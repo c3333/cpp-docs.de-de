@@ -1,16 +1,16 @@
 ---
-title: Erstellen eines neuen C++ Projekts unter Linux in Visual Studio
-ms.date: 10/24/2019
+title: Erstellen eines auf MSBuild basierenden C++-Projekts für Linux in Visual Studio
+ms.date: 08/04/2020
 description: Erstellen Sie ein neues MSBuild-basiertes Linux-Projekt in Visual Studio.
 ms.assetid: 5d7c1d67-bc31-4f96-8622-2b4cf91372fd
-ms.openlocfilehash: 1e79dd50756b71aabae7ccec75e57178898e7720
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 86d8b8fd2abe8970b5146d4ab08dc4251b5562d5
+ms.sourcegitcommit: 2034f8e744a8b36cff8b15e9a5cfe684afebadfb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81364353"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88043849"
 ---
-# <a name="create-a-new-linux-project"></a>Erstellen eines neuen Linux-Projekts
+# <a name="create-a-linux-msbuild-c-project-in-visual-studio"></a>Erstellen eines auf MSBuild basierenden C++-Projekts für Linux in Visual Studio
 
 ::: moniker range="vs-2015"
 
@@ -42,7 +42,7 @@ Führen Sie folgende Schritte aus, um ein neues Linux-Projekt in Visual Studio 
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-[Konfigurieren eines Linux-Projekts](configure-a-linux-project.md)
+[Konfigurieren eines auf MSBuild basierenden Linux-Projekts](configure-a-linux-project.md)
 
 ::: moniker-end
 
@@ -72,6 +72,6 @@ Führen Sie folgende Schritte aus, um ein neues Linux-Projekt in Visual Studio 
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-[Konfigurieren eines Linux-Projekts](configure-a-linux-project.md)
+[Konfigurieren eines MSBuild-Projekts für Linux](configure-a-linux-project.md)
 
 ::: moniker-end

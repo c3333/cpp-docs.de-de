@@ -1,56 +1,52 @@
 ---
-title: Erstellen und Konfigurieren eines Linux CMake-Projekts in Visual Studio
-description: Hier erfahren Sie, wie Sie ein Linux CMake-Projekt in Visual Studio erstellen, konfigurieren, bearbeiten und kompilieren.
-ms.date: 06/22/2020
+title: Erstellen eines CMake-Projekts für Linux in Visual Studio
+description: Informationen zum Erstellen ein CMake-Projekts für Linux in Visual Studio
+ms.date: 08/06/2020
 ms.assetid: f8707b32-f90d-494d-ae0b-1d44425fdc25
-ms.openlocfilehash: 2149b102c452149070d59c9645ce34a5977a6057
-ms.sourcegitcommit: f9344b09a734e8b05a7494415991a22b7aec5ae8
+ms.openlocfilehash: 1b622bcd2af49ee51f7546be4c7a6d804c3102d0
+ms.sourcegitcommit: 2034f8e744a8b36cff8b15e9a5cfe684afebadfb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85269727"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88043823"
 ---
-# <a name="create-and-configure-a-linux-cmake-project"></a>Erstellen und Konfigurieren eines Linux-CMake-Projekts
+# <a name="create-a-cmake-linux-project-in-visual-studio"></a>Erstellen eines CMake-Projekts für Linux in Visual Studio
 
 ::: moniker range="vs-2015"
-
-Die Unterstützung für Linux ist in Visual Studio 2017 und höher verfügbar. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
-
+Die Unterstützung für Linux ist in Visual Studio 2017 und höher verfügbar. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie die Dropdownliste **Version** über dem Inhaltsverzeichnis auf **Visual Studio 2017** oder **Visual Studio 2019** fest.
 ::: moniker-end
 
 ::: moniker range=">=vs-2017"
 
-## <a name="before-you-begin"></a>Vorbereitungen
+Wir empfehlen, CMake für Projekte zu verwenden, die plattformübergreifend sind oder als Open Source veröffentlicht werden sollen. Sie können CMake-Projekte zum Erstellen und Debuggen desselben Quellcodes unter Windows, im Windows-Subsystem für Linux (WSL) und auf Remotesystemen verwenden.
 
-Stellen Sie zuerst sicher, dass die Workload **Linux-Entwicklung mit C++** mit der CMake-Komponente installiert ist. Weitere Informationen finden Sie unter [Install the C++ Linux workload in Visual Studio (Installieren der C++-Workload unter Linux in Visual Studio)](download-install-and-setup-the-linux-development-workload.md).
+## <a name="before-you-begin"></a>Voraussetzungen
 
-Stellen Sie sicher, dass Folgendes auf dem Linux-System installiert ist:
+Stellen Sie zunächst sicher, dass Sie die Visual Studio-Workload „ Linux“ einschließlich CMake-Komponente installiert haben. Sie ist Teil der Workload **Linux-Entwicklung mit C++** im Visual Studio-Installationsprogramm. Weitere Informationen finden Sie unter [Herunterladen, Installieren und Einrichten der Linux-Workload](download-install-and-setup-the-linux-development-workload.md), wenn Sie nicht sicher sind, dass sie installiert ist.
+
+Stellen Sie sicher, dass Folgendes auf dem Remotecomputer installiert ist:
 
 - gcc
 - gdb
 - rsync
 - zip
-- ninja-build
-
-::: moniker-end
-
-::: moniker range="vs-2019"
-
-Für die Unterstützung von CMake-Projekten unter Linux ist eine aktuelle Version von CMake auf dem Zielcomputer erforderlich. Die vom Standardpaket-Manager einer Distribution bereitgestellte Version ist häufig nicht ausreichend aktuell, um alle für Visual Studio erforderlichen Features zu unterstützen. Visual Studio 2019 erkennt, ob eine aktuelle Version von CMake auf dem Linux-System installiert ist. Wenn keine gefunden werden kann, zeigt Visual Studio über dem Editorbereich eine Infoleiste an. Dort haben Sie die Möglichkeit, CMake von [https://github.com/Microsoft/CMake/releases](https://github.com/Microsoft/CMake/releases) herunterzuladen und zu installieren.
-
-Die CMake-Unterstützung in Visual Studio erfordert die Servermodusunterstützung, die in CMake 3.8 eingeführt wurde. In Visual Studio 2019 wird Version 3.14 oder höher empfohlen.
-
+- ninja-build (Visual Studio 2019 oder höher)
 ::: moniker-end
 
 ::: moniker range="vs-2017"
-
-Die CMake-Unterstützung in Visual Studio erfordert die Servermodusunterstützung, die in CMake 3.8 eingeführt wurde. Laden Sie für eine von Microsoft bereitgestellte CMake-Variante unter [https://github.com/Microsoft/CMake/releases](https://github.com/Microsoft/CMake/releases) die aktuellsten vordefinierten Binärdateien herunter.
+Die CMake-Unterstützung in Visual Studio erfordert Unterstützung des Servermodus, der in CMake 3.8 eingeführt wurde. Laden Sie für eine von Microsoft bereitgestellte CMake-Variante unter [https://github.com/Microsoft/CMake/releases](https://github.com/Microsoft/CMake/releases) die aktuellsten vordefinierten Binärdateien herunter.
 
 Die Binärdateien werden unter `~/.vs/cmake` installiert. Nach dem Bereitstellen der Binärdateien wird Ihr Projekt automatisch neu generiert. Wenn die vom Feld `cmakeExecutable` in *CMakeSettings.json* angegebene CMake-Version ungültig ist (Version nicht vorhanden oder ungültig) und die vorab erstellten Binärdateien vorhanden sind, ignoriert Visual Studio `cmakeExecutable` und verwendet die vorab erstellten Binärdateien.
 
-:::moniker-end
+In Visual Studio 2017 kann ein CMake-Projekt nicht von Grund auf neu erstellt werden. Sie können jedoch, wie im nächsten Abschnitt beschrieben, einen Ordner öffnen, der ein vorhandenes CMake-Projekt enthält.
+::: moniker-end
 
-::: moniker range="vs-2019"
+::: moniker range=">=vs-2019"
+Sie können Visual Studio 2019 zum Erstellen und Debuggen auf einem Linux-Remotesystem oder im WSL verwenden, wobei CMake auf diesem System aufgerufen wird. Die CMake-Version 3.14 oder höher muss auf dem Zielcomputer installiert sein.
+
+Stellen Sie sicher, dass der Zielcomputer über eine aktuelle Version von CMake verfügt. Die vom Standardpaket-Manager einer Distribution bereitgestellte Version ist häufig nicht aktuell genug, um alle für Visual Studio erforderlichen Features zu unterstützen. Visual Studio 2019 erkennt, ob eine aktuelle Version von CMake auf dem Linux-System installiert ist. Wenn keine gefunden werden kann, zeigt Visual Studio über dem Editorbereich eine Infoleiste an. Dort haben Sie die Möglichkeit, CMake von [https://github.com/Microsoft/CMake/releases](https://github.com/Microsoft/CMake/releases) herunterzuladen und zu installieren.
+
+In Visual Studio 2019 können Sie ein CMake-Projekt von Grund auf neu erstellen oder ein vorhandenes CMake-Projekt öffnen. Um ein neues CMake-Projekt zu erstellen, befolgen Sie die nachstehenden Anweisungen. Oder fahren Sie mit [Öffnen eines CMake-Projektordners](#open-a-cmake-project-folder) fort, wenn Sie bereits ein CMake-Projekt haben.
 
 ## <a name="create-a-new-linux-cmake-project"></a>Erstellen eines neuen CMake-Projekts unter Linux
 
@@ -59,17 +55,23 @@ So erstellen Sie ein neues Linux CMake-Projekt in Visual Studio 2019
 1. Wählen Sie in Visual Studio **Datei > Neues Projekt** aus, oder drücken Sie **STRG + UMSCHALT + N**.
 1. Legen Sie **Sprache** auf **C++** fest, und suchen Sie nach „CMake“. Klicken Sie dann auf **Weiter**. Geben Sie einen **Namen** und einen **Speicherort** an, und klicken Sie auf **Erstellen**.
 
-Visual Studio erstellt eine minimale Datei namens *CMakeLists.txt* mit nur dem Namen der ausführbaren Datei und der mindestens erforderlichen CMake-Version. Sie können diese Datei jedoch manuell nach Belieben bearbeiten. Visual Studio wird Ihre Änderungen in keinem Fall überschreiben. Sie können CMake-Befehlszeilenargumente und Umgebungsvariablen in dieser Datei angeben. Klicken Sie mit der rechten Maustaste auf die Datei *CMakeLists.txt* im **Projektmappen-Explorer**, und wählen Sie **CMake Settings for Project** (Einstellungen für CMake-Projekt) aus. Klicken Sie zum Angeben von Optionen für das Debuggen mit der rechten Maustaste auf den Projektknoten, und wählen Sie **Debug- und Starteinstellungen**.
+Alternativ können Sie Ihr eigenes CMake-Projekt in Visual Studio 2019 öffnen. Im folgenden Abschnitt wird dies erläutert.
 
+Visual Studio erstellt eine minimale Datei namens *CMakeLists.txt* mit nur dem Namen der ausführbaren Datei und der mindestens erforderlichen CMake-Version. Sie können diese Datei jedoch manuell nach Belieben bearbeiten. Visual Studio wird Ihre Änderungen in keinem Fall überschreiben.
+
+Um Ihnen zu helfen, Ihre CMake-Skripts in Visual Studio 2019 zu verstehen, zu bearbeiten und zu erstellen, verweisen wir auf die folgenden Ressourcen:
+
+- [Dokumentation für CMake im Editor in Visual Studio](https://devblogs.microsoft.com/cppblog/in-editor-documentation-for-cmake-in-visual-studio/)
+- [Codenavigation für CMake-Skripts](https://devblogs.microsoft.com/cppblog/code-navigation-for-cmake-scripts/)
+- [Einfaches Hinzufügen, Entfernen und Umbenennen von Dateien und Zielen in CMake-Projekten](https://devblogs.microsoft.com/cppblog/easily-add-remove-and-rename-files-and-targets-in-cmake-projects/)
 ::: moniker-end
 
 ::: moniker range=">=vs-2017"
-
 ## <a name="open-a-cmake-project-folder"></a>Öffnen eines CMake-Projektordners
 
 Wenn Sie einen Ordner öffnen, der ein bereits vorhandenes CMake-Projekt enthält, verwendet Visual Studio Variablen im CMake-Cache, um IntelliSense und Builds automatisch zu konfigurieren. Lokale Konfigurations- und Debugeinstellungen werden in JSON-Dateien gespeichert. Sie können diese Dateien optional für andere Personen freigeben, die Visual Studio verwenden.
 
-Visual Studio ändert die *CMakeLists.txt*-Dateien nicht. Sie bleiben unverändert, damit andere Personen, die am selben Projekt arbeiten, weiterhin ihre vorhandenen Tools verwenden können. Visual Studio generiert den Cache neu, wenn Sie Änderungen an *CMakeLists.txt* oder in einigen Fällen an *CMakeSettings.json* speichern. Wenn Sie aber eine Konfiguration des Typs **Vorhandener Cache** nutzen, ändert Visual Studio den Cache nicht.
+Visual Studio ändert die *CMakeLists.txt*-Dateien nicht. Auf diese Weise können andere, die am gleichen Projekt arbeiten, ihre bereits vorhandenen Tools weiter verwenden. Visual Studio generiert den Cache neu, wenn Sie Änderungen an *CMakeLists.txt* oder in einigen Fällen an *CMakeSettings.json* speichern. Wenn Sie aber eine Konfiguration des Typs **Vorhandener Cache** nutzen, ändert Visual Studio den Cache nicht.
 
 Allgemeine Informationen zur Unterstützung von CMake in Visual Studio finden Sie unter [CMake-Projekte in Visual Studio](../build/cmake-projects-in-visual-studio.md). Diesen Artikel sollten Sie lesen, bevor Sie hier fortfahren.
 
@@ -96,159 +98,11 @@ project (hello-cmake)
 add_executable(hello-cmake hello.cpp)
 ```
 
-## <a name="choose-a-linux-target"></a>Auswählen eines Linux-Ziels
+## <a name="next-steps"></a>Nächste Schritte
 
-Sobald Sie den Ordner öffnen, analysiert Visual Studio die Datei *CMakeLists.txt* und gibt das Windows-Ziel **x86-Debug** an. Ändern Sie die Projekteinstellungen auf **Linux-Debug** oder **Linux-Release**, um auf ein Linux-Remotesystem abzuzielen. (Siehe [Konfigurieren von CMake-Einstellungen für Linux](#configure_cmake_linux) weiter unten.)
-
-::: moniker-end
-
-::: moniker range="vs-2019"
-
-Klicken Sie auf der Hauptsymbolleiste in der Dropdownliste „Konfiguration“ auf **Konfigurationen verwalten**, um „Windows-Subsystem für Linux“ als Ziel festzulegen. Klicken Sie dann auf die Schaltfläche **Konfiguration hinzufügen**, und wählen Sie **WSL-Debug** oder **WSL-Release** aus, wenn GCC verwendet wird. Verwenden Sie bei Nutzung des Clang/LLVM-Toolsets die Clang-Varianten.
-
-**Visual Studio 2019, Version 16.1** Wenn WSL als Ziel verwendet wird, müssen Quellen oder Header nicht kopiert werden. Dies liegt daran, dass der Compiler unter Linux direkten Zugriff auf Ihre Quelldateien im Dateisystem von Windows hat. (Bei der Windows 10-Version 1903 und höheren Versionen können Windows-Anwendungen ebenfalls direkt auf die Linux-Headerdateien zugreifen. Visual Studio nutzt diese Möglichkeit noch nicht.)
-
-::: moniker-end
-
-::: moniker range=">=vs-2017"
-
-Für Remoteziele wählt Visual Studio standardmäßig das erste Remotesystem in der Liste unter **Extras** > **Optionen** > **Plattformübergreifend** > **Verbindungs-Manager** aus. Wenn keine Remoteverbindungen gefunden werden, werden Sie aufgefordert, eine Remoteverbindung zu erstellen. Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit Ihrem Linux-Remotecomputer](connect-to-your-remote-linux-computer.md).
-
-Wenn Sie ein Linux-Remoteziel angeben, wird Ihre Quelle in das Remotesystem kopiert.
-
-Wenn Sie ein Ziel ausgewählt haben, wird CMake zum Generieren des CMake-Caches für Ihr Projekt automatisch auf dem Linux-System ausgeführt.
-
-![Generieren des CMake-Caches unter Linux](media/cmake-linux-1.png "Generieren des CMake-Caches unter Linux")
-
-### <a name="intellisense"></a>Intellisense
-
-Visual Studio kopiert automatisch Header vom Linux-Computer in ein Verzeichnis auf Ihrem lokalen Windows-Computer, um IntelliSense-Unterstützung für Header auf Linux-Remotesystemen bereitzustellen. Weitere Informationen finden Sie unter [IntelliSense für Remoteheader (Visual Studio 2017-Version 15.7 und höher)](configure-a-linux-project.md#remote_intellisense).
-
-### <a name="locale"></a>Gebietsschema
-
-Weitere Informationen finden Sie unter [Linux-Zielgebietsschema](configure-a-linux-project.md#locale).
-
-## <a name="debug-the-cmake-project"></a><a name="debug_cmake_project"></a> Debuggen des CMake-Projekts
-
-Wenn Sie Ihren Code im angegebenen Zielsystem debuggen möchten, legen Sie einen Haltepunkt fest. Wählen Sie das CMake-Ziel als Startelement im Symbolleistenmenü neben den Projekteinstellungen auf. Klicken Sie dann auf **&#x23f5; Starten** in der Symbolleiste, oder drücken Sie **F5**.
-
-Wenn Sie die Befehlszeilenargumente Ihres Programms anpassen möchten, klicken Sie oben im **Projektmappen-Explorer** auf die Schaltfläche **Switch Targets** (Ziele wechseln), und wählen Sie dann die Ansicht **Ziele** aus. Klicken Sie mit der rechten Maustaste auf das Ziel, und wählen Sie **Debug- und Starteinstellungen** aus. Durch diesen Befehl wird eine Konfigurationsdatei *launch.vs.json* geöffnet oder erstellt, die Informationen zu Ihrem Programm enthält. Fügen Sie der Datei wie im folgenden Beispiel veranschaulicht eine **sourceFilemileMapap**-Eigenschaft hinzu, um den Speicherort für Quelldateien festzulegen.
-
-```json
-"MIMode": "gdb",
-"externalConsole": true,
-"sourceFileMap": {
-"c/Users/USER/source/repos/CMAKEPROJECTNAME": "C:\\Users\\USER\\source\\repos\\CMAKEPROJECTNAME"
-},
-"remoteMachineName": "${debugInfo.remoteMachineName}",
-```
-
-Um zusätzliche Argumente anzugeben, fügen Sie sie dem JSON-Array `args` hinzu. Weitere Informationen finden Sie unter [Open Folder projects for C++ (Verwenden von „Ordner öffnen“ mit Projekten in Visual C++)](../build/open-folder-projects-cpp.md) und [Configure CMake debugging sessions (Konfigurieren von CMake-Debugsitzungen)](../build/configure-cmake-debugging-sessions.md).
-
-## <a name="configure-cmake-settings-for-linux"></a><a name="configure_cmake_linux"></a> Konfigurieren von CMake-Einstellungen für Linux
-
-Eine *CMakeSettings.json*-Datei in einem CMake-Projekt unter Linux kann alle unter [Customize CMake settings](../build/customize-cmake-settings.md) (Anpassen von CMake-Einstellungen) aufgeführten Eigenschaften angeben sowie weitere Eigenschaften, die die Buildeinstellungen auf dem Linux-Remotecomputer steuern.
-
-::: moniker-end
-
-::: moniker range="vs-2019"
-
-Öffnen Sie über die Hauptsymbolleiste die Dropdownliste **Konfiguration**, und wählen Sie die Option **Konfigurationen verwalten** aus, um die Standardeinstellungen von CMake in Visual Studio 2019 zu ändern.
-
-![Verwalten von CMake-Konfigurationen](../build/media/vs2019-cmake-manage-configurations.png "Dropdownliste „CMake-Konfigurationen“")
-
-Durch diesen Befehl wird der **Editor für CMake-Einstellungen** geöffnet, den Sie zum Bearbeiten der *CMakeSettings.json*-Datei im Stammprojektordner verwenden können. Sie können die Datei auch direkt öffnen, indem Sie im Editor auf **JSON bearbeiten** klicken. Weitere Informationen finden Sie unter [Anpassen von CMake-Einstellungen](../build/customize-cmake-settings.md).
-
-Die Standardkonfiguration für Linux-Debug in Visual Studio 2019 ab Version 16.1 ist wie hier gezeigt:
-
-```json
-{
-      "name": "Linux-Debug",
-      "generator": "Unix Makefiles",
-      "configurationType": "Debug",
-      "cmakeExecutable": "/usr/bin/cmake",
-      "remoteCopySourcesExclusionList": [ ".vs", ".git", "out" ],
-      "cmakeCommandArgs": "",
-      "buildCommandArgs": "",
-      "ctestCommandArgs": "",
-      "inheritEnvironments": [ "linux_x64" ],
-      "remoteMachineName": "${defaultRemoteMachineName}",
-      "remoteCMakeListsRoot": "$HOME/.vs/${projectDirName}/${workspaceHash}/src",
-      "remoteBuildRoot": "$HOME/.vs/${projectDirName}/${workspaceHash}/out/build/${name}",
-      "remoteInstallRoot": "$HOME/.vs/${projectDirName}/${workspaceHash}/out/install/${name}",
-      "remoteCopySources": true,
-      "rsyncCommandArgs": "-t --delete --delete-excluded",
-      "remoteCopyBuildOutput": false,
-      "remoteCopySourcesMethod": "rsync",
-      "addressSanitizerRuntimeFlags": "detect_leaks=0",
-      "variables": []
-    }
-  ]
-}
-```
-
-::: moniker-end
-
-::: moniker range="vs-2017"
-
-Wenn Sie die Standard-CMake-Einstellungen in Visual Studio 2017 ändern möchten, klicken Sie im Hauptmenü auf **CMake** > **Change CMake Settings** > **CMakeLists.txt** (CMake > CMake-Einstellungen ändern > CMakeLists.txt). Alternativ können Sie auch mit der rechten Maustaste im **Projektmappen-Explorer** auf *CMakeSettings.txt* klicken und die Option **Change CMake Settings** (CMake-Einstellungen ändern) auswählen. Visual Studio erstellt dann eine neue *CMakeSettings.json*-Datei im Stammordner des Projekts. Sie können die Datei mit dem Editor für **CMake-Einstellungen** öffnen oder die Datei direkt ändern. Weitere Informationen finden Sie unter [Customize CMake settings (Anpassen von CMake-Einstellungen)](../build/customize-cmake-settings.md).
-
-Das folgende Beispiel zeigt die Standardkonfiguration für Linux-Debug in Visual Studio 2017 (und Visual Studio 2019, Version 16.0) basierend auf dem vorherigen Codebeispiel:
-
-```json
-{
-      "name": "Linux-Debug",
-      "generator": "Unix Makefiles",
-      "remoteMachineName": "${defaultRemoteMachineName}",
-      "configurationType": "Debug",
-      "remoteCMakeListsRoot": "/var/tmp/src/${workspaceHash}/${name}",
-      "cmakeExecutable": "/usr/local/bin/cmake",
-      "buildRoot": "${env.LOCALAPPDATA}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
-      "installRoot": "${env.LOCALAPPDATA}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
-      "remoteBuildRoot": "/var/tmp/build/${workspaceHash}/build/${name}",
-      "remoteInstallRoot": "/var/tmp/build/${workspaceHash}/install/${name}",
-      "remoteCopySources": true,
-      "remoteCopySourcesOutputVerbosity": "Normal",
-      "remoteCopySourcesConcurrentCopies": "10",
-      "remoteCopySourcesMethod": "rsync",
-      "remoteCopySourcesExclusionList": [".vs", ".git"],
-      "rsyncCommandArgs" : "-t --delete --delete-excluded",
-      "remoteCopyBuildOutput" : "false",
-      "cmakeCommandArgs": "",
-      "buildCommandArgs": "",
-      "ctestCommandArgs": "",
-      "inheritEnvironments": [ "linux-x64" ]
-}
-```
-
-::: moniker-end
-
-::: moniker range=">=vs-2017"
-
-Weitere Informationen zu diesen Einstellungen finden Sie in der [Referenz zu CMakeSettings.json](../build/cmakesettings-reference.md).
-
-## <a name="optional-settings"></a>Optionale Einstellungen
-
-Sie können über die folgenden optionalen Einstellungen mehr Kontrolle erlangen:
-
-```json
-{
-      "remotePrebuildCommand": "",
-      "remotePreGenerateCommand": "",
-      "remotePostbuildCommand": "",
-}
-```
-
-Mithilfe dieser Optionen können Sie Befehle vor und nach dem Erstellen und vor der CMake-Generierung auf dem Linux-System ausführen. Die Werte können ein beliebiger Befehl sein, der auf dem Remotesystem gültig ist. Die Ausgabe wird wieder zurück an Visual Studio geleitet.
+[Konfigurieren eines Linux CMake-Projekts](cmake-linux-configure.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-[Arbeiten mit Projekteigenschaften](../build/working-with-project-properties.md)<br/>
 [CMake Projects in Visual Studio (CMake-Projekte in Visual Studio)](../build/cmake-projects-in-visual-studio.md)<br/>
-[Herstellen einer Verbindung mit Ihrem Linux-Remotecomputer](connect-to-your-remote-linux-computer.md)<br/>
-[Anpassen von CMake-Buildeinstellungen](../build/customize-cmake-settings.md)<br/>
-[Konfigurieren von CMake-Debugsitzungen](../build/configure-cmake-debugging-sessions.md)<br/>
-[Bereitstellen, Ausführen und Debuggen Ihres Linux-Projekts](deploy-run-and-debug-your-linux-project.md)<br/>
-[CMake predefined configuration reference (Referenz für vordefinierte CMake-Konfigurationen)](../build/cmake-predefined-configuration-reference.md)
-
 ::: moniker-end

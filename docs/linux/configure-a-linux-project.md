@@ -1,15 +1,16 @@
 ---
-title: Konfigurieren eines C++ Projekts unter Linux in Visual Studio
-ms.date: 06/22/2020
+title: Konfigurieren eines auf MSBuild basierenden C++-Projekts für Linux in Visual Studio
+ms.date: 08/06/2020
+description: Konfigurieren Sie ein neues auf MSBuild basierendes Linux-Projekt in Visual Studio, damit Sie einen Build erstellen können.
 ms.assetid: 4d7c6adf-54b9-4b23-bd23-5de0c825b768
-ms.openlocfilehash: 6bc38e925e366804c8fe37604066b7cc20e04f15
-ms.sourcegitcommit: f9344b09a734e8b05a7494415991a22b7aec5ae8
+ms.openlocfilehash: 7f4664dfc364cbd9a3b499e02de4cf0e7f44fe78
+ms.sourcegitcommit: 2034f8e744a8b36cff8b15e9a5cfe684afebadfb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85269740"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88043862"
 ---
-# <a name="configure-a-linux-project"></a>Konfigurieren eines Linux-Projekts
+# <a name="configure-a-linux-msbuild-c-project-in-visual-studio"></a>Konfigurieren eines auf MSBuild basierenden C++-Projekts für Linux in Visual Studio
 
 ::: moniker range="vs-2015"
 
@@ -17,7 +18,7 @@ Die Unterstützung für Linux ist in Visual Studio 2017 und höher verfügbar.
 
 ::: moniker-end
 
-In diesem Thema wird das Konfigurieren eines C++-Linux-Projekts beschrieben. Den entsprechenden Artikel finden Sie unter [Create a new C++ Linux project in Visual Studio (Erstellen eines neuen C++-Linux-Projekts in Visual Studio)](create-a-new-linux-project.md). Informationen zu CMake-Linux-Projekten finden Sie unter [Konfigurieren eines Linux-CMake-Projekts](cmake-linux-project.md).
+In diesem Thema wird das Konfigurieren eines auf MSBuild basierenden C++-Projekts für Linux entsprechend der Erläuterung unter [Erstellen eines auf MSBuild basierenden C++-Projekts für Linux in Visual Studio](create-a-new-linux-project.md) beschrieben. Informationen zu CMake-Projekten für Linux finden Sie unter [Konfigurieren eines Linux-CMake-Projekts](cmake-linux-project.md).
 
 Sie können ein Linux-Projekt so konfigurieren, dass dieses auf einen physischen Linux-Computer, einen virtuellen Computer oder das [Windows-Subsystem für Linux](/windows/wsl/about) (WSL) abzielt.
 
