@@ -10,19 +10,19 @@ helpviewer_keywords:
 - SafeInt class
 - SafeInt class, constructor
 ms.assetid: 27a8f087-2511-46f9-8d76-2aeb66ca272f
-ms.openlocfilehash: 97d81401cfd01d6d39457a9d63c39bc25901128e
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: d61ce20a8644ca64d37c0eca605d52fb308c0863
+ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87219351"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88560959"
 ---
 # <a name="safeint-class"></a>SafeInt-Klasse
 
 Erweitert die primitiven Ganzzahlen, um Ganzzahlüberlauf zu vermeiden, und ermöglicht Ihnen, verschiedene Typen von ganzen Zahlen zu vergleichen.
 
 > [!NOTE]
-> Die neueste Version der safeint-Bibliothek finden Sie unter [https://github.com/dcleblanc/SafeInt](https://github.com/dcleblanc/SafeInt) . Um die safeint-Bibliothek zu verwenden, Klonen Sie das Repository, und`#include "SafeInt.hpp"`
+> Die neueste Version der safeint-Bibliothek finden Sie unter [https://github.com/dcleblanc/SafeInt](https://github.com/dcleblanc/SafeInt) . Um die safeint-Bibliothek zu verwenden, Klonen Sie das Repository, und `#include "SafeInt.hpp"`
 
 ## <a name="syntax"></a>Syntax
 
@@ -33,17 +33,23 @@ class SafeInt;
 
 ### <a name="parameters"></a>Parameter
 
-| Vorlage  |  BESCHREIBUNG |
-|--------|------------|
-| T         |  Der Typ des Ganzzahl- oder booleschen Parameters, der `SafeInt` ersetzt. |
-| E         |  Ein Aufzählungsdatentyp, der die Fehlerbehandlungsrichtlinie definiert. |
-| U         |  Der Typ des Ganzzahl- oder booleschen Parameters für den zweiten Operanden. |
+*`T`*\
+Der Typ des Ganzzahl- oder booleschen Parameters, der `SafeInt` ersetzt.
 
-| Parameter  |  BESCHREIBUNG |
-|---------|-----------------|
-| *rhs*      |  [in] Ein Eingabeparameter, der den Wert auf der rechten Seite des Operators in mehreren eigenständigen Funktionen darstellt. |
-| *i*        |  [in] Ein Eingabeparameter, der den Wert auf der rechten Seite des Operators in mehreren eigenständigen Funktionen darstellt. |
-| *Bohrer*     |  [in] Ein Eingabeparameter, der den Wert auf der rechten Seite des Operators in mehreren eigenständigen Funktionen darstellt. |
+*`E`*\
+Ein Aufzählungsdatentyp, der die Fehlerbehandlungsrichtlinie definiert.
+
+*`U`*\
+Der Typ des Ganzzahl- oder booleschen Parameters für den zweiten Operanden.
+
+*RHS*\
+[in] Ein Eingabeparameter, der den Wert auf der rechten Seite des Operators in mehreren eigenständigen Funktionen darstellt.
+
+*Ich*\
+[in] Ein Eingabeparameter, der den Wert auf der rechten Seite des Operators in mehreren eigenständigen Funktionen darstellt.
+
+*Bohrer*\
+[in] Ein Eingabeparameter, der den Wert auf der rechten Seite des Operators in mehreren eigenständigen Funktionen darstellt.
 
 ## <a name="members"></a>Member
 
@@ -174,7 +180,7 @@ In der Operatorentabelle in diesem Thema sind die von der `SafeInt`-Klasse unter
 
 Vergleichsvorgänge zwischen einem `SafeInt`- und einem Ganzzahltyp können in beiden Richtungen ausgeführt werden. Beispielsweise sind `SafeInt<int>(x) < y` und `y> SafeInt<int>(x)` beide gültig und geben das gleiche Ergebnis zurück.
 
-Viele binäre Operatoren unterstützen nicht die Verwendung von zwei unterschiedlichen `SafeInt` Typen. Ein Beispiel hierfür ist der `&`-Operator. `SafeInt<T, E> & int`wird unterstützt, aber `SafeInt<T, E> & SafeInt<U, E>` nicht. Im zweiten Beispiel weiß der Compiler nicht, welcher Parametertyp zurückgegeben werden soll. Eine Lösung dieses Problems ist die Umwandlung des zweiten Parameters zurück in den Basistyp. Bei Verwendung der gleichen Parameter kann dies mit `SafeInt<T, E> & (U)SafeInt<U, E>` erfolgen.
+Viele binäre Operatoren unterstützen nicht die Verwendung von zwei unterschiedlichen `SafeInt` Typen. Ein Beispiel hierfür ist der `&`-Operator. `SafeInt<T, E> & int` wird unterstützt, aber `SafeInt<T, E> & SafeInt<U, E>` nicht. Im zweiten Beispiel weiß der Compiler nicht, welcher Parametertyp zurückgegeben werden soll. Eine Lösung dieses Problems ist die Umwandlung des zweiten Parameters zurück in den Basistyp. Bei Verwendung der gleichen Parameter kann dies mit `SafeInt<T, E> & (U)SafeInt<U, E>` erfolgen.
 
 > [!NOTE]
 > Für bitweise Vorgänge sollten die beiden verschiedenen Parameter gleich groß sein. Wenn die Größen unterschiedlich sind, löst der Compiler eine [ASSERT](../mfc/reference/diagnostic-services.md#assert)-Ausnahme aus. Die Ergebnisse dieses Vorgangs können nicht unbedingt genau sein. Um dieses Problem zu beheben, wandeln Sie den kleineren Parameter um, bis er die gleiche Größe wie der größere Parameter hat.
@@ -248,7 +254,7 @@ int main()
 
 **Namespace:** keine
 
-## <a name="safeintsafeint"></a><a name="safeint"></a>Safeint:: safeint
+## <a name="safeintsafeint"></a><a name="safeint"></a> Safeint:: safeint
 
 Erstellt ein `SafeInt`-Objekt.
 
@@ -277,7 +283,7 @@ SafeInt (const U& i)
 `u`<br/>
 [in] Ein `SafeInt`-Objekt vom Typ „U“. Das neue `SafeInt`-Objekt hat den gleichen Wert wie *u*, ist aber vom Typ „T“.
 
-`U`Der Typ der in der gespeicherten Daten `SafeInt` . Dies kann entweder ein boolescher Wert, ein Zeichen oder eine ganze Zahl sein. Wenn es sich um einen ganzzahligen Typ handelt, kann er signiert oder nicht signiert werden und zwischen 8 und 64 Bits liegen.
+`U` Der Typ der in der gespeicherten Daten `SafeInt` . Dies kann entweder ein boolescher Wert, ein Zeichen oder eine ganze Zahl sein. Wenn es sich um einen ganzzahligen Typ handelt, kann er signiert oder nicht signiert werden und zwischen 8 und 64 Bits liegen.
 
 ### <a name="remarks"></a>Bemerkungen
 

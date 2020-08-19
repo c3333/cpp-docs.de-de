@@ -16,12 +16,12 @@ helpviewer_keywords:
 - stdext::max_variable_size [C++], released
 - stdext::max_variable_size [C++], saved
 ms.assetid: 9f2e9df0-4148-4b37-bc30-f8eca0ef86ae
-ms.openlocfilehash: f98b5698ff14349abf9300799f00c6d9121bcf65
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 53d2603c82e94710ed687dce4caeec24aeb2f60a
+ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87222263"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88561647"
 ---
 # <a name="max_variable_size-class"></a>max_variable_size-Klasse
 
@@ -55,7 +55,7 @@ class max_variable_size
 
 **Namespace:** stdext
 
-## <a name="max_variable_sizeallocated"></a><a name="allocated"></a>Max_variable_size:: zugeordnet
+## <a name="max_variable_sizeallocated"></a><a name="allocated"></a> Max_variable_size:: zugeordnet
 
 Erhöht die Anzahl der zugeordneten Speicherblöcke.
 
@@ -65,15 +65,14 @@ void allocated(std::size_t _Nx = 1);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
-|---------------|-----------------|
-|*_Nx*|Der Inkrementwert|
+*_Nx*\
+Der Inkrementwert
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Member-Funktion fügt *_Nx* dem gespeicherten Wert hinzu `_Nallocs` . Diese Member-Funktion wird nach jedem erfolgreichen Aufruf durch `cache_freelist::allocate` den-Operator aufgerufen **`new`** . Das Argument *_Nx* ist die Anzahl der Speicherblöcke im Block, der vom Operator zugeordnet wird **`new`** .
 
-## <a name="max_variable_sizedeallocated"></a><a name="deallocated"></a>Max_variable_size::d ezugeordnet
+## <a name="max_variable_sizedeallocated"></a><a name="deallocated"></a> Max_variable_size::d ezugeordnet
 
 Verringert die Anzahl der zugeordneten Speicherblöcke.
 
@@ -83,15 +82,14 @@ void deallocated(std::size_t _Nx = 1);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
-|---------------|-----------------|
-|*_Nx*|Der Inkrementwert|
+*_Nx*\
+Der Inkrementwert
 
 ### <a name="remarks"></a>Bemerkungen
 
 Die Member-Funktion subtrahiert *_Nx* vom gespeicherten Wert `_Nallocs` . Diese Member-Funktion wird nach jedem Aufruf durch `cache_freelist::deallocate` den-Operator aufgerufen **`delete`** . Das Argument *_Nx* ist die Anzahl der Speicherblöcke in dem Block, dessen Zuordnung vom Operator aufgehoben wird **`delete`** .
 
-## <a name="max_variable_sizefull"></a><a name="full"></a>Max_variable_size:: Full
+## <a name="max_variable_sizefull"></a><a name="full"></a> Max_variable_size:: Full
 
 Gibt einen Wert zurück, der angibt, ob zur Freiliste weitere Speicherblöcke hinzugefügt werden sollen.
 
@@ -107,7 +105,7 @@ bool full();
 
 Diese Memberfunktion wird von `cache_freelist::deallocate` aufgerufen. Wenn der Aufruf zurückgegeben **`true`** wird, wird `deallocate` der Speicherblock in die freie Liste eingefügt; Wenn false zurückgegeben wird, `deallocate` Ruft Operator **`delete`** auf, um die Zuteilung des Blocks aufzulösen.
 
-## <a name="max_variable_sizemax_variable_size"></a><a name="max_variable_size"></a>Max_variable_size:: Max_variable_size
+## <a name="max_variable_sizemax_variable_size"></a><a name="max_variable_size"></a> Max_variable_size:: Max_variable_size
 
 Konstruiert ein Objekt vom Typ `max_variable_size`.
 
@@ -119,7 +117,7 @@ max_variable_size();
 
 Dieser Konstruktor initialisiert die gespeicherten Werte `_Nblocks` und `_Nallocs` auf null.
 
-## <a name="max_variable_sizereleased"></a><a name="released"></a>Max_variable_size:: veröffentlicht
+## <a name="max_variable_sizereleased"></a><a name="released"></a> Max_variable_size:: veröffentlicht
 
 Verringert die Anzahl der Speicherblöcke auf der Freiliste.
 
@@ -131,7 +129,7 @@ void released();
 
 Diese Memberfunktion verringert den gespeicherten `_Nblocks`-Wert. Die `released`-Memberfunktion der aktuellen max-Klasse wird von `cache_freelist::allocate` aufgerufen, wann immer ein Speicherblock aus der Freiliste entfernt wird.
 
-## <a name="max_variable_sizesaved"></a><a name="saved"></a>Max_variable_size:: gespeichert
+## <a name="max_variable_sizesaved"></a><a name="saved"></a> Max_variable_size:: gespeichert
 
 Erhöht die Anzahl der Speicherblöcke auf der Freiliste.
 

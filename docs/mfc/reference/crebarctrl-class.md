@@ -1,5 +1,5 @@
 ---
-title: CReBarCtrl-Klasse
+title: Krebarctrl-Klasse
 ms.date: 11/19/2018
 f1_keywords:
 - CReBarCtrl
@@ -98,14 +98,14 @@ helpviewer_keywords:
 - CReBarCtrl [MFC], ShowBand
 - CReBarCtrl [MFC], SizeToRect
 ms.assetid: 154570d7-e48c-425d-8c7e-c64542bcb4cc
-ms.openlocfilehash: 930322f1803eba7709505018c77ecea3f816dd15
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.openlocfilehash: 872d577c2272939a6bf7ed1e3069cda426083e3f
+ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81750637"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88561894"
 ---
-# <a name="crebarctrl-class"></a>CReBarCtrl-Klasse
+# <a name="crebarctrl-class"></a>Krebarctrl-Klasse
 
 Kapselt die Funktionalität eines Grundleisten-Steuerelements. Dabei handelt es sich um einen Container für ein untergeordnetes Fenster.
 
@@ -119,95 +119,95 @@ class CReBarCtrl : public CWnd
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
-|[CReBarCtrl::CReBarCtrl](#crebarctrl)|Erstellt ein `CReBarCtrl`-Objekt.|
+|["Krebarctrl:: krebarctrl"](#crebarctrl)|Erstellt ein `CReBarCtrl`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
-|[CReBarCtrl::BeginDrag](#begindrag)|Platziert das Bewehrungssteuerelement in den Drag-and-Drop-Modus.|
-|[CReBarCtrl::Erstellen](#create)|Erstellt das Bewehrungssteuerelement und `CReBarCtrl` fügt es an das Objekt an.|
-|[CReBarCtrl::CreateEx](#createex)|Erstellt ein Bewehrungssteuerelement mit den angegebenen erweiterten `CReBarCtrl` Windows-Stilen und fügt es an ein Objekt an.|
-|[CReBarCtrl::DeleteBand](#deleteband)|Löscht ein Band aus einem Bewehrungssteuerelement.|
-|[CReBarCtrl::DragMove](#dragmove)|Aktualisiert die Ziehposition im Bewehrungssteuerelement nach einem Aufruf von `BeginDrag`.|
-|[CReBarCtrl::EndDrag](#enddrag)|Beendet den Drag-and-Drop-Vorgang des Bewehrungssteuerelements.|
-|[CReBarCtrl::GetBandBorders](#getbandborders)|Ruft die Ränder einer Band ab.|
-|[CReBarCtrl::GetBandCount](#getbandcount)|Ruft die Anzahl der Bänder ab, die sich derzeit im Bewehrungssteuerelement befinden.|
-|[CReBarCtrl::GetBandInfo](#getbandinfo)|Ruft Informationen zu einem angegebenen Band in einem Bewehrungssteuerelement ab.|
-|[CReBarCtrl::GetBandMargins](#getbandmargins)|Ruft die Ränder eines Bands ab.|
-|[CReBarCtrl::GetBarHeight](#getbarheight)|Ruft die Höhe des Bewehrungssteuerelements ab.|
-|[CReBarCtrl::GetBarInfo](#getbarinfo)|Ruft Informationen über das Bewehrungssteuerelement und die von ihm verwendete Bildliste ab.|
-|[CReBarCtrl::GetBkColor](#getbkcolor)|Ruft die Standardhintergrundfarbe eines Bewehrungssteuerelements ab.|
-|[CReBarCtrl::GetColorScheme](#getcolorscheme)|Ruft die [COLORSCHEME-Struktur ab,](/windows/win32/api/commctrl/ns-commctrl-colorscheme) die dem Bewehrungssteuerelement zugeordnet ist.|
-|[CReBarCtrl::GetDropTarget](#getdroptarget)|Ruft den Schnittstellenzeiger eines `IDropTarget` Bewehrungssteuerelements ab.|
-|[CReBarCtrl::GetExtendedStyle](#getextendedstyle)|Ruft den erweiterten Stil des aktuellen Bewehrungssteuerelements ab.|
-|[CReBarCtrl::GetImageList](#getimagelist)|Ruft die Bildliste ab, die einem Bewehrungssteuerelement zugeordnet ist.|
-|[CReBarCtrl::GetPalette](#getpalette)|Ruft die aktuelle Palette des Bewehrungssteuerelements ab.|
-|[CReBarCtrl::GetRect](#getrect)|Ruft das umschließende Rechteck für ein bestimmtes Band in einem Bewehrungssteuerelement ab.|
-|[CReBarCtrl::GetRowCount](#getrowcount)|Ruft die Anzahl der Bandzeilen in einem Bewehrungssteuerelement ab.|
-|[CReBarCtrl::GetRowHeight](#getrowheight)|Ruft die Höhe einer angegebenen Zeile in einem Bewehrungssteuerelement ab.|
-|[CReBarCtrl::GetTextColor](#gettextcolor)|Ruft die Standardtextfarbe eines Bewehrungssteuerelements ab.|
-|[CReBarCtrl::GetToolTipps](#gettooltips)|Ruft das Handle zu jedem QuickInfo-Steuerelement ab, das dem Bewehrungssteuerelement zugeordnet ist.|
-|[CReBarCtrl::HitTest](#hittest)|Bestimmt, welcher Teil eines Bewehrungsbandes sich an einem bestimmten Punkt auf dem Bildschirm befindet, wenn an diesem Punkt ein Bewehrungsband vorhanden ist.|
-|[CReBarCtrl::IDToIndex](#idtoindex)|Konvertiert einen Bandbezeichner (ID) in einen Bandindex in einem Bewehrungssteuerelement.|
-|[CReBarCtrl::InsertBand](#insertband)|Fügt ein neues Band in ein Bewehrungssteuerelement ein.|
-|[CReBarCtrl::MaximizeBand](#maximizeband)|Ändert die Größe eines Bands in einem Bewehrungssteuerelement auf seine größte Größe.|
-|[CReBarCtrl::MinimizeBand](#minimizeband)|Ändert die Größe eines Bands in einem Bewehrungssteuerelement auf die kleinste Größe.|
-|[CReBarCtrl::MoveBand](#moveband)|Verschiebt ein Band von einem Index in einen anderen.|
-|[CReBarCtrl::PushChevron](#pushchevron)|Programmatisch schiebt ein Chevron.|
-|[CReBarCtrl::RestoreBand](#restoreband)|Ändert die Größe eines Bands in einem Bewehrungssteuerelement auf seine ideale Größe.|
-|[CReBarCtrl::SetBandInfo](#setbandinfo)|Legt die Eigenschaften eines vorhandenen Bands in einem Bewehrungssteuerelement fest.|
-|[CReBarCtrl::SetBandWidth](#setbandwidth)|Legt die Breite des angegebenen angedockten Bandes im aktuellen Bewehrungssteuerelement fest.|
-|[CReBarCtrl::SetBarInfo](#setbarinfo)|Legt die Eigenschaften eines Bewehrungssteuerelements fest.|
-|[CReBarCtrl::SetBkColor](#setbkcolor)|Legt die Standardhintergrundfarbe eines Bewehrungssteuerelements fest.|
-|[CReBarCtrl::SetColorScheme](#setcolorscheme)|Legt das Farbschema für die Schaltflächen auf einem Bewehrungssteuerelement fest.|
-|[CReBarCtrl::SetExtendedStyle](#setextendedstyle)|Legt die erweiterten Stile für das aktuelle Bewehrungssteuerelement fest.|
-|[CReBarCtrl::SetImageList](#setimagelist)|Legt die Bildliste eines Bewehrungssteuerelements fest.|
-|[CReBarCtrl::SetOwner](#setowner)|Legt das Besitzerfenster eines Bewehrungssteuerelements fest.|
-|[CReBarCtrl::SetPalette](#setpalette)|Legt die aktuelle Palette des Bewehrungssteuerelements fest.|
-|[CReBarCtrl::SetTextColor](#settextcolor)|Legt die Standardtextfarbe eines Bewehrungssteuerelements fest.|
-|[CReBarCtrl::SetToolTips](#settooltips)|Ordnet dem Bewehrungssteuerelement ein Werkzeugspitzensteuerelement zu.|
-|[CReBarCtrl::SetWindowTheme](#setwindowtheme)|Legt den visuellen Stil des Bewehrungssteuerelements fest.|
-|[CReBarCtrl::ShowBand](#showband)|Zeigt ein bestimmtes Band in einem Bewehrungssteuerelement an oder blendet es aus.|
-|[CReBarCtrl::SizeToRect](#sizetorect)|Passt ein Bewehrungssteuerelement an ein angegebenes Rechteck an.|
+|["Krebarctrl:: BeginDrag"](#begindrag)|Versetzt das Grund leisten-Steuerelement in den Drag & Drop-Modus.|
+|["Erstellen": "erstellen"](#create)|Erstellt das Grund leisten-Steuerelement und fügt es an das- `CReBarCtrl` Objekt an.|
+|["Krebarctrl:: up-Ex"](#createex)|Erstellt ein Grund leisten-Steuerelement mit den angegebenen erweiterten Windows-Stilen und fügt es an ein- `CReBarCtrl` Objekt an.|
+|[:D eleteout:](#deleteband)|Löscht ein Band aus einem Grund leisten-Steuerelement.|
+|["Krebarctrl::D ragmove"](#dragmove)|Aktualisiert die Zieh Position im Grund leisten-Steuerelement nach einem-Rückruf `BeginDrag` .|
+|["Krebarctrl:: EndDrag"](#enddrag)|Beendet den Drag & Drop-Vorgang des Grund leisten-Steuer Elements.|
+|["Krebarctrl:: getbandrahmens"](#getbandborders)|Ruft die Rahmen eines Bands ab.|
+|["Krebarctrl:: GetBandCount"](#getbandcount)|Ruft die Anzahl der Bänder ab, die sich derzeit im Grund leisten-Steuerelement befinden.|
+|["Krebarctrl:: GetBandInfo"](#getbandinfo)|Ruft Informationen zu einem angegebenen Band in einem Grund leisten-Steuerelement ab.|
+|["Krebarctrl:: getbandmargin"](#getbandmargins)|Ruft die Ränder eines Bands ab.|
+|["Krebarctrl:: getbarheight"](#getbarheight)|Ruft die Höhe des Grund leisten-Steuer Elements ab.|
+|["Krebarctrl:: getbarinfo"](#getbarinfo)|Ruft Informationen zum Grund leisten-Steuerelement und der von ihm verwendeten Bildliste ab.|
+|["Krebarctrl:: GetBkColor"](#getbkcolor)|Ruft die Standard Hintergrundfarbe eines Grund leisten-Steuer Elements ab.|
+|["Krebarctrl:: getcolorscheme"](#getcolorscheme)|Ruft die [ColorScheme](/windows/win32/api/commctrl/ns-commctrl-colorscheme) -Struktur ab, die dem Grund leisten-Steuerelement zugeordnet ist.|
+|["Krebarctrl:: getdroptarget"](#getdroptarget)|Ruft den Schnittstellen Zeiger eines Grund leisten-Steuer Elements ab `IDropTarget` .|
+|["Krebarctrl:: getextendecodstyle"](#getextendedstyle)|Ruft den erweiterten Stil des aktuellen Grund leisten-Steuer Elements ab.|
+|["Krebarctrl:: GetImageList"](#getimagelist)|Ruft die Bildliste ab, die einem Grund leisten-Steuerelement zugeordnet ist.|
+|["Krebarctrl:: getpalette"](#getpalette)|Ruft die aktuelle Palette des Grund leisten-Steuer Elements ab.|
+|["Krebarctrl:: GetRect"](#getrect)|Ruft das umschließende Rechteck für ein bestimmtes Band in einem Grund leisten-Steuerelement ab.|
+|["Krebarctrl:: GetRowCount"](#getrowcount)|Ruft die Anzahl der Band Zeilen in einem Grund leisten-Steuerelement ab.|
+|["Krebarctrl:: getRowHeight"](#getrowheight)|Ruft die Höhe einer angegebenen Zeile in einem Grund leisten-Steuerelement ab.|
+|["Krebarctrl:: gettextcolor"](#gettextcolor)|Ruft die Standard Textfarbe eines Grund leisten-Steuer Elements ab.|
+|["Krebarctrl:: gettooltips"](#gettooltips)|Ruft das Handle für ein QuickInfo-Steuerelement ab, das dem Grund leisten-Steuerelement zugeordnet ist.|
+|["Krebarctrl:: HitTest"](#hittest)|Bestimmt, welcher Teil eines Grund leisten Bands an einem bestimmten Punkt auf dem Bildschirm angezeigt wird, wenn ein Info leisten-Band an diesem Punkt vorhanden ist.|
+|["Krebarctrl:: idto Index"](#idtoindex)|Konvertiert einen Band Bezeichner (ID) in einen Band Index in einem Grund leisten-Steuerelement.|
+|["Krebarctrl:: InsertBand"](#insertband)|Fügt ein neues Band in ein Grund leisten-Steuerelement ein.|
+|["Krebarctrl:: maximizeband"](#maximizeband)|Ändert die Größe eines Bands in einem Grund leisten-Steuerelement auf seine größte Größe.|
+|["Krebarctrl:: minimizeband"](#minimizeband)|Ändert die Größe eines Bands in einem Grund leisten-Steuerelement auf seine kleinste Größe.|
+|["Krebarctrl:: muveband"](#moveband)|Verschiebt ein Band von einem Index zu einem anderen.|
+|["Krebarctrl::P ushchevron"](#pushchevron)|Überträgt ein Chevron Programm gesteuert.|
+|["Krebarctrl:: restoreband"](#restoreband)|Ändert die Größe eines Bands in einem Grund leisten-Steuerelement auf seine ideale Größe.|
+|["Krebarctrl:: SetBandInfo"](#setbandinfo)|Legt die Eigenschaften eines vorhandenen Bands in einem Grund leisten-Steuerelement fest.|
+|["Krebarctrl:: setbandwidth"](#setbandwidth)|Legt die Breite des angegebenen angedockten Bands im aktuellen Grund leisten-Steuerelement fest.|
+|["Krebarctrl:: setbarinfo"](#setbarinfo)|Legt die Eigenschaften eines Grund leisten-Steuer Elements fest.|
+|["Krebarctrl:: SetBkColor"](#setbkcolor)|Legt die Standard Hintergrundfarbe eines Grund leisten-Steuer Elements fest.|
+|["Krebarctrl:: SetColorScheme"](#setcolorscheme)|Legt das Farbschema für die Schaltflächen eines Grund leisten-Steuer Elements fest.|
+|["Krebarctrl:: abtextendecodstyle"](#setextendedstyle)|Legt die erweiterten Stile für das aktuelle Grund leisten-Steuerelement fest.|
+|["Krebarctrl:: SetImageList"](#setimagelist)|Legt die Bildliste eines Grund leisten-Steuer Elements fest.|
+|["Krebarctrl:: seetowner"](#setowner)|Legt das Besitzer Fenster eines Grund leisten-Steuer Elements fest.|
+|["Krebarctrl:: SetPalette"](#setpalette)|Legt die aktuelle Palette des Grund leisten-Steuer Elements fest.|
+|["Krebarctrl:: SetTextColor"](#settextcolor)|Legt die Standard Textfarbe eines Grund leisten-Steuer Elements fest.|
+|["Krebarctrl:: SetToolTips"](#settooltips)|Ordnet ein QuickInfo-Steuerelement dem Grund leisten-Steuerelement zu.|
+|["Krebarctrl:: SetWindowTheme"](#setwindowtheme)|Legt den visuellen Stil des Grund leisten-Steuer Elements fest.|
+|["Krebarctrl:: Showband"](#showband)|Zeigt ein bestimmtes Band in einem Grund leisten-Steuerelement an oder blendet es aus.|
+|["Krebarctrl:: sizetorect"](#sizetorect)|Passt ein Grund leisten-Steuerelement an ein angegebenes Rechteck an.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die Anwendung, in der sich das Bewehrungssteuerelement befindet, weist dem Bewehrungsband das untergeordnete Fenster zu, das im Bewehrungssteuerelement enthalten ist. Das untergeordnete Fenster ist in der Regel ein weiteres gängiges Steuerelement.
+Die Anwendung, in der das Grund leisten-Steuerelement residiert, weist das untergeordnete Fenster, das im Info leisten-Steuerelement enthalten ist, dem Info leisten- Das untergeordnete Fenster ist in der Regel ein weiteres häufiges Steuerelement.
 
-Bewehrungssteuerelemente enthalten ein oder mehrere Bänder. Jedes Band kann eine Kombination aus einer Greiferleiste, einer Bitmap, einer Textbeschriftung und einem untergeordneten Fenster enthalten. Das Band kann nur eines dieser Elemente enthalten.
+Die Grund leisten-Steuerelemente enthalten ein oder mehrere Bänder. Jedes Band kann eine Kombination aus einer Zieh Punkt Leiste, einer Bitmap, einer Text Bezeichnung und einem untergeordneten Fenster enthalten. Das Band kann nur eines dieser Elemente enthalten.
 
-Das Bewehrungssteuerelement kann das untergeordnete Fenster über einer angegebenen Hintergrundbitmap anzeigen. Alle Bewehrungsarmbänder können in der Größe geändert werden, mit Ausnahme derjenigen, die den RBBS_FIXEDSIZE-Stil verwenden. Wenn Sie ein Bewehrungssteuerelement neu positionieren oder die Größe ändern, verwaltet das Bewehrungssteuerelement die Größe und Position des untergeordneten Fensters, das diesem Band zugewiesen ist. Um die Größe der Bänder innerhalb des Steuerelements zu ändern oder zu ändern, klicken und ziehen Sie die Greiferleiste eines Bands.
+Das Grund leisten-Steuerelement kann das untergeordnete Fenster über einer angegebenen Hintergrund Bitmap anzeigen. Für alle Grund leisten-Steuerelemente kann die Größe geändert werden, mit Ausnahme derjenigen, die den RBBS_FIXEDSIZE Stil verwenden. Beim Neupositionieren oder Ändern der Größe eines Grund leisten-Steuer Elements verwaltet das Grund leisten-Steuerelement die Größe und Position des untergeordneten Fensters, das diesem Band zugewiesen ist. Wenn Sie die Größe der Bänder im Steuerelement ändern oder ändern möchten, klicken und ziehen Sie die Zieh Punkt Leiste eines Bands.
 
-Die folgende Abbildung zeigt ein Bewehrungssteuerelement mit drei Bändern:
+Die folgende Abbildung zeigt ein Grund leisten-Steuerelement, das drei Bänder umfasst:
 
-- Band 0 enthält eine flache, transparente Werkzeugleistensteuerung.
+- Band 0 enthält ein flaches, transparentes Symbolleisten-Steuerelement.
 
-- Band 1 enthält sowohl transparente Standard- als auch transparente Dropdown-Tasten.
+- Band 1 enthält sowohl transparente Standard-als auch transparente Dropdown-Schaltflächen.
 
-- Band 2 enthält eine Kombinationsbox und vier Standardtasten.
+- Band 2 enthält ein Kombinations Feld und vier Standard Schaltflächen.
 
    ![Beispiel eines Grundleistenmenüs](../../mfc/reference/media/vc4scc1.gif "Beispiel eines Grundleistenmenüs")
 
-## <a name="rebar-control"></a>Bewehrungssteuerung
+## <a name="rebar-control"></a>Grund leisten-Steuerelement
 
-Unterstützung für Bewehrungssteuerelemente:
+Unterstützung für Grund leisten Steuerelemente:
 
 - Bildlisten.
 
 - Nachrichtenverarbeitung.
 
-- Benutzerdefinierte Zeichnungsfunktionalität.
+- Benutzerdefinierte Zeichnungsfunktionen.
 
-- Eine Vielzahl von Steuerungsstilen zusätzlich zu Standardfensterstilen. Eine Liste dieser Stile finden Sie unter [Bewehrungssteuerungsstile](/windows/win32/Controls/rebar-control-styles) im Windows SDK.
+- Eine Reihe von Steuerelement Stilen zusätzlich zu Standardfenster Stilen. Eine Liste dieser Stile finden Sie Untergrund leisten- [Steuerelement Stile](/windows/win32/Controls/rebar-control-styles) in der Windows SDK.
 
-Weitere Informationen finden Sie unter [Verwenden von CReBarCtrl](../../mfc/using-crebarctrl.md).
+Weitere Informationen finden Sie unter [verwenden](../../mfc/using-crebarctrl.md)von "debugstrg".
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[Cobject](../../mfc/reference/cobject-class.md)
+[CObject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -219,9 +219,9 @@ Weitere Informationen finden Sie unter [Verwenden von CReBarCtrl](../../mfc/usin
 
 **Header:** afxcmn.h
 
-## <a name="crebarctrlbegindrag"></a><a name="begindrag"></a>CReBarCtrl::BeginDrag
+## <a name="crebarctrlbegindrag"></a><a name="begindrag"></a> "Krebarctrl:: BeginDrag"
 
-Implementiert das Verhalten der Win32-RB_BEGINDRAG , wie im Windows SDK beschrieben. [RB_BEGINDRAG](/windows/win32/Controls/rb-begindrag)
+Implementiert das Verhalten des Win32-Nachrichten [RB_BEGINDRAG](/windows/win32/Controls/rb-begindrag), wie in der Windows SDK beschrieben.
 
 ```cpp
 void BeginDrag(
@@ -231,15 +231,15 @@ void BeginDrag(
 
 ### <a name="parameters"></a>Parameter
 
-*uBand*<br/>
-Nullbasierter Index des Bands, auf den sich der Drag-and-Drop-Vorgang auswirkt.
+*uband*<br/>
+Der null basierte Index des Bands, auf den sich der Drag & Drop-Vorgang auswirkt.
 
-*dwPos*<br/>
-Ein DWORD-Wert, der die Startmauskoordinaten enthält. Die horizontale Koordinate ist im LOWORD und die vertikale Koordinate im HIWORD enthalten. Wenn Sie (DWORD)-1 übergeben, verwendet das Bewehrungssteuerelement die Position der `GetMessage` Maus, wenn der Thread des Steuerelements das letzte Mal aufgerufen hat oder `PeekMessage`.
+*dwpos*<br/>
+Ein DWORD-Wert, der die Start Maus Koordinaten enthält. Die horizontale Koordinate ist im LoWord enthalten, und die vertikale Koordinate ist im HIWORD enthalten. Wenn Sie (DWORD)-1 übergeben, verwendet das Grund leisten-Steuerelement die Position des Mauszeigers, wenn der Thread das letzte Mal den Thread oder aufgerufen hat `GetMessage` `PeekMessage` .
 
-## <a name="crebarctrlcreate"></a><a name="create"></a>CReBarCtrl::Erstellen
+## <a name="crebarctrlcreate"></a><a name="create"></a> "Erstellen": "erstellen"
 
-Erstellt das Bewehrungssteuerelement und `CReBarCtrl` fügt es an das Objekt an.
+Erstellt das Grund leisten-Steuerelement und fügt es an das- `CReBarCtrl` Objekt an.
 
 ```
 virtual BOOL Create(
@@ -251,39 +251,39 @@ virtual BOOL Create(
 
 ### <a name="parameters"></a>Parameter
 
-*dwStyle*<br/>
-Gibt die Kombination von Bewehrungssteuerungsstilen an, die auf das Steuerelement angewendet werden. Eine Liste der unterstützten Stile finden Sie unter [Bewehrungssteuerungsstile](/windows/win32/Controls/rebar-control-styles) im Windows SDK.
+*dwstyle*<br/>
+Gibt die Kombination der auf das Steuerelement angewendeten Grundsteuer Element Stile an. Eine Liste unterstützter Stile finden Sie Untergrund leisten- [Steuerelement Stile](/windows/win32/Controls/rebar-control-styles) in der Windows SDK.
 
 *Rect*<br/>
-Ein Verweis auf ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) d. h. die Position und Größe des Bewehrungssteuerelements.
+Ein Verweis auf ein [CRect](../../atl-mfc-shared/reference/crect-class.md) -Objekt oder eine [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur, die die Position und Größe des Grund leisten-Steuer Elements ist.
 
-*pParentWnd*<br/>
-Ein Zeiger auf ein [CWnd-Objekt,](../../mfc/reference/cwnd-class.md) das das übergeordnete Fenster des Bewehrungssteuerelements ist. Es darf nicht NULL sein.
+*pparser*<br/>
+Ein Zeiger auf ein [CWnd](../../mfc/reference/cwnd-class.md) -Objekt, das das übergeordnete Fenster des Grund leisten-Steuer Elements ist. Er darf nicht NULL sein.
 
 *nID*<br/>
-Gibt die Steuerungs-ID des Bewehrungssteuerelements an.
+Gibt die Steuerelement-ID des Grund leisten Steuer Elements an.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Wert ungleich Null, wenn das Objekt erfolgreich erstellt wurde; andernfalls 0.
+Ungleich 0 (null), wenn das Objekt erfolgreich erstellt wurde. andernfalls 0.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Erstellen Sie ein Bewehrungssteuerelement in zwei Schritten:
+Erstellen Sie ein Grund leisten-Steuerelement in zwei Schritten:
 
-1. Rufen Sie [CReBarCtrl](#crebarctrl) auf, um ein `CReBarCtrl` Objekt zu erstellen.
+1. Aufrufen von " [krebarctrl](#crebarctrl) " zum Erstellen eines- `CReBarCtrl` Objekts.
 
-1. Rufen Sie diese Memberfunktion auf, die das Windows-Bewehrungssteuerelement erstellt und an das `CReBarCtrl` Objekt anfügt.
+1. Mit dieser Member-Funktion wird das Windows-Steuerelement für die Grund Leiste erstellt und an das-Objekt angefügt `CReBarCtrl` .
 
-Wenn Sie `Create`aufrufen, werden die allgemeinen Steuerelemente initialisiert.
+Wenn Sie aufzurufen `Create` , werden die allgemeinen Steuerelemente initialisiert.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CReBarCtrl#3](../../mfc/reference/codesnippet/cpp/crebarctrl-class_1.cpp)]
 
-## <a name="crebarctrlcreateex"></a><a name="createex"></a>CReBarCtrl::CreateEx
+## <a name="crebarctrlcreateex"></a><a name="createex"></a> "Krebarctrl:: up-Ex"
 
-Erstellt ein Steuerelement (ein untergeordnetes Fenster) und ordnet es dem `CReBarCtrl` Objekt zu.
+Erstellt ein-Steuerelement (ein untergeordnetes Fenster) und ordnet es dem- `CReBarCtrl` Objekt zu.
 
 ```
 virtual BOOL CreateEx(
@@ -297,19 +297,19 @@ virtual BOOL CreateEx(
 ### <a name="parameters"></a>Parameter
 
 *dwExStyle*<br/>
-Gibt den erweiterten Stil des zu erstellenden Steuerelements an. Eine Liste der erweiterten Windows-Stile finden Sie im *dwExStyle-Parameter* für [CreateWindowEx](/windows/win32/api/winuser/nf-winuser-createwindowexw) im Windows SDK.
+Gibt die erweiterte Art des zu erstellenden Steuer Elements an. Eine Liste erweiterter Windows-Stile finden Sie unter dem *dwExStyle* -Parameter für " [kreatewindowex](/windows/win32/api/winuser/nf-winuser-createwindowexw) " in der Windows SDK.
 
-*dwStyle*<br/>
-Gibt die Kombination von Bewehrungssteuerungsstilen an, die auf das Steuerelement angewendet werden. Eine Liste der unterstützten Stile finden Sie unter [Bewehrungssteuerungsstile](/windows/win32/Controls/rebar-control-styles) im Windows SDK.
+*dwstyle*<br/>
+Gibt die Kombination der auf das Steuerelement angewendeten Grundsteuer Element Stile an. Eine Liste unterstützter Stile finden Sie Untergrund leisten- [Steuerelement Stile](/windows/win32/Controls/rebar-control-styles) in der Windows SDK.
 
 *Rect*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
+Ein Verweis auf eine [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur, die die Größe und Position des zu erstellenden Fensters in Client Koordinaten von *pparser*beschreibt.
 
-*pParentWnd*<br/>
-Ein Zeiger auf das Fenster, das das übergeordnete Steuerelement ist.
+*pparser*<br/>
+Ein Zeiger auf das Fenster, das das übergeordnete Element des Steuer Elements ist.
 
 *nID*<br/>
-Die untergeordnete Fenster-ID des Steuerelements.
+Die ID des untergeordneten Fensters des Steuer Elements.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -317,11 +317,11 @@ Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
 ### <a name="remarks"></a>Bemerkungen
 
-Verwenden `CreateEx` Sie anstelle von [Erstellen,](#create) um erweiterte Windows-Formatvorlagen anzuwenden, die durch das Erweiterte Windows-Stilvorwort **WS_EX_** angegeben werden.
+Verwenden `CreateEx` Sie anstelle von [Create](#create) , um erweiterte Windows-Stile anzuwenden, die durch den erweiterten Windows-Stil **WS_EX_** angegeben werden.
 
-## <a name="crebarctrlcrebarctrl"></a><a name="crebarctrl"></a>CReBarCtrl::CReBarCtrl
+## <a name="crebarctrlcrebarctrl"></a><a name="crebarctrl"></a> "Krebarctrl:: krebarctrl"
 
-Erstellt ein `CReBarCtrl` -Objekt.
+Erstellt ein `CReBarCtrl`-Objekt.
 
 ```
 CReBarCtrl();
@@ -329,11 +329,11 @@ CReBarCtrl();
 
 ### <a name="example"></a>Beispiel
 
-  Siehe Beispiel für [CReBarCtrl::Create](#create).
+  Weitere Informationen finden Sie im Beispiel für " [krebarctrl:: Create](#create)".
 
-## <a name="crebarctrldeleteband"></a><a name="deleteband"></a>CReBarCtrl::DeleteBand
+## <a name="crebarctrldeleteband"></a><a name="deleteband"></a> :D eleteout:
 
-Implementiert das Verhalten der Win32-RB_DELETEBAND , wie im Windows SDK beschrieben. [RB_DELETEBAND](/windows/win32/Controls/rb-deleteband)
+Implementiert das Verhalten des Win32-Nachrichten [RB_DELETEBAND](/windows/win32/Controls/rb-deleteband), wie in der Windows SDK beschrieben.
 
 ```
 BOOL DeleteBand(UINT uBand);
@@ -341,20 +341,20 @@ BOOL DeleteBand(UINT uBand);
 
 ### <a name="parameters"></a>Parameter
 
-*uBand*<br/>
-Nullbasierter Index des zu löschenden Bands.
+*uband*<br/>
+Der null basierte Index des zu löschenden Bands.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Wert ungleich Null, wenn das Band erfolgreich gelöscht wurde; andernfalls Null.
+Ungleich NULL, wenn das Band erfolgreich gelöscht wurde. andernfalls NULL.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CReBarCtrl#4](../../mfc/reference/codesnippet/cpp/crebarctrl-class_2.cpp)]
 
-## <a name="crebarctrldragmove"></a><a name="dragmove"></a>CReBarCtrl::DragMove
+## <a name="crebarctrldragmove"></a><a name="dragmove"></a> "Krebarctrl::D ragmove"
 
-Implementiert das Verhalten der Win32-RB_DRAGMOVE , wie im Windows SDK beschrieben. [RB_DRAGMOVE](/windows/win32/Controls/rb-dragmove)
+Implementiert das Verhalten des Win32-Nachrichten [RB_DRAGMOVE](/windows/win32/Controls/rb-dragmove), wie in der Windows SDK beschrieben.
 
 ```cpp
 void DragMove(DWORD dwPos = (DWORD)-1);
@@ -362,20 +362,20 @@ void DragMove(DWORD dwPos = (DWORD)-1);
 
 ### <a name="parameters"></a>Parameter
 
-*dwPos*<br/>
-Ein DWORD-Wert, der die neuen Mauskoordinaten enthält. Die horizontale Koordinate ist im LOWORD und die vertikale Koordinate im HIWORD enthalten. Wenn Sie (DWORD)-1 übergeben, verwendet das Bewehrungssteuerelement die Position der `GetMessage` Maus, wenn der Thread des Steuerelements das letzte Mal aufgerufen hat oder `PeekMessage`.
+*dwpos*<br/>
+Ein DWORD-Wert, der die neuen Maus Koordinaten enthält. Die horizontale Koordinate ist im LoWord enthalten, und die vertikale Koordinate ist im HIWORD enthalten. Wenn Sie (DWORD)-1 übergeben, verwendet das Grund leisten-Steuerelement die Position des Mauszeigers, wenn der Thread das letzte Mal den Thread oder aufgerufen hat `GetMessage` `PeekMessage` .
 
-## <a name="crebarctrlenddrag"></a><a name="enddrag"></a>CReBarCtrl::EndDrag
+## <a name="crebarctrlenddrag"></a><a name="enddrag"></a> "Krebarctrl:: EndDrag"
 
-Implementiert das Verhalten der Win32-RB_ENDDRAG , wie im Windows SDK beschrieben. [RB_ENDDRAG](/windows/win32/Controls/rb-enddrag)
+Implementiert das Verhalten des Win32-Nachrichten [RB_ENDDRAG](/windows/win32/Controls/rb-enddrag), wie in der Windows SDK beschrieben.
 
 ```cpp
 void EndDrag();
 ```
 
-## <a name="crebarctrlgetbandborders"></a><a name="getbandborders"></a>CReBarCtrl::GetBandBorders
+## <a name="crebarctrlgetbandborders"></a><a name="getbandborders"></a> "Krebarctrl:: getbandrahmens"
 
-Implementiert das Verhalten der Win32-RB_GETBANDBORDERS , wie im Windows SDK beschrieben. [RB_GETBANDBORDERS](/windows/win32/Controls/rb-getbandborders)
+Implementiert das Verhalten des Win32-Nachrichten [RB_GETBANDBORDERS](/windows/win32/Controls/rb-getbandborders), wie in der Windows SDK beschrieben.
 
 ```cpp
 void GetBandBorders(
@@ -385,15 +385,15 @@ void GetBandBorders(
 
 ### <a name="parameters"></a>Parameter
 
-*uBand*<br/>
-Nullbasierter Index des Bands, für das die Rahmen abgerufen werden.
+*uband*<br/>
+Der null basierte Index des Bands, für das die Rahmen abgerufen werden.
 
-*Vr china*<br/>
-Ein Zeiger auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Bandgrenzen empfängt. Wenn das Bewehrungssteuerelement den stil RBS_BANDBORDERS hat, erhält jedes Element dieser Struktur die Anzahl der Pixel auf der entsprechenden Seite des Bands, die den Rahmen bilden. Wenn das Bewehrungssteuerelement nicht über den RBS_BANDBORDERS-Stil verfügt, erhält nur das linke Element dieser Struktur gültige Informationen. Eine Beschreibung der Bewehrungssteuerungsstile finden Sie unter [Bewehrungssteuerungsstile](/windows/win32/Controls/rebar-control-styles) im Windows SDK.
+*PRC*<br/>
+Ein Zeiger auf eine [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur, die die Band Rahmen empfängt. Wenn das Grund leisten-Steuerelement den RBS_BANDBORDERS Stil hat, erhält jedes Element dieser Struktur die Anzahl der Pixel auf der entsprechenden Seite des Bands, die den Rahmen bilden. Wenn das Grund leisten-Steuerelement nicht den RBS_BANDBORDERS Stil hat, erhält nur das linke Element dieser Struktur gültige Informationen. Eine Beschreibung der Grund leisten-Steuerelement Stile finden Sie Untergrund leisten- [Steuerelement Stile](/windows/win32/Controls/rebar-control-styles) in der Windows SDK.
 
-## <a name="crebarctrlgetbandcount"></a><a name="getbandcount"></a>CReBarCtrl::GetBandCount
+## <a name="crebarctrlgetbandcount"></a><a name="getbandcount"></a> "Krebarctrl:: GetBandCount"
 
-Implementiert das Verhalten der Win32-RB_GETBANDCOUNT , wie im Windows SDK beschrieben. [RB_GETBANDCOUNT](/windows/win32/Controls/rb-getbandcount)
+Implementiert das Verhalten des Win32-Nachrichten [RB_GETBANDCOUNT](/windows/win32/Controls/rb-getbandcount), wie in der Windows SDK beschrieben.
 
 ```
 UINT GetBandCount() const;
@@ -401,11 +401,11 @@ UINT GetBandCount() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der dem Steuerelement zugewiesenen Bänder.
+Die Anzahl der Bänder, die dem Steuerelement zugewiesen sind.
 
-## <a name="crebarctrlgetbandinfo"></a><a name="getbandinfo"></a>CReBarCtrl::GetBandInfo
+## <a name="crebarctrlgetbandinfo"></a><a name="getbandinfo"></a> "Krebarctrl:: GetBandInfo"
 
-Implementiert das Verhalten der Win32-RB_GETBANDINFO wie im Windows SDK beschrieben. [RB_GETBANDINFO](/windows/win32/Controls/rb-getbandinfo)
+Implementiert das Verhalten des Win32-Nachrichten [RB_GETBANDINFO](/windows/win32/Controls/rb-getbandinfo) , wie in der Windows SDK beschrieben.
 
 ```
 BOOL GetBandInfo(
@@ -415,17 +415,17 @@ BOOL GetBandInfo(
 
 ### <a name="parameters"></a>Parameter
 
-*uBand*<br/>
-Nullbasierter Index des Bands, für das die Informationen abgerufen werden.
+*uband*<br/>
+Der null basierte Index des Bands, für das die Informationen abgerufen werden.
 
 *prbbi*<br/>
-Ein Zeiger auf eine [REBARBANDINFO-Struktur,](/windows/win32/api/commctrl/ns-commctrl-rebarbandinfow) um die Bandinformationen zu erhalten. Sie müssen `cbSize` den Member dieser `sizeof(REBARBANDINFO)` Struktur `fMask` auf die Elemente festlegen, die Sie abrufen möchten, und das Element auf die Elemente festlegen, die Sie abrufen möchten, bevor Sie diese Nachricht senden.
+Ein Zeiger auf eine [REBARBANDINFO](/windows/win32/api/commctrl/ns-commctrl-rebarbandinfow) -Struktur zum Empfangen der Bandinformationen. Sie müssen den `cbSize` Member dieser Struktur auf festlegen `sizeof(REBARBANDINFO)` und den `fMask` Member auf die Elemente festlegen, die Sie vor dem Senden dieser Nachricht abrufen möchten.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-## <a name="crebarctrlgetbandmargins"></a><a name="getbandmargins"></a>CReBarCtrl::GetBandMargins
+## <a name="crebarctrlgetbandmargins"></a><a name="getbandmargins"></a> "Krebarctrl:: getbandmargin"
 
 Ruft die Ränder des Bands ab.
 
@@ -435,16 +435,16 @@ void GetBandMargins(PMARGINS pMargins);
 
 ### <a name="parameters"></a>Parameter
 
-*pMargins*<br/>
-Ein Zeiger auf [MARGINS](/windows/win32/api/uxtheme/ns-uxtheme-margins)eine MARGINS-Struktur, die die Informationen empfängt.
+*pmargin*<br/>
+Ein Zeiger auf eine [Ränder](/windows/win32/api/uxtheme/ns-uxtheme-margins)-Struktur, die die Informationen empfängt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Memberfunktion emuliert die Funktionalität der [RB_GETBANDMARGINS](/windows/win32/Controls/rb-getbandmargins) Nachricht, wie im Windows SDK beschrieben.
+Diese Member-Funktion emuliert die Funktionalität der [RB_GETBANDMARGINS](/windows/win32/Controls/rb-getbandmargins) Nachricht, wie in der Windows SDK beschrieben.
 
-## <a name="crebarctrlgetbarheight"></a><a name="getbarheight"></a>CReBarCtrl::GetBarHeight
+## <a name="crebarctrlgetbarheight"></a><a name="getbarheight"></a> "Krebarctrl:: getbarheight"
 
-Ruft die Höhe der Bewehrungsleiste ab.
+Ruft die Höhe der Info Leiste ab.
 
 ```
 UINT GetBarHeight() const;
@@ -452,11 +452,11 @@ UINT GetBarHeight() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wert, der die Höhe des Steuerelements in Pixel darstellt.
+Ein Wert, der die Höhe des Steuer Elements in Pixel darstellt.
 
-## <a name="crebarctrlgetbarinfo"></a><a name="getbarinfo"></a>CReBarCtrl::GetBarInfo
+## <a name="crebarctrlgetbarinfo"></a><a name="getbarinfo"></a> "Krebarctrl:: getbarinfo"
 
-Implementiert das Verhalten der Win32-RB_GETBARINFO , wie im Windows SDK beschrieben. [RB_GETBARINFO](/windows/win32/Controls/rb-getbarinfo)
+Implementiert das Verhalten des Win32-Nachrichten [RB_GETBARINFO](/windows/win32/Controls/rb-getbarinfo), wie in der Windows SDK beschrieben.
 
 ```
 BOOL GetBarInfo(REBARINFO* prbi) const;
@@ -465,15 +465,15 @@ BOOL GetBarInfo(REBARINFO* prbi) const;
 ### <a name="parameters"></a>Parameter
 
 *prbi*<br/>
-Ein Zeiger auf eine [REBARINFO-Struktur,](/windows/win32/api/commctrl/ns-commctrl-rebarinfo) die die Bewehrungssteuerungsinformationen empfängt. Sie müssen den *cbSize-Member* `sizeof(REBARINFO)` dieser Struktur auf festlegen, bevor Sie diese Nachricht senden.
+Ein Zeiger auf eine [rebarinfo](/windows/win32/api/commctrl/ns-commctrl-rebarinfo) -Struktur, die die Informationen zum Info leisten-Steuerelement empfängt. Sie müssen den *CBSIZE* -Member dieser-Struktur auf festlegen, `sizeof(REBARINFO)` bevor Sie diese Nachricht senden.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-## <a name="crebarctrlgetbkcolor"></a><a name="getbkcolor"></a>CReBarCtrl::GetBkColor
+## <a name="crebarctrlgetbkcolor"></a><a name="getbkcolor"></a> "Krebarctrl:: GetBkColor"
 
-Implementiert das Verhalten der Win32-RB_GETBKCOLOR , wie im Windows SDK beschrieben. [RB_GETBKCOLOR](/windows/win32/Controls/rb-getbkcolor)
+Implementiert das Verhalten des Win32-Nachrichten [RB_GETBKCOLOR](/windows/win32/Controls/rb-getbkcolor), wie in der Windows SDK beschrieben.
 
 ```
 COLORREF GetBkColor() const;
@@ -481,11 +481,11 @@ COLORREF GetBkColor() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein COLORREF-Wert, der die aktuelle Standardhintergrundfarbe darstellt.
+Ein COLORREF-Wert, der die aktuelle Standard Hintergrundfarbe darstellt.
 
-## <a name="crebarctrlgetcolorscheme"></a><a name="getcolorscheme"></a>CReBarCtrl::GetColorScheme
+## <a name="crebarctrlgetcolorscheme"></a><a name="getcolorscheme"></a> "Krebarctrl:: getcolorscheme"
 
-Ruft die [COLORSCHEME-Struktur](/windows/win32/api/commctrl/ns-commctrl-colorscheme) für das Bewehrungssteuerelement ab.
+Ruft die [ColorScheme](/windows/win32/api/commctrl/ns-commctrl-colorscheme) -Struktur für das Grund leisten-Steuerelement ab.
 
 ```
 BOOL GetColorScheme(COLORSCHEME* lpcs);
@@ -493,8 +493,8 @@ BOOL GetColorScheme(COLORSCHEME* lpcs);
 
 ### <a name="parameters"></a>Parameter
 
-*lpcs*<br/>
-Ein Zeiger auf eine [COLORSCHEME-Struktur,](/windows/win32/api/commctrl/ns-commctrl-colorscheme) wie im Windows SDK beschrieben.
+*LPCS*<br/>
+Ein Zeiger auf eine [ColorScheme](/windows/win32/api/commctrl/ns-commctrl-colorscheme) -Struktur, wie im Windows SDK beschrieben.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -502,11 +502,11 @@ Ungleich 0, wenn erfolgreich, andernfalls 0.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die `COLORSCHEME` Struktur enthält die Schaltflächenhervorhebungsfarbe und die Schaltflächenschattenfarbe.
+Die `COLORSCHEME` -Struktur enthält die Schaltflächen Hervorhebungs Farbe und die Schatten Farbe der Schaltfläche.
 
-## <a name="crebarctrlgetdroptarget"></a><a name="getdroptarget"></a>CReBarCtrl::GetDropTarget
+## <a name="crebarctrlgetdroptarget"></a><a name="getdroptarget"></a> "Krebarctrl:: getdroptarget"
 
-Implementiert das Verhalten der Win32-RB_GETDROPTARGET , wie im Windows SDK beschrieben. [RB_GETDROPTARGET](/windows/win32/Controls/rb-getdroptarget)
+Implementiert das Verhalten des Win32-Nachrichten [RB_GETDROPTARGET](/windows/win32/Controls/rb-getdroptarget), wie in der Windows SDK beschrieben.
 
 ```
 IDropTarget* GetDropTarget() const;
@@ -514,11 +514,11 @@ IDropTarget* GetDropTarget() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf eine [IDropTarget-Schnittstelle.](/windows/win32/api/oleidl/nn-oleidl-idroptarget)
+Ein Zeiger auf eine [IDropTarget](/windows/win32/api/oleidl/nn-oleidl-idroptarget) -Schnittstelle.
 
-## <a name="crebarctrlgetextendedstyle"></a><a name="getextendedstyle"></a>CReBarCtrl::GetExtendedStyle
+## <a name="crebarctrlgetextendedstyle"></a><a name="getextendedstyle"></a> "Krebarctrl:: getextendecodstyle"
 
-Ruft die erweiterten Stile des aktuellen Bewehrungssteuerelements ab.
+Ruft die erweiterten Stile des aktuellen Grund leisten-Steuer Elements ab.
 
 ```
 DWORD GetExtendedStyle() const;
@@ -526,15 +526,15 @@ DWORD GetExtendedStyle() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine bitweise Kombination (OR) von Flags, die die erweiterten Stile angeben. Die möglichen Flaggen werden RBS_EX_SPLITTER und RBS_EX_TRANSPARENT. Weitere Informationen finden Sie im *dwMask-Parameter* der [CReBarCtrl::SetExtendedStyle-Methode.](#setextendedstyle)
+Eine bitweise Kombination (or) von Flags, die die erweiterten Stile angeben. Die möglichen Flags sind RBS_EX_SPLITTER und RBS_EX_TRANSPARENT. Weitere Informationen finden Sie unter dem *dwMask* -Parameter der [Methode "](#setextendedstyle) Methode" von "Methode".
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [RB_GETEXTENDEDSTYLE](/windows/win32/Controls/rb-dragmove) Nachricht, die im Windows SDK beschrieben wird.
+Diese Methode sendet die [RB_GETEXTENDEDSTYLE](/windows/win32/Controls/rb-dragmove) Nachricht, die in der Windows SDK beschrieben wird.
 
-## <a name="crebarctrlgetimagelist"></a><a name="getimagelist"></a>CReBarCtrl::GetImageList
+## <a name="crebarctrlgetimagelist"></a><a name="getimagelist"></a> "Krebarctrl:: GetImageList"
 
-Ruft `CImageList` das Objekt ab, das einem Bewehrungssteuerelement zugeordnet ist.
+Ruft das einem Grund leisten-Steuerelement zugeordnete- `CImageList` Objekt ab.
 
 ```
 CImageList* GetImageList() const;
@@ -542,15 +542,15 @@ CImageList* GetImageList() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein [CImageList-Objekt.](../../mfc/reference/cimagelist-class.md) Gibt NULL zurück, wenn keine Bildliste für das Steuerelement festgelegt ist.
+Ein Zeiger auf ein [CImageList](../../mfc/reference/cimagelist-class.md) -Objekt. Gibt NULL zurück, wenn keine Bildliste für das Steuerelement festgelegt ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Memberfunktion verwendet Größen- und Maskeninformationen, die in der [REBARINFO-Struktur](/windows/win32/api/commctrl/ns-commctrl-rebarinfo) gespeichert sind, wie im Windows SDK beschrieben.
+Diese Member-Funktion verwendet in der [rebarinfo](/windows/win32/api/commctrl/ns-commctrl-rebarinfo) -Struktur gespeicherte Größen-und Masken Informationen, wie im Windows SDK beschrieben.
 
-## <a name="crebarctrlgetpalette"></a><a name="getpalette"></a>CReBarCtrl::GetPalette
+## <a name="crebarctrlgetpalette"></a><a name="getpalette"></a> "Krebarctrl:: getpalette"
 
-Ruft die aktuelle Palette des Bewehrungssteuerelements ab.
+Ruft die aktuelle Palette des Grund leisten-Steuer Elements ab.
 
 ```
 CPalette* GetPalette() const;
@@ -558,19 +558,19 @@ CPalette* GetPalette() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein [CPalette-Objekt,](../../mfc/reference/cpalette-class.md) das die aktuelle Palette des Bewehrungssteuerelements angibt.
+Ein Zeiger auf ein [CPalette](../../mfc/reference/cpalette-class.md) -Objekt, das die aktuelle Palette des Grund leisten-Steuer Elements angibt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Beachten Sie, dass `CPalette` diese Memberfunktion ein Objekt als Rückgabewert anstelle eines HPALETTE verwendet.
+Beachten Sie, dass diese Member-Funktion ein- `CPalette` Objekt als Rückgabewert anstelle einer hpalette verwendet.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CReBarCtrl#5](../../mfc/reference/codesnippet/cpp/crebarctrl-class_3.cpp)]
 
-## <a name="crebarctrlgetrect"></a><a name="getrect"></a>CReBarCtrl::GetRect
+## <a name="crebarctrlgetrect"></a><a name="getrect"></a> "Krebarctrl:: GetRect"
 
-Implementiert das Verhalten der Win32-RB_GETRECT , wie im Windows SDK beschrieben. [RB_GETRECT](/windows/win32/Controls/rb-getrect)
+Implementiert das Verhalten des Win32-Nachrichten [RB_GETRECT](/windows/win32/Controls/rb-getrect), wie in der Windows SDK beschrieben.
 
 ```
 BOOL GetRect(
@@ -580,11 +580,11 @@ BOOL GetRect(
 
 ### <a name="parameters"></a>Parameter
 
-*uBand*<br/>
-Nullbasierter Index eines Bands im Bewehrungssteuerelement.
+*uband*<br/>
+NULL basierter Index eines Bands im Grund leisten-Steuerelement.
 
-*Vr china*<br/>
-Ein Zeiger auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Grenzen des Bewehrungsbandes empfängt.
+*PRC*<br/>
+Ein Zeiger auf eine [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur, die die Begrenzungen des Bereichs der Info Leiste empfängt.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -594,9 +594,9 @@ Ungleich 0, wenn erfolgreich, andernfalls 0.
 
 [!code-cpp[NVC_MFC_CReBarCtrl#6](../../mfc/reference/codesnippet/cpp/crebarctrl-class_4.cpp)]
 
-## <a name="crebarctrlgetrowcount"></a><a name="getrowcount"></a>CReBarCtrl::GetRowCount
+## <a name="crebarctrlgetrowcount"></a><a name="getrowcount"></a> "Krebarctrl:: GetRowCount"
 
-Implementiert das Verhalten der Win32-RB_GETROWCOUNT , wie im Windows SDK beschrieben. [RB_GETROWCOUNT](/windows/win32/Controls/rb-getrowcount)
+Implementiert das Verhalten des Win32-Nachrichten [RB_GETROWCOUNT](/windows/win32/Controls/rb-getrowcount), wie in der Windows SDK beschrieben.
 
 ```
 UINT GetRowCount() const;
@@ -604,15 +604,15 @@ UINT GetRowCount() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein UINT-Wert, der die Anzahl der Bandzeilen im Steuerelement darstellt.
+Ein uint-Wert, der die Anzahl der Band Zeilen im-Steuerelement darstellt.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CReBarCtrl#7](../../mfc/reference/codesnippet/cpp/crebarctrl-class_5.cpp)]
 
-## <a name="crebarctrlgetrowheight"></a><a name="getrowheight"></a>CReBarCtrl::GetRowHeight
+## <a name="crebarctrlgetrowheight"></a><a name="getrowheight"></a> "Krebarctrl:: getRowHeight"
 
-Implementiert das Verhalten der Win32-RB_GETROWHEIGHT , wie im Windows SDK beschrieben. [RB_GETROWHEIGHT](/windows/win32/Controls/rb-getrowheight)
+Implementiert das Verhalten des Win32-Nachrichten [RB_GETROWHEIGHT](/windows/win32/Controls/rb-getrowheight), wie in der Windows SDK beschrieben.
 
 ```
 UINT GetRowHeight(UINT uRow) const;
@@ -620,20 +620,20 @@ UINT GetRowHeight(UINT uRow) const;
 
 ### <a name="parameters"></a>Parameter
 
-*uRow*<br/>
-Nullbasierter Index des Bands, dessen Höhe abgerufen wird.
+*UROW*<br/>
+Der null basierte Index des Bands, dessen Höhe abgerufen wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein UINT-Wert, der die Zeilenhöhe in Pixel darstellt.
+Ein uint-Wert, der die Zeilenhöhe in Pixel darstellt.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CReBarCtrl#8](../../mfc/reference/codesnippet/cpp/crebarctrl-class_6.cpp)]
 
-## <a name="crebarctrlgettextcolor"></a><a name="gettextcolor"></a>CReBarCtrl::GetTextColor
+## <a name="crebarctrlgettextcolor"></a><a name="gettextcolor"></a> "Krebarctrl:: gettextcolor"
 
-Implementiert das Verhalten der Win32-RB_GETTEXTCOLOR , wie im Windows SDK beschrieben. [RB_GETTEXTCOLOR](/windows/win32/Controls/rb-gettextcolor)
+Implementiert das Verhalten des Win32-Nachrichten [RB_GETTEXTCOLOR](/windows/win32/Controls/rb-gettextcolor), wie in der Windows SDK beschrieben.
 
 ```
 COLORREF GetTextColor() const;
@@ -641,11 +641,11 @@ COLORREF GetTextColor() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein COLORREF-Wert, der die aktuelle Standardtextfarbe darstellt.
+Ein COLORREF-Wert, der die aktuelle Standard Textfarbe darstellt.
 
-## <a name="crebarctrlgettooltips"></a><a name="gettooltips"></a>CReBarCtrl::GetToolTipps
+## <a name="crebarctrlgettooltips"></a><a name="gettooltips"></a> "Krebarctrl:: gettooltips"
 
-Implementiert das Verhalten der Win32-RB_GETTOOLTIPS , wie im Windows SDK beschrieben. [RB_GETTOOLTIPS](/windows/win32/Controls/rb-gettooltips)
+Implementiert das Verhalten des Win32-Nachrichten [RB_GETTOOLTIPS](/windows/win32/Controls/rb-gettooltips), wie in der Windows SDK beschrieben.
 
 ```
 CToolTipCtrl* GetToolTips() const;
@@ -653,15 +653,15 @@ CToolTipCtrl* GetToolTips() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein [CToolTipCtrl-Objekt.](../../mfc/reference/ctooltipctrl-class.md)
+Ein Zeiger auf ein [CToolTipCtrl](../../mfc/reference/ctooltipctrl-class.md) -Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Beachten Sie, dass `GetToolTips` die MFC-Implementierung `CToolTipCtrl`von einen Zeiger auf eine zurückgibt, anstatt auf eine HWND.
+Beachten Sie, dass die MFC-Implementierung von `GetToolTips` einen Zeiger auf einen `CToolTipCtrl` und nicht auf ein HWND zurückgibt.
 
-## <a name="crebarctrlhittest"></a><a name="hittest"></a>CReBarCtrl::HitTest
+## <a name="crebarctrlhittest"></a><a name="hittest"></a> "Krebarctrl:: HitTest"
 
-Implementiert das Verhalten der Win32-RB_HITTEST , wie im Windows SDK beschrieben. [RB_HITTEST](/windows/win32/Controls/rb-hittest)
+Implementiert das Verhalten des Win32-Nachrichten [RB_HITTEST](/windows/win32/Controls/rb-hittest), wie in der Windows SDK beschrieben.
 
 ```
 int HitTest(RBHITTESTINFO* prbht);
@@ -670,15 +670,15 @@ int HitTest(RBHITTESTINFO* prbht);
 ### <a name="parameters"></a>Parameter
 
 *prbht*<br/>
-Ein Zeiger auf eine [RBHITTESTINFO-Struktur.](/windows/win32/api/commctrl/ns-commctrl-rbhittestinfo) Vor dem Senden `pt` der Nachricht muss das Element dieser Struktur in Clientkoordinaten so initialisiert werden, dass es getestet wird.
+Ein Zeiger auf eine [rbhittestinfo](/windows/win32/api/commctrl/ns-commctrl-rbhittestinfo) -Struktur. Bevor die Nachricht gesendet wird, `pt` muss der Member dieser Struktur in Client Koordinaten mit dem zu testenden Punkt initialisiert werden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Null-basierte Index des Bands am angegebenen Punkt oder -1, wenn sich kein Bewehrungsband am Punkt befand.
+Der null basierte Index des Bands am angegebenen Punkt, oder-1, wenn sich kein umfügeband an der Stelle befand.
 
-## <a name="crebarctrlidtoindex"></a><a name="idtoindex"></a>CReBarCtrl::IDToIndex
+## <a name="crebarctrlidtoindex"></a><a name="idtoindex"></a> "Krebarctrl:: idto Index"
 
-Implementiert das Verhalten der Win32-RB_IDTOINDEX , wie im Windows SDK beschrieben. [RB_IDTOINDEX](/windows/win32/controls/rb-idtoindex)
+Implementiert das Verhalten des Win32-Nachrichten [RB_IDTOINDEX](/windows/win32/controls/rb-idtoindex), wie in der Windows SDK beschrieben.
 
 ```
 int IDToIndex(UINT uBandID) const;
@@ -686,16 +686,16 @@ int IDToIndex(UINT uBandID) const;
 
 ### <a name="parameters"></a>Parameter
 
-*uBandID*<br/>
-Der anwendungsdefinierte Bezeichner des angegebenen `wID` Bands, der im Member der [REBARBANDINFO-Struktur](/windows/win32/api/commctrl/ns-commctrl-rebarbandinfow) übergeben wird, wenn das Band eingefügt wird.
+*ubandid*<br/>
+Der von der Anwendung definierte Bezeichner des angegebenen Bands, der beim `wID` Einfügen des Bands an den Member der [REBARBANDINFO](/windows/win32/api/commctrl/ns-commctrl-rebarbandinfow) -Struktur weitergegeben wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Null-basierte Bandindex, wenn er erfolgreich ist, oder -1 andernfalls. Wenn doppelte Bandindizes vorhanden sind, wird der erste zurückgegeben.
+Der null basierte Band Index, wenn erfolgreich, andernfalls-1. Wenn doppelte Band Indizes vorhanden sind, wird der erste zurückgegeben.
 
-## <a name="crebarctrlinsertband"></a><a name="insertband"></a>CReBarCtrl::InsertBand
+## <a name="crebarctrlinsertband"></a><a name="insertband"></a> "Krebarctrl:: InsertBand"
 
-Implementiert das Verhalten der Win32-RB_INSERTBAND , wie im Windows SDK beschrieben. [RB_INSERTBAND](/windows/win32/Controls/rb-insertband)
+Implementiert das Verhalten des Win32-Nachrichten [RB_INSERTBAND](/windows/win32/Controls/rb-insertband), wie in der Windows SDK beschrieben.
 
 ```
 BOOL InsertBand(
@@ -705,11 +705,11 @@ BOOL InsertBand(
 
 ### <a name="parameters"></a>Parameter
 
-*uIndex*<br/>
-Nullbasierter Index der Position, an der das Band eingefügt wird. Wenn Sie diesen Parameter auf -1 setzen, fügt das Steuerelement das neue Band an der letzten Position hinzu.
+*uindex*<br/>
+Der null basierte Index der Position, an der das Band eingefügt wird. Wenn Sie diesen Parameter auf "-1" festlegen, fügt das Steuerelement das neue Band am letzten Speicherort hinzu.
 
 *prbbi*<br/>
-Ein Zeiger auf eine [REBARBANDINFO-Struktur,](/windows/win32/api/commctrl/ns-commctrl-rebarbandinfow) die das einzufügende Band definiert. Sie müssen den *cbSize-Member* `sizeof(REBARBANDINFO)` dieser Struktur auf festlegen, bevor Sie diese Funktion aufrufen.
+Ein Zeiger auf eine [REBARBANDINFO](/windows/win32/api/commctrl/ns-commctrl-rebarbandinfow) -Struktur, die das einzufügende Band definiert. Sie müssen den *CBSIZE* -Member dieser Struktur auf festlegen, `sizeof(REBARBANDINFO)` bevor Sie diese Funktion aufrufen.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -719,9 +719,9 @@ Ungleich 0, wenn erfolgreich, andernfalls 0.
 
 [!code-cpp[NVC_MFC_CReBarCtrl#9](../../mfc/reference/codesnippet/cpp/crebarctrl-class_7.cpp)]
 
-## <a name="crebarctrlmaximizeband"></a><a name="maximizeband"></a>CReBarCtrl::MaximizeBand
+## <a name="crebarctrlmaximizeband"></a><a name="maximizeband"></a> "Krebarctrl:: maximizeband"
 
-Ändert die Größe eines Bands in einem Bewehrungssteuerelement auf seine größte Größe.
+Ändert die Größe eines Bands in einem Grund leisten-Steuerelement auf seine größte Größe.
 
 ```cpp
 void MaximizeBand(UINT uBand);
@@ -729,20 +729,20 @@ void MaximizeBand(UINT uBand);
 
 ### <a name="parameters"></a>Parameter
 
-*uBand*<br/>
-Zero-basierter Index des zu maximierenden Bands.
+*uband*<br/>
+Der null basierte Index des zu maximier enden Bands.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Implementiert das Verhalten der Win32-RB_MAXIMIZEBAND mit [RB_MAXIMIZEBAND](/windows/win32/Controls/rb-maximizeband) `fIdeal` der Einstellung 0, wie im Windows SDK beschrieben.
+Implementiert das Verhalten der Win32-Nachricht [RB_MAXIMIZEBAND](/windows/win32/Controls/rb-maximizeband) , wobei auf 0 (null) `fIdeal` festgelegt ist, wie in der Windows SDK beschrieben.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CReBarCtrl#10](../../mfc/reference/codesnippet/cpp/crebarctrl-class_8.cpp)]
 
-## <a name="crebarctrlminimizeband"></a><a name="minimizeband"></a>CReBarCtrl::MinimizeBand
+## <a name="crebarctrlminimizeband"></a><a name="minimizeband"></a> "Krebarctrl:: minimizeband"
 
-Ändert die Größe eines Bands in einem Bewehrungssteuerelement auf die kleinste Größe.
+Ändert die Größe eines Bands in einem Grund leisten-Steuerelement auf seine kleinste Größe.
 
 ```cpp
 void MinimizeBand(UINT uBand);
@@ -750,20 +750,20 @@ void MinimizeBand(UINT uBand);
 
 ### <a name="parameters"></a>Parameter
 
-*uBand*<br/>
-Nullbasierter Index des zu minimierenden Bands.
+*uband*<br/>
+Der null basierte Index des zu minimier enden Bands.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Implementiert das Verhalten der Win32-RB_MINIMIZEBAND , wie im Windows SDK beschrieben. [RB_MINIMIZEBAND](/windows/win32/Controls/rb-minimizeband)
+Implementiert das Verhalten des Win32-Nachrichten [RB_MINIMIZEBAND](/windows/win32/Controls/rb-minimizeband), wie in der Windows SDK beschrieben.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CReBarCtrl#11](../../mfc/reference/codesnippet/cpp/crebarctrl-class_9.cpp)]
 
-## <a name="crebarctrlmoveband"></a><a name="moveband"></a>CReBarCtrl::MoveBand
+## <a name="crebarctrlmoveband"></a><a name="moveband"></a> "Krebarctrl:: muveband"
 
-Implementiert das Verhalten der Win32-RB_MOVEBAND , wie im Windows SDK beschrieben. [RB_MOVEBAND](/windows/win32/Controls/rb-moveband)
+Implementiert das Verhalten des Win32-Nachrichten [RB_MOVEBAND](/windows/win32/Controls/rb-moveband), wie in der Windows SDK beschrieben.
 
 ```
 BOOL MoveBand(
@@ -773,19 +773,19 @@ BOOL MoveBand(
 
 ### <a name="parameters"></a>Parameter
 
-*uAus*<br/>
-Nullbasierter Index des zu verschiebenden Bands.
+*ufrom*<br/>
+Der null basierte Index des zu bewegenden Bands.
 
-*Uto*<br/>
-Nullbasierter Index der neuen Bandposition. Dieser Parameterwert darf niemals größer sein als die Anzahl der Bänder minus eins. Um die Anzahl der Bänder zu erhalten, rufen Sie [GetBandCount](#getbandcount)an.
+*uTo*<br/>
+NULL basierter Index der neuen Bandposition. Dieser Parameterwert darf nicht größer als die Anzahl der Bänder minus 1 sein. Rufen Sie zum Abrufen der Anzahl der Bänder [GetBandCount](#getbandcount)auf.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-## <a name="crebarctrlpushchevron"></a><a name="pushchevron"></a>CReBarCtrl::PushChevron
+## <a name="crebarctrlpushchevron"></a><a name="pushchevron"></a> "Krebarctrl::P ushchevron"
 
-Implementiert das Verhalten der Win32-RB_PUSHCHEVRON , wie im Windows SDK beschrieben. [RB_PUSHCHEVRON](/windows/win32/Controls/rb-pushchevron)
+Implementiert das Verhalten des Win32-Nachrichten [RB_PUSHCHEVRON](/windows/win32/Controls/rb-pushchevron), wie in der Windows SDK beschrieben.
 
 ```cpp
 void PushChevron(
@@ -795,15 +795,15 @@ void PushChevron(
 
 ### <a name="parameters"></a>Parameter
 
-*uBand*<br/>
-Null-basierter Index der Band, deren Chevron geschoben werden soll.
+*uband*<br/>
+NULL basierter Index des Bands, dessen Chevron per pushübertragung durchgesetzt werden soll.
 
-*lAppValue*<br/>
-Ein anwendungsdefinierter 32-Bit-Wert. Siehe *lAppValue* in [RB_PUSHCHEVRON](/windows/win32/Controls/rb-pushchevron) im Windows SDK.
+*lappvalue*<br/>
+Ein von der Anwendung definierter 32-Bit-Wert. Weitere *Informationen finden Sie in der* [RB_PUSHCHEVRON](/windows/win32/Controls/rb-pushchevron) in der Windows SDK.
 
-## <a name="crebarctrlrestoreband"></a><a name="restoreband"></a>CReBarCtrl::RestoreBand
+## <a name="crebarctrlrestoreband"></a><a name="restoreband"></a> "Krebarctrl:: restoreband"
 
-Ändert die Größe eines Bands in einem Bewehrungssteuerelement auf seine ideale Größe.
+Ändert die Größe eines Bands in einem Grund leisten-Steuerelement auf seine ideale Größe.
 
 ```cpp
 void RestoreBand(UINT uBand);
@@ -811,20 +811,20 @@ void RestoreBand(UINT uBand);
 
 ### <a name="parameters"></a>Parameter
 
-*uBand*<br/>
-Zero-basierter Index des zu maximierenden Bands.
+*uband*<br/>
+Der null basierte Index des zu maximier enden Bands.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Implementiert das Verhalten der Win32-RB_MAXIMIZEBAND mit [RB_MAXIMIZEBAND](/windows/win32/Controls/rb-maximizeband) `fIdeal` satz 1, wie im Windows SDK beschrieben.
+Implementiert das Verhalten des Win32-Nachrichten [RB_MAXIMIZEBAND](/windows/win32/Controls/rb-maximizeband) `fIdeal` , wobei auf 1 festgelegt ist, wie in der Windows SDK beschrieben.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CReBarCtrl#12](../../mfc/reference/codesnippet/cpp/crebarctrl-class_10.cpp)]
 
-## <a name="crebarctrlsetbandinfo"></a><a name="setbandinfo"></a>CReBarCtrl::SetBandInfo
+## <a name="crebarctrlsetbandinfo"></a><a name="setbandinfo"></a> "Krebarctrl:: SetBandInfo"
 
-Implementiert das Verhalten der Win32-RB_SETBANDINFO , wie im Windows SDK beschrieben. [RB_SETBANDINFO](/windows/win32/Controls/rb-setbandinfo)
+Implementiert das Verhalten des Win32-Nachrichten [RB_SETBANDINFO](/windows/win32/Controls/rb-setbandinfo), wie in der Windows SDK beschrieben.
 
 ```
 BOOL SetBandInfo(
@@ -834,11 +834,11 @@ BOOL SetBandInfo(
 
 ### <a name="parameters"></a>Parameter
 
-*uBand*<br/>
-Nullbasierter Index des Bands, um die neuen Einstellungen zu erhalten.
+*uband*<br/>
+NULL basierter Index des Bands, um die neuen Einstellungen zu erhalten.
 
 *prbbi*<br/>
-Zeiger auf eine [REBARBANDINFO-Struktur,](/windows/win32/api/commctrl/ns-commctrl-rebarbandinfow) die das einzufügende Band definiert. Sie müssen `cbSize` den Member dieser `sizeof(REBARBANDINFO)` Struktur auf festlegen, bevor Sie diese Nachricht senden.
+Ein Zeiger auf eine [REBARBANDINFO](/windows/win32/api/commctrl/ns-commctrl-rebarbandinfow) -Struktur, die das einzufügende Band definiert. Sie müssen den- `cbSize` Member dieser-Struktur auf festlegen, `sizeof(REBARBANDINFO)` bevor Sie diese Nachricht senden.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -848,9 +848,9 @@ Ungleich 0, wenn erfolgreich, andernfalls 0.
 
 [!code-cpp[NVC_MFC_CReBarCtrl#13](../../mfc/reference/codesnippet/cpp/crebarctrl-class_11.cpp)]
 
-## <a name="crebarctrlsetbandwidth"></a><a name="setbandwidth"></a>CReBarCtrl::SetBandWidth
+## <a name="crebarctrlsetbandwidth"></a><a name="setbandwidth"></a> "Krebarctrl:: setbandwidth"
 
-Legt die Breite des angegebenen angedockten Bandes im aktuellen Bewehrungssteuerelement fest.
+Legt die Breite des angegebenen angedockten Bands im aktuellen Grund leisten-Steuerelement fest.
 
 ```
 BOOL SetBandWidth(
@@ -860,34 +860,35 @@ BOOL SetBandWidth(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
-|---------------|-----------------|
-|*uBand*|[in] Nullbasierter Index eines Bewehrungsbandes.|
-|*cxWidth*|[in] Neue Breite des Bewehrungsbandes in Pixel.|
+*uband*\
+in NULL basierter Index eines Info leisten Bands.
+
+*cxwidth*\
+in Neue Breite des Bereichs der Info Leiste in Pixel.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn die Methode erfolgreich ist; andernfalls FALSE.
+TRUE, wenn die Methode erfolgreich ist. andernfalls false.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [RB_SETBANDWIDTH](/windows/win32/Controls/rb-setbandwidth) Nachricht, die im Windows SDK beschrieben wird.
+Diese Methode sendet die [RB_SETBANDWIDTH](/windows/win32/Controls/rb-setbandwidth) Nachricht, die in der Windows SDK beschrieben wird.
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Codebeispiel wird `m_rebar`die Variable , definiert, die für den Zugriff auf das aktuelle Bewehrungssteuerelement verwendet wird. Diese Variable wird im nächsten Beispiel verwendet.
+Im folgenden Codebeispiel wird die-Variable definiert, die `m_rebar` für den Zugriff auf das aktuelle Grund leisten-Steuerelement verwendet wird. Diese Variable wird im nächsten Beispiel verwendet.
 
 [!code-cpp[NVC_MFC_CReBarCtrl_s1#1](../../mfc/reference/codesnippet/cpp/crebarctrl-class_12.h)]
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Codebeispiel wird festgelegt, dass jedes Bewehrungsband die gleiche Breite aufweist.
+Im folgenden Codebeispiel wird jedes Grund leisten-Band auf die gleiche Breite festgelegt.
 
 [!code-cpp[NVC_MFC_CReBarCtrl_s1#2](../../mfc/reference/codesnippet/cpp/crebarctrl-class_13.cpp)]
 
-## <a name="crebarctrlsetbarinfo"></a><a name="setbarinfo"></a>CReBarCtrl::SetBarInfo
+## <a name="crebarctrlsetbarinfo"></a><a name="setbarinfo"></a> "Krebarctrl:: setbarinfo"
 
-Implementiert das Verhalten der Win32-RB_SETBARINFO , wie im Windows SDK beschrieben. [RB_SETBARINFO](/windows/win32/Controls/rb-setbarinfo)
+Implementiert das Verhalten des Win32-Nachrichten [RB_SETBARINFO](/windows/win32/Controls/rb-setbarinfo), wie in der Windows SDK beschrieben.
 
 ```
 BOOL SetBarInfo(REBARINFO* prbi);
@@ -896,7 +897,7 @@ BOOL SetBarInfo(REBARINFO* prbi);
 ### <a name="parameters"></a>Parameter
 
 *prbi*<br/>
-Ein Zeiger auf eine [REBARINFO-Struktur,](/windows/win32/api/commctrl/ns-commctrl-rebarinfo) die die festzulegenden Informationen enthält. Sie müssen `cbSize` den Member dieser `sizeof(REBARINFO)` Struktur auf festlegen, bevor Sie diese Nachricht senden.
+Ein Zeiger auf eine [rebarinfo](/windows/win32/api/commctrl/ns-commctrl-rebarinfo) -Struktur, die die festzulegenden Informationen enthält. Sie müssen den `cbSize` Member dieser Struktur auf festlegen, `sizeof(REBARINFO)` bevor Sie diese Nachricht senden.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -906,9 +907,9 @@ Ungleich 0, wenn erfolgreich, andernfalls 0.
 
 [!code-cpp[NVC_MFC_CReBarCtrl#14](../../mfc/reference/codesnippet/cpp/crebarctrl-class_14.cpp)]
 
-## <a name="crebarctrlsetbkcolor"></a><a name="setbkcolor"></a>CReBarCtrl::SetBkColor
+## <a name="crebarctrlsetbkcolor"></a><a name="setbkcolor"></a> "Krebarctrl:: SetBkColor"
 
-Implementiert das Verhalten der Win32-Meldung [RB_SETBKCOLOR](/windows/win32/Controls/rb-setbkcolor), wie im Windows SDK beschrieben.
+Implementiert das Verhalten des Win32-Nachrichten [RB_SETBKCOLOR](/windows/win32/Controls/rb-setbkcolor), wie in der Windows SDK beschrieben.
 
 ```
 COLORREF SetBkColor(COLORREF clr);
@@ -916,20 +917,20 @@ COLORREF SetBkColor(COLORREF clr);
 
 ### <a name="parameters"></a>Parameter
 
-*Clr*<br/>
-Der COLORREF-Wert, der die neue Standardhintergrundfarbe darstellt.
+*CLR*<br/>
+Der COLORREF-Wert, der die neue Standard Hintergrundfarbe darstellt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [COLORREF-Wert,](/windows/win32/gdi/colorref) der die vorherige Standardhintergrundfarbe darstellt.
+Ein [COLORREF](/windows/win32/gdi/colorref) -Wert, der die vorherige Standard Hintergrundfarbe darstellt.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zum Festlegen der Hintergrundfarbe und zum Festlegen der Standardeinstellung finden Sie in diesem Thema.
 
-## <a name="crebarctrlsetcolorscheme"></a><a name="setcolorscheme"></a>CReBarCtrl::SetColorScheme
+## <a name="crebarctrlsetcolorscheme"></a><a name="setcolorscheme"></a> "Krebarctrl:: SetColorScheme"
 
-Legt das Farbschema für die Schaltflächen auf einem Bewehrungssteuerelement fest.
+Legt das Farbschema für die Schaltflächen eines Grund leisten-Steuer Elements fest.
 
 ```cpp
 void SetColorScheme(const COLORSCHEME* lpcs);
@@ -937,16 +938,16 @@ void SetColorScheme(const COLORSCHEME* lpcs);
 
 ### <a name="parameters"></a>Parameter
 
-*lpcs*<br/>
-Ein Zeiger auf eine [COLORSCHEME-Struktur,](/windows/win32/api/commctrl/ns-commctrl-colorscheme) wie im Windows SDK beschrieben.
+*LPCS*<br/>
+Ein Zeiger auf eine [ColorScheme](/windows/win32/api/commctrl/ns-commctrl-colorscheme) -Struktur, wie im Windows SDK beschrieben.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die `COLORSCHEME` Struktur enthält sowohl die Schaltflächenhervorhebungsfarbe als auch die Schaltflächenschattenfarbe.
+Die `COLORSCHEME` Struktur enthält sowohl die Hervorhebungs Farbe der Schaltfläche als auch die Schaltfläche Schatten Farbe.
 
-## <a name="crebarctrlsetextendedstyle"></a><a name="setextendedstyle"></a>CReBarCtrl::SetExtendedStyle
+## <a name="crebarctrlsetextendedstyle"></a><a name="setextendedstyle"></a> "Krebarctrl:: abtextendecodstyle"
 
-Legt die erweiterten Stile für das aktuelle Bewehrungssteuerelement fest.
+Legt die erweiterten Stile für das aktuelle Grund leisten-Steuerelement fest.
 
 ```
 DWORD SetExtendedStyle(
@@ -956,10 +957,14 @@ DWORD SetExtendedStyle(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
-|---------------|-----------------|
-|*dwMask*|[in] Eine bitweise Kombination (OR) von Flags, die angeben, welche Flags im *parameter dwStyleEx* angewendet werden. Verwenden Sie einen oder mehrere der folgenden Werte:<br /><br /> RBS_EX_SPLITTER: Zeigen Sie standardmäßig den Splitter unten im horizontalen Modus und rechts im vertikalen Modus an.<br /><br /> RBS_EX_TRANSPARENT: Leiten Sie die [WM_ERASEBKGND](/windows/win32/winmsg/wm-erasebkgnd) Nachricht an das übergeordnete Fenster weiter.|
-|*dwStyleEx*|[in] Eine bitweise Kombination (OR) von Flags, die die anzuwendenden Stile angeben. Um einen Stil festzulegen, geben Sie dasselbe Flag an, das im *Parameter dwMask* verwendet wird. Um einen Stil zurückzusetzen, geben Sie binäre Null an.|
+*dwMask*\
+in Eine bitweise Kombination (or) von Flags, die angeben, welche Flags im Parameter " *dwstyleex* " angewendet werden. Verwenden Sie einen oder mehrere der folgenden Werte:
+
+- `RBS_EX_SPLITTER`: Standardmäßig wird der Splitter unten im horizontalen und rechts im vertikalen Modus angezeigt.
+- `RBS_EX_TRANSPARENT`: Weiterleiten der [WM_ERASEBKGND](/windows/win32/winmsg/wm-erasebkgnd) Meldung an das übergeordnete Fenster.
+
+*dwstyleex*\
+in Eine bitweise Kombination (or) von Flags, die die anzuwendenden Stile angeben. Um einen Stil festzulegen, geben Sie das gleiche Flag an, das im *dwMask* -Parameter verwendet wird. Geben Sie zum Zurücksetzen eines Stils Binary NULL an.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -967,11 +972,11 @@ Der vorherige erweiterte Stil.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [RB_SETEXTENDEDSTYLE](/windows/win32/Controls/rb-setextendedstyle) Nachricht, die im Windows SDK beschrieben wird.
+Diese Methode sendet die [RB_SETEXTENDEDSTYLE](/windows/win32/Controls/rb-setextendedstyle) Nachricht, die in der Windows SDK beschrieben wird.
 
-## <a name="crebarctrlsetimagelist"></a><a name="setimagelist"></a>CReBarCtrl::SetImageList
+## <a name="crebarctrlsetimagelist"></a><a name="setimagelist"></a> "Krebarctrl:: SetImageList"
 
-Weist einem Bewehrungssteuerelement eine Bildliste zu.
+Weist einem Grund leisten-Steuerelement eine Bildliste zu.
 
 ```
 BOOL SetImageList(CImageList* pImageList);
@@ -979,16 +984,16 @@ BOOL SetImageList(CImageList* pImageList);
 
 ### <a name="parameters"></a>Parameter
 
-*pImageList*<br/>
-Ein Zeiger auf ein [CImageList-Objekt,](../../mfc/reference/cimagelist-class.md) das die Bildliste enthält, die dem Bewehrungssteuerelement zugewiesen werden soll.
+*pimagelist*<br/>
+Ein Zeiger auf ein [CImageList](../../mfc/reference/cimagelist-class.md) -Objekt, das die Bildliste enthält, die dem Grund leisten-Steuerelement zugewiesen werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-## <a name="crebarctrlsetowner"></a><a name="setowner"></a>CReBarCtrl::SetOwner
+## <a name="crebarctrlsetowner"></a><a name="setowner"></a> "Krebarctrl:: seetowner"
 
-Implementiert das Verhalten der Win32-RB_SETPARENT , wie im Windows SDK beschrieben. [RB_SETPARENT](/windows/win32/Controls/rb-setparent)
+Implementiert das Verhalten des Win32-Nachrichten [RB_SETPARENT](/windows/win32/Controls/rb-setparent), wie in der Windows SDK beschrieben.
 
 ```
 CWnd* SetOwner(CWnd* pWnd);
@@ -996,23 +1001,23 @@ CWnd* SetOwner(CWnd* pWnd);
 
 ### <a name="parameters"></a>Parameter
 
-*pWnd*<br/>
-Ein Zeiger auf `CWnd` ein Objekt, das als Besitzer des Bewehrungssteuerelements festgelegt werden soll.
+*folgenden*<br/>
+Ein Zeiger auf ein- `CWnd` Objekt, das als Besitzer des Grund leisten-Steuer Elements festgelegt werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein [CWnd-Objekt,](../../mfc/reference/cwnd-class.md) das der aktuelle Besitzer des Bewehrungssteuerelements ist.
+Ein Zeiger auf ein [CWnd](../../mfc/reference/cwnd-class.md) -Objekt, das der aktuelle Besitzer des Grund leisten-Steuer Elements ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Beachten Sie, dass diese Memberfunktion Zeiger auf `CWnd` Objekte sowohl für den aktuellen als auch für den ausgewählten Besitzer des Bewehrungssteuerelements verwendet, anstatt auf Fenster zu verarbeiten.
+Beachten Sie, dass diese Member-Funktion Zeiger auf `CWnd` -Objekte sowohl für den aktuellen als auch für den ausgewählten Besitzer des Grund leisten-Steuer Elements anstelle von Handles für Windows verwendet.
 
 > [!NOTE]
-> Diese Memberfunktion ändert nicht das tatsächliche übergeordnete Element, das beim Erstellen des Steuerelements festgelegt wurde. Stattdessen werden Benachrichtigungen an das von Ihnen angegebene Fenster gesendet.
+> Diese Member-Funktion ändert nicht das tatsächliche übergeordnete Element, das beim Erstellen des Steuer Elements festgelegt wurde. Stattdessen sendet Sie Benachrichtigungs Meldungen an das von Ihnen angegebene Fenster.
 
-## <a name="crebarctrlsetpalette"></a><a name="setpalette"></a>CReBarCtrl::SetPalette
+## <a name="crebarctrlsetpalette"></a><a name="setpalette"></a> "Krebarctrl:: SetPalette"
 
-Implementiert das Verhalten der Win32-RB_SETPALETTE , wie im Windows SDK beschrieben. [RB_SETPALETTE](/windows/win32/Controls/rb-setpalette)
+Implementiert das Verhalten des Win32-Nachrichten [RB_SETPALETTE](/windows/win32/Controls/rb-setpalette), wie in der Windows SDK beschrieben.
 
 ```
 CPalette* SetPalette(HPALETTE hPal);
@@ -1020,20 +1025,20 @@ CPalette* SetPalette(HPALETTE hPal);
 
 ### <a name="parameters"></a>Parameter
 
-*hPal*<br/>
-Eine HPALETTE, die die neue Palette angibt, die das Bewehrungssteuerelement verwendet.
+*hpal*<br/>
+Eine hpalette, die die neue Palette angibt, die vom Grund leisten-Steuerelement verwendet wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf ein [CPalette-Objekt,](../../mfc/reference/cpalette-class.md) das die vorherige Palette des Bewehrungssteuerelements angibt.
+Ein Zeiger auf ein [CPalette](../../mfc/reference/cpalette-class.md) -Objekt, das die vorherige Palette des Grund leisten-Steuer Elements angibt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Beachten Sie, dass `CPalette` diese Memberfunktion ein Objekt als Rückgabewert anstelle eines HPALETTE verwendet.
+Beachten Sie, dass diese Member-Funktion ein- `CPalette` Objekt als Rückgabewert anstelle einer hpalette verwendet.
 
-## <a name="crebarctrlsettextcolor"></a><a name="settextcolor"></a>CReBarCtrl::SetTextColor
+## <a name="crebarctrlsettextcolor"></a><a name="settextcolor"></a> "Krebarctrl:: SetTextColor"
 
-Implementiert das Verhalten der Win32-RB_SETTEXTCOLOR , wie im Windows SDK beschrieben. [RB_SETTEXTCOLOR](/windows/win32/Controls/rb-settextcolor)
+Implementiert das Verhalten des Win32-Nachrichten [RB_SETTEXTCOLOR](/windows/win32/Controls/rb-settextcolor), wie in der Windows SDK beschrieben.
 
 ```
 COLORREF SetTextColor(COLORREF clr);
@@ -1041,20 +1046,20 @@ COLORREF SetTextColor(COLORREF clr);
 
 ### <a name="parameters"></a>Parameter
 
-*Clr*<br/>
-Ein COLORREF-Wert, der die `CReBarCtrl` neue Textfarbe im Objekt darstellt.
+*CLR*<br/>
+Ein COLORREF-Wert, der die neue Textfarbe im- `CReBarCtrl` Objekt darstellt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der [COLORREF-Wert,](/windows/win32/gdi/colorref) der die `CReBarCtrl` vorherige Textfarbe darstellt, die dem Objekt zugeordnet ist.
+Der [COLORREF](/windows/win32/gdi/colorref) -Wert, der die vorherige Textfarbe darstellt, die dem-Objekt zugeordnet ist `CReBarCtrl` .
 
 ### <a name="remarks"></a>Bemerkungen
 
-Sie wird bereitgestellt, um die Flexibilität der Textfarbe in einem Bewehrungssteuerelement zu unterstützen.
+Er wird bereitgestellt, um die Text Farb Flexibilität in einem Grund leisten-Steuerelement zu unterstützen
 
-## <a name="crebarctrlsettooltips"></a><a name="settooltips"></a>CReBarCtrl::SetToolTips
+## <a name="crebarctrlsettooltips"></a><a name="settooltips"></a> "Krebarctrl:: SetToolTips"
 
-Ordnet ein Werkzeugspitzensteuerelement einem Bewehrungssteuerelement zu.
+Ordnet ein QuickInfo-Steuerelement einem Grund leisten-Steuerelement zu.
 
 ```cpp
 void SetToolTips(CToolTipCtrl* pToolTip);
@@ -1062,16 +1067,16 @@ void SetToolTips(CToolTipCtrl* pToolTip);
 
 ### <a name="parameters"></a>Parameter
 
-*pToolTip*<br/>
-Ein Zeiger auf ein [CToolTipCtrl-Objekt](../../mfc/reference/ctooltipctrl-class.md)
+*ptooltip*<br/>
+Ein Zeiger auf ein [CToolTipCtrl](../../mfc/reference/ctooltipctrl-class.md) -Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Sie müssen `CToolTipCtrl` das Objekt zerstören, wenn Sie damit fertig sind.
+Sie müssen das- `CToolTipCtrl` Objekt zerstören, wenn Sie damit abgeschlossen sind.
 
-## <a name="crebarctrlsetwindowtheme"></a><a name="setwindowtheme"></a>CReBarCtrl::SetWindowTheme
+## <a name="crebarctrlsetwindowtheme"></a><a name="setwindowtheme"></a> "Krebarctrl:: SetWindowTheme"
 
-Legt den visuellen Stil des Bewehrungssteuerelements fest.
+Legt den visuellen Stil des Grund leisten-Steuer Elements fest.
 
 ```
 HRESULT SetWindowTheme(LPCWSTR pszSubAppName);
@@ -1080,7 +1085,7 @@ HRESULT SetWindowTheme(LPCWSTR pszSubAppName);
 ### <a name="parameters"></a>Parameter
 
 *pszSubAppName*<br/>
-Ein Zeiger auf eine Unicode-Zeichenfolge, die den zu setzenden visuellen Bewehrungsstil enthält.
+Ein Zeiger auf eine Unicode-Zeichenfolge, die den festzulegenden visuellen Stil der Grund Leiste enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -1088,11 +1093,11 @@ Der Rückgabewert wird nicht verwendet.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Memberfunktion emuliert die Funktionalität der [RB_SETWINDOWTHEME](/windows/win32/Controls/rb-setwindowtheme) Nachricht, wie im Windows SDK beschrieben.
+Diese Member-Funktion emuliert die Funktionalität der [RB_SETWINDOWTHEME](/windows/win32/Controls/rb-setwindowtheme) Nachricht, wie in der Windows SDK beschrieben.
 
-## <a name="crebarctrlshowband"></a><a name="showband"></a>CReBarCtrl::ShowBand
+## <a name="crebarctrlshowband"></a><a name="showband"></a> "Krebarctrl:: Showband"
 
-Implementiert das Verhalten der Win32-RB_SHOWBAND , wie im Windows SDK beschrieben. [RB_SHOWBAND](/windows/win32/Controls/rb-showband)
+Implementiert das Verhalten des Win32-Nachrichten [RB_SHOWBAND](/windows/win32/Controls/rb-showband), wie in der Windows SDK beschrieben.
 
 ```
 BOOL ShowBand(
@@ -1102,19 +1107,19 @@ BOOL ShowBand(
 
 ### <a name="parameters"></a>Parameter
 
-*uBand*<br/>
-Nullbasierter Index eines Bands im Bewehrungssteuerelement.
+*uband*<br/>
+NULL basierter Index eines Bands im Grund leisten-Steuerelement.
 
-*fShow*<br/>
-Gibt an, ob das Band angezeigt oder ausgeblendet werden soll. Wenn dieser Wert TRUE ist, wird das Band angezeigt. Andernfalls wird die Band ausgeblendet.
+*mit der Bezeichnung*<br/>
+Gibt an, ob das Band angezeigt oder ausgeblendet werden soll. Wenn dieser Wert true ist, wird das Band angezeigt. Andernfalls wird das Band ausgeblendet.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ungleich 0, wenn erfolgreich, andernfalls 0.
 
-## <a name="crebarctrlsizetorect"></a><a name="sizetorect"></a>CReBarCtrl::SizeToRect
+## <a name="crebarctrlsizetorect"></a><a name="sizetorect"></a> "Krebarctrl:: sizetorect"
 
-Implementiert das Verhalten der Win32-RB_SIZETORECT , wie im Windows SDK beschrieben. [RB_SIZETORECT](/windows/win32/Controls/rb-sizetorect)
+Implementiert das Verhalten des Win32-Nachrichten [RB_SIZETORECT](/windows/win32/Controls/rb-sizetorect), wie in der Windows SDK beschrieben.
 
 ```
 BOOL SizeToRect(CRect& rect);
@@ -1123,7 +1128,7 @@ BOOL SizeToRect(CRect& rect);
 ### <a name="parameters"></a>Parameter
 
 *Rect*<br/>
-Ein Verweis auf ein [CRect-Objekt,](../../atl-mfc-shared/reference/crect-class.md) das das Rechteck angibt, auf das das Bewehrungssteuerelement angepasst werden soll.
+Ein Verweis auf ein [CRect](../../atl-mfc-shared/reference/crect-class.md) -Objekt, das das Rechteck angibt, zu dem das Steuerelement der Grund Leiste passen soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -1131,9 +1136,9 @@ Ungleich 0, wenn erfolgreich, andernfalls 0.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Beachten Sie, dass `CRect` diese Memberfunktion ein Objekt `RECT` als Parameter und nicht als Struktur verwendet.
+Beachten Sie, dass diese Member-Funktion ein- `CRect` Objekt als Parameter anstelle einer- `RECT` Struktur verwendet.
 
 ## <a name="see-also"></a>Weitere Informationen
 
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
-[Hierarchiediagramm](../../mfc/hierarchy-chart.md)
+[Hierarchie Diagramm](../../mfc/hierarchy-chart.md)

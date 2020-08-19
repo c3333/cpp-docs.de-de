@@ -44,12 +44,12 @@ helpviewer_keywords:
 - CStatusBarCtrl [MFC], SetText
 - CStatusBarCtrl [MFC], SetTipText
 ms.assetid: 8504ad38-7b91-4746-aede-ac98886eb47b
-ms.openlocfilehash: 57d040a7efd87d384e0aaa6275593bc91f38cc86
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.openlocfilehash: d2440eb05a1367b7d4980494e3d7f5de646d5fd0
+ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81753035"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88562648"
 ---
 # <a name="cstatusbarctrl-class"></a>CStatusBarCtrl-Klasse
 
@@ -65,44 +65,44 @@ class CStatusBarCtrl : public CWnd
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
-|[CStatusBarCtrl::CStatusBarCtrl](#cstatusbarctrl)|Erstellt ein `CStatusBarCtrl`-Objekt.|
+|[Cstatus-Barcode STRG:: cstatus-barstrg](#cstatusbarctrl)|Erstellt ein `CStatusBarCtrl`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
-|[CStatusBarCtrl::Erstellen](#create)|Erstellt ein Statusleistensteuerelement und fügt `CStatusBarCtrl` es an ein Objekt an.|
-|[CStatusBarCtrl::CreateEx](#createex)|Erstellt ein Statusleistensteuerelement mit den angegebenen erweiterten Windows-Stilen und fügt es an ein `CStatusBarCtrl` Objekt an.|
-|[CStatusBarCtrl::DrawItem](#drawitem)|Wird aufgerufen, wenn sich ein visueller Aspekt eines Besitzerzeichnungsstatusleistensteuerelements ändert.|
-|[CStatusBarCtrl::GetBorders](#getborders)|Ruft die aktuellen Breiten der horizontalen und vertikalen Ränder eines Statusleistensteuerelements ab.|
-|[CStatusBarCtrl::GetIcon](#geticon)|Ruft das Symbol für ein Teil (auch als Bereich bezeichnet) im aktuellen Statusleistensteuerelement ab.|
-|[CStatusBarCtrl::GetParts](#getparts)|Ruft eine Anzahl der Teile in einem Statusleistensteuerelement ab.|
-|[CStatusBarCtrl::GetRect](#getrect)|Ruft das umgrenzende Rechteck eines Teils in einem Statusleistensteuerelement ab.|
-|[CStatusBarCtrl::GetText](#gettext)|Ruft den Text aus dem angegebenen Teil eines Statusleistensteuerelements ab.|
-|[CStatusBarCtrl::GetTextLength](#gettextlength)|Rufen Sie die Länge des Texts in Zeichen aus dem angegebenen Teil eines Statusleistensteuerelements ab.|
-|[CStatusBarCtrl::GetTipText](#gettiptext)|Ruft den QuickInfo-Text für einen Bereich in einer Statusleiste ab.|
-|[CStatusBarCtrl::IsSimple](#issimple)|Überprüft ein Statusfenstersteuerelement, um festzustellen, ob es sich im einfachen Modus befindet.|
-|[CStatusBarCtrl::SetBkColor](#setbkcolor)|Legt die Hintergrundfarbe in einer Statusleiste fest.|
-|[CStatusBarCtrl::SetIcon](#seticon)|Legt das Symbol für einen Bereich in einer Statusleiste fest.|
-|[CStatusBarCtrl::SetMinHeight](#setminheight)|Legt die Minimale Höhe des Zeichenbereichs eines Statusleistensteuerelements fest.|
-|[CStatusBarCtrl::SetParts](#setparts)|Legt die Anzahl der Teile in einem Statusleistensteuerelement und die Koordinate des rechten Rands jedes Teils fest.|
-|[CStatusBarCtrl::SetSimple](#setsimple)|Gibt an, ob ein Statusleistensteuerelement einfachen Text oder alle `SetParts`Steuerelementteile anzeigt, die durch einen vorherigen Aufruf von festgelegt wurden.|
-|[CStatusBarCtrl::SetText](#settext)|Legt den Text im bestimmten Teil eines Statusleisten-Steuerelements fest.|
-|[CStatusBarCtrl::SetTipText](#settiptext)|Legt den QuickInfo-Text für einen Bereich in einer Statusleiste fest.|
+|[Cstatus-Barcode STRG:: Create](#create)|Erstellt ein StatusBar-Steuerelement und fügt es an ein- `CStatusBarCtrl` Objekt an.|
+|[Cstatus-Barcode STRG:: up-Ex](#createex)|Erstellt ein StatusBar-Steuerelement mit den angegebenen erweiterten Windows-Stilen und fügt es an ein- `CStatusBarCtrl` Objekt an.|
+|[Cstatus-STRG::D rawitem](#drawitem)|Wird aufgerufen, wenn sich ein visueller Aspekt eines Besitzers-Status leisten-Steuer Elements ändert.|
+|[Cstatus-barstrg:: getrahmens](#getborders)|Ruft die aktuelle Breite der horizontalen und vertikalen Rahmen eines StatusBar-Steuer Elements ab.|
+|[Cstatus-barstrg:: getIcon](#geticon)|Ruft das Symbol für einen Teil (auch als Bereich bezeichnet) im aktuellen StatusBar-Steuerelement ab.|
+|[Cstatus-barstrg:: GetParts](#getparts)|Ruft die Anzahl der Teile in einem StatusBar-Steuerelement ab.|
+|[Cstatus-Barcode STRG:: GetRect](#getrect)|Ruft das umgebende Rechteck eines Teils in einem StatusBar-Steuerelement ab.|
+|[Cstatus-barstrg:: gettext](#gettext)|Ruft den Text aus dem angegebenen Teil eines StatusBar-Steuer Elements ab.|
+|[Cstatus-barstrg:: getTextLength](#gettextlength)|Ruft die Länge des Texts aus dem angegebenen Teil eines StatusBar-Steuer Elements in Zeichen ab.|
+|[Cstatus-barstrg:: GetTipText](#gettiptext)|Ruft den QuickInfo-Text für einen Bereich in einer Statusleiste ab.|
+|[CStatusBarCtrl:: IsSimple](#issimple)|Überprüft ein Statusfenster-Steuerelement, um zu bestimmen, ob es sich im einfachen Modus befindet.|
+|[Cstatu\barctrl:: SetBkColor](#setbkcolor)|Legt die Hintergrundfarbe in einer Statusleiste fest.|
+|[Cstatus-barctrl:: abticon](#seticon)|Legt das Symbol für einen Bereich in einer Statusleiste fest.|
+|[Cstatuin barctrl:: setMinHeight](#setminheight)|Legt die Mindesthöhe des Zeichnungs Bereichs eines Status leisten Steuer Elements fest.|
+|[Cstatus-barctrl:: SetParts](#setparts)|Legt die Anzahl der Teile in einem StatusBar-Steuerelement und die Koordinate des rechten Rands der einzelnen Teile fest.|
+|[Cstatus-barctrl:: SetSimple](#setsimple)|Gibt an, ob ein Status leisten-Steuerelement einfachen Text anzeigt oder alle von einem vorherigen-Befehl festgelegten Steuerungs Teile anzeigt `SetParts` .|
+|[Cstatus-barctrl:: SetText](#settext)|Legt den Text im bestimmten Teil eines Statusleisten-Steuerelements fest.|
+|[Cstatulaufbarctrl:: Setup Text](#settiptext)|Legt den QuickInfo-Text für einen Bereich in einer Statusleiste fest.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Ein "Statusleistensteuerelement" ist ein horizontales Fenster, das normalerweise am unteren Rand eines übergeordneten Fensters angezeigt wird, in dem eine Anwendung verschiedene Arten von Statusinformationen anzeigen kann. Das Statusleistensteuerelement kann in Teile unterteilt werden, um mehr als einen Informationstyp anzuzeigen.
+Ein "StatusBar-Steuerelement" ist ein horizontales Fenster, das normalerweise am unteren Rand eines übergeordneten Fensters angezeigt wird, in dem eine Anwendung verschiedene Arten von Statusinformationen anzeigen kann. Das StatusBar-Steuerelement kann in Teile aufgeteilt werden, um mehr als eine Art von Informationen anzuzeigen.
 
-Dieses Steuerelement (und `CStatusBarCtrl` damit die Klasse) ist nur für Programme verfügbar, die unter Windows 95/98 und Windows NT Version 3.51 und höher ausgeführt werden.
+Dieses Steuerelement (und damit auch die- `CStatusBarCtrl` Klasse) ist nur für Programme verfügbar, die unter Windows 95/98 und Windows NT, Version 3,51 und höher, ausgeführt werden.
 
-Weitere Informationen zur `CStatusBarCtrl`Verwendung von finden Sie unter [Steuerelemente](../../mfc/controls-mfc.md) und [Verwenden von CStatusBarCtrl](../../mfc/using-cstatusbarctrl.md).
+Weitere Informationen zum Verwenden von finden Sie unter Steuer `CStatusBarCtrl` [Elemente](../../mfc/controls-mfc.md) und [Verwenden von cstatus-barctrl](../../mfc/using-cstatusbarctrl.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[Cobject](../../mfc/reference/cobject-class.md)
+[CObject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -114,9 +114,9 @@ Weitere Informationen zur `CStatusBarCtrl`Verwendung von finden Sie unter [Steue
 
 **Header:** afxcmn.h
 
-## <a name="cstatusbarctrlcreate"></a><a name="create"></a>CStatusBarCtrl::Erstellen
+## <a name="cstatusbarctrlcreate"></a><a name="create"></a> Cstatus-Barcode STRG:: Create
 
-Erstellt ein Statusleistensteuerelement und fügt `CStatusBarCtrl` es an ein Objekt an.
+Erstellt ein StatusBar-Steuerelement und fügt es an ein- `CStatusBarCtrl` Objekt an.
 
 ```
 virtual BOOL Create(
@@ -128,17 +128,17 @@ virtual BOOL Create(
 
 ### <a name="parameters"></a>Parameter
 
-*dwStyle*<br/>
-Gibt den Stil des Statusleistensteuerelements an. Wenden Sie eine beliebige Kombination von Statusleistensteuerungsstilen an, die in [allgemeinen Steuerelementstilen](/windows/win32/Controls/common-control-styles) im Windows SDK aufgeführt sind. Dieser Parameter muss den stilWS_CHILD enthalten. Es sollte auch den WS_VISIBLE Stil enthalten.
+*dwstyle*<br/>
+Gibt den Stil des StatusBar-Steuer Elements an. Wenden Sie eine beliebige Kombination von Status leisten-Steuerelement Formaten an, die in [allgemeinen Steuer](/windows/win32/Controls/common-control-styles) Element Formaten in der Windows SDK Dieser Parameter muss den WS_CHILD Stil enthalten. Sie sollte auch den WS_VISIBLE Stil enthalten.
 
 *Rect*<br/>
-Gibt die Größe und Position des Statusleistensteuerelements an. Dabei kann es sich entweder um ein [CRect-Objekt](../../atl-mfc-shared/reference/crect-class.md) oder eine [RECT-Struktur](/windows/win32/api/windef/ns-windef-rect) handelt.
+Gibt die Größe und Position des StatusBar-Steuer Elements an. Dabei kann es sich entweder um ein [CRect](../../atl-mfc-shared/reference/crect-class.md) -Objekt oder um eine [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur handeln.
 
-*pParentWnd*<br/>
-Gibt das übergeordnete Fenster des Statusleistensteuerelements an, in der Regel eine `CDialog`. Es darf nicht NULL sein.
+*pparser*<br/>
+Gibt das übergeordnete Fenster des Status leisten Steuer Elements an, in der Regel ein `CDialog` . Er darf nicht NULL sein.
 
 *nID*<br/>
-Gibt die ID des Statusleistensteuerelements an.
+Gibt die ID des StatusBar-Steuer Elements an.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -146,19 +146,19 @@ Ungleich 0, wenn erfolgreich, andernfalls 0.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Sie erstellen `CStatusBarCtrl` eine in zwei Schritten. Rufen Sie zuerst den Konstruktor `Create`auf, und rufen Sie dann auf, das das Statusleistensteuerelement erstellt und an das `CStatusBarCtrl` Objekt anfügt.
+Sie erstellen einen `CStatusBarCtrl` in zwei Schritten. Zuerst wird der-Konstruktor aufgerufen, und dann `Create` wird aufgerufen, wodurch das StatusBar-Steuerelement erstellt und an das-Objekt angefügt wird `CStatusBarCtrl` .
 
-Die Standardposition eines Statusfensters befindet sich am unteren Rand des übergeordneten Fensters, Sie können jedoch die CCS_TOP-Format angeben, damit sie oben im Clientbereich des übergeordneten Fensters angezeigt wird. Sie können den SBARS_SIZEGRIP Stil angeben, der einen Größengriff am rechten Ende des Statusfensters einschließen soll. Das Kombinieren der CCS_TOP- und SBARS_SIZEGRIP-Stile wird nicht empfohlen, da der resultierende Größengriff nicht funktionsfähig ist, obwohl das System ihn im Statusfenster zeichnet.
+Die Standardposition eines Status Fensters befindet sich am unteren Rand des übergeordneten Fensters, Sie können jedoch den CCS_TOP Stil angeben, damit er am oberen Rand des Client Bereichs des übergeordneten Fensters angezeigt wird. Sie können den SBARS_SIZEGRIP Stil angeben, um einen Größen Zieh Punkt am rechten Ende des Status Fensters einzuschließen. Das Kombinieren der CCS_TOP-und SBARS_SIZEGRIP Stile wird nicht empfohlen, da der resultierende Größen Zieh Punkt nicht funktionsfähig ist, auch wenn das System ihn im Statusfenster zeichnet.
 
-Um eine Statusleiste mit erweiterten Fensterstilen zu erstellen, rufen `Create`Sie [CStatusBarCtrl::CreateEx](#createex) anstelle von auf.
+Rufen Sie zum Erstellen einer Statusleiste mit erweiterten Fenster Stilen [CStatusBarCtrl::](#createex) up-Ex anstelle von auf `Create` .
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CStatusBarCtrl#1](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_1.cpp)]
 
-## <a name="cstatusbarctrlcreateex"></a><a name="createex"></a>CStatusBarCtrl::CreateEx
+## <a name="cstatusbarctrlcreateex"></a><a name="createex"></a> Cstatus-Barcode STRG:: up-Ex
 
-Erstellt ein Steuerelement (ein untergeordnetes Fenster) und ordnet es dem `CStatusBarCtrl` Objekt zu.
+Erstellt ein-Steuerelement (ein untergeordnetes Fenster) und ordnet es dem- `CStatusBarCtrl` Objekt zu.
 
 ```
 virtual BOOL CreateEx(
@@ -172,19 +172,19 @@ virtual BOOL CreateEx(
 ### <a name="parameters"></a>Parameter
 
 *dwExStyle*<br/>
-Gibt den erweiterten Stil des zu erstellenden Steuerelements an. Eine Liste der erweiterten Windows-Stile finden Sie im *dwExStyle-Parameter* für [CreateWindowEx](/windows/win32/api/winuser/nf-winuser-createwindowexw) im Windows SDK.
+Gibt die erweiterte Art des zu erstellenden Steuer Elements an. Eine Liste erweiterter Windows-Stile finden Sie unter dem *dwExStyle* -Parameter für " [kreatewindowex](/windows/win32/api/winuser/nf-winuser-createwindowexw) " in der Windows SDK.
 
-*dwStyle*<br/>
-Gibt den Stil des Statusleistensteuerelements an. Wenden Sie eine beliebige Kombination von Statusleistensteuerungsstilen an, die in [allgemeinen Steuerelementstilen](/windows/win32/Controls/common-control-styles) im Windows SDK aufgeführt sind. Dieser Parameter muss den stilWS_CHILD enthalten. Es sollte auch den WS_VISIBLE Stil enthalten.
+*dwstyle*<br/>
+Gibt den Stil des StatusBar-Steuer Elements an. Wenden Sie eine beliebige Kombination von Status leisten-Steuerelement Formaten an, die in [allgemeinen Steuer](/windows/win32/Controls/common-control-styles) Element Formaten in der Windows SDK Dieser Parameter muss den WS_CHILD Stil enthalten. Sie sollte auch den WS_VISIBLE Stil enthalten.
 
 *Rect*<br/>
-Ein Verweis auf eine [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die die Größe und Position des zu erstellenden Fensters in den Clientkoordinaten von *pParentWnd*beschreibt.
+Ein Verweis auf eine [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur, die die Größe und Position des zu erstellenden Fensters in Client Koordinaten von *pparser*beschreibt.
 
-*pParentWnd*<br/>
-Ein Zeiger auf das Fenster, das das übergeordnete Steuerelement ist.
+*pparser*<br/>
+Ein Zeiger auf das Fenster, das das übergeordnete Element des Steuer Elements ist.
 
 *nID*<br/>
-Die untergeordnete Fenster-ID des Steuerelements.
+Die ID des untergeordneten Fensters des Steuer Elements.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -192,9 +192,9 @@ Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
 ### <a name="remarks"></a>Bemerkungen
 
-Verwenden `CreateEx` Sie anstelle von [Erstellen,](#create) um erweiterte Windows-Formatvorlagen anzuwenden, die durch das Erweiterte Windows-Stilvorwort **WS_EX_** angegeben werden.
+Verwenden `CreateEx` Sie anstelle von [Create](#create) , um erweiterte Windows-Stile anzuwenden, die durch den erweiterten Windows-Stil **WS_EX_** angegeben werden.
 
-## <a name="cstatusbarctrlcstatusbarctrl"></a><a name="cstatusbarctrl"></a>CStatusBarCtrl::CStatusBarCtrl
+## <a name="cstatusbarctrlcstatusbarctrl"></a><a name="cstatusbarctrl"></a> Cstatus-Barcode STRG:: cstatus-barstrg
 
 Erstellt ein `CStatusBarCtrl`-Objekt.
 
@@ -202,9 +202,9 @@ Erstellt ein `CStatusBarCtrl`-Objekt.
 CStatusBarCtrl();
 ```
 
-## <a name="cstatusbarctrldrawitem"></a><a name="drawitem"></a>CStatusBarCtrl::DrawItem
+## <a name="cstatusbarctrldrawitem"></a><a name="drawitem"></a> Cstatus-STRG::D rawitem
 
-Wird vom Framework aufgerufen, wenn sich ein visueller Aspekt eines Besitzerzeichnungsstatusleistensteuerelements ändert.
+Wird von Framework aufgerufen, wenn sich ein visueller Aspekt eines Besitzers-Status leisten-Steuer Elements ändert.
 
 ```
 virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
@@ -212,20 +212,20 @@ virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
 
 ### <a name="parameters"></a>Parameter
 
-*lpDrawItemStruct*<br/>
-Ein langer Zeiger auf eine [DRAWITEMSTRUCT-Struktur,](/windows/win32/api/winuser/ns-winuser-drawitemstruct) die Informationen über den erforderlichen Zeichnungstyp enthält.
+*lpdrawitemstruct*<br/>
+Ein langer Zeiger auf eine [drawitemstruct](/windows/win32/api/winuser/ns-winuser-drawitemstruct) -Struktur, die Informationen über den erforderlichen Zeichentyp enthält.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das `itemAction` Element `DRAWITEMSTRUCT` der Struktur definiert die Zeichnungsaktion, die ausgeführt werden soll.
+Der- `itemAction` Member der- `DRAWITEMSTRUCT` Struktur definiert die Zeichnungs Aktion, die ausgeführt werden soll.
 
-Standardmäßig führt diese Memberfunktion nichts aus. Überschreiben Sie diese Memberfunktion, um `CStatusBarCtrl` die Zeichnung für ein Besitzerzeichnungsobjekt zu implementieren.
+Standardmäßig führt diese Member-Funktion keine Aktion aus. Überschreiben Sie diese Member-Funktion, um das Zeichnen für ein owner-draw-Objekt zu implementieren `CStatusBarCtrl`
 
-Die Anwendung sollte alle GDI-Objekte (Graphics Device Interface) wiederherstellen, die für den in *lpDrawItemStruct* bereitgestellten Anzeigekontext ausgewählt wurden, bevor diese Memberfunktion beendet wird.
+Die Anwendung sollte alle GDI-Objekte (Graphics Device Interface), die für den in *lpdrawitemstruct* angegebenen Anzeige Kontext ausgewählt sind, wiederherstellen, bevor diese Element Funktion beendet wird.
 
-## <a name="cstatusbarctrlgetborders"></a><a name="getborders"></a>CStatusBarCtrl::GetBorders
+## <a name="cstatusbarctrlgetborders"></a><a name="getborders"></a> Cstatus-barstrg:: getrahmens
 
-Ruft die aktuellen Breiten des Statusleistensteuerelements des horizontalen und vertikalen Rahmens sowie des Abstands zwischen Rechtecken ab.
+Ruft die aktuelle Breite der horizontalen und vertikalen Rahmen des StatusBar-Steuer Elements und des Leerraums zwischen Rechtecke ab.
 
 ```
 BOOL GetBorders(int* pBorders) const;
@@ -238,17 +238,17 @@ BOOL GetBorders(
 
 ### <a name="parameters"></a>Parameter
 
-*pGrenzen*<br/>
-Adresse eines ganzzahligen Arrays mit drei Elementen. Das erste Element erhält die Breite des horizontalen Rahmens, das zweite die Breite des vertikalen Rahmens und das dritte die Breite des Rahmens zwischen den Rechtecken.
+*prahmens*<br/>
+Die Adresse eines ganzzahligen Arrays mit drei Elementen. Das erste Element empfängt die Breite des horizontalen Rahmens, das zweite empfängt die Breite des vertikalen Rahmens, und das dritte empfängt die Breite des Rahmens zwischen Rechtecke.
 
-*nHorz*<br/>
-Verweis auf eine ganze Zahl, die die Breite des horizontalen Rahmens empfängt.
+*nhorz*<br/>
+Verweis auf eine Ganzzahl, die die Breite des horizontalen Rahmens empfängt.
 
-*nVert*<br/>
-Verweis auf eine ganze Zahl, die die Breite des vertikalen Rahmens empfängt.
+*vertieren*<br/>
+Verweis auf eine Ganzzahl, die die Breite des vertikalen Rahmens empfängt.
 
-*nSpacing*<br/>
-Verweis auf eine ganze Zahl, die die Breite des Rahmens zwischen Rechtecken empfängt.
+*nabstände*<br/>
+Verweis auf eine Ganzzahl, die die Breite des Rahmens zwischen Rechtecke empfängt.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -256,15 +256,15 @@ Ungleich 0, wenn erfolgreich, andernfalls 0.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Rahmen bestimmen den Abstand zwischen dem äußeren Rand des Steuerelements und den Rechtecken innerhalb des Steuerelements, die Text enthalten.
+Diese Rahmen bestimmen den Abstand zwischen dem äußeren Rand des Steuer Elements und den Rechtecke innerhalb des Steuer Elements, die Text enthalten.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CStatusBarCtrl#2](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_2.cpp)]
 
-## <a name="cstatusbarctrlgeticon"></a><a name="geticon"></a>CStatusBarCtrl::GetIcon
+## <a name="cstatusbarctrlgeticon"></a><a name="geticon"></a> Cstatus-barstrg:: getIcon
 
-Ruft das Symbol für ein Teil (auch als Bereich bezeichnet) im aktuellen Statusleistensteuerelement ab.
+Ruft das Symbol für einen Teil (auch als Bereich bezeichnet) im aktuellen StatusBar-Steuerelement ab.
 
 ```
 HICON GetIcon(int iPart) const;
@@ -272,35 +272,34 @@ HICON GetIcon(int iPart) const;
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
-|---------------|-----------------|
-|*Ipart*|[in] Der nullbasierte Index des Teils, das das abzudann ausgehende Symbol enthält. Wenn dieser Parameter -1 ist, wird davon ausgegangen, dass die Statusleiste eine einfache Modusstatusleiste ist.|
+*ipart*\
+in Der null basierte Index des Teils, der das abzurufende Symbol enthält. Wenn dieser Parameter-1 ist, wird angenommen, dass es sich bei der Statusleiste um eine Statusleiste im einfachen Modus handelt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Das Handle zum Symbol, wenn die Methode erfolgreich war; andernfalls NULL.
+Das Handle für das Symbol, wenn die Methode erfolgreich war. andernfalls NULL.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode sendet die [SB_GETICON](/windows/win32/Controls/sb-geticon) Nachricht, die im Windows SDK beschrieben wird.
+Diese Methode sendet die [SB_GETICON](/windows/win32/Controls/sb-geticon) Nachricht, die in der Windows SDK beschrieben wird.
 
-Ein Statusleistensteuerelement besteht aus einer Zeile von Textausgabebereichen, die auch als Teile bezeichnet werden. Weitere Informationen zur Statusleiste finden Sie unter [Statusleistenimplementierung in MFC](../../mfc/status-bar-implementation-in-mfc.md) und [Festlegen des Modus eines CStatusBarCtrl-Objekts](../../mfc/setting-the-mode-of-a-cstatusbarctrl-object.md).
+Ein StatusBar-Steuerelement besteht aus einer Zeile mit Textausgabe Bereichen, die auch als Teile bezeichnet werden. Weitere Informationen zur Statusleiste finden Sie unter [Status leisten Implementierung in MFC](../../mfc/status-bar-implementation-in-mfc.md) und [Festlegen des Modus für ein CStatusBarCtrl-Objekt](../../mfc/setting-the-mode-of-a-cstatusbarctrl-object.md).
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Codebeispiel wird `m_statusBar`eine Variable definiert, , die für den Zugriff auf das aktuelle Statusleistensteuerelement verwendet wird. Diese Variable wird im nächsten Beispiel verwendet.
+Im folgenden Codebeispiel wird die-Variable definiert, die `m_statusBar` für den Zugriff auf das aktuelle StatusBar-Steuerelement verwendet wird. Diese Variable wird im nächsten Beispiel verwendet.
 
 [!code-cpp[NVC_MFC_CStatusBarCtrl_s1#1](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_3.h)]
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Codebeispiel wird ein Symbol in zwei Bereiche des aktuellen Statusleistensteuerelements kopiert. In einem früheren Abschnitt des Codebeispiels haben wir ein Statusleistensteuerelement mit drei Bereichen erstellt und dann dem ersten Bereich ein Symbol hinzugefügt. In diesem Beispiel wird das Symbol aus dem ersten Bereich abgerufen und dann dem zweiten und dritten Bereich hinzugefügt.
+Im folgenden Codebeispiel wird ein Symbol in zwei Bereiche des aktuellen StatusBar-Steuer Elements kopiert. In einem früheren Abschnitt des Code Beispiels haben wir ein StatusBar-Steuerelement mit drei Bereichen erstellt und dann dem ersten Bereich ein Symbol hinzugefügt. In diesem Beispiel wird das Symbol aus dem ersten Bereich abgerufen und dann dem zweiten und dritten Bereich hinzugefügt.
 
 [!code-cpp[NVC_MFC_CStatusBarCtrl_s1#2](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_4.cpp)]
 
-## <a name="cstatusbarctrlgetparts"></a><a name="getparts"></a>CStatusBarCtrl::GetParts
+## <a name="cstatusbarctrlgetparts"></a><a name="getparts"></a> Cstatus-barstrg:: GetParts
 
-Ruft eine Anzahl der Teile in einem Statusleistensteuerelement ab.
+Ruft die Anzahl der Teile in einem StatusBar-Steuerelement ab.
 
 ```
 int GetParts(
@@ -310,27 +309,27 @@ int GetParts(
 
 ### <a name="parameters"></a>Parameter
 
-*nParts*<br/>
-Anzahl der Teile, für die Koordinaten abgerufen werden sollen. Wenn dieser Parameter größer als die Anzahl der Teile im Steuerelement ist, ruft die Nachricht Koordinaten nur für vorhandene Teile ab.
+*nparts*<br/>
+Anzahl der Teile, für die Koordinaten abgerufen werden sollen. Wenn dieser Parameter größer als die Anzahl der Teile im Steuerelement ist, ruft die Nachricht nur die Koordinaten für vorhandene Teile ab.
 
-*pParts*<br/>
-Adresse eines ganzzahligen Arrays mit der gleichen Anzahl von Elementen wie die Anzahl der von *nParts*angegebenen Teile . Jedes Element im Array empfängt die Client-Koordinate des rechten Rands des entsprechenden Teils. Wenn ein Element auf - 1 gesetzt ist, erstreckt sich die Position des rechten Rands für dieses Teil bis zum rechten Rand der Statusleiste.
+*pparts*<br/>
+Die Adresse eines ganzzahligen Arrays, das über die gleiche Anzahl von Elementen wie die Anzahl der von *nparts*angegebenen Teile verfügt. Jedes Element im Array empfängt die Client Koordinate des rechten Rands des entsprechenden Teils. Wenn ein Element auf-1 festgelegt ist, wird die Position des rechten Rands für diesen Teil auf den rechten Rand der Statusleiste erweitert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der Teile im Steuerelement, wenn sie erfolgreich sind, oder Null andernfalls.
+Die Anzahl der Teile im-Steuerelement, wenn erfolgreich, andernfalls 0 (null).
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Memberfunktion ruft auch die Koordinate der rechten Kante der angegebenen Anzahl von Teilen ab.
+Diese Member-Funktion ruft auch die Koordinate des rechten Rands der angegebenen Anzahl von Teilen ab.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CStatusBarCtrl#3](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_5.cpp)]
 
-## <a name="cstatusbarctrlgetrect"></a><a name="getrect"></a>CStatusBarCtrl::GetRect
+## <a name="cstatusbarctrlgetrect"></a><a name="getrect"></a> Cstatus-Barcode STRG:: GetRect
 
-Ruft das umgrenzende Rechteck eines Teils in einem Statusleistensteuerelement ab.
+Ruft das umgebende Rechteck eines Teils in einem StatusBar-Steuerelement ab.
 
 ```
 BOOL GetRect(
@@ -340,11 +339,11 @@ BOOL GetRect(
 
 ### <a name="parameters"></a>Parameter
 
-*nPane*<br/>
-Nullbasierter Index des Teils, dessen umgrenztes Rechteck abgerufen werden soll.
+*npane*<br/>
+NULL basierter Index des Teils, dessen Begrenzungs Rechteck abgerufen werden soll.
 
-*lpRect*<br/>
-Adresse einer [RECT-Struktur,](/windows/win32/api/windef/ns-windef-rect) die das umgrenzende Rechteck empfängt.
+*lprect*<br/>
+Adresse einer [Rect](/windows/win32/api/windef/ns-windef-rect) -Struktur, die das Begrenzungs Rechteck empfängt.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -354,9 +353,9 @@ Ungleich 0, wenn erfolgreich, andernfalls 0.
 
 [!code-cpp[NVC_MFC_CStatusBarCtrl#4](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_6.cpp)]
 
-## <a name="cstatusbarctrlgettext"></a><a name="gettext"></a>CStatusBarCtrl::GetText
+## <a name="cstatusbarctrlgettext"></a><a name="gettext"></a> Cstatus-barstrg:: gettext
 
-Ruft den Text aus dem angegebenen Teil eines Statusleistensteuerelements ab.
+Ruft den Text aus dem angegebenen Teil eines StatusBar-Steuer Elements ab.
 
 ```
 CString GetText(
@@ -372,33 +371,33 @@ int GetText(
 ### <a name="parameters"></a>Parameter
 
 *lpszText*<br/>
-Adresse des Puffers, der den Text empfängt. Dieser Parameter ist eine null-terminierte Zeichenfolge.
+Adresse des Puffers, der den Text empfängt. Dieser Parameter ist eine NULL-terminierte Zeichenfolge.
 
-*nPane*<br/>
-Nullbasierter Index des Teils, aus dem Text abgerufen werden soll.
+*npane*<br/>
+Der null basierte Index des Teils, von dem Text abgerufen werden soll.
 
 *pType*<br/>
-Zeiger auf eine ganze Zahl, die die Typinformationen empfängt. Der Typ kann einer der folgenden Werte sein:
+Zeiger auf eine Ganzzahl, die die Typinformationen empfängt. Der Typ kann einen der folgenden Werte aufweisen:
 
-- **0** Der Text wird mit einem Rahmen gezeichnet, der niedriger als die Ebene der Statusleiste angezeigt wird.
+- **0** der Text wird mit einem Rahmen gezeichnet, der unterhalb der Ebene der Statusleiste angezeigt wird.
 
-- SBT_NOBORDERS Der Text wird ohne Grenzen gezeichnet.
+- SBT_NOBORDERS der Text ohne Rahmen gezeichnet wird.
 
-- SBT_POPOUT Der Text wird mit einem Rahmen gezeichnet, der höher als die Ebene der Statusleiste angezeigt wird.
+- SBT_POPOUT der Text mit einem Rahmen gezeichnet wird, der höher als die Ebene der Statusleiste ist.
 
-- SBT_OWNERDRAW Wenn der Text den SBT_OWNERDRAW Zeichnungstyp s. hat, empfängt *pType* diese Meldung und gibt den 32-Bit-Wert zurück, der dem Text zugeordnet ist, anstatt der Länge und dem Vorgangstyp.
+- SBT_OWNERDRAW wenn der Text über den SBT_OWNERDRAW Zeichentyp verfügt, empfängt *pType* diese Nachricht und gibt den 32-Bit-Wert zurück, der dem Text statt der Länge und dem Vorgangstyp zugeordnet ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Länge des Textes oder eines [CStrings,](../../atl-mfc-shared/reference/cstringt-class.md) der den aktuellen Text enthält, in Zeichen.
+Die Länge (in Zeichen) des Texts oder ein [CString](../../atl-mfc-shared/reference/cstringt-class.md) -Wert, der den aktuellen Text enthält.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CStatusBarCtrl#5](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_7.cpp)]
 
-## <a name="cstatusbarctrlgettextlength"></a><a name="gettextlength"></a>CStatusBarCtrl::GetTextLength
+## <a name="cstatusbarctrlgettextlength"></a><a name="gettextlength"></a> Cstatus-barstrg:: getTextLength
 
-Ruft die Länge des Textes aus dem angegebenen Teil eines Statusleistensteuerelements in Zeichen ab.
+Ruft die Länge des Texts aus dem angegebenen Teil eines StatusBar-Steuer Elements in Zeichen ab.
 
 ```
 int GetTextLength(
@@ -408,29 +407,29 @@ int GetTextLength(
 
 ### <a name="parameters"></a>Parameter
 
-*nPane*<br/>
-Nullbasierter Index des Teils, aus dem Text abgerufen werden soll.
+*npane*<br/>
+Der null basierte Index des Teils, von dem Text abgerufen werden soll.
 
 *pType*<br/>
-Zeiger auf eine ganze Zahl, die die Typinformationen empfängt. Der Typ kann einer der folgenden Werte sein:
+Zeiger auf eine Ganzzahl, die die Typinformationen empfängt. Der Typ kann einen der folgenden Werte aufweisen:
 
-- **0** Der Text wird mit einem Rahmen gezeichnet, der niedriger als die Ebene der Statusleiste angezeigt wird.
+- **0** der Text wird mit einem Rahmen gezeichnet, der unterhalb der Ebene der Statusleiste angezeigt wird.
 
-- SBT_NOBORDERS Der Text wird ohne Grenzen gezeichnet.
+- SBT_NOBORDERS der Text ohne Rahmen gezeichnet wird.
 
-- SBT_OWNERDRAW Der Text wird vom übergeordneten Fenster gezeichnet.
+- SBT_OWNERDRAW wird der Text vom übergeordneten Fenster gezeichnet.
 
-- SBT_POPOUT Der Text wird mit einem Rahmen gezeichnet, der höher als die Ebene der Statusleiste angezeigt wird.
+- SBT_POPOUT der Text mit einem Rahmen gezeichnet wird, der höher als die Ebene der Statusleiste ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Länge des Textes in Zeichen.
+Die Länge des Texts in Zeichen.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CStatusBarCtrl#6](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_8.cpp)]
 
-## <a name="cstatusbarctrlgettiptext"></a><a name="gettiptext"></a>CStatusBarCtrl::GetTipText
+## <a name="cstatusbarctrlgettiptext"></a><a name="gettiptext"></a> Cstatus-barstrg:: GetTipText
 
 Ruft den QuickInfo-Text für einen Bereich in einer Statusleiste ab.
 
@@ -440,24 +439,24 @@ CString GetTipText(int nPane) const;
 
 ### <a name="parameters"></a>Parameter
 
-*nPane*<br/>
-Der nullbasierte Index des Statusleistenbereichs, um den QuickInfo-Text zu empfangen.
+*npane*<br/>
+Der null basierte Index des Status leisten Bereichs, um den QuickInfo-Text zu empfangen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [CString-Objekt,](../../atl-mfc-shared/reference/cstringt-class.md) das den Text enthält, der in der QuickInfo verwendet werden soll.
+Ein [CString](../../atl-mfc-shared/reference/cstringt-class.md) -Objekt, das den Text enthält, der in der QuickInfo verwendet werden soll.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Memberfunktion implementiert das Verhalten der [SB_GETTIPTEXT](/windows/win32/Controls/sb-gettiptext)Win32-SB_GETTIPTEXT , wie im Windows SDK beschrieben.
+Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [SB_GETTIPTEXT](/windows/win32/Controls/sb-gettiptext), wie in der Windows SDK beschrieben.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CStatusBarCtrl#7](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_9.cpp)]
 
-## <a name="cstatusbarctrlissimple"></a><a name="issimple"></a>CStatusBarCtrl::IsSimple
+## <a name="cstatusbarctrlissimple"></a><a name="issimple"></a> CStatusBarCtrl:: IsSimple
 
-Überprüft ein Statusfenstersteuerelement, um festzustellen, ob es sich im einfachen Modus befindet.
+Überprüft ein Statusfenster-Steuerelement, um zu bestimmen, ob es sich im einfachen Modus befindet.
 
 ```
 BOOL IsSimple() const;
@@ -465,13 +464,13 @@ BOOL IsSimple() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Wert ungleich Null, wenn sich das Statusfenstersteuerelement im einfachen Modus befindet; andernfalls Null.
+Ungleich 0 (null), wenn sich das Statusfenster-Steuerelement im einfachen Modus befindet andernfalls NULL.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Memberfunktion implementiert das Verhalten der [SB_ISSIMPLE](/windows/win32/Controls/sb-issimple)Win32-SB_ISSIMPLE , wie im Windows SDK beschrieben.
+Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [SB_ISSIMPLE](/windows/win32/Controls/sb-issimple), wie in der Windows SDK beschrieben.
 
-## <a name="cstatusbarctrlsetbkcolor"></a><a name="setbkcolor"></a>CStatusBarCtrl::SetBkColor
+## <a name="cstatusbarctrlsetbkcolor"></a><a name="setbkcolor"></a> Cstatu\barctrl:: SetBkColor
 
 Legt die Hintergrundfarbe in einer Statusleiste fest.
 
@@ -481,22 +480,22 @@ COLORREF SetBkColor(COLORREF cr);
 
 ### <a name="parameters"></a>Parameter
 
-*Cr*<br/>
-COLORREF-Wert, der die neue Hintergrundfarbe angibt. Geben Sie den wert CLR_DEFAULT an, der bewirkt, dass die Statusleiste die Standardhintergrundfarbe verwendet.
+*programmiert*<br/>
+COLORREF-Wert, der die neue Hintergrundfarbe angibt. Geben Sie den CLR_DEFAULT Wert an, der bewirkt, dass die Statusleiste die Standard Hintergrundfarbe verwendet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [COLORREF-Wert,](/windows/win32/gdi/colorref) der die vorherige Standardhintergrundfarbe darstellt.
+Ein [COLORREF](/windows/win32/gdi/colorref) -Wert, der die vorherige Standard Hintergrundfarbe darstellt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Memberfunktion implementiert das Verhalten der Win32-Meldung [SB_SETBKCOLOR](/windows/win32/Controls/sb-setbkcolor), wie im Windows SDK beschrieben.
+Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [SB_SETBKCOLOR](/windows/win32/Controls/sb-setbkcolor), wie in der Windows SDK beschrieben.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CStatusBarCtrl#8](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_10.cpp)]
 
-## <a name="cstatusbarctrlseticon"></a><a name="seticon"></a>CStatusBarCtrl::SetIcon
+## <a name="cstatusbarctrlseticon"></a><a name="seticon"></a> Cstatus-barctrl:: abticon
 
 Legt das Symbol für einen Bereich in einer Statusleiste fest.
 
@@ -508,11 +507,11 @@ BOOL SetIcon(
 
 ### <a name="parameters"></a>Parameter
 
-*nPane*<br/>
-Der nullbasierte Index des Bereichs, der das Symbol empfängt. Wenn dieser Parameter -1 ist, wird davon ausgegangen, dass die Statusleiste eine einfache Statusleiste ist.
+*npane*<br/>
+Der null basierte Index des Bereichs, der das Symbol empfängt. Wenn dieser Parameter-1 ist, wird angenommen, dass es sich bei der Statusleiste um eine einfache Statusleiste handelt.
 
 *hIcon*<br/>
-Behandeln Sie das zu setzende Symbol. Wenn dieser Wert NULL ist, wird das Symbol aus dem Teil entfernt.
+Handle für das Symbol, das festgelegt werden soll. Wenn dieser Wert NULL ist, wird das Symbol aus dem Teil entfernt.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -520,15 +519,15 @@ Ungleich 0, wenn erfolgreich, andernfalls 0.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Memberfunktion implementiert das Verhalten der [SB_SETICON](/windows/win32/Controls/sb-seticon)Win32-SB_SETICON , wie im Windows SDK beschrieben.
+Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [SB_SETICON](/windows/win32/Controls/sb-seticon), wie in der Windows SDK beschrieben.
 
 ### <a name="example"></a>Beispiel
 
-  Siehe Beispiel für [CStatusBarCtrl::SetBkColor](#setbkcolor).
+  Weitere Informationen finden Sie im Beispiel für [cstatuus barctrl:: SetBkColor](#setbkcolor).
 
-## <a name="cstatusbarctrlsetminheight"></a><a name="setminheight"></a>CStatusBarCtrl::SetMinHeight
+## <a name="cstatusbarctrlsetminheight"></a><a name="setminheight"></a> Cstatuin barctrl:: setMinHeight
 
-Legt die Minimale Höhe des Zeichenbereichs eines Statusleistensteuerelements fest.
+Legt die Mindesthöhe des Zeichnungs Bereichs eines Status leisten Steuer Elements fest.
 
 ```cpp
 void SetMinHeight(int nMin);
@@ -536,20 +535,20 @@ void SetMinHeight(int nMin);
 
 ### <a name="parameters"></a>Parameter
 
-*Nmin*<br/>
-Minimale Höhe (in Pixel) des Steuerelements.
+*nmin.*<br/>
+Die minimale Höhe des Steuer Elements in Pixel.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die minimale Höhe ist die Summe von *nMin* und die doppelte Breite (in Pixel) des vertikalen Rahmens des Statusleistensteuerelements.
+Die Mindesthöhe ist die Summe aus *nmin* und der doppelten Breite des vertikalen Rahmens des StatusBar-Steuer Elements in Pixel.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CStatusBarCtrl#9](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_11.cpp)]
 
-## <a name="cstatusbarctrlsetparts"></a><a name="setparts"></a>CStatusBarCtrl::SetParts
+## <a name="cstatusbarctrlsetparts"></a><a name="setparts"></a> Cstatus-barctrl:: SetParts
 
-Legt die Anzahl der Teile in einem Statusleistensteuerelement und die Koordinate des rechten Rands jedes Teils fest.
+Legt die Anzahl der Teile in einem StatusBar-Steuerelement und die Koordinate des rechten Rands der einzelnen Teile fest.
 
 ```
 BOOL SetParts(
@@ -559,11 +558,11 @@ BOOL SetParts(
 
 ### <a name="parameters"></a>Parameter
 
-*nParts*<br/>
+*nparts*<br/>
 Anzahl der festzulegenden Teile. Die Anzahl der Teile darf nicht größer als 255 sein.
 
-*pWidths*<br/>
-Adresse eines ganzzahligen Arrays mit der gleichen Anzahl von Elementen wie Teile, die von *nParts*angegeben werden. Jedes Element im Array gibt die Position in Clientkoordinaten des rechten Rands des entsprechenden Teils an. Wenn ein Element - 1 ist, erstreckt sich die Position der rechten Kante für dieses Teil bis zum rechten Rand des Steuerelements.
+*pbreiten*<br/>
+Die Adresse eines ganzzahligen Arrays, das über die gleiche Anzahl von Elementen wie von *nparts*angegebene Teile verfügt. Jedes Element im Array gibt die Position (in Client Koordinaten) des rechten Rands des entsprechenden Teils an. Wenn ein Element-1 ist, wird die Position des rechten Rands für diesen Teil auf den rechten Rand des Steuer Elements ausgedehnt.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -573,9 +572,9 @@ Ungleich 0, wenn erfolgreich, andernfalls 0.
 
 [!code-cpp[NVC_MFC_CStatusBarCtrl#10](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_12.cpp)]
 
-## <a name="cstatusbarctrlsetsimple"></a><a name="setsimple"></a>CStatusBarCtrl::SetSimple
+## <a name="cstatusbarctrlsetsimple"></a><a name="setsimple"></a> Cstatus-barctrl:: SetSimple
 
-Gibt an, ob ein Statusleistensteuerelement einfachen Text oder alle Steuerelementteile anzeigt, die durch einen vorherigen Aufruf von [SetParts](#setparts)festgelegt wurden.
+Gibt an, ob ein Status leisten-Steuerelement einfachen Text anzeigt oder alle Steuerelement Teile anzeigt, die durch einen vorherigen Aufrufen von [SetParts](#setparts)festgelegt wurden.
 
 ```
 BOOL SetSimple(BOOL bSimple = TRUE);
@@ -583,8 +582,8 @@ BOOL SetSimple(BOOL bSimple = TRUE);
 
 ### <a name="parameters"></a>Parameter
 
-*bEinfach*<br/>
-[in] Display-Typ-Flag. Wenn dieser Parameter TRUE ist, zeigt das Steuerelement einfachen Text an. Wenn es FALSE ist, werden mehrere Teile angezeigt.
+*bsimple*<br/>
+in Flag zum Anzeigen des Typs. Wenn dieser Parameter true ist, zeigt das Steuerelement einfachen Text an. Wenn der Wert false ist, werden mehrere Teile angezeigt.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -592,9 +591,9 @@ Es wird immer 0 zurückgegeben.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn Ihre Anwendung das Statusleistensteuerelement von nicht einfach auf einfach oder umgekehrt ändert, zeichnet das System das Steuerelement sofort neu.
+Wenn die Anwendung das StatusBar-Steuerelement von "nicht einfach" in "einfach" oder umgekehrt ändert, zeichnet das System sofort das Steuerelement neu.
 
-## <a name="cstatusbarctrlsettext"></a><a name="settext"></a>CStatusBarCtrl::SetText
+## <a name="cstatusbarctrlsettext"></a><a name="settext"></a> Cstatus-barctrl:: SetText
 
 Legt den Text im bestimmten Teil eines Statusleisten-Steuerelements fest.
 
@@ -608,13 +607,13 @@ BOOL SetText(
 ### <a name="parameters"></a>Parameter
 
 *lpszText*<br/>
-Adresse einer mit NULL endenden Zeichenfolge, die den festzulegenden Text angibt. Wenn *nType* SBT_OWNERDRAW ist, stellt *lpszText* 32 Bit Daten dar.
+Adresse einer mit NULL endenden Zeichenfolge, die den festzulegenden Text angibt. Wenn *nType* SBT_OWNERDRAW ist, stellt *lpszText* 32 Bits von Daten dar.
 
-*nPane*<br/>
+*npane*<br/>
 Der nullbasierte Index des festzulegenden Teils. Wenn dieser Wert 255 ist, wird angenommen, dass das Statusleisten-Steuerelement ein einfaches Steuerelement mit nur einem Teil ist.
 
 *nType*<br/>
-Der Typ des Zeichenvorgangs. Eine Liste der möglichen Werte [finden Sie in SB_SETTEXT Meldung.](/windows/win32/Controls/sb-settext)
+Der Typ des Zeichenvorgangs. Eine Liste möglicher Werte finden Sie unter [SB_SETTEXT Meldung](/windows/win32/Controls/sb-settext) .
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -622,13 +621,13 @@ Ungleich 0, wenn erfolgreich, andernfalls 0.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Nachricht macht den geänderten Teil des Steuerelements ungültig, sodass der neue Text angezeigt wird, wenn das Steuerelement das nächste WM_PAINT Nachricht empfängt.
+Die Meldung erklärt den Teil des Steuer Elements für ungültig, der geändert wurde, sodass der neue Text angezeigt wird, wenn das Steuerelement das nächste Mal die WM_PAINT Nachricht empfängt.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CStatusBarCtrl#11](../../mfc/reference/codesnippet/cpp/cstatusbarctrl-class_13.cpp)]
 
-## <a name="cstatusbarctrlsettiptext"></a><a name="settiptext"></a>CStatusBarCtrl::SetTipText
+## <a name="cstatusbarctrlsettiptext"></a><a name="settiptext"></a> Cstatulaufbarctrl:: Setup Text
 
 Legt den QuickInfo-Text für einen Bereich in einer Statusleiste fest.
 
@@ -640,15 +639,15 @@ void SetTipText(
 
 ### <a name="parameters"></a>Parameter
 
-*nPane*<br/>
-Der nullbasierte Index des Statusleistenbereichs, um den QuickInfo-Text zu empfangen.
+*npane*<br/>
+Der null basierte Index des Status leisten Bereichs, um den QuickInfo-Text zu empfangen.
 
-*pszTipText*<br/>
+*psztiptext*<br/>
 Ein Zeiger auf eine Zeichenfolge, die den QuickInfo-Text enthält.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Memberfunktion implementiert das Verhalten der [SB_SETTIPTEXT](/windows/win32/Controls/sb-settiptext)Win32-SB_SETTIPTEXT , wie im Windows SDK beschrieben.
+Diese Member-Funktion implementiert das Verhalten der Win32-Nachricht [SB_SETTIPTEXT](/windows/win32/Controls/sb-settiptext), wie in der Windows SDK beschrieben.
 
 ### <a name="example"></a>Beispiel
 
@@ -657,5 +656,5 @@ Diese Memberfunktion implementiert das Verhalten der [SB_SETTIPTEXT](/windows/wi
 ## <a name="see-also"></a>Weitere Informationen
 
 [CWnd-Klasse](../../mfc/reference/cwnd-class.md)<br/>
-[Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
+[Hierarchie Diagramm](../../mfc/hierarchy-chart.md)<br/>
 [CToolBarCtrl-Klasse](../../mfc/reference/ctoolbarctrl-class.md)

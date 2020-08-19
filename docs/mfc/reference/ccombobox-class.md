@@ -108,12 +108,12 @@ helpviewer_keywords:
 - CComboBox [MFC], SetTopIndex
 - CComboBox [MFC], ShowDropDown
 ms.assetid: 4e73b5df-0d2e-4658-9706-38133fb10513
-ms.openlocfilehash: 4e7eba94084a96c833136e4c92de481fdc435c7e
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 79bcb973046c418f0bea148084da239075414790
+ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87183109"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88561673"
 ---
 # <a name="ccombobox-class"></a>CComboBox-Klasse
 
@@ -129,7 +129,7 @@ class CComboBox : public CWnd
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
 |[CComboBox:: CComboBox](#ccombobox)|Erstellt ein `CComboBox`-Objekt.|
 
@@ -196,7 +196,7 @@ Das aktuell ausgewählte Element (sofern vorhanden) im Listenfeld wird im Steuer
 
 In der folgenden Tabelle werden die drei Kombinations Feld [Stile](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles)verglichen.
 
-|Stil|Wenn das Listenfeld ist sichtbar ist|Static-oder Edit-Steuerelement|
+|Style|Wenn das Listenfeld ist sichtbar ist|Static-oder Edit-Steuerelement|
 |-----------|-------------------------------|-----------------------------|
 |Einfach|Always|Bearbeiten|
 |Drop-down|Beim Ablegen|Bearbeiten|
@@ -238,7 +238,7 @@ Mögliche Nachrichten Zuordnungs Einträge sind folgende:
 
 - ON_CBN_KILLFOCUS das Kombinations Feld den Eingabefokus verliert.
 
-- ON_CBN_SELCHANGE die Auswahl im Listenfeld eines Kombinations Felds so geändert wird, dass der Benutzer entweder auf das Listenfeld klickt oder die Auswahl mithilfe der Pfeiltasten ändert. Bei der Verarbeitung dieser Nachricht kann der Text im Bearbeitungs Steuerelement des Kombinations Felds nur über `GetLBText` oder eine andere ähnliche Funktion abgerufen werden. `GetWindowText`kann nicht verwendet werden.
+- ON_CBN_SELCHANGE die Auswahl im Listenfeld eines Kombinations Felds so geändert wird, dass der Benutzer entweder auf das Listenfeld klickt oder die Auswahl mithilfe der Pfeiltasten ändert. Bei der Verarbeitung dieser Nachricht kann der Text im Bearbeitungs Steuerelement des Kombinations Felds nur über `GetLBText` oder eine andere ähnliche Funktion abgerufen werden. `GetWindowText` kann nicht verwendet werden.
 
 - ON_CBN_SETFOCUS das Kombinations Feld den Eingabefokus erhält.
 
@@ -262,7 +262,7 @@ Wenn Sie ein- `CComboBox` Objekt in ein anderes Fenster Objekt einbetten, müsse
 
 **Header:** afxwin.h
 
-## <a name="ccomboboxaddstring"></a><a name="addstring"></a>CComboBox:: AddString
+## <a name="ccomboboxaddstring"></a><a name="addstring"></a> CComboBox:: AddString
 
 Fügt eine Zeichenfolge in das Listenfeld eines Kombinations Felds ein.
 
@@ -292,7 +292,7 @@ Um eine Zeichenfolge in eine bestimmte Position in der Liste einzufügen, verwen
 
 [!code-cpp[NVC_MFC_CComboBox#3](../../mfc/reference/codesnippet/cpp/ccombobox-class_1.cpp)]
 
-## <a name="ccomboboxccombobox"></a><a name="ccombobox"></a>CComboBox:: CComboBox
+## <a name="ccomboboxccombobox"></a><a name="ccombobox"></a> CComboBox:: CComboBox
 
 Erstellt ein `CComboBox`-Objekt.
 
@@ -304,7 +304,7 @@ CComboBox();
 
 [!code-cpp[NVC_MFC_CComboBox#1](../../mfc/reference/codesnippet/cpp/ccombobox-class_2.cpp)]
 
-## <a name="ccomboboxclear"></a><a name="clear"></a>CComboBox:: Clear
+## <a name="ccomboboxclear"></a><a name="clear"></a> CComboBox:: Clear
 
 Löscht (löscht) die aktuelle Auswahl, sofern vorhanden, im Bearbeitungs Steuerelement des Kombinations Felds.
 
@@ -320,7 +320,7 @@ Um die aktuelle Auswahl zu löschen und den gelöschten Inhalt in die Zwischenab
 
 [!code-cpp[NVC_MFC_CComboBox#4](../../mfc/reference/codesnippet/cpp/ccombobox-class_3.cpp)]
 
-## <a name="ccomboboxcompareitem"></a><a name="compareitem"></a>CComboBox:: compareitem
+## <a name="ccomboboxcompareitem"></a><a name="compareitem"></a> CComboBox:: compareitem
 
 Wird von Framework aufgerufen, um die relative Position eines neuen Elements im Listenfeld Abschnitt eines sortierten Besitzers zu bestimmen.
 
@@ -353,7 +353,7 @@ Standardmäßig führt diese Member-Funktion keine Aktion aus. Wenn Sie ein Komb
 
 [!code-cpp[NVC_MFC_CComboBox#5](../../mfc/reference/codesnippet/cpp/ccombobox-class_4.cpp)]
 
-## <a name="ccomboboxcopy"></a><a name="copy"></a>CComboBox:: Copy
+## <a name="ccomboboxcopy"></a><a name="copy"></a> CComboBox:: Copy
 
 Kopiert die aktuelle Auswahl, sofern vorhanden, in das Bearbeitungs Steuerelement des Kombinations Felds in CF_TEXT Format in die Zwischenablage.
 
@@ -365,7 +365,7 @@ void Copy();
 
 [!code-cpp[NVC_MFC_CComboBox#6](../../mfc/reference/codesnippet/cpp/ccombobox-class_5.cpp)]
 
-## <a name="ccomboboxcreate"></a><a name="create"></a>CComboBox:: Create
+## <a name="ccomboboxcreate"></a><a name="create"></a> CComboBox:: Create
 
 Erstellt das Kombinations Feld und fügt es an das- `CComboBox` Objekt an.
 
@@ -423,7 +423,7 @@ Wenden Sie die folgenden [Fenster Stile](../../mfc/reference/styles-used-by-mfc.
 
 [!code-cpp[NVC_MFC_CComboBox#2](../../mfc/reference/codesnippet/cpp/ccombobox-class_6.cpp)]
 
-## <a name="ccomboboxcut"></a><a name="cut"></a>CComboBox:: Cut
+## <a name="ccomboboxcut"></a><a name="cut"></a> CComboBox:: Cut
 
 Löscht (schneidet) die aktuelle Auswahl im Kombinations Feld-Bearbeitungs Steuerelement, sofern vorhanden, und kopiert den gelöschten Text in die Zwischenablage in CF_TEXT Format.
 
@@ -439,7 +439,7 @@ Um die aktuelle Auswahl zu löschen, ohne den gelöschten Text in der Zwischenab
 
 [!code-cpp[NVC_MFC_CComboBox#7](../../mfc/reference/codesnippet/cpp/ccombobox-class_7.cpp)]
 
-## <a name="ccomboboxdeleteitem"></a><a name="deleteitem"></a>CComboBox::D eleteitem
+## <a name="ccomboboxdeleteitem"></a><a name="deleteitem"></a> CComboBox::D eleteitem
 
 Wird von Framework aufgerufen, wenn der Benutzer ein Element aus einem owner-draw- `CComboBox` Objekt löscht oder das Kombinations Feld zerstört.
 
@@ -460,7 +460,7 @@ Bei der Standardimplementierung dieser Funktion wird keine Aktion ausgeführt. �
 
 [!code-cpp[NVC_MFC_CComboBox#8](../../mfc/reference/codesnippet/cpp/ccombobox-class_8.cpp)]
 
-## <a name="ccomboboxdeletestring"></a><a name="deletestring"></a>CComboBox::D eletestring
+## <a name="ccomboboxdeletestring"></a><a name="deletestring"></a> CComboBox::D eletestring
 
 Löscht das Element in der Position *nIndex* aus dem Kombinations Feld.
 
@@ -485,7 +485,7 @@ Alle Elemente nach *nIndex* werden nun um eine Position nach unten verschoben. W
 
 [!code-cpp[NVC_MFC_CComboBox#9](../../mfc/reference/codesnippet/cpp/ccombobox-class_9.cpp)]
 
-## <a name="ccomboboxdir"></a><a name="dir"></a>CComboBox::D IR
+## <a name="ccomboboxdir"></a><a name="dir"></a> CComboBox::D IR
 
 Fügt dem Listenfeld eines Kombinations Felds eine Liste von Dateinamen oder Laufwerken hinzu.
 
@@ -531,7 +531,7 @@ Diese Funktion wird vom Windows-Steuerelement nicht unterstützt `ComboBoxEx` . 
 
 [!code-cpp[NVC_MFC_CComboBox#10](../../mfc/reference/codesnippet/cpp/ccombobox-class_10.cpp)]
 
-## <a name="ccomboboxdrawitem"></a><a name="drawitem"></a>CComboBox::D rawitem
+## <a name="ccomboboxdrawitem"></a><a name="drawitem"></a> CComboBox::D rawitem
 
 Wird von Framework aufgerufen, wenn sich ein visueller Aspekt eines Kombinations Felds für den Besitzer zeichnet.
 
@@ -554,7 +554,7 @@ Standardmäßig führt diese Member-Funktion keine Aktion aus. Überschreiben Si
 
 [!code-cpp[NVC_MFC_CComboBox#11](../../mfc/reference/codesnippet/cpp/ccombobox-class_11.cpp)]
 
-## <a name="ccomboboxfindstring"></a><a name="findstring"></a>CComboBox:: FindString
+## <a name="ccomboboxfindstring"></a><a name="findstring"></a> CComboBox:: FindString
 
 Sucht die erste Zeichenfolge, die das angegebene Präfix enthält, und wählt Sie nicht aus dem Listenfeld eines Kombinations Felds aus.
 
@@ -584,7 +584,7 @@ Diese Funktion wird vom Windows-Steuerelement nicht unterstützt `ComboBoxEx` . 
 
 [!code-cpp[NVC_MFC_CComboBox#12](../../mfc/reference/codesnippet/cpp/ccombobox-class_12.cpp)]
 
-## <a name="ccomboboxfindstringexact"></a><a name="findstringexact"></a>CComboBox:: FindStringExact
+## <a name="ccomboboxfindstringexact"></a><a name="findstringexact"></a> CComboBox:: FindStringExact
 
 Ruft die `FindStringExact` Member-Funktion auf, um die erste Listenfeld Zeichenfolge (in einem Kombinations Feld) zu suchen, die mit der in *lpszfind*angegebenen Zeichenfolge übereinstimmt.
 
@@ -614,7 +614,7 @@ Wenn das Kombinations Feld mit einem Besitzer Zeichnungs Stil, aber ohne den [CB
 
 [!code-cpp[NVC_MFC_CComboBox#13](../../mfc/reference/codesnippet/cpp/ccombobox-class_13.cpp)]
 
-## <a name="ccomboboxgetcomboboxinfo"></a><a name="getcomboboxinfo"></a>CComboBox:: getcomboboxinfo
+## <a name="ccomboboxgetcomboboxinfo"></a><a name="getcomboboxinfo"></a> CComboBox:: getcomboboxinfo
 
 Ruft Informationen für das- `CComboBox` Objekt ab.
 
@@ -635,7 +635,7 @@ Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
 Diese Member-Funktion emuliert die Funktionalität der [CB_GETCOMBOBOXINFO](/windows/win32/Controls/cb-getcomboboxinfo) Nachricht, wie in der Windows SDK beschrieben.
 
-## <a name="ccomboboxgetcount"></a><a name="getcount"></a>CComboBox:: GetCount
+## <a name="ccomboboxgetcount"></a><a name="getcount"></a> CComboBox:: GetCount
 
 Mit dieser Member-Funktion können Sie die Anzahl der Elemente im Listenfeld Teil eines Kombinations Felds abrufen.
 
@@ -651,7 +651,7 @@ Die Anzahl der Elemente. Die zurückgegebene Anzahl ist ein Wert größer als de
 
 [!code-cpp[NVC_MFC_CComboBox#14](../../mfc/reference/codesnippet/cpp/ccombobox-class_14.cpp)]
 
-## <a name="ccomboboxgetcuebanner"></a><a name="getcuebanner"></a>CComboBox:: getcuebanner
+## <a name="ccomboboxgetcuebanner"></a><a name="getcuebanner"></a> CComboBox:: getcuebanner
 
 Ruft den Hinweis Text ab, der für ein Kombinations Feld-Steuerelement angezeigt wird.
 
@@ -665,16 +665,17 @@ BOOL GetCueBanner(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
-|---------------|-----------------|
-|*lpszText*|vorgenommen Zeiger auf einen Puffer, der den Hinweis Banner Text empfängt.|
-|*cchText*|in Größe des Puffers, auf den der *lpszText* -Parameter verweist.|
+*lpszText*\
+vorgenommen Zeiger auf einen Puffer, der den Hinweis Banner Text empfängt.
+
+*cchText*\
+in Größe des Puffers, auf den der *lpszText* -Parameter verweist.
 
 ### <a name="return-value"></a>Rückgabewert
 
 In der ersten Überladung ein [CString](../../atl-mfc-shared/using-cstring.md) -Objekt, das den Hinweis Banner Text enthält, wenn es vorhanden ist. andernfalls ein- `CString` Objekt, das die Länge 0 (null) aufweist.
 
-Oder
+- oder -
 
 In der zweiten Überladung true, wenn diese Methode erfolgreich ist. andernfalls false.
 
@@ -684,7 +685,7 @@ Der Hinweis Text ist eine Eingabeaufforderung, die im Eingabebereich des Kombina
 
 Diese Methode sendet die [CB_GETCUEBANNER](/windows/win32/Controls/cb-getcuebanner) Nachricht, die in der Windows SDK beschrieben wird.
 
-## <a name="ccomboboxgetcursel"></a><a name="getcursel"></a>CComboBox:: getcurrsel
+## <a name="ccomboboxgetcursel"></a><a name="getcursel"></a> CComboBox:: getcurrsel
 
 Diese Member-Funktion wird aufgerufen, um zu bestimmen, welches Element im Kombinations Feld ausgewählt ist.
 
@@ -698,13 +699,13 @@ Der null basierte Index des derzeit ausgewählten Elements im Listenfeld eines K
 
 ### <a name="remarks"></a>Bemerkungen
 
-`GetCurSel`Gibt einen Index in die Liste zurück.
+`GetCurSel` Gibt einen Index in die Liste zurück.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#15](../../mfc/reference/codesnippet/cpp/ccombobox-class_15.cpp)]
 
-## <a name="ccomboboxgetdroppedcontrolrect"></a><a name="getdroppedcontrolrect"></a>CComboBox:: getdroppedcontrolrect
+## <a name="ccomboboxgetdroppedcontrolrect"></a><a name="getdroppedcontrolrect"></a> CComboBox:: getdroppedcontrolrect
 
 Rufen `GetDroppedControlRect` Sie die Member-Funktion auf, um die Bildschirm Koordinaten des sichtbaren (Dropdown-) Listen Felds eines Dropdown-Kombinations Felds abzurufen.
 
@@ -721,7 +722,7 @@ Verweist auf die [Rect-Struktur](/windows/win32/api/windef/ns-windef-rect) , die
 
 [!code-cpp[NVC_MFC_CComboBox#16](../../mfc/reference/codesnippet/cpp/ccombobox-class_16.cpp)]
 
-## <a name="ccomboboxgetdroppedstate"></a><a name="getdroppedstate"></a>CComboBox:: getdroppedstate
+## <a name="ccomboboxgetdroppedstate"></a><a name="getdroppedstate"></a> CComboBox:: getdroppedstate
 
 Ruft die `GetDroppedState` Member-Funktion auf, um zu bestimmen, ob das Listenfeld eines Dropdown-Kombinations Felds sichtbar (gelöscht) ist.
 
@@ -737,7 +738,7 @@ Ungleich 0 (null), wenn das Listenfeld sichtbar ist. andernfalls 0.
 
 [!code-cpp[NVC_MFC_CComboBox#17](../../mfc/reference/codesnippet/cpp/ccombobox-class_17.cpp)]
 
-## <a name="ccomboboxgetdroppedwidth"></a><a name="getdroppedwidth"></a>CComboBox:: getdroppeer-DTH
+## <a name="ccomboboxgetdroppedwidth"></a><a name="getdroppedwidth"></a> CComboBox:: getdroppeer-DTH
 
 Rufen Sie diese Funktion auf, um die minimale zulässige Breite des Listen Felds eines Kombinations Felds in Pixel abzurufen.
 
@@ -759,7 +760,7 @@ Standardmäßig ist die zulässige Mindestbreite für das Dropdown-Listenfeld 0.
 
   Weitere Informationen finden Sie im Beispiel für [setdroppeer-DTH](#setdroppedwidth).
 
-## <a name="ccomboboxgeteditsel"></a><a name="geteditsel"></a>CComboBox:: geteditsel
+## <a name="ccomboboxgeteditsel"></a><a name="geteditsel"></a> CComboBox:: geteditsel
 
 Ruft die Position des Anfangs-und des Endzeichens der aktuellen Auswahl im Bearbeitungs Steuerelement eines Kombinations Felds ab.
 
@@ -775,7 +776,7 @@ Ein 32-Bit-Wert, der die Anfangsposition in dem nieder wertigen Wort und die Pos
 
 [!code-cpp[NVC_MFC_CComboBox#18](../../mfc/reference/codesnippet/cpp/ccombobox-class_18.cpp)]
 
-## <a name="ccomboboxgetextendedui"></a><a name="getextendedui"></a>CComboBox:: getextendedui
+## <a name="ccomboboxgetextendedui"></a><a name="getextendedui"></a> CComboBox:: getextendedui
 
 Die Member-Funktion wird aufgerufen `GetExtendedUI` , um zu bestimmen, ob ein Kombinations Feld über die Standardbenutzer Oberfläche oder die erweiterte Benutzeroberfläche verfügt.
 
@@ -801,7 +802,7 @@ Das Scrollen im statischen Steuerelement ist deaktiviert, wenn die Elementliste 
 
 [!code-cpp[NVC_MFC_CComboBox#19](../../mfc/reference/codesnippet/cpp/ccombobox-class_19.cpp)]
 
-## <a name="ccomboboxgethorizontalextent"></a><a name="gethorizontalextent"></a>CComboBox:: gethorizontalblock
+## <a name="ccomboboxgethorizontalextent"></a><a name="gethorizontalextent"></a> CComboBox:: gethorizontalblock
 
 Ruft die Breite in Pixel ab, um die der Listenfeld Bereich des Kombinations Felds horizontal gescrollt werden kann.
 
@@ -821,7 +822,7 @@ Dies gilt nur, wenn der Listenfeld Bereich des Kombinations Felds über eine hor
 
 [!code-cpp[NVC_MFC_CComboBox#20](../../mfc/reference/codesnippet/cpp/ccombobox-class_20.cpp)]
 
-## <a name="ccomboboxgetitemdata"></a><a name="getitemdata"></a>CComboBox:: GetItemData
+## <a name="ccomboboxgetitemdata"></a><a name="getitemdata"></a> CComboBox:: GetItemData
 
 Ruft den von der Anwendung bereitgestellten 32-Bit-Wert ab, der dem angegebenen Kombinations Feld Element zugeordnet ist.
 
@@ -846,7 +847,7 @@ Der 32-Bit-Wert kann mit dem *dwitemdata* -Parameter eines [SetItemData](#setite
 
 [!code-cpp[NVC_MFC_CComboBox#21](../../mfc/reference/codesnippet/cpp/ccombobox-class_21.cpp)]
 
-## <a name="ccomboboxgetitemdataptr"></a><a name="getitemdataptr"></a>CComboBox:: getitemdataptr
+## <a name="ccomboboxgetitemdataptr"></a><a name="getitemdataptr"></a> CComboBox:: getitemdataptr
 
 Ruft den von der Anwendung bereitgestellten 32-Bit-Wert ab, der dem angegebenen Kombinations Feld Element als Zeiger () zugeordnet ist **`void`** <strong>\*</strong> .
 
@@ -867,7 +868,7 @@ Ruft einen Zeiger ab, oder-1, wenn ein Fehler auftritt.
 
 [!code-cpp[NVC_MFC_CComboBox#22](../../mfc/reference/codesnippet/cpp/ccombobox-class_22.cpp)]
 
-## <a name="ccomboboxgetitemheight"></a><a name="getitemheight"></a>CComboBox:: GetItemHeight
+## <a name="ccomboboxgetitemheight"></a><a name="getitemheight"></a> CComboBox:: GetItemHeight
 
 Rufen `GetItemHeight` Sie die Member-Funktion auf, um die Höhe der Listenelemente in einem Kombinations Feld abzurufen.
 
@@ -888,7 +889,7 @@ Die Höhe des angegebenen Elements in einem Kombinations Feld in Pixel. Der Rüc
 
 [!code-cpp[NVC_MFC_CComboBox#23](../../mfc/reference/codesnippet/cpp/ccombobox-class_23.cpp)]
 
-## <a name="ccomboboxgetlbtext"></a><a name="getlbtext"></a>CComboBox:: getlbtext
+## <a name="ccomboboxgetlbtext"></a><a name="getlbtext"></a> CComboBox:: getlbtext
 
 Ruft eine Zeichenfolge aus dem Listenfeld eines Kombinations Felds ab.
 
@@ -925,7 +926,7 @@ Die zweite Form dieser Member-Funktion füllt ein `CString` -Objekt mit dem Text
 
 [!code-cpp[NVC_MFC_CComboBox#24](../../mfc/reference/codesnippet/cpp/ccombobox-class_24.cpp)]
 
-## <a name="ccomboboxgetlbtextlen"></a><a name="getlbtextlen"></a>CComboBox:: getlbtextlen
+## <a name="ccomboboxgetlbtextlen"></a><a name="getlbtextlen"></a> CComboBox:: getlbtextlen
 
 Ruft die Länge einer Zeichenfolge im Listenfeld eines Kombinations Felds ab.
 
@@ -946,7 +947,7 @@ Die Länge der Zeichenfolge in Bytes, ohne das abschließende Null Zeichen. Wenn
 
   Weitere Informationen finden Sie im Beispiel für [CComboBox:: getlbtext](#getlbtext).
 
-## <a name="ccomboboxgetlocale"></a><a name="getlocale"></a>CComboBox:: getLocale
+## <a name="ccomboboxgetlocale"></a><a name="getlocale"></a> CComboBox:: getLocale
 
 Ruft das vom Kombinations Feld verwendete Gebiets Schema ab.
 
@@ -966,7 +967,7 @@ Das Gebiets Schema wird z. b. verwendet, um die Sortierreihenfolge der Zeichen f
 
   Weitere Informationen finden Sie im Beispiel für [CComboBox:: setlocale](#setlocale).
 
-## <a name="ccomboboxgetminvisible"></a><a name="getminvisible"></a>CComboBox:: getminvisible
+## <a name="ccomboboxgetminvisible"></a><a name="getminvisible"></a> CComboBox:: getminvisible
 
 Ruft die Mindestanzahl sichtbarer Elemente in der Dropdown Liste des aktuellen Kombinations Feld-Steuer Elements ab.
 
@@ -982,7 +983,7 @@ Die Mindestanzahl sichtbarer Elemente in der aktuellen Dropdown Liste.
 
 Diese Methode sendet die [CB_GETMINVISIBLE](/windows/win32/Controls/cb-setminvisible) Nachricht, die in der Windows SDK beschrieben wird.
 
-## <a name="ccomboboxgettopindex"></a><a name="gettopindex"></a>CComboBox:: gettopindex
+## <a name="ccomboboxgettopindex"></a><a name="gettopindex"></a> CComboBox:: gettopindex
 
 Ruft den NULL basierten Index des ersten sichtbaren Elements im Listenfeld Bereich des Kombinations Felds ab.
 
@@ -1002,7 +1003,7 @@ Zuerst befindet sich Element 0 am oberen Rand des Listen Felds, aber wenn im Lis
 
 [!code-cpp[NVC_MFC_CComboBox#25](../../mfc/reference/codesnippet/cpp/ccombobox-class_25.cpp)]
 
-## <a name="ccomboboxinitstorage"></a><a name="initstorage"></a>CComboBox:: InitStorage
+## <a name="ccomboboxinitstorage"></a><a name="initstorage"></a> CComboBox:: InitStorage
 
 Weist Arbeitsspeicher zum Speichern von Listenfeld Elementen im Listenfeld Bereich des Kombinations Felds zu.
 
@@ -1036,7 +1037,7 @@ Diese Funktion beschleunigt die Initialisierung von Listenfeldern, die über ein
 
 [!code-cpp[NVC_MFC_CComboBox#26](../../mfc/reference/codesnippet/cpp/ccombobox-class_26.cpp)]
 
-## <a name="ccomboboxinsertstring"></a><a name="insertstring"></a>CComboBox:: InsertString
+## <a name="ccomboboxinsertstring"></a><a name="insertstring"></a> CComboBox:: InsertString
 
 Fügt eine Zeichenfolge in das Listenfeld eines Kombinationsfelds ein.
 
@@ -1069,7 +1070,7 @@ Im Gegensatz zur Memberfunktion [AddString](#addstring) bewirkt die `InsertStrin
 
 [!code-cpp[NVC_MFC_CComboBox#27](../../mfc/reference/codesnippet/cpp/ccombobox-class_27.cpp)]
 
-## <a name="ccomboboxlimittext"></a><a name="limittext"></a>CComboBox:: limittext
+## <a name="ccomboboxlimittext"></a><a name="limittext"></a> CComboBox:: limittext
 
 Schränkt die Länge des Texts in Bytes ein, der vom Benutzer in das Bearbeitungs Steuerelement eines Kombinations Felds eingegeben werden kann.
 
@@ -1090,13 +1091,13 @@ Ungleich NULL, wenn erfolgreich. Wenn ein Kombinations Feld mit der Format [CBS_
 
 Wenn das Kombinations Feld nicht über die Format [CBS_AUTOHSCROLL](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles)verfügt, wirkt sich das Festlegen des Text Limits auf einen höheren Wert als die Größe des Bearbeitungs Steuer Elements aus.
 
-`LimitText`beschränkt nur den Text, den der Benutzer eingeben kann. Sie hat keine Auswirkung auf einen Text, der sich bereits im Bearbeitungs Steuerelement befindet, wenn die Nachricht gesendet wird, und wirkt sich auch nicht auf die Länge des Texts aus, der in das Bearbeitungs Steuerelement kopiert wird, wenn eine Zeichenfolge im Listenfeld ausgewählt ist.
+`LimitText` beschränkt nur den Text, den der Benutzer eingeben kann. Sie hat keine Auswirkung auf einen Text, der sich bereits im Bearbeitungs Steuerelement befindet, wenn die Nachricht gesendet wird, und wirkt sich auch nicht auf die Länge des Texts aus, der in das Bearbeitungs Steuerelement kopiert wird, wenn eine Zeichenfolge im Listenfeld ausgewählt ist.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_MFC_CComboBox#28](../../mfc/reference/codesnippet/cpp/ccombobox-class_28.cpp)]
 
-## <a name="ccomboboxmeasureitem"></a><a name="measureitem"></a>CComboBox:: MeasureItem
+## <a name="ccomboboxmeasureitem"></a><a name="measureitem"></a> CComboBox:: MeasureItem
 
 Wird von Framework aufgerufen, wenn ein Kombinations Feld mit einer Art von Besitzer zeichnen erstellt wird.
 
@@ -1121,7 +1122,7 @@ Eine Beschreibung der Struktur finden Sie unter [CWnd:: OnMeasureItem](../../mfc
 
 [!code-cpp[NVC_MFC_CComboBox#29](../../mfc/reference/codesnippet/cpp/ccombobox-class_29.cpp)]
 
-## <a name="ccomboboxpaste"></a><a name="paste"></a>CComboBox::P Aste
+## <a name="ccomboboxpaste"></a><a name="paste"></a> CComboBox::P Aste
 
 Fügt die Daten aus der Zwischenablage in das Bearbeitungs Steuerelement des Kombinations Felds an der aktuellen Cursorposition ein.
 
@@ -1137,7 +1138,7 @@ Daten werden nur eingefügt, wenn die Zwischenablage Daten in CF_TEXT Format ent
 
 [!code-cpp[NVC_MFC_CComboBox#30](../../mfc/reference/codesnippet/cpp/ccombobox-class_30.cpp)]
 
-## <a name="ccomboboxresetcontent"></a><a name="resetcontent"></a>CComboBox:: resetcontent
+## <a name="ccomboboxresetcontent"></a><a name="resetcontent"></a> CComboBox:: resetcontent
 
 Entfernt alle Elemente aus dem Listenfeld und bearbeitet das Steuerelement eines Kombinations Felds.
 
@@ -1149,7 +1150,7 @@ void ResetContent();
 
 [!code-cpp[NVC_MFC_CComboBox#31](../../mfc/reference/codesnippet/cpp/ccombobox-class_31.cpp)]
 
-## <a name="ccomboboxselectstring"></a><a name="selectstring"></a>CComboBox:: SelectString
+## <a name="ccomboboxselectstring"></a><a name="selectstring"></a> CComboBox:: SelectString
 
 Sucht im Listenfeld eines Kombinations Felds nach einer Zeichenfolge, und wenn die Zeichenfolge gefunden wird, wählt die Zeichenfolge im Listenfeld aus und kopiert sie in das Bearbeitungs Steuerelement.
 
@@ -1181,7 +1182,7 @@ Beachten Sie, dass die `SelectString` -und-Element `FindString` Funktionen beide
 
 [!code-cpp[NVC_MFC_CComboBox#32](../../mfc/reference/codesnippet/cpp/ccombobox-class_32.cpp)]
 
-## <a name="ccomboboxsetcuebanner"></a><a name="setcuebanner"></a>CComboBox:: setcuebanner
+## <a name="ccomboboxsetcuebanner"></a><a name="setcuebanner"></a> CComboBox:: setcuebanner
 
 Legt den Hinweis Text fest, der für ein Kombinations Feld-Steuerelement angezeigt wird.
 
@@ -1191,9 +1192,8 @@ BOOL SetCueBanner(LPCTSTR lpszText);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
-|---------------|-----------------|
-|*lpszText*|in Ein Zeiger auf einen null-terminierten Puffer, der den Hinweis Text enthält.|
+*lpszText*\
+in Ein Zeiger auf einen null-terminierten Puffer, der den Hinweis Text enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -1217,7 +1217,7 @@ Im folgenden Codebeispiel wird das Hinweis Banner für das Kombinations Feld-Ste
 
 [!code-cpp[NVC_MFC_CComboBox_s1#2](../../mfc/reference/codesnippet/cpp/ccombobox-class_34.cpp)]
 
-## <a name="ccomboboxsetcursel"></a><a name="setcursel"></a>CComboBox:: setcurrsel
+## <a name="ccomboboxsetcursel"></a><a name="setcursel"></a> CComboBox:: setcurrsel
 
 Wählt eine Zeichenfolge im Listenfeld eines Kombinations Felds aus.
 
@@ -1242,7 +1242,7 @@ Bei Bedarf führt das Listenfeld einen Bildlauf in der Zeichenfolge durch (wenn 
 
 [!code-cpp[NVC_MFC_CComboBox#33](../../mfc/reference/codesnippet/cpp/ccombobox-class_35.cpp)]
 
-## <a name="ccomboboxsetdroppedwidth"></a><a name="setdroppedwidth"></a>CComboBox:: setdroppeer-DTH
+## <a name="ccomboboxsetdroppedwidth"></a><a name="setdroppedwidth"></a> CComboBox:: setdroppeer-DTH
 
 Mit dieser Funktion können Sie die minimale zulässige Breite des Listen Felds eines Kombinations Felds in Pixel festlegen.
 
@@ -1269,7 +1269,7 @@ Standardmäßig ist die zulässige Mindestbreite für das Dropdown-Listenfeld 0.
 
 [!code-cpp[NVC_MFC_CComboBox#34](../../mfc/reference/codesnippet/cpp/ccombobox-class_36.cpp)]
 
-## <a name="ccomboboxseteditsel"></a><a name="seteditsel"></a>CComboBox:: fest.
+## <a name="ccomboboxseteditsel"></a><a name="seteditsel"></a> CComboBox:: fest.
 
 Wählt Zeichen im Bearbeitungs Steuerelement eines Kombinations Felds aus.
 
@@ -1302,7 +1302,7 @@ Die Positionen sind NULL basiert. Um das erste Zeichen des Bearbeitungs Steuer E
 
   Weitere Informationen finden Sie im Beispiel für [CComboBox:: geteditsel](#geteditsel).
 
-## <a name="ccomboboxsetextendedui"></a><a name="setextendedui"></a>CComboBox:: abtextendedui
+## <a name="ccomboboxsetextendedui"></a><a name="setextendedui"></a> CComboBox:: abtextendedui
 
 Mit der `SetExtendedUI` Member-Funktion können Sie entweder die Standardbenutzer Oberfläche oder die erweiterte Benutzeroberfläche für ein Kombinations Feld auswählen, das die [CBS_DROPDOWN](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) oder [CBS_DROPDOWNLIST](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) Format hat.
 
@@ -1333,7 +1333,7 @@ Das Scrollen im statischen Steuerelement ist deaktiviert, wenn die Elementliste 
 
   Weitere Informationen finden Sie im Beispiel für [CComboBox:: getextendedui](#getextendedui).
 
-## <a name="ccomboboxsethorizontalextent"></a><a name="sethorizontalextent"></a>CComboBox:: CComboBox::
+## <a name="ccomboboxsethorizontalextent"></a><a name="sethorizontalextent"></a> CComboBox:: CComboBox::
 
 Legt die Breite (in Pixel) fest, um die der Listenfeld Bereich des Kombinations Felds horizontal gescrollt werden kann.
 
@@ -1354,7 +1354,7 @@ Wenn die Breite des Listen Felds kleiner als dieser Wert ist, führt die horizon
 
 [!code-cpp[NVC_MFC_CComboBox#35](../../mfc/reference/codesnippet/cpp/ccombobox-class_37.cpp)]
 
-## <a name="ccomboboxsetitemdata"></a><a name="setitemdata"></a>CComboBox:: "abtitemdata"
+## <a name="ccomboboxsetitemdata"></a><a name="setitemdata"></a> CComboBox:: "abtitemdata"
 
 Legt den 32-Bit-Wert fest, der dem angegebenen Element in einem Kombinations Feld zugeordnet ist.
 
@@ -1384,7 +1384,7 @@ Verwenden `SetItemDataPtr` Sie die Member-Funktion, wenn das 32-Bit-Element ein 
 
 [!code-cpp[NVC_MFC_CComboBox#36](../../mfc/reference/codesnippet/cpp/ccombobox-class_38.cpp)]
 
-## <a name="ccomboboxsetitemdataptr"></a><a name="setitemdataptr"></a>CComboBox:: "abtitemdataptr"
+## <a name="ccomboboxsetitemdataptr"></a><a name="setitemdataptr"></a> CComboBox:: "abtitemdataptr"
 
 Legt den 32-Bit-Wert, der dem angegebenen Element in einem Kombinations Feld zugeordnet ist, als den angegebenen Zeiger ( **`void`** <strong>\*</strong> ) fest.
 
@@ -1414,7 +1414,7 @@ Dieser Zeiger bleibt für die Lebensdauer des Kombinations Felds gültig, auch w
 
 [!code-cpp[NVC_MFC_CComboBox#37](../../mfc/reference/codesnippet/cpp/ccombobox-class_39.cpp)]
 
-## <a name="ccomboboxsetitemheight"></a><a name="setitemheight"></a>CComboBox::-Elementhöhe
+## <a name="ccomboboxsetitemheight"></a><a name="setitemheight"></a> CComboBox::-Elementhöhe
 
 Ruft die `SetItemHeight` Member-Funktion auf, um die Höhe von Listenelementen in einem Kombinations Feld oder die Höhe des Bearbeitungs Steuer Elements (oder statischer Text) eines Kombinations Felds festzulegen.
 
@@ -1448,7 +1448,7 @@ Die Höhe des Bearbeitungs Steuerelement-Teils (oder statischer Text) des Kombin
 
 [!code-cpp[NVC_MFC_CComboBox#38](../../mfc/reference/codesnippet/cpp/ccombobox-class_40.cpp)]
 
-## <a name="ccomboboxsetlocale"></a><a name="setlocale"></a>CComboBox:: setlocale
+## <a name="ccomboboxsetlocale"></a><a name="setlocale"></a> CComboBox:: setlocale
 
 Legt den Gebiets Schema Bezeichner für dieses Kombinations Feld fest.
 
@@ -1473,7 +1473,7 @@ Wenn `SetLocale` nicht aufgerufen wird, wird das Standard Gebiets Schema vom Sys
 
 [!code-cpp[NVC_MFC_CComboBox#39](../../mfc/reference/codesnippet/cpp/ccombobox-class_41.cpp)]
 
-## <a name="ccomboboxsetminvisibleitems"></a><a name="setminvisibleitems"></a>CComboBox:: setminvisibleitems
+## <a name="ccomboboxsetminvisibleitems"></a><a name="setminvisibleitems"></a> CComboBox:: setminvisibleitems
 
 Legt die Mindestanzahl sichtbarer Elemente in der Dropdown Liste des aktuellen Kombinations Feld-Steuer Elements fest.
 
@@ -1483,9 +1483,8 @@ BOOL SetMinVisibleItems(int iMinVisible);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
-|---------------|-----------------|
-|*nicht unsichtbar*|in Gibt die Mindestanzahl von sichtbaren Elementen an.|
+*nicht unsichtbar*\
+in Gibt die Mindestanzahl von sichtbaren Elementen an.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -1507,7 +1506,7 @@ Im folgenden Codebeispiel werden 20 Elemente in die Dropdown Liste eines Kombina
 
 [!code-cpp[NVC_MFC_CComboBox_s1#2](../../mfc/reference/codesnippet/cpp/ccombobox-class_34.cpp)]
 
-## <a name="ccomboboxsettopindex"></a><a name="settopindex"></a>CComboBox:: settopindex
+## <a name="ccomboboxsettopindex"></a><a name="settopindex"></a> CComboBox:: settopindex
 
 Stellt sicher, dass ein bestimmtes Element im Listenfeld Bereich des Kombinations Felds angezeigt wird.
 
@@ -1532,7 +1531,7 @@ Das System führt einen Bildlauf durch das Listenfeld durch, bis entweder das vo
 
 [!code-cpp[NVC_MFC_CComboBox#40](../../mfc/reference/codesnippet/cpp/ccombobox-class_42.cpp)]
 
-## <a name="ccomboboxshowdropdown"></a><a name="showdropdown"></a>CComboBox:: ShowDropDown
+## <a name="ccomboboxshowdropdown"></a><a name="showdropdown"></a> CComboBox:: ShowDropDown
 
 Blendet das Listenfeld eines Kombinations Felds ein, das die [CBS_DROPDOWN](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) oder [CBS_DROPDOWNLIST](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) Format aufweist, oder blendet es aus.
 

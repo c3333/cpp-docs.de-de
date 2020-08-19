@@ -8,12 +8,12 @@ helpviewer_keywords:
 - LIDT instruction
 - __lidt intrinsic
 ms.assetid: 8298d25d-a19e-4900-828d-6b3b09841882
-ms.openlocfilehash: 24778b761ada56830b155a2fc65e90f54ba729ed
-ms.sourcegitcommit: 6e1c1822e7bcf3d2ef23eb8fac6465f88743facf
+ms.openlocfilehash: 87a49643e7cd11ae57dc01130f250895cf012065
+ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70217511"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88562492"
 ---
 # <a name="__lidt"></a>__lidt
 
@@ -29,21 +29,20 @@ void __lidt(void * Source);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
-|---------------|-----------------|
-|*Quelle*|in Zeiger auf den Wert, der in den IDTR kopiert werden soll.|
+*Ausgangs*\
+in Zeiger auf den Wert, der in den IDTR kopiert werden soll.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-|Systemintern|Architektur|
+|Intrinsic|Aufbau|
 |---------------|------------------|
 |`__lidt`|x86, x64|
 
-**Header Datei** \<intrin. h->
+**Headerdatei** \<intrin.h>
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die `__lidt` -Funktion entspricht der `LIDT` -Computer Anweisung und ist nur im Kernel Modus verfügbar. Weitere Informationen finden Sie im Dokument "Intel Architecture Software Developer es Manual, Volume 2: Anweisungs Satz Verweis "auf der Website der [Intel Corporation](https://software.intel.com/articles/intel-sdm) .
+Die `__lidt` -Funktion entspricht der `LIDT` -Computer Anweisung und ist nur im Kernel Modus verfügbar. Weitere Informationen finden Sie im Dokument "Intel Architecture Software Developer es Manual, Volume 2: Instruction Set Reference" auf der Website der [Intel Corporation](https://software.intel.com/articles/intel-sdm) .
 
 **Ende Microsoft-spezifisch**
 

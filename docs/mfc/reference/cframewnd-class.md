@@ -106,12 +106,12 @@ helpviewer_keywords:
 - CFrameWnd [MFC], m_bAutoMenuEnable
 - CFrameWnd [MFC], rectDefault
 ms.assetid: e2220aba-5bf4-4002-b960-fbcafcad01f1
-ms.openlocfilehash: b31e8d28cba5199d0a40a050bb2b284cfafc5c55
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 5e40f08447d24eed51588b5c2dfa87e289d99eed
+ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87212422"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88561576"
 ---
 # <a name="cframewnd-class"></a>CFrameWnd-Klasse
 
@@ -127,7 +127,7 @@ class CFrameWnd : public CWnd
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
 |[CFrameWnd:: CFrameWnd](#cframewnd)|Erstellt ein `CFrameWnd`-Objekt.|
 
@@ -175,7 +175,7 @@ class CFrameWnd : public CWnd
 |[CFrameWnd:: setprogressbarposition](#setprogressbarposition)|Legt die aktuelle Position für die Windows 7-Statusanzeige auf der Taskleiste fest.|
 |[CFrameWnd:: setprogressbarrange](#setprogressbarrange)|Legt den Bereich für die auf der Taskleiste angezeigte Statusleiste von Windows 7 fest.|
 |[CFrameWnd:: setprogressbarstate](#setprogressbarstate)|Legt den Typ und den Zustand der Statusanzeige fest, die auf einer Task leisten Schaltfläche angezeigt wird.|
-|[CFrameWnd:: settaskbaroverlayicon](#settaskbaroverlayicon)|Ist überladen. Wendet ein Overlay auf eine Task leisten Schaltfläche an, um den Anwendungs Status oder eine Benachrichtigung an den Benutzer anzugeben.|
+|[CFrameWnd:: settaskbaroverlayicon](#settaskbaroverlayicon)|Überladen. Wendet ein Overlay auf eine Task leisten Schaltfläche an, um den Anwendungs Status oder eine Benachrichtigung an den Benutzer anzugeben.|
 |[CFrameWnd:: SetTitle](#settitle)|Legt den Titel der zugehörigen Steuerleiste fest.|
 |[CFrameWnd:: showcontrolbar](#showcontrolbar)|Ruft auf, um die Steuerleiste anzuzeigen.|
 |[CFrameWnd:: showownedwindows](#showownedwindows)|Zeigt alle Fenster an, die Nachfolger des- `CFrameWnd` Objekts sind.|
@@ -211,7 +211,7 @@ Bevor Sie entweder `Create` oder Ausführen `LoadFrame` , müssen Sie das Rahmen
 
 Verwenden `Create` Sie die Member-Funktion, um die Erstellungs Parameter des Frames als unmittelbare Argumente zu übergeben.
 
-`LoadFrame`erfordert weniger Argumente als `Create` und ruft stattdessen die meisten Standardwerte aus Ressourcen ab, einschließlich der Beschriftung, des Symbols, der Zugriffstasten Tabelle und des Menüs des Frames. Um auf zugreifen zu können `LoadFrame` , müssen alle diese Ressourcen dieselbe Ressourcen-ID aufweisen (z. b. IDR_MAINFRAME).
+`LoadFrame` erfordert weniger Argumente als `Create` und ruft stattdessen die meisten Standardwerte aus Ressourcen ab, einschließlich der Beschriftung, des Symbols, der Zugriffstasten Tabelle und des Menüs des Frames. Um auf zugreifen zu können `LoadFrame` , müssen alle diese Ressourcen dieselbe Ressourcen-ID aufweisen (z. b. IDR_MAINFRAME).
 
 Wenn ein `CFrameWnd` -Objekt Sichten und Dokumente enthält, werden diese indirekt durch das Framework anstatt direkt vom Programmierer erstellt. Das `CDocTemplate` -Objekt orchestriert die Erstellung des Frames, die Erstellung der enthaltenden Sichten und die Verbindung der Ansichten mit dem entsprechenden Dokument. Die Parameter des- `CDocTemplate` Konstruktors geben den der `CRuntimeClass` drei beteiligten Klassen an (Dokument, Rahmen und Ansicht). Ein- `CRuntimeClass` Objekt wird vom Framework verwendet, um neue Frames dynamisch zu erstellen, wenn Sie vom Benutzer angegeben werden (z. b. mit dem Befehl Datei New oder dem MDI-Fenster (Multiple Document Interface) neu).
 
@@ -257,7 +257,7 @@ Weitere Informationen zu `CFrameWnd` finden Sie unter [Rahmen Fenster](../../mfc
 
 **Header:** afxwin.h
 
-## <a name="cframewndactivateframe"></a><a name="activateframe"></a>CFrameWnd:: activateframe
+## <a name="cframewndactivateframe"></a><a name="activateframe"></a> CFrameWnd:: activateframe
 
 Mit dieser Member-Funktion können Sie das Rahmen Fenster aktivieren und wiederherstellen, sodass es für den Benutzer sichtbar und verfügbar ist.
 
@@ -282,7 +282,7 @@ Die Standard Implementierung aktiviert den Frame und bringt ihn am Anfang der Z-
 
 [!code-cpp[NVC_MFCWindowing#1](../../mfc/reference/codesnippet/cpp/cframewnd-class_1.cpp)]
 
-## <a name="cframewndbeginmodalstate"></a><a name="beginmodalstate"></a>CFrameWnd:: beginmodalstate
+## <a name="cframewndbeginmodalstate"></a><a name="beginmodalstate"></a> CFrameWnd:: beginmodalstate
 
 Rufen Sie diese Memberfunktion auf, um ein Framefenster modal zu machen.
 
@@ -290,7 +290,7 @@ Rufen Sie diese Memberfunktion auf, um ein Framefenster modal zu machen.
 virtual void BeginModalState();
 ```
 
-## <a name="cframewndcframewnd"></a><a name="cframewnd"></a>CFrameWnd:: CFrameWnd
+## <a name="cframewndcframewnd"></a><a name="cframewnd"></a> CFrameWnd:: CFrameWnd
 
 Erstellt ein- `CFrameWnd` Objekt, erstellt jedoch nicht das sichtbare Rahmen Fenster.
 
@@ -302,7 +302,7 @@ CFrameWnd();
 
 Rufen `Create` Sie auf, um das sichtbare Fenster zu erstellen.
 
-## <a name="cframewndcreate"></a><a name="create"></a>CFrameWnd:: Create
+## <a name="cframewndcreate"></a><a name="create"></a> CFrameWnd:: Create
 
 Rufen Sie auf, um das dem-Objekt zugeordnete Windows-Rahmen Fenster zu erstellen und zu initialisieren `CFrameWnd` .
 
@@ -350,11 +350,11 @@ Ungleich NULL, wenn die Initialisierung erfolgreich ist. andernfalls 0.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Erstellen Sie ein- `CFrameWnd` Objekt in zwei Schritten. Rufen Sie zuerst den-Konstruktor auf, der das `CFrameWnd` -Objekt erstellt, und rufen `Create` Sie dann auf, wodurch das Windows-Rahmen Fenster erstellt und an das-Objekt angefügt wird `CFrameWnd` . `Create`Initialisiert den Klassennamen und den Fensternamen des Fensters und registriert die Standardwerte für den Stil, das übergeordnete Element und das zugehörige Menü.
+Erstellen Sie ein- `CFrameWnd` Objekt in zwei Schritten. Rufen Sie zuerst den-Konstruktor auf, der das `CFrameWnd` -Objekt erstellt, und rufen `Create` Sie dann auf, wodurch das Windows-Rahmen Fenster erstellt und an das-Objekt angefügt wird `CFrameWnd` . `Create` Initialisiert den Klassennamen und den Fensternamen des Fensters und registriert die Standardwerte für den Stil, das übergeordnete Element und das zugehörige Menü.
 
 Verwenden `LoadFrame` `Create` Sie anstelle von, um das Rahmen Fenster aus einer Ressource zu laden, anstatt deren Argumente anzugeben.
 
-## <a name="cframewndcreateview"></a><a name="createview"></a>CFrameWnd:: ansichtsansicht
+## <a name="cframewndcreateview"></a><a name="createview"></a> CFrameWnd:: ansichtsansicht
 
 Rufen `CreateView` Sie auf, um eine Ansicht innerhalb eines Frames zu erstellen.
 
@@ -380,7 +380,7 @@ Zeiger auf ein- `CWnd` Objekt, wenn erfolgreich; andernfalls NULL.
 
 Verwenden Sie diese Member-Funktion, um Ansichten zu erstellen, die nicht `CView` innerhalb eines Frames abgeleitet werden. Nachdem `CreateView` Sie aufgerufen haben, müssen Sie die Ansicht manuell auf "aktiv" festlegen und Sie als sichtbar festlegen. diese Aufgaben werden von nicht automatisch ausgeführt `CreateView` .
 
-## <a name="cframewnddockcontrolbar"></a><a name="dockcontrolbar"></a>CFrameWnd::D ockcontrolbar
+## <a name="cframewnddockcontrolbar"></a><a name="dockcontrolbar"></a> CFrameWnd::D ockcontrolbar
 
 Bewirkt, dass eine Steuerleiste an das Rahmen Fenster angedockt wird.
 
@@ -416,7 +416,7 @@ Bestimmt in Bildschirm Koordinaten, wo die Steuerleiste im nicht-Client Bereich 
 
 Die Steuerleiste wird an eine der Seiten des Rahmen Fensters angedockt, das in den Aufrufen von [CControlBar:: EnableDocking](../../mfc/reference/ccontrolbar-class.md#enabledocking) und [CFrameWnd:: EnableDocking](#enabledocking)angegeben ist. Die gewählte Seite wird von *ndockbarid*bestimmt.
 
-## <a name="cframewndenabledocking"></a><a name="enabledocking"></a>CFrameWnd:: EnableDocking
+## <a name="cframewndenabledocking"></a><a name="enabledocking"></a> CFrameWnd:: EnableDocking
 
 Diese Funktion wird aufgerufen, um andockbare Steuer leisten in einem Rahmen Fenster zu aktivieren.
 
@@ -447,7 +447,7 @@ Standardmäßig werden Steuer leisten an eine Seite des Rahmen Fensters in der f
 
   Weitere Informationen finden Sie im Beispiel für [CToolBar:: Create](../../mfc/reference/ctoolbar-class.md#create).
 
-## <a name="cframewndendmodalstate"></a><a name="endmodalstate"></a>CFrameWnd:: endmodalstate
+## <a name="cframewndendmodalstate"></a><a name="endmodalstate"></a> CFrameWnd:: endmodalstate
 
 Rufen Sie diese Memberfunktion auf, um ein Framefenster von einem modalen in einen Status ohne Modus zu ändern.
 
@@ -457,9 +457,9 @@ virtual void EndModalState();
 
 ### <a name="remarks"></a>Bemerkungen
 
-`EndModalState`aktiviert alle Fenster, die von [beginmodalstate](#beginmodalstate)deaktiviert werden.
+`EndModalState` aktiviert alle Fenster, die von [beginmodalstate](#beginmodalstate)deaktiviert werden.
 
-## <a name="cframewndfloatcontrolbar"></a><a name="floatcontrolbar"></a>CFrameWnd:: FloatControlBar
+## <a name="cframewndfloatcontrolbar"></a><a name="floatcontrolbar"></a> CFrameWnd:: FloatControlBar
 
 Mit dieser Funktion können Sie bewirken, dass eine Steuerleiste nicht an das Rahmen Fenster angedockt wird.
 
@@ -497,7 +497,7 @@ Dies erfolgt in der Regel beim Starten der Anwendung, wenn das Programmeinstellu
 
 Diese Funktion wird vom Framework aufgerufen, wenn der Benutzer einen Drop-Vorgang auslöst, indem die linke Maustaste losgelassen wird, während die Steuerleiste über einen Speicherort, der nicht zum Andocken verfügbar ist, gezogen wird.
 
-## <a name="cframewndgetactivedocument"></a><a name="getactivedocument"></a>CFrameWnd:: GetActiveDocument
+## <a name="cframewndgetactivedocument"></a><a name="getactivedocument"></a> CFrameWnd:: GetActiveDocument
 
 Rufen Sie diese Member-Funktion auf, um einen Zeiger auf den aktuellen zu erhalten, `CDocument` der der aktuellen aktiven Ansicht zugeordnet ist.
 
@@ -509,7 +509,7 @@ virtual CDocument* GetActiveDocument();
 
 Ein Zeiger auf das aktuelle [CDocument](../../mfc/reference/cdocument-class.md). Wenn kein Aktuelles Dokument vorhanden ist, wird NULL zurückgegeben.
 
-## <a name="cframewndgetactiveframe"></a><a name="getactiveframe"></a>CFrameWnd:: GetActiveFrame
+## <a name="cframewndgetactiveframe"></a><a name="getactiveframe"></a> CFrameWnd:: GetActiveFrame
 
 Rufen Sie diese Member-Funktion auf, um einen Zeiger auf das aktive untergeordnete MDI-Fenster (Multiple Document Interface) eines MDI-Rahmen Fensters zu erhalten.
 
@@ -525,7 +525,7 @@ Ein Zeiger auf das aktive untergeordnete MDI-Fenster. Wenn es sich bei der Anwen
 
 Wenn kein aktives untergeordnetes MDI-Element vorhanden ist oder es sich bei der Anwendung um eine Single Document Interface (SDI) handelt, wird der implizite **`this`** Zeiger zurückgegeben.
 
-## <a name="cframewndgetactiveview"></a><a name="getactiveview"></a>CFrameWnd:: GetActiveView
+## <a name="cframewndgetactiveview"></a><a name="getactiveview"></a> CFrameWnd:: GetActiveView
 
 Rufen Sie diese Member-Funktion auf, um einen Zeiger auf die aktive Ansicht (sofern vorhanden) zu erhalten, die an ein Rahmen Fenster () angefügt ist `CFrameWnd` .
 
@@ -543,7 +543,7 @@ Diese Funktion gibt NULL zurück, wenn Sie für ein MDI-Hauptrahmen Fenster () a
 
 [!code-cpp[NVC_MFCWindowing#2](../../mfc/reference/codesnippet/cpp/cframewnd-class_2.cpp)]
 
-## <a name="cframewndgetcontrolbar"></a><a name="getcontrolbar"></a>CFrameWnd:: getcontrolbar
+## <a name="cframewndgetcontrolbar"></a><a name="getcontrolbar"></a> CFrameWnd:: getcontrolbar
 
 Aufrufen `GetControlBar` , um Zugriff auf die Steuerleiste zu erhalten, die mit der ID verknüpft ist.
 
@@ -564,9 +564,9 @@ Ein Zeiger auf die Steuerleiste, die der ID zugeordnet ist.
 
 Der *NID* -Parameter verweist auf den eindeutigen Bezeichner, der an die- `Create` Methode der Steuerleiste übergeben wird. Weitere Informationen zu Steuer leisten finden Sie im Thema [Steuer leisten](../../mfc/control-bars.md).
 
-`GetControlBar`Gibt die Steuerleiste zurück, auch wenn Sie unverankert ist und daher derzeit kein untergeordnetes Fenster des Frames ist.
+`GetControlBar` Gibt die Steuerleiste zurück, auch wenn Sie unverankert ist und daher derzeit kein untergeordnetes Fenster des Frames ist.
 
-## <a name="cframewndgetdockstate"></a><a name="getdockstate"></a>CFrameWnd:: getdockstate
+## <a name="cframewndgetdockstate"></a><a name="getdockstate"></a> CFrameWnd:: getdockstate
 
 Mit dieser Member-Funktion werden Zustandsinformationen zu den Steuer leisten des Rahmen Fensters in einem- `CDockState` Objekt gespeichert.
 
@@ -583,7 +583,7 @@ Enthält den aktuellen Zustand der Steuer leisten des Rahmen Fensters bei der R�
 
 Anschließend können Sie den Inhalt von `CDockState` mithilfe von oder in den Speicher schreiben `CDockState::SaveState` `Serialize` . Wenn Sie die Steuer leisten später in einem vorherigen Zustand wiederherstellen möchten, laden Sie den Zustand mit `CDockState::LoadState` oder `Serialize` , und `SetDockState` wenden Sie dann an, um den vorherigen Zustand auf die Steuer leisten des Rahmen Fensters anzuwenden.
 
-## <a name="cframewndgetmenubarstate"></a><a name="getmenubarstate"></a>CFrameWnd:: getmenubarstate
+## <a name="cframewndgetmenubarstate"></a><a name="getmenubarstate"></a> CFrameWnd:: getmenubarstate
 
 Ruft den Anzeige Zustand des Menüs in der aktuellen MFC-Anwendung ab.
 
@@ -603,7 +603,7 @@ Der Rückgabewert kann die folgenden Werte aufweisen:
 
 Wenn ein Laufzeitfehler auftritt, wird diese Methode im Debugmodus bestätigt und löst eine Ausnahme aus, die von der [CException](../../mfc/reference/cexception-class.md) -Klasse abgeleitet wird.
 
-## <a name="cframewndgetmenubarvisibility"></a><a name="getmenubarvisibility"></a>CFrameWnd:: getmenubarvisibility
+## <a name="cframewndgetmenubarvisibility"></a><a name="getmenubarvisibility"></a> CFrameWnd:: getmenubarvisibility
 
 Gibt an, ob der Standardzustand des Menüs in der aktuellen MFC-Anwendung ausgeblendet oder sichtbar ist.
 
@@ -625,7 +625,7 @@ Diese Methode gibt einen der folgenden Werte zurück:
 
 Wenn ein Laufzeitfehler auftritt, wird diese Methode im Debugmodus bestätigt und löst eine Ausnahme aus, die von der [CException](../../mfc/reference/cexception-class.md) -Klasse abgeleitet wird.
 
-## <a name="cframewndgetmessagebar"></a><a name="getmessagebar"></a>CFrameWnd:: getmessagebar
+## <a name="cframewndgetmessagebar"></a><a name="getmessagebar"></a> CFrameWnd:: getmessagebar
 
 Mit dieser Member-Funktion können Sie einen Zeiger auf die Statusleiste abrufen.
 
@@ -637,7 +637,7 @@ virtual CWnd* GetMessageBar();
 
 Zeiger auf das Fenster der Statusleiste.
 
-## <a name="cframewndgetmessagestring"></a><a name="getmessagestring"></a>CFrameWnd:: GetMessageString
+## <a name="cframewndgetmessagestring"></a><a name="getmessagestring"></a> CFrameWnd:: GetMessageString
 
 Überschreiben Sie diese Funktion, um benutzerdefinierte Zeichen folgen für Befehls-IDs anzugeben
 
@@ -653,13 +653,13 @@ virtual void GetMessageString(
 Die Ressourcen-ID der gewünschten Nachricht.
 
 *rmessage*<br/>
-`CString`das Objekt, in das die Nachricht platziert werden soll.
+`CString` das Objekt, in das die Nachricht platziert werden soll.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Die Standard Implementierung lädt einfach die durch *NID* angegebene Zeichenfolge aus der Ressourcen Datei. Diese Funktion wird von Framework aufgerufen, wenn die Meldungs Zeichenfolge in der Statusleiste aktualisiert werden muss.
 
-## <a name="cframewndgettitle"></a><a name="gettitle"></a>CFrameWnd:: getTitle
+## <a name="cframewndgettitle"></a><a name="gettitle"></a> CFrameWnd:: getTitle
 
 Ruft den Titel des Fenster Objekts ab.
 
@@ -671,7 +671,7 @@ CString GetTitle() const;
 
 Ein [CString](../../atl-mfc-shared/reference/cstringt-class.md) -Objekt, das den aktuellen Titel des Fenster Objekts enthält.
 
-## <a name="cframewndinitialupdateframe"></a><a name="initialupdateframe"></a>CFrameWnd:: initialupdateframe
+## <a name="cframewndinitialupdateframe"></a><a name="initialupdateframe"></a> CFrameWnd:: initialupdateframe
 
 Wird aufgerufen, `IntitialUpdateFrame` nachdem ein neuer Frame mit erstellt wurde `Create` .
 
@@ -695,7 +695,7 @@ Dies bewirkt, dass alle Sichten in diesem Rahmen Fenster Ihre `OnInitialUpdate` 
 
 Wenn zuvor noch keine aktive Ansicht vorhanden war, wird die primäre Ansicht des Rahmen Fensters aktiviert. Die primäre Ansicht ist eine Ansicht mit der untergeordneten ID AFX_IDW_PANE_FIRST. Zum Schluss wird das Rahmen Fenster sichtbar gemacht, wenn *bmakevisible* ungleich 0 (null) ist. Wenn *bmakevisible* gleich 0 ist, bleiben der aktuelle Fokus und der sichtbare Zustand des Rahmen Fensters unverändert. Es ist nicht erforderlich, diese Funktion aufzurufen, wenn Sie die Implementierung des Frameworks von Datei New und Datei Open verwenden.
 
-## <a name="cframewndinmodalstate"></a><a name="inmodalstate"></a>CFrameWnd:: inmodalstate
+## <a name="cframewndinmodalstate"></a><a name="inmodalstate"></a> CFrameWnd:: inmodalstate
 
 Mit dieser Member-Funktion können Sie überprüfen, ob ein Rahmen Fenster modal oder nicht modelliert ist.
 
@@ -707,7 +707,7 @@ BOOL InModalState() const;
 
 Ungleich NULL, wenn ja; andernfalls 0.
 
-## <a name="cframewndistracking"></a><a name="istracking"></a>CFrameWnd:: istracking
+## <a name="cframewndistracking"></a><a name="istracking"></a> CFrameWnd:: istracking
 
 Mit dieser Member-Funktion können Sie ermitteln, ob die Splitter Leiste im Fenster gerade verschoben wird.
 
@@ -719,7 +719,7 @@ BOOL IsTracking() const;
 
 Ungleich 0 (null), wenn ein Splitter Vorgang ausgeführt wird. andernfalls 0.
 
-## <a name="cframewndloadacceltable"></a><a name="loadacceltable"></a>CFrameWnd:: loadacceltable
+## <a name="cframewndloadacceltable"></a><a name="loadacceltable"></a> CFrameWnd:: loadacceltable
 
 Ruft auf, um die angegebene Zugriffstasten Tabelle zu laden.
 
@@ -744,7 +744,7 @@ Aus Ressourcen geladene Zugriffstasten Tabellen werden automatisch freigegeben, 
 
 Wenn Sie `LoadFrame` zum Erstellen des Rahmen Fensters aufzurufen, lädt das Framework eine Zugriffstasten Tabelle zusammen mit den Menü-und Symbol Ressourcen, und ein nachfolgende Rückruf dieser Member-Funktion ist dann nicht erforderlich.
 
-## <a name="cframewndloadbarstate"></a><a name="loadbarstate"></a>CFrameWnd:: LoadBarState
+## <a name="cframewndloadbarstate"></a><a name="loadbarstate"></a> CFrameWnd:: LoadBarState
 
 Mit dieser Funktion können Sie die Einstellungen für jede Steuerleiste wiederherstellen, deren Besitzer das Rahmen Fenster ist.
 
@@ -763,7 +763,7 @@ Zu den wiederhergestellten Informationen zählen Sichtbarkeit, horizontale/verti
 
 Die Einstellungen, die Sie wiederherstellen möchten, müssen in die Registrierung geschrieben werden, bevor Sie den Befehl ausführen `LoadBarState` . Schreiben Sie die Informationen in die Registrierung, indem Sie [CWinApp:: settregistrykey](../../mfc/reference/cwinapp-class.md#setregistrykey)aufrufen. Schreiben Sie die Informationen in die INI-Datei, indem Sie [SaveBarState](#savebarstate)aufrufen.
 
-## <a name="cframewndloadframe"></a><a name="loadframe"></a>CFrameWnd:: LoadFrame
+## <a name="cframewndloadframe"></a><a name="loadframe"></a> CFrameWnd:: LoadFrame
 
 Rufen Sie auf, um ein Rahmen Fenster dynamisch aus den Ressourcen Informationen zu erstellen.
 
@@ -799,7 +799,7 @@ Das Framework ruft auf, `LoadFrame` Wenn ein Rahmen Fenster mithilfe eines Dokum
 
 Das Framework verwendet das *pContext* -Argument, um die Objekte anzugeben, die mit dem Rahmen Fenster verbunden werden sollen, einschließlich aller enthaltenen Ansichts Objekte. Sie können das *pContext* -Argument auf NULL festlegen, wenn Sie aufzurufen `LoadFrame` .
 
-## <a name="cframewndm_bautomenuenable"></a><a name="m_bautomenuenable"></a>CFrameWnd:: m_bAutoMenuEnable
+## <a name="cframewndm_bautomenuenable"></a><a name="m_bautomenuenable"></a> CFrameWnd:: m_bAutoMenuEnable
 
 Wenn dieses Datenmember aktiviert ist (Standardeinstellung), werden Menü Elemente, die keine ON_UPDATE_COMMAND_UI oder ON_COMMAND Handler aufweisen, automatisch deaktiviert, wenn der Benutzer ein Menü abruft.
 
@@ -814,7 +814,7 @@ Menü Elemente, die über einen ON_COMMAND Handler verfügen, aber keinen ON_UPD
 Wenn dieses Datenmember festgelegt ist, werden Menü Elemente automatisch auf die gleiche Weise aktiviert, wie Symbolleisten Schaltflächen aktiviert werden.
 
 > [!NOTE]
-> `m_bAutoMenuEnable`hat keine Auswirkung auf Menü Elemente der obersten Ebene.
+> `m_bAutoMenuEnable` hat keine Auswirkung auf Menü Elemente der obersten Ebene.
 
 Dieser Datenmember vereinfacht die Implementierung Optionaler Befehle auf der Grundlage der aktuellen Auswahl und reduziert das Schreiben von ON_UPDATE_COMMAND_UI Handlern zum Aktivieren und Deaktivieren von Menü Elementen.
 
@@ -822,7 +822,7 @@ Dieser Datenmember vereinfacht die Implementierung Optionaler Befehle auf der Gr
 
 [!code-cpp[NVC_MFCWindowing#3](../../mfc/reference/codesnippet/cpp/cframewnd-class_3.cpp)]
 
-## <a name="cframewndnegotiateborderspace"></a><a name="negotiateborderspace"></a>CFrameWnd:: aushandateborderspace
+## <a name="cframewndnegotiateborderspace"></a><a name="negotiateborderspace"></a> CFrameWnd:: aushandateborderspace
 
 Mit dieser Member-Funktion können Sie während der OLE-Aktivierung einen Rahmen Bereich in einem Rahmen Fenster aushandeln.
 
@@ -854,7 +854,7 @@ Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
 Diese Member-Funktion ist die `CFrameWnd` Implementierung der OLE-Border-Space-Aushandlung.
 
-## <a name="cframewndonbarcheck"></a><a name="onbarcheck"></a>CFrameWnd:: onbarcheck
+## <a name="cframewndonbarcheck"></a><a name="onbarcheck"></a> CFrameWnd:: onbarcheck
 
 Wird aufgerufen, wenn eine Aktion auf der angegebenen Steuerleiste ausgeführt wird.
 
@@ -871,7 +871,7 @@ Die ID der angezeigten Steuerleiste.
 
 Ungleich NULL, wenn die Steuerleiste vorhanden war. andernfalls 0.
 
-## <a name="cframewndoncontexthelp"></a><a name="oncontexthelp"></a>CFrameWnd:: oncontexthelp
+## <a name="cframewndoncontexthelp"></a><a name="oncontexthelp"></a> CFrameWnd:: oncontexthelp
 
 Behandelt die UMSCHALT + F1-Hilfe für direkte Elemente.
 
@@ -889,7 +889,7 @@ Um die kontextbezogene Hilfe zu aktivieren, müssen Sie ein
 
 Wenn es sich bei der Anwendung um einen OLE-Container handelt, werden `OnContextHelp` alle direkten Elemente, die im Rahmen Fenster Objekt enthalten sind, in den Hilfe Modus eingefügt. Der Cursor wechselt zu einem Pfeil und einem Fragezeichen, und der Benutzer kann dann den Mauszeiger bewegen und die linke Maustaste drücken, um ein Dialogfeld, ein Fenster, ein Menü oder eine Befehls Schaltfläche auszuwählen. Diese Member-Funktion Ruft die Windows-Funktion `WinHelp` mit dem Hilfe Kontext des-Objekts unter dem Cursor auf.
 
-## <a name="cframewndoncreateclient"></a><a name="oncreateclient"></a>CFrameWnd:: onkreateclient
+## <a name="cframewndoncreateclient"></a><a name="oncreateclient"></a> CFrameWnd:: onkreateclient
 
 Wird von Framework während der Ausführung von aufgerufen `OnCreate` .
 
@@ -922,7 +922,7 @@ Die Standard Implementierung dieser Funktion erstellt ein- `CView` Objekt aus de
 > [!NOTE]
 > Ersetzen Sie keine Werte, die in der Struktur übermittelt werden `CREATESTRUCT` . Sie dienen nur zur Informations Verwendung. Wenn Sie das anfängliche Fenster Rechteck außer Kraft setzen möchten, überschreiben Sie z `CWnd` . b. die Element Funktion [prekreatewindow](../../mfc/reference/cwnd-class.md#precreatewindow).
 
-## <a name="cframewndonhidemenubar"></a><a name="onhidemenubar"></a>CFrameWnd:: onhidemenubar
+## <a name="cframewndonhidemenubar"></a><a name="onhidemenubar"></a> CFrameWnd:: onhidemenubar
 
 Diese Funktion wird aufgerufen, wenn das System im Begriff ist, die Menüleiste in der aktuellen MFC-Anwendung auszublenden.
 
@@ -934,7 +934,7 @@ virtual void OnHideMenuBar();
 
 Dieser Ereignishandler ermöglicht der Anwendung, benutzerdefinierte Aktionen auszuführen, wenn das System im Begriff ist, das Menü auszublenden. Sie können nicht verhindern, dass das Menü ausgeblendet wird. Sie können z. b. andere Methoden aufrufen, um den Menü Stil oder-Zustand abzurufen.
 
-## <a name="cframewndonsetpreviewmode"></a><a name="onsetpreviewmode"></a>CFrameWnd:: onsetpreviewmode
+## <a name="cframewndonsetpreviewmode"></a><a name="onsetpreviewmode"></a> CFrameWnd:: onsetpreviewmode
 
 Rufen Sie diese Memberfunktion auf, um für das Hauptrahmenfenster den Seitenansichtmodus zu aktivieren oder zu deaktivieren.
 
@@ -958,7 +958,7 @@ Die Standard Implementierung deaktiviert alle Standard Symbolleisten und blendet
 
 Überschreiben Sie diese Member-Funktion, um das Ausblenden und Anzeigen von Steuer leisten und anderen Rahmen Fenster teilen während der Seitenansicht anzupassen. Ruft die Basisklassen Implementierung innerhalb der überschriebenen Version auf.
 
-## <a name="cframewndonshowmenubar"></a><a name="onshowmenubar"></a>CFrameWnd:: onshowmenubar
+## <a name="cframewndonshowmenubar"></a><a name="onshowmenubar"></a> CFrameWnd:: onshowmenubar
 
 Diese Funktion wird aufgerufen, wenn das System im Begriff ist, die Menüleiste in der aktuellen MFC-Anwendung anzuzeigen.
 
@@ -970,7 +970,7 @@ virtual void OnShowMenuBar();
 
 Dieser Ereignishandler ermöglicht der Anwendung, benutzerdefinierte Aktionen auszuführen, wenn das Menü angezeigt wird. Sie können nicht verhindern, dass das Menü angezeigt wird. Sie können z. b. andere Methoden aufrufen, um den Menü Stil oder-Zustand abzurufen.
 
-## <a name="cframewndonupdatecontrolbarmenu"></a><a name="onupdatecontrolbarmenu"></a>CFrameWnd:: onupdatecontrolbarmenu
+## <a name="cframewndonupdatecontrolbarmenu"></a><a name="onupdatecontrolbarmenu"></a> CFrameWnd:: onupdatecontrolbarmenu
 
 Wird von Framework aufgerufen, wenn das zugehörige Menü aktualisiert wird.
 
@@ -983,7 +983,7 @@ afx_msg void OnUpdateControlBarMenu(CCmdUI* pCmdUI);
 *pCmdUI*<br/>
 Ein Zeiger auf ein [CCmdUI](../../mfc/reference/ccmdui-class.md) -Objekt, das das Menü darstellt, das den Update-Befehl generiert hat. Der Update Handler Ruft die [enable](../../mfc/reference/ccmdui-class.md#enable) Member-Funktion des- `CCmdUI` Objekts über *pCmdUI* auf, um die Benutzeroberfläche zu aktualisieren.
 
-## <a name="cframewndrecalclayout"></a><a name="recalclayout"></a>CFrameWnd:: Neuberechnen
+## <a name="cframewndrecalclayout"></a><a name="recalclayout"></a> CFrameWnd:: Neuberechnen
 
 Wird von Framework aufgerufen, wenn die Standard Steuer leisten ein-oder ausgeschaltet werden oder wenn die Größe des Rahmen Fensters geändert wird.
 
@@ -1002,7 +1002,7 @@ Die Standard Implementierung dieser Member-Funktion Ruft die- `CWnd` Member-Funk
 
 Überschreiben Sie diese Member-Funktion, um die Darstellung und das Verhalten von Steuer leisten zu steuern, nachdem sich das Layout des Rahmen Fensters geändert hat. Beispielsweise, wenn Sie Steuer leisten ein-oder ausschalten oder eine weitere Steuerleiste hinzufügen.
 
-## <a name="cframewndrectdefault"></a><a name="rectdefault"></a>CFrameWnd:: rectdefault
+## <a name="cframewndrectdefault"></a><a name="rectdefault"></a> CFrameWnd:: rectdefault
 
 Übergeben Sie dieses static `CRect` als Parameter, wenn Sie ein Fenster erstellen, damit Windows die anfängliche Größe und Position des Fensters auswählen kann.
 
@@ -1010,7 +1010,7 @@ Die Standard Implementierung dieser Member-Funktion Ruft die- `CWnd` Member-Funk
 static AFX_DATA const CRect rectDefault;
 ```
 
-## <a name="cframewndsavebarstate"></a><a name="savebarstate"></a>CFrameWnd:: SaveBarState
+## <a name="cframewndsavebarstate"></a><a name="savebarstate"></a> CFrameWnd:: SaveBarState
 
 Mit dieser Funktion werden Informationen zu den einzelnen Steuer leisten im Besitz des Rahmen Fensters gespeichert.
 
@@ -1027,7 +1027,7 @@ Name eines Abschnitts in der Initialisierungsdatei oder ein Schlüssel in der Wi
 
 Diese Informationen können mithilfe von [LoadBarState](#loadbarstate)aus der Initialisierungsdatei gelesen werden. Zu den gespeicherten Informationen zählen Sichtbarkeit, horizontale/vertikale Ausrichtung, Andock Zustand und Position der Steuerleiste.
 
-## <a name="cframewndsetactivepreviewview"></a><a name="setactivepreviewview"></a>CFrameWnd:: abviewview
+## <a name="cframewndsetactivepreviewview"></a><a name="setactivepreviewview"></a> CFrameWnd:: abviewview
 
 Legt die angegebene Ansicht als aktive Ansicht für die umfangreiche Vorschau fest.
 
@@ -1042,7 +1042,7 @@ Ein Zeiger auf eine Ansicht, die aktiviert werden soll.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="cframewndsetactiveview"></a><a name="setactiveview"></a>CFrameWnd:: abtativeview
+## <a name="cframewndsetactiveview"></a><a name="setactiveview"></a> CFrameWnd:: abtativeview
 
 Mit dieser Member-Funktion können Sie die aktive Ansicht festlegen.
 
@@ -1064,7 +1064,7 @@ Gibt an, ob die Ansicht über die Aktivierung benachrichtigt werden soll. TRUE `
 
 Das Framework ruft diese Funktion automatisch auf, wenn der Benutzer den Fokus auf eine Ansicht innerhalb des Rahmen Fensters ändert. Sie können explizit aufzurufen `SetActiveView` , um den Fokus auf die angegebene Ansicht zu ändern.
 
-## <a name="cframewndsetdockstate"></a><a name="setdockstate"></a>CFrameWnd:: setdockstate
+## <a name="cframewndsetdockstate"></a><a name="setdockstate"></a> CFrameWnd:: setdockstate
 
 Mit dieser Member-Funktion können Sie in einem-Objekt gespeicherte Zustandsinformationen `CDockState` auf die Steuer leisten des Rahmen Fensters anwenden.
 
@@ -1081,7 +1081,7 @@ Anwenden des gespeicherten Zustands auf die Steuer leisten des Rahmen Fensters.
 
 Wenn Sie einen früheren Zustand der Steuer leisten wiederherstellen möchten, können Sie den gespeicherten Zustand mit `CDockState::LoadState` oder laden `Serialize` und dann mithilfe von auf `SetDockState` die Steuer leisten des Rahmen Fensters anwenden. Der vorherige Zustand wird im-Objekt gespeichert. `CDockState``GetDockState`
 
-## <a name="cframewndsetmenubarstate"></a><a name="setmenubarstate"></a>CFrameWnd:: setmenubarstate
+## <a name="cframewndsetmenubarstate"></a><a name="setmenubarstate"></a> CFrameWnd:: setmenubarstate
 
 Legt den Anzeige Zustand des Menüs in der aktuellen MFC-Anwendung auf ausgeblendet oder angezeigt fest.
 
@@ -1091,9 +1091,11 @@ virtual BOOL SetMenuBarState(DWORD nState);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
-|---------------|-----------------|
-|*nstatusinformationen*|in Gibt an, ob das Menü angezeigt oder ausgeblendet werden soll. Der *nState* -Parameter kann die folgenden Werte aufweisen:<br /><br />-AFX_MBS_VISIBLE (0x01): zeigt das Menü an, wenn es ausgeblendet ist, aber hat keine Auswirkung, wenn es sichtbar ist.<br />-AFX_MBS_HIDDEN (0x02): Blendet das Menü aus, wenn es sichtbar ist, aber keine Auswirkung hat, wenn es ausgeblendet ist.|
+*nstatusinformationen*\
+in Gibt an, ob das Menü angezeigt oder ausgeblendet werden soll. Der *nState* -Parameter kann die folgenden Werte aufweisen:
+
+- `AFX_MBS_VISIBLE` (0x01): zeigt das Menü an, wenn es ausgeblendet ist, aber keine Auswirkung hat, wenn es sichtbar ist.
+- `AFX_MBS_HIDDEN` (0x02): Blendet das Menü aus, wenn es sichtbar ist, aber keine Auswirkung hat, wenn es ausgeblendet ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -1103,7 +1105,7 @@ TRUE, wenn diese Methode den Menü Zustand erfolgreich ändert. andernfalls fals
 
 Wenn ein Laufzeitfehler auftritt, wird diese Methode im Debugmodus bestätigt und löst eine Ausnahme aus, die von der [CException](../../mfc/reference/cexception-class.md) -Klasse abgeleitet wird.
 
-## <a name="cframewndsetmenubarvisibility"></a><a name="setmenubarvisibility"></a>CFrameWnd:: SetMenuBarVisibility
+## <a name="cframewndsetmenubarvisibility"></a><a name="setmenubarvisibility"></a> CFrameWnd:: SetMenuBarVisibility
 
 Legt das Standardverhalten des Menüs in der aktuellen MFC-Anwendung als ausgeblendet oder sichtbar fest.
 
@@ -1113,9 +1115,14 @@ virtual void SetMenuBarVisibility(DWORD nStyle);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
-|---------------|-----------------|
-|*nStyle*|in Gibt an, ob das Menü standardmäßig ausgeblendet ist, oder ist sichtbar und hat den Fokus. Der *nstyle* -Parameter kann die folgenden Werte aufweisen:<br /><br />-AFX_MBV_KEEPVISIBLE (0x01)-<br />     Das Menü wird jederzeit angezeigt, und der Fokus ist standardmäßig nicht vorhanden.<br />-AFX_MBV_DISPLAYONFOCUS (0x02)-<br />     Das Menü ist standardmäßig ausgeblendet. Wenn das Menü ausgeblendet ist, drücken Sie die Alt-Taste, um das Menü anzuzeigen, und weisen Sie ihm den Fokus zu. Wenn das Menü angezeigt wird, drücken Sie die Alt-Taste oder ESC-Taste, um das Menü auszublenden.<br />-AFX_MBV_ displayonfocus (0x02) &#124; AFX_MBV_DISPLAYONF10 (0x04)<br />     (bitweise Kombination (oder)): das Menü ist standardmäßig ausgeblendet. Wenn das Menü ausgeblendet ist, drücken Sie die Taste F10, um das Menü anzuzeigen, und weisen Sie dem Fokus den Fokus zu. Wenn das Menü angezeigt wird, drücken Sie die Taste F10, um den Fokus auf das Menü zu schalten oder zu deaktivieren. Das Menü wird angezeigt, bis Sie die alt-oder ESC-Taste drücken, um es auszublenden.|
+*nstyle*\
+in Gibt an, ob das Menü standardmäßig ausgeblendet ist, oder ist sichtbar und hat den Fokus. Der *nstyle* -Parameter kann die folgenden Werte aufweisen:
+
+- `AFX_MBV_KEEPVISIBLE` (0x01): das Menü wird immer angezeigt, und der Fokus ist standardmäßig nicht vorhanden.
+
+- `AFX_MBV_DISPLAYONFOCUS` (0x02): das Menü ist standardmäßig ausgeblendet. Wenn das Menü ausgeblendet ist, drücken Sie die Alt-Taste, um das Menü anzuzeigen, und weisen Sie ihm den Fokus zu. Wenn das Menü angezeigt wird, drücken Sie die Alt-Taste oder ESC-Taste, um das Menü auszublenden.
+
+- `AFX_MBV_DISPLAYONFOCUS` (0x02) &#124; `AFX_MBV_DISPLAYONF10` (0x04) (bitweise Kombination (oder)): das Menü ist standardmäßig ausgeblendet. Wenn das Menü ausgeblendet ist, drücken Sie die Taste F10, um das Menü anzuzeigen, und weisen Sie dem Fokus den Fokus zu. Wenn das Menü angezeigt wird, drücken Sie die Taste F10, um den Fokus auf das Menü zu schalten oder zu deaktivieren. Das Menü wird angezeigt, bis Sie die alt-oder ESC-Taste drücken, um es auszublenden.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -1123,7 +1130,7 @@ Wenn der Wert des *nstyle* -Parameters ungültig ist, bestätigt diese Methode i
 
 Diese Methode wirkt sich auf den Zustand von Menüs in Anwendungen aus, die für Windows Vista und höher geschrieben wurden.
 
-## <a name="cframewndsetmessagetext"></a><a name="setmessagetext"></a>CFrameWnd:: ab.
+## <a name="cframewndsetmessagetext"></a><a name="setmessagetext"></a> CFrameWnd:: ab.
 
 Mit dieser Funktion können Sie eine Zeichenfolge im Status Leistenbereich mit der ID 0 platzieren.
 
@@ -1144,7 +1151,7 @@ Zeichen folgen Ressourcen-ID der Zeichenfolge, die auf der Statusleiste platzier
 
 Dabei handelt es sich in der Regel um den am weitesten links stehenden und längsten Bereich der Statusleiste.
 
-## <a name="cframewndsetprogressbarposition"></a><a name="setprogressbarposition"></a>CFrameWnd:: setprogressbarposition
+## <a name="cframewndsetprogressbarposition"></a><a name="setprogressbarposition"></a> CFrameWnd:: setprogressbarposition
 
 Legt die aktuelle Position für die Windows 7-Statusanzeige fest, die auf der Taskleiste angezeigt wird.
 
@@ -1159,7 +1166,7 @@ Gibt die festzulegende Position an. Sie muss innerhalb des Bereichs liegen, der 
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="cframewndsetprogressbarrange"></a><a name="setprogressbarrange"></a>CFrameWnd:: setprogressbarrange
+## <a name="cframewndsetprogressbarrange"></a><a name="setprogressbarrange"></a> CFrameWnd:: setprogressbarrange
 
 Legt den Bereich für die Windows 7-Statusanzeige fest, der auf der Taskleiste angezeigt wird.
 
@@ -1179,7 +1186,7 @@ Maximaler Wert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="cframewndsetprogressbarstate"></a><a name="setprogressbarstate"></a>CFrameWnd:: setprogressbarstate
+## <a name="cframewndsetprogressbarstate"></a><a name="setprogressbarstate"></a> CFrameWnd:: setprogressbarstate
 
 Legt den Typ und den Zustand der Statusanzeige fest, die auf einer Task leisten Schaltfläche angezeigt wird.
 
@@ -1194,9 +1201,9 @@ Flags, die den aktuellen Zustand der Fortschritts Schaltfläche steuern. Geben S
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="cframewndsettaskbaroverlayicon"></a><a name="settaskbaroverlayicon"></a>CFrameWnd:: settaskbaroverlayicon
+## <a name="cframewndsettaskbaroverlayicon"></a><a name="settaskbaroverlayicon"></a> CFrameWnd:: settaskbaroverlayicon
 
-Ist überladen. Wendet ein Overlay auf eine Task leisten Schaltfläche an, um den Anwendungs Status anzugeben oder um den Benutzer zu benachrichtigen.
+Überladen. Wendet ein Overlay auf eine Task leisten Schaltfläche an, um den Anwendungs Status anzugeben oder um den Benutzer zu benachrichtigen.
 
 ```
 BOOL SetTaskbarOverlayIcon(
@@ -1225,7 +1232,7 @@ TRUE, wenn erfolgreich; FALSE, wenn die Betriebssystemversion kleiner als Window
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="cframewndsettitle"></a><a name="settitle"></a>CFrameWnd:: SetTitle
+## <a name="cframewndsettitle"></a><a name="settitle"></a> CFrameWnd:: SetTitle
 
 Legt den Titel des Fenster Objekts fest.
 
@@ -1238,7 +1245,7 @@ void SetTitle(LPCTSTR lpszTitle);
 *lpsztitle*<br/>
 Ein Zeiger auf eine Zeichenfolge, die den Titel des Fenster Objekts enthält.
 
-## <a name="cframewndshowcontrolbar"></a><a name="showcontrolbar"></a>CFrameWnd:: showcontrolbar
+## <a name="cframewndshowcontrolbar"></a><a name="showcontrolbar"></a> CFrameWnd:: showcontrolbar
 
 Mit dieser Member-Funktion können Sie die Steuerleiste anzeigen oder ausblenden.
 
@@ -1260,7 +1267,7 @@ Wenn der Wert true ist, wird angegeben, dass die Steuerleiste angezeigt werden s
 *bdelay*<br/>
 Wenn true, wird die Steuerleiste verzögert angezeigt. Wenn der Wert false ist, wird die Steuerleiste sofort angezeigt.
 
-## <a name="cframewndshowownedwindows"></a><a name="showownedwindows"></a>CFrameWnd:: showownedwindows
+## <a name="cframewndshowownedwindows"></a><a name="showownedwindows"></a> CFrameWnd:: showownedwindows
 
 Diese Member-Funktion wird aufgerufen, um alle Fenster anzuzeigen, die Nachfolger des- `CFrameWnd` Objekts sind.
 

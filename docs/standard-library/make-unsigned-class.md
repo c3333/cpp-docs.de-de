@@ -7,14 +7,14 @@ helpviewer_keywords:
 - make_unsigned class
 - make_unsigned
 ms.assetid: 7a6a3c4f-1a4c-47e8-9ee2-ac1f7b669353
-ms.openlocfilehash: 4c0224bd5fd7dc8c6589ae474bb9acb9a8f09cf6
-ms.sourcegitcommit: 0dcab746c49f13946b0a7317fc9769130969e76d
+ms.openlocfilehash: 46b785b20d2ca8ff2de0dfa678b543fa7493aa92
+ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68456326"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88561751"
 ---
-# <a name="makeunsigned-class"></a>make_unsigned-Klasse
+# <a name="make_unsigned-class"></a>make_unsigned-Klasse
 
 Macht den Typ oder den kleinsten Typ ohne Vorzeichen größer oder gleich dem Typ.
 
@@ -30,20 +30,19 @@ using make_unsigned_t = typename make_unsigned<T>::type;
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
-|---------------|-----------------|
-|*T*|Der zu ändernde Typ.|
+*Bund*\
+Der zu ändernde Typ.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Eine Instanz des typmodifizierers enthält einen geänderten Typ, der " *T* " `is_unsigned<T>` ist, wenn "true" ist. Andernfalls ist dies der kleinste Datentyp mit Vorzeichen `ST`, für den `sizeof (T) <= sizeof (ST)`.
+Eine Instanz des typmodifizierers enthält einen geänderten Typ, der " *T* " ist, wenn "true" ist `is_unsigned<T>` . Andernfalls ist dies der kleinste Datentyp mit Vorzeichen `ST`, für den `sizeof (T) <= sizeof (ST)`.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<type_traits>
+**Header:**\<type_traits>
 
 **Namespace:** std
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [<type_traits>](../standard-library/type-traits.md)

@@ -1,5 +1,5 @@
 ---
-title: CMFCDropDownFrame-Klasse
+title: Cmfcdropdownframe-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CMFCDropDownFrame
@@ -16,16 +16,16 @@ helpviewer_keywords:
 - CMFCDropDownFrame [MFC], RecalcLayout
 - CMFCDropDownFrame [MFC], SetAutoDestroy
 ms.assetid: 09ff81a9-de00-43ec-9df9-b626f7728c4b
-ms.openlocfilehash: 508b27acd0a2004b1b8f75fde0bddcdf91194948
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.openlocfilehash: d99dae9d8e7eca96c736a33621f0b544f1962f0f
+ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81752426"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88560893"
 ---
-# <a name="cmfcdropdownframe-class"></a>CMFCDropDownFrame-Klasse
+# <a name="cmfcdropdownframe-class"></a>Cmfcdropdownframe-Klasse
 
-Bietet Dropdown-Framefensterfunktionen für Dropdown-Symbolleisten und Dropdown-Symbolleistenschaltflächen.
+Stellt Funktionen für das Dropdown-Rahmen Fenster für Dropdown-Symbolleisten und Dropdown-Symbolleisten-Schaltflächen bereit.
 
 ## <a name="syntax"></a>Syntax
 
@@ -39,7 +39,7 @@ class CMFCDropDownFrame : public CMiniFrameWnd
 
 |||
 |-|-|
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |`CMFCDropDownFrame::CMFCDropDownFrame`|Der Standardkonstruktor.|
 |`CMFCDropDownFrame::~CMFCDropDownFrame`|Destruktor.|
 
@@ -47,30 +47,30 @@ class CMFCDropDownFrame : public CMiniFrameWnd
 
 |||
 |-|-|
-|Name|BESCHREIBUNG|
-|[CMFCDropDownFrame::Erstellen](#create)|Erstellt ein `CMFCDropDownFrame` -Objekt.|
+|name|BESCHREIBUNG|
+|[Cmfcdropdownframe:: Create](#create)|Erstellt ein `CMFCDropDownFrame`-Objekt.|
 |`CMFCDropDownFrame::CreateObject`|Wird vom Framework verwendet, um eine dynamische Instanz dieses Klassentyps zu erstellen.|
-|[CMFCDropDownFrame::GetParentMenuBar](#getparentmenubar)|Ruft die übergeordnete Menüleiste des Dropdown-Frames ab.|
-|[CMFCDropDownFrame::GetParentPopupMenu](#getparentpopupmenu)|Ruft das übergeordnete Popupmenü des Dropdown-Frames ab.|
-|`CMFCDropDownFrame::GetThisClass`|Wird vom Framework verwendet, um einen Zeiger auf das [CRuntimeClass-Objekt](../../mfc/reference/cruntimeclass-structure.md) abzuholen, das diesem Klassentyp zugeordnet ist.|
-|[CMFCDropDownFrame::RecalcLayout](#recalclayout)|Positioniert den Dropdown-Frame neu.|
-|[CMFCDropDownFrame::SetAutoDestroy](#setautodestroy)|Legt fest, ob das untergeordnete Dropdown-Symbolleistenfenster automatisch zerstört wird.|
+|[Cmfcdropdownframe:: getparametermenubar](#getparentmenubar)|Ruft die übergeordnete Menüleiste des Dropdown Rahmens ab.|
+|[Cmfcdropdownframe:: getparameterpopupmenu](#getparentpopupmenu)|Ruft das übergeordnete Popup Menü des Dropdown Rahmens ab.|
+|`CMFCDropDownFrame::GetThisClass`|Wird vom Framework verwendet, um einen Zeiger auf das [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md) -Objekt abzurufen, das diesem Klassentyp zugeordnet ist.|
+|[Cmfcdropdownframe:: Neuberechnung](#recalclayout)|Positioniert den Dropdown Rahmen neu.|
+|[Cmfcdropdownframe:: "Dropdown"](#setautodestroy)|Legt fest, ob das untergeordnete Dropdown-Symbolleisten Fenster automatisch zerstört wird.|
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Klasse ist nicht für die direkte Verwendung im Code vorgesehen.
 
-Das Framework verwendet diese Klasse, `CMFCDropDownToolbar` um `CMFCDropDownToolbarButton` Frameverhalten für die und Klassen bereitzustellen. Weitere Informationen zu diesen Klassen finden Sie unter [CMFCDropDownToolBar Class](../../mfc/reference/cmfcdropdowntoolbar-class.md) und [CMFCDropDownToolbarButton Class](../../mfc/reference/cmfcdropdowntoolbarbutton-class.md).
+Das Framework verwendet diese Klasse, um Frame Verhalten für die-Klasse und die-Klasse bereitzustellen `CMFCDropDownToolbar` `CMFCDropDownToolbarButton` . Weitere Informationen zu diesen Klassen finden Sie unter [cmfcdropdowntoolbar-Klasse](../../mfc/reference/cmfcdropdowntoolbar-class.md) und [cmfcdropdowntoolbarbutton-Klasse](../../mfc/reference/cmfcdropdowntoolbarbutton-class.md).
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird veranschaulicht, wie `CMFCDropDownFrame` Ein `CFrameWnd` Zeiger auf ein Objekt aus einer Klasse abgerufen wird und wie das untergeordnete Dropdown-Symbolleistenfenster automatisch zerstört wird.
+Im folgenden Beispiel wird veranschaulicht, wie ein Zeiger auf ein `CMFCDropDownFrame` -Objekt aus einer `CFrameWnd` -Klasse abgerufen wird und wie das untergeordnete Dropdown-Symbolleisten Fenster automatisch zerstört wird.
 
 [!code-cpp[NVC_MFC_RibbonApp#36](../../mfc/reference/codesnippet/cpp/cmfcdropdownframe-class_1.cpp)]
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[Cobject](../../mfc/reference/cobject-class.md)
+[CObject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -80,15 +80,15 @@ Im folgenden Beispiel wird veranschaulicht, wie `CMFCDropDownFrame` Ein `CFrameW
 
 [CMiniFrameWnd](../../mfc/reference/cminiframewnd-class.md)
 
-[CMFCDropDownFrame](../../mfc/reference/cmfcdropdownframe-class.md)
+[Cmfcdropdownframe](../../mfc/reference/cmfcdropdownframe-class.md)
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxdropdowntoolbar.h
 
-## <a name="cmfcdropdownframecreate"></a><a name="create"></a>CMFCDropDownFrame::Erstellen
+## <a name="cmfcdropdownframecreate"></a><a name="create"></a> Cmfcdropdownframe:: Create
 
-Erstellt ein `CMFCDropDownFrame` -Objekt.
+Erstellt ein `CMFCDropDownFrame`-Objekt.
 
 ```
 virtual BOOL Create(
@@ -100,27 +100,31 @@ virtual BOOL Create(
 
 ### <a name="parameters"></a>Parameter
 
-|||
-|-|-|
-|Parameter|Beschreibung|
-|*pWndParent*|[in] Das übergeordnete Fenster des Dropdown-Frames.|
-|*x*|[in] Die horizontale Bildschirmkoordinate für die Position des Down-Down-Frames.|
-|*Y*|[in] Die vertikale Bildschirmkoordinate für die Position des Down-Down-Frames.|
-|*pWndOriginToolbar*|[in] Die Symbolleiste mit den Dropdown-Schaltflächen, die diese Methode zum Auffüllen des neuen Dropdown-Frameobjekts verwendet.|
+*pwndparent*\
+in Das übergeordnete Fenster des Dropdown Rahmens.
+
+*Stuben*\
+in Die horizontale Bildschirm Koordinate für die Position des nach-unten-Rahmens.
+
+*Teenie*\
+in Die vertikale Bildschirm Koordinate für die Position des nach-unten-Rahmens.
+
+*pwndorigintoolbar*\
+in Die Symbolleiste mit den Dropdown-Schaltflächen, die von dieser Methode zum Auffüllen des neuen Dropdown Frame-Objekts verwendet werden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn der Dropdown-Frame erfolgreich erstellt wurde; andernfalls FALSE.
+TRUE, wenn der Dropdown Rahmen erfolgreich erstellt wurde. andernfalls false.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode ruft die [CMiniFrameWnd::CreateEx-Basismethode](../../mfc/reference/cminiframewnd-class.md#createex) auf, um das Dropdown-Rahmenfenster mit dem WS_POPUP-Stil zu erstellen. Das Dropdown-Rahmenfenster wird an den angegebenen Bildschirmkoordinaten angezeigt. Diese Methode schlägt fehl, wenn die [CMiniFrameWnd::CreateEx-Methode](../../mfc/reference/cminiframewnd-class.md#createex) FALSE zurückgibt.
+Diese Methode ruft die Base [CMiniFrameWnd:: foateex](../../mfc/reference/cminiframewnd-class.md#createex) -Methode auf, um das Dropdown-Rahmen Fenster mit dem WS_POPUP-Stil zu erstellen. Das Dropdown-Rahmen Fenster wird an den angegebenen Bildschirm Koordinaten angezeigt. Bei dieser Methode tritt ein Fehler auf, wenn die [CMiniFrameWnd::](../../mfc/reference/cminiframewnd-class.md#createex) up-Methode false zurückgibt.
 
-Die `CMFCDropDownFrame` Klasse erstellt eine `CMFCDropDownToolBar` Kopie des bereitgestellten Parameters. Diese Methode kopiert die Schaltflächenbilder `pWndOriginToolbar` und `m_pWndOriginToolbar` Schaltflächenzustände vom Parameter in das Datenelement.
+Die- `CMFCDropDownFrame` Klasse erstellt eine Kopie des angegebenen- `CMFCDropDownToolBar` Parameters. Diese Methode kopiert die Schaltflächen Bilder und Schaltflächen Zustände aus dem- `pWndOriginToolbar` Parameter in den- `m_pWndOriginToolbar` Datenmember.
 
-## <a name="cmfcdropdownframegetparentmenubar"></a><a name="getparentmenubar"></a>CMFCDropDownFrame::GetParentMenuBar
+## <a name="cmfcdropdownframegetparentmenubar"></a><a name="getparentmenubar"></a> Cmfcdropdownframe:: getparametermenubar
 
-Ruft die übergeordnete Menüleiste des Dropdown-Frames ab.
+Ruft die übergeordnete Menüleiste des Dropdown Rahmens ab.
 
 ```
 CMFCMenuBar* GetParentMenuBar() const;
@@ -128,15 +132,15 @@ CMFCMenuBar* GetParentMenuBar() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf die übergeordnete Menüleiste des Dropdown-Frames oder NULL, wenn der Rahmen kein übergeordnetes Element hat.
+Ein Zeiger auf die übergeordnete Menüleiste des Dropdown Rahmens oder NULL, wenn der Frame kein übergeordnetes Element aufweist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode ruft die übergeordnete Menüleiste von der übergeordneten Schaltfläche ab. Diese Methode gibt NULL zurück, wenn der Dropdownrahmen keine übergeordnete Schaltfläche oder die übergeordnete Schaltfläche keine übergeordnete Menüleiste hat.
+Diese Methode ruft die übergeordnete Menüleiste von der übergeordneten Schaltfläche ab. Diese Methode gibt NULL zurück, wenn der Dropdown-Frame keine übergeordnete Schaltfläche aufweist oder die übergeordnete Schaltfläche keine übergeordnete Menüleiste hat.
 
-## <a name="cmfcdropdownframegetparentpopupmenu"></a><a name="getparentpopupmenu"></a>CMFCDropDownFrame::GetParentPopupMenu
+## <a name="cmfcdropdownframegetparentpopupmenu"></a><a name="getparentpopupmenu"></a> Cmfcdropdownframe:: getparameterpopupmenu
 
-Ruft das übergeordnete Popupmenü des Dropdown-Frames ab.
+Ruft das übergeordnete Popup Menü des Dropdown Rahmens ab.
 
 ```
 CMFCDropDownFrame* GetParentPopupMenu() const;
@@ -144,15 +148,15 @@ CMFCDropDownFrame* GetParentPopupMenu() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf das übergeordnete Dropdownmenü des Dropdown-Frames oder NULL, wenn der Rahmen kein übergeordnetes Element hat.
+Ein Zeiger auf das übergeordnete Dropdown Menü des Dropdown Rahmens oder NULL, wenn der Frame kein übergeordnetes Element aufweist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode ruft das übergeordnete Menü von der übergeordneten Schaltfläche ab. Diese Methode gibt NULL zurück, wenn der Dropdown-Frame keine übergeordnete Schaltfläche oder die übergeordnete Schaltfläche kein übergeordnetes Menü hat.
+Diese Methode ruft das übergeordnete Menü von der übergeordneten Schaltfläche ab. Diese Methode gibt NULL zurück, wenn der Dropdown-Frame keine übergeordnete Schaltfläche aufweist oder die übergeordnete Schaltfläche kein übergeordnetes Menü hat.
 
-## <a name="cmfcdropdownframerecalclayout"></a><a name="recalclayout"></a>CMFCDropDownFrame::RecalcLayout
+## <a name="cmfcdropdownframerecalclayout"></a><a name="recalclayout"></a> Cmfcdropdownframe:: Neuberechnung
 
-Positioniert den Dropdown-Frame neu.
+Positioniert den Dropdown Rahmen neu.
 
 ```
 virtual void RecalcLayout(BOOL bNotify = TRUE);
@@ -160,18 +164,16 @@ virtual void RecalcLayout(BOOL bNotify = TRUE);
 
 ### <a name="parameters"></a>Parameter
 
-|||
-|-|-|
-|Parameter|Beschreibung|
-|*bNotify*|[in] Nicht verwendet.|
+*bbenachrichtigen*\
+[in] Nicht verwendet.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das Framework ruft diese Methode auf, wenn der Dropdown-Frame erstellt oder die Größe des übergeordneten Fensters geändert wird. Diese Methode berechnet die Position und Größe des Dropdown-Rahmens mithilfe der Position und Größe des übergeordneten Fensters.
+Das Framework ruft diese Methode auf, wenn der Dropdown Rahmen erstellt wird oder die Größe des übergeordneten Fensters geändert wird. Diese Methode berechnet die Position und die Größe des Dropdown Rahmens, indem die Position und Größe des übergeordneten Fensters verwendet wird.
 
-## <a name="cmfcdropdownframesetautodestroy"></a><a name="setautodestroy"></a>CMFCDropDownFrame::SetAutoDestroy
+## <a name="cmfcdropdownframesetautodestroy"></a><a name="setautodestroy"></a> Cmfcdropdownframe:: "Dropdown"
 
-Legt fest, ob das untergeordnete Dropdown-Symbolleistenfenster automatisch zerstört wird.
+Legt fest, ob das untergeordnete Dropdown-Symbolleisten Fenster automatisch zerstört wird.
 
 ```cpp
 void SetAutoDestroy(BOOL bAutoDestroy = TRUE);
@@ -179,16 +181,16 @@ void SetAutoDestroy(BOOL bAutoDestroy = TRUE);
 
 ### <a name="parameters"></a>Parameter
 
-*bAutoDestroy*<br/>
-[in] TRUE, um das zugehörige Dropdown-Symbolleistenfenster automatisch zu zerstören; andernfalls FALSE.
+*Bauto zerstören*<br/>
+in TRUE, wenn das zugehörige Dropdown-Symbolleisten Fenster automatisch zerstört werden soll. andernfalls false.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn *bAutoDestroy* TRUE ist, zerstört der `CMFCDropDownFrame` Destruktor das zugehörige Dropdown-Symbolleistenfenster. Der Standardwert ist TRUE.
+Wenn *baudedestroy* den Wert true aufweist, `CMFCDropDownFrame` zerstört der debugtor das zugehörige Dropdown-Symbolleisten Fenster. Der Standardwert ist TRUE.
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
+[Hierarchie Diagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>
-[CMFCDropDownToolBar-Klasse](../../mfc/reference/cmfcdropdowntoolbar-class.md)<br/>
-[CMFCDropDownToolbarButton-Klasse](../../mfc/reference/cmfcdropdowntoolbarbutton-class.md)
+[Cmfcdropdowntoolbar-Klasse](../../mfc/reference/cmfcdropdowntoolbar-class.md)<br/>
+[Cmfcdropdowntoolbarbutton-Klasse](../../mfc/reference/cmfcdropdowntoolbarbutton-class.md)
