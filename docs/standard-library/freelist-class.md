@@ -10,12 +10,12 @@ helpviewer_keywords:
 - stdext::freelist [C++], pop
 - stdext::freelist [C++], push
 ms.assetid: 8ad7e35c-4c80-4479-8ede-1a2497b06d71
-ms.openlocfilehash: 7425f99f7966548bdb1f94d3007382eeb99863df
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: bf88e33f5d00b9b6b90d2712a0bbabaa3e571340
+ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87193223"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88561205"
 ---
 # <a name="freelist-class"></a>freelist-Klasse
 
@@ -30,10 +30,11 @@ class freelist : public Max
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
-|---------------|-----------------|
-|*RT*|Die Anzahl der zuzuweisenden Elemente im Array|
-|*Max*|Die max-Klasse, die die maximale Anzahl von Elementen darstellt, die in der freien Liste gespeichert werden. Die Klasse kann [max_none](../standard-library/max-none-class.md), [max_unbounded](../standard-library/max-unbounded-class.md), [max_fixed_size](../standard-library/max-fixed-size-class.md) oder [max_variable_size](../standard-library/max-variable-size-class.md) sein.|
+*RT*\
+Die Anzahl der zuzuweisenden Elemente im Array
+
+*Max*\
+Die max-Klasse, die die maximale Anzahl von Elementen darstellt, die in der freien Liste gespeichert werden. Die Klasse kann [max_none](../standard-library/max-none-class.md), [max_unbounded](../standard-library/max-unbounded-class.md), [max_fixed_size](../standard-library/max-fixed-size-class.md) oder [max_variable_size](../standard-library/max-variable-size-class.md) sein.
 
 ## <a name="remarks"></a>Bemerkungen
 
@@ -58,7 +59,7 @@ Diese Klassen Vorlage verwaltet eine Liste von Speicherblöcken der Größe- *SZ
 
 **Namespace:** stdext
 
-## <a name="freelistfreelist"></a><a name="freelist"></a>FreeList:: FreeList
+## <a name="freelistfreelist"></a><a name="freelist"></a> FreeList:: FreeList
 
 Konstruiert ein Objekt vom Typ `freelist`.
 
@@ -68,7 +69,7 @@ freelist();
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="freelistpop"></a><a name="pop"></a>FreeList::p op
+## <a name="freelistpop"></a><a name="pop"></a> FreeList::p op
 
 Entfernt den ersten Speicherblock aus der freien Liste
 
@@ -84,7 +85,7 @@ Gibt einen Zeiger auf den Speicherblock zurück, der aus der Liste entfernt wurd
 
 Die Member-Funktion gibt NULL zurück, wenn die Liste leer ist. Andernfalls entfernt sie den ersten Speicherblock aus der Liste.
 
-## <a name="freelistpush"></a><a name="push"></a>FreeList::p USH
+## <a name="freelistpush"></a><a name="push"></a> FreeList::p USH
 
 Fügt der Liste einen Speicherblock hinzu
 
@@ -94,13 +95,12 @@ bool push(void* ptr);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
-|---------------|-----------------|
-|*ptr*|Ein Zeiger auf den Speicherblock, der der freien Liste hinzugefügt werden soll|
+*PTR*\
+Ein Zeiger auf den Speicherblock, der der freien Liste hinzugefügt werden soll
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn die- `full` Funktion der Max-Klasse zurückgibt **`false`** , andernfalls `push` gibt die Funktion zurück **`false`** .
+**`true`** , wenn die- `full` Funktion der Max-Klasse zurückgibt **`false`** , andernfalls `push` gibt die Funktion zurück **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 

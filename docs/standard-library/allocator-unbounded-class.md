@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - allocator_unbounded class
 ms.assetid: facbaea1-b320-4d99-96da-039b2642f352
-ms.openlocfilehash: ba4c8b774752b327f5a4ede84fa804888cfd31d0
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: d9d82dd29ab86654020e13b39a8c9588ee0732e8
+ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84617390"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88561543"
 ---
 # <a name="allocator_unbounded-class"></a>allocator_unbounded-Klasse
 
@@ -27,13 +27,12 @@ class allocator_unbounded;
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
-|---------------|-----------------|
-|*Type*|Der Elementtyp, die durch die Zuweisung zugeordnet wird.|
+*Sorte*\
+Der Elementtyp, die durch die Zuweisung zugeordnet wird.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das [ALLOCATOR_DECL](allocators-functions.md#allocator_decl) -Makro übergibt diese Klasse als *Name* -Parameter in der folgenden Anweisung:`ALLOCATOR_DECL(CACHE_FREELIST(stdext::allocators::max_unbounded), SYNC_DEFAULT, allocator_unbounded);`
+Das [ALLOCATOR_DECL](allocators-functions.md#allocator_decl) -Makro übergibt diese Klasse als *Name* -Parameter in der folgenden Anweisung: `ALLOCATOR_DECL(CACHE_FREELIST(stdext::allocators::max_unbounded), SYNC_DEFAULT, allocator_unbounded);`
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
@@ -41,6 +40,6 @@ Das [ALLOCATOR_DECL](allocators-functions.md#allocator_decl) -Makro übergibt di
 
 **Namespace:** stdext
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<allocators>](allocators-header.md)

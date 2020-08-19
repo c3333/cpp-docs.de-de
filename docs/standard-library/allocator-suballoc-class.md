@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - allocator_suballoc class
 ms.assetid: 50c6a5c0-d00d-4276-9285-d908fd4f6483
-ms.openlocfilehash: 01d282585133d55ee3f7ec96c212705c2afca9d1
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 47b82a198a52a61bd5558bd59a38b1d328fa67b2
+ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84617421"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88562583"
 ---
 # <a name="allocator_suballoc-class"></a>allocator_suballoc-Klasse
 
@@ -27,13 +27,12 @@ class allocator_suballoc;
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
-|---------------|-----------------|
-|*Type*|Der Elementtyp, die durch die Zuweisung zugeordnet wird.|
+*Sorte*\
+Der Elementtyp, die durch die Zuweisung zugeordnet wird.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das [ALLOCATOR_DECL](allocators-functions.md#allocator_decl) -Makro übergibt diese Klasse als *Name* -Parameter in der folgenden Anweisung:`ALLOCATOR_DECL(CACHE_SUBALLOC, SYNC_DEFAULT, allocator_suballoc);`
+Das [ALLOCATOR_DECL](allocators-functions.md#allocator_decl) -Makro übergibt diese Klasse als *Name* -Parameter in der folgenden Anweisung: `ALLOCATOR_DECL(CACHE_SUBALLOC, SYNC_DEFAULT, allocator_suballoc);`
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
@@ -41,6 +40,6 @@ Das [ALLOCATOR_DECL](allocators-functions.md#allocator_decl) -Makro übergibt di
 
 **Namespace:** stdext
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<allocators>](allocators-header.md)

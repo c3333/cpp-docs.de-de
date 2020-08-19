@@ -14,12 +14,12 @@ helpviewer_keywords:
 - rethrow_exception
 - move exceptions between threads
 ms.assetid: 5c95d57b-acf5-491f-8122-57c5df0edd98
-ms.openlocfilehash: 1b3e6ffa0e98d54b047e18e4c023a8f5173470b1
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: c3ba61062421462dea8f4280575be9f00ac3931a
+ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87186099"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88561361"
 ---
 # <a name="transporting-exceptions-between-threads"></a>Transportieren von Ausnahmen zwischen Threads
 
@@ -40,12 +40,17 @@ namespace std
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
-|---------------|-----------------|
-|*nicht angegeben*|Eine nicht angegebene interne Klasse, die verwendet wird, um den Typ `exception_ptr` zu implementieren.|
-|*cker*|Ein `exception_ptr`-Objekt, das auf eine Ausnahme verweist.|
-|*Fresser*|Eine Klasse, die eine Ausnahme darstellt.|
-|*e*|Eine Instanz der `E`-Parameterklasse.|
+*nicht angegeben*\
+Eine nicht angegebene interne Klasse, die verwendet wird, um den Typ `exception_ptr` zu implementieren.
+
+*cker*\
+Ein `exception_ptr`-Objekt, das auf eine Ausnahme verweist.
+
+*Fresser*\
+Eine Klasse, die eine Ausnahme darstellt.
+
+*Fresser*\
+Eine Instanz der `E`-Parameterklasse.
 
 ## <a name="return-value"></a>Rückgabewert
 
@@ -90,7 +95,7 @@ Nur die folgende Kombination von Compileroptionen und Programmieranweisungen kan
    > [!IMPORTANT]
    > Es wird empfohlen, die **/EHsc** -Compileroption anzugeben und nur C++-Ausnahmen abzufangen. Wenn Sie die **/EHa** -oder **/CLR** -Compileroption und eine **`catch`** -Anweisung mit einer Ellipse *-Ausnahme Deklaration* () verwenden, machen Sie sich selbst eine Sicherheitsbedrohung ausgesetzt `catch(...)` . Wahrscheinlich möchten Sie die- **`catch`** Anweisung verwenden, um einige spezifische Ausnahmen zu erfassen. Allerdings fängt die `catch(...)`-Anweisung alle C++- und SEH-Ausnahmen ab, einschließlich der unerwarteten Ausnahmen mit schwerwiegenden Ausnahmefehlern. Wenn Sie eine unerwartete Ausnahme nicht korrekt behandeln oder ignorieren, kann Malware-Code diese Möglichkeit nutzen, die Sicherheit Ihres Programms zu beeinträchtigen.
 
-## <a name="usage"></a>Verbrauch
+## <a name="usage"></a>Verwendung
 
 In den folgenden Abschnitten wird beschrieben, wie Ausnahmen mithilfe des `exception_ptr` -Typs und der `current_exception` Funktionen, und transportiert werden `rethrow_exception` `make_exception_ptr` .
 
@@ -256,6 +261,6 @@ exception_ptr 1: Caught a  myException exception.
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Behandlung von Ausnahmen](../cpp/exception-handling-in-visual-cpp.md)<br/>
+[Ausnahmebehandlung](../cpp/exception-handling-in-visual-cpp.md)<br/>
 [/EH (Ausnahme Behandlungsmodell)](../build/reference/eh-exception-handling-model.md)<br/>
 [/clr (Common Language Runtime-Kompilierung)](../build/reference/clr-common-language-runtime-compilation.md)

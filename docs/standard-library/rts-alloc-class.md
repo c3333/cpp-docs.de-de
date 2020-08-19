@@ -12,12 +12,12 @@ helpviewer_keywords:
 - stdext::rts_alloc [C++], deallocate
 - stdext::rts_alloc [C++], equals
 ms.assetid: ab41bffa-83d1-4a1c-87b9-5707d516931f
-ms.openlocfilehash: f422b171c14695a1207a30419a10d50cdfb5adf0
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 04a6578c7abd07ff84f4c0a5cee68cfd7ec8ef04
+ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87228127"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88560555"
 ---
 # <a name="rts_alloc-class"></a>rts_alloc-Klasse
 
@@ -32,9 +32,8 @@ class rts_alloc
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
-|---------------|-----------------|
-|*Cache*|Der Typ der Cache-Instanzen, die im Array enthalten sind. Dieser kann eine [cache_chunklist-Klasse](../standard-library/cache-chunklist-class.md), [cache_freelist](../standard-library/cache-freelist-class.md) oder [cache_suballoc](../standard-library/cache-suballoc-class.md) sein.|
+*Speichern*\
+Der Typ der Cache-Instanzen, die im Array enthalten sind. Dabei kann es [`cache_chunklist`](../standard-library/cache-chunklist-class.md) sich um, [`cache_freelist`](../standard-library/cache-freelist-class.md) oder handeln [`cache_suballoc`](../standard-library/cache-suballoc-class.md) .
 
 ## <a name="remarks"></a>Bemerkungen
 
@@ -44,7 +43,7 @@ Diese Klassen Vorlage enthält mehrere Block Belegungs Instanzen und bestimmt, w
 
 |Memberfunktion|BESCHREIBUNG|
 |-|-|
-|[allocate](#allocate)|Belegt einen Speicherblock.|
+|[Jugend](#allocate)|Belegt einen Speicherblock.|
 |[DEALLOCATE](#deallocate)|Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.|
 |[equals](#equals)|Vergleicht zwei Caches auf Gleichheit.|
 
@@ -54,7 +53,7 @@ Diese Klassen Vorlage enthält mehrere Block Belegungs Instanzen und bestimmt, w
 
 **Namespace:** stdext
 
-## <a name="rts_allocallocate"></a><a name="allocate"></a>Rts_alloc:: zuordnen
+## <a name="rts_allocallocate"></a><a name="allocate"></a> Rts_alloc:: zuordnen
 
 Belegt einen Speicherblock.
 
@@ -64,9 +63,8 @@ void *allocate(std::size_t count);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
-|---------------|-----------------|
-|*count*|Die Anzahl der zuzuweisenden Elemente im Array|
+*Countdown*\
+Die Anzahl der zuzuweisenden Elemente im Array
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -76,7 +74,7 @@ Zeiger auf das zugewiesene Objekt.
 
 Die Member-Funktion gibt zurück `caches[_IDX].allocate(count)` , wobei der Index `_IDX` durch die angeforderte Block *count*Größe bestimmt wird, oder wenn *count* zu groß ist, wird zurückgegeben `operator new(count)` . `cache`, das das Cache-Objekt darstellt.
 
-## <a name="rts_allocdeallocate"></a><a name="deallocate"></a>Rts_alloc::d ezuordnen
+## <a name="rts_allocdeallocate"></a><a name="deallocate"></a> Rts_alloc::d ezuordnen
 
 Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.
 
@@ -86,16 +84,17 @@ void deallocate(void* ptr, std::size_t count);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
-|---------------|-----------------|
-|*ptr*|Ein Zeiger auf das erste Objekt, dessen Zuordnung zum Speicherplatz aufgehoben werden soll.|
-|*count*|Die Anzahl von Objekten, deren Zuweisung zum Speicherplatz aufgehoben werden soll.|
+*PTR*\
+Ein Zeiger auf das erste Objekt, dessen Zuordnung zum Speicherplatz aufgehoben werden soll.
+
+*Countdown*\
+Die Anzahl von Objekten, deren Zuweisung zum Speicherplatz aufgehoben werden soll.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Die Member-Funktion ruft `caches[_IDX].deallocate(ptr, count)` auf, wobei der Index `_IDX` durch die angeforderte Block *count*Größe bestimmt wird, oder wenn *count* zu groß ist, wird zurückgegeben `operator delete(ptr)` .
 
-## <a name="rts_allocequals"></a><a name="equals"></a>Rts_alloc:: ist Gleichheits
+## <a name="rts_allocequals"></a><a name="equals"></a> Rts_alloc:: ist Gleichheits
 
 Vergleicht zwei Caches auf Gleichheit.
 
@@ -105,16 +104,17 @@ bool equals(const sync<_Cache>& _Other) const;
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|Beschreibung|
-|---------------|-----------------|
-|*_Cache*|Das Cache-Objekt, das dem Filter zugeordnet ist.|
-|*_Other*|Das Cache-Objekt, das auf Gleichheit verglichen werden soll.|
+*_Cache*\
+Das Cache-Objekt, das dem Filter zugeordnet ist.
+
+*_Other*\
+Das Cache-Objekt, das auf Gleichheit verglichen werden soll.
 
 ### <a name="remarks"></a>Bemerkungen
 
-**`true`**, wenn das Ergebnis von `caches[0].equals(other.caches[0])` ist, andernfalls **`false`** . `caches` stellt das Array von Cache-Objekten dar.
+**`true`** , wenn das Ergebnis von `caches[0].equals(other.caches[0])` ist, andernfalls **`false`** . `caches` stellt das Array von Cache-Objekten dar.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [ALLOCATOR_DECL](../standard-library/allocators-functions.md#allocator_decl)\
 [\<allocators>](../standard-library/allocators-header.md)

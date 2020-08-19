@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 f1_keywords:
 - sstream/std::swap
 ms.assetid: bc9607e8-7c6b-44ef-949b-19e917b450ad
-ms.openlocfilehash: bdf7cd26b25680eb7e5270fdc8ae7dac0d10f70f
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 722cba257b12bb753aaa61ac2f430df76c2ceb93
+ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81336654"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88560373"
 ---
 # <a name="ltsstreamgt-functions"></a>&lt;sstream&gt; Funktionen
 
@@ -17,7 +17,7 @@ ms.locfileid: "81336654"
 |-|
 |[swap](#sstream_swap)|
 
-## <a name="swap"></a><a name="sstream_swap"></a>Swap
+## <a name="swap"></a><a name="sstream_swap"></a> Wechsel
 
 Tauscht die Werte zwischen zwei `sstream`-Objekten aus.
 
@@ -45,15 +45,16 @@ void swap(
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
-|---------------|-----------------|
-|*Links*|Ein Verweis auf ein `sstream`-Objekt.|
-|*Richting*|Ein Verweis auf ein `sstream`-Objekt.|
+*linken*\
+Ein Verweis auf ein `sstream`-Objekt.
+
+*Richting*\
+Ein Verweis auf ein `sstream`-Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Die Vorlagenfunktion führt `left.swap(right)` aus.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<sstream>](../standard-library/sstream.md)

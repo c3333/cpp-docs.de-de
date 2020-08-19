@@ -10,12 +10,12 @@ helpviewer_keywords:
 - stdext::cache_suballoc [C++], allocate
 - stdext::cache_suballoc [C++], deallocate
 ms.assetid: 9ea9c5e9-1dcc-45d0-b3a7-a56a93d88898
-ms.openlocfilehash: 55860a65fc77f834ed699f3a5114768b7efdde6f
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 410cdc7bd45c54c252ce33c7d8e3e2f883ac0eb4
+ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81366731"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88560620"
 ---
 # <a name="cache_suballoc-class"></a>cache_suballoc-Klasse
 
@@ -30,15 +30,14 @@ class cache_suballoc
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
-|---------------|-----------------|
-|*Sz*|Die Anzahl der zuzuweisenden Elemente im Array|
+*RT*\
+Die Anzahl der zuzuweisenden Elemente im Array
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die cache_suballoc-Klassenvorlage speichert verteilte Speicherblöcke in einer freien `freelist<sizeof(Type), max_unbounded>`Liste mit unbegrenzter Länge, verwendet , und unterordnet Speicherblöcke aus einem größeren Block, der dem **Operator new** zugeordnet ist, wenn die freie Liste leer ist.
+In der Cache_suballoc-Klassen Vorlage werden die frei zugeordneten Speicherblöcke in einer freien Liste mit unbegrenzter Länge gespeichert. dabei wird verwendet `freelist<sizeof(Type), max_unbounded>` , und die Speicherblöcke werden von einem größeren Block, der mit **Operator new** zugeordnet wird, zugeordnet, wenn die freie Liste leer ist.
 
-Jeder Chunk `Sz * Nelts` enthält Bytes an nutzbarem Speicher, und die Daten, die der **Operator new** und **das Löschen** des Operators benötigen. Zugeordnete Blöcke werden niemals freigegeben.
+Jeder Block enthält `Sz * Nelts` Bytes des verwendbaren Speichers und die Daten, die der **Operator new** und der **Operator Delete** erfordern. Zugeordnete Blöcke werden niemals freigegeben.
 
 ### <a name="constructors"></a>Konstruktoren
 
@@ -50,16 +49,16 @@ Jeder Chunk `Sz * Nelts` enthält Bytes an nutzbarem Speicher, und die Daten, di
 
 |Memberfunktion|BESCHREIBUNG|
 |-|-|
-|[Zuordnen](#allocate)|Belegt einen Speicherblock.|
-|[Freigeben](#deallocate)|Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.|
+|[Jugend](#allocate)|Belegt einen Speicherblock.|
+|[DEALLOCATE](#deallocate)|Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<allocators>
+**Header:**\<allocators>
 
 **Namespace:** stdext
 
-## <a name="cache_suballocallocate"></a><a name="allocate"></a>cache_suballoc::zuweisen
+## <a name="cache_suballocallocate"></a><a name="allocate"></a> Cache_suballoc:: zuordnen
 
 Belegt einen Speicherblock.
 
@@ -69,9 +68,8 @@ void *allocate(std::size_t count);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
-|---------------|-----------------|
-|*count*|Die Anzahl der zuzuweisenden Elemente im Array|
+*Countdown*\
+Die Anzahl der zuzuweisenden Elemente im Array
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -79,7 +77,7 @@ Zeiger auf das zugewiesene Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="cache_suballoccache_suballoc"></a><a name="cache_suballoc"></a>cache_suballoc::cache_suballoc
+## <a name="cache_suballoccache_suballoc"></a><a name="cache_suballoc"></a> Cache_suballoc:: Cache_suballoc
 
 Konstruiert ein Objekt vom Typ `cache_suballoc`.
 
@@ -89,7 +87,7 @@ cache_suballoc();
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="cache_suballocdeallocate"></a><a name="deallocate"></a>cache_suballoc::deallocate
+## <a name="cache_suballocdeallocate"></a><a name="deallocate"></a> Cache_suballoc::d ezuordnen
 
 Gibt eine angegebene Anzahl von Objekten im Speicher frei, beginnend an einer angegebenen Position.
 
@@ -99,13 +97,14 @@ void deallocate(void* ptr, std::size_t count);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
-|---------------|-----------------|
-|*Ptr*|Ein Zeiger auf das erste Objekt, dessen Zuordnung zum Speicherplatz aufgehoben werden soll.|
-|*count*|Die Anzahl von Objekten, deren Zuweisung zum Speicherplatz aufgehoben werden soll.|
+*PTR*\
+Ein Zeiger auf das erste Objekt, dessen Zuordnung zum Speicherplatz aufgehoben werden soll.
+
+*Countdown*\
+Die Anzahl von Objekten, deren Zuweisung zum Speicherplatz aufgehoben werden soll.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[\<Zuallokatoren>](../standard-library/allocators-header.md)
+[\<allocators>](../standard-library/allocators-header.md)

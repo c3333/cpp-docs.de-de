@@ -51,12 +51,12 @@ helpviewer_keywords:
 - std::span [C++], rend
 - std::span [C++], size
 - std::span [C++], size_bytes
-ms.openlocfilehash: 86ef4afcb5e6e7a9d244a8c2f2126bec7e1ace75
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 4d5cf7f38d10814b3112a25a8da0e412f0d65093
+ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87217453"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88560451"
 ---
 # <a name="span-class-c-standard-library"></a>Span-Klasse (C++-Standard Bibliothek)
 
@@ -75,10 +75,11 @@ class span;
 
 ### <a name="template-parameters"></a>Vorlagenparameter
 
-|Parameter|BESCHREIBUNG|
-|-|-|
-|`T`| Der Typ der Elemente in der Spanne. |
-|`Extent`| Die Anzahl der Elemente in der Spanne, die zur Kompilierzeit angegeben werden. Andernfalls, `std::dynamic_extent` Wenn die Anzahl der Elemente zur Laufzeit angegeben wird. |
+`T`\
+ Der Typ der Elemente in der Spanne.
+
+`Extent`\
+ Die Anzahl der Elemente in der Spanne, die zur Kompilierzeit angegeben werden. Andernfalls,  `std::dynamic_extent` Wenn die Anzahl der Elemente zur Laufzeit angegeben wird.
 
 [ABLEITUNGS Handbuch](#deduction_guides)
 
@@ -742,7 +743,7 @@ Ein umgekehrter Iterator für den Platzhalter, der auf das letzte Element in der
 
 ### <a name="remarks"></a>Bemerkungen
 
-`rend`wird bei einer umgekehrten Spanne verwendet, so wie [span:: End](#end) bei einer Spanne verwendet wird. Verwenden Sie es, um zu testen, ob ein umgekehrter Iterator das Ende seiner Spanne erreicht hat.
+`rend` wird bei einer umgekehrten Spanne verwendet, so wie [span:: End](#end) bei einer Spanne verwendet wird. Verwenden Sie es, um zu testen, ob ein umgekehrter Iterator das Ende seiner Spanne erreicht hat.
 
 Der von zurückgegebene Wert `rend` darf nicht dereferenziert werden.
 
@@ -890,7 +891,7 @@ int main()
 
 ## <a name="spanspan"></a><a name="span"></a> `span::span`
 
-`span`Konstruktoren.
+`span` Konstruktoren.
 
 ```cpp
 constexpr span() noexcept
@@ -962,7 +963,7 @@ Eine Spanne gibt keinen Speicher für Elemente in der Spanne frei, da Sie nicht 
 |---------|---------|
 |`span()` | Erstellen Sie eine leere Spanne. Wird nur bei der Überladungs Auflösung berücksichtigt, wenn der Vorlagen Parameter `Extent` `0` oder ist `dynamic_extent` .|
 |`span(It first, size_type count)` | Erstellen Sie eine Spanne aus den ersten `count` Elementen aus dem Iterator `first` .  Nur bei der Überladungs Auflösung berücksichtigt, wenn der Vorlagen Parameter `Extent` nicht ist `dynamic_extent` . |
-|`span(It first, End last)` | Erstellen Sie eine Spanne aus den Elementen im Iterator, `first` bis das Ende `last` erreicht ist. Nur bei der Überladungs Auflösung berücksichtigt, wenn der Vorlagen Parameter `Extent` nicht ist `dynamic_extent` . `It`muss ein sein `contiguous_iterator` .  |
+|`span(It first, End last)` | Erstellen Sie eine Spanne aus den Elementen im Iterator, `first` bis das Ende `last` erreicht ist. Nur bei der Überladungs Auflösung berücksichtigt, wenn der Vorlagen Parameter `Extent` nicht ist `dynamic_extent` . `It` muss ein sein `contiguous_iterator` .  |
 |`span(array<T, N>& arr) noexcept;`<br /><br />`span(const array<T, N>& arr) noexcept;`<br /><br />`span(type_identity_t<element_type> (&arr)[N]) noexcept;` |  Erstellt eine Spanne aus `N` Elementen des angegebenen Arrays. Wird nur bei der Überladungs Auflösung berücksichtigt, wenn der Vorlagen Parameter `Extent` ist `dynamic_extent` oder entspricht `N` . |
 |`span(R&& r)` |  Erstellen Sie eine Spanne aus einem Bereich. Ist nur an der Überladungs Auflösung beteiligt, wenn der Vorlagen Parameter `Extent` nicht `dynamic_extent` .|
 |`span(const span& other)` |  Der vom Compiler generierte Kopierkonstruktor. Eine flache Kopie des Daten Zeigers ist sicher, da die Spanne den Speicher nicht zum Speichern der Elemente zuweist. |
@@ -1086,7 +1087,7 @@ int main()
 2
 ```
 
-## <a name="deduction-guides"></a><a name="deduction_guides"></a>ABLEITUNGS Handbücher
+## <a name="deduction-guides"></a><a name="deduction_guides"></a> ABLEITUNGS Handbücher
 
 Die folgenden ABLEITUNGS Handbücher werden für Span bereitgestellt.
 

@@ -25,12 +25,12 @@ f1_keywords:
 helpviewer_keywords:
 - CAtlTransactionManager class
 ms.assetid: b01732dc-1d16-4b42-bfac-b137fca2b740
-ms.openlocfilehash: 968582feccd8ba9252ca009699eef6eae2c5c3d6
-ms.sourcegitcommit: 2bc15c5b36372ab01fa21e9bcf718fa22705814f
+ms.openlocfilehash: 74afc1a82c12d6138198f5696d300825e06aba1e
+ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82167824"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88562215"
 ---
 # <a name="catltransactionmanager-class"></a>Klasse von "-Klasse"
 
@@ -49,14 +49,14 @@ class CAtlTransactionManager;
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
 |[~-"~-Transaktionmanager"](#dtor)|Der Initialisierer von "-Dekonstruktor".|
 |[CAtlTransactionManager](#catltransactionmanager)|Der-Konstruktor "-Konstruktor".|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
 |[Schließen](#close)|Schließt einen Transaktions handle.|
 |[Commit](#commit)|Fordert an, dass für die Transaktion ein Commit ausgeführt wird.|
@@ -88,11 +88,11 @@ class CAtlTransactionManager;
 
 [ATL::-Daten Transaktions-Manager](../../atl/reference/catltransactionmanager-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atltransaktionmanager. h
 
-## <a name="catltransactionmanager"></a><a name="dtor"></a>~-"~-Transaktionmanager"
+## <a name="catltransactionmanager"></a><a name="dtor"></a>  ~-"~-Transaktionmanager"
 
 Der Initialisierer von "-Dekonstruktor".
 
@@ -104,7 +104,7 @@ virtual ~CAtlTransactionManager();
 
 Bei normaler Verarbeitung wird die Transaktion automatisch committet und geschlossen. Wenn der Dekonstruktor während einer Ausnahme entladen wird, wird ein Rollback für die Transaktion ausgeführt und geschlossen.
 
-## <a name="catltransactionmanager"></a><a name="catltransactionmanager"></a>CAtlTransactionManager
+## <a name="catltransactionmanager"></a><a name="catltransactionmanager"></a> CAtlTransactionManager
 
 Der-Konstruktor "-Konstruktor".
 
@@ -122,7 +122,7 @@ TRUE gibt an, dass der Transaktions Handler automatisch im Konstruktor erstellt 
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="close"></a><a name="close"></a>Ihrer
+## <a name="close"></a><a name="close"></a> Ihrer
 
 Schließt das Transaktions handle.
 
@@ -136,9 +136,9 @@ TRUE, wenn erfolgreich, andernfalls FALSE.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Wrapper Ruft die `CloseHandle` -Funktion auf. Die-Methode wird automatisch im Dekonstruktor aufgerufen.
+Dieser Wrapper Ruft die- `CloseHandle` Funktion auf. Die-Methode wird automatisch im Dekonstruktor aufgerufen.
 
-## <a name="commit"></a><a name="commit"></a>Einzusetzen
+## <a name="commit"></a><a name="commit"></a> Einzusetzen
 
 Fordert an, dass für die Transaktion ein Commit ausgeführt wird.
 
@@ -152,9 +152,9 @@ TRUE, wenn erfolgreich, andernfalls FALSE.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Wrapper Ruft die `CommitTransaction` -Funktion auf. Die-Methode wird automatisch im Dekonstruktor aufgerufen.
+Dieser Wrapper Ruft die- `CommitTransaction` Funktion auf. Die-Methode wird automatisch im Dekonstruktor aufgerufen.
 
-## <a name="create"></a><a name="create"></a> Erstellen
+## <a name="create"></a><a name="create"></a> Create
 
 Erstellt das Transaktions handle.
 
@@ -168,9 +168,9 @@ TRUE, wenn erfolgreich, andernfalls FALSE.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Wrapper Ruft die `CreateTransaction` -Funktion auf. Überprüfen Sie dies
+Dieser Wrapper Ruft die- `CreateTransaction` Funktion auf. Überprüfen Sie dies
 
-## <a name="createfile"></a><a name="createfile"></a>CreateFile
+## <a name="createfile"></a><a name="createfile"></a> CreateFile
 
 Erstellt oder öffnet eine Datei, einen Dateistream oder ein Verzeichnis als transaktiven Vorgang.
 
@@ -203,7 +203,7 @@ Ein Zeiger auf eine SECURITY_ATTRIBUTES-Struktur, die einen optionalen Sicherhei
 Eine Aktion, die für Dateien ausgeführt werden soll, die vorhanden sind und nicht vorhanden sind. Dieser Parameter muss einer der folgenden Werte sein, die nicht kombiniert werden können: CREATE_ALWAYS, CREATE_NEW, OPEN_ALWAYS, OPEN_EXISTING oder TRUNCATE_EXISTING.
 
 *dwflagsandattribute*<br/>
-Die Dateiattribute und-Flags. Dieser Parameter kann eine beliebige Kombination der verfügbaren Dateiattribute (FILE_ATTRIBUTE_ *) enthalten. Alle anderen Dateiattribute überschreiben FILE_ATTRIBUTE_NORMAL. Dieser Parameter kann auch Kombinationen von Flags (FILE_FLAG_\*) enthalten, um das Puffer Verhalten, Zugriffs Modi und andere Flags für bestimmte Zwecke zu steuern. Diese kombinieren Sie mit\* allen FILE_ATTRIBUTE_ Werten.
+Die Dateiattribute und-Flags. Dieser Parameter kann eine beliebige Kombination der verfügbaren Dateiattribute (FILE_ATTRIBUTE_ *) enthalten. Alle anderen Dateiattribute überschreiben FILE_ATTRIBUTE_NORMAL. Dieser Parameter kann auch Kombinationen von Flags (FILE_FLAG_ \* ) enthalten, um das Puffer Verhalten, Zugriffs Modi und andere Flags für bestimmte Zwecke zu steuern. Diese kombinieren Sie mit allen FILE_ATTRIBUTE_ \* Werten.
 
 *htemplatefile*<br/>
 Ein gültiges Handle für eine Vorlagen Datei mit dem GENERIC_READ Zugriffsrecht. Die Vorlagen Datei liefert Dateiattribute und erweiterte Attribute für die Datei, die erstellt wird. Dieser Parameter kann NULL sein.
@@ -214,9 +214,9 @@ Gibt ein Handle zurück, das für den Zugriff auf das-Objekt verwendet werden ka
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Wrapper Ruft die `CreateFileTransacted` -Funktion auf.
+Dieser Wrapper Ruft die- `CreateFileTransacted` Funktion auf.
 
-## <a name="deletefile"></a><a name="deletefile"></a>DeleteFile
+## <a name="deletefile"></a><a name="deletefile"></a> DeleteFile
 
 Löscht eine vorhandene Datei als transaktiven Vorgang.
 
@@ -231,9 +231,9 @@ Der Name der zu löschenden Datei.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Wrapper Ruft die `DeleteFileTransacted` -Funktion auf.
+Dieser Wrapper Ruft die- `DeleteFileTransacted` Funktion auf.
 
-## <a name="findfirstfile"></a><a name="findfirstfile"></a>FindFirstFile
+## <a name="findfirstfile"></a><a name="findfirstfile"></a> FindFirstFile
 
 Durchsucht ein Verzeichnis nach einer Datei oder einem Unterverzeichnis als transaktiver Vorgang.
 
@@ -253,13 +253,13 @@ Ein Zeiger auf die WIN32_FIND_DATA Struktur, die Informationen zu einer gefunden
 
 ### <a name="return-value"></a>Rückgabewert
 
-Wenn die Funktion erfolgreich ausgeführt wird, ist der Rückgabewert ein Such handle, das in einem `FindNextFile` nachfolg `FindClose`enden Rückruf von oder verwendet wird. Wenn die Funktion fehlschlägt oder Dateien aus der Such Zeichenfolge im *lpFileName* -Parameter nicht finden kann, wird der Rückgabewert INVALID_HANDLE_VALUE.
+Wenn die Funktion erfolgreich ausgeführt wird, ist der Rückgabewert ein Such handle, das in einem nachfolgenden Rückruf von oder verwendet wird `FindNextFile` `FindClose` . Wenn die Funktion fehlschlägt oder Dateien aus der Such Zeichenfolge im *lpFileName* -Parameter nicht finden kann, wird der Rückgabewert INVALID_HANDLE_VALUE.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Wrapper Ruft die `FindFirstFileTransacted` -Funktion auf.
+Dieser Wrapper Ruft die- `FindFirstFileTransacted` Funktion auf.
 
-## <a name="getfileattributes"></a><a name="getfileattributes"></a>GetFileAttributes
+## <a name="getfileattributes"></a><a name="getfileattributes"></a> GetFileAttributes
 
 Ruft Dateisystem Attribute für eine angegebene Datei oder ein angegebenes Verzeichnis als transaktiven Vorgang ab.
 
@@ -274,9 +274,9 @@ Der Name der Datei oder des Verzeichnisses.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Wrapper Ruft die `GetFileAttributesTransacted` -Funktion auf.
+Dieser Wrapper Ruft die- `GetFileAttributesTransacted` Funktion auf.
 
-## <a name="getfileattributesex"></a><a name="getfileattributesex"></a>Getfileattributesex
+## <a name="getfileattributesex"></a><a name="getfileattributesex"></a> Getfileattributesex
 
 Ruft Dateisystem Attribute für eine angegebene Datei oder ein angegebenes Verzeichnis als transaktiven Vorgang ab.
 
@@ -300,9 +300,9 @@ Ein Zeiger auf einen Puffer, der die Attributinformationen empfängt. Der Typ de
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Wrapper Ruft die `GetFileAttributesTransacted` -Funktion auf.
+Dieser Wrapper Ruft die- `GetFileAttributesTransacted` Funktion auf.
 
-## <a name="gethandle"></a><a name="gethandle"></a>GetHandle
+## <a name="gethandle"></a><a name="gethandle"></a> GetHandle
 
 Gibt das Transaktions Handle zurück.
 
@@ -312,11 +312,11 @@ HANDLE GetHandle() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt das Transaktions Handle für eine-Klasse zurück. Gibt NULL zurück, `CAtlTransactionManager` wenn das nicht an ein Handle angefügt ist.
+Gibt das Transaktions Handle für eine-Klasse zurück. Gibt NULL zurück, wenn das `CAtlTransactionManager` nicht an ein Handle angefügt ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="isfallback"></a><a name="isfallback"></a>Isfallback
+## <a name="isfallback"></a><a name="isfallback"></a> Isfallback
 
 Bestimmt, ob die Fall Back Aufrufe aktiviert sind.
 
@@ -330,7 +330,7 @@ Gibt true zurück, wenn die Klasse Fall Back Aufrufe unterstützt. Andernfalls f
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="m_bfallback"></a><a name="m_bfallback"></a>m_bFallback
+## <a name="m_bfallback"></a><a name="m_bfallback"></a> m_bFallback
 
 TRUE, wenn der Fall Back unterstützt wird. Andernfalls false.
 
@@ -340,7 +340,7 @@ BOOL m_bFallback;
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="m_htransaction"></a><a name="m_htransaction"></a>m_hTransaction
+## <a name="m_htransaction"></a><a name="m_htransaction"></a> m_hTransaction
 
 Das Transaktions handle.
 
@@ -350,7 +350,7 @@ HANDLE m_hTransaction;
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="movefile"></a><a name="movefile"></a>MoveFile
+## <a name="movefile"></a><a name="movefile"></a> MoveFile
 
 Verschiebt eine vorhandene Datei oder ein Verzeichnis, einschließlich der untergeordneten Elemente, als transaktiven Vorgang.
 
@@ -368,9 +368,9 @@ Der neue Name für die Datei oder das Verzeichnis. Dieser Name darf nicht bereit
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Wrapper Ruft die `MoveFileTransacted` -Funktion auf.
+Dieser Wrapper Ruft die- `MoveFileTransacted` Funktion auf.
 
-## <a name="regcreatekeyex"></a><a name="regcreatekeyex"></a>Regkreatekeyex
+## <a name="regcreatekeyex"></a><a name="regcreatekeyex"></a> Regkreatekeyex
 
 Erstellt den angegebenen Registrierungsschlüssel und ordnet ihn einer Transaktion zu. Wenn der Schlüssel bereits vorhanden ist, wird er von der Funktion geöffnet.
 
@@ -411,7 +411,7 @@ Eine Maske, die die Zugriffsrechte für den Schlüssel angibt.
 Zeiger auf eine SECURITY_ATTRIBUTES-Struktur, die bestimmt, ob das zurückgegebene Handle von untergeordneten Prozessen geerbt werden kann. Wenn *lpsecurityattribute* NULL ist, kann das Handle nicht geerbt werden.
 
 *phkResult*<br/>
-Ein Zeiger auf eine Variable, die ein Handle für den geöffneten oder erstellten Schlüssel empfängt. Wenn es sich bei dem Schlüssel nicht um einen der vordefinierten Registrierungsschlüssel handelt `RegCloseKey` , müssen Sie die Funktion nach Abschluss der Verwendung des Handles aufzurufen.
+Ein Zeiger auf eine Variable, die ein Handle für den geöffneten oder erstellten Schlüssel empfängt. Wenn es sich bei dem Schlüssel nicht um einen der vordefinierten Registrierungsschlüssel handelt, `RegCloseKey` müssen Sie die Funktion nach Abschluss der Verwendung des Handles aufzurufen.
 
 *lpdwdisposition*<br/>
 Ein Zeiger auf eine Variable, die einen der folgenden Dispositions Werte empfängt: REG_CREATED_NEW_KEY oder REG_OPENED_EXISTING_KEY.
@@ -422,9 +422,9 @@ Wenn die Funktion erfolgreich ausgeführt wird, wird der Rückgabewert ERROR_SUC
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Wrapper Ruft die `RegCreateKeyTransacted` -Funktion auf.
+Dieser Wrapper Ruft die- `RegCreateKeyTransacted` Funktion auf.
 
-## <a name="regdeletekey"></a><a name="regdeletekey"></a>Regdeletekey
+## <a name="regdeletekey"></a><a name="regdeletekey"></a> Regdeletekey
 
 Löscht einen Unterschlüssel und seine Werte aus der angegebenen plattformspezifischen Sicht der Registrierung als transaktiven Vorgang.
 
@@ -434,10 +434,11 @@ inline LSTATUS RegDeleteKeyEx(HKEY hKey, LPCTSTR lpSubKey);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
-|---------------|-----------------|
-|*HKEY*|Ein Handle für einen geöffneten Registrierungsschlüssel.|
-|*lpsubkey*|Der Name des zu löschenden Schlüssels.|
+*HKEY*\
+Ein Handle für einen geöffneten Registrierungsschlüssel.
+
+*lpsubkey*\
+Der Name des zu löschenden Schlüssels.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -445,9 +446,9 @@ Wenn die Funktion erfolgreich ausgeführt wird, wird der Rückgabewert ERROR_SUC
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Wrapper Ruft die `RegDeleteKeyTransacted` -Funktion auf.
+Dieser Wrapper Ruft die- `RegDeleteKeyTransacted` Funktion auf.
 
-## <a name="regopenkeyex"></a><a name="regopenkeyex"></a>Fehler bei RegOpenKeyEx
+## <a name="regopenkeyex"></a><a name="regopenkeyex"></a> Fehler bei RegOpenKeyEx
 
 Öffnet den angegebenen Registrierungsschlüssel und ordnet ihn einer Transaktion zu.
 
@@ -475,7 +476,7 @@ Dieser Parameter ist reserviert und muss NULL sein.
 Eine Maske, die die Zugriffsrechte für den Schlüssel angibt.
 
 *phkResult*<br/>
-Ein Zeiger auf eine Variable, die ein Handle für den geöffneten oder erstellten Schlüssel empfängt. Wenn es sich bei dem Schlüssel nicht um einen der vordefinierten Registrierungsschlüssel handelt `RegCloseKey` , müssen Sie die Funktion nach Abschluss der Verwendung des Handles aufzurufen.
+Ein Zeiger auf eine Variable, die ein Handle für den geöffneten oder erstellten Schlüssel empfängt. Wenn es sich bei dem Schlüssel nicht um einen der vordefinierten Registrierungsschlüssel handelt, `RegCloseKey` müssen Sie die Funktion nach Abschluss der Verwendung des Handles aufzurufen.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -483,9 +484,9 @@ Wenn die Funktion erfolgreich ausgeführt wird, wird der Rückgabewert ERROR_SUC
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Wrapper Ruft die `RegOpenKeyTransacted` -Funktion auf.
+Dieser Wrapper Ruft die- `RegOpenKeyTransacted` Funktion auf.
 
-## <a name="rollback"></a><a name="rollback"></a>Rollback
+## <a name="rollback"></a><a name="rollback"></a> Rollback
 
 Fordert an, dass ein Rollback der Transaktion ausgeführt wird.
 
@@ -499,9 +500,9 @@ TRUE, wenn erfolgreich, andernfalls FALSE.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Wrapper Ruft die `RollbackTransaction` -Funktion auf.
+Dieser Wrapper Ruft die- `RollbackTransaction` Funktion auf.
 
-## <a name="setfileattributes"></a><a name="setfileattributes"></a>Setfileattribute
+## <a name="setfileattributes"></a><a name="setfileattributes"></a> Setfileattribute
 
 Legt die Attribute für eine Datei oder ein Verzeichnis als transaktiven Vorgang fest.
 
@@ -519,8 +520,8 @@ Die Dateiattribute, die für die Datei festgelegt werden sollen. Weitere Informa
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieser Wrapper Ruft die `SetFileAttributesTransacted` -Funktion auf.
+Dieser Wrapper Ruft die- `SetFileAttributesTransacted` Funktion auf.
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Weitere Informationen
 
 [ATL-COM-Desktop-Komponenten](../../atl/atl-com-desktop-components.md)

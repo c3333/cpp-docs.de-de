@@ -96,12 +96,12 @@ helpviewer_keywords:
 - std::array [C++], size
 - std::array [C++], swap
 ms.assetid: fdfd43a5-b2b5-4b9e-991f-93bf10fb4293
-ms.openlocfilehash: 9cde21624e3a8d4cce6db9cdc054bad427340f31
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: f826bb679d3391855d0a0dbc7c4355a735b9c529
+ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87203906"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88562570"
 ---
 # <a name="array-class-c-standard-library"></a>array-Klasse (C++-Standardvorlagenbibliothek)
 
@@ -116,10 +116,11 @@ class array;
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
-|-|-|
-|`Ty`|Der Typ eines Elements.|
-|`N`|Die Anzahl der Elemente.|
+`Ty`\
+Der Typ eines Elements.
+
+`N`\
+Die Anzahl der Elemente.
 
 ## <a name="members"></a>Member
 
@@ -180,7 +181,7 @@ erstellt das Objekt `ai`, das vier ganzzahlige Werte enthält, initialisiert die
 
 **Namespace:** std
 
-## <a name="arrayarray"></a><a name="array"></a>Array:: Array
+## <a name="arrayarray"></a><a name="array"></a> Array:: Array
 
 Erstellt ein Arrayobjekt.
 
@@ -239,11 +240,11 @@ int main()
 0 1 2 3
 ```
 
-## <a name="arrayassign"></a><a name="assign"></a>Array:: Assign
+## <a name="arrayassign"></a><a name="assign"></a> Array:: Assign
 
 In C++11 veraltet, wurde durch [fill](#fill) ersetzt. Ersetzt alle Elemente.
 
-## <a name="arrayat"></a><a name="at"></a>Array:: at
+## <a name="arrayat"></a><a name="at"></a> Array:: at
 
 Greift auf ein Element an einer angegebenen Position zu.
 
@@ -289,7 +290,7 @@ int main()
 }
 ```
 
-## <a name="arrayback"></a><a name="back"></a>Array:: Back
+## <a name="arrayback"></a><a name="back"></a> Array:: Back
 
 Greift auf das letzte Element zu.
 
@@ -334,7 +335,7 @@ int main()
 3
 ```
 
-## <a name="arraybegin"></a><a name="begin"></a>Array:: begin
+## <a name="arraybegin"></a><a name="begin"></a> Array:: begin
 
 Legt den Anfang der kontrollierten Sequenz fest.
 
@@ -379,7 +380,7 @@ int main()
 0
 ```
 
-## <a name="arraycbegin"></a><a name="cbegin"></a>Array:: cbegin
+## <a name="arraycbegin"></a><a name="cbegin"></a> Array:: cbegin
 
 Gibt einen **`const`** Iterator zurück, der das erste Element im Bereich adressiert.
 
@@ -405,7 +406,7 @@ auto i2 = Container.cbegin();
 // i2 is Container<T>::const_iterator
 ```
 
-## <a name="arraycend"></a><a name="cend"></a>Array:: cend
+## <a name="arraycend"></a><a name="cend"></a> Array:: cend
 
 Gibt einen **`const`** Iterator zurück, der die Position direkt hinter dem letzten Element in einem Bereich adressiert.
 
@@ -433,7 +434,7 @@ auto i2 = Container.cend();
 
 Der von `cend` zurückgegebene Wert darf nicht dereferenziert werden.
 
-## <a name="arrayconst_iterator"></a><a name="const_iterator"></a>Array:: const_iterator
+## <a name="arrayconst_iterator"></a><a name="const_iterator"></a> Array:: const_iterator
 
 Der Typ eines konstanten Iterators für die gesteuerte Sequenz.
 
@@ -481,7 +482,7 @@ it1: 0 1 2 3
 it2: 0
 ```
 
-## <a name="arrayconst_pointer"></a><a name="const_pointer"></a>Array:: const_pointer
+## <a name="arrayconst_pointer"></a><a name="const_pointer"></a> Array:: const_pointer
 
 Der Typ eines konstanten Zeigers auf ein Element.
 
@@ -525,7 +526,7 @@ int main()
 0
 ```
 
-## <a name="arrayconst_reference"></a><a name="const_reference"></a>Array:: const_reference
+## <a name="arrayconst_reference"></a><a name="const_reference"></a> Array:: const_reference
 
 Der Typ eines konstanten Verweises auf ein Element.
 
@@ -569,7 +570,7 @@ int main()
 0
 ```
 
-## <a name="arrayconst_reverse_iterator"></a><a name="const_reverse_iterator"></a>Array:: const_reverse_iterator
+## <a name="arrayconst_reverse_iterator"></a><a name="const_reverse_iterator"></a> Array:: const_reverse_iterator
 
 Der Typ eines konstanten umgekehrten Iterators für die gesteuerte Sequenz.
 
@@ -613,7 +614,7 @@ int main()
 3
 ```
 
-## <a name="arraycrbegin"></a><a name="crbegin"></a>Array:: crbegin
+## <a name="arraycrbegin"></a><a name="crbegin"></a> Array:: crbegin
 
 Gibt einen konstanten Iterator zum ersten Element in einem umgekehrten Array zurück.
 
@@ -657,7 +658,7 @@ The first element of array is 1.
 The first element of the reversed array is 2.
 ```
 
-## <a name="arraycrend"></a><a name="crend"></a>Array:: crend
+## <a name="arraycrend"></a><a name="crend"></a> Array:: crend
 
 Gibt einen konstanten Iterator zurück, der den Speicherort adressiert, der dem letzten Element in einem umgekehrten Array nachfolgt.
 
@@ -701,7 +702,7 @@ int main( )
 1
 ```
 
-## <a name="arraydata"></a><a name="data"></a>Array::d ATA
+## <a name="arraydata"></a><a name="data"></a> Array::d ATA
 
 Ruft die Adresse des ersten Elements ab.
 
@@ -747,7 +748,7 @@ int main()
 0
 ```
 
-## <a name="arraydifference_type"></a><a name="difference_type"></a>Array::d ifference_type
+## <a name="arraydifference_type"></a><a name="difference_type"></a> Array::d ifference_type
 
 Der Typ eines Abstands mit Vorzeichen zwischen zwei Elementen.
 
@@ -791,7 +792,7 @@ int main()
 -4
 ```
 
-## <a name="arrayempty"></a><a name="empty"></a>Array:: Empty
+## <a name="arrayempty"></a><a name="empty"></a> Array:: Empty
 
 Testet, ob keine Elemente vorhanden sind.
 
@@ -841,7 +842,7 @@ false
 true
 ```
 
-## <a name="arrayend"></a><a name="end"></a>Array:: End
+## <a name="arrayend"></a><a name="end"></a> Array:: End
 
 Legt das Ende der kontrollierten Sequenz fest.
 
@@ -887,7 +888,7 @@ int main()
 3
 ```
 
-## <a name="arrayfill"></a><a name="fill"></a>Array:: Fill
+## <a name="arrayfill"></a><a name="fill"></a> Array:: Fill
 
 Löscht ein Array und kopiert die angegebenen Elemente in das leere Array.
 
@@ -897,9 +898,8 @@ void fill(const Type& val);
 
 ### <a name="parameters"></a>Parameter
 
-|Parameter|BESCHREIBUNG|
-|-|-|
-|*ster*|Der Wert des Elements, das in das Array eingefügt wird.|
+*ster*\
+Der Wert des Elements, das in das Array eingefügt wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -933,7 +933,7 @@ int main()
 }
 ```
 
-## <a name="arrayfront"></a><a name="front"></a>Array:: Front
+## <a name="arrayfront"></a><a name="front"></a> Array:: Front
 
 Greift auf das erste Element zu.
 
@@ -978,7 +978,7 @@ int main()
 0
 ```
 
-## <a name="arrayiterator"></a><a name="iterator"></a>Array:: Iterator
+## <a name="arrayiterator"></a><a name="iterator"></a> Array:: Iterator
 
 Der Typ eines Iterators für die gesteuerte Sequenz.
 
@@ -1027,7 +1027,7 @@ it1: 0 1 2 3
 it2: 0
 ```
 
-## <a name="arraymax_size"></a><a name="max_size"></a>Array:: max_size
+## <a name="arraymax_size"></a><a name="max_size"></a> Array:: max_size
 
 Ermittelt die Anzahl von Elementen.
 
@@ -1070,7 +1070,7 @@ int main()
 4
 ```
 
-## <a name="arrayoperator"></a><a name="op_at"></a>Array:: Operator []
+## <a name="arrayoperator"></a><a name="op_at"></a> Array:: Operator []
 
 Greift auf ein Element an einer angegebenen Position zu.
 
@@ -1123,7 +1123,7 @@ int main()
 1 3
 ```
 
-## <a name="arrayoperator"></a><a name="op_eq"></a>Array:: Operator =
+## <a name="arrayoperator"></a><a name="op_eq"></a> Array:: Operator =
 
 Ersetzt die kontrollierte Sequenz.
 
@@ -1178,7 +1178,7 @@ int main()
 0 1 2 3
 ```
 
-## <a name="arraypointer"></a><a name="pointer"></a>Array::p
+## <a name="arraypointer"></a><a name="pointer"></a> Array::p
 
 Der Typ eines Zeigers auf ein Element.
 
@@ -1222,7 +1222,7 @@ int main()
 0
 ```
 
-## <a name="arrayrbegin"></a><a name="rbegin"></a>Array:: rbegin
+## <a name="arrayrbegin"></a><a name="rbegin"></a> Array:: rbegin
 
 Legt den Anfang der umgekehrten kontrollierten Sequenz fest.
 
@@ -1267,7 +1267,7 @@ int main()
 3
 ```
 
-## <a name="arrayreference"></a><a name="reference"></a>Array:: Reference
+## <a name="arrayreference"></a><a name="reference"></a> Array:: Reference
 
 Der Typ eines Verweises auf ein Element.
 
@@ -1311,7 +1311,7 @@ int main()
 0
 ```
 
-## <a name="arrayrend"></a><a name="rend"></a>Array:: rend
+## <a name="arrayrend"></a><a name="rend"></a> Array:: rend
 
 Legt das Ende der umgekehrten kontrollierten Sequenz fest.
 
@@ -1356,7 +1356,7 @@ int main()
 0
 ```
 
-## <a name="arrayreverse_iterator"></a><a name="reverse_iterator"></a>Array:: reverse_iterator
+## <a name="arrayreverse_iterator"></a><a name="reverse_iterator"></a> Array:: reverse_iterator
 
 Der Typ eines umgekehrten Iterators für die gesteuerte Sequenz.
 
@@ -1400,7 +1400,7 @@ int main()
 3
 ```
 
-## <a name="arraysize"></a><a name="size"></a>Array:: size
+## <a name="arraysize"></a><a name="size"></a> Array:: size
 
 Ermittelt die Anzahl von Elementen.
 
@@ -1443,7 +1443,7 @@ int main()
 4
 ```
 
-## <a name="arraysize_type"></a><a name="size_type"></a>Array:: size_type
+## <a name="arraysize_type"></a><a name="size_type"></a> Array:: size_type
 
 Der Typ eines Abstands ohne Vorzeichen zwischen zwei Elementen.
 
@@ -1487,7 +1487,7 @@ int main()
 4
 ```
 
-## <a name="arrayswap"></a><a name="swap"></a>Array:: Swap
+## <a name="arrayswap"></a><a name="swap"></a> Array:: Swap
 
 Tauscht den Inhalt dieses Arrays mit dem eines anderen aus.
 
@@ -1553,7 +1553,7 @@ int main()
 0 1 2 3
 ```
 
-## <a name="arrayvalue_type"></a><a name="value_type"></a>Array:: value_type
+## <a name="arrayvalue_type"></a><a name="value_type"></a> Array:: value_type
 
 Der Typ eines Elements.
 

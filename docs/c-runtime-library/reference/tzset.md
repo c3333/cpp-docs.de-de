@@ -28,12 +28,12 @@ helpviewer_keywords:
 - time environment variables
 - environment variables, setting time
 ms.assetid: 3f6ed537-b414-444d-b272-5dd377481930
-ms.openlocfilehash: d5afc1b05f52d73228abc1a1e102c1578eb2d2dc
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 0791fe6002b751906c6bc6f83dafe1ccf202bc8b
+ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82912145"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88562024"
 ---
 # <a name="_tzset"></a>_tzset
 
@@ -48,19 +48,26 @@ Legt die Umgebungsvariablen für die Zeit fest.
 void _tzset( void );
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **_tzset** -Funktion verwendet die aktuelle Einstellung der Umgebungsvariablen **TZ** , um drei globalen Variablen Werte zuzuweisen: **_daylight**, **_timezone**und **_tzname**. Diese Variablen werden von den Funktionen [_ftime](ftime-ftime32-ftime64.md) und [localtime](localtime-localtime32-localtime64.md) verwendet, um Korrekturen von der koordinierten Weltzeit (UTC) zur Ortszeit und von der [time](time-time32-time64.md) -Funktion zur Berechnung der UTC aus der Systemzeit durchführen. Verwenden Sie die folgende Syntax, um die **TZ** -Umgebungsvariable festzulegen:
 
-> **Set TZ =**_tzn_ \[ **+**&#124;**-**]*HH*\[**:**_mm_\[**:**_SS_]] [*DZN*]
+> **Set TZ =**_tzn_ \[ **+**&#124;**-** ]*HH* \[ **:**_mm_ \[ **:**_SS_]] [*DZN*]
 
-|Parameter|Beschreibung|
-|-|-|
-| *tzn* | Dreibuchstabiger Zeitzonenname, z. B. PST. Sie müssen die richtige Verschiebung (Offset) von der Ortszeit zur UTC angeben. |
-| *hh* | Unterschied in Stunden zwischen UTC und Ortszeit. Das Pluszeichen (+) ist für positive Werte optional. |
-| *MM* | Minuten. Getrennt von *HH* durch einen Doppelpunkt (**:**). |
-| *Schaden* | Sekunden. Von *mm* getrennt durch einen Doppelpunkt (**:**). |
-| *DZN* | Dreibuchstabige Sommerzeitzone, z. B. PDT. Wenn die Sommerzeit in der Lokalität nie wirksam ist, legen Sie **TZ** ohne einen Wert für *DZN*fest. Die C-Laufzeitbibliothek wendet die Regeln der Vereinigten Staaten an, um die Berechnung der Sommerzeit (DST, Daylight Saving Time) zu implementieren. |
+ *tzn* \
+ Dreibuchstabiger Zeitzonenname, z. B. PST. Sie müssen die richtige Verschiebung (Offset) von der Ortszeit zur UTC angeben.
+
+ *hh* \
+ Unterschied in Stunden zwischen UTC und Ortszeit. Das Pluszeichen (+) ist für positive Werte optional.
+
+ *mm* \
+ Minuten. Getrennt von *HH* durch einen Doppelpunkt (**:**).
+
+ *Schaden* \
+ Sekunden. Von *mm* getrennt durch einen Doppelpunkt (**:**).
+
+ *DZN* \
+ Dreibuchstabige Sommerzeitzone, z. B. PDT. Wenn die Sommerzeit in der Lokalität nie wirksam ist, legen Sie **TZ** ohne einen Wert für *DZN*fest. Die C-Laufzeitbibliothek wendet die Regeln der Vereinigten Staaten an, um die Berechnung der Sommerzeit (DST, Daylight Saving Time) zu implementieren.
 
 > [!NOTE]
 > Seien Sie vorsichtig, wenn Sie das Zeichen des Zeitunterschieds berechnen. Da der Zeitunterschied die Verschiebung von der Ortszeit zu UTC (anstatt umgekehrt) ist, ist das dazugehörige Zeichen gegenüber dem erwarteten möglicherweise das entgegengesetzte. Für Zeitzonen vor UTC ist der Zeitunterschied negativ; für Zeitzonen hinter UTC ist der Unterschied positiv.
@@ -75,7 +82,7 @@ Wenn der **TZ** -Wert nicht festgelegt ist, versucht **_tzset** , die vom Betrie
 
 Basierend auf dem Wert der **TZ** -Umgebungsvariablen werden die folgenden Werte den globalen Variablen **_daylight**, **_timezone**und **_tzname** zugewiesen, wenn **_tzset** aufgerufen wird:
 
-|Globale Variable|Beschreibung|Standardwert|
+|Globale Variable|BESCHREIBUNG|Standardwert|
 |---------------------|-----------------|-------------------|
 |**_daylight**|Wert ungleich 0 (null), wenn eine Sommer Zeitzone in der **TZ** -Einstellung angegeben wird. andernfalls 0.|1|
 |**_timezone**|Unterschied in Sekunden zwischen Ortszeit und UTC.|28800 (28800 Sekunden sind gleich 8 Stunden)|
@@ -88,7 +95,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**_tzset**|\<time.h>|
 

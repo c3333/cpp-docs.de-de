@@ -26,12 +26,12 @@ helpviewer_keywords:
 - _set_error_mode function
 - set_error_mode function
 ms.assetid: f0807be5-73d1-4a32-a701-3c9bdd139c5c
-ms.openlocfilehash: 15a6d72a79f0498fb7d81094ed3595dea1cf444f
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: c1bb617e0f3792f2ac41d59df13d184423d56a9e
+ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70948564"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88562037"
 ---
 # <a name="_set_error_mode"></a>_set_error_mode
 
@@ -57,20 +57,20 @@ Ziel der Fehlermeldungen.
 
 Gibt die alte Einstellung oder -1 zurück, wenn ein Fehler auftritt.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Steuert die Fehlerausgabe Senke, indem der Wert von **__error_mode**festgelegt wird. Beispielsweise können Sie die Ausgabe an einen Standardfehler weiterleiten oder die **MessageBox** -API verwenden.
+Steuert die Fehlerausgabe Senke, indem der Wert **__error_mode**festgelegt wird. Beispielsweise können Sie die Ausgabe an einen Standardfehler weiterleiten oder die **MessageBox** -API verwenden.
 
 Der *mode_val* -Parameter kann auf einen der folgenden Werte festgelegt werden.
 
-|Parameter|Beschreibung|
+|Wert|BESCHREIBUNG|
 |---------------|-----------------|
-|**_OUT_TO_DEFAULT**|Die Fehler Senke wird von **__app_type**bestimmt.|
+|**_OUT_TO_DEFAULT**|Die Fehler Senke wird durch **__app_type**bestimmt.|
 |**_OUT_TO_STDERR**|Fehlersenke ist ein Standardfehler.|
 |**_OUT_TO_MSGBOX**|Fehlersenke ist ein Meldungsfeld.|
-|**_REPORT_ERRMODE**|Meldet den aktuellen **__error_mode** -Wert.|
+|**_REPORT_ERRMODE**|Melden Sie den aktuellen **__error_mode** Wert.|
 
-Wenn ein anderer Wert als die aufgeführten übergeben wird, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameterüberprüfung)](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die weitere Ausführung zugelassen wird, legt _set_error_mode **errno** auf **EINVAL** fest und gibt-1 zurück.
+Wenn ein anderer Wert als die aufgeführten übergeben wird, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameterüberprüfung)](../../c-runtime-library/parameter-validation.md) beschrieben. Wenn die weitere Ausführung zugelassen wird, **_set_error_mode** legt _set_error_mode **errno** auf **EINVAL** fest und gibt-1 zurück.
 
 Wenn Sie mit einer [Assert](assert-macro-assert-wassert.md)-Anweisung verwendet wird, zeigt **_set_error_mode** die fehlerhafte Anweisung im Dialogfeld an und bietet Ihnen die Möglichkeit, die Schaltfläche **ignorieren** auszuwählen, sodass Sie das Programm weiter ausführen können.
 
@@ -102,6 +102,6 @@ This application has requested the Runtime to terminate it in an unusual way.
 Please contact the application's support team for more information.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[assert Macro, _assert, _wassert](assert-macro-assert-wassert.md)<br/>
+[Assert-Makro, _ASSERT _wassert](assert-macro-assert-wassert.md)<br/>
