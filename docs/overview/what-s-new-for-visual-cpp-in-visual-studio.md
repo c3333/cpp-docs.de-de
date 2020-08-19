@@ -3,12 +3,12 @@ title: Neuerungen bei C++ in Visual Studio
 ms.date: 05/19/2020
 ms.technology: cpp-ide
 ms.assetid: 8801dbdb-ca0b-491f-9e33-01618bff5ae9
-ms.openlocfilehash: 28b3708c8064623a364b7a60eb63c508808b0a0b
-ms.sourcegitcommit: 6e55aeb538b1c39af754f82d6f7738a18f5aa031
+ms.openlocfilehash: 509c9d458360c2ba8f46054b69de38aad8bbf56a
+ms.sourcegitcommit: 8140647370017b885432349ce89f187c3068b46a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87389999"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88144177"
 ---
 # <a name="whats-new-for-c-in-visual-studio"></a>Neuerungen bei C++ in Visual Studio
 
@@ -636,7 +636,7 @@ Ihnen stehen nun neue Optionen zum Schreiben und Packen von C++-Anwendungen für
 
 Eine Projektvorlage **Paketerstellungsprojekt für Windows-Anwendungen** wurde hinzugefügt, die die Paketerstellung von Desktopanwendungen mithilfe von Desktop Bridge unterstützt. Sie ist unter **Datei > Neu > Projekt > Installiert > Visual C++ > Universelle Windows-Plattform** verfügbar. Weitere Informationen finden Sie unter [Packen einer App mit Visual Studio (Desktop Bridge)](/windows/uwp/porting/desktop-to-uwp-packaging-dot-net).
 
-Beim Schreiben von neuem Code können Sie nun C++/WinRT verwenden. Dies ist eine C++-Standardsprachprojektion für Windows-Runtime (WinRT), die nur in Headerdateien implementiert wird. Mit ihr können Sie Windows-Runtime-APIs mit jedem standardkonformen C++-Compiler nutzen und erstellen. C++/WinRT wurde dafür konzipiert, C++-Entwicklern erstklassigen Zugriff auf die moderne Windows-API zur Verfügung zu stellen. Weitere Informationen finden Sie unter [C++/WinRT: Modernes C++ für die Windows-Runtime](https://moderncpp.com/).
+Beim Schreiben von neuem Code können Sie nun C++/WinRT verwenden. Dies ist eine C++-Standardsprachprojektion für Windows-Runtime (WinRT), die nur in Headerdateien implementiert wird. Mit ihr können Sie Windows-Runtime-APIs mit jedem standardkonformen C++-Compiler nutzen und erstellen. C++/WinRT wurde dafür konzipiert, C++-Entwicklern erstklassigen Zugriff auf die moderne Windows-API zur Verfügung zu stellen. Weitere Informationen finden Sie unter [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/).
 
 Ab Build 17025 der Windows SDK Insider Preview ist C++/WinRT im Windows SDK enthalten. Weitere Informationen finden Sie unter [C++/WinRT ist jetzt im Windows SDK enthalten](https://devblogs.microsoft.com/cppblog/cppwinrt-is-now-included-the-windows-sdk/).
 
