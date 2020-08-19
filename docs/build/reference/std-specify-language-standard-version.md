@@ -6,14 +6,14 @@ f1_keywords:
 - -std
 - VC.Project.VCCLCompilerTool.CppLanguageStandard
 ms.assetid: 0acb74ba-1aa8-4c05-b96c-682988dc19bd
-ms.openlocfilehash: eef44858064b89d4a836c80a48552599bceec242
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 9755194d70774f27af4c5174151588cc03d5f97a
+ms.sourcegitcommit: 65fead53d56d531d71be42216056aca5f44def11
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87223823"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88610958"
 ---
-# <a name="std-specify-language-standard-version"></a>`/std`(Standard Version der Sprache angeben)
+# <a name="std-specify-language-standard-version"></a>`/std` (Standard Version der Sprache angeben)
 
 Aktivieren Sie unterstützte Features der Programmiersprache C++ aus der angegebenen Version des C++-Sprachstandards.
 
@@ -21,17 +21,17 @@ Aktivieren Sie unterstützte Features der Programmiersprache C++ aus der angegeb
 
 > **`/std:c++14`**\
 > **`/std:c++17`**\
-> **`/std:c++latest`**]
+> **`/std:c++latest`**
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **`/std`** Option ist in Visual Studio 2017 und höher verfügbar. Sie wird verwendet, um die Versions spezifischen Standard Features der ISO C++-Programmiersprache zu steuern, die während der Kompilierung Ihres Codes aktiviert wurden. Mit dieser Option können Sie die Unterstützung für bestimmte neue sprach-und Bibliotheks Features deaktivieren: solche, die den vorhandenen Code unterbrechen können, der einer bestimmten Version des Sprachstandards entspricht. Standardmäßig **`/std:c++14`** ist angegeben. Dadurch werden die Sprach-und Standard Bibliotheksfunktionen deaktiviert, die in späteren Versionen des C++-Sprachstandards gefunden werden. Verwenden **`/std:c++17`** Sie, um c++ 17-Standard spezifische Features und Verhalten zu aktivieren. Verwenden Sie, um die derzeit implementierten Compiler-und Standard Bibliotheksfunktionen, die für den nächsten Entwurfs Standard vorgeschlagen werden, explizit zu aktivieren **`/std:c++latest`** . Alle c++ 20 Features erfordern **`/std:c++latest`** ; Wenn die Implementierung vollständig ist, wird eine neue **`/std:c++20`** Option aktiviert.
+Die **`/std`** Option ist in Visual Studio 2017 und höher verfügbar. Sie wird verwendet, um die Versions spezifischen Standard Features der ISO C++-Programmiersprache zu steuern, die während der Kompilierung Ihres Codes aktiviert wurden. Mit dieser Option können Sie die Unterstützung für bestimmte neue sprach-und Bibliotheks Features deaktivieren: solche, die den vorhandenen Code unterbrechen können, der einer bestimmten Version des Sprachstandards entspricht. Standardmäßig **`/std:c++14`** ist angegeben. Dadurch werden die Sprach-und Standard Bibliotheksfunktionen deaktiviert, die in späteren Versionen des C++-Sprachstandards gefunden werden. Verwenden  **`/std:c++17`** Sie, um c++ 17-Standard spezifische Features und Verhalten zu aktivieren. Verwenden Sie, um die derzeit implementierten Compiler-und Standard Bibliotheksfunktionen, die für den nächsten Entwurfs Standard vorgeschlagen werden, explizit zu aktivieren **`/std:c++latest`** . Alle c++ 20 Features erfordern **`/std:c++latest`** ; Wenn die Implementierung vollständig ist, wird eine neue **`/std:c++20`** Option aktiviert.
 
 Die Standard **`/std:c++14`** Option aktiviert den Satz von c++ 14-Funktionen, die vom MSVC-Compiler implementiert werden. Mit dieser Option wird die Unterstützung von Compiler-und Standardbibliotheken für Funktionen deaktiviert, die in neueren Versionen des Sprachstandards geändert oder neu sind. Einige c++ 17-Features, die bereits in vorherigen Versionen des MSVC-Compilers implementiert wurden, werden nicht deaktiviert. Um wichtige Änderungen für Benutzer zu vermeiden, die bereits Abhängigkeiten von den in oder vor Visual Studio 2015 Update 2 verfügbaren Features übernommen haben, bleiben diese Features aktiviert, wenn die **`/std:c++14`** Option angegeben wird:
 
 - [Regeln für `auto` mit geschweizten Klammern-init-Lists](https://wg21.link/n3922)
 
-- [`typename`in Vorlagen Vorlagen-Parametern](https://wg21.link/n4051)
+- [`typename` in Vorlagen Vorlagen-Parametern](https://wg21.link/n4051)
 
 - [Entfernen von Trigraphen](https://wg21.link/n4086)
 

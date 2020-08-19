@@ -2,12 +2,12 @@
 title: Auflistungen (C++/CX)
 ms.date: 11/19/2018
 ms.assetid: 914da30b-aac5-4cd7-9da3-a5ac08cdd72c
-ms.openlocfilehash: c8b844cd2500df7ab9069ac1586a352c639e17bd
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 84c6ecad5ffb4920972faf5aa564103ec1f5b5df
+ms.sourcegitcommit: 65fead53d56d531d71be42216056aca5f44def11
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87233508"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88610945"
 ---
 # <a name="collections-ccx"></a>Auflistungen (C++/CX)
 
@@ -39,7 +39,7 @@ Wenn die Klasse einen Sequenz Container an eine andere Windows-Runtime Komponent
 > [!IMPORTANT]
 > Wenn Sie eine Sequenz im eigenen Programm übergeben, verwenden Sie entweder `Vector` oder `std::vector` , da sie effizienter als `IVector`sind. Verwenden Sie `IVector` nur, wenn Sie den Container über die ABI übergeben.
 >
-> Das Windows-Runtime-Typsystem unterstützt das Konzept von verzweigten Arrays nicht. Daher können Sie ein IVector<Platform:: Array- \<T>> nicht als Rückgabewert oder Methoden Parameter übergeben. Um ein verzweigtes Array oder eine Sequenz von Sequenzen an die ABI zu übergeben, verwenden Sie `IVector<IVector<T>^>`.
+> Das Windows-Runtime-Typsystem unterstützt das Konzept von verzweigten Arrays nicht. Daher können Sie keine `IVector<Platform::Array<T>>` als Rückgabewert oder Methoden Parameter übergeben. Um ein verzweigtes Array oder eine Sequenz von Sequenzen an die ABI zu übergeben, verwenden Sie `IVector<IVector<T>^>`.
 
 `Vector<T>` stellt die Methoden bereit, die zum Hinzufügen, Entfernen und das Zugreifen auf Elemente in der Auflistung erforderlich sind, und kann implizit zu `IVector<T>`konvertiert werden. Sie können STL-Algorithmen auch bei Instanzen von `Vector<T>`verwenden. Das folgende Beispiel veranschaulicht die grundlegende Verwendung. Die [begin function](../cppcx/begin-function.md) und [end function](../cppcx/end-function.md) hier stammen vom Namespace `Platform::Collections` und nicht vom Namespace `std` .
 
@@ -121,7 +121,7 @@ Ein STL-Iterator, der die Anforderungen eines STL-Eingabeiterators erfüllt.
 Ein STL-Iterator, der die Anforderungen eines änderbaren STL-Iterators mit Direktzugriff erfüllt.
 
 [Platform:: Collections:: vectorviewiterator-Klasse](../cppcx/platform-collections-vectorviewiterator-class.md)<br/>
-Ein STL-Iterator, der die Anforderungen eines STL **`const`** -Iterators mit zufälligem Zugriff erfüllt.
+Ein STL-Iterator, der die Anforderungen eines STL  **`const`** -Iterators mit zufälligem Zugriff erfüllt.
 
 ### <a name="begin-and-end-functions"></a>begin() und end() -Funktionen
 

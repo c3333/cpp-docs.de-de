@@ -4,12 +4,12 @@ ms.date: 02/26/2020
 helpviewer_keywords:
 - MSBuild overview
 ms.assetid: dd258f6f-ab51-48d9-b274-f7ba911d05ca
-ms.openlocfilehash: e100913cf4f0d84eac0e5891edb053918aec67f4
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: c52434fa4b652d52baea70df705920db4ee68a5f
+ms.sourcegitcommit: 65fead53d56d531d71be42216056aca5f44def11
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87190493"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88610846"
 ---
 # <a name="msbuild-internals-for-c-projects"></a>MSBuild-Interna für C++-Projekte
 
@@ -21,17 +21,17 @@ Die meisten Ziele und Eigenschaften in den Unterstützungsdateien dienen ausschl
 
 Standardmäßig befinden sich die primären Visual Studio-Supportdateien in den folgenden Verzeichnissen. Diese Informationen sind Versions spezifisch.
 
-### <a name="visual-studio-2019"></a>Visual Studio 2019
+### <a name="visual-studio-2019"></a>Visual Studio 2019
 
-- % VSInstallDir% MSBuild \\ Microsoft \\ VC \\ *Version* \\ vctargets\\
+- % VSInstallDir% MSBuild \\ Microsoft \\ VC- \\ *Version*\\
 
   Enthält die primären Zieldateien (TARGETS-Format) und Eigenschaftendateien (PROPS-Format), die von den Zielen verwendet werden. Standardmäßig verweist das $ (VCTargetsPath)-Makro auf dieses Verzeichnis. Der *Versions* Platzhalter verweist auf die Visual Studio-Version: V160 for Visual Studio 2019, V150 for Visual Studio 2017.
 
-- % VSInstallDir% MSBuild \\ Microsoft \\ VC \\ *Version* \\ vctargets \\ Platforms \\ *Plattform*\\
+- % VSInstallDir% MSBuild \\ \\ Plattform für \\ *version* \\ Plattformen \\ *platform* von Microsoft VC\\
 
   Enthält plattformspezifische Ziel- und Eigenschaftsdateien, die die Ziele und Eigenschaften im übergeordneten Verzeichnis außer Kraft setzen. Dieses Verzeichnis enthält außerdem eine DLL, die die von den Zielen in diesem Verzeichnis verwendeten Aufgaben definiert. Der Platzhalter *Plattform* steht für das ARM-, Win32- oder x64-Unterverzeichnis.
 
-- % VSInstallDir% MSBuild \\ Microsoft \\ VC \\ *Version* \\ vctargets \\ Platforms \\ *Platform* \\ platformtoolsets- \\ *Toolset*\\
+- % VSInstallDir% MSBuild \\ Microsoft \\ VC \\ *Version* \\ Platforms \\ *Plattform* \\ platformtoolsets \\ *Toolset*\\
 
   Enthält die Verzeichnisse, die es dem Build ermöglichen, C++-Anwendungen mit dem angegebenen *Toolset* zu generieren. Der Platzhalter *Plattform* steht für das ARM-, Win32- oder x64-Unterverzeichnis. Der *toolsetplatzhalter* stellt das toolsetunterverzeichnis dar.
 
@@ -127,7 +127,7 @@ In der folgenden Tabelle sind mehrere nützliche benutzerorientierte Ziele aufge
 > [!NOTE]
 > In Visual Studio 2017 und höher ist die Unterstützung von C++-Projekten für **xsd**-Dateien veraltet. Sie können **Microsoft.VisualC.CppCodeProvider** weiterhin verwenden, indem Sie die Datei **CppCodeProvider.dll** manuell dem globalen Assemblycache hinzufügen.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Referenz zu MSBuild-Aufgaben](/visualstudio/msbuild/msbuild-task-reference)\
 [BSCMAKE-Aufgabe](/visualstudio/msbuild/bscmake-task)\

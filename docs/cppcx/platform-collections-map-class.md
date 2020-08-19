@@ -15,12 +15,12 @@ f1_keywords:
 helpviewer_keywords:
 - Map Class (C++/Cx)
 ms.assetid: 2b8cf968-1167-4898-a149-1195b32c1785
-ms.openlocfilehash: 30dbc71a03c398c77124738b2477a3563191d50d
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 0ddb15507c97c0dfff48575e476b57fe91359239
+ms.sourcegitcommit: 65fead53d56d531d71be42216056aca5f44def11
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87214983"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88610906"
 ---
 # <a name="platformcollectionsmap-class"></a>Platform::Collections::Map-Klasse
 
@@ -49,7 +49,7 @@ Ein Typ, der ein Funktionsobjekt bereitstellt, das zwei Elementwerte als Sortier
 
 *__is_valid_winrt_type ()* Eine vom Compiler generierte Funktion, die den Typ von *K* und *V* überprüft und eine benutzerfreundliche Fehlermeldung bereitstellt, wenn der Typ nicht in der Zuordnung gespeichert werden kann.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Folgende Typen sind zulässig:
 
@@ -63,21 +63,21 @@ Folgende Typen sind zulässig:
 
 - Öffentliche Enumerationsklasse
 
-Die Zuordnung ist im Grunde genommen ein Wrapper für [std::map](../standard-library/map-class.md). Dabei handelt es sich um eine konkrete C++-Implementierung der Typen [Windows:: Foundation:: Collections:: IMap<Windows:: Foundation:: Collections:: ikeyvaluepair \<K,V> > ](/uwp/api/windows.foundation.collections.imap-2) und [iobservablemap](/uwp/api/windows.foundation.collections.iobservablemap-2) , die über öffentliche Windows-Runtime Schnittstellen geleitet werden. Wenn Sie versuchen, einen `Platform::Collections::Map` -Typ in einem öffentlichen Rückgabewert oder Parameter zu verwenden, wird der Compilerfehler C3986 ausgelöst. Sie können den Fehler beheben, indem Sie den Typ des Parameters oder des Rückgabewerts in [Windows:: Foundation:: Collections: \<K,V> : IMap](/uwp/api/windows.foundation.collections.imap-2)ändern.
+Die Zuordnung ist im Grunde genommen ein Wrapper für [std::map](../standard-library/map-class.md). Dabei handelt es sich um eine konkrete C++-Implementierung der Typen [Windows:: Foundation:: \<Windows::Foundation::Collections::IKeyValuePair\<K,V> > Collections:: IMap](/uwp/api/windows.foundation.collections.imap-2) und [iobservablemap](/uwp/api/windows.foundation.collections.iobservablemap-2) , die über öffentliche Windows-Runtime Schnittstellen übermittelt werden. Wenn Sie versuchen, einen `Platform::Collections::Map` -Typ in einem öffentlichen Rückgabewert oder Parameter zu verwenden, wird der Compilerfehler C3986 ausgelöst. Sie können den Fehler beheben, indem Sie den Typ des Parameters oder des Rückgabewerts in [Windows:: Foundation:: Collections: \<K,V> : IMap](/uwp/api/windows.foundation.collections.imap-2)ändern.
 
 Weitere Informationen finden Sie unter [Collections](../cppcx/collections-c-cx.md).
 
-### <a name="members"></a>Member
+### <a name="members"></a>Members
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[Map:: map](#ctor)|Initialisiert eine neue Instanz der Map-Klasse.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[Map:: Clear](#clear)|Entfernt alle Schlüssel-Wert-Paare aus dem derzeitigen Map-Objekt.|
 |[Map:: First](#first)|Gibt einen Iterator zurück, der das erste Element in der Zuordnung angibt.|
@@ -88,11 +88,11 @@ Weitere Informationen finden Sie unter [Collections](../cppcx/collections-c-cx.m
 |[Map::Remove](#remove)|Löscht das angegebene Schlüssel-Wert-Paar vom aktuellen Map-Objekt.|
 |[Map:: size](#size)|Gibt die Anzahl von Elementen im aktuellen Map-Objekt zurück.|
 
-### <a name="events"></a>Ereignisse
+### <a name="events"></a>Events
 
 |||
 |-|-|
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |[Map:: mapchanged](#mapchanged) -Ereignis|Tritt auf, wenn sich die Map ändert.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
@@ -105,7 +105,7 @@ Weitere Informationen finden Sie unter [Collections](../cppcx/collections-c-cx.m
 
 **Namespace:** Platform::Collections
 
-## <a name="mapclear-method"></a><a name="clear"></a>Map:: Clear-Methode
+## <a name="mapclear-method"></a><a name="clear"></a> Map:: Clear-Methode
 
 Entfernt alle Schlüssel-Wert-Paare aus dem derzeitigen Map-Objekt.
 
@@ -115,7 +115,7 @@ Entfernt alle Schlüssel-Wert-Paare aus dem derzeitigen Map-Objekt.
 virtual void Clear();
 ```
 
-## <a name="mapfirst-method"></a><a name="first"></a>Map:: First-Methode
+## <a name="mapfirst-method"></a><a name="first"></a> Map:: First-Methode
 
 Gibt einen Iterator zurück, der das erste Element in der Zuordnung angibt, oder, **`nullptr`** Wenn die Zuordnung leer ist.
 
@@ -130,11 +130,11 @@ Windows::Foundation::Collections::IKeyValuePair<K, V>^>^ First();
 
 Ein Iterator, der das erste Element in der Zuordnung angibt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine bequeme Möglichkeit, den von First () zurückgegebenen Iterator zu halten, besteht darin, den Rückgabewert einer Variablen zuzuweisen, die mit dem **`auto`** typableitungs Schlüsselwort deklariert wird. Beispiel: `auto x = myMap->First();`.
 
-## <a name="mapgetview-method"></a><a name="getview"></a>Map:: GetView-Methode
+## <a name="mapgetview-method"></a><a name="getview"></a> Map:: GetView-Methode
 
 Gibt eine schreibgeschützte Ansicht der aktuellen Zuordnung zurück. Das heißt, eine [Platform:: Collections:: MapView-Klasse](../cppcx/platform-collections-mapview-class.md), die die Schnittstelle [Windows:: Foundation:: Collections:: imapview \<K,V> ](/uwp/api/windows.foundation.collections.imapview-2) implementiert.
 
@@ -148,7 +148,7 @@ Windows::Foundation::Collections::IMapView<K, V>^ GetView();
 
 Ein `MapView`-Objekt.
 
-## <a name="maphaskey-method"></a><a name="haskey"></a>Map:: Haskey-Methode
+## <a name="maphaskey-method"></a><a name="haskey"></a> Map:: Haskey-Methode
 
 Ermittelt, ob die aktuelle Map den angegebenen Schlüssel enthält.
 
@@ -165,9 +165,9 @@ Der zum Suchen des Map-Elements verwendete Schlüssel. Der *Schlüsseltyp* laute
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn der Schlüssel gefunden wird. andernfalls **`false`** .
+**`true`** , wenn der Schlüssel gefunden wird. andernfalls **`false`** .
 
-## <a name="mapinsert-method"></a><a name="insert"></a>Map:: Insert-Methode
+## <a name="mapinsert-method"></a><a name="insert"></a> Map:: Insert-Methode
 
 Fügt das angegebene Schlüssel-Wert-Paar dem aktuellen Map-Objekt hinzu.
 
@@ -187,9 +187,9 @@ Der Wertteil des Schlüssel-Wert-Paars. Der *Werttyp* ist Typname *V*.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`** Wenn der Schlüssel eines vorhandenen Elements in der aktuellen Zuordnung mit *Key* übereinstimmt und der Wert Teil dieses Elements auf *value*festgelegt ist. **`false`**, wenn kein vorhandenes Element in der aktuellen Zuordnung mit *Key* übereinstimmt und die *Schlüssel* -und *Wert* Parameter in einem Schlüssel-Wert-Paar erstellt und dann der aktuellen Zuordnung hinzugefügt werden.
+**`true`** Wenn der Schlüssel eines vorhandenen Elements in der aktuellen Zuordnung mit *Key* übereinstimmt und der Wert Teil dieses Elements auf *value*festgelegt ist. **`false`** , wenn kein vorhandenes Element in der aktuellen Zuordnung mit *Key* übereinstimmt und die *Schlüssel* -und *Wert* Parameter in einem Schlüssel-Wert-Paar erstellt und dann der aktuellen Zuordnung hinzugefügt werden.
 
-## <a name="maplookup-method"></a><a name="lookup"></a>Map:: Lookup-Methode
+## <a name="maplookup-method"></a><a name="lookup"></a> Map:: Lookup-Methode
 
 Ruft den Wert des Typs V ab, der mit dem angegebenen Schlüssel des Typs K verknüpft ist, sofern der Schlüssel vorhanden ist.
 
@@ -208,11 +208,11 @@ Der zum Suchen eines in der Zuordnung vorhandenen Elements verwendete Schlüssel
 
 Der Wert, der mit dem *Schlüssel*gekoppelt ist. Der Typ des Rückgabewerts ist Typname *V*.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn der Schlüssel nicht vorhanden ist, wird eine [Platform:: outoeboundsexception-Ausnahme](../cppcx/platform-outofboundsexception-class.md) ausgelöst.
 
-## <a name="mapmap-constructor"></a><a name="ctor"></a>Map:: Map-Konstruktor
+## <a name="mapmap-constructor"></a><a name="ctor"></a> Map:: Map-Konstruktor
 
 Initialisiert eine neue Instanz der Map-Klasse.
 
@@ -246,7 +246,7 @@ Der Eingabeiterator des ersten Elements in einem Bereich von Elementen, die verw
 *last*<br/>
 Der Eingabeiterator des ersten Elements nach einem Bereich von Elementen, die verwendet werden, um die aktuelle Map zu initialisieren.
 
-## <a name="mapmapchanged-event"></a><a name="mapchanged"></a>Map:: mapchanged-Ereignis
+## <a name="mapmapchanged-event"></a><a name="mapchanged"></a> Map:: mapchanged-Ereignis
 
 Wird ausgelöst, wenn ein Element in eine Zuordnung eingefügt bzw. aus der Zuordnung entfernt wird.
 
@@ -264,7 +264,7 @@ Ein [mapchangedeventhandler \<K,V> ](/uwp/api/windows.foundation.collections.map
 
 Windows-Runtime apps, die c# oder Visual Basic Project IMap \<K,V> als IDictionary verwenden \<K,V> .
 
-## <a name="mapremove-method"></a><a name="remove"></a>Map:: Remove-Methode
+## <a name="mapremove-method"></a><a name="remove"></a> Map:: Remove-Methode
 
 Löscht das angegebene Schlüssel-Wert-Paar vom aktuellen Map-Objekt.
 
@@ -279,7 +279,7 @@ virtual void Remove(K key);
 *key*<br/>
 Der Schlüsselteil des Schlüssel-Wert-Paars. Der *Schlüsseltyp* lautet Typname *K*.
 
-## <a name="mapsize-method"></a><a name="size"></a>Map:: size-Methode
+## <a name="mapsize-method"></a><a name="size"></a> Map:: size-Methode
 
 Gibt die Anzahl der [Windows:: Foundation:: Collections:: ikeyvaluepair \<K,V> ](/uwp/api/windows.foundation.collections.ikeyvaluepair-2) -Elemente in der Zuordnung zurück.
 
@@ -293,7 +293,7 @@ virtual property unsigned int Size;
 
 Die Anzahl von Elementen in der Zuordnung.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Auflistungen (C++/CX)](collections-c-cx.md)<br/>
 [Platform-Namespace](platform-namespace-c-cx.md)<br/>
