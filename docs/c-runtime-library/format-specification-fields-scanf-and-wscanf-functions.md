@@ -1,6 +1,8 @@
 ---
 title: 'Formatangabefelder: scanf- und wscanf-Funktionen'
 ms.date: 11/04/2016
+ms.topic: reference
+ms.custom: contperfq1
 helpviewer_keywords:
 - width, specifications in scanf function
 - scanf format specifications
@@ -10,12 +12,12 @@ helpviewer_keywords:
 - format specification fields for scanf function
 - type fields
 ms.assetid: 7e95de1b-0b71-4de3-9f81-c9560c78e039
-ms.openlocfilehash: 025d4c164d3afe1ca6b05c1c8e76441109cbc4ae
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 4be7aa5e0790f0124890ee981ffd58e3027ea59b
+ms.sourcegitcommit: 111ee74772d7f308d3414b5d42cbc1e90287f081
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79438365"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88659330"
 ---
 # <a name="format-specification-fields-scanf-and-wscanf-functions"></a>Formatangabefelder: scanf- und wscanf-Funktionen
 
@@ -45,11 +47,11 @@ Die einfachste Formatspezifikation enthält nur das Prozentzeichen und ein `type
 
 Ein Sternchen (`*`), gefolgt von einem Prozentzeichen, unterdrückt die Zuweisung des nächsten Eingabefelds, das als Feld des angegebenen Typs interpretiert wird. Das Feld wird überprüft, aber nicht gespeichert.
 
-Die sicheren Versionen der `_s`-Funktionsfamilie (mit dem Suffix `scanf`) erfordern, dass ein Puffergrößenparameter unmittelbar nach jedem Parameter des Typs `c`, `C`, `s`, `S` oder `[` übergeben wird. Weitere Informationen zu den sicheren Versionen der `scanf`-Funktionsfamilie finden Sie unter [scanf_s, _scanf_s_l, wscanf_s, _wscanf_s_l](../c-runtime-library/reference/scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md).
+Die sicheren Versionen der `scanf`-Funktionsfamilie (mit dem Suffix `_s`) erfordern, dass ein Puffergrößenparameter unmittelbar nach jedem Parameter des Typs `c`, `C`, `s`, `S` oder `[` übergeben wird. Weitere Informationen zu den sicheren Versionen der `scanf`-Funktionsfamilie finden Sie unter [scanf_s, _scanf_s_l, wscanf_s, _wscanf_s_l](../c-runtime-library/reference/scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md).
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[scanf-Breitenangabe](../c-runtime-library/scanf-width-specification.md)<br/>
-[scanf-Typenfeldzeichen](../c-runtime-library/scanf-type-field-characters.md)<br/>
+[scanf-breiten Angabe](../c-runtime-library/scanf-width-specification.md)<br/>
+[scanf-Typen Feldzeichen](../c-runtime-library/scanf-type-field-characters.md)<br/>
 [scanf, _scanf_l, wscanf, _wscanf_l](../c-runtime-library/reference/scanf-scanf-l-wscanf-wscanf-l.md)<br/>
 [scanf_s, _scanf_s_l, wscanf_s, _wscanf_s_l](../c-runtime-library/reference/scanf-s-scanf-s-l-wscanf-s-wscanf-s-l.md)
