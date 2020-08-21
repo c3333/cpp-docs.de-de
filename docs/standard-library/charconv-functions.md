@@ -1,18 +1,19 @@
 ---
 title: '&lt;chardev- &gt; Funktionen'
-ms.date: 07/22/2020
+description: Beschreibt die <charconv> Bibliotheksfunktionen, die ganzzahlige oder Gleit Komma Werte in oder aus Zeichen konvertieren.
+ms.date: 08/20/2020
 f1_keywords:
 - charconv/std::to_chars
 - charconv/std::from_chars
 helpviewer_keywords:
 - std::charconv [C++], to_chars
 - std::charconv [C++], from_chars
-ms.openlocfilehash: 92f838ededad3e2b8493e934ae2b614247f18458
-ms.sourcegitcommit: 4eda68a0b3c23d8cefa56b7ba11583412459b32f
+ms.openlocfilehash: b8117f2a272f33be2bb5fef6ba8fa53ec794b63b
+ms.sourcegitcommit: f1752bf90b4f869633a859ace85439ca19e208b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87565949"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88722153"
 ---
 # <a name="ltcharconvgt-functions"></a>&lt;chardev- &gt; Funktionen
 
@@ -93,21 +94,17 @@ Für Gleit Komma Konvertierungen die Anzahl der Ziffern der Genauigkeit für den
 
 Eine [to_chars_result](to-chars-result-structure.md) , die das Ergebnis der Konvertierung enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Funktionen, die einen [chars_format](chars-format-class.md) -Parameter verwenden, bestimmen den Konvertierungsspezifizierer wie `printf()` folgt: der Konvertierungsspezifizierer ist, wenn ist, `'f'` `fmt` `chars_format::fixed` `'e'` `fmt` `chars_format::scientific` `'a'` (ohne die führende `0x` im Ergebnis) `fmt` , wenn ist, `chars_format::hex` und wenn ist `'g'` `fmt` `chars_format::general` . Die Angabe der kürzesten Fixed-Notation kann zu einer längeren Ausgabe führen, da Sie möglicherweise die kürzeste Darstellung darstellt, wenn der Wert sehr groß oder sehr klein ist.
 
 In der folgenden Tabelle wird das Konvertierungs Verhalten anhand verschiedener Kombinationen von `fmt` -und- `precision` Parametern beschrieben Der Begriff "kürzeste Roundtrip-Verhalten" bezieht sich auf das Schreiben der geringsten Anzahl von Ziffern, die erforderlich sind, damit der Wert durch die Verwendung der entsprechenden `from_chars` Funktion genau wieder hergestellt wird.
 
-| `fmt`und- `precision` Kombination | Output |
+| `fmt` und- `precision` Kombination | Ausgabe |
 |--|--|
 |  Neither | Je nachdem, welche der Fixed-oder Scientific-Notation kürzer ist, wird als eine tief Trennung bevorzugt.</br>Dieses Verhalten kann nicht von einer Überladung simuliert werden, die den- `fmt` Parameter annimmt. |
 | `fmt` | Das kürzeste Roundtrip-Verhalten für das angegebene Format, z. b. das kürzeste wissenschaftliche Format. |
 | `fmt` und `precision` | Verwendet die angegebene Genauigkeit im folgenden `printf()` Stil, ohne das kürzeste Roundtrip-Verhalten. |
-
-### <a name="return-value"></a>Rückgabewert
-
-Eine [to_chars_result](to-chars-result-structure.md) , die das Ergebnis der Konvertierung enthält.
 
 ### <a name="example"></a>Beispiel
 
@@ -186,7 +183,7 @@ Bei ganzzahligen Konvertierungen die Basis, die während der Konvertierung verwe
 *fmt*\
 Für Gleit Komma Konvertierungen das Format der Sequenz von Zeichen, die konvertiert wird. Weitere Informationen finden Sie unter [chars_format](chars-format-class.md) .
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die- `from_chars()` Funktionen analysieren die Zeichenfolge ( \[ `first` `last` ) für ein Zahlenmuster, bei dem \[ `first` , `last` ) ein gültiger Bereich sein muss.
 
@@ -245,7 +242,7 @@ int main()
 
 /Std: c++ 17 (oder höher) ist erforderlich.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [\<charconv>](charconv.md)  
 [Die kürzeste Dezimal Zeichenfolge, die von Roundtrips](https://www.exploringbinary.com/the-shortest-decimal-string-that-round-trips-examples/) 

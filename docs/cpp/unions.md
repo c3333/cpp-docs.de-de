@@ -1,47 +1,50 @@
 ---
-title: Unions
-ms.date: 05/06/2019
+title: union
+description: Eine Beschreibung des Standard mäßigen C++ union class -Typs und-Schlüssel Worts, dessen Verwendung und Einschränkungen.
+ms.date: 08/18/2020
 f1_keywords:
 - union_cpp
 helpviewer_keywords:
-- class types [C++], unions as
+- class type [C++], union as
 - union keyword [C++]
 ms.assetid: 25c4e219-fcbb-4b7b-9b64-83f3252a92ca
-ms.openlocfilehash: 5010512b2c5f19a236d2f44bd3acf00097a3e168
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+no-loc:
+- union
+- struct
+- enum
+- class
+- static
+ms.openlocfilehash: a4dc07df5e7858dffe62478509ee1d8dc759ce96
+ms.sourcegitcommit: f1752bf90b4f869633a859ace85439ca19e208b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87213137"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88722179"
 ---
-# <a name="unions"></a>Unions
+# `union`
 
 > [!NOTE]
-> In c++ 17 und höher ist die **Std:: Variant** -Klasse eine typsichere Alternative für Unions.
+> In c++ 17 und höher `std::variant` class ist eine typsichere Alternative für eine union .
 
-Ein **`union`** ist ein benutzerdefinierter Typ, in dem alle Member denselben Speicherort verwenden. Das heißt, eine Union kann niemals mehr als ein Objekt aus seiner Liste der Member enthalten. Es heißt zudem, unabhängig davon, über wie viele Member eine Union verfügt, sie immer nur so viel Arbeitsspeicher verwendet, um das größte Member zu speichern.
+Ein **`union`** ist ein benutzerdefinierter Typ, in dem alle Member denselben Speicherort verwenden. Diese Definition bedeutet, dass ein-Objekt zu jedem beliebigen Zeitpunkt nur ein union Objekt aus der Liste der Elemente enthalten kann. Dies bedeutet auch, dass unabhängig davon, wie viele Member a vorhanden ist union , immer nur ausreichend Arbeitsspeicher verwendet wird, um das größte Element zu speichern.
 
-Unions können für das Einsparen von Arbeitsspeicher hilfreich sein, wenn Sie über viele Objekte bzw. begrenzten Arbeitsspeicher verfügen. Für ihre Verwendung ist jedoch besondere Vorsicht geboten, da Sie dafür verantwortlich sind, dass Sie immer auf das letzte Member zugreifen, in das geschrieben wurde. Wenn Membertypen über einen nicht trivialen Konstruktor verfügen, müssen Sie zusätzlichen Code schreiben, um dieses Member explizit zu erstellen und zu zerstören. Ziehen Sie vor dem Verwenden einer Union in Erwägung, ob das zu lösende Problem nicht durch die Verwendung einer Basisklasse und abgeleiteten Klasse ausgedrückt werden könnte. 
+Ein union kann nützlich sein, um Speicherplatz zu sparen, wenn Sie über viele Objekte und begrenzten Arbeitsspeicher verfügen. Eine erfordert jedoch union besondere Sorgfalt, um richtig zu verwenden. Sie sind dafür verantwortlich, sicherzustellen, dass Sie immer auf denselben Member zugreifen, den Sie zugewiesen haben. Wenn Elementtypen über ein nicht triviales con struct oder verfügen, müssen Sie zusätzlichen Code schreiben, um diesen Member explizit zu erstellen struct und zu zerstören. Bevor Sie eine verwenden union , sollten Sie überprüfen, ob das Problem, das Sie lösen möchten, mithilfe eines Basis class -und abgeleiteten Typs besser ausgedrückt werden kann class .
 
 ## <a name="syntax"></a>Syntax
 
-```cpp
-union [name]  { member-list };
-```
+> **`union`***`tag`* <sub>opt</sub> **`{`** opt *`member-list`***`};`**
 
 ### <a name="parameters"></a>Parameter
 
-*name*<br/>
-Der Typname, der für die Union angegeben wurde.
+*`tag`*<br/>
+Der Typname, der an den übergeben wird union .
 
-*Mitgliederliste*<br/>
-Elemente, die die Union enthalten kann. Siehe Hinweise.
+*`member-list`*<br/>
+Member, die der union enthalten kann.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="declare-a-no-locunion"></a>Deklarieren union
 
-## <a name="declaring-a-union"></a>Deklarieren einer Union
-
-Beginnen Sie mit der Deklaration einer Union mit dem **`union`** Schlüsselwort, und schließen Sie die Elementliste in geschweiften Klammern ein:
+Beginnen Sie mit dem-Schlüsselwort mit der Deklaration von union **`union`** , und schließen Sie die Elementliste in geschweiften Klammern ein:
 
 ```cpp
 // declaring_a_union.cpp
@@ -54,6 +57,7 @@ union RecordType    // Declare a simple union type
     double d;
     int *int_ptr;
 };
+
 int main()
 {
     RecordType t;
@@ -62,9 +66,9 @@ int main()
 }
 ```
 
-## <a name="using-unions"></a>Verwenden von Unions
+## <a name="use-a-no-locunion"></a>Verwenden Sie eine union
 
-Im vorherigen Beispiel muss der Code wissen, der auf die Union zugreift, welches Member welche Daten hält. Die gängigste Lösung für dieses Problem besteht darin, die Union in einer Struktur zusammen mit einem zusätzlichen Enumerationsmember einzuschließen, das den Typ der zurzeit in der Union gespeicherten Daten angibt. Dies wird als Unterscheidungs- *Union* bezeichnet, und im folgenden Beispiel wird das grundlegende Muster veranschaulicht.
+Im vorherigen Beispiel muss jeder Code, der auf das zugreift, union wissen, welcher Member die Daten enthält. Die gängigste Lösung für dieses Problem wird als * union *Unterscheidungs bezeichnet. Sie schließt union in ein ein struct und schließt einen Member ein, enum der den derzeit im gespeicherten Elementtyp angibt union . Das grundlegende Muster wird im folgenden Beispiel veranschaulicht:
 
 ```cpp
 #include <queue>
@@ -107,16 +111,27 @@ struct Input
 void Process_Temp(TempData t) {}
 void Process_Wind(WindData w) {}
 
-// Container for all the data records
-queue<Input> inputs;
-void Initialize();
+void Initialize(std::queue<Input>& inputs)
+{
+    Input first;
+    first.type = WeatherDataType::Temperature;
+    first.temp = { 101, 1418855664, 91.8, 108.5, 67.2 };
+    inputs.push(first);
+
+    Input second;
+    second.type = WeatherDataType::Wind;
+    second.wind = { 204, 1418859354, 14, 27 };
+    inputs.push(second);
+}
 
 int main(int argc, char* argv[])
 {
-    Initialize();
+    // Container for all the data records
+    queue<Input> inputs;
+    Initialize(inputs);
     while (!inputs.empty())
     {
-        Input i = inputs.front();
+        Input const i = inputs.front();
         switch (i.type)
         {
         case WeatherDataType::Temperature:
@@ -133,29 +148,17 @@ int main(int argc, char* argv[])
     }
     return 0;
 }
-
-void Initialize()
-{
-    Input first, second;
-    first.type = WeatherDataType::Temperature;
-    first.temp = { 101, 1418855664, 91.8, 108.5, 67.2 };
-    inputs.push(first);
-
-    second.type = WeatherDataType::Wind;
-    second.wind = { 204,1418859354, 14, 27 };
-    inputs.push(second);
-}
 ```
 
-Beachten Sie, dass die Union in der Eingabestruktur im vorherigen Beispiel keinen Namen aufweist. Hierbei handelt es sich um eine anonyme Union. Der Zugriff auf ihre Member ist so möglich, als wären sie direkte Member der Struktur. Weitere Informationen über anonyme Unions finden Sie im folgenden Abschnitt.
+Im vorherigen Beispiel union hat der in der `Input` struct keinen Namen, daher wird er als *Anonym* bezeichnet union . Auf seine Member kann direkt zugegriffen werden, als ob Sie Elemente von sind struct . Weitere Informationen zur Verwendung eines anonymen finden Sie union im Abschnitt " [ union Anonym](#anonymous_unions) ".
 
-Im vorherigen Beispiel wurde ein Problem gezeigt, das selbstredend mithilfe von aus einer allgemeinen Basisklasse abgeleiteten Klassen und durch das Branchen Ihres Codes auf Grundlage des Laufzeittyps jedes Objekts im Container gelöst werden könnte. Dies hätte Code zur Folge, der einfacher zu verwalten und zu verstehen wäre, wobei die Verwendung möglicherweise langsamer wäre als bei der Verwendung von Unions. Zudem können Sie mit einer Union vollständig nicht verknüpfte Typen speichern und den Typ des Werts dynamisch ändern, der gespeichert wird, ohne den Typ der Unionsvariablen an sich zu ändern. Daher können Sie ein heterogenes Array von „MyUnionType“ erstellen, dessen Elemente unterschiedliche Werte von unterschiedlichen Typen speichern.
+Das vorherige Beispiel zeigt ein Problem, das Sie auch durch die Verwendung von Typen lösen können class , die von einer gemeinsamen Basis abgeleitet werden class . Sie könnten den Code auf Grundlage des Lauf Zeit Typs jedes Objekts im Container verzweigen. Der Code ist möglicherweise einfacher zu verwalten und zu verstehen, kann aber auch langsamer als die Verwendung eines sein union . Mit einem können Sie auch nicht verknüpfte union Typen speichern. unionMit einem können Sie den Typ des gespeicherten Werts dynamisch ändern, ohne den Typ der union Variablen selbst zu ändern. Beispielsweise können Sie ein heterogenes Array von erstellen `MyUnionType` , dessen Elemente verschiedene Werte verschiedener Typen speichern.
 
-Beachten Sie, dass die `Input`-Struktur im vorherigen Beispiel einfach missbraucht werden kann. Es liegt ganz im Ermessen des Benutzers, die Unterscheidung richtig zu verwenden, um auf das Member zuzugreifen, das die Daten hält. Sie können sich vor Missbrauch schützen, indem Sie die Union privat machen und besondere Zugriffsfunktionen bereitstellen, wie dies im nächsten Beispiel gezeigt wird.
+Es ist einfach, die `Input` struct im Beispiel zu missbrauchen. Der Benutzer muss den Diskriminator ordnungsgemäß verwenden, um auf den Member zuzugreifen, der die Daten enthält. Sie können vor Missbrauch schützen, indem Sie den union **`private`** und spezielle Zugriffs Funktionen bereitstellen, wie im folgenden Beispiel gezeigt.
 
-## <a name="unrestricted-unions-c11"></a>Uneingeschränkte Unions (C++11)
+## <a name="unrestricted-no-locunion-c11"></a>Uneingeschränkt union (c++ 11)
 
-In C++03 und früher kann eine Union nicht statische Datenmember mit dem Klassentyp enthalten, solange der Typ über keine vom Benutzer bereitgestellten Konstruktoren, Destruktoren oder Zuweisungsoperatoren verfügt. In C++11 wurden diese Einschränkungen entfernt. Wenn Sie ein derartiges Member in Ihre Union einbeziehen, markiert der Compiler automatisch jede besondere Memberfunktion, die nicht vom Benutzer bereitgestellt wurde, als gelöscht. Wenn es sich bei der Union um eine anonyme Union in einer Klasse oder Struktur handelt, werden besondere Memberfunktionen der Klasse oder Struktur, die nicht vom Benutzer bereitgestellt wurden, als gelöscht markiert. Im folgenden Beispiel wird gezeigt, wie der Fall verarbeitet wird, in dem eines der Member der Union über ein Member verfügt, für das diese besondere Behandlung erforderlich ist:
+In c++ 03 und früheren Versionen union kann ein nicht- static Datenmember mit einem-Typ enthalten, solange der- class Typ keine von Benutzern bereitgestellten con struct ORS, de struct ORS oder Zuweisungs Operatoren hat. In C++11 wurden diese Einschränkungen entfernt. Wenn Sie einen solchen Member in ihren einschließen union , markiert der Compiler automatisch alle speziellen Member-Funktionen, die nicht als Benutzer bereitgestellt werden **`deleted`** . Wenn union ein anonymer innerhalb eines-oder-Elements ist union class struct , werden alle speziellen Member-Funktionen von class oder struct , die nicht vom Benutzer bereitgestellt werden, als markiert **`deleted`** . Im folgenden Beispiel wird gezeigt, wie Sie diesen Fall behandeln können. Einer der union Member der verfügt über einen Member, der diese besondere Behandlung erfordert:
 
 ```cpp
 // for MyVariant
@@ -513,99 +516,13 @@ int main()
     char c;
     cin >> c;
 }
-#include <queue>
-#include <iostream>
-using namespace std;
-
-enum class WeatherDataType
-{
-    Temperature, Wind
-};
-
-struct TempData
-{
-    TempData() : StationId(""), time(0), current(0), maxTemp(0), minTemp(0) {}
-    TempData(string id, time_t t, double cur, double max, double min)
-        : StationId(id), time(t), current(cur), maxTemp(max), minTemp(0) {}
-    string StationId;
-    time_t time = 0;
-    double current;
-    double maxTemp;
-    double minTemp;
-};
-
-struct WindData
-{
-    int StationId;
-    time_t time;
-    int speed;
-    short direction;
-};
-
-struct Input
-{
-    Input() {}
-    Input(const Input&) {}
-
-    ~Input()
-    {
-        if (type == WeatherDataType::Temperature)
-        {
-            temp.StationId.~string();
-        }
-    }
-
-    WeatherDataType type;
-    void SetTemp(const TempData& td)
-    {
-        type = WeatherDataType::Temperature;
-
-        // must use placement new because of string member!
-        new(&temp) TempData(td);
-    }
-
-    TempData GetTemp()
-    {
-        if (type == WeatherDataType::Temperature)
-            return temp;
-        else
-            throw logic_error("Can't return TempData when Input holds a WindData");
-    }
-    void SetWind(WindData wd)
-    {
-        // Explicitly delete struct member that has a
-        // non-trivial constructor
-        if (type == WeatherDataType::Temperature)
-        {
-            temp.StationId.~string();
-        }
-        wind = wd; //placement new not required.
-    }
-    WindData GetWind()
-    {
-        if (type == WeatherDataType::Wind)
-        {
-            return wind;
-        }
-        else
-            throw logic_error("Can't return WindData when Input holds a TempData");
-    }
-
-private:
-
-    union
-    {
-        TempData temp;
-        WindData wind;
-    };
-};
 ```
 
-Unions können keine Verweise speichern. Unions unterstützen keine Vererbung. Daher kann eine Union an sich nicht als eine Basisklasse verwendet werden, aus einer andere Klasse erben oder virtuelle Funktionen aufweisen.
+Ein union kann keinen Verweis speichern. Ein union unterstützt auch keine Vererbung. Dies bedeutet, dass Sie keine union als Basis verwenden class oder von einem anderen erben können class oder über virtuelle Funktionen verfügen.
 
-## <a name="initializing-unions"></a>Initialisieren von Unions
+## <a name="initialize-a-no-locunion"></a>Initialisieren eines union
 
-Sie können eine Union in derselben Anweisung deklarieren und initialisieren, indem Sie einen Ausdruck zuweisen, der in geschweifte Klammern eingeschlossen ist. Der Ausdruck wird ausgewertet und dem ersten Feld der Union zugewiesen.
+Sie können eine in derselben Anweisung deklarieren und initialisieren, union indem Sie einen Ausdruck zuweisen, der in geschweiften Klammern eingeschlossen ist. Der Ausdruck wird ausgewertet und dem ersten Feld des zugewiesen union .
 
 ```cpp
 #include <iostream>
@@ -623,7 +540,7 @@ int main()
     union NumericType Values = { 10 };   // iValue = 10
     cout << Values.iValue << endl;
     Values.dValue = 3.1416;
-    cout << Values.dValue) << endl;
+    cout << Values.dValue << endl;
 }
 /* Output:
 10
@@ -631,32 +548,30 @@ int main()
 */
 ```
 
-Die `NumericType`-Union ist im Arbeitsspeicher angeordnet (konzeptionell), wie in der folgenden Abbildung dargestellt.
+Die `NumericType` union wird wie in der folgenden Abbildung dargestellt im Arbeitsspeicher angeordnet (konzeptionell).
 
-![Speicherung von Daten in einer Union numerischer Typen](../cpp/media/vc38ul1.png "Speicherung von Daten in einer numerictype-Union") <br/>
-Speicherung von Daten in einer Union numerischer Typen
+![Speicherung von Daten in einem numerischen Typ::: NO-LOC (Union):::](../cpp/media/vc38ul1.png "Speicherung von Daten in einem numerictype::: NO-LOC (Union):::") <br/>
+Speicherung von Daten in einem `NumericType`union
 
-## <a name="anonymous-unions"></a><a name="anonymous_unions"></a>Anonyme Unions
+## <a name="anonymous-no-locunion"></a><a name="anonymous_unions"></a> Anonymous union
 
-Anonyme Unions sind Unions, die ohne einen *Klassennamen* oder eine *Deklaratorliste*deklariert werden.
+Eine anonyme union ist eine, die ohne *`class-name`* oder deklariert ist *`declarator-list`* .
 
-```cpp
-union  {  member-list  }
-```
+> **`union  {`**  *`member-list`*  **`}`**
 
-Die in einer anonymen Union deklarierten Namen werden, wie Nichtmembervariablen, direkt verwendet. Daher müssen die in der anonymen Union deklarierten Namen eindeutig im umgebenden Bereich sein.
+Namen, die in einem anonymen deklariert union sind, werden direkt verwendet, wie nicht-Member-Variablen. Dies impliziert, dass die in einem anonymen deklarierten Namen union im umgebenden Bereich eindeutig sein müssen.
 
-Zusätzlich zu den Einschränkungen für benannte Unions unterliegen anonyme Unions den folgenden zusätzlichen Einschränkungen:
+Ein anonymer union unterliegt diesen zusätzlichen Einschränkungen:
 
-- Sie müssen auch als deklariert werden, **`static`** Wenn Sie im Datei-oder Namespace-Gültigkeitsbereich deklariert werden.
+- Wenn Sie im Datei-oder Namespace-Gültigkeitsbereich deklariert ist, muss Sie auch als deklariert werden **`static`** .
 
-- Sie können nur Member enthalten **`public`** , **`private`** und Member **`protected`** in anonymen Unions generieren Fehler.
+- Sie kann nur über Member verfügen; die Verwendung von **`public`** **`private`** -und-Membern **`protected`** in einem anonymen union generiert Fehler.
 
-- Sie können keine Memberfunktionen aufweisen.
+- Es können keine Element Funktionen vorhanden sein.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Klassen und Strukturen](../cpp/classes-and-structs-cpp.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
-[class](../cpp/class-cpp.md)<br/>
-[struct](../cpp/struct-cpp.md)
+[`class`](../cpp/class-cpp.md)<br/>
+[`struct`](../cpp/struct-cpp.md)
