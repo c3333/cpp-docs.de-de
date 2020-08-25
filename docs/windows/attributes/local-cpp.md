@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - local attribute
 ms.assetid: 35cdd668-bd8e-492a-b7b8-263e7b662437
-ms.openlocfilehash: d3710eee748a43a1daa5c07d8b3feb6beb8f64fa
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: dea62653478e451af00fa47b72984f3b580aadc0
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80214746"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88834088"
 ---
 # <a name="local-c"></a>local (C++)
 
@@ -25,7 +25,7 @@ Wenn Sie im Schnittstellen Header verwendet wird, können Sie den Mittel l-Compi
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **lokale** C++ Attribut verfügt über die gleiche Funktionalität wie das [lokale](/windows/win32/Midl/local) Attribut "Mittel l".
+Das **lokale** C++-Attribut verfügt über die gleiche Funktionalität wie das [lokale](/windows/win32/Midl/local) -Attribut.
 
 ## <a name="example"></a>Beispiel
 
@@ -33,12 +33,10 @@ Ein Beispiel für die Verwendung von **local**finden Sie unter [Call_as](call-as
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|**Schnittstelle**, Schnittstellen Methode|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|**Schnittstelle**, Schnittstellen Methode|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|`dispinterface`|
 
@@ -47,6 +45,6 @@ Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net
 ## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[Schnittstellenattribut](interface-attributes.md)<br/>
-[Methodenattribut](method-attributes.md)<br/>
+[Schnittstellen Attribute](interface-attributes.md)<br/>
+[Methoden Attribute](method-attributes.md)<br/>
 [call_as](call-as.md)

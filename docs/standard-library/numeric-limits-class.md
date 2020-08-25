@@ -70,12 +70,12 @@ helpviewer_keywords:
 - std::numeric_limits [C++], tinyness_before
 - std::numeric_limits [C++], traps
 ms.assetid: 9e817177-0e91-48e6-b680-0531c4b26625
-ms.openlocfilehash: f0b33404f16df59e2cb73023f3539e87080734a1
-ms.sourcegitcommit: f2a135d69a2a8ef1777da60c53d58fe06980c997
+ms.openlocfilehash: eb2ee9bc6bc887ff6739c3da1bf2566dbdcbc016
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520602"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88830682"
 ---
 # <a name="numeric_limits-class"></a>numeric_limits-Klasse
 
@@ -101,7 +101,7 @@ Für eine beliebige Spezialisierung gibt es keine Member, die sinnvolle Werte ha
 
 ## <a name="static-functions-and-constants"></a>Statische Funktionen und Konstanten
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[denorm_min](#denorm_min)|Gibt den kleinsten denormalisierten Wert ungleich 0 zurück.|
 |[Zahlen](#digits)|Gibt die Anzahl von Basisziffern zurück, die der Typ ohne Genauigkeitsverlust darstellen kann.|
@@ -136,7 +136,7 @@ Für eine beliebige Spezialisierung gibt es keine Member, die sinnvolle Werte ha
 |[tinyness_before](#tinyness_before)|Testet, ob ein Typ für einen Wert vor dessen Rundung ermitteln kann, ob der Wert zu klein ist, um als normalisierter Wert dargestellt zu werden.|
 |[Speichern](#traps)|Testet, ob für einen Typ Auffangen, bei dem arithmetischen Ausnahmen gemeldet werden, implementiert ist.|
 
-### <a name="denorm_min"></a><a name="denorm_min"></a>denorm_min
+### <a name="denorm_min"></a><a name="denorm_min"></a> denorm_min
 
 Gibt den kleinsten denormalisierten Wert ungleich 0 zurück.
 
@@ -195,7 +195,7 @@ for long double objects is: 4.94066e-324
 0
 ```
 
-### <a name="digits"></a><a name="digits"></a>Treffern
+### <a name="digits"></a><a name="digits"></a> Treffern
 
 Gibt die Anzahl von Basisziffern zurück, die der Typ ohne Genauigkeitsverlust darstellen kann.
 
@@ -239,7 +239,7 @@ int main( )
 63
 ```
 
-### <a name="digits10"></a><a name="digits10"></a>digits10
+### <a name="digits10"></a><a name="digits10"></a> digits10
 
 Gibt die Anzahl von Dezimalziffern zurück, die der Typ ohne Genauigkeitsverlust darstellen kann.
 
@@ -283,7 +283,7 @@ int main( )
 The float is; 100000000
 ```
 
-### <a name="epsilon"></a><a name="epsilon"></a>Epsilon
+### <a name="epsilon"></a><a name="epsilon"></a> Epsilon
 
 Die Funktion gibt die Differenz zwischen 1 und dem kleinsten Wert größer als 1 zurück, die der Datentyp darstellen kann.
 
@@ -335,7 +335,7 @@ The difference between 1 and the smallest value greater than 1
 for long double objects is: 2.22045e-016
 ```
 
-### <a name="has_denorm"></a><a name="has_denorm"></a>has_denorm
+### <a name="has_denorm"></a><a name="has_denorm"></a> has_denorm
 
 Testet, ob ein Typ denormalisierte Werte unterstützt.
 
@@ -381,7 +381,7 @@ Whether double objects allow denormalized values: 1
 Whether long int objects allow denormalized values: 0
 ```
 
-### <a name="has_denorm_loss"></a><a name="has_denorm_loss"></a>has_denorm_loss
+### <a name="has_denorm_loss"></a><a name="has_denorm_loss"></a> has_denorm_loss
 
 Testet, ob ein Genauigkeitsverlust nicht als ungenaues Ergebnis, sondern als Denormalisierungsverlust erkannt wird.
 
@@ -391,7 +391,7 @@ static constexpr bool has_denorm_loss = false;
 
 #### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn der Genauigkeits Verlust als denormalisierungsverlust erkannt wird. **`false`** andernfalls.
+**`true`** , wenn der Genauigkeits Verlust als denormalisierungsverlust erkannt wird. **`false`** andernfalls.
 
 #### <a name="remarks"></a>Bemerkungen
 
@@ -427,7 +427,7 @@ Whether double objects can detect denormalized loss: 1
 Whether long int objects can detect denormalized loss: 0
 ```
 
-### <a name="has_infinity"></a><a name="has_infinity"></a>has_infinity
+### <a name="has_infinity"></a><a name="has_infinity"></a> has_infinity
 
 Testet, ob ein Typ eine Darstellung für positive Unendlichkeit hat.
 
@@ -437,7 +437,7 @@ static constexpr bool has_infinity = false;
 
 #### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn der Typ eine Darstellung für positive Unendlichkeit hat. **`false`** andernfalls.
+**`true`** , wenn der Typ eine Darstellung für positive Unendlichkeit hat. **`false`** andernfalls.
 
 #### <a name="remarks"></a>Bemerkungen
 
@@ -473,7 +473,7 @@ Whether double objects have infinity: 1
 Whether long int objects have infinity: 0
 ```
 
-### <a name="has_quiet_nan"></a><a name="has_quiet_nan"></a>has_quiet_NaN
+### <a name="has_quiet_nan"></a><a name="has_quiet_nan"></a> has_quiet_NaN
 
 Testet, ob ein Typ eine Darstellung für eine stille NaN (Not a Number) hat, also eine nicht anzeigende NaN.
 
@@ -483,7 +483,7 @@ static constexpr bool has_quiet_NaN = false;
 
 #### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn der **Typ** eine Darstellung für einen stillen Nan hat. **`false`** andernfalls.
+**`true`** , wenn der **Typ** eine Darstellung für einen stillen Nan hat. **`false`** andernfalls.
 
 #### <a name="remarks"></a>Bemerkungen
 
@@ -519,7 +519,7 @@ Whether double objects have quiet_NaN: 1
 Whether long int objects have quiet_NaN: 0
 ```
 
-### <a name="has_signaling_nan"></a><a name="has_signaling_nan"></a>has_signaling_NaN
+### <a name="has_signaling_nan"></a><a name="has_signaling_nan"></a> has_signaling_NaN
 
 Testet, ob ein Typ eine Darstellung für eine anzeigenden NaN (Not a Number) hat.
 
@@ -529,7 +529,7 @@ static constexpr bool has_signaling_NaN = false;
 
 #### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn der Typ eine Darstellung für einen signalisierenden Nan hat. **`false`** andernfalls.
+**`true`** , wenn der Typ eine Darstellung für einen signalisierenden Nan hat. **`false`** andernfalls.
 
 #### <a name="remarks"></a>Bemerkungen
 
@@ -565,7 +565,7 @@ Whether double objects have a signaling_NaN: 1
 Whether long int objects have a signaling_NaN: 0
 ```
 
-### <a name="infinity"></a><a name="infinity"></a>unendliche
+### <a name="infinity"></a><a name="infinity"></a> unendliche
 
 Die Darstellung für positive Unendlichkeit für einen Typ, sofern verfügbar.
 
@@ -619,7 +619,7 @@ The representation of infinity for type double is: inf
 The representation of infinity for type long double is: inf
 ```
 
-### <a name="is_bounded"></a><a name="is_bounded"></a>is_bounded
+### <a name="is_bounded"></a><a name="is_bounded"></a> is_bounded
 
 Testet, ob die Menge von Werten, die ein Typ darstellen kann, endlich ist.
 
@@ -629,7 +629,7 @@ static constexpr bool is_bounded = false;
 
 #### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn der Typ über einen begrenzten Satz darstellbarer Werte verfügt. **`false`** andernfalls.
+**`true`** , wenn der Typ über einen begrenzten Satz darstellbarer Werte verfügt. **`false`** andernfalls.
 
 #### <a name="remarks"></a>Bemerkungen
 
@@ -673,7 +673,7 @@ Whether long int objects have bounded set of representable values: 1
 Whether unsigned char objects have bounded set of representable values: 1
 ```
 
-### <a name="is_exact"></a><a name="is_exact"></a>is_exact
+### <a name="is_exact"></a><a name="is_exact"></a> is_exact
 
 Testet, ob die für einen Typ ausgeführten Berechnungen keine Rundungsfehler haben.
 
@@ -683,7 +683,7 @@ static constexpr bool is_exact = false;
 
 #### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn die Berechnungen keine Rundungsfehler haben. **`false`** andernfalls.
+**`true`** , wenn die Berechnungen keine Rundungsfehler haben. **`false`** andernfalls.
 
 #### <a name="remarks"></a>Bemerkungen
 
@@ -727,7 +727,7 @@ Whether long int objects have calculations free of rounding errors: 1
 Whether unsigned char objects have calculations free of rounding errors: 1
 ```
 
-### <a name="is_iec559"></a><a name="is_iec559"></a>is_iec559
+### <a name="is_iec559"></a><a name="is_iec559"></a> is_iec559
 
 Testet, ob ein Typ den IEC 559-Standards entspricht.
 
@@ -737,7 +737,7 @@ static constexpr bool is_iec559 = false;
 
 #### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn der Typ den IEC 559-Standards entspricht. **`false`** andernfalls.
+**`true`** , wenn der Typ den IEC 559-Standards entspricht. **`false`** andernfalls.
 
 #### <a name="remarks"></a>Bemerkungen
 
@@ -777,7 +777,7 @@ Whether int objects conform to iec559 standards: 0
 Whether unsigned char objects conform to iec559 standards: 0
 ```
 
-### <a name="is_integer"></a><a name="is_integer"></a>is_integer
+### <a name="is_integer"></a><a name="is_integer"></a> is_integer
 
 Testet, ob ein Typ eine Ganzzahldarstellung hat.
 
@@ -787,7 +787,7 @@ static constexpr bool is_integer = false;
 
 #### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn der Typ eine ganzzahlige Darstellung hat. **`false`** andernfalls.
+**`true`** , wenn der Typ eine ganzzahlige Darstellung hat. **`false`** andernfalls.
 
 #### <a name="remarks"></a>Bemerkungen
 
@@ -827,7 +827,7 @@ Whether int objects have an integral representation: 1
 Whether unsigned char objects have an integral representation: 1
 ```
 
-### <a name="is_modulo"></a><a name="is_modulo"></a>is_modulo
+### <a name="is_modulo"></a><a name="is_modulo"></a> is_modulo
 
 Testet, ob ein **Typ** eine modulo-Darstellung aufweist.
 
@@ -837,7 +837,7 @@ static constexpr bool is_modulo = false;
 
 #### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn der Typ eine modulo-Darstellung aufweist. **`false`** andernfalls.
+**`true`** , wenn der Typ eine modulo-Darstellung aufweist. **`false`** andernfalls.
 
 #### <a name="remarks"></a>Bemerkungen
 
@@ -877,7 +877,7 @@ Whether signed char objects have a modulo representation: 1
 Whether unsigned char objects have a modulo representation: 1
 ```
 
-### <a name="is_signed"></a><a name="is_signed"></a>is_signed
+### <a name="is_signed"></a><a name="is_signed"></a> is_signed
 
 Testet, ob ein Typ eine vorzeichenbehaftete Darstellung hat.
 
@@ -887,7 +887,7 @@ static constexpr bool is_signed = false;
 
 #### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn der Typ eine signierte Darstellung hat. **`false`** andernfalls.
+**`true`** , wenn der Typ eine signierte Darstellung hat. **`false`** andernfalls.
 
 #### <a name="remarks"></a>Bemerkungen
 
@@ -927,7 +927,7 @@ Whether signed char objects have a signed representation: 1
 Whether unsigned char objects have a signed representation: 0
 ```
 
-### <a name="is_specialized"></a><a name="is_specialized"></a>is_specialized
+### <a name="is_specialized"></a><a name="is_specialized"></a> is_specialized
 
 Testet, ob ein Typ eine explizite Spezialisierung hat, die in der Klassen Vorlage definiert ist `numeric_limits` .
 
@@ -937,7 +937,7 @@ static constexpr bool is_specialized = false;
 
 #### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn für den Typ eine explizite Spezialisierung in der Klassen Vorlage definiert ist. **`false`** andernfalls.
+**`true`** , wenn für den Typ eine explizite Spezialisierung in der Klassen Vorlage definiert ist. **`false`** andernfalls.
 
 #### <a name="remarks"></a>Bemerkungen
 
@@ -981,7 +981,7 @@ Whether int objects have an explicit specialization in the class: 1
 Whether int* objects have an explicit specialization in the class: 0
 ```
 
-### <a name="lowest"></a><a name="lowest"></a>gering
+### <a name="lowest"></a><a name="lowest"></a> gering
 
 Gibt den kleinsten negativen begrenzten Wert zurück.
 
@@ -997,7 +997,7 @@ Gibt den kleinsten negativen begrenzten Wert zurück.
 
 Gibt den kleinsten negativen, endlichen Wert für den Typ zurück (der normalerweise `min()` für ganzzahlige Typen und `-max()` für Gleitkommatypen ist). Der Rückgabewert ist aussagekräftig, wenn den Wert hat `is_bounded` **`true`** .
 
-### <a name="max"></a><a name="max"></a>Max
+### <a name="max"></a><a name="max"></a> Max
 
 Gibt den größten endlichen Wert für einen Typ zurück.
 
@@ -1039,7 +1039,7 @@ int main() {
 }
 ```
 
-### <a name="max_digits10"></a><a name="max_digits10"></a>max_digits10
+### <a name="max_digits10"></a><a name="max_digits10"></a> max_digits10
 
 Gibt die Anzahl von Dezimalstellen zurück, die dazu erforderlich ist sicherzustellen, dass zwei unterschiedliche Werte des Typs unterschiedliche Dezimaldarstellungen haben.
 
@@ -1055,7 +1055,7 @@ Gibt die Anzahl von Dezimalstellen zurück, die dazu erforderlich ist sicherzust
 
 Der Member speichert die Anzahl von Dezimalstellen, die dazu erforderlich ist sicherzustellen, dass zwei unterschiedliche Werte des Typs unterschiedliche Dezimaldarstellungen haben.
 
-### <a name="max_exponent"></a><a name="max_exponent"></a>max_exponent
+### <a name="max_exponent"></a><a name="max_exponent"></a> max_exponent
 
 Gibt den größten positiven ganzzahligen Exponenten zurück, den der Gleitkommatyp als einen endlichen Wert darstellen kann, wenn eine Basis mit diesem Exponenten potenziert wird.
 
@@ -1101,7 +1101,7 @@ The maximum radix-based exponent for type double is:  1024
 The maximum radix-based exponent for type long double is:  1024
 ```
 
-### <a name="max_exponent10"></a><a name="max_exponent10"></a>max_exponent10
+### <a name="max_exponent10"></a><a name="max_exponent10"></a> max_exponent10
 
 Gibt den größten positiven ganzzahligen Exponenten zurück, den der Gleitkommatyp als einen endlichen Wert darstellen kann, wenn eine Basis von zehn mit diesem Exponenten potenziert wird.
 
@@ -1197,7 +1197,7 @@ The minimum value for type int is:  -2147483648
 The minimum value for type short int is:  -32768
 ```
 
-### <a name="min_exponent"></a><a name="min_exponent"></a>min_exponent
+### <a name="min_exponent"></a><a name="min_exponent"></a> min_exponent
 
 Gibt den größten negativen ganzzahligen Exponenten zurück, den der Gleitkommatyp als einen endlichen Wert darstellen kann, wenn eine Basis mit diesem Exponenten potenziert wird.
 
@@ -1243,7 +1243,7 @@ The minimum radix-based exponent for type double is:  -1021
 The minimum radix-based exponent for type long double is:  -1021
 ```
 
-### <a name="min_exponent10"></a><a name="min_exponent10"></a>min_exponent10
+### <a name="min_exponent10"></a><a name="min_exponent10"></a> min_exponent10
 
 Gibt den größten negativen ganzzahligen Exponenten zurück, den der Gleitkommatyp als einen endlichen Wert darstellen kann, wenn eine Basis von zehn mit diesem Exponenten potenziert wird.
 
@@ -1289,7 +1289,7 @@ The minimum base 10 exponent for type double is:  -307
 The minimum base 10 exponent for type long double is:  -307
 ```
 
-### <a name="quiet_nan"></a><a name="quiet_nan"></a>quiet_NaN
+### <a name="quiet_nan"></a><a name="quiet_nan"></a> quiet_NaN
 
 Gibt die Darstellung einer stillen NaN (Not a Number) für den Typ zurück.
 
@@ -1335,7 +1335,7 @@ The quiet NaN for type int is:  0
 The quiet NaN for type long double is:  1.#QNAN
 ```
 
-### <a name="radix"></a><a name="radix"></a>Basis
+### <a name="radix"></a><a name="radix"></a> Basis
 
 Gibt die ganzzahlige Basis (als Radix bezeichnet) zurück, die für die Darstellung eines Typs verwendet wird.
 
@@ -1381,7 +1381,7 @@ The base for type int is:  2
 The base for type long double is:  2
 ```
 
-### <a name="round_error"></a><a name="round_error"></a>round_error
+### <a name="round_error"></a><a name="round_error"></a> round_error
 
 Gibt den größten Rundungsfehler für den Typ zurück.
 
@@ -1423,7 +1423,7 @@ The maximum rounding error for type int is:  0
 The maximum rounding error for type long double is:  0.5
 ```
 
-### <a name="round_style"></a><a name="round_style"></a>round_style
+### <a name="round_style"></a><a name="round_style"></a> round_style
 
 Gibt einen Wert zurück, der die verschiedenen Methoden beschreibt, die eine Implementierung für die Rundung eines Gleitkommawerts auf einen ganzzahligen Wert auswählen kann.
 
@@ -1470,7 +1470,7 @@ The rounding style for a double type is now: 1
 The rounding style for an int type is: 0
 ```
 
-### <a name="signaling_nan"></a><a name="signaling_nan"></a>signaling_NaN
+### <a name="signaling_nan"></a><a name="signaling_nan"></a> signaling_NaN
 
 Gibt die Darstellung einer anzeigenden NaN (Not a Number) für den Typ zurück.
 
@@ -1510,7 +1510,7 @@ int main( )
 }
 ```
 
-### <a name="tinyness_before"></a><a name="tinyness_before"></a>tinyness_before
+### <a name="tinyness_before"></a><a name="tinyness_before"></a> tinyness_before
 
 Testet, ob ein Typ für einen Wert vor dessen Rundung ermitteln kann, ob der Wert zu klein ist, um als normalisierter Wert dargestellt zu werden.
 
@@ -1520,7 +1520,7 @@ static constexpr bool tinyness_before = false;
 
 #### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn der Typ vor dem runden kleine Werte erkennen kann. **`false`** Wenn dies nicht möglich ist.
+**`true`** , wenn der Typ vor dem runden kleine Werte erkennen kann. **`false`** Wenn dies nicht möglich ist.
 
 #### <a name="remarks"></a>Bemerkungen
 
@@ -1560,7 +1560,7 @@ Whether long int types can detect tinyness before rounding: 0
 Whether unsigned char types can detect tinyness before rounding: 0
 ```
 
-### <a name="traps"></a><a name="traps"></a>Speichern
+### <a name="traps"></a><a name="traps"></a> Speichern
 
 Testet, ob für einen Typ Auffangen, bei dem arithmetischen Ausnahmen gemeldet werden, implementiert ist.
 
@@ -1570,7 +1570,7 @@ static constexpr bool traps = false;
 
 #### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das Abfangen für den Typ implementiert ist. **`false`** Wenn dies nicht der Fall ist.
+**`true`** , wenn das Abfangen für den Typ implementiert ist. **`false`** Wenn dies nicht der Fall ist.
 
 #### <a name="example"></a>Beispiel
 

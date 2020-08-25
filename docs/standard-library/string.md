@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - string header
 ms.assetid: a2fb9d00-d7ae-4170-bfea-2dc337aa37cf
-ms.openlocfilehash: 68b1865fd9c45c3782917edba273083dac086548
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: cb7d869d36bea6854e3eacbacb6dfad0c32a816f
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87212123"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88833179"
 ---
 # <a name="ltstringgt"></a>&lt;string&gt;
 
@@ -45,7 +45,7 @@ Die Programmiersprache C++ und die C++-Standardbibliothek unterstützen zwei Art
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|BESCHREIBUNG|
+|Operator|Beschreibung|
 |-|-|
 |[Operator +](../standard-library/string-operators.md#op_add)|Verkettet zwei Zeichenfolgenobjekte.|
 |[Operator! =](../standard-library/string-operators.md#op_neq)|Testet, ob das Zeichenfolgenobjekt links vom Operator ungleich dem Zeichenfolgenobjekt rechts vom Operator ist.|
@@ -59,9 +59,9 @@ Die Programmiersprache C++ und die C++-Standardbibliothek unterstützen zwei Art
 
 ### <a name="specialized-template-functions"></a>Spezialisierte Vorlagenfunktionen
 
-|||
+|Name|Beschreibung|
 |-|-|
-|hash|Erzeugt einen Hashwert einer Zeichenfolge.|
+|`hash`|Erzeugt einen Hashwert einer Zeichenfolge.|
 |[swap](../standard-library/string-functions.md#swap)|Tauscht die Arrays von Zeichen für zwei Zeichenfolgen aus.|
 |[Stod](../standard-library/string-functions.md#stod)|Konvertiert eine Zeichenfolge in eine **`double`** .|
 |[Stof](../standard-library/string-functions.md#stof)|Konvertiert eine Zeichenfolge in eine **`float`** .|
@@ -75,20 +75,20 @@ Die Programmiersprache C++ und die C++-Standardbibliothek unterstützen zwei Art
 
 ### <a name="functions"></a>Functions
 
-|Funktion|BESCHREIBUNG|
+|Funktion|Beschreibung|
 |-|-|
 |[getline-Vorlage](../standard-library/string-functions.md#getline)|Extrahiert Zeichenfolgen aus dem Eingabestream zeilenweise.|
 
 ### <a name="classes"></a>Klassen
 
-|Klasse|BESCHREIBUNG|
+|Klasse|Beschreibung|
 |-|-|
 |[Basic_string-Klasse](../standard-library/basic-string-class.md)|Eine Klassen Vorlage, die Objekte beschreibt, die eine Sequenz beliebiger Zeichen ähnlicher Objekte speichern können.|
 |[Char_traits-Struktur](../standard-library/char-traits-struct.md)|Eine Klassen Vorlage, die Attribute beschreibt, die einem Zeichen vom Typ "CharType" zugeordnet sind.|
 
 ### <a name="specializations"></a>Spezialisierungen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[Char_traits- \<char> Struktur](../standard-library/char-traits-char-struct.md)|Eine Struktur, die eine Spezialisierung der Vorlagen Struktur `char_traits` \<CharType> zu einem Element vom Typ ist **`char`** .|
 |[Char_traits<wchar_t> Struktur](../standard-library/char-traits-wchar-t-struct.md)|Eine Struktur, die eine Spezialisierung der Vorlagen Struktur `char_traits` \<CharType> zu einem Element vom Typ ist **`wchar_t`** .|

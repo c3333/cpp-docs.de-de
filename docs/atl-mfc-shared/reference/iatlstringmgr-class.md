@@ -14,12 +14,12 @@ helpviewer_keywords:
 - memory, managing
 - IAtlStringMgr class
 ms.assetid: 722f0346-a770-4aa7-8f94-177be8dba823
-ms.openlocfilehash: bee9c3d27ea05a40d6835d69079fc3e0a56efb86
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: a617ba829999e9e5778bd7f0091cfb0d624dce71
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87219052"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88832008"
 ---
 # <a name="iatlstringmgr-class"></a>IAtlStringMgr-Klasse
 
@@ -35,7 +35,7 @@ __interface IAtlStringMgr
 
 ### <a name="methods"></a>Methoden
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[Jugend](#allocate)|Diese Methode wird aufgerufen, um eine neue Zeichen folgen Datenstruktur zuzuordnen.|
 |[Klonen](#clone)|Ruft diese Methode auf, um einen Zeiger auf einen neuen Zeichen folgen-Manager für die Verwendung mit einer anderen Instanz von zurückzugeben `CSimpleStringT` .|
@@ -53,7 +53,7 @@ Sie können diese Klasse auch verwenden, um einen benutzerdefinierten Speicher-M
 
 **Header:** atlsimpstr. h
 
-## <a name="iatlstringmgrallocate"></a><a name="allocate"></a>IAtlStringMgr:: zuordnen
+## <a name="iatlstringmgrallocate"></a><a name="allocate"></a> IAtlStringMgr:: zuordnen
 
 Ordnet eine neue Zeichen folgen Datenstruktur zu.
 
@@ -83,7 +83,7 @@ Nennen Sie [IAtlStringMgr:: Free](#free) oder [IAtlStringMgr:: rezuordnen](#real
 > [!NOTE]
 > Verwendungs Beispiele finden Sie unter [Speicherverwaltung und CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md).
 
-## <a name="iatlstringmgrclone"></a><a name="clone"></a>IAtlStringMgr:: Clone
+## <a name="iatlstringmgrclone"></a><a name="clone"></a> IAtlStringMgr:: Clone
 
 Gibt einen Zeiger auf einen neuen Zeichen folgen-Manager zurück, der mit einer anderen Instanz von verwendet werden soll `CSimpleStringT` .
 
@@ -104,7 +104,7 @@ Wenn der Speicher-Manager die Verwendung durch mehrere Instanzen von jedoch nich
 > [!NOTE]
 > Verwendungs Beispiele finden Sie unter [Speicherverwaltung und CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md).
 
-## <a name="iatlstringmgrfree"></a><a name="free"></a>IAtlStringMgr:: Free
+## <a name="iatlstringmgrfree"></a><a name="free"></a> IAtlStringMgr:: Free
 
 Gibt eine Zeichen folgen Datenstruktur frei.
 
@@ -124,7 +124,7 @@ Gibt den angegebenen Speicherblock frei, der zuvor durch [zuordnen](#allocate) o
 > [!NOTE]
 > Verwendungs Beispiele finden Sie unter [Speicherverwaltung und CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md).
 
-## <a name="iatlstringmgrgetnilstring"></a><a name="getnilstring"></a>IAtlStringMgr:: GetNilString
+## <a name="iatlstringmgrgetnilstring"></a><a name="getnilstring"></a> IAtlStringMgr:: GetNilString
 
 Gibt einen Zeiger auf eine Zeichen folgen Datenstruktur für eine leere Zeichenfolge zurück.
 
@@ -146,7 +146,7 @@ Mit dieser Funktion wird eine Darstellung einer leeren Zeichenfolge zurückgegeb
 > [!NOTE]
 > Verwendungs Beispiele finden Sie unter [Speicherverwaltung und CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md).
 
-## <a name="iatlstringmgrreallocate"></a><a name="reallocate"></a>IAtlStringMgr:: Neuzuordnung
+## <a name="iatlstringmgrreallocate"></a><a name="reallocate"></a> IAtlStringMgr:: Neuzuordnung
 
 Ordnet eine Zeichen folgen Datenstruktur neu zu.
 

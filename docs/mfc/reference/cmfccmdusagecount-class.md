@@ -20,12 +20,12 @@ helpviewer_keywords:
 - CMFCCmdUsageCount [MFC], Serialize
 - CMFCCmdUsageCount [MFC], SetOptions
 ms.assetid: 9c33b783-37c0-43ea-9f31-3c75e246c841
-ms.openlocfilehash: 15026746f2af55b9cc153cce19cf00475e5c5d77
-ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
+ms.openlocfilehash: 95dca548856510cd8b06914932cc46435c28399d
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88561101"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88834276"
 ---
 # <a name="cmfccmdusagecount-class"></a>CMF ccmdusagecount-Klasse
 
@@ -41,17 +41,15 @@ class CMFCCmdUsageCount : public CObject
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|||
+|name|Beschreibung|
 |-|-|
-|name|BESCHREIBUNG|
-|`CMFCCmdUsageCount::CMFCCmdUsageCount`|Der Standardkonstruktor.|
+|`CMFCCmdUsageCount::CMFCCmdUsageCount`|Standardkonstruktor|
 |`CMFCCmdUsageCount::~CMFCCmdUsageCount`|Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|||
+|name|Beschreibung|
 |-|-|
-|name|BESCHREIBUNG|
 |[CMF ccmdusagecount:: addcmd](#addcmd)|Inkremente um einen der mit dem angegebenen Befehl verknüpften Zählers.|
 |[CMF ccmdusagecount:: GetCount](#getcount)|Ruft den Verwendungs Zähler ab, der der angegebenen Befehls-ID zugeordnet ist.|
 |[CMF ccmdusagecount:: hasenoughinformation](#hasenoughinformation)|Bestimmt, ob dieses-Objekt die minimale Menge an Überwachungsdaten erfasst hat.|
@@ -62,9 +60,8 @@ class CMFCCmdUsageCount : public CObject
 
 ### <a name="data-members"></a>Datenelemente
 
-|||
+|Name|Beschreibung|
 |-|-|
-|Name|BESCHREIBUNG|
 |`m_CmdUsage`|Ein- `CMap` Objekt, das Befehle Ihren Verwendungs Anzahlen zuordnet.|
 |`m_nMinUsagePercentage`|Der minimale Verwendungs Prozentsatz für einen Befehl, der häufig verwendet wird.|
 |`m_nStartCount`|Der Start-Counter, der verwendet wird, um zu bestimmen, ob dieses Objekt die minimale Menge an Überwachungsdaten erfasst hat.|

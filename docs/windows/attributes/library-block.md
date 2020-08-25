@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - library_block attribute
 ms.assetid: ae7a7ebe-5e1a-4eda-a058-11bbd058ece8
-ms.openlocfilehash: 405cc1cd5af7dcd689e833764f3da2fdc6d5f703
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 13988abc12eb0b136dfc8d2c0d597005b56f0526
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80214772"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88834115"
 ---
 # <a name="library_block"></a>library_block
 
@@ -44,12 +44,10 @@ __interface IMyInterface {
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|Überall|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Überall|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 

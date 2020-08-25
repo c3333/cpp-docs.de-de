@@ -34,24 +34,32 @@ helpviewer_keywords:
 - std::tolower [C++]
 - std::toupper [C++]
 - std::use_facet [C++]
-ms.openlocfilehash: a1e81fe28976e914f90a441ff97027f411b05738
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 91d0b40de557eb2414d6ee685795796c3290177c
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87224811"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88833243"
 ---
 # <a name="ltlocalegt-functions"></a>&lt;locale&gt;-Funktionen
 
-||||
-|-|-|-|
-|[has_facet](#has_facet)|[isalnum](#isalnum)|[isalpha](#isalpha)|
-|[iscntrl](#iscntrl)|[isdigit](#isdigit)|[isgraph](#isgraph)|
-|[islower](#islower)|[isprint](#isprint)|[ispunct](#ispunct)|
-|[isspace](#isspace)|[isupper](#isupper)|[isxdigit](#isxdigit)|
-|[ToLower](#tolower)|[ToUpper](#toupper)|[use_facet](#use_facet)|
+[has_facet](#has_facet)\
+[isalnum](#isalnum)\
+[isalpha](#isalpha)\
+[iscntrl](#iscntrl)\
+[IsDigit](#isdigit)\
+[isgraph](#isgraph)\
+[IsLower](#islower)\
+[isprint](#isprint)\
+[Ispunct](#ispunct)\
+[isspace](#isspace)\
+[IsUpper](#isupper)\
+[isxdigit](#isxdigit)\
+[ToLower](#tolower)\
+[ToUpper](#toupper)\
+[use_facet](#use_facet)
 
-## <a name="has_facet"></a><a name="has_facet"></a>has_facet
+## <a name="has_facet"></a><a name="has_facet"></a> has_facet
 
 Testet, ob ein bestimmtes Facet in einem angegebenen Gebietsschema gespeichert wird.
 
@@ -67,7 +75,7 @@ Das Gebietsschema, das auf das Vorhandensein eines Facets getestet werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn für das Gebiets Schema die Facette getestet wurde. **`false`** Wenn dies nicht der Fall ist.
+**`true`** , wenn für das Gebiets Schema die Facette getestet wurde. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -94,7 +102,7 @@ int main( )
 1
 ```
 
-## <a name="isalnum"></a><a name="isalnum"></a>isalnum
+## <a name="isalnum"></a><a name="isalnum"></a> isalnum
 
 Testet, ob ein Element in einem Gebietsschema ein alphabetisches oder ein numerisches Zeichen ist.
 
@@ -113,7 +121,7 @@ Das Gebietsschema, das das zu testende alphanumerische Element enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das getestete Element alphanumerisch ist. **`false`** Wenn dies nicht der Fall ist.
+**`true`** , wenn das getestete Element alphanumerisch ist. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -161,7 +169,7 @@ The character '@' in the locale is  not alphanumeric.
 The character '3' in the locale is alphanumeric.
 ```
 
-## <a name="isalpha"></a><a name="isalpha"></a>isalpha
+## <a name="isalpha"></a><a name="isalpha"></a> isalpha
 
 Testet, ob ein Element in einem Gebietsschema ein alphabetisches Zeichen ist.
 
@@ -180,7 +188,7 @@ Das Gebietsschema, das das zu testende alphabetische Element enthält, welches g
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das getestete Element alphabetisch ist. **`false`** Wenn dies nicht der Fall ist.
+**`true`** , wenn das getestete Element alphabetisch ist. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -226,7 +234,7 @@ int main( )
 }
 ```
 
-## <a name="iscntrl"></a><a name="iscntrl"></a>iscntrl
+## <a name="iscntrl"></a><a name="iscntrl"></a> iscntrl
 
 Testet, ob ein Element in einem Gebietsschema ein Steuerzeichen ist.
 
@@ -245,7 +253,7 @@ Das Gebietsschema, das das zu testende Element enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das getestete Element ein Steuerzeichen ist. **`false`** Wenn dies nicht der Fall ist.
+**`true`** , wenn das getestete Element ein Steuerzeichen ist. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -291,7 +299,7 @@ int main( )
 }
 ```
 
-## <a name="isdigit"></a><a name="isdigit"></a>IsDigit
+## <a name="isdigit"></a><a name="isdigit"></a> IsDigit
 
 Testet, ob ein Element in einem Gebietsschema ein numerisches Zeichen ist.
 
@@ -310,7 +318,7 @@ Das Gebietsschema, das das zu testende Element enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das getestete Element ein numerisches Zeichen ist. **`false`** Wenn dies nicht der Fall ist.
+**`true`** , wenn das getestete Element ein numerisches Zeichen ist. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -356,7 +364,7 @@ int main( )
 }
 ```
 
-## <a name="isgraph"></a><a name="isgraph"></a>isgraph
+## <a name="isgraph"></a><a name="isgraph"></a> isgraph
 
 Testet, ob ein Element in einem Gebietsschema ein alphanumerisches Zeichen oder ein Interpunktionszeichen ist.
 
@@ -375,7 +383,7 @@ Das Gebietsschema, das das zu testende Element enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das getestete Element ein alphanumerisches Zeichen oder ein Interpunktions Zeichen ist. **`false`** Wenn dies nicht der Fall ist.
+**`true`** , wenn das getestete Element ein alphanumerisches Zeichen oder ein Interpunktions Zeichen ist. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -421,7 +429,7 @@ int main( )
 }
 ```
 
-## <a name="islower"></a><a name="islower"></a>IsLower
+## <a name="islower"></a><a name="islower"></a> IsLower
 
 Testet, ob ein Element in einem Gebietsschema kleingeschrieben ist.
 
@@ -440,7 +448,7 @@ Das Gebietsschema, das das zu testende Element enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das getestete Element ein Kleinbuchstabe ist. **`false`** Wenn dies nicht der Fall ist.
+**`true`** , wenn das getestete Element ein Kleinbuchstabe ist. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -486,7 +494,7 @@ int main( )
 }
 ```
 
-## <a name="isprint"></a><a name="isprint"></a>isprint
+## <a name="isprint"></a><a name="isprint"></a> isprint
 
 Testet, ob ein Element in einem Gebietsschema ein druckbares Zeichen ist.
 
@@ -505,7 +513,7 @@ Das Gebietsschema, das das zu testende Element enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das getestete Element ein druckbares Element ist. **`false`** Wenn dies nicht der Fall ist.
+**`true`** , wenn das getestete Element ein druckbares Element ist. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -550,7 +558,7 @@ int main( )
 }
 ```
 
-## <a name="ispunct"></a><a name="ispunct"></a>Ispunct
+## <a name="ispunct"></a><a name="ispunct"></a> Ispunct
 
 Testet, ob ein Element in einem Gebietsschema ein Interpunktionszeichen ist.
 
@@ -569,7 +577,7 @@ Das Gebietsschema, das das zu testende Element enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das getestete Element ein Interpunktions Zeichen ist. **`false`** Wenn dies nicht der Fall ist.
+**`true`** , wenn das getestete Element ein Interpunktions Zeichen ist. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -615,7 +623,7 @@ int main( )
 }
 ```
 
-## <a name="isspace"></a><a name="isspace"></a>isspace
+## <a name="isspace"></a><a name="isspace"></a> isspace
 
 Testet, ob ein Element in einem Gebietsschema ein Leerzeichen ist.
 
@@ -634,7 +642,7 @@ Das Gebietsschema, das das zu testende Element enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das getestete Element ein Leerzeichen ist. **`false`** Wenn dies nicht der Fall ist.
+**`true`** , wenn das getestete Element ein Leerzeichen ist. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -680,7 +688,7 @@ int main( )
 }
 ```
 
-## <a name="isupper"></a><a name="isupper"></a>IsUpper
+## <a name="isupper"></a><a name="isupper"></a> IsUpper
 
 Testet, ob ein Element in einem Gebietsschema groß geschrieben ist.
 
@@ -699,7 +707,7 @@ Das Gebietsschema, das das zu testende Element enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das getestete Element ein Großbuchstabe ist. **`false`** Wenn dies nicht der Fall ist.
+**`true`** , wenn das getestete Element ein Großbuchstabe ist. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -745,7 +753,7 @@ int main( )
 }
 ```
 
-## <a name="isxdigit"></a><a name="isxdigit"></a>isxdigit
+## <a name="isxdigit"></a><a name="isxdigit"></a> isxdigit
 
 Testet, ob ein Element in einem Gebietsschema ein Zeichen ist, mit dem eine Hexadezimalzahl dargestellt wird.
 
@@ -764,7 +772,7 @@ Das Gebietsschema, das das zu testende Element enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das getestete Element ein Zeichen ist, mit dem eine hexadezimale Zahl dargestellt wird. **`false`** Wenn dies nicht der Fall ist.
+**`true`** , wenn das getestete Element ein Zeichen ist, mit dem eine hexadezimale Zahl dargestellt wird. **`false`** Wenn dies nicht der Fall ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -812,7 +820,7 @@ int main( )
 }
 ```
 
-## <a name="tolower"></a><a name="tolower"></a>ToLower
+## <a name="tolower"></a><a name="tolower"></a> ToLower
 
 Konvertiert ein Zeichen in einen Kleinbuchstaben.
 
@@ -861,7 +869,7 @@ int main( )
 }
 ```
 
-## <a name="toupper"></a><a name="toupper"></a>ToUpper
+## <a name="toupper"></a><a name="toupper"></a> ToUpper
 
 Konvertiert ein Zeichen in einen Großbuchstaben.
 
@@ -910,7 +918,7 @@ int main( )
 }
 ```
 
-## <a name="use_facet"></a><a name="use_facet"></a>use_facet
+## <a name="use_facet"></a><a name="use_facet"></a> use_facet
 
 Gibt einen Verweis auf ein Facet eines angegebenen Typs zurück, der in einem Gebietsschema gespeichert wird.
 
@@ -971,6 +979,6 @@ The character 'a' in locale loc1 is alphabetic.
 The character '!' in locale loc2 is not alphabetic.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<locale>](../standard-library/locale.md)

@@ -36,12 +36,12 @@ helpviewer_keywords:
 - _wspawnv function
 - spawnv function
 ms.assetid: 72360ef4-dfa9-44c1-88c1-b3ecb660aa7d
-ms.openlocfilehash: b29b1739f4511cd8f600d051aa0d754dbc8be224
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: ffed211fffc7b994fa04fde7210339b9355197fe
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82909243"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88830812"
 ---
 # <a name="_spawnv-_wspawnv"></a>_spawnv, _wspawnv
 
@@ -80,7 +80,7 @@ Array von Zeigern zu Argumenten. Das Argument *argv*[0] ist normalerweise ein Ze
 
 Der Rückgabewert eines synchronen **_spawnv** oder **_wspawnv** (**_P_WAIT** für den- *Modus*angegeben) ist der Beendigungs Status des neuen Prozesses. Der Rückgabewert eines asynchronen **_spawnv** oder **_wspawnv** (**_P_NOWAIT** oder **_P_NOWAITO** , der für den- *Modus*angegeben ist) ist das Prozess handle. Der Beendigungsstatus ist 0, wenn der Prozess ordnungsgemäß beendet wurde. Sie können den Beendigungs Status auf einen Wert ungleich 0 (null) festlegen, wenn der erzeugte Prozess speziell die **Exit** -Routine mit einem Argument ungleich 0 aufruft. Wenn der neue Prozess nicht explizit einen positiven Beendigungsstatus eingestellt hat, weist ein positiver Beendigungsstatus auf eine abnormale Beendigung mit einem Abbruch oder einer Unterbrechung hin. Der Rückgabewert-1 gibt einen Fehler an (der neue Prozess wird nicht gestartet). In diesem Fall wird **errno** auf einen der folgenden Werte festgelegt.
 
-|||
+| Wert | Beschreibung |
 |-|-|
 | **E2BIG** | Argumentliste umfasst mehr als 1024 Byte. |
 | **Eingabe** | Das *Mode* -Argument ist ungültig. |
@@ -90,7 +90,7 @@ Der Rückgabewert eines synchronen **_spawnv** oder **_wspawnv** (**_P_WAIT** f�
 
 Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Jede dieser Funktionen erstellt einen neuen Prozess, führt ihn aus und übergibt ein Array von Zeigern auf Befehlszeilenargumente.
 
@@ -100,7 +100,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**_spawnv**|\<stdio.h> oder \<process.h>|
 |**_wspawnv**|\<stdio.h> oder \<wchar.h>|
@@ -114,7 +114,7 @@ Siehe das Beispiel in [_spawn, _wspawn Functions](../../c-runtime-library/spawn-
 ## <a name="see-also"></a>Weitere Informationen
 
 [Prozess-und Umgebungs Steuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
-[_spawn-, _wspawn-Funktionen](../../c-runtime-library/spawn-wspawn-functions.md)<br/>
+[_spawn, _wspawn Funktionen](../../c-runtime-library/spawn-wspawn-functions.md)<br/>
 [Abbruch](abort.md)<br/>
 [atexit](atexit.md)<br/>
 [_exec, _wexec Funktionen](../../c-runtime-library/exec-wexec-functions.md)<br/>

@@ -10,22 +10,24 @@ f1_keywords:
 - regex/std::operator==
 - regex/std::operator<<
 ms.assetid: ec623e65-c186-491f-aa18-6b12b47e1127
-ms.openlocfilehash: ebed98daaea895fa88dc654189fb3c3068d2b508
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: f3117ce7e962468855172a463c375392930e7c81
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81366418"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88833230"
 ---
 # <a name="ltregexgt-operators"></a>&lt;regex&gt;-Operatoren
 
-||||
-|-|-|-|
-|[Operator!=](#op_neq)|[Operator&gt;](#op_gt)|[Operator&gt;=](#op_gt_eq)|
-|[Operator&lt;](#op_lt)|[Operator&lt;&lt;](#op_lt_lt)|[Operator&lt;=](#op_lt_eq)|
-|[Betreiber== Einzelnachweise ==](#op_eq_eq)|
+[Operator! =](#op_neq)\
+[KOM&gt;](#op_gt)\
+[KOM&gt;=](#op_gt_eq)\
+[KOM&lt;](#op_lt)\
+[KOM&lt;&lt;](#op_lt_lt)\
+[KOM&lt;=](#op_lt_eq)\
+[Operator = =](#op_eq_eq)
 
-## <a name="operator"></a><a name="op_neq"></a>Operator!=
+## <a name="operator"></a><a name="op_neq"></a> Operator! =
 
 „Ungleich-wie“-Vergleich von verschiedenen Objekten.
 
@@ -66,16 +68,16 @@ bool operator!=(const match_results<BidIt, Alloc>& left,
 
 ### <a name="parameters"></a>Parameter
 
-*BidIt*\
+*Bidit*\
 Der Iteratortyp.
 
-*IOtraits*\
+*Iocharakteristika*\
 Die Trait-Klasse der Zeichenfolge.
 
-*Alloc*\
+*Zuordnungseinheits*\
 Die Zuweisungsklasse.
 
-*Links*\
+*linken*\
 Das linke zu vergleichende Objekt.
 
 *Richting*\
@@ -144,7 +146,7 @@ sub != "aab" == true
 sub != 'a' == true
 ```
 
-## <a name="operatorlt"></a><a name="op_lt"></a>Operator&lt;
+## <a name="operatorlt"></a><a name="op_lt"></a> KOM&lt;
 
 „Weniger-als“-Vergleich von verschiedenen Objekten.
 
@@ -181,16 +183,16 @@ bool operator<(const sub_match<BidIt>& left,
 
 ### <a name="parameters"></a>Parameter
 
-*BidIt*\
+*Bidit*\
 Der Iteratortyp.
 
-*IOtraits*\
+*Iocharakteristika*\
 Die Trait-Klasse der Zeichenfolge.
 
-*Alloc*\
+*Zuordnungseinheits*\
 Die Zuweisungsklasse.
 
-*Links*\
+*linken*\
 Das linke zu vergleichende Objekt.
 
 *Richting*\
@@ -198,7 +200,7 @@ Das rechte zu vergleichende Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Jeder Vorlagenoperator konvertiert seine Argumente in einen Zeichenfolgentyp und gibt true nur dann zurück, wenn der konvertierte Wert von *links* kleiner als der konvertierte Wert von *rechts*verglichen wird.
+Jeder Vorlagen Operator konvertiert seine Argumente in einen Zeichen Folgentyp und gibt nur dann true zurück, wenn der konvertierte Wert von *left* kleiner als der konvertierte Wert von *right*ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -254,7 +256,7 @@ sub < "aab" == true
 sub < 'a' == false
 ```
 
-## <a name="operatorltlt"></a><a name="op_lt_lt"></a>Operator&lt;&lt;
+## <a name="operatorltlt"></a><a name="op_lt_lt"></a> KOM&lt;&lt;
 
 Fügt eine sub_match in einen Stream ein.
 
@@ -269,16 +271,16 @@ basic_ostream<Elem, IOtraits>& operator<<(basic_ostream<Elem, IOtraits>& os,
 *Elem*\
 Der Elementtyp.
 
-*IOtraits*\
+*Iocharakteristika*\
 Die Trait-Klasse der Zeichenfolge.
 
-*Alloc*\
+*Zuordnungseinheits*\
 Die Zuweisungsklasse.
 
-*BidIt*\
+*Bidit*\
 Der Iteratortyp.
 
-*Os*\
+*Vulkane*\
 Der Ausgabestream.
 
 *Richting*\
@@ -314,7 +316,7 @@ int main()
 whole match: caaa
 ```
 
-## <a name="operatorlt"></a><a name="op_lt_eq"></a>Operator&lt;=
+## <a name="operatorlt"></a><a name="op_lt_eq"></a> KOM&lt;=
 
 „Weniger-als“- oder „Gleich-wie“-Vergleich von verschiedenen Objekten.
 
@@ -351,16 +353,16 @@ bool operator<=(const sub_match<BidIt>& left,
 
 ### <a name="parameters"></a>Parameter
 
-*BidIt*\
+*Bidit*\
 Der Iteratortyp.
 
-*IOtraits*\
+*Iocharakteristika*\
 Die Trait-Klasse der Zeichenfolge.
 
-*Alloc*\
+*Zuordnungseinheits*\
 Die Zuweisungsklasse.
 
-*Links*\
+*linken*\
 Das linke zu vergleichende Objekt.
 
 *Richting*\
@@ -424,7 +426,7 @@ sub <= "aab" == true
 sub <= 'a' == false
 ```
 
-## <a name="operator"></a><a name="op_eq_eq"></a>Betreiber== Einzelnachweise ==
+## <a name="operator"></a><a name="op_eq_eq"></a> Operator = =
 
 „Gleich-wie“-Vergleich von verschiedenen Objekten.
 
@@ -465,16 +467,16 @@ bool operator==(const match_results<BidIt, Alloc>& left,
 
 ### <a name="parameters"></a>Parameter
 
-*BidIt*\
+*Bidit*\
 Der Iteratortyp.
 
-*IOtraits*\
+*Iocharakteristika*\
 Die Trait-Klasse der Zeichenfolge.
 
-*Alloc*\
+*Zuordnungseinheits*\
 Die Zuweisungsklasse.
 
-*Links*\
+*linken*\
 Das linke zu vergleichende Objekt.
 
 *Richting*\
@@ -486,11 +488,11 @@ Jede Operatorvorlage konvertiert alle Argumente in einen Zeichenfolgentyp und gi
 
 Wenn eine Operatorvorlage Argumente in einen Zeichenfolgentyp konvertiert, verwendet sie die erste der folgenden Transformationen, die angewendet wird:
 
-Argumente, deren Typen eine `match_results` Spezialisierung `sub_match` der Klassenvorlage `str` sind oder durch Aufrufen der Memberfunktion konvertiert werden;
+Argumente, deren Typen eine Spezialisierung einer Klassen Vorlage sind `match_results` oder `sub_match` durch Aufrufen der Member-Funktion konvertiert werden `str` .
 
-Argumente, deren Typen eine Spezialisierung `basic_string` der Klassenvorlage sind, bleiben unverändert.
+Argumente, deren Typen eine Spezialisierung der Klassen Vorlage sind `basic_string` , sind unverändert.
 
-Alle anderen Argumenttypen werden konvertiert, indem der Argumentwert für eine entsprechende `basic_string`Spezialisierung der Klassenvorlage an den Konstruktor übergeben wird.
+alle anderen Argument Typen werden konvertiert, indem der Argument Wert an den Konstruktor für eine entsprechende Spezialisierung der Klassen Vorlage übergeben wird `basic_string` .
 
 ### <a name="example"></a>Beispiel
 
@@ -551,7 +553,7 @@ sub == "aab" == false
 sub == 'a' == false
 ```
 
-## <a name="operatorgt"></a><a name="op_gt"></a>Operator&gt;
+## <a name="operatorgt"></a><a name="op_gt"></a> KOM&gt;
 
 „Größer-als“-Vergleich von verschiedenen Objekten.
 
@@ -588,16 +590,16 @@ bool operator>(const sub_match<BidIt>& left,
 
 ### <a name="parameters"></a>Parameter
 
-*BidIt*\
+*Bidit*\
 Der Iteratortyp.
 
-*IOtraits*\
+*Iocharakteristika*\
 Die Trait-Klasse der Zeichenfolge.
 
-*Alloc*\
+*Zuordnungseinheits*\
 Die Zuweisungsklasse.
 
-*Links*\
+*linken*\
 Das linke zu vergleichende Objekt.
 
 *Richting*\
@@ -661,7 +663,7 @@ sub > "aab" == false
 sub > 'a' == true
 ```
 
-## <a name="operatorgt"></a><a name="op_gt_eq"></a>Operator&gt;=
+## <a name="operatorgt"></a><a name="op_gt_eq"></a> KOM&gt;=
 
 „Größer-als“- oder „Gleich-wie“-Vergleich von verschiedenen Objekten.
 
@@ -698,16 +700,16 @@ bool operator>=(const sub_match<BidIt>& left,
 
 ### <a name="parameters"></a>Parameter
 
-*BidIt*\
+*Bidit*\
 Der Iteratortyp.
 
-*IOtraits*\
+*Iocharakteristika*\
 Die Trait-Klasse der Zeichenfolge.
 
-*Alloc*\
+*Zuordnungseinheits*\
 Die Zuweisungsklasse.
 
-*Links*\
+*linken*\
 Das linke zu vergleichende Objekt.
 
 *Richting*\
@@ -771,7 +773,7 @@ sub >= "aab" == false
 sub >= 'a' == true
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<regex>](../standard-library/regex.md)\
 [regex_constants-Klasse](../standard-library/regex-constants-class.md)\
@@ -780,4 +782,4 @@ sub >= 'a' == true
 [regex_iterator-Klasse](../standard-library/regex-iterator-class.md)\
 [regex_token_iterator-Klasse](../standard-library/regex-token-iterator-class.md)\
 [regex_traits-Klasse](../standard-library/regex-traits-class.md)\
-[\<regex> typedefs](../standard-library/regex-typedefs.md)
+[\<regex> Typedefs](../standard-library/regex-typedefs.md)

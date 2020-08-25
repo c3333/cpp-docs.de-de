@@ -19,14 +19,14 @@ helpviewer_keywords:
 - _LK_RLCK constant
 - LK_LOCK constant
 ms.assetid: c3dc92c8-60e3-4d29-9f50-5d217627c8ad
-ms.openlocfilehash: d559a68e8fede6e0b6dd40505a041b14da703681
-ms.sourcegitcommit: dedd4c3cb28adec3793329018b9163ffddf890a4
-ms.translationtype: HT
+ms.openlocfilehash: 8cfc1f933179e043f464a69f3ac5cf4ca25763e0
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57738489"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88830825"
 ---
-# <a name="locking-constants"></a>_locking-Konstanten
+# <a name="_locking-constants"></a>_locking-Konstanten
 
 ## <a name="syntax"></a>Syntax
 
@@ -34,13 +34,13 @@ ms.locfileid: "57738489"
 #include <sys/locking.h>
 ```
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Bemerkungen
 
 Das *mode*-Argument im Aufruf der `_locking`-Funktion gibt die auszuführende Sperraktion an.
 
 Das *mode*-Argument muss eine der folgenden Manifestkonstanten sein.
 
-|||
+|Wert|Beschreibung|
 |-|-|
 | `_LK_LOCK`  | Sperrt die angegebenen Bytes. Wenn die Bytes nicht gesperrt werden können, führt die Funktion nach 1 Sekunde einen neuen Versuch durch. Wenn nach 10 Versuchen die Bytes nicht gesperrt werden können, gibt die Funktion einen Fehler zurück.  |
 | `_LK_RLCK`  | Wie in `_LK_LOCK`.  |
@@ -48,7 +48,7 @@ Das *mode*-Argument muss eine der folgenden Manifestkonstanten sein.
 | `_LK_NBRLCK`  | Wie in `_LK_NBLCK`.  |
 | `_LK_UNLCK`  | Entsperrt die angegebenen Bytes. (Die Bytes müssen zuvor gesperrt worden sein.)  |
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_locking](../c-runtime-library/reference/locking.md)<br/>
 [Globale Konstanten](../c-runtime-library/global-constants.md)

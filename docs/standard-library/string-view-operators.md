@@ -17,24 +17,27 @@ helpviewer_keywords:
 - std::basic_string_view::operator&lt;
 - std::basic_string_view::operator&lt;&lt;
 - std::basic_string_view::operator&lt;=, std::basic_string_view::operator==
-ms.openlocfilehash: 39727177ff0fe88e2fcc105a6cee49711b36de6e
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: b0761c1af7b2ed9f34917d2e4165561b357f0a30
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87222236"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88833217"
 ---
 # <a name="ltstring_viewgt-operators"></a>&lt;string_view- &gt; Operatoren
 
 Verwenden Sie diese Operatoren zum Vergleichen von zwei string_view Objekten oder einer string_view und eines anderen Zeichen folgen Objekts (z. b. " [Std:: String](basic-string-class.md)" oder " **Char \* **"), für das eine implizite Konvertierung bereitgestellt wird.
 
-||||
-|-|-|-|
-|[Operator! =](#op_neq)|[KOM&gt;](#op_gt)|[KOM&gt;=](#op_gt_eq)|
-|[KOM&lt;](#op_lt)|[KOM&lt;&lt;](#op_lt_lt)|[KOM&lt;=](#op_lt_eq)|
-|[Operator = =](#op_eq_eq)|[Operator "" SV](#op_sv)|
+[Operator! =](#op_neq)\
+[KOM&gt;](#op_gt)\
+[KOM&gt;=](#op_gt_eq)\
+[KOM&lt;](#op_lt)\
+[KOM&lt;&lt;](#op_lt_lt)\
+[KOM&lt;=](#op_lt_eq)\
+[Operator = =](#op_eq_eq)\
+[Operator "" SV](#op_sv)
 
-## <a name="operator"></a><a name="op_neq"></a>Operator! =
+## <a name="operator"></a><a name="op_neq"></a> Operator! =
 
 Testet, ob das Objekt links vom Operator ungleich dem Objekt rechts vom Operator ist.
 
@@ -65,7 +68,7 @@ Alle konvertierbaren Zeichen folgen Typen oder ein Objekt vom Typ `basic_string_
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das Objekt links vom Operator nicht lexikografisch gleich dem Objekt rechts vom Operator ist. andernfalls **`false`** .
+**`true`** , wenn das Objekt links vom Operator nicht lexikografisch gleich dem Objekt rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -73,7 +76,7 @@ Es muss eine implizite Konvertierung von *convertible_string_type* zum string_vi
 
 Der Vergleich basiert auf einem Paar weisen lexikografischen Vergleich der Zeichen folgen. Wenn Sie die gleiche Anzahl von Elementen aufweisen und die Elemente alle gleich sind, sind die beiden Objekte gleich. Andernfalls sind sie ungleich.
 
-## <a name="operator"></a><a name="op_eq_eq"></a>Operator = =
+## <a name="operator"></a><a name="op_eq_eq"></a> Operator = =
 
 Testet, ob das Objekt links vom Operator gleich dem Objekt rechts vom Operator ist.
 
@@ -104,7 +107,7 @@ Alle konvertierbaren Zeichen folgen Typen oder ein Objekt vom Typ `basic_string_
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das Objekt links vom Operator lexikografisch gleich dem Objekt auf der rechten Seite ist. andernfalls **`false`** .
+**`true`** , wenn das Objekt links vom Operator lexikografisch gleich dem Objekt auf der rechten Seite ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -112,7 +115,7 @@ Es muss eine implizite Konvertierung von *convertible_string_type* zum string_vi
 
 Der Vergleich basiert auf einem Paar weisen lexikografischen Vergleich der Zeichen folgen. Wenn Sie die gleiche Anzahl von Elementen aufweisen und die Elemente alle gleich sind, sind die beiden Objekte gleich.
 
-## <a name="operatorlt"></a><a name="op_lt"></a>KOM&lt;
+## <a name="operatorlt"></a><a name="op_lt"></a> KOM&lt;
 
 Testet, ob das Objekt links vom Operator kleiner als das Objekt auf der rechten Seite ist sidestring_view
 
@@ -143,7 +146,7 @@ Alle konvertierbaren Zeichen folgen Typen oder ein Objekt vom Typ `basic_string_
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das Objekt links vom Operator lexikografisch kleiner ist als das Objekt auf der rechten Seite. andernfalls **`false`** .
+**`true`** , wenn das Objekt links vom Operator lexikografisch kleiner ist als das Objekt auf der rechten Seite. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -173,7 +176,7 @@ int main()
 }
 ```
 
-## <a name="operatorlt"></a><a name="op_lt_eq"></a>KOM&lt;=
+## <a name="operatorlt"></a><a name="op_lt_eq"></a> KOM&lt;=
 
 Testet, ob das Objekt links vom Operator kleiner oder gleich dem Objekt auf der rechten Seite ist.
 
@@ -204,13 +207,13 @@ Alle konvertierbaren Zeichen folgen Typen oder ein Objekt vom Typ `basic_string_
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das Objekt links vom Operator lexikografisch kleiner als oder gleich dem Objekt rechts vom Operator ist. andernfalls **`false`** .
+**`true`** , wenn das Objekt links vom Operator lexikografisch kleiner als oder gleich dem Objekt rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
 Siehe [Operator &lt; ](#op_lt).
 
-## <a name="operatorltlt"></a><a name="op_lt_lt"></a>KOM&lt;&lt;
+## <a name="operatorltlt"></a><a name="op_lt_lt"></a> KOM&lt;&lt;
 
 Schreibt eine string_view in einen Ausgabestream.
 
@@ -236,7 +239,7 @@ ein Ausgabestream, in den geschrieben wird.
 
 Verwenden Sie diesen Operator, um den Inhalt einer string_view in einen Ausgabestream einzufügen, z. b. mit [Std:: cout](iostream.md#cout).
 
-## <a name="operatorgt"></a><a name="op_gt"></a>KOM&gt;
+## <a name="operatorgt"></a><a name="op_gt"></a> KOM&gt;
 
 Testet, ob das Objekt links vom Operator größer als das Objekt auf der rechten Seite ist.
 
@@ -267,13 +270,13 @@ Alle konvertierbaren Zeichen folgen Typen oder ein Objekt vom Typ `basic_string_
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das Objekt links vom Operator lexikografisch größer als das string_view Objekt rechts vom Operator ist. andernfalls **`false`** .
+**`true`** , wenn das Objekt links vom Operator lexikografisch größer als das string_view Objekt rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
 Siehe [Operator &lt; ](#op_lt).
 
-## <a name="operatorgt"></a><a name="op_gt_eq"></a>KOM&gt;=
+## <a name="operatorgt"></a><a name="op_gt_eq"></a> KOM&gt;=
 
 Testet, ob das Objekt links vom Operator größer oder gleich dem Objekt auf der rechten Seite ist.
 
@@ -304,13 +307,13 @@ Alle konvertierbaren Zeichen folgen Typen oder ein Objekt vom Typ `basic_string_
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das-Objekt links vom Operator lexikografisch größer als oder gleich dem-Objekt rechts vom Operator ist. andernfalls **`false`** .
+**`true`** , wenn das-Objekt links vom Operator lexikografisch größer als oder gleich dem-Objekt rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
 Siehe [Operator &lt; ](#op_lt).
 
-## <a name="operator-sv-string_view-literal"></a><a name="op_sv"></a>Operator "" SV (string_view Literale)
+## <a name="operator-sv-string_view-literal"></a><a name="op_sv"></a> Operator "" SV (string_view Literale)
 
 Erstellt eine string_view aus einem Zeichenfolgenliteral. Erfordert Namespace `std::literals::string_view_literals` .
 

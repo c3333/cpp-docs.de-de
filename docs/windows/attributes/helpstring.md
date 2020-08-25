@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - helpstring attribute [C++]
 ms.assetid: 0401e905-a63e-4fad-98d0-d1efea111966
-ms.openlocfilehash: 18a8dbea2387224070903aa10c812c9dd079bf96
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 57f7a5bfd5bd0e7a6509797ec34e88531304ec92
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87217258"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88831033"
 ---
 # <a name="helpstring"></a>helpstring
 
@@ -38,9 +38,7 @@ Ein Beispiel für die Verwendung von **HelpString**finden Sie im Beispiel für [
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
 |**Zielgruppe**|**Schnittstelle**, **`typedef`** , **`class`** , Methode, Eigenschaft|
 |**REPEATABLE**|Nein|

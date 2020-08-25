@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - db_source attribute
 ms.assetid: 0ec8bbf7-ade2-4899-bf4c-8608b92779bc
-ms.openlocfilehash: d328cd7bcfed257b423a440041b6806149736ed0
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: f17a4ea183a24f7bf4e88137f4536ca082efdf85
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87215295"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88831384"
 ---
 # <a name="db_source"></a>db_source
 
@@ -50,7 +50,7 @@ Ein Beispiel für dieses Attribut, das in einer Anwendung verwendet wird, finden
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel wird **db_source** für eine-Klasse aufgerufen, um `ds` mithilfe der Northwind-Datenbank eine Verbindung mit der Datenquelle herzustellen. `ds`ist ein Handle für die Datenquelle, die intern für die-Klasse verwendet werden kann `CMyCommand` .
+In diesem Beispiel wird **db_source** für eine-Klasse aufgerufen, um `ds` mithilfe der Northwind-Datenbank eine Verbindung mit der Datenquelle herzustellen. `ds` ist ein Handle für die Datenquelle, die intern für die-Klasse verwendet werden kann `CMyCommand` .
 
 ```cpp
 // db_source_1.cpp
@@ -68,9 +68,7 @@ class CMyCommand {};
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
 |**Zielgruppe**|**`class`**, **`struct`** , Member, Methode, local|
 |**REPEATABLE**|Nein|

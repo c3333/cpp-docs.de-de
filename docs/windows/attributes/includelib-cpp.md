@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - includelib attribute
 ms.assetid: cd90ea6e-5ae8-4f11-b8d1-662db95412b2
-ms.openlocfilehash: 4022a3f1f2d4ccaabe65c24065be8e1c846d604d
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 30e84a6c82ec25e07ca0eb08f64c7aa5b560e9e7
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80214843"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88830695"
 ---
 # <a name="includelib-c"></a>includelib (C++)
 
@@ -30,7 +30,7 @@ Der Name der IDL-Datei, die als Teil der generierten IDL-Datei enthalten sein so
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Includelib** C++ -Attribut bewirkt, dass eine IDL-oder h-Datei in der generierten IDL-Datei nach der `importlib`-Anweisung eingeschlossen wird.
+Das **Includelib** C++-Attribut bewirkt, dass eine IDL-oder h-Datei in der generierten IDL-Datei nach der- `importlib` Anweisung eingeschlossen wird.
 
 ## <a name="example"></a>Beispiel
 
@@ -45,12 +45,10 @@ Der folgende Code wird in einer CPP-Datei angezeigt:
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|Überall|
-|**Wiederholbar**|Ja|
+|**Zielgruppe**|Überall|
+|**REPEATABLE**|Ja|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -62,5 +60,5 @@ Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net
 [Eigenständige Attribute](stand-alone-attributes.md)<br/>
 [import](import.md)<br/>
 [importidl](importidl.md)<br/>
-[include](include-cpp.md)<br/>
+[darunter](include-cpp.md)<br/>
 [importlib](importlib.md)

@@ -28,12 +28,12 @@ helpviewer_keywords:
 - std::weak_ptr [C++], swap
 - std::weak_ptr [C++], use_count
 ms.assetid: 2db4afb2-c7be-46fc-9c20-34ec2f8cc7c2
-ms.openlocfilehash: f76682b14e49e5f699144674da33b0826975e2d6
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 5a4989b9ac29e6a35e50479343d6bcf5a39ae1b0
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87217336"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88831735"
 ---
 # <a name="weak_ptr-class"></a>weak_ptr-Klasse
 
@@ -62,7 +62,7 @@ Ein Zyklus tritt auf, wenn es für zwei oder mehr Ressourcen, die von `shared_pt
 
 ## <a name="members"></a>Member
 
-|||
+|Name|Beschreibung|
 |-|-|
 | **Konstruktoren** | |
 |[weak_ptr](#weak_ptr)|Erstellt ein Objekt vom Typ `weak_ptr`.|
@@ -80,7 +80,7 @@ Ein Zyklus tritt auf, wenn es für zwei oder mehr Ressourcen, die von `shared_pt
 | **Operatoren** | |
 |[Operator =](#op_eq)|Ersetzt eine in Besitz befindliche Ressource.|
 
-## <a name="element_type"></a><a name="element_type"></a>element_type
+## <a name="element_type"></a><a name="element_type"></a> element_type
 
 Der Typ des Elements.
 
@@ -117,7 +117,7 @@ int main()
 *wp0.lock() == 5
 ```
 
-## <a name="expired"></a><a name="expired"></a>Frist
+## <a name="expired"></a><a name="expired"></a> Frist
 
 Testet, ob der Besitz abgelaufen ist, d. h. das Objekt, auf das verwiesen wird, wurde gelöscht.
 
@@ -166,7 +166,7 @@ wp.expired() == true
 (bool)wp.lock() == false
 ```
 
-## <a name="lock"></a><a name="lock"></a>Sperre
+## <a name="lock"></a><a name="lock"></a> Sperre
 
 Ruft ein ab `shared_ptr` , das den Besitz einer Ressource freigibt.
 
@@ -215,7 +215,7 @@ wp.expired() == true
 (bool)wp.lock() == false
 ```
 
-## <a name="operator"></a><a name="op_eq"></a>Operator =
+## <a name="operator"></a><a name="op_eq"></a> Operator =
 
 Ersetzt eine in Besitz befindliche Ressource.
 
@@ -273,7 +273,7 @@ int main()
 *wp1.lock() == 10
 ```
 
-## <a name="owner_before"></a><a name="owner_before"></a>owner_before
+## <a name="owner_before"></a><a name="owner_before"></a> owner_before
 
 Gibt zurück, **`true`** Wenn dieser `weak_ptr` vor (oder kleiner als) dem bereitgestellten Zeiger geordnet ist.
 
@@ -294,7 +294,7 @@ Ein Lvalue-Verweis auf ein `shared_ptr` oder ein `weak_ptr` .
 
 Die Template-Member-Funktion gibt zurück, **`true`** Wenn **`*this`** vor *ptr*geordnet ist.
 
-## <a name="reset"></a><a name="reset"></a>Festlegen
+## <a name="reset"></a><a name="reset"></a> Festlegen
 
 Gibt die eigene Ressource frei.
 
@@ -336,7 +336,7 @@ wp.expired() == false
 wp.expired() == true
 ```
 
-## <a name="swap"></a><a name="swap"></a>Wechsel
+## <a name="swap"></a><a name="swap"></a> Wechsel
 
 Tauscht zwei `weak_ptr`-Objekte.
 
@@ -405,7 +405,7 @@ int main()
 *wp1 == 5
 ```
 
-## <a name="use_count"></a><a name="use_count"></a>use_count
+## <a name="use_count"></a><a name="use_count"></a> use_count
 
 Zählt die Anzahl der `shared_ptr` Objekte, die die freigegebene Ressource besitzen.
 
@@ -445,7 +445,7 @@ wp.use_count() == 1
 wp.use_count() == 2
 ```
 
-## <a name="weak_ptr"></a><a name="weak_ptr"></a>weak_ptr
+## <a name="weak_ptr"></a><a name="weak_ptr"></a> weak_ptr
 
 Erstellt ein Objekt vom Typ `weak_ptr`.
 
@@ -514,7 +514,7 @@ wp0.expired() == true
 *wp2.lock() == 5
 ```
 
-## <a name="weak_ptr"></a><a name="tilde-weak_ptr"></a>~ weak_ptr
+## <a name="weak_ptr"></a><a name="tilde-weak_ptr"></a> ~ weak_ptr
 
 Beschädigt ein Objekt vom Typ `weak_ptr`.
 

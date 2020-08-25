@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - hidden attribute
 ms.assetid: 199c96dd-fc07-46c7-af93-92020aebebe7
-ms.openlocfilehash: e0e3c5cb0355f3bedd8ecee57b034f0d9dde87df
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: ffa1ce01cfd570de7b699e415f10b27acf525047
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87224434"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88830955"
 ---
 # <a name="hidden"></a>hidden
 
@@ -33,9 +33,7 @@ Ein Beispiel für die Verwendung von **Hidden**finden Sie im Beispiel für [bind
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
 |**Zielgruppe**|**Schnittstelle**, **`class`** , **`struct`** , Methode, Eigenschaft|
 |**REPEATABLE**|Nein|
@@ -44,7 +42,7 @@ Ein Beispiel für die Verwendung von **Hidden**finden Sie im Beispiel für [bind
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Schnittstellen Attribute](interface-attributes.md)<br/>

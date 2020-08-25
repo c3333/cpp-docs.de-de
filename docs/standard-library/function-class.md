@@ -18,12 +18,12 @@ helpviewer_keywords:
 - std::function [C++], target
 - std::function [C++], target_type
 ms.assetid: 7b5ca76b-9ca3-4d89-8fcf-cad70a4aeae6
-ms.openlocfilehash: ed00d8e3a94b03a5d44194b880218ded7a6dc0e8
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 052cbba69aa99d33de963a3e360e6951a6006bec
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182498"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88831462"
 ---
 # <a name="function-class"></a>function-Klasse
 
@@ -107,19 +107,19 @@ Ein leeres `function`-Objekt enthält kein aufrufbaren Objekt bzw. einen Verweis
 
 ### <a name="constructors"></a>Konstruktoren
 
-|||
+|Name|Beschreibung|
 |-|-|
-|[function](#function)|Konstruiert einen Wrapper, der entweder leer ist oder ein aufrufbares Objekt eines willkürlichen Typs mit einer festen Signatur speichert.|
+|[Funktion](#function)|Konstruiert einen Wrapper, der entweder leer ist oder ein aufrufbares Objekt eines willkürlichen Typs mit einer festen Signatur speichert.|
 
 ### <a name="typedefs"></a>TypeDefs
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[result_type](#result_type)|Der Rückgabetyp des gespeicherten aufrufbaren Objekts.|
 
 ### <a name="functions"></a>Functions
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[assign](#assign)|Weist ein aufrufbares Objekt diesem Funktionsobjekt zu.|
 |[swap](#swap)|Tauscht zwei aufrufbare Objekte miteinander.|
@@ -128,13 +128,13 @@ Ein leeres `function`-Objekt enthält kein aufrufbaren Objekt bzw. einen Verweis
 
 ### <a name="operators"></a>Operatoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[Operator nicht angegeben](#op_unspecified)|Prüft, ob ein gespeichertes aufrufbares Objekt existiert.|
 |[Operator ()](#op_call)|Ruf ein aufrufbares Objekt auf.|
 |[Operator =](#op_eq)|Ersetzt das gespeicherte aufrufbare Objekt.|
 
-## <a name="assign"></a><a name="assign"></a>einräumen
+## <a name="assign"></a><a name="assign"></a> einräumen
 
 Weist ein aufrufbares Objekt diesem Funktionsobjekt zu.
 
@@ -282,7 +282,7 @@ f is non-empty (correct).
 g is empty (correct).
 ```
 
-## <a name="operator-unspecified"></a><a name="op_unspecified"></a>Operator nicht angegeben
+## <a name="operator-unspecified"></a><a name="op_unspecified"></a> Operator nicht angegeben
 
 Prüft, ob ein gespeichertes aufrufbares Objekt existiert.
 
@@ -324,7 +324,7 @@ not empty == false
 not empty == true
 ```
 
-## <a name="operator"></a><a name="op_call"></a>Operator ()
+## <a name="operator"></a><a name="op_call"></a> Operator ()
 
 Ruf ein aufrufbares Objekt auf.
 
@@ -375,7 +375,7 @@ empty == false
 val == -3
 ```
 
-## <a name="operator"></a><a name="op_eq"></a>Operator =
+## <a name="operator"></a><a name="op_eq"></a> Operator =
 
 Ersetzt das gespeicherte aufrufbare Objekt.
 
@@ -457,7 +457,7 @@ empty == false
 val == -3
 ```
 
-## <a name="result_type"></a><a name="result_type"></a>result_type
+## <a name="result_type"></a><a name="result_type"></a> result_type
 
 Der Rückgabetyp des gespeicherten aufrufbaren Objekts.
 
@@ -499,7 +499,7 @@ empty == false
 val == -3
 ```
 
-## <a name="swap"></a><a name="swap"></a>Wechsel
+## <a name="swap"></a><a name="swap"></a> Wechsel
 
 Tauscht zwei aufrufbare Objekte miteinander.
 
@@ -558,7 +558,7 @@ empty == false
 val == -3
 ```
 
-## <a name="target"></a><a name="target"></a>Spar
+## <a name="target"></a><a name="target"></a> Spar
 
 Prüft, ob das gespeicherte aufrufbare Objekt wie festgelegt aufrufbar ist.
 
@@ -619,7 +619,7 @@ empty == true
 no target == true
 ```
 
-## <a name="target_type"></a><a name="target_type"></a>target_type
+## <a name="target_type"></a><a name="target_type"></a> target_type
 
 Ruft Typinformationen für das aufrufbare Objekt ab.
 

@@ -1,5 +1,5 @@
 ---
-title: CMFCImageEditorPaletteBar-Klasse
+title: Cmficimageeditorpalettebar-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CMFCImageEditorPaletteBar
@@ -10,16 +10,16 @@ helpviewer_keywords:
 - CMFCImageEditorPaletteBar [MFC], GetRowHeight
 - CMFCImageEditorPaletteBar [MFC], IsButtonExtraSizeAvailable
 ms.assetid: 3fb7ba8e-f254-4d56-b913-9941b4ed8138
-ms.openlocfilehash: 33d4bc0c72718d028031ac11bc67da6aec5e4907
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 007fa94269a6a42bf076d2d75a18860896503aa1
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81374426"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88831163"
 ---
-# <a name="cmfcimageeditorpalettebar-class"></a>CMFCImageEditorPaletteBar-Klasse
+# <a name="cmfcimageeditorpalettebar-class"></a>Cmficimageeditorpalettebar-Klasse
 
-Stellt Palettenleistenfunktionen für ein Bildeditor-Dialogfeld bereit.
+Stellt eine Palette leisten Funktionalität für ein Bild-Editor-Dialogfeld bereit.
 
 ## <a name="syntax"></a>Syntax
 
@@ -31,21 +31,20 @@ class CMFCImageEditorPaletteBar : public CMFCToolBar
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|||
+|name|Beschreibung|
 |-|-|
-|Name|BESCHREIBUNG|
-|[CMFCImageEditorPaletteBar::GetRowHeight](#getrowheight)|Gibt die Höhe der Symbolleistenschaltflächen zurück. (Überschreibt [CMFCToolBar::GetRowHeight](../../mfc/reference/cmfctoolbar-class.md#getrowheight).)|
-|[CMFCImageEditorPaletteBar::IsButtonExtraSizeverfügbar](#isbuttonextrasizeavailable)|Bestimmt, ob die Symbolleiste Schaltflächen mit erweiterten Rahmen anzeigen kann. (Überschreibt [CMFCToolBar::IsButtonExtraSizeVerfügbar](../../mfc/reference/cmfctoolbar-class.md#isbuttonextrasizeavailable).)|
+|[Cmficimageeditor palettebar:: getRowHeight](#getrowheight)|Gibt die Höhe von Symbolleisten-Schaltflächen zurück. (Überschreibt [cmfctoolbar:: getRowHeight](../../mfc/reference/cmfctoolbar-class.md#getrowheight).)|
+|[Cmficimageeditor palettebar:: isbuttonextrasizeavailable](#isbuttonextrasizeavailable)|Bestimmt, ob die Symbolleiste Schaltflächen mit erweiterten Rahmen anzeigen kann. (Überschreibt [cmfctoolbar:: isbuttonextrasizeavailable](../../mfc/reference/cmfctoolbar-class.md#isbuttonextrasizeavailable).)|
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Klasse ist nicht für die direkte Verwendung im Code vorgesehen.
 
-Das Framework verwendet diese Klasse, um eine Palettenleiste in einem Bildeditor-Dialogfeld anzuzeigen. Weitere Informationen zum Dialogfeld Bildeditor finden Sie unter [CMFCImageEditorDialog Class](../../mfc/reference/cmfcimageeditordialog-class.md).
+Das Framework verwendet diese Klasse, um einen palettenbalken in einem Bild-Editor-Dialogfeld anzuzeigen. Weitere Informationen zum Dialogfeld Bildbearbeitung finden Sie unter [cmfcimageeditordialog-Klasse](../../mfc/reference/cmfcimageeditordialog-class.md).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[Cobject](../../mfc/reference/cobject-class.md)
+[CObject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -55,19 +54,19 @@ Das Framework verwendet diese Klasse, um eine Palettenleiste in einem Bildeditor
 
 [CPane](../../mfc/reference/cpane-class.md)
 
-[CMFCBaseToolBa](../../mfc/reference/cmfcbasetoolbar-class.md)
+[Cmfcbasetoolba](../../mfc/reference/cmfcbasetoolbar-class.md)
 
 [CMFCToolBar](../../mfc/reference/cmfctoolbar-class.md)
 
-[CMFCImageEditorPaletteBar](../../mfc/reference/cmfcimageeditorpalettebar-class.md)
+[Cmficimageeditor palettebar](../../mfc/reference/cmfcimageeditorpalettebar-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** afximageeditordialog.h
+**Header:** afximageeditor Dialog. h
 
-## <a name="cmfcimageeditorpalettebargetrowheight"></a><a name="getrowheight"></a>CMFCImageEditorPaletteBar::GetRowHeight
+## <a name="cmfcimageeditorpalettebargetrowheight"></a><a name="getrowheight"></a> Cmficimageeditor palettebar:: getRowHeight
 
-Gibt die Höhe der Symbolleistenschaltflächen zurück.
+Gibt die Höhe von Symbolleisten-Schaltflächen zurück.
 
 ```
 virtual int GetRowHeight() const;
@@ -75,9 +74,9 @@ virtual int GetRowHeight() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Höhe jeder Schaltfläche auf der Symbolleiste.
+Die Höhe der einzelnen Schaltflächen auf der Symbolleiste.
 
-## <a name="cmfcimageeditorpalettebarisbuttonextrasizeavailable"></a><a name="isbuttonextrasizeavailable"></a>CMFCImageEditorPaletteBar::IsButtonExtraSizeverfügbar
+## <a name="cmfcimageeditorpalettebarisbuttonextrasizeavailable"></a><a name="isbuttonextrasizeavailable"></a> Cmficimageeditor palettebar:: isbuttonextrasizeavailable
 
 Bestimmt, ob die Symbolleiste Schaltflächen mit erweiterten Rahmen anzeigen kann.
 
@@ -87,10 +86,10 @@ virtual BOOL IsButtonExtraSizeAvailable() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Diese Methode gibt FALSE zurück.
+Diese Methode gibt false zurück.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
+[Hierarchie Diagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>
-[CMFCImageEditorDialog-Klasse](../../mfc/reference/cmfcimageeditordialog-class.md)
+[Cmficimageeditordialog-Klasse](../../mfc/reference/cmfcimageeditordialog-class.md)

@@ -22,12 +22,12 @@ helpviewer_keywords:
 - CMFCRibbonSeparator [MFC], OnDraw
 - CMFCRibbonSeparator [MFC], OnDrawOnList
 ms.assetid: bedb1a53-cb07-4c3c-be12-698c5409e7cf
-ms.openlocfilehash: de2c6c45e4a91aa4efa0ebacba4019be74e03c72
-ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
+ms.openlocfilehash: f435dc5ae8821a6d5626af2f93710a1672fd374c
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88560867"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88831800"
 ---
 # <a name="cmfcribbonseparator-class"></a>CMF cribbonseparator-Klasse
 
@@ -43,25 +43,22 @@ class CMFCRibbonSeparator : public CMFCRibbonBaseElement
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|||
+|name|Beschreibung|
 |-|-|
-|name|BESCHREIBUNG|
 |[CMF cribbonseparator:: CMF cribbonseparator](#cmfcribbonseparator)|Erstellt ein `CMFCRibbonSeparator`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|||
+|name|Beschreibung|
 |-|-|
-|name|BESCHREIBUNG|
 |[Cmfcribbonseparator:: AddTo ListBox](#addtolistbox)|Fügt der Liste **Befehle** im Dialogfeld **Anpassen** ein Trennzeichen hinzu. (Überschreibt [cmfcribbonbaseelement:: addtlistbox](../../mfc/reference/cmfcribbonbaseelement-class.md#addtolistbox).)|
 |`CMFCRibbonSeparator::CreateObject`|Wird vom Framework verwendet, um eine dynamische Instanz dieses Klassentyps zu erstellen.|
 |`CMFCRibbonSeparator::GetThisClass`|Wird vom Framework verwendet, um einen Zeiger auf das [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md) -Objekt abzurufen, das diesem Klassentyp zugeordnet ist.|
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|||
+|Name|Beschreibung|
 |-|-|
-|Name|BESCHREIBUNG|
 |[CMF cribbonseparator:: CopyFrom](#copyfrom)|Eine Kopiermethode, mit der die Element Variablen eines Trenn Zeichens von einem anderen Objekt festgelegt werden.|
 |[CMF cribbonseparator:: getregularsize](#getregularsize)|Gibt die Größe eines Trenn Zeichens zurück.|
 |[CMF cribbonseparator:: IsSeparator](#isseparator)|Gibt an, ob dies ein Trennzeichen ist.|

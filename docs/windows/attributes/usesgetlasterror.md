@@ -1,21 +1,21 @@
 ---
-title: "\"US-GetLastErrorC++ \" (com-Attribut)"
+title: "\"US-GetLastError\" (C++ com-Attribut)"
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.usesgetlasterror
 helpviewer_keywords:
 - usesgetlasterror attribute
 ms.assetid: d149e33d-35a7-46cb-9137-ae6883d86122
-ms.openlocfilehash: f58929db01a1710e811a973c0559ad29b242b4eb
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: e3d3c292554350d85296971a9bd3620909ef47c7
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80166132"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88831631"
 ---
 # <a name="usesgetlasterror"></a>usesgetlasterror
 
-Teilt dem Aufrufer mit, dass der Aufrufer beim Aufrufen dieser Funktion `GetLastError` aufrufen kann, um den Fehlercode abzurufen.
+Teilt dem Aufrufer mit, dass der Aufrufer dann aufrufen kann, `GetLastError` um den Fehlercode abzurufen, wenn beim Aufrufen der Funktion ein Fehler auftritt.
 
 ## <a name="syntax"></a>Syntax
 
@@ -25,7 +25,7 @@ Teilt dem Aufrufer mit, dass der Aufrufer beim Aufrufen dieser Funktion `GetLast
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **usesgetlasterror** C++ Attribut " [" des](/windows/win32/Midl/usesgetlasterror) Attributs "" ist die gleiche Funktionalität wie das Attribut "" von "" in "".
+Das Attribut **"C++" des** Attributs "" verfügt über die gleiche Funktionalität [wie das Attribut](/windows/win32/Midl/usesgetlasterror) "" für das Attribut "" in "".
 
 ## <a name="example"></a>Beispiel
 
@@ -33,12 +33,10 @@ Im [idl_module](idl-module.md) Beispiel wird ein Beispiel für **die Verwendung 
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|**Module** -Attribut|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|**Module** -Attribut|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 

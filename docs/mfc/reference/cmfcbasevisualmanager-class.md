@@ -28,12 +28,12 @@ helpviewer_keywords:
 - CMFCBaseVisualManager [MFC], CleanUpThemes
 - CMFCBaseVisualManager [MFC], UpdateSystemColors
 ms.assetid: d56f3afc-cdea-4de1-825a-a08999c571e0
-ms.openlocfilehash: 28efe75c3c825c04c88f9f2263a3db2d83d4f3af
-ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
+ms.openlocfilehash: 79a3c0945fdd0df04e9ee52d7bad97dc0847fa91
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88561322"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88834296"
 ---
 # <a name="cmfcbasevisualmanager-class"></a>Cmfcbasevisualmanager-Klasse
 
@@ -53,17 +53,15 @@ class CMFCBaseVisualManager: public CObject
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|||
+|name|Beschreibung|
 |-|-|
-|name|BESCHREIBUNG|
 |[Cmfcbasevisualmanager:: cmfcbasevisualmanager](#cmfcbasevisualmanager)|Erstellt und initialisiert ein `CMFCBaseVisualManager`-Objekt.|
 |`CMFCBaseVisualManager::~CMFCBaseVisualManager`|Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|||
+|name|Beschreibung|
 |-|-|
-|name|BESCHREIBUNG|
 |[Cmfcbasevisualmanager::D rawcheckbox](#drawcheckbox)|Zeichnet ein Kontrollkästchen-Steuerelement mithilfe des aktuellen Windows-Designs.|
 |[Cmfcbasevisualmanager::D rawcomboborder](#drawcomboborder)|Zeichnet einen Kombinations Feld Rahmen mithilfe des aktuellen Windows-Designs.|
 |[Cmfcbasevisualmanager::D rawcombodropbutton](#drawcombodropbutton)|Zeichnet eine Kombinations Feld-Dropdown Schaltfläche mithilfe des aktuellen Windows-Designs.|
@@ -75,9 +73,8 @@ class CMFCBaseVisualManager: public CObject
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|||
+|Name|Beschreibung|
 |-|-|
-|Name|BESCHREIBUNG|
 |[Cmfcbasevisualmanager:: cleanupthemes](#cleanupthemes)|Ruft `CloseThemeData` für alle in abgerufenen Handles auf `UpdateSystemColors` .|
 |[Cmfcbasevisualmanager:: updatesystemcolors](#updatesystemcolors)|Aufrufe `OpenThemeData` zum Abrufen von Handles zum Zeichnen verschiedener Steuerelemente: Fenster, Symbolleisten, Schaltflächen usw.|
 

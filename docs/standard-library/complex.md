@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - complex header
 ms.assetid: 5e728995-3059-496a-9ce9-61d1bfbe4f2b
-ms.openlocfilehash: 2c6487370bfa4d3af6c9c7c40b7f83a252c2e01d
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: f63fe99238450b8dffbf459ab078a8ecf6623b77
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87222575"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88831501"
 ---
 # <a name="ltcomplexgt"></a>&lt;complex&gt;
 
@@ -20,7 +20,7 @@ Definiert die Containerklassen Vorlage `complex` und deren unterstützende Vorla
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header**:\<complex>
+**Header**: \<complex>
 
 **Namespace:** std
 
@@ -72,7 +72,7 @@ Sofern nicht anders angegeben, müssen Funktionen, die mehrere Werte zurückgebe
 
 ### <a name="functions"></a>Functions
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[Stäbchen](../standard-library/complex-functions.md#abs)|Berechnet den Betrag einer komplexen Zahl.|
 |[ACOS](../standard-library/complex-functions.md#acos)||
@@ -102,7 +102,7 @@ Sofern nicht anders angegeben, müssen Funktionen, die mehrere Werte zurückgebe
 
 ### <a name="operators"></a>Operatoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[Operator! =](../standard-library/complex-operators.md#op_neq)|Testet zwei komplexe Zahlen auf Ungleichheit, von denen eine oder beide einer Teilmenge des Typs für die reellen und imaginären Teile angehören.|
 |[KOM](../standard-library/complex-operators.md#op_star)|Multipliziert zwei komplexe Zahlen, von denen eine oder beide einer Teilmenge des Typs für die reellen und imaginären Teile angehören.|
@@ -115,7 +115,7 @@ Sofern nicht anders angegeben, müssen Funktionen, die mehrere Werte zurückgebe
 
 ### <a name="classes"></a>Klassen
 
-|||
+|name|Beschreibung|
 |-|-|
 |[viel\<double>](../standard-library/complex-double.md)|Die explizit spezialisierte Klassen Vorlage beschreibt ein Objekt, das ein geordnetes Paar von Objekten speichert, die beide **`double`** den Typ haben, wobei das erste Element den reellen Teil einer komplexen Zahl und das zweite den imaginären Teil darstellt.|
 |[viel\<float>](../standard-library/complex-float.md)|Die explizit spezialisierte Klassen Vorlage beschreibt ein Objekt, das ein geordnetes Paar von Objekten speichert, die beide **`float`** den Typ haben, wobei das erste Element den reellen Teil einer komplexen Zahl und das zweite den imaginären Teil darstellt.|
@@ -126,7 +126,7 @@ Sofern nicht anders angegeben, müssen Funktionen, die mehrere Werte zurückgebe
 
 Der- \<complex> Header definiert die folgenden [benutzerdefinierten Literale](../cpp/user-defined-literals-cpp.md) , mit denen eine komplexe Zahl erstellt wird, bei der der reelle Teil 0 (null) und der Imaginärteil der Wert des Eingabe Parameters ist.
 
-|||
+|Deklaration|Beschreibung|
 |-|-|
 |`constexpr complex<long double> operator""il(long double d)`<br />`constexpr complex<long double> operator""il(unsigned long long d)`|Rückgabewert: `complex<long double>{0.0L, static_cast<long double>(d)}`|
 |`constexpr complex<double> operator""i(long double d)`<br />`constexpr complex<double> operator""i(unsigned long long d)`|Gibt `complex<double>{0.0, static_cast<double>(d)}` zurück.|

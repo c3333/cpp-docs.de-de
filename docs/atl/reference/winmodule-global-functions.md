@@ -5,12 +5,12 @@ f1_keywords:
 - atlbase/ATL::AtlWinModuleAddCreateWndData
 - atlbase/ATL::AtlWinModuleExtractCreateWndData
 ms.assetid: 8ce45a5b-26a7-491f-9096-c09ceca5f2c2
-ms.openlocfilehash: 1a929fd0f583150e84ce5b1efa7e896bc16e4247
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 1f1dcb325f8844a74b3dd831a51050083e7ea552
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87229934"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88834400"
 ---
 # <a name="winmodule-global-functions"></a>Globale winmodule-Funktionen
 
@@ -19,7 +19,7 @@ Diese Funktionen bieten Unterstützung für `_AtlCreateWndData` Struktur Vorgän
 > [!IMPORTANT]
 > Die in der folgenden Tabelle aufgeführten Funktionen können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[AtlWinModuleAddCreateWndData](#atlwinmoduleaddcreatewnddata)|Mit dieser Funktion wird eine `_AtlCreateWndData`-Struktur initialisiert und hinzugefügt.|
 |[AtlWinModuleExtractCreateWndData](#atlwinmoduleextractcreatewnddata)|Mit dieser Funktion wird eine vorhandene `_AtlCreateWndData`-Struktur extrahiert.|
@@ -28,7 +28,7 @@ Diese Funktionen bieten Unterstützung für `_AtlCreateWndData` Struktur Vorgän
 
 **Header:** atlbase. h
 
-## <a name="atlwinmoduleaddcreatewnddata"></a><a name="atlwinmoduleaddcreatewnddata"></a>Atlwinmoduleaddkreatewnddata
+## <a name="atlwinmoduleaddcreatewnddata"></a><a name="atlwinmoduleaddcreatewnddata"></a> Atlwinmoduleaddkreatewnddata
 
 Mit dieser Funktion wird eine `_AtlCreateWndData`-Struktur initialisiert und hinzugefügt.
 
@@ -54,7 +54,7 @@ Zeiger auf den Zeiger eines Objekts **`this`** .
 
 Initialisiert eine- `_AtlCreateWndData` Struktur, die zum Speichern des Zeigers verwendet wird, der zum **`this`** verweisen auf Klassen Instanzen verwendet wird, und fügt ihn der Liste hinzu, auf die durch die Struktur eines Moduls verwiesen wird `_ATL_WIN_MODULE70` . [Wird von](catlwinmodule-class.md#addcreatewnddata)"" mit "" von "" für "" aufgerufen.
 
-## <a name="atlwinmoduleextractcreatewnddata"></a><a name="atlwinmoduleextractcreatewnddata"></a>Atlwinmoduleextractkreatewnddata
+## <a name="atlwinmoduleextractcreatewnddata"></a><a name="atlwinmoduleextractcreatewnddata"></a> Atlwinmoduleextractkreatewnddata
 
 Mit dieser Funktion wird eine vorhandene `_AtlCreateWndData`-Struktur extrahiert.
 

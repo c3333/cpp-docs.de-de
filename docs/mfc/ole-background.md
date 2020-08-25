@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - OLE, about OLE
 ms.assetid: 5f654eb5-66b1-40c9-9215-bb85356a67f8
-ms.openlocfilehash: f18614f7b156a1757df9dfaac9e4a0ad4f8209eb
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: baa2bca8b2e06fd55591c3a4fa2a9752abbb5355
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86404293"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88830786"
 ---
 # <a name="ole-background"></a>OLE-Hintergrund
 
@@ -58,15 +58,15 @@ OLE beinhaltet viele verschiedene Konzepte, die alle für das Ziel der nahtlosen
 
 Einige der wichtigeren OLE-Themen werden in den folgenden Artikeln behandelt:
 
-- [OLE-Hintergrund: Verlinken und Einbetten](ole-background-linking-and-embedding.md)
+- [OLE-Hintergrund: verknüpfen und Einbetten](ole-background-linking-and-embedding.md)
 
 - [OLE-Hintergrund: Container und Server](ole-background-containers-and-servers.md)
 
-- [OLE-Hintergrund: Implementierungsstrategien](ole-background-implementation-strategies.md)
+- [OLE-Hintergrund: Implementierungs Strategien](ole-background-implementation-strategies.md)
 
 - [OLE-Hintergrund: MFC-Implementierung](ole-background-mfc-implementation.md)
 
-Allgemeine OLE- [Informationen, die in den](https://docs.microsoft.com/search/?terms=ole) obigen Artikeln nicht gefunden wurden, finden Sie in Microsoft-Dokumentation.
+Allgemeine OLE- [Informationen, die in den](/search/?terms=ole) obigen Artikeln nicht gefunden wurden, finden Sie in Microsoft-Dokumentation.
 
 ## <a name="see-also"></a>Weitere Informationen
 

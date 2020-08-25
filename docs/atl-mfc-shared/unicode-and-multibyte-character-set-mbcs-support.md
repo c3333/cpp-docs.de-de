@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Unicode [C++], string objects
 - strings [C++], Unicode
 - strings [C++], character set support
-ms.openlocfilehash: 217690e09ed595bb9fa9572693bf774259c42412
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: efa90acd169aeb8739b0bf97a5ab27026cc80cc6
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87219026"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88831982"
 ---
 # <a name="unicode-and-multibyte-character-set-mbcs-support"></a>Unterstützung für Unicode- und Multibyte-Zeichensätze (MBCS)
 
@@ -33,17 +33,38 @@ Die gesamte MFC-Klassenbibliothek ist für Unicode-Zeichen und Zeichen folgen, d
 
 Diese Bibliothek-, Debugger-und dll-Dateien werden verwendet, um Unicode in MFC zu unterstützen:
 
-|||||
-|-|-|-|-|
-|UAFXCW.LIB|UAFXCW.PDB|UAFXCWD.LIB|UAFXCWD.PDB|
-|MFC-*Version*U. lib|MFC-*Version*U. pdb|MFC-*Version*U.DLL|MFC-*Version*UD. LIB|
-|MFC-*Version*UD. PDB|MFC-*Version*UD.DLL|MF-*Version*U. lib|MF-*Version*U. pdb|
-|MF-*Version*UD. LIB|MF-*Version*UD. PDB|MF-*Version*U. lib|MF-*Version*U. pdb|
-|Mficm-*Version*U.DLL|MF-*Version*UD. LIB|MF-*Version*UD. PDB|Mficm-*Version*UD.DLL|
+:::row:::
+   :::column span="":::
+      MFC-*Version*U. lib \
+      MFC-*Version*UD. LIB
+      MF-*Version*U. lib \
+      MF-*Version*UD. LIB
+      MF-*Version*U. lib \
+      MF-*Version*UD. LIB
+      Uafxcw. LIB
+      UAFXCWD.LIB
+   :::column-end:::
+   :::column span="":::
+      MFC-*Version*U. pdb \
+      MFC-*Version*UD. PDB
+      MF-*Version*U. pdb \
+      MF-*Version*UD. PDB
+      MF-*Version*U. pdb \
+      MF-*Version*UD. PDB
+      Uafxcw. PDB
+      UAFXCWD.PDB
+   :::column-end:::
+   :::column span="":::
+      MFC-*Version*U.DLL \
+      MFC-*Version*UD.DLL \
+      MF-*Version*U.DLL \
+      Mficm-*Version*UD.DLL
+   :::column-end:::
+:::row-end:::
 
 (*Version* ist die Versionsnummer der Datei, z. b. "140", Version 14,0.)
 
-`CString`basiert auf dem TCHAR-Datentyp. Wenn das Symbol _UNICODE für einen Build des Programms definiert ist, wird TCHAR als Typ **`wchar_t`** , ein 16-Bit-Zeichen Codierungstyp, definiert. Andernfalls ist Tchar definiert als **`char`** , die normale 8-Bit-Zeichencodierung. Daher setzt sich ein `CString` unter Unicode aus 16-Bit-Zeichen zusammen. Ohne Unicode besteht Sie aus Zeichen vom Typ **`char`** .
+`CString` basiert auf dem TCHAR-Datentyp. Wenn das Symbol _UNICODE für einen Build des Programms definiert ist, wird TCHAR als Typ **`wchar_t`** , ein 16-Bit-Zeichen Codierungstyp, definiert. Andernfalls ist Tchar definiert als **`char`** , die normale 8-Bit-Zeichencodierung. Daher setzt sich ein `CString` unter Unicode aus 16-Bit-Zeichen zusammen. Ohne Unicode besteht Sie aus Zeichen vom Typ **`char`** .
 
 Um Unicode-Programmierung der Anwendung durchzuführen, benötigen Sie auch Folgendes:
 
@@ -59,7 +80,7 @@ Um Unicode-Programmierung der Anwendung durchzuführen, benötigen Sie auch Folg
 
   - Verwenden Sie LPTSTR, um zu verwenden **`char`** <strong>\*</strong> .
 
-  - Verwenden Sie LPCTSTR, in dem Sie " **Konstanten char**" verwenden würden <strong>\*</strong> . `CString`stellt den LPCTSTR-Operator für die Konvertierung zwischen `CString` und LPCTSTR bereit.
+  - Verwenden Sie LPCTSTR, um zu verwenden **`const char`** <strong>\*</strong> . `CString` stellt den LPCTSTR-Operator für die Konvertierung zwischen `CString` und LPCTSTR bereit.
 
 `CString` stellt außerdem Unicode-kompatible Konstruktoren, Zuweisungsoperatoren und Vergleichsoperatoren bereit.
 
@@ -80,7 +101,7 @@ Unter DBCS kann eine angegebene Zeichenfolge alle Einzelbyte-ANSI-Zeichen, alle 
 
 `CString`-Memberfunktionen verwenden spezielle Versionen der C-Laufzeitfunktionen mit "generischem Text", die aufgerufen werden, oder sie verwenden Unicode-kompatible Funktionen. Wenn daher eine `CString`-Funktion normalerweise `strcmp` aufrufen würde, ruft sie stattdessen die entsprechende Funktion `_tcscmp` für generischen Text auf. Abhängig davon, wie die Symbole _MBCS und _UNICODE definiert sind, wird `_tcscmp` wie folgt zugeordnet:
 
-|||
+|Symbole|Funktion|
 |-|-|
 |_MBCS definiert|`_mbscmp`|
 |_UNICODE definiert|`wcscmp`|

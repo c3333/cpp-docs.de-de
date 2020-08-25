@@ -36,12 +36,12 @@ helpviewer_keywords:
 - file names [C++], temporary
 - wtmpnam_s function
 ms.assetid: e70d76dc-49f5-4aee-bfa2-f1baa2bcd29f
-ms.openlocfilehash: 4839cb6baae8f163ac5e5efd8fecfab43f599d19
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 2168a1bef5b8eb20a1f59460146559f4fa9f2645
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82917488"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88831579"
 ---
 # <a name="tmpnam_s-_wtmpnam_s"></a>tmpnam_s, _wtmpnam_s
 
@@ -82,15 +82,14 @@ Beide Funktionen geben bei Erfolg 0 zurück und bei einem Fehler eine Fehlernumm
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|||||
-|-|-|-|-|
-|*SRT*|*sizabchars*|**Rückgabewert**|**Inhalt von**  *Str*|
-|**Normal**|any|**Eingabe**|nicht geändert|
-|Not **null** (zeigt auf gültigen Speicher)|zu kurz|**ERANGE**|nicht geändert|
+| *SRT* | *sizabchars* | **Rückgabewert** | **Inhalt von** *Str* |
+|--|--|--|--|
+| **NULL** | any | **Eingabe** | nicht geändert |
+| Not **null** (zeigt auf gültigen Speicher) | zu kurz | **ERANGE** | nicht geändert |
 
 Wenn *Str* **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen " **errno** " auf " **EINVAL** " fest und geben " **EINVAL**" zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Jede dieser Funktionen gibt den Namen einer Datei zurück, die derzeit nicht vorhanden ist. **tmpnam_s** gibt einen eindeutigen Namen im angegebenen temporären Windows-Verzeichnis zurück, das von [gettemppathw](/windows/win32/api/fileapi/nf-fileapi-gettemppathw)zurückgegeben wurde. Wenn einem Dateinamen ohne Pfadinformationen ein umgekehrter Schrägstrich vorangestellt ist, wie z.B. \fname21, weist dies darauf hin, dass der Name für das aktuelle Arbeitsverzeichnis gültig ist.
 
@@ -110,7 +109,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**tmpnam_s**|\<stdio.h>|
 |**_wtmpnam_s**|\<stdio.h> oder \<wchar.h>|

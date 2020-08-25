@@ -1,5 +1,5 @@
 ---
-title: COM-Kartenmakros
+title: COM-Zuordnungs Makros
 ms.date: 11/04/2016
 f1_keywords:
 - atlcom/ATL::BEGIN_COM_MAP
@@ -7,29 +7,29 @@ f1_keywords:
 helpviewer_keywords:
 - COM interfaces, COM map macros
 ms.assetid: 0f33656d-321f-4996-90cc-9a7f21ab73c3
-ms.openlocfilehash: 191a0ba0aeda6ad18cdac7ba14f7ab5f3b2282f7
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 100402e17ca1bee5f338c37f2315fbc4898a713e
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81326605"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88833581"
 ---
-# <a name="com-map-macros"></a>COM-Kartenmakros
+# <a name="com-map-macros"></a>COM-Zuordnungs Makros
 
-Diese Makros definieren COM-Schnittstellenzuordnungen.
+Diese Makros definieren com-Schnittstellen Zuordnungen.
 
-|||
+|Makro|Beschreibung|
 |-|-|
-|[BEGIN_COM_MAP](#begin_com_map)|Markiert den Anfang der COM-Schnittstellenzuordnungseinträge.|
-|[END_COM_MAP](#end_com_map)|Markiert das Ende der COM-Schnittstellenzuordnungseinträge.|
+|[BEGIN_COM_MAP](#begin_com_map)|Markiert den Anfang der COM-Schnittstellen Zuordnungs Einträge.|
+|[END_COM_MAP](#end_com_map)|Markiert das Ende der COM-Schnittstellen Zuordnungs Einträge.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** atlcom.h
+**Header:** Atlcom. h
 
-## <a name="begin_com_map"></a><a name="begin_com_map"></a>BEGIN_COM_MAP
+## <a name="begin_com_map"></a><a name="begin_com_map"></a> BEGIN_COM_MAP
 
-Die COM-Zuordnung ist der Mechanismus, der Schnittstellen für `QueryInterface`ein Objekt für einen Client über verfügbar macht.
+Die com-Zuordnung ist der Mechanismus, der Schnittstellen für ein Objekt für einen Client über verfügbar macht `QueryInterface` .
 
 ```
 BEGIN_COM_MAP(x)
@@ -37,28 +37,28 @@ BEGIN_COM_MAP(x)
 
 ### <a name="parameters"></a>Parameter
 
-*X*<br/>
-[in] Der Name des Klassenobjekts, für das Sie Schnittstellen aussetzen.
+*x*<br/>
+in Der Name des Klassen Objekts, für das Sie Schnittstellen verfügbar machen.
 
 ### <a name="remarks"></a>Bemerkungen
 
-[CComObjectRootEx::InternalQueryInterface](ccomobjectrootex-class.md#internalqueryinterface) gibt nur Zeiger für Schnittstellen in der COM-Zuordnung zurück. Starten Sie die Schnittstellenzuordnung mit dem BEGIN_COM_MAP-Makro, fügen Sie Einträge für jede Ihrer Schnittstellen mit dem [COM_INTERFACE_ENTRY](com-interface-entry-macros.md#com_interface_entry) Makro oder einer seiner Varianten hinzu, und vervollständigen Sie die Karte mit dem [END_COM_MAP-Makro.](#end_com_map)
+[CComObjectRootEx:: InternalQueryInterface](ccomobjectrootex-class.md#internalqueryinterface) gibt nur Zeiger für Schnittstellen in der com-Zuordnung zurück. Starten Sie Ihre Schnittstellen Zuordnung mit dem BEGIN_COM_MAP-Makro, fügen Sie mit dem [COM_INTERFACE_ENTRY](com-interface-entry-macros.md#com_interface_entry) -Makro oder einer der Varianten Einträge für jede Schnittstelle hinzu, und vervollständigen Sie die Zuordnung mit dem [END_COM_MAP](#end_com_map) -Makro.
 
 ### <a name="example"></a>Beispiel
 
-Aus dem ATL [BEEPER-Beispiel:](../../overview/visual-cpp-samples.md)
+Aus dem ATL- [Beeper](../../overview/visual-cpp-samples.md) -Beispiel:
 
 [!code-cpp[NVC_ATL_COM#1](../../atl/codesnippet/cpp/com-map-macros_1.h)]
 
-## <a name="end_com_map"></a><a name="end_com_map"></a>END_COM_MAP
+## <a name="end_com_map"></a><a name="end_com_map"></a> END_COM_MAP
 
-Beendet die Definition der COM-Schnittstellenzuordnung.
+Beendet die Definition der COM-Schnittstellen Zuordnung.
 
 ```
 END_COM_MAP()
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Makros](../../atl/reference/atl-macros.md)<br/>
-[COM Map Globale Funktionen](../../atl/reference/com-map-global-functions.md)
+[Globale com Map-Funktionen](../../atl/reference/com-map-global-functions.md)

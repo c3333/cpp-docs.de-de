@@ -1,5 +1,5 @@
 ---
-title: Globale Funktionen für die Ereignisbehandlung
+title: Globale Funktionen zur Ereignis Behandlung
 ms.date: 11/04/2016
 f1_keywords:
 - atlbase/ATL::AtlWaitWithMessageLoop
@@ -7,29 +7,29 @@ helpviewer_keywords:
 - event handling, global functions
 - global functions, event handling
 ms.assetid: fd674470-3def-47c3-be1c-894fa85f13e8
-ms.openlocfilehash: f2f8269dcf0f59a5d0794d3f16d4c4f85d8841ac
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: fde93415640ef7fa460bb363af4c3cb14b356061
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81330136"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88833451"
 ---
-# <a name="event-handling-global-functions"></a>Globale Funktionen für die Ereignisbehandlung
+# <a name="event-handling-global-functions"></a>Globale Funktionen zur Ereignis Behandlung
 
 Diese Funktion stellt einen Ereignishandler bereit.
 
 > [!IMPORTANT]
 > Die in der folgenden Tabelle aufgeführte Funktion kann nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
-|||
+|Name|Beschreibung|
 |-|-|
-|[AtlWaitWithMessageLoop](#atlwaitwithmessageloop)|Wartet, bis ein Objekt signalisiert wird, und sendet bei Bedarf Fensternachrichten.|
+|[AtlWaitWithMessageLoop](#atlwaitwithmessageloop)|Wartet darauf, dass ein Objekt signalisiert wird, während gleichzeitig Fenster Meldungen nach Bedarf verteilt werden.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** atlbase.h
+**Header:** atlbase. h
 
-## <a name="atlwaitwithmessageloop"></a><a name="atlwaitwithmessageloop"></a>AtlWaitWithMessageLoop
+## <a name="atlwaitwithmessageloop"></a><a name="atlwaitwithmessageloop"></a> Atlwaitwithmessageloop
 
 Wartet auf die Signalisierung des Objekts und leitet unterdessen Fenstermeldungen nach Bedarf weiter.
 
@@ -42,17 +42,17 @@ BOOL AtlWaitWithMessageLoop(HANDLE hEvent);
 
 ### <a name="parameters"></a>Parameter
 
-*hEvent*<br/>
-[in] Das Handle des zu wartenden Objekts.
+*hevent*<br/>
+in Das Handle des Objekts, auf das gewartet werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE zurück, wenn das Objekt signalisiert wurde.
+Gibt "true" zurück, wenn das Objekt signalisiert wurde.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dies ist nützlich, wenn Sie warten möchten, bis das Ereignis eines Objekts eintritt und darüber benachrichtigt werden, aber zulassen, dass Fensternachrichten während des Wartens gesendet werden.
+Dies ist hilfreich, wenn Sie warten möchten, bis das Ereignis eines Objekts auftritt und benachrichtigt wird, während Sie darauf warten, dass Fenster Meldungen gesendet werden.
 
 ## <a name="see-also"></a>Siehe auch
 
-[Functions](../../atl/reference/atl-functions.md)
+[Funktionen](../../atl/reference/atl-functions.md)

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - new header
 ms.assetid: 218e2a15-34e8-4ef3-9122-1e90eccf8559
-ms.openlocfilehash: 2a35a7b4d9581a11d889f3e66d0179c553c4fc25
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 0fe2d0e57c0746f25187028b85157d66ee736ca4
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87212162"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88836425"
 ---
 # <a name="ltnewgt"></a>&lt;Neu&gt;
 
@@ -31,13 +31,13 @@ Einige der Funktionen, die in diesem Header deklariert sind, können ersetzt wer
 
 ### <a name="objects"></a>Objekte
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[nothrow](../standard-library/new-functions.md#nothrow)|Stellt ein Objekt bereit, das als Argument für die **`nothrow`** Versionen von und verwendet werden soll **`new`** **`delete`** .|
 
 ### <a name="typedefs"></a>TypeDefs
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[new_handler](../standard-library/new-typedefs.md#new_handler)|Ein Typ, der auf eine Funktion verweist, die als neuer Handler geeignet ist.|
 |[hardware_constructive_interference_size](../standard-library/new-typedefs.md#hardware_destructive_interference_size)||
@@ -45,7 +45,7 @@ Einige der Funktionen, die in diesem Header deklariert sind, können ersetzt wer
 
 ### <a name="functions"></a>Functions
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[get_new_handler](../standard-library/new-functions.md#get_new_handler)||
 |[launter](../standard-library/new-functions.md#launder)||
@@ -53,7 +53,7 @@ Einige der Funktionen, die in diesem Header deklariert sind, können ersetzt wer
 
 ### <a name="operators"></a>Operatoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[Operator löschen](../standard-library/new-operators.md#op_delete)|Die Funktion, die durch einen Löschausdruck aufgerufen wird, um Speicher für einzelne Objekte freizugeben.|
 |[operator delete&#91;&#93;](../standard-library/new-operators.md#op_delete_arr)|Die Funktion, die durch einen Löschausdruck (delete-Ausdruck) aufgerufen wird, um Speicher für ein Array von Objekten freizugeben.|
@@ -62,13 +62,13 @@ Einige der Funktionen, die in diesem Header deklariert sind, können ersetzt wer
 
 ### <a name="enums"></a>Enumerationen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[align_val_t](../standard-library/new-operators.md#op_align_val_t)||
 
 ### <a name="classes"></a>Klassen
 
-|||
+|name|Beschreibung|
 |-|-|
 |[bad_alloc-Klasse](../standard-library/bad-alloc-class.md)|Die Klasse beschreibt eine Ausnahme, die ausgelöst wurde, um anzugeben, dass eine Belegungsanforderung nicht erfolgreich war.|
 |[bad_array_new_length-Klasse](../standard-library/bad-array-new-length.md)||

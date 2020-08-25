@@ -42,12 +42,12 @@ helpviewer_keywords:
 - RichEdit 1.0 control
 - rich edit controls [C++], RichEdit 1.0
 ms.assetid: 73cef03f-5c8c-456a-87d1-1458dff185cf
-ms.openlocfilehash: 9c1596b66f4387ea1f7ce309a5012ecd0f63d5de
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 90e4eb659de6d1d5ed1488365f6637de2d537e57
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84623460"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88831683"
 ---
 # <a name="how-to-add-edit-or-delete-controls-c"></a>Vorgehensweise: Hinzufügen, bearbeiten oder Löschen von Steuerelementen (C++)
 
@@ -166,20 +166,38 @@ Nach dem Hinzufügen eines allgemeinen Steuer Elements oder eines Rich-Edit-Steu
 
 Derzeit fügt der **Dialog-Editor** dem Projekt nicht automatisch Code hinzu, wenn Sie die folgenden allgemeinen Steuerelemente oder Rich Edit-Steuerelemente in ein Dialog Feld ziehen und ablegen. Außerdem bietet Visual Studio bei Auftreten dieses Problems einen Fehler oder eine Warnung an. Fügen Sie den Code für das Steuerelement manuell hinzu, um es zu beheben.
 
-||||
-|-|-|-|
-|Schiebereglersteuerung|Tree-Steuerelement|Datums-/Zeitauswahl|
-|Dreh Steuerelement|Register Steuerelement|Month Calendar|
-|Fortschrittskontrolle|Animations Steuerelement|IP-Adressensteuerelement|
-|Abkürzungs Taste|Rich Edit-Steuerelement|Erweitertes Kombinations Feld|
-|Listen Steuerelement|Rich Edit 2,0-Steuerelement|Benutzerdefiniertes Steuerelement|
+:::row:::
+   :::column span="":::
+      Animations Steuerelement \
+      Benutzerdefiniertes Steuerelement
+      Datums-/Uhrzeitauswahl \
+      Erweitertes Kombinations Feld
+   :::column-end:::
+   :::column span="":::
+      Hot Key \
+      IP-Adress Steuerung \
+      Listen Steuerelement \
+      Month Calendar
+   :::column-end:::
+   :::column span="":::
+      Fortschrittskontrolle \
+      Rich Edit 2,0-Steuerelement \
+      Rich Edit-Steuerelement \
+      Schiebereglersteuerung
+   :::column-end:::
+   :::column span="":::
+      Dreh Steuerelement \
+      Register Steuerelement \
+      Tree-Steuerelement
+   :::column-end:::
+:::row-end:::
 
 Um allgemeine Steuerelemente in einem Dialogfeld zu verwenden, müssen Sie [InitCommonControlsEx](/windows/win32/api/commctrl/nf-commctrl-initcommoncontrolsex) oder `AFXInitCommonControls` vor dem Erstellen des Dialog Felds anrufen.
 
 Um RichEdit-Steuerelemente verwenden zu können, müssen Sie aufzurufen `LoadLibrary` . Weitere Informationen finden Sie unter Informationen [zu Rich Edit](/windows/win32/Controls/about-rich-edit-controls) -Steuerelementen im Windows SDK und [Übersicht über das Rich Edit-Steuer](../mfc/overview-of-the-rich-edit-control.md)Element.
 
 > [!NOTE]
-> Wenn Sie ein RichEdit-Steuerelement mit MFC verwenden möchten, müssen Sie zuerst [AfxInitRichEdit2](../mfc/reference/application-information-and-management.md#afxinitrichedit2) aufzurufen, um das RichEdit 2,0-Steuerelement (Riched20 zu laden. DLL), oder Sie können das ältere RichEdit 1,0-Steuerelement (RICHED32) mit [afxiniterchedit](../mfc/reference/application-information-and-management.md#afxinitrichedit) laden. DLL).
+> Wenn Sie ein RichEdit-Steuerelement mit MFC verwenden möchten, müssen Sie zuerst [AfxInitRichEdit2](../mfc/reference/application-information-and-management.md#afxinitrichedit2) , um das RichEdit 2,0-Steuerelement (RICHED20.DLL) zu laden, oder [afxiniungchedit](../mfc/reference/application-information-and-management.md#afxinitrichedit) aufzurufen, um das ältere RichEdit 1,0-Steuerelement (RICHED32.DLL) zu laden.
 >
 > Sie können die aktuelle [CRichEditCtrl](../mfc/reference/cricheditctrl-class.md) -Klasse mit dem älteren RichEdit 1,0-Steuerelement verwenden, `CRichEditCtrl` ist jedoch nur für die Unterstützung des RichEdit-Steuer Elements 2,0 vorgesehen. Da RichEdit 1,0 und RichEdit 2,0 ähnlich sind, funktionieren die meisten Methoden. Es gibt jedoch einige Unterschiede zwischen den Steuerelementen 1,0 und 2,0, sodass einige Methoden möglicherweise falsch funktionieren oder überhaupt nicht funktionieren.
 
@@ -192,7 +210,7 @@ Im Dialogfeld **ActiveX-Steuerelement einfügen** können Sie ActiveX-Steuerelem
 |Eigenschaft|Beschreibung|
 |---|---|
 |**ActiveX-Steuerelement**|Zeigt eine Liste von ActiveX-Steuerelementen an.<br/><br/>Das Einfügen eines Steuer Elements aus diesem Dialogfeld generiert keine Wrapper Klasse. Wenn Sie eine Wrapper Klasse benötigen, verwenden Sie [Klassenansicht](/visualstudio/ide/viewing-the-structure-of-code) , um einen zu erstellen, siehe [Hinzufügen einer Klasse](../ide/adding-a-class-visual-cpp.md).<br/><br/>Wenn ein ActiveX-Steuerelement in diesem Dialogfeld nicht angezeigt wird, versuchen Sie, das Steuerelement gemäß den Anweisungen des Herstellers zu installieren.|
-|**Pfad**|Zeigt die Datei an, in der das ActiveX-Steuerelement gefunden wurde.|
+|**Path**|Zeigt die Datei an, in der das ActiveX-Steuerelement gefunden wurde.|
 
 > [!CAUTION]
 > Der Vertrieb ist möglicherweise nicht für alle ActiveX-Steuerelemente auf Ihrem System rechtlich zulässig. Lesen Sie den Lizenzvertrag für die Software, die die Steuerelemente installiert hat, oder wenden Sie sich an das Softwareunternehmen.
@@ -227,7 +245,7 @@ ActiveX-Steuerelemente, die von unabhängigen Anbietern bereitgestellt werden, v
 
 Win32
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Dialog Feld-Steuerelemente verwalten](controls-in-dialog-boxes.md)<br/>
 [Gewusst wie: Layout von Steuerelementen](arrangement-of-controls-on-dialog-boxes.md)<br/>

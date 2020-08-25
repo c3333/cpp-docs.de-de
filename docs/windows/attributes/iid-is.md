@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - iid_is attribute
 ms.assetid: 2f9b42a9-7130-4b08-9b1e-0d5d360e10ff
-ms.openlocfilehash: 627ecff4835386dc70a9f3dfac0500404a84eefe
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 6a8fe8c7481cd251baff65293607733573f46ea6
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80167991"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88832216"
 ---
 # <a name="iid_is"></a>iid_is
 
@@ -30,7 +30,7 @@ Ein C-sprach Ausdruck, der eine IID einer COM-Schnittstelle angibt, auf die von 
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **iid_is** C++ -Attribut verfügt über die gleiche Funktionalität wie das [iid_is](/windows/win32/Midl/iid-is) -Attribut "Mittel".
+Das **iid_is** C++-Attribut verfügt über die gleiche Funktionalität wie das [iid_is](/windows/win32/Midl/iid-is) -Attribut "Mittel".
 
 ## <a name="example"></a>Beispiel
 
@@ -53,12 +53,10 @@ __interface IFireTabCtrl : IDispatch
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|Schnittstellenparameter, Datenmember|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Schnittstellenparameter, Datenmember|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 

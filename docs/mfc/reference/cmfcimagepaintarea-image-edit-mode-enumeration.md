@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - IMAGE_EDIT_MODE Enumeration method [MFC]
 ms.assetid: e51db66a-fa1c-4766-9dac-a25b595f871a
-ms.openlocfilehash: 372a1df6500f4d7219c89d8f82425246c2236514
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 37c877cc8562a9479535d9c6132e49e7c9b7e82f
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62410173"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88831137"
 ---
-# <a name="cmfcimagepaintareaimageeditmode-enumeration"></a>CMFCImagePaintArea::IMAGE_EDIT_MODE Enumeration
+# <a name="cmfcimagepaintareaimage_edit_mode-enumeration"></a>CMFCImagePaintArea::IMAGE_EDIT_MODE Enumeration
 
-Gibt eine Zeichnungsmodus, mit denen Sie ein Bild in einem Bild-Editor-Dialogfeld ändern.
+Gibt einen Zeichnungsmodus an, den Sie zum Ändern eines Bilds in einem Bild-Editor-Dialogfeld verwenden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -33,30 +33,29 @@ enum IMAGE_EDIT_MODE
 
 ## <a name="members"></a>Member
 
-|||
-|-|-|
 |Name|Beschreibung|
-|IMAGE_EDIT_MODE_PEN|Verwendet, um die einzelnen Pixel gezeichnet werden soll.|
-|IMAGE_EDIT_MODE_FILL|Verwendet, um alle benachbarte Bereiche zu füllen, die die Farbe in der aktuellen Cursorposition enthalten.|
-|IMAGE_EDIT_MODE_LINE|Verwendet, um eine Linie zu zeichnen.|
-|IMAGE_EDIT_MODE_RECT|Verwendet, um ein Rechteck zu zeichnen.|
-|IMAGE_EDIT_MODE_ELLIPSE|Verwendet, um eine Ellipse zu zeichnen.|
-|IMAGE_EDIT_MODE_COLOR|Verwendet, um die aktuelle Farbe auf die Farbe an der aktuellen Cursorposition festgelegt.|
+|-|-|
+|IMAGE_EDIT_MODE_PEN|Wird verwendet, um einzelne Pixel zu zeichnen.|
+|IMAGE_EDIT_MODE_FILL|Wird verwendet, um alle angrenzenden Bereiche auszufüllen, die die Farbe an der aktuellen Cursorposition enthalten.|
+|IMAGE_EDIT_MODE_LINE|Wird verwendet, um eine Linie zu zeichnen.|
+|IMAGE_EDIT_MODE_RECT|Wird verwendet, um ein Rechteck zu zeichnen.|
+|IMAGE_EDIT_MODE_ELLIPSE|Wird zum Zeichnen einer Ellipse verwendet.|
+|IMAGE_EDIT_MODE_COLOR|Wird verwendet, um die aktuelle Farbe auf die Farbe an der aktuellen Cursorposition festzulegen.|
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die `CMFCImagePaintArea` und `CMFCImageEditorDialog` Klassen, die diese Enumeration verwenden, um den aktuellen Zeichnungsmodus festgelegt. Den Zeichnungsmodus des und die aktuelle Farbe werden verwendet, so ändern Sie die Bildbereich in einem Bild-Editor-Dialogfeld. Weitere Informationen zu `CMFCImagePaintArea` und `CMFCImageEditorDialog`, finden Sie unter [CMFCImagePaintArea-Klasse](../../mfc/reference/cmfcimagepaintarea-class.md) und [CMFCImageEditorDialog-Klasse](../../mfc/reference/cmfcimageeditordialog-class.md).
+Die `CMFCImagePaintArea` - `CMFCImageEditorDialog` Klasse und die-Klasse verwenden diese Enumeration, um den aktuellen Zeichnungsmodus festzulegen. Der Zeichenmodus und die aktuelle Farbe werden verwendet, um den Bildbereich in einem Bild-Editor-Dialogfeld zu ändern. Weitere Informationen zu `CMFCImagePaintArea` und `CMFCImageEditorDialog` finden Sie unter [cmficimagepaintarea Class](../../mfc/reference/cmfcimagepaintarea-class.md) und [cmficimageeditordialog Class](../../mfc/reference/cmfcimageeditordialog-class.md).
 
-Wenn Sie eine Farbe aus einem Image mit den Zeichnungsmodus IMAGE_EDIT_MODE_COLOR auswählen, wird das Framework den aktuellen Zeichnungsmodus auf IMAGE_EDIT_MODE_PEN an.
+Wenn Sie eine Farbe aus einem Bild auswählen, indem Sie den IMAGE_EDIT_MODE_COLOR Zeichnungsmodus verwenden, legt das Framework den aktuellen Zeichnungsmodus auf IMAGE_EDIT_MODE_PEN fest.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** afximagepaintarea.h
+**Header:** afximagepaintarea. h
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Makros und globale Variablen](../../mfc/reference/mfc-macros-and-globals.md)<br/>
-[Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
+[MFC-Makros, globale Funktionen und globale Variablen](../../mfc/reference/mfc-macros-and-globals.md)<br/>
+[Hierarchie Diagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>
-[CMFCImagePaintArea-Klasse](../../mfc/reference/cmfcimagepaintarea-class.md)<br/>
-[CMFCImageEditorDialog-Klasse](../../mfc/reference/cmfcimageeditordialog-class.md)
+[Cmficimagepaintarea-Klasse](../../mfc/reference/cmfcimagepaintarea-class.md)<br/>
+[Cmficimageeditordialog-Klasse](../../mfc/reference/cmfcimageeditordialog-class.md)

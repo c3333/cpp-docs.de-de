@@ -1,18 +1,18 @@
 ---
-title: '&lt;memory_resource &gt;'
+title: '&lt;memory_resource&gt;'
 ms.date: 04/04/2019
 f1_keywords:
 - <memory_resource>
 helpviewer_keywords:
 - memory_resource header
-ms.openlocfilehash: 752396bb06b292ce29b7c6cd292287955b6066a7
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: de88feb691d0ec1bc9bf9b9dc2bc40cbc31a1cfe
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72687713"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88831046"
 ---
-# <a name="ltmemory_resourcegt"></a>&lt;memory_resource &gt;
+# <a name="ltmemory_resourcegt"></a>&lt;memory_resource&gt;
 
 Definiert die Container-Klassen Vorlage memory_resource und deren unterstützende Vorlagen.
 
@@ -26,20 +26,20 @@ Definiert die Container-Klassen Vorlage memory_resource und deren unterstützend
 
 ### <a name="operators"></a>Operatoren
 
-|||
+|Name|Beschreibung|
 |-|-|
-|[Operator!=](../standard-library/memory-resource-operators.md#op_neq)|Testet, ob das memory_resource-Objekt links vom Operator ungleich dem memory_resource-Objekt rechts vom Operator ist.|
-|[operator==](../standard-library/memory-resource-operators.md#op_eq_eq)|Testet, ob das memory_resource-Objekt links vom Operator gleich dem memory_resource-Objekt rechts vom Operator ist.|
+|[Operator! =](../standard-library/memory-resource-operators.md#op_neq)|Testet, ob das memory_resource Objekt links vom Operator ungleich dem memory_resource Objekt rechts vom Operator ist.|
+|[Operator = =](../standard-library/memory-resource-operators.md#op_eq_eq)|Testet, ob das memory_resource Objekt links vom Operator gleich dem memory_resource Objekt rechts vom Operator ist.|
 
 ### <a name="specialized-template-functions"></a>Spezialisierte Vorlagenfunktionen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[polymorphic_allocator](../standard-library/memory-resource-functions.md#poly_alloc)||
 
-### <a name="functions"></a>Funktionen
+### <a name="functions"></a>Functions
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[get_default_resource](../standard-library/memory-resource-functions.md#get_default)||
 |[new_delete_resource](../standard-library/memory-resource-functions.md#new_delete)||
@@ -48,7 +48,7 @@ Definiert die Container-Klassen Vorlage memory_resource und deren unterstützend
 
 ### <a name="classes-and-structs"></a>Klassen und Strukturen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[memory_resource-Klasse](../standard-library/memory-resource-class.md)||
 |[monotonic_buffer_resource-Klasse](../standard-library/monotonic-buffer-resource-class.md)||
@@ -56,8 +56,8 @@ Definiert die Container-Klassen Vorlage memory_resource und deren unterstützend
 |[synchronized_pool_resource-Klasse](../standard-library/synchronized-pool-resource-class.md)||
 |[unsynchronized_pool_resource-Klasse](../standard-library/unsynchronized-pool-resource-class.md)||
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Headerdateienreferenz](../standard-library/cpp-standard-library-header-files.md)\
-[Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
-[C++-Standardbibliotheksreferenz](../standard-library/cpp-standard-library-reference.md)
+[Header Dateireferenz](../standard-library/cpp-standard-library-header-files.md)\
+[Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
+[C++-Standard Bibliotheks Referenz](../standard-library/cpp-standard-library-reference.md)

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - db_command attribute
 ms.assetid: 714c3e15-85d7-408b-9a7c-88505c3e5d24
-ms.openlocfilehash: ff1a9c55dc859016e5fc4210e96bc3fcf1b1fec5
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: d9ee1ed1bede6a5deaeae0be3783d6abbd05a0d9
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87232780"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88831371"
 ---
 # <a name="db_command"></a>db_command
 
@@ -238,9 +238,7 @@ int main() {
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
 |**Zielgruppe**|**`class`**, **`struct`** , Member, Methode, local|
 |**REPEATABLE**|Nein|
@@ -249,7 +247,7 @@ int main() {
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB Consumer-Attribute](ole-db-consumer-attributes.md)<br/>
 [Eigenständige Attribute](stand-alone-attributes.md)

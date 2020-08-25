@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - LCID attribute
 ms.assetid: 7f248c69-ee1c-42c3-9411-39cf27c9f43d
-ms.openlocfilehash: bb9e44d34c675e4f5d955c5f422a6dd35259ec8d
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 7533cd9b269a879c5c2f061dcdfc632b1b27c871
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80214798"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88834179"
 ---
 # <a name="lcid"></a>lcid
 
@@ -25,7 +25,7 @@ Ermöglicht es Ihnen, einen Gebiets Schema Bezeichner an eine Funktion zu überg
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **LCID** C++ -Attribut implementiert die Funktionalität des [LCID](/windows/win32/Midl/lcid) -Attributs "Mittel l". Wenn Sie das Gebiets Schema für einen Bibliotheks Block implementieren möchten, verwenden Sie den **LCID =** `lcid`-Parameter für das [Module](module-cpp.md) -Attribut.
+Das **LCID** C++-Attribut implementiert die Funktionalität des [LCID](/windows/win32/Midl/lcid) -Attributs "Mittel l". Wenn Sie das Gebiets Schema für einen Bibliotheks Block implementieren möchten, verwenden Sie den **LCID =** - `lcid` Parameter für das [Module](module-cpp.md) -Attribut.
 
 ## <a name="example"></a>Beispiel
 
@@ -44,12 +44,10 @@ __interface IStatic {
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|Schnittstellenparameter|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Schnittstellenparameter|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - std::raw_storage_iterator [C++], element_type
 - std::raw_storage_iterator [C++], iter_type
 ms.assetid: 6f033f15-f48e-452a-a326-647ea2cf346f
-ms.openlocfilehash: 062a3db5c28bc463d6346a26cf1385adecd41183
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: e5423d3b0801570167e1e0424aad18b9e8f74e7c
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87217635"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88831423"
 ---
 # <a name="raw_storage_iterator-class"></a>raw_storage_iterator-Klasse
 
@@ -46,26 +46,26 @@ Diese Adapterklasse wird verwendet, wenn es erforderlich ist, Speicherbelegung u
 
 ### <a name="constructors"></a>Konstruktoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[raw_storage_iterator](#raw_storage_iterator)|Erstellt einen unformatierten Speicheriterator mit einem angegebenen zugrunde liegenden Ausgabeiterator.|
 
 ### <a name="typedefs"></a>TypeDefs
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[element_type](#element_type)|Stellt einen Typ bereit, der ein Element beschreibt, das in einem unformatierten Speicheriterator gespeichert werden soll.|
 |[iter_type](#iter_type)|Stellt einen Typ bereit, der einen Iterator beschreibt, der einem unformatierten Speicheriterator zugrunde liegt.|
 
 ### <a name="operators"></a>Operatoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[KOM](#op_star)|Ein Dereferenzierungsoperator, der zum Implementieren des ausgabeiteratorausdrucks verwendet wird \* `ii`  =  `x` .|
 |[Operator =](#op_eq)|Ein Zuweisungs Operator, mit dem der unformatierte speicheriteratorausdruck \* `i`  =  `x` zum Speichern im Arbeitsspeicher implementiert wird.|
 |[Operator + +](#op_add_add)|Inkrementoperatoren in Präfix- und Postfix-Notation für unformatierte Speicheriteratoren.|
 
-### <a name="element_type"></a><a name="element_type"></a>element_type
+### <a name="element_type"></a><a name="element_type"></a> element_type
 
 Stellt einen Typ bereit, der ein Element beschreibt, das in einem unformatierten Speicheriterator gespeichert werden soll.
 
@@ -77,7 +77,7 @@ typedef Type element_type;
 
 Der Typ ist ein Synonym für den Raw_storage_iterator Klassen Vorlagen Parameter `Type` .
 
-### <a name="iter_type"></a><a name="iter_type"></a>iter_type
+### <a name="iter_type"></a><a name="iter_type"></a> iter_type
 
 Stellt einen Typ bereit, der einen Iterator beschreibt, der einem unformatierten Speicheriterator zugrunde liegt.
 
@@ -89,7 +89,7 @@ typedef ForwardIterator iter_type;
 
 Der Type stellt ein Synonym für den Vorlagenparameter `ForwardIterator` dar.
 
-### <a name="operator"></a><a name="op_star"></a>KOM\*
+### <a name="operator"></a><a name="op_star"></a> KOM\*
 
 Ein Dereferenzierungsoperator, der verwendet wird, um den RAW-speicheriteratorausdruck \* *II*  =  *x*zu implementieren.
 
@@ -157,7 +157,7 @@ Copying 5
 Constructing 5
 ```
 
-### <a name="operator"></a><a name="op_eq"></a>Operator =
+### <a name="operator"></a><a name="op_eq"></a> Operator =
 
 Der Zuweisungs Operator, der zum Implementieren des unformatierten Speicher-iteratorausdrucks \* *i*  =  *x* zum Speichern im Arbeitsspeicher verwendet
 
@@ -231,7 +231,7 @@ Copying 5
 Constructing 5
 ```
 
-### <a name="operator"></a><a name="op_add_add"></a>Operator + +
+### <a name="operator"></a><a name="op_add_add"></a> Operator + +
 
 Inkrementoperatoren in Präfix- und Postfix-Notation für unformatierte Speicheriteratoren.
 
@@ -288,7 +288,7 @@ array 3 = 6
 array 4 = 8
 ```
 
-### <a name="raw_storage_iterator"></a><a name="raw_storage_iterator"></a>raw_storage_iterator
+### <a name="raw_storage_iterator"></a><a name="raw_storage_iterator"></a> raw_storage_iterator
 
 Erstellt einen unformatierten Speicheriterator mit einem angegebenen zugrunde liegenden Ausgabeiterator.
 

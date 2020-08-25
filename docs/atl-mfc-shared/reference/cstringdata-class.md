@@ -19,16 +19,16 @@ helpviewer_keywords:
 - CStringData class
 - shared classes, CStringData
 ms.assetid: 4e31b5ca-3dbe-4fd5-b692-8211fbfb2593
-ms.openlocfilehash: f14f1d9c269f06099bd224f582de1f55da33ff0f
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.openlocfilehash: 140836f45ed2f4088bc0baed67676f93cb268d01
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81746838"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88832112"
 ---
 # <a name="cstringdata-class"></a>CStringData-Klasse
 
-Diese Klasse stellt die Daten eines Zeichenfolgenobjekts dar.
+Diese Klasse stellt die Daten eines Zeichen folgen Objekts dar.
 
 ## <a name="syntax"></a>Syntax
 
@@ -40,56 +40,56 @@ struct CStringData
 
 ### <a name="methods"></a>Methoden
 
-|||
+|Name|Beschreibung|
 |-|-|
-|[AddRef](#addref)|Inkrementiert die Referenzanzahl des Zeichenfolgendatenobjekts.|
-|[Daten](#data)|Ruft die Zeichendaten eines Zeichenfolgenobjekts ab.|
-|[IsLocked](#islocked)|Bestimmt, ob der Puffer des zugeordneten Zeichenfolgenobjekts gesperrt ist.|
-|[IsShared](#isshared)|Bestimmt, ob der Puffer des zugeordneten Zeichenfolgenobjekts derzeit freigegeben ist.|
-|[Sperre](#lock)|Sperrt den Puffer des zugeordneten Zeichenfolgenobjekts.|
-|[Release](#release)|Gibt das angegebene Zeichenfolgenobjekt frei.|
-|[Entsperren](#unlock)|Entsperrt den Puffer des zugeordneten Zeichenfolgenobjekts.|
+|[AddRef](#addref)|Erhöht den Verweis Zähler des Zeichen folgen-Datenobjekts.|
+|[data](#data)|Ruft die Zeichendaten eines Zeichen folgen Objekts ab.|
+|[IsLocked](#islocked)|Bestimmt, ob der Puffer des zugeordneten Zeichen folgen Objekts gesperrt ist.|
+|[IsShared](#isshared)|Bestimmt, ob der Puffer des zugeordneten Zeichen folgen Objekts zurzeit freigegeben ist.|
+|[Sperre](#lock)|Sperrt den Puffer des zugeordneten Zeichen folgen Objekts.|
+|[Release](#release)|Gibt das angegebene Zeichen folgen Objekt frei.|
+|[Entsperren](#unlock)|Entsperrt den Puffer des zugeordneten Zeichen folgen Objekts.|
 
 ### <a name="data-members"></a>Datenelemente
 
-|||
+|Name|Beschreibung|
 |-|-|
-|[nAllocLength](#nalloclength)|Länge der zugewiesenen Daten in `XCHAR`s (ohne Kündigung null)|
-|[nDataLength](#ndatalength)|Länge der aktuell `XCHAR`verwendeten Daten in s (ohne Beenden von NULL)|
-|[nRefs](#nrefs)|Die aktuelle Verweisanzahl des Objekts.|
-|[pStringMgr](#pstringmgr)|Ein Zeiger auf den Zeichenfolgen-Manager dieses Zeichenfolgenobjekts.|
+|[nzuweisung](#nalloclength)|Länge der zugeordneten Daten in `XCHAR` s (ohne abschließende Null)|
+|[ndatalength](#ndatalength)|Länge der derzeit verwendeten Daten in `XCHAR` s (ohne abschließende Null)|
+|[nrefs](#nrefs)|Der aktuelle Verweis Zähler des Objekts.|
+|[pstringmgr](#pstringmgr)|Ein Zeiger auf den Zeichen folgen-Manager dieses Zeichen folgen Objekts.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Diese Klasse sollte nur von Entwicklern verwendet werden, die benutzerdefinierte Zeichenfolgen-Manager implementieren. Weitere Informationen zu benutzerdefinierten Zeichenfolgen-Managern finden Sie unter [Speicherverwaltung und CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)
+Diese Klasse sollte nur von Entwicklern verwendet werden, die benutzerdefinierte Zeichen folgen-Manager implementieren. Weitere Informationen über benutzerdefinierte Zeichen folgen-Manager finden Sie unter [Speicherverwaltung und CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md)
 
-Diese Klasse kapselt verschiedene Arten von Informationen und Daten, die einem höheren Zeichenfolgenobjekt zugeordnet sind, z. B. [CStringT-](../../atl-mfc-shared/reference/cstringt-class.md), [CSimpleStringT-](../../atl-mfc-shared/reference/csimplestringt-class.md)oder [CFixedStringT-Objekte.](../../atl-mfc-shared/reference/cfixedstringt-class.md) Jedes höhere Zeichenfolgenobjekt enthält einen `CStringData` Zeiger auf das zugeordnete Objekt, sodass mehrere Zeichenfolgenobjekte auf dasselbe Zeichenfolgendatenobjekt verweisen können. Diese Beziehung wird durch die`nRefs`Referenzanzahl `CStringData` ( ) des Objekts dargestellt.
+Diese Klasse kapselt verschiedene Typen von Informationen und Daten, die einem höheren Zeichen folgen Objekt zugeordnet sind, z. b. [CStringT](../../atl-mfc-shared/reference/cstringt-class.md)-, [CSimpleStringT](../../atl-mfc-shared/reference/csimplestringt-class.md)-oder [CFixedStringT](../../atl-mfc-shared/reference/cfixedstringt-class.md) -Objekte. Jedes höhere Zeichen folgen Objekt enthält einen Zeiger auf das zugeordnete- `CStringData` Objekt, sodass mehrere Zeichen folgen Objekte auf dasselbe Zeichen folgen Datenobjekt verweisen können. Diese Beziehung wird durch den Verweis Zähler ( `nRefs` ) des- `CStringData` Objekts dargestellt.
 
 > [!NOTE]
-> In bestimmten Fällen gibt ein `CFixedString`Zeichenfolgentyp (z. B. ) kein Zeichenfolgendatenobjekt für mehr als ein höheres Zeichenfolgenobjekt gemeinsam. Weitere Informationen hierzu finden Sie unter [Speicherverwaltung und CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md).
+> In bestimmten Fällen wird ein Zeichen folgen- `CFixedString` Datenobjekt (z. b.) nicht von einem Zeichen folgen-Datenobjekt mit mehr als einem höheren Zeichen folgen Objekt gemeinsam verwendet. Weitere Informationen hierzu finden Sie unter [Speicherverwaltung und CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md).
 
-Diese Daten setzen sich zusammen aus:
+Diese Daten bestehen aus:
 
 - Der Speicher-Manager (vom Typ [IAtlStringMgr](../../atl-mfc-shared/reference/iatlstringmgr-class.md)) der Zeichenfolge.
 
-- Die aktuelle Länge ( [nDataLength](#ndatalength)) der Zeichenfolge.
+- Die aktuelle Länge ( [ndatalength](#ndatalength)) der Zeichenfolge.
 
-- Die zugewiesene Länge ( [nAllocLength](#nalloclength)) der Zeichenfolge. Aus Leistungsgründen kann dies von der aktuellen Stringlänge abweichen.
+- Die zugeordnete Länge ( [nzuordnungs](#nalloclength)Element) der Zeichenfolge. Aus Leistungsgründen kann sich dies von der aktuellen Zeichen folgen Länge unterscheiden.
 
-- Die aktuelle Referenzanzahl ( [nRefs](#nrefs)) des `CStringData` Objekts. Dieser Wert wird verwendet, um zu bestimmen, wie viele Zeichenfolgenobjekte dasselbe `CStringData` Objekt gemeinsam verwenden.
+- Der aktuelle Verweis Zähler ( [nrefs](#nrefs)) des- `CStringData` Objekts. Dieser Wert wird verwendet, um zu bestimmen, wie viele Zeichen folgen Objekte dasselbe Objekt gemeinsam verwenden `CStringData` .
 
-- Der tatsächliche Zeichenpuffer ( [Daten](#data)) der Zeichenfolge.
+- Der tatsächliche Zeichen Puffer ( [Daten](#data)) der Zeichenfolge.
 
    > [!NOTE]
-   > Der eigentliche Zeichenpuffer des Zeichenfolgenobjekts wird vom Zeichenfolgen-Manager zugewiesen und an das `CStringData` Objekt angehängt.
+   > Der tatsächliche Zeichen Puffer des Zeichen folgen Objekts wird vom Zeichen folgen-Manager zugeordnet und an das- `CStringData` Objekt angehängt.
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** atlsimpstr.h
+**Header:** atlsimpstr. h
 
-## <a name="cstringdataaddref"></a><a name="addref"></a>CStringData::AddRef
+## <a name="cstringdataaddref"></a><a name="addref"></a> CStringData:: adressf
 
-Inkrementiert die Referenzanzahl des Zeichenfolgenobjekts.
+Inkremente den Verweis Zähler für das Zeichen folgen Objekt.
 
 ```cpp
 void AddRef() throw();
@@ -97,14 +97,14 @@ void AddRef() throw();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Inkrementiert die Referenzanzahl des Zeichenfolgenobjekts.
+Inkremente den Verweis Zähler für das Zeichen folgen Objekt.
 
 > [!NOTE]
-> Rufen Sie diese Methode nicht für eine Zeichenfolge mit einer negativen Verweisanzahl auf, da eine negative Anzahl angibt, dass der Zeichenfolgenpuffer gesperrt ist.
+> Diese Methode darf nicht für eine Zeichenfolge mit einem negativen Verweis Zähler aufgerufen werden, da eine negative Anzahl angibt, dass der Zeichen folgen Puffer gesperrt ist.
 
-## <a name="cstringdatadata"></a><a name="data"></a>CStringData::data
+## <a name="cstringdatadata"></a><a name="data"></a> CStringData::d ATA
 
-Gibt einen Zeiger auf den Zeichenpuffer eines Zeichenfolgenobjekts zurück.
+Gibt einen Zeiger auf den Zeichen Puffer eines Zeichen folgen Objekts zurück.
 
 ```cpp
 void* data() throw();
@@ -112,18 +112,18 @@ void* data() throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf den Zeichenpuffer des Zeichenfolgenobjekts.
+Ein Zeiger auf den Zeichen Puffer des Zeichen folgen Objekts.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Funktion auf, um den aktuellen Zeichenpuffer des zugeordneten Zeichenfolgenobjekts zurückzugeben.
+Diese Funktion wird aufgerufen, um den aktuellen Zeichen Puffer des zugeordneten Zeichen folgen Objekts zurückzugeben.
 
 > [!NOTE]
-> Dieser Puffer wird nicht `CStringData` vom Objekt, sondern bei Bedarf vom Zeichenfolgen-Manager zugewiesen. Bei der Zuweisung wird der Puffer an das Zeichenfolgendatenobjekt angehängt.
+> Dieser Puffer wird nicht durch das- `CStringData` Objekt zugeordnet, sondern durch den Zeichen folgen-Manager bei Bedarf. Wenn die Zuordnung erfolgt, wird der Puffer an das Zeichen folgen Datenobjekt angehängt.
 
-## <a name="cstringdataislocked"></a><a name="islocked"></a>CStringData::IsLocked
+## <a name="cstringdataislocked"></a><a name="islocked"></a> CStringData:: IsLocked
 
-Bestimmt, ob der Zeichenpuffer gesperrt ist.
+Bestimmt, ob der Zeichen Puffer gesperrt ist.
 
 ```
 bool IsLocked() const throw();
@@ -131,15 +131,15 @@ bool IsLocked() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE zurück, wenn der Puffer gesperrt ist; andernfalls FALSE.
+Gibt "true" zurück, wenn der Puffer gesperrt ist. andernfalls false.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Funktion auf, um zu bestimmen, ob der Zeichenpuffer eines Zeichenfolgenobjekts derzeit gesperrt ist.
+Mit dieser Funktion wird ermittelt, ob der Zeichen Puffer eines Zeichen folgen Objekts zurzeit gesperrt ist.
 
-## <a name="cstringdataisshared"></a><a name="isshared"></a>CStringData::IsShared
+## <a name="cstringdataisshared"></a><a name="isshared"></a> CStringData:: IsShared
 
-Bestimmt, ob der Zeichenpuffer freigegeben ist.
+Bestimmt, ob der Zeichen Puffer freigegeben ist.
 
 ```
 bool IsShared() const throw();
@@ -147,15 +147,15 @@ bool IsShared() const throw();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE zurück, wenn der Puffer freigegeben ist; andernfalls FALSE.
+Gibt true zurück, wenn der Puffer freigegeben ist. andernfalls false.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Funktion auf, um zu bestimmen, ob der Zeichenpuffer eines Zeichenfolgendatenobjekts derzeit von mehreren Zeichenfolgenobjekten gemeinsam genutzt wird.
+Mit dieser Funktion wird ermittelt, ob der Zeichen Puffer eines Zeichen folgen-Datenobjekts derzeit von mehreren Zeichen folgen Objekten gemeinsam genutzt wird.
 
-## <a name="cstringdatalock"></a><a name="lock"></a>CStringData::Sperren
+## <a name="cstringdatalock"></a><a name="lock"></a> CStringData:: Lock
 
-Sperrt den Zeichenpuffer des zugeordneten Zeichenfolgenobjekts.
+Sperrt den Zeichen Puffer des zugeordneten Zeichen folgen Objekts.
 
 ```cpp
 void Lock() throw();
@@ -163,14 +163,14 @@ void Lock() throw();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Funktion auf, um den Zeichenpuffer des Zeichenfolgendatenobjekts zu sperren. Sperren und Entsperren wird verwendet, wenn der Entwickler direkten Zugriff auf den Zeichenpuffer benötigt. Ein gutes Beispiel für das Sperren wird durch `CSimpleStringT`die [LockBuffer-](../../atl-mfc-shared/reference/csimplestringt-class.md#lockbuffer) und [UnlockBuffer-Methoden](../../atl-mfc-shared/reference/csimplestringt-class.md#unlockbuffer) von demonstriert.
+Mit dieser Funktion wird der Zeichen Puffer des Zeichen folgen Datenobjekts gesperrt. Sperren und entsperren werden verwendet, wenn der Entwickler den direkten Zugriff auf den Zeichen Puffer benötigt. Ein gutes Beispiel für Sperren wird durch die [LockBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#lockbuffer) -Methode und die [UnlockBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#unlockbuffer) -Methode von veranschaulicht `CSimpleStringT` .
 
 > [!NOTE]
-> Ein Zeichenpuffer kann nur gesperrt werden, wenn der Puffer nicht von höheren Zeichenfolgenobjekten gemeinsam genutzt wird.
+> Ein Zeichen Puffer kann nur gesperrt werden, wenn der Puffer nicht von höheren Zeichen folgen Objekten gemeinsam genutzt wird.
 
-## <a name="cstringdatanalloclength"></a><a name="nalloclength"></a>CStringData::nAllocLength
+## <a name="cstringdatanalloclength"></a><a name="nalloclength"></a> CStringData:: nzuweisung
 
-Länge des zugewiesenen Zeichenpuffers.
+Länge des zugeordneten Zeichen Puffers.
 
 ```
 int nAllocLength;
@@ -178,11 +178,11 @@ int nAllocLength;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Speichert die Länge des zugewiesenen Datenpuffers in `XCHAR`s (ohne Beenden von NULL).
+Speichert die Länge des zugeordneten Daten Puffers in `XCHAR` s (ohne das abschließende Null-Zeichen).
 
-## <a name="cstringdatandatalength"></a><a name="ndatalength"></a>CStringData::nDataLength
+## <a name="cstringdatandatalength"></a><a name="ndatalength"></a> CStringData:: ndatalength
 
-Aktuelle Länge des Zeichenfolgenobjekts.
+Die aktuelle Länge des Zeichen folgen Objekts.
 
 ```
 int nDataLength;
@@ -190,11 +190,11 @@ int nDataLength;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Speichert die Länge der `XCHAR`aktuell verwendeten Daten in s (ohne Beenden von NULL).
+Speichert die Länge der aktuell verwendeten Daten in `XCHAR` s (ohne das abschließende Null-Zeichen).
 
-## <a name="cstringdatanrefs"></a><a name="nrefs"></a>CStringData::nRefs
+## <a name="cstringdatanrefs"></a><a name="nrefs"></a> CStringData:: nrefs
 
-Referenzanzahl des Zeichenfolgendatenobjekts.
+Verweis Zähler des Zeichen folgen-Datenobjekts.
 
 ```
 long nRefs;
@@ -202,11 +202,11 @@ long nRefs;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Speichert die Referenzanzahl des Zeichenfolgendatenobjekts. Diese Anzahl gibt die Anzahl der höheren Zeichenfolgenobjekte an, die dem Zeichenfolgendatenobjekt zugeordnet sind. Ein negativer Wert gibt an, dass das Zeichenfolgendatenobjekt derzeit gesperrt ist.
+Speichert den Verweis Zähler des Zeichen folgen Datenobjekts. Diese Anzahl gibt die Anzahl der höheren Zeichen folgen Objekte an, die dem Zeichen folgen Datenobjekt zugeordnet sind. Ein negativer Wert gibt an, dass das Zeichen folgen Datenobjekt zurzeit gesperrt ist.
 
-## <a name="cstringdatapstringmgr"></a><a name="pstringmgr"></a>CStringData::pStringMgr
+## <a name="cstringdatapstringmgr"></a><a name="pstringmgr"></a> CStringData::p stringmgr
 
-Der Speicher-Manager des zugeordneten Zeichenfolgenobjekts.
+Der Speicher-Manager des zugeordneten Zeichen folgen Objekts.
 
 ```
 IAtlStringMgr* pStringMgr;
@@ -214,11 +214,11 @@ IAtlStringMgr* pStringMgr;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Speichert den Speicher-Manager für das zugeordnete Zeichenfolgenobjekt. Weitere Informationen zu Speicher-Managern und Zeichenfolgen finden Sie unter [Speicherverwaltung und CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md).
+Speichert den Speicher-Manager für das zugeordnete String-Objekt. Weitere Informationen zu Speicher Managern und Zeichen folgen finden Sie unter [Speicherverwaltung und CStringT](../../atl-mfc-shared/memory-management-with-cstringt.md).
 
-## <a name="cstringdatarelease"></a><a name="release"></a>CStringData::Release
+## <a name="cstringdatarelease"></a><a name="release"></a> CStringData:: Release
 
-Dekrementiert die Referenzanzahl des Zeichenfolgendatenobjekts.
+Dekremente den Verweis Zähler des Zeichen folgen-Datenobjekts.
 
 ```cpp
 void Release() throw();
@@ -226,15 +226,15 @@ void Release() throw();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Funktion auf, um die `CStringData` Referenzanzahl zu dekremenieren, wodurch die Struktur frei wird, wenn die Referenzanzahl null erreicht. Dies geschieht häufig, wenn ein Zeichenfolgenobjekt gelöscht wird und daher nicht mehr auf das Zeichenfolgendatenobjekt verweisen muss.
+Mit dieser Funktion wird der Verweis Zähler verringert, und die Struktur wird freigegeben, `CStringData` Wenn der Verweis Zähler Null erreicht. Dies erfolgt in der Regel, wenn ein Zeichen folgen Objekt gelöscht wird und daher nicht mehr auf das Zeichen folgen Datenobjekt verweisen muss.
 
-Der folgende Code würde `CStringData::Release` z. B. das `str1`Zeichenfolgendatenobjekt aufrufen, das folgenden Themen zugeordnet ist:
+Der folgende Code ruft beispielsweise `CStringData::Release` für das Zeichen folgen Datenobjekt, das zugeordnet ist, auf `str1` :
 
 [!code-cpp[NVC_ATLMFC_Utilities#104](../../atl-mfc-shared/codesnippet/cpp/cstringdata-class_1.cpp)]
 
-## <a name="cstringdataunlock"></a><a name="unlock"></a>CStringData::Entsperren
+## <a name="cstringdataunlock"></a><a name="unlock"></a> CStringData:: Unlock
 
-Entsperrt den Zeichenpuffer des zugeordneten Zeichenfolgenobjekts.
+Entsperrt den Zeichen Puffer des zugeordneten Zeichen folgen Objekts.
 
 ```cpp
 void Unlock() throw();
@@ -242,14 +242,14 @@ void Unlock() throw();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Funktion auf, um den Zeichenpuffer des Zeichenfolgendatenobjekts zu entsperren. Sobald ein Puffer entsperrt ist, kann er gemeinsam freigegeben werden und kann als Referenz gezählt werden.
+Mit dieser Funktion wird der Zeichen Puffer des Zeichen folgen Datenobjekts entsperrt. Nachdem ein Puffer entsperrt wurde, ist er frei zugänglich und kann Verweis Zähler sein.
 
 > [!NOTE]
-> Jeder Aufruf `Lock` muss mit einem entsprechenden `Unlock`Aufruf von übereinstimmen.
+> Jeder-Rückruf `Lock` muss mit einem entsprechenden-Befehl abgeglichen werden `Unlock` .
 
-Sperren und Entsperren wird verwendet, wenn der Entwickler sicherstellen muss, dass die Zeichenfolgendaten nicht freigegeben werden. Ein gutes Beispiel für das Sperren wird durch `CSimpleStringT`die [LockBuffer-](../../atl-mfc-shared/reference/csimplestringt-class.md#lockbuffer) und [UnlockBuffer-Methoden](../../atl-mfc-shared/reference/csimplestringt-class.md#unlockbuffer) von demonstriert.
+Sperren und entsperren werden verwendet, wenn der Entwickler sicherstellen muss, dass die Zeichen folgen Daten nicht freigegeben werden. Ein gutes Beispiel für Sperren wird durch die [LockBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#lockbuffer) -Methode und die [UnlockBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#unlockbuffer) -Methode von veranschaulicht `CSimpleStringT` .
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
-[FREIGEGEBENe ATL/MFC-Klassen](../../atl-mfc-shared/atl-mfc-shared-classes.md)
+[Hierarchie Diagramm](../../mfc/hierarchy-chart.md)<br/>
+[Gemeinsam genutzte ATL/MFC-Klassen](../../atl-mfc-shared/atl-mfc-shared-classes.md)
