@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - call_as attribute
 ms.assetid: a09d7f1f-353b-4870-9b45-f0284161695d
-ms.openlocfilehash: 755741faec6c0ba702d372ca8dee486edcb72ef3
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 9ae620ed6f2b01cc52e4a9c76217f044db925f11
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80167332"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88838919"
 ---
 # <a name="call_as"></a>call_as
 
@@ -30,11 +30,11 @@ Die lokale Funktion, die aufgerufen werden soll, wenn eine Remote Funktion aufge
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Call_as** C++ -Attribut verfügt über die gleiche Funktionalität wie das [Call_as](/windows/win32/Midl/call-as) -Attribut "Mittel".
+Das **Call_as** C++-Attribut verfügt über die gleiche Funktionalität wie das [Call_as](/windows/win32/Midl/call-as) -Attribut "Mittel".
 
 ## <a name="example"></a>Beispiel
 
-Der folgende Code zeigt, wie Sie mit **Call_as** eine nicht Remote fähige Funktion (`f1`) einer Remote fähigen Funktion (`Remf1`) zuordnen können:
+Der folgende Code zeigt, wie Sie mit **Call_as** eine nicht Remote fähige Funktion ( `f1` ) einer Remote fähigen Funktion () zuordnen können `Remf1` :
 
 ```cpp
 // cpp_attr_ref_call_as.cpp
@@ -50,12 +50,10 @@ __interface IMInterface {
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|Schnittstellenmethode|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Schnittstellenmethode|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -64,5 +62,5 @@ Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontext
 ## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[Methodenattribut](method-attributes.md)<br/>
-[local](local-cpp.md)
+[Methoden Attribute](method-attributes.md)<br/>
+[nah](local-cpp.md)

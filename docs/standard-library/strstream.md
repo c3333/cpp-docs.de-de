@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - strstream header
 ms.assetid: eaa9d0d4-d217-4f28-8a68-9b9ad7b1c0f5
-ms.openlocfilehash: a7df541049aafd191e969eaa392ab3706f171926
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 13eea1101abca0f79f0d7c15405ceb3118707b67
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87224603"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845652"
 ---
 # <a name="ltstrstreamgt"></a>&lt;strstream&gt;
 
@@ -34,7 +34,7 @@ Objekte des Typs `strstream` funktionieren mit **`char`** *, die C-Zeichen folge
 
 ### <a name="classes"></a>Klassen
 
-|||
+|name|Beschreibung|
 |-|-|
 |[Klasse "straustreambuf"](../standard-library/strstreambuf-class.md)|Die Klasse beschreibt einen Streampuffer, der die Übertragung von Elementen in eine und aus einer Sequenz von Elementen steuert, die in einem- **`char`** Array Objekt gespeichert sind.|
 |[istrinstream-Klasse](../standard-library/istrstream-class.md)|Die Klasse beschreibt ein Objekt, das die Extraktion von Elementen und codierten Objekten aus einem Streampuffer der Klasse [strstreambuf](../standard-library/strstreambuf-class.md) steuert.|
@@ -49,7 +49,7 @@ char* str();
 int pcount();
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<strstream>](../standard-library/strstream.md)\
 [Header Dateireferenz](../standard-library/cpp-standard-library-header-files.md)\

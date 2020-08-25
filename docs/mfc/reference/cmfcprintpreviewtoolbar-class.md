@@ -1,20 +1,20 @@
 ---
-title: CMFCPrintPreviewToolBar-Klasse
+title: Cmfcprintpreviewtoolbar-Klasse
 ms.date: 11/04/2016
 helpviewer_keywords:
 - CMFCPrintPreviewToolBar class [MFC]
 - CMFCPrintPreviewToolBar class [MFC], destructor
 ms.assetid: 7b9f641b-d402-4339-8815-e5247237e7e5
-ms.openlocfilehash: ac1fba453a539c6c311e672c1b26e34a3bf81ffd
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: ee66c5faf12a8fd651c481f058c24b649a6c2fb4
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62403619"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88838645"
 ---
-# <a name="cmfcprintpreviewtoolbar-class"></a>CMFCPrintPreviewToolBar-Klasse
+# <a name="cmfcprintpreviewtoolbar-class"></a>Cmfcprintpreviewtoolbar-Klasse
 
-Die Symbolleiste für die Seitenansicht.
+Die Symbolleiste in der Seitenansicht.
 
 ## <a name="syntax"></a>Syntax
 
@@ -26,17 +26,15 @@ class CMFCPrintPreviewToolBar : public CMFCToolBar
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|||
+|name|Beschreibung|
 |-|-|
-|Name|Beschreibung|
 |`CMFCPrintPreviewToolBar::~CMFCPrintPreviewToolBar`|Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|||
+|name|Beschreibung|
 |-|-|
-|Name|Beschreibung|
-|`CMFCPrintPreviewToolBar::GetThisClass`|Durch das Framework verwendet wird, einen Zeiger zum Abrufen der [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md) -Objekt, das diesem Klassentyp zugeordnet ist.|
+|`CMFCPrintPreviewToolBar::GetThisClass`|Wird vom Framework verwendet, um einen Zeiger auf das [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md) -Objekt abzurufen, das diesem Klassentyp zugeordnet ist.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -50,17 +48,17 @@ class CMFCPrintPreviewToolBar : public CMFCToolBar
 
 [CPane](../../mfc/reference/cpane-class.md)
 
-[CMFCBaseToolBar](../../mfc/reference/cmfcbasetoolbar-class.md)
+[Cmfcbasetoolbar](../../mfc/reference/cmfcbasetoolbar-class.md)
 
 [CMFCToolBar](../../mfc/reference/cmfctoolbar-class.md)
 
-[CMFCPrintPreviewToolBar](../../mfc/reference/cmfcprintpreviewtoolbar-class.md)
+[Cmfcprintpreviewtoolbar](../../mfc/reference/cmfcprintpreviewtoolbar-class.md)
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** afxpreviewviewex.h
+**Header:** afxpreviewviewex. h
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
+[Hierarchie Diagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)

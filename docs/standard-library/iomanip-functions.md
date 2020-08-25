@@ -26,23 +26,28 @@ helpviewer_keywords:
 - std::setiosflags [C++]
 - std::setprecision [C++]
 - std::setw [C++]
-ms.openlocfilehash: f4ef061e49bda027b0a8a65449c7c71cd765dcf1
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: f540b311cafd59935a9cf1e521d3dbd558f59673
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87228244"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845756"
 ---
 # <a name="ltiomanipgt-functions"></a>&lt;iomanip&gt;-Funktionen
 
-||||
-|-|-|-|
-|[get_money](#iomanip_get_money)|[get_time](#iomanip_get_time)|[put_money](#iomanip_put_money)|
-|[put_time](#iomanip_put_time)|[notiert](#quoted)|[resetiosflags](#resetiosflags)|
-|[setbase](#setbase)|[setfill](#setfill)|[setiosflags](#setiosflags)|
-|[setprecision](#setprecision)|[setw](#setw)|
+[get_money](#iomanip_get_money)\
+[get_time](#iomanip_get_time)\
+[put_money](#iomanip_put_money)\
+[put_time](#iomanip_put_time)\
+[notiert](#quoted)\
+[resetiosflags](#resetiosflags)\
+[setbase](#setbase)\
+[setfill](#setfill)\
+[setiosflags](#setiosflags)\
+[setprecision](#setprecision)\
+[setw](#setw)
 
-## <a name="get_money"></a><a name="iomanip_get_money"></a>get_money
+## <a name="get_money"></a><a name="iomanip_get_money"></a> get_money
 
 Extrahiert mithilfe des gewünschten Formats einen Währungswert aus einem Stream, und gibt den Wert in einem Parameter zurück.
 
@@ -63,9 +68,9 @@ Wenn **`true`** , verwenden Sie das internationale Format. Der Standardwert ist 
 
 Der Manipulator gibt ein Objekt zurück, das beim Extrahieren aus dem Stream sich `str` als verhält, `formatted input function` das die-Member-Funktion für das Gebiets Schema Element aufruft `get` , das `money_get` zugeordnet `str` ist, und verwendet *use_intl* , um das internationale Format anzugeben. Bei erfolgreicher Ausführung speichert der-Befehl den extrahierten monetären Wert in der *Summe* . Dann gibt der Manipulator `str` zurück.
 
-`Money`muss vom Typ **`long double`** oder einer Instanziierung von `basic_string` mit denselben Element-und Merkmale-Parametern wie sein `str` .
+`Money` muss vom Typ **`long double`** oder einer Instanziierung von `basic_string` mit denselben Element-und Merkmale-Parametern wie sein `str` .
 
-## <a name="get_time"></a><a name="iomanip_get_time"></a>get_time
+## <a name="get_time"></a><a name="iomanip_get_time"></a> get_time
 
 Extrahiert einen Zeitwert mithilfe eines gewünschten Formats aus einem Stream. Gibt den Wert als Zeitstruktur in einem Parameter zurück.
 
@@ -86,7 +91,7 @@ Das gewünschte Format, das Sie verwenden, um den Zeitwert zu erhalten.
 
 Der Manipulator gibt ein Objekt zurück, das sich, wenn es aus dem Stream `str` extrahiert wurde, wie eine `formatted input function` verhält; diese ruft die Memberfunktion `get` für das zu `str` gehörige Gebietsschemafacet `time_get` auf, um mithilfe von `tptr`die Zeitstruktur und mithilfe von `fmt` den Anfang der mit NULL endenden Formatzeichenfolgen anzugeben. Bei Erfolg speichert der Aufruf den zu jedem extrahierten Zeitfeld gehörigen Wert in der Zeitstruktur. Dann gibt der Manipulator `str` zurück.
 
-## <a name="put_money"></a><a name="iomanip_put_money"></a>put_money
+## <a name="put_money"></a><a name="iomanip_put_money"></a> put_money
 
 Fügt einen Währungswert mithilfe des gewünschten Formats in einen Stream ein.
 
@@ -111,9 +116,9 @@ Gibt `str`zurück.
 
 Der Manipulator gibt ein Objekt zurück, das sich, wenn es in den Stream `str` eingefügt wurde, wie eine formatierte Ausgabefunktion verhält; diese ruft die Memberfunktion `put` für das zu `str` gehörige Gebietsschemafacet `money_put` auf. Bei erfolgreicher Ausführung fügt der-Befehl `amount` entsprechend formatiert ein und verwendet *use_intl* , um das internationale Format und `str.fill()` als Fill-Element anzugeben. Dann gibt der Manipulator `str` zurück.
 
-`Money`muss vom Typ **`long double`** oder einer Instanziierung von `basic_string` mit denselben Element-und Merkmale-Parametern wie sein `str` .
+`Money` muss vom Typ **`long double`** oder einer Instanziierung von `basic_string` mit denselben Element-und Merkmale-Parametern wie sein `str` .
 
-## <a name="put_time"></a><a name="iomanip_put_time"></a>put_time
+## <a name="put_time"></a><a name="iomanip_put_time"></a> put_time
 
 Schreibt einen Zeitwert mithilfe eines angegebenen Formats von einer Zeitstruktur in einen Stream.
 
@@ -134,7 +139,7 @@ Das gewünschte Format, das Sie verwenden, um den Zeitwert zu schreiben.
 
 Der Manipulator gibt ein Objekt zurück, das sich, wenn es in den Stream `str` eingefügt wird, wie eine `formatted output function` verhält. Die Ausgabefunktion ruft für das zu `str` gehörige Gebietsschema `time_put` die Memberfunktion `put` auf. Die Output-Funktion verwendet *time_ptr* , um die Zeitstruktur anzugeben, und *time_format* , um den Anfang einer null-terminierten Format Zeichenfolge anzugeben. Bei Erfolg fügt der Aufruf normalen Text aus der Formatzeichenfolge und konvertierte Werte aus der Zeitstruktur ein. Dann gibt der Manipulator `str` zurück.
 
-## <a name="quoted"></a><a name="quoted"></a>notiert
+## <a name="quoted"></a><a name="quoted"></a> notiert
 
 **(Neu in C++14)** Ein iostream-Manipulator, der mithilfe der Operatoren „>>“ und „<<“ praktisches Roundtripping von Zeichenfolgen in und aus Streams ermöglicht.
 
@@ -301,7 +306,7 @@ Press Enter to exit
 */
 ```
 
-## <a name="resetiosflags"></a><a name="resetiosflags"></a>resetiosflags
+## <a name="resetiosflags"></a><a name="resetiosflags"></a> resetiosflags
 
 Löscht die angegebenen Flags.
 
@@ -322,7 +327,7 @@ Der Manipulator gibt ein Objekt zurück, das beim Extrahieren aus oder Einfügen
 
 Unter [setw](../standard-library/iomanip-functions.md#setw) finden Sie ein Beispiel für die Verwendung von `resetiosflags`.
 
-## <a name="setbase"></a><a name="setbase"></a>setbase
+## <a name="setbase"></a><a name="setbase"></a> setbase
 
 Legt die Basis für Ganzzahlen fest.
 
@@ -351,7 +356,7 @@ Der Manipulator gibt ein Objekt zurück, das beim Extrahieren aus oder Einfügen
 
 Unter [setw](../standard-library/iomanip-functions.md#setw) finden Sie ein Beispiel für die Verwendung von `setbase`.
 
-## <a name="setfill"></a><a name="setfill"></a>setfill
+## <a name="setfill"></a><a name="setfill"></a> setfill
 
 Legt das zum Auffüllen in einer rechts ausgerichteten Anzeige verwendete Zeichen fest.
 
@@ -373,7 +378,7 @@ Der Vorlagen Manipulator gibt ein Objekt zurück, das beim Extrahieren aus oder 
 
 Unter [setw](../standard-library/iomanip-functions.md#setw) finden Sie ein Beispiel für die Verwendung von `setfill`.
 
-## <a name="setiosflags"></a><a name="setiosflags"></a>setiosflags
+## <a name="setiosflags"></a><a name="setiosflags"></a> setiosflags
 
 Legt die angegebenen Flags fest.
 
@@ -394,7 +399,7 @@ Der Manipulator gibt ein Objekt zurück, das beim Extrahieren aus oder Einfügen
 
 Unter [setw](../standard-library/iomanip-functions.md#setw) finden Sie ein Beispiel für die Verwendung von `setiosflags`.
 
-## <a name="setprecision"></a><a name="setprecision"></a>setprecision
+## <a name="setprecision"></a><a name="setprecision"></a> setprecision
 
 Legt die Genauigkeit für Gleitkommawerte fest.
 
@@ -415,7 +420,7 @@ Der Manipulator gibt ein Objekt zurück, das beim Extrahieren aus oder Einfügen
 
 Unter [setw](../standard-library/iomanip-functions.md#setw) finden Sie ein Beispiel für die Verwendung von `setprecision`.
 
-## <a name="setw"></a><a name="setw"></a>setw
+## <a name="setw"></a><a name="setw"></a> setw
 
 Gibt die Breite des Anzeigefelds für das nächste Element im Stream an.
 
@@ -651,6 +656,6 @@ l4 = 4096
 l5 = 65536
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<iomanip>](../standard-library/iomanip.md)

@@ -24,12 +24,12 @@ helpviewer_keywords:
 - CMFCToolBarsCustomizeDialog [MFC], OnInitDialog
 - CMFCToolBarsCustomizeDialog [MFC], PostNcDestroy
 ms.assetid: 78e2cddd-4f13-4097-afc3-1ad646a113f1
-ms.openlocfilehash: fc313a5cb6e9ce6ebd06ed0432f99203a0f1ff4d
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: a61cefa7f844062fcca42711ce6515180066b919
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182914"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88839100"
 ---
 # <a name="cmfctoolbarscustomizedialog-class"></a>Cmfctoolbarscustomizedialog-Klasse
 
@@ -47,21 +47,21 @@ class CMFCToolBarsCustomizeDialog : public CPropertySheet
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[Cmfctoolbarscustomizedialog:: cmfctoolbarscustomizedialog](#cmfctoolbarscustomizedialog)|Erstellt ein `CMFCToolBarsCustomizeDialog`-Objekt.|
 |`CMFCToolBarsCustomizeDialog::~CMFCToolBarsCustomizeDialog`|Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[Cmfctoolbarscustomizedialog:: AddButton](#addbutton)|Fügt eine Symbolleisten-Schaltfläche in die Liste der Befehle auf der Seite **Befehle** ein.|
 |[Cmfctoolbarscustomizedialog:: AddMenu](#addmenu)|Lädt ein Menü aus den Ressourcen und ruft [cmfctoolbarscustomizedialog:: addmenucommands](#addmenucommands) auf, um dieses Menü der Liste der Befehle auf der Seite **Befehle** hinzuzufügen.|
 |[Cmfctoolbarscustomizedialog:: addmenucommands](#addmenucommands)|Lädt ein Menü aus den Ressourcen und ruft [cmfctoolbarscustomizedialog:: addmenucommands](#addmenucommands) auf, um dieses Menü der Liste der Befehle auf der Seite **Befehle** hinzuzufügen.|
 |[Cmfctoolbarscustomizedialog:: AddToolBar](#addtoolbar)|Lädt eine Symbolleiste aus den Ressourcen. Anschließend wird für jeden Befehl im Menü die [cmfctoolbarscustomizedialog:: AddButton](#addbutton) -Methode aufgerufen, um eine Schaltfläche in der Liste der Befehle auf der Seite **Befehle** in der angegebenen Kategorie einzufügen.|
 |[Cmfctoolbarscustomizedialog:: Create](#create)|Zeigt das Dialogfeld **Anpassung** an.|
-|`CMFCToolBarsCustomizeDialog::EnableTools`|Für die zukünftige Verwendung reserviert.|
+|`CMFCToolBarsCustomizeDialog::EnableTools`|Für zukünftige Verwendung reserviert.|
 |[Cmfctoolbarscustomizedialog:: enableuserdefinedtoolbars](#enableuserdefinedtoolbars)|Aktiviert oder deaktiviert das Erstellen neuer Symbolleisten mithilfe des Dialog Felds **Anpassen** .|
 |[Cmfctoolbarscustomizedialog:: fillallcommandslist](#fillallcommandslist)|Füllt das angegebene- `CListBox` Objekt mit den Befehlen in der Kategorie **alle Befehle** auf.|
 |[Cmfctoolbarscustomizedialog:: fillkategoriescombobox](#fillcategoriescombobox)|Füllt das angegebene- `CComboBox` Objekt mit dem Namen jeder Befehls Kategorie im Dialogfeld **Anpassen** auf.|
@@ -80,7 +80,7 @@ class CMFCToolBarsCustomizeDialog : public CPropertySheet
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[Cmfctoolbarscustomizedialog:: checktoolsgültigkeit](#checktoolsvalidity)|Wird von Framework aufgerufen, um zu bestimmen, ob die Liste der benutzerdefinierten Tools gültig ist.|
 |[Cmfctoolbarscustomizedialog:: onafterchangetool](#onafterchangetool)|Wird von Framework aufgerufen, wenn sich die Eigenschaften eines benutzerdefinierten Tools ändern.|
@@ -116,7 +116,7 @@ Das folgende Beispiel veranschaulicht die Verwendung verschiedener Methoden in d
 
 **Header:** afxtoolbarscustomizedialog. h
 
-## <a name="cmfctoolbarscustomizedialogaddbutton"></a><a name="addbutton"></a>Cmfctoolbarscustomizedialog:: AddButton
+## <a name="cmfctoolbarscustomizedialogaddbutton"></a><a name="addbutton"></a> Cmfctoolbarscustomizedialog:: AddButton
 
 Fügt eine Symbolleisten-Schaltfläche in die Liste der Befehle auf der Seite **Befehle** ein.
 
@@ -162,7 +162,7 @@ Im folgenden Beispiel wird veranschaulicht, wie die- `AddButton` Methode der-Kla
 
 [!code-cpp[NVC_MFC_Slider#1](../../mfc/reference/codesnippet/cpp/cmfctoolbarscustomizedialog-class_2.cpp)]
 
-## <a name="cmfctoolbarscustomizedialogaddmenu"></a><a name="addmenu"></a>Cmfctoolbarscustomizedialog:: AddMenu
+## <a name="cmfctoolbarscustomizedialogaddmenu"></a><a name="addmenu"></a> Cmfctoolbarscustomizedialog:: AddMenu
 
 Lädt ein Menü aus den Ressourcen und ruft [cmfctoolbarscustomizedialog:: addmenucommands](#addmenucommands) auf, um dieses Menü der Liste der Befehle auf der Seite **Befehle** hinzuzufügen.
 
@@ -183,7 +183,7 @@ TRUE, wenn ein Menü erfolgreich hinzugefügt wurde. andernfalls false.
 
 Im-Befehl `AddMenuCommands` ist *bpopup* auf false fest. Folglich fügt diese Methode keine Menü Elemente hinzu, die Untermenüs zur Liste der Befehle enthalten. Diese Methode fügt die Menü Elemente in den Untermenüs der Liste der Befehle hinzu.
 
-## <a name="cmfctoolbarscustomizedialogaddmenucommands"></a><a name="addmenucommands"></a>Cmfctoolbarscustomizedialog:: addmenucommands
+## <a name="cmfctoolbarscustomizedialogaddmenucommands"></a><a name="addmenucommands"></a> Cmfctoolbarscustomizedialog:: addmenucommands
 
 Fügt der Liste der Befehle auf der Seite **Befehle** Elemente hinzu, um alle Elemente im angegebenen Menü darzustellen.
 
@@ -215,7 +215,7 @@ Die- `AddMenuCommands` Methode durchläuft alle Menü Elemente von *pmenu*. Für
 
 Wenn *bpopup* auf true festgelegt ist, erstellt diese Methode für jedes Menü Element, das ein Untermenü enthält, ein [cmfctoolbarmenubutton-Klassen](../../mfc/reference/cmfctoolbarmenubutton-class.md) Objekt und fügt es in die Liste der Befehle ein, indem aufgerufen wird `AddButton` . Andernfalls werden Menü Elemente, die Untermenüs enthalten, nicht in der Liste der Befehle angezeigt. Wenn in beiden Fällen `AddMenuCommands` ein Menü Element mit einem Untermenü gefunden wird, ruft es sich selbst rekursiv auf und übergibt einen Zeiger auf das Untermenü als *pmenu* -Parameter und fügt die Bezeichnung des Untermenüs an *lpszmenupath*an.
 
-## <a name="cmfctoolbarscustomizedialogaddtoolbar"></a><a name="addtoolbar"></a>Cmfctoolbarscustomizedialog:: AddToolBar
+## <a name="cmfctoolbarscustomizedialogaddtoolbar"></a><a name="addtoolbar"></a> Cmfctoolbarscustomizedialog:: AddToolBar
 
 Lädt eine Symbolleiste aus den Ressourcen. Anschließend wird für jeden Befehl im Menü die [cmfctoolbarscustomizedialog:: AddButton](#addbutton) -Methode aufgerufen, um eine Schaltfläche in der Liste der Befehle auf der Seite **Befehle** in der angegebenen Kategorie einzufügen.
 
@@ -254,7 +254,7 @@ Im folgenden Beispiel wird veranschaulicht, wie die- `AddToolBar` Methode in der
 
 Das Steuerelement, das zum Darstellen der einzelnen Befehle verwendet wird, ist ein [cmfctoolbarbutton-Klassen](../../mfc/reference/cmfctoolbarbutton-class.md) Objekt. Nachdem Sie die Symbolleiste hinzugefügt haben, können Sie die Schaltfläche durch ein Steuerelement eines abgeleiteten Typs ersetzen, indem Sie [cmfctoolbarscustomizedialog:: replacebutton](#replacebutton)aufrufen.
 
-## <a name="cmfctoolbarscustomizedialogchecktoolsvalidity"></a><a name="checktoolsvalidity"></a>Cmfctoolbarscustomizedialog:: checktoolsgültigkeit
+## <a name="cmfctoolbarscustomizedialogchecktoolsvalidity"></a><a name="checktoolsvalidity"></a> Cmfctoolbarscustomizedialog:: checktoolsgültigkeit
 
 Überprüft die Gültigkeit der Liste der Benutzer Tools.
 
@@ -275,9 +275,9 @@ Gibt true zurück, wenn die Liste der benutzerdefinierten Tools gültig ist. and
 
 Das Framework ruft diese Methode auf, um die Gültigkeit von Objekten zu überprüfen, die benutzerdefinierte Tools darstellen, die von [cmfctoolbarscustomizedialog:: checktoolsgültigkeit](#checktoolsvalidity)zurückgegeben werden.
 
-Überschreiben `CheckToolsValidity` Sie die-Methode in einer Klasse, die von abgeleitet `CMFCToolBarsCustomizeDialog` ist, wenn Sie die Benutzer Tools überprüfen möchten, bevor der Benutzer das Dialogfeld schließt. Wenn diese Methode false zurückgibt, wenn der Benutzer auf die Schaltfläche **Schließen** in der oberen rechten Ecke des Dialog Felds oder auf die Schaltfläche **Schließen** in der unteren rechten Ecke des Dialog Felds klickt, wird im Dialogfeld anstelle von schließen die Registerkarte **Tools** angezeigt. Wenn diese Methode false zurückgibt, wenn der Benutzer auf eine Registerkarte klickt, um von der Registerkarte " **Tools** " zu navigieren, erfolgt keine Navigation. Sie sollten ein entsprechendes Meldungs Feld anzeigen, um den Benutzer über das Problem zu informieren, das zu einem Fehler bei der Validierung geführt hat.
+Überschreiben `CheckToolsValidity` Sie die-Methode in einer Klasse, die von abgeleitet `CMFCToolBarsCustomizeDialog`  ist, wenn Sie die Benutzer Tools überprüfen möchten, bevor der Benutzer das Dialogfeld schließt. Wenn diese Methode false zurückgibt, wenn der Benutzer auf die Schaltfläche **Schließen** in der oberen rechten Ecke des Dialog Felds oder auf die Schaltfläche **Schließen** in der unteren rechten Ecke des Dialog Felds klickt, wird im Dialogfeld anstelle von schließen die Registerkarte **Tools** angezeigt. Wenn diese Methode false zurückgibt, wenn der Benutzer auf eine Registerkarte klickt, um von der Registerkarte " **Tools** " zu navigieren, erfolgt keine Navigation. Sie sollten ein entsprechendes Meldungs Feld anzeigen, um den Benutzer über das Problem zu informieren, das zu einem Fehler bei der Validierung geführt hat.
 
-## <a name="cmfctoolbarscustomizedialogcmfctoolbarscustomizedialog"></a><a name="cmfctoolbarscustomizedialog"></a>Cmfctoolbarscustomizedialog:: cmfctoolbarscustomizedialog
+## <a name="cmfctoolbarscustomizedialogcmfctoolbarscustomizedialog"></a><a name="cmfctoolbarscustomizedialog"></a> Cmfctoolbarscustomizedialog:: cmfctoolbarscustomizedialog
 
 Erstellt ein `CMFCToolBarsCustomizeDialog`-Objekt.
 
@@ -331,7 +331,7 @@ Im folgenden Beispiel wird veranschaulicht, wie ein Objekt der- `CMFCToolBarsCus
 
 [!code-cpp[NVC_MFC_CustomPages#3](../../mfc/reference/codesnippet/cpp/cmfctoolbarscustomizedialog-class_4.cpp)]
 
-## <a name="cmfctoolbarscustomizedialogcreate"></a><a name="create"></a>Cmfctoolbarscustomizedialog:: Create
+## <a name="cmfctoolbarscustomizedialogcreate"></a><a name="create"></a> Cmfctoolbarscustomizedialog:: Create
 
 Zeigt das Dialogfeld **Anpassung** an.
 
@@ -347,7 +347,7 @@ TRUE, wenn das Anpassungs Eigenschaften Blatt erfolgreich erstellt wurde. andern
 
 Die- `Create` Methode wird erst aufgerufen, nachdem Sie die-Klasse vollständig initialisiert haben.
 
-## <a name="cmfctoolbarscustomizedialogenableuserdefinedtoolbars"></a><a name="enableuserdefinedtoolbars"></a>Cmfctoolbarscustomizedialog:: enableuserdefinedtoolbars
+## <a name="cmfctoolbarscustomizedialogenableuserdefinedtoolbars"></a><a name="enableuserdefinedtoolbars"></a> Cmfctoolbarscustomizedialog:: enableuserdefinedtoolbars
 
 Aktiviert oder deaktiviert das Erstellen neuer Symbolleisten mithilfe des Dialog Felds **Anpassen** .
 
@@ -366,7 +366,7 @@ Wenn *benable* auf true festgelegt ist, werden die Schaltflächen **neu**, **Umb
 
 Standardmäßig werden diese Schaltflächen nicht angezeigt, und der Benutzer kann keine neuen Symbolleisten definieren, wenn Sie den *Wert* false haben.
 
-## <a name="cmfctoolbarscustomizedialogfillallcommandslist"></a><a name="fillallcommandslist"></a>Cmfctoolbarscustomizedialog:: fillallcommandslist
+## <a name="cmfctoolbarscustomizedialogfillallcommandslist"></a><a name="fillallcommandslist"></a> Cmfctoolbarscustomizedialog:: fillallcommandslist
 
 Füllt das angegebene- `CListBox` Objekt mit den Befehlen in der Kategorie **alle Befehle** auf.
 
@@ -387,7 +387,7 @@ Diese Methode löscht den Inhalt des bereitgestellten- `CListBox` Objekts, bevor
 
 Die- `CMFCMousePropertyPage` Klasse verwendet diese Methode, um das Doppelklick Ereignis-Listenfeld aufzufüllen.
 
-## <a name="cmfctoolbarscustomizedialogfillcategoriescombobox"></a><a name="fillcategoriescombobox"></a>Cmfctoolbarscustomizedialog:: fillkategoriescombobox
+## <a name="cmfctoolbarscustomizedialogfillcategoriescombobox"></a><a name="fillcategoriescombobox"></a> Cmfctoolbarscustomizedialog:: fillkategoriescombobox
 
 Füllt das angegebene- `CComboBox` Objekt mit dem Namen jeder Befehls Kategorie im Dialogfeld **Anpassen** auf.
 
@@ -415,7 +415,7 @@ Sie können neue Befehls Kategorien hinzufügen, indem Sie die [cmfctoolbarscust
 
 Die `CMFCToolBarsKeyboardPropertyPage` -Klasse und die- `CMFCKeyMapDialog` Klasse verwenden diese Methode zum Kategorisieren von Tastatur Zuordnungen.
 
-## <a name="cmfctoolbarscustomizedialogfillcategorieslistbox"></a><a name="fillcategorieslistbox"></a>Cmfctoolbarscustomizedialog:: fillcategorieslistbox
+## <a name="cmfctoolbarscustomizedialogfillcategorieslistbox"></a><a name="fillcategorieslistbox"></a> Cmfctoolbarscustomizedialog:: fillcategorieslistbox
 
 Füllt das angegebene- `CListBox` Objekt mit dem Namen jeder Befehls Kategorie im Dialogfeld **Anpassen** auf.
 
@@ -443,7 +443,7 @@ Sie können neue Befehls Kategorien hinzufügen, indem Sie die [cmfctoolbarscust
 
 Die- `CMFCToolBarsCommandsPropertyPage` Klasse verwendet diese Methode, um die Liste der Befehle anzuzeigen, die jeder Befehls Kategorie zugeordnet sind.
 
-## <a name="cmfctoolbarscustomizedialoggetcommandname"></a><a name="getcommandname"></a>Cmfctoolbarscustomizedialog:: getcommandname
+## <a name="cmfctoolbarscustomizedialoggetcommandname"></a><a name="getcommandname"></a> Cmfctoolbarscustomizedialog:: getcommandname
 
 Ruft den Namen ab, der der angegebenen Befehls-ID zugeordnet ist.
 
@@ -460,7 +460,7 @@ in Die ID des abzurufenden Befehls.
 
 Der Name, der der angegebenen Befehls-ID zugeordnet ist, oder NULL, wenn der Befehl nicht vorhanden ist.
 
-## <a name="cmfctoolbarscustomizedialoggetcountincategory"></a><a name="getcountincategory"></a>Cmfctoolbarscustomizedialog:: getzählcategory
+## <a name="cmfctoolbarscustomizedialoggetcountincategory"></a><a name="getcountincategory"></a> Cmfctoolbarscustomizedialog:: getzählcategory
 
 Ruft die Anzahl der Elemente in der angegebenen Liste ab, die über eine angegebene Text Bezeichnung verfügen.
 
@@ -486,7 +486,7 @@ Die Anzahl der Elemente in der bereitgestellten Liste, deren Text Bezeichnung *l
 
 Jedes Element in der Liste der bereitgestellten Objekte muss vom Typ sein `CMFCToolBarButton` . Diese Methode vergleicht *lpszitemname* mit dem [cmfctoolbarbutton:: m_strText](../../mfc/reference/cmfctoolbarbutton-class.md#m_strtext) -Datenmember.
 
-## <a name="cmfctoolbarscustomizedialoggetflags"></a><a name="getflags"></a>Cmfctoolbarscustomizedialog:: GetFlags
+## <a name="cmfctoolbarscustomizedialoggetflags"></a><a name="getflags"></a> Cmfctoolbarscustomizedialog:: GetFlags
 
 Ruft den Satz von Flags ab, die das Verhalten des Dialog Felds beeinflussen.
 
@@ -502,7 +502,7 @@ Der Satz von Flags, die das Verhalten des Dialog Felds beeinflussen.
 
 Diese Methode ruft den Wert des *uiflags* -Parameters ab, der an den-Konstruktor übergeben wird. Der Rückgabewert kann einen oder mehrere der folgenden Werte aufweisen:
 
-|||
+|Name|Beschreibung|
 |-|-|
 |AFX_CUSTOMIZE_MENU_SHADOWS|Ermöglicht es dem Benutzer, die Schatten Darstellung des Menüs anzugeben.  |
 |AFX_CUSTOMIZE_TEXT_LABELS|Ermöglicht es dem Benutzer anzugeben, ob Text Bezeichnungen unterhalb der Symbolleisten-Schaltflächen Bilder angezeigt werden.  |
@@ -515,7 +515,7 @@ Diese Methode ruft den Wert des *uiflags* -Parameters ab, der an den-Konstruktor
 
 Weitere Informationen zum WS_EX_CONTEXTHELP visuellen Stil finden Sie unter [Erweiterte Fenster Stile](../../mfc/reference/styles-used-by-mfc.md#extended-window-styles).
 
-## <a name="cmfctoolbarscustomizedialogonafterchangetool"></a><a name="onafterchangetool"></a>Cmfctoolbarscustomizedialog:: onafterchangetool
+## <a name="cmfctoolbarscustomizedialogonafterchangetool"></a><a name="onafterchangetool"></a> Cmfctoolbarscustomizedialog:: onafterchangetool
 
 Reagiert auf eine Änderung in einem Benutzer Tool unmittelbar nach dem auftreten.
 
@@ -530,9 +530,9 @@ virtual void OnAfterChangeTool(CUserTool* pSelTool);
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode wird vom Framework aufgerufen, wenn ein Benutzer die Eigenschaften eines benutzerdefinierten Tools ändert. Bei der Standardimplementierung wird keine Aktion ausgeführt. Überschreiben Sie diese Methode in einer von abgeleiteten Klasse `CMFCToolBarsCustomizeDialog` , um die Verarbeitung nach einer Änderung an einem Benutzer Tool auszuführen.
+Diese Methode wird vom Framework aufgerufen, wenn ein Benutzer die Eigenschaften eines benutzerdefinierten Tools ändert. Bei der Standardimplementierung wird keine Aktion ausgeführt. Überschreiben Sie diese Methode in einer von abgeleiteten Klasse `CMFCToolBarsCustomizeDialog`  , um die Verarbeitung nach einer Änderung an einem Benutzer Tool auszuführen.
 
-## <a name="cmfctoolbarscustomizedialogonassignkey"></a><a name="onassignkey"></a>Cmfctoolbarscustomizedialog:: onzuzutragkey
+## <a name="cmfctoolbarscustomizedialogonassignkey"></a><a name="onassignkey"></a> Cmfctoolbarscustomizedialog:: onzuzutragkey
 
 Überprüft Tastenkombinationen, wenn Sie von einem Benutzer definiert werden.
 
@@ -553,7 +553,7 @@ TRUE, wenn der Schlüssel zugewiesen werden kann, oder false, wenn der Schlüsse
 
 Überschreiben Sie diese Methode in einer abgeleiteten Klasse, um zusätzliche Verarbeitungsschritte auszuführen, wenn ein Benutzer eine neue Tastenkombination zuweist, oder um Tastenkombinationen zu überprüfen, die vom Benutzer definiert werden. Um zu verhindern, dass eine Verknüpfung zugewiesen wird, geben Sie false zurück. Sie sollten auch ein Meldungs Feld anzeigen oder den Benutzer über den Grund informieren, warum die Tastenkombination abgelehnt wurde.
 
-## <a name="cmfctoolbarscustomizedialogonbeforechangetool"></a><a name="onbeforechangetool"></a>Cmfctoolbarscustomizedialog:: onbeforechangetool
+## <a name="cmfctoolbarscustomizedialogonbeforechangetool"></a><a name="onbeforechangetool"></a> Cmfctoolbarscustomizedialog:: onbeforechangetool
 
 Führt eine benutzerdefinierte Verarbeitung durch, wenn eine Änderung an einem Benutzer Tool erfolgt, wenn der Benutzer eine Änderung anwendet.
 
@@ -570,7 +570,7 @@ virtual void OnBeforeChangeTool(CUserTool* pSelTool);
 
 Diese Methode wird von Framework aufgerufen, wenn sich die Eigenschaften eines benutzerdefinierten Tools ändern. Bei der Standardimplementierung wird keine Aktion ausgeführt. Überschreiben `OnBeforeChangeTool` Sie die-Methode in einer Klasse, die von abgeleitet ist `CMFCToolBarsCustomizeDialog` , wenn Sie die Verarbeitung durchführen möchten, bevor eine Änderung an einem *pSelTool* Benutzer Tool stattfindet
 
-## <a name="cmfctoolbarscustomizedialogonedittoolbarmenuimage"></a><a name="onedittoolbarmenuimage"></a>Cmfctoolbarscustomizedialog:: onedittoolbarmenuimage
+## <a name="cmfctoolbarscustomizedialogonedittoolbarmenuimage"></a><a name="onedittoolbarmenuimage"></a> Cmfctoolbarscustomizedialog:: onedittoolbarmenuimage
 
 Startet einen Bild-Editor, damit ein Benutzer eine Symbolleisten-Schaltfläche oder ein Menü Element Symbol anpassen kann.
 
@@ -600,7 +600,7 @@ TRUE, wenn ein Commit für eine Änderung ausgeführt wird. andernfalls false. D
 
 Diese Methode wird vom Framework aufgerufen, wenn der Benutzer den Bild-Editor ausführt. Die Standard Implementierung zeigt das Dialogfeld [cmfcimageeditordialog-Klasse](../../mfc/reference/cmfcimageeditordialog-class.md) an. `OnEditToolbarMenuImage`Überschreiben in einer abgeleiteten Klasse, um einen benutzerdefinierten Bild-Editor zu verwenden.
 
-## <a name="cmfctoolbarscustomizedialogoninitdialog"></a><a name="oninitdialog"></a>Cmfctoolbarscustomizedialog:: OnInitDialog
+## <a name="cmfctoolbarscustomizedialogoninitdialog"></a><a name="oninitdialog"></a> Cmfctoolbarscustomizedialog:: OnInitDialog
 
 Überschreibt, um die Eigenschaften Blatt Initialisierung zu erweitern.
 
@@ -616,7 +616,7 @@ Das Ergebnis des Aufrufs der [CPropertySheet:: OnInitDialog](../../mfc/reference
 
 Diese Methode erweitert die Basisklassen Implementierung, [CPropertySheet:: OnInitDialog](../../mfc/reference/cpropertysheet-class.md#oninitdialog), durch Anzeigen der Schaltfläche **Schließen** , indem Sie sicherstellt, dass das Dialogfeld der aktuellen Bildschirmgröße entspricht, und indem Sie die Schaltfläche **Hilfe** in die linke untere Ecke des Dialog Felds verschieben.
 
-## <a name="cmfctoolbarscustomizedialogoninittoolspage"></a><a name="oninittoolspage"></a>Cmfctoolbarscustomizedialog:: oninittoolspage
+## <a name="cmfctoolbarscustomizedialogoninittoolspage"></a><a name="oninittoolspage"></a> Cmfctoolbarscustomizedialog:: oninittoolspage
 
 Verarbeitet die Benachrichtigung vom Framework, dass die **Seite Extras** gerade initialisiert werden soll.
 
@@ -628,7 +628,7 @@ virtual void OnInitToolsPage();
 
 Bei der Standardimplementierung wird keine Aktion ausgeführt. Überschreiben Sie diese Methode in einer abgeleiteten Klasse, um diese Benachrichtigung zu verarbeiten.
 
-## <a name="cmfctoolbarscustomizedialogpostncdestroy"></a><a name="postncdestroy"></a>Cmfctoolbarscustomizedialog::P ostncdestroy
+## <a name="cmfctoolbarscustomizedialogpostncdestroy"></a><a name="postncdestroy"></a> Cmfctoolbarscustomizedialog::P ostncdestroy
 
 Wird von Framework aufgerufen, nachdem das Fenster zerstört wurde.
 
@@ -642,7 +642,7 @@ Diese Methode erweitert die Basisklassen Implementierung, `CPropertySheet::PostN
 
 Die [cmfctoolbarscustomizedialog:: Create](#create) -Methode versetzt die Anwendung in einen speziellen Modus, durch den der Benutzer auf Anpassungs Aufgaben beschränkt wird.
 
-## <a name="cmfctoolbarscustomizedialogremovebutton"></a><a name="removebutton"></a>Cmfctoolbarscustomizedialog:: RemoveButton
+## <a name="cmfctoolbarscustomizedialogremovebutton"></a><a name="removebutton"></a> Cmfctoolbarscustomizedialog:: RemoveButton
 
 Entfernt die Schaltfläche mit der angegebenen Befehls-ID aus der angegebenen Kategorie oder aus allen Kategorien.
 
@@ -675,7 +675,7 @@ Der null basierte Index der entfernten Schaltfläche oder-1, wenn die angegebene
 
 Um eine Schaltfläche aus allen Kategorien zu entfernen, müssen Sie die erste Überladung dieser Methode aufrufen und *uicategoryid* auf-1 festlegen.
 
-## <a name="cmfctoolbarscustomizedialogrenamecategory"></a><a name="renamecategory"></a>Cmfctoolbarscustomizedialog:: renamecategory
+## <a name="cmfctoolbarscustomizedialogrenamecategory"></a><a name="renamecategory"></a> Cmfctoolbarscustomizedialog:: renamecategory
 
 Benennt eine Kategorie im Listenfeld der Kategorien auf der Seite **Befehle** um.
 
@@ -701,7 +701,7 @@ TRUE, wenn die Methode erfolgreich war. andernfalls false.
 
 Der Kategoriename muss eindeutig sein.
 
-## <a name="cmfctoolbarscustomizedialogreplacebutton"></a><a name="replacebutton"></a>Cmfctoolbarscustomizedialog:: replacebutton
+## <a name="cmfctoolbarscustomizedialogreplacebutton"></a><a name="replacebutton"></a> Cmfctoolbarscustomizedialog:: replacebutton
 
 Ersetzt eine Symbolleisten-Schaltfläche im Listenfeld der Befehle auf der Seite **Befehle** .
 
@@ -729,7 +729,7 @@ Im folgenden Beispiel wird veranschaulicht, wie die- `ReplaceButton` Methode in 
 
 [!code-cpp[NVC_MFC_VisualStudioDemo#34](../../mfc/codesnippet/cpp/cmfctoolbarscustomizedialog-class_5.cpp)]
 
-## <a name="cmfctoolbarscustomizedialogsetusercategory"></a><a name="setusercategory"></a>Cmfctoolbarscustomizedialog:: setusercategory
+## <a name="cmfctoolbarscustomizedialogsetusercategory"></a><a name="setusercategory"></a> Cmfctoolbarscustomizedialog:: setusercategory
 
 Gibt an, welche Kategorie in der Liste der Kategorien auf der Seite **Befehle** die Kategorie Benutzer ist. Sie müssen diese Funktion aufrufen, bevor Sie [cmfctoolbarscustomizedialog:: Create](#create)aufrufen.
 

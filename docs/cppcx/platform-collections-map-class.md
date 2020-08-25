@@ -15,12 +15,12 @@ f1_keywords:
 helpviewer_keywords:
 - Map Class (C++/Cx)
 ms.assetid: 2b8cf968-1167-4898-a149-1195b32c1785
-ms.openlocfilehash: 0ddb15507c97c0dfff48575e476b57fe91359239
-ms.sourcegitcommit: 65fead53d56d531d71be42216056aca5f44def11
+ms.openlocfilehash: 40b7d653b21cdc2b0fab4c852c9809ab1db46a12
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88610906"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88839139"
 ---
 # <a name="platformcollectionsmap-class"></a>Platform::Collections::Map-Klasse
 
@@ -41,7 +41,7 @@ ref class Map sealed;
 *Km*<br/>
 Der Typ des Schlüssels im Schlüssel-Wert-Paar.
 
-*Ramelow*<br/>
+*V*<br/>
 Der Typ des Werts im Schlüssel-Wert-Paar.
 
 *C*<br/>
@@ -49,7 +49,7 @@ Ein Typ, der ein Funktionsobjekt bereitstellt, das zwei Elementwerte als Sortier
 
 *__is_valid_winrt_type ()* Eine vom Compiler generierte Funktion, die den Typ von *K* und *V* überprüft und eine benutzerfreundliche Fehlermeldung bereitstellt, wenn der Typ nicht in der Zuordnung gespeichert werden kann.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Folgende Typen sind zulässig:
 
@@ -67,7 +67,7 @@ Die Zuordnung ist im Grunde genommen ein Wrapper für [std::map](../standard-lib
 
 Weitere Informationen finden Sie unter [Collections](../cppcx/collections-c-cx.md).
 
-### <a name="members"></a>Members
+### <a name="members"></a>Member
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
@@ -88,12 +88,11 @@ Weitere Informationen finden Sie unter [Collections](../cppcx/collections-c-cx.m
 |[Map::Remove](#remove)|Löscht das angegebene Schlüssel-Wert-Paar vom aktuellen Map-Objekt.|
 |[Map:: size](#size)|Gibt die Anzahl von Elementen im aktuellen Map-Objekt zurück.|
 
-### <a name="events"></a>Events
+### <a name="events"></a>Ereignisse
 
-|||
-|-|-|
-|Name|Beschreibung|
-|[Map:: mapchanged](#mapchanged) -Ereignis|Tritt auf, wenn sich die Map ändert.|
+| Name | Beschreibung |
+|--|--|
+| [Map:: mapchanged](#mapchanged) -Ereignis | Tritt auf, wenn sich die Map ändert. |
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -130,7 +129,7 @@ Windows::Foundation::Collections::IKeyValuePair<K, V>^>^ First();
 
 Ein Iterator, der das erste Element in der Zuordnung angibt.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Eine bequeme Möglichkeit, den von First () zurückgegebenen Iterator zu halten, besteht darin, den Rückgabewert einer Variablen zuzuweisen, die mit dem **`auto`** typableitungs Schlüsselwort deklariert wird. Beispiel: `auto x = myMap->First();`.
 
@@ -208,7 +207,7 @@ Der zum Suchen eines in der Zuordnung vorhandenen Elements verwendete Schlüssel
 
 Der Wert, der mit dem *Schlüssel*gekoppelt ist. Der Typ des Rückgabewerts ist Typname *V*.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Wenn der Schlüssel nicht vorhanden ist, wird eine [Platform:: outoeboundsexception-Ausnahme](../cppcx/platform-outofboundsexception-class.md) ausgelöst.
 
@@ -293,7 +292,7 @@ virtual property unsigned int Size;
 
 Die Anzahl von Elementen in der Zuordnung.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Auflistungen (C++/CX)](collections-c-cx.md)<br/>
 [Platform-Namespace](platform-namespace-c-cx.md)<br/>

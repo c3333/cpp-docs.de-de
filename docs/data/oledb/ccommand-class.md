@@ -49,12 +49,12 @@ helpviewer_keywords:
 - SetParameterInfo method
 - Unprepare method
 ms.assetid: 0760bfc5-b9ee-4aee-8e54-31bd78714d3a
-ms.openlocfilehash: 73b02f0ffb9d9b98a17933cc3b17c8627121e3ac
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: beabe73ff4ce0e6be8aaccfcdc636adc1ba04d5c
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87228920"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88838437"
 ---
 # <a name="ccommand-class"></a>CCommand-Klasse
 
@@ -91,20 +91,20 @@ Um einen OLE DB Befehl zu verwenden, der mehrere Ergebnisse zurückgeben kann, g
 
 ### <a name="methods"></a>Methoden
 
-|||
+| Name | Beschreibung |
 |-|-|
-|[Close](#close)|Schließt den aktuellen Befehl.|
+|[Schließen](#close)|Schließt den aktuellen Befehl.|
 |[GetNextResult](#getnextresult)|Ruft das nächste Ergebnis ab, wenn mehrere Resultsets verwendet werden.|
 |[Öffnen](#open)|Führt den Befehl aus und bindet ihn optional.|
 
 ### <a name="inherited-methods"></a>Geerbte Methoden
 
-|||
+| Name | BESCHREIBUNG |
 |-|-|
 |[Erstellen](#create)|Erstellt einen neuen Befehl für die angegebene Sitzung und legt dann den Befehls Text fest.|
 |[CreateCommand](#createcommand)|Erstellt einen neuen Befehl.|
 |[GetParameterInfo](#getparameterinfo)|Ruft eine Liste mit den Parametern des Befehls, deren Namen und deren Typen ab.|
-|[Vorbereiten](#prepare)|Überprüft und optimiert den aktuellen Befehl.|
+|[Erstellt](#prepare)|Überprüft und optimiert den aktuellen Befehl.|
 |[ReleaseCommand](#releasecommand)|Gibt ggf. den Parameter Accessor frei und gibt dann den Befehl frei.|
 |[SetParameterInfo](#setparameterinfo)|Gibt den systemeigenen Typ der einzelnen Befehlsparameter an.|
 |[Unprepare](#unprepare)|Verwirft den aktuellen Befehls Ausführungsplan.|
@@ -117,7 +117,7 @@ Die von Ihnen verwendete Accessor-Klasse bestimmt die Methode zum Binden von Par
 
 Beachten Sie, dass Sie keine gespeicherten Prozeduren mit dem OLE DB Anbieter für Jet verwenden können, da dieser Anbieter keine gespeicherten Prozeduren unterstützt (nur Konstanten sind in Abfrage Zeichenfolgen zulässig).
 
-## <a name="ccommandclose"></a><a name="close"></a>CCommand:: Close
+## <a name="ccommandclose"></a><a name="close"></a> CCommand:: Close
 
 Gibt das dem Befehl zugeordnete accessorrowset frei.
 
@@ -141,7 +141,7 @@ Das folgende Beispiel zeigt, wie Sie `Close` und `ReleaseCommand` aufrufen, wenn
 
 [!code-cpp[NVC_OLEDB_Consumer#2](../../data/oledb/codesnippet/cpp/ccommand-close_1.cpp)]
 
-## <a name="ccommandgetnextresult"></a><a name="getnextresult"></a>CCommand:: GetNextResult
+## <a name="ccommandgetnextresult"></a><a name="getnextresult"></a> CCommand:: GetNextResult
 
 Ruft das nächste Resultset ab, sofern ein solches vorhanden ist.
 
@@ -170,7 +170,7 @@ Wenn ein Resultset bereits abgerufen wurde, gibt diese Funktion das vorherige Re
 
 Sie sollten diese Funktion nur aufrufen, wenn Sie mehrere Ergebnisse angegeben haben, indem Sie den `CCommand` Vorlagen Parameter " *TMultiple*" festlegen = `CMultipleResults` .
 
-## <a name="ccommandopen"></a><a name="open"></a>CCommand:: Open
+## <a name="ccommandopen"></a><a name="open"></a> CCommand:: Open
 
 Führt den Befehl aus und bindet ihn optional.
 
@@ -256,9 +256,9 @@ Die dritte Form von `Open` ermöglicht, dass die Befehls Zeichenfolge aufgrund d
 Verwenden Sie die vierte Form von `Open` , wenn Sie bereits einen Befehl erstellt haben und eine einzelne [Vorbereitung](../../data/oledb/ccommand-prepare.md) und mehrere Ausführungen ausführen möchten.
 
 > [!NOTE]
-> `Open`Ruft `Execute` auf, das wiederum aufruft `GetNextResult` .
+> `Open` Ruft `Execute` auf, das wiederum aufruft `GetNextResult` .
 
-## <a name="ccommandcreate"></a><a name="create"></a>CCommand:: Create
+## <a name="ccommandcreate"></a><a name="create"></a> CCommand:: Create
 
 Ruft [CCommand:: kreatecommand](../../data/oledb/ccommand-createcommand.md) auf, um einen Befehl für die angegebene Sitzung zu erstellen, und ruft dann [ICommandText:: SetCommandText](/previous-versions/windows/desktop/ms709825(v=vs.85)) auf, um den Befehls Text anzugeben.
 
@@ -296,7 +296,7 @@ Ein HRESULT-Standard.
 
 Die erste Form von `Create` nimmt eine Unicode-Befehls Zeichenfolge an. Die zweite Form von `Create` erfordert eine ANSI-Befehls Zeichenfolge (aus Gründen der Abwärtskompatibilität mit vorhandenen ANSI-Anwendungen).
 
-## <a name="ccommandcreatecommand"></a><a name="createcommand"></a>CCommand:: kreatecommand
+## <a name="ccommandcreatecommand"></a><a name="createcommand"></a> CCommand:: kreatecommand
 
 Erstellt einen neuen Befehl.
 
@@ -319,7 +319,7 @@ Ein HRESULT-Standard.
 
 Diese Methode erstellt mit dem angegebenen Sitzungs Objekt einen Befehl.
 
-## <a name="ccommandgetparameterinfo"></a><a name="getparameterinfo"></a>CCommand:: GetParameterInfo
+## <a name="ccommandgetparameterinfo"></a><a name="getparameterinfo"></a> CCommand:: GetParameterInfo
 
 Ruft eine Liste mit den Parametern des Befehls, deren Namen und deren Typen ab.
 
@@ -339,7 +339,7 @@ Weitere Informationen finden Sie unter [ICommandWithParameters:: GetParameterInf
 
 Ein HRESULT-Standard.
 
-## <a name="ccommandprepare"></a><a name="prepare"></a>CCommand::P repare
+## <a name="ccommandprepare"></a><a name="prepare"></a> CCommand::P repare
 
 Überprüft und optimiert den aktuellen Befehl.
 
@@ -362,7 +362,7 @@ Ein HRESULT-Standard.
 
 Diese Methode umschließt die OLE DB [ICommandPrepare::P repare](/previous-versions/windows/desktop/ms718370(v=vs.85))-Methode.
 
-## <a name="ccommandreleasecommand"></a><a name="releasecommand"></a>CCommand:: ReleaseCommand
+## <a name="ccommandreleasecommand"></a><a name="releasecommand"></a> CCommand:: ReleaseCommand
 
 Gibt den Parameter Accessor frei und gibt dann den Befehl selbst frei.
 
@@ -374,9 +374,9 @@ void CCommandBase::ReleaseCommand() throw();
 
 ### <a name="remarks"></a>Bemerkungen
 
-`ReleaseCommand`wird in Verbindung mit verwendet `Close` . Weitere Informationen zur Verwendung finden Sie unter [Close](../../data/oledb/ccommand-close.md) .
+`ReleaseCommand` wird in Verbindung mit verwendet `Close` . Weitere Informationen zur Verwendung finden Sie unter [Close](../../data/oledb/ccommand-close.md) .
 
-## <a name="ccommandsetparameterinfo"></a><a name="setparameterinfo"></a>CCommand:: SetParameterInfo
+## <a name="ccommandsetparameterinfo"></a><a name="setparameterinfo"></a> CCommand:: SetParameterInfo
 
 Gibt den systemeigenen Typ der einzelnen Befehlsparameter an.
 
@@ -396,7 +396,7 @@ Weitere Informationen finden Sie unter [ICommandWithParameters:: SetParameterInf
 
 Ein HRESULT-Standard.
 
-## <a name="ccommandunprepare"></a><a name="unprepare"></a>CCommand:: Unprepare
+## <a name="ccommandunprepare"></a><a name="unprepare"></a> CCommand:: Unprepare
 
 Verwirft den aktuellen Befehls Ausführungsplan.
 
@@ -414,7 +414,7 @@ Ein HRESULT-Standard.
 
 Diese Methode umschließt die OLE DB [ICommandPrepare:: Unprepare](/previous-versions/windows/desktop/ms719635(v=vs.85))-Methode.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
 [Referenz zu OLE DB Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)

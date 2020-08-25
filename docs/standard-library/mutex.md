@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 f1_keywords:
 - <mutex>
 ms.assetid: efb60c89-687a-4e38-8fe4-694e11c4e8a3
-ms.openlocfilehash: e17488023d8de6eb5d341c719be8f1b36c14ffcd
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: d5ff6f2a81a5caa564792e2c0cb43b7722c3e1dd
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87228179"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88838549"
 ---
 # <a name="ltmutexgt"></a>&lt;mutex&gt;
 
@@ -51,7 +51,7 @@ Ein mutex-Typ wird auch als *sperrbarer Typ* bezeichnet. Wenn er die Memberfunkt
 
 ### <a name="classes"></a>Klassen
 
-|||
+|name|Beschreibung|
 |-|-|
 |[lock_guard-Klasse](../standard-library/lock-guard-class.md)|Stellt eine Vorlage dar, die zum Erstellen eines Objekts instanziiert werden kann, dessen Destruktor ein `mutex`-Objekt entsperrt.|
 |[Mutex-Klasse (C++-Standard Bibliothek)](../standard-library/mutex-class-stl.md)|Stellt einen mutex-Typ dar. Verwenden Sie Objekte dieses Typs dazu, den gegenseitigen Ausschluss innerhalb eines Programms zu erzwingen.|
@@ -63,7 +63,7 @@ Ein mutex-Typ wird auch als *sperrbarer Typ* bezeichnet. Wenn er die Memberfunkt
 
 ### <a name="functions"></a>Functions
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[call_once](../standard-library/mutex-functions.md#call_once)|Stellt einen Mechanismus zum Aufrufen eines angegebenen aufrufbaren Objekts genau einmal während der Ausführung bereit.|
 |[lock](../standard-library/mutex-functions.md#lock)|Versucht, alle Argumente ohne Deadlock zu sperren.|
@@ -72,7 +72,7 @@ Ein mutex-Typ wird auch als *sperrbarer Typ* bezeichnet. Wenn er die Memberfunkt
 
 ### <a name="structs"></a>Strukturen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[adopt_lock_t-Struktur](../standard-library/adopt-lock-t-structure.md)|Stellt einen Typ dar, der zum Definieren eines `adopt_lock`-Elements verwendet wird.|
 |[defer_lock_t-Struktur](../standard-library/defer-lock-t-structure.md)|Stellt einen Typ dar, der ein `defer_lock`-Objekt definiert, das zum Auswählen eines überladenen Konstruktors von `unique_lock` verwendet wird.|
@@ -81,12 +81,12 @@ Ein mutex-Typ wird auch als *sperrbarer Typ* bezeichnet. Wenn er die Memberfunkt
 
 ### <a name="variables"></a>Variables
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[adopt_lock](../standard-library/mutex-functions.md#adopt_lock)|Stellt ein Objekt dar, das an die Konstruktoren von `lock_guard` und `unique_lock` übergeben werden kann, um anzugeben, dass das auch an den Konstruktor übergebene mutex-Objekt gesperrt ist.|
 |[defer_lock](../standard-library/mutex-functions.md#defer_lock)|Stellt ein Objekt dar, das an den Konstruktor für `unique_lock` übergeben werden kann, um anzugeben, dass der Konstruktor das an diesen übergebene mutex-Objekt nicht sperren soll.|
 |[try_to_lock](../standard-library/mutex-functions.md#try_to_lock)|Stellt ein Objekt dar, das an den Konstruktor für `unique_lock` übergeben werden kann, um anzugeben, dass der Konstruktor das an diesen übergebene `mutex`-Objekt ohne Blockierung entsperren soll.|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Headerdateienreferenz](../standard-library/cpp-standard-library-header-files.md)

@@ -95,12 +95,12 @@ helpviewer_keywords:
 - ReleaseRows method
 - SetRows method
 ms.assetid: c6bde426-c543-4022-a98a-9519d9e2ae59
-ms.openlocfilehash: e66a183c7bbafa16b3aefea8da1472255b507468
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 5c1c7bc381d30f701bad123807689b08ea47f65d
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80212122"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88838463"
 ---
 # <a name="cbulkrowset-class"></a>CBulkRowset-Klasse
 
@@ -122,11 +122,11 @@ Eine Accessor-Klasse.
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="methods"></a>Methoden
 
-|||
+| Name | Beschreibung |
 |-|-|
 |[AddRefRows](#addrefrows)|Erhöht den Verweis Zähler.|
 |[CBulkRowset](#cbulkrowset)|Konstruktor.|
@@ -136,16 +136,16 @@ Eine Accessor-Klasse.
 |[MovePrev](#moveprev)|Wechselt zur vorherigen Zeile.|
 |[MoveToBookmark](#movetobookmark)|Ruft die Zeile ab, die durch ein Lesezeichen oder die Zeile an einem angegebenen Offset aus diesem Lesezeichen gekennzeichnet ist.|
 |[MoveToRatio](#movetoratio)|Ruft Zeilen ab einer Bruch Position im Rowset ab.|
-|[ReleaseRows](#releaserows)|Legt die aktuelle Zeile (`m_nCurrentRow`) auf 0 (null) fest und gibt alle Zeilen frei.|
+|[ReleaseRows](#releaserows)|Legt die aktuelle Zeile ( `m_nCurrentRow` ) auf 0 (null) fest und gibt alle Zeilen frei.|
 |[SetRows](#setrows)|Legt die Anzahl der Zeilen Handles fest, die durch einen-Befehl abgerufen werden sollen.|
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel veranschaulicht die Verwendung der `CBulkRowset`-Klasse.
+Im folgenden Beispiel wird die Verwendung der- `CBulkRowset` Klasse veranschaulicht.
 
 [!code-cpp[NVC_OLEDB_Consumer#1](../../data/oledb/codesnippet/cpp/cbulkrowset-class_1.cpp)]
 
-## <a name="cbulkrowsetaddrefrows"></a><a name="addrefrows"></a>CBulkRowset:: adressfrows
+## <a name="cbulkrowsetaddrefrows"></a><a name="addrefrows"></a> CBulkRowset:: adressfrows
 
 Ruft [IRowset:: adressfrows](/previous-versions/windows/desktop/ms719619(v=vs.85)) auf, um den Verweis Zähler für alle derzeit aus dem BULK-Rowset abgerufenen Zeilen zu erhöhen.
 
@@ -159,9 +159,9 @@ HRESULT AddRefRows() throw();
 
 Ein HRESULT-Standard.
 
-## <a name="cbulkrowsetcbulkrowset"></a><a name="cbulkrowset"></a>CBulkRowset:: CBulkRowset
+## <a name="cbulkrowsetcbulkrowset"></a><a name="cbulkrowset"></a> CBulkRowset:: CBulkRowset
 
-Erstellt ein neues `CBulkRowset`-Objekt und legt die Standardzeilen Anzahl auf 10 fest.
+Erstellt ein neues `CBulkRowset` -Objekt und legt die Standardzeilen Anzahl auf 10 fest.
 
 ### <a name="syntax"></a>Syntax
 
@@ -169,7 +169,7 @@ Erstellt ein neues `CBulkRowset`-Objekt und legt die Standardzeilen Anzahl auf 1
 CBulkRowset();
 ```
 
-## <a name="cbulkrowsetmovefirst"></a><a name="movefirst"></a>CBulkRowset:: vfirst
+## <a name="cbulkrowsetmovefirst"></a><a name="movefirst"></a> CBulkRowset:: vfirst
 
 Ruft die erste Daten Zeile ab.
 
@@ -183,7 +183,7 @@ HRESULT MoveFirst() throw();
 
 Ein HRESULT-Standard.
 
-## <a name="cbulkrowsetmovelast"></a><a name="movelast"></a>CBulkRowset:: muvelast
+## <a name="cbulkrowsetmovelast"></a><a name="movelast"></a> CBulkRowset:: muvelast
 
 Wechselt zur letzten Zeile.
 
@@ -197,7 +197,7 @@ HRESULT MoveLast() throw();
 
 Ein HRESULT-Standard.
 
-## <a name="cbulkrowsetmovenext"></a><a name="movenext"></a>CBulkRowset:: wvenext
+## <a name="cbulkrowsetmovenext"></a><a name="movenext"></a> CBulkRowset:: wvenext
 
 Ruft die nächste Daten Zeile ab.
 
@@ -211,7 +211,7 @@ HRESULT MoveNext() throw();
 
 Ein HRESULT-Standard. Wenn das Ende des Rowsets erreicht ist, gibt DB_S_ENDOFROWSET zurück.
 
-## <a name="cbulkrowsetmoveprev"></a><a name="moveprev"></a>CBulkRowset:: vprev
+## <a name="cbulkrowsetmoveprev"></a><a name="moveprev"></a> CBulkRowset:: vprev
 
 Wechselt zur vorherigen Zeile.
 
@@ -225,7 +225,7 @@ HRESULT MovePrev() throw();
 
 Ein HRESULT-Standard.
 
-## <a name="cbulkrowsetmovetobookmark"></a><a name="movetobookmark"></a>CBulkRowset:: muvedebookmark
+## <a name="cbulkrowsetmovetobookmark"></a><a name="movetobookmark"></a> CBulkRowset:: muvedebookmark
 
 Ruft die Zeile ab, die durch ein Lesezeichen oder die Zeile an einem angegebenen Offset (*lskip*) aus diesem Lesezeichen gekennzeichnet ist.
 
@@ -238,7 +238,7 @@ HRESULT MoveToBookmark(const CBookmarkBase& bookmark,
 
 #### <a name="parameters"></a>Parameter
 
-*Lesezeichen*<br/>
+*bookmark*<br/>
 in Ein Lesezeichen, das den Speicherort markiert, von dem aus Sie Daten abrufen möchten.
 
 *lskip*<br/>
@@ -248,7 +248,7 @@ in Die Anzahl der Zeilen aus dem Lesezeichen in die Zielzeile. Wenn *lskip* 0 (n
 
 Weitere Informationen finden Sie unter [IRowset:: GetData](/previous-versions/windows/desktop/ms716988(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-## <a name="cbulkrowsetmovetoratio"></a><a name="movetoratio"></a>CBulkRowset:: wvetoratio
+## <a name="cbulkrowsetmovetoratio"></a><a name="movetoratio"></a> CBulkRowset:: wvetoratio
 
 Ruft Zeilen ab einer Bruch Position im Rowset ab.
 
@@ -273,13 +273,13 @@ Ein HRESULT-Standard.
 
 ### <a name="remarks"></a>Bemerkungen
 
-`MoveToRatio` die Zeilen ungefähr gemäß der folgenden Formel abrufen:
+`MoveToRatio` die Zeilen werden ungefähr gemäß der folgenden Formel abgerufen:
 
 `(nNumerator *  RowsetSize ) / nDenominator`
 
-Dabei ist `RowsetSize` die Größe des Rowsets (in Zeilen gemessen). Die Genauigkeit dieser Formel hängt vom jeweiligen Anbieter ab. Weitere Informationen finden Sie unter [IRowsetScroll:: GetRowsAtRatio](/previous-versions/windows/desktop/ms709602(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
+`RowsetSize`Dabei ist die Größe des Rowsets, gemessen in Zeilen. Die Genauigkeit dieser Formel hängt vom jeweiligen Anbieter ab. Weitere Informationen finden Sie unter [IRowsetScroll:: GetRowsAtRatio](/previous-versions/windows/desktop/ms709602(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-## <a name="cbulkrowsetreleaserows"></a><a name="releaserows"></a>CBulkRowset:: ReleaseRows
+## <a name="cbulkrowsetreleaserows"></a><a name="releaserows"></a> CBulkRowset:: ReleaseRows
 
 Ruft [IRowset:: ReleaseRows](/previous-versions/windows/desktop/ms719771(v=vs.85)) auf, um den Verweis Zähler für alle derzeit aus dem BULK-Rowset abgerufenen Zeilen zu verringern.
 
@@ -293,7 +293,7 @@ HRESULT ReleaseRows() throw();
 
 Ein HRESULT-Standard.
 
-## <a name="cbulkrowsetsetrows"></a><a name="setrows"></a>CBulkRowset:: setRows
+## <a name="cbulkrowsetsetrows"></a><a name="setrows"></a> CBulkRowset:: setRows
 
 Legt die Anzahl der Zeilen Handles fest, die von jedem-Befehl abgerufen werden.
 
@@ -315,4 +315,4 @@ Wenn Sie diese Funktion aufzurufen, muss Sie vor dem Öffnen des Rowsets liegen.
 ## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
-[Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)
+[Referenz zu OLE DB Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)

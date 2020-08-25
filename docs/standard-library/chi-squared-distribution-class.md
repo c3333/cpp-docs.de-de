@@ -23,12 +23,12 @@ helpviewer_keywords:
 - std::chi_squared_distribution [C++], param_type
 - std::chi_squared_distribution [C++], param_type
 ms.assetid: 9b603fbe-cafd-4a92-b8c5-a434d60b8122
-ms.openlocfilehash: 634a78274a9c7a4ed75466b083f4ee4880401630
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 5d7a7e2ba3c962a1ef63b14fed5d4bfb67c38b44
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87230168"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845678"
 ---
 # <a name="chi_squared_distribution-class"></a>chi_squared_distribution-Klasse
 
@@ -76,10 +76,8 @@ Die einheitliche Zufallszahlengenerator-Engine. Informationen zu möglichen Type
 
 Die Klassen Vorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten Gleit Komma Typs produziert **`double`** . Wenn kein entsprechend der Chi-Quadrat-Verteilung verteilter Wert bereitgestellt wird, geben Sie ein. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
 
-||||
-|-|-|-|
-|[chi_squared_distribution](../standard-library/chi-squared-distribution-class.md)|`chi_squared_distribution::n`|`chi_squared_distribution::param`|
-|`chi_squared_distribution::operator()`||[param_type](#param_type)|
+[chi_squared_distribution](../standard-library/chi-squared-distribution-class.md)\
+[param_type](#param_type)
 
 Die Eigenschaftsfunktion `n()` gibt den Wert für den gespeicherten Verteilungsparameter `n` zurück.
 
@@ -224,7 +222,7 @@ Distribution for 10 samples:
 
 **Namespace:** std
 
-## <a name="chi_squared_distributionchi_squared_distribution"></a><a name="chi_squared_distribution"></a>chi_squared_distribution:: chi_squared_distribution
+## <a name="chi_squared_distributionchi_squared_distribution"></a><a name="chi_squared_distribution"></a> chi_squared_distribution:: chi_squared_distribution
 
 Erstellt die Verteilung.
 
@@ -249,7 +247,7 @@ Der erste Konstruktor konstruiert ein Objekt, dessen gespeicherter `n`-Wert den 
 
 Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter aus *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
 
-## <a name="chi_squared_distributionparam_type"></a><a name="param_type"></a>chi_squared_distribution::p aram_type
+## <a name="chi_squared_distributionparam_type"></a><a name="param_type"></a> chi_squared_distribution::p aram_type
 
 Speichert die Parameter der Verteilung.
 

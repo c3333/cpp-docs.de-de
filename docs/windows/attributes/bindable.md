@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - bindable attribute
 ms.assetid: a2360f92-927b-4af8-98cc-6eca7f4ec954
-ms.openlocfilehash: 9e476183374ad2a70864fd46aaa19c616cd3ce91
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 27f44259401a42dcef7e2add370d95091d10879d
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80167354"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88838970"
 ---
 # <a name="bindable"></a>bindable
 
@@ -25,7 +25,7 @@ Gibt an, dass die Eigenschaft die Datenbindung unterstützt.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **bindbare** C++ Attribut verfügt über die gleiche Funktionalität wie das [binable](/windows/win32/Midl/bindable) -Attribut "Mittel l". Sie können Sie in Eigenschaften verwenden, die mit den Attributen [propget](propget.md), [PROPPUT](propput.md)oder [PROPPUTREF](propputref.md) definiert wurden, oder Sie können eine bindbare Methode manuell definieren.
+Das **bindbare** C++-Attribut verfügt über die gleiche Funktionalität wie das [binable](/windows/win32/Midl/bindable) -Attribut "Mittel l". Sie können Sie in Eigenschaften verwenden, die mit den Attributen [propget](propget.md), [PROPPUT](propput.md)oder [PROPPUTREF](propputref.md) definiert wurden, oder Sie können eine bindbare Methode manuell definieren.
 
 Die folgenden MFC-Beispiele zeigen die Verwendung von **bindbaren**Elementen:
 
@@ -60,12 +60,10 @@ __interface IPropDemo : IDispatch {
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|Schnittstellenmethode|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Schnittstellenmethode|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -74,7 +72,7 @@ Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontext
 ## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[Methodenattribut](method-attributes.md)<br/>
+[Methoden Attribute](method-attributes.md)<br/>
 [defaultbind](defaultbind.md)<br/>
 [displaybind](displaybind.md)<br/>
 [immediatebind](immediatebind.md)<br/>

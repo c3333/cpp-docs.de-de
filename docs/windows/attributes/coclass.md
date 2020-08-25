@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - coclass attribute
 ms.assetid: 42da6a10-3af9-4b43-9a1d-689d00b61eb3
-ms.openlocfilehash: 0a47f4f503541f9dee67dd8c6cf10297de724a19
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 12f7af195f2282955cb16c1f38d4e512ca0f86cb
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87232793"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88838879"
 ---
 # <a name="coclass"></a>coclass
 
@@ -53,15 +53,15 @@ Schließlich wird jede duale Schnittstelle, die nicht mit eingebetteter IDL defi
 
 Das **Co-Klasse** -Attribut macht auch die folgenden Funktionen über injizierten Code verfügbar, oder im Fall von `GetObjectCLSID` als statische Methode in der Basisklasse `CComCoClass` :
 
-- `UpdateRegistry`registriert die Klassenfactorys der Zielklasse.
+- `UpdateRegistry` registriert die Klassenfactorys der Zielklasse.
 
 - `GetObjectCLSID`, der sich auf die Registrierung bezieht, kann auch zum Abrufen der CLSID der Zielklasse verwendet werden.
 
-- `GetObjectFriendlyName`gibt standardmäßig eine Zeichenfolge im Format " \<*target class name*> `Object` " zurück. Wenn diese Funktion bereits vorhanden ist, wird Sie nicht hinzugefügt. Fügen Sie diese Funktion der Zielklasse hinzu, um einen freundlicheren Namen als den automatisch generierten Namen zurückzugeben.
+- `GetObjectFriendlyName` gibt standardmäßig eine Zeichenfolge im Format " \<*target class name*> `Object` " zurück. Wenn diese Funktion bereits vorhanden ist, wird Sie nicht hinzugefügt. Fügen Sie diese Funktion der Zielklasse hinzu, um einen freundlicheren Namen als den automatisch generierten Namen zurückzugeben.
 
 - `GetProgID`, der sich auf die Registrierung bezieht, gibt die mit dem [ProgID](progid.md) -Attribut angegebene Zeichenfolge zurück.
 
-- `GetVersionIndependentProgID`verfügt über die gleiche Funktionalität wie `GetProgID` , gibt jedoch die mit [Vi_progid](vi-progid.md)angegebene Zeichenfolge zurück.
+- `GetVersionIndependentProgID` verfügt über die gleiche Funktionalität wie `GetProgID` , gibt jedoch die mit [Vi_progid](vi-progid.md)angegebene Zeichenfolge zurück.
 
 Die folgenden Änderungen, die mit der com-Zuordnung verknüpft sind, werden an der Zielklasse vorgenommen:
 
@@ -127,9 +127,7 @@ public:
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
 |**Zielgruppe**|**`class`**, **`struct`**|
 |**REPEATABLE**|Nein|
@@ -138,7 +136,7 @@ public:
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [COM-Attribute](com-attributes.md)<br/>

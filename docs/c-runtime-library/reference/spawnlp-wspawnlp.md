@@ -33,12 +33,12 @@ helpviewer_keywords:
 - process creation
 - spawnlp function
 ms.assetid: 74fc6e7a-4f24-4103-9387-7177875875e6
-ms.openlocfilehash: 98d5609d17f5932a81be916b878eb25333869591
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 68ad011af1a53452c0f3cfda02bdf80582a8431b
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70947737"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845951"
 ---
 # <a name="_spawnlp-_wspawnlp"></a>_spawnlp, _wspawnlp
 
@@ -81,19 +81,19 @@ Liste von Zeigern zu Argumenten. Das *arg0* -Argument ist normalerweise ein Zeig
 
 ## <a name="return-value"></a>Rückgabewert
 
-Der Rückgabewert eines synchronen **_spawnlp** oder **_wspawnlp** ( **_P_WAIT** angegeben für- *Modus*) ist der Beendigungs Status des neuen Prozesses. Der Rückgabewert eines asynchronen **_spawnlp** oder **_wspawnlp** ( **_P_NOWAIT** oder **_P_NOWAITO** , der für den- *Modus*angegeben ist) ist das Prozess handle. Der Beendigungsstatus ist 0, wenn der Prozess ordnungsgemäß beendet wurde. Sie können den Beendigungs Status auf einen Wert ungleich 0 (null) festlegen, wenn der erzeugte Prozess speziell die **Exit** -Routine mit einem Argument ungleich 0 aufruft. Wenn der neue Prozess nicht explizit einen positiven Beendigungsstatus eingestellt hat, weist ein positiver Beendigungsstatus auf eine abnormale Beendigung mit einem Abbruch oder einer Unterbrechung hin. Der Rückgabewert-1 gibt einen Fehler an (der neue Prozess wird nicht gestartet). In diesem Fall wird **errno** auf einen der folgenden Werte festgelegt.
+Der Rückgabewert eines synchronen **_spawnlp** oder **_wspawnlp** (**_P_WAIT** für den- *Modus*angegeben) ist der Beendigungs Status des neuen Prozesses. Der Rückgabewert eines asynchronen **_spawnlp** oder **_wspawnlp** (**_P_NOWAIT** oder **_P_NOWAITO** , der für den- *Modus*angegeben ist) ist das Prozess handle. Der Beendigungsstatus ist 0, wenn der Prozess ordnungsgemäß beendet wurde. Sie können den Beendigungs Status auf einen Wert ungleich 0 (null) festlegen, wenn der erzeugte Prozess speziell die **Exit** -Routine mit einem Argument ungleich 0 aufruft. Wenn der neue Prozess nicht explizit einen positiven Beendigungsstatus eingestellt hat, weist ein positiver Beendigungsstatus auf eine abnormale Beendigung mit einem Abbruch oder einer Unterbrechung hin. Der Rückgabewert-1 gibt einen Fehler an (der neue Prozess wird nicht gestartet). In diesem Fall wird **errno** auf einen der folgenden Werte festgelegt.
 
-|||
+| Wert | Beschreibung |
 |-|-|
 | **E2BIG** | Argumentliste umfasst mehr als 1024 Byte. |
-| **EINVAL** | Das *Mode* -Argument ist ungültig. |
+| **Eingabe** | Das *Mode* -Argument ist ungültig. |
 | **ENOENT** | Datei oder Pfad nicht gefunden. |
 | **ENOEXEC** | Die angegebene Datei ist nicht ausführbar oder hat ein ungültiges Format für eine ausführbare Datei. |
-| **ENOMEM** | Es ist nicht genügend Arbeitsspeicher verfügbar, um den neuen Prozess auszuführen. |
+| **Umomem** | Es ist nicht genügend Arbeitsspeicher verfügbar, um den neuen Prozess auszuführen. |
 
 Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Jede dieser Funktionen erstellt einen neuen Prozess und führt diesen aus. dabei wird jedes Befehlszeilenargument als separater Parameter übergeben und die **path** -Umgebungsvariable verwendet, um die auszuführende Datei zu suchen.
 
@@ -106,19 +106,19 @@ Diese Funktionen überprüfen ihre Parameter. Wenn entweder *cmdname* oder *arg0
 |**_spawnlp**|\<process.h>|
 |**_wspawnlp**|\<stdio.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
 Siehe das Beispiel in [_spawn, _wspawn Functions](../../c-runtime-library/spawn-wspawn-functions.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Prozess- und Umgebungssteuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
-[_spawn-, _wspawn-Funktionen](../../c-runtime-library/spawn-wspawn-functions.md)<br/>
-[abort](abort.md)<br/>
+[Prozess-und Umgebungs Steuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
+[_spawn, _wspawn Funktionen](../../c-runtime-library/spawn-wspawn-functions.md)<br/>
+[Abbruch](abort.md)<br/>
 [atexit](atexit.md)<br/>
-[_exec- und _wexec-Funktionen](../../c-runtime-library/exec-wexec-functions.md)<br/>
+[_exec, _wexec Funktionen](../../c-runtime-library/exec-wexec-functions.md)<br/>
 [exit, _Exit, _exit](exit-exit-exit.md)<br/>
 [_flushall](flushall.md)<br/>
 [_getmbcp](getmbcp.md)<br/>

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - -TSAWARE linker option
 - TSAWARE linker option
 ms.assetid: fe1c1846-de5b-4839-b562-93fbfe36cd29
-ms.openlocfilehash: 135d919278c8e969dc3a31381d5abbd1058c8663
-ms.sourcegitcommit: 31a443c9998cf5cfbaff00fcf815b133f55b2426
+ms.openlocfilehash: c2ec12b0b5fbe241d75acc4bb0d87837371a293e
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86373891"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845730"
 ---
 # <a name="tsaware-create-terminal-server-aware-application"></a>/TSAWARE (Terminalserverfähige Anwendung erstellen)
 
@@ -24,7 +24,7 @@ ms.locfileid: "86373891"
 /TSAWARE[:NO]
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Option/TSAWARE legt ein Flag im Feld IMAGE_OPTIONAL_HEADER DllCharacteristics im optionalen Header des Programm Bilds fest. Wenn dieses Flag festgelegt ist, wird der Terminalserver keine bestimmten Änderungen an der Anwendung vornehmen.
 
@@ -59,4 +59,4 @@ Wenn eine Anwendung mit/TSAWARE verknüpft wurde, zeigt DUMPBIN [/Headers](heade
 [MSVC-Linkerreferenz](linking.md)<br/>
 [MSVC-Linkeroptionen](linker-options.md)<br/>
 [Speichern von benutzerspezifischen Informationen](/windows/win32/TermServ/storing-user-specific-information)<br/>
-[Legacy Anwendungen in einer Terminaldiensteumgebung](https://docs.microsoft.com/previous-versions//aa382957(v=vs.85))
+[Legacy Anwendungen in einer Terminaldiensteumgebung](/previous-versions/aa382957(v=vs.85))

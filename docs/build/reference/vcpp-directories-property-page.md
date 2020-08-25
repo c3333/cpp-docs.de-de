@@ -13,12 +13,12 @@ f1_keywords:
 helpviewer_keywords:
 - VC++ Directories Property Page
 ms.assetid: 428eeef6-f127-4271-b3ea-0ae6f2c3d624
-ms.openlocfilehash: 06e9508ae09f9c7581648b45098f497fda785013
-ms.sourcegitcommit: 13f42c339fb7af935e3a93ac80e350d5e784c9f1
+ms.openlocfilehash: 39362deaa770b39eea964f1e4e58186dd5923b7f
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87470796"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846029"
 ---
 # <a name="vc-directories-property-page-windows"></a>Eigenschaftenseite „VC++-Verzeichnisse“ (Windows)
 
@@ -74,7 +74,7 @@ Sie können eigene Makros auf zwei Arten definieren:
 
 - Definieren Sie Benutzermakros in einer PROPS-Datei. Weitere Informationen finden Sie unter [Property page macros (Makros für Eigenschaftenseiten)](../working-with-project-properties.md).
 
-Weitere Informationen finden Sie in den Blogbeiträgen zu den Themen [VC++ Directories (VC++-Verzeichnisse)](https://docs.microsoft.com/archive/blogs/vsproject/vc-directories), [Inherited Properties and Property Sheets (Geerbte Eigenschaften und Eigenschaftenblätter)](https://docs.microsoft.com/cpp/build/project-property-inheritance) sowie im [Visual Studio 2010 C++ Project Upgrade Guide (Visual Studio 2010-Handbuch für Upgrades von C++-Projekten)](https://devblogs.microsoft.com/cppblog/visual-studio-2010-c-project-upgrade-guide/).
+Weitere Informationen finden Sie unter [Eigenschaften Vererbung in Visual Studio-Projekten und in](../project-property-inheritance.md)diesen Blogbeiträgen: [VC + +-Verzeichnisse](/archive/blogs/vsproject/vc-directories), [Visual Studio 2010 C++ Project Upgrade Guide](https://devblogs.microsoft.com/cppblog/visual-studio-2010-c-project-upgrade-guide/).
 
 ## <a name="directory-types"></a>Verzeichnistypen
 

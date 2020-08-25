@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - ms_union attribute
 ms.assetid: bb548689-6962-457e-af56-8ffdf68987eb
-ms.openlocfilehash: 3e89facf48bd4f0f9d6200657b0e0a66fe95455a
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: ae99a996cd7969da27f38ad3532f0472f389ee3d
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80166639"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88838840"
 ---
 # <a name="ms_union"></a>ms_union
 
@@ -25,7 +25,7 @@ Steuert die Ausrichtung der Netzwerkdaten Darstellung von nicht gekapselten Unio
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Ms_union** C++ -Attribut verfügt über die gleiche Funktionalität wie das [Ms_union](/windows/win32/Midl/ms-union-attrib) -Attribut "Mittel".
+Das **Ms_union** C++-Attribut verfügt über die gleiche Funktionalität wie das [Ms_union](/windows/win32/Midl/ms-union-attrib) -Attribut "Mittel".
 
 ## <a name="example"></a>Beispiel
 
@@ -56,12 +56,10 @@ __interface IFireTabCtrl {
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|Nicht gekapselt Unions|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Nicht gekapselt Unions|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|`dispinterface`|
 
@@ -70,4 +68,4 @@ Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net
 ## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[typedef-, enum-, union- und struct-Attribute](typedef-enum-union-and-struct-attributes.md)
+[Typedef-, Aufzählungs-, Union-und struct-Attribute](typedef-enum-union-and-struct-attributes.md)
