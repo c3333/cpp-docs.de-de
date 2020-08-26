@@ -19,16 +19,16 @@ helpviewer_keywords:
 - IRowsetCreatorImpl class
 - SetSite method
 ms.assetid: 92cc950f-7978-4754-8d9a-defa63867d82
-ms.openlocfilehash: a53cd653258980d21e9dd297ae61c458732b7250
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: c1ad2c5e97dfe975a3b545e44b512dff7bf512a0
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80210547"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88843443"
 ---
 # <a name="irowsetcreatorimpl-class"></a>IRowsetCreatorImpl-Klasse
 
-Führt dieselben Funktionen wie `IObjectWithSite` aus, aktiviert jedoch auch die OLE DB Eigenschaften `DBPROPCANSCROLLBACKWARDS DBPROPCANFETCHBACKWARDS`.
+Führt dieselben Funktionen wie aus, `IObjectWithSite` aktiviert jedoch auch die OLE DB Eigenschaften `DBPROPCANSCROLLBACKWARDS DBPROPCANFETCHBACKWARDS` .
 
 ## <a name="syntax"></a>Syntax
 
@@ -41,25 +41,25 @@ class ATL_NO_VTABLE IRowsetCreatorImpl
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Eine von `IRowsetCreator`abgeleitete Klasse.
+Eine von abgeleitete Klasse `IRowsetCreator` .
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** atldb.h
+**Header:** „atldb.h“
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="methods"></a>Methoden
 
-|||
+| Name | Beschreibung |
 |-|-|
 |[SetSite](#setsite)|Legt die Site fest, die das Rowsetobjekt enthält.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Diese Klasse erbt von [IObjectWithSite](/windows/win32/api/ocidl/nn-ocidl-iobjectwithsite) und überschreibt [IObjectWithSite:: SetSite](/windows/win32/api/ocidl/nf-ocidl-iobjectwithsite-setsite). Wenn ein Anbieter Befehl oder ein Sitzungs Objekt ein Rowset erstellt, ruft es `QueryInterface` für das Rowsetobjekt auf, das nach `IObjectWithSite` sucht, und ruft auf, `SetSite` die `IUnkown` Schnittstelle des rowsetobjektes als Website Schnittstelle zu übergeben.
+Diese Klasse erbt von [IObjectWithSite](/windows/win32/api/ocidl/nn-ocidl-iobjectwithsite) und überschreibt [IObjectWithSite:: SetSite](/windows/win32/api/ocidl/nf-ocidl-iobjectwithsite-setsite). Wenn ein Anbieter Befehl oder ein Sitzungs Objekt ein Rowset erstellt, ruft es `QueryInterface` für das Rowsetobjekt auf und ruft auf, um die `IObjectWithSite` `SetSite` Schnittstelle des Rowsetobjekt `IUnkown` als Website Schnittstelle zu übergeben.
 
-## <a name="irowsetcreatorimplsetsite"></a><a name="setsite"></a>Irowsetkreatorimpl:: SetSite
+## <a name="irowsetcreatorimplsetsite"></a><a name="setsite"></a> Irowsetkreatorimpl:: SetSite
 
 Legt die Site fest, die das Rowsetobjekt enthält. Weitere Informationen finden Sie unter [IObjectWithSite:: SetSite](/windows/win32/api/ocidl/nf-ocidl-iobjectwithsite-setsite).
 
@@ -80,9 +80,9 @@ Ein HRESULT-Standard.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Außerdem werden `IRowsetCreatorImpl::SetSite` die OLE DB `DBPROPCANSCROLLBACKWARDS DBPROPCANFETCHBACKWARDS` Eigenschaften aktiviert.
+Außerdem `IRowsetCreatorImpl::SetSite` aktiviert die OLE DB `DBPROPCANSCROLLBACKWARDS DBPROPCANFETCHBACKWARDS` Eigenschaften.
 
 ## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
-[Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)
+[Architektur der OLE DB-Anbieter Vorlage](../../data/oledb/ole-db-provider-template-architecture.md)

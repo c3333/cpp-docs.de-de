@@ -8,12 +8,12 @@ helpviewer_keywords:
 - setlocale function
 - language strings
 ms.assetid: a0e5a0c5-5602-4da0-b65f-de3d6c8530a2
-ms.openlocfilehash: 95557c824aafb1092cc7711f19708cd7782683a9
-ms.sourcegitcommit: b51703a96ee35ee2376d5f0775b70f03ccbe6d9a
+ms.openlocfilehash: 704da410ee6386027a7528c0c73a89ef31557a77
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88087006"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88842948"
 ---
 # <a name="ucrt-locale-names-languages-and-countryregion-strings"></a>UCRT: Gebietsschemanamen, Sprachen und Zeichenfolgen für Länder und Regionen
 
@@ -26,7 +26,7 @@ Das *locale*-Argument für die Funktionen [setlocale\_, wsetlocale](../c-runtime
 &nbsp;&nbsp;&nbsp;&nbsp;\| ""<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;\| NULL
 
-Die *locale-name*-Form ist eine kurze, von der IETF standardisierte Zeichenfolge, z.B. `en-US` für Englisch (USA) oder `bs-Cyrl-BA` für Bosnisch (Kyrillisch, Bosnien und Herzegowina). Diese Formen werden bevorzugt. Eine Liste der unterstützten Gebiets Schema Namen nach Version des Windows-Betriebssystems finden Sie in der Spalte **Sprachtag** der Tabelle in [Anhang a: Produktverhalten](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c) in \[ MS-LCID]: Referenz zur Windows-Sprach Code Kennung (LCID). Unter dieser Ressource finden Sie die unterstützte Sprache, das Skript und die regionalen Teile der Gebietsschemanamen. Informationen zu den unterstützten Gebietsschemanamen ohne standardmäßige Sortierreihenfolge finden Sie in der Spalte des **Gebietsschemanamens** unter den [Sortierreihenfolgen-IDs](/windows/win32/Intl/sort-order-identifiers). Unter Windows 10 oder höher sind Gebiets Schema Namen zulässig, die gültigen [bcp-47-](https://tools.ietf.org/html/bcp47) sprach Tags entsprechen. `jp-US` z.B. ist ein gültiges BCP-47-Tag, für die locale-Funktion ist es jedoch effektiv nur `US`.
+Die *locale-name*-Form ist eine kurze, von der IETF standardisierte Zeichenfolge, z.B. `en-US` für Englisch (USA) oder `bs-Cyrl-BA` für Bosnisch (Kyrillisch, Bosnien und Herzegowina). Diese Formen werden bevorzugt. Eine Liste der unterstützten Gebiets Schema Namen nach Version des Windows-Betriebssystems finden Sie in der Spalte **Sprachtag** der Tabelle in [Anhang a: Produktverhalten](/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c) in \[ MS-LCID]: Referenz zur Windows-Sprach Code Kennung (LCID). Unter dieser Ressource finden Sie die unterstützte Sprache, das Skript und die regionalen Teile der Gebietsschemanamen. Informationen zu den unterstützten Gebietsschemanamen ohne standardmäßige Sortierreihenfolge finden Sie in der Spalte des **Gebietsschemanamens** unter den [Sortierreihenfolgen-IDs](/windows/win32/Intl/sort-order-identifiers). Unter Windows 10 oder höher sind Gebiets Schema Namen zulässig, die gültigen [bcp-47-](https://tools.ietf.org/html/bcp47) sprach Tags entsprechen. `jp-US` z.B. ist ein gültiges BCP-47-Tag, für die locale-Funktion ist es jedoch effektiv nur `US`.
 
 Die *Sprache* \[ **\_** _Country-Region_ \[ __.__ *Codepage*]] das Formular wird in den Gebiets Schema Einstellungen für eine Kategorie gespeichert, wenn eine Sprachen Zeichenfolge, eine Sprachen Zeichenfolge oder eine Zeichenfolge für ein Land oder eine Region verwendet wird Der Satz unterstützter Sprachzeichenfolgen wird in [Language Strings](../c-runtime-library/language-strings.md) beschrieben, und die Liste der unterstützten Land-/Regionszeichenfolgen wird in [Country/Region Strings](../c-runtime-library/country-region-strings.md) aufgeführt. Wenn die angegebene Sprache nicht dem angegebenen Land bzw. der angegebenen Region zugeordnet ist, wird in den Gebietsschemaeinstellungen die Standardsprache für das angegebene Land bzw. die angegebene Region gespeichert. Für Gebietsschema-Zeichenfolgen, die in Code eingebettet sind oder für den Speicher serialisiert sind, empfehlen wir diese Form nicht. Bei diesen Zeichenfolgen ist nämlich die Wahrscheinlichkeit größer, dass sie durch eine Betriebssystemaktualisierung geändert werden, als die Gebietsschema-Namensform.
 

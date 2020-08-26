@@ -29,12 +29,12 @@ helpviewer_keywords:
 - file handles [C++], associating
 - _open_osfhandle function
 ms.assetid: 30d94df4-7868-4667-a401-9eb67ecb7855
-ms.openlocfilehash: 9fbe4a4079fcbb8414e09d0f7dd814a3957e0822
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: d0f86c2588eed506bc9b8408e01bccdb6d1aad9d
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82910675"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88844066"
 ---
 # <a name="_open_osfhandle"></a>_open_osfhandle
 
@@ -61,18 +61,18 @@ Zulässige Vorgangsarten.
 
 Im Erfolgsfall gibt **_open_osfhandle** einen C-Laufzeit-Dateideskriptor zurück. Andernfalls wird –1 zurückgegeben.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_open_osfhandle** -Funktion weist einen C-Lauf Zeit Dateideskriptor zu. Dieser Dateideskriptor wird dem von *OSF handle*angegebenen Betriebssystem-Datei Handle zugeordnet. Um eine Compilerwarnung zu vermeiden, wandeln Sie das *osfhandle*-Argument von **HANDLE** zu **intptr_t** um. Das *flags*-Argument ist ein Ganzzahlausdruck, der von einer oder mehreren der folgenden Manifestkonstanten gebildet wurde, die in \<fcntl.h> definiert sind. Sie können den bitweisen OR-Operator ( **&#124;** ) verwenden, um zwei oder mehr Manifest-Konstanten zu kombinieren, um das *Flags* -Argument zu bilden.
+Die **_open_osfhandle** -Funktion weist einen C-Lauf Zeit Dateideskriptor zu. Dieser Dateideskriptor wird dem von *OSF handle*angegebenen Betriebssystem-Datei Handle zugeordnet. Um eine Compilerwarnung zu vermeiden, wandeln Sie das *osfhandle*-Argument von **HANDLE** zu **intptr_t** um. Das *Flags* -Argument ist ein ganzzahliger Ausdruck, der aus einer oder mehreren der in definierten Manifest-Konstanten gebildet wird \<fcntl.h> . Sie können den bitweisen OR-Operator ( **&#124;** ) verwenden, um zwei oder mehr Manifest-Konstanten zu kombinieren, um das *Flags* -Argument zu bilden.
 
-Die Manifestkonstanten werden in \<fcntl.h> definiert:
+Diese Manifest-Konstanten werden in definiert \<fcntl.h> :
 
-|||
-|-|-|
-| **\_O\_anfügen** | Positioniert einen Dateizeiger vor jedem Schreibvorgang am Ende der Datei. |
-| **\_O\_rdonly** | Öffnet eine Datei nur zum Lesen. |
-| **\_O\_-Text** | Öffnet eine Datei im Textmodus (übersetzt). |
-| **\_O\_wtext** | Öffnet eine Datei in Unicode (übersetzt UTF-16). |
+| Konstante | Beschreibung |
+|--|--|
+| **\_O \_ Anfügen** | Positioniert einen Dateizeiger vor jedem Schreibvorgang am Ende der Datei. |
+| **\_O \_ rdonly** | Öffnet eine Datei nur zum Lesen. |
+| **\_O- \_ Text** | Öffnet eine Datei im Textmodus (übersetzt). |
+| **\_O \_ wtext** | Öffnet eine Datei in Unicode (übersetzt UTF-16). |
 
 Der **_open_osfhandle**-Aufruf überträgt den Besitz am Win32-Dateihandle auf den Dateideskriptor. Um eine mit **_open_osfhandle** geöffnete Datei zu schließen, rufen Sie [\_close](close.md) auf. Das zugrundeliegende OS-Dateihandle wird auch mit einem **_close**-Aufruf geschlossen. Rufen Sie nicht die Win32-Funktion **CloseHandle** für das ursprüngliche Handle auf. Wenn sich der Dateideskriptor im Besitz einer **Datei &#42;** Streams befindet, schließt ein [fclose](fclose-fcloseall.md) -aufrufswert sowohl den Dateideskriptor als auch das zugrunde liegende Handle. In diesem Fall rufen Sie nicht **_close** für den Dateideskriptor oder **CloseHandle** für das ursprüngliche Handle auf.
 
@@ -80,7 +80,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**_open_osfhandle**|\<io.h>|
 

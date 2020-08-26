@@ -14,16 +14,16 @@ helpviewer_keywords:
 - std::make_integer_sequence
 - std::index_sequence_for
 ms.assetid: 2cfdddee-819d-478e-bb78-c8a9c2696803
-ms.openlocfilehash: 3de64f7855b5158f1565580d305e2a6eeaf3e76f
-ms.sourcegitcommit: 89d9e1cb08fa872483d1cde98bc2a7c870e505e9
+ms.openlocfilehash: 4d927be4fdd41ab75ca78a0e0e7ab0282e4fbf6a
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82031471"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88843871"
 ---
 # <a name="integer_sequence-class"></a>integer_sequence-Klasse
 
-Stellt eine Ganzzahlsequenz dar. Kann zum Ableiten und Erweitern von Parameterpaketen in Variadic-Typen wie „std::tuple\<T...>“ verwendet werden, die an eine Funktion als Argumente weitergegeben werden.
+Stellt eine Ganzzahlsequenz dar. Kann zum ableiten und Erweitern von Parameter Paketen in Variadic-Typen wie "Std:: Tuple" verwendet werden \<T...> , die als Argumente an eine Funktion übergeben werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -34,15 +34,15 @@ struct integer_sequence
 
 ### <a name="parameters"></a>Parameter
 
-*T*\
+*Bund*\
 Der Typ von Werten; muss sich um einen integralen Typ handeln: „bool“, „char“, „char16_t“, „char32_t“, „wchar_t“ oder signierte oder nicht signierte Ganzzahltypen.
 
-*Vals*\
+*Veranstaltungen*\
 Ein typenloses Parameterpaket, das eine Sequenz von Werten des integralen Typs T darstellt.
 
 ## <a name="members"></a>Member
 
-|||
+|Name|Beschreibung|
 |-|-|
 |`static size_t size() noexcept`|Die Anzahl der Elemente in der Sequenz.|
 |`typedef T value_type`|Der Typ jedes Elements in der Sequenz. Muss ein ganzzahliger Typ sein.|
@@ -57,7 +57,7 @@ Das folgende Beispiel beruht auf dem ursprünglichen Vorschlag [N3658](https://w
 
 In der Funktion `a2t` ist `index_sequence` ein Alias von `integer_sequence` auf Grundlage des integralen Typs `size_t`. `make_index_sequence` ist ein Alias, der zum Zeitpunkt der Kompilierung eine nullbasierte `index_sequence` mit der gleichen Anzahl an Elementen wie das Array erstellt, das durch den Aufrufer weitergegeben wird. `a2t` übergibt `index_sequence` nach Wert an `a2t_`, wo der Ausdruck `a[I]...` entpackt`I` wird. Dann werden die Elemente an `make_tuple` übergeben, wo sie als einzelne Argumente verwendet werden. Wenn Sie Sequenz beispielsweise drei Elemente enthält, wird `make_tuple` als „make_tuple(a[0], a[1], a[2])“ aufgerufen. Die Arrayelemente an sich können von einem beliebigen Typ sein.
 
-Die apply-Funktion akzeptiert ein [std::tuple](../standard-library/tuple-class.md)und `tuple_size` erzeugt mithilfe der Hilfsklasse eine. `integer_sequence` Beachten Sie, dass [std::decay_t](../standard-library/decay-class.md) erforderlich ist, da [tuple_size](../standard-library/tuple-size-class-tuple.md) nicht mit Referenztypen funktioniert. Mithilfe der `apply_`-Funktion werden Tupel-Member entpackt und als getrennte Argumente an einen Funktionsaufruf weitergeleitet. In diesem Beispiel ist die Funktion ein einfacher Lambdaausdruck, der die Werte ausgibt.
+Die Apply-Funktion akzeptiert ein [Std:: Tuple](../standard-library/tuple-class.md)und erzeugt `integer_sequence` mithilfe der- `tuple_size` Hilfsklasse einen. Beachten Sie, dass [Std::d ecay_t](../standard-library/decay-class.md) erforderlich ist, da [tuple_size](../standard-library/tuple-size-class-tuple.md) nicht mit Verweis Typen funktioniert. Mithilfe der `apply_`-Funktion werden Tupel-Member entpackt und als getrennte Argumente an einen Funktionsaufruf weitergeleitet. In diesem Beispiel ist die Funktion ein einfacher Lambdaausdruck, der die Werte ausgibt.
 
 ```cpp
 #include <stddef.h>
@@ -115,14 +115,14 @@ int main()
 }
 ```
 
-Verwenden Sie zum Erstellen einer `index_sequence` für ein Parameterpaket `index_sequence_for`\<<T...>. Hierbei handelt es sich um einen Alias für `make_index_sequence`\<<sizeof...(T)>
+Um einen `index_sequence` für ein Parameter Paket zu erstellen, verwenden Sie `index_sequence_for` \<T...> einen Alias für.`make_index_sequence`\<sizeof...(T)>
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-Kopfzeile: \<type_traits\>
+Header: \<type_traits\>
 
 Namepace: std
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Ellipsis und Variadic Templates](../cpp/ellipses-and-variadic-templates.md)
+[Auslassungs Zeichen-und Variadic-Vorlagen](../cpp/ellipses-and-variadic-templates.md)

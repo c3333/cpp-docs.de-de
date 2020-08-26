@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - standard dialog, data validation routines
 ms.assetid: 44dbc222-a897-4949-925e-7660e8964ccd
-ms.openlocfilehash: 2511e2ec6dbd4e27c0e12e35bdc1cd671bf72eaa
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 19d1858d67802a7c464a9be783e4c1fb96fe3fae
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87213982"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88844482"
 ---
 # <a name="standard-dialog-data-validation-routines"></a>Standardroutinen zur Prüfung der Dialogfelddaten
 
@@ -20,7 +20,7 @@ In diesem Thema werden die Standard Routinen für die Dialog Datenüberprüfung 
 
 ### <a name="ddv-functions"></a>DDV-Funktionen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[DDV_MaxChars](#ddv_maxchars)|Überprüft, ob die Anzahl der Zeichen in einem angegebenen Steuerelement einen angegebenen Höchstwert nicht überschreitet.|
 |[DDV_MinMaxByte](#ddv_minmaxbyte)|Überprüft, ob ein angegebener Steuerelement Wert einen angegebenen **Byte** Bereich nicht überschreitet.|
@@ -38,7 +38,7 @@ In diesem Thema werden die Standard Routinen für die Dialog Datenüberprüfung 
 |[DDV_MinMaxUnsigned](#ddv_minmaxuint)|Überprüft, ob ein angegebener Steuerelement Wert zwischen zwei angegebenen Werten liegt.|
 |[DDV_MinMaxULongLong](#ddv_minmaxulonglong)|Überprüft, ob ein angegebener Steuerelement Wert einen angegebenen **ULONGLONG** -Bereich nicht überschreitet.|
 
-## <a name="ddv_maxchars"></a><a name="ddv_maxchars"></a>DDV_MaxChars
+## <a name="ddv_maxchars"></a><a name="ddv_maxchars"></a> DDV_MaxChars
 
 Ruft `DDV_MaxChars` auf, um zu überprüfen, ob die Anzahl der Zeichen im Steuerelement, das dem *Wert* zugeordnet ist, nicht mehr als *nchars*
 
@@ -68,7 +68,7 @@ Weitere Informationen zu DDV finden Sie unter [Dialog Datenaustausch und-Validie
 
   **Header** afxdd_. h
 
-## <a name="ddv_minmaxbyte"></a><a name="ddv_minmaxbyte"></a>DDV_MinMaxByte
+## <a name="ddv_minmaxbyte"></a><a name="ddv_minmaxbyte"></a> DDV_MinMaxByte
 
 Wird aufgerufen `DDV_MinMaxByte` , um zu überprüfen, ob der Wert im dem *Wert* zugeordneten Steuerelement zwischen *MinVal* und *MaxVal*liegt.
 
@@ -102,7 +102,7 @@ Weitere Informationen zu DDV finden Sie unter [Dialog Datenaustausch und-Validie
 
   **Header** afxdd_. h
 
-## <a name="ddv_minmaxdatetime"></a><a name="ddv_minmaxdatetime"></a>DDV_MinMaxDateTime
+## <a name="ddv_minmaxdatetime"></a><a name="ddv_minmaxdatetime"></a> DDV_MinMaxDateTime
 
 Wird aufgerufen, `DDV_MinMaxDateTime` um zu überprüfen, ob der Zeit-/Uhrzeitwert im Steuerelement für Datums-und Zeitauswahl ( [CDateTimeCtrl](../../mfc/reference/cdatetimectrl-class.md)), das *refvalue* zugeordnet ist, zwischen *refminrange* und *refmaxrange*fällt.
 
@@ -142,7 +142,7 @@ Weitere Informationen zu DDV finden Sie unter [Dialog Datenaustausch und-Validie
 
   **Header** afxdd_. h
 
-## <a name="ddv_minmaxdouble"></a><a name="ddv_minmaxdouble"></a>DDV_MinMaxDouble
+## <a name="ddv_minmaxdouble"></a><a name="ddv_minmaxdouble"></a> DDV_MinMaxDouble
 
 Wird aufgerufen `DDV_MinMaxDouble` , um zu überprüfen, ob der Wert im dem *Wert* zugeordneten Steuerelement zwischen *MinVal* und *MaxVal*liegt.
 
@@ -176,7 +176,7 @@ Weitere Informationen zu DDV finden Sie unter [Dialog Datenaustausch und-Validie
 
   **Header** afxdd_. h
 
-## <a name="ddv_minmaxdword"></a><a name="ddv_minmaxdword"></a>DDV_MinMaxDWord
+## <a name="ddv_minmaxdword"></a><a name="ddv_minmaxdword"></a> DDV_MinMaxDWord
 
 Wird aufgerufen `DDV_MinMaxDWord` , um zu überprüfen, ob der Wert im dem *Wert* zugeordneten Steuerelement zwischen *MinVal* und *MaxVal*liegt.
 
@@ -210,7 +210,7 @@ Weitere Informationen zu DDV finden Sie unter [Dialog Datenaustausch und-Validie
 
   **Header** afxdd_. h
 
-## <a name="ddv_minmaxfloat"></a><a name="ddv_minmaxfloat"></a>DDV_MinMaxFloat
+## <a name="ddv_minmaxfloat"></a><a name="ddv_minmaxfloat"></a> DDV_MinMaxFloat
 
 Wird aufgerufen `DDV_MinMaxFloat` , um zu überprüfen, ob der Wert im dem *Wert* zugeordneten Steuerelement zwischen *MinVal* und *MaxVal*liegt.
 
@@ -244,7 +244,7 @@ Weitere Informationen zu DDV finden Sie unter [Dialog Datenaustausch und-Validie
 
   **Header** afxdd_. h
 
-## <a name="ddv_minmaxint"></a><a name="ddv_minmaxint"></a>DDV_MinMaxInt
+## <a name="ddv_minmaxint"></a><a name="ddv_minmaxint"></a> DDV_MinMaxInt
 
 Wird aufgerufen `DDV_MinMaxInt` , um zu überprüfen, ob der Wert im dem *Wert* zugeordneten Steuerelement zwischen *MinVal* und *MaxVal*liegt.
 
@@ -278,7 +278,7 @@ Weitere Informationen zu DDV finden Sie unter [Dialog Datenaustausch und-Validie
 
   **Header** afxdd_. h
 
-## <a name="ddv_minmaxlong"></a><a name="ddv_minmaxlong"></a>DDV_MinMaxLong
+## <a name="ddv_minmaxlong"></a><a name="ddv_minmaxlong"></a> DDV_MinMaxLong
 
 Wird aufgerufen `DDV_MinMaxLong` , um zu überprüfen, ob der Wert im dem *Wert* zugeordneten Steuerelement zwischen *MinVal* und *MaxVal*liegt.
 
@@ -312,7 +312,7 @@ Weitere Informationen zu DDV finden Sie unter [Dialog Datenaustausch und-Validie
 
   **Header** afxdd_. h
 
-## <a name="ddv_minmaxlonglong"></a><a name="ddv_minmaxlonglong"></a>DDV_MinMaxLongLong
+## <a name="ddv_minmaxlonglong"></a><a name="ddv_minmaxlonglong"></a> DDV_MinMaxLongLong
 
 Wird aufgerufen `DDV_MinMaxLongLong` , um zu überprüfen, ob der Wert im dem *Wert* zugeordneten Steuerelement zwischen *MinVal* und *MaxVal*liegt.
 
@@ -346,7 +346,7 @@ Weitere Informationen zu DDV finden Sie unter [Dialog Datenaustausch und-Validie
 
   **Header** afxdd_. h
 
-## <a name="ddv_minmaxmonth"></a><a name="ddv_minmaxmonth"></a>DDV_MinMaxMonth
+## <a name="ddv_minmaxmonth"></a><a name="ddv_minmaxmonth"></a> DDV_MinMaxMonth
 
 Wird aufgerufen, `DDV_MinMaxMonth` um zu überprüfen, ob der Wert für Datum und Uhrzeit im Monatskalender-Steuerelement ( [CMonthCalCtrl](../../mfc/reference/cmonthcalctrl-class.md)), das *refvalue* zugeordnet ist, zwischen *refminrange* und *refmaxrange*fällt.
 
@@ -386,7 +386,7 @@ Weitere Informationen zu DDV finden Sie unter [Dialog Datenaustausch und-Validie
 
   **Header** afxdd_. h
 
-## <a name="ddv_minmaxshort"></a><a name="ddv_minmaxshort"></a>DDV_MinMaxShort
+## <a name="ddv_minmaxshort"></a><a name="ddv_minmaxshort"></a> DDV_MinMaxShort
 
 Wird aufgerufen `DDV_MinMaxShort` , um zu überprüfen, ob der Wert im dem *Wert* zugeordneten Steuerelement zwischen *MinVal* und *MaxVal*liegt.
 
@@ -420,7 +420,7 @@ Weitere Informationen zu DDV finden Sie unter [Dialog Datenaustausch und-Validie
 
   **Header** afxdd_. h
 
-## <a name="ddv_minmaxslider"></a><a name="ddv_minmaxslider"></a>DDV_MinMaxSlider
+## <a name="ddv_minmaxslider"></a><a name="ddv_minmaxslider"></a> DDV_MinMaxSlider
 
 Wird aufgerufen `DDV_MinMaxSlider` , um zu überprüfen, ob der Wert im dem *Wert* zugeordneten Steuerelement zwischen *MinVal* und *MaxVal*liegt.
 
@@ -454,7 +454,7 @@ Weitere Informationen zu DDV finden Sie unter [Dialog Datenaustausch und-Validie
 
   **Header** afxdd_. h
 
-## <a name="ddv_minmaxuint"></a><a name="ddv_minmaxuint"></a>DDV_MinMaxUInt
+## <a name="ddv_minmaxuint"></a><a name="ddv_minmaxuint"></a> DDV_MinMaxUInt
 
 Wird aufgerufen `DDV_MinMaxUInt` , um zu überprüfen, ob der Wert im dem *Wert* zugeordneten Steuerelement zwischen *MinVal* und *MaxVal*liegt.
 
@@ -488,7 +488,7 @@ Weitere Informationen zu DDV finden Sie unter [Dialog Datenaustausch und-Validie
 
   **Header** afxdd_. h
 
-## <a name="ddv_minmaxulonglong"></a><a name="ddv_minmaxulonglong"></a>DDV_MinMaxULongLong
+## <a name="ddv_minmaxulonglong"></a><a name="ddv_minmaxulonglong"></a> DDV_MinMaxULongLong
 
 Wird aufgerufen `DDV_MinMaxULongLong` , um zu überprüfen, ob der Wert im dem *Wert* zugeordneten Steuerelement zwischen *MinVal* und *MaxVal*liegt.
 

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - CMFCColorPopupMenu [MFC], GetMenuBar
 - CMFCColorPopupMenu [MFC], SetPropList
 ms.assetid: 0bf9efe8-aed5-4ab7-b23b-eb284b4668be
-ms.openlocfilehash: d668a7bd2b5226de906ca146c7b7e882b97f4640
-ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
+ms.openlocfilehash: 2964f250b25ad6c77c70e8f10cd92cca0c7d11da
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88560984"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88844560"
 ---
 # <a name="cmfccolorpopupmenu-class"></a>Cmfccolorpopupmenu-Klasse
 
@@ -35,17 +35,15 @@ class CMFCColorPopupMenu : public CMFCPopupMenu
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|||
+|name|Beschreibung|
 |-|-|
-|name|BESCHREIBUNG|
 |[Cmfccolorpopupmenu:: cmfccolorpopupmenu](#cmfccolorpopupmenu)|Erstellt ein `CMFCColorPopupMenu`-Objekt.|
 |`CMFCColorPopupMenu::~CMFCColorPopupMenu`|Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|||
+|name|Beschreibung|
 |-|-|
-|name|BESCHREIBUNG|
 |[Cmfccolorpopupmenu:: kreatetearoffbar](#createtearoffbar)|Erstellt eine andockbare Farbleiste. (Überschreibt [cmfcpopupmenu:: kreatetearoffbar](../../mfc/reference/cmfcpopupmenu-class.md#createtearoffbar).)|
 |[Cmfccolorpopupmenu:: getmenubar](#getmenubar)|Gibt den [cmfcpopupmenubar](../../mfc/reference/cmfcpopupmenubar-class.md) -Wert zurück, der in das Popupmenü eingebettet ist. (Überschreibt [cmfcpopupmenu:: getmenubar](../../mfc/reference/cmfcpopupmenu-class.md#getmenubar).)|
 |`CMFCColorPopupMenu::GetThisClass`|Wird vom Framework verwendet, um einen Zeiger auf das [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md) -Objekt abzurufen, das diesem Klassentyp zugeordnet ist.|
@@ -53,9 +51,8 @@ class CMFCColorPopupMenu : public CMFCPopupMenu
 
 ### <a name="data-members"></a>Datenelemente
 
-|||
+|Name|Beschreibung|
 |-|-|
-|Name|BESCHREIBUNG|
 |`m_bEnabledInCustomizeMode`|Ein boolescher Wert, der bestimmt, ob die Farbleiste angezeigt werden soll.|
 |`m_wndColorBar`|Das `CMFCColorBar` Objekt, das die Farbauswahl bereitstellt.|
 

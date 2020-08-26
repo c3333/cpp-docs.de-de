@@ -8,20 +8,19 @@ f1_keywords:
 ms.assetid: cf2e4115-f205-4a0e-90be-a143ffcc1f44
 helpviewer_keywords:
 - std::swap (unordered_map/multimap)
-ms.openlocfilehash: 759957028b74f984385f47647275cf22d561f59c
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 9e572e4ba8cb4c6cb15329342a7947c35ece7270
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81373136"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88844261"
 ---
 # <a name="ltunordered_mapgt-functions"></a>&lt;unordered_map&gt;-Funktionen
 
-|||
-|-|-|
-|[swap (unordered_map)](#swap)|[swap (unordered_multimap)](#swap_function_multimap)|
+[austauschen (unordered_map)](#swap) 
+ [austauschen (unordered_multimap)](#swap_function_multimap)
 
-## <a name="swap-unordered_map"></a><a name="swap"></a>Swap (unordered_map)
+## <a name="swap-unordered_map"></a><a name="swap"></a> austauschen (unordered_map)
 
 Vertauscht den Inhalt von zwei Containern.
 
@@ -34,10 +33,10 @@ void swap(
 
 ### <a name="parameters"></a>Parameter
 
-*Schlüssel*\
+*Wichtigen*\
 Der Schlüsseltyp.
 
-*Ty*\
+*Genossenschaft*\
 Der zugeordnete Typ.
 
 *Hash*\
@@ -46,10 +45,10 @@ Der Hashfunktionsobjekttyp.
 *Pred*\
 Der Gleichheitsvergleich-Funktionsobjekttyp.
 
-*Alloc*\
+*Zuordnungseinheits*\
 Die Zuweisungsklasse.
 
-*Links*\
+*linken*\
 Der erste zu tauschende Container.
 
 *Richting*\
@@ -57,7 +56,7 @@ Der zweite zu tauschende Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenfunktion `left.`wird [unordered_map::swap](../standard-library/unordered-map-class.md#swap)`(right)`ausgeführt.
+Die Vorlagen Funktion führt `left.` [unordered_map:: Swap](../standard-library/unordered-map-class.md#swap)aus `(right)` .
 
 ### <a name="example"></a>Beispiel
 
@@ -114,7 +113,7 @@ int main()
 [c, 3] [b, 2] [a, 1]
 ```
 
-## <a name="swap-unordered_multimap"></a><a name="swap_function_multimap"></a>Swap (unordered_multimap)
+## <a name="swap-unordered_multimap"></a><a name="swap_function_multimap"></a> austauschen (unordered_multimap)
 
 Vertauscht den Inhalt von zwei Containern.
 
@@ -127,10 +126,10 @@ void swap(
 
 ### <a name="parameters"></a>Parameter
 
-*Schlüssel*\
+*Wichtigen*\
 Der Schlüsseltyp.
 
-*Ty*\
+*Genossenschaft*\
 Der zugeordnete Typ.
 
 *Hash*\
@@ -139,10 +138,10 @@ Der Hashfunktionsobjekttyp.
 *Pred*\
 Der Gleichheitsvergleich-Funktionsobjekttyp.
 
-*Alloc*\
+*Zuordnungseinheits*\
 Die Zuweisungsklasse.
 
-*Links*\
+*linken*\
 Der erste zu tauschende Container.
 
 *Richting*\
@@ -150,7 +149,7 @@ Der zweite zu tauschende Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenfunktion `left.`wird [unordered_multimap::swap](../standard-library/unordered-multimap-class.md#swap)`(right)`ausgeführt.
+Die Vorlagen Funktion führt `left.` [unordered_multimap:: Swap](../standard-library/unordered-multimap-class.md#swap)aus `(right)` .
 
 ### <a name="example"></a>Beispiel
 
@@ -207,6 +206,6 @@ int main()
 [c, 3] [b, 2] [a, 1]
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [<unordered_map>](../standard-library/unordered-map.md)

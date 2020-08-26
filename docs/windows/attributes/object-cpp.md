@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - object attribute
 ms.assetid: f2d3c231-630d-4b4c-bd15-b1c30df362dd
-ms.openlocfilehash: 4545d899c13a1eabf8ea5fb6fe3918fb5f05b626
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: c0c0ff552d8a33ebe70f56b9b186e963cc8e9b3d
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80214669"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88843104"
 ---
 # <a name="object-c"></a>object (C++)
 
@@ -25,9 +25,9 @@ Identifiziert eine benutzerdefinierte-Schnittstelle.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Wenn eine Schnittstellen Definition vorangestellt wird, bewirkt das **Objekt** C++ Attribut, dass die-Schnittstelle in der IDL-Datei als benutzerdefinierte-Schnittstelle platziert wird.
+Wenn eine Schnittstellen Definition vorangestellt wird, bewirkt das **Object** C++-Attribut, dass die-Schnittstelle in der IDL-Datei als benutzerdefinierte-Schnittstelle platziert wird.
 
-Jede mit dem-Objekt markierte Schnittstelle muss von `IUnknown`erben. Diese Bedingung ist erfüllt, wenn eine der Basis Schnittstellen von `IUnknown`erbt. Wenn keine Basis Schnittstellen von `IUnknown`erben, bewirkt der Compiler, dass die mit **Object** markierte Schnittstelle von `IUnknown`abgeleitet wird.
+Jede mit dem-Objekt markierte Schnittstelle muss von Erben `IUnknown` . Diese Bedingung ist erfüllt, wenn eine der Basis Schnittstellen von erbt `IUnknown` . Wenn keine Basis Schnittstellen von Erben `IUnknown` , bewirkt der Compiler, dass die mit **Object** markierte Schnittstelle von abgeleitet wird `IUnknown` .
 
 ## <a name="example"></a>Beispiel
 
@@ -35,12 +35,10 @@ Ein Beispiel für die Verwendung von **Object**finden Sie unter [nicht](nonbrows
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|**interface**|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|**interface**|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -49,8 +47,8 @@ Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontext
 ## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[Schnittstellenattribut](interface-attributes.md)<br/>
+[Schnittstellen Attribute](interface-attributes.md)<br/>
 [dual](dual.md)<br/>
 [dispinterface](dispinterface.md)<br/>
-[custom](custom-cpp.md)<br/>
+[Zollunion](custom-cpp.md)<br/>
 [__interface](../../cpp/interface.md)

@@ -36,12 +36,12 @@ helpviewer_keywords:
 - GetRowset method
 - GetSchemas method
 ms.assetid: bd7bf0d7-a1c6-4afa-88e3-cfdbdf560703
-ms.openlocfilehash: f6af0f61ca425a2a1fba98b4041a92163e2f1d4e
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: eea0ebeaf83b9203cf57f7b35fe3dd1ec2d63d81
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80210625"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88844001"
 ---
 # <a name="idbschemarowsetimpl-class"></a>IDBSchemaRowsetImpl-Klasse
 
@@ -61,21 +61,21 @@ Die Klasse, mit der `IDBSchemaRowsetImpl` geerbt wird. Diese Klasse ist in der R
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** atldb.h
+**Header:** „atldb.h“
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="methods"></a>Methoden
 
-|||
+| Name | Beschreibung |
 |-|-|
-|[CheckRestrictions](#checkrestrictions)|Überprüft die Gültigkeit von Einschränkungen an einem Schemarowset.|
+|[CheckRestrictions](#checkrestrictions)|Überprüft die Gültigkeit von Einschränkungen für ein Schemarowset.|
 |[CreateSchemaRowset](#createschemarowset)|Implementiert eine COM-Objekterstellerfunktion für das mit dem Vorlagenparameter angegebene Objekt.|
 |[SetRestrictions](#setrestrictions)|Gibt an, welche Einschränkungen Sie für ein bestimmtes Schemarowset unterstützen.|
 
 ### <a name="interface-methods"></a>Schnittstellenmethoden
 
-|||
+| Name | Beschreibung |
 |-|-|
 |[GetRowset](#getrowset)|Gibt ein Schemarowset zurück.|
 |[GetSchemas](#getschemas)|Gibt eine Liste der Schemarowsets zurück, auf die [IDBSchemaRowsetImpl::GetRowset](../../data/oledb/idbschemarowsetimpl-getrowset.md)zugreifen kann.|
@@ -84,7 +84,7 @@ Die Klasse, mit der `IDBSchemaRowsetImpl` geerbt wird. Diese Klasse ist in der R
 
 Diese Klasse implementiert die [IDBSchemaRowset](/previous-versions/windows/desktop/ms713686(v=vs.85)) -Schnittstelle und die vorlagenbasierte Erstellerfunktion [CreateSchemaRowset](../../data/oledb/idbschemarowsetimpl-createschemarowset.md).
 
-OLE DB verwendet die Schemarowsets, um Daten zu den Daten in einem Anbieter zurückzugeben. Solche Daten werden häufig als „Metadaten“ bezeichnet. Standardmäßig muss ein Anbieter immer `DBSCHEMA_TABLES`, `DBSCHEMA_COLUMNS`und `DBSCHEMA_PROVIDER_TYPES`unterstützen, wie in [IDBSchemaRowset](/previous-versions/windows/desktop/ms713686(v=vs.85)) in der *OLE DB Programmierer-Referenz*beschrieben. Schemarowsets werden in einer Schemazuordnung festgelegt. Informationen zu den Schemazuordnungseinträgen finden Sie unter [SCHEMA_ENTRY](../../data/oledb/schema-entry.md).
+OLE DB verwendet die Schemarowsets, um Daten zu den Daten in einem Anbieter zurückzugeben. Solche Daten werden häufig als „Metadaten“ bezeichnet. Standardmäßig muss ein Anbieter immer `DBSCHEMA_TABLES` , und unterstützen `DBSCHEMA_COLUMNS` `DBSCHEMA_PROVIDER_TYPES` , wie in [IDBSchemaRowset](/previous-versions/windows/desktop/ms713686(v=vs.85)) in der *OLE DB Programmierer-Referenz*beschrieben. Schemarowsets werden in einer Schemazuordnung festgelegt. Informationen zu den Schemazuordnungseinträgen finden Sie unter [SCHEMA_ENTRY](../../data/oledb/schema-entry.md).
 
 Der OLE DB-Anbieterassistent im ATL-Objektassistenten generiert automatisch Code für die Schemarowsets in Ihrem Projekt. (Standardmäßig unterstützt der Assistent die zuvor erwähnten obligatorischen Schemarowsets.) Wenn Sie einen Consumer mit dem ATL-Objekt-Assistenten erstellen, verwendet der Assistent Schemarowsets, um die richtigen Daten an einen Anbieter zu binden. Wenn Sie die Schemarowsets nicht implementieren, um die richtigen Metadaten bereitzustellen, bindet der Assistent nicht die richtigen Daten.
 
@@ -92,9 +92,9 @@ Informationen über die Unterstützung für Schemarowsets in Ihrem Anbieter find
 
 Weitere Informationen zu Schemarowsets finden Sie unter [Schema Rowsets](/previous-versions/windows/desktop/ms712921(v=vs.85)) (Schemarowsets) in der *OLE DB-Programmiererreferenz*.
 
-## <a name="idbschemarowsetimplcheckrestrictions"></a><a name="checkrestrictions"></a>Idbschemarowabtimpl:: Check Restrictions
+## <a name="idbschemarowsetimplcheckrestrictions"></a><a name="checkrestrictions"></a> Idbschemarowabtimpl:: Check Restrictions
 
-Überprüft die Gültigkeit von Einschränkungen an einem Schemarowset.
+Überprüft die Gültigkeit von Einschränkungen für ein Schemarowset.
 
 ### <a name="syntax"></a>Syntax
 
@@ -116,13 +116,13 @@ HRESULT CheckRestrictions(REFGUID rguidSchema,
 
 ### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie `CheckRestrictions` , um die Gültigkeit von Einschränkungen für ein Schemarowset zu überprüfen. Es überprüft die Einschränkungen für die Schemarowsets `DBSCHEMA_TABLES`, `DBSCHEMA_COLUMNS`und `DBSCHEMA_PROVIDER_TYPES`. Nennen Sie ihn, um zu bestimmen, ob der `IDBSchemaRowset::GetRowset` eines Consumers korrekt ist. Wenn Sie andere als die oben aufgeführten Schemarowsets unterstützen möchten, sollten Sie Ihre eigene Funktion zum Ausführen dieser Aufgabe erstellen.
+Verwenden Sie `CheckRestrictions` , um die Gültigkeit von Einschränkungen für ein Schemarowset zu überprüfen. Es überprüft die Einschränkungen für die `DBSCHEMA_TABLES` `DBSCHEMA_COLUMNS` `DBSCHEMA_PROVIDER_TYPES` Schemarowsets, und. Nennen Sie ihn, um zu bestimmen, ob der-Rückruf eines Consumers `IDBSchemaRowset::GetRowset` korrekt ist. Wenn Sie andere als die oben aufgeführten Schemarowsets unterstützen möchten, sollten Sie Ihre eigene Funktion zum Ausführen dieser Aufgabe erstellen.
 
-`CheckRestrictions` bestimmt, ob der Consumer [GetRowset](../../data/oledb/idbschemarowsetimpl-getrowset.md) mit der richtigen Einschränkung und dem richtigen Einschränkungstyp (z. b. eine VT_BSTR für eine Zeichenfolge), die der Anbieter unterstützt, anruft. Es bestimmt außerdem, ob die richtige Anzahl von Einschränkungen unterstützt werden. Standardmäßig fragt `CheckRestrictions` den Anbieter mittels des Aufrufs von [SetRestrictions](../../data/oledb/idbschemarowsetimpl-setrestrictions.md) , welche Einschränkungen für ein angegebenes Rowset unterstützt werden. Es vergleicht dann die Einschränkungen vom Consumer mit den vom Anbieter unterstützten, wobei der Vergleich entweder erfolgreich ist oder fehlschlägt.
+`CheckRestrictions` bestimmt, ob der Consumer [GetRowset](../../data/oledb/idbschemarowsetimpl-getrowset.md) mit der richtigen Einschränkung und dem richtigen Einschränkungstyp (z. b. einer VT_BSTR für eine Zeichenfolge), die der Anbieter unterstützt, anruft. Es bestimmt außerdem, ob die richtige Anzahl von Einschränkungen unterstützt werden. Standardmäßig fragt `CheckRestrictions` den Anbieter mittels des Aufrufs von [SetRestrictions](../../data/oledb/idbschemarowsetimpl-setrestrictions.md) , welche Einschränkungen für ein angegebenes Rowset unterstützt werden. Es vergleicht dann die Einschränkungen vom Consumer mit den vom Anbieter unterstützten, wobei der Vergleich entweder erfolgreich ist oder fehlschlägt.
 
 Weitere Informationen zu [Schemarowsets finden Sie unter IDBSchemaRowset](/previous-versions/windows/desktop/ms713686(v=vs.85)) in der *OLE DB-Programmier Referenz* im Windows SDK.
 
-## <a name="idbschemarowsetimplcreateschemarowset"></a><a name="createschemarowset"></a>IDBSchemaRowsetImpl:: kreateschemarowset
+## <a name="idbschemarowsetimplcreateschemarowset"></a><a name="createschemarowset"></a> IDBSchemaRowsetImpl:: kreateschemarowset
 
 Implementiert eine COM-Objekterstellerfunktion für das mit dem Vorlagenparameter angegebene Objekt.
 
@@ -152,16 +152,16 @@ in Ein äußeres [IUnknown](/windows/win32/api/unknwn/nn-unknwn-iunknown) beim a
 [in] Ein Array auf das Rowset anzuwendender `cRestrictions`**VARIANT**en.
 
 *riid*<br/>
-in Die Schnittstelle zu [QueryInterface](../../atl/queryinterface.md) für in der Ausgabe `IUnknown`.
+in Die Schnittstelle zu [QueryInterface](../../atl/queryinterface.md) für in der Ausgabe `IUnknown` .
 
 *cPropertySets*<br/>
-[in] Die Anzahl festzulegender Eigenschaftensätze.
+[in] Die Anzahl der festzulegenden Eigenschaftensätze.
 
 *rgPropertySets*<br/>
 [in] Ein Array von [DBPROPSET](/previous-versions/windows/desktop/ms714367(v=vs.85)) -Strukturen, die die festzulegenden Eigenschaften angeben.
 
 *ppRowset*<br/>
-vorgenommen Die von *riid*angeforderte ausgehende `IUnknown`. Diese `IUnknown` ist eine Schnittstelle für das Schemarowsetobjekt.
+vorgenommen Der `IUnknown` von *riid*angeforderte ausgehende. Dies `IUnknown` ist eine Schnittstelle für das Schemarowsetobjekt.
 
 *pschemarowset*<br/>
 [out] Ein Zeiger auf eine Instanz der Schemarowsetklasse. Dieser Parameter wird in der Regel nicht verwendet, kann jedoch verwendet werden, wenn Sie mehr Arbeit in das Schemarowset investieren müssen, bevor Sie es einem COM-Objekt übergeben. Die Lebensdauer von *pschemarowset* wird durch *ppRowset*gebunden.
@@ -174,7 +174,7 @@ Ein HRESULT-Standardwert.
 
 Diese Funktion implementiert einen generischen Ersteller für alle Typen von Schemarowsets. In der Regel ruft der Benutzer diese Funktion nicht auf. Sie wird durch die Implementierung der Schemazuordnung aufgerufen.
 
-## <a name="idbschemarowsetimplsetrestrictions"></a><a name="setrestrictions"></a>Idbschemarowabtimpl:: abtrestrictions
+## <a name="idbschemarowsetimplsetrestrictions"></a><a name="setrestrictions"></a> Idbschemarowabtimpl:: abtrestrictions
 
 Gibt an, welche Einschränkungen Sie für ein bestimmtes Schemarowset unterstützen.
 
@@ -199,7 +199,7 @@ in Die Anzahl der Einschränkungen im *rgRestrictions* -Array und die Anzahl von
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das `IDBSchemaRowset`-Objekt ruft `SetRestrictions` auf, um zu bestimmen, welche Einschränkungen Sie für ein bestimmtes Schemarowset unterstützen (es wird von [GetSchemas](../../data/oledb/idbschemarowsetimpl-getschemas.md) über einen upcasted-Zeiger aufgerufen). Einschränkungen ermöglichen es Consumern, nur die übereinstimmende Zeilen abzurufen (z. B. Suche nach allen Spalten in der Tabelle „MyTable“). Einschränkungen sind optional, und wenn keine unterstützt werden (Standardeinstellung), werden immer alle Daten zurückgegeben.
+Das- `IDBSchemaRowset` Objekt ruft `SetRestrictions` auf, um zu bestimmen, welche Einschränkungen Sie für ein bestimmtes Schemarowset unterstützen (es wird von [GetSchemas](../../data/oledb/idbschemarowsetimpl-getschemas.md) über einen upcasted-Zeiger aufgerufen). Einschränkungen ermöglichen es Consumern, nur die übereinstimmende Zeilen abzurufen (z. B. Suche nach allen Spalten in der Tabelle „MyTable“). Einschränkungen sind optional, und wenn keine unterstützt werden (Standardeinstellung), werden immer alle Daten zurückgegeben.
 
 Die Standard Implementierung dieser Methode legt die *rgRestrictions* -Array Elemente auf 0 fest. Überschreiben Sie die Standardeinstellung in Ihrer Sitzungsklasse, um Einschränkungen festzulegen, die vom Standard abweichen.
 
@@ -209,7 +209,7 @@ Ein Beispiel für einen Anbieter, der Schemarowsets unterstützt, finden Sie unt
 
 Weitere Informationen zu [Schemarowsets finden Sie unter IDBSchemaRowset](/previous-versions/windows/desktop/ms713686(v=vs.85)) in der *OLE DB-Programmier Referenz* im Windows SDK.
 
-## <a name="idbschemarowsetimplgetrowset"></a><a name="getrowset"></a>IDBSchemaRowsetImpl:: GetRowset
+## <a name="idbschemarowsetimplgetrowset"></a><a name="getrowset"></a> IDBSchemaRowsetImpl:: GetRowset
 
 Gibt ein Schemarowset zurück.
 
@@ -244,7 +244,7 @@ in Ein äußerer `IUnknown` beim aggregierten; andernfalls NULL.
 [in] Die anzufordernde IID des neu erstellten Schemarowsets.
 
 *cPropertySets*<br/>
-[in] Die Anzahl festzulegender Eigenschaftensätze.
+[in] Die Anzahl der festzulegenden Eigenschaftensätze.
 
 *rgPropertySets*<br/>
 [in/out] Ein Array von [DBPROPSET](/previous-versions/windows/desktop/ms714367(v=vs.85)) -Strukturen, die für das neu erstellte Schemarowset festgelegt werden sollen.
@@ -254,11 +254,11 @@ in Ein äußerer `IUnknown` beim aggregierten; andernfalls NULL.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Für diese Methode muss der Benutzer eine Schemazuordnung in der Sitzungsklasse haben. Mithilfe der Schema Zuordnungs Informationen erstellt `GetRowset` ein angegebenes Rowsetobjekt, wenn der *rguidschema* -Parameter mit einem der Zuordnungs Einträge identisch ist. Unter [SCHEMA_ENTRY](../../data/oledb/schema-entry.md) finden Sie eine Beschreibung des Zuordnungseintrags.
+Für diese Methode muss der Benutzer eine Schemazuordnung in der Sitzungsklasse haben. Erstellt mithilfe der Schema Zuordnungs Informationen ein angegebenes `GetRowset` Rowsetobjekt, wenn der *rguidschema* -Parameter mit einem der Karten Einträge-GUIDs identisch ist. Unter [SCHEMA_ENTRY](../../data/oledb/schema-entry.md) finden Sie eine Beschreibung des Zuordnungseintrags.
 
 Siehe [IDBSchemaRowset:: GetRowset](/previous-versions/windows/desktop/ms722634(v=vs.85)) im Windows SDK.
 
-## <a name="idbschemarowsetimplgetschemas"></a><a name="getschemas"></a>Idbschemarowabtimpl:: GetSchemas
+## <a name="idbschemarowsetimplgetschemas"></a><a name="getschemas"></a> Idbschemarowabtimpl:: GetSchemas
 
 Gibt eine Liste der Schemarowsets zurück, auf die [IDBSchemaRowsetImpl::GetRowset](../../data/oledb/idbschemarowsetimpl-getrowset.md)zugreifen kann.
 
@@ -289,7 +289,7 @@ Für die Implementierung dieser Funktion muss der Benutzer eine Schemazuordnung 
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Schemarowset-Klassen und Typedef-Klassen](../../data/oledb/schema-rowset-classes-and-typedef-classes.md)<br/>
-[Supporting Schema Rowsets](../../data/oledb/supporting-schema-rowsets.md)<br/>
+[Schemarowset-Klassen und typedef-Klassen](../../data/oledb/schema-rowset-classes-and-typedef-classes.md)<br/>
+[Unterstützen von Schemarowsets](../../data/oledb/supporting-schema-rowsets.md)<br/>
 [SCHEMA_ENTRY](../../data/oledb/schema-entry.md)<br/>
 [UpdatePV](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/ATL/OLEDB/Provider)

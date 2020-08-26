@@ -27,12 +27,12 @@ helpviewer_keywords:
 - FreeRecordMemory method
 - GetColumnInfo method
 ms.assetid: bd4f58ed-cebf-4d43-8985-1e5fcbf06953
-ms.openlocfilehash: 42b7d385877d68db22ccaf6665e8043dbfe2ee44
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 9ad4292b69d0219aa1732638ae250758e4456f4b
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87233482"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88843286"
 ---
 # <a name="caccessorrowset-class"></a>CAccessorRowset-Klasse
 
@@ -62,19 +62,19 @@ Eine Rowsetklasse.
 
 ### <a name="methods"></a>Methoden
 
-|||
-|-|-|
-|[Zwick](#bind)|Erstellt Bindungen (wird verwendet, wenn `bBind` als **`false`** in [CCommand:: Open](../../data/oledb/ccommand-open.md)angegeben ist).|
-|[CAccessorRowset](#caccessorrowset)|Konstruktor.|
-|[Close](#close)|Schließt das Rowset und alle Accessoren.|
-|[FreeRecordMemory](#freerecordmemory)|Gibt alle Spalten im aktuellen Datensatz frei, die freigegeben werden müssen.|
-|[GetColumnInfo](#getcolumninfo)|Implementiert [IColumnsInfo:: GetColumnInfo](/previous-versions/windows/desktop/ms722704\(v=vs.85\)).|
+| Name | Beschreibung |
+|--|--|
+| [Zwick](#bind) | Erstellt Bindungen (wird verwendet, wenn `bBind` als **`false`** in [CCommand:: Open](../../data/oledb/ccommand-open.md)angegeben ist). |
+| [CAccessorRowset](#caccessorrowset) | Konstruktor. |
+| [Schließen](#close) | Schließt das Rowset und alle Accessoren. |
+| [FreeRecordMemory](#freerecordmemory) | Gibt alle Spalten im aktuellen Datensatz frei, die freigegeben werden müssen. |
+| [GetColumnInfo](#getcolumninfo) | Implementiert [IColumnsInfo:: GetColumnInfo](/previous-versions/windows/desktop/ms722704\(v=vs.85\)). |
 
 ## <a name="remarks"></a>Bemerkungen
 
 Die-Klasse `TAccessor` verwaltet den-Accessor. Die Klasse *TRowset* verwaltet das Rowset.
 
-## <a name="caccessorrowsetbind"></a><a name="bind"></a>CAccessorRowset:: Bind
+## <a name="caccessorrowsetbind"></a><a name="bind"></a> CAccessorRowset:: Bind
 
 Erstellt die Bindungen, wenn Sie `bBind` als **`false`** in [CCommand:: Open](../../data/oledb/ccommand-open.md)angegeben haben.
 
@@ -88,7 +88,7 @@ HRESULT Bind();
 
 Ein HRESULT-Standard.
 
-## <a name="caccessorrowsetcaccessorrowset"></a><a name="caccessorrowset"></a>CAccessorRowset:: CAccessorRowset
+## <a name="caccessorrowsetcaccessorrowset"></a><a name="caccessorrowset"></a> CAccessorRowset:: CAccessorRowset
 
 Initialisiert das `CAccessorRowset`-Objekt.
 
@@ -98,7 +98,7 @@ Initialisiert das `CAccessorRowset`-Objekt.
 CAccessorRowset();
 ```
 
-## <a name="caccessorrowsetclose"></a><a name="close"></a>CAccessorRowset:: Close
+## <a name="caccessorrowsetclose"></a><a name="close"></a> CAccessorRowset:: Close
 
 Gibt alle aktiven Accessoren und das Rowset frei.
 
@@ -112,7 +112,7 @@ void Close();
 
 Gibt jeden zugeordneten Arbeitsspeicher frei.
 
-## <a name="caccessorrowsetfreerecordmemory"></a><a name="freerecordmemory"></a>CAccessorRowset:: freerecordmemory
+## <a name="caccessorrowsetfreerecordmemory"></a><a name="freerecordmemory"></a> CAccessorRowset:: freerecordmemory
 
 Gibt alle Spalten im aktuellen Datensatz frei, die freigegeben werden müssen.
 
@@ -122,7 +122,7 @@ Gibt alle Spalten im aktuellen Datensatz frei, die freigegeben werden müssen.
 void FreeRecordMemory();
 ```
 
-## <a name="caccessorrowsetgetcolumninfo"></a><a name="getcolumninfo"></a>CAccessorRowset:: GetColumnInfo
+## <a name="caccessorrowsetgetcolumninfo"></a><a name="getcolumninfo"></a> CAccessorRowset:: GetColumnInfo
 
 Ruft Spalten Informationen aus dem geöffneten Rowset ab.
 
@@ -151,7 +151,7 @@ Der Benutzer muss die zurückgegebenen Spalten Informationen und den Zeichen fol
 
 Weitere Informationen finden Sie unter [IColumnsInfo:: GetColumnInfo](/previous-versions/windows/desktop/ms722704\(v=vs.85\)) in der *OLE DB-Programmier Referenz*.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
 [Referenz zu OLE DB Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)

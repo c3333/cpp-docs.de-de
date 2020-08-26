@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - uidefault attribute
 ms.assetid: 200de0e0-2e34-40a2-bae4-8d485a62264d
-ms.openlocfilehash: 55e88ab4dfaaa4157a99c4dc523f205370f78c46
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 70f54c9d3e6aaa46aef08d109e8682989e382120
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80214460"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88843065"
 ---
 # <a name="uidefault"></a>uidefault
 
@@ -25,7 +25,7 @@ Gibt an, dass der Typinformationsmember der Standard Member für die Anzeige in 
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Uidefault** C++ -Attribut verfügt über die gleiche Funktionalität wie das [Uidefault](/windows/win32/Midl/uidefault) -Attribut "Mittel".
+Das **Uidefault** C++-Attribut verfügt über die gleiche Funktionalität wie das [Uidefault](/windows/win32/Midl/uidefault) -Attribut "Mittel".
 
 ## <a name="example"></a>Beispiel
 
@@ -50,12 +50,10 @@ __interface ICustom{
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|Schnittstellenmethode|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Schnittstellenmethode|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -64,4 +62,4 @@ Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontext
 ## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[Methodenattribut](method-attributes.md)
+[Methoden Attribute](method-attributes.md)

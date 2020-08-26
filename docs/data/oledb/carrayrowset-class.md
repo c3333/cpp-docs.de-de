@@ -42,12 +42,12 @@ helpviewer_keywords:
 - operator[], arrays
 - m_nRowsRead
 ms.assetid: 511427e1-73ca-4fd8-9ba1-ae9463557cb6
-ms.openlocfilehash: 0c5159ac5b834c7c31d980a412f28f8129e15b45
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: c5f12afa09bc1c62d3287bab93159e217721906f
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80212263"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88843247"
 ---
 # <a name="carrayrowset-class"></a>CArrayRowset-Klasse
 
@@ -71,28 +71,28 @@ Der Typ der Accessorklasse, die vom Rowset verwendet werden soll.
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="methods"></a>Methoden
 
-|||
-|-|-|
-|[CArrayRowset](#carrayrowset)|Konstruktor.|
-|[Momentaufnahme](#snapshot)|Liest das gesamte Rowset in den Arbeitsspeicher.|
+| Name | Beschreibung |
+|--|--|
+| [CArrayRowset](#carrayrowset) | Konstruktor. |
+| [Momentaufnahme](#snapshot) | Liest das gesamte Rowset in den Arbeitsspeicher. |
 
 ### <a name="operators"></a>Operatoren
 
-|||
-|-|-|
-|[KOM&#91;&#93;](#operator)|Greift auf ein Element des Rowsets zu.|
+| Name | Beschreibung |
+|--|--|
+| [Operator&#91;&#93;](#operator) | Greift auf ein Element des Rowsets zu. |
 
 ### <a name="data-members"></a>Datenelemente
 
-|||
-|-|-|
-|[CArrayRowset::m_nRowsRead](#nrowsread)|Die Anzahl der bereits gelesenen Zeilen.|
+| Name | Beschreibung |
+|--|--|
+| [CArrayRowset::m_nRowsRead](#nrowsread) | Die Anzahl der bereits gelesenen Zeilen. |
 
-## <a name="carrayrowsetcarrayrowset"></a><a name="carrayrowset"></a>CArrayRowset:: CArrayRowset
+## <a name="carrayrowsetcarrayrowset"></a><a name="carrayrowset"></a> CArrayRowset:: CArrayRowset
 
 Erstellt ein neues `CArrayRowset`-Objekt.
 
@@ -107,7 +107,7 @@ CArrayRowset(int nMax = 100000);
 *nMax*<br/>
 in Maximale Anzahl von Zeilen im Rowset.
 
-## <a name="carrayrowsetsnapshot"></a><a name="snapshot"></a>CArrayRowset:: Snapshot
+## <a name="carrayrowsetsnapshot"></a><a name="snapshot"></a> CArrayRowset:: Snapshot
 
 Liest das gesamte Rowset in den Arbeitsspeicher, wobei ein Bild oder eine Momentaufnahme erstellt wird.
 
@@ -117,7 +117,7 @@ Liest das gesamte Rowset in den Arbeitsspeicher, wobei ein Bild oder eine Moment
 HRESULT Snapshot() throw();
 ```
 
-## <a name="carrayrowsetoperator"></a><a name="operator"></a>CArrayRowset::-Operator
+## <a name="carrayrowsetoperator"></a><a name="operator"></a> CArrayRowset::-Operator
 
 Stellt eine Array ähnliche Syntax für den Zugriff auf eine Zeile im Rowset bereit.
 
@@ -143,7 +143,7 @@ Der Inhalt der angeforderten Zeile.
 
 Wenn die Anzahl der Zeilen im Rowset von *nrow* überschritten wird, wird eine Ausnahme ausgelöst.
 
-## <a name="carrayrowsetm_nrowsread"></a><a name="nrowsread"></a>CArrayRowset:: m_nRowsRead
+## <a name="carrayrowsetm_nrowsread"></a><a name="nrowsread"></a> CArrayRowset:: m_nRowsRead
 
 Enthält die Anzahl der Zeilen im Rowset, die bereits gelesen wurden.
 
@@ -156,5 +156,5 @@ ULONG m_nRowsRead;
 ## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
-[Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)<br/>
+[Referenz zu OLE DB Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)<br/>
 [CRowset-Klasse](../../data/oledb/crowset-class.md)

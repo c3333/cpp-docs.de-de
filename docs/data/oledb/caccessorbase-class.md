@@ -25,16 +25,16 @@ helpviewer_keywords:
 - IsAutoAccessor method
 - ReleaseAccessors method
 ms.assetid: 389b65be-11ca-4ae0-9290-60c621c4982b
-ms.openlocfilehash: e29883b2a42010daee19f915c49c31686b232cf6
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: eff7eff855bcccefee7e051c67d583d28e488293
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87233456"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88843299"
 ---
 # <a name="caccessorbase-class"></a>CAccessorBase-Klasse
 
-Alle Accessoren in den OLE DB Vorlagen werden von dieser Klasse abgeleitet. `CAccessorBase`ermöglicht einem Rowset die Verwaltung mehrerer Accessoren. Außerdem werden Bindungen für Parameter und Ausgabespalten bereitstellt.
+Alle Accessoren in den OLE DB Vorlagen werden von dieser Klasse abgeleitet. `CAccessorBase` ermöglicht einem Rowset die Verwaltung mehrerer Accessoren. Außerdem werden Bindungen für Parameter und Ausgabespalten bereitstellt.
 
 ## <a name="syntax"></a>Syntax
 
@@ -46,19 +46,19 @@ Alle Accessoren in den OLE DB Vorlagen werden von dieser Klasse abgeleitet. `CAc
 
 ### <a name="methods"></a>Methoden
 
-|||
-|-|-|
-|[Close](#close)|Schließt die Accessoren.|
-|[GetHAccessor](#geth)|Ruft das Accessorhandle ab.|
-|[GetNumAccessors](#getnum)|Ruft die Anzahl der Accessoren ab, die von der-Klasse erstellt wurden.|
-|[IsAutoAccessor](#isauto)|Testet, ob der angegebene Accessor ein Autoaccessor ist.|
-|[ReleaseAccessors](#release)|Gibt die Accessoren frei.|
+| Name | Beschreibung |
+|--|--|
+| [Schließen](#close) | Schließt die Accessoren. |
+| [GetHAccessor](#geth) | Ruft das Accessorhandle ab. |
+| [GetNumAccessors](#getnum) | Ruft die Anzahl der Accessoren ab, die von der-Klasse erstellt wurden. |
+| [IsAutoAccessor](#isauto) | Testet, ob der angegebene Accessor ein Autoaccessor ist. |
+| [ReleaseAccessors](#release) | Gibt die Accessoren frei. |
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldbcli.h
 
-## <a name="caccessorbaseclose"></a><a name="close"></a>CAccessorBase:: Close
+## <a name="caccessorbaseclose"></a><a name="close"></a> CAccessorBase:: Close
 
 Schließt die Accessoren.
 
@@ -72,7 +72,7 @@ void Close();
 
 Sie müssen [releaseaccessors](../../data/oledb/caccessorbase-releaseaccessors.md) zuerst aufruft.
 
-## <a name="caccessorbasegethaccessor"></a><a name="geth"></a>CAccessorBase:: gethaccessor
+## <a name="caccessorbasegethaccessor"></a><a name="geth"></a> CAccessorBase:: gethaccessor
 
 Ruft das Accessorhandle eines angegebenen Accessors ab.
 
@@ -91,7 +91,7 @@ in Die Null-Offset Zahl für den Accessor.
 
 Der Accessorhandle.
 
-## <a name="caccessorbasegetnumaccessors"></a><a name="getnum"></a>CAccessorBase:: getnumaccessors
+## <a name="caccessorbasegetnumaccessors"></a><a name="getnum"></a> CAccessorBase:: getnumaccessors
 
 Ruft die Anzahl der Accessoren ab, die von der-Klasse erstellt wurden.
 
@@ -105,7 +105,7 @@ ULONG GetNumAccessors() const;
 
 Die Anzahl der Accessoren, die von der-Klasse erstellt wurden.
 
-## <a name="caccessorbaseisautoaccessor"></a><a name="isauto"></a>CAccessorBase:: isautoaccessor
+## <a name="caccessorbaseisautoaccessor"></a><a name="isauto"></a> CAccessorBase:: isautoaccessor
 
 Gibt true zurück, wenn Daten während eines Verschiebungs Vorgangs automatisch für den Accessor abgerufen werden.
 
@@ -124,7 +124,7 @@ in Die Null-Offset Zahl für den Accessor.
 
 Gibt zurück, **`true`** Wenn der Accessor ein Autoaccessor ist. Andernfalls wird zurückgegeben **`false`** .
 
-## <a name="caccessorbasereleaseaccessors"></a><a name="release"></a>CAccessorBase:: releaseaccessors
+## <a name="caccessorbasereleaseaccessors"></a><a name="release"></a> CAccessorBase:: releaseaccessors
 
 Gibt die von der-Klasse erstellten Accessoren frei.
 
@@ -147,7 +147,7 @@ Ein HRESULT-Standard.
 
 Wird von [CAccessorRowset:: Close](../../data/oledb/caccessorrowset-close.md)aufgerufen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
 [Referenz zu OLE DB Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)<br/>

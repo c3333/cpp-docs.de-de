@@ -5,20 +5,19 @@ f1_keywords:
 - allocators/std::operator!=
 - allocators/std::operator==
 ms.assetid: b55d67cb-3c69-46bf-ad40-e845fb096c4e
-ms.openlocfilehash: 2d2f928ab3773ed8e0b0afdc0113db2ef5b2a3dd
-ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
+ms.openlocfilehash: 969c9f8e05a9fafad4d3a1102060e2b3d4d0eb2e
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88561217"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88844781"
 ---
 # <a name="ltallocatorsgt-operators"></a>&lt;Allocators&gt;-Operatoren
 
 Dabei handelt es sich um die Funktionen des globalen Vorlagen Operators, die in Zuweisungen definiert sind &lt; &gt; . Informationen zu Klassenmember-Operator Funktionen finden Sie in der-Klassen Dokumentation.
 
-|||
-|-|-|
-|[Operator! =](#op_neq)|[Operator = =](#op_eq_eq)|
+[Operator! =](#op_neq)\
+[Operator = =](#op_eq_eq)
 
 ## <a name="operator"></a><a name="op_neq"></a> Operator! =
 

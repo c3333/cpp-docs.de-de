@@ -25,12 +25,12 @@ helpviewer_keywords:
 - Microsoft::WRL::FtmBase::ReleaseMarshalData method
 - Microsoft::WRL::FtmBase::UnmarshalInterface method
 ms.assetid: 275f3b71-2975-4f92-89e7-d351e96496df
-ms.openlocfilehash: f28a850c365bc9a75d8e5b100e5e5cc0a1c5dc10
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: b28b7ee0038e4f828f43fcc3f0d49a2d9e092315
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86404563"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88844040"
 ---
 # <a name="ftmbase-class"></a>FtmBase-Klasse
 
@@ -54,13 +54,13 @@ Weitere Informationen finden Sie unter [runtimeclass-Klasse](runtimeclass-class.
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-| Name                         | BESCHREIBUNG                                        |
+| name                         | Beschreibung                                        |
 | ---------------------------- | -------------------------------------------------- |
 | [Ftmbase:: ftmbase](#ftmbase) | Initialisiert eine neue Instanz der `FtmBase`-Klasse. |
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-| name                                                               | BESCHREIBUNG                                                                                                                                                          |
+| name                                                               | Beschreibung                                                                                                                                                          |
 | ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Ftmbase:: kreateglobalinterfaketable](#createglobalinterfacetable) | Erstellt eine globale Schnittstellen Tabelle (git).                                                                                                                              |
 | [Ftmbase::D isconnectobject](#disconnectobject)                     | Erzwingt die Freigabe aller externen Verbindungen zu einem Objekt. Der Server des-Objekts ruft vor dem Herunterfahren die Implementierung dieser Methode des Objekts auf.                |
@@ -72,7 +72,7 @@ Weitere Informationen finden Sie unter [runtimeclass-Klasse](runtimeclass-class.
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-| Name                                | BESCHREIBUNG                                       |
+| Name                                | Beschreibung                                       |
 | ----------------------------------- | ------------------------------------------------- |
 | [Ftmbase:: marshaller_](#marshaller) | Enthält einen Verweis auf den freien Thread-Mars Haller. |
 
@@ -86,7 +86,7 @@ Weitere Informationen finden Sie unter [runtimeclass-Klasse](runtimeclass-class.
 
 **Namespace:** Microsoft::WRL
 
-## <a name="ftmbasecreateglobalinterfacetable"></a><a name="createglobalinterfacetable"></a>Ftmbase:: kreateglobalinterfaketable
+## <a name="ftmbasecreateglobalinterfacetable"></a><a name="createglobalinterfacetable"></a> Ftmbase:: kreateglobalinterfaketable
 
 Erstellt eine globale Schnittstellen Tabelle (git).
 
@@ -107,9 +107,9 @@ S_OK, wenn erfolgreich; andernfalls ein HRESULT, das den Fehler angibt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [`IGlobalInterfaceTable`](https://docs.microsoft.com/windows/win32/api/objidl/nn-objidl-iglobalinterfacetable).
+Weitere Informationen finden Sie unter [`IGlobalInterfaceTable`](/windows/win32/api/objidl/nn-objidl-iglobalinterfacetable).
 
-## <a name="ftmbasedisconnectobject"></a><a name="disconnectobject"></a>Ftmbase::D isconnectobject
+## <a name="ftmbasedisconnectobject"></a><a name="disconnectobject"></a> Ftmbase::D isconnectobject
 
 Erzwingt die Freigabe aller externen Verbindungen zu einem Objekt. Der Server des-Objekts ruft vor dem Herunterfahren die Implementierung dieser Methode des Objekts auf.
 
@@ -128,7 +128,7 @@ Für die zukünftige Verwendung reserviert. Muss 0 (null) sein.
 
 S_OK, wenn erfolgreich; andernfalls ein HRESULT, das den Fehler angibt.
 
-## <a name="ftmbaseftmbase"></a><a name="ftmbase"></a>Ftmbase:: ftmbase
+## <a name="ftmbaseftmbase"></a><a name="ftmbase"></a> Ftmbase:: ftmbase
 
 Initialisiert eine neue Instanz der `FtmBase`-Klasse.
 
@@ -136,7 +136,7 @@ Initialisiert eine neue Instanz der `FtmBase`-Klasse.
 FtmBase();
 ```
 
-## <a name="ftmbasegetmarshalsizemax"></a><a name="getmarshalsizemax"></a>Ftmbase:: GetMarshalSizeMax
+## <a name="ftmbasegetmarshalsizemax"></a><a name="getmarshalsizemax"></a> Ftmbase:: GetMarshalSizeMax
 
 Gibt die obere Grenze für die Anzahl von Bytes an, die zum Mars Hallen des angegebenen Schnittstellen Zeigers für das angegebene Objekt benötigt werden.
 
@@ -179,7 +179,7 @@ Wenn dieser Vorgang abgeschlossen ist, Zeiger auf die obere Grenze der Datenmeng
 
 S_OK, wenn erfolgreich; andernfalls E_FAIL oder E_NOINTERFACE.
 
-## <a name="ftmbasegetunmarshalclass"></a><a name="getunmarshalclass"></a>Ftmbase:: GetUnmarshalClass
+## <a name="ftmbasegetunmarshalclass"></a><a name="getunmarshalclass"></a> Ftmbase:: GetUnmarshalClass
 
 Ruft die CLSID ab, die com verwendet, um die dll zu suchen, die den Code für den entsprechenden Proxy enthält. COM lädt diese DLL, um eine nicht initialisierte Instanz des Proxys zu erstellen.
 
@@ -221,7 +221,7 @@ Wenn dieser Vorgang abgeschlossen ist, Zeiger auf die CLSID, die zum Erstellen e
 
 S_OK, wenn erfolgreich; andernfalls S_FALSE.
 
-## <a name="ftmbasemarshalinterface"></a><a name="marshalinterface"></a>Ftmbase:: MarshalInterface
+## <a name="ftmbasemarshalinterface"></a><a name="marshalinterface"></a> Ftmbase:: MarshalInterface
 
 Schreibt die Daten, die zum Initialisieren eines Proxy Objekts in einem Client Prozess erforderlich sind, in einen Stream.
 
@@ -270,7 +270,7 @@ STG_E_MEDIUMFULL der Stream voll ist.
 
 E_FAIL Vorgang ist fehlgeschlagen.
 
-## <a name="ftmbasemarshaller_"></a><a name="marshaller"></a>Ftmbase:: marshaller_
+## <a name="ftmbasemarshaller_"></a><a name="marshaller"></a> Ftmbase:: marshaller_
 
 Enthält einen Verweis auf den freien Thread-Mars Haller.
 
@@ -278,7 +278,7 @@ Enthält einen Verweis auf den freien Thread-Mars Haller.
 Microsoft::WRL::ComPtr<IMarshal> marshaller_; ;
 ```
 
-## <a name="ftmbasereleasemarshaldata"></a><a name="releasemarshaldata"></a>Ftmbase:: ReleaseMarshalData
+## <a name="ftmbasereleasemarshaldata"></a><a name="releasemarshaldata"></a> Ftmbase:: ReleaseMarshalData
 
 Zerstört ein gemarshalltes Datenpaket.
 
@@ -297,7 +297,7 @@ Zeiger auf einen Stream, der das zu zerstörende Datenpaket enthält.
 
 S_OK, wenn erfolgreich; andernfalls ein HRESULT, das den Fehler angibt.
 
-## <a name="ftmbaseunmarshalinterface"></a><a name="unmarshalinterface"></a>Ftmbase:: UnmarshalInterface
+## <a name="ftmbaseunmarshalinterface"></a><a name="unmarshalinterface"></a> Ftmbase:: UnmarshalInterface
 
 Initialisiert einen neu erstellten Proxy und gibt einen Schnittstellen Zeiger auf diesen Proxy zurück.
 

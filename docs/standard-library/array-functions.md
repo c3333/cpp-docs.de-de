@@ -10,22 +10,21 @@ helpviewer_keywords:
 - std::array [C++], get
 - std::get [C++]
 - std::swap [C++]
-ms.openlocfilehash: d54e430853959c77b4042092409a8640a169e4c8
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 3389ba769d6b61a363e8cbfcf5f6a4e9ec679469
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81364931"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88844703"
 ---
 # <a name="ltarraygt-functions"></a>&lt;array&gt;-Funktionen
 
-Der \<Array->-Header enthält zwei `get` `swap`Nicht-Member-Funktionen und , die für **Arrayobjekte** ausgeführt werden.
+Der \<array> -Header enthält zwei nicht-Member-Funktionen, `get` und `swap` , die auf **Array** -Objekten angewendet werden.
 
-|||
-|-|-|
-|[get](#get)|[swap](#swap)|
+[Erhalten](#get)\
+[swap](#swap)
 
-## <a name="get"></a><a name="get"></a>Erhalten
+## <a name="get"></a><a name="get"></a> Erhalten
 
 Gibt einen Verweis auf das angegebene Element des Arrays zurück.
 
@@ -45,13 +44,13 @@ constexpr T&& get(array<T, N>&& arr) noexcept;
 *Index*\
 Der Offset des Elements.
 
-*T*\
+*Bund*\
 Der Typ eines Elements.
 
-*N*\
+*Nr*\
 Die Anzahl der Elemente im Array.
 
-*Arr*\
+*r*\
 Das Array, aus dem die Auswahl erfolgt.
 
 ### <a name="example"></a>Beispiel
@@ -86,9 +85,9 @@ int main()
 1 3
 ```
 
-## <a name="swap"></a><a name="swap"></a>Swap
+## <a name="swap"></a><a name="swap"></a> Wechsel
 
-Eine Spezialisierung ohne `std::swap` Mitgliedsvorlage, bei der zwei **Arrayobjekte** ausgetauscht werden.
+Eine nicht-Member-Vorlagen Spezialisierung von `std::swap` , die zwei **Array** Objekte tauscht.
 
 ```cpp
 template <class Ty, std::size_t N>
@@ -97,13 +96,13 @@ void swap(array<Ty, N>& left, array<Ty, N>& right);
 
 ### <a name="parameters"></a>Parameter
 
-*Ty*\
+*Genossenschaft*\
 Der Typ eines Elements.
 
-*N*\
+*Nr*\
 Die Größe des Arrays.
 
-*Links*\
+*linken*\
 Das erste auszutauschende Array.
 
 *Richting*\
@@ -159,6 +158,6 @@ int main()
 0 1 2 3
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[\<Array->](../standard-library/array.md)
+[\<array>](../standard-library/array.md)

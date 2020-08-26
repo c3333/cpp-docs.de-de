@@ -45,12 +45,12 @@ helpviewer_keywords:
 - RFX (record field exchange), data exchange functions [MFC]
 - RFX (record field exchange)
 ms.assetid: 6e4c5c1c-acb7-4c18-bf51-bf7959a696cd
-ms.openlocfilehash: f4f1b12795252b91a2c14877822e221ca86ab39e
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 9bb1b7bcbce16bba8029fcfbbeea7552b1d4a0ba
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87214034"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88843598"
 ---
 # <a name="record-field-exchange-functions"></a>Funktionen für den Datensatzfeldaustausch
 
@@ -70,7 +70,7 @@ Ein Beispiel für RFX und Bulk-RFX-Funktionen, wie Sie in `DoFieldExchange` den 
 
 ### <a name="rfx-functions-odbc"></a>RFX-Funktionen (ODBC)
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[RFX_Binary](#rfx_binary)|Überträgt Byte-Arrays vom Typ [CByteArray](cbytearray-class.md).|
 |[RFX_Bool](#rfx_bool)|Überträgt boolesche Daten.|
@@ -85,7 +85,7 @@ Ein Beispiel für RFX und Bulk-RFX-Funktionen, wie Sie in `DoFieldExchange` den 
 
 ### <a name="bulk-rfx-functions-odbc"></a>Bulk-RFX-Funktionen (ODBC)
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[RFX_Binary_Bulk](#rfx_binary_bulk)|Überträgt Arrays von Bytedaten.|
 |[RFX_Bool_Bulk](#rfx_bool_bulk)|Überträgt Arrays von booleschen Daten.|
@@ -99,7 +99,7 @@ Ein Beispiel für RFX und Bulk-RFX-Funktionen, wie Sie in `DoFieldExchange` den 
 
 ### <a name="dfx-functions-dao"></a>DFX-Funktionen (DAO)
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[DFX_Binary](#dfx_binary)|Überträgt Byte-Arrays vom Typ [CByteArray](cbytearray-class.md).|
 |[DFX_Bool](#dfx_bool)|Überträgt boolesche Daten.|
@@ -115,7 +115,7 @@ Ein Beispiel für RFX und Bulk-RFX-Funktionen, wie Sie in `DoFieldExchange` den 
 
 =============================================
 
-## <a name="rfx_binary"></a><a name="rfx_binary"></a>RFX_Binary
+## <a name="rfx_binary"></a><a name="rfx_binary"></a> RFX_Binary
 
 Überträgt Arrays von Bytes zwischen den Felddatenmembern eines `CRecordset` -Objekts und den Spalten eines Datensatzes in der Datenquelle des ODBC-Typs SQL_BINARY, SQL_VARBINARY oder SQL_LONGVARBINARY.
 
@@ -155,7 +155,7 @@ Siehe [RFX_Text](#rfx_text).
 
 **Header:** AFXDB. h
 
-## <a name="rfx_bool"></a><a name="rfx_bool"></a>RFX_Bool
+## <a name="rfx_bool"></a><a name="rfx_bool"></a> RFX_Bool
 
 Überträgt boolesche Daten zwischen den Felddatenmembern eines `CRecordset` -Objekts und den Spalten eines Datensatzes in der Datenquelle des ODBC-Typs SQL_BIT.
 
@@ -187,7 +187,7 @@ Siehe [RFX_Text](#rfx_text).
 
 **Header:** AFXDB. h
 
-## <a name="rfx_byte"></a><a name="rfx_byte"></a>RFX_Byte
+## <a name="rfx_byte"></a><a name="rfx_byte"></a> RFX_Byte
 
 Überträgt einzelne Bytes zwischen den Felddatenmembern eines `CRecordset` -Objekts und den Spalten eines Datensatzes in der Datenquelle des ODBC-Typs SQL_TINYINT.
 
@@ -219,7 +219,7 @@ Siehe [RFX_Text](#rfx_text).
 
 **Header:** AFXDB. h
 
-## <a name="rfx_date"></a><a name="rfx_date"></a>RFX_Date
+## <a name="rfx_date"></a><a name="rfx_date"></a> RFX_Date
 
 Überträgt `CTime` oder TIMESTAMP_STRUCT Daten zwischen den Felddatenmembern eines `CRecordset` -Objekts und den Spalten eines Datensatzes in der Datenquelle des ODBC-Typs SQL_DATE, SQL_TIME oder SQL_TIMESTAMP.
 
@@ -269,7 +269,7 @@ Siehe [RFX_Text](#rfx_text).
 
 **Header:** AFXDB. h
 
-## <a name="rfx_double"></a><a name="rfx_double"></a>RFX_Double
+## <a name="rfx_double"></a><a name="rfx_double"></a> RFX_Double
 
 Überträgt **doppelte float** -Daten zwischen den Felddatenmembern eines `CRecordset` -Objekts und den Spalten eines Datensatzes in der Datenquelle des ODBC-Typs SQL_DOUBLE.
 
@@ -301,7 +301,7 @@ Siehe [RFX_Text](#rfx_text).
 
 **Header:** AFXDB. h
 
-## <a name="rfx_int"></a><a name="rfx_int"></a>RFX_Int
+## <a name="rfx_int"></a><a name="rfx_int"></a> RFX_Int
 
 Überträgt ganzzahlige Daten zwischen den Felddatenmembern eines `CRecordset` -Objekts und den Spalten eines Datensatzes in der Datenquelle des ODBC-Typs SQL_SMALLINT.
 
@@ -333,7 +333,7 @@ Siehe [RFX_Text](#rfx_text).
 
 **Header:** AFXDB. h
 
-## <a name="rfx_long"></a><a name="rfx_long"></a>RFX_Long
+## <a name="rfx_long"></a><a name="rfx_long"></a> RFX_Long
 
 Überträgt lange ganzzahlige Daten zwischen den Felddatenmembern eines `CRecordset` -Objekts und den Spalten eines Datensatzes in der Datenquelle des ODBC-Typs SQL_INTEGER.
 
@@ -366,7 +366,7 @@ Siehe [RFX_Text](#rfx_text).
 
 **Header:** AFXDB. h
 
-## <a name="rfx_longbinary"></a><a name="rfx_longbinary"></a>RFX_LongBinary
+## <a name="rfx_longbinary"></a><a name="rfx_longbinary"></a> RFX_LongBinary
 
 Überträgt Binary Large Object (BLOB)-Daten mithilfe der [CLongBinary](clongbinary-class.md) -Klasse zwischen den Felddatenmembern eines `CRecordset` -Objekts und den Spalten eines Datensatzes in der Datenquelle des ODBC-Typs SQL_LONGVARBINARY oder SQL_LONGVARCHAR.
 
@@ -398,7 +398,7 @@ Siehe [RFX_Text](#rfx_text).
 
 **Header:** AFXDB. h
 
-## <a name="rfx_single"></a><a name="rfx_single"></a>RFX_Single
+## <a name="rfx_single"></a><a name="rfx_single"></a> RFX_Single
 
 Überträgt Gleit Komma Daten zwischen den Felddatenmembern eines `CRecordset` -Objekts und den Spalten eines Datensatzes in der Datenquelle des ODBC-Typs SQL_REAL.
 
@@ -430,7 +430,7 @@ Siehe [RFX_Text](#rfx_text).
 
 **Header:** AFXDB. h
 
-## <a name="rfx_text"></a><a name="rfx_text"></a>RFX_Text
+## <a name="rfx_text"></a><a name="rfx_text"></a> RFX_Text
 
 Überträgt `CString` Daten zwischen den Felddatenmembern eines `CRecordset` -Objekts und den Spalten eines Datensatzes in der Datenquelle des ODBC-Typs SQL_LONGVARCHAR, SQL_CHAR, SQL_VARCHAR, SQL_DECIMAL oder SQL_NUMERIC.
 
@@ -496,7 +496,7 @@ void CCustomer::DoFieldExchange(CFieldExchange* pFX)
 
 **Header:** AFXDB. h
 
-## <a name="rfx_binary_bulk"></a><a name="rfx_binary_bulk"></a>RFX_Binary_Bulk
+## <a name="rfx_binary_bulk"></a><a name="rfx_binary_bulk"></a> RFX_Binary_Bulk
 
 Überträgt mehrere Zeilen von Byte Daten aus einer Spalte einer ODBC-Datenquelle an ein entsprechendes Array in einem von `CRecordset` abgeleiteten Objekt.
 
@@ -547,7 +547,7 @@ Siehe [RFX_Text_Bulk](#rfx_text_bulk).
 
 **Header:** AFXDB. h
 
-## <a name="rfx_bool_bulk"></a><a name="rfx_bool_bulk"></a>RFX_Bool_Bulk
+## <a name="rfx_bool_bulk"></a><a name="rfx_bool_bulk"></a> RFX_Bool_Bulk
 
 Überträgt mehrere Zeilen von booleschen Daten aus einer Spalte einer ODBC-Datenquelle an ein entsprechendes Array in einem von `CRecordset` abgeleiteten Objekt.
 
@@ -594,7 +594,7 @@ Siehe [RFX_Text_Bulk](#rfx_text_bulk).
 
 **Header:** AFXDB. h
 
-## <a name="rfx_byte_bulk"></a><a name="rfx_byte_bulk"></a>RFX_Byte_Bulk
+## <a name="rfx_byte_bulk"></a><a name="rfx_byte_bulk"></a> RFX_Byte_Bulk
 
 Überträgt mehrere Zeilen von einzelnen Bytes aus einer Spalte einer ODBC-Datenquelle an ein entsprechendes Array in einem von `CRecordset` abgeleiteten Objekt.
 
@@ -641,7 +641,7 @@ Siehe [RFX_Text_Bulk](#rfx_text_bulk).
 
 **Header:** AFXDB. h
 
-## <a name="rfx_date_bulk"></a><a name="rfx_date_bulk"></a>RFX_Date_Bulk
+## <a name="rfx_date_bulk"></a><a name="rfx_date_bulk"></a> RFX_Date_Bulk
 
 Überträgt mehrere Zeilen von TIMESTAMP_STRUCT Daten aus einer Spalte einer ODBC-Datenquelle an ein entsprechendes Array in einem von `CRecordset` abgeleiteten Objekt.
 
@@ -688,7 +688,7 @@ Siehe [RFX_Text_Bulk](#rfx_text_bulk).
 
 **Header:** AFXDB. h
 
-## <a name="rfx_double_bulk"></a><a name="rfx_double_bulk"></a>RFX_Double_Bulk
+## <a name="rfx_double_bulk"></a><a name="rfx_double_bulk"></a> RFX_Double_Bulk
 
 Überträgt mehrere Zeilen mit Gleit Komma Daten mit doppelter Genauigkeit aus einer Spalte einer ODBC-Datenquelle in ein entsprechendes Array in einem von `CRecordset` abgeleiteten Objekt.
 
@@ -735,7 +735,7 @@ Siehe [RFX_Text_Bulk](#rfx_text_bulk).
 
 **Header:** AFXDB. h
 
-## <a name="rfx_int_bulk"></a><a name="rfx_int_bulk"></a>RFX_Int_Bulk
+## <a name="rfx_int_bulk"></a><a name="rfx_int_bulk"></a> RFX_Int_Bulk
 
 Überträgt ganzzahlige Daten zwischen den Felddatenmembern eines `CRecordset` -Objekts und den Spalten eines Datensatzes in der Datenquelle des ODBC-Typs SQL_SMALLINT.
 
@@ -767,7 +767,7 @@ Siehe [RFX_Text](#rfx_text).
 
 **Header:** AFXDB. h
 
-## <a name="rfx_long_bulk"></a><a name="rfx_long_bulk"></a>RFX_Long_Bulk
+## <a name="rfx_long_bulk"></a><a name="rfx_long_bulk"></a> RFX_Long_Bulk
 
 Überträgt mehrere Zeilen mit langen ganzzahligen Daten aus einer Spalte einer ODBC-Datenquelle an ein entsprechendes Array in einem von `CRecordset` abgeleiteten Objekt.
 
@@ -814,7 +814,7 @@ Siehe [RFX_Text_Bulk](#rfx_text_bulk).
 
 **Header:** AFXDB. h
 
-## <a name="rfx_single_bulk"></a><a name="rfx_single_bulk"></a>RFX_Single_Bulk
+## <a name="rfx_single_bulk"></a><a name="rfx_single_bulk"></a> RFX_Single_Bulk
 
 Überträgt mehrere Zeilen von Gleit Komma Daten aus einer Spalte einer ODBC-Datenquelle in ein entsprechendes Array in einem von `CRecordset` abgeleiteten Objekt.
 
@@ -861,7 +861,7 @@ Siehe [RFX_Text_Bulk](#rfx_text_bulk).
 
 **Header:** AFXDB. h
 
-## <a name="rfx_text_bulk"></a><a name="rfx_text_bulk"></a>RFX_Text_Bulk
+## <a name="rfx_text_bulk"></a><a name="rfx_text_bulk"></a> RFX_Text_Bulk
 
 Überträgt mehrere Zeilen von Zeichendaten aus einer Spalte einer ODBC-Datenquelle an ein entsprechendes Array in einem von `CRecordset` abgeleiteten Objekt.
 
@@ -927,7 +927,7 @@ void CMultiCustomer::DoBulkFieldExchange(CFieldExchange* pFX)
 
 **Header:** AFXDB. h
 
-## <a name="dfx_binary"></a><a name="dfx_binary"></a>DFX_Binary
+## <a name="dfx_binary"></a><a name="dfx_binary"></a> DFX_Binary
 
 Überträgt Byte Arrays zwischen den Felddatenmembern eines [CDaoRecordset](cdaorecordset-class.md) -Objekts und den Spalten eines Datensatzes in der Datenquelle.
 
@@ -974,7 +974,7 @@ Siehe [DFX_Text](#dfx_text).
 
 **Header:** afxdao.h
 
-## <a name="dfx_bool"></a><a name="dfx_bool"></a>DFX_Bool
+## <a name="dfx_bool"></a><a name="dfx_bool"></a> DFX_Bool
 
 Überträgt boolesche Daten zwischen den Felddatenmembern eines [CDaoRecordset](cdaorecordset-class.md) -Objekts und den Spalten eines Datensatzes in der Datenquelle.
 
@@ -1017,7 +1017,7 @@ Siehe [DFX_Text](#dfx_text).
 
 **Header:** afxdao.h
 
-## <a name="dfx_byte"></a><a name="dfx_byte"></a>DFX_Byte
+## <a name="dfx_byte"></a><a name="dfx_byte"></a> DFX_Byte
 
 Überträgt einzelne Bytes zwischen den Felddatenmembern eines [CDaoRecordset](cdaorecordset-class.md) -Objekts und den Spalten eines Datensatzes in der Datenquelle.
 
@@ -1060,7 +1060,7 @@ Siehe [DFX_Text](#dfx_text).
 
 **Header:** afxdao.h
 
-## <a name="dfx_currency"></a><a name="dfx_currency"></a>DFX_Currency
+## <a name="dfx_currency"></a><a name="dfx_currency"></a> DFX_Currency
 
 Überträgt Währungs Daten zwischen den Felddatenmembern eines [CDaoRecordset](cdaorecordset-class.md) -Objekts und den Spalten eines Datensatzes in der Datenquelle.
 
@@ -1103,7 +1103,7 @@ Siehe [DFX_Text](#dfx_text).
 
 **Header:** afxdao.h
 
-## <a name="dfx_datetime"></a><a name="dfx_datetime"></a>DFX_DateTime
+## <a name="dfx_datetime"></a><a name="dfx_datetime"></a> DFX_DateTime
 
 Überträgt Zeit-und Datumsdaten zwischen den Felddatenmembern eines [CDaoRecordset](cdaorecordset-class.md) -Objekts und den Spalten eines Datensatzes in der Datenquelle.
 
@@ -1139,7 +1139,7 @@ Eine Option, mit der Sie den doppelten Puffer Puffer Mechanismus von MFC zum Erk
 Daten werden zwischen dem Typ DAO_DATE in DAO und dem Typ [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md) im Recordset zugeordnet.
 
 > [!NOTE]
-> `COleDateTime`ersetzt [ctime](../../atl-mfc-shared/reference/ctime-class.md) und TIMESTAMP_STRUCT zu diesem Zweck in den DAO-Klassen. `CTime`und TIMESTAMP_STRUCT werden weiterhin für die ODBC-basierten Datenzugriffsklassen verwendet.
+> `COleDateTime` ersetzt [ctime](../../atl-mfc-shared/reference/ctime-class.md) und TIMESTAMP_STRUCT zu diesem Zweck in den DAO-Klassen. `CTime` und TIMESTAMP_STRUCT werden weiterhin für die ODBC-basierten Datenzugriffsklassen verwendet.
 
 ### <a name="example"></a>Beispiel
 
@@ -1149,7 +1149,7 @@ Siehe [DFX_Text](#dfx_text).
 
 **Header:** afxdao.h
 
-## <a name="dfx_double"></a><a name="dfx_double"></a>DFX_Double
+## <a name="dfx_double"></a><a name="dfx_double"></a> DFX_Double
 
 Überträgt **doppelte float** -Daten zwischen den Felddatenmembern eines [CDaoRecordset](cdaorecordset-class.md) -Objekts und den Spalten eines Datensatzes in der Datenquelle.
 
@@ -1192,7 +1192,7 @@ Siehe [DFX_Text](#dfx_text).
 
 **Header:** afxdao.h
 
-## <a name="dfx_long"></a><a name="dfx_long"></a>DFX_Long
+## <a name="dfx_long"></a><a name="dfx_long"></a> DFX_Long
 
 Überträgt lange ganzzahlige Daten zwischen den Felddatenmembern eines [CDaoRecordset](cdaorecordset-class.md) -Objekts und den Spalten eines Datensatzes in der Datenquelle.
 
@@ -1235,7 +1235,7 @@ Siehe [DFX_Text](#dfx_text).
 
 **Header:** afxdao.h
 
-## <a name="dfx_longbinary"></a><a name="dfx_longbinary"></a>DFX_LongBinary
+## <a name="dfx_longbinary"></a><a name="dfx_longbinary"></a> DFX_LongBinary
 
 **Wichtig** Es wird empfohlen, anstelle dieser Funktion [DFX_Binary](#dfx_binary) zu verwenden.
 
@@ -1272,7 +1272,7 @@ Eine Option, mit der Sie den doppelten Puffer Puffer Mechanismus von MFC zum Erk
 
 ### <a name="remarks"></a>Bemerkungen
 
-`DFX_LongBinary`wird aus Gründen der Kompatibilität mit den MFC-ODBC-Klassen bereitgestellt. Die- `DFX_LongBinary` Funktion überträgt binäre Large-Object (BLOB)-Daten mithilfe der-Klasse `CLongBinary` zwischen den Felddatenmembern eines [CDaoRecordset](cdaorecordset-class.md) -Objekts und den Spalten eines Datensatzes in der Datenquelle. Daten werden zwischen dem Typ DAO_BYTES in DAO und dem Typ " [CLongBinary](clongbinary-class.md) " im Recordset zugeordnet.
+`DFX_LongBinary` wird aus Gründen der Kompatibilität mit den MFC-ODBC-Klassen bereitgestellt. Die- `DFX_LongBinary` Funktion überträgt binäre Large-Object (BLOB)-Daten mithilfe der-Klasse `CLongBinary` zwischen den Felddatenmembern eines [CDaoRecordset](cdaorecordset-class.md) -Objekts und den Spalten eines Datensatzes in der Datenquelle. Daten werden zwischen dem Typ DAO_BYTES in DAO und dem Typ " [CLongBinary](clongbinary-class.md) " im Recordset zugeordnet.
 
 ### <a name="example"></a>Beispiel
 
@@ -1282,7 +1282,7 @@ Siehe [DFX_Text](#dfx_text).
 
 **Header:** afxdao.h
 
-## <a name="dfx_short"></a><a name="dfx_short"></a>DFX_Short
+## <a name="dfx_short"></a><a name="dfx_short"></a> DFX_Short
 
 Überträgt kurze ganzzahlige Daten zwischen den Felddatenmembern eines [CDaoRecordset](cdaorecordset-class.md) -Objekts und den Spalten eines Datensatzes in der Datenquelle.
 
@@ -1318,7 +1318,7 @@ Eine Option, mit der Sie den doppelten Puffer Puffer Mechanismus von MFC zum Erk
 Daten werden zwischen dem Typ DAO_I2 in DAO und **`short`** dem Recordset zugeordnet.
 
 > [!NOTE]
-> `DFX_Short`entspricht [RFX_Int](#rfx_int) für die ODBC-basierten Klassen.
+> `DFX_Short` entspricht [RFX_Int](#rfx_int) für die ODBC-basierten Klassen.
 
 ### <a name="example"></a>Beispiel
 
@@ -1328,7 +1328,7 @@ Siehe [DFX_Text](#dfx_text).
 
 **Header:** afxdao.h
 
-## <a name="dfx_single"></a><a name="dfx_single"></a>DFX_Single
+## <a name="dfx_single"></a><a name="dfx_single"></a> DFX_Single
 
 Überträgt Gleit Komma Daten zwischen den Felddatenmembern eines [CDaoRecordset](cdaorecordset-class.md) -Objekts und den Spalten eines Datensatzes in der Datenquelle.
 
@@ -1371,7 +1371,7 @@ Siehe [DFX_Text](#dfx_text).
 
 **Header:** afxdao.h
 
-## <a name="dfx_text"></a><a name="dfx_text"></a>DFX_Text
+## <a name="dfx_text"></a><a name="dfx_text"></a> DFX_Text
 
 Überträgt `CString` Daten zwischen den Felddatenmembern eines [CDaoRecordset](cdaorecordset-class.md) -Objekts und den Spalten eines Datensatzes in der Datenquelle.
 

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - registering OLE controls
 - OLE controls [MFC], registering
 ms.assetid: 73c45b7f-7dbc-43f5-bd17-dd77c6acec72
-ms.openlocfilehash: 0471bad0793779d0bc13a2bee41957381f56389f
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 5468f3d4b730cc0b81a6ab814d495b061d292f20
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87214021"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88843572"
 ---
 # <a name="registering-ole-controls"></a>Registrieren des OLE-Steuerelements
 
@@ -20,7 +20,7 @@ Mit den folgenden Funktionen können Sie die-Klasse, die Eigenschaften Seiten un
 
 ### <a name="registering-ole-controls"></a>Registrieren des OLE-Steuerelements
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[AfxOleRegisterControlClass](#afxoleregistercontrolclass)|Fügt der Registrierungsdatenbank die Klasse des Steuer Elements hinzu.|
 |[AfxOleRegisterPropertyPageClass](#afxoleregisterpropertypageclass)|Fügt der Registrierungsdatenbank eine Eigenschaften Seite des-Steuer Elements hinzu.|
@@ -28,9 +28,9 @@ Mit den folgenden Funktionen können Sie die-Klasse, die Eigenschaften Seiten un
 |[AfxOleUnregisterClass](#afxoleunregisterclass)|Entfernt eine Steuerelement Klasse oder eine Eigenschaften Seiten Klasse aus der Registrierungsdatenbank.|
 |[AfxOleUnregisterTypeLib](#afxoleunregistertypelib)|Entfernt die Typbibliothek des Steuer Elements aus der Registrierungsdatenbank.|
 
-`AfxOleRegisterTypeLib`wird in der Regel in der Implementierung von der-Steuerelement-DLL aufgerufen `DllRegisterServer` . Ebenso `AfxOleUnregisterTypeLib` wird von aufgerufen `DllUnregisterServer` . `AfxOleRegisterControlClass`, `AfxOleRegisterPropertyPageClass` und `AfxOleUnregisterClass` werden in der Regel von der `UpdateRegistry` Member-Funktion der Klassenfactory oder Eigenschaften Seite eines Steuer Elements aufgerufen.
+`AfxOleRegisterTypeLib` wird in der Regel in der Implementierung von der-Steuerelement-DLL aufgerufen `DllRegisterServer` . Ebenso `AfxOleUnregisterTypeLib` wird von aufgerufen `DllUnregisterServer` . `AfxOleRegisterControlClass`, `AfxOleRegisterPropertyPageClass` und `AfxOleUnregisterClass` werden in der Regel von der `UpdateRegistry` Member-Funktion der Klassenfactory oder Eigenschaften Seite eines Steuer Elements aufgerufen.
 
-## <a name="afxoleregistercontrolclass"></a><a name="afxoleregistercontrolclass"></a>AfxOleRegisterControlClass
+## <a name="afxoleregistercontrolclass"></a><a name="afxoleregistercontrolclass"></a> AfxOleRegisterControlClass
 
 Registriert die Steuerelement Klasse bei der Windows-Registrierungsdatenbank.
 
@@ -68,11 +68,11 @@ Die Ressourcen-ID der Bitmap, die zum Darstellen des OLE-Steuer Elements in eine
 *nregflags*<br/>
 Enthält mindestens eines der folgenden Flags:
 
-- `afxRegInsertable`Ermöglicht, dass das Steuerelement im Dialogfeld Objekt einfügen für OLE-Objekte angezeigt wird.
+- `afxRegInsertable` Ermöglicht, dass das Steuerelement im Dialogfeld Objekt einfügen für OLE-Objekte angezeigt wird.
 
-- `afxRegApartmentThreading`Legt das Threading Modell in der Registrierung auf ThreadingModel = Apartment fest.
+- `afxRegApartmentThreading` Legt das Threading Modell in der Registrierung auf ThreadingModel = Apartment fest.
 
-- `afxRegFreeThreading`Legt das Threading Modell in der Registrierung auf ThreadingModel = Free fest.
+- `afxRegFreeThreading` Legt das Threading Modell in der Registrierung auf ThreadingModel = Free fest.
 
    Sie können die beiden Flags kombinieren `afxRegApartmentThreading` und `afxRegFreeThreading` ThreadingModel = both festlegen. Weitere Informationen zur Threading Modell Registrierung finden Sie unter [InProcServer32](/windows/win32/com/inprocserver32) im Windows SDK.
 
@@ -135,7 +135,7 @@ Ungleich 0 (null), wenn die Steuerelement Klasse registriert wurde. andernfalls 
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dadurch kann das Steuerelement von Containern verwendet werden, die OLE-Steuerelemente unterstützen. `AfxOleRegisterControlClass`Aktualisiert die Registrierung mit dem Namen und Speicherort des Steuer Elements auf dem System und legt außerdem das Thread Modell fest, das das Steuerelement in der Registrierung unterstützt. Weitere Informationen finden Sie im [technischen Hinweis 64](../../mfc/tn064-apartment-model-threading-in-activex-controls.md), "Apartment Modell Threading in OLE-Steuerelementen" und Informationen [zu Prozessen und Threads](/windows/win32/ProcThread/about-processes-and-threads) in der Windows SDK.
+Dadurch kann das Steuerelement von Containern verwendet werden, die OLE-Steuerelemente unterstützen. `AfxOleRegisterControlClass` Aktualisiert die Registrierung mit dem Namen und Speicherort des Steuer Elements auf dem System und legt außerdem das Thread Modell fest, das das Steuerelement in der Registrierung unterstützt. Weitere Informationen finden Sie im [technischen Hinweis 64](../../mfc/tn064-apartment-model-threading-in-activex-controls.md), "Apartment Modell Threading in OLE-Steuerelementen" und Informationen [zu Prozessen und Threads](/windows/win32/ProcThread/about-processes-and-threads) in der Windows SDK.
 
 ### <a name="example"></a>Beispiel
 
@@ -151,7 +151,7 @@ Das Steuerelement wird im Dialogfeld Objekt einfügen für aktivierte Container 
 
   **Header** afxctl. h
 
-## <a name="afxoleregisterpropertypageclass"></a><a name="afxoleregisterpropertypageclass"></a>Afxoleregisterpropertypageclass
+## <a name="afxoleregisterpropertypageclass"></a><a name="afxoleregisterpropertypageclass"></a> Afxoleregisterpropertypageclass
 
 Registriert die Eigenschaften Seiten Klasse bei der Windows-Registrierungsdatenbank.
 
@@ -177,7 +177,7 @@ Die Ressourcen-ID der Zeichenfolge, die einen vom Benutzer lesbaren Namen für d
 *nregflags*<br/>
 Kann das-Flag enthalten:
 
-- `afxRegApartmentThreading`Legt das Threading Modell in der Registrierung auf ThreadingModel = Apartment fest.
+- `afxRegApartmentThreading` Legt das Threading Modell in der Registrierung auf ThreadingModel = Apartment fest.
 
 > [!NOTE]
 > In MFC-Versionen vor MFC 4,2 war der **`int`** *nregflags* -Parameter nicht verfügbar. Beachten Sie außerdem, dass das `afxRegInsertable` -Flag keine gültige Option für Eigenschaften Seiten ist und eine Bestätigung in MFC verursacht, wenn es festgelegt ist.
@@ -188,13 +188,13 @@ Ungleich 0 (null), wenn die Steuerelement Klasse registriert wurde. andernfalls 
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dadurch kann die Eigenschaften Seite von Containern verwendet werden, die OLE-Steuerelemente unterstützen. `AfxOleRegisterPropertyPageClass`Aktualisiert die Registrierung mit dem Namen der Eigenschaften Seite und deren Speicherort auf dem System und legt außerdem das Thread Modell fest, das das Steuerelement in der Registrierung unterstützt. Weitere Informationen finden Sie im [technischen Hinweis 64](../../mfc/tn064-apartment-model-threading-in-activex-controls.md), "Apartment Modell Threading in OLE-Steuerelementen" und Informationen [zu Prozessen und Threads](/windows/win32/ProcThread/about-processes-and-threads) in der Windows SDK.
+Dadurch kann die Eigenschaften Seite von Containern verwendet werden, die OLE-Steuerelemente unterstützen. `AfxOleRegisterPropertyPageClass` Aktualisiert die Registrierung mit dem Namen der Eigenschaften Seite und deren Speicherort auf dem System und legt außerdem das Thread Modell fest, das das Steuerelement in der Registrierung unterstützt. Weitere Informationen finden Sie im [technischen Hinweis 64](../../mfc/tn064-apartment-model-threading-in-activex-controls.md), "Apartment Modell Threading in OLE-Steuerelementen" und Informationen [zu Prozessen und Threads](/windows/win32/ProcThread/about-processes-and-threads) in der Windows SDK.
 
 ### <a name="requirements"></a>Requirements (Anforderungen)
 
   **Header** afxctl. h
 
-## <a name="afxoleregistertypelib"></a><a name="afxoleregistertypelib"></a>AfxOleRegisterTypeLib
+## <a name="afxoleregistertypelib"></a><a name="afxoleregistertypelib"></a> AfxOleRegisterTypeLib
 
 Registriert die Typbibliothek bei der Windows-Registrierungsdatenbank und ermöglicht die Verwendung der Typbibliothek durch andere Container, die die OLE-Kontrolle unterstützen.
 
@@ -238,7 +238,7 @@ Diese Funktion aktualisiert die Registrierung mit dem Namen der Typbibliothek un
 
   **Header** afxdisp. h
 
-## <a name="afxoleunregisterclass"></a><a name="afxoleunregisterclass"></a>Afxoleunregisterclass
+## <a name="afxoleunregisterclass"></a><a name="afxoleunregisterclass"></a> Afxoleunregisterclass
 
 Entfernt das Steuerelement oder den Klassen Eintrag der Eigenschaften Seite aus der Windows-Registrierungsdatenbank.
 
@@ -262,7 +262,7 @@ Ungleich NULL, wenn die Registrierung für das Steuerelement oder die Eigenschaf
 
   **Header** afxctl. h
 
-## <a name="afxoleunregistertypelib"></a><a name="afxoleunregistertypelib"></a>Afxoleunregistertypelib
+## <a name="afxoleunregistertypelib"></a><a name="afxoleunregistertypelib"></a> Afxoleunregistertypelib
 
 Mit dieser Funktion können Sie den Typbibliotheks Eintrag aus der Windows-Registrierungsdatenbank entfernen.
 

@@ -5,12 +5,12 @@ ms.topic: reference
 f1_keywords:
 - module/Microsoft::WRL::FactoryCacheFlags
 ms.assetid: 6f54258f-0144-4264-9608-414e5905f6fb
-ms.openlocfilehash: 250c8c8e7ade72bd1a9cd63f0b515774058f0723
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 3381b2bcfcbf298270b547199ae614291855a2f7
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80214005"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88843273"
 ---
 # <a name="factorycacheflags-enumeration"></a>FactoryCacheFlags-Enumeration
 
@@ -26,11 +26,11 @@ enum FactoryCacheFlags;
 
 Standardmäßig wird die Richtlinie zum Zwischenspeichern der Factory als [ModuleType](moduletype-enumeration.md) -Vorlagen Parameter angegeben, wenn Sie ein [Modul](module-class.md) Objekt erstellen. Um diese Richtlinie zu überschreiben, geben Sie einen **factorycacheflags** -Wert an, wenn Sie ein Factory-Objekt erstellen.
 
-|||
+| Richtlinie | Beschreibung |
 |-|-|
-|`FactoryCacheDefault`|Die Cachingrichtlinie des `Module` Objekts wird verwendet.|
-|`FactoryCacheEnabled`|Aktiviert das Zwischenspeichern von Fabriken unabhängig vom `ModuleType` Vorlagen Parameter, der zum Erstellen eines `Module` Objekts verwendet wird.|
-|`FactoryCacheDisabled`|Deaktiviert das Zwischenspeichern von Fabriken unabhängig vom `ModuleType` Vorlagen Parameter, der zum Erstellen eines `Module` Objekts verwendet wird.|
+|`FactoryCacheDefault`|Die Cachingrichtlinie des- `Module` Objekts wird verwendet.|
+|`FactoryCacheEnabled`|Aktiviert das Zwischenspeichern von Fabriken unabhängig von dem `ModuleType` Vorlagen Parameter, der zum Erstellen eines-Objekts verwendet wird `Module` .|
+|`FactoryCacheDisabled`|Deaktiviert das Zwischenspeichern von Fabriken unabhängig von dem `ModuleType` Vorlagen Parameter, der zum Erstellen eines-Objekts verwendet wird `Module` .|
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
@@ -40,4 +40,4 @@ Standardmäßig wird die Richtlinie zum Zwischenspeichern der Factory als [Modul
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Microsoft::WRL-Namespace](microsoft-wrl-namespace.md)
+[Microsoft:: WRL-Namespace](microsoft-wrl-namespace.md)

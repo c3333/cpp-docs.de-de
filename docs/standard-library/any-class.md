@@ -15,12 +15,12 @@ helpviewer_keywords:
 - any/std::any::reset
 - any/std::any::swap
 - any/std::any::type
-ms.openlocfilehash: 66e74a7fa7f35aae9ac9e1f3ba7520e8d3f9b3f2
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: defec0f6ab8f59219afddcefc67ea93435347978
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87203961"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88844742"
 ---
 # <a name="any-class"></a>beliebige Klasse
 
@@ -38,13 +38,13 @@ class any
 
 ### <a name="constructors"></a>Konstruktoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[irgendeiner](#any)|Konstruiert ein Objekt vom Typ `any`.|
 
 ### <a name="functions"></a>Functions
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[emplace](#emplace)|Legt einen beliebigen Wert fest.|
 |[has_value](#has_value)|Gibt zurück, **`true`** Wenn ein beliebiger einen Wert aufweist.|
@@ -54,11 +54,11 @@ class any
 
 ### <a name="operators"></a>Operatoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[Operator =](#op_eq)|Ersetzt alle durch eine Kopie einer anderen.|
 
-## <a name="any"></a><a name="any"></a>irgendeiner
+## <a name="any"></a><a name="any"></a> irgendeiner
 
 Konstruiert ein Objekt vom Typ `any`. Schließt außerdem einen Dekonstruktor ein.
 
@@ -76,7 +76,7 @@ template <class T, class U, class... Args>
 ~any();
 ```
 
-## <a name="emplace"></a><a name="emplace"></a>emplace
+## <a name="emplace"></a><a name="emplace"></a> emplace
 
 Legt einen beliebigen Wert fest.
 
@@ -87,7 +87,7 @@ template <class T, class U, class... Args>
     decay_t<T>& emplace(initializer_list<U>, Args&&...);
 ```
 
-## <a name="has_value"></a><a name="has_value"></a>has_value
+## <a name="has_value"></a><a name="has_value"></a> has_value
 
 Gibt zurück, **`true`** Wenn ein beliebiger einen Wert aufweist.
 
@@ -95,7 +95,7 @@ Gibt zurück, **`true`** Wenn ein beliebiger einen Wert aufweist.
 bool has_value() const noexcept;
 ```
 
-## <a name="operator"></a><a name="op_eq"></a>Operator =
+## <a name="operator"></a><a name="op_eq"></a> Operator =
 
 Ersetzt alle durch eine Kopie einer anderen.
 
@@ -111,7 +111,7 @@ template <class T>
 *Richting*\
 Die, die in alle kopiert werden.
 
-## <a name="reset"></a><a name="reset"></a>Festlegen
+## <a name="reset"></a><a name="reset"></a> Festlegen
 
 Setzt eine beliebige zurück.
 
@@ -119,7 +119,7 @@ Setzt eine beliebige zurück.
 void reset() noexcept;
 ```
 
-## <a name="swap"></a><a name="swap"></a>Wechsel
+## <a name="swap"></a><a name="swap"></a> Wechsel
 
 Tauscht zwei beliebige-Objekte aus.
 

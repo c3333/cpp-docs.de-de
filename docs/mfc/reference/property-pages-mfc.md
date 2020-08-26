@@ -5,12 +5,12 @@ helpviewer_keywords:
 - property page data transfer functions in MFC
 - property pages [MFC], global MFC functions
 ms.assetid: 734f88bc-c776-4136-9b0e-f45c761a45c1
-ms.openlocfilehash: 9689d511760752903b83b34199fb035c0e7a8d37
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 9a04395aec8c2eb968e5cefaf410643a1ce03e32
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87214047"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88843585"
 ---
 # <a name="property-pages-mfc"></a>Eigenschaftenseiten (MFC)
 
@@ -20,7 +20,7 @@ Dieser Daten Zuordnungs Mechanismus ordnet Eigenschaften Seiten-Steuerelemente d
 
 ### <a name="property-page-data-transfer"></a>Eigenschaften Seite Datenübertragung
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[DDP_CBIndex](#ddp_cbindex)|Verknüpft den Index der ausgewählten Zeichenfolge in einem Kombinations Feld mit der-Eigenschaft eines-Steuer Elements.|
 |[DDP_CBString](#ddp_cbstring)|Verknüpft die ausgewählte Zeichenfolge in einem Kombinations Feld mit der-Eigenschaft eines-Steuer Elements. Die ausgewählte Zeichenfolge kann mit denselben Buchstaben wie der Eigenschafts Wert beginnen, muss jedoch nicht vollständig übereinstimmen.|
@@ -39,13 +39,13 @@ Im folgenden finden Sie eine Liste der Makros, die zum Erstellen und Verwalten v
 
 ### <a name="property-pages"></a>Eigenschaftenseiten
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[BEGIN_PROPPAGEIDS](#begin_proppageids)|Startet die Liste der Eigenschaften Seiten-IDs.|
 |[END_PROPPAGEIDS](#end_proppageids)|Beendet die Liste der Eigenschaften Seiten-IDs.|
 |[PROPPAGEID](#proppageid)|Deklariert eine Eigenschaften Seite der Steuerelement Klasse.|
 
-## <a name="ddp_cbindex"></a><a name="ddp_cbindex"></a>DDP_CBIndex
+## <a name="ddp_cbindex"></a><a name="ddp_cbindex"></a> DDP_CBIndex
 
 Diese Funktion wird in der-Funktion der Eigenschaften Seite aufgerufen `DoDataExchange` , um den Wert einer ganzzahligen Eigenschaft mit dem Index der aktuellen Auswahl in einem Kombinations Feld auf der Eigenschaften Seite zu synchronisieren.
 
@@ -79,7 +79,7 @@ Diese Funktion sollte vor dem entsprechenden `DDX_CBIndex` Funktionsaufruf aufge
 
   **Header** afxctl. h
 
-## <a name="ddp_cbstring"></a><a name="ddp_cbstring"></a>DDP_CBString
+## <a name="ddp_cbstring"></a><a name="ddp_cbstring"></a> DDP_CBString
 
 Diese Funktion wird in der-Funktion der Eigenschaften Seite aufgerufen `DoDataExchange` , um den Wert einer Zeichen folgen Eigenschaft mit der aktuellen Auswahl in einem Kombinations Feld auf der Eigenschaften Seite zu synchronisieren.
 
@@ -113,7 +113,7 @@ Diese Funktion sollte vor dem entsprechenden `DDX_CBString` Funktionsaufruf aufg
 
   **Header** afxctl. h
 
-## <a name="ddp_cbstringexact"></a><a name="ddp_cbstringexact"></a>DDP_CBStringExact
+## <a name="ddp_cbstringexact"></a><a name="ddp_cbstringexact"></a> DDP_CBStringExact
 
 Diese Funktion wird in der-Funktion der Eigenschaften Seite aufgerufen `DoDataExchange` , um den Wert einer Zeichen folgen Eigenschaft zu synchronisieren, die exakt mit der aktuellen Auswahl in einem Kombinations Feld auf der Eigenschaften Seite übereinstimmt.
 
@@ -147,7 +147,7 @@ Diese Funktion sollte vor dem entsprechenden `DDX_CBStringExact` Funktionsaufruf
 
   **Header** afxctl. h
 
-## <a name="ddp_check"></a><a name="ddp_check"></a>DDP_Check
+## <a name="ddp_check"></a><a name="ddp_check"></a> DDP_Check
 
 Mit dieser Funktion können Sie in der- `DoDataExchange` Funktion der Eigenschaften Seite den Wert der-Eigenschaft mit dem Kontrollkästchen-Steuerelement der zugehörigen Eigenschaften Seite synchronisieren.
 
@@ -181,7 +181,7 @@ Diese Funktion sollte vor dem entsprechenden `DDX_Check` Funktionsaufruf aufgeru
 
   **Header** afxctl. h
 
-## <a name="ddp_lbindex"></a><a name="ddp_lbindex"></a>DDP_LBIndex
+## <a name="ddp_lbindex"></a><a name="ddp_lbindex"></a> DDP_LBIndex
 
 Diese Funktion wird in der-Funktion der Eigenschaften Seite aufgerufen `DoDataExchange` , um den Wert einer ganzzahligen Eigenschaft mit dem Index der aktuellen Auswahl in einem Listenfeld auf der Eigenschaften Seite zu synchronisieren.
 
@@ -215,7 +215,7 @@ Diese Funktion sollte vor dem entsprechenden `DDX_LBIndex` Funktionsaufruf aufge
 
   **Header** afxctl. h
 
-## <a name="ddp_lbstring"></a><a name="ddp_lbstring"></a>DDP_LBString
+## <a name="ddp_lbstring"></a><a name="ddp_lbstring"></a> DDP_LBString
 
 Diese Funktion wird in der-Funktion der Eigenschaften Seite aufgerufen `DoDataExchange` , um den Wert einer Zeichen folgen Eigenschaft mit der aktuellen Auswahl in einem Listenfeld auf der Eigenschaften Seite zu synchronisieren.
 
@@ -249,7 +249,7 @@ Diese Funktion sollte vor dem entsprechenden `DDX_LBString` Funktionsaufruf aufg
 
   **Header** afxctl. h
 
-## <a name="ddp_lbstringexact"></a><a name="ddp_lbstringexact"></a>DDP_LBStringExact
+## <a name="ddp_lbstringexact"></a><a name="ddp_lbstringexact"></a> DDP_LBStringExact
 
 Diese Funktion wird in der-Funktion der Eigenschaften Seite aufgerufen `DoDataExchange` , um den Wert einer Zeichen folgen Eigenschaft zu synchronisieren, die exakt mit der aktuellen Auswahl in einem Listenfeld auf der Eigenschaften Seite übereinstimmt.
 
@@ -283,7 +283,7 @@ Diese Funktion sollte vor dem entsprechenden `DDX_LBStringExact` Funktionsaufruf
 
   **Header** afxctl. h
 
-## <a name="ddp_postprocessing"></a><a name="ddp_postprocessing"></a>DDP_PostProcessing
+## <a name="ddp_postprocessing"></a><a name="ddp_postprocessing"></a> DDP_PostProcessing
 
 Diese Funktion wird in der-Funktion der Eigenschaften Seite aufgerufen `DoDataExchange` , um die Übertragung von Eigenschafts Werten von der Eigenschaften Seite zum-Steuerelement abzuschließen, wenn Eigenschaftswerte gespeichert werden.
 
@@ -306,7 +306,7 @@ Diese Funktion sollte aufgerufen werden, nachdem alle Datenaustauschfunktionen a
 
   **Header** afxctl. h
 
-## <a name="ddp_radio"></a><a name="ddp_radio"></a>DDP_Radio
+## <a name="ddp_radio"></a><a name="ddp_radio"></a> DDP_Radio
 
 Diese Funktion wird in der-Funktion des Steuer Elements aufgerufen `DoPropExchange` , um den Wert der-Eigenschaft mit dem entsprechenden Optionsfeld-Steuerelement der Eigenschaften Seite zu synchronisieren.
 
@@ -340,7 +340,7 @@ Diese Funktion sollte vor dem entsprechenden `DDX_Radio` Funktionsaufruf aufgeru
 
   **Header** afxctl. h
 
-## <a name="ddp_text"></a><a name="ddp_text"></a>DDP_Text
+## <a name="ddp_text"></a><a name="ddp_text"></a> DDP_Text
 
 Mit dieser Funktion können Sie in der-Funktion des Steuer Elements `DoDataExchange` den Wert der-Eigenschaft mit dem zugeordneten Eigenschaften Seiten-Steuerelement synchronisieren.
 
@@ -416,7 +416,7 @@ Diese Funktion sollte vor dem entsprechenden `DDX_Text` Funktionsaufruf aufgeruf
 
   **Header** afxctl. h
 
-## <a name="begin_proppageids"></a><a name="begin_proppageids"></a>BEGIN_PROPPAGEIDS
+## <a name="begin_proppageids"></a><a name="begin_proppageids"></a> BEGIN_PROPPAGEIDS
 
 Beginnt die Definition der Liste der Eigenschaften Seiten-IDs Ihres Steuer Elements.
 
@@ -442,7 +442,7 @@ Weitere Informationen zu Eigenschaften Seiten finden Sie im Artikel ActiveX-Steu
 
   **Header** afxctl. h
 
-## <a name="end_proppageids"></a><a name="end_proppageids"></a>END_PROPPAGEIDS
+## <a name="end_proppageids"></a><a name="end_proppageids"></a> END_PROPPAGEIDS
 
 Beendet die Definition der Eigenschaften Seiten-ID-Liste.
 
@@ -459,7 +459,7 @@ Der Name der Steuerelement Klasse, die die Eigenschaften Seite besitzt.
 
   **Header** afxctl. h
 
-## <a name="proppageid"></a><a name="proppageid"></a>Proppageid
+## <a name="proppageid"></a><a name="proppageid"></a> Proppageid
 
 Fügt eine Eigenschaften Seite für die Verwendung durch das OLE-Steuerelement hinzu.
 

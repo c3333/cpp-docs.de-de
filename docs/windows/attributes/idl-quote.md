@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - idl_quote attribute
 ms.assetid: a370e1b7-948b-4e67-9a25-58facf24e4c9
-ms.openlocfilehash: 4b05da6d237d71e0cc645ad0f626f75ecd85c827
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 1d0aa80f64593ed347720b84e4059a0c32dce4be
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80168028"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88844235"
 ---
 # <a name="idl_quote"></a>idl_quote
 
-Ermöglicht die Verwendung von IDL-Konstrukten, die in der aktuellen Version von Visual C++ nicht unterstützt werden und die Sie an die generierte IDL-Datei weiterleiten.
+Ermöglicht die Verwendung Visual C++ von IDL-Konstrukten, die in der aktuellen Version von nicht unterstützt werden, und die Sie an die generierte IDL-Datei weiterleiten müssen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -26,11 +26,11 @@ Ermöglicht die Verwendung von IDL-Konstrukten, die in der aktuellen Version von
 ### <a name="parameters"></a>Parameter
 
 *text*<br/>
-Der Attribut Name, den der Microsoft C++ -Compiler an die generierte IDL-Datei weitergeben soll, ohne einen Compilerfehler zurückzugeben.
+Der Attribut Name, den der Microsoft C++-Compiler an die generierte IDL-Datei weitergeben soll, ohne einen Compilerfehler zurückzugeben.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Wenn das **Idl_quote** C++ -Attribut als eigenständiges Attribut verwendet wird (mit einem Semikolon nach der schließenden Klammer), wird der *Text* in die zusammengeführte IDL-Datei eingefügt, unverändert. Wenn **Idl_quote** für ein Symbol verwendet wird, wird der *Text* im Attribut Block für das Symbol platziert.
+Wenn das **Idl_quote** C++-Attribut als eigenständiges Attribut verwendet wird (mit einem Semikolon nach der schließenden Klammer), wird der *Text* in die zusammengeführte IDL-Datei eingefügt, unverändert. Wenn **Idl_quote** für ein Symbol verwendet wird, wird der *Text* im Attribut Block für das Symbol platziert.
 
 ## <a name="example"></a>Beispiel
 
@@ -69,16 +69,14 @@ __interface IStatic{
 };
 ```
 
-Dieser Code bewirkt, dass `MYFLOT` und `MYDUB` und der *Text* Eintrag in der generierten IDL-Datei platziert werden. Der *Name* -Parameter erzwingt das Platzieren von *Text* vor dem Verweis auf den *Namen* in der generierten IDL-Datei. Der *Abhängigkeiten* -Parameter erzwingt, dass die Abhängigkeits Listen Definitionen vor *Text* in der generierten IDL-Datei platziert werden.
+Dieser Code bewirkt `MYFLOT` `MYDUB` , dass und und der *Text* Eintrag in der generierten IDL-Datei abgelegt werden. Der *Name* -Parameter erzwingt das Platzieren von *Text* vor dem Verweis auf den *Namen* in der generierten IDL-Datei. Der *Abhängigkeiten* -Parameter erzwingt, dass die Abhängigkeits Listen Definitionen vor *Text* in der generierten IDL-Datei platziert werden.
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|Überall|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Überall|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 

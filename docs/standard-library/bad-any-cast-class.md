@@ -1,5 +1,5 @@
 ---
-title: Bad_any_cast-Klasse
+title: bad_any_cast-Klasse
 ms.date: 04/04/2019
 f1_keywords:
 - any/std::bad_any_cast
@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - any/std::bad_any_cast
 - any/std::bad_any_cast::what
-ms.openlocfilehash: 5172281d1918a8b4ac33bcf412bf4be82b04ef56
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.openlocfilehash: b47ca4f615c6f317f17ce64e8388ae5d698185ea
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68268682"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88844586"
 ---
-# <a name="badanycast-class"></a>Bad_any_cast-Klasse
+# <a name="bad_any_cast-class"></a>bad_any_cast-Klasse
 
-Objekte, die von einer fehlgeschlagenen ausgelöst `any_cast`.
+Fehler beim Auslösen von Objekten `any_cast` .
 
 ## <a name="syntax"></a>Syntax
 
@@ -26,13 +26,13 @@ class bad_any_cast
 
 ### <a name="member-functions"></a>Memberfunktionen
 
-|||
+|Name|Beschreibung|
 |-|-|
-|[Was](#what)|Gibt den Typ zurück.|
+|[worüber](#what)|Gibt den-Typ zurück.|
 
-## <a name="what"></a> Was
+## <a name="what"></a><a name="what"></a> worüber
 
-Gibt den Typ zurück.
+Gibt den-Typ zurück.
 
 ```cpp
 const char* what() const noexcept override;
