@@ -4,23 +4,23 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - container classes
 ms.assetid: dc5a1998-a31b-4adf-b888-8abe5b87a4e0
-ms.openlocfilehash: 21d3660661e3987d1b9477bb6298373033946c06
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: ea30810177d936248f836e7e4462739d8b5f393a
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87228114"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846263"
 ---
 # <a name="sample-container-members"></a>Sample Container-Member
 
 > [!NOTE]
 > Dieses Thema befindet sich in der Microsoft C++-Dokumentation als nicht funktionales Beispiel für Container, die in der C++-Standard Bibliothek verwendet werden. Weitere Informationen finden Sie unter [C++-Standardbibliothekscontainer](../standard-library/stl-containers.md).
 
-## <a name="reference"></a>Verweis
+## <a name="reference"></a>Referenz
 
 ## <a name="typedefs"></a>TypeDefs
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[const_iterator](../standard-library/container-class-const-iterator.md)|Beschreibt ein Objekt, das als konstanter Iterator für die gesteuerte Sequenz fungieren kann.|
 |[const_reference](../standard-library/container-class-const-reference.md)|Beschreibt ein Objekt, das als Konstantenverweis auf ein Element der gesteuerten Sequenz fungieren kann|
@@ -34,7 +34,7 @@ ms.locfileid: "87228114"
 
 ## <a name="member-functions"></a>Elementfunktionen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[beginnen](../standard-library/container-class-begin.md)|Gibt einen Iterator zurück, der auf das erste Element der Sequenz zeigt (bzw. unmittelbar hinter das Ende einer leeren Sequenz)|
 |[Löschen](../standard-library/container-class-clear.md)|Ruft [erase](../standard-library/container-class-erase.md)([begin](../standard-library/container-class-begin.md), [end](../standard-library/container-class-end.md)) auf.|

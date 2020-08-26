@@ -5,22 +5,35 @@ f1_keywords:
 - concrt/concurrency::operator!=
 - concrt/concurrency:[operator&amp;&amp
 ms.assetid: 8e373f23-fc8e-49f7-82e6-ba0c57b822f8
-ms.openlocfilehash: 6cef9304be17dd39e0f0b020133abd08f07fba7c
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 97553276a7c4ff687dd8bea4627f943d5666b2e9
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87194380"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88836010"
 ---
 # <a name="concurrency-namespace-operators"></a>concurrency-Namespace-Operatoren
 
-||||
-|-|-|-|
-|[Operator! =](#operator_neq)|[KOM&amp;&amp;](#operator_amp_amp)|[KOM&gt;](#operator_gt)|
-|[KOM&gt;=](#operator_gt_eq)|[KOM&lt;](#operator_lt)|[KOM&lt;=](#operator_lt_eq)|
-|[Operator = =](#operator_eq_eq)|[operator||](#operator_lor)| |
+:::row:::
+   :::column span="":::
+      [`operator||`](#operator_lor)\
+      [`operator&&`](#operator_amp_amp)
+   :::column-end:::
+   :::column span="":::
+      [`operator==`](#operator_eq_eq)\
+      [`operator!=`](#operator_neq)
+   :::column-end:::
+   :::column span="":::
+      [`operator<`](#operator_lt)\
+      [`operator<=`](#operator_lt_eq)
+   :::column-end:::
+   :::column span="":::
+      [`operator>`](#operator_gt)\
+      [`operator>=`](#operator_gt_eq)
+   :::column-end:::
+:::row-end:::
 
-## <a name="operator124124-operator"></a><a name="operator_lor"></a>Operator&#124;&#124; -Operator
+## <a name="operator124124-operator"></a><a name="operator_lor"></a> Operator&#124;&#124; -Operator
 
 Erstellt eine Aufgabe, die erfolgreich abgeschlossen wird, wenn eine der als Argumente angegeben Aufgaben erfolgreich abgeschlossen wird.
 
@@ -113,7 +126,7 @@ Eine Aufgabe, die erfolgreich abgeschlossen ist, wenn beide Eingabeaufgaben erfo
 
 Wenn eine der Aufgaben abgebrochen wird oder eine Ausnahme auslöst, wird die zurückgegebene Aufgabe früh im abgebrochenen Zustand ausgeführt, und die Ausnahme, sofern Sie auftritt, wird ausgelöst, wenn Sie `get()` oder `wait()` für diese Aufgabe aufzurufen.
 
-## <a name="operator-operator"></a><a name="operator_eq_eq"></a>Operator = =-Operator
+## <a name="operator-operator"></a><a name="operator_eq_eq"></a> Operator = =-Operator
 
 Testet, ob das `concurrent_vector`-Objekt links vom Operator gleich dem `concurrent_vector`-Objekt rechts vom Operator ist.
 
@@ -136,14 +149,14 @@ Der zuordnertyp des ersten `concurrent_vector` Objekts.
 Der zuordnertyp des zweiten `concurrent_vector` Objekts.
 
 *_A*<br/>
-Ein Objekt des Typs `concurrent_vector`.
+Ein Objekt vom Typ `concurrent_vector`.
 
 *_B*<br/>
-Ein Objekt des Typs `concurrent_vector`.
+Ein Objekt vom Typ `concurrent_vector`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn der gleichzeitige Vektor Links vom Operator gleich dem gleichzeitigen Vektor auf der rechten Seite des Operators ist. andernfalls **`false`** .
+**`true`** , wenn der gleichzeitige Vektor Links vom Operator gleich dem gleichzeitigen Vektor auf der rechten Seite des Operators ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -151,7 +164,7 @@ Zwei gleichzeitige Vektoren sind gleich, wenn Sie über die gleiche Anzahl von E
 
 Diese Methode ist nicht Parallelitäts sicher in Bezug auf andere Methoden, die einen der gleichzeitigen Vektoren oder ändern `_A` können `_B` .
 
-## <a name="operator-operator"></a><a name="operator_neq"></a>Operator! =-Operator
+## <a name="operator-operator"></a><a name="operator_neq"></a> Operator! =-Operator
 
 Testet, ob das `concurrent_vector`-Objekt links vom Operator ungleich dem `concurrent_vector`-Objekt rechts vom Operator ist.
 
@@ -174,14 +187,14 @@ Der zuordnertyp des ersten `concurrent_vector` Objekts.
 Der zuordnertyp des zweiten `concurrent_vector` Objekts.
 
 *_A*<br/>
-Ein Objekt des Typs `concurrent_vector`.
+Ein Objekt vom Typ `concurrent_vector`.
 
 *_B*<br/>
-Ein Objekt des Typs `concurrent_vector`.
+Ein Objekt vom Typ `concurrent_vector`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn die gleichzeitigen Vektoren nicht gleich sind. , **`false`** Wenn die gleichzeitigen Vektoren gleich sind.
+**`true`** , wenn die gleichzeitigen Vektoren nicht gleich sind. , **`false`** Wenn die gleichzeitigen Vektoren gleich sind.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -189,7 +202,7 @@ Zwei gleichzeitige Vektoren sind gleich, wenn Sie über die gleiche Anzahl von E
 
 Diese Methode ist nicht Parallelitäts sicher in Bezug auf andere Methoden, die einen der gleichzeitigen Vektoren oder ändern `_A` können `_B` .
 
-## <a name="operatorlt-operator"></a><a name="operator_lt"></a>Operator &lt; Operator
+## <a name="operatorlt-operator"></a><a name="operator_lt"></a> Operator &lt; Operator
 
 Testet, ob das `concurrent_vector`-Objekt links vom Operator kleiner als das `concurrent_vector`-Objekt auf der rechten Seite ist.
 
@@ -212,14 +225,14 @@ Der zuordnertyp des ersten `concurrent_vector` Objekts.
 Der zuordnertyp des zweiten `concurrent_vector` Objekts.
 
 *_A*<br/>
-Ein Objekt des Typs `concurrent_vector`.
+Ein Objekt vom Typ `concurrent_vector`.
 
 *_B*<br/>
-Ein Objekt des Typs `concurrent_vector`.
+Ein Objekt vom Typ `concurrent_vector`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn der gleichzeitige Vektor Links vom Operator kleiner als der gleichzeitige Vektor auf der rechten Seite des Operators ist. andernfalls **`false`** .
+**`true`** , wenn der gleichzeitige Vektor Links vom Operator kleiner als der gleichzeitige Vektor auf der rechten Seite des Operators ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -227,7 +240,7 @@ Das Verhalten dieses Operators ist identisch mit dem äquivalenten Operator für
 
 Diese Methode ist nicht Parallelitäts sicher in Bezug auf andere Methoden, die einen der gleichzeitigen Vektoren oder ändern `_A` können `_B` .
 
-## <a name="operatorlt-operator"></a><a name="operator_lt_eq"></a>Operator &lt; =-Operator
+## <a name="operatorlt-operator"></a><a name="operator_lt_eq"></a> Operator &lt; =-Operator
 
 Testet, ob das `concurrent_vector`-Objekt links vom Operator kleiner oder gleich dem `concurrent_vector`-Objekt auf der rechten Seite ist.
 
@@ -250,14 +263,14 @@ Der zuordnertyp des ersten `concurrent_vector` Objekts.
 Der zuordnertyp des zweiten `concurrent_vector` Objekts.
 
 *_A*<br/>
-Ein Objekt des Typs `concurrent_vector`.
+Ein Objekt vom Typ `concurrent_vector`.
 
 *_B*<br/>
-Ein Objekt des Typs `concurrent_vector`.
+Ein Objekt vom Typ `concurrent_vector`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn der gleichzeitige Vektor Links vom Operator kleiner als oder gleich dem gleichzeitigen Vektor auf der rechten Seite des Operators ist. andernfalls **`false`** .
+**`true`** , wenn der gleichzeitige Vektor Links vom Operator kleiner als oder gleich dem gleichzeitigen Vektor auf der rechten Seite des Operators ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -265,7 +278,7 @@ Das Verhalten dieses Operators ist identisch mit dem äquivalenten Operator für
 
 Diese Methode ist nicht Parallelitäts sicher in Bezug auf andere Methoden, die einen der gleichzeitigen Vektoren oder ändern `_A` können `_B` .
 
-## <a name="operatorgt-operator"></a><a name="operator_gt"></a>Operator &gt; Operator
+## <a name="operatorgt-operator"></a><a name="operator_gt"></a> Operator &gt; Operator
 
 Testet, ob das `concurrent_vector`-Objekt links vom Operator größer als das `concurrent_vector`-Objekt auf der rechten Seite ist.
 
@@ -288,14 +301,14 @@ Der zuordnertyp des ersten `concurrent_vector` Objekts.
 Der zuordnertyp des zweiten `concurrent_vector` Objekts.
 
 *_A*<br/>
-Ein Objekt des Typs `concurrent_vector`.
+Ein Objekt vom Typ `concurrent_vector`.
 
 *_B*<br/>
-Ein Objekt des Typs `concurrent_vector`.
+Ein Objekt vom Typ `concurrent_vector`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn der gleichzeitige Vektor Links vom Operator größer als der gleichzeitige Vektor auf der rechten Seite des Operators ist. andernfalls **`false`** .
+**`true`** , wenn der gleichzeitige Vektor Links vom Operator größer als der gleichzeitige Vektor auf der rechten Seite des Operators ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -303,7 +316,7 @@ Das Verhalten dieses Operators ist identisch mit dem äquivalenten Operator für
 
 Diese Methode ist nicht Parallelitäts sicher in Bezug auf andere Methoden, die einen der gleichzeitigen Vektoren oder ändern `_A` können `_B` .
 
-## <a name="operatorgt-operator"></a><a name="operator_gt_eq"></a>Operator &gt; =-Operator
+## <a name="operatorgt-operator"></a><a name="operator_gt_eq"></a> Operator &gt; =-Operator
 
 Testet, ob das `concurrent_vector`-Objekt links vom Operator größer oder gleich dem `concurrent_vector`-Objekt auf der rechten Seite ist.
 
@@ -326,14 +339,14 @@ Der zuordnertyp des ersten `concurrent_vector` Objekts.
 Der zuordnertyp des zweiten `concurrent_vector` Objekts.
 
 *_A*<br/>
-Ein Objekt des Typs `concurrent_vector`.
+Ein Objekt vom Typ `concurrent_vector`.
 
 *_B*<br/>
-Ein Objekt des Typs `concurrent_vector`.
+Ein Objekt vom Typ `concurrent_vector`.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn der gleichzeitige Vektor Links vom Operator größer als oder gleich dem gleichzeitigen Vektor auf der rechten Seite des Operators ist. andernfalls **`false`** .
+**`true`** , wenn der gleichzeitige Vektor Links vom Operator größer als oder gleich dem gleichzeitigen Vektor auf der rechten Seite des Operators ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 

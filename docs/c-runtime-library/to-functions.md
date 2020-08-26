@@ -23,23 +23,22 @@ helpviewer_keywords:
 - case, converting
 - characters, converting
 ms.assetid: f636a4c6-8c9f-4be2-baac-064f9dbae300
-ms.openlocfilehash: df8f59088cd402503fe31f768557e3ed936b31ec
-ms.sourcegitcommit: a5fa9c6f4f0c239ac23be7de116066a978511de7
+ms.openlocfilehash: a54f20d6ae4dead5ba7c606fd28d456e96ff31d6
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75301690"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88836077"
 ---
 # <a name="to-functions"></a>to-Funktionen
 
 Jede der **to**-Funktionen und ggf. das zugehörige Makro konvertiert ein einzelnes Zeichen in ein anderes Zeichen.
 
-|||
-|-|-|
-|[__toascii](../c-runtime-library/reference/toascii-toascii.md)|[toupper, _toupper, towupper](../c-runtime-library/reference/toupper-toupper-towupper-toupper-l-towupper-l.md)|
-|[tolower, _tolower, towlower](../c-runtime-library/reference/tolower-tolower-towlower-tolower-l-towlower-l.md)||
+[__toascii](../c-runtime-library/reference/toascii-toascii.md)\
+[ToLower, _tolower, towlower](../c-runtime-library/reference/tolower-tolower-towlower-tolower-l-towlower-l.md)\
+[toupper, _toupper, towupper](../c-runtime-library/reference/toupper-toupper-towupper-toupper-l-towupper-l.md)
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Es gibt folgende **to**-Funktionen und Makrokonvertierungen:
 
@@ -67,7 +66,7 @@ Die Routinen `_tolower` und `_toupper`:
 
 - Sind vom Gebietsschema unabhängige, viel schnellere Versionen von `tolower` und **.**
 
-- Können nur verwendet werden, wenn **isascii(** `c` **)** und entweder **isupper(** `c` **)** oder **islower(** `c` **)** ungleich null sind.
+- Kann nur verwendet werden, wenn **isascii (** `c` **)** und entweder **IsUpper (** `c` **)** oder **IsLower (** `c` **)** bzw. nicht NULL sind.
 
 - Haben nicht definierte Ergebnisse, wenn `c` kein ASCII-Buchstabe des entsprechenden zu konvertierenden Falls ist.
 
@@ -115,8 +114,8 @@ Some of THESE letters are Capitals.
 sOME OF these LETTERS ARE cAPITALS.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../c-runtime-library/data-conversion.md)<br/>
-[Locale](../c-runtime-library/locale.md)<br/>
-[is- und isw-Routinen](../c-runtime-library/is-isw-routines.md)
+[Gebietsschema](../c-runtime-library/locale.md)<br/>
+[is-, ISW-Routinen](../c-runtime-library/is-isw-routines.md)

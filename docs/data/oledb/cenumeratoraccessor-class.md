@@ -35,12 +35,12 @@ helpviewer_keywords:
 - m_szName
 - m_szParseName
 ms.assetid: 21e8e7ea-3511-4afe-b33f-d520f4ff82bb
-ms.openlocfilehash: f238c0b5b2a3988f08d910f605415bbe6403ea3d
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 0b4baa4671a013699e51a9ab28c002a680dfcd61
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80211824"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88838138"
 ---
 # <a name="cenumeratoraccessor-class"></a>CEnumeratorAccessor-Klasse
 
@@ -56,11 +56,11 @@ class CEnumeratorAccessor
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="data-members"></a>Datenelemente
 
-|||
+| Name | Beschreibung |
 |-|-|
 |[m_bIsParent](#bisparent)|Eine Variable, die angibt, ob der Enumerator ein übergeordneter Enumerator ist, wenn die Zeile ein Enumerator ist.|
 |[m_nType](#ntype)|Eine Variable, die angibt, ob die Zeile eine Datenquelle oder einen Enumerator beschreibt.|
@@ -72,7 +72,7 @@ class CEnumeratorAccessor
 
 Dieses Rowset besteht aus den Datenquellen und Enumeratoren, die im aktuellen Enumerator sichtbar sind.
 
-## <a name="cenumeratoraccessorm_bisparent"></a><a name="bisparent"></a>Cenzueratoraccessor:: m_bIsParent
+## <a name="cenumeratoraccessorm_bisparent"></a><a name="bisparent"></a> Cenzueratoraccessor:: m_bIsParent
 
 Eine Variable, die angibt, ob der Enumerator ein übergeordneter Enumerator ist, wenn die Zeile ein Enumerator ist.
 
@@ -86,7 +86,7 @@ VARIANT_BOOL m_bIsParent;
 
 Weitere Informationen finden Sie unter [ISourcesRowset:: GetSourcesRowset](/previous-versions/windows/desktop/ms711200(v=vs.85)) in der *OLE DB Programmierer-Referenz* .
 
-## <a name="cenumeratoraccessorm_ntype"></a><a name="ntype"></a>Cenzueratoraccessor:: m_nType
+## <a name="cenumeratoraccessorm_ntype"></a><a name="ntype"></a> Cenzueratoraccessor:: m_nType
 
 Eine Variable, die angibt, ob die Zeile eine Datenquelle oder einen Enumerator beschreibt.
 
@@ -100,7 +100,7 @@ USHORT m_nType;
 
 Weitere Informationen finden Sie unter [ISourcesRowset:: GetSourcesRowset](/previous-versions/windows/desktop/ms711200(v=vs.85)) in der *OLE DB Programmierer-Referenz* .
 
-## <a name="cenumeratoraccessorm_szdescription"></a><a name="szdescription"></a>Cenzueratoraccessor:: m_szDescription
+## <a name="cenumeratoraccessorm_szdescription"></a><a name="szdescription"></a> Cenzueratoraccessor:: m_szDescription
 
 Die Beschreibung der Datenquelle oder des Enumerators.
 
@@ -114,7 +114,7 @@ WCHAR m_szDescription[129];
 
 Weitere Informationen finden Sie unter [ISourcesRowset:: GetSourcesRowset](/previous-versions/windows/desktop/ms711200(v=vs.85)) in der *OLE DB Programmierer-Referenz* .
 
-## <a name="cenumeratoraccessorm_szname"></a><a name="szname"></a>Cenzueratoraccessor:: m_szName
+## <a name="cenumeratoraccessorm_szname"></a><a name="szname"></a> Cenzueratoraccessor:: m_szName
 
 Der Name der Datenquelle oder des Enumerators.
 
@@ -128,7 +128,7 @@ WCHAR m_szName[129];
 
 Weitere Informationen finden Sie unter [ISourcesRowset:: GetSourcesRowset](/previous-versions/windows/desktop/ms711200(v=vs.85)) in der *OLE DB Programmierer-Referenz* .
 
-## <a name="cenumeratoraccessorm_szparsename"></a><a name="szparsename"></a>Cenzueratoraccessor:: m_szParseName
+## <a name="cenumeratoraccessorm_szparsename"></a><a name="szparsename"></a> Cenzueratoraccessor:: m_szParseName
 
 Eine Zeichenfolge, die an [iparser Display Name](/windows/win32/api/oleidl/nn-oleidl-iparsedisplayname) übergeben werden soll, um einen Moniker für die Datenquelle oder den Enumerator zu erhalten.
 
@@ -145,4 +145,4 @@ Weitere Informationen finden Sie unter [ISourcesRowset:: GetSourcesRowset](/prev
 ## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
-[Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)
+[Referenz zu OLE DB Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)

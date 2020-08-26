@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - emitidl attribute
 ms.assetid: 85b80c56-578e-4392-ac03-8443c74ebb7d
-ms.openlocfilehash: 4ddf71c385414a28c2b616b359a93a637abc24aa
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 32362f287320e69d1680cbe07ca050143b507514
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87222133"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846328"
 ---
 # <a name="emitidl"></a>emitidl
 
@@ -36,7 +36,7 @@ Einer der folgenden möglichen Werte: **`true`** , **`false`** , `forced` , `res
 
 - Wenn `forced` , wird ein nachfolgendes `restricted` Attribut überschrieben, das erfordert, dass eine Datei über ein-Attribut verfügt, `module` Wenn in der Datei IDL-Attribute vorhanden sind.
 
-- `push`ermöglicht das Speichern der aktuellen **Emitidl** -Einstellungen in einem internen **Emitidl** -Stapel und `pop` ermöglicht das Festlegen von **Emitidl** auf einen beliebigen Wert, der sich am Anfang des internen **Emitidl** -Stapels befindet.
+- `push` ermöglicht das Speichern der aktuellen **Emitidl** -Einstellungen in einem internen **Emitidl** -Stapel und `pop` ermöglicht das Festlegen von **Emitidl** auf einen beliebigen Wert, der sich am Anfang des internen **Emitidl** -Stapels befindet.
 
 `defaultimports=`*boolescher* \( Wert optionale
 
@@ -54,9 +54,7 @@ Jedes Mal, wenn der Compiler auf eine neue Datei stößt, wird **Emitidl** impli
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
 |**Zielgruppe**|Überall|
 |**REPEATABLE**|Nein|

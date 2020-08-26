@@ -23,12 +23,12 @@ helpviewer_keywords:
 - std::geometric_distribution [C++], param_type
 - std::geometric_distribution [C++], param_type
 ms.assetid: 38f933af-3b49-492e-9d26-b6b272a60013
-ms.openlocfilehash: 6a9e2c55da7278c50d43a63a4cce79d2a21f573c
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 98ecbc96d104a900d222c660de7f16563f566a9c
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87233183"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88837878"
 ---
 # <a name="geometric_distribution-class"></a>geometric_distribution-Klasse
 
@@ -76,10 +76,8 @@ Die einheitliche Zufallszahlengenerator-Engine. Informationen zu möglichen Type
 
 Die Klassen Vorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten ganzzahligen Typs mit einer geometrischen Verteilung produziert. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
 
-||||
-|-|-|-|
-|[geometric_distribution](#geometric_distribution)|`geometric_distribution::p`|`geometric_distribution::param`|
-|`geometric_distribution::operator()`||[param_type](#param_type)|
+[geometric_distribution](#geometric_distribution)\
+[param_type](#param_type)
 
 Die Eigenschaftsfunktion `p()` gibt den Wert für den gespeicherten Verteilungsparameter `p` zurück.
 
@@ -209,7 +207,7 @@ Distribution for 100 samples:
 
 **Namespace:** std
 
-## <a name="geometric_distributiongeometric_distribution"></a><a name="geometric_distribution"></a>geometric_distribution:: geometric_distribution
+## <a name="geometric_distributiongeometric_distribution"></a><a name="geometric_distribution"></a> geometric_distribution:: geometric_distribution
 
 Erstellt die Verteilung.
 
@@ -234,7 +232,7 @@ Der erste Konstruktor konstruiert ein Objekt, dessen gespeicherter `p`-Wert den 
 
 Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter aus *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
 
-## <a name="geometric_distributionparam_type"></a><a name="param_type"></a>geometric_distribution::p aram_type
+## <a name="geometric_distributionparam_type"></a><a name="param_type"></a> geometric_distribution::p aram_type
 
 Speichert die Parameter der Verteilung.
 
@@ -263,6 +261,6 @@ Die `param_type`-Instanz, mit der verglichen wird.
 
 Diese Struktur kann bei der Instanziierung an den Klassenkonstruktor des Verteilers, an die Memberfunktion `param()` (zur Festlegung der gespeicherten Parameter einer vorhandenen Verteilung) und an `operator()` (zur Verwendung anstelle der gespeicherten Parameter) übergeben werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<random>](../standard-library/random.md)

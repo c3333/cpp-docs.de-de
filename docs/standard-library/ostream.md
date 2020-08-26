@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - ostream header
 ms.assetid: 90c3b6fb-57cd-4ae7-99b8-8512f24a67d2
-ms.openlocfilehash: 37642cbcbe57fba54f071a8fc94af53c97684a36
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: ffcb6c7b2f95b0b62659f6080c9ed0d1f111237c
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87228140"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846393"
 ---
 # <a name="ltostreamgt"></a>&lt;ostream&gt;
 
@@ -34,7 +34,7 @@ Definiert die Klassen Vorlagen [basic_ostream](../standard-library/basic-ostream
 
 ### <a name="manipulators"></a>Manipulatoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[endl](../standard-library/ostream-functions.md#endl)|Beendet eine Zeile und leert den Puffer.|
 |[Runden](../standard-library/ostream-functions.md#ends)|Beendet eine Zeichenfolge.|
@@ -43,17 +43,17 @@ Definiert die Klassen Vorlagen [basic_ostream](../standard-library/basic-ostream
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|BESCHREIBUNG|
+|Operator|Beschreibung|
 |-|-|
 |[Operator<<](../standard-library/ostream-operators.md#op_lt_lt)|Schreibt verschiedene Typen in den Stream.|
 
 ### <a name="classes"></a>Klassen
 
-|Klasse|BESCHREIBUNG|
+|Klasse|Beschreibung|
 |-|-|
 |[basic_ostream](../standard-library/basic-ostream-class.md)|Die Klassen Vorlage beschreibt ein Objekt, das das Einfügen von Elementen und codierten Objekten in einen Streampuffer steuert.|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Header Dateireferenz](../standard-library/cpp-standard-library-header-files.md)\
 [Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\

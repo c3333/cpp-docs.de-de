@@ -29,29 +29,29 @@ helpviewer_keywords:
 - std::bit_xor [C++]
 - std::cref [C++]
 ms.assetid: c34d0b45-50a7-447a-9368-2210d06339a4
-ms.openlocfilehash: 472200d6941867387d99ab52c08a70467f802f62
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 5e3aa35395c8fd5a42d7127d0b6072a3edf4ace5
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87219117"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88838086"
 ---
 # <a name="ltfunctionalgt-functions"></a>&lt;functional&gt;-Funktionen
 
 Diese Funktionen sind in c++ 11 veraltet und wurden in c++ 17 entfernt:
 
-||||
-|-|-|-|
-|[bind1st](#bind1st) |[bind2nd](#bind2nd)|[mem_fun](#mem_fun)|
-|[mem_fun_ref](#mem_fun_ref)|[ptr_fun](#ptr_fun)||
+[bind1st](#bind1st)\
+[bind2nd](#bind2nd)\
+[mem_fun](#mem_fun)\
+[mem_fun_ref](#mem_fun_ref)\
+[ptr_fun](#ptr_fun)
 
 Diese Funktionen sind in c++ 17 veraltet:
 
-|||
-|-|-|
-|[not1](#not1)|[not2](#not2)|
+[not1](#not1)\
+[not2](#not2)
 
-## <a name="bind"></a><a name="bind"></a>Zwick
+## <a name="bind"></a><a name="bind"></a> Zwick
 
 Bindet Argumente an ein aufrufbares Objekt.
 
@@ -152,7 +152,7 @@ int main()
 3^2 == 9
 ```
 
-## <a name="bind1st"></a><a name="bind1st"></a>bind1st
+## <a name="bind1st"></a><a name="bind1st"></a> bind1st
 
 Eine hilfsvorlagen Funktion, mit der ein Adapter erstellt wird, um ein binäres Funktions Objekt in ein unäres Funktions Objekt zu konvertieren. Es bindet das erste Argument der binären Funktion an einen angegebenen Wert. In c++ 11 veraltet, entfernt in c++ 17.
 
@@ -246,7 +246,7 @@ The number of elements in v1 greater than 5 is: 4.
 The number of elements in v1 less than 10 is: 2.
 ```
 
-## <a name="bind2nd"></a><a name="bind2nd"></a>bind2nd
+## <a name="bind2nd"></a><a name="bind2nd"></a> bind2nd
 
 Eine hilfsvorlagen Funktion, mit der ein Adapter erstellt wird, um ein binäres Funktions Objekt in ein unäres Funktions Objekt zu konvertieren. Es bindet das zweite Argument der binären Funktion an einen angegebenen Wert. In c++ 11 veraltet, entfernt in c++ 17.
 
@@ -340,7 +340,7 @@ The number of elements in v1 greater than 15 is: 2.
 The number of elements in v1 less than 10 is: 2.
 ```
 
-## <a name="bit_and"></a><a name="bit_and"></a>bit_and
+## <a name="bit_and"></a><a name="bit_and"></a> bit_and
 
 Ein vordefiniertes Funktions Objekt, das eine bitweise AND-Operation (Binary `operator&` ) für die Argumente durchführt.
 
@@ -381,7 +381,7 @@ Das Ergebnis von `Left & Right`. Die spezialisierte Vorlage vervollkommnet die W
 
 Das `bit_and`-Funktionselement wird auf Ganzzahltypen für die grundlegenden Datentypen oder benutzerdefinierte Typen beschränkt, die das binäre `operator&`-Element implementieren.
 
-## <a name="bit_not"></a><a name="bit_not"></a>bit_not
+## <a name="bit_not"></a><a name="bit_not"></a> bit_not
 
 Ein vordefiniertes Funktions Objekt, das einen bitweisen Komplement (Not)-Vorgang (unärer Vorgang `operator~` ) für sein Argument durchführt. In c++ 14 hinzugefügt.
 
@@ -417,7 +417,7 @@ Das Ergebnis von `~ Right`. Die spezialisierte Vorlage vervollkommnet die Weiter
 
 Das `bit_not`-Funktionselement wird auf Ganzzahltypen für die grundlegenden Datentypen oder benutzerdefinierte Typen beschränkt, die das binäre `operator~`-Element implementieren.
 
-## <a name="bit_or"></a><a name="bit_or"></a>bit_or
+## <a name="bit_or"></a><a name="bit_or"></a> bit_or
 
 Ein vordefiniertes Funktions Objekt, das eine bitweise OR-Operation ( `operator|` ) auf die Argumente durchführt.
 
@@ -458,7 +458,7 @@ Das Ergebnis von `Left | Right`. Die spezialisierte Vorlage vervollkommnet die W
 
 Das `bit_or`-Funktionselement wird auf Ganzzahltypen für die grundlegenden Datentypen oder benutzerdefinierte Typen beschränkt, die `operator|` implementieren.
 
-## <a name="bit_xor"></a><a name="bit_xor"></a>bit_xor
+## <a name="bit_xor"></a><a name="bit_xor"></a> bit_xor
 
 Ein vordefiniertes Funktions Objekt, das eine bitweise XOR-Operation (Binary `operator^` ) für die Argumente durchführt.
 
@@ -499,7 +499,7 @@ Das Ergebnis von `Left ^ Right`. Die spezialisierte Vorlage vervollkommnet die W
 
 Das `bit_xor`-Funktionselement wird auf Ganzzahltypen für die grundlegenden Datentypen oder benutzerdefinierte Typen beschränkt, die das binäre `operator^`-Element implementieren.
 
-## <a name="cref"></a><a name="cref"></a>cref
+## <a name="cref"></a><a name="cref"></a> cref
 
 Erstellt ein konstantes `reference_wrapper`-Element aus einem Argument.
 
@@ -555,7 +555,7 @@ cref(i) = 1
 cref(neg)(i) = -1
 ```
 
-## <a name="invoke"></a><a name="invoke"></a>Blaze
+## <a name="invoke"></a><a name="invoke"></a> Blaze
 
 Ruft jedes Aufruf Bare Objekt mit den angegebenen Argumenten auf. Hinzugefügt in c++ 17.
 
@@ -588,15 +588,15 @@ Ruft das Aufruf Bare Objekt " *FN* " mithilfe der Parameter " *args*" auf. Effek
 
 - `(t1.*f)(t2, ..., tN)`, wenn `f` ein Zeiger auf eine Memberfunktion der Klasse `T` und `t1` ist, ist ein Objekt vom Typ `T` oder ein Verweis auf ein Objekt vom Typ `T` oder ein Verweis auf ein Objekt eines Typs, der von `T` abgeleitet wird. Das heißt, wenn den Wert `std::is_base_of<T, std::decay_t<decltype(t1)>>::value` true hat.
 
-- `(t1.get().*f)(t2, ..., tN)`Wenn `f` ein Zeiger auf eine Member-Funktion der `T` -Klasse ist und `std::decay_t<decltype(t1)>` eine Spezialisierung von ist `std::reference_wrapper` .
+- `(t1.get().*f)(t2, ..., tN)` Wenn `f` ein Zeiger auf eine Member-Funktion der `T` -Klasse ist und `std::decay_t<decltype(t1)>` eine Spezialisierung von ist `std::reference_wrapper` .
 
-- `((*t1).*f)(t2, ..., tN)`Wenn `f` ein Zeiger auf eine Member-Funktion der `T` -Klasse ist und `t1` keiner der vorherigen Typen ist.
+- `((*t1).*f)(t2, ..., tN)` Wenn `f` ein Zeiger auf eine Member-Funktion der `T` -Klasse ist und `t1` keiner der vorherigen Typen ist.
 
 - `t1.*f`, wenn N == 1 und `f` ein Zeiger auf Memberdaten einer Klasse `T` und `t1` ist, ist ein Objekt vom Typ `T` oder ein Verweis auf ein Objekt vom Typ `T` oder ein Verweis auf ein Objekt eines Typs, der von `T` abgeleitet wird.  Das heißt, wenn den Wert `std::is_base_of<T, std::decay_t<decltype(t1)>>::value` true hat.
 
-- `t1.get().*f`Wenn N = = 1 und `f` ein Zeiger auf die Elementdaten einer Klasse ist `T` und `std::decay_t<decltype(t1)>` eine Spezialisierung von ist `std::reference_wrapper` .
+- `t1.get().*f` Wenn N = = 1 und `f` ein Zeiger auf die Elementdaten einer Klasse ist `T` und `std::decay_t<decltype(t1)>` eine Spezialisierung von ist `std::reference_wrapper` .
 
-- `(*t1).*f`Wenn N = = 1 und `f` ein Zeiger auf die Elementdaten einer Klasse ist `T` und `t1` keiner der vorherigen Typen ist.
+- `(*t1).*f` Wenn N = = 1 und `f` ein Zeiger auf die Elementdaten einer Klasse ist `T` und `t1` keiner der vorherigen Typen ist.
 
 - `f(t1, t2, ..., tN)` in allen anderen Fällen.
 
@@ -676,7 +676,7 @@ pd->n_: 42
 42 is divisible by 7.
 ```
 
-## <a name="mem_fn"></a><a name="mem_fn"></a>mem_fn
+## <a name="mem_fn"></a><a name="mem_fn"></a> mem_fn
 
 Generiert einen einfachen Aufrufwrapper.
 
@@ -739,7 +739,7 @@ int main()
 3*2 == 6
 ```
 
-## <a name="mem_fun"></a><a name="mem_fun"></a>mem_fun
+## <a name="mem_fun"></a><a name="mem_fun"></a> mem_fun
 
 Hilfevorlagenfunktionen, die verwendet werden, um Funktionsobjektadapter für Memberfunktionen zu konstruieren, wenn Sie mit Zeigerargumenten initialisiert werden. In c++ 11 als veraltet markiert, um [mem_fn](#mem_fn) und [Bind](#bind)zu erhalten und in c++ 17 entfernt zu werden.
 
@@ -826,7 +826,7 @@ int main( )
 }
 ```
 
-## <a name="mem_fun_ref"></a><a name="mem_fun_ref"></a>mem_fun_ref
+## <a name="mem_fun_ref"></a><a name="mem_fun_ref"></a> mem_fun_ref
 
 Hilfevorlagenfunktionen, die verwendet werden, um Funktionsobjektadapter für Memberfunktionen zu konstruieren, indem Sie mit Verweisargumenten initialisiert werden. In c++ 11 veraltet, entfernt in c++ 17.
 
@@ -931,7 +931,7 @@ The original values stored in v2 are: 1 2 3 4 5 6 7 8 9 10 11 12 13
 With the even numbers removed, the remaining values are: 1 3 5 7 9 11 13
 ```
 
-## <a name="not1"></a><a name="not1"></a>not1
+## <a name="not1"></a><a name="not1"></a> not1
 
 Gibt das Komplement eines unären Prädikats zurück. Veraltet für [not_fn](#not_fn) in c++ 17.
 
@@ -1003,7 +1003,7 @@ The number of elements in v1 greater than 10 is: 5.
 The number of elements in v1 not greater than 10 is: 3.
 ```
 
-## <a name="not2"></a><a name="not2"></a>not2
+## <a name="not2"></a><a name="not2"></a> not2
 
 Gibt das Komplement eines binären Prädikats zurück. Veraltet für [not_fn](#not_fn) in c++ 17.
 
@@ -1079,9 +1079,9 @@ Sorted vector v1 = ( 41 6262 6262 6334 18467 19169 26500 )
 Resorted vector v1 = ( 26500 19169 18467 6334 6262 6262 41 )
 ```
 
-## <a name="not_fn"></a><a name="not_fn"></a>not_fn
+## <a name="not_fn"></a><a name="not_fn"></a> not_fn
 
-Die `not_fn` Funktions Vorlage nimmt ein Aufruf bares Objekt an und gibt ein Aufruf bares Objekt zurück. Wenn das zurückgegebene Aufruf Bare Objekt später mit einigen Argumenten aufgerufen wird, übergibt es diese an das ursprüngliche Aufruf Bare Objekt und negiert das Ergebnis logisch. Es behält das Konstante Qualifikations-und wertkategorieverhalten des umschaufenen Aufruf baren Objekts bei. `not_fn`ist neu in c++ 17 und ersetzt die veralteten `std::not1` , `std::not2` , `std::unary_negate` und `std::binary_negate` .
+Die `not_fn` Funktions Vorlage nimmt ein Aufruf bares Objekt an und gibt ein Aufruf bares Objekt zurück. Wenn das zurückgegebene Aufruf Bare Objekt später mit einigen Argumenten aufgerufen wird, übergibt es diese an das ursprüngliche Aufruf Bare Objekt und negiert das Ergebnis logisch. Es behält das Konstante Qualifikations-und wertkategorieverhalten des umschaufenen Aufruf baren Objekts bei. `not_fn` ist neu in c++ 17 und ersetzt die veralteten `std::not1` , `std::not2` , `std::unary_negate` und `std::binary_negate` .
 
 ```cpp
 template <class Callable>
@@ -1179,7 +1179,7 @@ Elements divisible by three: 2
 Elements not divisible by three: 5
 ```
 
-## <a name="ptr_fun"></a><a name="ptr_fun"></a>ptr_fun
+## <a name="ptr_fun"></a><a name="ptr_fun"></a> ptr_fun
 
 Hilfevorlagenfunktionen, die verwendet werden, um die jeweiligen unären und binären Funktionszeiger in die unären und binären anwendbaren Funktionen zu konvertieren. In c++ 11 veraltet, entfernt in c++ 17.
 
@@ -1210,7 +1210,7 @@ Ein Funktionszeiger ist ein Funktions Objekt. Es kann an jeden Algorithmus über
 
 [!code-cpp[functional_ptr_fun#1](../standard-library/codesnippet/CPP/functional-functions_1.cpp)]
 
-## <a name="ref"></a><a name="ref"></a>atur
+## <a name="ref"></a><a name="ref"></a> atur
 
 Konstruiert ein `reference_wrapper` aus einem Argument.
 
@@ -1302,7 +1302,7 @@ tiger lion cougar
 tiger cougar
 ```
 
-## <a name="swap"></a><a name="swap"></a>Wechsel
+## <a name="swap"></a><a name="swap"></a> Wechsel
 
 Tauscht zwei `function`-Objekte.
 

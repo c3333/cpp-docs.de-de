@@ -1,5 +1,5 @@
 ---
-title: IWorkerThreadClient-Schnittstelle
+title: Iworkerthreadclient-Schnittstelle
 ms.date: 11/04/2016
 f1_keywords:
 - IWorkerThreadClient
@@ -9,19 +9,19 @@ f1_keywords:
 helpviewer_keywords:
 - IWorkerThreadClient interface
 ms.assetid: 56f4a2f5-007e-4a33-9e20-05187629f715
-ms.openlocfilehash: 6a68f25f153a0ad2cf42ebfaa374ff63c5746fcd
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: aa72f090a006d6936339582a919b0faf5cab6b03
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81326301"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88835349"
 ---
-# <a name="iworkerthreadclient-interface"></a>IWorkerThreadClient-Schnittstelle
+# <a name="iworkerthreadclient-interface"></a>Iworkerthreadclient-Schnittstelle
 
-`IWorkerThreadClient`ist die Schnittstelle, die von Clients der [CWorkerThread-Klasse](../../atl/reference/cworkerthread-class.md) implementiert wird.
+`IWorkerThreadClient` ist die Schnittstelle, die von Clients der [CWorkerThread](../../atl/reference/cworkerthread-class.md) -Klasse implementiert wird.
 
 > [!IMPORTANT]
-> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+> Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -33,22 +33,22 @@ __interface IWorkerThreadClient
 
 ### <a name="methods"></a>Methoden
 
-|||
+|Name|Beschreibung|
 |-|-|
-|[Closehandle](#closehandle)|Implementieren Sie diese Methode, um das diesem Objekt zugeordnete Handle zu schließen.|
-|[Ausführen](#execute)|Implementieren Sie diese Methode, um Code auszuführen, wenn das diesem Objekt zugeordnete Handle signalisiert wird.|
+|[CloseHandle](#closehandle)|Implementieren Sie diese Methode, um das Handle zu schließen, das diesem Objekt zugeordnet ist.|
+|[Ausführen](#execute)|Implementieren Sie diese Methode, um Code auszuführen, wenn das Handle, das diesem Objekt zugeordnet ist, signalisiert wird.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Implementieren Sie diese Schnittstelle, wenn Sie Code haben, der auf einem Arbeitsthread ausgeführt werden muss, als Reaktion auf ein gesignalisiertes Handle.
+Implementieren Sie diese Schnittstelle, wenn Sie über Code verfügen, der als Reaktion auf ein zu signalisierendes Handle auf einem Arbeits Thread ausgeführt werden muss.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** atlutil.h
+**Header:** atlutil. h
 
-## <a name="iworkerthreadclientclosehandle"></a><a name="closehandle"></a>IWorkerThreadClient::CloseHandle
+## <a name="iworkerthreadclientclosehandle"></a><a name="closehandle"></a> Iworkerthreadclient:: CloseHandle
 
-Implementieren Sie diese Methode, um das diesem Objekt zugeordnete Handle zu schließen.
+Implementieren Sie diese Methode, um das Handle zu schließen, das diesem Objekt zugeordnet ist.
 
 ```
 HRESULT CloseHandle(HANDLE  hHandle);
@@ -57,25 +57,25 @@ HRESULT CloseHandle(HANDLE  hHandle);
 ### <a name="parameters"></a>Parameter
 
 *hHandle*<br/>
-Der zu schließende Griff.
+Das Handle, das geschlossen werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Geben Sie S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Rückgabe S_OK bei Erfolg oder ein Fehler HRESULT bei einem Fehler.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das an diese Methode übergebene Handle wurde diesem Objekt zuvor durch einen Aufruf von [CWorkerThread::AddHandle](../../atl/reference/cworkerthread-class.md#addhandle)zugeordnet.
+Das an diese Methode über gegebene Handle wurde diesem-Objekt zuvor durch einen [CWorkerThread:: addhandle](../../atl/reference/cworkerthread-class.md#addhandle)-Befehl zugeordnet.
 
 ### <a name="example"></a>Beispiel
 
-Der folgende Code zeigt `IWorkerThreadClient::CloseHandle`eine einfache Implementierung von .
+Der folgende Code zeigt eine einfache Implementierung von `IWorkerThreadClient::CloseHandle` .
 
 [!code-cpp[NVC_ATL_Utilities#135](../../atl/codesnippet/cpp/iworkerthreadclient-interface_1.cpp)]
 
-## <a name="iworkerthreadclientexecute"></a><a name="execute"></a>IWorkerThreadClient::Ausführen
+## <a name="iworkerthreadclientexecute"></a><a name="execute"></a> Iworkerthreadclient:: Execute
 
-Implementieren Sie diese Methode, um Code auszuführen, wenn das diesem Objekt zugeordnete Handle signalisiert wird.
+Implementieren Sie diese Methode, um Code auszuführen, wenn das Handle, das diesem Objekt zugeordnet ist, signalisiert wird.
 
 ```
 HRESULT Execute(DWORD_PTR dwParam, HANDLE hObject);
@@ -83,27 +83,27 @@ HRESULT Execute(DWORD_PTR dwParam, HANDLE hObject);
 
 ### <a name="parameters"></a>Parameter
 
-*dwParam*<br/>
+*dwparam*<br/>
 Der Benutzerparameter.
 
-*hObject*<br/>
-Der Griff, der signalisiert wurde.
+*hobject*<br/>
+Das Handle, das signalisiert wurde.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Geben Sie S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Rückgabe S_OK bei Erfolg oder ein Fehler HRESULT bei einem Fehler.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das handle und der DWORD/Pointer, der an diese Methode übergeben wurde, wurden diesem Objekt zuvor durch einen Aufruf von [CWorkerThread::AddHandle](../../atl/reference/cworkerthread-class.md#addhandle)zugeordnet.
+Das Handle und der DWORD/Zeiger, die an diese Methode übergeben wurden, wurden diesem-Objekt zuvor durch einen [CWorkerThread:: addhandle](../../atl/reference/cworkerthread-class.md#addhandle)-Befehl zugeordnet.
 
 ### <a name="example"></a>Beispiel
 
-Der folgende Code zeigt `IWorkerThreadClient::Execute`eine einfache Implementierung von .
+Der folgende Code zeigt eine einfache Implementierung von `IWorkerThreadClient::Execute` .
 
 [!code-cpp[NVC_ATL_Utilities#136](../../atl/codesnippet/cpp/iworkerthreadclient-interface_2.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Klassen](../../atl/reference/atl-classes.md)<br/>
 [CWorkerThread-Klasse](../../atl/reference/cworkerthread-class.md)

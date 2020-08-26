@@ -2,12 +2,12 @@
 title: /Qpar-report (Auto-Parallelizer-Berichtsebene)
 ms.date: 11/04/2016
 ms.assetid: 562673b9-02da-4bf8-bb64-70bc25ef4651
-ms.openlocfilehash: ea3e430dec61d35b8540792773b5519e64cedaef
-ms.sourcegitcommit: 31a443c9998cf5cfbaff00fcf815b133f55b2426
+ms.openlocfilehash: 3a154bdf50e951ee932173cdb65f9e1514011245
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86373787"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88839412"
 ---
 # <a name="qpar-report-auto-parallelizer-reporting-level"></a>/Qpar-report (Auto-Parallelizer-Berichtsebene)
 
@@ -19,7 +19,7 @@ Aktiviert die Berichterstattungs Funktion des [automatischen parallelisierers](.
 /Qpar-report:{1}{2}
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 **/QPAR-Report: 1**<br/>
 Gibt eine Informationsmeldung für Schleifen an, die parallel ausgeführt werden.
@@ -46,4 +46,4 @@ Nachrichten werden an Stdout gesendet. Wenn keine Informationsmeldungen angezeig
 [/Q-Optionen (Vorgänge auf niedriger Ebene)](q-options-low-level-operations.md)<br/>
 [MSVC-Compileroptionen](compiler-options.md)<br/>
 [MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)<br/>
-[Vektorisierung in nativem Code in Visual Studio](https://docs.microsoft.com/archive/blogs/nativeconcurrency/auto-vectorizer-in-visual-studio-2012-overview)
+[Vektorisierung in nativem Code in Visual Studio](/archive/blogs/nativeconcurrency/auto-vectorizer-in-visual-studio-2012-overview)

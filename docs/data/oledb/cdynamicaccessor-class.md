@@ -124,12 +124,12 @@ helpviewer_keywords:
 - SetStatus method
 - SetValue method
 ms.assetid: 374b13b7-1f09-457d-9e6b-df260ff4d178
-ms.openlocfilehash: 6182d66b49647758bf17ab160d536e39b97b8c0f
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: ecbc332fcdb7fee8f748a02b2f111d4d1abf3c0b
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87216478"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88838203"
 ---
 # <a name="cdynamicaccessor-class"></a>CDynamicAccessor-Klasse
 
@@ -149,11 +149,11 @@ class CDynamicAccessor : public CAccessorBase
 
 ### <a name="methods"></a>Methoden
 
-|||
+| Name | Beschreibung |
 |-|-|
 |[AddBindEntry](#addbindentry)|Fügt beim Überschreiben des Standard Accessors dem Ausgabespalten einen Bindungs Eintrag hinzu.|
 |[CDynamicAccessor](#cdynamicaccessor)|Instanziiert und initialisiert das- `CDynamicAccessor` Objekt.|
-|[Close](#close)|Hebt die Bindung aller Spalten auf, gibt den zugewiesenen Speicher frei und gibt den [IAccessor](/previous-versions/windows/desktop/ms719672(v=vs.85)) -Schnittstellen Zeiger in der-Klasse frei.|
+|[Schließen](#close)|Hebt die Bindung aller Spalten auf, gibt den zugewiesenen Speicher frei und gibt den [IAccessor](/previous-versions/windows/desktop/ms719672(v=vs.85)) -Schnittstellen Zeiger in der-Klasse frei.|
 |[GetBlobHandling](#getblobhandling)|Ruft den Wert für die BLOB-Behandlung der aktuellen Zeile ab.|
 |[GetBlobSizeLimit](#getblobsizelimit)|Ruft die maximale BLOB-Größe in Bytes ab.|
 |[GetBookmark](#getbookmark)|Ruft das Lesezeichen für die aktuelle Zeile ab.|
@@ -180,7 +180,7 @@ Die Spalten Informationen werden in einem Puffer gespeichert, der von dieser Kla
 
 Eine Erläuterung und Beispiele für die Verwendung der dynamischen [Accessorklassen finden Sie unter Verwenden dynamischer Accessoren](../../data/oledb/using-dynamic-accessors.md).
 
-## <a name="cdynamicaccessoraddbindentry"></a><a name="addbindentry"></a>CDynamicAccessor:: AddBindEntry
+## <a name="cdynamicaccessoraddbindentry"></a><a name="addbindentry"></a> CDynamicAccessor:: AddBindEntry
 
 Fügt den Ausgabespalten einen Bindungs Eintrag hinzu.
 
@@ -203,7 +203,7 @@ Einer der HRESULT-Standardwerte.
 
 Verwenden Sie diese Methode, wenn Sie den mit erstellten Standard Accessor überschreiben `CDynamicAccessor` (siehe Gewusst [wie: Abrufen von Daten](../../data/oledb/fetching-data.md)).
 
-## <a name="cdynamicaccessorcdynamicaccessor"></a><a name="cdynamicaccessor"></a>CDynamicAccessor:: CDynamicAccessor
+## <a name="cdynamicaccessorcdynamicaccessor"></a><a name="cdynamicaccessor"></a> CDynamicAccessor:: CDynamicAccessor
 
 Instanziiert und initialisiert das- `CDynamicAccessor` Objekt.
 
@@ -228,7 +228,7 @@ Wenn Sie den-Konstruktor verwenden, um das Objekt zu initialisieren `CDynamicAcc
 
 Sie können auch angeben, wie `CDynamicAccessor` Spaltendaten behandelt werden sollen, die sich als BLOB-Daten qualifizieren: Sie können BLOB-Daten auf die Standard Weise verarbeiten. Sie können BLOB-Daten überspringen (nicht binden), oder Sie können BLOB-Daten im vom Anbieter zugewiesenen Speicher binden.
 
-## <a name="cdynamicaccessorclose"></a><a name="close"></a>CDynamicAccessor:: Close
+## <a name="cdynamicaccessorclose"></a><a name="close"></a> CDynamicAccessor:: Close
 
 Hebt die Bindung aller Spalten auf, gibt den zugewiesenen Speicher frei und gibt den [IAccessor](/previous-versions/windows/desktop/ms719672(v=vs.85)) -Schnittstellen Zeiger in der-Klasse frei.
 
@@ -238,7 +238,7 @@ Hebt die Bindung aller Spalten auf, gibt den zugewiesenen Speicher frei und gibt
 void Close() throw();
 ```
 
-## <a name="cdynamicaccessorgetblobhandling"></a><a name="getblobhandling"></a>CDynamicAccessor:: getblobhandling
+## <a name="cdynamicaccessorgetblobhandling"></a><a name="getblobhandling"></a> CDynamicAccessor:: getblobhandling
 
 Ruft den Wert für die BLOB-Behandlung der aktuellen Zeile ab.
 
@@ -252,7 +252,7 @@ const DBBLOBHANDLINGENUM GetBlobHandling() const;
 
 Gibt den von [setblobhandling](../../data/oledb/cdynamicaccessor-setblobhandling.md)festgelegten BLOB-Behandlungs Wert *eblobhandling* zurück.
 
-## <a name="cdynamicaccessorgetblobsizelimit"></a><a name="getblobsizelimit"></a>CDynamicAccessor:: getblobsizelimit
+## <a name="cdynamicaccessorgetblobsizelimit"></a><a name="getblobsizelimit"></a> CDynamicAccessor:: getblobsizelimit
 
 Ruft die maximale BLOB-Größe in Bytes ab.
 
@@ -266,7 +266,7 @@ const DBLENGTH GetBlobSizeLimit() const;
 
 Gibt den von [setblobsizelimit](../../data/oledb/cdynamicaccessor-setblobsizelimit.md)festgelegten BLOB-Behandlungs Wert *nblobsize* zurück.
 
-## <a name="cdynamicaccessorgetbookmark"></a><a name="getbookmark"></a>CDynamicAccessor:: GetBookmark
+## <a name="cdynamicaccessorgetbookmark"></a><a name="getbookmark"></a> CDynamicAccessor:: GetBookmark
 
 Ruft das Lesezeichen für die aktuelle Zeile ab.
 
@@ -289,7 +289,7 @@ Einer der HRESULT-Standardwerte.
 
 Zum `DBPROP_IRowsetLocate` Abrufen eines Lesezeichens müssen Sie auf VARIANT_TRUE festlegen.
 
-## <a name="cdynamicaccessorgetcolumncount"></a><a name="getcolumncount"></a>CDynamicAccessor:: GetColumnCount
+## <a name="cdynamicaccessorgetcolumncount"></a><a name="getcolumncount"></a> CDynamicAccessor:: GetColumnCount
 
 Ruft die Anzahl der Spalten ab.
 
@@ -303,7 +303,7 @@ DBORDINAL GetColumnCount() const throw();
 
 Die Anzahl der abgerufenen Spalten.
 
-## <a name="cdynamicaccessorgetcolumnflags"></a><a name="getcolumnflags"></a>CDynamicAccessor:: getcolumnflags
+## <a name="cdynamicaccessorgetcolumnflags"></a><a name="getcolumnflags"></a> CDynamicAccessor:: getcolumnflags
 
 Ruft die Spalten Eigenschaften ab.
 
@@ -330,7 +330,7 @@ Gibt zurück, **`true`** Wenn die Spalten Eigenschaften erfolgreich abgerufen we
 
 Die Spaltennummer ist von eins versetzt. Die Spalte 0 (null) ist ein Sonderfall. Es ist das Lesezeichen, wenn es verfügbar ist.
 
-## <a name="cdynamicaccessorgetcolumninfo"></a><a name="getcolumninfo"></a>CDynamicAccessor:: GetColumnInfo
+## <a name="cdynamicaccessorgetcolumninfo"></a><a name="getcolumninfo"></a> CDynamicAccessor:: GetColumnInfo
 
 Gibt die von den meisten Consumern benötigten Spaltenmetadaten zurück.
 
@@ -365,7 +365,7 @@ Einer der HRESULT-Standardwerte.
 
 Informationen zu den Datentypen, und finden Sie unter [IColumnsInfo:: GetColumnInfo](/previous-versions/windows/desktop/ms722704\(v=vs.85\)) in der *OLE DB Programmierer-Referenz* `DBORDINAL` `DBCOLUMNINFO` `OLECHAR` .
 
-## <a name="cdynamicaccessorgetcolumnname"></a><a name="getcolumnname"></a>CDynamicAccessor:: GetColumnName
+## <a name="cdynamicaccessorgetcolumnname"></a><a name="getcolumnname"></a> CDynamicAccessor:: GetColumnName
 
 Ruft den Namen der angegebenen Spalte ab.
 
@@ -384,7 +384,7 @@ in Die Spaltennummer. Die Spalten Nummern beginnen mit 1. Der Wert 0 verweist gg
 
 Der Name der angegebenen Spalte.
 
-## <a name="cdynamicaccessorgetcolumntype"></a><a name="getcolumntype"></a>CDynamicAccessor:: GetColumnType
+## <a name="cdynamicaccessorgetcolumntype"></a><a name="getcolumntype"></a> CDynamicAccessor:: GetColumnType
 
 Ruft den Datentyp einer angegebenen Spalte ab.
 
@@ -407,7 +407,7 @@ vorgenommen Ein Zeiger auf den Datentyp der angegebenen Spalte.
 
 Gibt **`true`** bei Erfolg oder **`false`** bei Fehler zurück.
 
-## <a name="cdynamicaccessorgetlength"></a><a name="getlength"></a>CDynamicAccessor:: GetLength
+## <a name="cdynamicaccessorgetlength"></a><a name="getlength"></a> CDynamicAccessor:: GetLength
 
 Ruft die Länge der angegebenen Spalte ab.
 
@@ -443,7 +443,7 @@ Gibt zurück, **`true`** Wenn die angegebene Spalte gefunden wurde. Andernfalls 
 
 Die erste außer Kraft Setzung nimmt die Spaltennummer an, und die zweite und Dritte über schreibungen nehmen den Spaltennamen im ANSI-bzw. Unicode-Format.
 
-## <a name="cdynamicaccessorgetordinal"></a><a name="getordinal"></a>CDynamicAccessor:: getor
+## <a name="cdynamicaccessorgetordinal"></a><a name="getordinal"></a> CDynamicAccessor:: getor
 
 Ruft die Spaltennummer ab, wenn ein Spaltenname angegeben ist.
 
@@ -469,7 +469,7 @@ vorgenommen Ein Zeiger auf die Spaltennummer.
 
 Gibt zurück, **`true`** Wenn eine Spalte mit dem angegebenen Namen gefunden wird. Andernfalls gibt diese Funktion zurück **`false`** .
 
-## <a name="cdynamicaccessorgetstatus"></a><a name="getstatus"></a>CDynamicAccessor:: GetStatus
+## <a name="cdynamicaccessorgetstatus"></a><a name="getstatus"></a> CDynamicAccessor:: GetStatus
 
 Ruft den Status der angegebenen Spalte ab.
 
@@ -501,7 +501,7 @@ vorgenommen Ein Zeiger auf die Variable, die den Spalten Status enthält. Weiter
 
 Gibt zurück, **`true`** Wenn die angegebene Spalte gefunden wurde. Andernfalls gibt diese Funktion zurück **`false`** .
 
-## <a name="cdynamicaccessorgetvalue"></a><a name="getvalue"></a>CDynamicAccessor:: GetValue
+## <a name="cdynamicaccessorgetvalue"></a><a name="getvalue"></a> CDynamicAccessor:: GetValue
 
 Ruft die Daten für eine angegebene Spalte ab.
 
@@ -527,7 +527,7 @@ bool GetValue(const WCHAR* pColumnName, ctype* pData) const throw();
 #### <a name="parameters"></a>Parameter
 
 *ctype*<br/>
-in Ein Vorlagen Parameter, der jeden Datentyp außer Zeichen folgen Typen ( `CHAR*` , `WCHAR*` ) behandelt, die eine besondere Behandlung erfordern. `GetValue`verwendet den entsprechenden Datentyp basierend auf den hier angegebenen Angaben.
+in Ein Vorlagen Parameter, der jeden Datentyp außer Zeichen folgen Typen ( `CHAR*` , `WCHAR*` ) behandelt, die eine besondere Behandlung erfordern. `GetValue` verwendet den entsprechenden Datentyp basierend auf den hier angegebenen Angaben.
 
 *ncolumn*<br/>
 in Die Spaltennummer. Die Spalten Nummern beginnen mit 1. Der Wert 0 verweist ggf. auf die Lesezeichen Spalte.
@@ -550,7 +550,7 @@ Verwenden Sie die Versionen nicht Vorlagen, um Spalten zurückzugeben, die Zeich
 
 Im Debugmodus erhalten Sie eine-Erklärung, wenn die Größe von *pData* ungleich der Größe der Spalte ist, auf die Sie verweist.
 
-## <a name="cdynamicaccessorsetblobhandling"></a><a name="setblobhandling"></a>CDynamicAccessor:: setblobhandling
+## <a name="cdynamicaccessorsetblobhandling"></a><a name="setblobhandling"></a> CDynamicAccessor:: setblobhandling
 
 Legt den Wert für die BLOB-Behandlung für die aktuelle Zeile fest.
 
@@ -577,7 +577,7 @@ Sie sollten `SetBlobHandling` vor `Open` aufrufen.
 
 Die Konstruktormethode [CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md) legt den Wert für die BLOB-Behandlung auf DBBLOBHANDLING_DEFAULT fest.
 
-## <a name="cdynamicaccessorsetblobsizelimit"></a><a name="setblobsizelimit"></a>CDynamicAccessor:: setblobsizelimit
+## <a name="cdynamicaccessorsetblobsizelimit"></a><a name="setblobsizelimit"></a> CDynamicAccessor:: setblobsizelimit
 
 Legt die maximale BLOB-Größe in Bytes fest.
 
@@ -598,7 +598,7 @@ Legt die maximale BLOB-Größe in Bytes fest. Spaltendaten, die größer als die
 
 Die Konstruktormethode [CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md) legt die maximale BLOB-Größe auf einen Standardwert von 8.000 Bytes fest.
 
-## <a name="cdynamicaccessorsetlength"></a><a name="setlength"></a>CDynamicAccessor:: SetLength
+## <a name="cdynamicaccessorsetlength"></a><a name="setlength"></a> CDynamicAccessor:: SetLength
 
 Legt die Länge der angegebenen Spalte fest.
 
@@ -630,7 +630,7 @@ in Ein Zeiger auf eine Zeichenfolge, die den Spaltennamen enthält.
 
 Gibt zurück, **`true`** Wenn die angegebene Spaltenlänge erfolgreich festgelegt wurde. Andernfalls gibt diese Funktion zurück **`false`** .
 
-## <a name="cdynamicaccessorsetstatus"></a><a name="setstatus"></a>CDynamicAccessor:: SetStatus
+## <a name="cdynamicaccessorsetstatus"></a><a name="setstatus"></a> CDynamicAccessor:: SetStatus
 
 Legt den Status der angegebenen Spalte fest.
 
@@ -662,7 +662,7 @@ in Ein Zeiger auf eine Zeichenfolge, die den Spaltennamen enthält.
 
 Gibt zurück, **`true`** Wenn der angegebene Spalten Status erfolgreich festgelegt wurde. Andernfalls gibt diese Funktion zurück **`false`** .
 
-## <a name="cdynamicaccessorsetvalue"></a><a name="setvalue"></a>CDynamicAccessor:: SetValue
+## <a name="cdynamicaccessorsetvalue"></a><a name="setvalue"></a> CDynamicAccessor:: SetValue
 
 Speichert Daten für eine angegebene Spalte.
 
@@ -688,7 +688,7 @@ bool SetValue(
 #### <a name="parameters"></a>Parameter
 
 *ctype*<br/>
-in Ein Vorlagen Parameter, der jeden Datentyp außer Zeichen folgen Typen ( `CHAR*` , `WCHAR*` ) behandelt, die eine besondere Behandlung erfordern. `GetValue`verwendet den entsprechenden Datentyp basierend auf den hier angegebenen Angaben.
+in Ein Vorlagen Parameter, der jeden Datentyp außer Zeichen folgen Typen ( `CHAR*` , `WCHAR*` ) behandelt, die eine besondere Behandlung erfordern. `GetValue` verwendet den entsprechenden Datentyp basierend auf den hier angegebenen Angaben.
 
 *pcolumnname*<br/>
 in Ein Zeiger auf eine Zeichenfolge, die den Spaltennamen enthält.

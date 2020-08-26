@@ -22,12 +22,12 @@ helpviewer_keywords:
 - GetMoniker method
 - Open method
 ms.assetid: 25805f1b-26e3-402f-af83-1b5fe5ddebf7
-ms.openlocfilehash: 2a48acb8a961d76c34d2ba85ede5c827c880f400
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: f3e3a61028768144cbef17912952622f19ad0242
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87214918"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88838151"
 ---
 # <a name="cenumerator-class"></a>CEnumerator-Klasse
 
@@ -48,9 +48,9 @@ class CEnumerator :
 
 ### <a name="methods"></a>Methoden
 
-|||
+| Name | Beschreibung |
 |-|-|
-|[Suchen](#find)|Durchsucht die verfügbaren Anbieter (Datenquellen) mit dem angegebenen Namen.|
+|[Sich](#find)|Durchsucht die verfügbaren Anbieter (Datenquellen) mit dem angegebenen Namen.|
 |[GetMoniker](#getmoniker)|Ruft die- `IMoniker` Schnittstelle für den aktuellen Datensatz ab.|
 |[Öffnen](#open)|Öffnet den Enumerator.|
 
@@ -58,7 +58,7 @@ class CEnumerator :
 
 Sie können die `ISourcesRowset` Daten indirekt von dieser Klasse abrufen.
 
-## <a name="cenumeratorfind"></a><a name="find"></a>Cenzuerator:: Find
+## <a name="cenumeratorfind"></a><a name="find"></a> Cenzuerator:: Find
 
 Sucht unter Verfügbare Anbieter nach einem angegebenen Namen.
 
@@ -75,13 +75,13 @@ in Der Name, nach dem gesucht werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn der Name gefunden wurde. Andernfalls **`false`** .
+**`true`** , wenn der Name gefunden wurde. Andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
 Dieser Name wird dem- `SOURCES_NAME` Member der [ISourcesRowset](/previous-versions/windows/desktop/ms715969(v=vs.85)) -Schnittstelle zugeordnet.
 
-## <a name="cenumeratorgetmoniker"></a><a name="getmoniker"></a>Cenenerator:: getmoniker
+## <a name="cenumeratorgetmoniker"></a><a name="getmoniker"></a> Cenenerator:: getmoniker
 
 Analysiert den anzeigen Amen, um die Komponente der Zeichenfolge zu extrahieren, die in einen Moniker konvertiert werden kann.
 
@@ -106,7 +106,7 @@ in Der anzuteilbare Anzeige Name.
 
 Ein HRESULT-Standard.
 
-## <a name="cenumeratoropen"></a><a name="open"></a>Centoerator:: Open
+## <a name="cenumeratoropen"></a><a name="open"></a> Centoerator:: Open
 
 Bindet den Moniker für den Enumerator, wenn ein solcher angegeben ist, und ruft dann das Rowset für den Enumerator durch Aufrufen von [ISourcesRowset:: GetSourcesRowset](/previous-versions/windows/desktop/ms711200(v=vs.85))ab.
 

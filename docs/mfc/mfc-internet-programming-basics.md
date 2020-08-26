@@ -16,12 +16,12 @@ helpviewer_keywords:
 - Internet content [MFC]
 - WinInet classes [MFC]
 ms.assetid: 6df2dfd0-6e3f-4587-9d01-2a32f00f8a6f
-ms.openlocfilehash: c9825cdcb5cb0963a4e0d3acdeb36dfee54b70fc
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: b41ce97a9b5efe6ad84c543f5c49dd091557b3a8
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86405025"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846315"
 ---
 # <a name="mfc-internet-programming-basics"></a>Grundlagen der MFC-Internetprogrammierung
 
@@ -36,44 +36,44 @@ MFC stellt Klassen bereit, die die Internet Programmierung unterstützen. Sie k�
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 
-- [Internetbezogene MFC-Klassen](internet-related-mfc-classes.md)
+- [Internet bezogene MFC-Klassen](internet-related-mfc-classes.md)
 
-- [Themenliste für Internetinformationen](internet-information-by-topic.md)
+- [Internet Informationen nach Thema](internet-information-by-topic.md)
 
-- [Internetinformation – nach Aufgaben geordnet](internet-information-by-task.md)
+- [Internet Informationen nach Aufgabe](internet-information-by-task.md)
 
-- [Active Technology für das Internet](active-technology-on-the-internet.md)
+- [Aktive Technologie im Internet](active-technology-on-the-internet.md)
 
 - [WinInet-Grundlagen](wininet-basics.md)
 
-- [Grundlagen zu HTML](html-basics.md)
+- [HTML-Grundlagen](html-basics.md)
 
 ## <a name="related-sections"></a>Verwandte Abschnitte
 
-- [ActiveX-Steuerelemente für das Internet](activex-controls-on-the-internet.md)
+- [ActiveX-Steuerelemente im Internet](activex-controls-on-the-internet.md)
 
 - [Asynchrone Moniker im Internet](asynchronous-monikers-on-the-internet.md)
 
-- [Win32-Interneterweiterungen (WinInet)](win32-internet-extensions-wininet.md)
+- [Win32-Internet Erweiterungen (WinInet)](win32-internet-extensions-wininet.md)
 
-- [MFC-Internetprogrammierungsaufgaben](mfc-internet-programming-tasks.md)
+- [MFC-Internet Programmierungsaufgaben](mfc-internet-programming-tasks.md)
 
-- [Überlegungen zum Anwendungsentwurf](application-design-choices.md)
+- [Anwendungs Entwurfs Optionen](application-design-choices.md)
 
 - [Schreiben von MFC-Anwendungen](writing-mfc-applications.md)
 
-- [Testen von Internetanwendungen](testing-internet-applications.md)
+- [Testen von Internet Anwendungen](testing-internet-applications.md)
 
 - [Internetsicherheit](internet-security-cpp.md)
 
 - [ATL-Unterstützung für DHTML-Steuerelemente](../atl/atl-support-for-dhtml-controls.md)
 
-## <a name="websites-for-more-information"></a><a name="_core_web_sites_for_more_information"></a>Websites Weitere Informationen
+## <a name="websites-for-more-information"></a><a name="_core_web_sites_for_more_information"></a> Websites Weitere Informationen
 
-Weitere Informationen zur Microsoft-Internet Technologie finden Sie unter [Microsoft-Dokumentation](https://docs.microsoft.com/).
+Weitere Informationen zur Microsoft-Internet Technologie finden Sie unter [Netzwerk und Internet](/windows/win32/networking).
 
 Der [World Wide Web Consortium (W3C)](https://go.microsoft.com/fwlink/p/?linkid=37125) veröffentlicht Spezifikationen für HTML-, http-, CGI-und andere World Wide Web-Technologien.
 
-## <a name="more-internet-help"></a><a name="_core_more_internet_help"></a>Weitere Internet Hilfe
+## <a name="more-internet-help"></a><a name="_core_more_internet_help"></a> Weitere Internet Hilfe
 
 Der OLE-Abschnitt der Windows SDK enthält zusätzliche Informationen zur OLE-Programmierung. Diese Informationen enthalten Details zur direkten Verwendung der Win32-WinInet-Funktionen und nicht über die MFC-Klassen. Sie enthält auch Übersichts Informationen zu Internet Technologien.

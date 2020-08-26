@@ -1,17 +1,17 @@
 ---
-title: nicht browsetierbarC++ (com-Attribut)
+title: nicht browsefähig (C++ com-Attribut)
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.nonbrowsable
 helpviewer_keywords:
 - nonbrowsable attribute
 ms.assetid: e71a98e7-4b65-454a-9829-342b9f2a84be
-ms.openlocfilehash: f0aae070c1c97695180797b228178b210493b7bb
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 561622cc30573ace606eccb6aa7b5f2dfd188dfe
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80166561"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88836103"
 ---
 # <a name="nonbrowsable"></a>nonbrowsable
 
@@ -25,7 +25,7 @@ Gibt an, dass ein Schnittstellenmember nicht in einem Eigenschaften Browser ange
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **nicht browsefähige** C++ Attribut verfügt über die gleiche Funktionalität wie das [nicht browsefähige](/windows/win32/Midl/nonbrowsable) Mittel l-Attribut.
+Das **nicht browsefähige** C++-Attribut verfügt über die gleiche Funktionalität wie das [nicht browsefähige](/windows/win32/Midl/nonbrowsable) Mittel l-Attribut.
 
 ## <a name="example"></a>Beispiel
 
@@ -45,12 +45,10 @@ __interface IMyI
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|Schnittstellenmethode|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Schnittstellenmethode|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -59,4 +57,4 @@ Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontext
 ## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[Methodenattribut](method-attributes.md)
+[Methoden Attribute](method-attributes.md)

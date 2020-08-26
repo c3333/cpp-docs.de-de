@@ -6,18 +6,18 @@ helpviewer_keywords:
 - symbols [C++], Win32 predefined
 - Windows API [C++], predefined symbols
 ms.assetid: 45c8e193-ee2a-4024-bfc2-34d1ec9c9239
-ms.openlocfilehash: ae79b4c1a4021b32f631c694b376d2202b345415
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: f69dddcb8b6a9a390f80ab4d0112e19c4e8d32e1
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80165924"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88835648"
 ---
 # <a name="win32-predefined-symbols"></a>Vordefinierte Win32-Symbole
 
 Diese Symbole werden in den Win32-Header Dateien definiert und unterstützen standardmäßige Windows-Anwendungsfunktionen und-Aktionen. Diese Symbole werden hauptsächlich mit allgemeinen Benutzeroberflächen Elementen verwendet. Wenn Sie in den Ressourcen-Editoren mit Steuerelementen arbeiten, werden diese Symbole in den [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window) angezeigt, die den allgemeinen Steuerelementen zugeordnet sind. Wenn beispielsweise auf der Symbolleiste das Anwendungssymbol angezeigt werden soll, wird das Symbol dem Symbol IDI_SMALL im **Eigenschaften** Fenster zugeordnet.
 
-|||
+|Name|Beschreibung|
 |-|-|
 |IDABORT|Steuerelement Dialog Feld, Schaltfläche "Abbrechen"|
 |IDC_STATIC|Steuerelement Statischer Text in einem Dialogfeld|

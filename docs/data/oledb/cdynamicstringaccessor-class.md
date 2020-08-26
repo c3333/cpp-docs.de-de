@@ -12,12 +12,12 @@ helpviewer_keywords:
 - GetString method
 - SetString method
 ms.assetid: 138dc4de-c7c3-478c-863e-431e48249027
-ms.openlocfilehash: a0590bc015c5487315b8cbd38f0baf91eb3082cc
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 927ea5ceef9ac74ae3cc1e06a47969b537209002
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80211864"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88838164"
 ---
 # <a name="cdynamicstringaccessor-class"></a>CDynamicStringAccessor-Klasse
 
@@ -32,30 +32,30 @@ class CDynamicStringAccessorT : public CDynamicAccessor
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header**: atldbcli.h
+**Header**: atldbcli. h
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="methods"></a>Methoden
 
-|||
+| Name | Beschreibung |
 |-|-|
 |[GetString](#getstring)|Ruft die angegebenen Spaltendaten als Zeichenfolge ab.|
 |[SetString](#setstring)|Legt die angegebenen Spaltendaten als Zeichenfolge fest.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Während [CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md) Daten im vom Anbieter gemeldeten systemeigenen Format anfordert, `CDynamicStringAccessor` Anforderungen, dass der Anbieter alle Daten, auf die aus dem Datenspeicher zugegriffen wird, als Zeichen folgen Daten abruft. Dies ist besonders nützlich für einfache Aufgaben, bei denen keine Berechnung von Werten im Datenspeicher erforderlich ist, z. b. das Anzeigen oder Drucken der Inhalte des Daten Stores.
+Während [CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md) Daten im vom Anbieter gemeldeten systemeigenen Format anfordert, `CDynamicStringAccessor` fordert der Anbieter alle Daten, auf die aus dem Datenspeicher zugegriffen wird, als Zeichen folgen Daten an. Dies ist besonders nützlich für einfache Aufgaben, bei denen keine Berechnung von Werten im Datenspeicher erforderlich ist, z. b. das Anzeigen oder Drucken der Inhalte des Daten Stores.
 
-Der systemeigene Typ der Spaltendaten im Datenspeicher spielt keine Rolle. solange der Anbieter die Datenkonvertierung unterstützen kann, werden die Daten im Zeichen folgen Format bereitgestellt. Wenn der Anbieter die Konvertierung des systemeigenen Datentyps in eine Zeichenfolge nicht unterstützt (was nicht häufig der Fall ist), gibt der anfordernde-Befehl den Success-Wert DB_S_ERRORSOCCURED zurück, und der Status der entsprechenden Spalte weist auf ein Konvertierungs Problem mit DBSTATUS_E_CANTCONVERTVALUE.
+Der systemeigene Typ der Spaltendaten im Datenspeicher spielt keine Rolle. solange der Anbieter die Datenkonvertierung unterstützen kann, werden die Daten im Zeichen folgen Format bereitgestellt. Wenn der Anbieter die Konvertierung des systemeigenen Datentyps in eine Zeichenfolge nicht unterstützt (was nicht häufig der Fall ist), gibt der anfordernde-Befehl den Success-Wert DB_S_ERRORSOCCURED zurück, und der Status der entsprechenden Spalte weist auf ein Konvertierungs Problem mit DBSTATUS_E_CANTCONVERTVALUE hin.
 
-Verwenden Sie `CDynamicStringAccessor` Methoden, um Spalten Informationen zu erhalten. Mit diesen Spalten Informationen können Sie einen Accessor dynamisch zur Laufzeit erstellen.
+Verwenden `CDynamicStringAccessor` Sie Methoden zum Abrufen von Spalten Informationen. Mit diesen Spalten Informationen können Sie einen Accessor dynamisch zur Laufzeit erstellen.
 
 Die Spalten Informationen werden in einem Puffer gespeichert, der von dieser Klasse erstellt und verwaltet wird. Rufen Sie mithilfe von [GetString](../../data/oledb/cdynamicstringaccessor-getstring.md)Daten aus dem Puffer ab, oder speichern Sie Sie mithilfe von [SetString](../../data/oledb/cdynamicstringaccessor-setstring.md)im Puffer.
 
 Eine Erläuterung und Beispiele für die Verwendung der dynamischen [Accessorklassen finden Sie unter Verwenden dynamischer Accessoren](../../data/oledb/using-dynamic-accessors.md).
 
-## <a name="cdynamicstringaccessorgetstring"></a><a name="getstring"></a>CDynamicStringAccessor:: GetString
+## <a name="cdynamicstringaccessorgetstring"></a><a name="getstring"></a> CDynamicStringAccessor:: GetString
 
 Ruft die angegebenen Spaltendaten als Zeichenfolge ab.
 
@@ -79,13 +79,13 @@ in Ein Zeiger auf eine Zeichenfolge, die den Spaltennamen enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf den Zeichen folgen Wert, der aus der angegebenen Spalte abgerufen wird. Der Wert ist vom Typ `BaseType`, der **char** oder **WCHAR** ist, je nachdem, ob _UNICODE definiert ist oder nicht. Gibt NULL zurück, wenn die angegebene Spalte nicht gefunden wurde.
+Ein Zeiger auf den Zeichen folgen Wert, der aus der angegebenen Spalte abgerufen wird. Der Wert ist vom Typ `BaseType` . Dies ist abhängig davon, ob _UNICODE definiert ist, **char** oder **WCHAR** . Gibt NULL zurück, wenn die angegebene Spalte nicht gefunden wurde.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Das zweite Überschreibungs Formular nimmt den Spaltennamen als ANSI-Zeichenfolge an. Das dritte Überschreibungs Formular nimmt den Spaltennamen als Unicode-Zeichenfolge an.
 
-## <a name="cdynamicstringaccessorsetstring"></a><a name="setstring"></a>CDynamicStringAccessor:: SetString
+## <a name="cdynamicstringaccessorsetstring"></a><a name="setstring"></a> CDynamicStringAccessor:: SetString
 
 Legt die angegebenen Spaltendaten als Zeichenfolge fest.
 
@@ -115,7 +115,7 @@ in Ein Zeiger auf die Zeichen folgen Daten, die in die angegebene Spalte geschri
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf den Zeichen folgen Wert, auf den die angegebene Spalte festgelegt werden soll. Der Wert ist vom Typ `BaseType`, der **char** oder **WCHAR** ist, je nachdem, ob _UNICODE definiert ist oder nicht.
+Ein Zeiger auf den Zeichen folgen Wert, auf den die angegebene Spalte festgelegt werden soll. Der Wert ist vom Typ `BaseType` . Dies ist abhängig davon, ob _UNICODE definiert ist, **char** oder **WCHAR** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -126,7 +126,7 @@ Wenn _SECURE_ATL für einen Wert ungleich 0 (null) definiert ist, wird ein Lauf 
 ## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
-[Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)<br/>
+[Referenz zu OLE DB Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)<br/>
 [CAccessor-Klasse](../../data/oledb/caccessor-class.md)<br/>
 [CDynamicParameterAccessor-Klasse](../../data/oledb/cdynamicparameteraccessor-class.md)<br/>
 [CManualAccessor-Klasse](../../data/oledb/cmanualaccessor-class.md)<br/>

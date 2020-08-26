@@ -1,19 +1,19 @@
 ---
-title: '&lt;Ausführung&gt;'
+title: '&lt;Niederlage&gt;'
 ms.date: 04/18/2019
 f1_keywords:
 - <execution>
 - std::<execution>
 helpviewer_keywords:
 - execution header
-ms.openlocfilehash: 81e9aa63265c367412fda709aacd5ca3953e9fdf
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: f37458fdc0b58968e095a7c59de797eac295bde7
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79445031"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88835935"
 ---
-# <a name="ltexecutiongt"></a>&lt;Ausführung&gt;
+# <a name="ltexecutiongt"></a>&lt;Niederlage&gt;
 
 Beschreibt die Ausführungsrichtlinien für parallele Algorithmen.
 
@@ -32,7 +32,7 @@ namespace std::execution {
 
 ### <a name="classes-and-structs"></a>Klassen und Strukturen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[is_execution_policy-Struktur](is-execution-policy-struct.md)|Erkennt Ausführungsrichtlinien, um Funktions Signaturen von der ansonsten mehrdeutigen Überladungs Auflösungs Beteiligung auszuschließen.|
 |[parallel_policy-Klasse](parallel-policy-class.md)|Wird als eindeutiger Typ verwendet, um das überladen paralleler Algorithmen eindeutig zu machen und anzugeben, dass die Ausführung eines parallelen Algorithmus parallelisiert werden kann.|
@@ -41,12 +41,12 @@ namespace std::execution {
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<Ausführung >
+**Header:**\<execution>
 
 **Namespace:** stdext
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Headerdateienreferenz](cpp-standard-library-header-files.md)\
-[Threadsicherheit in der C++-Standardbibliothek](thread-safety-in-the-cpp-standard-library.md)\
-[C++ Standard Library Reference (C++-Standardbibliotheksreferenz)](cpp-standard-library-reference.md)
+[Header Dateireferenz](cpp-standard-library-header-files.md)\
+[Thread Sicherheit in der C++-Standard Bibliothek](thread-safety-in-the-cpp-standard-library.md)\
+[C++-Standard Bibliotheks Referenz](cpp-standard-library-reference.md)

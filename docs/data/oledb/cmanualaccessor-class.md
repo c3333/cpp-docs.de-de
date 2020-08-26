@@ -30,12 +30,12 @@ helpviewer_keywords:
 - CreateAccessor method
 - CreateParameterAccessor method
 ms.assetid: a0088074-7135-465c-b228-69097a50b8cc
-ms.openlocfilehash: 4d9fb79bbf5203fa959672faec8c3b076c17f1ca
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 32ab31734b8c6e3f72053e1e4f2a8a9233b73995
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80211847"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88838099"
 ---
 # <a name="cmanualaccessor-class"></a>CManualAccessor-Klasse
 
@@ -51,11 +51,11 @@ class CManualAccessor : public CAccessorBase
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="methods"></a>Methoden
 
-|||
+| Name | Beschreibung |
 |-|-|
 |[AddBindEntry](#addbindentry)|Fügt den Ausgabespalten einen Bindungs Eintrag hinzu.|
 |[AddParameterEntry](#addparameterentry)|Fügt dem Parameter Accessor einen Parameter Eintrag hinzu.|
@@ -64,9 +64,9 @@ class CManualAccessor : public CAccessorBase
 
 ## <a name="remarks"></a>Bemerkungen
 
-Mithilfe `CManualAccessor`können Sie die Parameter-und Ausgabespalten Bindung mithilfe von Lauf Zeit Funktionsaufrufen angeben.
+Mithilfe `CManualAccessor` von können Sie die Parameter-und Ausgabespalten Bindung mithilfe von Lauf Zeit Funktionsaufrufen angeben.
 
-## <a name="cmanualaccessoraddbindentry"></a><a name="addbindentry"></a>CManualAccessor:: AddBindEntry
+## <a name="cmanualaccessoraddbindentry"></a><a name="addbindentry"></a> CManualAccessor:: AddBindEntry
 
 Fügt den Ausgabespalten einen Bindungs Eintrag hinzu.
 
@@ -104,9 +104,9 @@ in Ein Zeiger auf die Variable, die an den Spalten Status gebunden werden soll, 
 
 ### <a name="remarks"></a>Bemerkungen
 
-Um diese Funktion verwenden zu können, müssen Sie zuerst "up- [Accessor](../../data/oledb/cmanualaccessor-createaccessor.md)" aufrufen. Sie können keine weiteren Einträge hinzufügen, als die Anzahl der in `CreateAccessor`angegebenen Spalten.
+Um diese Funktion verwenden zu können, müssen Sie zuerst "up- [Accessor](../../data/oledb/cmanualaccessor-createaccessor.md)" aufrufen. Sie können keine weiteren Einträge hinzufügen, als die Anzahl der in angegebenen Spalten `CreateAccessor` .
 
-## <a name="cmanualaccessoraddparameterentry"></a><a name="addparameterentry"></a>CManualAccessor:: AddParameterEntry
+## <a name="cmanualaccessoraddparameterentry"></a><a name="addparameterentry"></a> CManualAccessor:: AddParameterEntry
 
 Fügt den Parameter Eintrags Strukturen einen Parameter Eintrag hinzu.
 
@@ -150,7 +150,7 @@ in Gibt an, ob der Parameter, mit dem die Bindung verknüpft ist, ein Eingabe-, 
 
 Um diese Funktion verwenden zu können, müssen Sie zuerst den Befehl "" für "" als " [" aufrufen.](../../data/oledb/cmanualaccessor-createparameteraccessor.md)
 
-## <a name="cmanualaccessorcreateaccessor"></a><a name="createaccessor"></a>CManualAccessor:: erkreateaccessor
+## <a name="cmanualaccessorcreateaccessor"></a><a name="createaccessor"></a> CManualAccessor:: erkreateaccessor
 
 Weist Speicher für die Spalten Bindungs Strukturen zu und initialisiert die Spalten Datenmember.
 
@@ -179,9 +179,9 @@ Einer der HRESULT-Standardwerte.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Funktion wird aufgerufen, bevor Sie die `CManualAccessor::AddBindEntry`-Funktion aufzurufen.
+Diese Funktion wird aufgerufen, bevor die-Funktion aufgerufen wird `CManualAccessor::AddBindEntry` .
 
-## <a name="cmanualaccessorcreateparameteraccessor"></a><a name="createparameteraccessor"></a>CManualAccessor:: up Parameteraccessor
+## <a name="cmanualaccessorcreateparameteraccessor"></a><a name="createparameteraccessor"></a> CManualAccessor:: up Parameteraccessor
 
 Weist Speicher für die Parameter Bindungs Strukturen zu und initialisiert die Parameter Datenmember.
 
@@ -216,7 +216,7 @@ Sie müssen diese Funktion aufrufen, bevor Sie [AddParameterEntry](../../data/ol
 
 [DBViewer](../../overview/visual-cpp-samples.md)<br/>
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
-[Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)<br/>
+[Referenz zu OLE DB Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)<br/>
 [CAccessor-Klasse](../../data/oledb/caccessor-class.md)<br/>
 [CDynamicAccessor-Klasse](../../data/oledb/cdynamicaccessor-class.md)<br/>
 [CDynamicParameterAccessor-Klasse](../../data/oledb/cdynamicparameteraccessor-class.md)

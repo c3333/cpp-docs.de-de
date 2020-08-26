@@ -6,20 +6,20 @@ f1_keywords:
 - future/std::future_status
 - future/std::launch
 ms.assetid: 8c675645-db47-4cab-bc0e-7b87f8a302df
-ms.openlocfilehash: 0f1064fdf434560c3130d1254512470cc5bc1ee0
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 45dc3277b3f14b7f9dbb043cf9db1f1865d4e4c9
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81370692"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88838021"
 ---
 # <a name="ltfuturegt-enums"></a>&lt;future&gt;-Enumerationen
 
-||||
-|-|-|-|
-|[future_errc](#future_errc)|[future_status](#future_status)|[Starten](#launch)|
+[future_errc](#future_errc)\
+[future_status](#future_status)\
+[Starten](#launch)
 
-## <a name="future_errc-enumeration"></a><a name="future_errc"></a>future_errc-Enumeration
+## <a name="future_errc-enumeration"></a><a name="future_errc"></a> future_errc-Enumeration
 
 Liefert symbolische Namen für alle Fehler, die von der [future_error](../standard-library/future-error-class.md)-Klasse gemeldet werden.
 
@@ -32,7 +32,7 @@ class future_errc {
    };
 ```
 
-## <a name="future_status-enumeration"></a><a name="future_status"></a>future_status-Enumeration
+## <a name="future_status-enumeration"></a><a name="future_status"></a> future_status-Enumeration
 
 Liefert symbolische Namen für die Gründe, aus denen eine zeitgesteuerte Wartefunktion eine Rückgabe ausführen kann.
 
@@ -44,7 +44,7 @@ enum future_status{
 };
 ```
 
-## <a name="launch-enumeration"></a><a name="launch"></a>Enumeration starten
+## <a name="launch-enumeration"></a><a name="launch"></a> Launch-Enumeration
 
 Stellt einen Bitmaskentyp dar, mit dem die möglichen Modi für die Vorlagenfunktion [async](../standard-library/future-functions.md#async) beschrieben werden.
 
@@ -55,6 +55,6 @@ class launch{
    };
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[\<zukünftige>](../standard-library/future.md)
+[\<future>](../standard-library/future.md)

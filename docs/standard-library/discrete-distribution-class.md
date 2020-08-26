@@ -23,12 +23,12 @@ helpviewer_keywords:
 - std::discrete_distribution [C++], param_type
 - std::discrete_distribution [C++], param_type
 ms.assetid: 8c8ba8f8-c06f-4f07-b354-f53950142fcf
-ms.openlocfilehash: 65d5c993efd1cb9c6dd35f11223ed39e026ed7c6
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 5dcac516da088a55d2ddc176275ec25941ad8949
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87217804"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846276"
 ---
 # <a name="discrete_distribution-class"></a>discrete_distribution-Klasse
 
@@ -81,10 +81,8 @@ Die Sampling-Verteilung weist Intervalle von gleicher Breite und in jedem Interv
 
 Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft:
 
-|||
-|-|-|
-|[discrete_distribution](#discrete_distribution)|`discrete_distribution::param`|
-|`discrete_distribution::operator()`|[param_type](#param_type)|
+[discrete_distribution](#discrete_distribution)\
+[param_type](#param_type)
 
 Die Eigenschaftsfunktion `vector<double> probabilities()` gibt die einzelnen Eigenschaften für jede generierte Ganzzahl zurück.
 
@@ -175,7 +173,7 @@ Distribution for 100 samples:
 
 **Namespace:** std
 
-## <a name="discrete_distributiondiscrete_distribution"></a><a name="discrete_distribution"></a>discrete_distribution::d iscrete_distribution
+## <a name="discrete_distributiondiscrete_distribution"></a><a name="discrete_distribution"></a> discrete_distribution::d iscrete_distribution
 
 Erstellt die Verteilung.
 
@@ -239,7 +237,7 @@ Der Konstruktor mit den Parametern *count*, *low*, *high* und *weightfunc* erste
 
 Der Konstruktor mit einem `param_type`-Parameter *parm* erstellt ein Verteilungsobjekt und verwendet dabei *parm* als gespeicherte Parameterstruktur.
 
-## <a name="discrete_distributionparam_type"></a><a name="param_type"></a>discrete_distribution::p aram_type
+## <a name="discrete_distributionparam_type"></a><a name="param_type"></a> discrete_distribution::p aram_type
 
 Speichert alle Parameter der Verteilung.
 

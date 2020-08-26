@@ -86,12 +86,12 @@ helpviewer_keywords:
 - std::set [C++], upper_bound
 - std::set [C++], value_comp
 ms.assetid: 8991f9aa-5509-4440-adc1-371512d32018
-ms.openlocfilehash: 80e7c2258fc1fbeabeb8174df18d5cb46aa682bb
-ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
+ms.openlocfilehash: e879e7ffd9f674769e32548195f5017e27e64576
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88560528"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846237"
 ---
 # <a name="set-class"></a>set-Klasse
 
@@ -145,13 +145,13 @@ Der von einer Set-Klasse bereitgestellte Iterator ist ein bidirektionaler Iterat
 
 ### <a name="constructors"></a>Konstruktoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[set](#set)|Erstellt einen Satz, der leer oder die Kopie eines ganzen anderen Satzes oder eines Teils davon ist.|
 
 ### <a name="typedefs"></a>TypeDefs
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[allocator_type](#allocator_type)|Ein Typ, der die `allocator`-Klasse für das Set-Objekt darstellt.|
 |[const_iterator](#const_iterator)|Ein Typ, der einen bidirektionalen Iterator bereitstellt, mit dem ein- **`const`** Element im Satz gelesen werden kann.|
@@ -171,7 +171,7 @@ Der von einer Set-Klasse bereitgestellte Iterator ist ein bidirektionaler Iterat
 
 ### <a name="functions"></a>Functions
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[beginnen](#begin)|Gibt einen Iterator zurück, der das erste Element im Satz adressiert.|
 |[cbegin](#cbegin)|Gibt einen konstanten Iterator zurück, der das erste Element im Satz adressiert.|
@@ -201,7 +201,7 @@ Der von einer Set-Klasse bereitgestellte Iterator ist ein bidirektionaler Iterat
 
 ### <a name="operators"></a>Operatoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[Operator =](#op_eq)|Ersetzt die Elemente eines Satzes durch eine Kopie eines anderen Satzes.|
 

@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 f1_keywords:
 - VC.Project.VCCLCompilerTool.EnableParallelCodeGeneration
 ms.assetid: 33ecf49d-c0d5-4f34-bce3-84ff03f38918
-ms.openlocfilehash: 18aaa1dc678ca2c73f9fad6c016aa40cfa95982b
-ms.sourcegitcommit: 31a443c9998cf5cfbaff00fcf815b133f55b2426
+ms.openlocfilehash: effe1ad7799022ea85184513de1dc48c72d6bfcb
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86373800"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88839438"
 ---
 # <a name="qpar-auto-parallelizer"></a>/Qpar (Automatische Parallelisierung)
 
@@ -21,7 +21,7 @@ Ermöglicht der [automatischen parallelisierungsfunktion](../../parallel/auto-pa
 /Qpar
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Wenn der Compiler Schleifen im Code automatisch parallelisiert, wird die Berechnung auf mehrere Prozessorkerne verteilt. Eine-Schleife wird nur parallelisiert, wenn der Compiler feststellt, dass dies zulässig ist und die Parallelisierung die Leistung verbessert.
 
@@ -48,4 +48,4 @@ Informationen zum Aktivieren von Ausgabemeldungen für die automatische Parallel
 [MSVC-Compileroptionen](compiler-options.md)<br/>
 [MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)<br/>
 [#pragma-Schleife ()](../../preprocessor/loop.md)<br/>
-[Vektorisierung in nativem Code in Visual Studio](https://docs.microsoft.com/archive/blogs/nativeconcurrency/auto-vectorizer-in-visual-studio-2012-overview)
+[Vektorisierung in nativem Code in Visual Studio](/archive/blogs/nativeconcurrency/auto-vectorizer-in-visual-studio-2012-overview)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - categories, run-time functions
 - functions [CRT]
 ms.assetid: de6f5ac4-2226-4dad-be9f-deeb31138c9d
-ms.openlocfilehash: 4da18db2278a38fd7c59010d2c64d5cb804ad4eb
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: be58ce7550c8f15c1c12eafa1dd4187f12fb71cd
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79444805"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846341"
 ---
 # <a name="universal-c-runtime-routines-by-category"></a>Universelle C-Laufzeitroutinen nach Kategorie
 
@@ -22,21 +22,36 @@ In diesem Abschnitt werden die universellen C-Laufzeitbibliotheksroutinen (UCRT)
 
 Die Hauptkategorien der UCRT-Bibliotheksroutinen sind:
 
-|||
-|-|-|
-|[Argumentzugriff](../c-runtime-library/argument-access.md)|[Pufferbearbeitung](../c-runtime-library/buffer-manipulation.md)|
-|[Byteklassifizierung](../c-runtime-library/byte-classification.md)|[Zeichenklassifizierung](../c-runtime-library/character-classification.md)|
-|[Unterstützung für komplexe Matehmatik](../c-runtime-library/complex-math-support.md)||
-|[Datenausrichtung](../c-runtime-library/data-alignment.md)|[Datenkonvertierung](../c-runtime-library/data-conversion.md)|
-|[Debugroutinen](../c-runtime-library/debug-routines.md)|[Verzeichnissteuerung](../c-runtime-library/directory-control.md)|
-|[Fehlerbehandlung](../c-runtime-library/error-handling-crt.md)|[Ausnahmebehandlungsroutinen](../c-runtime-library/exception-handling-routines.md)|
-|[Dateibehandlung](../c-runtime-library/file-handling.md)|[Gleitkommaunterstützung](../c-runtime-library/floating-point-support.md)|
-|[Eingabe und Ausgabe](../c-runtime-library/input-and-output.md)|[Internationalisierung](../c-runtime-library/internationalization.md)|
-|[Speicherreservierung](../c-runtime-library/memory-allocation.md)|[Prozess- und Umgebungssteuerung](../c-runtime-library/process-and-environment-control.md)|
-|[Stabilität](../c-runtime-library/robustness.md)|[Run-Time Error Checking (Laufzeitfehlerüberprüfung)](../c-runtime-library/run-time-error-checking.md)|
-|[Suchen und Sortieren](../c-runtime-library/searching-and-sorting.md)|[Zeichenfolgenbearbeitung](../c-runtime-library/string-manipulation-crt.md)|
-|[Systemaufrufe](../c-runtime-library/system-calls.md)|[Uhrzeitverwaltung](../c-runtime-library/time-management.md)|
+:::row:::
+   :::column span="":::
+      [Argument Zugriff](../c-runtime-library/argument-access.md)\
+      [Puffer Bearbeitung](../c-runtime-library/buffer-manipulation.md)\
+      [Byte Klassifizierung](../c-runtime-library/byte-classification.md)\
+      [Zeichen Klassifizierung](../c-runtime-library/character-classification.md)\
+      [Komplexe mathematische Unterstützung](../c-runtime-library/complex-math-support.md)\
+      [Daten Ausrichtung](../c-runtime-library/data-alignment.md)\
+      [Datenkonvertierung](../c-runtime-library/data-conversion.md)\
+      [Debugroutinen](../c-runtime-library/debug-routines.md)\
+      [Verzeichnis Steuerung](../c-runtime-library/directory-control.md)\
+      [Fehlerbehandlung](../c-runtime-library/error-handling-crt.md)\
+      [Ausnahme Behandlungs Routinen](../c-runtime-library/exception-handling-routines.md)\
+      [Dateiverarbeitung](../c-runtime-library/file-handling.md)
+   :::column-end:::
+   :::column span="":::
+      [Gleit Komma Unterstützung](../c-runtime-library/floating-point-support.md)\
+      [Eingabe und Ausgabe](../c-runtime-library/input-and-output.md)\
+      [Internationalisierung](../c-runtime-library/internationalization.md)\
+      [Speicher Belegung](../c-runtime-library/memory-allocation.md)\
+      [Prozess-und Umgebungs Steuerung](../c-runtime-library/process-and-environment-control.md)\
+      [Stabilität](../c-runtime-library/robustness.md)\
+      [Lauf Zeit Fehlerüberprüfung](../c-runtime-library/run-time-error-checking.md)\
+      [Suchen und Sortieren](../c-runtime-library/searching-and-sorting.md)\
+      [Zeichen folgen Bearbeitung](../c-runtime-library/string-manipulation-crt.md)\
+      [System Aufrufe](../c-runtime-library/system-calls.md)\
+      [Zeitmanagement](../c-runtime-library/time-management.md)
+   :::column-end:::
+:::row-end:::
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[C-Laufzeitbibliotheksreferenz](../c-runtime-library/c-run-time-library-reference.md)<br/>
+[C-Lauf Zeit Bibliotheks Referenz](../c-runtime-library/c-run-time-library-reference.md)<br/>

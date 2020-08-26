@@ -13,12 +13,12 @@ helpviewer_keywords:
 - CTable class
 - Open method
 ms.assetid: f13fdaa3-e198-4557-977d-54b0bbc3454d
-ms.openlocfilehash: 47c9899889bbbf9b09300779691085786db0e088
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: a967ef8fa2832afd56442ae4f988ba080d0b2872
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80211145"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845639"
 ---
 # <a name="ctable-class"></a>CTable-Klasse
 
@@ -45,11 +45,11 @@ Eine Rowsetklasse.
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="methods"></a>Methoden
 
-|||
+| Name | Beschreibung |
 |-|-|
 |[Öffnen](#open)|Öffnet die Tabelle.|
 
@@ -57,7 +57,7 @@ Eine Rowsetklasse.
 
 Weitere Informationen zum Ausführen eines Befehls für den Zugriff auf ein Rowset finden Sie unter [CCommand](../../data/oledb/ccommand-class.md) .
 
-## <a name="ctableopen"></a><a name="open"></a>CTable:: Open
+## <a name="ctableopen"></a><a name="open"></a> CTable:: Open
 
 Öffnet die Tabelle.
 
@@ -91,10 +91,10 @@ in Der Name der zu öffnenden Tabelle, die als Unicode-Zeichenfolge an Sie über
 *sztablename*<br/>
 in Der Name der zu öffnenden Tabelle, die als ANSI-Zeichenfolge übermittelt wird.
 
-*dbid*<br/>
-in Der `DBID` der zu öffnenden Tabelle.
+*DBID*<br/>
+in Der der `DBID` zu öffnenden Tabelle.
 
-*ppropset*<br/>
+*pPropSet*<br/>
 in Ein Zeiger auf ein Array von [DBPROPSET](/previous-versions/windows/desktop/ms714367(v=vs.85)) -Strukturen, das Eigenschaften und Werte enthält, die festgelegt werden sollen. Informationen zu [Eigenschafts Sätzen und Eigenschafts Gruppen](/previous-versions/windows/desktop/ms713696(v=vs.85)) finden Sie in der *OLE DB Programmierer-Referenz* im Windows SDK. Der Standardwert von NULL gibt keine Eigenschaften an.
 
 *ulpropsets*<br/>
@@ -111,4 +111,4 @@ Weitere Informationen finden Sie unter [IOpenRowset:: OPENROWSET](/previous-vers
 ## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
-[Referenz der OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)
+[Referenz zu OLE DB Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)

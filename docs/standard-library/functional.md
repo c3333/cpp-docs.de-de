@@ -9,28 +9,28 @@ helpviewer_keywords:
 - functors
 - functional header
 ms.assetid: 7dd463e8-a29f-49bc-aedd-8fa53b54bfbc
-ms.openlocfilehash: 67b2ccf70b4d3045cecd13d9096875f77c4cde9a
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: 9f1eaf69f49a449877b9013dca62ab49cb8a5b48
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72689623"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88838047"
 ---
 # <a name="ltfunctionalgt"></a>&lt;functional&gt;
 
-Definiert C++ Standard Bibliotheksfunktionen, die das Erstellen von *Funktions Objekten*, auch als Funktions *tüktoren*bezeichnet werden, und deren Bindungen unterstützen. Ein Funktionsobjekt ist ein Objekt eines Typs, der `operator()` definiert. Ein Funktionsobjekt kann ein Funktionszeiger sein, aber in der Regel, wird das Objekt zum Speichern zusätzlicher Informationen verwendet, auf die während eines Funktionsaufrufs zugegriffen werden kann.
+Definiert Funktionen der C++-Standard Bibliothek, die die Erstellung von *Funktions Objekten*, auch als Funktions *tüktoren*bezeichnet werden, und deren Bindungen unterstützen. Ein Funktionsobjekt ist ein Objekt eines Typs, der `operator()` definiert. Ein Funktionsobjekt kann ein Funktionszeiger sein, aber in der Regel, wird das Objekt zum Speichern zusätzlicher Informationen verwendet, auf die während eines Funktionsaufrufs zugegriffen werden kann.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<functional>
+**Header:**\<functional>
 
 **Namespace:** std
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Algorithmen erfordern zwei Typen von Funktions Objekten: *unär* und *Binär*. Für unäre Funktionsobjekte ist ein Argument und für binäre Funktionsobjekte sind zwei Argumente erforderlich. Ein Funktionsobjekt und Funktionszeiger können einem Algorithmus als Prädikat übergeben werden; Funktionsobjekte sind allerdings auch anwendbar und erweitern den Bereich, die Flexibilität und die Effizienz der C++-Standardbibliothek. Wenn beispielsweise ein Wert, der benötigt wurde, an eine Funktion gebunden, bevor an einem Algorithmus, dann ein Funktionszeiger übergeben wurde, nicht verwendet werden kann. Funktionsadapter konvertieren Funktionszeiger in anwendbare Funktionsobjekte, die an einen Wert gebunden werden können. Im Header \<functional> sind auch Memberfunktionsadapter enthalten, die es ermöglichen, dass Memberfunktionen als anwendbare Funktionsobjekte aufgerufen werden können. Funktionen sind anwendbar, wenn sie über geschachtelte Typdeklarationen verfügen, die die Argument- und Rückgabetypen angeben. Funktionsobjekte und Adapter ermöglichen es der C++-Standardbibliothek, bestehende Anwendungen zu aktualisieren, und helfen bei der Integration der Bibliothek in die C++-Programmierumgebung.
+Algorithmen erfordern zwei Typen von Funktions Objekten: *unär* und *Binär*. Für unäre Funktionsobjekte ist ein Argument und für binäre Funktionsobjekte sind zwei Argumente erforderlich. Ein Funktionsobjekt und Funktionszeiger können einem Algorithmus als Prädikat übergeben werden; Funktionsobjekte sind allerdings auch anwendbar und erweitern den Bereich, die Flexibilität und die Effizienz der C++-Standardbibliothek. Wenn beispielsweise ein Wert, der benötigt wurde, an eine Funktion gebunden, bevor an einem Algorithmus, dann ein Funktionszeiger übergeben wurde, nicht verwendet werden kann. Funktionsadapter konvertieren Funktionszeiger in anwendbare Funktionsobjekte, die an einen Wert gebunden werden können. Der Header \<functional> enthält auch Member-Funktions Adapter, die es ermöglichen, Element Funktionen als anpassbare Funktions Objekte aufzurufen. Funktionen sind anwendbar, wenn sie über geschachtelte Typdeklarationen verfügen, die die Argument- und Rückgabetypen angeben. Funktionsobjekte und Adapter ermöglichen es der C++-Standardbibliothek, bestehende Anwendungen zu aktualisieren, und helfen bei der Integration der Bibliothek in die C++-Programmierumgebung.
 
-Die Implementierung der Funktions Objekte in \<functional > enthält *transparente Operatoren für Operatoren*. Dabei handelt es sich um Spezialisierungs Funktionen von Standard Funktions Objekten, die keine Vorlagen Parameter akzeptieren und eine perfekte Weiterleitung der Funktionsargumente und eine perfekte Rückgabe des Ergebnisses ausführen. Für diese Vorlagenspezialisierungen müssen keine Argumenttypen angeben werden, wenn arithmetische, bitweise sowie Vergleichs- und Logikoperatorfunktionselemente aufgerufen werden. Sie können arithmetische, bitweise sowie Vergleichs- und Logikoperatoren für eigene Typen überladen oder für heterogene Typkombinationen und die transparenten Operatorfunktionselemente dann als Funktionsargumente verwenden. Wenn Ihr Typ *MyType* z.B. `operator<` implementiert, können Sie `sort(my_collection.begin(), my_collection.end(), less<>())` aufrufen, anstatt explizit den Typ `sort(my_collection.begin(), my_collection.end(), less<MyType>())` anzugeben.
+Die Implementierung der Funktions Objekte in \<functional> umfasst *transparente Operatoren für Operatoren*. Dabei handelt es sich um Spezialisierungs Funktionen von Standard Funktions Objekten, die keine Vorlagen Parameter akzeptieren und eine perfekte Weiterleitung der Funktionsargumente und eine perfekte Rückgabe des Ergebnisses ausführen. Für diese Vorlagenspezialisierungen müssen keine Argumenttypen angeben werden, wenn arithmetische, bitweise sowie Vergleichs- und Logikoperatorfunktionselemente aufgerufen werden. Sie können arithmetische, bitweise sowie Vergleichs- und Logikoperatoren für eigene Typen überladen oder für heterogene Typkombinationen und die transparenten Operatorfunktionselemente dann als Funktionsargumente verwenden. Wenn Ihr Typ *MyType* z.B. `operator<` implementiert, können Sie `sort(my_collection.begin(), my_collection.end(), less<>())` aufrufen, anstatt explizit den Typ `sort(my_collection.begin(), my_collection.end(), less<MyType>())` anzugeben.
 
 Die folgenden Features werden in c++ 11, c++ 14 und c++ 17 hinzugefügt:
 
@@ -56,7 +56,7 @@ Die Pseudofunktion `INVOKE(f, t1, t2, ..., tN)` bedeutet eine der folgenden Akti
 
 - `(*t1).*f`, wenn N == 1 und `f` ein Zeiger auf Memberdaten einer Klasse `T` ist, und `t1` keinem der Typen entspricht, die im vorherigen Element beschrieben werden.
 
-- In allen anderen Fällen `f(t1, t2, ..., tN)`.
+- `f(t1, t2, ..., tN)` in allen anderen Fällen.
 
 Die Pseudofunktion `INVOKE(f, t1, t2, ..., tN, R)` bedeutet, dass `INVOKE(f, t1, t2, ..., tN)` implizit in `R` konvertiert wird.
 
@@ -76,7 +76,7 @@ Jeder Aufrufwrapper weist einen Verschiebekonstruktor und einen Kopierkonstrukto
 
 ### <a name="classes"></a>Klassen
 
-|||
+|name|Beschreibung|
 |-|-|
 |[bad_function_call](../standard-library/bad-function-call-class.md)|Eine Klasse, mit der eine Ausnahme beschrieben wird, die ausgelöst wird, um anzugeben, dass ein Aufruf von `operator()` an ein [function](../standard-library/function-class.md)-Objekt einen Fehler verursacht hat, da das Objekt leer war.|
 |[binary_negate](../standard-library/binary-negate-class.md)|Eine Klassen Vorlage, die eine Member-Funktion bereitstellt, die den Rückgabewert einer angegebenen binären Funktion negiert.<br/> (Veraltet in c++ 17.) |
@@ -89,22 +89,22 @@ Jeder Aufrufwrapper weist einen Verschiebekonstruktor und einen Kopierkonstrukto
 |[const_mem_fun1_ref_t](../standard-library/const-mem-fun1-ref-t-class.md)|Eine Adapterklasse, die einer const-Memberfunktion, die ein einzelnes Argument akzeptiert, ermöglicht, als binäres Funktionsobjekt aufgerufen zu werden, wenn sie mit einem Verweisargument initialisiert wird.<br/> (In c++ 11 veraltet, wurde in c++ 17 entfernt.) |
 |[const_mem_fun1_t](../standard-library/const-mem-fun1-t-class.md)|Eine Adapterklasse, die einer const-Memberfunktion, die ein einzelnes Argument akzeptiert, ermöglicht, als binäres Funktionsobjekt aufgerufen zu werden, wenn sie mit einem Zeigerargument initialisiert wird.<br/> (In c++ 11 veraltet, wurde in c++ 17 entfernt.) |
 |[default_searcher](../standard-library/default-searcher-class.md)||
-|[function](../standard-library/function-class.md)|Eine Klasse, die ein aufrufbares Objekt umschließt.|
+|[Funktion](../standard-library/function-class.md)|Eine Klasse, die ein aufrufbares Objekt umschließt.|
 |[hash](../standard-library/hash-class.md)|Eine Klasse, die einen Hashcode für einen Wert berechnet.|
 |[is_bind_expression](../standard-library/is-bind-expression-class.md)|Eine Klasse, die überprüft, ob ein bestimmter Typ generiert wird, indem `bind` aufgerufen wird.|
 |[is_placeholder](../standard-library/is-placeholder-class.md)|Eine Klasse, die überprüft, ob ein bestimmter Typ ein Platzhalter ist.|
-|[mem_fun_ref_t](../standard-library/mem-fun-ref-t-class.md)|Eine Adapter Klasse, die es ermöglicht, dass eine `non_const` Member-Funktion, die keine Argumente annimmt, als unäres Funktions Objekt aufgerufen wird, wenn Sie mit einem Verweis Argument initialisiert wird.<br/> (In c++ 11 veraltet, wurde in c++ 17 entfernt.) |
-|[mem_fun_t](../standard-library/mem-fun-t-class.md)|Eine Adapter Klasse, die es ermöglicht, dass eine `non_const` Member-Funktion, die keine Argumente annimmt, als unäres Funktions Objekt aufgerufen wird, wenn Sie mit einem Zeigerargument initialisiert wird.<br/> (In c++ 11 veraltet, wurde in c++ 17 entfernt.) |
-|[mem_fun1_ref_t](../standard-library/mem-fun1-ref-t-class.md)|Eine Adapter Klasse, die es ermöglicht, dass eine `non_const` Member-Funktion, die ein einzelnes Argument annimmt, als binäres Funktions Objekt aufgerufen wird, wenn es mit einem Verweis Argument initialisiert wird.<br/> (In c++ 11 veraltet, wurde in c++ 17 entfernt.) |
-|[mem_fun1_t](../standard-library/mem-fun1-t-class.md)|Eine Adapter Klasse, die es ermöglicht, dass eine `non_const` Member-Funktion, die ein einzelnes Argument annimmt, als binäres Funktions Objekt aufgerufen wird, wenn es mit einem Zeigerargument initialisiert wird.<br/> (In c++ 11 veraltet, wurde in c++ 17 entfernt.) |
+|[mem_fun_ref_t](../standard-library/mem-fun-ref-t-class.md)|Eine Adapter Klasse, die es ermöglicht, `non_const` dass eine Member-Funktion, die keine Argumente annimmt, als unäres Funktions Objekt aufgerufen wird, wenn Sie mit einem Verweis Argument initialisiert wird.<br/> (In c++ 11 veraltet, wurde in c++ 17 entfernt.) |
+|[mem_fun_t](../standard-library/mem-fun-t-class.md)|Eine Adapter Klasse, die es ermöglicht, `non_const` dass eine Member-Funktion, die keine Argumente annimmt, als unäres Funktions Objekt aufgerufen wird, wenn Sie mit einem Zeigerargument initialisiert wird.<br/> (In c++ 11 veraltet, wurde in c++ 17 entfernt.) |
+|[mem_fun1_ref_t](../standard-library/mem-fun1-ref-t-class.md)|Eine Adapter Klasse, die es ermöglicht, `non_const` dass eine Member-Funktion, die ein einzelnes Argument annimmt, als binäres Funktions Objekt aufgerufen wird, wenn Sie mit einem Verweis Argument initialisiert wird.<br/> (In c++ 11 veraltet, wurde in c++ 17 entfernt.) |
+|[mem_fun1_t](../standard-library/mem-fun1-t-class.md)|Eine Adapter Klasse, die es ermöglicht, `non_const` dass eine Member-Funktion, die ein einzelnes Argument annimmt, als binäres Funktions Objekt aufgerufen wird, wenn Sie mit einem Zeigerargument initialisiert wird.<br/> (In c++ 11 veraltet, wurde in c++ 17 entfernt.) |
 |[pointer_to_binary_function](../standard-library/pointer-to-binary-function-class.md)|Konvertiert einen binären Funktionszeiger in eine anwendbare binäre Funktion.<br/> (In c++ 11 veraltet, wurde in c++ 17 entfernt.) |
 |[pointer_to_unary_function](../standard-library/pointer-to-unary-function-class.md)|Konvertiert einen unären Funktionszeiger in eine anwendbare unäre Funktion.<br/> (In c++ 11 veraltet, wurde in c++ 17 entfernt.) |
 |[reference_wrapper](../standard-library/reference-wrapper-class.md)|Eine Klasse, die einen Verweis umschließt.|
 |[unary_negate](../standard-library/unary-negate-class.md)|Eine Klassen Vorlage, die eine Member-Funktion bereitstellt, die den Rückgabewert einer angegebenen unären Funktion negiert.<br/> (Veraltet in c++ 17.)  |
 
-### <a name="functions"></a>Funktionen
+### <a name="functions"></a>Functions
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[bind](../standard-library/functional-functions.md#bind)|Bindet Argumente an ein aufrufbares Objekt.|
 |[bind1st](../standard-library/functional-functions.md#bind1st)|Eine Hilfevorlagenfunktion, mit der ein Adapter erstellt wird, um ein binäres Funktionsobjekt in ein unäres Funktionsobjekt zu konvertieren, indem das erste Argument der binären Funktion an einen angegebenen Wert gebunden wird.<br/> (In c++ 11 veraltet, wurde in c++ 17 entfernt.) |
@@ -114,7 +114,7 @@ Jeder Aufrufwrapper weist einen Verschiebekonstruktor und einen Kopierkonstrukto
 |[bit_or](../standard-library/functional-functions.md#bit_or)|Gibt das bitweise logische OR (operator&#124;) der zwei Parameter zurück.|
 |[bit_xor](../standard-library/functional-functions.md#bit_xor)|Gibt das bitweise logische XOR (Operator^) der zwei Parameter zurück.|
 |[cref](../standard-library/functional-functions.md#cref)|Erstellt ein konstantes `reference_wrapper`-Element aus einem Argument.|
-|[Blaze](../standard-library/functional-functions.md#invoke)||
+|[invoke](../standard-library/functional-functions.md#invoke)||
 |[mem_fn](../standard-library/functional-functions.md#mem_fn)|Generiert einen einfachen Aufrufwrapper.|
 |[mem_fun](../standard-library/functional-functions.md#mem_fun)|Hilfevorlagenfunktionen, die verwendet werden, um Funktionsobjektadapter für Memberfunktionen zu konstruieren, wenn Sie mit Zeigerargumenten initialisiert werden.<br/> (In c++ 11 veraltet, wurde in c++ 17 entfernt.) |
 |[mem_fun_ref](../standard-library/functional-functions.md#mem_fun_ref)|Eine Hilfevorlagenfunktion, die verwendet wird, um Funktionsobjektadapter für Memberfunktionen zu konstruieren, wenn Sie mit Verweisargumenten initialisiert wird.|
@@ -127,7 +127,7 @@ Jeder Aufrufwrapper weist einen Verschiebekonstruktor und einen Kopierkonstrukto
 
 ### <a name="structs"></a>Strukturen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[binary_function](../standard-library/binary-function-struct.md)|Eine leere Basisklasse, mit der Typen definiert werden, die möglicherweise von einer abgeleiteten Klasse geerbt wird, die ein binäres Funktionsobjekt bereitstellt.<br/> (In c++ 11 veraltet, wurde in c++ 17 entfernt.) |
 |[divides](../standard-library/divides-struct.md)|Die Klasse stellt ein vordefiniertes Funktionsobjekt bereit, das die arithmetische Operation der Unterteilung für Elemente eines angegebenen Werttyps ausführt.|
@@ -140,28 +140,28 @@ Jeder Aufrufwrapper weist einen Verschiebekonstruktor und einen Kopierkonstrukto
 |[logical_not](../standard-library/logical-not-struct.md)|Die Klasse stellt ein vordefiniertes Funktionsobjekt bereit, mit dem die logische Operation der Negation für Elemente eines angegebenen Werttyps ausgeführt und die Wahrheit oder Falschheit des Ergebnisses getestet wird.|
 |[logical_or](../standard-library/logical-or-struct.md)|Die Klasse stellt ein vordefiniertes Funktionsobjekt bereit, mit dem die logische Operation der Disjunktion für Elemente eines angegebenen Werttyps ausgeführt und die Wahrheit oder Falschheit des Ergebnisses getestet wird.|
 |[minus](../standard-library/minus-struct.md)|Die Klasse stellt ein vordefiniertes Funktionsobjekt bereit, das die arithmetische Operation der Subtraktion für Elemente eines angegebenen Werttyps ausführt.|
-|[modulus](../standard-library/modulus-struct.md)|Die Klasse stellt ein vordefiniertes Funktionsobjekt bereit, das die arithmetische Operation des Modulus für Elemente eines angegebenen Werttyps ausführt.|
+|[Modulo](../standard-library/modulus-struct.md)|Die Klasse stellt ein vordefiniertes Funktionsobjekt bereit, das die arithmetische Operation des Modulus für Elemente eines angegebenen Werttyps ausführt.|
 |[multiplies](../standard-library/multiplies-struct.md)|Die Klasse stellt ein vordefiniertes Funktionsobjekt bereit, das die arithmetische Operation der Multiplikation für Elemente eines angegebenen Werttyps ausführt.|
 |[negate](../standard-library/negate-struct.md)|Die Klasse stellt ein vordefiniertes Funktionsobjekt bereit, mit dem der negative Bereich eines Elementwerts zurückgegeben wird.|
 |[not_equal_to](../standard-library/not-equal-to-struct.md)|Ein binäres Prädikat, mit dem überprüft wird, ob der Wert eines bestimmten Typs ungleich einem anderen Wert dieses Typs ist.|
 |[plus](../standard-library/plus-struct.md)|Die Klasse stellt ein vordefiniertes Funktionsobjekt bereit, das die arithmetische Operation der Addition für Elemente eines angegebenen Werttyps ausführt.|
 |[unary_function](../standard-library/unary-function-struct.md)|Eine leere Basisklasse, mit der Typen definiert werden, die möglicherweise von einer abgeleiteten Klasse geerbt wird, die ein unäres Funktionsobjekt bereitstellt.<br/> (In c++ 11 veraltet, wurde in c++ 17 entfernt.) |
 
-### <a name="objects"></a>erzwingen
+### <a name="objects"></a>Objekte
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[_1.._M](../standard-library/1-object.md)|Platzhalter für austauschbare Argumente.|
 
 ### <a name="operators"></a>Operatoren
 
-|||
+|Name|Beschreibung|
 |-|-|
-|[operator==](../standard-library/functional-operators.md#op_eq_eq)|Lässt den Gleichheitsvergleich von aufrufbaren Objekten nicht zu.|
-|[Operator!=](../standard-library/functional-operators.md#op_neq)|Lässt den Ungleichheitsvergleich von aufrufbaren Objekten nicht zu.|
+|[Operator = =](../standard-library/functional-operators.md#op_eq_eq)|Lässt den Gleichheitsvergleich von aufrufbaren Objekten nicht zu.|
+|[Operator! =](../standard-library/functional-operators.md#op_neq)|Lässt den Ungleichheitsvergleich von aufrufbaren Objekten nicht zu.|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Headerdateienreferenz](../standard-library/cpp-standard-library-header-files.md)\
-[Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
-[C++-Standardbibliotheksreferenz](../standard-library/cpp-standard-library-reference.md)
+[Header Dateireferenz](../standard-library/cpp-standard-library-header-files.md)\
+[Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
+[C++-Standard Bibliotheks Referenz](../standard-library/cpp-standard-library-reference.md)

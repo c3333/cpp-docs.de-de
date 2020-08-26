@@ -1,36 +1,36 @@
 ---
-title: Marshalling globaler Funktionen
+title: Marshalling von globalen Funktionen
 ms.date: 11/04/2016
 f1_keywords:
 - atlbase/ATL::AtlFreeMarshalStream
 - atlbase/ATL::AtlMarshalPtrInProc
 - atlbase/ATL::AtlUnmarshalPtr
 ms.assetid: 877100b5-6ad9-44c5-a2e0-09414f1720d0
-ms.openlocfilehash: b839e93b6251a09ce79df60a49b4054d1af76cc9
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 79b19b613fbae49c0f8338dcadd2225e092fb371
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81326266"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88835323"
 ---
-# <a name="marshaling-global-functions"></a>Marshalling globaler Funktionen
+# <a name="marshaling-global-functions"></a>Marshalling von globalen Funktionen
 
-Diese Funktionen bieten Unterstützung für das Marshallen und Konvertieren von Marshallingdaten in Schnittstellenzeiger.
+Diese Funktionen bieten Unterstützung für das Marshalling und das Umstellen von Marshallingdaten in Schnittstellen Zeiger.
 
 > [!IMPORTANT]
 > Die in der folgenden Tabelle aufgeführten Funktionen können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
-|||
+|Name|Beschreibung|
 |-|-|
-|[AtlFreeMarshalStream](#atlfreemarshalstream)|Gibt die Marshalldaten `IStream` und den Zeiger frei.|
-|[AtlMarshalPtrInProc](#atlmarshalptrinproc)|Erstellt ein neues Streamobjekt und marshallt den angegebenen Schnittstellenzeiger.|
-|[AtlUnmarshalPtr](#atlunmarshalptr)|Konvertiert die Marshallingdaten eines Streams in einen Schnittstellenzeiger.|
+|[AtlFreeMarshalStream](#atlfreemarshalstream)|Gibt die Mars Hall Daten und den- `IStream` Zeiger frei.|
+|[AtlMarshalPtrInProc](#atlmarshalptrinproc)|Erstellt ein neues Streamobjekt und Marshalls den angegebenen Schnittstellen Zeiger.|
+|[AtlUnmarshalPtr](#atlunmarshalptr)|Konvertiert die Marshallingdaten eines Streams in einen-Schnittstellen Zeiger.|
 
 ## <a name="requirements"></a>Anforderungen:
 
-**Kopfzeile:** atlbase.h
+**Header:** atlbase. h
 
-## <a name="atlfreemarshalstream"></a><a name="atlfreemarshalstream"></a>AtlFreeMarshalStream
+## <a name="atlfreemarshalstream"></a><a name="atlfreemarshalstream"></a> Atlfreemarshalstream
 
 Gibt die Marschalldaten im Stream und anschließend den Streamzeiger frei.
 
@@ -41,13 +41,13 @@ HRESULT AtlFreeMarshalStream(IStream* pStream);
 ### <a name="parameters"></a>Parameter
 
 *pStream*<br/>
-[in] Ein Zeiger auf `IStream` die Schnittstelle auf dem Stream, der zum Marshallen verwendet wird.
+in Ein Zeiger auf die- `IStream` Schnittstelle auf dem Stream, der für das Marshalling verwendet wird.
 
 ### <a name="example"></a>Beispiel
 
-Siehe Beispiel für [AtlMarshalPtrInProc](#atlmarshalptrinproc).
+Weitere Informationen finden Sie im Beispiel für [atlmarshalptrinproc](#atlmarshalptrinproc).
 
-## <a name="atlmarshalptrinproc"></a><a name="atlmarshalptrinproc"></a>AtlMarshalPtrInProc
+## <a name="atlmarshalptrinproc"></a><a name="atlmarshalptrinproc"></a> Atlmarshalptrinproc
 
 Erstellt ein neues Streamobjekt, schreibt die CLSID des Proxys in den Stream und marshallt den angegebenen Schnittstellenzeiger durch Schreiben der für die Initialisierung des Proxys erforderlichen Daten in den Stream.
 
@@ -60,32 +60,32 @@ HRESULT AtlMarshalPtrInProc(
 
 ### <a name="parameters"></a>Parameter
 
-*Punk*<br/>
-[in] Ein Zeiger auf die zu marshallende Schnittstelle.
+*Kro*<br/>
+in Ein Zeiger auf die-Schnittstelle, die gemarshallt werden soll.
 
-*Iid*<br/>
-[in] Die GUID der gemarshallten Schnittstelle.
+*IID*<br/>
+in Die GUID der Schnittstelle, die gemarshallt wird.
 
 *ppStream*<br/>
-[out] Ein Zeiger auf `IStream` die Schnittstelle des neuen Streamobjekts, das zum Marshallen verwendet wird.
+vorgenommen Ein Zeiger auf die- `IStream` Schnittstelle für das neue Streamobjekt, das für das Marshalling verwendet wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Standard-HRESULT-Wert.
+Ein HRESULT-Standardwert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das MSHLFLAGS_TABLESTRONG-Flag wird so gesetzt, dass der Zeiger in mehrere Streams gemarshallt werden kann. Der Zeiger kann auch mehrmals gemarshallt werden.
+Das MSHLFLAGS_TABLESTRONG-Flag ist festgelegt, sodass der Zeiger an mehrere Datenströme gemarshallt werden kann. Der Zeiger kann auch mehrmals gemarshallt werden.
 
 Wenn das Marshalling fehlschlägt, wird der Streamzeiger freigegeben.
 
-`AtlMarshalPtrInProc`kann nur für einen Zeiger auf ein In-Process-Objekt verwendet werden.
+`AtlMarshalPtrInProc` kann nur für einen Zeiger auf ein Objekt vom Typ "in-Process" verwendet werden.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_COM#50](../../atl/codesnippet/cpp/marshaling-global-functions_1.cpp)]
 
-## <a name="atlunmarshalptr"></a><a name="atlunmarshalptr"></a>AtlUnmarshalPtr
+## <a name="atlunmarshalptr"></a><a name="atlunmarshalptr"></a> Atlunmarshalptr
 
 Konvertiert die Marshallingdaten des Streams in einen Schnittstellenzeiger, der vom Client verwendet werden kann.
 
@@ -99,22 +99,22 @@ HRESULT AtlUnmarshalPtr(
 ### <a name="parameters"></a>Parameter
 
 *pStream*<br/>
-[in] Ein Zeiger auf den Nichtgemarshallungsstrom.
+in Ein Zeiger auf den Stream, der nicht gemarshallt wird.
 
-*Iid*<br/>
-[in] Die GUID der Schnittstelle, die nicht gemarshallt wird.
+*IID*<br/>
+in Die GUID der Schnittstelle, die gemarshallt wird.
 
 *ppUnk*<br/>
-[out] Ein Zeiger auf die nicht gemarshallte Schnittstelle.
+vorgenommen Ein Zeiger auf die nicht gemarshallte Schnittstelle.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Standard-HRESULT-Wert.
+Ein HRESULT-Standardwert.
 
 ### <a name="example"></a>Beispiel
 
-Siehe Beispiel für [AtlMarshalPtrInProc](#atlmarshalptrinproc).
+Weitere Informationen finden Sie im Beispiel für [atlmarshalptrinproc](#atlmarshalptrinproc).
 
 ## <a name="see-also"></a>Siehe auch
 
-[Functions](../../atl/reference/atl-functions.md)
+[Funktionen](../../atl/reference/atl-functions.md)

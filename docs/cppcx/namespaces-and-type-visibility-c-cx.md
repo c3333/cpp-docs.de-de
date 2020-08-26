@@ -2,12 +2,12 @@
 title: Namespaces und Typsichtbarkeit (C++/CX)
 ms.date: 12/30/2016
 ms.assetid: cbc01a3a-3b69-4ded-9c42-ecbf0fd0a00e
-ms.openlocfilehash: cbfbd8c27065121eb176d9a62662eab7e1f4271b
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 78d5f5af761cef985ec43cf448251b4dc3c70bc2
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87230973"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88837800"
 ---
 # <a name="namespaces-and-type-visibility-ccx-"></a>Namespaces und Typsichtbarkeit (C++/CX)
 
@@ -28,15 +28,14 @@ In einer privaten Verweisklasse, Schnittstelle oder einem privaten Delegat werde
 
 Verwenden Sie die folgenden Zugriffsmodifizierer, um die Sichtbarkeit der Metadaten und die Quellcodebarrierefreiheit zu steuern.
 
-||||
-|-|-|-|
-|Modifizierer|Bedeutung|An Metadaten ausgegeben?|
-|private|Die Standardeinstellung für die Barrierefreiheit. Dieselbe Bedeutung wie in Standard-C++.|Nein|
-|protected|Dieselbe Bedeutung wie in Standard-C++, sowohl innerhalb der Anwendung oder Komponente als auch in den Metadaten.|Ja|
-|öffentlich|Dieselbe Bedeutung wie in Standard-C++.|Ja|
-|`public protected` - oder - `protected public`|Geschützte Barrierefreiheit in den Metadaten, öffentlich innerhalb der App oder Komponente.|Ja|
-|`protected private` oder `private protected`|In den Metadaten nicht sichtbar. Geschützte Barrierefreiheit innerhalb der App oder Komponente.||
-|`internal` oder `private public`|Der Member ist innerhalb der Anwendung oder Komponente öffentlich, aber nicht in den Metadaten sichtbar.|Nein|
+| Modifizierer | Bedeutung | An Metadaten ausgegeben? |
+|--|--|--|
+| **`private`** | Die Standardeinstellung für die Barrierefreiheit. Dieselbe Bedeutung wie in Standard-C++. | Nein |
+| **`protected`** | Dieselbe Bedeutung wie in Standard-C++, sowohl innerhalb der Anwendung oder Komponente als auch in den Metadaten. | Ja |
+| **`public`** | Dieselbe Bedeutung wie in Standard-C++. | Ja |
+| **`public protected`** noch **`protected public`** | Geschützte Barrierefreiheit in den Metadaten, öffentlich innerhalb der App oder Komponente. | Ja |
+| **`protected private`** oder **`private protected`** | In den Metadaten nicht sichtbar. Geschützte Barrierefreiheit innerhalb der App oder Komponente. |  |
+| **`internal`** oder **`private public`** | Der Member ist innerhalb der Anwendung oder Komponente öffentlich, aber nicht in den Metadaten sichtbar. | Nein |
 
 ## <a name="windows-runtime-namespaces"></a>Namespaces Windows-Runtime
 
@@ -46,14 +45,13 @@ Die Windows-API besteht aus Typen, die in Windows:: \* Namespaces deklariert wer
 
 C++/CX definieren bestimmte Typen in diesen Namespaces als Teil der Projektion des Windows-Runtime Typsystems.
 
-|||
-|-|-|
-|**Namespace**|**Beschreibung**|
-|default|Enthält die integrierten numerischen und char16-Typen. Diese Typen befinden sich in jedem Namespace im Gültigkeitsbereich, und **`using`** es ist keine-Anweisung erforderlich.|
-|Plattform|Enthält hauptsächlich öffentliche Typen, die Windows-Runtime Typen wie `Array<T>` , `String` , und entsprechen `Guid` `Boolean` . Schließt auch spezielle Hilfsprogrammtypen wie `Platform::Agile<T>` und `Platform::Box<T>`ein.|
-|Platform::Collections|Enthält die konkreten Auflistungs Klassen, die die Windows-Runtime Auflistungs Schnittstellen `IVector` , `IMap` usw. implementieren. Diese Typen werden in einer Headerdatei, collection.h, und nicht in der Datei platform.winmd definiert.|
-|Platform::Details|Enthält Typen, die vom Compiler verwendet werden und nicht für die öffentliche Nutzung vorgesehen sind.|
+| Namespace | BESCHREIBUNG |
+|--|--|
+| default | Enthält die integrierten numerischen und char16-Typen. Diese Typen befinden sich in jedem Namespace im Gültigkeitsbereich, und **`using`** es ist keine-Anweisung erforderlich. |
+| `Platform` | Enthält hauptsächlich öffentliche Typen, die Windows-Runtime Typen wie `Array<T>` , `String` , und entsprechen `Guid` `Boolean` . Schließt auch spezielle Hilfsprogrammtypen wie `Platform::Agile<T>` und `Platform::Box<T>`ein. |
+| `Platform::Collections` | Enthält die konkreten Auflistungs Klassen, die die Windows-Runtime Auflistungs Schnittstellen `IVector` , `IMap` usw. implementieren. Diese Typen werden in einer Headerdatei, collection.h, und nicht in der Datei platform.winmd definiert. |
+| `Platform::Details` | Enthält Typen, die vom Compiler verwendet werden und nicht für die öffentliche Nutzung vorgesehen sind. |
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Typsystem (C++-CX)](../cppcx/type-system-c-cx.md)

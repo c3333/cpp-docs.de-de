@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - range attribute
 ms.assetid: f352f79e-ecb3-4cdd-9cdd-8406ef473594
-ms.openlocfilehash: 380f7c9e15a3682b486217c842f00c944251e631
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 8ed0ba2c53992dd19d1c4491f8085e955146224c
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80214616"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88839477"
 ---
 # <a name="range-c"></a>range (C++)
 
@@ -25,15 +25,15 @@ Gibt einen Bereich zulässiger Werte für Argumente oder Felder an, deren Werte 
 
 ### <a name="parameters"></a>Parameter
 
-*low*<br/>
+*Preis*<br/>
 Der niedrige Bereichs Wert.
 
-*high*<br/>
+*hochrangiger*<br/>
 Der Wert für den hohen Bereich.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Range** C++ -Attribut verfügt über die gleiche Funktionalität [wie das-](/windows/win32/Midl/range) bereichsmittell-Attribut.
+Das **Range** C++-Attribut verfügt über die gleiche Funktionalität wie das [Range](/windows/win32/Midl/range) -Attribut "mittlerl".
 
 ## <a name="example"></a>Beispiel
 
@@ -53,12 +53,10 @@ __interface ICustom {
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|Schnittstellen Methode, Schnittstellenparameter|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Schnittstellen Methode, Schnittstellenparameter|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -67,6 +65,6 @@ Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontext
 ## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[Methodenattribut](method-attributes.md)<br/>
+[Methoden Attribute](method-attributes.md)<br/>
 [Parameterattribute](parameter-attributes.md)<br/>
-[Datenmemberattribute](data-member-attributes.md)
+[Datenmember-Attribute](data-member-attributes.md)
