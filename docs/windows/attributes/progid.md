@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - progid attribute
 ms.assetid: afcf559c-e432-481f-aa9a-bd3bb72c02a8
-ms.openlocfilehash: 3092111236afe1e1360a2814c3091ab0de4ff6ea
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 136c651ec92c78339c2f701804a6a409523dd30f
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87213852"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88839997"
 ---
 # <a name="progid"></a>progid
 
@@ -36,7 +36,7 @@ ProgIDs stellen eine lesbare Version des Klassen Bezeichners (CLSID) dar, mit de
 
 Wenn von einem Attribut Block `progid` nicht auch verwendet `uuid` wird, prüft der Compiler die Registrierung, um festzustellen, ob eine `uuid` für den angegebenen vorhanden ist `progid` . Wenn `progid` nicht angegeben ist, wird die Version (und der Co-Klassenname beim Erstellen einer Co-Klasse) verwendet, um ein zu generieren `progid` .
 
-`progid`impliziert das `coclass` -Attribut, d. h., wenn Sie angeben `progid` , entspricht es dem Angeben der `coclass` `progid` Attribute und.
+`progid` impliziert das `coclass` -Attribut, d. h., wenn Sie angeben `progid` , entspricht es dem Angeben der `coclass` `progid` Attribute und.
 
 Das- `progid` Attribut bewirkt, dass eine Klasse automatisch unter dem angegebenen Namen registriert wird. In der generierten IDL-Datei wird der Wert nicht angezeigt `progid` .
 
@@ -48,9 +48,7 @@ Ein Beispiel für die Verwendung von finden Sie im Beispiel für die [Co-Klasse]
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
 |**Zielgruppe**|`class`, `struct`|
 |**REPEATABLE**|Nein|

@@ -16,12 +16,12 @@ helpviewer_keywords:
 - CMFCDropDownFrame [MFC], RecalcLayout
 - CMFCDropDownFrame [MFC], SetAutoDestroy
 ms.assetid: 09ff81a9-de00-43ec-9df9-b626f7728c4b
-ms.openlocfilehash: d99dae9d8e7eca96c736a33621f0b544f1962f0f
-ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
+ms.openlocfilehash: 62bab0fbde364406f35edb959abb6e55a9125504
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88560893"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88840738"
 ---
 # <a name="cmfcdropdownframe-class"></a>Cmfcdropdownframe-Klasse
 
@@ -37,17 +37,15 @@ class CMFCDropDownFrame : public CMiniFrameWnd
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|||
+|name|Beschreibung|
 |-|-|
-|name|BESCHREIBUNG|
-|`CMFCDropDownFrame::CMFCDropDownFrame`|Der Standardkonstruktor.|
+|`CMFCDropDownFrame::CMFCDropDownFrame`|Standardkonstruktor|
 |`CMFCDropDownFrame::~CMFCDropDownFrame`|Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|||
+|name|Beschreibung|
 |-|-|
-|name|BESCHREIBUNG|
 |[Cmfcdropdownframe:: Create](#create)|Erstellt ein `CMFCDropDownFrame`-Objekt.|
 |`CMFCDropDownFrame::CreateObject`|Wird vom Framework verwendet, um eine dynamische Instanz dieses Klassentyps zu erstellen.|
 |[Cmfcdropdownframe:: getparametermenubar](#getparentmenubar)|Ruft die übergeordnete Menüleiste des Dropdown Rahmens ab.|

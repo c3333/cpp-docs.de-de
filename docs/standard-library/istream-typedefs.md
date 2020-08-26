@@ -7,21 +7,21 @@ f1_keywords:
 - istream/std::wiostream
 - istream/std::wistream
 ms.assetid: 55bc1f84-53a7-46ca-a36f-ac6ef75d0374
-ms.openlocfilehash: 1e162dc9fb784bda5b4b9834d083012cf76ed6e3
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: c66a4349a016eb8428a8aa8eb260a78b4bac9efb
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87217713"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846471"
 ---
 # <a name="ltistreamgt-typedefs"></a>&lt;iStream&gt;-Typedefs
 
-||||
-|-|-|-|
-|[iostream](#iostream)|[istream](#istream)|[wiostream](#wiostream)|
-|[wistream](#wistream)|
+[iostream](#iostream)\
+[IStream](#istream)\
+[wiostream](#wiostream)\
+[wistream](#wistream)
 
-## <a name="iostream"></a><a name="iostream"></a>iostream
+## <a name="iostream"></a><a name="iostream"></a> iostream
 
 Ein Typ, `basic_iostream` der auf spezialisiert ist **`char`** .
 
@@ -33,7 +33,7 @@ typedef basic_iostream<char, char_traits<char>> iostream;
 
 Der Typ ist ein Synonym für Klassen Vorlagen [basic_iostream](../standard-library/basic-iostream-class.md), das auf Elemente des Typs **`char`** mit Standard Zeichen Merkmalen spezialisiert ist.
 
-## <a name="istream"></a><a name="istream"></a>IStream
+## <a name="istream"></a><a name="istream"></a> IStream
 
 Ein Typ, `basic_istream` der auf spezialisiert ist **`char`** .
 
@@ -45,7 +45,7 @@ typedef basic_istream<char, char_traits<char>> istream;
 
 Der Typ ist ein Synonym für Klassen Vorlagen [basic_istream](../standard-library/basic-istream-class.md), das auf Elemente des Typs **`char`** mit Standard Zeichen Merkmalen spezialisiert ist.
 
-## <a name="wiostream"></a><a name="wiostream"></a>wiostream
+## <a name="wiostream"></a><a name="wiostream"></a> wiostream
 
 Ein Typ, `basic_iostream` der auf spezialisiert ist **`wchar_t`** .
 
@@ -57,7 +57,7 @@ typedef basic_iostream<wchar_t, char_traits<wchar_t>> wiostream;
 
 Der Typ ist ein Synonym für Klassen Vorlagen [basic_iostream](../standard-library/basic-iostream-class.md), das auf Elemente des Typs **`wchar_t`** mit Standard Zeichen Merkmalen spezialisiert ist.
 
-## <a name="wistream"></a><a name="wistream"></a>wistream
+## <a name="wistream"></a><a name="wistream"></a> wistream
 
 Ein Typ, `basic_istream` der auf spezialisiert ist **`wchar_t`** .
 

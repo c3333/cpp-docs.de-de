@@ -26,12 +26,12 @@ helpviewer_keywords:
 - std::uniform_real_distribution [C++], param_type
 - std::uniform_real_distribution [C++], param_type
 ms.assetid: 5cf906fd-0319-4984-b21b-98425cd7532d
-ms.openlocfilehash: fc003ebe9301c3648b47c796910d20096e7ef23d
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: ba2ec419e524ca571120fe82c7cbf63c1a97eaaa
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87217362"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88839594"
 ---
 # <a name="uniform_real_distribution-class"></a>uniform_real_distribution-Klasse
 
@@ -78,10 +78,8 @@ Der Gleit Komma Ergebnistyp. der Standardwert ist **`double`** . Informationen z
 
 Die Klassen Vorlage beschreibt eine inklusiv-exklusive Verteilung, die Werte eines vom Benutzer angegebenen ganzzahligen Gleit Komma Typs mit einer Verteilung erzeugt, damit jeder Wert gleichermaßen wahrscheinlich ist. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
 
-||||
-|-|-|-|
-|[uniform_real_distribution](#uniform_real_distribution)|`uniform_real_distribution::a`|`uniform_real_distribution::param`|
-|`uniform_real_distribution::operator()`|`uniform_real_distribution::b`|[param_type](#param_type)|
+[uniform_real_distribution](#uniform_real_distribution)\
+[param_type](#param_type)|
 
 Das Eigenschaftsmember `a()` gibt die aktuell gespeicherte Untergrenze der Verteilung zurück, während `b()` die aktuell gespeicherte Obergrenze zurückgibt. Für diese Verteilungs Klasse sind diese Mindest-und Maximalwerte identisch mit denen, die von den allgemeinen Eigenschafts Funktionen zurückgegeben `min()` und `max()` im Thema beschrieben werden [\<random>](../standard-library/random.md) .
 
@@ -178,7 +176,7 @@ Distribution for 10 samples:
 
 **Namespace:** std
 
-## <a name="uniform_real_distributionuniform_real_distribution"></a><a name="uniform_real_distribution"></a>uniform_real_distribution:: uniform_real_distribution
+## <a name="uniform_real_distributionuniform_real_distribution"></a><a name="uniform_real_distribution"></a> uniform_real_distribution:: uniform_real_distribution
 
 Erstellt die Verteilung.
 
@@ -206,7 +204,7 @@ Der erste Konstruktor konstruiert ein Objekt, dessen *gespeicherter-Wert den* We
 
 Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter aus *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
 
-## <a name="uniform_real_distributionparam_type"></a><a name="param_type"></a>uniform_real_distribution::p aram_type
+## <a name="uniform_real_distributionparam_type"></a><a name="param_type"></a> uniform_real_distribution::p aram_type
 
 Speichert alle Parameter der Verteilung.
 

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - propget attribute
 ms.assetid: c9d4a97f-36dd-4b61-8eb0-b1a217598f14
-ms.openlocfilehash: d2c0ebab1630634ddd4fc81e7c9c8364f7fad46f
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 2627213d1d1dc74edb33d70ac45f3b7bbd38ba6b
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80166458"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88839971"
 ---
 # <a name="propget"></a>propget
 
@@ -25,7 +25,7 @@ Gibt eine eigenschaftenaccessorfunktion an.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **propget** C++ -Attribut verfügt über die gleiche Funktionalität wie das-Attribut von [propget](/windows/win32/Midl/propget) .
+Das **propget** C++-Attribut verfügt über die gleiche Funktionalität wie das-Attribut von [propget](/windows/win32/Midl/propget) .
 
 ## <a name="example"></a>Beispiel
 
@@ -33,12 +33,10 @@ Eine Beispiel Verwendung von **propget finden Sie**im Beispiel für [bindbare](b
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|Methode|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Methode|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|`propput`, `propputref`|
 
@@ -47,6 +45,6 @@ Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontext
 ## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[Methodenattribut](method-attributes.md)<br/>
+[Methoden Attribute](method-attributes.md)<br/>
 [propput](propput.md)<br/>
 [propputref](propputref.md)

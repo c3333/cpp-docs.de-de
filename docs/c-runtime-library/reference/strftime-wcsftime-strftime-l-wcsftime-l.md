@@ -42,12 +42,12 @@ helpviewer_keywords:
 - _tcsftime function
 - time strings
 ms.assetid: 6330ff20-4729-4c4a-82af-932915d893ea
-ms.openlocfilehash: c59e8297013e02592e623859621bb1ff11474733
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 36a84c5de41f3358adbcba42010ed8e6f3c83939
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87215139"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846575"
 ---
 # <a name="strftime-wcsftime-_strftime_l-_wcsftime_l"></a>strftime, wcsftime, _strftime_l, _wcsftime_l
 
@@ -127,9 +127,8 @@ Das *Format* -Argument besteht aus mindestens einem Code. wie in **printf**wird 
 
 Die Funktionen von " **Strauch Zeit** " unterstützen diese Formatierungscodes:
 
-|||
-|-|-|
 |Code|Ersetzungszeichenfolge|
+|-|-|
 |**% a**|Abgekürzte Wochentagsname im Gebiets Schema|
 |**% A**|Vollständiger Wochentagsname im Gebiets Schema|
 |**% b**|Abgekürzte Monats Name im Gebiets Schema|
@@ -172,7 +171,7 @@ Wie in der **printf** -Funktion kann das- **#** Flag jedem Formatierungs Code al
 
 |Formatcode|Bedeutung|
 |-----------------|-------------|
-|**% #a**, **% #A**, **% #b**, **% #B**, **% #g**, **% #G**, **% #h**, **% #n**, **% #p**, **% #t**, **% #u**, **% #w**, **% #X**, **% #z**, **% #Z**,**%#%**|**#** das Flag wird ignoriert.|
+|**% #a**, **% #A**, **% #b**, **% #B**, **% #g**, **% #G**, **% #h**, **% #n**, **% #p**, **% #t**, **% #u**, **% #w**, **% #X**, **% #z**, **% #Z**, **%#%**|**#** das Flag wird ignoriert.|
 |**% #c**|Eine lange Datums-und Uhrzeit Darstellung, die für das Gebiets Schema geeignet ist. Beispiel: „Dienstag, 14. März 1995, 12:41:29“.|
 |**% #x**|Eine lange Datums Darstellung, die für das Gebiets Schema geeignet ist. Beispiel: „Dienstag, 14. März 1995“.|
 |**% #d**, **% #D**, **% #e**, **% #F**, **% #H**, **% #I**, **% #j**, **% #m**, **% #M**, **% #r**, **% #R**, **% #S**, **% #T**, **%**#U, **% #V**, **%**#W, **%**#y, **%** #Y|Entfernen Sie führende Nullen oder Leerzeichen (sofern vorhanden).|

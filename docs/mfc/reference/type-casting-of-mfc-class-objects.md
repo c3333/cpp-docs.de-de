@@ -8,29 +8,29 @@ helpviewer_keywords:
 - casting types [MFC]
 - macros [MFC], casting pointers
 ms.assetid: e138465e-c35f-4e84-b788-bd200ccf2f0e
-ms.openlocfilehash: 953acc32c3510b31c265f2d64d0a013f6dee06cc
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: e3702ced83021e42ac6bf71a78efc51fa07b8be9
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81372896"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88840491"
 ---
 # <a name="type-casting-of-mfc-class-objects"></a>Typumwandlung von MFC-Klassenobjekten
 
-Typumwandlungsmakros bieten eine Möglichkeit, einen bestimmten Zeiger auf einen Zeiger zu werfen, der auf ein Objekt einer bestimmten Klasse zeigt, mit oder ohne zu überprüfen, ob die Umwandlung legal ist.
+Typumwandlungs Makros bieten eine Möglichkeit, einen bestimmten Zeiger auf einen Zeiger umzuwandeln, der auf ein Objekt einer bestimmten Klasse zeigt, mit oder ohne zu überprüfen, ob die Umwandlung zulässig ist.
 
-In der folgenden Tabelle sind die MFC-Typumwandlungsmakros aufgeführt.
+In der folgenden Tabelle sind die MFC-Typumwandlungs Makros aufgeführt.
 
-### <a name="macros-that-cast-pointers-to-mfc-class-objects"></a>Makros, die Zeiger auf MFC-Klassenobjekte umwerfen
+### <a name="macros-that-cast-pointers-to-mfc-class-objects"></a>Makros, die Zeiger auf MFC-Klassen Objekte umwandeln
 
-|||
+|Name|Beschreibung|
 |-|-|
-|[DYNAMIC_DOWNCAST](#dynamic_downcast)|Gibt einen Zeiger auf einen Zeiger auf ein Klassenobjekt, während überprüft wird, ob die Umwandlung legal ist.|
-|[STATIC_DOWNCAST](#static_downcast)|Gibt einen Zeiger auf ein Objekt von einer Klasse auf einen Zeiger eines verknüpften Typs um. Verursacht in einem Debugbuild einen ASSERT, wenn das Objekt keine "Art" des Zieltyps ist.|
+|[DYNAMIC_DOWNCAST](#dynamic_downcast)|Wandelt einen Zeiger auf einen Zeiger auf ein Klassenobjekt um, während überprüft wird, ob die Umwandlung zulässig ist.|
+|[STATIC_DOWNCAST](#static_downcast)|Wandelt einen Zeiger auf ein Objekt von einer Klasse in einen Zeiger eines verknüpften Typs um. In einem Debugbuild bewirkt eine Assert-Bestätigung, wenn das Objekt kein "Art" des Zieltyps ist.|
 
-## <a name="dynamic_downcast"></a><a name="dynamic_downcast"></a>DYNAMIC_DOWNCAST
+## <a name="dynamic_downcast"></a><a name="dynamic_downcast"></a> DYNAMIC_DOWNCAST
 
-Bietet eine praktische Möglichkeit, einen Zeiger auf einen Zeiger auf ein Klassenobjekt zu werfen, während überprüft wird, ob die Umwandlung legal ist.
+Bietet eine praktische Möglichkeit, einen Zeiger auf einen Zeiger auf ein Klassenobjekt umzuwandeln, während überprüft wird, ob die Umwandlung zulässig ist.
 
 ```
 DYNAMIC_DOWNCAST(class, pointer)
@@ -41,18 +41,18 @@ DYNAMIC_DOWNCAST(class, pointer)
 *class*<br/>
 Der Name einer Klasse.
 
-*Zeiger*<br/>
-Ein Zeiger, der auf einen Zeiger auf ein Objekt der *Typklasse*umgeworfen werden soll.
+*Zeichner*<br/>
+Ein Zeiger, der in einen Zeiger auf ein Objekt der Type- *Klasse*umgewandelt werden soll.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das Makro wird den *Zeigerparameter* in einen Zeiger auf ein Objekt des *Klassenparameterstyps* umwerfen.
+Das Makro wandelt den *Zeiger* Parameter in einen Zeiger auf ein Objekt des *Klassen* Parameter Typs um.
 
-Wenn das Objekt, auf das vom Zeiger verwiesen wird, eine "Art" der identifizierten Klasse ist, gibt das Makro den entsprechenden Zeiger zurück. Wenn es sich nicht um eine legale Umwandlung handelt, gibt das Makro NULL zurück.
+Wenn das Objekt, auf das der Zeiger verweist, eine "Art" der identifizierten Klasse ist, gibt das Makro den entsprechenden Zeiger zurück. Wenn es sich nicht um eine gültige Umwandlung handelt, gibt das Makro NULL zurück.
 
-## <a name="static_downcast"></a><a name="static_downcast"></a>STATIC_DOWNCAST
+## <a name="static_downcast"></a><a name="static_downcast"></a> STATIC_DOWNCAST
 
-Gibt *pobject* auf einen Zeiger auf ein *class_name* Objekt.
+Wandelt *pObject* in einen Zeiger auf ein *class_name* Objekt um.
 
 ```
 STATIC_DOWNCAST(class_name, pobject)
@@ -60,24 +60,24 @@ STATIC_DOWNCAST(class_name, pobject)
 
 ### <a name="parameters"></a>Parameter
 
-*Class_name*<br/>
-Der Name der Klasse, in die gecastet wird.
+*class_name*<br/>
+Der Name der Klasse, in die umgewandelt wird.
 
-*pobject*<br/>
-Der Zeiger, der auf einen Zeiger auf ein *class_name* Objekt s.
+*pObject*<br/>
+Der Zeiger, der in einen Zeiger auf ein *class_name* Objekt umgewandelt werden soll.
 
 ### <a name="remarks"></a>Bemerkungen
 
-*pobject* muss entweder NULL sein oder auf ein Objekt einer Klasse verweisen, das direkt oder indirekt von *class_name*abgeleitet wird. In Builds Ihrer Anwendung mit dem _DEBUG Präprozessorsymbol definiert, wird das Makro ASSERT, wenn *pobject* nicht NULL ist, oder wenn es auf ein Objekt verweist, das keine "Art" der im *Parameter class_name* angegebenen Klasse ist (siehe [CObject::IsKindOf](../../mfc/reference/cobject-class.md#iskindof)). In nicht **_DEBUG-Builds** führt das Makro die Umwandlung ohne Typprüfung durch.
+*pObject* muss entweder NULL sein oder auf ein Objekt einer Klasse verweisen, das direkt oder indirekt von *class_name*abgeleitet ist. In Builds Ihrer Anwendung, bei der das _DEBUG Präprozessorsymbol definiert ist, wird das Makro bestätigt, wenn *pObject* nicht NULL ist, oder wenn es auf ein Objekt verweist, das keine "Art" der im Parameter *class_name* angegebenen Klasse ist (siehe [CObject:: IsKindOf](../../mfc/reference/cobject-class.md#iskindof)). In nicht **_DEBUG** Builds führt das Makro die Umwandlung ohne Typüberprüfung durch.
 
-Die im *Parameter class_name* angegebene Klasse `CObject` muss von den DECLARE_DYNAMIC und IMPLEMENT_DYNAMIC, den DECLARE_DYNCREATE und IMPLEMENT_DYNCREATE oder den DECLARE_SERIAL- und IMPLEMENT_SERIAL-Makros abgeleitet werden und diese verwenden, wie im Artikel [CObject-Klasse: Ableiten einer Klasse von CObject](../../mfc/deriving-a-class-from-cobject.md)erläutert.
+Die im *class_name* -Parameter angegebene Klasse muss von abgeleitet werden `CObject` und die DECLARE_DYNAMIC und IMPLEMENT_DYNAMIC, die DECLARE_DYNCREATE und IMPLEMENT_DYNCREATE oder die DECLARE_SERIAL-und IMPLEMENT_SERIAL-Makros verwenden, wie im Artikel [CObject-Klasse: Ableiten einer Klasse von CObject](../../mfc/deriving-a-class-from-cobject.md)erläutert.
 
-Sie können z. B. `CMyDoc`einen `pMyDoc`Zeiger auf , `CDocument` aufgerufen , auf einen Zeiger auf die Verwendung dieses Ausdrucks umsetzen:
+Sie können z. b. einen Zeiger auf `CMyDoc` , aufgerufen `pMyDoc` , in einen Zeiger auf umwandeln, indem Sie den folgenden `CDocument` Ausdruck verwenden:
 
 [!code-cpp[NVC_MFCDocView#197](../../mfc/codesnippet/cpp/type-casting-of-mfc-class-objects_1.cpp)]
 
-Wenn `pMyDoc` nicht auf ein Objekt, das `CDocument`direkt oder indirekt von abgeleitet wird, weist das Makro ASSERT auf.
+Wenn `pMyDoc` nicht auf ein Objekt verweist, das direkt oder indirekt von abgeleitet `CDocument` ist, wird das Makro von bestätigt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Makros, globale Funktionen und globale Variablen](../../mfc/reference/mfc-macros-and-globals.md)

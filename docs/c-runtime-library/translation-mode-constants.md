@@ -17,12 +17,12 @@ helpviewer_keywords:
 - translation, modes
 - translation modes (file I/O)
 ms.assetid: a5993bf4-7e7a-47f9-83c3-e46332b85579
-ms.openlocfilehash: a86c0c1a0b70613c6e7749c78f58f6dfb3602d4d
-ms.sourcegitcommit: 878a164fe6d550ca81ab87d8425c8d3cd52fe384
-ms.translationtype: HT
+ms.openlocfilehash: 0b951fc76635f67115f4a832ed316d66b6de7497
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68376283"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88836698"
 ---
 # <a name="translation-mode-constants"></a>Übersetzungsmoduskonstanten
 
@@ -32,13 +32,13 @@ ms.locfileid: "68376283"
 #include <fcntl.h>
 ```
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Bemerkungen
 
 Die Manifestkonstanten `_O_BINARY` und `_O_TEXT` geben den Übersetzungsmodus von Dateien (`_open` und `_sopen`) oder von Streams (`_setmode`) an.
 
-Folgende Werte sind zulässig:
+Zulässige Werte sind:
 
-|||
+|Wert|Beschreibung|
 |-|-|
 `_O_TEXT`  | Öffnet eine Datei im Textmodus (übersetzt). Kombinationen aus Wagenrücklauf und Zeilenvorschub (CR-LF) werden bei der Eingabe in einen einzelnen Zeilenvorschub (LF) umgewandelt. Zeilenvorschubzeichen werden bei der Ausgabe in Kombinationen aus Wagenrücklauf und Zeilenvorschub (CR-LF) übersetzt. Außerdem wird STRG+Z bei der Eingabe als EOF-Zeichen interpretiert. In den Dateien, die für das Lesen und Lesen/Schreiben geöffnet sind, überprüft `fopen` die Datei auf STRG+Z am Dateiende und entfernt nach Möglichkeit die Markierung. Dies geschieht, da ein Verwenden der Funktionen `fseek` und `ftell` zum Navigieren innerhalb einer Datei, die mit STRG + Z endet, dazu führen kann, dass sich `fseek` in der Nähe des Dateiendes nicht ordnungsgemäß verhält.
 `_O_BINARY`  | Öffnet eine Datei im binären (unübersetzten) Modus. Die oben genannten Übersetzungen werden unterdrückt.
@@ -46,7 +46,7 @@ Folgende Werte sind zulässig:
 
 Weitere Informationen finden Sie unter [Text- und Binärmodus-Datei-E-A](../c-runtime-library/text-and-binary-mode-file-i-o.md) und [Dateiübersetzung](../c-runtime-library/file-translation-constants.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [_open, _wopen](../c-runtime-library/reference/open-wopen.md)<br/>
 [_pipe](../c-runtime-library/reference/pipe.md)<br/>

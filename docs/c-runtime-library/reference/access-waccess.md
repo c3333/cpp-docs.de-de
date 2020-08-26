@@ -37,12 +37,12 @@ helpviewer_keywords:
 - _waccess function
 - taccess function
 ms.assetid: ba34f745-85c3-49e5-a7d4-3590bd249dd3
-ms.openlocfilehash: ae213768e30fa8120a80aaa30b3fe1b53e802d78
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: fdada7f02115f44aa6a7e3c5e9bdfdf5e65f8b2f
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82920269"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846588"
 ---
 # <a name="_access-_waccess"></a>_access, _waccess
 
@@ -71,26 +71,26 @@ Lese-/Schreibattribut.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Jede Funktion gibt 0 zurück, wenn sich die Datei im angegebenen Modus befindet. Die Funktion gibt-1 zurück, wenn die benannte Datei nicht vorhanden ist oder nicht über den angegebenen Modus verfügt. in diesem Fall wird `errno` festgelegt, wie in der folgenden Tabelle gezeigt.
+Jede Funktion gibt 0 zurück, wenn sich die Datei im angegebenen Modus befindet. Die Funktion gibt-1 zurück, wenn die benannte Datei nicht vorhanden ist oder nicht über den angegebenen Modus verfügt. in diesem Fall `errno` wird festgelegt, wie in der folgenden Tabelle gezeigt.
 
-|||
-|-|-|
-`EACCES`|Zugriff verweigert: Aufgrund der Berechtigungen wird der Zugriff im angegebenen Modus verweigert.
-`ENOENT`|Der Dateiname oder der Pfad wurde nicht gefunden.
-`EINVAL`|Ungültiger Parameter.
+| Wert | Beschreibung |
+|--|--|
+| `EACCES` | Zugriff verweigert: Aufgrund der Berechtigungen wird der Zugriff im angegebenen Modus verweigert. |
+| `ENOENT` | Der Dateiname oder der Pfad wurde nicht gefunden. |
+| `EINVAL` | Ungültiger Parameter. |
 
 Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Bei der Verwendung mit Dateien bestimmt die **_access** Funktion, ob die angegebene Datei bzw. das angegebene Verzeichnis vorhanden ist und über die durch den Wert des- *Modus*angegebenen Attribute verfügt. Bei der Verwendung mit Verzeichnissen bestimmt **_access** nur, ob das angegebene Verzeichnis vorhanden ist. in Windows 2000 und neueren Betriebssystemen haben alle Verzeichnisse Lese-und Schreibzugriff.
 
 |*Moduswert*|überprüft nur, ob die Datei|
 |------------------|---------------------|
 |00|existiert|
-|02|Nur Schreibzugriff|
+|02|Lesegeschützt|
 |04|Schreibgeschützt|
-|06|Lesen und Schreiben|
+|06|Lese- und Schreibvorgänge|
 
 Diese Funktion überprüft nur, ob die Datei oder das Verzeichnis schreibgeschützt sind. Es überprüft jedoch nicht die Dateisystem-Sicherheitseinstellungen. Dafür benötigen Sie ein Zugriffstoken. Weitere Informationen zur Dateisystemsicherheit finden Sie unter [Zugriffstoken](/windows/win32/SecAuthZ/access-tokens). Für diese Funktion gibt es eine ATL-Klasse. Weitere Informationen finden Sie unter [CAccessToken-Klasse](../../atl/reference/caccesstoken-class.md).
 
@@ -108,7 +108,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|Optionale Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|Optionale Header|
 |-------------|---------------------|----------------------|
 |**_access**|\<io.h>|\<errno.h>|
 |**_waccess**|\<wchar.h> oder \<io.h>|\<errno.h>|

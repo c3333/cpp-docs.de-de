@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - istream header
 ms.assetid: efcf24e4-05d1-4719-ab0b-9e7ebe845d89
-ms.openlocfilehash: 37399bb50f195c683b52eea4c8fadf8679d62852
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 15d955aca1406183cc348395068ba042b75d7417
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87233092"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846458"
 ---
 # <a name="ltistreamgt"></a>&lt;istream&gt;
 
@@ -36,25 +36,25 @@ Definiert die Klassen Vorlagen Basic_istream, die Extraktionen für die Iostream
 
 ### <a name="manipulators"></a>Manipulatoren
 
-|||
+|Name|BESCHREIBUNG|
 |-|-|
 |[Gefangener](../standard-library/istream-functions.md#ws)|Überspringt Leerraum im Datenstrom.|
 |[swap](../standard-library/istream-functions.md#istream_swap)|Tauscht zwei Streamobjekte.|
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|BESCHREIBUNG|
+|Operator|Beschreibung|
 |-|-|
 |[Operator>>](../standard-library/istream-operators.md#op_gt_gt)|Extrahiert von Zeichenfolgen und Zeichen aus dem Stream.|
 
 ### <a name="classes"></a>Klassen
 
-|Klasse|BESCHREIBUNG|
+|Klasse|Beschreibung|
 |-|-|
 |[basic_iostream](../standard-library/basic-iostream-class.md)|Eine Streamklasse für Ein- und Ausgabe.|
 |[basic_istream](../standard-library/basic-istream-class.md)|Die Klassen Vorlage beschreibt ein Objekt, das das Extrahieren von Elementen und codierten Objekten aus einem Streampuffer mit Elementen des Typs steuert `Elem` , der auch als " [char_type](../standard-library/basic-ios-class.md#char_type)" bezeichnet wird, dessen Zeichen Merkmale von der Klasse bestimmt werden `Tr` , die auch als [Traits_type](../standard-library/basic-ios-class.md#traits_type)bezeichnet wird.|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
 [iostream-Programmierung](../standard-library/iostream-programming.md)\

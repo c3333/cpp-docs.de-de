@@ -26,12 +26,12 @@ helpviewer_keywords:
 - std::binomial_distribution [C++], param_type
 - std::binomial_distribution [C++], param_type
 ms.assetid: b7c8a26a-da8c-45a5-a3a8-208f7a3609ce
-ms.openlocfilehash: d0bba986889dfbd17fddcd0c6985c082f6f74c29
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 3054a29bd1bc82861461851d4403a7095ac1fcbd
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87230245"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846510"
 ---
 # <a name="binomial_distribution-class"></a>binomial_distribution-Klasse
 
@@ -81,10 +81,8 @@ Die einheitliche Zufallszahlengenerator-Engine. Informationen zu möglichen Type
 
 Die Klassen Vorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten ganzzahligen Typs produziert **`int`** . Wenn kein entsprechend der diskreten Wahrscheinlichkeitsfunktion der binomialen Verteilung verteilter Wert bereitgestellt wird, geben Sie ein. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
 
-||||
-|-|-|-|
-|[binomial_distribution](#binomial_distribution)|`binomial_distribution::t`|`binomial_distribution::param`|
-|`binomial_distribution::operator()`|`binomial_distribution::p`|[param_type](#param_type)|
+[binomial_distribution](#binomial_distribution)\
+[param_type](#param_type)
 
 Die Eigenschaftenmember `t()` und `p()` geben die aktuell gespeicherten Verteilungsparameter Werte *t* bzw. *p* zurück.
 
@@ -231,7 +229,7 @@ Histogram for 100 samples:
 
 **Namespace:** std
 
-## <a name="binomial_distributionbinomial_distribution"></a><a name="binomial_distribution"></a>binomial_distribution:: binomial_distribution
+## <a name="binomial_distributionbinomial_distribution"></a><a name="binomial_distribution"></a> binomial_distribution:: binomial_distribution
 
 Erstellt die Verteilung.
 
@@ -259,7 +257,7 @@ Der erste Konstruktor konstruiert ein Objekt, dessen gespeicherter *p* -Wert den
 
 Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter aus *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
 
-## <a name="binomial_distributionparam_type"></a><a name="param_type"></a>binomial_distribution::p aram_type
+## <a name="binomial_distributionparam_type"></a><a name="param_type"></a> binomial_distribution::p aram_type
 
 Speichert alle Parameter der Verteilung.
 

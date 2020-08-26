@@ -9,12 +9,12 @@ helpviewer_keywords:
 - aggregate objects [C++], aggregates attribute
 - aggregates [C++]
 ms.assetid: 67a084c9-941f-474b-a029-9c93b38ebe9a
-ms.openlocfilehash: 65a166faa9380272c87af92ebaf8294c0e0b1af3
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: e745cae5710bbf8df1314ec20a4a0b72545c0591
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87217284"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88836360"
 ---
 # <a name="aggregates"></a>Aggregate
 
@@ -79,9 +79,7 @@ struct CObject : IObject
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
 |**Zielgruppe**|**`class`**, **`struct`**|
 |**REPEATABLE**|Ja|
@@ -95,6 +93,6 @@ Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontext
 [COM-Attribute](com-attributes.md)<br/>
 [Klassenattribute](class-attributes.md)<br/>
 [Typedef-, Aufzählungs-, Union-und struct-Attribute](typedef-enum-union-and-struct-attributes.md)<br/>
-[Stellung](/windows/win32/com/aggregation)<br/>
+[Aggregation](/windows/win32/com/aggregation)<br/>
 [Aggregierbare](/windows/win32/Midl/aggregatable)<br/>
 [COM_INTERFACE_ENTRY_AUTOAGGREGATE_BLIND](../../atl/reference/com-interface-entry-macros.md#com_interface_entry_autoaggregate_blind)

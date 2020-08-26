@@ -26,12 +26,12 @@ helpviewer_keywords:
 - std::negative_binomial_distribution [C++], param_type
 - std::negative_binomial_distribution [C++], param_type
 ms.assetid: 7f5f0967-7fdd-4578-99d4-88f292b4fe9c
-ms.openlocfilehash: 5168bd054d045f624a970b177113203179e1fb8a
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: fd5153a8eb0652aed7d963fb1dbdb1277e4f6718
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87212201"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88836451"
 ---
 # <a name="negative_binomial_distribution-class"></a>negative_binomial_distribution-Klasse
 
@@ -78,10 +78,8 @@ Der Integer-Ergebnistyp, der Standardwert ist **`int`** . Informationen zu mögl
 
 Die Klassen Vorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten ganzzahligen Typs produziert **`int`** . Wenn kein entsprechend der diskreten Wahrscheinlichkeitsfunktion der negativen binomialen Verteilung verteilter Wert bereitgestellt wird, geben Sie ein. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
 
-||||
-|-|-|-|
-|[negative_binomial_distribution](#negative_binomial_distribution)|`negative_binomial_distribution::k`|`negative_binomial_distribution::param`|
-|`negative_binomial_distribution::operator()`|`negative_binomial_distribution::p`|[param_type](#param_type)|
+[negative_binomial_distribution](#negative_binomial_distribution)\
+[param_type](#param_type)
 
 Die Eigenschaftenmember `k()` und `p()` geben die aktuell gespeicherten Verteilungsparameter Werte *k* bzw. *p* zurück.
 
@@ -221,7 +219,7 @@ Histogram for 100 samples:
 
 **Namespace:** std
 
-## <a name="negative_binomial_distributionnegative_binomial_distribution"></a><a name="negative_binomial_distribution"></a>negative_binomial_distribution:: negative_binomial_distribution
+## <a name="negative_binomial_distributionnegative_binomial_distribution"></a><a name="negative_binomial_distribution"></a> negative_binomial_distribution:: negative_binomial_distribution
 
 Erstellt die Verteilung.
 
@@ -249,7 +247,7 @@ Mit dem ersten Konstruktor wird ein Objekt erstellt, dessen gespeicherter `p`-We
 
 Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter aus *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
 
-## <a name="negative_binomial_distributionparam_type"></a><a name="param_type"></a>negative_binomial_distribution::p aram_type
+## <a name="negative_binomial_distributionparam_type"></a><a name="param_type"></a> negative_binomial_distribution::p aram_type
 
 Speichert die Parameter der Verteilung.
 

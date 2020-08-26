@@ -9,12 +9,12 @@ helpviewer_keywords:
 - MFC Feature Pack, update existing application
 - walkthroughs [MFC], update existing application
 ms.assetid: aa6330d3-6cfc-4c79-8fcb-0282263025f7
-ms.openlocfilehash: 9fc2903180a055c18c6f3779b1da55ee347d2535
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: a9eda80fbabf939b9e3a5f8a0ef5b76e46656740
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87230427"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88840257"
 ---
 # <a name="walkthrough-updating-the-mfc-scribble-application-part-1"></a>Exemplarische Vorgehensweise: Aktualisieren der MFC Scribble-Anwendung (Teil 1)
 
@@ -26,7 +26,7 @@ In dieser exemplarischen Vorgehensweise wird das klassische MFC-Beispiel Scribbl
 
 Das [Scribble 1,0 MFC-Beispiel](https://download.microsoft.com/download/4/0/9/40946FEC-EE5C-48C2-8750-B0F8DA1C99A8/MFC/general/Scribble.zip.exe). Hilfe bei der Umstellung auf Visual Studio 2017 oder höher finden Sie unter [Leitfaden zum Portieren: MFC Scribble](../porting/porting-guide-mfc-scribble.md).
 
-## <a name="sections"></a><a name="top"></a>Strecken
+## <a name="sections"></a><a name="top"></a> Strecken
 
 Dieser Teil der exemplarischen Vorgehensweise enthält die folgenden Abschnitte:
 
@@ -42,7 +42,7 @@ Dieser Teil der exemplarischen Vorgehensweise enthält die folgenden Abschnitte:
 
 - [Festlegen der Darstellung der Anwendung](#setlook)
 
-## <a name="replacing-the-base-classes"></a><a name="replaceclass"></a>Ersetzen der Basisklassen
+## <a name="replacing-the-base-classes"></a><a name="replaceclass"></a> Ersetzen der Basisklassen
 
 Zum Konvertieren einer Anwendung, die ein Menü unterstützt, in eine Anwendung, die ein Menüband unterstützt, müssen Sie die Anwendung, das Rahmenfenster und die Symbolleistenklassen von den aktualisierten Basisklassen ableiten. (Wir empfehlen, dass Sie das ursprüngliche Scribble-Beispiel nicht ändern. Bereinigen Sie stattdessen das Scribble-Projekt, kopieren Sie es in ein anderes Verzeichnis, und ändern Sie dann die Kopie.)
 
@@ -103,11 +103,11 @@ Zum Konvertieren einer Anwendung, die ein Menü unterstützt, in eine Anwendung,
 
 1. Speichern Sie die Änderungen, erstellen Sie anschließend die Anwendung, und führen Sie sie aus.
 
-## <a name="adding-bitmaps-to-the-project"></a><a name="addbitmap"></a>Hinzufügen von Bitmaps zum Projekt
+## <a name="adding-bitmaps-to-the-project"></a><a name="addbitmap"></a> Hinzufügen von Bitmaps zum Projekt
 
 Für die nächsten vier Schritte dieser exemplarischen Vorgehensweise sind Bitmapressourcen erforderlich. Die entsprechenden Bitmaps können auf verschiedene Arten angezeigt werden:
 
-- Verwenden Sie die [Ressourcen-Editoren](../windows/resource-editors.md) , um eigene Bitmaps zu erfinden. Oder verwenden Sie die Ressourcen-Editoren, um Bitmaps aus den Images der portablen Netzwerk Grafiken (PNG) zusammenzustellen, die in Visual Studio enthalten sind und aus der [Visual Studio-Bildbibliothek](https://docs.microsoft.com/visualstudio/designers/the-visual-studio-image-library)heruntergeladen werden können.
+- Verwenden Sie die [Ressourcen-Editoren](../windows/resource-editors.md) , um eigene Bitmaps zu erfinden. Oder verwenden Sie die Ressourcen-Editoren, um Bitmaps aus den Images der portablen Netzwerk Grafiken (PNG) zusammenzustellen, die in Visual Studio enthalten sind und aus der [Visual Studio-Bildbibliothek](/visualstudio/designers/the-visual-studio-image-library)heruntergeladen werden können.
 
     Die **Menüband** -Benutzeroberfläche erfordert jedoch, dass bestimmte Bitmaps transparente Bilder unterstützen. Transparente Bitmaps verwenden 32-Bit-Pixel, wobei 24 Bits die roten, grünen und blauen Komponenten der Farbe angeben und 8 Bits einen *Alphakanal* definieren, der die Transparenz der Farbe angibt. Die aktuellen Ressourcen-Editoren können Bitmaps mit 32 Bits/Pixel anzeigen, aber nicht ändern. Verwenden Sie daher einen externen Bild-Editor anstelle der Ressourcen-Editoren, um transparente Bitmaps zu bearbeiten.
 
@@ -153,7 +153,7 @@ Diese exemplarische Vorgehensweise kopiert Ressourcen Dateien aus dem Beispiel, 
    > [!NOTE]
    > Da wir nur die ersten vier 16x16-Bilder (16X64) benötigen, können Sie optional die Rechte Breite dieser Bitmap von 128 auf 64 zuschneiden.
 
-## <a name="adding-a-ribbon-resource-to-the-project"></a><a name="addribbon"></a>Hinzufügen einer Menü Band Ressource zum Projekt
+## <a name="adding-a-ribbon-resource-to-the-project"></a><a name="addribbon"></a> Hinzufügen einer Menü Band Ressource zum Projekt
 
 Wenn Sie eine Anwendung, die Menüs verwendet, in eine Anwendung konvertieren, die ein Menüband verwendet, müssen Sie die vorhandenen Menüs nicht entfernen oder deaktivieren. Erstellen Sie einfach eine Menü Band Ressource, fügen Sie Menüband-Schaltflächen hinzu, und ordnen Sie dann die neuen Schaltflächen den vorhandenen Menü Elementen zu Obwohl die Menüs nicht mehr sichtbar sind, werden die Nachrichten von der Menü Band Leiste über die Menüs weitergeleitet, und Menü Verknüpfungen funktionieren weiterhin.
 
@@ -206,7 +206,7 @@ Ein Menüband besteht aus der **Anwendungs** Schaltfläche, bei der es sich um d
 
    1. Sie haben die **Schalt**Flächen geändert. Klicken Sie auf **Schließen** , um den **Elemente-Editor**zu beenden
 
-## <a name="creating-an-instance-of-the-ribbon-bar"></a><a name="createinstance"></a>Erstellen einer Instanz der Menü Band Leiste
+## <a name="creating-an-instance-of-the-ribbon-bar"></a><a name="createinstance"></a> Erstellen einer Instanz der Menü Band Leiste
 
 Die folgenden Schritte zeigen, wie beim Starten Ihrer Anwendung eine Instanz der Menübandleiste erstellt wird. Um eine Menübandleiste zu einer Anwendung hinzuzufügen, deklarieren Sie die Menübandleiste in der Datei "mainfrm.h". Schreiben Sie dann in der Datei "mainfrm.cpp" Code zum Laden der Menübandressource.
 
@@ -230,7 +230,7 @@ Die folgenden Schritte zeigen, wie beim Starten Ihrer Anwendung eine Instanz der
     m_wndRibbonBar.LoadFromResource(IDR_RIBBON1);
     ```
 
-## <a name="customizing-the-ribbon-resource"></a><a name="addcategory"></a>Anpassen der Menüband-Ressource
+## <a name="customizing-the-ribbon-resource"></a><a name="addcategory"></a> Anpassen der Menüband-Ressource
 
 Nachdem Sie die **Anwendungs** Schaltfläche erstellt haben, können Sie dem Menüband Elemente hinzufügen.
 
@@ -247,7 +247,7 @@ Nachdem Sie die **Anwendungs** Schaltfläche erstellt haben, können Sie dem Men
 
 1. Speichern Sie die Änderungen, erstellen Sie anschließend die Anwendung, und führen Sie sie aus. Die Scribble-Anwendung sollte angezeigt werden, und sie sollte am oberen Rand des Fensters über eine Menübandleiste anstelle einer Menüleiste verfügen. Die Menü Band Leiste sollte eine Kategorie, eine " **Home**" und " **Home** " einen Bereich haben, " **Bearbeiten**". Die Menü Band Schaltflächen, die Sie hinzugefügt haben, sollten den vorhandenen Ereignis Handlern zugeordnet sein, und die Schaltflächen **Öffnen**, **Schließen**, **Speichern**, **Drucken**und **Alle löschen** sollten erwartungsgemäß funktionieren.
 
-## <a name="setting-the-look-of-the-application"></a><a name="setlook"></a>Das Aussehen der Anwendung wird festgelegt.
+## <a name="setting-the-look-of-the-application"></a><a name="setlook"></a> Das Aussehen der Anwendung wird festgelegt.
 
 Bei einem *visuellen Manager* handelt es sich um ein globales Objekt, das alle Zeichnungen für eine Anwendung steuert. Da die ursprüngliche Scribble-Anwendung die Benutzeroberfläche im Office 2000-Stil nutzt, sieht die Anwendung möglicherweise altmodisch aus. Sie können die Anwendung zurücksetzen, um den visuellen Manager "Office 2007" zu verwenden, sodass sie einer Office 2007-Anwendung ähnelt.
 
@@ -267,7 +267,7 @@ Bei einem *visuellen Manager* handelt es sich um ein globales Objekt, das alle Z
 
 Sie haben das klassische Scribble 1,0 MFC-Beispiel geändert, um den **Menüband-Designer**zu verwenden. Wechseln Sie jetzt zu [Teil 2](../mfc/walkthrough-updating-the-mfc-scribble-application-part-2.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Exemplarische Vorgehensweisen](../mfc/walkthroughs-mfc.md)<br/>
 [Exemplarische Vorgehensweise: Aktualisieren der MFC Scribble-Anwendung (Teil 2)](../mfc/walkthrough-updating-the-mfc-scribble-application-part-2.md)

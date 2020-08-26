@@ -3,12 +3,12 @@ title: Windows Runtime C++ Template Library (WRL)
 ms.date: 11/04/2016
 ms.topic: overview
 ms.assetid: b915afce-553b-44a7-b8dc-0ab601758eb0
-ms.openlocfilehash: b03dc98212bbc822ddc44871632fda73d1be8740
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: 10e2303fa5498079fc1f9bb6f82aa909c9a6c3ee
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86404911"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88840534"
 ---
 # <a name="windows-runtime-c-template-library-wrl"></a>Windows Runtime C++ Template Library (WRL)
 
@@ -17,7 +17,7 @@ Die C++-Vorlagenbibliothek für Windows-Runtime(WRL) ist eine Vorlagenbibliothek
 > [!NOTE]
 > WRL ist nun durch C++/WinRT abgelöst, eine standardmäßige C++ 17-sprach Projektion für Windows-Runtime-APIs. C++/WinRT ist im Windows 10 SDK ab Version 1803 erhältlich. C++/WinRT wird vollständig in Header Dateien implementiert und wurde entwickelt, um Ihnen erstklassigen Zugriff auf die moderne Windows-API zu ermöglichen.
 >
-> Mit C++/WinRT können Sie mithilfe eines beliebigen Standard kompatiblen C++ 17-Compilers Windows-Runtime-APIs verwenden und erstellen. C++/WinRT führt in der Regel zu einer besseren Leistung und erzeugt kleinere Binärdateien als jede andere Sprachoption für die Windows-Runtime. Wir unterstützen C++/CX und WRL weiterhin, empfehlen jedoch dringend die Verwendung von C++/WinRT für neue Anwendungen. Weitere Informationen finden Sie unter [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/index).
+> Mit C++/WinRT können Sie mithilfe eines beliebigen Standard kompatiblen C++ 17-Compilers Windows-Runtime-APIs verwenden und erstellen. C++/WinRT führt in der Regel zu einer besseren Leistung und erzeugt kleinere Binärdateien als jede andere Sprachoption für die Windows-Runtime. Wir unterstützen C++/CX und WRL weiterhin, empfehlen jedoch dringend die Verwendung von C++/WinRT für neue Anwendungen. Weitere Informationen finden Sie unter [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index).
 
 ## <a name="benefits"></a>Vorteile
 
@@ -73,7 +73,7 @@ Verwendet die `HttpRequest` -Klasse, die in Exemplarische Vorgehensweise [: Hers
 [Beispiel zum Erstellen einer Windows Runtime DLL-Komponente mit C++](https://github.com/Microsoft/VCSamples/tree/master/VC2012Samples/Windows%208%20samples/C%2B%2B/Windows%208%20app%20samples)<br/>
 Zeigt, wie die Windows-Runtime C++-Vorlagen Bibliothek verwendet wird, um eine Prozess interne dll-Komponente zu erstellen und Sie aus C++/CX, JavaScript und c# zu nutzen.
 
-[DirectX-Beispiel eines Murmellabyrinthspiels](https://docs.microsoft.com/samples/microsoft/windows-appsample-marble-maze/directx-marble-maze-game-sample/)<br/>
+[DirectX-Beispiel eines Murmellabyrinthspiels](/samples/microsoft/windows-appsample-marble-maze/directx-marble-maze-game-sample/)<br/>
 Veranschaulicht, wie die Windows-Runtime C++-Vorlagen Bibliothek verwendet wird, um die Lebensdauer von COM-Komponenten wie DirectX und Media Foundation im Kontext eines kompletten 3D-Spiels zu verwalten.
 
 [Popup Benachrichtigungen aus Desktop-Apps](/windows/uwp/design/shell/tiles-and-notifications/toast-desktop-apps)<br/>
@@ -143,9 +143,14 @@ Ein `WeakRef` -Objekt stellt in der Regel ein Objekt dar, dessen Vorhandensein v
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-|||
-|-|-|
-|[Schlüssel-APIs nach Kategorie](key-wrl-apis-by-category.md)|Hebt die primären Windows-Runtime C++-Vorlagen Bibliothekstypen,-Funktionen und-Makros hervor.|
-|[Referenz](wrl-reference.md)|Enthält Referenzinformationen für die Windows-Runtime C++-Vorlagen Bibliothek.|
-|[Kurz Referenz (C++/CX)](../../cppcx/quick-reference-c-cx.md)|Beschreibt kurz die C++/CX-Funktionen, die die Windows-Runtime unterstützen.|
-|[Verwendung von Windows-Runtime-Komponenten in Visual C++](/windows/uwp/winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp)|Zeigt, wie Sie mit C++/CX eine grundlegende Windows-Runtime Komponente erstellen.|
+[Schlüssel-APIs nach Kategorie](key-wrl-apis-by-category.md)\
+Hebt die primären Windows-Runtime C++-Vorlagen Bibliothekstypen,-Funktionen und-Makros hervor.
+
+[Angabe](wrl-reference.md)\
+Enthält Referenzinformationen für die Windows-Runtime C++-Vorlagen Bibliothek.
+
+[Kurz Referenz (C++/CX)](../../cppcx/quick-reference-c-cx.md)\
+Beschreibt kurz die C++/CX-Funktionen, die die Windows-Runtime unterstützen.
+
+[Verwenden von Windows-Runtime Komponenten in Visual C++](/windows/uwp/winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp)\
+Zeigt, wie Sie mit C++/CX eine grundlegende Windows-Runtime Komponente erstellen.

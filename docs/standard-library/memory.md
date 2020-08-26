@@ -7,12 +7,12 @@ f1_keywords:
 - std::<memory>
 helpviewer_keywords:
 - memory header
-ms.openlocfilehash: 57b7db798b4f44650513097137299d53b4e25266
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 0e3ce4a4411bd6d4c352802a96c97e93c66491df
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87202960"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88836464"
 ---
 # <a name="ltmemorygt"></a>&lt;memory&gt;
 
@@ -28,7 +28,7 @@ Definiert eine Klasse, einen Operator und mehrere Vorlagen, die beim Zuordnen un
 
 ### <a name="functions"></a>Functions
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[AddressOf](../standard-library/memory-functions.md#addressof)|Ruft die echte Adresse eines Objekts ab.|
 |[align](../standard-library/memory-functions.md#align)|Gibt einen Zeiger auf einen Bereich einer angegebenen Größe zurück, basierend auf der angegebenen Ausrichtung und der Startadresse.|
@@ -77,7 +77,7 @@ Definiert eine Klasse, einen Operator und mehrere Vorlagen, die beim Zuordnen un
 
 ### <a name="operators"></a>Operatoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[Operator! =](../standard-library/memory-operators.md#op_neq)|Es wird auf Ungleichheit zwischen Zuweisungsobjekten einer bestimmten Klasse getestet.|
 |[Operator = =](../standard-library/memory-operators.md#op_eq_eq)|Es wird auf Gleichheit zwischen Zuweisungsobjekten einer bestimmten Klasse getestet.|
@@ -89,7 +89,7 @@ Definiert eine Klasse, einen Operator und mehrere Vorlagen, die beim Zuordnen un
 
 ### <a name="classes"></a>Klassen
 
-|||
+|name|Beschreibung|
 |-|-|
 |[allocator](../standard-library/allocator-class.md)|Die Klassen Vorlage beschreibt ein Objekt, das die Speicher Belegung und-Freigabe für Arrays von Objekten vom Typ **Type**verwaltet.|
 |[allocator_traits](../standard-library/allocator-traits-class.md)|Beschreibt ein Objekt, das alle Informationen bestimmt, die für einen zuweisungsfähigen Container erforderlich ist.|
@@ -104,7 +104,7 @@ Definiert eine Klasse, einen Operator und mehrere Vorlagen, die beim Zuordnen un
 
 ### <a name="structures"></a>Strukturen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[allocator_arg_t](../standard-library/allocator-class.md#allocator_arg_t)||
 |[default_delete](../standard-library/default-delete-struct.md)||
@@ -114,7 +114,7 @@ Definiert eine Klasse, einen Operator und mehrere Vorlagen, die beim Zuordnen un
 
 ### <a name="specializations"></a>Spezialisierungen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[allocator\<void>](../standard-library/allocator-void-class.md)|Eine Spezialisierung der Klassen Vorlagen Zuweisung zum Typ **`void`** , die nur die Elementtypen definiert, die in diesem speziellen Kontext sinnvoll sind.|
 

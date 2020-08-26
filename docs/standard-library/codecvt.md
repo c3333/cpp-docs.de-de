@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - codecvt header
 ms.assetid: d44ee229-00d5-4761-9b48-0c702122789d
-ms.openlocfilehash: e571c1ca8beef684a40bbf643e83aba3f205fc8e
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: ec403bd02df0b937269acc71ddf87e1942bb4c5c
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87230116"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88836594"
 ---
 # <a name="ltcodecvtgt"></a>&lt;codecvt&gt;
 
@@ -44,13 +44,13 @@ Für Bytestreams (in einer Datei gespeichert, als Byte Sequenz übertragen oder 
 
 ### <a name="enumerations"></a>Enumerationen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[codecvt_mode](../standard-library/codecvt-enums.md#codecvt_mode)|Gibt die Konfigurationsinformationen für Gebietsschemafacets an.|
 
 ### <a name="classes"></a>Klassen
 
-|Klasse|BESCHREIBUNG|
+|Klasse|Beschreibung|
 |-|-|
 |[codecvt_utf8](codecvt-utf8-class.md)|Stellt ein Gebietsschemafacet dar, das eine Konvertierung durchführt zwischen Breitzeichen, die als UCS-2 oder UCS-4 codiert sind, und einem Bytestream, der als UTF-8 codiert ist.|
 |[codecvt_utf8_utf16](codecvt-utf8-utf16-class.md)|Stellt ein Gebietsschemafacet dar, das eine Konvertierung durchführt zwischen Breitzeichen, die als UTF-16 codiert sind, und einem Bytestream, der als UTF-8 codiert ist.|

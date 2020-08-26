@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - pointer_default attribute
 ms.assetid: 2d0c7bbc-a1e8-4337-9e54-e304523e2735
-ms.openlocfilehash: d0c5832623c1e418f4c6e8bdb606d1d363503483
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: e4e5ce03e8c0e6ca19814f5d228305b0d97322f9
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80166535"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88836191"
 ---
 # <a name="pointer_default"></a>pointer_default
 
@@ -30,7 +30,7 @@ Ein Wert, der den Zeigertyp beschreibt: " **ptr**", " **ref**" oder " **Unique**
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Pointer_default** C++ -Attribut verfügt über die gleiche Funktionalität wie das [Pointer_default](/windows/win32/Midl/pointer-default) -Attribut "Mittel".
+Das **Pointer_default** C++-Attribut verfügt über die gleiche Funktionalität wie das [Pointer_default](/windows/win32/Midl/pointer-default) -Attribut "Mittel".
 
 ## <a name="example"></a>Beispiel
 
@@ -38,12 +38,10 @@ Ein Beispiel für die Verwendung von **Pointer_default**finden Sie im Beispiel f
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|**interface**|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|**interface**|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -52,4 +50,4 @@ Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontext
 ## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[Schnittstellenattribut](interface-attributes.md)
+[Schnittstellen Attribute](interface-attributes.md)

@@ -23,12 +23,12 @@ helpviewer_keywords:
 - std::bernoulli_distribution [C++], param_type
 - std::bernoulli_distribution [C++], param_type
 ms.assetid: 586bcde1-95ca-411a-bf17-4aaf19482f34
-ms.openlocfilehash: 8b8e433b5ea1283fb60273a2fd21106c65867c0b
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: bfb63451c8789f7d390e2387ed8fadae23d1c7a5
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87230258"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846523"
 ---
 # <a name="bernoulli_distribution-class"></a>bernoulli_distribution-Klasse
 
@@ -73,10 +73,8 @@ Die einheitliche Zufallszahlengenerator-Engine. Informationen zu möglichen Type
 
 Die Klasse beschreibt eine Verteilung, die Werte vom Typ erzeugt **`bool`** , die entsprechend der diskreten Wahrscheinlichkeitsfunktion der Bernoulli-Verteilung verteilt werden. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
 
-||||
-|-|-|-|
-|[bernoulli_distribution](#bernoulli_distribution)|`bernoulli_distribution::p`|`bernoulli_distribution::param`|
-|`bernoulli_distribution::operator()`||[param_type](#param_type)|
+[bernoulli_distribution](#bernoulli_distribution)\
+[param_type](#param_type)
 
 Das Eigenschaftsmember `p()` gibt den aktuell gespeicherten Verteilungsparameterwert `p` zurück.
 
@@ -158,7 +156,7 @@ true :::::::::::::::::::::::::::::::::::::::::
 
 **Namespace:** std
 
-## <a name="bernoulli_distributionbernoulli_distribution"></a><a name="bernoulli_distribution"></a>bernoulli_distribution:: bernoulli_distribution
+## <a name="bernoulli_distributionbernoulli_distribution"></a><a name="bernoulli_distribution"></a> bernoulli_distribution:: bernoulli_distribution
 
 Erstellt die Verteilung.
 
@@ -183,7 +181,7 @@ Der erste Konstruktor konstruiert ein Objekt, dessen gespeicherter `p`-Wert den 
 
 Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter aus *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
 
-## <a name="bernoulli_distributionparam_type"></a><a name="param_type"></a>bernoulli_distribution::p aram_type
+## <a name="bernoulli_distributionparam_type"></a><a name="param_type"></a> bernoulli_distribution::p aram_type
 
 Enthält die Parameter der Verteilung.
 

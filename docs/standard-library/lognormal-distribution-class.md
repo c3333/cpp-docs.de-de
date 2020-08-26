@@ -26,12 +26,12 @@ helpviewer_keywords:
 - std::lognormal_distribution [C++], param_type
 - std::lognormal_distribution [C++], param_type
 ms.assetid: f2d6a431-6c3a-4370-b12e-4adb4ddf6cc4
-ms.openlocfilehash: bf6cb4a620243f35886835e996eb34bc7b0e6960
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 28ecadfce3e52d9541358d8aa9f68b2e0857661b
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87224785"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88839607"
 ---
 # <a name="lognormal_distribution-class"></a>lognormal_distribution-Klasse
 
@@ -75,10 +75,8 @@ Der Gleit Komma Ergebnistyp. der Standardwert ist **`double`** . Informationen z
 
 Die Klassen Vorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten ganzzahligen Typs produziert **`double`** . Wenn kein entsprechend der Protokoll normal Verteilung verteilter Wert bereitgestellt wird, geben Sie ein. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
 
-||||
-|-|-|-|
-|[lognormal_distribution](#lognormal_distribution)|`lognormal_distribution::m`|`lognormal_distribution::param`|
-|`lognormal_distribution::operator()`|`lognormal_distribution::s`|[param_type](#param_type)|
+[lognormal_distribution](#lognormal_distribution)\
+[param_type](#param_type)
 
 Die Eigenschaftsfunktionen `m()` und `s()` geben die Werte für die gespeicherten Verteilungsparameter *m* bzw. *s* zurück.
 
@@ -184,7 +182,7 @@ Distribution for 10 samples:
 
 **Namespace:** std
 
-## <a name="lognormal_distributionlognormal_distribution"></a><a name="lognormal_distribution"></a>lognormal_distribution:: lognormal_distribution
+## <a name="lognormal_distributionlognormal_distribution"></a><a name="lognormal_distribution"></a> lognormal_distribution:: lognormal_distribution
 
 Erstellt die Verteilung.
 
@@ -212,7 +210,7 @@ Mit dem ersten Konstruktor wird ein Objekt erstellt, in dessen gespeichertem `m`
 
 Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter aus *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
 
-## <a name="lognormal_distributionparam_type"></a><a name="param_type"></a>lognormal_distribution::p aram_type
+## <a name="lognormal_distributionparam_type"></a><a name="param_type"></a> lognormal_distribution::p aram_type
 
 Speichert die Parameter der Verteilung.
 
@@ -245,6 +243,6 @@ Die `param_type`-Struktur, mit der verglichen wird.
 
 Diese Struktur kann bei der Instanziierung an den Klassenkonstruktor des Verteilers, an die Memberfunktion `param()` (zur Festlegung der gespeicherten Parameter einer vorhandenen Verteilung) und an `operator()` (zur Verwendung anstelle der gespeicherten Parameter) übergeben werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<random>](../standard-library/random.md)

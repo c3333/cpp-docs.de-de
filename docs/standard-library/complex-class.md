@@ -10,12 +10,12 @@ helpviewer_keywords:
 - std::complex [C++], imag
 - std::complex [C++], real
 ms.assetid: d6492e1c-5eba-4bc5-835b-2a88001a5868
-ms.openlocfilehash: db2f8b2f889d9454db737cf5b2a39b414f1d67f1
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: c7e2ca2c14ed0ac5f561fab446f6cd2dcc19649d
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87230090"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88836543"
 ---
 # <a name="complex-class"></a>complex-Klasse
 
@@ -46,26 +46,26 @@ Für die drei Gleit Komma Typen sind explizite Spezialisierungs Klassen Vorlagen
 
 ### <a name="constructors"></a>Konstruktoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[viel](#complex)|Erstellt eine komplexe Zahl aus den angegebenen reellen und imaginären Teilen oder eine Kopie einer anderen komplexen Zahl.|
 
 ### <a name="typedefs"></a>TypeDefs
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[value_type](#value_type)|Ein Typ, der den Datentyp darstellt, der für die Darstellung der Real- und Imaginärteile einer komplexen Zahl verwendet wird|
 
 ### <a name="functions"></a>Functions
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[imag](#imag)|Extrahiert die imaginäre Komponente einer komplexen Zahl.|
 |[real](#real)|Extrahiert die reelle Komponente einer komplexen Zahl.|
 
 ### <a name="operators"></a>Operatoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[Operator * =](#op_star_eq)|Multipliziert eine komplexe Zielzahl mit einem komplexen Faktor oder einem Faktor vom gleichen Typ wie die Real- und Imaginärteile der komplexen Zahl|
 |[Operator + =](#op_add_eq)|Fügt der komplexen Zielzahl eine Zahl hinzu, die komplex ist oder vom gleichen Typ wie die Real- und Imaginärteile der komplexen Zahl, der sie hinzugefügt wird|
@@ -73,7 +73,7 @@ Für die drei Gleit Komma Typen sind explizite Spezialisierungs Klassen Vorlagen
 |[Operator/=](#op_div_eq)|Dividiert eine komplexe Zielzahl durch einen komplexen Faktor oder einen Faktor vom gleichen Typ wie die Real- und Imaginärteile der komplexen Zahl|
 |[Operator =](#op_eq)|Weist der komplexen Zielzahl eine Zahl hinzu, die komplex ist oder vom gleichen Typ wie die Real- und Imaginärteile der komplexen Zahl, der sie hinzugefügt wird|
 
-## <a name="complex"></a><a name="complex"></a>viel
+## <a name="complex"></a><a name="complex"></a> viel
 
 Erstellt eine komplexe Zahl aus den angegebenen reellen und imaginären Teilen oder eine Kopie einer anderen komplexen Zahl.
 
@@ -157,7 +157,7 @@ int main( )
 }
 ```
 
-## <a name="imag"></a><a name="imag"></a>IMAG
+## <a name="imag"></a><a name="imag"></a> IMAG
 
 Extrahiert die imaginäre Komponente einer komplexen Zahl.
 
@@ -211,7 +211,7 @@ The real part of c1 is c1.real() = 4.
 The imaginary part of c1 is c1.imag() = 3.
 ```
 
-## <a name="operator"></a><a name="op_star_eq"></a>Operator * =
+## <a name="operator"></a><a name="op_star_eq"></a> Operator * =
 
 Multipliziert eine komplexe Zielzahl mit einem komplexen Faktor oder einem Faktor vom gleichen Typ wie die Real- und Imaginärteile der komplexen Zahl
 
@@ -296,7 +296,7 @@ int main()
 }
 ```
 
-## <a name="operator"></a><a name="op_add_eq"></a>Operator + =
+## <a name="operator"></a><a name="op_add_eq"></a> Operator + =
 
 Fügt der komplexen Zielzahl eine Zahl hinzu, die komplex ist oder vom gleichen Typ wie die Real- und Imaginärteile der komplexen Zahl, der sie hinzugefügt wird
 
@@ -399,7 +399,7 @@ The modulus of cl2 is: 5
 The argument of cl2 is: 0.927295 radians, which is 53.1301 degrees.
 ```
 
-## <a name="operator-"></a><a name="operator-_eq"></a>Operator-=
+## <a name="operator-"></a><a name="operator-_eq"></a> Operator-=
 
 Subtrahiert eine Zahl von der komplexen Zielzahl, wobei die subtrahiert Zahl komplex ist oder vom gleichen Typ wie die Real- und Imaginärteile der komplexen Zahl, von der sie subtrahiert wurde
 
@@ -507,7 +507,7 @@ The modulus of cl2 is: 5
 The argument of cl2 is: 2.2143 radians, which is 126.87 degrees.
 ```
 
-## <a name="operator"></a><a name="op_div_eq"></a>Operator/=
+## <a name="operator"></a><a name="op_div_eq"></a> Operator/=
 
 Dividiert eine komplexe Zielzahl durch einen komplexen Faktor oder einen Faktor vom gleichen Typ wie die Real- und Imaginärteile der komplexen Zahl
 
@@ -611,7 +611,7 @@ The modulus of cl2 is: 0.6
 The argument of cl2 is: 0.523599 radians, which is 30 degrees.
 ```
 
-## <a name="operator"></a><a name="op_eq"></a>Operator =
+## <a name="operator"></a><a name="op_eq"></a> Operator =
 
 Weist der komplexen Zielzahl eine Zahl hinzu, die komplex ist oder vom gleichen Typ wie die Real- und Imaginärteile der komplexen Zahl, der sie hinzugefügt wird
 
@@ -689,7 +689,7 @@ The complex number (3, 4) assigned to the complex number cl2 is:
 cl2 = (3,4)
 ```
 
-## <a name="real"></a><a name="real"></a>wirkliche
+## <a name="real"></a><a name="real"></a> wirkliche
 
 Ruft die reelle Komponente einer komplexen Zahl ab, oder legt diese fest.
 
@@ -743,7 +743,7 @@ The real part of c1 is c1.real() = 4.
 The imaginary part of c1 is c1.imag() = 3.
 ```
 
-## <a name="value_type"></a><a name="value_type"></a>value_type
+## <a name="value_type"></a><a name="value_type"></a> value_type
 
 Ein Typ, der den Datentyp darstellt, der für die Darstellung der Real- und Imaginärteile einer komplexen Zahl verwendet wird
 
@@ -753,7 +753,7 @@ typedef Type value_type;
 
 ### <a name="remarks"></a>Bemerkungen
 
-`value_type`ist ein Synonym für den komplexen `Type` Vorlagen Parameter der Klasse.
+`value_type` ist ein Synonym für den komplexen `Type` Vorlagen Parameter der Klasse.
 
 ### <a name="example"></a>Beispiel
 

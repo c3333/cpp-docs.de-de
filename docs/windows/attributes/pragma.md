@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - pragma attribute
 ms.assetid: 3f90d023-b8b5-4007-8311-008bb72cbea1
-ms.openlocfilehash: 56b1aa4bf445095b86a1ea6792bfc78f45266e9a
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: e5683a6f52eccf9eae7c29010849a148e506b286
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80166483"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88836168"
 ---
 # <a name="pragma"></a>pragma
 
@@ -30,7 +30,7 @@ Das Pragma, das in der generierten IDL-Datei gespeichert werden soll.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **pragma** C++ -Attribut verfügt über die gleiche Funktionalität wie das [pragma](/windows/win32/Midl/pragma) -Attribut "Mittel l".
+Das **pragma** C++-Attribut verfügt über die gleiche Funktionalität wie das [pragma](/windows/win32/Midl/pragma) -Attribut "Mittel".
 
 ## <a name="example"></a>Beispiel
 
@@ -50,12 +50,10 @@ __interface A
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|Überall|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Überall|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 

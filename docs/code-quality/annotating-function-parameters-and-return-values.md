@@ -124,12 +124,12 @@ f1_keywords:
 - _Scanf_s_format_string_
 - _Printf_format_string_
 ms.assetid: 82826a3d-0c81-421c-8ffe-4072555dca3a
-ms.openlocfilehash: 4d0325fbab2f27da2556e2c252e35711d9b42789
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: b1831a2a504bb12473f564cd914340bc429fab8d
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87231259"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88836673"
 ---
 # <a name="annotating-function-parameters-and-return-values"></a>Kommentieren von Funktionsparametern und Rückgabe Werten
 
@@ -188,7 +188,7 @@ Wenn ein Zeiger Parameter mit Anmerkungen versehen ist, meldet der Analyzer in d
      void MyStringCopy(_Out_writes_(size) PWSTR p1, _In_ size_t size, _In_ PWSTR p2);
      ```
 
-     In diesem Beispiel stellt der Aufrufer einen Puffer von `size` Elementen für bereit `p1` . `MyStringCopy`macht einige dieser Elemente gültig. Noch wichtiger ist, `_Null_terminated_` dass die Anmerkung in `PWSTR` bedeutet, dass `p1` im Post-State NULL-terminiert ist. Auf diese Weise ist die Anzahl der gültigen Elemente immer noch klar definiert, aber eine bestimmte Element Anzahl ist nicht erforderlich.
+     In diesem Beispiel stellt der Aufrufer einen Puffer von `size` Elementen für bereit `p1` . `MyStringCopy` macht einige dieser Elemente gültig. Noch wichtiger ist, `_Null_terminated_` dass die Anmerkung in `PWSTR` bedeutet, dass `p1` im Post-State NULL-terminiert ist. Auf diese Weise ist die Anzahl der gültigen Elemente immer noch klar definiert, aber eine bestimmte Element Anzahl ist nicht erforderlich.
 
      Die `_bytes_` Variante gibt die Größe in Bytes anstelle von Elementen an. Verwenden Sie diese Variante nur, wenn die Größe nicht als Elemente ausgedrückt werden kann. Beispielsweise würden Zeichen folgen **`char`** die `_bytes_` Variante nur dann verwenden, wenn eine ähnliche Funktion, die verwendet, **`wchar_t`** wäre.
 
@@ -272,15 +272,37 @@ Wenn ein Zeiger Parameter mit Anmerkungen versehen ist, meldet der Analyzer in d
 Wenn eine Zeiger Parameter Anmerkung enthält `_opt_` , gibt Sie an, dass der Parameter möglicherweise NULL ist. Andernfalls verhält sich die-Anmerkung genauso wie die Version, die nicht enthält `_opt_` . Im folgenden finden Sie eine Liste der `_opt_` Varianten der Zeiger Parameter Anmerkungen:
 
 :::row:::
-    :::column:::
-        `_In_opt_`<br /><br /> `_Out_opt_`<br /><br /> `_Inout_opt_`<br /><br /> `_In_opt_z_`<br /><br /> `_Inout_opt_z_`<br /><br /> `_In_reads_opt_`<br /><br /> `_In_reads_bytes_opt_`<br /><br /> `_In_reads_opt_z_`
-    :::column-end:::
-    :::column:::
-        `_Out_writes_opt_`<br /><br /> `_Out_writes_opt_z_`<br /><br /> `_Inout_updates_opt_`<br /><br /> `_Inout_updates_bytes_opt_`<br /><br /> `_Inout_updates_opt_z_`<br /><br /> `_Out_writes_to_opt_`<br /><br /> `_Out_writes_bytes_to_opt_`<br /><br /> `_Out_writes_all_opt_`<br /><br /> `_Out_writes_bytes_all_opt_`
-    :::column-end:::
-    :::column:::
-        `_Inout_updates_to_opt_`<br /><br /> `_Inout_updates_bytes_to_opt_`<br /><br /> `_Inout_updates_all_opt_`<br /><br /> `_Inout_updates_bytes_all_opt_`<br /><br /> `_In_reads_to_ptr_opt_`<br /><br /> `_In_reads_to_ptr_opt_z_`<br /><br /> `_Out_writes_to_ptr_opt_`<br /><br /> `_Out_writes_to_ptr_opt_z_`
-    :::column-end:::
+   :::column:::
+      `_In_opt_`\
+      `_Out_opt_`\
+      `_Inout_opt_`\
+      `_In_opt_z_`\
+      `_Inout_opt_z_`\
+      `_In_reads_opt_`\
+      `_In_reads_bytes_opt_`\
+      `_In_reads_opt_z_`
+   :::column-end:::
+   :::column:::
+      `_Out_writes_opt_`\
+      `_Out_writes_opt_z_`\
+      `_Inout_updates_opt_`\
+      `_Inout_updates_bytes_opt_`\
+      `_Inout_updates_opt_z_`\
+      `_Out_writes_to_opt_`\
+      `_Out_writes_bytes_to_opt_`\
+      `_Out_writes_all_opt_`\
+      `_Out_writes_bytes_all_opt_`
+   :::column-end:::
+   :::column:::
+      `_Inout_updates_to_opt_`\
+      `_Inout_updates_bytes_to_opt_`\
+      `_Inout_updates_all_opt_`\
+      `_Inout_updates_bytes_all_opt_`\
+      `_In_reads_to_ptr_opt_`\
+      `_In_reads_to_ptr_opt_z_`\
+      `_Out_writes_to_ptr_opt_`\
+      `_Out_writes_to_ptr_opt_z_`
+   :::column-end:::
 :::row-end:::
 
 ## <a name="output-pointer-parameters"></a>Ausgabe Zeiger Parameter
@@ -439,17 +461,30 @@ Der Verweis Parameter wird häufig für Ausgabeparameter verwendet. Für einfach
 Der Rückgabewert einer Funktion ähnelt einem `_Out_` Parameter, befindet sich jedoch auf einer anderen Ebene von "de-Reference", und Sie müssen das Konzept des Zeigers auf das Ergebnis nicht überprüfen. Für die folgenden Anmerkungen ist der Rückgabewert das mit Anmerkungen versehene Objekt – ein Skalar, ein Zeiger auf eine Struktur oder ein Zeiger auf einen Puffer. Diese Anmerkungen haben die gleiche Semantik wie die entsprechende `_Out_` Anmerkung.
 
 :::row:::
-    :::column:::
-        `_Ret_z_`<br /><br /> `_Ret_writes_(s)`<br /><br /> `_Ret_writes_bytes_(s)`<br /><br /> `_Ret_writes_z_(s)`<br /><br /> `_Ret_writes_to_(s,c)`<br /><br /> `_Ret_writes_maybenull_(s)`<br /><br /> `_Ret_writes_to_maybenull_(s)`<br /><br /> `_Ret_writes_maybenull_z_(s)`
-    :::column-end:::
-    :::column:::
-        `_Ret_maybenull_`<br /><br /> `_Ret_maybenull_z_`<br /><br /> `_Ret_null_`<br /><br /> `_Ret_notnull_`<br /><br /> `_Ret_writes_bytes_to_`<br /><br /> `_Ret_writes_bytes_maybenull_`<br /><br /> `_Ret_writes_bytes_to_maybenull_`
-    :::column-end:::
+   :::column:::
+      `_Ret_z_`\
+      `_Ret_writes_(s)`\
+      `_Ret_writes_bytes_(s)`\
+      `_Ret_writes_z_(s)`\
+      `_Ret_writes_to_(s,c)`\
+      `_Ret_writes_maybenull_(s)`\
+      `_Ret_writes_to_maybenull_(s)`\
+      `_Ret_writes_maybenull_z_(s)`
+   :::column-end:::
+   :::column:::
+      `_Ret_maybenull_`\
+      `_Ret_maybenull_z_`\
+      `_Ret_null_`\
+      `_Ret_notnull_`\
+      `_Ret_writes_bytes_to_`\
+      `_Ret_writes_bytes_maybenull_`\
+      `_Ret_writes_bytes_to_maybenull_`
+   :::column-end:::
 :::row-end:::
 
 ## <a name="format-string-parameters"></a>Zeichen folgen Parameter formatieren
 
-- `_Printf_format_string_`Gibt an, dass der Parameter eine Format Zeichenfolge für die Verwendung in einem- `printf` Ausdruck ist.
+- `_Printf_format_string_` Gibt an, dass der Parameter eine Format Zeichenfolge für die Verwendung in einem- `printf` Ausdruck ist.
 
      **Beispiel**
 
@@ -464,7 +499,7 @@ Der Rückgabewert einer Funktion ähnelt einem `_Out_` Parameter, befindet sich 
     }
     ```
 
-- `_Scanf_format_string_`Gibt an, dass der Parameter eine Format Zeichenfolge für die Verwendung in einem- `scanf` Ausdruck ist.
+- `_Scanf_format_string_` Gibt an, dass der Parameter eine Format Zeichenfolge für die Verwendung in einem- `scanf` Ausdruck ist.
 
      **Beispiel**
 
@@ -479,7 +514,7 @@ Der Rückgabewert einer Funktion ähnelt einem `_Out_` Parameter, befindet sich 
     }
     ```
 
-- `_Scanf_s_format_string_`Gibt an, dass der Parameter eine Format Zeichenfolge für die Verwendung in einem- `scanf_s` Ausdruck ist.
+- `_Scanf_s_format_string_` Gibt an, dass der Parameter eine Format Zeichenfolge für die Verwendung in einem- `scanf_s` Ausdruck ist.
 
      **Beispiel**
 

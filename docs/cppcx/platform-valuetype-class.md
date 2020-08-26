@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - Platform::ValueType Class
 ms.assetid: 79aa8754-b140-4974-a5b1-be046938a10a
-ms.openlocfilehash: 889cf3a53468491517d37978ca09472756ad9b7e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f4ce34fa3f197424833d34bdb866712d412e69c3
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62182950"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846549"
 ---
 # <a name="platformvaluetype-class"></a>Platform::ValueType-Klasse
 
@@ -26,25 +26,25 @@ public ref class ValueType : Object
 
 ## <a name="public-methods"></a>Öffentliche Methoden
 
-|||
-|-|-|
-|[ValueType::ToString](#tostring)|Gibt eine Zeichenfolgendarstellung des Objekts zurück. Geerbt von [Platform:: Object](../cppcx/platform-object-class.md).|
+| Name | Beschreibung |
+|--|--|
+| [ValueType::-Zeichenfolge](#tostring) | Gibt eine Zeichenfolgendarstellung des Objekts zurück. Geerbt von [Platform:: Object](../cppcx/platform-object-class.md). |
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die ValueType-Klasse wird zum Erstellen von Werttypen verwendet. „ValueType“ ist von „Object“ abgeleitet, die über Basismember verfügt. Der Compiler trennt jedoch diese Basismember von den Werttypen, die aus der ValueType-Klasse abgeleitet sind. Der Compiler fügt die Basismember wieder an, wenn ein Werttyp mittels Boxing konvertiert wird.
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
-**Unterstützter Client (Min.):** Windows 8
+**Mindestens unterstützter Client:** Windows 8
 
-**Unterstützter Server (Min.):** Windows Server 2012
+**Mindestens unterstützter Server:** Windows Server 2012
 
-**Namespace:** Plattform
+**Namespace:** Platform
 
-**Metadaten:** platform.winmd
+**Metadaten:** Platform. winmd
 
-## <a name="tostring"></a> ValueType:: ToString-Methode
+## <a name="valuetypetostring-method"></a><a name="tostring"></a> ValueType:: destring-Methode
 
 Gibt eine Zeichenfolgendarstellung des Objekts zurück.
 
@@ -56,8 +56,8 @@ Platform::String ToString();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Platform:: String-Wert, der den Wert darstellt.
+Eine Platform:: String, die den Wert darstellt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Plattformnamespace](../cppcx/platform-namespace-c-cx.md)

@@ -16,12 +16,12 @@ helpviewer_keywords:
 - std::error_category::message
 - std::error_category::name
 ms.assetid: e0a71e14-852d-4905-acd6-5f8ed426706d
-ms.openlocfilehash: ced6046b93a8d5140118e1e9de848df13a8c29c4
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 218596ff5b81e99f4787efe2582fdc2752533cec
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87224876"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88840166"
 ---
 # <a name="error_category-class"></a>error_category-Klasse
 
@@ -45,13 +45,13 @@ error_category(const error_category&) = delete
 
 ### <a name="typedefs"></a>TypeDefs
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[value_type](#value_type)|Ein Typ, der den gespeicherten Fehlercodewert darstellt.|
 
 ### <a name="functions"></a>Functions
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[default_error_condition](#default_error_condition)|Speichert den Fehlercodewert für ein Fehlerbedingungsobjekt.|
 |[entsprechen](#equivalent)|Gibt einen Wert zurück, der angibt, ob Fehlerobjekte gleichwertig sind.|
@@ -62,14 +62,14 @@ error_category(const error_category&) = delete
 
 ### <a name="operators"></a>Operatoren
 
-|||
+|Name|Beschreibung|
 |-|-|
-|[Operator =](#op_as)||
+|[Operator =](#op_as)|Zuweisungsoperator.|
 |[Operator = =](#op_eq_eq)|Prüft auf Gleichheit zwischen `error_category`-Objekten.|
 |[Operator! =](#op_neq)|Prüft auf Ungleichheit zwischen `error_category`-Objekten.|
 |[Operator<](#op_lt)|Testet, ob das [error_category](../standard-library/error-category-class.md)-Objekt kleiner ist als das `error_category`-Objekt, das für den Vergleich übergeben wurde.|
 
-## <a name="default_error_condition"></a><a name="default_error_condition"></a>default_error_condition
+## <a name="default_error_condition"></a><a name="default_error_condition"></a> default_error_condition
 
 Speichert den Fehlercodewert für ein Fehlerbedingungsobjekt.
 
@@ -113,7 +113,7 @@ Das zu vergleichende [error_code](../standard-library/error-code-class.md)-Objek
 
 #### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn Kategorie und Wert gleich sind. andernfalls **`false`** .
+**`true`** , wenn Kategorie und Wert gleich sind. andernfalls **`false`** .
 
 #### <a name="remarks"></a>Bemerkungen
 
@@ -121,13 +121,13 @@ Die erste Memberfunktion gibt `*this == _Cond.category() && _Cond.value() == _Er
 
 Die zweite Memberfunktion gibt `*this == _Code.category() && _Code.value() == _Errval` zurück.
 
-### <a name="generic_category"></a><a name="generic"></a>generic_category
+### <a name="generic_category"></a><a name="generic"></a> generic_category
 
 ```cpp
 const error_category& generic_category();
 ```
 
-### <a name="message"></a><a name="message"></a>Nachricht
+### <a name="message"></a><a name="message"></a> Nachricht
 
 Gibt den Namen des angegebenen Fehlercodes zurück.
 
@@ -158,13 +158,13 @@ virtual const char *name() const = 0;
 
 Gibt den Namen der Kategorie als Bytezeichenfolge zurück, die mit null endet.
 
-### <a name="operator"></a><a name="op_as"></a>Operator =
+### <a name="operator"></a><a name="op_as"></a> Operator =
 
 ```cpp
 error_category& operator=(const error_category&) = delete;
 ```
 
-### <a name="operator"></a><a name="op_eq_eq"></a>Operator = =
+### <a name="operator"></a><a name="op_eq_eq"></a> Operator = =
 
 Prüft auf Gleichheit zwischen `error_category`-Objekten.
 
@@ -179,13 +179,13 @@ Das Objekt, das auf Gleichheit getestet werden soll.
 
 #### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn die Objekte gleich sind. , **`false`** Wenn die Objekte nicht gleich sind.
+**`true`** , wenn die Objekte gleich sind. , **`false`** Wenn die Objekte nicht gleich sind.
 
 #### <a name="remarks"></a>Bemerkungen
 
 Dieser Memberoperator gibt `this == &right` zurück.
 
-### <a name="operator"></a><a name="op_neq"></a>Operator! =
+### <a name="operator"></a><a name="op_neq"></a> Operator! =
 
 Prüft auf Ungleichheit zwischen `error_category`-Objekten.
 
@@ -200,13 +200,13 @@ Das Objekt, das auf Ungleichheit geprüft werden soll.
 
 #### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das `error_category` Objekt nicht gleich dem-Objekt ist, das `error_category` *Rechts*übermittelt wird; andernfalls **`false`** .
+**`true`** , wenn das `error_category` Objekt nicht gleich dem-Objekt ist, das `error_category` *Rechts*übermittelt wird; andernfalls **`false`** .
 
 #### <a name="remarks"></a>Bemerkungen
 
 Der Memberoperator gibt `(!*this == right)`zurück.
 
-### <a name="operatorlt"></a><a name="op_lt"></a>KOM&lt;
+### <a name="operatorlt"></a><a name="op_lt"></a> KOM&lt;
 
 Testet, ob das [error_category](../standard-library/error-category-class.md)-Objekt kleiner ist als das `error_category`-Objekt, das für den Vergleich übergeben wurde.
 
@@ -221,19 +221,19 @@ Das zu vergleichende `error_category`-Objekt.
 
 #### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das- `error_category` Objekt kleiner als das `error_category` für den Vergleich übergebenen Objekt ist. Andernfalls **`false`** .
+**`true`** , wenn das- `error_category` Objekt kleiner als das `error_category` für den Vergleich übergebenen Objekt ist. Andernfalls **`false`** .
 
 #### <a name="remarks"></a>Bemerkungen
 
 Der Memberoperator gibt `this < &right`zurück.
 
-### <a name="system_category"></a><a name="system"></a>system_category
+### <a name="system_category"></a><a name="system"></a> system_category
 
 ```cpp
 const error_category& system_category();
 ```
 
-### <a name="value_type"></a><a name="value_type"></a>value_type
+### <a name="value_type"></a><a name="value_type"></a> value_type
 
 Ein Typ, der den gespeicherten Fehlercodewert darstellt.
 

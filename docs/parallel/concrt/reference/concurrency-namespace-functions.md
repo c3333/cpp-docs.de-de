@@ -33,34 +33,69 @@ f1_keywords:
 - ppltasks/concurrency::when_all
 - ppltasks/concurrency::when_any
 ms.assetid: 520a6dff-9324-4df2-990d-302e3050af6a
-ms.openlocfilehash: 86324d126fa1c3b659e6500579c4a1d220874094
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 25cd74e20102bbc1a75e4b4efe1bf234845f7fcb
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182745"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88840179"
 ---
 # <a name="concurrency-namespace-functions"></a>concurrency-Namespace-Funktionen
 
-||||
-|-|-|-|
-|[Zuordnungseinheits](#alloc)|[CreateResourceManager](#createresourcemanager)|[DisableTracing](#disabletracing)|
-|[EnableTracing](#enabletracing)|[Free](#free)|[GetExecutionContextId](#getexecutioncontextid)|
-|[GetOSVersion](#getosversion)|[GetProcessorCount](#getprocessorcount)|[GetProcessorNodeCount](#getprocessornodecount)|
-|[GetSchedulerId](#getschedulerid)|[Trace_agents_register_name](#trace_agents_register_name)|[ASend](#asend)|
-|[cancel_current_task](#cancel_current_task)|[Löschen](#clear)|[create_async](#create_async)|
-|[create_task](#create_task)|[get_ambient_scheduler](#get_ambient_scheduler)|[internal_assign_iterators](#internal_assign_iterators)|
-|[interruption_point](#interruption_point)|[is_current_task_group_canceling](#is_current_task_group_canceling)|[make_choice](#make_choice)|
-|[make_greedy_join](#make_greedy_join)|[make_join](#make_join)|[make_task](#make_task)|
-|[parallel_buffered_sort](#parallel_buffered_sort)|[parallel_for](#parallel_for)|[parallel_for_each](#parallel_for_each)|
-|[parallel_invoke](#parallel_invoke)|[parallel_radixsort](#parallel_radixsort)|[parallel_reduce](#parallel_reduce)|
-|[parallel_sort](#parallel_sort)|[parallel_transform](#parallel_transform)|[medizinisch](#receive)|
-|[run_with_cancellation_token](#run_with_cancellation_token)|[send](#send)|[set_ambient_scheduler](#set_ambient_scheduler)|
-|[set_task_execution_resources](#set_task_execution_resources)|[swap](#swap)|[task_from_exception](#task_from_exception)|
-|[task_from_result](#task_from_result)|[try_receive](#try_receive)|[Warte](#wait)|
-|[when_all](#when_all)|[when_any](#when_any)|
+:::row:::
+   :::column span="":::
+      [`Alloc`](#alloc)\
+      [`asend`](#asend)\
+      [`cancel_current_task`](#cancel_current_task)\
+      [`clear`](#clear)\
+      [`create_async`](#create_async)\
+      [`create_task`](#create_task)\
+      [`CreateResourceManager`](#createresourcemanager)\
+      [`DisableTracing`](#disabletracing)\
+      [`EnableTracing`](#enabletracing)\
+      [`Free`](#free)\
+      [`get_ambient_scheduler`](#get_ambient_scheduler)\
+      [`GetExecutionContextId`](#getexecutioncontextid)\
+      [`GetOSVersion`](#getosversion)\
+      [`GetProcessorCount`](#getprocessorcount)\
+      [`GetProcessorNodeCount`](#getprocessornodecount)
+   :::column-end:::
+   :::column span="":::
+      [`GetSchedulerId`](#getschedulerid)\
+      [`internal_assign_iterators`](#internal_assign_iterators)\
+      [`interruption_point`](#interruption_point)\
+      [`is_current_task_group_canceling`](#is_current_task_group_canceling)\
+      [`make_choice`](#make_choice)\
+      [`make_greedy_join`](#make_greedy_join)\
+      [`make_join`](#make_join)\
+      [`make_task`](#make_task)\
+      [`parallel_buffered_sort`](#parallel_buffered_sort)\
+      [`parallel_for_each`](#parallel_for_each)\
+      [`parallel_for`](#parallel_for)\
+      [`parallel_invoke`](#parallel_invoke)\
+      [`parallel_radixsort`](#parallel_radixsort)\
+      [`parallel_reduce`](#parallel_reduce)\
+      [`parallel_sort`](#parallel_sort)
+   :::column-end:::
+   :::column span="":::
+      [`parallel_transform`](#parallel_transform)\
+      [`receive`](#receive)\
+      [`run_with_cancellation_token`](#run_with_cancellation_token)\
+      [`send`](#send)\
+      [`set_ambient_scheduler`](#set_ambient_scheduler)\
+      [`set_task_execution_resources`](#set_task_execution_resources)\
+      [`swap`](#swap)\
+      [`task_from_exception`](#task_from_exception)\
+      [`task_from_result`](#task_from_result)\
+      [`Trace_agents_register_name`](#trace_agents_register_name)\
+      [`try_receive`](#try_receive)\
+      [`wait`](#wait)\
+      [`when_all`](#when_all)\
+      [`when_any`](#when_any)
+   :::column-end:::
+:::row-end:::
 
-## <a name="alloc"></a><a name="alloc"></a>Zuordnungseinheits
+## <a name="alloc"></a><a name="alloc"></a> Zuordnungseinheits
 
 Reserviert einen Speicherblock mit der in der Unterbelegungsfunktion für die Zwischenspeicherung der Concurrency Runtime angegebenen Größe.
 
@@ -81,7 +116,7 @@ Ein Zeiger auf den neu belegten Arbeitsspeicher.
 
 Weitere Informationen darüber, welche Szenarien in Ihrer Anwendung von der Verwendung der cachesubzuweisung profitieren können, finden Sie unter [Taskplaner](../../../parallel/concrt/task-scheduler-concurrency-runtime.md).
 
-## <a name="asend"></a><a name="asend"></a>ASend
+## <a name="asend"></a><a name="asend"></a> ASend
 
 Ein asynchroner Sendevorgang, der eine Aufgabe zum Weitergeben der Daten an den Zielblock plant.
 
@@ -110,13 +145,13 @@ Ein Verweis auf die zu sendenden Daten.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn die Nachricht vor der Rückgabe der Methode akzeptiert wurde, **`false`** andernfalls.
+**`true`** , wenn die Nachricht vor der Rückgabe der Methode akzeptiert wurde, **`false`** andernfalls.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [Nachrichten Übergabe Funktionen](../../../parallel/concrt/message-passing-functions.md).
 
-## <a name="cancel_current_task"></a><a name="cancel_current_task"></a>cancel_current_task
+## <a name="cancel_current_task"></a><a name="cancel_current_task"></a> cancel_current_task
 
 Bricht die gerade ausgeführte Aufgabe ab. Diese Funktion kann aus dem Text einer Aufgabe aufgerufen werden, um die Ausführung der Aufgabe abzubrechen und ihn dabei in den `canceled` Zustand übergehen zu lassen.
 
@@ -126,7 +161,7 @@ Der Aufruf dieser Funktion, wenn Sie sich nicht innerhalb des Texts von einem `t
 inline __declspec(noreturn) void __cdecl cancel_current_task();
 ```
 
-## <a name="clear"></a><a name="clear"></a>Klartext
+## <a name="clear"></a><a name="clear"></a> Klartext
 
 Löscht die gleichzeitige Warteschlange und zerstört alle Elemente, die in die Warteschlange eingereiht sind Diese Methode ist nicht nebenläufigkeitssicher.
 
@@ -141,7 +176,7 @@ void concurrent_queue<T, _Ax>::clear();
 
 *_Ax*<br/>
 
-## <a name="create_async"></a><a name="create_async"></a>create_async
+## <a name="create_async"></a><a name="create_async"></a> create_async
 
 Erstellt ein asynchrones Konstrukt der Windows Runtime auf einem vom Benutzer angegebenes Lambda oder Funktionsobjekt. Der Rückgabetyp von `create_async` ist entweder `IAsyncAction^`, `IAsyncActionWithProgress<TProgress>^`, `IAsyncOperation<TResult>^` oder `IAsyncOperationWithProgress<TResult, TProgress>^` auf Grundlage der Signatur des Lambda-Ausdrucks, der an die Methode übergeben wurde.
 
@@ -179,7 +214,7 @@ Wenn der Text des Lambda-Ausdrucks eine Aufgabe zurückgibt, wird der Lambda-Aus
 
 Diese Funktion ist nur für Windows-Runtime-apps verfügbar.
 
-## <a name="createresourcemanager"></a><a name="createresourcemanager"></a>CreateResourceManager
+## <a name="createresourcemanager"></a><a name="createresourcemanager"></a> CreateResourceManager
 
 Gibt eine Schnittstelle zurück, die die Singletoninstanz des Ressourcen-Managers der Concurrency Runtime darstellt. Der Ressourcen-Manager ist für das Zuweisen von Ressourcen für Planer, die miteinander kooperieren möchten, zuständig.
 
@@ -197,7 +232,7 @@ Mehrere nachfolgende Aufrufe dieser Methode geben die gleiche Instanz des Ressou
 
 [Unsupported_os](unsupported-os-class.md) wird ausgelöst, wenn das Betriebssystem vom Concurrency Runtime nicht unterstützt wird.
 
-## <a name="create_task"></a><a name="create_task"></a>create_task
+## <a name="create_task"></a><a name="create_task"></a> create_task
 
 Erstellt ein ppl- [Aufgaben](task-class.md) Objekt. Das Element `create_task` kann überall dort verwendet werden, wo Sie einen Aufgabenkonstruktor verwendet hätten. Es wird hauptsächlich aus Gründen der praktische bereitgestellt, da es die Verwendung des- **`auto`** Schlüssel Worts beim Erstellen von Aufgaben ermöglicht.
 
@@ -241,7 +276,7 @@ Der Typ des zurückgegebenen Tasks wird vom ersten Parameter zur Funktion abgele
 
 Wenn in einer UWP-APP `_Param` vom Typ Windows:: Foundation:: iasyncoperation \<T> ^ oder Windows:: Foundation:: iasyncoperationwithprogress ^ oder ein Funktionselement ist, \<T,P> das einen dieser Typen zurückgibt, ist die erstellte Aufgabe vom Typ `task<T>` . Wenn `_Param` vom Typ Windows:: Foundation:: iasyncaction ^ oder Windows:: Foundation:: iasyncactionwithprogress \<P> ^ ist, oder ein Funktionselement, das einen dieser Typen zurückgibt, hat die erstellte Aufgabe den Typ `task<void>` .
 
-## <a name="disabletracing"></a><a name="disabletracing"></a>DisableTracing
+## <a name="disabletracing"></a><a name="disabletracing"></a> DisableTracing
 
 Deaktiviert die Ablaufverfolgung in der Concurrency Runtime. Diese Funktion ist veraltet, da die Registrierung der ETW-Ablaufverfolgung standardmäßig aufgehoben wird.
 
@@ -253,7 +288,7 @@ __declspec(deprecated("Concurrency::DisableTracing is a deprecated function.")) 
 
 Wenn die Ablauf Verfolgung ordnungsgemäß deaktiviert wurde, `S_OK` wird zurückgegeben. Wenn die Ablauf Verfolgung zuvor nicht initiiert wurde, `E_NOT_STARTED` wird zurückgegeben.
 
-## <a name="enabletracing"></a><a name="enabletracing"></a>EnableTracing
+## <a name="enabletracing"></a><a name="enabletracing"></a> EnableTracing
 
 Aktiviert die Ablaufverfolgung in der Concurrency Runtime. Diese Funktion ist veraltet, da die Registrierung der ETW-Ablaufverfolgung jetzt standardmäßig erfolgt.
 
@@ -265,7 +300,7 @@ __declspec(deprecated("Concurrency::EnableTracing is a deprecated function.")) _
 
 Wenn die Ablauf Verfolgung ordnungsgemäß initiiert wurde, `S_OK` wird zurückgegeben; andernfalls `E_NOT_STARTED` wird zurückgegeben.
 
-## <a name="free"></a><a name="free"></a>Kosten
+## <a name="free"></a><a name="free"></a> Kosten
 
 Gibt einen Speicherblock frei, der zuvor mit der `Alloc`-Methode der Unterbelegungsfunktion für die Zwischenspeicherung der Concurrency Runtime reserviert wurde.
 
@@ -282,7 +317,7 @@ Ein Zeiger auf den Arbeitsspeicher, der zuvor mit der `Alloc`-Methode reserviert
 
 Weitere Informationen darüber, welche Szenarien in Ihrer Anwendung von der Verwendung der cachesubzuweisung profitieren können, finden Sie unter [Taskplaner](../../../parallel/concrt/task-scheduler-concurrency-runtime.md).
 
-## <a name="get_ambient_scheduler"></a><a name="get_ambient_scheduler"></a>get_ambient_scheduler
+## <a name="get_ambient_scheduler"></a><a name="get_ambient_scheduler"></a> get_ambient_scheduler
 
 ```cpp
 inline std::shared_ptr<::Concurrency::scheduler_interface> get_ambient_scheduler();
@@ -290,7 +325,7 @@ inline std::shared_ptr<::Concurrency::scheduler_interface> get_ambient_scheduler
 
 ### <a name="return-value"></a>Rückgabewert
 
-## <a name="getexecutioncontextid"></a><a name="getexecutioncontextid"></a>GetExecutionContextId
+## <a name="getexecutioncontextid"></a><a name="getexecutioncontextid"></a> GetExecutionContextId
 
 Gibt einen eindeutigen Bezeichner zurück, der einem Ausführungskontext zugewiesen werden kann, der die `IExecutionContext`-Schnittstelle implementiert.
 
@@ -306,7 +341,7 @@ Ein eindeutiger Bezeichner für einen Ausführungs Kontext.
 
 Verwenden Sie diese Methode, um einen Bezeichner für den Ausführungs Kontext abzurufen, bevor Sie eine `IExecutionContext` Schnittstelle als Parameter an eine der Methoden übergeben, die vom Ressourcen-Manager angeboten werden.
 
-## <a name="getosversion"></a><a name="getosversion"></a>GetOSVersion
+## <a name="getosversion"></a><a name="getosversion"></a> GetOSVersion
 
 Gibt die Betriebssystemversion zurück.
 
@@ -322,7 +357,7 @@ Ein Enumerationswert, der das Betriebssystem darstellt.
 
 [Unsupported_os](unsupported-os-class.md) wird ausgelöst, wenn das Betriebssystem vom Concurrency Runtime nicht unterstützt wird.
 
-## <a name="getprocessorcount"></a><a name="getprocessorcount"></a>GetProcessorCount
+## <a name="getprocessorcount"></a><a name="getprocessorcount"></a> GetProcessorCount
 
 Gibt die Anzahl von Hardwarethreads des zugrunde liegenden Systems zurück.
 
@@ -338,7 +373,7 @@ Die Anzahl der Hardwarethreads.
 
 [Unsupported_os](unsupported-os-class.md) wird ausgelöst, wenn das Betriebssystem vom Concurrency Runtime nicht unterstützt wird.
 
-## <a name="getprocessornodecount"></a><a name="getprocessornodecount"></a>GetProcessorNodeCount
+## <a name="getprocessornodecount"></a><a name="getprocessornodecount"></a> GetProcessorNodeCount
 
 Gibt die Anzahl von NUMA-Knoten oder Prozessorpaketen des zugrunde liegenden Systems zurück.
 
@@ -356,7 +391,7 @@ Wenn das System mehr NUMA-Knoten als Prozessorpakete enthält, wird die Anzahl d
 
 [Unsupported_os](unsupported-os-class.md) wird ausgelöst, wenn das Betriebssystem vom Concurrency Runtime nicht unterstützt wird.
 
-## <a name="getschedulerid"></a><a name="getschedulerid"></a>GetSchedulerId
+## <a name="getschedulerid"></a><a name="getschedulerid"></a> GetSchedulerId
 
 Gibt einen eindeutigen Bezeichner zurück, der einem Planer zugewiesen werden kann, der die `IScheduler`-Schnittstelle implementiert.
 
@@ -372,7 +407,7 @@ Ein eindeutiger Bezeichner für einen Scheduler.
 
 Verwenden Sie diese Methode, um einen Bezeichner für den Scheduler abzurufen, bevor Sie eine `IScheduler` Schnittstelle als Parameter an eine der Methoden übergeben, die vom Ressourcen-Manager angeboten werden.
 
-## <a name="internal_assign_iterators"></a><a name="internal_assign_iterators"></a>internal_assign_iterators
+## <a name="internal_assign_iterators"></a><a name="internal_assign_iterators"></a> internal_assign_iterators
 
 ```cpp
 template<typename T, class _Ax>
@@ -394,7 +429,7 @@ void concurrent_vector<T, _Ax>::internal_assign_iterators(
 
 *last*<br/>
 
-## <a name="interruption_point"></a><a name="interruption_point"></a>interruption_point
+## <a name="interruption_point"></a><a name="interruption_point"></a> interruption_point
 
 Erstellt einen Unterbrechungspunkt für den Abbruch. Wenn ein Abbruch im Kontext, in dem diese Funktion aufgerufen wird, ausgeführt wird, löst diese eine interne Ausnahme aus, mit der die Ausführung der aktuell ausgeführten parallelen Verarbeitung abgebrochen wird. Wenn kein Abbruch ausgeführt wird, bleibt die Funktion untätig.
 
@@ -406,7 +441,7 @@ inline void interruption_point();
 
 Die von der Funktion ausgelöste interne Abbruch Ausnahme sollte nicht abgefangen werden `interruption_point()` . Die Ausnahme wird von der Laufzeit abgefangen und behandelt, und das abfangen kann dazu führen, dass sich das Programm nicht ordnungsgemäß verhält.
 
-## <a name="is_current_task_group_canceling"></a><a name="is_current_task_group_canceling"></a>is_current_task_group_canceling
+## <a name="is_current_task_group_canceling"></a><a name="is_current_task_group_canceling"></a> is_current_task_group_canceling
 
 Gibt zurück, ob die Aufgabengruppe, die gerade inline auf dem aktuellen Kontext ausgeführt wird, in diesem Moment (oder in Kürze) einen Abbruch durchführt. Beachten Sie, dass zurückgegeben wird, wenn derzeit keine Aufgaben Gruppe im aktuellen Kontext Inline ausgeführt wird **`false`** .
 
@@ -416,13 +451,13 @@ bool __cdecl is_current_task_group_canceling();
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn die derzeit ausgeführte Aufgaben Gruppe abgebrochen wird, **`false`** andernfalls.
+**`true`** , wenn die derzeit ausgeführte Aufgaben Gruppe abgebrochen wird, **`false`** andernfalls.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [Abbruch](../../../parallel/concrt/exception-handling-in-the-concurrency-runtime.md#cancellation).
 
-## <a name="make_choice"></a><a name="make_choice"></a>make_choice
+## <a name="make_choice"></a><a name="make_choice"></a> make_choice
 
 Erstellt einen `choice`-Meldungsblock aus einem optionalen `Scheduler` oder einer `ScheduleGroup` und mindestens zwei Eingabequellen.
 
@@ -475,7 +510,7 @@ Das `ScheduleGroup` -Objekt, in dem die Weiterleitungsaufgabe für den `choice` 
 
 Ein `choice`-Nachrichtenblock mit zwei oder mehr Eingabequellen.
 
-## <a name="make_greedy_join"></a><a name="make_greedy_join"></a>make_greedy_join
+## <a name="make_greedy_join"></a><a name="make_greedy_join"></a> make_greedy_join
 
 Erstellt einen `greedy multitype_join`-Meldungsblock aus einem optionalen `Scheduler` oder einer `ScheduleGroup` und mindestens zwei Eingabequellen.
 
@@ -528,7 +563,7 @@ Das `ScheduleGroup` -Objekt, in dem die Weiterleitungsaufgabe für den `multityp
 
 Ein `greedy multitype_join`-Nachrichtenblock mit zwei oder mehr Eingabequellen.
 
-## <a name="make_join"></a><a name="make_join"></a>make_join
+## <a name="make_join"></a><a name="make_join"></a> make_join
 
 Erstellt einen `non_greedy multitype_join`-Meldungsblock aus einem optionalen `Scheduler` oder einer `ScheduleGroup` und mindestens zwei Eingabequellen.
 
@@ -582,7 +617,7 @@ Das `ScheduleGroup` -Objekt, in dem die Weiterleitungsaufgabe für den `multityp
 
 Ein `non_greedy multitype_join`-Nachrichtenblock mit zwei oder mehr Eingabequellen.
 
-## <a name="make_task"></a><a name="make_task"></a>make_task
+## <a name="make_task"></a><a name="make_task"></a> make_task
 
 Eine Factorymethode zum Erstellen eines `task_handle`-Objekts.
 
@@ -607,7 +642,7 @@ Ein `task_handle`-Objekt.
 
 Diese Funktion ist nützlich, wenn Sie ein- `task_handle` Objekt mit einem Lambda-Ausdruck erstellen müssen, da es Ihnen ermöglicht, das-Objekt zu erstellen, ohne den tatsächlichen Typ des Lambda-funktors zu kennen.
 
-## <a name="parallel_buffered_sort"></a><a name="parallel_buffered_sort"></a>parallel_buffered_sort
+## <a name="parallel_buffered_sort"></a><a name="parallel_buffered_sort"></a> parallel_buffered_sort
 
 Ordnet die Elemente in einem angegebenen Bereich in einer nicht absteigenden Reihenfolge oder entsprechend einem Sortierkriterium an, das von einem binären Prädikat gleichzeitig angegeben wird. Diese Funktion entspricht `std::sort` semantisch darin, dass sie eine vergleichsbasierte, instabile, direkte Sortierung ist, abgesehen von den zusätzlich erforderlichen `O(n)`-Leerzeichen und er notwendigen Standardinitialisierung für die sortierten Elemente.
 
@@ -694,7 +729,7 @@ Wenn Sie keinen zuordnertyp oder keine Instanz angeben, wird die Speicherzuweisu
 
 Der Algorithmus dividiert den Eingabebereich in zwei Blöcke und dividiert jeden Block nacheinander in zwei unter Segmente für die parallele Ausführung. Das optionale-Argument `_Chunk_size` kann verwendet werden, um für den Algorithmus anzugeben, dass er Blöcke der Größe < `_Chunk_size` seriell verarbeiten soll.
 
-## <a name="parallel_for"></a><a name="parallel_for"></a>parallel_for
+## <a name="parallel_for"></a><a name="parallel_for"></a> parallel_for
 
 `parallel_for` durchläuft einen Bereich von Indizes und führt bei jeder Iteration parallel eine vom Benutzer bereitgestellte Funktion aus.
 
@@ -773,7 +808,7 @@ Ein Verweis auf das Partitionierer-Objekt. Bei dem Argument kann es sich um eine
 
 Weitere Informationen finden Sie unter [parallele Algorithmen](../../../parallel/concrt/parallel-algorithms.md).
 
-## <a name="parallel_for_each"></a><a name="parallel_for_each"></a>parallel_for_each
+## <a name="parallel_for_each"></a><a name="parallel_for_each"></a> parallel_for_each
 
 `parallel_for_each` wendet eine angegebene Funktion parallel auf jedes Element innerhalb eines Bereichs an. Sie entspricht semantisch der `for_each`-Funktion im `std`-Namespace, außer dass die Iteration über die Elemente parallel ausgeführt wird und die Reihenfolge der Iteration nicht angegeben ist. Das Argument `_Func` muss einen Funktionsaufrufoperator in der Form `operator()(T)` unterstützen, wobei der Parameter `T` der Elementtyp des durchlaufenen Containers ist.
 
@@ -821,7 +856,7 @@ Für Iteratoren, die keinen zufälligen Zugriff unterstützen, wird nur [auto_pa
 
 Weitere Informationen finden Sie unter [parallele Algorithmen](../../../parallel/concrt/parallel-algorithms.md).
 
-## <a name="parallel_invoke"></a><a name="parallel_invoke"></a>parallel_invoke
+## <a name="parallel_invoke"></a><a name="parallel_invoke"></a> parallel_invoke
 
 Führt die als Parameter angegebenen Funktionsobjekte parallel aus, und blockiert, bis die Ausführung beendet ist. Jedes Funktionsobjekt kann ein Lambdaausdruck, ein Zeiger auf eine Funktion oder ein anderes Objekt sein, das den Funktionsaufrufoperator mit der Signatur `void operator()()` unterstützt.
 
@@ -1020,7 +1055,7 @@ Wenn mindestens eines der Funktions Objekte, das als Parameter an diese Funktion
 
 Weitere Informationen finden Sie unter [parallele Algorithmen](../../../parallel/concrt/parallel-algorithms.md).
 
-## <a name="parallel_radixsort"></a><a name="parallel_radixsort"></a>parallel_radixsort
+## <a name="parallel_radixsort"></a><a name="parallel_radixsort"></a> parallel_radixsort
 
 Ordnet Elemente in einem angegebenen Bereich mithilfe eines Basis-Sortieralgorithmus in einer absteigenden Reihenfolge an. Dies ist eine stabile Sortierfunktion, die eine Projektionsfunktion erfordert, mit der Elemente zur Sortierung in Schlüssel, die ganzen Zahlen ohne Vorzeichen ähneln, projiziert werden können. Standardinitialisierung ist für die zu sortierenden Elemente erforderlich.
 
@@ -1103,7 +1138,7 @@ Wenn Sie keinen zuordnertyp oder keine Instanz angeben, wird die Speicherzuweisu
 
 Der Algorithmus dividiert den Eingabebereich in zwei Blöcke und dividiert jeden Block nacheinander in zwei unter Segmente für die parallele Ausführung. Das optionale-Argument `_Chunk_size` kann verwendet werden, um für den Algorithmus anzugeben, dass er Blöcke der Größe < `_Chunk_size` seriell verarbeiten soll.
 
-## <a name="parallel_reduce"></a><a name="parallel_reduce"></a>parallel_reduce
+## <a name="parallel_reduce"></a><a name="parallel_reduce"></a> parallel_reduce
 
 Berechnet die Summe aller Elemente in einem angegebenen Bereich, indem aufeinander folgende Teilsummen berechnet werden, oder berechnet das Ergebnis der aufeinander folgenden Teilergebnisse, die auf ähnliche Weise mithilfe eines angegebenen binären Vorgangs (außer Summe) abgerufen werden parallel. `parallel_reduce` entspricht `std::accumulate` semantisch, außer dass der binäre Vorgang assoziativ sein muss und ein Identitätswert anstelle eines Anfangswerts erforderlich ist.
 
@@ -1176,7 +1211,7 @@ Die zweite Überladung erfordert auch, dass der Iterator mit dem `value_type` Id
 
 Für die dritte Überladung muss der Identitäts Werttyp mit dem reduzierungstyp identisch sein, aber die Iteratoren `value_type` können sich von beiden unterscheiden. Die Bereichs Reduzierungs Funktion `_Range_fun` wird in der ersten Phase mit dem Identitäts Wert als Anfangswert verwendet, und die binäre Funktion `_Sym_reduce_fun` wird in der zweiten Phase auf Sub-Ergebnisse angewendet.
 
-## <a name="parallel_sort"></a><a name="parallel_sort"></a>parallel_sort
+## <a name="parallel_sort"></a><a name="parallel_sort"></a> parallel_sort
 
 Ordnet die Elemente in einem angegebenen Bereich in einer nicht absteigenden Reihenfolge oder entsprechend einem Sortierkriterium an, das von einem binären Prädikat gleichzeitig angegeben wird. Diese Funktion entspricht `std::sort` semantisch insofern, dass sie eine vergleichsbasierte, instabile, direkte Sortierung ist.
 
@@ -1222,7 +1257,7 @@ Der zweite überladene verwendet den bereitgestellten binären Vergleichs Operat
 
 Der Algorithmus dividiert den Eingabebereich in zwei Blöcke und dividiert jeden Block nacheinander in zwei unter Segmente für die parallele Ausführung. Das optionale-Argument `_Chunk_size` kann verwendet werden, um für den Algorithmus anzugeben, dass er Blöcke der Größe < `_Chunk_size` seriell verarbeiten soll.
 
-## <a name="parallel_transform"></a><a name="parallel_transform"></a>parallel_transform
+## <a name="parallel_transform"></a><a name="parallel_transform"></a> parallel_transform
 
 Wendet ein angegebenes Funktionsobjekt auf jedes Element in einem Quellbereich oder auf ein Elementpaar aus zwei Quellbereichen an und kopiert die Rückgabewerte des Funktionsobjekts parallel in einen Zielbereich. Diese Funktion entspricht semantisch `std::transform`.
 
@@ -1343,13 +1378,13 @@ Ein Ausgabeiterator, der die Position direkt hinter dem letzten Element im Zielb
 
 Für Iteratoren, die keinen zufälligen Zugriff unterstützen, wird nur [auto_partitioner](auto-partitioner-class.md) unterstützt.
 
-Die über Ladungen, die das-Argument akzeptieren, `_Unary_op` transformieren den Eingabebereich in den Ausgabebereich, indem Sie den unären Funktor auf jedes Element im Eingabebereich anwenden. `_Unary_op`muss den Funktions Aufrufoperator mit der Signatur unterstützen `operator()(T)` `T` , wobei der Werttyp des Bereichs ist, der durchlaufen wird.
+Die über Ladungen, die das-Argument akzeptieren, `_Unary_op` transformieren den Eingabebereich in den Ausgabebereich, indem Sie den unären Funktor auf jedes Element im Eingabebereich anwenden. `_Unary_op` muss den Funktions Aufrufoperator mit der Signatur unterstützen `operator()(T)` `T` , wobei der Werttyp des Bereichs ist, der durchlaufen wird.
 
-Die über Ladungen, die das-Argument akzeptieren, `_Binary_op` transformieren zwei Eingabe Bereiche in den Ausgabebereich, indem Sie das binäre Funktor auf ein Element vom ersten Eingabebereich und ein Element aus dem zweiten Eingabebereich anwenden. `_Binary_op`muss den Funktions Aufrufoperator mit der Signatur unterstützen `operator()(T, U)` , wobei die `T` Werttypen der beiden eingabeiteratoren `U` sind.
+Die über Ladungen, die das-Argument akzeptieren, `_Binary_op` transformieren zwei Eingabe Bereiche in den Ausgabebereich, indem Sie das binäre Funktor auf ein Element vom ersten Eingabebereich und ein Element aus dem zweiten Eingabebereich anwenden. `_Binary_op` muss den Funktions Aufrufoperator mit der Signatur unterstützen `operator()(T, U)` , wobei die `T` Werttypen der beiden eingabeiteratoren `U` sind.
 
 Weitere Informationen finden Sie unter [parallele Algorithmen](../../../parallel/concrt/parallel-algorithms.md).
 
-## <a name="receive"></a><a name="receive"></a>medizinisch
+## <a name="receive"></a><a name="receive"></a> medizinisch
 
 Eine allgemeine Empfangsimplementierung, mit der ein Kontext auf Daten von genau einer Quelle warten und die akzeptierten Werte filtern kann.
 
@@ -1401,7 +1436,7 @@ Wenn der-Parameter `_Timeout` einen anderen Wert als die-Konstante aufweist `COO
 
 Weitere Informationen finden Sie unter [Nachrichten Übergabe Funktionen](../../../parallel/concrt/message-passing-functions.md).
 
-## <a name="run_with_cancellation_token"></a><a name="run_with_cancellation_token"></a>run_with_cancellation_token
+## <a name="run_with_cancellation_token"></a><a name="run_with_cancellation_token"></a> run_with_cancellation_token
 
 Führt sofort synchron ein Funktionsobjekt im Kontext eines angegebenen Abbruchtokens aus.
 
@@ -1427,7 +1462,7 @@ Das Abbruch Token, das den impliziten Abbruch des Funktions Objekts steuert. Ver
 
 Alle Unterbrechungs Punkte im Funktions Objekt werden ausgelöst, wenn der `cancellation_token` abgebrochen wird. Das explizite Token `_Ct` isoliert dies `_Func` von einem übergeordneten Abbruch, wenn das übergeordnete Element über ein anderes Token oder kein Token verfügt.
 
-## <a name="send"></a><a name="send"></a>Senden
+## <a name="send"></a><a name="send"></a> Senden
 
 Ein synchroner Sendevorgang, der wartet, bis das Ziel die Meldung akzeptiert oder ablehnt.
 
@@ -1452,13 +1487,13 @@ Ein Verweis auf die zu sendenden Daten.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn die Nachricht akzeptiert wurde, **`false`** andernfalls.
+**`true`** , wenn die Nachricht akzeptiert wurde, **`false`** andernfalls.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [Nachrichten Übergabe Funktionen](../../../parallel/concrt/message-passing-functions.md).
 
-## <a name="set_ambient_scheduler"></a><a name="set_ambient_scheduler"></a>set_ambient_scheduler
+## <a name="set_ambient_scheduler"></a><a name="set_ambient_scheduler"></a> set_ambient_scheduler
 
 ```cpp
 inline void set_ambient_scheduler(std::shared_ptr<::Concurrency::scheduler_interface> _Scheduler);
@@ -1469,7 +1504,7 @@ inline void set_ambient_scheduler(std::shared_ptr<::Concurrency::scheduler_inter
 *_Scheduler*<br/>
 Der zu fest Legende Ambient-Scheduler.
 
-## <a name="set_task_execution_resources"></a><a name="set_task_execution_resources"></a>set_task_execution_resources
+## <a name="set_task_execution_resources"></a><a name="set_task_execution_resources"></a> set_task_execution_resources
 
 Schränkt die Ausführungsressourcen, die von den internen Arbeitsthreads der Concurrency Runtime verwendet werden, auf den angegebenen Affinitätssatz ein.
 
@@ -1505,7 +1540,7 @@ Die Version der-Methode, die ein Array von Gruppen Affinitäten als Parameter an
 
 Die programmgesteuerte Änderung der Prozess Affinität, nachdem diese Methode aufgerufen wurde, bewirkt nicht, dass die Ressourcen-Manager die Affinität, auf die Sie beschränkt ist, neu auswerten. Daher sollten alle Änderungen an der Prozess Affinität vorgenommen werden, bevor diese Methode aufgerufen wird.
 
-## <a name="swap"></a><a name="swap"></a>Wechsel
+## <a name="swap"></a><a name="swap"></a> Wechsel
 
 Tauscht die Elemente zweier `concurrent_vector`-Objekte.
 
@@ -1536,7 +1571,7 @@ Die Vorlagen Funktion ist ein Algorithmus, der auf die Container Klasse speziali
 
 Diese Methode ist nicht nebenläufigkeitssicher. Wenn Sie diese Methode aufgerufen haben, müssen Sie sicherstellen, dass keine anderen Threads Vorgänge für einen der gleichzeitigen Vektoren durchführen.
 
-## <a name="task_from_exception"></a><a name="task_from_exception"></a>task_from_exception
+## <a name="task_from_exception"></a><a name="task_from_exception"></a> task_from_exception
 
 ```cpp
 template<typename _TaskType, typename _ExType>
@@ -1557,7 +1592,7 @@ task<_TaskType> task_from_exception(
 
 ### <a name="return-value"></a>Rückgabewert
 
-## <a name="task_from_result"></a><a name="task_from_result"></a>task_from_result
+## <a name="task_from_result"></a><a name="task_from_result"></a> task_from_result
 
 ```cpp
 template<typename T>
@@ -1581,7 +1616,7 @@ inline task<void> task_from_result(
 
 ### <a name="return-value"></a>Rückgabewert
 
-## <a name="trace_agents_register_name"></a><a name="trace_agents_register_name"></a>Trace_agents_register_name
+## <a name="trace_agents_register_name"></a><a name="trace_agents_register_name"></a> Trace_agents_register_name
 
 Ordnet den angegebenen Namen dem Nachrichtenblock oder dem Agent in der ETW-Ablaufverfolgung zu.
 
@@ -1603,7 +1638,7 @@ Ein Zeiger auf den Nachrichtenblock oder den Agent, der in der Ablauf Verfolgung
 *_Name*<br/>
 Der Name für das angegebene Objekt.
 
-## <a name="try_receive"></a><a name="try_receive"></a>try_receive
+## <a name="try_receive"></a><a name="try_receive"></a> try_receive
 
 Eine allgemeine try-receive-Implementierung, mit der ein Kontext Daten von genau einer Quelle suchen und die akzeptierten Werte filtern kann. Wenn die Daten nicht bereit sind, gibt die Methode zurück **`false`** .
 
@@ -1649,7 +1684,7 @@ Ein **`bool`** Wert, der angibt, ob eine Nutzlast in eingefügt wurde `_value` .
 
 Weitere Informationen finden Sie unter [Nachrichten Übergabe Funktionen](../../../parallel/concrt/message-passing-functions.md).
 
-## <a name="wait"></a><a name="wait"></a>Warte
+## <a name="wait"></a><a name="wait"></a> Warte
 
 Hält den aktuellen Kontext für eine bestimmte Zeit an.
 
@@ -1666,7 +1701,7 @@ Die Anzahl von Millisekunden, für die der aktuelle Kontext angehalten werden so
 
 Wenn diese Methode für einen Concurrency Runtime Scheduler-Kontext aufgerufen wird, findet der Planer einen anderen Kontext, der für die zugrunde liegende Ressource ausgeführt werden kann. Da der Scheduler in der Natur kooperativ ist, kann dieser Kontext nicht genau nach der angegebenen Anzahl von Millisekunden wieder aufgenommen werden. Wenn das Zeit Planungs Modul mit dem Ausführen anderer Aufgaben beschäftigt ist, die nicht kooperativ an den Scheduler übergeben werden, kann die Wartezeit unbegrenzt sein.
 
-## <a name="when_all"></a><a name="when_all"></a>when_all
+## <a name="when_all"></a><a name="when_all"></a> when_all
 
 Erstellt eine Aufgabe, die erfolgreich abgeschlossen wird, wenn alle als Argumente angegeben Aufgaben erfolgreich abgeschlossen werden.
 
@@ -1706,7 +1741,7 @@ Wenn eine der Aufgaben abgebrochen wird oder eine Ausnahme auslöst, wird die zu
 
 Weitere Informationen finden Sie unter [Aufgaben Parallelität](../../../parallel/concrt/task-parallelism-concurrency-runtime.md).
 
-## <a name="when_any"></a><a name="when_any"></a>when_any
+## <a name="when_any"></a><a name="when_any"></a> when_any
 
 Erstellt eine Aufgabe, die erfolgreich abgeschlossen wird, wenn eine der als Argumente angegeben Aufgaben erfolgreich abgeschlossen wird.
 

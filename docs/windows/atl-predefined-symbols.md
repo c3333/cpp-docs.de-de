@@ -5,12 +5,12 @@ helpviewer_keywords:
 - symbols [C++], ATL predefined
 - ATL symbols
 ms.assetid: 60d8f4e6-6ed9-47f3-9051-e4bf34384456
-ms.openlocfilehash: 4ce2d8060c7218226340a591c6295a573f99dad8
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 8134f334b0143a360fd3e02c04bca7a65ce67ce0
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84619769"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88836386"
 ---
 # <a name="atl-predefined-symbols"></a>Vordefinierte ATL-Symbole
 
@@ -18,7 +18,7 @@ Diese Symbole werden in den ATL-Header Dateien definiert, unterstützen jedoch s
 
 Wenn Sie im [Dialog-Editor mit Dialog](dialog-editor.md)Feldern und Steuerelementen arbeiten, werden diese Symbole in den [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window) angezeigt, die den allgemeinen Steuerelementen zugeordnet sind. Wenn das Dialogfeld beispielsweise über eine Schaltfläche **Abbrechen** verfügt, wird dieser Befehl dem Symbol IDCANCEL im **Eigenschaften** Fenster zugeordnet.
 
-|||
+|Name|Beschreibung|
 |-|-|
 |IDABORT|Steuerelement Dialog Feld, Schaltfläche "Abbrechen"|
 |IDC_STATIC|Steuerelement Statisches Steuerelement|
@@ -35,7 +35,7 @@ Wenn Sie im [Dialog-Editor mit Dialog](dialog-editor.md)Feldern und Steuerelemen
 
 ATL
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Vordefinierte Symbol-IDs](predefined-symbol-ids.md)<br/>
 [Vordefinierte MFC-Symbole](mfc-predefined-symbols.md)<br/>

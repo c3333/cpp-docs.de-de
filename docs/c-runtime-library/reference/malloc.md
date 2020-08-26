@@ -27,12 +27,12 @@ helpviewer_keywords:
 - malloc function
 - memory allocation
 ms.assetid: 144fcee2-be34-4a03-bb7e-ed6d4b99eea0
-ms.openlocfilehash: 30d92975d1a3971d29b1758dc23d3a84372288c9
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: a093dbdbc4849b1c2f3d86e85a5e2b25a7b988e2
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87232507"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88836659"
 ---
 # <a name="malloc"></a>malloc
 
@@ -63,18 +63,54 @@ Die **malloc** -Funktion weist einen Speicherblock mit mindestens *Größe* von 
 
 Der Startcode verwendet **malloc** , um Speicher für die Variablen " **_environ**", " *SVP*" und " *argv* " zuzuweisen. Die folgenden Funktionen und ihre breit Zeichen Entsprechungen nennen auch **malloc**.
 
-|||||
-|-|-|-|-|
-|[calloc](calloc.md)|[fscanf](fscanf-fscanf-l-fwscanf-fwscanf-l.md)|[_getw](getw.md)|[setvbuf](setvbuf.md)|
-|[_exec functions](../../c-runtime-library/exec-wexec-functions.md)|[fseek](fseek-fseeki64.md)|[_popen](popen-wpopen.md)|[_spawn-Funktionen](../../c-runtime-library/spawn-wspawn-functions.md)|
-|[fgetc](fgetc-fgetwc.md)|[fsetpos](fsetpos.md)|[printf](printf-printf-l-wprintf-wprintf-l.md)|[_strdup](strdup-wcsdup-mbsdup.md)|
-|[_fgetchar](fgetc-fgetwc.md)|[_fullpath](fullpath-wfullpath.md)|[putc](putc-putwc.md)|[System](system-wsystem.md)|
-|[fgets](fgets-fgetws.md)|[fwrite](fwrite.md)|[putchar](putc-putwc.md)|[_tempnam](tempnam-wtempnam-tmpnam-wtmpnam.md)|
-|[fprintf](fprintf-fprintf-l-fwprintf-fwprintf-l.md)|[getc](getc-getwc.md)|[_putenv](putenv-wputenv.md)|[ungetc](ungetc-ungetwc.md)|
-|[fputc](fputc-fputwc.md)|[GetChar](getc-getwc.md)|[puts](puts-putws.md)|[vfprintf](vfprintf-vfprintf-l-vfwprintf-vfwprintf-l.md)|
-|[_fputchar](fputc-fputwc.md)|[_getcwd](getcwd-wgetcwd.md)|[_putw](putw.md)|[vprintf](vprintf-vprintf-l-vwprintf-vwprintf-l.md)|
-|[fputs](fputs-fputws.md)|[_getdcwd](getcwd-wgetcwd.md)|[scanf](scanf-scanf-l-wscanf-wscanf-l.md)||
-|[fread](fread.md)|[kommt](../../c-runtime-library/gets-getws.md)|[_searchenv](searchenv-wsearchenv.md)||
+:::row:::
+   :::column span="":::
+      [calloc](calloc.md)\
+      [_exec Funktionen](../../c-runtime-library/exec-wexec-functions.md)\
+      [fgetc](fgetc-fgetwc.md)\
+      [_fgetchar](fgetc-fgetwc.md)\
+      [fgets](fgets-fgetws.md)\
+      [fprintf](fprintf-fprintf-l-fwprintf-fwprintf-l.md)\
+      [fputc](fputc-fputwc.md)\
+      [_fputchar](fputc-fputwc.md)\
+      [fputs](fputs-fputws.md)\
+      [fread](fread.md)
+   :::column-end:::
+   :::column span="":::
+      [fscanf](fscanf-fscanf-l-fwscanf-fwscanf-l.md)\
+      [fseek](fseek-fseeki64.md)\
+      [fsetpos](fsetpos.md)\
+      [_fullpath](fullpath-wfullpath.md)\
+      [fwrite](fwrite.md)\
+      [getc](getc-getwc.md)\
+      [GetChar](getc-getwc.md)\
+      [_getcwd](getcwd-wgetcwd.md)\
+      [_getdcwd](getcwd-wgetcwd.md)\
+      [kommt](../../c-runtime-library/gets-getws.md)
+   :::column-end:::
+   :::column span="":::
+      [_getw](getw.md)\
+      [_popen](popen-wpopen.md)\
+      [printf](printf-printf-l-wprintf-wprintf-l.md)\
+      [putc](putc-putwc.md)\
+      [putchar](putc-putwc.md)\
+      [_putenv](putenv-wputenv.md)\
+      [legt](puts-putws.md)\
+      [_putw](putw.md)\
+      [scanf](scanf-scanf-l-wscanf-wscanf-l.md)
+   :::column-end:::
+   :::column span="":::
+      [_searchenv](searchenv-wsearchenv.md)\
+      [setvbuf](setvbuf.md)\
+      [_spawn Funktionen](../../c-runtime-library/spawn-wspawn-functions.md)\
+      [_strdup](strdup-wcsdup-mbsdup.md)\
+      [Anlage](system-wsystem.md)\
+      [_tempnam](tempnam-wtempnam-tmpnam-wtmpnam.md)\
+      [ungetc](ungetc-ungetwc.md)\
+      [vfprintf](vfprintf-vfprintf-l-vfwprintf-vfwprintf-l.md)\
+      [vprintf](vprintf-vprintf-l-vwprintf-vwprintf-l.md)
+   :::column-end:::
+:::row-end:::
 
 Die C++-Funktion [_set_new_mode](set-new-mode.md) legt den neuen Handlermodus für **malloc** fest. Der neue handlermodus gibt an, ob **malloc** bei einem Fehler die neue Handlerroutine aufrufen soll, wie Sie von [_set_new_handler](set-new-handler.md)festgelegt wird. Standardmäßig ruft **malloc** die neue Handlerroutine nicht bei einem Fehler auf, um Arbeitsspeicher zuzuweisen. Sie können dieses Standardverhalten überschreiben, sodass **malloc** die neue Handlerroutine auf dieselbe Weise aufruft, wenn **malloc** keinen Arbeitsspeicher zuordnen kann, **`new`** Wenn es aus demselben Grund fehlschlägt. Um den Standardwert zu überschreiben, sollten `_set_new_mode(1)` Sie früh im Programm aufzurufen oder mit NEWMODE verknüpfen. Obj (siehe [Link Optionen](../../c-runtime-library/link-options.md)).
 
@@ -137,6 +173,6 @@ Memory freed
 
 [Speicher Belegung](../../c-runtime-library/memory-allocation.md)<br/>
 [calloc](calloc.md)<br/>
-[Kosten](free.md)<br/>
+[frei](free.md)<br/>
 [realloc](realloc.md)<br/>
 [_aligned_malloc](aligned-malloc.md)<br/>

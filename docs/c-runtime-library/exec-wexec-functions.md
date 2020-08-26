@@ -56,27 +56,37 @@ helpviewer_keywords:
 - _exec function
 - _texecvpe function
 ms.assetid: a261df93-206a-4fdc-b8ac-66aa7db83bc6
-ms.openlocfilehash: 52c9727db544d8b124b37cc5beae369ae06abe10
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: ecfcf88b09a4383fc050e9737a0ffe7203f9a050
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81351665"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88839724"
 ---
 # <a name="_exec-_wexec-functions"></a>_exec- und _wexec-Funktionen
 
 Jede Funktion in dieser Familie lädt einen neuen Prozess und führt ihn aus:
 
-|||
-|-|-|
-|[_execl, _wexecl](../c-runtime-library/reference/execl-wexecl.md)|[_execv, _wexecv](../c-runtime-library/reference/execv-wexecv.md)|
-|[_execle, _wexecle](../c-runtime-library/reference/execle-wexecle.md)|[_execve, _wexecve](../c-runtime-library/reference/execve-wexecve.md)|
-|[_execlp, _wexeclp](../c-runtime-library/reference/execlp-wexeclp.md)|[_execvp, _wexecvp](../c-runtime-library/reference/execvp-wexecvp.md)|
-|[_execlpe, _wexeclpe](../c-runtime-library/reference/execlpe-wexeclpe.md)|[_execvpe, _wexecvpe](../c-runtime-library/reference/execvpe-wexecvpe.md)|
+:::row:::
+   :::column span="":::
+      [_execl _wexecl](../c-runtime-library/reference/execl-wexecl.md)\
+      [_execv _wexecv](../c-runtime-library/reference/execv-wexecv.md)\
+      [_execle, _wexecle](../c-runtime-library/reference/execle-wexecle.md)
+   :::column-end:::
+   :::column span="":::
+      [_execve _wexecve](../c-runtime-library/reference/execve-wexecve.md)\
+      [_execlp _wexeclp](../c-runtime-library/reference/execlp-wexeclp.md)\
+      [_execvp, _wexecvp](../c-runtime-library/reference/execvp-wexecvp.md)
+   :::column-end:::
+   :::column span="":::
+      [_execlpe _wexeclpe](../c-runtime-library/reference/execlpe-wexeclpe.md)\
+      [_execvpe, _wexecvpe](../c-runtime-library/reference/execvpe-wexecvpe.md)
+   :::column-end:::
+:::row-end:::
 
 Der Buchstabe am Ende des Funktionsnamens bestimmt die Variante.
 
-|_exec-Funktionssuffix|BESCHREIBUNG|
+|_exec-Funktionssuffix|Beschreibung|
 |----------------------------|-----------------|
 |`e`|`envp`: Array von Zeigern zu Umgebungseinstellungen, wird an den neuen Prozess übergeben.|
 |`l`|Befehlszeilenargumente werden einzeln an die `_exec`-Funktion übergeben. Wird normalerweise verwendet, wenn die Anzahl der Parameter im neuen Prozess im Voraus bekannt ist.|
@@ -118,7 +128,7 @@ Die `_execl`-, `_execle`-, `_execlp`- und `_execlpe`-Aufrufe werden normalerweis
 
 Die `_execv`-, `_execve`-, `_execvp`- und `_execvpe`-Aufrufe sind nützlich, wenn die Anzahl der Parameter im neuen Prozess variabel ist. Zeiger auf Parameter werden als Array, nämlich `argv`, übergeben. Der `argv`[0]-Parameter ist normalerweise ein Zeiger auf `cmdname`. Die Parameter von `argv`[1] bis `argv`[`n`] weisen auf die Zeichenfolgen hin, aus denen die neue Parameterliste besteht. Der `argv`[`n`+1]-Parameter muss ein **NULL**-Zeiger sein, um das Ende der Parameterliste zu markieren.
 
-Dateien, die beim Aufrufen von `_exec` geöffnet waren, bleiben im neuen Prozess geöffnet. Bei `_execl`-, `_execlp`-, `_execv`- und `_execvp`-Aufrufen erbt der neue Prozess die Umgebung des aufrufenden Prozesses. `_execle`-, `_execlpe`-, `_execve`- und `_execvpe`-Aufrufe ändern die Umgebung für den neuen Prozess, indem eine Liste der Umgebungseinstellungen durch den `envp`-Parameter übergeben wird. `envp` ist ein Array von Zeichenzeigern, von denen jedes Element (außer dem letzten Element) auf eine auf NULL endende Zeichenfolge verweist, die eine Umgebungsvariable definiert. Solch eine Zeichenfolge hat normalerweise die Form `NAME`=`value`, wobei `NAME` der Name einer Umgebungsvariable und `value` der Zeichenfolgenwert ist, für den diese Variable festgelegt wird. (Beachten `value` Sie, dass dies nicht in doppelten Anführungszeichen eingeschlossen ist.) Das letzte Element `envp` des Arrays sollte **NULL**sein. Wenn `envp` selbst **NULL** ist, erbt der neue Prozess die Umgebungseinstellungen des aufrufenden Prozesses.
+Dateien, die beim Aufrufen von `_exec` geöffnet waren, bleiben im neuen Prozess geöffnet. Bei `_execl`-, `_execlp`-, `_execv`- und `_execvp`-Aufrufen erbt der neue Prozess die Umgebung des aufrufenden Prozesses. `_execle`-, `_execlpe`-, `_execve`- und `_execvpe`-Aufrufe ändern die Umgebung für den neuen Prozess, indem eine Liste der Umgebungseinstellungen durch den `envp`-Parameter übergeben wird. `envp` ist ein Array von Zeichenzeigern, von denen jedes Element (außer dem letzten Element) auf eine auf NULL endende Zeichenfolge verweist, die eine Umgebungsvariable definiert. Solch eine Zeichenfolge hat normalerweise die Form `NAME`=`value`, wobei `NAME` der Name einer Umgebungsvariable und `value` der Zeichenfolgenwert ist, für den diese Variable festgelegt wird. (Beachten Sie, dass `value` nicht in doppelte Anführungszeichen eingeschlossen ist.) Das letzte Element des `envp` Arrays muss **null**sein. Wenn `envp` selbst **NULL** ist, erbt der neue Prozess die Umgebungseinstellungen des aufrufenden Prozesses.
 
 Ein Programm, das mit einer der `_exec`-Funktionen ausgeführt wird, wird immer in den Speicher geladen, als ob das Feld für die maximale Speicherbelegung in der Kopfzeile der EXE-Datei des Programms auf den Standardwert "0xFFFFH" festgelegt wäre.
 
@@ -232,16 +242,16 @@ int main( int ac, char* av[] )
 }
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** process.h
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Prozess- und Umweltkontrolle](../c-runtime-library/process-and-environment-control.md)<br/>
-[Abbrechen](../c-runtime-library/reference/abort.md)<br/>
+[Prozess-und Umgebungs Steuerung](../c-runtime-library/process-and-environment-control.md)<br/>
+[Abbruch](../c-runtime-library/reference/abort.md)<br/>
 [atexit](../c-runtime-library/reference/atexit.md)<br/>
 [exit, _Exit, _exit](../c-runtime-library/reference/exit-exit-exit.md)<br/>
 [_onexit, _onexit_m](../c-runtime-library/reference/onexit-onexit-m.md)<br/>
-[_spawn-, _wspawn-Funktionen](../c-runtime-library/spawn-wspawn-functions.md)<br/>
+[_spawn, _wspawn Funktionen](../c-runtime-library/spawn-wspawn-functions.md)<br/>
 [system, _wsystem](../c-runtime-library/reference/system-wsystem.md)
