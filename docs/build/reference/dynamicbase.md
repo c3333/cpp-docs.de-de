@@ -8,12 +8,12 @@ helpviewer_keywords:
 - DYNAMICBASE editbin option
 - /DYNAMICBASE editbin option
 ms.assetid: edb3df90-7b07-42fb-a94a-f5a4c1d325d6
-ms.openlocfilehash: 54644d9df546299be3b688f9745a121592938df6
-ms.sourcegitcommit: 31a443c9998cf5cfbaff00fcf815b133f55b2426
+ms.openlocfilehash: 5451e3d16883eef225aebc3c420e6c0700947ad6
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86373618"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88842583"
 ---
 # <a name="dynamicbase"></a>/DYNAMICBASE
 
@@ -23,7 +23,7 @@ Gibt an, ob ein ausführbares Image generiert werden soll, das zur Ladezeit nach
 
 > **/DynamicBase**[**: No**]
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Option **/DynamicBase** ändert den Header eines *ausführbaren Images*, eine DLL-oder exe-Datei, um anzugeben, ob die Anwendung zur Ladezeit nach dem Zufallsprinzip neu erstellt werden soll, und ermöglicht die zufällige Zuordnung von virtuellen Adressen, die sich auf den Speicherort des virtuellen Speichers von Heaps, Stapeln und anderen Betriebssystem Zuordnungen auswirkt. Die **/DynamicBase** -Option gilt sowohl für 32-Bit-als auch für 64-Bit-Images. ASLR wird unter Windows Vista und höheren Betriebssystemen unterstützt. Die Option wird von älteren Betriebssystemen ignoriert.
 
@@ -32,4 +32,4 @@ Standardmäßig ist **/DynamicBase** aktiviert. Verwenden Sie **/DynamicBase: No
 ## <a name="see-also"></a>Weitere Informationen
 
 - [EDITBIN-Optionen](editbin-options.md)
-- [Schutzmaßnahmen für Windows ISV-Software](https://docs.microsoft.com/previous-versions/bb430720(v=msdn.10))
+- [Schutzmaßnahmen für Windows ISV-Software](/previous-versions/bb430720(v=msdn.10))

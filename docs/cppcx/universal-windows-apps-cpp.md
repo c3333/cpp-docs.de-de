@@ -3,12 +3,12 @@ title: Universelle Windows-Apps (C++)
 ms.date: 03/30/2018
 ms.assetid: 357121cc-d390-4bae-b34a-39614861a9f4
 ms.topic: overview
-ms.openlocfilehash: 25b89d2d9cb99e05145e60f9c9b1a6324fbbeb39
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: 45d02a5ab923ee46da97d78a1e5ceb2f4313352a
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86404599"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88841673"
 ---
 # <a name="universal-windows-apps-c"></a>Universelle Windows-Apps (C++)
 
@@ -22,13 +22,20 @@ Mit dem Desktop Bridge-App Converter können Sie Ihre vorhandene Desktop Anwendu
 
 ## <a name="uwp-apps-that-use-ccx"></a>UWP-apps, die C++/CX verwenden
 
-|||
-|-|-|
-|[C++-/CX-Sprachreferenz](visual-c-language-reference-c-cx.md)|Beschreibt den Satz von Erweiterungen, die den C++-Verbrauch von Windows-Runtime-APIs vereinfachen und die Fehlerbehandlung ermöglichen, die auf Ausnahmen basiert.|
-|[Entwickeln von apps und Bibliotheken (C++/CX)](building-apps-and-libraries-c-cx.md)|Beschreibt das Erstellen von DLLs und statischen Bibliotheken, auf die von einer C++/CX-App oder Komponente zugegriffen werden kann.|
-|[Tutorial: Erstellen einer UWP-app "Hello, World" in C++/CX](/windows/uwp/get-started/create-a-basic-windows-10-app-in-cpp)|Eine exemplarische Vorgehensweise mit den grundlegenden Konzepten der UWP-App-Entwicklung in C++/CX. |
-|[Erstellen von Windows-Runtime Komponenten in C++/CX](/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp)|Beschreibt, wie DLLs erstellt werden, die von anderen UWP-apps und-Komponenten verwendet werden können.|
-|[UWP-Spielprogrammierung](/windows/uwp/gaming/)|Beschreibt, wie DirectX und C++/CX zum Erstellen von Spielen verwendet werden.|
+[C++/CX-Sprachreferenz](visual-c-language-reference-c-cx.md)\
+Beschreibt den Satz von Erweiterungen, die den C++-Verbrauch von Windows-Runtime-APIs vereinfachen und die Fehlerbehandlung ermöglichen, die auf Ausnahmen basiert.
+
+[Entwickeln von apps und Bibliotheken (C++/CX)](building-apps-and-libraries-c-cx.md)\
+Beschreibt das Erstellen von DLLs und statischen Bibliotheken, auf die von einer C++/CX-App oder Komponente zugegriffen werden kann.
+
+[Tutorial: Erstellen einer UWP-app "Hello, World" in C++/CX](/windows/uwp/get-started/create-a-basic-windows-10-app-in-cpp)\
+Eine exemplarische Vorgehensweise mit den grundlegenden Konzepten der UWP-App-Entwicklung in C++/CX.
+
+[Erstellen von Windows-Runtime Komponenten in C++/CX](/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp)\
+Beschreibt, wie DLLs erstellt werden, die von anderen UWP-apps und-Komponenten verwendet werden können.
+
+[UWP-Spielprogrammierung](/windows/uwp/gaming/)\
+Beschreibt, wie DirectX und C++/CX zum Erstellen von Spielen verwendet werden.
 
 ## <a name="uwp-apps-that-use-the-windows-runtime-c-template-library-wrl"></a>UWP-apps, die die Windows-Runtime C++ Template Library (WRL) verwenden
 

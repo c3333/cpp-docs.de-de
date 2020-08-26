@@ -7,12 +7,12 @@ helpviewer_keywords:
 - typetrait header
 - type_traits
 ms.assetid: 2260b51f-8160-4c66-a82f-00b534cb60d4
-ms.openlocfilehash: 94178d2efd1942a7475fa7987526b021b1c6fb68
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 42c94daf331fd9a17e050067e4c4e495af180b0c
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87201959"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88841700"
 ---
 # <a name="lttype_traitsgt"></a>&lt;type_traits&gt;
 
@@ -43,22 +43,44 @@ using add_const_t = typename add_const<T>::type;
 
 Dies sind die bereitgestellten Aliase für die Member `type` :
 
-||||
-|-|-|-|
-| add_const_t | add_cv_t | add_lvalue_reference_t |
-| add_pointer_t | add_rvalue_reference_t | add_volatile_t |
-| aligned_storage_t | aligned_union_t | common_type_t |
-| conditional_t | decay_t | enable_if_t |
-| invoke_result_t | make_signed_t | make_unsigned_t |
-| remove_all_extents_t | remove_const_t | remove_cv_t |
-| remove_extent_t | remove_pointer_t | remove_reference_t |
-| remove_volatile_t | result_of_t | underlying_type_t |
+:::row:::
+   :::column:::
+      `add_const_t`\
+      `add_cv_t`\
+      `add_lvalue_reference_t`\
+      `add_pointer_t`\
+      `add_rvalue_reference_t`\
+      `add_volatile_t`\
+      `aligned_storage_t`\
+      `aligned_union_t`\
+   :::column-end:::
+   :::column:::
+      `common_type_t`\
+      `conditional_t`\
+      `decay_t`\
+      `enable_if_t`\
+      `invoke_result_t`\
+      `make_signed_t`\
+      `make_unsigned_t`\
+      `remove_all_extents_t`\
+   :::column-end:::
+   :::column:::
+      `remove_const_t`\
+      `remove_cv_t`\
+      `remove_extent_t`\
+      `remove_pointer_t`\
+      `remove_reference_t`\
+      `remove_volatile_t`\
+      `result_of_t`\
+      `underlying_type_t`\
+   :::column-end:::
+:::row-end:::
 
 ### <a name="classes"></a>Klassen
 
 Hilfsprogrammklasse und Typedefs
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[integral_constant](../standard-library/integral-constant-class-bool-constant-class.md)|Wandelt einen Typ und einen Wert in eine Ganzzahlkonstante um.|
 |[true_type](../standard-library/type-traits-typedefs.md#true_type)|Enthält eine Ganzzahlkonstante mit einem wahren Wert.|
@@ -66,7 +88,7 @@ Hilfsprogrammklasse und Typedefs
 
 Primäre Typkategorien
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[is_void](../standard-library/is-void-class.md)|Testet, ob der Typ ist **`void`** .|
 |[is_null_pointer](../standard-library/is-null-pointer-class.md)|Testet, ob der Typ `std::nullptr_t` ist.|
@@ -85,7 +107,7 @@ Primäre Typkategorien
 
 Zusammengesetzte Typkategorien
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[is_reference](../standard-library/is-reference-class.md)|Testet, ob der Typ ein Verweis ist.|
 |[is_arithmetic](../standard-library/is-arithmetic-class.md)|Testet, ob der Typ arithmetisch ist.|
@@ -97,7 +119,7 @@ Zusammengesetzte Typkategorien
 
 Typeigenschaften
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[is_const](../standard-library/is-const-class.md)|Testet, ob der Typ ist **`const`** .|
 |[is_volatile](../standard-library/is-volatile-class.md)|Testet, ob der Typ ist **`volatile`** .|
@@ -150,7 +172,7 @@ Typeigenschaften
 
 Typeigenschaftsabfragen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[alignment_of](../standard-library/alignment-of-class.md)|Ruft die Ausrichtung eines Typs ab.|
 |[gehören](../standard-library/rank-class.md)|Ruft die Anzahl von Arraydimensionen ab.|
@@ -158,7 +180,7 @@ Typeigenschaftsabfragen
 
 Typbeziehungen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[is_same](../standard-library/is-same-class.md)|Stellt fest, ob zwei Typen identisch sind.|
 |[is_base_of](../standard-library/is-base-of-class.md)|Testet, ob ein Typ die Basis eines anderen ist.|
@@ -166,7 +188,7 @@ Typbeziehungen
 
 Änderungen flüchtiger Konstanten
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[add_const](../standard-library/add-const-class.md)|Erzeugt einen **`const`** Typ aus dem Typ.|
 |[add_volatile](../standard-library/add-volatile-class.md)|Erzeugt einen **`volatile`** Typ aus dem Typ.|
@@ -177,7 +199,7 @@ Typbeziehungen
 
 Verweisänderungen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[add_lvalue_reference](../standard-library/add-lvalue-reference-class.md)|Wandelt den Typ in einen Verweis auf den Typ um.|
 |[add_rvalue_reference](../standard-library/add-rvalue-reference-class.md)|Wandelt den Typ in einen rvalue-Verweis auf den Typ um|
@@ -185,28 +207,28 @@ Verweisänderungen
 
 Vorzeichenmanipulation
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[make_signed](../standard-library/make-signed-class.md)|Erzeugt bei einem signierten Typ den Typ und andernfalls den kleinsten signierten Typ größer oder gleich dem Typ.|
 |[make_unsigned](../standard-library/make-unsigned-class.md)|Erzeugt bei einem unsignierten Typ den Typ und andernfalls den kleinsten unsignierten Typ größer oder gleich dem Typ.|
 
 Arrayänderungen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[remove_all_extents](../standard-library/remove-all-extents-class.md)|Wandelt einen Arraytyp in einen Nichtarraytyp um.|
 |[remove_extent](../standard-library/remove-extent-class.md)|Wandelt einen Arraytyp in einen Elementtyp um.|
 
 Zeigeränderungen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[add_pointer](../standard-library/add-pointer-class.md)|Wandelt den Typ in einen Zeiger auf den Typ um.|
 |[remove_pointer](../standard-library/remove-pointer-class.md)|Wandelt einen Zeiger auf den Typ in einen Typ um.|
 
 Weitere Transformationen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[aligned_storage](../standard-library/aligned-storage-class.md)|Weist nicht initialisierten Arbeitsspeicher für eine ausgerichteten Typ zu.|
 |[aligned_union](../standard-library/aligned-union-class.md)|Weist den nicht initialisierten Arbeitsspeicher für eine ausgerichtete Union mit einem nicht trivialen Konstruktor oder Destruktor zu.|
@@ -220,7 +242,7 @@ Weitere Transformationen
 
 Logische Operator Merkmale
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[Verbindung](../standard-library/conjunction-class.md)||
 |[Disjunktion](../standard-library/disjunction-class.md)||

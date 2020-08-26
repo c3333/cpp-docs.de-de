@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - regex header
 ms.assetid: 5dd4ef74-6063-4dbc-b692-1960bb736f0b
-ms.openlocfilehash: 9d7f84ac47979cf398ae1f94e4d01ba0915da299
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 60548e96e0922fdcff00456b03bf9fa15bb7e3b3
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87217531"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88841479"
 ---
 # <a name="ltregexgt"></a>&lt;regex&gt;
 
@@ -37,7 +37,7 @@ Um die Details der Grammatik regulärer Ausdrücke zu ändern, schreiben Sie ein
 
 ### <a name="classes"></a>Klassen
 
-|Klasse|BESCHREIBUNG|
+|Klasse|Beschreibung|
 |-|-|
 |[basic_regex](../standard-library/basic-regex-class.md)|Umschließt einen regulären Ausdruck.|
 |[match_results](../standard-library/match-results-class.md)|Enthält eine Sequenz von Teilübereinstimmungen.|
@@ -52,13 +52,13 @@ Um die Details der Grammatik regulärer Ausdrücke zu ändern, schreiben Sie ein
 
 ### <a name="type-definitions"></a>Typdefinitionen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[cmatch](../standard-library/regex-typedefs.md#cmatch)|Typdefinition für **`char`** `match_results` .|
 |[cregex_iterator](../standard-library/regex-typedefs.md#cregex_iterator)|Typdefinition für **`char`** `regex_iterator` .|
 |[cregex_token_iterator](../standard-library/regex-typedefs.md#cregex_token_iterator)|Typdefinition für **`char`** `regex_token_iterator` .|
 |[csub_match](../standard-library/regex-typedefs.md#csub_match)|Typdefinition für **`char`** `sub_match` .|
-|[regex](../standard-library/regex-typedefs.md#regex)|Typdefinition für **`char`** `basic_regex` .|
+|[Regex](../standard-library/regex-typedefs.md#regex)|Typdefinition für **`char`** `basic_regex` .|
 |[smatch](../standard-library/regex-typedefs.md#smatch)|Typdefinition für `string` `match_results`.|
 |[sregex_iterator](../standard-library/regex-typedefs.md#sregex_iterator)|Typdefinition für `string` `regex_iterator`.|
 |[sregex_token_iterator](../standard-library/regex-typedefs.md#sregex_token_iterator)|Typdefinition für `string` `regex_token_iterator`.|
@@ -75,7 +75,7 @@ Um die Details der Grammatik regulärer Ausdrücke zu ändern, schreiben Sie ein
 
 ### <a name="functions"></a>Functions
 
-|Funktion|BESCHREIBUNG|
+|Funktion|Beschreibung|
 |-|-|
 |[regex_match](../standard-library/regex-functions.md#regex_match)|Gleicht einen regulären Ausdruck exakt ab.|
 |[regex_replace](../standard-library/regex-functions.md#regex_replace)|Ersetzt übereinstimmende reguläre Ausdrücke.|
@@ -84,7 +84,7 @@ Um die Details der Grammatik regulärer Ausdrücke zu ändern, schreiben Sie ein
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|BESCHREIBUNG|
+|Operator|Beschreibung|
 |-|-|
 |[Operator = =](../standard-library/regex-operators.md#op_eq_eq)|Vergleich von verschiedenen Objekten: gleich.|
 |[Operator! =](../standard-library/regex-operators.md#op_neq)|Vergleich von verschiedenen Objekten: ungleich.|
@@ -99,9 +99,9 @@ Um die Details der Grammatik regulärer Ausdrücke zu ändern, schreiben Sie ein
 [Reguläre Ausdrücke (C++)](../standard-library/regular-expressions-cpp.md)\
 [regex_constants-Klasse](../standard-library/regex-constants-class.md)\
 [regex_error-Klasse](../standard-library/regex-error-class.md)\
-[\<regex>Funktionen](../standard-library/regex-functions.md)\
+[\<regex> Funktionen](../standard-library/regex-functions.md)\
 [regex_iterator-Klasse](../standard-library/regex-iterator-class.md)\
-[\<regex>Veranstalter](../standard-library/regex-operators.md)\
+[\<regex> Veranstalter](../standard-library/regex-operators.md)\
 [regex_token_iterator-Klasse](../standard-library/regex-token-iterator-class.md)\
 [regex_traits-Klasse](../standard-library/regex-traits-class.md)\
-[\<regex>Typedefs](../standard-library/regex-typedefs.md)
+[\<regex> Typedefs](../standard-library/regex-typedefs.md)

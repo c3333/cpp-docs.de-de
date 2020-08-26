@@ -1,19 +1,19 @@
 ---
-title: Rvalue-verweisdedeklarator:&amp;&amp;
+title: 'Rvalue-verweisdedeklarator: &amp;&amp;'
 ms.date: 11/04/2016
 f1_keywords:
 - '&&'
 helpviewer_keywords:
 - '&& rvalue reference declarator'
 ms.assetid: eab0ce3a-c5a3-4992-aa70-6a8ab1f7491d
-ms.openlocfilehash: 65eec84447043b89ff94b77b7aed22b1b06f58e3
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 953aafe79115ad32a172c878eb910dd06b81e3f4
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87227100"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88842038"
 ---
-# <a name="rvalue-reference-declarator-ampamp"></a>Rvalue-verweisdedeklarator:&amp;&amp;
+# <a name="rvalue-reference-declarator-ampamp"></a>Rvalue-verweisdedeklarator: &amp;&amp;
 
 Enthält einen Verweis auf einen rvalue-Ausdruck.
 
@@ -391,13 +391,12 @@ Diese Version der `print_type_and_value`-Funktion leitet dann den Parameter an d
 
 Die folgende Tabelle fasst die Verweisreduzierungsregeln für die Ableitung des Vorlagenargumenttyps zusammen:
 
-|||
-|-|-|
-|Erweiterter Typ|Reduzierter Typ|
-|`T& &`|`T&`|
-|`T& &&`|`T&`|
-|`T&& &`|`T&`|
-|`T&& &&`|`T&&`|
+| Erweiterter Typ | Reduzierter Typ |
+|--|--|
+| `T& &` | `T&` |
+| `T& &&` | `T&` |
+| `T&& &` | `T&` |
+| `T&& &&` | `T&&` |
 
 Vorlagenargumentableitung ist ein wichtiger Bestandteil der Implementierung der perfekten Weiterleitung. Der Abschnitt zur perfekten Weiterleitung, die bereits besprochen wurde, beschreibt die perfekte Weiterleitung im Detail.
 

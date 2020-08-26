@@ -16,12 +16,12 @@ helpviewer_keywords:
 - std::subtract_with_carry_engine [C++], max
 - std::subtract_with_carry_engine [C++], seed
 ms.assetid: 94a055f2-a620-4a22-ac34-c156924bab31
-ms.openlocfilehash: 63cbbb3a1a508b41c1e0632eda3eeabe4fda6696
-ms.sourcegitcommit: 590e488e51389066a4da4aa06d32d4c362c23393
+ms.openlocfilehash: cf82c4ca3ce995fa9a53dbea21293dc8515ff491
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72685819"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88840907"
 ---
 # <a name="subtract_with_carry_engine-class"></a>subtract_with_carry_engine-Klasse
 
@@ -36,33 +36,36 @@ class subtract_with_carry_engine;
 
 ### <a name="parameters"></a>Parameter
 
-*Uinttype* -\
-Der unsigned integer-Ergebnistyp. Die möglichen Typen finden Sie unter [\<random>](../standard-library/random.md).
+*Uinttype*\
+Der unsigned integer-Ergebnistyp. Informationen zu möglichen Typen finden Sie unter [\<random>](../standard-library/random.md) .
 
-*W* \
-**Wortgröße**. Größe jedes einzelnen Wortes der Zustandssequenz in Bits. **Vorbedingung**:`0 < W ≤ numeric_limits<UIntType>::digits`
+*Löw*\
+**Wortgröße**. Größe jedes einzelnen Wortes der Zustandssequenz in Bits. **Vorbedingung**: `0 < W ≤ numeric_limits<UIntType>::digits`
 
-*S* \
-**Kurze Verzögerung**. Anzahl der Ganzzahlwerte. **Vorbedingung**:`0 < S < R`
+*Hymnen*\
+**Kurze Verzögerung**. Anzahl der Ganzzahlwerte. **Vorbedingung**: `0 < S < R`
 
 *R*\
 **Lange Verzögerung**. Bestimmt die Wiederholungsrate in der generierten Serie.
 
 ## <a name="members"></a>Member
 
-||||
-|-|-|-|
-|`subtract_with_carry_engine::subtract_with_carry_engine`|`subtract_with_carry_engine::min`|`subtract_with_carry_engine::discard`|
-|`subtract_with_carry_engine::operator()`|`subtract_with_carry_engine::max`|`subtract_with_carry_engine::seed`|
-|`default_seed` ist eine als `19780503u` definierte Memberkonstante, die als Standardparameterwert für `subtract_with_carry_engine::seed` und den Einzelwertkonstruktor verwendet wird.|||
+`subtract_with_carry_engine::subtract_with_carry_engine`
+`subtract_with_carry_engine::max`\
+`subtract_with_carry_engine::min`\
+`subtract_with_carry_engine::discard`\
+`subtract_with_carry_engine::operator()`\
+`subtract_with_carry_engine::seed`
 
-Weitere Informationen über Engine-Member finden Sie unter [\<random&gt;](../standard-library/random.md).
+`default_seed` ist eine als `19780503u` definierte Memberkonstante, die als Standardparameterwert für `subtract_with_carry_engine::seed` und den Einzelwertkonstruktor verwendet wird.
 
-## <a name="remarks"></a>Hinweise
+Weitere Informationen zu Engine-Membern finden Sie unter [\<random>](../standard-library/random.md) .
 
-Die `substract_with_carry_engine`-Klassen Vorlage ist eine Verbesserung gegenüber der [linear_congruential_engine](../standard-library/linear-congruential-engine-class.md). Keines dieser Module ist so schnell oder gibt so hochqualitative Ergebnisse zurück wie das [mersenne_twister_engine](../standard-library/mersenne-twister-engine-class.md).
+## <a name="remarks"></a>Bemerkungen
 
-Diese Engine erzeugt Werte eines benutzerdefinierten ganzzahligen Typs ohne Vorzeichen mithilfe der Wiederholungs Beziehung ( *Period*) `x(i) = (x(i - R) - x(i - S) - cy(i - 1)) mod M`, wobei `cy(i)` den Wert `1`, wenn `x(i - S) - x(i - R) - cy(i - 1) < 0` ist, andernfalls `0` und `M` den Wert `2`<sup>W</sup>hat. Der Zustand der Engine ist ein Carry-Indikator Plus *R* -Werte. Diese Werte bestehen aus den letzten *r* -Werten, die zurückgegeben werden, wenn `operator()` mindestens *r* -Mal aufgerufen wurde, andernfalls die `N` Werte, die zurückgegeben wurden, und die letzten `R - N` Werte des Start Werts.
+Die `substract_with_carry_engine` Klassen Vorlage ist eine Verbesserung gegenüber der [linear_congruential_engine](../standard-library/linear-congruential-engine-class.md). Keines dieser Module ist so schnell oder gibt so hochqualitative Ergebnisse zurück wie das [mersenne_twister_engine](../standard-library/mersenne-twister-engine-class.md).
+
+Diese Engine erzeugt Werte eines benutzerdefinierten ganzzahligen Typs ohne Vorzeichen unter Verwendung der Wiederholungs Beziehung ( *Period*) `x(i) = (x(i - R) - x(i - S) - cy(i - 1)) mod M` , wobei `cy(i)` den Wert hat, `1` `x(i - S) - x(i - R) - cy(i - 1) < 0` andernfalls `0` und `M` den Wert `2` <sup>W</sup>. Der Zustand der Engine ist ein Carry-Indikator Plus *R* -Werte. Diese Werte bestehen aus den letzten *r* -Werten, die zurückgegeben werden, wenn mindestens `operator()` *r* -Mal aufgerufen wurde, andernfalls den Werten, die `N` zurückgegeben wurden, und den letzten `R - N` Werten des Start Werts.
 
 Das Vorlagenargument `UIntType` muss groß genug sein, um Werte bis zu `M - 1` zu enthalten.
 
@@ -76,12 +79,12 @@ Obwohl Sie direkt aus dieser Engine einen Generator konstruieren können, könne
 
 Ausführliche Informationen über den Algorithmus „subtract with carry engine“ erhalten Sie im Wikipedia-Artikel [Lagged Fibonacci generator (Kongruenzgenerator, in englischer Sprache)](https://en.wikipedia.org/wiki/Lagged_Fibonacci_generator).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<random>
+**Header:**\<random>
 
 **Namespace:** std
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<random>](../standard-library/random.md)

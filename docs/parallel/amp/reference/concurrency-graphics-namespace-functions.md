@@ -5,20 +5,19 @@ f1_keywords:
 - amp_graphics/Concurrency::fast_math::copy_async
 - amp_graphics/Concurrency::fast_math::copy
 ms.assetid: ace01cd5-29d3-4356-930e-c81a61c5f934
-ms.openlocfilehash: 776f715f72d2e3b6b3841856323a52953e9c5344
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: e767c6b3e02564d89be48f47e8bf7718600af961
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81376339"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88841245"
 ---
 # <a name="concurrencygraphics-namespace-functions"></a>Concurrency::graphics-Namespace-Funktionen
 
-|||
-|-|-|
-|[Kopieren](#copy)|[copy_async](#copy_async)|
+[skopie](#copy)\
+[copy_async](#copy_async)
 
-## <a name="copy-function-concurrencygraphics-namespace"></a><a name="copy"></a>Kopierfunktion (Concurrency::graphics Namespace)
+## <a name="copy-function-concurrencygraphics-namespace"></a><a name="copy"></a> Copy-Funktion (parallelcurrency:: graphics-Namespace)
 
 Kopiert eine Quelltextur in einen Zielpuffer oder kopiert einen Quellpuffer in einen Zielpuffer. Das allgemeine Format dieser Funktion ist `copy(src, dest)`.
 
@@ -133,7 +132,7 @@ Der Typ des Zielobjekts.
 *_Dst_offset*<br/>
 Der Offset in das Ziel, an dem der Kopiervorgang beginnen soll.
 
-*Inputiterator*<br/>
+*InputIterator*<br/>
 Der Typ des Eingabeiterators.
 
 *OutputIterator*<br/>
@@ -157,9 +156,9 @@ Ein Anfangsiterator in den Quellcontainer.
 *last*<br/>
 Ein Endeiterator in den Quellcontainer.
 
-## <a name="copy_async-function-concurrencygraphics-namespace"></a><a name="copy_async"></a>copy_async-Funktion (Concurrency::graphics Namespace)
+## <a name="copy_async-function-concurrencygraphics-namespace"></a><a name="copy_async"></a> copy_async-Funktion (parallelcurrency:: graphics-Namespace)
 
-Kopiert eine Quelltextur asynchron in einen Zielpuffer oder kopiert einen Quellpuffer in einen Zielpuffer und gibt dann ein [completion_future](completion-future-class.md) Objekt zurück, auf das gewartet werden kann. Es können keine Daten kopiert werden, wenn auf einer Zugriffstaste Code ausgeführt wird. Das allgemeine Format dieser Funktion ist `copy(src, dest)`.
+Kopiert asynchron eine Quell Textur in einen Ziel Puffer oder kopiert einen Quell Puffer in einen Ziel Puffer und gibt dann ein [completion_future](completion-future-class.md) Objekt zurück, auf das gewartet werden kann. Es können keine Daten kopiert werden, wenn auf einer Zugriffstaste Code ausgeführt wird. Das allgemeine Format dieser Funktion ist `copy(src, dest)`.
 
 ```cpp
 template<
@@ -268,7 +267,7 @@ Der Typ des Zielobjekts.
 *_Dst_offset*<br/>
 Der Offset in das Ziel, an dem der Kopiervorgang beginnen soll.
 
-*Inputiterator*<br/>
+*InputIterator*<br/>
 Der Typ des Eingabeiterators.
 
 *OutputIterator*<br/>
@@ -292,12 +291,12 @@ Ein Anfangsiterator in den Quellcontainer.
 *last*<br/>
 Ein Endeiterator in den Quellcontainer.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** amp_graphics.h
+**Header:** amp_graphics. h
 
-**Namespace:** Parallelität::Grafiken
+**Namespace:** Parallelität:: Grafiken
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Concurrency::graphics-Namespace](concurrency-graphics-namespace.md)

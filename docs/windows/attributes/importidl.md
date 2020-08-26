@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - importidl attribute
 ms.assetid: 4b0a4b55-6c57-4e6e-bc7b-a12cc8063941
-ms.openlocfilehash: 6e41a98bef079c92b6df6e7eff203301aa9ceae4
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 8f3c2c5c67ac216d096d1082814c561698f3f732
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80166821"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88842246"
 ---
 # <a name="importidl"></a>importidl
 
@@ -30,7 +30,7 @@ Identifiziert den Namen der IDL-Datei, die Sie mit der IDL-Datei zusammenführen
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **importidl** C++ -Attribut platziert den Abschnitt außerhalb des Bibliotheks Blocks (in *idl_file*) in der generierten IDL-Datei des Programms und im Bibliotheks Abschnitt (in *idl_file*) in den Bibliotheks Abschnitt der generierten IDL-Datei des Programms.
+Das **importidl** C++-Attribut platziert den Abschnitt außerhalb des Bibliotheks Blocks (in *idl_file*) in der generierten IDL-Datei des Programms und im Bibliotheks Abschnitt (in *idl_file*) in den Bibliotheks Abschnitt der generierten IDL-Datei des Programms.
 
 Sie können beispielsweise **importidl**verwenden, wenn Sie eine Hand codierte IDL-Datei mit der generierten IDL-Datei verwenden möchten.
 
@@ -45,12 +45,10 @@ Sie können beispielsweise **importidl**verwenden, wenn Sie eine Hand codierte I
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|Überall|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Überall|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -62,5 +60,5 @@ Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net
 [Eigenständige Attribute](stand-alone-attributes.md)<br/>
 [import](import.md)<br/>
 [importlib](importlib.md)<br/>
-[include](include-cpp.md)<br/>
-[includelib](includelib-cpp.md)
+[darunter](include-cpp.md)<br/>
+[Includelib](includelib-cpp.md)

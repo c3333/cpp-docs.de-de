@@ -12,12 +12,12 @@ helpviewer_keywords:
 - CException [MFC], Delete
 - CException [MFC], ReportError
 ms.assetid: cfacf14d-bfe4-4666-a5c7-38b800512920
-ms.openlocfilehash: a24f324576c872e7fe509b742aa58d6c230ec24a
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: e27802e05c832d28d848d9eb1235d6ef5980b306
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87212487"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88841557"
 ---
 # <a name="cexception-class"></a>CException-Klasse
 
@@ -33,13 +33,13 @@ class AFX_NOVTABLE CException : public CObject
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[CException:: CException](#cexception)|Erstellt ein `CException`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[CException::D Elete](#delete)|Löscht ein- `CException` Objekt.|
 |[CException:: Report Terror](#reporterror)|Meldet dem Benutzer eine Fehlermeldung in einem Meldungs Feld.|
@@ -50,7 +50,7 @@ Da `CException` eine abstrakte Basisklasse ist, können Sie `CException` Objekte
 
 Die abgeleiteten Klassen und ihre Beschreibungen sind unten aufgeführt:
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[CSimpleException](../../mfc/reference/csimpleexception-class.md)|Eine Basisklasse für Ressourcen kritische MFC-Ausnahmen|
 |[CInvalidArgException](../../mfc/reference/cinvalidargexception-class.md)|Ungültige Argument Ausnahme Bedingung|
@@ -84,7 +84,7 @@ Wenn eine Ausnahme von einem der Makros abgefangen wird, wird das `CException` O
 
 **Header:** AFX. h
 
-## <a name="cexceptioncexception"></a><a name="cexception"></a>CException:: CException
+## <a name="cexceptioncexception"></a><a name="cexception"></a> CException:: CException
 
 Diese Member-Funktion erstellt ein- `CException` Objekt.
 
@@ -101,7 +101,7 @@ Geben Sie true an, wenn der Speicher für das `CException` Objekt auf dem Heap z
 
 Dieser Konstruktor muss normalerweise niemals direkt aufgerufen werden. Eine Funktion, die eine Ausnahme auslöst, sollte eine Instanz einer von `CException` abgeleiteten Klasse erstellen und deren Konstruktor aufzurufen, oder Sie sollte eine der MFC-Throw-Funktionen, wie z. b. [afxthrowfileexception](exception-processing.md#afxthrowfileexception), verwenden, um einen vordefinierten Typ auszulösen. Diese Dokumentation wird nur aus Gründen der Vollständigkeit bereitgestellt.
 
-## <a name="cexceptiondelete"></a><a name="delete"></a>CException::D Elete
+## <a name="cexceptiondelete"></a><a name="delete"></a> CException::D Elete
 
 Diese Funktion überprüft, ob das `CException` Objekt auf dem Heap erstellt wurde. wenn dies der Fall ist, wird der- **`delete`** Operator für das-Objekt aufgerufen.
 
@@ -168,7 +168,7 @@ if (pFile != NULL)
 }
 ```
 
-## <a name="cexceptionreporterror"></a><a name="reporterror"></a>CException:: Report Terror
+## <a name="cexceptionreporterror"></a><a name="reporterror"></a> CException:: Report Terror
 
 Mit dieser Member-Funktion können Sie dem Benutzerfehler Text in einem Meldungs Feld melden.
 

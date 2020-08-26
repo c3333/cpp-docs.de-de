@@ -5,20 +5,19 @@ f1_keywords:
 - istream/std::swap
 - istream/std::ws
 ms.assetid: 0301ea0d-4ded-4841-83dd-4253b55b3188
-ms.openlocfilehash: 3d647c7b05a3868ec0359410cc0e703306b874ba
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 6d1fede2726d3d8f5dd678b95fd7a22a301ea95a
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81363079"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88840972"
 ---
 # <a name="ltistreamgt-functions"></a>&lt;istream&gt;-Funktionen
 
-|||
-|-|-|
-|[swap](#istream_swap)|[Ws](#ws)|
+[Wechsel](#istream_swap)\
+[Gefangener](#ws)
 
-## <a name="swap"></a><a name="istream_swap"></a>Swap
+## <a name="swap"></a><a name="istream_swap"></a> Wechsel
 
 Tauscht die Elemente zweier Streamobjekte.
 
@@ -36,13 +35,13 @@ void swap(
 
 ### <a name="parameters"></a>Parameter
 
-*Links*\
+*linken*\
 Ein Stream
 
 *Richting*\
 Ein Stream
 
-## <a name="ws"></a><a name="ws"></a>Ws
+## <a name="ws"></a><a name="ws"></a> Gefangener
 
 Überspringt Leerraum im Datenstrom.
 
@@ -61,14 +60,14 @@ Der Datenstrom.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Manipulator extrahiert und verwirft alle Elemente, `ch` für die [use_facet](../standard-library/basic-filebuf-class.md#open)< **Ctype** \< **Elem**> >( [getloc](../standard-library/ios-base-class.md#getloc)). **is**(**ctype**\< **Elem**>:: **space**, **ch**) ist TRUE.
+Der Manipulator extrahiert und verwirft alle Elemente `ch` , für die [Use_facet](../standard-library/basic-filebuf-class.md#open) <  **CType** \< **Elem**> > ( [getloc](../standard-library/ios-base-class.md#getloc)) ist. **is**( **CType** \< **Elem**> :: **Space**, **ch**) ist true.
 
-Die Funktion ruft [setstate](../standard-library/basic-ios-class.md#setstate)( **eofbit**) auf, wenn sie beim Extrahieren der Elemente auf das Ende der Datei stößt. Es gibt *_Istr zurück.*
+Die Funktion ruft [setstate](../standard-library/basic-ios-class.md#setstate)( **eofbit**) auf, wenn sie beim Extrahieren der Elemente auf das Ende der Datei stößt. *_Istr*wird zurückgegeben.
 
 ### <a name="example"></a>Beispiel
 
 Unter [Operator>>](../standard-library/istream-operators.md#op_gt_gt) finden Sie ein Beispiel für die Verwendung von `ws`.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<istream>](../standard-library/istream.md)

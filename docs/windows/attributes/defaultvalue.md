@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - defaultvalue attribute
 ms.assetid: efa5d050-b2cc-4d9e-9b8e-79954f218d3a
-ms.openlocfilehash: aaa2290c871df3a2482294794461e53afe00568d
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 53b6a50bd7156eb9d6873e5ef08f6d75508fa3e1
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80214842"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88841687"
 ---
 # <a name="defaultvalue"></a>defaultvalue
 
@@ -30,7 +30,7 @@ Der Standardwert für den Parameter.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **DefaultValue** C++ -Attribut verfügt über die gleiche Funktionalität wie das-Attribut [DefaultValue](/windows/win32/Midl/defaultvalue) .
+Das **DefaultValue** C++-Attribut verfügt über die gleiche Funktionalität wie das-Attribut [DefaultValue](/windows/win32/Midl/defaultvalue) .
 
 ## <a name="example"></a>Beispiel
 
@@ -56,12 +56,10 @@ __interface IFireTabCtrl : IDispatch {
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|Schnittstellenparameter|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Schnittstellenparameter|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 

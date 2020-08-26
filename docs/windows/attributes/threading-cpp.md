@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - threading attribute
 ms.assetid: 9b558cd6-fbf0-4602-aed5-31c068550ce3
-ms.openlocfilehash: e08d25df07ad881c8843953d01d9074c815ddb85
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 6f83dca442b6508207a4123fa918fc5078bdf664
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87193067"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88840816"
 ---
 # <a name="threading-c"></a>threading (C++)
 
@@ -28,15 +28,15 @@ Gibt das Threading Modell für ein COM-Objekt an.
 *model*<br/>
 Optionale Eines der folgenden Threading Modelle:
 
-- `apartment`(Apartment Threading)
+- `apartment` (Apartment Threading)
 
-- `neutral`(.NET Framework Komponenten ohne Benutzeroberfläche)
+- `neutral` (.NET Framework Komponenten ohne Benutzeroberfläche)
 
-- `single`(einfaches Threading)
+- `single` (einfaches Threading)
 
-- `free`(freies Threading)
+- `free` (freies Threading)
 
-- `both`(Apartment und freies Threading)
+- `both` (Apartment und freies Threading)
 
 Der Standardwert ist `apartment`.
 
@@ -54,9 +54,7 @@ Ein Beispiel für die Verwendung von **Threading**finden Sie im [lizenzierten](l
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
 |**Zielgruppe**|**`class`**, **`struct`**|
 |**REPEATABLE**|Nein|

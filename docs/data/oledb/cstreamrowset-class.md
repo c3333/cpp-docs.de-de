@@ -26,16 +26,16 @@ helpviewer_keywords:
 - CStreamRowset class, constructor
 - Close method
 ms.assetid: a106e953-a38a-464e-8ea5-28963d9e4811
-ms.openlocfilehash: ad4987422fd200faef141150908d4df0722f669a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 304dfe0e026a9fbba899c1ef17c06cf1baf1529b
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81366277"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88841050"
 ---
 # <a name="cstreamrowset-class"></a>CStreamRowset-Klasse
 
-Wird in `CCommand` `CTable` einer oder einer Deklaration verwendet.
+Wird in einer- `CCommand` oder- `CTable` Deklaration verwendet.
 
 ## <a name="syntax"></a>Syntax
 
@@ -47,9 +47,9 @@ class CStreamRowset
 ### <a name="parameters"></a>Parameter
 
 *TAccessor*<br/>
-Eine Accessorklasse.
+Eine Accessor-Klasse.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldbcli.h
 
@@ -57,14 +57,14 @@ Eine Accessorklasse.
 
 ### <a name="methods"></a>Methoden
 
-|||
+| Name | Beschreibung |
 |-|-|
-|[CStreamRowset](#cstreamrowset)|Konstruktor. Instanziiert und initialisiert `CStreamRowset` das Objekt.|
-|[Schließen](#close)|Gibt den [ISequentialStream-Schnittstellenzeiger](/previous-versions/windows/desktop/ms718035(v=vs.85)) in der Klasse frei.|
+|[CStreamRowset](#cstreamrowset)|Konstruktor. Instanziiert und initialisiert das- `CStreamRowset` Objekt.|
+|[Schließen](#close)|Gibt den [ISequentialStream](/previous-versions/windows/desktop/ms718035(v=vs.85)) -Schnittstellen Zeiger in der-Klasse frei.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Verwenden `CStreamRowset` Sie `CCommand` `CTable` in Ihrer oder Deklaration, z. B.:
+Verwenden `CStreamRowset` Sie in Ihrer- `CCommand` oder- `CTable` Deklaration, z.b.:
 
 [!code-cpp[NVC_OLEDB_Consumer#11](../../data/oledb/codesnippet/cpp/cstreamrowset-class_1.cpp)]
 
@@ -72,18 +72,18 @@ oder
 
 [!code-cpp[NVC_OLEDB_Consumer#12](../../data/oledb/codesnippet/cpp/cstreamrowset-class_2.cpp)]
 
-`ICommand::Execute`gibt `ISequentialStream` einen Zeiger zurück, `m_spStream`der in gespeichert wird. Anschließend verwenden `Read` Sie die Methode, um die (Unicode-Zeichenfolge) Daten im XML-Format abzurufen. Beispiel:
+`ICommand::Execute` Gibt einen- `ISequentialStream` Zeiger zurück, der in gespeichert wird `m_spStream` . Verwenden Sie dann die- `Read` Methode, um die Daten der (Unicode-Zeichenfolge) im XML-Format abzurufen. Beispiel:
 
 [!code-cpp[NVC_OLEDB_Consumer#13](../../data/oledb/codesnippet/cpp/cstreamrowset-class_3.cpp)]
 
-SQL Server 2000 führt die XML-Formatierung aus und gibt alle Spalten und alle Zeilen des Rowsets als eine XML-Zeichenfolge zurück.
+SQL Server 2000 wird die XML-Formatierung durchführt und alle Spalten und alle Zeilen des Rowsets als eine XML-Zeichenfolge zurückgegeben.
 
 > [!NOTE]
 > Diese Funktion funktioniert nur mit SQL Server 2000.
 
-## <a name="cstreamrowsetcstreamrowset"></a><a name="cstreamrowset"></a>CStreamRowset::CStreamRowset
+## <a name="cstreamrowsetcstreamrowset"></a><a name="cstreamrowset"></a> CStreamRowset:: CStreamRowset
 
-Instanziiert und initialisiert `CStreamRowset` das Objekt.
+Instanziiert und initialisiert das- `CStreamRowset` Objekt.
 
 ### <a name="syntax"></a>Syntax
 
@@ -91,9 +91,9 @@ Instanziiert und initialisiert `CStreamRowset` das Objekt.
 CStreamRowset();
 ```
 
-## <a name="cstreamrowsetclose"></a><a name="close"></a>CStreamRowset::Schließen
+## <a name="cstreamrowsetclose"></a><a name="close"></a> CStreamRowset:: Close
 
-Gibt den [ISequentialStream-Schnittstellenzeiger](/previous-versions/windows/desktop/ms718035(v=vs.85)) in der Klasse frei.
+Gibt den [ISequentialStream](/previous-versions/windows/desktop/ms718035(v=vs.85)) -Schnittstellen Zeiger in der-Klasse frei.
 
 ### <a name="syntax"></a>Syntax
 
@@ -101,7 +101,7 @@ Gibt den [ISequentialStream-Schnittstellenzeiger](/previous-versions/windows/des
 void Close();
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Consumervorlagen](../../data/oledb/ole-db-consumer-templates-cpp.md)<br/>
-[Ole DB Consumer Templates Referenz](../../data/oledb/ole-db-consumer-templates-reference.md)
+[Referenz zu OLE DB Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md)

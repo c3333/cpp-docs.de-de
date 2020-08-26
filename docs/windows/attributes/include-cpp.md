@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - include attribute
 ms.assetid: d23f8b91-fe5b-48fa-9371-8bd73af7b8e3
-ms.openlocfilehash: 39f991bb036dce1c50a9d2ee800d3fec65af7c55
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 6b75df74ee69ee4f89eb7bf18fb6bcd77d8a6284
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80166782"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88842194"
 ---
 # <a name="include-c"></a>include (C++)
 
@@ -30,13 +30,13 @@ Der Name einer Datei, die in die generierte IDL-Datei eingefügt werden soll.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **include** C++ -Attribut bewirkt, dass eine `#include` Anweisung unterhalb der `import "docobj.idl"`-Anweisung in der generierten IDL-Datei platziert wird.
+Das **include** C++-Attribut bewirkt `#include` , dass eine-Anweisung unter der- `import "docobj.idl"` Anweisung in der generierten IDL-Datei platziert wird.
 
-Das **include** C++ -Attribut verfügt über die gleiche Funktionalität wie das [include](/windows/win32/Midl/include) -Attribut "Mittel l".
+Das **include** C++-Attribut verfügt über die gleiche Funktionalität wie das [include](/windows/win32/Midl/include) -Attribut "Mittel l".
 
 ## <a name="example"></a>Beispiel
 
-Der folgende Code zeigt ein Beispiel für die Verwendung von **include**. In diesem Beispiel enthält die Datei include. h nur eine `#include`-Anweisung.
+Der folgende Code zeigt ein Beispiel für die Verwendung von **include**. In diesem Beispiel enthält die Datei include. h nur eine- `#include` Anweisung.
 
 ```cpp
 // cpp_attr_ref_include.cpp
@@ -47,12 +47,10 @@ Der folgende Code zeigt ein Beispiel für die Verwendung von **include**. In die
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|Überall|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Überall|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -64,5 +62,5 @@ Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net
 [Eigenständige Attribute](stand-alone-attributes.md)<br/>
 [import](import.md)<br/>
 [importidl](importidl.md)<br/>
-[includelib](includelib-cpp.md)<br/>
+[Includelib](includelib-cpp.md)<br/>
 [importlib](importlib.md)

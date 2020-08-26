@@ -30,12 +30,12 @@ helpviewer_keywords:
 - CKeyboardManager [MFC], TranslateCharToUpper
 - CKeyboardManager [MFC], UpdateAccelTable
 ms.assetid: 4809ece6-89df-4479-8b53-9bf476ee107b
-ms.openlocfilehash: a2d2ae8133310f3a93b6eefc30c67045a47cd94f
-ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
+ms.openlocfilehash: e67bbb18b6a87edfaa4bc4c410ec28eb613ed51d
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88561465"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88841492"
 ---
 # <a name="ckeyboardmanager-class"></a>Ckeyboardmanager-Klasse
 
@@ -51,16 +51,14 @@ class CKeyboardManager : public CObject
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|||
+|name|Beschreibung|
 |-|-|
-|name|BESCHREIBUNG|
 |[Ckeyboardmanager:: ckeyboardmanager](#ckeyboardmanager)|Erstellt ein `CKeyboardManager`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|||
+|name|Beschreibung|
 |-|-|
-|name|BESCHREIBUNG|
 |[Ckeyboardmanager:: Cleanup](#cleanup)|Löscht die Tastenkombinationen.|
 |[Ckeyboardmanager:: finddefaultaccelerator](#finddefaultaccelerator)|Ruft die standardmäßige Tastenkombination für den angegebenen Befehl und das Fenster ab.|
 |[Ckeyboardmanager:: iskeybehandelte](#iskeyhandled)|Bestimmt, ob ein Schlüssel von der Zugriffstasten Tabelle behandelt wird.|
@@ -138,7 +136,7 @@ static BOOL FindDefaultAccelerator(
 *uicmd*<br/>
 in Die Befehls-ID.
 
-*str*<br/>
+*SRT*<br/>
 vorgenommen Ein Verweis auf ein- `CString` Objekt.
 
 *pWndFrame*<br/>

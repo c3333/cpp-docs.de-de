@@ -17,12 +17,12 @@ helpviewer_keywords:
 - signal constants
 - SIGILL constant
 ms.assetid: a3b39281-dae7-4e44-8d68-e6a610c669dd
-ms.openlocfilehash: e9953e967d1c94ae56dfc1063fb0deafa342631c
-ms.sourcegitcommit: dedd4c3cb28adec3793329018b9163ffddf890a4
-ms.translationtype: HT
+ms.openlocfilehash: d26671b8c3d983e7f1c3fd559d8aa2029e3162fe
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57738728"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88841141"
 ---
 # <a name="signal-constants"></a>Signalkonstanten
 
@@ -32,11 +32,11 @@ ms.locfileid: "57738728"
 #include <signal.h>
 ```
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Bemerkungen
 
 Das `sig`-Argument muss eine der unten aufgelisteten (und in SIGNAL.H definierten) Manifestkonstanten sein.
 
-|||
+|Konstante|Beschreibung|
 |-|-|
 |SIGABRT|Nicht ordnungsgemäße Beendigung. Die Standardaktion beendet das aufrufende Programm mit Exitcode 3.  |
 |SIGABRT_COMPAT|Identisch mit SIGABRT. Zur Kompatibilität mit anderen Plattformen.  |
@@ -47,8 +47,8 @@ Das `sig`-Argument muss eine der unten aufgelisteten (und in SIGNAL.H definierte
 |SIGTERM|An das Programm gesendete Beendigungsanforderung. Die Standardaktion beendet das aufrufende Programm mit Exitcode 3.  |
 |SIG_ERR|Ein Rückgabetyp aus einem Signal, der angibt, das ein Fehler aufgetreten ist.  |
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [signal](../c-runtime-library/reference/signal.md)<br/>
-[raise](../c-runtime-library/reference/raise.md)<br/>
+[züchten](../c-runtime-library/reference/raise.md)<br/>
 [Globale Konstanten](../c-runtime-library/global-constants.md)

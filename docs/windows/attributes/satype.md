@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - satype attribute
 ms.assetid: 1716590b-6bcb-4aba-b1bc-82f7335f02c3
-ms.openlocfilehash: 4619deec6d5e4e9083fbc7bcab53caee0101285c
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 16da256f491dbb0002d92cadaceda14a49eb2192
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80166275"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88842779"
 ---
 # <a name="satype"></a>satype
 
@@ -30,18 +30,16 @@ Der Datentyp für die `SAFEARRAY` Datenstruktur, die als Parameter an eine Schni
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|Schnittstellenparameter, Schnittstellen Methode|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Schnittstellenparameter, Schnittstellen Methode|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Satype** C++ -Attribut gibt den Datentyp des `SAFEARRAY`an.
+Das Attribut **Satype** C++ gibt den Datentyp von an `SAFEARRAY` .
 
 > [!NOTE]
 > Eine Dereferenzierungsebene wird vom `SAFEARRAY` Zeiger in der generierten IDL-Datei aus der Deklaration in der CPP-Datei gelöscht.
@@ -63,5 +61,5 @@ __interface A {
 
 [Compilerattribute](compiler-attributes.md)<br/>
 [Parameterattribute](parameter-attributes.md)<br/>
-[Methodenattribut](method-attributes.md)<br/>
+[Methoden Attribute](method-attributes.md)<br/>
 [id](id.md)

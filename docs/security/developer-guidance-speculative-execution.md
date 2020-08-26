@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Spectre
 - CVE-2017-5753
 - Speculative Execution
-ms.openlocfilehash: d0b9faf0bd11892c05e25e981e8cd729cb623dd4
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 72dffd25eef847d1bdffe61c4a18a27d9cb33644
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87219325"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88842454"
 ---
 # <a name="c-developer-guidance-for-speculative-execution-side-channels"></a>C++ Anleitung für Entwickler für spekulative Ausführungs seitige Kanäle
 
@@ -21,7 +21,7 @@ Dieser Artikel enthält Anleitungen für Entwickler, die Unterstützung beim ide
 
 Die Anleitungen in diesem Artikel beziehen sich auf die Klassen von Sicherheitsrisiken, die durch dargestellt werden:
 
-1. CVE-2017-5753, auch als Spectre Variant 1 bezeichnet. Diese Hardware Sicherheitsrisiko-Klasse bezieht sich auf neben Kanäle, die durch eine spekulative Ausführung ausgelöst werden können, die als Ergebnis einer bedingten Verzweigungs-fehl Setzung auftritt. Der Microsoft C++-Compiler in Visual Studio 2017 (beginnend mit Version 15.5.5) umfasst Unterstützung für den `/Qspectre` Switch, der eine Kompilierzeit Entschärfung für eine begrenzte Anzahl von potenziell anfälligen Codierungs Mustern im Zusammenhang mit CVE-2017-5753 bereitstellt. Der `/Qspectre` Schalter ist auch in Visual Studio 2015 Update 3 bis [KB 4338871](https://support.microsoft.com/help/4338871)verfügbar. In der Dokumentation für das [/Qspectre](https://docs.microsoft.com/cpp/build/reference/qspectre) -Flag finden Sie weitere Informationen zu den Auswirkungen und der Verwendung.
+1. CVE-2017-5753, auch als Spectre Variant 1 bezeichnet. Diese Hardware Sicherheitsrisiko-Klasse bezieht sich auf neben Kanäle, die durch eine spekulative Ausführung ausgelöst werden können, die als Ergebnis einer bedingten Verzweigungs-fehl Setzung auftritt. Der Microsoft C++-Compiler in Visual Studio 2017 (beginnend mit Version 15.5.5) umfasst Unterstützung für den `/Qspectre` Switch, der eine Kompilierzeit Entschärfung für eine begrenzte Anzahl von potenziell anfälligen Codierungs Mustern im Zusammenhang mit CVE-2017-5753 bereitstellt. Der `/Qspectre` Schalter ist auch in Visual Studio 2015 Update 3 bis [KB 4338871](https://support.microsoft.com/help/4338871)verfügbar. In der Dokumentation für das- [`/Qspectre`](../build/reference/qspectre.md) Flag finden Sie weitere Informationen zu den Auswirkungen und der Verwendung.
 
 2. CVE-2018-3639, auch als " [spekulative Store Bypass (SSB)](https://aka.ms/sescsrdssb)" bezeichnet. Diese Hardware Sicherheitsrisiko-Klasse bezieht sich auf neben Kanäle, die aufgrund der spekulativen Ausführung einer Last vor einem abhängigen Speicher aufgrund einer Speicherzugriffs-midepdiction auftreten können.
 
@@ -67,7 +67,7 @@ Wenn Sie sichere Software mit einem Prozess wie dem [Security Development Lifecy
 
 In der folgenden Tabelle finden Sie eine Zusammenfassung der Software Sicherheitsmodelle, in denen sich Entwickler möglicherweise Gedanken über diese Sicherheitslücken machen müssen:
 
-|Vertrauensgrenze|BESCHREIBUNG|
+|Vertrauensgrenze|Beschreibung|
 |----------------|----------------|
 |Grenze für virtuelle Computer|Anwendungen, die Arbeits Auslastungen auf separaten virtuellen Computern isolieren, die nicht vertrauenswürdige Daten von einem anderen virtuellen Computer empfangen, können gefährdet sein.|
 |Kernel Grenze|Ein Kernel Modus-Gerätetreiber, der nicht vertrauenswürdige Daten von einem nicht administrativen Benutzermodusprozess empfängt, ist möglicherweise gefährdet.|
@@ -174,7 +174,7 @@ unsigned char WriteSlot(unsigned int untrusted_index, void *ptr) {
 }
 ```
 
-Beachten Sie, dass beide Beispiele eine spekulative Änderung der durch den Stapel zugewiesenen indirekten Verzweigungs Zeiger beinhalten. Es ist möglich, dass eine spekulative Änderung auch bei globalen Variablen, Heap zugewiesener Speicher und sogar Schreib geschütztem Arbeitsspeicher auf einigen CPUs stattfindet. Für den Stapel zugeordneten Arbeitsspeicher führt der Microsoft C++-Compiler bereits Schritte aus, um das spekulative Ändern der durch den Stapel zugewiesenen indirekten Verzweigungs Ziele zu erschweren, wie z. b. durch Neuanordnen von lokalen Variablen, sodass Puffer neben einem Sicherheits Cookie als Teil der [/GS](https://docs.microsoft.com/cpp/build/reference/gs-buffer-security-check) -compilersicherheitsfunktion platziert werden.
+Beachten Sie, dass beide Beispiele eine spekulative Änderung der durch den Stapel zugewiesenen indirekten Verzweigungs Zeiger beinhalten. Es ist möglich, dass eine spekulative Änderung auch bei globalen Variablen, Heap zugewiesener Speicher und sogar Schreib geschütztem Arbeitsspeicher auf einigen CPUs stattfindet. Für den Stapel zugeordneten Arbeitsspeicher führt der Microsoft C++-Compiler bereits Schritte aus, um das spekulative Ändern der durch den Stapel zugewiesenen indirekten Verzweigungs Ziele zu erschweren, wie z. b. durch Neuanordnen von lokalen Variablen, sodass Puffer neben einem Sicherheits Cookie als Teil der [`/GS`](../build/reference/gs-buffer-security-check.md) compilersicherheitsfunktion platziert werden.
 
 ## <a name="speculative-type-confusion"></a>Spekulative typverwirrung
 
@@ -331,7 +331,7 @@ unsigned char ReadByte(unsigned char *buffer, unsigned int buffer_size, unsigned
 
 ### <a name="speculation-barrier-via-compiler-time-instrumentation"></a>Spekulations Barriere durch compilerzeit Instrumentation
 
-Der Microsoft C++-Compiler in Visual Studio 2017 (beginnend mit Version 15.5.5) umfasst die Unterstützung für den `/Qspectre` Switch, der automatisch eine Spekulations Barriere für einen begrenzten Satz potenziell anfälliger Codierungs Muster im Zusammenhang mit CVE-2017-5753 einfügt. In der Dokumentation für das [/Qspectre](https://docs.microsoft.com/cpp/build/reference/qspectre) -Flag finden Sie weitere Informationen zu den Auswirkungen und der Verwendung. Es ist wichtig zu beachten, dass dieses Flag nicht alle potenziell anfälligen Codierungs Muster abdeckt und solche Entwickler nicht als umfassende Entschärfung für diese Klasse von Sicherheitsrisiken verlassen sollten.
+Der Microsoft C++-Compiler in Visual Studio 2017 (beginnend mit Version 15.5.5) umfasst die Unterstützung für den `/Qspectre` Switch, der automatisch eine Spekulations Barriere für einen begrenzten Satz potenziell anfälliger Codierungs Muster im Zusammenhang mit CVE-2017-5753 einfügt. In der Dokumentation für das- [`/Qspectre`](../build/reference/qspectre.md) Flag finden Sie weitere Informationen zu den Auswirkungen und der Verwendung. Es ist wichtig zu beachten, dass dieses Flag nicht alle potenziell anfälligen Codierungs Muster abdeckt und solche Entwickler nicht als umfassende Entschärfung für diese Klasse von Sicherheitsrisiken verlassen sollten.
 
 ### <a name="masking-array-indices"></a>Maskieren von Array Indizes
 

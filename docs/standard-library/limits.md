@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - limits header
 ms.assetid: e07d6379-5b00-4a3d-a789-40d41538b59e
-ms.openlocfilehash: 2d0f4f96d25c91ac20fe5a1883fc61fc47d15d5e
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 1527672bd51682bf32c82601ff54a94ea4154a0b
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87217687"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88841908"
 ---
 # <a name="ltlimitsgt"></a>&lt;limits&gt;
 
@@ -32,14 +32,14 @@ Explizite Spezialisierungs spezizierungen der- `numeric_limits` Klasse beschreib
 
 ### <a name="enumerations"></a>Enumerationen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[float_denorm_style](../standard-library/limits-enums.md#float_denorm_style)|Die Enumeration beschreibt die verschiedenen Methoden, die eine Implementierung für die Darstellung eines denormalisierten Gleitkommawerts auswählen kann – für Werte, die zu klein sind, um als normalisierte Werte dargestellt zu werden:|
 |[float_round_style](../standard-library/limits-enums.md#float_round_style)|Die Enumeration beschreibt die verschiedenen Methoden, die eine Implementierung für die Rundung eines Gleitkommawerts auf einen ganzzahligen Wert auswählen kann.|
 
 ### <a name="classes"></a>Klassen
 
-|||
+|name|Beschreibung|
 |-|-|
 |[Numeric_limits-Klasse](../standard-library/numeric-limits-class.md)|Die Klassen Vorlage beschreibt arithmetische Eigenschaften integrierter numerischer Typen.|
 

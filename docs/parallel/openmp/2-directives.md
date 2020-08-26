@@ -2,12 +2,12 @@
 title: 2. Anweisungen
 ms.date: 01/18/2019
 ms.assetid: d1a69374-6c03-45fb-8c86-e91cea8adae8
-ms.openlocfilehash: c3aadcf34e013c66dec81ca4b09dce4144294ac3
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 5b2649a65efd3368cf8a4d2649a424b1a539f1ef
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87228400"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88841973"
 ---
 # <a name="2-directives"></a>2. Direktiven
 
@@ -21,7 +21,7 @@ Die Syntax einer OpenMP-Direktive wird formal von der Grammatik in [Anhang C](c-
 #pragma omp directive-name  [clause[ [,] clause]...] new-line
 ```
 
-Jede Direktive beginnt mit `#pragma omp` , um das potenzielle Auftreten von Konflikten mit anderen (nicht-OpenMP-oder Lieferanten Erweiterungen von OpenMP)-Pragma-Direktiven mit denselben Namen zu reduzieren. Der Rest der Direktive befolgt die Konventionen der C-und C++-Standards für Compilerdirektiven. Insbesondere kann Leerraum vor und nach dem verwendet werden `#` , und manchmal müssen Leerräume verwendet werden, um die Wörter in einer-Direktive voneinander zu trennen. Die Vorverarbeitung von Token `#pragma omp` , die auf folgen, unterliegen dem Makro Austausch.
+Jede Direktive beginnt mit  `#pragma omp` , um das potenzielle Auftreten von Konflikten mit anderen (nicht-OpenMP-oder Lieferanten Erweiterungen von OpenMP)-Pragma-Direktiven mit denselben Namen zu reduzieren. Der Rest der Direktive befolgt die Konventionen der C-und C++-Standards für Compilerdirektiven. Insbesondere kann Leerraum vor und nach dem verwendet werden `#` , und manchmal müssen Leerräume verwendet werden, um die Wörter in einer-Direktive voneinander zu trennen. Die Vorverarbeitung von Token `#pragma omp` , die auf folgen, unterliegen dem Makro Austausch.
 
 Bei Anweisungen wird die Groß-/Kleinschreibung beachtet Die Reihenfolge, in der Klauseln in Direktiven vorkommen, ist nicht signifikant. Klauseln für Direktiven können bei Bedarf wiederholt werden, je nach den Einschränkungen, die in der Beschreibung der einzelnen Klauseln aufgeführt sind. Wenn " *Variable-list* " in einer-Klausel angezeigt wird, müssen nur Variablen angegeben werden. Pro Direktive kann nur ein *Direktivenname* angegeben werden.  Beispielsweise ist die folgende Anweisung nicht zulässig:
 
@@ -191,12 +191,12 @@ Die- `schedule` Klausel gibt an, wie Iterationen der `for` Schleife zwischen den
 
 Tabelle 2-1: `schedule` *Klauselart* Werte
 
-|||
+|Wert|Beschreibung|
 |-|-|
-|Statisch|Wenn `schedule(static,` *chunk_size* `)` angegeben wird, werden Iterationen in Blöcke der durch *chunk_size*angegebenen Größe aufgeteilt. Die Blöcke werden den Threads im Team im Team in der Reihenfolge der Thread Nummer statisch zugewiesen. Wenn kein *chunk_size* angegeben wird, wird der Iterations Bereich in Blöcke unterteilt, die ungefähr gleich groß sind, wobei jedem Thread ein Block zugeordnet ist.|
+|static|Wenn `schedule(static,` *chunk_size* `)` angegeben wird, werden Iterationen in Blöcke der durch *chunk_size*angegebenen Größe aufgeteilt. Die Blöcke werden den Threads im Team im Team in der Reihenfolge der Thread Nummer statisch zugewiesen. Wenn kein *chunk_size* angegeben wird, wird der Iterations Bereich in Blöcke unterteilt, die ungefähr gleich groß sind, wobei jedem Thread ein Block zugeordnet ist.|
 |dynamisch|Wenn `schedule(dynamic,` *chunk_size* `)` angegeben wird, werden die Iterationen in eine Reihe von Blöcken aufgeteilt, von denen jede *chunk_size* Iterationen enthält. Jeder Block wird einem Thread zugewiesen, der auf eine Zuweisung wartet. Der Thread führt den Teil der Iterationen aus und wartet dann auf seine nächste Zuweisung, bis keine Blöcke mehr zugewiesen werden. Der letzte Block, der zugewiesen werden soll, kann eine geringere Anzahl von Iterationen aufweisen. Wenn kein *chunk_size* angegeben wird, wird der Standardwert 1 verwendet.|
 |durch|Wenn `schedule(guided,` *chunk_size* `)` angegeben wird, werden die Iterationen Threads in Blöcken mit absteigender Größe zugewiesen. Wenn ein Thread den zugewiesenen Teil der Iterationen beendet, wird ihm dynamisch ein weiterer Block zugewiesen, bis keine vorhanden ist. Bei einem *chunk_size* von 1 entspricht die Größe jedes Blocks ungefähr der Anzahl der nicht zugewiesenen Iterationen dividiert durch die Anzahl der Threads. Diese Größen verringern sich fast exponentiell auf 1. Bei einer *chunk_size* mit dem Wert *k* größer als 1 verringern sich die Größen fast exponentiell auf *k*, mit der Ausnahme, dass der letzte Block weniger als *k* Iterationen aufweisen kann. Wenn kein *chunk_size* angegeben wird, wird der Standardwert 1 verwendet.|
-|Laufzeit|Wenn `schedule(runtime)` angegeben wird, wird die Entscheidung bezüglich der Planung bis zur Laufzeit verzögert. Die *planart* und die Größe der Blöcke können zur Laufzeit durch Festlegen der Umgebungsvariablen ausgewählt werden `OMP_SCHEDULE` . Wenn diese Umgebungsvariable nicht festgelegt ist, wird der resultierende Zeitplan von der Implementierung definiert. Wenn `schedule(runtime)` angegeben wird, darf *chunk_size* nicht angegeben werden.|
+|Laufzeit|Wenn `schedule(runtime)` angegeben wird, wird die Entscheidung bezüglich der Planung bis zur Laufzeit verzögert. Die *planart* und die Größe der Blöcke können zur Laufzeit durch Festlegen der Umgebungsvariablen ausgewählt werden `OMP_SCHEDULE` . Wenn diese Umgebungsvariable nicht festgelegt ist, wird der resultierende Zeitplan von der Implementierung definiert. Wenn  `schedule(runtime)` angegeben wird, darf *chunk_size* nicht angegeben werden.|
 
 Wenn keine explizit definierte `schedule` Klausel vorhanden ist, wird der Standardwert von der `schedule` Implementierung definiert.
 
@@ -462,21 +462,21 @@ Wenn die Objekte, die synchronisiert werden müssen, durch Variablen festgelegt 
 Eine `flush` -Direktive ohne *Variable-list* synchronisiert alle freigegebenen Objekte außer nicht zugänglichen Objekten mit automatischer Speicherdauer. (Dies hat wahrscheinlich mehr Aufwand als eine `flush` mit einer *Variablen Liste*.) Eine `flush` -Direktive ohne eine *Variablen Liste* wird für die folgenden Direktiven impliziert:
 
 - `barrier`
-- Beim eingeben und Beenden von`critical`
-- Beim eingeben und Beenden von`ordered`
-- Beim eingeben und Beenden von`parallel`
-- Beim Beenden von`for`
-- Beim Beenden von`sections`
-- Beim Beenden von`single`
-- Beim eingeben und Beenden von`parallel for`
-- Beim eingeben und Beenden von`parallel sections`
+- Beim eingeben und Beenden von `critical`
+- Beim eingeben und Beenden von `ordered`
+- Beim eingeben und Beenden von `parallel`
+- Beim Beenden von `for`
+- Beim Beenden von `sections`
+- Beim Beenden von `single`
+- Beim eingeben und Beenden von `parallel for`
+- Beim eingeben und Beenden von `parallel sections`
 
 Die-Direktive wird nicht impliziert, wenn eine- `nowait` Klausel vorhanden ist. Beachten Sie, dass die- `flush` Direktive nicht für Folgendes impliziert ist:
 
-- Beim Eintrag zu`for`
-- Beim eingeben oder Beenden von`master`
-- Beim Eintrag zu`sections`
-- Beim Eintrag zu`single`
+- Beim Eintrag zu `for`
+- Beim eingeben oder Beenden von `master`
+- Beim Eintrag zu `sections`
+- Beim Eintrag zu `single`
 
 Ein Verweis, der auf den Wert eines Objekts mit einem flüchtig qualifizierten Typ zugreift, verhält sich so, als wäre es eine `flush` Direktive, die das Objekt am vorherigen Sequenz Punkt angibt. Ein Verweis, der den Wert eines Objekts mit einem flüchtig gekennzeichneten Typ ändert, verhält sich so, als wäre es eine `flush` Direktive, die das Objekt am nachfolgenden Sequenz Punkt angibt.
 
@@ -717,7 +717,7 @@ Eine Reduzierung wird in der Regel für eine-Anweisung mit einer der folgenden F
 
 - *x* `=` *x* - *op* - *expr*
 - *x* *binop* - `=` *expr*
-- *x* `=` *expr* *op* *x* (außer Subtraktion)
+- *x* `=` *expr* *op* *x*  (außer Subtraktion)
 - *x*`++`
 - `++` *x*
 - *x*`--`
@@ -860,14 +860,14 @@ Die dynamische Schachtelung von-Direktiven muss den folgenden Regeln entsprechen
 
 - `for``sections`-,-und- `single` Direktiven, die an denselben binden, `parallel` dürfen nicht ineinander geschachtelt werden.
 
-- `critical`Direktiven mit dem gleichen Namen dürfen nicht ineinander geschachtelt werden. Beachten Sie, dass diese Einschränkung nicht ausreicht, um Deadlocks zu verhindern.
+- `critical` Direktiven mit dem gleichen Namen dürfen nicht ineinander geschachtelt werden. Beachten Sie, dass diese Einschränkung nicht ausreicht, um Deadlocks zu verhindern.
 
 - `for`-,- `sections` und- `single` Direktiven sind im dynamischen Bereich `critical` der `ordered` -,-und-Regionen nicht zulässig, `master` Wenn die Direktiven an denselben `parallel` wie die Regionen gebunden werden.
 
-- `barrier`-Anweisungen sind im dynamischen Bereich der `for` Regionen, `ordered` ,,, und nicht zulässig, `sections` `single` `master` `critical` Wenn die Direktiven an die gleichen `parallel` wie die Regionen gebunden werden.
+- `barrier` -Anweisungen sind im dynamischen Bereich der `for` Regionen, `ordered` ,,, und nicht zulässig, `sections` `single` `master` `critical` Wenn die Direktiven an die gleichen `parallel` wie die Regionen gebunden werden.
 
-- `master`-Anweisungen sind im dynamischen Block von `for` -, `sections` -und-Direktiven nicht zulässig, `single` Wenn die `master` Direktiven an dieselbe `parallel` wie die Arbeits Freigabe Direktiven gebunden werden.
+- `master` -Anweisungen sind im dynamischen Block von `for` -, `sections` -und-Direktiven nicht zulässig, `single` Wenn die `master` Direktiven an dieselbe `parallel` wie die Arbeits Freigabe Direktiven gebunden werden.
 
-- `ordered`Anweisungen sind im dynamischen Bereich von Regionen nicht zulässig `critical` , wenn die Direktiven an denselben `parallel` wie die Regionen gebunden werden.
+- `ordered` Anweisungen sind im dynamischen Bereich von Regionen nicht zulässig `critical` , wenn die Direktiven an denselben `parallel` wie die Regionen gebunden werden.
 
 - Jede Direktive, die zulässig ist, wenn Sie in einem parallelen Bereich dynamisch ausgeführt wird, ist auch bei der Ausführung außerhalb eines parallelen Bereichs zulässig. Bei der dynamischen Ausführung außerhalb eines vom Benutzer angegebenen parallelen Bereichs wird die-Direktive von einem Team ausgeführt, das nur aus dem Master Thread besteht.

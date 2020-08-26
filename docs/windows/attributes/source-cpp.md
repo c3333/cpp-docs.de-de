@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - source attribute
 ms.assetid: 1878d05d-7709-4e97-b114-c62f38f5140e
-ms.openlocfilehash: 274e446aecc4d0d7096211bbae88e0f170ae44a2
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: f9a1f576e26805c5dd84c2d83cdf3615d0661af3
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87213826"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88842766"
 ---
 # <a name="source-c"></a>source (C++)
 
@@ -70,13 +70,11 @@ class NN : public b
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
 |**Zielgruppe**|**`class`**, **`struct`** ,- **Schnittstelle**|
 |**REPEATABLE**|Nein|
-|**Erforderliche Attribute**|`coclass`(bei Anwendung auf Klasse oder Struktur)|
+|**Erforderliche Attribute**|`coclass` (bei Anwendung auf Klasse oder Struktur)|
 |**Ungültige Attribute**|Keine|
 
 Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).

@@ -22,12 +22,12 @@ helpviewer_keywords:
 - CAutoHideDockSite [MFC], UnSetAutoHideMode
 - CAutoHideDockSite [MFC], m_nExtraSpace
 ms.assetid: 2a0f6bec-c369-4ab7-977d-564e7946ebad
-ms.openlocfilehash: 2779e643b15179b0017535fbfbb144f94e1aedbe
-ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
+ms.openlocfilehash: 14db8d93ea7706b3a4daad2ba751f8410974f6cb
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88562011"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88841635"
 ---
 # <a name="cautohidedocksite-class"></a>Cautohidedocksite-Klasse
 
@@ -43,17 +43,17 @@ class CAutoHideDockSite : public CDockSite
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|||
+| name | Beschreibung |
 |-|-|
-|name|BESCHREIBUNG|
+|Name|Beschreibung|
 |`CAutoHideDockSite::CAutoHideDockSite`|Erstellt ein `CAutoHideDockSite`-Objekt.|
 |`CAutoHideDockSite::~CAutoHideDockSite`|Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|||
+| name | Beschreibung |
 |-|-|
-|name|BESCHREIBUNG|
+|Name|Beschreibung|
 |`CAutoHideDockSite::AllowShowOnPaneMenu`|Gibt an, ob das `CAutoHideDockSite` im Menübereich angezeigt wird.|
 |[Cautohidedocksite:: canakzeptpane](#canacceptpane)|Bestimmt, ob ein Basis Fenster Objekt von der [cmfcautohidebar-Klasse](../../mfc/reference/cmfcautohidebar-class.md)abgeleitet wird.|
 |[Cautohidedocksite::D ockpane](#dockpane)|Dockt einen Bereich an dieses `CAuotHideDockSite` Objekt an.|
@@ -65,9 +65,9 @@ class CAutoHideDockSite : public CDockSite
 
 ### <a name="data-members"></a>Datenelemente
 
-|||
+| Name | Beschreibung |
 |-|-|
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |[Cautohidedocksite:: m_nExtraSpace](#m_nextraspace)|Definiert die Größe des Leerraums zwischen den Symbolleisten und dem Rand der Andock Leiste. Dieser Platz wird vom linken oder oberen Rand abhängig von der Ausrichtung des Andock Bereichs gemessen.|
 
 ## <a name="remarks"></a>Bemerkungen

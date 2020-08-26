@@ -7,20 +7,19 @@ f1_keywords:
 - type_traits/std::true_type
 - xtr1common/std::true_type
 ms.assetid: 8ac040ca-ed2d-4570-adc9-cb5626530053
-ms.openlocfilehash: 784bcfa5325e74180d3981a98cda530d839ab9f6
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 70894689f934ef8008bfa2d82ae63727c2e2605d
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81367978"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88841739"
 ---
 # <a name="lttype_traitsgt-typedefs"></a>&lt;type_traits&gt;-Typedefs
 
-|||
-|-|-|
-|[false_type](#false_type)|[true_type](#true_type)|
+[false_type](#false_type)\
+[true_type](#true_type)
 
-## <a name="false_type-typedef"></a><a name="false_type"></a>false_type Typedef
+## <a name="false_type-typedef"></a><a name="false_type"></a> false_type-Typdefinition
 
 Enthält eine Ganzzahlkonstante mit einem falschen Wert.
 
@@ -53,7 +52,7 @@ false_type == false
 true_type == true
 ```
 
-## <a name="true_type-typedef"></a><a name="true_type"></a>true_type Typedef
+## <a name="true_type-typedef"></a><a name="true_type"></a> true_type-Typdefinition
 
 Enthält eine Ganzzahlkonstante mit einem wahren Wert.
 
@@ -88,6 +87,6 @@ false_type == false
 true_type == true
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[<>type_traits](../standard-library/type-traits.md)
+[<type_traits>](../standard-library/type-traits.md)

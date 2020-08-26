@@ -1,17 +1,17 @@
 ---
-title: Display BIND (C++ com-Attribut)
+title: Display BIND (C++-com-Attribut)
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.displaybind
 helpviewer_keywords:
 - displaybind attribute
 ms.assetid: b3d70396-78e4-43d9-9583-16ddb8c9bb1f
-ms.openlocfilehash: 9ca5c84e859d395d71b7f37a34b1158800bceed7
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: e5c870aefbc73893b5bf14edec384a93fe0b057b
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80168251"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88841661"
 ---
 # <a name="displaybind"></a>displaybind
 
@@ -25,7 +25,7 @@ Gibt eine Eigenschaft an, die dem Benutzer als Bindable angezeigt werden soll.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Das **Display BIND** C++ -Attribut verfügt über die gleiche Funktionalität wie das Attribut " [Display BIND](/windows/win32/Midl/displaybind) " in der Mitte.
+Das **Display BIND** C++-Attribut verfügt über die gleiche Funktionalität wie das [attributebind](/windows/win32/Midl/displaybind) -Attribut "Mittel l".
 
 ## <a name="example"></a>Beispiel
 
@@ -33,12 +33,10 @@ Ein Beispiel für die Verwendung von **Display BIND**finden Sie im Beispiel für
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|Schnittstellenmethode|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Schnittstellenmethode|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -47,8 +45,8 @@ Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net
 ## <a name="see-also"></a>Weitere Informationen
 
 [IDL-Attribute](idl-attributes.md)<br/>
-[Methodenattribut](method-attributes.md)<br/>
-[Datenmemberattribute](data-member-attributes.md)<br/>
+[Methoden Attribute](method-attributes.md)<br/>
+[Datenmember-Attribute](data-member-attributes.md)<br/>
 [defaultbind](defaultbind.md)<br/>
 [immediatebind](immediatebind.md)<br/>
 [requestedit](requestedit.md)

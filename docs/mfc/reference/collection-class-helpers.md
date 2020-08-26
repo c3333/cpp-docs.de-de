@@ -8,12 +8,12 @@ helpviewer_keywords:
 - collection classes [MFC], helper functions
 - helper functions collection class [MFC]
 ms.assetid: bc3a2368-9edd-4748-9e6a-13cba79517ca
-ms.openlocfilehash: 02bc5c5a7c1766c97d9a834c8b6b4dfb2a26ae82
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 04b142cde12a9795f217559f875eef7fcec3b0f2
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87231792"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88841427"
 ---
 # <a name="collection-class-helpers"></a>Hilfsfunktionen für die Auflistungsklasse
 
@@ -23,7 +23,7 @@ Die Microsoft Foundation Class-Bibliothek bietet die folgenden globalen Funktion
 
 ### <a name="collection-class-helpers"></a>Hilfsfunktionen für die Auflistungsklasse
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[CompareElements](#compareelements)|Gibt an, ob Elemente identisch sind.|
 |[CopyElements](#copyelements)|Kopiert Elemente aus einem Array in ein anderes.|
@@ -31,7 +31,7 @@ Die Microsoft Foundation Class-Bibliothek bietet die folgenden globalen Funktion
 |[Hashkey](#hashkey)|Berechnet einen hashkey.|
 |[SerializeElements](#serializeelements)|Speichert oder ruft Elemente in ein oder aus einem Archiv ab.|
 
-## <a name="compareelements"></a><a name="compareelements"></a>Compareelements
+## <a name="compareelements"></a><a name="compareelements"></a> Compareelements
 
 Wird direkt durch [CLIST:: Find] (CLIST-Class. MD # NOT_FOUND. MD # clist__find und indirekt durch [cmap__lookup](cmap-class.md#lookup) und [cmap__operator &#91;&#93;](cmap-class.md#operator_at)aufgerufen.
 
@@ -73,7 +73,7 @@ Die Programmiersprache C++ definiert den Vergleichs Operator ( `==` ) für einfa
 
    **Header:** afxtempl.h
 
-## <a name="copyelements"></a><a name="copyelements"></a>Copyelements
+## <a name="copyelements"></a><a name="copyelements"></a> Copyelements
 
 Diese Funktion wird direkt von " [CArray:: Append](carray-class.md#append) " und " [CArray:: Copy](carray-class.md#copy)" aufgerufen.
 
@@ -109,7 +109,7 @@ Weitere Informationen zur Implementierung dieser und anderer Hilfsfunktionen fin
 
   **Header** afxtempl. h
 
-## <a name="dumpelements"></a><a name="dumpelements"></a>Dumpelements
+## <a name="dumpelements"></a><a name="dumpelements"></a> Dumpelements
 
 Stellt beim Überschreiben die Datenstrom orientierte Diagnoseausgabe in Textform für die Elemente der Auflistung bereit.
 
@@ -145,7 +145,7 @@ Bei der Standardimplementierung wird keine Aktion ausgeführt. Wenn die Elemente
 
   **Header** afxtempl. h
 
-## <a name="hashkey"></a><a name="hashkey"></a>Hashkey
+## <a name="hashkey"></a><a name="hashkey"></a> Hashkey
 
 Berechnet einen Hashwert für den angegebenen Schlüssel.
 
@@ -187,7 +187,7 @@ template <> UINT AFXAPI HashKey(unsigned __int64 key)
 
   **Header** afxtempl. h
 
-## <a name="serializeelements"></a><a name="serializeelements"></a>SerializeElements
+## <a name="serializeelements"></a><a name="serializeelements"></a> SerializeElements
 
 [CArray](carray-class.md), [CLIST](clist-class.md)und [cmap](cmap-class.md) ruft diese Funktion auf, um Elemente zu serialisieren.
 
