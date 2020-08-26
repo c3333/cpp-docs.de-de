@@ -6,16 +6,16 @@ helpviewer_keywords:
 - CArchive class [MFC], storing and loading objects
 - CArchive class [MFC], operators
 ms.assetid: 56aef326-02dc-4992-8282-f0a4b78a064e
-ms.openlocfilehash: 5029227078ac0af9ebdd0c74522a7b0ae8ea4d42
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 0351cd0fad1d0fc838c75d3cdbd809a04b0fb393
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87228517"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88832294"
 ---
 # <a name="using-the-carchive-ltlt-and-gtgt-operators"></a>Verwenden der CArchive &lt; &lt; -und- &gt; &gt; Operatoren
 
-`CArchive`stellt <\< and >> Operatoren zum Schreiben und Lesen von einfachen Datentypen sowie `CObject` von s in und aus einer Datei bereit.
+`CArchive` stellt <\< and >> Operatoren zum Schreiben und Lesen von einfachen Datentypen sowie `CObject` von s in und aus einer Datei bereit.
 
 #### <a name="to-store-an-object-in-a-file-via-an-archive"></a>So speichern Sie ein Objekt in einer Datei über ein Archiv
 
@@ -39,24 +39,43 @@ Die obige Code Vorlage ist exakt identisch mit der von AppWizard erstellten Funk
 
 [!code-cpp[NVC_MFCSerialization#10](../mfc/codesnippet/cpp/using-the-carchive-output-and-input-operators_4.cpp)]
 
-Die Bibliothek definiert **<\<** and **>>** Operatoren für `CArchive` als ersten Operanden und die folgenden Datentypen und Klassentypen als zweiter Operand:
+Die Bibliothek definiert **`<<`** -und- **`>>`** Operatoren für `CArchive` als ersten Operanden und die folgenden Datentypen und Klassentypen als zweiter Operand:
 
-||||
-|-|-|-|
-|`CObject*`|**Größe** und`CSize`|**`float`**|
-|**Wort**|`CString`|**Punkt** und`CPoint`|
-|`DWORD`|**Hobby**|`RECT` und `CRect`|
-|**Double**|**Lange**|`CTime` und `CTimeSpan`|
-|`Int`|**COleCurrency**|`COleVariant`|
-|`COleDateTime`|`COleDateTimeSpan`||
+:::row:::
+   :::column span="":::
+      `BYTE`\
+      `CObject*`\
+      `COleCurrency`\
+      `COleDateTime`\
+      `COleDateTimeSpan`
+   :::column-end:::
+   :::column span="":::
+      `COleVariant`\
+      `CString`\
+      `CTime` und `CTimeSpan`\
+      `Double`
+   :::column-end:::
+   :::column span="":::
+      `DWORD`\
+      `Float`\
+      `Int`\
+      `LONG`
+   :::column-end:::
+   :::column span="":::
+      `POINT` und `CPoint`\
+      `RECT` und `CRect`\
+      `SIZE` und `CSize`\
+      `WORD`
+   :::column-end:::
+:::row-end:::
 
 > [!NOTE]
 > Das Speichern und Laden von `CObject` s über ein Archiv erfordert zusätzliche Überlegungen. Weitere Informationen finden Sie unter [Speichern und Laden von CObjects über ein Archiv](../mfc/storing-and-loading-cobjects-via-an-archive.md).
 
-Der **CArchive- \<** and **> > <** -Operatoren gibt immer einen Verweis auf das- `CArchive` Objekt zurück, das der erste Operand ist. Dies ermöglicht es Ihnen, die Operatoren zu verketten, wie unten dargestellt:
+Die `CArchive` **`<<`** **`>>`** Operatoren und geben immer einen Verweis auf das- `CArchive` Objekt zurück, das der erste Operand ist. Dies ermöglicht es Ihnen, die Operatoren zu verketten, wie unten dargestellt:
 
 [!code-cpp[NVC_MFCSerialization#11](../mfc/codesnippet/cpp/using-the-carchive-output-and-input-operators_5.cpp)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Serialisierung: Serialisieren eines Objekts](../mfc/serialization-serializing-an-object.md)

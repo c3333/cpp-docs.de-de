@@ -22,12 +22,12 @@ helpviewer_keywords:
 - std::queue [C++], push
 - std::queue [C++], size
 ms.assetid: 28c20ab0-3a72-4185-9e0f-5a44eea0e204
-ms.openlocfilehash: 331ca298507e0ebecac0376f660feefdafd9d99d
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: e0bfa4ab037b52b237bd674d5f705de4e9699383
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87232936"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88832606"
 ---
 # <a name="queue-class"></a>queue-Klasse
 
@@ -68,13 +68,13 @@ Es gibt drei Arten von Containeradaptern, die von der C++-Standardbibliothek def
 
 ### <a name="constructors"></a>Konstruktoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[Ei](#queue)|Erstellt ein `queue`-Objekt, das leer oder eine Kopie eines Basiscontainerobjekts ist.|
 
 ### <a name="typedefs"></a>TypeDefs
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[container_type](#container_type)|Ein Typ, der den Basiscontainer bereitstellt, der durch `queue` angepasst werden soll.|
 |[size_type](#size_type)|Eine Ganzzahltyp ohne Vorzeichen, der die Anzahl von Elementen in `queue` darstellen kann.|
@@ -82,7 +82,7 @@ Es gibt drei Arten von Containeradaptern, die von der C++-Standardbibliothek def
 
 ### <a name="functions"></a>Functions
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[Zurück](#back)|Gibt ein Verweis auf das letzte und das zuletzt hinzugefügte Element auf der Rückseite des `queue` zurück.|
 |[empty](#empty)|Testet, ob das `queue`-Objekt ist leer.|
@@ -91,7 +91,7 @@ Es gibt drei Arten von Containeradaptern, die von der C++-Standardbibliothek def
 |[push](#push)|Fügt am Ende der `queue` ein Element hinzu.|
 |[size](#size)|Gibt die Anzahl von Elementen in der `queue` zurück.|
 
-## <a name="back"></a><a name="back"></a>Zurück
+## <a name="back"></a><a name="back"></a> Zurück
 
 Gibt einen Verweis auf das letzte und das zuletzt hinzugefügte Element auf der Rückseite der Warteschlange zurück.
 
@@ -137,7 +137,7 @@ int main( )
 }
 ```
 
-## <a name="container_type"></a><a name="container_type"></a>container_type
+## <a name="container_type"></a><a name="container_type"></a> container_type
 
 Ein Typ, der den anzupassenden Basiscontainer bereitstellt.
 
@@ -155,7 +155,7 @@ Weitere Informationen zu `Container` finden Sie im Abschnitt „Hinweise“ des 
 
 Im Beispiel für [Warteschlange](#queue) wird verdeutlicht, wie ein `container_type` deklariert und verwendet wird.
 
-## <a name="empty"></a><a name="empty"></a>leer
+## <a name="empty"></a><a name="empty"></a> leer
 
 Testet, ob eine Warteschlange leer ist.
 
@@ -165,7 +165,7 @@ bool empty() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn die Warteschlange leer ist. , **`false`** Wenn die Warteschlange nicht leer ist.
+**`true`** , wenn die Warteschlange leer ist. , **`false`** Wenn die Warteschlange nicht leer ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -201,7 +201,7 @@ The queue q1 is not empty.
 The queue q2 is empty.
 ```
 
-## <a name="front"></a><a name="front"></a>Beifahrer
+## <a name="front"></a><a name="front"></a> Beifahrer
 
 Gibt einen Verweis auf das erste Element auf der Vorderseite einer Warteschlange zurück.
 
@@ -253,7 +253,7 @@ int main() {
 }
 ```
 
-## <a name="pop"></a><a name="pop"></a>Chor
+## <a name="pop"></a><a name="pop"></a> Chor
 
 Entfernt ein Element von der Vorderseite der Warteschlange.
 
@@ -309,7 +309,7 @@ After a pop the queue length is 2.
 After a pop, the element at the front of the queue is 20.
 ```
 
-## <a name="push"></a><a name="push"></a>Push
+## <a name="push"></a><a name="push"></a> Push
 
 Fügt am Ende der Warteschlange ein Element hinzu.
 
@@ -425,7 +425,7 @@ The element at the front of queue q5 is 1.
 The element at the back of queue q5 is 2.
 ```
 
-## <a name="size"></a><a name="size"></a>Größe
+## <a name="size"></a><a name="size"></a> Größe
 
 Gibt die Anzahl der Elemente in der Warteschlange zurück.
 
@@ -466,7 +466,7 @@ The queue length is 1.
 The queue length is now 2.
 ```
 
-## <a name="size_type"></a><a name="size_type"></a>size_type
+## <a name="size_type"></a><a name="size_type"></a> size_type
 
 Ein Ganzzahltyp ohne Vorzeichen, der die Anzahl von Elementen in einer Warteschlange darstellen kann.
 
@@ -482,7 +482,7 @@ Der Typ ist ein Synonym für das `size_type` des Basiscontainers, der von der Wa
 
 Im Beispiel für [queue::front](#front) wird verdeutlicht, wie ein `size_type` deklariert und verwendet wird.
 
-## <a name="value_type"></a><a name="value_type"></a>value_type
+## <a name="value_type"></a><a name="value_type"></a> value_type
 
 Ein Typ, der den Objekttyp angibt, der als Element in einer Warteschlange gespeichert wird.
 
@@ -524,7 +524,7 @@ The value_type is AnInt = 69
 The element at the front of the queue is 69.
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
 [C++-Standard Bibliotheks Referenz](../standard-library/cpp-standard-library-reference.md)

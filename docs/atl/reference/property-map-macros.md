@@ -1,5 +1,5 @@
 ---
-title: Eigenschaftenzuordnungsmakros
+title: Eigenschaften Zuordnungs Makros
 ms.date: 11/04/2016
 f1_keywords:
 - atlcom/ATL::BEGIN_PROP_MAP
@@ -11,33 +11,33 @@ f1_keywords:
 helpviewer_keywords:
 - property maps
 ms.assetid: 128bc742-2b98-4b97-a243-684dbb83db77
-ms.openlocfilehash: 56fdb02939a99e396b9000705753e2475b80f6dc
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 5e14c3cb82b9b7527ed8af42e181581097218360
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81326093"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88834664"
 ---
-# <a name="property-map-macros"></a>Eigenschaftenzuordnungsmakros
+# <a name="property-map-macros"></a>Eigenschaften Zuordnungs Makros
 
-Diese Makros definieren Eigenschaftenzuordnungen und Einträge.
+Diese Makros definieren Eigenschaften Zuordnungen und Einträge.
 
-|||
+|Name|Beschreibung|
 |-|-|
-|[BEGIN_PROP_MAP](#begin_prop_map)|Markiert den Anfang der ATL-Eigenschaftszuordnung.|
-|[PROP_DATA_ENTRY](#prop_data_entry)|Gibt die Ausdehnung oder Dimensionen eines ActiveX-Steuerelements an.|
-|[PROP_ENTRY_TYPE](#prop_entry_type)|Gibt eine Eigenschaftenbeschreibung, eine Eigenschaft DISPID und die Eigenschaftenseite CLSID in die Eigenschaftenzuordnung ein.|
-|[PROP_ENTRY_TYPE_EX](#prop_entry_type_ex)|Gibt eine Eigenschaftenbeschreibung, eine Eigenschaft DISPID, `IDispatch` die Eigenschaftenseite CLSID und IID in die Eigenschaftenzuordnung ein.|
-|[PROP_PAGE](#prop_page)|Gibt eine Eigenschaftenseite CLSID in die Eigenschaftenzuordnung ein.|
-|[END_PROP_MAP](#end_prop_map)|Markiert das Ende der ATL-Eigenschaftszuordnung.|
+|[BEGIN_PROP_MAP](#begin_prop_map)|Markiert den Anfang der ATL-Eigenschaften Zuordnung.|
+|[PROP_DATA_ENTRY](#prop_data_entry)|Gibt den Block oder die Dimensionen eines ActiveX-Steuer Elements an.|
+|[PROP_ENTRY_TYPE](#prop_entry_type)|Gibt eine Eigenschafts Beschreibung, eine Eigenschaften-DISPID und eine CLSID der Eigenschaften Seite in die Eigenschaften Zuordnung ein.|
+|[PROP_ENTRY_TYPE_EX](#prop_entry_type_ex)|Gibt eine Eigenschafts Beschreibung, die Eigenschaft "DISPID", die CLSID der Eigenschaften Seite und `IDispatch` die IID in die Eigenschaften Zuordnung ein.|
+|[PROP_PAGE](#prop_page)|Gibt eine CLSID einer Eigenschaften Seite in die Eigenschaften Zuordnung ein.|
+|[END_PROP_MAP](#end_prop_map)|Markiert das Ende der ATL-Eigenschafts Zuordnung.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** atlcom.h
+**Header:** Atlcom. h
 
-## <a name="begin_prop_map"></a><a name="begin_prop_map"></a>BEGIN_PROP_MAP
+## <a name="begin_prop_map"></a><a name="begin_prop_map"></a> BEGIN_PROP_MAP
 
-Markiert den Anfang der Eigenschaftszuordnung des Objekts.
+Markiert den Anfang der Eigenschaften Zuordnung des Objekts.
 
 ```
 BEGIN_PROP_MAP(theClass)
@@ -45,24 +45,24 @@ BEGIN_PROP_MAP(theClass)
 
 ### <a name="parameters"></a>Parameter
 
-*theClass*<br/>
-[in] Gibt die Klasse an, die die Eigenschaftenzuordnung enthält.
+*spiegeln*<br/>
+in Gibt die Klasse an, die die Eigenschaften Zuordnung enthält.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Eigenschaftenzuordnung speichert Eigenschaftenbeschreibungen, EigenschaftenDISPIDs, Eigenschaftenseite CLSIDs und `IDispatch` IIDs. Die Klassen [IPerPropertyBrowsingImpl](../../atl/reference/iperpropertybrowsingimpl-class.md), [IPersistPropertyBagImpl](../../atl/reference/ipersistpropertybagimpl-class.md), [IPersistStreamInitImpl](../../atl/reference/ipersiststreaminitimpl-class.md)und [ISpecifyPropertyPagesImpl](../../atl/reference/ispecifypropertypagesimpl-class.md) verwenden die Eigenschaftenzuordnung, um diese Informationen abzurufen und festzulegen.
+Die Eigenschaften Zuordnung speichert Eigenschafts Beschreibungen, Eigenschaften-DispIds, Eigenschaften Seiten-CLSIDs und `IDispatch` IIDs. Die Klassen [iperpropertybrowsingimpl](../../atl/reference/iperpropertybrowsingimpl-class.md), [ipersistpropertybagimpl](../../atl/reference/ipersistpropertybagimpl-class.md), [ipersiststreaminitimpl](../../atl/reference/ipersiststreaminitimpl-class.md)und [ISpecifyPropertyPagesImpl](../../atl/reference/ispecifypropertypagesimpl-class.md) verwenden die Eigenschaften Zuordnung, um diese Informationen abzurufen und festzulegen.
 
-Wenn Sie ein Objekt mit dem ATL-Projekt-Assistenten erstellen, erstellt der Assistent eine leere Eigenschaftenzuordnung, indem er BEGIN_PROP_MAP gefolgt von [END_PROP_MAP](#end_prop_map)angibt.
+Wenn Sie ein Objekt mit dem ATL-Projekt-Assistenten erstellen, erstellt der Assistent eine leere Eigenschaften Zuordnung, indem BEGIN_PROP_MAP gefolgt von [END_PROP_MAP](#end_prop_map)angegeben wird.
 
-BEGIN_PROP_MAP speichert nicht die Ausdehnung (d. h. die Dimensionen) einer Eigenschaftenzuordnung, da ein Objekt, das eine Eigenschaftenzuordnung verwendet, möglicherweise keine Benutzeroberfläche hat, sodass es keine Ausdehnung hätte. Wenn es sich bei dem Objekt um ein ActiveX-Steuerelement mit einer Benutzeroberfläche handelt, hat es eine Ausdehnung. In diesem Fall müssen Sie [PROP_DATA_ENTRY](#prop_data_entry) in der Eigenschaftenzuordnung angeben, um die Ausdehnung anzugeben.
+BEGIN_PROP_MAP speichert den Block (d. h. die Dimensionen) einer Eigenschaften Zuordnung nicht, da ein Objekt, das eine Eigenschaften Zuordnung verwendet, möglicherweise keine Benutzeroberfläche hat, sodass es keinen Block hat. Wenn das Objekt ein ActiveX-Steuerelement mit einer Benutzeroberfläche ist, verfügt es über einen Block. In diesem Fall müssen Sie [PROP_DATA_ENTRY](#prop_data_entry) in der Eigenschaften Zuordnung angeben, um den Wertebereich bereitzustellen.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Windowing#103](../../atl/codesnippet/cpp/property-map-macros_1.h)]
 
-## <a name="prop_data_entry"></a><a name="prop_data_entry"></a>PROP_DATA_ENTRY
+## <a name="prop_data_entry"></a><a name="prop_data_entry"></a> PROP_DATA_ENTRY
 
-Gibt die Ausdehnung oder Dimensionen eines ActiveX-Steuerelements an.
+Gibt den Block oder die Dimensionen eines ActiveX-Steuer Elements an.
 
 ```
 PROP_DATA_ENTRY( szDesc, member, vt)
@@ -70,32 +70,32 @@ PROP_DATA_ENTRY( szDesc, member, vt)
 
 ### <a name="parameters"></a>Parameter
 
-*szDesc*<br/>
-[in] Die Eigenschaftenbeschreibung.
+*szdäsc*<br/>
+in Die Eigenschafts Beschreibung.
 
-*Mitglied*<br/>
-[in] Das Datenelement, das den Umfang enthält; z. `m_sizeExtent`B. .
+*Kollege*<br/>
+in Der Datenmember, der den Block enthält. Beispiel: `m_sizeExtent` .
 
 *vt*<br/>
-[in] Gibt den VARIANT-Typ der Eigenschaft an.
+in Gibt den Varianttyp der Eigenschaft an.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieses Makro bewirkt, dass das angegebene Datenelement beibehalten wird.
+Dieses Makro bewirkt, dass der angegebene Datenmember persistent ist.
 
-Wenn Sie ein ActiveX-Steuerelement erstellen, fügt der Assistent dieses Makro ein, nachdem das Eigenschaftenzuordnungsmakro [BEGIN_PROP_MAP](#begin_prop_map) und vor dem Eigenschaftenzuordnungsmakro [END_PROP_MAP](#end_prop_map).
+Wenn Sie ein ActiveX-Steuerelement erstellen, fügt der Assistent dieses Makro nach dem Eigenschafts Zuordnungs Makro [BEGIN_PROP_MAP](#begin_prop_map) und vor dem [END_PROP_MAP](#end_prop_map)der Eigenschaften Zuordnung ein.
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird die Ausdehnung des Objekts (`m_sizeExtent`) beibehalten.
+Im folgenden Beispiel wird der Umfang des-Objekts ( `m_sizeExtent` ) beibehalten.
 
 [!code-cpp[NVC_ATL_Windowing#131](../../atl/codesnippet/cpp/property-map-macros_2.h)]
 
 [!code-cpp[NVC_ATL_Windowing#132](../../atl/codesnippet/cpp/property-map-macros_3.h)]
 
-## <a name="prop_entry_type"></a><a name="prop_entry_type"></a>PROP_ENTRY_TYPE
+## <a name="prop_entry_type"></a><a name="prop_entry_type"></a> PROP_ENTRY_TYPE
 
-Verwenden Sie dieses Makro, um eine Eigenschaftenbeschreibung, Eine EigenschaftdisPID und eine Eigenschaftenseite CLSID in die Eigenschaftenzuordnung des Objekts einzugeben.
+Verwenden Sie dieses Makro, um eine Eigenschafts Beschreibung, eine Eigenschaften-DISPID und eine CLSID der Eigenschaften Seite in die Eigenschaften Zuordnung des Objekts einzugeben.
 
 ```
 PROP_ENTRY_TYPE( szDesc, dispid, clsid, vt)
@@ -103,31 +103,31 @@ PROP_ENTRY_TYPE( szDesc, dispid, clsid, vt)
 
 ### <a name="parameters"></a>Parameter
 
-*szDesc*<br/>
-[in] Die Eigenschaftenbeschreibung.
+*szdäsc*<br/>
+in Die Eigenschafts Beschreibung.
 
-*Dispid*<br/>
-[in] Die DISPID der Eigenschaft.
+*DISPID*<br/>
+in Die DispID der Eigenschaft.
 
-*clsid*<br/>
-[in] Die CLSID der zugehörigen Eigenschaftenseite. Verwenden Sie den sonderwert CLSID_NULL für eine Eigenschaft, der keine Eigenschaftenseite zugeordnet ist.
+*CLSID*<br/>
+in Die CLSID der zugeordneten Eigenschaften Seite. Verwenden Sie den speziellen Wert CLSID_NULL für eine Eigenschaft, die nicht über eine zugeordnete Eigenschaften Seite verfügt.
 
 *vt*<br/>
-[in] Der Typ der Eigenschaft.
+in Der Typ der Eigenschaft.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das PROP_ENTRY Makro war unsicher und veraltet. Es wurde durch PROP_ENTRY_TYPE ersetzt.
+Das PROP_ENTRY-Makro war unsicher und veraltet. Sie wurde durch PROP_ENTRY_TYPE ersetzt.
 
-Das [BEGIN_PROP_MAP-Makro](#begin_prop_map) markiert den Anfang der Eigenschaftenzuordnung. das [END_PROP_MAP-Makro](#end_prop_map) markiert das Ende.
+Das [BEGIN_PROP_MAP](#begin_prop_map) -Makro markiert den Anfang der Eigenschaften Zuordnung. Das [END_PROP_MAP](#end_prop_map) -Makro markiert das Ende.
 
 ### <a name="example"></a>Beispiel
 
-Siehe Beispiel für [BEGIN_PROP_MAP](#begin_prop_map).
+Weitere Informationen finden Sie im Beispiel für [BEGIN_PROP_MAP](#begin_prop_map).
 
-## <a name="prop_entry_type_ex"></a><a name="prop_entry_type_ex"></a>PROP_ENTRY_TYPE_EX
+## <a name="prop_entry_type_ex"></a><a name="prop_entry_type_ex"></a> PROP_ENTRY_TYPE_EX
 
-Ähnlich wie [PROP_ENTRY_TYPE](#prop_entry_type), können Sie jedoch eine bestimmte IID angeben, wenn Ihr Objekt mehrere duale Schnittstellen unterstützt.
+Ähnlich wie [PROP_ENTRY_TYPE](#prop_entry_type), ermöglicht Ihnen jedoch, eine bestimmte IID anzugeben, wenn das Objekt mehrere duale Schnittstellen unterstützt.
 
 ```
 PROP_ENTRY_TYPE_EX( szDesc, dispid, clsid, iidDispatch, vt)
@@ -135,36 +135,36 @@ PROP_ENTRY_TYPE_EX( szDesc, dispid, clsid, iidDispatch, vt)
 
 ### <a name="parameters"></a>Parameter
 
-*szDesc*<br/>
-[in] Die Eigenschaftenbeschreibung.
+*szdäsc*<br/>
+in Die Eigenschafts Beschreibung.
 
-*Dispid*<br/>
-[in] Die DISPID der Eigenschaft.
+*DISPID*<br/>
+in Die DispID der Eigenschaft.
 
-*clsid*<br/>
-[in] Die CLSID der zugehörigen Eigenschaftenseite. Verwenden Sie den sonderwert CLSID_NULL für eine Eigenschaft, der keine Eigenschaftenseite zugeordnet ist.
+*CLSID*<br/>
+in Die CLSID der zugeordneten Eigenschaften Seite. Verwenden Sie den speziellen Wert CLSID_NULL für eine Eigenschaft, die nicht über eine zugeordnete Eigenschaften Seite verfügt.
 
-*iidDispatch*<br/>
-[in] Die IID der dualen Schnittstelle, die die Eigenschaft definiert.
+*iiddispatch*<br/>
+in Die IID der Dual-Schnittstelle, die die Eigenschaft definiert.
 
 *vt*<br/>
-[in] Der Typ der Eigenschaft.
+in Der Typ der Eigenschaft.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das PROP_ENTRY_EX Makro war unsicher und veraltet. Es wurde durch PROP_ENTRY_TYPE_EX ersetzt.
+Das PROP_ENTRY_EX-Makro war unsicher und veraltet. Sie wurde durch PROP_ENTRY_TYPE_EX ersetzt.
 
-Das [BEGIN_PROP_MAP-Makro](#begin_prop_map) markiert den Anfang der Eigenschaftenzuordnung. das [END_PROP_MAP-Makro](#end_prop_map) markiert das Ende.
+Das [BEGIN_PROP_MAP](#begin_prop_map) -Makro markiert den Anfang der Eigenschaften Zuordnung. Das [END_PROP_MAP](#end_prop_map) -Makro markiert das Ende.
 
 ### <a name="example"></a>Beispiel
 
-Im folgenden Beispiel `IMyDual1` werden Einträge für `IMyDual2`gefolgt von einem Eintrag für gruppiert. Die Gruppierung nach dualer Schnittstelle verbessert die Leistung.
+Im folgenden Beispiel werden die Einträge für, `IMyDual1` gefolgt von einem Eintrag für, gruppiert `IMyDual2` . Durch die Gruppierung durch Dual Interface wird die Leistung verbessert.
 
 [!code-cpp[NVC_ATL_Windowing#133](../../atl/codesnippet/cpp/property-map-macros_4.h)]
 
-## <a name="prop_page"></a><a name="prop_page"></a>PROP_PAGE
+## <a name="prop_page"></a><a name="prop_page"></a> PROP_PAGE
 
-Verwenden Sie dieses Makro, um eine Eigenschaftenseite CLSID in die Eigenschaftenzuordnung des Objekts einzugeben.
+Verwenden Sie dieses Makro, um eine CLSID einer Eigenschaften Seite in die Eigenschaften Zuordnung des Objekts einzugeben.
 
 ```
 PROP_PAGE(clsid)
@@ -172,25 +172,25 @@ PROP_PAGE(clsid)
 
 ### <a name="parameters"></a>Parameter
 
-*clsid*<br/>
-[in] Die CLSID einer Eigenschaftenseite.
+*CLSID*<br/>
+in Die CLSID einer Eigenschaften Seite.
 
 ### <a name="remarks"></a>Bemerkungen
 
-PROP_PAGE ist [ähnlich wie PROP_ENTRY_TYPE](#prop_entry_type), erfordert jedoch keine Eigenschaftenbeschreibung oder DISPID.
+PROP_PAGE ähnelt [PROP_ENTRY_TYPE](#prop_entry_type), erfordert jedoch keine Eigenschafts Beschreibung oder DISPID.
 
 > [!NOTE]
-> Wenn Sie bereits eine CLSID mit PROP_ENTRY_TYPE oder [PROP_ENTRY_TYPE_EX](#prop_entry_type_ex)eingegeben haben, müssen Sie keinen zusätzlichen Eintrag mit PROP_PAGE vornehmen.
+> Wenn Sie bereits eine CLSID mit PROP_ENTRY_TYPE oder [PROP_ENTRY_TYPE_EX](#prop_entry_type_ex)eingegeben haben, müssen Sie keinen zusätzlichen Eintrag mit PROP_PAGE erstellen.
 
-Das [BEGIN_PROP_MAP-Makro](#begin_prop_map) markiert den Anfang der Eigenschaftenzuordnung. das [END_PROP_MAP-Makro](#end_prop_map) markiert das Ende.
+Das [BEGIN_PROP_MAP](#begin_prop_map) -Makro markiert den Anfang der Eigenschaften Zuordnung. Das [END_PROP_MAP](#end_prop_map) -Makro markiert das Ende.
 
 ### <a name="example"></a>Beispiel
 
 [!code-cpp[NVC_ATL_Windowing#134](../../atl/codesnippet/cpp/property-map-macros_5.h)]
 
-## <a name="end_prop_map"></a><a name="end_prop_map"></a>END_PROP_MAP
+## <a name="end_prop_map"></a><a name="end_prop_map"></a> END_PROP_MAP
 
-Markiert das Ende der Eigenschaftszuordnung des Objekts.
+Markiert das Ende der Eigenschaften Zuordnung des Objekts.
 
 ```
 END_PROP_MAP()
@@ -198,12 +198,12 @@ END_PROP_MAP()
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie ein Objekt mit dem ATL-Projekt-Assistenten erstellen, erstellt der Assistent eine leere Eigenschaftenzuordnung, indem [er BEGIN_PROP_MAP](#begin_prop_map) gefolgt von END_PROP_MAP angibt.
+Wenn Sie ein Objekt mit dem ATL-Projekt-Assistenten erstellen, erstellt der Assistent eine leere Eigenschaften Zuordnung, indem [BEGIN_PROP_MAP](#begin_prop_map) gefolgt von END_PROP_MAP angegeben wird.
 
 ### <a name="example"></a>Beispiel
 
-Siehe Beispiel für [BEGIN_PROP_MAP](#begin_prop_map).
+Weitere Informationen finden Sie im Beispiel für [BEGIN_PROP_MAP](#begin_prop_map).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Makros](../../atl/reference/atl-macros.md)

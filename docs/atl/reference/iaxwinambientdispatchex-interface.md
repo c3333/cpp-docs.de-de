@@ -1,5 +1,5 @@
 ---
-title: IAxWinAmbientDispatchEx-Schnittstelle
+title: Iaxwinambientdispatchex-Schnittstelle
 ms.date: 11/04/2016
 f1_keywords:
 - IAxWinAmbientDispatchEx
@@ -8,19 +8,19 @@ f1_keywords:
 helpviewer_keywords:
 - IAxWinAmbientDispatchEx interface
 ms.assetid: 2c25e079-6128-4278-bc72-b2c6195ba7ef
-ms.openlocfilehash: f4816846801e388619db62998ec979a1100916ee
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: f052c39424fc2ee6f43f249e3034be7c464d016c
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81329977"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88833386"
 ---
-# <a name="iaxwinambientdispatchex-interface"></a>IAxWinAmbientDispatchEx-Schnittstelle
+# <a name="iaxwinambientdispatchex-interface"></a>Iaxwinambientdispatchex-Schnittstelle
 
-Diese Schnittstelle implementiert zusätzliche Umgebungseigenschaften für ein gehostetes Steuerelement.
+Diese Schnittstelle implementiert zusätzliche Ambient-Eigenschaften für ein gehosteter-Steuerelement.
 
 > [!IMPORTANT]
-> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+> Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -32,35 +32,35 @@ MIDL_INTERFACE("B2D0778B - AC99 - 4c58 - A5C8 - E7724E5316B5") IAxWinAmbientDisp
 
 ### <a name="methods"></a>Methoden
 
-|||
+|Name|Beschreibung|
 |-|-|
-|[SetAmbientDispatch](#setambientdispatch)|Diese Methode wird aufgerufen, um die standardmäßige Umgebungseigenschaftsschnittstelle durch eine benutzerdefinierte Schnittstelle zu ergänzen.|
+|[Setambientdispatch](#setambientdispatch)|Diese Methode wird aufgerufen, um die standardmäßige Ambient-Eigenschaften Schnittstelle durch eine benutzerdefinierte Schnittstelle zu ergänzen.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Schließen Sie diese Schnittstelle in ATL-Anwendungen ein, die statisch mit ATL- und Host-ActiveX-Steuerelementen verknüpft sind, insbesondere ActiveX-Steuerelemente mit Umgebungseigenschaften. Ohne diese Schnittstelle wird diese Assertion generiert: "Haben Sie vergessen, das LIBID an CComModule::Init übergeben"
+Fügen Sie diese Schnittstelle in ATL-Anwendungen ein, die statisch mit ATL-und Host-ActiveX-Steuerelementen verknüpft sind, insbesondere ActiveX-Steuerelemente mit Ambient-Eigenschaften. Wenn Sie diese Schnittstelle nicht einschließen, wird diese Assertion generiert: "haben Sie vergessen, die LIBID an CComModule:: init zu übergeben"
 
-Diese Schnittstelle wird von ATLs ActiveX-Steuerelementhostingobjekten verfügbar gemacht. Abgeleitet von [IAxWinAmbientDispatch](../../atl/reference/iaxwinambientdispatch-interface.md), `IAxWinAmbientDispatchEx` fügt eine Methode hinzu, mit der Sie die von ATL bereitgestellte Umgebungseigenschaftsschnittstelle um eine eigene eigenschaft ergänzen können.
+Diese Schnittstelle wird durch die ActiveX-Steuerelemente des ATL-Steuer Elements verfügbar gemacht. Wird von [IAxWinAmbientDispatch](../../atl/reference/iaxwinambientdispatch-interface.md)abgeleitet und `IAxWinAmbientDispatchEx` Fügt eine Methode hinzu, mit der Sie die von ATL bereitgestellte Ambient-Eigenschaften Schnittstelle mit einem ihrer eigenen ergänzen können.
 
-<xref:System.Windows.Forms.AxHost>versucht, Typinformationen über `IAxWinAmbientDispatch` `IAxWinAmbientDispatchEx` und aus der Typbibliothek zu laden, die den Code enthält.
+<xref:System.Windows.Forms.AxHost> versucht, Typinformationen über `IAxWinAmbientDispatch` und `IAxWinAmbientDispatchEx` aus der Typbibliothek, die den Code enthält, zu laden.
 
-Wenn Sie eine Verknüpfung mit ATL90.dll herstellen, lädt **AXHost** die Typinformationen aus der Typbibliothek in der DLL.
+Wenn Sie mit ATL90.dll verknüpfen, lädt **AxHost** die Typinformationen aus der Typbibliothek in der dll.
 
-Weitere Informationen finden Sie unter [Hosting von ActiveX-Steuerelementen unter Verwendung von ATL AXHost.](../../atl/hosting-activex-controls-using-atl-axhost.md)
+Weitere Informationen finden Sie unter Hosting von ActiveX-Steuer [Elementen mithilfe von ATL AxHost](../../atl/hosting-activex-controls-using-atl-axhost.md) .
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-Die Definition dieser Schnittstelle ist in einer Reihe von Formen verfügbar, wie in der folgenden Tabelle dargestellt.
+Die Definition dieser Schnittstelle ist in einer Reihe von Formularen verfügbar, wie in der folgenden Tabelle dargestellt.
 
 |Definitionstyp|Datei|
 |---------------------|----------|
-|Idl|atliface.idl|
+|IDL|atliface. idl|
 |Typbibliothek|ATL.dll|
-|C++|atliface.h (auch in ATLBase.h enthalten)|
+|C++|atliface. h (auch in "atlbase. h" enthalten)|
 
-## <a name="iaxwinambientdispatchexsetambientdispatch"></a><a name="setambientdispatch"></a>IAxWinAmbientDispatchEx::SetAmbientDispatch
+## <a name="iaxwinambientdispatchexsetambientdispatch"></a><a name="setambientdispatch"></a> Iaxwinambientdispatchex:: setambientdispatch
 
-Diese Methode wird aufgerufen, um die standardmäßige Umgebungseigenschaftsschnittstelle durch eine benutzerdefinierte Schnittstelle zu ergänzen.
+Diese Methode wird aufgerufen, um die standardmäßige Ambient-Eigenschaften Schnittstelle durch eine benutzerdefinierte Schnittstelle zu ergänzen.
 
 ```
 virtual HRESULT STDMETHODCALLTYPE SetAmbientDispatch(IDispatch* pDispatch) = 0;
@@ -68,17 +68,17 @@ virtual HRESULT STDMETHODCALLTYPE SetAmbientDispatch(IDispatch* pDispatch) = 0;
 
 ### <a name="parameters"></a>Parameter
 
-*pDispatch*<br/>
-Zeiger auf die neue Schnittstelle.
+*pdispatch*<br/>
+Ein Zeiger auf die neue-Schnittstelle.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Wenn `SetAmbientDispatch` mit einem Zeiger auf eine neue Schnittstelle aufgerufen wird, wird diese neue Schnittstelle verwendet, um alle Eigenschaften oder Methoden aufzurufen, die vom gehosteten Steuerelement angefordert werden, wenn diese Eigenschaften nicht bereits von [IAxWinAmbientDispatch](../../atl/reference/iaxwinambientdispatch-interface.md)bereitgestellt werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [IAxWinAmbientDispatch-Schnittstelle](../../atl/reference/iaxwinambientdispatch-interface.md)

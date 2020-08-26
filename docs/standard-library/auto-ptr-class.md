@@ -14,12 +14,12 @@ helpviewer_keywords:
 - std::auto_ptr [C++], release
 - std::auto_ptr [C++], reset
 ms.assetid: 7f9108b6-9eb3-4634-b615-cf7aa814f23b
-ms.openlocfilehash: 1f2c8cce234910fbf69a35c8f8ef2fb0fe2a41c0
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 7e652b18b723e2a58c1f4673baf180a14db93477
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87203872"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88834777"
 ---
 # <a name="auto_ptr-class"></a>auto_ptr-Klasse
 
@@ -71,19 +71,19 @@ Sie können ein `auto_ptr<Type>`-Objekt als Wert als ein Argument für einen Fun
 
 ### <a name="constructors"></a>Konstruktoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[auto_ptr](#auto_ptr)|Der Konstruktor für Objekte des Typs `auto_ptr`.|
 
 ### <a name="typedefs"></a>TypeDefs
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[element_type](#element_type)|Der Type stellt ein Synonym für den Vorlagenparameter `Type` dar.|
 
 ### <a name="functions"></a>Functions
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[get](#get)|Die Memberfunktion gibt den gespeicherten Zeiger `myptr` zurück.|
 |[Abgabe](#release)|Der Member ersetzt den gespeicherten Zeiger `myptr` durch einen NULL-Zeiger und gibt den zuvor gespeicherten Zeiger zurück.|
@@ -91,7 +91,7 @@ Sie können ein `auto_ptr<Type>`-Objekt als Wert als ein Argument für einen Fun
 
 ### <a name="operators"></a>Operatoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[Operator =](#op_eq)|Ein Zuweisungsoperator, der den Besitz von einem `auto_ptr`-Objekt an ein anderes Objekt übergibt.|
 |[KOM](#op_star)|Der dereferenzierende Operator für Objekte des Typs `auto_ptr`.|
@@ -99,7 +99,7 @@ Sie können ein `auto_ptr<Type>`-Objekt als Wert als ein Argument für einen Fun
 |[operator auto_ptr\<Other>](#op_auto_ptr_lt_other_gt)|Nimmt eine Umwandlung aus einer Art von `auto_ptr` in eine andere Art von `auto_ptr` vor.|
 |[Operator auto_ptr_ref\<Other>](#op_auto_ptr_ref_lt_other_gt)|Nimmt eine Umwandlung von einem `auto_ptr` zu einem anderen `auto_ptr_ref` vor.|
 
-### <a name="auto_ptr"></a><a name="auto_ptr"></a>auto_ptr
+### <a name="auto_ptr"></a><a name="auto_ptr"></a> auto_ptr
 
 Der Konstruktor für Objekte des Typs `auto_ptr`.
 
@@ -126,7 +126,7 @@ Das `auto_ptr`-Objekt, das vom Konstruktor kopiert werden soll.
 
 Der erste Konstruktor speichert *ptr* in `myptr` , den gespeicherten Zeiger auf das zugeordnete Objekt. Der zweite Konstruktor überträgt den Besitz des in der *rechten*Ecke gespeicherten Zeigers durch Speichern von *right*. [Release](#release) in `myptr` .
 
-Der dritte Konstruktor verhält sich wie der zweite Konstruktor, mit dem Unterschied, dass er gespeichert wird `right` . `ref`. `release`in `myptr` , wobei `ref` der in gespeicherte Verweis ist `right` .
+Der dritte Konstruktor verhält sich wie der zweite Konstruktor, mit dem Unterschied, dass er gespeichert wird `right` . `ref`. `release` in `myptr` , wobei `ref` der in gespeicherte Verweis ist `right` .
 
 Der vorlagenkonstruktor verhält sich wie der zweite Konstruktor, vorausgesetzt, dass ein Zeiger auf `Other` implizit in einen Zeiger auf konvertiert werden kann `Type` .
 
@@ -189,7 +189,7 @@ Constructing 00311AF8
 Destructing 00311AF8
 ```
 
-### <a name="element_type"></a><a name="element_type"></a>element_type
+### <a name="element_type"></a><a name="element_type"></a> element_type
 
 Der Type stellt ein Synonym für den Vorlagenparameter `Type` dar.
 
@@ -197,7 +197,7 @@ Der Type stellt ein Synonym für den Vorlagenparameter `Type` dar.
 typedef Type element  _type;
 ```
 
-### <a name="get"></a><a name="get"></a>Erhalten
+### <a name="get"></a><a name="get"></a> Erhalten
 
 Die Memberfunktion gibt den gespeicherten Zeiger `myptr` zurück.
 
@@ -256,7 +256,7 @@ pi2 == pi3
 Destructing 00311B88 Value: 6
 ```
 
-### <a name="operator"></a><a name="op_eq"></a>Operator =
+### <a name="operator"></a><a name="op_eq"></a> Operator =
 
 Ein Zuweisungsoperator, der den Besitz von einem `auto_ptr`-Objekt an ein anderes Objekt übergibt.
 
@@ -270,7 +270,7 @@ auto_ptr<Type>& operator=(auto_ptr_ref<Type> right) throw();
 #### <a name="parameters"></a>Parameter
 
 *Richting*\
-Ein Objekt des Typs `auto_ptr`.
+Ein Objekt vom Typ `auto_ptr`.
 
 #### <a name="return-value"></a>Rückgabewert
 
@@ -284,7 +284,7 @@ Die Zuweisung wertet den Ausdruck `delete myptr` aus, aber nur, wenn sich der ge
 
 Ein Beispiel für die Verwendung des Member-Operators finden Sie unter [auto_ptr](#auto_ptr).
 
-### <a name="operator"></a><a name="op_star"></a>KOM
+### <a name="operator"></a><a name="op_star"></a> KOM
 
 Der dereferenzierende Operator für Objekte des Typs `auto_ptr`.
 
@@ -304,7 +304,7 @@ Der Dereferenzierungsoperator gibt `*`[get](#get) zurück. Daher darf der gespei
 
 Ein Beispiel für die Verwendung der Member-Funktion finden Sie unter [auto_ptr](#auto_ptr).
 
-### <a name="operator-gt"></a><a name="op_arrow"></a>KOM&gt;
+### <a name="operator-gt"></a><a name="op_arrow"></a> KOM&gt;
 
 Der Operator zum Ermöglichen von Memberzugriff.
 
@@ -324,7 +324,7 @@ Der Auswahl Operator gibt [Get](#get)zurück `( )` , sodass sich das Ausdruck- *
 
 Ein Beispiel für die Verwendung der Member-Funktion finden Sie unter [auto_ptr](#auto_ptr).
 
-### <a name="operator-auto_ptrltothergt"></a><a name="op_auto_ptr_lt_other_gt"></a>Operator auto_ptr &lt; anderer&gt;
+### <a name="operator-auto_ptrltothergt"></a><a name="op_auto_ptr_lt_other_gt"></a> Operator auto_ptr &lt; anderer&gt;
 
 Nimmt eine Umwandlung aus einer Art von `auto_ptr` in eine andere Art von `auto_ptr` vor.
 
@@ -354,7 +354,7 @@ int main()
 }
 ```
 
-### <a name="operator-auto_ptr_refltothergt"></a><a name="op_auto_ptr_ref_lt_other_gt"></a>Operator Auto_ptr_ref &lt; anderer&gt;
+### <a name="operator-auto_ptr_refltothergt"></a><a name="op_auto_ptr_ref_lt_other_gt"></a> Operator Auto_ptr_ref &lt; anderer&gt;
 
 Nimmt eine Umwandlung von einem `auto_ptr` zu einem anderen `auto_ptr_ref` vor.
 
@@ -415,7 +415,7 @@ main exiting
 ~C:  1
 ```
 
-### <a name="release"></a><a name="release"></a>Abgabe
+### <a name="release"></a><a name="release"></a> Abgabe
 
 Der Member ersetzt den gespeicherten Zeiger `myptr` durch einen NULL-Zeiger und gibt den zuvor gespeicherten Zeiger zurück.
 
@@ -477,7 +477,7 @@ pi2 == pi3
 Destructing 00311B88 Value: 6
 ```
 
-### <a name="reset"></a><a name="reset"></a>Festlegen
+### <a name="reset"></a><a name="reset"></a> Festlegen
 
 Die Member-Funktion wertet den Ausdruck `delete myptr` aus, aber nur, wenn sich der gespeicherte Zeiger Wert `myptr` als Ergebnis eines Funktions Aufrufes ändert. Anschließend ersetzt die Funktion den gespeicherten Zeiger durch `ptr`.
 

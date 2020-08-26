@@ -23,12 +23,12 @@ helpviewer_keywords:
 - std::poisson_distribution [C++], param_type
 - std::poisson_distribution [C++], param_type
 ms.assetid: 09614281-349a-45f7-8e95-c0196be0a937
-ms.openlocfilehash: fe59c58659252f5d799339fdd83237e56f81a2ad
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: bf5cd289ab0ee02d6c9e09e95d01008191899cd6
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87232962"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88832645"
 ---
 # <a name="poisson_distribution-class"></a>poisson_distribution-Klasse
 
@@ -74,10 +74,8 @@ Der Integer-Ergebnistyp, der Standardwert ist **`int`** . Informationen zu mögl
 
 Die Klassen Vorlage beschreibt eine Verteilung, die Werte eines benutzerdefinierten ganzzahligen Typs mit einer Poisson-Verteilung produziert. Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft.
 
-||||
-|-|-|-|
-|[poisson_distribution](#poisson_distribution)|`poisson_distribution::mean`|`poisson_distribution::param`|
-|`poisson_distribution::operator()`||[param_type](#param_type)|
+[poisson_distribution](#poisson_distribution)\
+[param_type](#param_type)
 
 Die Eigenschaftsfunktion `mean()` gibt den Wert für den gespeicherten Verteilungsparameter *mean* zurück.
 
@@ -196,7 +194,7 @@ Distribution for 100 samples:
 
 **Namespace:** std
 
-## <a name="poisson_distributionpoisson_distribution"></a><a name="poisson_distribution"></a>poisson_distribution::p oisson_distribution
+## <a name="poisson_distributionpoisson_distribution"></a><a name="poisson_distribution"></a> poisson_distribution::p oisson_distribution
 
 Erstellt die Verteilung.
 
@@ -221,7 +219,7 @@ Der erste Konstruktor konstruiert ein Objekt, dessen gespeicherter `mean`-Wert d
 
 Mit dem zweiten Konstruktor wird ein Objekt erstellt, dessen gespeicherte Parameter aus *parm* initialisiert werden. Sie können die aktuellen Parameter einer vorhandenen Verteilung abrufen und festlegen, indem Sie die Memberfunktion `param()` aufrufen.
 
-## <a name="poisson_distributionparam_type"></a><a name="param_type"></a>poisson_distribution::p aram_type
+## <a name="poisson_distributionparam_type"></a><a name="param_type"></a> poisson_distribution::p aram_type
 
 Speichert die Parameter der Verteilung.
 
@@ -246,6 +244,6 @@ Siehe Konstruktorparameter für [poisson_distribution](#poisson_distribution).
 
 Diese Struktur kann bei der Instanziierung an den Klassenkonstruktor des Verteilers, an die Memberfunktion `param()` (zur Festlegung der gespeicherten Parameter einer vorhandenen Verteilung) und an `operator()` (zur Verwendung anstelle der gespeicherten Parameter) übergeben werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<random>](../standard-library/random.md)

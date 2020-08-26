@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - db_column attribute
 ms.assetid: 58da4afc-f69c-4ae6-af9a-3f9515f56081
-ms.openlocfilehash: b78fb081895b7a3e8f0e266810cd19d1b2792240
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 98f546a243016fa85f6d71159ab2fc0a7963bae3
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87222146"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88833114"
 ---
 # <a name="db_column"></a>db_column
 
@@ -25,7 +25,7 @@ Bindet eine angegebene Spalte an eine Variable im Rowset.
 
 ### <a name="parameters"></a>Parameter
 
-*ordinal*<br/>
+*Ordnungszahl*<br/>
 Die ordinalspaltennummer ( `DBCOLUMNINFO` Ordnungszahl) oder der Spaltenname (ANSI-oder Unicode-Zeichenfolge), die einem Feld im Rowset entspricht, an das Daten gebunden werden sollen. Wenn Sie Zahlen verwenden, können Sie aufeinander folgende ordinale überspringen (z. b.: 1, 2, 3, 5). Der Name kann Leerzeichen enthalten, wenn der von Ihnen verwendete OLE DB Anbieter ihn unterstützt. Sie können z. b. eines der folgenden Formate verwenden:
 
 ```cpp
@@ -100,9 +100,7 @@ class CProducts {
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
 |**Zielgruppe**|**`class`**, **`struct`** , Member, Methode|
 |**REPEATABLE**|Nein|

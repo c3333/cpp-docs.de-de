@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -HIGHENTROPYVA editbin option
 - /HIGHENTROPYVA editbin option
 ms.assetid: ef4b7c63-440d-40ca-b39d-edefb3217505
-ms.openlocfilehash: 1adc12c0673764460b4af5eb7cf3b394d9666e81
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: 80e34a3f57974e1af6afb65196697cce9aa344b1
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86404099"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88834998"
 ---
 # <a name="highentropyva"></a>/HIGHENTROPYVA
 
@@ -34,4 +34,4 @@ Standardmäßig aktiviert der Linker **`/HIGHENTROPYVA`** ausführbare 64-Bit-Im
 [EDITBIN-Optionen](editbin-options.md)\
 [`/DYNAMICBASE`](dynamicbase.md)\
 [`/LARGEADDRESSAWARE`](largeaddressaware.md)\
-[Schutzmaßnahmen für Windows ISV-Software](https://docs.microsoft.com/previous-versions/bb430720(v=msdn.10))
+[Schutzmaßnahmen für Windows ISV-Software](/previous-versions/bb430720(v=msdn.10))

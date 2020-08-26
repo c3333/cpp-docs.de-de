@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - list header
 ms.assetid: 2345823b-5612-44d8-95d3-aa96ed076d17
-ms.openlocfilehash: 6b67434d36146de87a124fc02f49971425943dc5
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: cbc93500c3fe61b2a4640008b869f3a6b71b5c6c
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79447281"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88833308"
 ---
 # <a name="ltlistgt"></a>&lt;list&gt;
 
@@ -24,35 +24,35 @@ Definiert die Containerklassen-Vorlagenliste und mehrere unterstützende Vorlage
 ```
 
 > [!NOTE]
-> Die \<Liste > Bibliothek verwendet auch die `#include <initializer_list>`-Anweisung.
+> Die \<list> Bibliothek verwendet auch die- `#include <initializer_list>` Anweisung.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="operators"></a>Operatoren
 
-|||
+|Name|Beschreibung|
 |-|-|
-|[operator!=](../standard-library/list-operators.md#op_neq)|Testet, ob das Listenobjekt links vom Operator ungleich dem Listenobjekt rechts vom Operator ist.|
-|[operator<](../standard-library/list-operators.md#op_lt)|Testet, ob das Listenobjekt links vom Operator kleiner als das Listenobjekt auf der rechten Seite ist.|
-|[operator\<=](../standard-library/list-operators.md#op_gt_eq)|Testet, ob das Listenobjekt links vom Operator kleiner als oder gleich dem Listenobjekt rechts vom Operator ist.|
-|[operator==](../standard-library/list-operators.md#op_eq_eq)|Testet, ob das Listenobjekt links vom Operator gleich dem Listenobjekt rechts vom Operator ist.|
-|[operator>](../standard-library/list-operators.md#op_gt)|Testet, ob das Listenobjekt links vom Operator größer als das Listenobjekt auf der rechten Seite ist.|
-|[operator>=](../standard-library/list-operators.md#op_gt_eq)|Testet, ob das Listenobjekt links vom Operator größer als oder gleich dem Listenobjekt rechts vom Operator ist.|
+|[Operator! =](../standard-library/list-operators.md#op_neq)|Testet, ob das Listenobjekt links vom Operator ungleich dem Listenobjekt rechts vom Operator ist.|
+|[Operator<](../standard-library/list-operators.md#op_lt)|Testet, ob das Listenobjekt links vom Operator kleiner als das Listenobjekt auf der rechten Seite ist.|
+|[KOM\<=](../standard-library/list-operators.md#op_gt_eq)|Testet, ob das Listenobjekt links vom Operator kleiner als oder gleich dem Listenobjekt rechts vom Operator ist.|
+|[Operator = =](../standard-library/list-operators.md#op_eq_eq)|Testet, ob das Listenobjekt links vom Operator gleich dem Listenobjekt rechts vom Operator ist.|
+|[Operator>](../standard-library/list-operators.md#op_gt)|Testet, ob das Listenobjekt links vom Operator größer als das Listenobjekt auf der rechten Seite ist.|
+|[Operator>=](../standard-library/list-operators.md#op_gt_eq)|Testet, ob das Listenobjekt links vom Operator größer als oder gleich dem Listenobjekt rechts vom Operator ist.|
 
 ### <a name="functions"></a>Functions
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[swap](../standard-library/list-functions.md#swap)|Tauscht die Elemente zweier Listen aus.|
 
 ### <a name="classes"></a>Klassen
 
-|||
+|name|Beschreibung|
 |-|-|
-|[list-Klasse](../standard-library/list-class.md)|Eine Klassen Vorlage von Sequenz Containern, die ihre Elemente in einer linearen Anordnung verwalten und effiziente Einfügungen und Löschungen an einer beliebigen Position innerhalb der Sequenz ermöglichen.|
+|[List-Klasse](../standard-library/list-class.md)|Eine Klassen Vorlage von Sequenz Containern, die ihre Elemente in einer linearen Anordnung verwalten und effiziente Einfügungen und Löschungen an einer beliebigen Position innerhalb der Sequenz ermöglichen.|
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Headerdateienreferenz](../standard-library/cpp-standard-library-header-files.md)\
-[Threadsicherheit in der C++-Standardbibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
-[C++ Standard Library Reference (C++-Standardbibliotheksreferenz)](../standard-library/cpp-standard-library-reference.md)
+[Header Dateireferenz](../standard-library/cpp-standard-library-header-files.md)\
+[Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
+[C++-Standard Bibliotheks Referenz](../standard-library/cpp-standard-library-reference.md)

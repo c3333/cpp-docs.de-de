@@ -20,22 +20,26 @@ helpviewer_keywords:
 - std::operator&lt; (string)
 - std::operator&lt;&lt; (string)
 - std::operator&lt;= (string), std::operator== (string)
-ms.openlocfilehash: 0e63054365f4b29cf474a46dbf7c730f54759792
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: e031eb4421906e35a96a862855a140218f233778
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87217388"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88832541"
 ---
 # <a name="ltstringgt-operators"></a>&lt;string&gt;-Operatoren
 
-||||
-|-|-|-|
-|[Operator! =](#op_neq)|[KOM&gt;](#op_gt)|[KOM&gt;&gt;](#op_gt_gt)|
-|[KOM&gt;=](#op_gt_eq)|[KOM&lt;](#op_lt)|[KOM&lt;&lt;](#op_lt_lt)|
-|[KOM&lt;=](#op_lt_eq)|[Operator +](#op_add)|[Operator = =](#op_eq_eq)|
+[Operator! =](#op_neq)\
+[KOM&gt;](#op_gt)\
+[KOM&gt;&gt;](#op_gt_gt)\
+[KOM&gt;=](#op_gt_eq)\
+[KOM&lt;](#op_lt)\
+[KOM&lt;&lt;](#op_lt_lt)\
+[KOM&lt;=](#op_lt_eq)\
+[Operator +](#op_add)\
+[Operator = =](#op_eq_eq)
 
-## <a name="operator"></a><a name="op_add"></a>Operator +
+## <a name="operator"></a><a name="op_add"></a> Operator +
 
 Verkettet zwei Zeichenfolgenobjekte.
 
@@ -169,7 +173,7 @@ The string concatenating s1 & s3 is: antiheroine
 The string concatenating s1 & s3 is: antiheroine!
 ```
 
-## <a name="operator"></a><a name="op_neq"></a>Operator! =
+## <a name="operator"></a><a name="op_neq"></a> Operator! =
 
 Testet, ob das Zeichenfolgenobjekt links vom Operator ungleich dem Zeichenfolgenobjekt rechts vom Operator ist.
 
@@ -200,7 +204,7 @@ Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder 
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das Zeichen folgen Objekt links vom Operator nicht lexikografisch gleich dem Zeichen folgen Objekt rechts vom Operator ist. andernfalls **`false`** .
+**`true`** , wenn das Zeichen folgen Objekt links vom Operator nicht lexikografisch gleich dem Zeichen folgen Objekt rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -260,7 +264,7 @@ The strings s1 & s3 are equal.
 The strings s3 & s2 are not equal.
 ```
 
-## <a name="operator"></a><a name="op_eq_eq"></a>Operator = =
+## <a name="operator"></a><a name="op_eq_eq"></a> Operator = =
 
 Testet, ob das Zeichenfolgenobjekt links vom Operator gleich dem Zeichenfolgenobjekt rechts vom Operator ist.
 
@@ -291,7 +295,7 @@ Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder 
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das Zeichen folgen Objekt links vom Operator lexikografisch gleich dem Zeichen folgen Objekt rechts vom Operator ist. andernfalls **`false`** .
+**`true`** , wenn das Zeichen folgen Objekt links vom Operator lexikografisch gleich dem Zeichen folgen Objekt rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -351,7 +355,7 @@ The strings s1 & s3 are equal.
 The strings s3 & s2 are not equal.
 ```
 
-## <a name="operatorlt"></a><a name="op_lt"></a>KOM&lt;
+## <a name="operatorlt"></a><a name="op_lt"></a> KOM&lt;
 
 Testet, ob das Zeichenfolgenobjekt links vom Operator kleiner als das Zeichenfolgenobjekt rechts vom Operator ist.
 
@@ -382,7 +386,7 @@ Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder 
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das Zeichen folgen Objekt links vom Operator lexikografisch kleiner als das Zeichen folgen Objekt rechts vom Operator ist. andernfalls **`false`** .
+**`true`** , wenn das Zeichen folgen Objekt links vom Operator lexikografisch kleiner als das Zeichen folgen Objekt rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -447,7 +451,7 @@ The string s1 is not less than the string s3.
 The string s3 is less than the string s2.
 ```
 
-## <a name="operatorlt"></a><a name="op_lt_eq"></a>KOM&lt;=
+## <a name="operatorlt"></a><a name="op_lt_eq"></a> KOM&lt;=
 
 Testet, ob das Zeichenfolgenobjekt links vom Operator kleiner als oder gleich dem Zeichenfolgenobjekt rechts vom Operator ist.
 
@@ -478,7 +482,7 @@ Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder 
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das Zeichen folgen Objekt links vom Operator lexikografisch kleiner als oder gleich dem Zeichen folgen Objekt rechts vom Operator ist. andernfalls **`false`** .
+**`true`** , wenn das Zeichen folgen Objekt links vom Operator lexikografisch kleiner als oder gleich dem Zeichen folgen Objekt rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -550,7 +554,7 @@ The string s1 is less than or equal to the string s3.
 The string s2 is greater than the string s3.
 ```
 
-## <a name="operatorltlt"></a><a name="op_lt_lt"></a>KOM&lt;&lt;
+## <a name="operatorltlt"></a><a name="op_lt_lt"></a> KOM&lt;&lt;
 
 Eine Vorlagenfunktion, die eine Zeichenfolge in den Ausgabestream schreibt.
 
@@ -577,7 +581,7 @@ Schreibt den Wert der angegebenen Zeichenfolge in den Ausgabestream *_Ostr*.
 
 Die Vorlagen Funktion überlädt den **Operator<<** , um ein Objekt *Str* der Klassen Vorlage [basic_string](../standard-library/basic-string-class.md) in den Stream * \_ Ostr*einzufügen. Die Funktion gibt effektiv zurück `_Ostr.write( str.c_str, str.size )` .
 
-## <a name="operatorgt"></a><a name="op_gt"></a>KOM&gt;
+## <a name="operatorgt"></a><a name="op_gt"></a> KOM&gt;
 
 Testet, ob das Zeichenfolgenobjekt links vom Operator größer als das Zeichenfolgenobjekt rechts vom Operator ist.
 
@@ -608,7 +612,7 @@ Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder 
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das Zeichen folgen Objekt links vom Operator lexikografisch größer als das Zeichen folgen Objekt rechts vom Operator ist. andernfalls **`false`** .
+**`true`** , wenn das Zeichen folgen Objekt links vom Operator lexikografisch größer als das Zeichen folgen Objekt rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -680,7 +684,7 @@ The string s3 is greater than the string s1.
 The string s2 is greater than the string s3.
 ```
 
-## <a name="operatorgt"></a><a name="op_gt_eq"></a>KOM&gt;=
+## <a name="operatorgt"></a><a name="op_gt_eq"></a> KOM&gt;=
 
 Testet, ob das Zeichenfolgenobjekt links vom Operator größer als oder gleich dem Zeichenfolgenobjekt rechts vom Operator ist.
 
@@ -711,7 +715,7 @@ Eine Zeichenfolge im C-Format oder ein Objekt des Typs `basic_string`, die oder 
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das Zeichen folgen Objekt links vom Operator lexikografisch größer als oder gleich dem Zeichen folgen Objekt rechts vom Operator ist. andernfalls **`false`** .
+**`true`** , wenn das Zeichen folgen Objekt links vom Operator lexikografisch größer als oder gleich dem Zeichen folgen Objekt rechts vom Operator ist. andernfalls **`false`** .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -783,7 +787,7 @@ The string s3 is greater than or equal to the string s1.
 The string s2 is greater than or equal to the string s3.
 ```
 
-## <a name="operatorgtgt"></a><a name="op_gt_gt"></a>KOM&gt;&gt;
+## <a name="operatorgtgt"></a><a name="op_gt_gt"></a> KOM&gt;&gt;
 
 Eine Vorlagenfunktion, die eine Zeichenfolge aus dem Eingabestream liest.
 

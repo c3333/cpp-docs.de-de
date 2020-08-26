@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - valarray header
 ms.assetid: 30835415-21c1-4801-8f24-6bbef7dd8ecd
-ms.openlocfilehash: eb782b0d16c4bc826da4ea9291756f34ca0eaf29
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 9d2f3097637b3708c16f3048a34dd32b7f6fd80b
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87215412"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88840140"
 ---
 # <a name="ltvalarraygt"></a>&lt;valarray&gt;
 
@@ -34,7 +34,7 @@ Diese Klassen Vorlagen und-Funktionen sind im Interesse einer verbesserten Leist
 
 ### <a name="functions"></a>Functions
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[Stäbchen](../standard-library/valarray-functions.md#abs)|Verarbeitet die Elemente eines valarray-Eingabeobjekts und gibt ein valarray-Objekt zurück, dessen Elemente gleich dem absoluten Wert der Elemente des valarray-Eingabeobjekts sind.|
 |[ACOS](../standard-library/valarray-functions.md#acos)|Verarbeitet die Elemente eines valarray-Eingabeobjekts und gibt ein valarray-Objekt zurück, dessen Elemente gleich dem Arkuskosinus der Elemente des valarray-Eingabeobjekts sind.|
@@ -58,7 +58,7 @@ Diese Klassen Vorlagen und-Funktionen sind im Interesse einer verbesserten Leist
 
 ### <a name="operators"></a>Operatoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[Operator! =](../standard-library/valarray-operators.md#op_neq)|Überprüft, ob die entsprechenden Elemente von zwei gleich großen valarray-Objekten ungleich sind oder ob alle Elemente eines valarray-Objekts entsprechend einem angegebenen Wert des Elementtyps des valarray-Objekts ungleich sind.|
 |[KOM](../standard-library/valarray-operators.md#op_mod)|Ruft den Rest der Division der entsprechenden Elemente von zwei gleich großen valarray-Objekten oder der Division eines valarray-Objekts durch einen angegebenen Wert des valarray Elementtyps oder der Division eines angegebenen Werts durch ein valarray-Objekt ab.|
@@ -81,7 +81,7 @@ Diese Klassen Vorlagen und-Funktionen sind im Interesse einer verbesserten Leist
 
 ### <a name="classes"></a>Klassen
 
-|||
+|name|Beschreibung|
 |-|-|
 |[Gslice-Klasse](../standard-library/gslice-class.md)|Eine Hilfsklasse der valarray-Klasse, die zum Definieren von mehrdimensionalen Segmenten eines valarray-Objekts verwendet wird.|
 |[Gslice_array-Klasse](../standard-library/gslice-array-class.md)|Eine interne, zusätzliche Klassen Vorlage, die allgemeine Slice-Objekte unterstützt, indem Vorgänge zwischen Teilmengen Arrays bereitgestellt werden, die durch das allgemeine Slice eines Valarray-Objekts definiert werden.|
@@ -93,7 +93,7 @@ Diese Klassen Vorlagen und-Funktionen sind im Interesse einer verbesserten Leist
 
 ### <a name="specializations"></a>Spezialisierungen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[Valarray- \<bool> Klasse](../standard-library/valarray-bool-class.md)|Eine spezialisierte Version des Valarray-Klassen Vorlagen \<**Type**> Elements für Elemente des Typs **`bool`** .|
 

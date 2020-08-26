@@ -26,12 +26,12 @@ helpviewer_keywords:
 - std::piecewise_constant_distribution [C++], param_type
 - std::piecewise_constant_distribution [C++], param_type
 ms.assetid: 2c9a21fa-623e-4d63-b827-3f1556b6dedb
-ms.openlocfilehash: 6764e37b994ed76d27f88e3bdc8ec137d5e2f600
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 59911d8a61a05de9ec92f4152b2835da3cf82f7f
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87232988"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88832723"
 ---
 # <a name="piecewise_constant_distribution-class"></a>piecewise_constant_distribution-Klasse
 
@@ -89,10 +89,8 @@ Die Sampling-Verteilung weist Intervalle von variierender Breite und in jedem In
 
 Die folgende Tabelle ist mit Artikeln über einzelne Member verknüpft:
 
-||||
-|-|-|-|
-|[piecewise_constant_distribution](#piecewise_constant_distribution)|`piecewise_constant_distribution::intervals`|`piecewise_constant_distribution::param`|
-|`piecewise_constant_distribution::operator()`|`piecewise_constant_distribution::densities`|[param_type](#param_type)|
+[piecewise_constant_distribution](#piecewise_constant_distribution)\
+[param_type](#param_type)
 
 Die Eigenschaftsfunktion `intervals()` gibt einen `vector<result_type>` mit dem Satz gespeicherter Intervalle der Verteilung zurück.
 
@@ -218,7 +216,7 @@ Distribution for 100 samples:
 
 **Namespace:** std
 
-## <a name="piecewise_constant_distributionpiecewise_constant_distribution"></a><a name="piecewise_constant_distribution"></a>piecewise_constant_distribution::p iecewise_constant_distribution
+## <a name="piecewise_constant_distributionpiecewise_constant_distribution"></a><a name="piecewise_constant_distribution"></a> piecewise_constant_distribution::p iecewise_constant_distribution
 
 Erstellt die Verteilung.
 
@@ -318,7 +316,7 @@ explicit piecewise_constant_distribution(const param_type& parm);
 
 erstellt ein Verteilungs *Objekt mit einem* Parameter als gespeicherte Parameter Struktur.
 
-## <a name="piecewise_constant_distributionparam_type"></a><a name="param_type"></a>piecewise_constant_distribution::p aram_type
+## <a name="piecewise_constant_distributionparam_type"></a><a name="param_type"></a> piecewise_constant_distribution::p aram_type
 
 Speichert alle Parameter der Verteilung.
 
@@ -348,7 +346,7 @@ Siehe Konstruktorparameter für [piecewise_constant_distribution](#piecewise_con
 
 Diese Struktur kann bei der Instanziierung an den Klassenkonstruktor des Verteilers, an die Memberfunktion `param()` (zur Festlegung der gespeicherten Parameter einer vorhandenen Verteilung) und an `operator()` (zur Verwendung anstelle der gespeicherten Parameter) übergeben werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<random>](../standard-library/random.md)\
 [piecewise_linear_distribution](../standard-library/piecewise-linear-distribution-class.md)

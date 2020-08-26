@@ -16,19 +16,19 @@ helpviewer_keywords:
 - CAxWindow class
 - ATL, hosting ActiveX controls
 ms.assetid: 85e79261-43e4-4770-bde0-1ff87f222b0f
-ms.openlocfilehash: 6f5629370bc1f821dac0a08cc76b5df1450f7a5b
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 1301baef874ac4e482a1b2a7f0a2ee6b1b63396f
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81318722"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88833828"
 ---
 # <a name="caxwindow-class"></a>CAxWindow-Klasse
 
-Diese Klasse stellt Methoden zum Bearbeiten eines Fensters bereit, in dem ein ActiveX-Steuerelement gehostet wird.
+Diese Klasse stellt Methoden zum Bearbeiten eines Fensters bereit, das ein ActiveX-Steuerelement gehostet.
 
 > [!IMPORTANT]
-> Diese Klasse und ihre Member können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
+> Diese Klasse und ihre Member können in Anwendungen, die im Windows-Runtime ausgeführt werden, nicht verwendet werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -40,41 +40,41 @@ class CAxWindow : public CWindow
 
 ### <a name="methods"></a>Methoden
 
-|||
+|Funktion|Beschreibung|
 |-|-|
-|[AttachControl](#attachcontrol)|Fügt dem `CAxWindow` Objekt ein vorhandenes ActiveX-Steuerelement an.|
+|[AttachControl](#attachcontrol)|Fügt ein vorhandenes ActiveX-Steuerelement an das- `CAxWindow` Objekt an.|
 |[CAxWindow](#caxwindow)|Erstellt ein `CAxWindow`-Objekt.|
-|[CreateControl](#createcontrol)|Erstellt ein ActiveX-Steuerelement, initialisiert es und `CAxWindow` hostet es im Fenster.|
-|[CreateControlEx](#createcontrolex)|Erstellt ein ActiveX-Steuerelement und ruft einen Schnittstellenzeiger (oder Zeiger) aus dem Steuerelement ab.|
-|[GetWndClassName](#getwndclassname)|(Statisch) Ruft den vordefinierten Klassennamen `CAxWindow` des Objekts ab.|
-|[QueryControl](#querycontrol)|Ruft das `IUnknown` des gehosteten ActiveX-Steuerelements ab.|
-|[QueryHost](#queryhost)|Ruft den `IUnknown` Zeiger des `CAxWindow` Objekts ab.|
-|[SetExternalDispatch](#setexternaldispatch)|Legt die externe Dispatchschnittstelle `CAxWindow` fest, die vom Objekt verwendet wird.|
-|[SetExternalUIHandler](#setexternaluihandler)|Legt die `IDocHostUIHandler` vom `CAxWindow` Objekt verwendete externe Schnittstelle fest.|
+|[CreateControl](#createcontrol)|Erstellt ein ActiveX-Steuerelement, initialisiert es und hostet es im- `CAxWindow` Fenster.|
+|["Kreatecontrolex"](#createcontrolex)|Erstellt ein ActiveX-Steuerelement und Ruft einen Schnittstellen Zeiger (oder Zeiger) aus dem-Steuerelement ab.|
+|[Getwndclassname](#getwndclassname)|Kum Ruft den vordefinierten Klassennamen des Objekts ab `CAxWindow` .|
+|[Querycontrol](#querycontrol)|Ruft den `IUnknown` des gehosteten ActiveX-Steuer Elements ab.|
+|[QueryHost](#queryhost)|Ruft den `IUnknown` Zeiger des- `CAxWindow` Objekts ab.|
+|["Abtexternaldispatch"](#setexternaldispatch)|Legt die externe Dispatchschnittstelle fest, die vom-Objekt verwendet wird `CAxWindow` .|
+|["Abtexternaluihandler"](#setexternaluihandler)|Legt die `IDocHostUIHandler` vom-Objekt verwendete externe Schnittstelle fest `CAxWindow` .|
 
 ### <a name="operators"></a>Operatoren
 
-|||
+|Operator|Beschreibung|
 |-|-|
-|[Operator =](#operator_eq)|Weist einem vorhandenen `CAxWindow` Objekt eine HWND zu.|
+|[Operator =](#operator_eq)|Weist einem vorhandenen-Objekt ein HWND zu `CAxWindow` .|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Diese Klasse stellt Methoden zum Bearbeiten eines Fensters bereit, das ein ActiveX-Steuerelement hostet. Das Hosting wird von " **AtlAxWin80"** `CAxWindow`bereitgestellt, das von umschlossen wird.
+Diese Klasse stellt Methoden zum Bearbeiten eines Fensters bereit, das ein ActiveX-Steuerelement hostet. Das Hosting wird von " **AtlAxWin80"** bereitgestellt, das von umschließt wird `CAxWindow` .
 
-Die `CAxWindow` Klasse wird als Spezialisierung `CAxWindowT` der Klasse implementiert. Diese Spezialisierung wird wie:
+`CAxWindow`Die Klasse wird als Spezialisierung der- `CAxWindowT` Klasse implementiert. Diese Spezialisierung wird wie folgt deklariert:
 
 `typedef CAxWindowT<CWindow> CAxWindow;`
 
-Wenn Sie die Basisklasse ändern müssen, können Sie die neue Basisklasse als Vorlagenargument verwenden `CAxWindowT` und angeben.
+Wenn Sie die Basisklasse ändern müssen, können Sie verwenden `CAxWindowT` und die neue Basisklasse als Vorlagen Argument angeben.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Kopfzeile:** atlwin.h
+**Header:** atlwin. h
 
-## <a name="caxwindowattachcontrol"></a><a name="attachcontrol"></a>CAxWindow::AttachControl
+## <a name="caxwindowattachcontrol"></a><a name="attachcontrol"></a> CAxWindow:: AttachControl
 
-Erstellt ein neues Hostobjekt, wenn es noch nicht vorhanden ist, und fügt das angegebene Steuerelement an den Host an.
+Erstellt ein neues Host Objekt, wenn es noch nicht vorhanden ist, und fügt das angegebene Steuerelement an den Host an.
 
 ```
 HRESULT AttachControl(
@@ -85,22 +85,22 @@ HRESULT AttachControl(
 ### <a name="parameters"></a>Parameter
 
 *pControl*<br/>
-[in] Ein Zeiger auf `IUnknown` das Steuerelement.
+in Ein Zeiger auf den `IUnknown` des Steuer Elements.
 
-*ppUnkContainer*<br/>
-[out] Ein Zeiger auf `IUnknown` den des `AxWin` Hosts (des Objekts).
+*ppunkcontainer*<br/>
+vorgenommen Ein Zeiger auf den `IUnknown` des Hosts (das- `AxWin` Objekt).
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Standard-HRESULT-Wert.
+Ein HRESULT-Standardwert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das angehängte Steuerelementobjekt muss vor `AttachControl`dem Aufruf korrekt initialisiert werden.
+Das anzufügende Steuerelement Objekt muss vor dem Aufrufen von ordnungsgemäß initialisiert werden `AttachControl` .
 
-## <a name="caxwindowcaxwindow"></a><a name="caxwindow"></a>CAxWindow::CAxWindow
+## <a name="caxwindowcaxwindow"></a><a name="caxwindow"></a> CAxWindow:: CAxWindow
 
-Erstellt ein `CAxWindow` Objekt mit einem vorhandenen Fensterobjekthandle.
+Erstellt ein- `CAxWindow` Objekt mit einem vorhandenen Fenster Objekt handle.
 
 ```
 CAxWindow(HWND hWnd = NULL);
@@ -109,9 +109,9 @@ CAxWindow(HWND hWnd = NULL);
 ### <a name="parameters"></a>Parameter
 
 *hWnd*<br/>
-Ein Handle für ein vorhandenes Fensterobjekt.
+Ein Handle für ein vorhandenes Fenster Objekt.
 
-## <a name="caxwindowcreatecontrol"></a><a name="createcontrol"></a>CAxWindow::CreateControl
+## <a name="caxwindowcreatecontrol"></a><a name="createcontrol"></a> CAxWindow:: kreatecontrol
 
 Erstellt ein ActiveX-Steuerelement, initialisiert es und hostet es im angegebenen Fenster.
 
@@ -129,50 +129,50 @@ HRESULT CreateControl(
 
 ### <a name="parameters"></a>Parameter
 
-*lpszName*<br/>
-Ein Zeiger auf eine Zeichenfolge, um das Steuerelement zu erstellen. Muss auf eine der folgenden Arten formatiert werden:
+*lpszname*<br/>
+Ein Zeiger auf eine Zeichenfolge zum Erstellen des Steuer Elements. Muss auf eine der folgenden Arten formatiert werden:
 
-- Eine ProgID wie`"MSCAL.Calendar.7"`
+- Eine ProgID, z. b. `"MSCAL.Calendar.7"`
 
-- Eine CLSID wie`"{8E27C92B-1264-101C-8A2F-040224009C02}"`
+- Eine CLSID, z. b. `"{8E27C92B-1264-101C-8A2F-040224009C02}"`
 
-- Eine URL wie`"<https://www.microsoft.com>"`
+- Eine URL wie `"<https://www.microsoft.com>"`
 
-- Ein Verweis auf ein aktives Dokument, z. B.`"file://\\\Documents\MyDoc.doc"`
+- Ein Verweis auf ein aktives Dokument, z. b. `"file://\\\Documents\MyDoc.doc"`
 
-- Ein HTML-Fragment wie`"MSHTML:\<HTML>\<BODY>This is a line of text\</BODY>\</HTML>"`
+- Ein Fragment von HTML, z. b. `"MSHTML:\<HTML>\<BODY>This is a line of text\</BODY>\</HTML>"`
 
    > [!NOTE]
-   > `"MSHTML:"`muss dem HTML-Fragment vorangestellt werden, damit es als MSHTML-Stream bezeichnet wird. Nur ProgID und CLSID werden in Windows Mobile-Plattformen unterstützt. Windows CE Embedded-Plattformen, mit Ausnahme von Windows Mobile mit Unterstützung für CE IE unterstützen alle Typen einschließlich ProgID, CLSID, URL, Verweis auf aktive saktivdokument und HTML-Fragment.
+   > `"MSHTML:"` muss dem HTML-Fragment vorangestellt sein, damit es als MSHTML-Stream festgelegt ist. Nur die ProgID und CLSID werden auf Windows Mobile-Plattformen unterstützt. Windows CE Embedded-Plattformen (außer Windows Mobile) mit Unterstützung für CE IE unterstützen alle Typen, einschließlich ProgID, CLSID, URL, Verweis auf aktives Dokument und HTML-Fragmente.
 
 *pStream*<br/>
-[in] Ein Zeiger auf einen Stream, der zum Initialisieren der Eigenschaften des Steuerelements verwendet wird. Kann den Wert NULL haben.
+in Ein Zeiger auf einen Stream, der verwendet wird, um die Eigenschaften des Steuer Elements zu initialisieren. Kann den Wert NULL haben.
 
-*ppUnkContainer*<br/>
-[out] Die Adresse eines Zeigers, `IUnknown` der den Container empfängt. Kann den Wert NULL haben.
+*ppunkcontainer*<br/>
+vorgenommen Die Adresse eines Zeigers, der den `IUnknown` des Containers empfängt. Kann den Wert NULL haben.
 
-*dwResID*<br/>
+*dwresid*<br/>
 Die Ressourcen-ID einer HTML-Ressource. Das WebBrowser-Steuerelement wird erstellt und mit der angegebenen Ressource geladen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Standard-HRESULT-Wert.
+Ein HRESULT-Standardwert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn die zweite Version dieser Methode verwendet wird, wird ein HTML-Steuerelement erstellt und an die von *dwResID*identifizierte Ressource gebunden.
+Wenn die zweite Version dieser Methode verwendet wird, wird ein HTML-Steuerelement erstellt und an die durch *dwresid*identifizierte Ressource gebunden.
 
-Diese Methode gibt Ihnen das gleiche Ergebnis wie das Aufrufen:
+Diese Methode gibt Ihnen dasselbe Ergebnis wie das Aufrufen von:
 
 [!code-cpp[NVC_ATL_Windowing#42](../../atl/codesnippet/cpp/caxwindow-class_1.cpp)]
 
-Siehe [CAxWindow2T::CreateControlLic,](../../atl/reference/caxwindow2t-class.md#createcontrollic) um ein lizenziertes ActiveX-Steuerelement zu erstellen, zu initialisieren und zu hosten.
+Weitere Informationen finden Sie unter [CAxWindow2T:: kreatecontrollic](../../atl/reference/caxwindow2t-class.md#createcontrollic) zum Erstellen, initialisieren und Hosten eines lizenzierten ActiveX-Steuer Elements.
 
 ### <a name="example"></a>Beispiel
 
-Weitere Informationen finden Sie unter [Hostieren von ActiveX-Steuerelementen unter Verwendung von ATL AXHost](../../atl/hosting-activex-controls-using-atl-axhost.md) für ein Beispiel, das `CreateControl`verwendet.
+Ein Beispiel, das verwendet, finden Sie unter Hosting von ActiveX-Steuer [Elementen mithilfe von ATL AxHost](../../atl/hosting-activex-controls-using-atl-axhost.md) `CreateControl` .
 
-## <a name="caxwindowcreatecontrolex"></a><a name="createcontrolex"></a>CAxWindow::CreateControlEx
+## <a name="caxwindowcreatecontrolex"></a><a name="createcontrolex"></a> CAxWindow:: kreatecontrolex
 
 Erstellt ein ActiveX-Steuerelement, initialisiert es und hostet es im angegebenen Fenster.
 
@@ -196,57 +196,57 @@ HRESULT CreateControlEx(
 
 ### <a name="parameters"></a>Parameter
 
-*lpszName*<br/>
-Ein Zeiger auf eine Zeichenfolge, um das Steuerelement zu erstellen. Muss auf eine der folgenden Arten formatiert werden:
+*lpszname*<br/>
+Ein Zeiger auf eine Zeichenfolge zum Erstellen des Steuer Elements. Muss auf eine der folgenden Arten formatiert werden:
 
-- Eine ProgID wie`"MSCAL.Calendar.7"`
+- Eine ProgID, z. b. `"MSCAL.Calendar.7"`
 
-- Eine CLSID wie`"{8E27C92B-1264-101C-8A2F-040224009C02}"`
+- Eine CLSID, z. b. `"{8E27C92B-1264-101C-8A2F-040224009C02}"`
 
-- Eine URL wie`"<https://www.microsoft.com>"`
+- Eine URL wie `"<https://www.microsoft.com>"`
 
-- Ein Verweis auf ein aktives Dokument, z. B.`"file://\\\Documents\MyDoc.doc"`
+- Ein Verweis auf ein aktives Dokument, z. b. `"file://\\\Documents\MyDoc.doc"`
 
-- Ein HTML-Fragment wie`"MSHTML:\<HTML>\<BODY>This is a line of text\</BODY>\</HTML>"`
+- Ein Fragment von HTML, z. b. `"MSHTML:\<HTML>\<BODY>This is a line of text\</BODY>\</HTML>"`
 
    > [!NOTE]
-   > `"MSHTML:"`muss dem HTML-Fragment vorangestellt werden, damit es als MSHTML-Stream bezeichnet wird. Nur ProgID und CLSID werden in Windows Mobile-Plattformen unterstützt. Windows CE Embedded-Plattformen, mit Ausnahme von Windows Mobile mit Unterstützung für CE IE unterstützen alle Typen einschließlich ProgID, CLSID, URL, Verweis auf aktive saktivdokument und HTML-Fragment.
+   > `"MSHTML:"` muss dem HTML-Fragment vorangestellt sein, damit es als MSHTML-Stream festgelegt ist. Nur die ProgID und CLSID werden auf Windows Mobile-Plattformen unterstützt. Windows CE Embedded-Plattformen (außer Windows Mobile) mit Unterstützung für CE IE unterstützen alle Typen, einschließlich ProgID, CLSID, URL, Verweis auf aktives Dokument und HTML-Fragmente.
 
 *pStream*<br/>
-[in] Ein Zeiger auf einen Stream, der zum Initialisieren der Eigenschaften des Steuerelements verwendet wird. Kann den Wert NULL haben.
+in Ein Zeiger auf einen Stream, der verwendet wird, um die Eigenschaften des Steuer Elements zu initialisieren. Kann den Wert NULL haben.
 
-*ppUnkContainer*<br/>
-[out] Die Adresse eines Zeigers, `IUnknown` der den Container empfängt. Kann den Wert NULL haben.
+*ppunkcontainer*<br/>
+vorgenommen Die Adresse eines Zeigers, der den `IUnknown` des Containers empfängt. Kann den Wert NULL haben.
 
-*ppUnkControl*<br/>
-[out] Die Adresse eines Zeigers, `IUnknown` der die des Steuerelements empfängt. Kann den Wert NULL haben.
+*ppunkcontrol*<br/>
+vorgenommen Die Adresse eines Zeigers, der den `IUnknown` des Steuer Elements empfängt. Kann den Wert NULL haben.
 
-*iidSink*<br/>
-[in] Der Schnittstellenbezeichner einer ausgehenden Schnittstelle für das enthaltene Objekt. Kann IID_NULL werden.
+*iidsink*<br/>
+in Der Schnittstellen Bezeichner einer ausgehenden Schnittstelle für das enthaltene Objekt. Kann IID_NULL werden.
 
-*punkSink*<br/>
-[in] Ein Zeiger auf `IUnknown` die Schnittstelle des Senkenobjekts, der mit dem Verbindungspunkt des enthaltenen Objekts verbunden werden soll, das von *iidSink*angegeben wird.
+*punksink*<br/>
+in Ein Zeiger auf die- `IUnknown` Schnittstelle des Sink-Objekts, das mit dem Verbindungspunkt für das von *iidsink*angegebene enthaltene Objekt verbunden werden soll.
 
-*dwResID*<br/>
-[in] Die Ressourcen-ID einer HTML-Ressource. Das WebBrowser-Steuerelement wird erstellt und mit der angegebenen Ressource geladen.
+*dwresid*<br/>
+in Die Ressourcen-ID einer HTML-Ressource. Das WebBrowser-Steuerelement wird erstellt und mit der angegebenen Ressource geladen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Standard-HRESULT-Wert.
+Ein HRESULT-Standardwert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode ähnelt [CAxWindow::CreateControl](#createcontrol), `CreateControlEx` aber im Gegensatz zu dieser Methode können Sie auch einen Schnittstellenzeiger auf das neu erstellte Steuerelement empfangen und eine Ereignissenke einrichten, um Ereignisse zu empfangen, die vom Steuerelement ausgelöst werden.
+Diese Methode ähnelt [CAxWindow:: anatecontrol](#createcontrol), aber im Gegensatz zu dieser Methode `CreateControlEx` können Sie auch einen Schnittstellen Zeiger auf das neu erstellte Steuerelement empfangen und eine Ereignis Senke für den Empfang von Ereignissen einrichten, die vom Steuerelement ausgelöst werden.
 
-Siehe [CAxWindow2T::CreateControlLicEx](../../atl/reference/caxwindow2t-class.md#createcontrollicex) zum Erstellen, Initialisieren und Hosten eines lizenzierten ActiveX-Steuerelements.
+Weitere Informationen finden Sie unter [CAxWindow2T:: anatecontrollicex](../../atl/reference/caxwindow2t-class.md#createcontrollicex) zum Erstellen, initialisieren und Hosten eines lizenzierten ActiveX-Steuer Elements.
 
 ### <a name="example"></a>Beispiel
 
-Weitere Informationen finden Sie unter [Hostieren von ActiveX-Steuerelementen unter Verwendung von ATL AXHost](../../atl/hosting-activex-controls-using-atl-axhost.md) für ein Beispiel, das `CreateControlEx`verwendet.
+Ein Beispiel, das verwendet, finden Sie unter Hosting von ActiveX-Steuer [Elementen mithilfe von ATL AxHost](../../atl/hosting-activex-controls-using-atl-axhost.md) `CreateControlEx` .
 
-## <a name="caxwindowgetwndclassname"></a><a name="getwndclassname"></a>CAxWindow::GetWndClassName
+## <a name="caxwindowgetwndclassname"></a><a name="getwndclassname"></a> CAxWindow:: getwndclassname
 
-Ruft den Namen der Fensterklasse ab.
+Ruft den Namen der Fenster Klasse ab.
 
 ```
 static LPCTSTR GetWndClassName();
@@ -254,11 +254,11 @@ static LPCTSTR GetWndClassName();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Zeiger auf eine Zeichenfolge, die den Namen der Fensterklasse enthält, die nicht lizenzierte ActiveX-Steuerelemente hosten kann.
+Ein Zeiger auf eine Zeichenfolge, die den Namen der Fenster Klasse enthält, die nicht lizenzierte ActiveX-Steuerelemente hosten kann.
 
-## <a name="caxwindowoperator-"></a><a name="operator_eq"></a>CAxWindow::operator =
+## <a name="caxwindowoperator-"></a><a name="operator_eq"></a> CAxWindow:: Operator =
 
-Weist einem vorhandenen `CAxWindow` Objekt eine HWND zu.
+Weist einem vorhandenen-Objekt ein HWND zu `CAxWindow` .
 
 ```
 CAxWindow<TBase>& operator=(HWND hWnd);
@@ -273,9 +273,9 @@ Ein Handle für ein vorhandenes Fenster.
 
 Gibt einen Verweis auf das aktuelle `CAxWindow`-Objekt zurück.
 
-## <a name="caxwindowquerycontrol"></a><a name="querycontrol"></a>CAxWindow::QueryControl
+## <a name="caxwindowquerycontrol"></a><a name="querycontrol"></a> CAxWindow:: querycontrol
 
-Ruft die angegebene Schnittstelle des gehosteten Steuerelements ab.
+Ruft die angegebene Schnittstelle des gehosteten Steuer Elements ab.
 
 ```
 HRESULT QueryControl(REFIID iid, void** ppUnk);
@@ -285,20 +285,20 @@ HRESULT QueryControl(Q** ppUnk);
 
 ### <a name="parameters"></a>Parameter
 
-*Iid*<br/>
-[in] Gibt die IID der Benutzeroberfläche des Steuerelements an.
+*IID*<br/>
+in Gibt die IID der-Schnittstelle des Steuer Elements an.
 
 *ppUnk*<br/>
-[out] Ein Zeiger auf die Schnittstelle des Steuerelements. In der Vorlagenversion dieser Methode ist keine Referenz-ID erforderlich, solange eine typisierte Schnittstelle mit einer zugeordneten UUID übergeben wird.
+vorgenommen Ein Zeiger auf die-Schnittstelle des Steuer Elements. In der Vorlagen Version dieser Methode ist keine Verweis-ID erforderlich, solange eine typisierte Schnittstelle mit einer zugeordneten UUID übermittelt wird.
 
-*Q*<br/>
-[in] Die Schnittstelle, nach der abgefragt wird.
+*Q1*<br/>
+in Die Schnittstelle, für die abgefragt wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Standard-HRESULT-Wert.
+Ein HRESULT-Standardwert.
 
-## <a name="caxwindowqueryhost"></a><a name="queryhost"></a>CAxWindow::QueryHost
+## <a name="caxwindowqueryhost"></a><a name="queryhost"></a> CAxWindow:: QueryHost
 
 Gibt die angegebene Schnittstelle des Hosts zurück.
 
@@ -310,26 +310,26 @@ HRESULT QueryHost(Q** ppUnk);
 
 ### <a name="parameters"></a>Parameter
 
-*Iid*<br/>
-[in] Gibt die IID der Benutzeroberfläche des Steuerelements an.
+*IID*<br/>
+in Gibt die IID der-Schnittstelle des Steuer Elements an.
 
 *ppUnk*<br/>
-[out] Ein Zeiger auf die Schnittstelle auf dem Host. In der Vorlagenversion dieser Methode ist keine Referenz-ID erforderlich, solange eine typisierte Schnittstelle mit einer zugeordneten UUID übergeben wird.
+vorgenommen Ein Zeiger auf die-Schnittstelle auf dem Host. In der Vorlagen Version dieser Methode ist keine Verweis-ID erforderlich, solange eine typisierte Schnittstelle mit einer zugeordneten UUID übermittelt wird.
 
-*Q*<br/>
-[in] Die Schnittstelle, nach der abgefragt wird.
+*Q1*<br/>
+in Die Schnittstelle, für die abgefragt wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Standard-HRESULT-Wert.
+Ein HRESULT-Standardwert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Schnittstelle des Hosts ermöglicht den Zugriff auf die zugrunde `AxWin`liegende Funktionalität des Window-Hosting-Codes, implementiert von .
+Die-Schnittstelle des Hosts ermöglicht den Zugriff auf die zugrunde liegende Funktionalität des Fenster-hostingcodes, der von implementiert wird `AxWin` .
 
-## <a name="caxwindowsetexternaldispatch"></a><a name="setexternaldispatch"></a>CAxWindow::SetExternalDispatch
+## <a name="caxwindowsetexternaldispatch"></a><a name="setexternaldispatch"></a> CAxWindow:: abtexternaldispatch
 
-Legt die externe Dispatchschnittstelle für das `CAxWindow` Objekt fest.
+Legt die externe Dispatchschnittstelle für das- `CAxWindow` Objekt fest.
 
 ```
 HRESULT SetExternalDispatch(IDispatch* pDisp);
@@ -338,15 +338,15 @@ HRESULT SetExternalDispatch(IDispatch* pDisp);
 ### <a name="parameters"></a>Parameter
 
 *pDisp*<br/>
-[in] Ein Zeiger auf `IDispatch` eine Schnittstelle.
+in Ein Zeiger auf eine- `IDispatch` Schnittstelle.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Standard-HRESULT-Wert.
+Ein HRESULT-Standardwert.
 
-## <a name="caxwindowsetexternaluihandler"></a><a name="setexternaluihandler"></a>CAxWindow::SetExternalUIHandler
+## <a name="caxwindowsetexternaluihandler"></a><a name="setexternaluihandler"></a> CAxWindow:: abtexternaluihandler
 
-Legt die externe [IDocHostUIHandlerDispatch-Schnittstelle](../../atl/reference/idochostuihandlerdispatch-interface.md) für das `CAxWindow` Objekt fest.
+Legt die externe [idochostuihandlerdispatch](../../atl/reference/idochostuihandlerdispatch-interface.md) -Schnittstelle für das- `CAxWindow` Objekt fest.
 
 ```
 HRESULT SetExternalUIHandler(IDocHostUIHandlerDispatch* pUIHandler);
@@ -354,18 +354,18 @@ HRESULT SetExternalUIHandler(IDocHostUIHandlerDispatch* pUIHandler);
 
 ### <a name="parameters"></a>Parameter
 
-*pUIHandler*<br/>
-[in] Ein Zeiger auf `IDocHostUIHandlerDispatch` eine Schnittstelle.
+*puihandler*<br/>
+in Ein Zeiger auf eine- `IDocHostUIHandlerDispatch` Schnittstelle.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Standard-HRESULT-Wert.
+Ein HRESULT-Standardwert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die `IDocHostUIHandlerDispatch` externe Schnittstelle wird von Steuerelementen verwendet, `IDocHostUIHandlerDispatch` die die Hostsite für die Schnittstelle abfragen. Das WebBrowser-Steuerelement ist ein Steuerelement, das dies tut.
+Die externe `IDocHostUIHandlerDispatch` Schnittstelle wird von Steuerelementen verwendet, die die Host Website nach der- `IDocHostUIHandlerDispatch` Schnittstelle Abfragen. Das WebBrowser-Steuerelement ist ein Steuerelement, das dies bewirkt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [ATLCON-Beispiel](../../overview/visual-cpp-samples.md)<br/>
 [CWindow-Klasse](../../atl/reference/cwindow-class.md)<br/>

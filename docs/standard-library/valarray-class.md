@@ -28,12 +28,12 @@ helpviewer_keywords:
 - std::valarray [C++], sum
 - std::valarray [C++], swap
 ms.assetid: 19b862f9-5d09-4003-8844-6ddd02c1a3a7
-ms.openlocfilehash: da7a1a8ca4aca88cda4eb3153c169629b76843da
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 177840ffea711395b7cace6e47426d979f8fe329
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87212021"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88840127"
 ---
 # <a name="valarray-class"></a>valarray-Klasse
 
@@ -59,23 +59,23 @@ Insbesondere dürfen keine feinen Unterschiede zwischen einer Kopierkonstruktion
 
 ### <a name="constructors"></a>Konstruktoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[Valarray](#valarray)|Erstellt ein `valarray`-Objekt einer bestimmten Größe oder mit Elementen eines bestimmten Werts oder als Kopie eines anderen `valarray`-Objekts oder als Teilmenge eines anderen `valarray`-Objekts.|
 
 ### <a name="typedefs"></a>TypeDefs
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[value_type](#value_type)|Ein Typ, der den Typ der in einem `valarray`-Objekt gespeicherten Elemente darstellt.|
 
 ### <a name="functions"></a>Functions
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[Apply](#apply)|Wendet eine angegebene Funktion auf jedes Element eines `valarray`-Objekts an.|
 |[cshift](#cshift)|Verschiebt zyklisch alle Elemente in einem `valarray`-Objekt um eine angegebene Anzahl von Positionen.|
-|[Kosten](#free)|Gibt den Arbeitsspeicher frei, der vom `valarray`-Objekt verwendet wird.|
+|[frei](#free)|Gibt den Arbeitsspeicher frei, der vom `valarray`-Objekt verwendet wird.|
 |[max](#max)|Sucht nach dem größten Element in einem `valarray`-Objekt.|
 |[min](#min)|Sucht nach dem kleinsten Element in einem `valarray`-Objekt.|
 |[Größe](#resize)|Ändert die Anzahl von Elementen in einem `valarray`-Objekt in die jeweils angegebene Anzahl, wozu Elemente nach Bedarf hinzugefügt oder entfernt werden.|
@@ -86,7 +86,7 @@ Insbesondere dürfen keine feinen Unterschiede zwischen einer Kopierkonstruktion
 
 ### <a name="operators"></a>Operatoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[KOM!](#op_not)|Ein unärer Operator, der die logischen `NOT`-Werte jedes Elements eines `valarray`-Objekts abruft.|
 |[Operator% =](#op_mod_eq)|Ruft den Rest der Division der Elemente eines Arrays elementweise entweder entsprechend einem angegebenen `valarray`-Objekt oder entsprechend einem Wert des Elementtyps ab.|
@@ -105,7 +105,7 @@ Insbesondere dürfen keine feinen Unterschiede zwischen einer Kopierkonstruktion
 |[Operator&#124;=](#op_or_eq)|Ruft das bitweise `OR`-Ergebnis von Elementen eines Arrays entweder mit den entsprechenden Elementen in einem angegebenen `valarray`-Objekt oder mit einem Wert des Elementtyps ab.|
 |[Operator ~](#op_dtor)|Ein unärer Operator, der die bitweisen `NOT`-Werte jedes Elements eines `valarray`-Objekts abruft.|
 
-## <a name="apply"></a><a name="apply"></a>Apply
+## <a name="apply"></a><a name="apply"></a> Apply
 
 Wendet eine angegebene Funktion auf jedes Element eines valarray-Objekts an.
 
@@ -181,7 +181,7 @@ The element-by-element result of applying MyApplyFunc to vaR is the
 valarray: (  0 0 -4 6 0 -10 12 0 -16 18 )
 ```
 
-## <a name="cshift"></a><a name="cshift"></a>cshift
+## <a name="cshift"></a><a name="cshift"></a> cshift
 
 Verschiebt alle Elemente in einem valarray-Objekt zyklisch um eine angegebene Anzahl von Positionen.
 
@@ -259,7 +259,7 @@ The cyclically shifted valarray va2 is:
 va2.shift (-4) = ( 4 3 2 1 10 9 8 7 6 5)
 ```
 
-## <a name="free"></a><a name="free"></a>Kosten
+## <a name="free"></a><a name="free"></a> Kosten
 
 Gibt den Arbeitsspeicher frei, der vom valarray-Objekt verwendet wird.
 
@@ -278,7 +278,7 @@ v = valarray<T>();
 // equivalent to v.free()
 ```
 
-## <a name="max"></a><a name="max"></a>Max
+## <a name="max"></a><a name="max"></a> Max
 
 Sucht nach dem größten Element in einem valarray-Objekt.
 
@@ -383,7 +383,7 @@ The smallest element in the valarray is: -9.
 */
 ```
 
-## <a name="operator"></a><a name="op_not"></a>KOM!
+## <a name="operator"></a><a name="op_not"></a> KOM!
 
 Ein unärer Operator, der die logischen **NOT**-Werte jedes Elements eines valarray-Objekts abruft.
 
@@ -442,7 +442,7 @@ The element-by-element result of the logical NOT operator! is the
 valarray: ( 1 1 1 0 1 0 1 0 1 0 ).
 ```
 
-## <a name="operator"></a><a name="op_mod_eq"></a>Operator% =
+## <a name="operator"></a><a name="op_mod_eq"></a> Operator% =
 
 Ruft den Rest der Division der Elemente eines Arrays elementweise entweder entsprechend einem angegebenen valarray-Objekt oder entsprechend einem Wert des Elementtyps ab.
 
@@ -509,7 +509,7 @@ The remainders from the element-by-element division is the
 valarray: ( 0 -3 4 -7 1 -3 ).
 ```
 
-## <a name="operatoramp"></a><a name="op_and_eq"></a>KOM&amp;=
+## <a name="operatoramp"></a><a name="op_and_eq"></a> KOM&amp;=
 
 Ruft das bitweise **AND**-Ergebnis von Elementen eines Arrays entweder mit den entsprechenden Elementen in einem angegebenen valarray-Objekt oder mit einem Wert des Elementtyps ab.
 
@@ -582,7 +582,7 @@ The element-by-element result of the logical AND operator&= is the
 valarray: ( 0 0 0 2 0 4 0 6 0 8 ).
 ```
 
-## <a name="operatorgtgt"></a><a name="op_gt_gt_eq"></a>KOM&gt;&gt;=
+## <a name="operatorgtgt"></a><a name="op_gt_gt_eq"></a> KOM&gt;&gt;=
 
 Verschiebt die Bits für jedes Element eines valarray-Operanden um eine angegebene Anzahl von Positionen oder um einen elementweisen Betrag, der durch einen zweiten valarray-Operanden angegeben ist, nach rechts.
 
@@ -653,7 +653,7 @@ The element-by-element result of the right shift is the
 valarray: ( 64 -32 16 -8 4 -2 1 -1 ).
 ```
 
-## <a name="operatorltlt"></a><a name="op_lt_lt_eq"></a>KOM&lt;&lt;=
+## <a name="operatorltlt"></a><a name="op_lt_lt_eq"></a> KOM&lt;&lt;=
 
 Verschiebt die Bits für jedes Element eines valarray-Operanden um eine angegebene Anzahl von Positionen oder um einen elementweisen Betrag, der durch einen zweiten valarray-Operanden angegeben ist, nach links.
 
@@ -726,7 +726,7 @@ on the operand array is the valarray:
 ( 1 -2 4 -8 16 -32 64 -128 ).
 ```
 
-## <a name="operator"></a><a name="op_star_eq"></a>Operator * =
+## <a name="operator"></a><a name="op_star_eq"></a> Operator * =
 
 Multipliziert die Elemente eines angegebenen valarray-Objekts oder einen Wert des Elementtyps elementweise mit einem valarray-Operanden.
 
@@ -792,7 +792,7 @@ valarray: ( 0 -1 4 -3 8 -5 12 -7 ).
 */
 ```
 
-## <a name="operator"></a><a name="op_add"></a>Operator +
+## <a name="operator"></a><a name="op_add"></a> Operator +
 
 Ein unärer Operator, der ein Pluszeichen auf jedes Element in einem valarray-Objekt anwendet.
 
@@ -845,7 +845,7 @@ The element-by-element result of the operator+ is the
 valarray: ( 0 0 -2 2 -4 4 -6 6 -8 8 ).
 ```
 
-## <a name="operator"></a><a name="op_add_eq"></a>Operator + =
+## <a name="operator"></a><a name="op_add_eq"></a> Operator + =
 
 Addiert die Elemente eines angegebenen valarray-Objekts oder einen Wert des Elementtyps elementweise mit einem valarray-Operanden.
 
@@ -912,7 +912,7 @@ The element-by-element result of the sum is the
 valarray: ( 2 0 4 2 6 4 8 6 ).
 ```
 
-## <a name="operator-"></a><a name="operator-"></a>KOM
+## <a name="operator-"></a><a name="operator-"></a> KOM
 
 Ein unärer Operator, der ein Minuszeichen auf jedes Element in einem valarray-Objekt anwendet.
 
@@ -965,7 +965,7 @@ The element-by-element result of the operator+ is the
 valarray: ( 0 0 2 -2 4 -4 6 -6 8 -8 ).
 ```
 
-## <a name="operator-"></a><a name="operator-_eq"></a>Operator-=
+## <a name="operator-"></a><a name="operator-_eq"></a> Operator-=
 
 Subtrahiert die Elemente eines angegebenen valarray-Objekts oder einen Wert des Elementtyps elementweise von einem valarray-Operanden.
 
@@ -1032,7 +1032,7 @@ The element-by-element result of the difference is the
 valarray: ( 10 -1 8 -3 6 -5 4 -7 ).
 ```
 
-## <a name="operator"></a><a name="op_div_eq"></a>Operator/=
+## <a name="operator"></a><a name="op_div_eq"></a> Operator/=
 
 Dividiert einen valarray-Operanden elementweise durch die Elemente eines angegebenen valarray-Objekts oder einen Wert des Elementtyps.
 
@@ -1099,7 +1099,7 @@ The element-by-element result of the quotient is the
 valarray: ( inf -50 25 -16.6667 12.5 -10 ).
 ```
 
-## <a name="operator"></a><a name="op_eq"></a>Operator =
+## <a name="operator"></a><a name="op_eq"></a> Operator =
 
 Weist einem valarray-Objekt Elemente zu, dessen Werte entweder direkt oder als Teil eines anderen valarray-Objekts oder durch ein slice_array-, gslice_array-, mask_array- oder indirect_array-Element angegeben werden.
 
@@ -1209,7 +1209,7 @@ The reassigned valarray va is: 10 10 10 10 10 10 10 10 10 10
 
 ```
 
-## <a name="operator"></a><a name="op_at"></a>[]-Operator
+## <a name="operator"></a><a name="op_at"></a> []-Operator
 
 Gibt einen Verweis auf ein Element oder auf den Wert zurück, den es am angegebenen Index oder in der angegebenen Teilmenge hat.
 
@@ -1266,7 +1266,7 @@ Wenn [_ITERATOR_DEBUG_LEVEL](../standard-library/iterator-debug-level.md) beim K
 
 Im Beispiel für [slice::slice](../standard-library/slice-class.md#slice) und [gslice::gslice](../standard-library/gslice-class.md#gslice) wird verdeutlicht, wie der Operator deklariert und verwendet wird.
 
-## <a name="operator"></a><a name="op_xor_eq"></a>Operator ^ =
+## <a name="operator"></a><a name="op_xor_eq"></a> Operator ^ =
 
 Ruft den elementweisen logischen Operator exklusives Oder ( **XOR**) eines Arrays entweder mit einem angegebenen valarray-Objekt oder mit einem Wert des Elementtyps ab.
 
@@ -1341,7 +1341,7 @@ The element-by-element result of the bitwise XOR operator^= is the
 valarray: ( 1 0 0 3 2 4 7 6 6 9 ).
 ```
 
-## <a name="operator124"></a><a name="op_or_eq"></a>Operator&#124;=
+## <a name="operator124"></a><a name="op_or_eq"></a> Operator&#124;=
 
 Ruft das bitweise `OR`-Ergebnis von Elementen eines Arrays entweder mit den entsprechenden Elementen in einem angegebenen valarray-Objekt oder mit einem Wert des Elementtyps ab.
 
@@ -1424,7 +1424,7 @@ operator|= is the valarray:
 ( 1 0 1 3 3 4 7 6 7 9 ).
 ```
 
-## <a name="operator"></a><a name="op_dtor"></a>Operator ~
+## <a name="operator"></a><a name="op_dtor"></a> Operator ~
 
 Ein unärer Operator, der die bitweisen `NOT` Werte der einzelnen Elemente in einem Valarray-Element abruft.
 
@@ -1523,7 +1523,7 @@ is the negative of the original elements the
 valarray: ( 0 2 -2 6 -4 10 -6 14 -8 18 ).
 ```
 
-## <a name="resize"></a><a name="resize"></a>Größe
+## <a name="resize"></a><a name="resize"></a> Größe
 
 Ändert die Anzahl der Elemente in einem „valarray“ auf eine bestimmte Anzahl.
 
@@ -1599,7 +1599,7 @@ The valarray contains ( 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 ).
 The number of elements in the resized valarray is: 15.
 ```
 
-## <a name="shift"></a><a name="shift"></a>Schuss
+## <a name="shift"></a><a name="shift"></a> Schuss
 
 Verschiebt alle Elemente in einem valarray-Objekt um eine angegebene Anzahl von Stellen.
 
@@ -1674,7 +1674,7 @@ The operand valarray va2(10) is: ( 10 9 8 7 6 5 4 3 2 1 ).
 The shifted valarray va2 is: va2.shift (-4) = ( 0 0 0 0 10 9 8 7 6 5 ).
 ```
 
-## <a name="size"></a><a name="size"></a>Größe
+## <a name="size"></a><a name="size"></a> Größe
 
 Gibt die Anzahl von Elementen in einem Wertarray zurück.
 
@@ -1751,7 +1751,7 @@ the operand valarray va2(12) is now: ( 0 1 2 3 4 5 6 7 8 9 10 11 ).
 The number of elements in the valarray va2 is still: 12.
 ```
 
-## <a name="sum"></a><a name="sum"></a>Pauschalen
+## <a name="sum"></a><a name="sum"></a> Pauschalen
 
 Bestimmt die Summe aller Elemente in einem valarray-Objekt mit einer Länge ungleich null.
 
@@ -1801,7 +1801,7 @@ The operand valarray va (10) is: ( 0 1 2 3 4 5 6 7 8 9 ).
 The sum of elements in the valarray is: 45.
 ```
 
-## <a name="swap"></a><a name="swap"></a>Wechsel
+## <a name="swap"></a><a name="swap"></a> Wechsel
 
 Tauscht die Elemente zweier `valarray`n.
 
@@ -1818,7 +1818,7 @@ Ein `valarray`-Objekt, das die auszutauschenden Elemente bereitgestellt.
 
 Die Member-Funktion tauscht die kontrollierten Sequenzen zwischen **`*this`** und *Rechts*aus. Sie führt dies in einer konstanten Zeit aus, sie löst keine Ausnahmen aus, und sie macht keine Verweise, Zeiger oder Iteratoren ungültig, die Elemente in den beiden kontrollierten Sequenzen bestimmen.
 
-## <a name="valarray"></a><a name="valarray"></a>Valarray
+## <a name="valarray"></a><a name="valarray"></a> Valarray
 
 Erstellt ein Wertarray einer bestimmten Größe bzw. eins mit Elementen eines bestimmten Werts oder als Kopie eines anderen Wertarrays oder als Teilmenge eines anderen Wertarrays.
 
@@ -1954,7 +1954,7 @@ va[slice( 2, 4, 3)] = ( 0 0 0 )
 1 2 3 4
 ```
 
-## <a name="value_type"></a><a name="value_type"></a>value_type
+## <a name="value_type"></a><a name="value_type"></a> value_type
 
 Ein Typ, der den Typ des in einem valarray-Objekt gespeicherten Elements darstellt.
 

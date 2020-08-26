@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - wire_marshal attribute
 ms.assetid: 244f9d72-776d-4ebd-b60a-cee600a126b5
-ms.openlocfilehash: ff01d20117e2f04aca96b0fee7489d7195cc7488
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 04d6e7dcc887815b6f1b3becd67bd11bef4a81d7
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87213774"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88832880"
 ---
 # <a name="wire_marshal"></a>wire_marshal
 
@@ -49,9 +49,7 @@ Der folgende Code zeigt die Verwendung von **Wire_marshal**:
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
 |**Zielgruppe**|**`typedef`**|
 |**REPEATABLE**|Nein|

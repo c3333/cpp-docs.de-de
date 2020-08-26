@@ -11,18 +11,18 @@ f1_keywords:
 helpviewer_keywords:
 - macros, error reporting
 ms.assetid: 4da9b87f-ec5c-4a32-ab93-637780909b9d
-ms.openlocfilehash: 14c9298758e9d55445affaf5a65c81910a9ab151
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 2bcdfb474ee852e55bd54f1b125716e7785f28be
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87224226"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88833477"
 ---
 # <a name="debugging-and-error-reporting-macros"></a>Debugging-und Fehlerberichterstattungs-Makros
 
 Diese Makros bieten nützliche Debugging-und Ablauf Verfolgungs Funktionen.
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[_ATL_DEBUG_INTERFACES](#_atl_debug_interfaces)|Schreibt im Ausgabefenster alle Schnittstellen Verluste, die erkannt werden, wenn `_Module.Term` aufgerufen wird.|
 |[_ATL_DEBUG_QI](#_atl_debug_qi)|Schreibt alle Aufrufe von `QueryInterface` in das Ausgabefenster.|
@@ -32,7 +32,7 @@ Diese Makros bieten nützliche Debugging-und Ablauf Verfolgungs Funktionen.
 |[ATLTRACE](#atltrace)|Meldet Warnungen an ein Ausgabegerät, z. b. das Debugger-Fenster, gemäß den ermittelten Flags und Ebenen. Aus Gründen der Abwärtskompatibilität eingeschlossen.|
 |[ATLTRACE2](#atltrace2)|Meldet Warnungen an ein Ausgabegerät, z. b. das Debugger-Fenster, gemäß den ermittelten Flags und Ebenen.|
 
-## <a name="_atl_debug_interfaces"></a><a name="_atl_debug_interfaces"></a>_ATL_DEBUG_INTERFACES
+## <a name="_atl_debug_interfaces"></a><a name="_atl_debug_interfaces"></a> _ATL_DEBUG_INTERFACES
 
 Definieren Sie dieses Makro, bevor Sie ATL-Header Dateien einschließen, um alle zu verfolgen, `AddRef` und `Release` rufen Sie die Schnittstellen der Komponenten an das Ausgabefenster an.
 
@@ -63,7 +63,7 @@ Die Informationen, die hier bereitgestellt werden, werden direkt den Information
 > [!NOTE]
 > _ATL_DEBUG_INTERFACES können in Einzelhandels Builds verwendet werden.
 
-## <a name="_atl_debug_qi"></a><a name="_atl_debug_qi"></a>_ATL_DEBUG_QI
+## <a name="_atl_debug_qi"></a><a name="_atl_debug_qi"></a> _ATL_DEBUG_QI
 
 Schreibt alle Aufrufe von `QueryInterface` in das Ausgabefenster.
 
@@ -77,7 +77,7 @@ Wenn beim Aufrufen von ein Fehler aufgetreten `QueryInterface` ist, wird im Ausg
 
 *Schnittstellen Name* - `failed`
 
-## <a name="atlassert"></a><a name="atlassert"></a>ATLASSERT
+## <a name="atlassert"></a><a name="atlassert"></a> ATLASSERT
 
 Das ATLASSERT-Makro führt die gleiche Funktionalität wie das [_ASSERTE](../../c-runtime-library/reference/assert-asserte-assert-expr-macros.md) Makro in der C-Lauf Zeit Bibliothek aus.
 
@@ -98,7 +98,7 @@ In Debugbuilds wertet ATLASSERT " *booleanExpression* " aus und generiert einen 
 
 **Header:** atldef. h
 
-## <a name="atlensure"></a><a name="atlensure"></a>Atlsicher
+## <a name="atlensure"></a><a name="atlensure"></a> Atlsicher
 
 Dieses Makro wird verwendet, um Parameter zu überprüfen, die an eine Funktion geleitet werden.
 
@@ -135,7 +135,7 @@ Der Unterschied zwischen atlsicher und ATLASSERT besteht darin, dass ATL-sicher 
 
 **Header:** AFX. h
 
-## <a name="atltracenotimpl"></a><a name="atltracenotimpl"></a>Atltracenotimpl
+## <a name="atltracenotimpl"></a><a name="atltracenotimpl"></a> Atltracenotimpl
 
 In Debugbuilds von ATL sendet die Zeichenfolge " *funcname* ist nicht implementiert" an das dumpgerät und gibt E_NOTIMPL zurück.
 
@@ -160,7 +160,7 @@ Gibt in Releasebuilds einfach E_NOTIMPL zurück.
 
 **Header:** ATLTRACE. h
 
-## <a name="atltrace"></a><a name="atltrace"></a>ATLTRACE
+## <a name="atltrace"></a><a name="atltrace"></a> ATLTRACE
 
 Meldet Warnungen an ein Ausgabegerät, z. b. das Debugger-Fenster, gemäß den ermittelten Flags und Ebenen. Aus Gründen der Abwärtskompatibilität eingeschlossen.
 
@@ -191,7 +191,7 @@ in Die formatierte Zeichenfolge, die an das dumpgerät gesendet werden soll.
 
 Eine Beschreibung von ATLTRACE finden Sie unter [ATLTRACE2](#atltrace2) . ATLTRACE und ATLTRACE2 haben das gleiche Verhalten, ATLTRACE ist aus Gründen der Abwärtskompatibilität eingeschlossen.
 
-## <a name="atltrace2"></a><a name="atltrace2"></a>ATLTRACE2
+## <a name="atltrace2"></a><a name="atltrace2"></a> ATLTRACE2
 
 Meldet Warnungen an ein Ausgabegerät, z. b. das Debugger-Fenster, gemäß den ermittelten Flags und Ebenen.
 
