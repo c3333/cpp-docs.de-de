@@ -5,12 +5,12 @@ helpviewer_keywords:
 - C++, optimization
 - optimization, best practices
 ms.assetid: f3433148-7255-4ca6-8a4f-7c31aac88508
-ms.openlocfilehash: 7b1cea29a782f291f1e85f7a143730825958d91b
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 425fa0bb6b7aab502ce493ced8b587fad8ce59a8
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87229778"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88833347"
 ---
 # <a name="optimization-best-practices"></a>Bewährte Methoden für die Optimierung
 
@@ -40,7 +40,7 @@ Es wird dringend empfohlen, Debugsymbole zu generieren. Dies gilt sogar für opt
 
 Die **`/Op`** -Compileroption wurde entfernt, und die folgenden vier Compileroptionen für Gleitkommaoptimierungen wurden hinzugefügt:
 
-|||
+|Option|BESCHREIBUNG|
 |-|-|
 |**`/fp:precise`**|Dies ist die als Standard empfohlene Option, die in den meisten Fällen verwendet werden sollte.|
 |**`/fp:fast`**|Empfohlen für die Fälle, in denen die Leistung von höchster Wichtigkeit ist, z. B. bei Spielen. Dies führt zur schnellsten Programmausführung.|

@@ -4,12 +4,12 @@ ms.date: 08/20/2019
 helpviewer_keywords:
 - tasks.vs.json file [C++]
 ms.assetid: abd1985e-3717-4338-9e80-869db5435175
-ms.openlocfilehash: cc6b2983d3cc3d40449357a554df5feee38c21d9
-ms.sourcegitcommit: 6c1960089b92d007fc28c32af1e4bef0f85fdf0c
+ms.openlocfilehash: a2aea1b64d5a6c62604c680bf1a4a26478b7b52a
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75556655"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88844989"
 ---
 # <a name="tasksvsjson-schema-reference-c"></a>Tasks.vs.json-Schemareferenz (C++)
 
@@ -21,9 +21,8 @@ Eine Aufgabe hat eine `type`-Eigenschaft, die einen von vier Werten aufweisen ka
 
 Die Standardeigenschaften sind für alle Aufgabentypen verfügbar:
 
-||||
+|Eigenschaft|type|BESCHREIBUNG|
 |-|-|-|
-|**Property**|**Type**|**Beschreibung**|
 |`taskLabel`|string| (Erforderlich.) Gibt die in der Benutzeroberfläche verwendete Aufgabenbezeichnung an.|
 |`appliesTo`|string| (Erforderlich.) Gibt an, für welche Dateien der Befehl ausgeführt werden kann. Die Verwendung von Platzhaltern wird unterstützt, z. B. „ *“, „* .cpp“, „/*.txt“.|
 |`contextType`|string| Zulässige Werte sind: „custom“, „build“, „clean“ und „rebuild“. Bestimmt, wo im Kontextmenü die Aufgabe angezeigt wird. Der Standardwert ist „custom“.|
@@ -35,9 +34,8 @@ Die Standardeigenschaften sind für alle Aufgabentypen verfügbar:
 
 Wenn der Aufgabentyp `launch` ist, sind die folgenden Eigenschaften verfügbar:
 
-||||
+|Eigenschaft|type|BESCHREIBUNG|
 |-|-|-|
-|**Property**|**Type**|**Beschreibung**|
 |`command`|string| Gibt den vollständigen Pfad des Prozesses oder Skripts für den Start an.|
 |`args`|array| Gibt eine durch Kommas getrennte Liste an Argumenten an, die an den Befehl übergeben werden.|
 |`launchOption`|string| Zulässige Werte: „None“, „ContinueOnError“, „IgnoreError“. Gibt an, wie der Befehl fortgesetzt werden soll, wenn Fehler auftreten.|
@@ -88,9 +86,8 @@ Remoteaufgaben sind möglich, wenn Sie die Workload „Linux Entwicklung mit C++
 
 Wenn der Aufgabentyp `remote` ist, sind die folgenden Eigenschaften verfügbar:
 
-||||
+|Eigenschaft|type|BESCHREIBUNG|
 |-|-|-|
-|**Property**|**Type**|**Beschreibung**|
 |`remoteMachineName`|string|Der Name des Remotecomputers. Dieser muss einem Computername im **Verbindungs-Manager** entsprechen.|
 |`command`|string|Der Befehl, um den Remotecomputer zu senden. Standardmäßig werden Befehle im $HOME-Verzeichnis auf dem Remotesystem ausgeführt.|
 |`remoteWorkingDirectory`|string|Das aktuelle Arbeitsverzeichnis auf dem Remotecomputer.|
@@ -129,9 +126,8 @@ Die folgende Aufgabe wird im Kontextmenü angezeigt, wenn Sie mit der rechten Ma
 
 Wenn der Aufgabentyp `msbuild` ist, sind die folgenden Eigenschaften verfügbar:
 
-||||
+|Eigenschaft|type|BESCHREIBUNG|
 |-|-|-|
-|**Property**|**Type**|**Beschreibung**|
 |`verbosity`|string| Gibt die verbosityAllowed-Werte für die MSBuild-Projektbuildausgabe an: „Quiet“, „Minimal“, „Normal“, „Detailed“, „Diagnostic“.|
 |`toolsVersion`|string| Gibt die Toolsetversion an, mit der das Projekt erstellt werden soll, z. B. „2.0“, „3.5“, „4.0“, „Current“. Der Standardwert ist „Current“.|
 |`globalProperties`|Objekt|Gibt eine Schlüssel-Wert-Liste der globalen Eigenschaften an, die in das Projekt übergeben werden sollen, z. B. „Configuration“:„Release“.|

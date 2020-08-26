@@ -3,12 +3,12 @@ title: Hilfe und Community für Visual C++
 ms.date: 08/03/2020
 ms.technology: cpp-ide
 ms.assetid: 6bc23c18-fcd9-47bc-bff2-17537700be4a
-ms.openlocfilehash: e3dd475112f217e9d7891a18f7dc91972b221dd9
-ms.sourcegitcommit: 4eda68a0b3c23d8cefa56b7ba11583412459b32f
+ms.openlocfilehash: 36bc8cc37d3e0018088f284ad00bbefe2eafd22a
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87565923"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88839763"
 ---
 # <a name="visual-c-help-and-community"></a>Hilfe und Community für Visual C++
 
@@ -18,7 +18,7 @@ Hier erhalten Sie Hilfe und Informationen zum Schreiben von C++-Code und zum Ver
 
 |Titel|Beschreibung|
 |-----------|-----------------|
-|[Entwickler-Codebeispiele](https://docs.microsoft.com/samples)|Enthält herunterladbaren Beispielcode von Microsoft und Mitwirkenden aus der Community.|
+|[Entwickler-Codebeispiele](/samples)|Enthält herunterladbaren Beispielcode von Microsoft und Mitwirkenden aus der Community.|
 
 ## <a name="product-documentation"></a>Produktdokumentation
 
@@ -42,4 +42,4 @@ Viele Abschnitte der Dokumentation sind auch im PDF-Format verfügbar. Diese Abs
 |[C++-Teamblog](https://devblogs.microsoft.com/cppblog/)|Enthält Beiträge zu verschiedenen Themen von Experten aus dem C++-Produktteam von Microsoft.|
 |[Channel 9](https://channel9.msdn.com/)|Enthält Videointerviews und -vorlesungen. Verwenden Sie das Suchfeld auf der Channel 9-Homepage, um C++-Inhalt zu suchen.|
 |[Visual Studio](https://visualstudio.microsoft.com/)|Enthält Artikel und Neuigkeiten zu Visual Studio und verwandte Entwicklungstools.|
-|[Fragen und Antworten zur Microsoft-Dokumentation](https://docs.microsoft.com/answers/topics/c%2B%2B.html) und [Entwicklercommunity](https://developercommunity.visualstudio.com/spaces/62/index.html) zu Visual Studio C++|Offizielle Microsoft-Foren, in denen Sie Fragen zu C++ posten und Antworten von Microsoft und Experten aus der Community erhalten können.|
+|[Fragen und Antworten zur Microsoft-Dokumentation](/answers/topics/c%2B%2B.html) und [Entwicklercommunity](https://developercommunity.visualstudio.com/spaces/62/index.html) zu Visual Studio C++|Offizielle Microsoft-Foren, in denen Sie Fragen zu C++ posten und Antworten von Microsoft und Experten aus der Community erhalten können.|

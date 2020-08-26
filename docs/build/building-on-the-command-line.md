@@ -10,12 +10,12 @@ helpviewer_keywords:
 - command line [C++], building from
 - command line [C++], compilers
 ms.assetid: 7ca9daed-a003-4162-842d-908f79058365
-ms.openlocfilehash: f729947e4d798e5817ff8d4e5abe09eaca090e01
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 1fe8e59c85e0c6b00bff4de639267a44c6ae369e
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87229895"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88838801"
 ---
 # <a name="use-the-microsoft-c-toolset-from-the-command-line"></a>Verwenden des Microsoft C++-Toolsets über die Befehlszeile
 
@@ -237,7 +237,7 @@ Verwenden Sie den Linker (link.exe), um kompilierte Objektdateien in Apps und DL
 [NMAKE](reference/nmake-reference.md)<br/>
 Verwenden Sie NMAKE (nmake.exe) unter Windows, um C++-Projekte auf der Grundlage eines traditionellen Makefiles zu erstellen.
 
-Wenn Sie Builds über die Befehlszeile ausführen, ist der F1-Befehl für Soforthilfe nicht verfügbar. Stattdessen können Sie eine Suchmaschine verwenden, um Informationen zu Warnungen, Fehlern und Meldungen abzurufen. Sie können auch die Offlinehilfedateien herunterladen und verwenden. Um die Suche in [docs.microsoft.com](https://docs.microsoft.com/cpp/) zu verwenden, geben Sie Ihre Abfrage in das Suchfeld oben in einem beliebigen Artikel ein.
+Wenn Sie Builds über die Befehlszeile ausführen, ist der F1-Befehl für Soforthilfe nicht verfügbar. Stattdessen können Sie eine Suchmaschine verwenden, um Informationen zu Warnungen, Fehlern und Meldungen abzurufen. Sie können auch die Offlinehilfedateien herunterladen und verwenden. Um die Suche in docs.microsoft.com zu verwenden, geben Sie Ihre Abfrage in das Suchfeld oben in einem beliebigen Artikel ein.
 
 ## <a name="command-line-project-management-tools"></a>Befehlszeilentools für die Projektverwaltung
 

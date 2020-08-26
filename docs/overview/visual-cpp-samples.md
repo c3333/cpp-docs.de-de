@@ -4,18 +4,18 @@ description: Zusammenfassende Beschreibungen der Beispiele, die im archivierten 
 ms.date: 03/23/2020
 ms.technology: cpp-language
 ms.assetid: 76798022-5886-48e7-a7f2-f99352b15cbf
-ms.openlocfilehash: cb8d2aa8322cb3e9bfc30dc9ad041e7c70662049
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 56e9cfe72e58a12fb381c88616496820908006c8
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87226762"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846367"
 ---
 # <a name="visual-studio-c-samples"></a>Visual Studio: C++ -Beispiele
 
 Beispiele für Visual Studio C++ sind im Web verfügbar. Microsoft hat viele C++-Beispiele erstellt, die verschiedene Funktionen und mehrere Technologien veranschaulichen. Hier finden Sie weitere Beispiele:
 
-- [Beispiele in der Microsoft-Dokumentation: C++](https://docs.microsoft.com/samples/browse/?term=c%2B%2B)
+- [Beispiele in der Microsoft-Dokumentation: C++](/samples/browse/?term=c%2B%2B)
 
 - [Windows-Beispiele auf GitHub](https://microsoft.github.io/windows/)
 
@@ -25,7 +25,7 @@ Beispiele für Visual Studio C++ sind im Web verfügbar. Microsoft hat viele C++
 
 - [ADO-Codebeispiele](/office/client-developer/access/desktop-database-reference/ado-code-examples-in-microsoft-visual-c)
 
-- [Windows hardware development samples](https://docs.microsoft.com/samples/browse/?products=windows-wdk)
+- [Windows hardware development samples](/samples/browse/?products=windows-wdk)
 
 ## <a name="archived-c-samples-on-github"></a>Archivierte C++-Beispiele auf GitHub
 

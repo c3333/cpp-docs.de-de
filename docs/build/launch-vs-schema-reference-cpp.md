@@ -3,12 +3,12 @@ title: launch.vs.json-Schemareferenz (C++)
 ms.date: 08/20/2019
 helpviewer_keywords:
 - launch.vs.json file [C++]
-ms.openlocfilehash: 0410f22a680d5bfc12270ff686938a54e2e8a8fd
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 1161e8fa8ac3751ca8cc2b96ec063cd6063bb245
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87223953"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88841986"
 ---
 # <a name="launchvsjson-schema-reference-c"></a>launch.vs.json-Schemareferenz (C++)
 
@@ -16,9 +16,8 @@ Verwenden Sie die Datei *launch.vs.json*, um Debugparameter zu konfigurieren. Kl
 
 ## <a name="default-properties"></a>Standardeigenschaften
 
-||||
+|Eigenschaft|type|BESCHREIBUNG|
 |-|-|-|
-|**Property**|**Type**|**Beschreibung**|
 |`name`|string|Hiermit wird der Name des Eintrags in der Dropdownliste „Debugziel“ angegeben.|
 |`type`|string|Hiermit wird angegeben, ob es sich bei dem Projekt um eine DLL oder eine EXE-Datei handelt. (Standardmäßig handelt es sich um eine EXE-Datei.)|
 |`project`|string|Hiermit wird der relative Pfad zur Projektdatei angegeben.|
@@ -36,9 +35,8 @@ Verwenden Sie die Datei *launch.vs.json*, um Debugparameter zu konfigurieren. Kl
 
 ## <a name="c-linux-properties"></a>C++-Linux-Eigenschaften
 
-||||
+|Eigenschaft|type|BESCHREIBUNG|
 |-|-|-|
-|**Property**|**Type**|**Beschreibung**|
 |`program`|string|Hierbei handelt es sich um den vollständigen Pfad zur ausführbaren Programmdatei auf dem Remotecomputer. Wenn CMake verwendet wird, kann das Makro `${debugInfo.fullTargetPath}` als Wert für dieses Feld verwendet werden.|
 |`processId`|Ganze Zahl|Hierbei handelt es sich um die optionale Prozess-ID, an die der Debugger angefügt werden soll.|
 |`sourceFileMap`|Objekt|Hierbei handelt es sich um optionale Quelldateizuordnungen, die an die Debug-Engine übergeben werden. Das Format lautet `{ "\<Compiler source location>": "\<Editor source location>" }` oder `{ "\<Compiler source location>": { "editorPath": "\<Editor source location>", "useForBreakpoints": true } }`. Beispiele sind `{ "/home/user/foo": "C:\\foo" }` oder `{ "/home/user/foo": { "editorPath": "c:\\foo", "useForBreakpoints": true } }`. Weitere Informationen finden Sie unter [Quelldateizuordnungsoptionen](#source_file_map_options).|
@@ -67,7 +65,7 @@ externalConsole|boolean|Wenn „true“ festgelegt ist, wird eine Konsole für d
 
 Folgende Optionen können mit der Eigenschaft `setupCommands` verwendet werden:
 
-||||
+|Eigenschaft|type|BESCHREIBUNG|
 |-|-|-|
 |`text`|string|Hiermit wird der auszuführende Debuggerbefehl angegeben.|
 |`description`|string|Hiermit wird eine optionale Beschreibung des Befehls angegeben.|
@@ -77,7 +75,7 @@ Folgende Optionen können mit der Eigenschaft `setupCommands` verwendet werden:
 
 Folgende Optionen können mit der Eigenschaft `pipeTransport` verwendet werden:
 
-||||
+|Eigenschaft|type|BESCHREIBUNG|
 |-|-|-|
 |`pipeCwd`|string|Hiermit wird der vollqualifizierte Pfad zum Arbeitsverzeichnis für das Pipeprogramm angegeben.|
 |`pipeProgram`|string|Hiermit wird der vollqualifizierte auszuführende Pipebefehl angegeben.|
@@ -90,7 +88,7 @@ Folgende Optionen können mit der Eigenschaft `pipeTransport` verwendet werden:
 
 Folgende Optionen können mit der Eigenschaft `sourceFileMap` verwendet werden:
 
-||||
+|Eigenschaft|type|BESCHREIBUNG|
 |-|-|-|
 |`editorPath`|string|Hiermit wird der Speicherort des Quellcodes angegeben, den der Editor sucht.|
 |`useForBreakpoints`|boolean|Beim Festlegen von Breakpoints sollte diese Quellzuordnung verwendet werden. Wenn **`false`** festgelegt ist, werden nur der Dateiname und die Zeilennummer zum Festlegen von Breakpoints verwendet. Wenn **`true`** festgelegt ist, werden Breakpoints nur dann mit dem vollständigen Pfad zur Datei und der Zeilennummer festgelegt, wenn diese Quellzuordnung verwendet wird. Andernfalls werden beim Festlegen von Breakpoints nur Dateiname und Zeilennummer verwendet. Der Standardwert lautet **`true`** .|

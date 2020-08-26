@@ -12,12 +12,12 @@ helpviewer_keywords:
 - dialog box controls, variable types
 - variables, dialog box control member variables
 ms.assetid: 437783bd-8eb4-4508-8b73-7380116e9d71
-ms.openlocfilehash: a8f693345fcb265cf8e97af342c6e0cd539c9001
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: e7fd5bd93198c494f18fe18755d13d40fe7fbf96
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87215997"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845132"
 ---
 # <a name="add-a-member-variable"></a>Hinzufügen einer Membervariable
 
@@ -80,13 +80,15 @@ Dieser Assistent fügt der Headerdatei eine Membervariablendeklaration hinzu. Ab
 
     Weitere Informationen zu Typen finden Sie unter [Grundlegende Typen](../cpp/fundamental-types-cpp.md).
 
-    |||
-    |-|-|
-    |**`char`**|**`short`**|
-    |**`double`**|**`unsigned char`**|
-    |**`float`**|**`unsigned int`**|
-    |**`int`**|**`unsigned long`**|
-    |**`long`**||
+    - **`char`**
+    - **`double`**
+    - **`float`**
+    - **`int`**
+    - **`long`**
+    - **`short`**
+    - **`unsigned char`**
+    - **`unsigned int`**
+    - **`unsigned long`**
 
   - Wenn Sie eine Membervariable für ein Steuerelement für Dialogfelder hinzufügen, wird dieses Feld mit dem Typ des Objekts aufgefüllt, das für ein Steuerelement oder einen Wert zurückgegeben wird. Wenn Sie **Steuerelement** auswählen, gibt der **Variablentyp** die Basisklasse des Steuerelements an, das Sie im Feld **Steuerelement-ID** ausgewählt haben. Wenn das Steuerelement für ein Dialogfeld einen Wert enthalten kann und Sie **Wert** ausgewählt haben, gibt der **Variablentyp** den geeigneten Typ für den Wert an, den das Steuerelement enthalten kann. Weitere Informationen finden Sie unter [Dialog Box Controls and Variable Types (Steuerelemente für Dialogfelder und Variablentypen)](#dialog-box-controls-and-variable-types).
 

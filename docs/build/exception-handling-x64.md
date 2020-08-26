@@ -5,12 +5,12 @@ helpviewer_keywords:
 - C++ exception handling, x64
 - exception handling, x64
 ms.assetid: 41fecd2d-3717-4643-b21c-65dcd2f18c93
-ms.openlocfilehash: 75658e2c86ffb1a75d5f66e873e0648a8ebae29e
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 3d973354f94ca8c9f2e0901e60f2a8009ac08cd6
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87224044"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88835050"
 ---
 # <a name="x64-exception-handling"></a>Ausnahmebehandlung bei x64-Systemen
 
@@ -24,7 +24,7 @@ Für die Unterstützung der Ausnahmebehandlung und des Debuggens sind mehrere Da
 
 Die tabellenbasierte Ausnahmebehandlung erfordert einen Tabelleneintrag für alle Funktionen, die Stapelspeicher zuordnen oder eine andere Funktion (z. B. Non-Leaf-Funktionen) aufrufen. Funktionstabelleneinträge weisen das folgende Format auf:
 
-|||
+|Size|Wert|
 |-|-|
 |ULONG|Startadresse der Funktion|
 |ULONG|Endadresse der Funktion|
@@ -36,7 +36,7 @@ Die RUNTIME_FUNCTION-Struktur muss im Arbeitsspeicher auf DWORD ausgerichtet sei
 
 Die Informationsstruktur für Entladeinformationen wird verwendet, um die Auswirkungen einer Funktion auf den Stapelzeiger aufzuzeichnen, und um den Speicherort nicht flüchtiger Register im Stapel anzugeben:
 
-|||
+|Size|Wert|
 |-|-|
 |UBYTE: 3|Version|
 |UBYTE: 5|Flags|
@@ -49,14 +49,14 @@ Die Informationsstruktur für Entladeinformationen wird verwendet, um die Auswir
 
 (1) Ausnahmehandler
 
-|||
+|Size|Wert|
 |-|-|
 |ULONG|Adresse des Ausnahmehandlers|
 |-Variable|Sprachspezifische Handlerdaten (optional)|
 
 (2) Verkettete Entladeinformationen
 
-|||
+|Size|Wert|
 |-|-|
 |ULONG|Startadresse der Funktion|
 |ULONG|Endadresse der Funktion|
@@ -114,7 +114,7 @@ Die UNWIND_INFO-Struktur muss im Arbeitsspeicher auf DWORD ausgerichtet sein. Di
 
 Das Entladungscodearray wird verwendet, um die Abfolge der Vorgänge im Prolog aufzuzeichnen, die sich auf die nicht flüchtigen Register und RSPs auswirken. Jedes Codeelement weist das folgende Format auf:
 
-|||
+|Size|Wert|
 |-|-|
 |UBYTE|Offset im Prolog|
 |UBYTE: 4|Code für den Entladevorgang|
@@ -180,7 +180,7 @@ Der Code für den Entladungsvorgang entspricht einem der folgenden Werte:
 
   Ein Computerframe wird übertragen.  Dieser Entladungscode wird verwendet, um die Auswirkungen von Hardwareunterbrechungen oder Ausnahmen aufzuzeichnen. Es gibt zwei Varianten. Wenn die Vorgangsinformationen gleich 0 (null) sind, wurde einer dieser Frames an den Stapel übertragen:
 
-  |||
+  |Position|Wert|
   |-|-|
   |RSP + 32|SS|
   |RSP + 24|RSP (alt)|
@@ -190,7 +190,7 @@ Der Code für den Entladungsvorgang entspricht einem der folgenden Werte:
 
   Wenn die Vorgangsinformationen gleich 1 sind, wurde einer dieser Frames übertragen:
 
-  |||
+  |Position|Wert|
   |-|-|
   |RSP + 40|SS|
   |RSP + 32|RSP (alt)|
@@ -221,7 +221,7 @@ Der Code für den Entladungsvorgang entspricht einem der folgenden Werte:
 
 Die Bedeutung der einzelnen Bits der Vorgangsinformationen hängt vom Opcode ab. Folgende Zuordnung wird verwendet, um ein allgemeines Register (Integer) zu codieren:
 
-|||
+|bit|Registrieren|
 |-|-|
 |0|RAX|
 |1|RCX|

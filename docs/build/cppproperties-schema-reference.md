@@ -3,12 +3,12 @@ title: CppProperties.json-Referenz
 ms.date: 08/09/2019
 helpviewer_keywords:
 - CppProperties.json file [C++]
-ms.openlocfilehash: 2409c1d93d4e9d814407dbd4334daa73ae630775
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 31b4e7901bf35986e553a9e280da0243d61982a2
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87224057"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88837904"
 ---
 # <a name="cpppropertiesjson-reference"></a>CppProperties.json-Referenz
 
@@ -18,7 +18,7 @@ ms.locfileid: "87224057"
 
 Eine Konfiguration kann folgende Eigenschaften aufweisen:
 
-|||
+|Name|BESCHREIBUNG|
 |-|-|
 |`inheritEnvironments`| Hiermit wird angegeben, für welche Umgebungen diese Konfiguration gilt.|
 |`name`|Dies ist der Konfigurationsname, der im Dropdownmenü für die C++-Konfiguration angezeigt wird.|
@@ -125,7 +125,7 @@ Wenn Sie eine **Umgebungseigenschaft** innerhalb einer Konfiguration definieren,
 
 Sie können auf die folgenden integrierten Makros innerhalb von *CppProperties.json* zugreifen:
 
-|||
+|Makro|Beschreibung|
 |-|-|
 |`${workspaceRoot}`| den vollständigen Pfad zum Arbeitsbereichordner|
 |`${projectRoot}`| den vollständigen Pfad zum Ordner von *CppProperties.json*|

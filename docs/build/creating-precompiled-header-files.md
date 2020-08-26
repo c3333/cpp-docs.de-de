@@ -7,12 +7,12 @@ helpviewer_keywords:
 - cl.exe compiler, precompiling code
 - .pch files, creating
 ms.assetid: e2cdb404-a517-4189-9771-c869c660cb1b
-ms.openlocfilehash: 158301ec3caacced1663892071b17ef2b8f8e741
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c68de0ee8e6376731254adf965fb9a81f10f2861
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81328672"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88838853"
 ---
 # <a name="precompiled-header-files"></a>Vorkompilierte Headerdateien
 
@@ -91,22 +91,54 @@ Pragmas, die während der Erstellung einer PCH-Datei verarbeitet werden, wirken 
 
 Die folgenden Pragmas beeinflussen nur den Code in der PCH-Datei. Sie wirken sich nicht auf den Code aus, der dann die PCH-Datei verwendet:
 
-||||
-|-|-|-|
-|`comment`|`page`|`subtitle`|
-|`linesize`|`pagesize`|`title`|
-|`message`|`skip`||
+:::row:::
+   :::column span="":::
+      `comment`\
+      `linesize`
+   :::column-end:::
+   :::column span="":::
+      `message`\
+      `page`
+   :::column-end:::
+   :::column span="":::
+      `pagesize`\
+      `skip`
+   :::column-end:::
+   :::column span="":::
+      `subtitle`\
+      `title`
+   :::column-end:::
+:::row-end:::
 
 Die folgenden Pragmas werden als Teil eines vorkompilierten Headers beibehalten und wirken sich auf die restliche Kompilierung aus, die den vorkompilierten Header verwendet:
 
-||||
-|-|-|-|
-|`alloc_text`|`include_alias`|`pack`|
-|`auto_inline`|`init_seg`|`pointers_to_members`|
-|`check_stack`|`inline_depth`|`setlocale`|
-|`code_seg`|`inline_recursion`|`vtordisp`|
-|`data_seg`|`intrinsic`|`warning`|
-|`function`|`optimize`||
+:::row:::
+   :::column span="":::
+      `alloc_text`\
+      `auto_inline`\
+      `check_stack`\
+      `code_seg`\
+      `data_seg`
+   :::column-end:::
+   :::column span="":::
+      `function`\
+      `include_alias`\
+      `init_seg`\
+      `inline_depth`
+   :::column-end:::
+   :::column span="":::
+      `inline_recursion`\
+      `intrinsic`\
+      `optimize`\
+      `pack`
+   :::column-end:::
+   :::column span="":::
+      `pointers_to_members`\
+      `setlocale`\
+      `vtordisp`\
+      `warning`
+   :::column-end:::
+:::row-end:::
 
 ## <a name="consistency-rules-for-yc-and-yu"></a>Konsistenzregeln für "/Yc" und "/Yu"
 

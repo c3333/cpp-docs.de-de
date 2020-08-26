@@ -3,12 +3,12 @@ title: Verbesserungen an C++ bei der Übereinstimmung mit Standards
 ms.date: 08/04/2020
 description: Microsoft C++ in Visual Studio  bewegt sich auf die vollständige Konformität mit dem Sprachstandard C++20 zu.
 ms.technology: cpp-language
-ms.openlocfilehash: ea0b871651d1cf0c8719e8d5f22df5ab42e69e14
-ms.sourcegitcommit: 68ae6f9ea17f32734b32bb06ffeec12d8d33f0fe
+ms.openlocfilehash: a28281eb7b47dcfc633467c96e520c7e97e26777
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87807822"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88841388"
 ---
 # <a name="c-conformance-improvements-in-visual-studio"></a>Verbesserungen der C++-Konformität in Visual Studio
 
@@ -1937,7 +1937,7 @@ Ab C++17 müssen die Operanden der Operatoren `->*`, `[]`, `>>` und `<<` in der 
 
 - wenn er mithilfe von **`/clr`** kompiliert wird und einer der Operanden ein Feld eines Objekts oder ein Arrayelement ist.
 
-Der Compiler gibt die Warnung [C4866](https://docs.microsoft.com/cpp/error-messages/compiler-warnings/c4866?view=vs-2017) aus, wenn er die Auswertung von links nach rechts nicht sicherstellen kann. Diese Warnung wird vom Compiler nur generiert, wenn **`/std:c++17`** oder höher angegeben ist, da die Anforderung der Auswertungsreihenfolge von links nach rechts für diese Operatoren in C++17 eingeführt wurde.
+Der Compiler gibt die Warnung [C4866](../error-messages/compiler-warnings/c4866.md) aus, wenn er die Auswertung von links nach rechts nicht sicherstellen kann. Diese Warnung wird vom Compiler nur generiert, wenn **`/std:c++17`** oder höher angegeben ist, da die Anforderung der Auswertungsreihenfolge von links nach rechts für diese Operatoren in C++17 eingeführt wurde.
 
 Um diese Warnung zu vermeiden, sollten Sie zunächst überprüfen, ob die Auswertung von links nach rechts für die Operanden erforderlich ist. Dies kann beispielsweise erforderlich sein, wenn durch die Auswertung der Operanden reihenfolgenabhängige Nebenwirkungen auftreten. In vielen Fällen hat die Reihenfolge, in der Operanden ausgewertet werden, keinen beobachtbaren Effekt. Wenn die Auswertungsreihenfolge von links nach rechts sein muss, überlegen Sie, ob Sie die Operanden stattdessen als const-Verweis übergeben können. Diese Änderung entfernt die Warnung im folgenden Codebeispiel:
 

@@ -4,12 +4,12 @@ ms.date: 05/16/2019
 helpviewer_keywords:
 - 'msbuild (c++), howto: integrate custom tools'
 ms.assetid: f32d91a4-44e9-4de3-aa9a-1c7f709ad2ee
-ms.openlocfilehash: 5a96ffd15bb28022b3000252307c75b3383ac59c
-ms.sourcegitcommit: 31a443c9998cf5cfbaff00fcf815b133f55b2426
+ms.openlocfilehash: 821fb1637306c70d850f12fc1b954860557f47f7
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86373748"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88840439"
 ---
 # <a name="how-to-integrate-custom-tools-into-the-project-properties"></a>Vorgehensweise: Integrieren von benutzerdefinierten Tools in die Projekteigenschaften
 
@@ -17,7 +17,7 @@ Sie können dem Visual Studio-Fenster **Eigenschaftenseiten** benutzerdefinierte
 
 Im Abschnitt **Konfigurationseigenschaften** des Fensters **Eigenschaftenseiten** werden Einstellungsgruppen angezeigt, die als *Regeln* bezeichnet werden. Jede Regel enthält die Einstellungen für ein Tool oder eine Gruppe Features. Beispielsweise enthält die **Linker**-Regel die Einstellungen für das Linkertool. Die Einstellungen in einer Regel können weiter in *Kategorien* unterteilt werden.
 
-Dieses Dokument erläutert, wie eine Datei in einem festgelegten Verzeichnis erstellt wird, die Eigenschaften für Ihr benutzerdefiniertes Tool enthält, so dass die Eigenschaften beim Starten von Visual Studio geladen werden. Informationen zum Ändern der Datei finden Sie unter [Platform Extensibility Part 2](https://docs.microsoft.com/archive/blogs/vsproject/platform-extensibility-part-2) (Plattformerweiterbarkeit Teil 2) im Visual Studio Project-Teamblog.
+Dieses Dokument erläutert, wie eine Datei in einem festgelegten Verzeichnis erstellt wird, die Eigenschaften für Ihr benutzerdefiniertes Tool enthält, so dass die Eigenschaften beim Starten von Visual Studio geladen werden. Informationen zum Ändern der Datei finden Sie unter [Platform Extensibility Part 2](/archive/blogs/vsproject/platform-extensibility-part-2) (Plattformerweiterbarkeit Teil 2) im Visual Studio Project-Teamblog.
 
 ### <a name="to-add-or-change-project-properties"></a>Hinzufügen oder Ändern von Projekteigenschaften
 

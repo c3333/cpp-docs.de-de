@@ -2,19 +2,19 @@
 title: 'Exemplarische Vorgehensweise: Kompilieren eines C++- bzw. CX-Programms in der Befehlszeile'
 ms.date: 04/23/2019
 ms.assetid: 626f5544-69ed-4736-83a9-f11389b371b2
-ms.openlocfilehash: 456373fc9009920b734243f6a6c1af3d2c0301d4
-ms.sourcegitcommit: 31a443c9998cf5cfbaff00fcf815b133f55b2426
+ms.openlocfilehash: 8dcd27ca8fff826f33ee8bd752cd32f2d44d3691
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86373683"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88836711"
 ---
 # <a name="walkthrough-compiling-a-ccx-program-on-the-command-line"></a>Exemplarische Vorgehensweise: Kompilieren eines C++- bzw. CX-Programms in der Befehlszeile
 
 > [!NOTE]
 > Für neue UWP-Apps und -Komponenten empfiehlt es sich, [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) zu verwenden, eine C++17-Standardsprachprojektion für Windows-Runtime-APIs. C++/WinRT ist im Windows 10 SDK ab Version 1803 erhältlich. C++/WinRT wird vollständig in Headerdateien implementiert und wurde entwickelt, um Ihnen erstklassigen Zugriff auf die moderne Windows-API zu ermöglichen.
 
-Der Microsoft Visual C++-Compiler (MSVC) unterstützt C++-Komponentenerweiterungen (C++/CX), die zusätzliche Typen und Operatoren für das Windows-Runtime-Programmiermodell bereitstellen. Sie können C++/CX verwenden, um UWP-Apps und Windows Desktop-Apps zu erstellen. Weitere Informationen finden Sie unter [Einführung in C++/CX](https://docs.microsoft.com/archive/msdn-magazine/2013/april/component-extensions-a-tour-of-c-cx) und [Komponentenerweiterungen für Laufzeitplattformen](../extensions/component-extensions-for-runtime-platforms.md).
+Der Microsoft Visual C++-Compiler (MSVC) unterstützt C++-Komponentenerweiterungen (C++/CX), die zusätzliche Typen und Operatoren für das Windows-Runtime-Programmiermodell bereitstellen. Sie können C++/CX verwenden, um UWP-Apps und Windows Desktop-Apps zu erstellen. Weitere Informationen finden Sie unter [Einführung in C++/CX](/archive/msdn-magazine/2013/april/component-extensions-a-tour-of-c-cx) und [Komponentenerweiterungen für Laufzeitplattformen](../extensions/component-extensions-for-runtime-platforms.md).
 
 In dieser exemplarischen Vorgehensweise verwenden Sie einen Texteditor zur Erstellung eines grundlegenden C++/CX-Programms und kompilieren es dann auf der Befehlszeile. (Sie können Sie Ihr C++/CX-Programm verwenden, statt das gezeigte einzugeben oder Sie können ein C++/CX-Codebeispiel aus einem anderen Hilfeartikel verwenden. Diese Technik ist nützlich zum Erstellen und Testen von kleinen Modulen, die keine Benutzeroberflächenelemente enthalten.)
 
