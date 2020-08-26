@@ -14,21 +14,22 @@ helpviewer_keywords:
 - std::sleep_until [C++]
 - std::swap [C++]
 - std::yield [C++]
-ms.openlocfilehash: 130328ca07de28e14eedd7fdc99fb8946f26c5cb
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 64a62180243d77f361c243b2a89de56b0a14920e
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87232858"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845041"
 ---
 # <a name="ltthreadgt-functions"></a>&lt;thread&gt;-Funktionen
 
-||||
-|-|-|-|
-|[get_id](#get_id)|[sleep_for](#sleep_for)|[sleep_until](#sleep_until)|
-|[swap](#swap)|[yield](#yield)|
+[get_id](#get_id)\
+[sleep_for](#sleep_for)\
+[sleep_until](#sleep_until)\
+[Wechsel](#swap)\
+[yield](#yield)
 
-## <a name="get_id"></a><a name="get_id"></a>get_id
+## <a name="get_id"></a><a name="get_id"></a> get_id
 
 Weist den aktuellen Ausführungsthread eindeutig aus.
 
@@ -40,7 +41,7 @@ thread::id this_thread::get_id() noexcept;
 
 Ein Objekt vom Typ [Thread:: ID](../standard-library/thread-class.md), das den aktuellen Ausführungsthread eindeutig ausweist.
 
-## <a name="sleep_for"></a><a name="sleep_for"></a>sleep_for
+## <a name="sleep_for"></a><a name="sleep_for"></a> sleep_for
 
 Blockiert den aufrufenden Thread.
 
@@ -59,7 +60,7 @@ Ein [Dauer](../standard-library/duration-class.md)-Objekt, das ein Zeitintervall
 
 Die-Funktion sperrt den aufrufenden Thread zumindest für die Zeit, die durch *Rel_time*angegeben wird. Diese Funktion löst keine Ausnahmen aus.
 
-## <a name="sleep_until"></a><a name="sleep_until"></a>sleep_until
+## <a name="sleep_until"></a><a name="sleep_until"></a> sleep_until
 
 Blockiert den aufrufenden Thread mindestens bis zum angegebenen Zeitpunkt.
 
@@ -79,7 +80,7 @@ Stellt einen Zeitpunkt dar.
 
 Diese Funktion löst keine Ausnahmen aus.
 
-## <a name="swap"></a><a name="swap"></a>Wechsel
+## <a name="swap"></a><a name="swap"></a> Wechsel
 
 Vertauscht die Zustände von zwei `thread`-Objekten.
 
@@ -99,7 +100,7 @@ Das rechte `thread`-Objekt.
 
 Die Funktion ruft `Left.swap(Right)` auf.
 
-## <a name="yield"></a><a name="yield"></a>Yield
+## <a name="yield"></a><a name="yield"></a> Yield
 
 Signalisiert dem Betriebssystem, andere Threads auszuführen, auch wenn der aktuelle Thread normalerweise weiterhin ausgeführt werden würde.
 
@@ -107,6 +108,6 @@ Signalisiert dem Betriebssystem, andere Threads auszuführen, auch wenn der aktu
 inline void yield() noexcept;
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<thread>](../standard-library/thread.md)

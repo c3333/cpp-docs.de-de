@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - ios header
 ms.assetid: d3d4c161-2f37-4f04-93cc-0a2a89984a9c
-ms.openlocfilehash: 59ff0d1a9538bd43cc2164306e6a37a3b307067d
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 8ba03e5ab5dd90a6f29e08b01576803a00f0bd24
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87212266"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845483"
 ---
 # <a name="ltiosgt"></a>&lt;ios&gt;
 
@@ -20,7 +20,7 @@ Definiert verschiedene Typen und Funktionen, die grundlegend für den Umgang mit
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header**:\<ios>
+**Header**: \<ios>
 
 **Namespace:** std
 
@@ -43,7 +43,7 @@ Ruft [noskipws](../standard-library/ios-functions.md#noskipws)(**istr**) auf.
 
 ### <a name="typedefs"></a>TypeDefs
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[erhältlich](../standard-library/ios-typedefs.md#ios)|Unterstützt die ios-Klasse aus der alten iostream-Bibliothek.|
 |[streamoff](../standard-library/ios-typedefs.md#streamoff)|Unterstützt interne Vorgänge.|
@@ -54,7 +54,7 @@ Ruft [noskipws](../standard-library/ios-functions.md#noskipws)(**istr**) auf.
 
 ### <a name="manipulators"></a>Manipulatoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[boolalpha](../standard-library/ios-functions.md#boolalpha)|Gibt an, dass Variablen des Typs [bool](../cpp/bool-cpp.md) als **`true`** oder **`false`** im Stream angezeigt werden.|
 |[31.12.2012](../standard-library/ios-functions.md#dec)|Gibt an, dass ganzzahlige Variablen in Basis-10-Schreibweise angezeigt werden.|
@@ -83,7 +83,7 @@ Ruft [noskipws](../standard-library/ios-functions.md#noskipws)(**istr**) auf.
 
 ### <a name="error-reporting"></a>Fehlerberichterstellung
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[io_errc](../standard-library/ios-functions.md#io_errc)||
 |[is_error_code_enum](../standard-library/ios-functions.md#is_error_code_enum)||
@@ -93,7 +93,7 @@ Ruft [noskipws](../standard-library/ios-functions.md#noskipws)(**istr**) auf.
 
 ### <a name="classes"></a>Klassen
 
-|||
+|name|Beschreibung|
 |-|-|
 |[basic_ios](../standard-library/basic-ios-class.md)|Die Klassen Vorlage beschreibt die Speicher-und Element Funktionen, die sowohl für die Eingabedaten Ströme (von Klassen Vorlagen [basic_istream](../standard-library/basic-istream-class.md)) als auch für die Ausgabestreams (der Klassen Vorlage [basic_ostream](../standard-library/basic-ostream-class.md)), die von den Vorlagen Parametern abhängen, gemeinsam|
 |[fpos](../standard-library/fpos-class.md)|Die Klassen Vorlage beschreibt ein Objekt, das alle Informationen speichern kann, die zum Wiederherstellen eines beliebigen Datei Positions Indikators innerhalb eines Streams benötigt werden.|

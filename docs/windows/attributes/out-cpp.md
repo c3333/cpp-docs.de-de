@@ -1,17 +1,17 @@
 ---
-title: Out (C++ com-Attribut)
+title: Out (C++-com-Attribut)
 ms.date: 10/02/2018
 f1_keywords:
 - vc-attr.out
 helpviewer_keywords:
 - out attribute
 ms.assetid: 5051b1bf-4949-4bf1-b82f-35e14f0f244b
-ms.openlocfilehash: 6ab8fdf691e2220087f5c5d64bb70c5deb27675c
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: b99e520a11c2e8110d2e63fa85ddb1dd444e56e6
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80214667"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88837098"
 ---
 # <a name="out-c"></a>out (C++)
 
@@ -33,12 +33,10 @@ Ein Beispiel für die Verwendung von [bindable](bindable.md) finden Sie im Beisp
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|Schnittstellenparameter|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Schnittstellenparameter|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -48,5 +46,5 @@ Weitere Informationen zu den Attributkontexten finden Sie unter [Attributkontext
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Parameterattribute](parameter-attributes.md)<br/>
-[defaultvalue](defaultvalue.md)<br/>
+[DefaultValue](defaultvalue.md)<br/>
 [id](id.md)

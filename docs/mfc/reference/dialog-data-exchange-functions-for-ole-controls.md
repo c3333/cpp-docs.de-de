@@ -18,12 +18,12 @@ helpviewer_keywords:
 - OLE controls [MFC], DDX functions
 - DDX (dialog data exchange), OLE support
 ms.assetid: 7ef1f288-ff65-40d4-aad2-5497bc00bb27
-ms.openlocfilehash: b5a7263ae5cac81508ab2450a530132879ed45b2
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 9133c30dd1ac069145862d4bf61ba0bc0d504838
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87222822"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88837358"
 ---
 # <a name="dialog-data-exchange-functions-for-ole-controls"></a>Dialogdatenaustausch-Funktionen für OLE-Steuerelemente
 
@@ -31,7 +31,7 @@ In diesem Thema werden die DDX_OC Funktionen aufgelistet, die zum Austauschen vo
 
 ### <a name="ddx_oc-functions"></a>DDX_OC Funktionen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[DDX_OCBool](#ddx_ocbool)|Verwaltet die Übertragung von **booleschen** Daten zwischen einer Eigenschaft eines OLE-Steuer Elements und einem **booleschen** Datenmember.|
 |[DDX_OCBoolRO](#ddx_ocboolro)|Verwaltet die Übertragung von **booleschen** Daten zwischen einer schreibgeschützten Eigenschaft eines OLE-Steuer Elements und einem **booleschen** Datenmember.|
@@ -46,7 +46,7 @@ In diesem Thema werden die DDX_OC Funktionen aufgelistet, die zum Austauschen vo
 |[DDX_OCText](#ddx_octext)|Verwaltet die Übertragung von **CString** -Daten zwischen einer Eigenschaft eines OLE-Steuer Elements und einem **CString** -Datenmember.|
 |[DDX_OCTextRO](#ddx_octextro)|Verwaltet die Übertragung von **CString** -Daten zwischen einer schreibgeschützten Eigenschaft eines OLE-Steuer Elements und einem **CString** -Datenmember.|
 
-## <a name="ddx_ocbool"></a><a name="ddx_ocbool"></a>DDX_OCBool
+## <a name="ddx_ocbool"></a><a name="ddx_ocbool"></a> DDX_OCBool
 
 Die `DDX_OCBool` -Funktion verwaltet die Übertragung von **booleschen** Daten zwischen einer Eigenschaft eines OLE-Steuer Elements in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem **booleschen** Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
 
@@ -80,7 +80,7 @@ Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -vali
 
   **Header:** afxdisp.h
 
-## <a name="ddx_ocboolro"></a><a name="ddx_ocboolro"></a>DDX_OCBoolRO
+## <a name="ddx_ocboolro"></a><a name="ddx_ocboolro"></a> DDX_OCBoolRO
 
 Die `DDX_OCBoolRO` -Funktion verwaltet die Übertragung von **booleschen** Daten zwischen einer schreibgeschützten Eigenschaft eines OLE-Steuer Elements in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem **booleschen** Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
 
@@ -114,7 +114,7 @@ Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -vali
 
   **Header** afxdisp. h
 
-## <a name="ddx_occolor"></a><a name="ddx_occolor"></a>DDX_OCColor
+## <a name="ddx_occolor"></a><a name="ddx_occolor"></a> DDX_OCColor
 
 Die `DDX_OCColor` -Funktion verwaltet die Übertragung von OLE_COLOR Daten zwischen einer Eigenschaft eines OLE-Steuer Elements in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem OLE_COLOR Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
 
@@ -148,7 +148,7 @@ Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -vali
 
   **Header** afxdisp. h
 
-## <a name="ddx_occolorro"></a><a name="ddx_occolorro"></a>DDX_OCColorRO
+## <a name="ddx_occolorro"></a><a name="ddx_occolorro"></a> DDX_OCColorRO
 
 Die `DDX_OCColorRO` -Funktion verwaltet die Übertragung von OLE_COLOR Daten zwischen einer schreibgeschützten Eigenschaft eines OLE-Steuer Elements in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem OLE_COLOR Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
 
@@ -182,7 +182,7 @@ Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -vali
 
   **Header** afxdisp. h
 
-## <a name="ddx_ocfloat"></a><a name="ddx_ocfloat"></a>DDX_OCFloat
+## <a name="ddx_ocfloat"></a><a name="ddx_ocfloat"></a> DDX_OCFloat
 
 Die `DDX_OCFloat` -Funktion verwaltet die Übertragung von **`float`** Daten (oder **`double`** ) zwischen einer Eigenschaft eines OLE-Steuer Elements in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem **`float`** (oder **`double`** ) Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
 
@@ -222,7 +222,7 @@ Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -vali
 
   **Header** afxdisp. h
 
-## <a name="ddx_ocfloatro"></a><a name="ddx_ocfloatro"></a>DDX_OCFloatRO
+## <a name="ddx_ocfloatro"></a><a name="ddx_ocfloatro"></a> DDX_OCFloatRO
 
 Die `DDX_OCFloatRO` -Funktion verwaltet die Übertragung von **`float`** (oder) **`double`** -Daten zwischen einer schreibgeschützten Eigenschaft eines OLE-Steuer Elements in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem **`float`** (oder **`double`** ) Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
 
@@ -262,7 +262,7 @@ Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -vali
 
   **Header** afxdisp. h
 
-## <a name="ddx_ocint"></a><a name="ddx_ocint"></a>DDX_OCInt
+## <a name="ddx_ocint"></a><a name="ddx_ocint"></a> DDX_OCInt
 
 Die `DDX_OCInt` -Funktion verwaltet die Übertragung von **`int`** Daten (oder **`long`** ) zwischen einer Eigenschaft eines OLE-Steuer Elements in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem **`int`** (oder **`long`** ) Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
 
@@ -302,7 +302,7 @@ Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -vali
 
   **Header** afxdisp. h
 
-## <a name="ddx_ocintro"></a><a name="ddx_ocintro"></a>DDX_OCIntRO
+## <a name="ddx_ocintro"></a><a name="ddx_ocintro"></a> DDX_OCIntRO
 
 Die `DDX_OCIntRO` -Funktion verwaltet die Übertragung von **`int`** (oder) **`long`** -Daten zwischen einer schreibgeschützten Eigenschaft eines OLE-Steuer Elements in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem **`int`** (oder **`long`** ) Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
 
@@ -342,7 +342,7 @@ Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -vali
 
   **Header** afxdisp. h
 
-## <a name="ddx_ocshort"></a><a name="ddx_ocshort"></a>DDX_OCShort
+## <a name="ddx_ocshort"></a><a name="ddx_ocshort"></a> DDX_OCShort
 
 Die `DDX_OCShort` -Funktion verwaltet die Übertragung kurzer Daten zwischen einer Eigenschaft eines OLE-Steuer Elements in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem kurzen Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
 
@@ -376,7 +376,7 @@ Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -vali
 
   **Header** afxdisp. h
 
-## <a name="ddx_ocshortro"></a><a name="ddx_ocshortro"></a>DDX_OCShortRO
+## <a name="ddx_ocshortro"></a><a name="ddx_ocshortro"></a> DDX_OCShortRO
 
 Die `DDX_OCShortRO` -Funktion verwaltet die Übertragung kurzer Daten zwischen einer schreibgeschützten Eigenschaft eines OLE-Steuer Elements in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem kurzen Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
 
@@ -410,7 +410,7 @@ Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -vali
 
   **Header** afxdisp. h
 
-## <a name="ddx_octext"></a><a name="ddx_octext"></a>DDX_OCText
+## <a name="ddx_octext"></a><a name="ddx_octext"></a> DDX_OCText
 
 Die **DDX_OCText** -Funktion verwaltet die Übertragung von **CString** -Daten zwischen einer Eigenschaft eines OLE-Steuer Elements in einem Dialogfeld, einer Formularansicht oder einem Steuerungs Ansichts Objekt und einem **CString** -Datenmember des Dialog Felds, der Formularansicht oder des Steuerungs Ansichts Objekts.
 
@@ -444,7 +444,7 @@ Weitere Informationen über DDX finden Sie unter [Dialogdatenaustausch und -vali
 
   **Header** afxdisp. h
 
-## <a name="ddx_octextro"></a><a name="ddx_octextro"></a>DDX_OCTextRO
+## <a name="ddx_octextro"></a><a name="ddx_octextro"></a> DDX_OCTextRO
 
 Die `DDX_OCTextRO` -Funktion verwaltet die Übertragung von `CString` -Daten zwischen einer schreibgeschützten Eigenschaft eines OLE-Steuerelements in einem Dialogfeld, einem Formularansichts- oder Steuerungsansichtsobjekts und einem `CString` -Datenelement des Dialogfelds, des Formularansichts- oder Steuerungsansichtsobjekts.
 

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - event sources
 - event handling, creating event source
 ms.assetid: 0983e36a-6127-4fbb-8a22-8dfec6564c16
-ms.openlocfilehash: a7231b01cd341bbc04bcccd3c2198d1a76dd5e39
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: bea90020c3ec570149e11db95ff6d6f8fd0a5507
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87232767"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845301"
 ---
 # <a name="event_source"></a>event_source
 
@@ -60,18 +60,16 @@ Das C++-Attribut **event_source** gibt an, dass die Klasse oder Struktur, auf di
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
 |**Zielgruppe**|**`class`**, **`struct`**|
 |**REPEATABLE**|Nein|
-|**Erforderliche Attribute**|**Co-Klasse** , wenn`type`=`com`|
+|**Erforderliche Attribute**|**Co-Klasse** , wenn `type`=`com`|
 |**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Compilerattribute](compiler-attributes.md)<br/>
 [event_receiver](event-receiver.md)<br/>

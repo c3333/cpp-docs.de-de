@@ -192,12 +192,12 @@ helpviewer_keywords:
 - CWinApp [MFC], m_nAutosaveInterval
 - CWinApp [MFC], m_pDataRecoveryHandler
 ms.assetid: e426a3cd-0d15-40d6-bd55-beaa5feb2343
-ms.openlocfilehash: 515307bd79059c22b5b40cd8b47ce8809ede8f04
-ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
+ms.openlocfilehash: f8ca4ad2023902d40a1f63c881a8dd2fd38a9ae9
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88560854"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88837605"
 ---
 # <a name="cwinapp-class"></a>CWinApp-Klasse
 
@@ -213,13 +213,13 @@ class CWinApp : public CWinThread
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[CWinApp:: CWinApp](#cwinapp)|Erstellt ein `CWinApp`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[CWinApp:: AddDocTemplate](#adddoctemplate)|Fügt der Liste der verfügbaren Dokumentvorlagen der Anwendung eine Dokument Vorlage hinzu.|
 |[CWinApp:: addtor ecentfilelist](#addtorecentfilelist)|Fügt der zuletzt verwendeten Datei Liste (MRU) einen Dateinamen hinzu.|
@@ -287,7 +287,7 @@ class CWinApp : public CWinThread
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CWinApp:: EnableShellOpen](#enableshellopen)|Ermöglicht dem Benutzer das Öffnen von Datendateien aus dem Windows-Datei-Manager.|
 |[CWinApp:: LoadStdProfileSettings](#loadstdprofilesettings)|Lädt den Standard. INI-Datei Einstellungen und aktiviert das MRU-Dateilisten Feature.|
@@ -306,7 +306,7 @@ class CWinApp : public CWinThread
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CWinApp:: m_bHelpMode](#m_bhelpmode)|Gibt an, ob sich der Benutzer im Hilfe Kontext Modus befindet (wird in der Regel mit UMSCHALT + F1 aufgerufen).|
 |[CWinApp:: m_eHelpType](#m_ehelptype)|Gibt die Art der Hilfe an, die von der Anwendung verwendet wird.|
@@ -323,7 +323,7 @@ class CWinApp : public CWinThread
 
 ### <a name="protected-data-members"></a>Geschützte Datenmember
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CWinApp:: m_dwRestartManagerSupportFlags](#m_dwrestartmanagersupportflags)|Flags, die bestimmen, wie sich der Neustart-Manager verhält.|
 |[CWinApp:: m_nAutosaveInterval](#m_nautosaveinterval)|Die Zeitspanne (in Millisekunden) zwischen den AutoSpeichern.|
@@ -1303,9 +1303,8 @@ DWORD m_dwRestartManagerSupportFlags;
 
 Um den Neustart-Manager zu aktivieren, legen `m_dwRestartManagerSupportFlags` Sie auf das gewünschte Verhalten fest. In der folgenden Tabelle sind die verfügbaren Flags aufgeführt.
 
-|||
-|-|-|
 |Flag|Beschreibung|
+|-|-|
 |AFX_RESTART_MANAGER_SUPPORT_RESTART|Die Anwendung wird mit [CWinApp:: registerwithrestartmanager](#registerwithrestartmanager)registriert. Der Neustart-Manager ist dafür verantwortlich, die Anwendung neu zu starten, wenn Sie unerwartet beendet wird.|
 |-AFX_RESTART_MANAGER_SUPPORT_RECOVERY|Die Anwendung wird beim Neustart-Manager registriert, und der Neustart-Manager ruft die Wiederherstellungs Rückruffunktion auf, wenn die Anwendung neu gestartet wird. Die standardmäßige Wiederherstellungs Rückruffunktion ist [CWinApp:: applicationrecovery Callback](#applicationrecoverycallback).|
 |-AFX_RESTART_MANAGER_AUTOSAVE_AT_RESTART|Autosave ist aktiviert, und der Neustart-Manager speichert automatisch alle geöffneten Dokumente, wenn die Anwendung neu gestartet wird.|
@@ -1970,7 +1969,7 @@ in Die eindeutige Zeichenfolge, die diese Instanz des Neustart-Managers identifi
 in Eine Zeichenfolge, die alle zusätzlichen Argumente von der Befehlszeile enthält.
 
 *dwrestartflags*\
-in Optionale Flags für den Neustart-Manager. Weitere Informationen finden Sie im Abschnitt mit Hinweisen.
+in Optionale Flags für den Neustart-Manager. Weitere Informationen finden Sie im Abschnitt "Hinweise".
 
 *precoverycallback*\
 in Die Wiederherstellungs Rückruffunktion. Diese Funktion muss einen LPVOID-Parameter als Eingabe annehmen und ein DWORD zurückgeben. Die standardmäßige Wiederherstellungs Rückruffunktion ist `CWinApp::ApplicationRecoveryCallback` .
@@ -1982,7 +1981,7 @@ in Der Eingabeparameter für die Wiederherstellungs Rückruffunktion. Weitere In
 in Die Zeitspanne, die der Neustart-Manager wartet, bis die Wiederherstellungs Rückruffunktion zurückgegeben wird. Dieser Parameter ist in Millisekunden angegeben.
 
 *dwcallbackflags*\
-in An die Wiederherstellungs Rückruffunktion übergebenen Flags. Für die zukünftige Verwendung reserviert.
+in An die Wiederherstellungs Rückruffunktion übergebenen Flags. Für zukünftige Verwendung reserviert.
 
 ### <a name="return-value"></a>Rückgabewert
 

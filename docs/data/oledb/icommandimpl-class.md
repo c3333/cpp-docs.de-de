@@ -51,12 +51,12 @@ helpviewer_keywords:
 - m_bCancelWhenExecuting
 - m_bIsExecuting
 ms.assetid: ef285fef-0d66-45e6-a762-b03357098e3b
-ms.openlocfilehash: b235a85ccab4fd3d3377e656b53276928b425d94
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: c88554d717888719ad6d805a2871489ce4b0df32
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87232156"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845587"
 ---
 # <a name="icommandimpl-class"></a>ICommandImpl-Klasse
 
@@ -85,18 +85,18 @@ Eine Befehlsschnittstelle. Der Standardwert ist `ICommand`.
 
 ### <a name="methods"></a>Methoden
 
-|||
+| Name | Beschreibung |
 |-|-|
 |[Abbrechen](#cancel)|Bricht die Ausführung des aktuellen Befehls ab.|
 |[CancelExecution](#cancelexecution)|Bricht die Ausführung des aktuellen Befehls ab.|
 |[CreateRowset](#createrowset)|Erstellt ein Rowsetobjekt.|
-|[Execute](#execute)|Führt den Befehl aus.|
+|[Ausführen](#execute)|Führt den Befehl aus.|
 |[GetDBSession](#getdbsession)|Gibt einen Schnittstellen Zeiger auf die Sitzung zurück, die den Befehl erstellt hat.|
 |[ICommandImpl](#icommandimpl)|Der Konstruktor.|
 
 ### <a name="data-members"></a>Datenelemente
 
-|||
+| Name | Beschreibung |
 |-|-|
 |[m_bCancel](#bcancel)|Gibt an, ob der Befehl abgebrochen werden soll.|
 |[m_bCancelWhenExecuting](#bcancelwhenexecuting)|Gibt an, ob der Befehl bei der Ausführung abgebrochen werden soll.|
@@ -106,7 +106,7 @@ Eine Befehlsschnittstelle. Der Standardwert ist `ICommand`.
 
 Eine erforderliche Schnittstelle für das Befehls Objekt.
 
-## <a name="icommandimplcancel"></a><a name="cancel"></a>ICommandImpl:: Cancel
+## <a name="icommandimplcancel"></a><a name="cancel"></a> ICommandImpl:: Cancel
 
 Bricht die Ausführung des aktuellen Befehls ab.
 
@@ -120,7 +120,7 @@ STDMETHOD(Cancel)();
 
 Weitere Informationen finden Sie unter [ICommand:: Cancel](/previous-versions/windows/desktop/ms714402(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-## <a name="icommandimplcancelexecution"></a><a name="cancelexecution"></a>ICommandImpl:: cancelexecution
+## <a name="icommandimplcancelexecution"></a><a name="cancelexecution"></a> ICommandImpl:: cancelexecution
 
 Bricht die Ausführung des aktuellen Befehls ab.
 
@@ -130,7 +130,7 @@ Bricht die Ausführung des aktuellen Befehls ab.
 HRESULT CancelExecution();
 ```
 
-## <a name="icommandimplcreaterowset"></a><a name="createrowset"></a>ICommandImpl:: kreaterowset
+## <a name="icommandimplcreaterowset"></a><a name="createrowset"></a> ICommandImpl:: kreaterowset
 
 Wird von [Execute](../../data/oledb/icommandimpl-execute.md) aufgerufen, um ein einzelnes Rowset zu erstellen.
 
@@ -179,7 +179,7 @@ Um mehr als ein Rowset zu erstellen oder eigene Bedingungen zum Erstellen versch
 
 Weitere Informationen finden Sie unter [ICommand:: Execute](/previous-versions/windows/desktop/ms718095(v=vs.85)) in der *OLE DB Programmierer-Referenz.*
 
-## <a name="icommandimplexecute"></a><a name="execute"></a>ICommandImpl:: Execute
+## <a name="icommandimplexecute"></a><a name="execute"></a> ICommandImpl:: Execute
 
 Führt den Befehl aus.
 
@@ -201,9 +201,9 @@ Weitere Informationen finden Sie unter [ICommand:: Execute](/previous-versions/w
 
 Die angeforderte ausgehende Schnittstelle ist eine Schnittstelle, die vom Rowsetobjekt abgerufen wird, das diese Funktion erstellt.
 
-`Execute`Ruft " [kreaterowset](../../data/oledb/icommandimpl-createrowset.md)" auf. Überschreiben Sie die Standard Implementierung, um mehr als ein Rowset zu erstellen oder eigene Bedingungen zum Erstellen verschiedener Rowsets anzugeben.
+`Execute` Ruft " [kreaterowset](../../data/oledb/icommandimpl-createrowset.md)" auf. Überschreiben Sie die Standard Implementierung, um mehr als ein Rowset zu erstellen oder eigene Bedingungen zum Erstellen verschiedener Rowsets anzugeben.
 
-## <a name="icommandimplgetdbsession"></a><a name="getdbsession"></a>ICommandImpl:: getdbsession
+## <a name="icommandimplgetdbsession"></a><a name="getdbsession"></a> ICommandImpl:: getdbsession
 
 Gibt einen Schnittstellen Zeiger auf die Sitzung zurück, die den Befehl erstellt hat.
 
@@ -222,7 +222,7 @@ Weitere Informationen finden Sie unter [ICommand:: getdbsession](/previous-versi
 
 Nützlich zum Abrufen von Eigenschaften aus der Sitzung.
 
-## <a name="icommandimplicommandimpl"></a><a name="icommandimpl"></a>ICommandImpl:: ICommandImpl
+## <a name="icommandimplicommandimpl"></a><a name="icommandimpl"></a> ICommandImpl:: ICommandImpl
 
 Der Konstruktor.
 
@@ -232,7 +232,7 @@ Der Konstruktor.
 ICommandImpl();
 ```
 
-## <a name="icommandimplm_bcancel"></a><a name="bcancel"></a>ICommandImpl:: m_bCancel
+## <a name="icommandimplm_bcancel"></a><a name="bcancel"></a> ICommandImpl:: m_bCancel
 
 Gibt an, ob der Befehl abgebrochen wird.
 
@@ -246,7 +246,7 @@ unsigned m_bCancel:1;
 
 Sie können diese Variable in der `Execute` -Methode der Befehls Klasse abrufen und entsprechend abbrechen.
 
-## <a name="icommandimplm_bcancelwhenexecuting"></a><a name="bcancelwhenexecuting"></a>ICommandImpl:: m_bCancelWhenExecuting
+## <a name="icommandimplm_bcancelwhenexecuting"></a><a name="bcancelwhenexecuting"></a> ICommandImpl:: m_bCancelWhenExecuting
 
 Gibt an, ob der Befehl bei der Ausführung abgebrochen werden kann.
 
@@ -260,7 +260,7 @@ unsigned m_bCancelWhenExecuting:1;
 
 Der Standardwert **`true`** ist (kann abgebrochen werden).
 
-## <a name="icommandimplm_bisexecuting"></a><a name="bisexecuting"></a>ICommandImpl:: m_bIsExecuting
+## <a name="icommandimplm_bisexecuting"></a><a name="bisexecuting"></a> ICommandImpl:: m_bIsExecuting
 
 Gibt an, ob der Befehl gerade ausgeführt wird.
 

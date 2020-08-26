@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - helpfile attribute
 ms.assetid: d75161c1-1363-4019-ae09-e7e3b8a3971e
-ms.openlocfilehash: 641823779346bf5417ec0db26b83083fa949e960
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 385c6da6a432f0954e62c9f16a22f0b70b73b317
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87222120"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845236"
 ---
 # <a name="helpfile"></a>helpfile
 
@@ -38,11 +38,9 @@ Ein Beispiel für die Verwendung von **HelpFile**finden Sie im Beispiel für das
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Zielgruppe**|**Interface**, **`typedef`** , **`class`** ,-Methode,**`property`**|
+|**Zielgruppe**|**Interface**, **`typedef`** , **`class`** ,-Methode, **`property`**|
 |**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|

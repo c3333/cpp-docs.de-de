@@ -5,27 +5,27 @@ helpviewer_keywords:
 - DAO (Data Access Objects), termination
 - DAO (Data Access Objects), initialization
 ms.assetid: a7edf31c-e7c2-4f3e-aada-63c3e48781da
-ms.openlocfilehash: 62460e8e55f70b8cb0743f1d044636d25121050d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 0a70dd396a87315a96224edccf13250a2927cd99
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81365896"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88837592"
 ---
 # <a name="dao-database-engine-initialization-and-termination"></a>Initialisieren und Beenden der DAO-Datenbank-Engine
 
-DAO wird mit Access-Datenbanken verwendet und wird über Office 2013 unterstützt. DAO 3.6 ist die endgültige Version und gilt als veraltet. Bei Verwendung von MFC-DAO-Objekten muss das DAO-Datenbankmodul zuerst initialisiert und dann beendet werden, bevor die Anwendung oder DLL beendet wird. Diese Aufgaben `AfxDaoInit` `AfxDaoTerm`werden von zwei Funktionen ausgeführt.
+DAO wird für Access-Datenbanken verwendet und wird von Office 2013 unterstützt. DAO 3,6 ist die endgültige Version, die als veraltet eingestuft wird. Bei der Verwendung von MFC-DAO-Objekten muss das DAO-Datenbankmodul zunächst initialisiert und dann beendet werden, bevor die Anwendung oder dll abgebrochen wird. Zwei Funktionen, `AfxDaoInit` und `AfxDaoTerm` , führen diese Aufgaben aus.
 
 ### <a name="dao-database-engine-initialization-and-termination"></a>Initialisieren und Beenden der DAO-Datenbank-Engine
 
-|||
+|Name|Beschreibung|
 |-|-|
-|[AfxDaoInit](#afxdaoinit)|Initialisiert das DAO-Datenbankmodul.|
+|[AfxDaoInit](#afxdaoinit)|Initialisiert die DAO-Datenbank-Engine.|
 |[AfxDaoTerm](#afxdaoterm)|Beendet das DAO-Datenbankmodul.|
 
-## <a name="afxdaoinit"></a><a name="afxdaoinit"></a>AfxDaoInit
+## <a name="afxdaoinit"></a><a name="afxdaoinit"></a> Afxdaoinit
 
-Diese Funktion initialisiert das DAO-Datenbankmodul.
+Mit dieser Funktion wird die DAO-Datenbank-Engine initialisiert.
 
 ```
 
@@ -36,15 +36,15 @@ throw(CDaoException*);
 
 ### <a name="remarks"></a>Bemerkungen
 
-In den meisten Fällen müssen Sie `AfxDaoInit` nicht aufrufen, da die Anwendung sie automatisch aufruft, wenn sie benötigt wird.
+In den meisten Fällen müssen Sie nicht aufrufen, `AfxDaoInit` da die Anwendung Sie automatisch aufruft, wenn Sie benötigt wird.
 
-Weitere Informationen und ein Beispiel `AfxDaoInit`für den Aufruf finden Sie unter [Technische Anmerkung 54](../../mfc/tn054-calling-dao-directly-while-using-mfc-dao-classes.md).
+Weitere Informationen und ein Beispiel für den Aufruf von `AfxDaoInit` finden Sie im [technischen Hinweis 54](../../mfc/tn054-calling-dao-directly-while-using-mfc-dao-classes.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
-  **Header** afxdao.h
+  **Header** afxdao. h
 
-## <a name="afxdaoterm"></a><a name="afxdaoterm"></a>AfxDaoTerm
+## <a name="afxdaoterm"></a><a name="afxdaoterm"></a> AfxDaoTerm
 
 Diese Funktion beendet das DAO-Datenbankmodul.
 
@@ -55,16 +55,16 @@ void AfxDaoTerm();
 
 ### <a name="remarks"></a>Bemerkungen
 
-In der Regel müssen Sie diese Funktion nur in einer regulären MFC-DLL aufrufen. Eine Anwendung ruft `AfxDaoTerm` automatisch auf, wenn sie benötigt wird.
+In der Regel müssen Sie diese Funktion nur in einer regulären MFC-DLL abrufen. eine Anwendung wird automatisch aufgerufen, `AfxDaoTerm` Wenn Sie benötigt wird.
 
-Rufen Sie in regulären `AfxDaoTerm` MFC-DLLs vor der `ExitInstance` Funktion auf, aber schließlich wurden MFC-DAO-Objekte zerstört.
+In regulären MFC-DLLs wird `AfxDaoTerm` vor der- `ExitInstance` Funktion aufgerufen, aber nachdem alle MFC-DAO-Objekte zerstört wurden.
 
-Weitere Informationen finden Sie unter [Technische Anmerkung 54](../../mfc/tn054-calling-dao-directly-while-using-mfc-dao-classes.md).
+Weitere Informationen finden Sie im [technischen Hinweis 54](../../mfc/tn054-calling-dao-directly-while-using-mfc-dao-classes.md).
 
-### <a name="requirements"></a>Anforderungen
+### <a name="requirements"></a>Requirements (Anforderungen)
 
-  **Header** afxdao.h
+  **Header** afxdao. h
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Makros, globale Funktionen und globale Variablen](../../mfc/reference/mfc-macros-and-globals.md)

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - event sinks, creating
 - event sinks
 ms.assetid: bf8fe770-3ea2-4128-b46b-166222ee4097
-ms.openlocfilehash: fb17eaa5d94636cedd650eb1bfb393d7c09e4fcc
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 7280729a9ae3a054468e1f11bdcc4a563b32effe
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87217271"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845288"
 ---
 # <a name="event_receiver"></a>event_receiver
 
@@ -35,7 +35,7 @@ Erstellt einen Ereignisempfänger (Senke).
 *type*<br/>
 Eine Enumeration von einem der folgenden Werte:
 
-- `native`für nicht verwalteten C/C++-Code (Standardeinstellung für Native Klassen).
+- `native` für nicht verwalteten C/C++-Code (Standardeinstellung für Native Klassen).
 
 - `com` für COM-Code. Dieser Wert erfordert, dass Sie folgende Headerdateien einschließen:
 
@@ -50,7 +50,7 @@ Geben Sie *layout_dependent* nur dann an, wenn `type` = **com**. *layout_depende
 
 - **`true`** bedeutet, dass die Signatur der Delegaten im Ereignis Empfänger genau mit denen übereinstimmen muss, an die Sie in der Ereignis Quelle angeschlossen sind. Die Namen des ereignishandlerhandlers müssen mit den in der relevanten Ereignis Quellen Schnittstelle angegebenen Namen identisch sein. Sie müssen verwenden, `coclass` Wenn *layout_dependent* ist **`true`** . Es ist etwas effizienter, anzugeben **`true`** .
 
-- **`false`**(Standard) bedeutet, dass die Aufruf Konvention und die Speicher Klasse (virtuell, statisch und andere) nicht mit der Ereignismethode und den Handlern übereinstimmen müssen. Außerdem müssen die Handlernamen nicht mit den Methodennamen der Ereignis Quell Schnittstellen identisch sein.
+- **`false`** (Standard) bedeutet, dass die Aufruf Konvention und die Speicher Klasse (virtuell, statisch und andere) nicht mit der Ereignismethode und den Handlern übereinstimmen müssen. Außerdem müssen die Handlernamen nicht mit den Methodennamen der Ereignis Quell Schnittstellen identisch sein.
 
 ## <a name="remarks"></a>Bemerkungen
 
@@ -65,13 +65,11 @@ Das **event_receiver** C++-Attribut gibt an, dass die Klasse oder Struktur, auf 
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
 |**Zielgruppe**|**`class`**, **`struct`**|
 |**REPEATABLE**|Nein|
-|**Erforderliche Attribute**|`coclass`Wenn *layout_dependent*=**`true`**|
+|**Erforderliche Attribute**|`coclass` Wenn *layout_dependent*=**`true`**|
 |**Ungültige Attribute**|Keine|
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).

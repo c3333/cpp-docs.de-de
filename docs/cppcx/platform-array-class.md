@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - Platform::Array Class
 ms.assetid: 7815ab40-88c5-42b0-83b8-081cef0cda31
-ms.openlocfilehash: 23548df6718b9397db8521b2bebc6e8389859dcd
-ms.sourcegitcommit: 65fead53d56d531d71be42216056aca5f44def11
+ms.openlocfilehash: 00b73b9fb113066c6948c49ec7d2039748284800
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88610698"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88837759"
 ---
 # <a name="platformarray-class"></a>Platform::Array-Klasse
 
@@ -44,11 +44,11 @@ Siehe [Platform:: Beschreib teonlyarray-Klasse](../cppcx/platform-writeonlyarray
 
 ### <a name="properties"></a>Eigenschaften
 
-|||
-|-|-|
-|[Array:: Value](#value)|Ruft ein Handle für das aktuelle Array ab.|
+| Name | Beschreibung |
+|--|--|
+| [Array:: Value](#value) | Ruft ein Handle für das aktuelle Array ab. |
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Array-Klasse wird versiegelt und kann nicht vererbt werden.
 
@@ -84,7 +84,7 @@ Die Anzahl der Elemente im Array.
 *data*<br/>
 Ein Zeiger auf ein Array von Daten des Typs `T`, der verwendet wird, um dieses Arrayobjekt zu initialisieren.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen zum Erstellen von Instanzen von Platform:: Array finden Sie unter [Array und beschreiteonlyarray](../cppcx/array-and-writeonlyarray-c-cx.md).
 
@@ -121,7 +121,7 @@ property Array^ Value;
 
 Ein Handle für das aktuelle Array.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Plattformnamespace](../cppcx/platform-namespace-c-cx.md)<br/>
 [Array und WriteOnlyArray](../cppcx/array-and-writeonlyarray-c-cx.md)

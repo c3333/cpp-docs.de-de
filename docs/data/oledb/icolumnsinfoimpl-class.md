@@ -26,12 +26,12 @@ helpviewer_keywords:
 - GetColumnInfo method
 - MapColumnIDs method
 ms.assetid: ba74c1c5-2eda-4452-8b57-84919fa0d066
-ms.openlocfilehash: 39aa3f5e89746d48057e0e8efe6fe62b1c2d8921
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 05e902e09c51012bd456751fb701ce2508a2fc16
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80210869"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845600"
 ---
 # <a name="icolumnsinfoimpl-class"></a>IColumnsInfoImpl-Klasse
 
@@ -49,26 +49,26 @@ class ATL_NO_VTABLE IColumnsInfoImpl :
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Die von `IColumnsInfoImpl`abgeleitete Klasse.
+Die von abgeleitete Klasse `IColumnsInfoImpl` .
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** atldb.h
+**Header:** „atldb.h“
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="methods"></a>Methoden
 
-|||
+| Name | Beschreibung |
 |-|-|
 |[GetColumnInfo](#getcolumninfo)|Gibt die von den meisten Consumern benötigten Spaltenmetadaten zurück.|
 |[MapColumnIDs](#mapcolumnids)|Gibt ein Array von Ordnungszahlen der Spalten in einem Rowset zurück, die mit den angegebenen Spalten-IDs gekennzeichnet sind.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Eine erforderliche Schnittstelle für Rowsets und Befehle. Um das Verhalten der `IColumnsInfo` Implementierung Ihres Anbieters zu ändern, müssen Sie die Zuordnung der Anbieter Spalte ändern.
+Eine erforderliche Schnittstelle für Rowsets und Befehle. Um das Verhalten der Implementierung Ihres Anbieters zu ändern `IColumnsInfo` , müssen Sie die Zuordnung der Anbieter Spalte ändern.
 
-## <a name="icolumnsinfoimplgetcolumninfo"></a><a name="getcolumninfo"></a>Icolumnsinfoimpl:: GetColumnInfo
+## <a name="icolumnsinfoimplgetcolumninfo"></a><a name="getcolumninfo"></a> Icolumnsinfoimpl:: GetColumnInfo
 
 Gibt die von den meisten Consumern benötigten Spaltenmetadaten zurück.
 
@@ -84,7 +84,7 @@ STDMETHOD (GetColumnInfo)(DBORDINAL* pcColumns,
 
 Weitere Informationen finden Sie unter [IColumnsInfo:: GetColumnInfo](/previous-versions/windows/desktop/ms722704\(v=vs.85\)) in der *OLE DB-Programmier Referenz*.
 
-## <a name="icolumnsinfoimplmapcolumnids"></a><a name="mapcolumnids"></a>Icolumnsinfoimpl:: MapColumnIDs
+## <a name="icolumnsinfoimplmapcolumnids"></a><a name="mapcolumnids"></a> Icolumnsinfoimpl:: MapColumnIDs
 
 Gibt ein Array von Ordnungszahlen der Spalten in einem Rowset zurück, die mit den angegebenen Spalten-IDs gekennzeichnet sind.
 
@@ -103,4 +103,4 @@ Weitere Informationen finden Sie unter [IColumnsInfo:: MapColumnIDs](/previous-v
 ## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
-[Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)
+[Architektur der OLE DB-Anbieter Vorlage](../../data/oledb/ole-db-provider-template-architecture.md)

@@ -9,12 +9,12 @@ f1_keywords:
 helpviewer_keywords:
 - gray and dithered bitmap functions [MFC]
 ms.assetid: cb139a77-b85e-4504-9d93-24156ad77a41
-ms.openlocfilehash: a220596b880ee74d5f9ebf683d087156224ee7c5
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.openlocfilehash: 57f163fd36c0f25508d94a84495fcaf1956e277d
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81751476"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88837202"
 ---
 # <a name="gray-and-dithered-bitmap-functions"></a>Bitmap-Funktionen zu Ausgrauen und Dithering
 
@@ -24,10 +24,10 @@ MFC enthält zwei Funktionen, die verwendet werden können, um einer Bitmap das 
 
 ![Vergleich von grauen und ursprünglichen Symbolversionen](../../mfc/reference/media/vcgraybitmap.gif "Vergleich von grauen und ursprünglichen Symbolversionen")
 
-|||
+|Name|Beschreibung|
 |-|-|
-|[AfxDrawGrayBitmap](#afxdrawgraybitmap)|Zeichnet eine graue Version einer Bitmap.|
-|[AfxGetGrayBitmap](#afxgetgraybitmap)|Kopiert eine graue Version einer Bitmap.|
+|[Afxdrawgraybitmap](#afxdrawgraybitmap)|Zeichnet eine graue Version einer Bitmap.|
+|[Afxgetgraybitmap](#afxgetgraybitmap)|Kopiert eine graue Version einer Bitmap.|
 
 **Bitmap-Funktionen mit Dithering**
 
@@ -35,12 +35,12 @@ MFC enthält außerdem zwei Funktionen, mit denen der Hintergrund einer Bitmap d
 
 ![Vergleich von geditherten und ursprünglichen Symbolversionen](../../mfc/reference/media/vcditheredbitmap.gif "Vergleich von geditherten und ursprünglichen Symbolversionen")
 
-|||
+|Name|Beschreibung|
 |-|-|
-|[AfxDrawDitheredBitmap](#afxdrawditheredbitmap)|Zeichnet eine Bitmap mit gedithertem Hintergrund.|
+|[Afxdrawditheredbitmap](#afxdrawditheredbitmap)|Zeichnet eine Bitmap mit gedithertem Hintergrund.|
 |[AfxGetDitheredBitmap](#afxgetditheredbitmap)|Kopiert eine Bitmap mit gedithertem Hintergrund.|
 
-## <a name="afxdrawgraybitmap"></a><a name="afxdrawgraybitmap"></a>AfxDrawGrayBitmap
+## <a name="afxdrawgraybitmap"></a><a name="afxdrawgraybitmap"></a> Afxdrawgraybitmap
 
 Zeichnet eine graue Version einer Bitmap.
 
@@ -55,19 +55,19 @@ void AFXAPI AfxDrawGrayBitmap(
 
 ### <a name="parameters"></a>Parameter
 
-*pDC*<br/>
+*PDC*<br/>
 Zeigt auf den Ziel-DC.
 
 *x*<br/>
 Die X-Koordinate des Ziels.
 
-*Y*<br/>
+*y*<br/>
 Die Y-Koordinate des Ziels.
 
 *rSrc*<br/>
 Die Quellbitmap.
 
-*crBackground*<br/>
+*crbackground*<br/>
 Die neue Hintergrundfarbe (normalerweise grau, wie etwa COLOR_MENU).
 
 ### <a name="remarks"></a>Bemerkungen
@@ -84,7 +84,7 @@ Eine mit `AfxDrawGrayBitmap` gezeichnete Bitmap hat das Aussehen eines deaktivie
 
 **Header:** afxwin.h
 
-## <a name="afxgetgraybitmap"></a><a name="afxgetgraybitmap"></a>AfxGetGrayBitmap
+## <a name="afxgetgraybitmap"></a><a name="afxgetgraybitmap"></a> Afxgetgraybitmap
 
 Kopiert eine graue Version einer Bitmap.
 
@@ -103,7 +103,7 @@ Die Quellbitmap.
 *pDest*<br/>
 Die Zielbitmap.
 
-*crBackground*<br/>
+*crbackground*<br/>
 Die neue Hintergrundfarbe (normalerweise grau, wie etwa COLOR_MENU).
 
 ### <a name="remarks"></a>Bemerkungen
@@ -120,9 +120,9 @@ Eine mit `AfxGetGrayBitmap` kopierte Bitmap hat das Aussehen eines deaktivierten
 
 **Header:** afxwin.h
 
-## <a name="afxdrawditheredbitmap"></a><a name="afxdrawditheredbitmap"></a>AfxDrawDitheredBitmap
+## <a name="afxdrawditheredbitmap"></a><a name="afxdrawditheredbitmap"></a> Afxdrawditheredbitmap
 
-Zeichnet eine Bitmap und ersetzt ihren Hintergrund durch ein gezaudertes (Prüfmuster) Muster.
+Zeichnet eine Bitmap und ersetzt Ihren Hintergrund durch ein Dithering-Muster (Checker).
 
 ```cpp
 void AFXAPI AfxDrawDitheredBitmap(
@@ -136,27 +136,27 @@ void AFXAPI AfxDrawDitheredBitmap(
 
 ### <a name="parameters"></a>Parameter
 
-*pDC*<br/>
+*PDC*<br/>
 Zeigt auf den Ziel-DC.
 
 *x*<br/>
 Die X-Koordinate des Ziels.
 
-*Y*<br/>
+*y*<br/>
 Die Y-Koordinate des Ziels.
 
 *rSrc*<br/>
 Die Quellbitmap.
 
 *cr1*<br/>
-Eine der beiden dither Farben, in der Regel weiß.
+Eine der beiden Dithering-Farben, normalerweise weiß.
 
 *cr2*<br/>
-Die andere dither Farbe, in der Regel hellgrau (COLOR_MENU).
+Die andere Dithering-Farbe, normalerweise hellgrau (COLOR_MENU).
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Quell-Bitmap wird auf dem Ziel-DC mit einem zweifarbigen (*cr1* und *cr2*) karierten Muster gezeichnet, das den Hintergrund der Bitmap ersetzt. Der Hintergrund der Quellbitmap ist definiert als seine weißen Pixel und alle Pixel, die der Farbe des Pixels in der oberen linken Ecke der Bitmap entsprechen.
+Die Quell Bitmap wird auf dem Ziel-DC mit einem zweifarbigen, CR1-und *CR2*-Muster (*cr1* und) gezeichnet, das den Hintergrund der Bitmap ersetzt. Der Hintergrund der Quell Bitmap wird als weiße Pixel und alle Pixel definiert, die mit der Farbe des Pixels in der oberen linken Ecke der Bitmap übereinstimmen.
 
 ![Vergleich von geditherten und ursprünglichen Symbolversionen](../../mfc/reference/media/vcditheredbitmap.gif "Vergleich von geditherten und ursprünglichen Symbolversionen")
 
@@ -168,9 +168,9 @@ Die Quell-Bitmap wird auf dem Ziel-DC mit einem zweifarbigen (*cr1* und *cr2*) k
 
 **Header:** afxwin.h
 
-## <a name="afxgetditheredbitmap"></a><a name="afxgetditheredbitmap"></a>AfxGetDitheredBitmap
+## <a name="afxgetditheredbitmap"></a><a name="afxgetditheredbitmap"></a> Afxgetditheredbitmap
 
-Kopiert eine Bitmap und ersetzt den Hintergrund durch ein gezaudertes (Prüfmuster) Muster.
+Kopiert eine Bitmap und ersetzt Ihren Hintergrund durch ein Dithering (Checker)-Muster.
 
 ```cpp
 void AFXAPI AfxGetDitheredBitmap(
@@ -189,14 +189,14 @@ Die Quellbitmap.
 Die Zielbitmap.
 
 *cr1*<br/>
-Eine der beiden dither Farben, in der Regel weiß.
+Eine der beiden Dithering-Farben, normalerweise weiß.
 
 *cr2*<br/>
-Die andere dither Farbe, in der Regel hellgrau (COLOR_MENU).
+Die andere Dithering-Farbe, normalerweise hellgrau (COLOR_MENU).
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Quellbitmap wird mit einem zweifarbigen (*cr1* und *cr2*) karierten Muster, das den Hintergrund der Quellbitmap ersetzt, in die Zielbitmap kopiert. Der Hintergrund der Quellbitmap ist definiert als seine weißen Pixel und alle Pixel, die der Farbe des Pixels in der oberen linken Ecke der Bitmap entsprechen.
+Die Quell Bitmap wird in die Ziel Bitmap kopiert. dabei wird ein zweifarbiges Muster (*CR1* und *CR2*) durchsucht, das den Hintergrund der Quell Bitmap ersetzt. Der Hintergrund der Quell Bitmap wird als weiße Pixel und alle Pixel definiert, die mit der Farbe des Pixels in der oberen linken Ecke der Bitmap übereinstimmen.
 
 ![Vergleich von geditherten und ursprünglichen Symbolversionen](../../mfc/reference/media/vcditheredbitmap.gif "vcditheredbitmap")
 

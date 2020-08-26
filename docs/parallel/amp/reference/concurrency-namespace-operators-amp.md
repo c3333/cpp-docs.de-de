@@ -2,22 +2,34 @@
 title: Concurrency-Namespace-Operatoren (AMP)
 ms.date: 11/04/2016
 ms.assetid: 77f1ae17-1eb2-480d-8fe5-66d4c24bb91e
-ms.openlocfilehash: 03079f8899f3b13c8509e1affd10a82191b1817c
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 1b6353e1edbe216dcb8aa5a342e139d826b82c6c
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87228478"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845340"
 ---
 # <a name="concurrency-namespace-operators-amp"></a>Concurrency-Namespace-Operatoren (AMP)
 
-||||
-|-|-|-|
-|[Operator! =](#operator_neq)|[KOM](#operator_mod)|[KOM](#operator_star)|
-|[Operator +](#operator_add)|[KOM](#operator-)|[KOM](#operator_div)|
-|[Operator = =](#operator_eq_eq)|
+:::row:::
+   :::column span="":::
+      [`operator==`](#operator_eq_eq)\
+      [`operator!=`](#operator_neq)
+   :::column-end:::
+   :::column span="":::
+      [`operator+`](#operator_add)\
+      [`operator-`](#operator-)
+   :::column-end:::
+   :::column span="":::
+      [`operator*`](#operator_star)\
+      [`operator/`](#operator_div)
+   :::column-end:::
+   :::column span="":::
+      [`operator%`](#operator_mod)
+   :::column-end:::
+:::row-end:::
 
-## <a name="operator"></a><a name="operator_eq_eq"></a>Operator = =
+## <a name="operator"></a><a name="operator_eq_eq"></a> Operator = =
 
 Bestimmt, ob die angegebenen Argumente gleich sind.
 
@@ -44,9 +56,9 @@ Eines der zu vergleichenden Tupel.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn die Tupel gleich sind. andernfalls **`false`** .
+**`true`** , wenn die Tupel gleich sind. andernfalls **`false`** .
 
-## <a name="operator"></a><a name="operator_neq"></a>Operator! =
+## <a name="operator"></a><a name="operator_neq"></a> Operator! =
 
 Bestimmt, ob die angegebenen Argumente ungleich sind.
 
@@ -73,9 +85,9 @@ Eines der zu vergleichenden Tupel.
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn die Tupel nicht gleich sind. andernfalls **`false`** .
+**`true`** , wenn die Tupel nicht gleich sind. andernfalls **`false`** .
 
-## <a name="operator"></a><a name="operator_add"></a>Operator +
+## <a name="operator"></a><a name="operator_add"></a> Operator +
 
 Berechnet die komponentenbezogene Summe der angegebenen Argumente.
 
@@ -120,7 +132,7 @@ Eines der hinzuzufügenden Argumente.
 
 Die komponentenbezogene Summe der angegebenen Argumente.
 
-## <a name="operator-"></a><a name="operator-"></a>KOM
+## <a name="operator-"></a><a name="operator-"></a> KOM
 
 Berechnet die Differenz zwischen den angegebenen Argumenten pro Komponente.
 
@@ -165,7 +177,7 @@ Das zu subtrahierende Argument.
 
 Die Differenz zwischen den angegebenen Argumenten pro Komponente.
 
-## <a name="operator"></a><a name="operator_star"></a>KOM
+## <a name="operator"></a><a name="operator_star"></a> KOM
 
 Berechnet das komponentenbezogene Produkt der angegebenen Argumente.
 
@@ -202,7 +214,7 @@ Eines der zu multiplizierenden Tupel.
 
 Das komponentenbezogene Produkt der angegebenen Argumente.
 
-## <a name="operator"></a><a name="operator_div"></a>KOM
+## <a name="operator"></a><a name="operator_div"></a> KOM
 
 Berechnet den komponentenbezogenen Quotienten der angegebenen Argumente.
 
@@ -239,7 +251,7 @@ Das Tupel für die Division.
 
 Der komponentenbezogene Quotient der angegebenen Argumente.
 
-## <a name="operator"></a><a name="operator_mod"></a>KOM
+## <a name="operator"></a><a name="operator_mod"></a> KOM
 
 Berechnet den Modul des angegebenen ersten Arguments dividiert durch das zweite angegebene Argument.
 
@@ -276,6 +288,6 @@ Das Tupel für die Modulo-Berechnung.
 
 Das Ergebnis des ersten angegebenen Arguments ergibt das zweite angegebene Argument.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Parallelitäts Namespace](concurrency-namespace-cpp-amp.md)

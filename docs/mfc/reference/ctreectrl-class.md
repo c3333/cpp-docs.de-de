@@ -162,12 +162,12 @@ helpviewer_keywords:
 - CTreeCtrl [MFC], SortChildren
 - CTreeCtrl [MFC], SortChildrenCB
 ms.assetid: 96e20031-6161-4143-8c12-8d1816c66d90
-ms.openlocfilehash: e193af8cb5c92f4a3f1ca7381783d90102e0764f
-ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
+ms.openlocfilehash: 6a824aceae39d5aa6685176354c48a9457a40e9e
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88561816"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88837618"
 ---
 # <a name="ctreectrl-class"></a>CTreeCtrl Class
 
@@ -183,13 +183,13 @@ class CTreeCtrl : public CWnd
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[CTreeCtrl:: CTreeCtrl](#ctreectrl)|Erstellt ein `CTreeCtrl`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[CTreeCtrl:: Create](#create)|Erstellt ein Strukturansicht-Steuerelement und fügt es an ein- `CTreeCtrl` Objekt an.|
 |[CTreeCtrl:: kreatedragimage](#createdragimage)|Erstellt eine Zieh Bitmap für das angegebene Struktur Ansichts Element.|
@@ -1364,9 +1364,8 @@ Das Handle des Struktur Ansichts Elements, das den angegebenen Punkt einnimmt, o
 
 Wenn diese Funktion aufgerufen wird, gibt der *PT* -Parameter die Koordinaten des zu testenden Punkts an. Die-Funktion gibt das Handle des Elements am angegebenen Punkt oder NULL zurück, wenn kein Element den Punkt einnimmt. Außerdem enthält der *pflags* -Parameter einen Wert, der den Speicherort des angegebenen Punkts angibt. Mögliche Werte:
 
-|||
+|Wert|Beschreibung|
 |-|-|
-|Wert|Bedeutung|
 |TVHT_ABOVE|Oberhalb des Client Bereichs.|
 |TVHT_BELOW|Unterhalb des Client Bereichs.|
 |TVHT_NOWHERE|Im Client Bereich, jedoch unter dem letzten Element.|
@@ -1379,7 +1378,6 @@ Wenn diese Funktion aufgerufen wird, gibt der *PT* -Parameter die Koordinaten de
 |TVHT_ONITEMSTATEICON|Auf dem Statussymbol für ein Struktur Ansichts Element, das sich in einem benutzerdefinierten Zustand befindet.|
 |TVHT_TOLEFT|Links vom Client Bereich.|
 |TVHT_TORIGHT|Rechts vom Client Bereich.|
-|||
 
 ### <a name="example"></a>Beispiel
 

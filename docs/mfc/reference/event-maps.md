@@ -4,12 +4,12 @@ ms.date: 09/07/2019
 helpviewer_keywords:
 - event maps [MFC]
 ms.assetid: 1ed53aee-bc53-43cd-834a-6fb935c0d29b
-ms.openlocfilehash: ef8ee6b87bdeb9d5da9f34d303e0c0fda89443c5
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: aa11dbe1a0a3dc45893d1a05cda0ef1addb9e665
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87222796"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88837345"
 ---
 # <a name="event-maps"></a>Ereigniszuordnungen
 
@@ -29,7 +29,7 @@ Um Ereignis Zuordnungen zu unterstützen, stellt MFC die folgenden Makros bereit
 
 ### <a name="event-map-declaration-and-demarcation"></a>Deklaration und Abgrenzung von Ereignis Zuordnungen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[DECLARE_EVENT_MAP](#declare_event_map)|Deklariert, dass eine Ereignis Zuordnung in einer Klasse verwendet wird, um Ereignisse Ereignis auslösenden Funktionen zuzuordnen (muss in der Klassen Deklaration verwendet werden).|
 |[BEGIN_EVENT_MAP](#begin_event_map)|Beginnt die Definition einer Ereignis Zuordnung (muss in der Klassen Implementierung verwendet werden).|
@@ -37,19 +37,19 @@ Um Ereignis Zuordnungen zu unterstützen, stellt MFC die folgenden Makros bereit
 
 ### <a name="event-mapping-macros"></a>Ereignis Zuordnungs Makros
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[EVENT_CUSTOM](#event_custom)|Gibt an, welche Ereignis auslösende Funktion das angegebene Ereignis auslöst.|
 |[EVENT_CUSTOM_ID](#event_custom_id)|Gibt an, welche Ereignis auslösende Funktion das angegebene Ereignis mit einer angegebenen Dispatch-ID auslöst.|
 
 ### <a name="message-mapping-macros"></a>Nachrichten Zuordnungs Makros
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[ON_OLEVERB](#on_oleverb)|Gibt ein vom OLE-Steuerelement behandeltes benutzerdefiniertes Verb an|
 |[ON_STDOLEVERB](#on_stdoleverb)|Überschreibt eine standardmäßige Verb Zuordnung des OLE-Steuer Elements.|
 
-## <a name="declare_event_map"></a><a name="declare_event_map"></a>DECLARE_EVENT_MAP
+## <a name="declare_event_map"></a><a name="declare_event_map"></a> DECLARE_EVENT_MAP
 
 Jede `COleControl` von abgeleitete Klasse in Ihrem Programm kann eine Ereignis Zuordnung bereitstellen, um die Ereignisse anzugeben, die von Ihrem Steuerelement ausgelöst werden.
 
@@ -67,7 +67,7 @@ Weitere Informationen zu Ereignis Zuordnungen finden Sie im Artikel [ActiveX-Ste
 
 **Header** afxctl. h
 
-## <a name="begin_event_map"></a><a name="begin_event_map"></a>BEGIN_EVENT_MAP
+## <a name="begin_event_map"></a><a name="begin_event_map"></a> BEGIN_EVENT_MAP
 
 Beginnt die Definition ihrer Ereignis Zuordnung.
 
@@ -93,7 +93,7 @@ Weitere Informationen zu Ereignis Zuordnungen und dem BEGIN_EVENT_MAP-Makro find
 
 **Header** afxctl. h
 
-## <a name="end_event_map"></a><a name="end_event_map"></a>END_EVENT_MAP
+## <a name="end_event_map"></a><a name="end_event_map"></a> END_EVENT_MAP
 
 Verwenden Sie das END_EVENT_MAP-Makro, um die Definition der Ereignis Zuordnung zu beenden.
 
@@ -105,7 +105,7 @@ END_EVENT_MAP()
 
 **Header** afxctl. h
 
-## <a name="event_custom"></a><a name="event_custom"></a>EVENT_CUSTOM
+## <a name="event_custom"></a><a name="event_custom"></a> EVENT_CUSTOM
 
 Definiert einen Ereignis Zuordnungs Eintrag für ein benutzerdefiniertes Ereignis.
 
@@ -171,7 +171,7 @@ Die `VTS_` Konstanten und ihre Bedeutungen lauten wie folgt:
 
 **Header** afxctl. h
 
-## <a name="event_custom_id"></a><a name="event_custom_id"></a>EVENT_CUSTOM_ID
+## <a name="event_custom_id"></a><a name="event_custom_id"></a> EVENT_CUSTOM_ID
 
 Definiert eine Ereignis auslösende Funktion für ein benutzerdefiniertes Ereignis, das zur von *DISPID*angegebenen Dispatch-ID gehört.
 
@@ -211,7 +211,7 @@ Eine Liste der `VTS_` Konstanten finden Sie unter [EVENT_CUSTOM](#event_custom).
 
 **Header** afxctl. h
 
-## <a name="on_oleverb"></a><a name="on_oleverb"></a>ON_OLEVERB
+## <a name="on_oleverb"></a><a name="on_oleverb"></a> ON_OLEVERB
 
 Dieses Makro definiert einen Meldungs Zuordnungs Eintrag, der einer bestimmten Member-Funktion des Steuer Elements ein benutzerdefiniertes Verb zuordnet.
 
@@ -246,7 +246,7 @@ Die Werte der Parameter *lpmsg*, *hwndParent*und *lprect* werden aus den entspre
 
 **Header** Afxole. h
 
-## <a name="on_stdoleverb"></a><a name="on_stdoleverb"></a>ON_STDOLEVERB
+## <a name="on_stdoleverb"></a><a name="on_stdoleverb"></a> ON_STDOLEVERB
 
 Verwenden Sie dieses Makro, um das Standardverhalten eines Standard Verbs zu überschreiben.
 

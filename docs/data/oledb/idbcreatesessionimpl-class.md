@@ -12,12 +12,12 @@ helpviewer_keywords:
 - IDBCreateSessionImpl class
 - CreateSession method
 ms.assetid: 48c02c5c-8362-45ac-af8e-bb119cf8c5c7
-ms.openlocfilehash: cff1ca374c9489cb9c5df0dad153c4bf7a4cbc9e
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: aeeca008499ca43cdcebd008390e5cb6c5a9e63c
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80210781"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845522"
 ---
 # <a name="idbcreatesessionimpl-class"></a>IDBCreateSessionImpl-Klasse
 
@@ -41,13 +41,13 @@ Das Sitzungs Objekt.
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** atldb.h
+**Header:** „atldb.h“
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="interface-methods"></a>Schnittstellenmethoden
 
-|||
+| Name | Beschreibung |
 |-|-|
 |[CreateSession](#createsession)|Erstellt eine neue Sitzung aus dem Datenquellen Objekt und gibt die angeforderte Schnittstelle für die neu erstellte Sitzung zurück.|
 
@@ -55,7 +55,7 @@ Das Sitzungs Objekt.
 
 Eine erforderliche Schnittstelle für Datenquellen Objekte.
 
-## <a name="idbcreatesessionimplcreatesession"></a><a name="createsession"></a>Idbkreatesessionimpl:: kreatesession
+## <a name="idbcreatesessionimplcreatesession"></a><a name="createsession"></a> Idbkreatesessionimpl:: kreatesession
 
 Erstellt eine neue Sitzung aus dem Datenquellen Objekt und gibt die angeforderte Schnittstelle für die neu erstellte Sitzung zurück.
 
@@ -74,4 +74,4 @@ Weitere Informationen finden Sie in der *OLE DB Programmierer-Referenz*unter [id
 ## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
-[Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)
+[Architektur der OLE DB-Anbieter Vorlage](../../data/oledb/ole-db-provider-template-architecture.md)

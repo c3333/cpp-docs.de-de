@@ -818,12 +818,12 @@ helpviewer_keywords:
 - CWnd [MFC], WindowProc
 - CWnd [MFC], m_hWnd
 ms.assetid: 49a832ee-bc34-4126-88b3-bc1d9974f6c4
-ms.openlocfilehash: aaeee501ef9c05fb19ac7561f7ff7567bae18793
-ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
+ms.openlocfilehash: 62298872def1a6e0e262c5339d323b83ad9bbc3d
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88562557"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88837644"
 ---
 # <a name="cwnd-class"></a>CWnd-Klasse
 
@@ -839,13 +839,13 @@ class CWnd : public CCmdTarget
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[CWnd::CWnd](#cwnd)|Erstellt ein `CWnd`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[CWnd::accDoDefaultAction](#accdodefaultaction)|Wird durch das Framework aufgerufen, um die Standardaktion des Objekts auszuführen.|
 |[CWnd::accHitTest](#acchittest)|Wird durch das Framework aufgerufen, um das untergeordnete Element oder untergeordnete Objekt an einem bestimmten Punkt auf dem Bildschirm abzurufen.|
@@ -1088,7 +1088,7 @@ class CWnd : public CCmdTarget
 
 ### <a name="protected-methods"></a>Geschützte Methoden
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CWnd::Default](#default)|Ruft die standardmäßige Fensterprozedur auf, die eine standardmäßige Verarbeitung für Fenstermeldungen bereitstellt, die von einer Anwendung nicht verarbeitet werden.|
 |[CWnd::DefWindowProc](#defwindowproc)|Ruft die standardmäßige Fensterprozedur auf, die eine standardmäßige Verarbeitung für Fenstermeldungen bereitstellt, die von einer Anwendung nicht verarbeitet werden.|
@@ -1259,7 +1259,7 @@ class CWnd : public CCmdTarget
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CWnd::operator HWND](#operator_hwnd)|Nehmen Sie einen Aufruf vor, um ein Handle zu einem Fenster zu erhalten.|
 |[CWnd::operator !=](#operator_neq)|Bestimmt, ob ein Fenster nicht mit dem Fenster identisch ist, dessen Handle [m_hWnd](#m_hwnd)ist.|
@@ -1267,7 +1267,7 @@ class CWnd : public CCmdTarget
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CWnd::m_hWnd](#m_hwnd)|Gibt das HWND an, das diesem zugeordnet ist `CWnd` .|
 
@@ -5680,7 +5680,7 @@ Verwenden Sie die globale Funktion [AfxMessageBox](../../mfc/reference/cstring-f
 
 Im folgenden werden die verschiedenen System Symbole angezeigt, die in einem Meldungs Feld verwendet werden können:
 
-|||
+|Symbol|Makro|
 |-|-|
 |![Symbol "&#40;x-&#41; Abbrechen"](../../mfc/reference/media/vc364f1.gif "Symbol "&#40;x-&#41; Abbrechen"")|MB_ICONHAND, MB_ICONSTOP und MB_ICONERROR|
 |![Hilfe &#40;? &#41; Symbol](../../mfc/reference/media/vc364f2.gif "Hilfe &#40;? &#41; Symbol")|MB_ICONQUESTION|
@@ -5711,7 +5711,7 @@ Gibt Fenster Stile an, die bei der Stiländerung entfernt werden sollen.
 Gibt Fenster Stile an, die bei der Stiländerung hinzugefügt werden sollen.
 
 *nFlags*<br/>
-Flags, die an [SetWindowPos](#setwindowpos)zu übertragen sind, oder 0 (null), wenn `SetWindowPos` nicht aufgerufen werden soll. Der Standardwert beträgt 0. Eine Liste der voreingestellten Flags finden Sie im Abschnitt "Hinweise".
+Flags, die an [SetWindowPos](#setwindowpos)zu übertragen sind, oder 0 (null), wenn `SetWindowPos` nicht aufgerufen werden soll. Der Standardwert ist 0. Eine Liste der voreingestellten Flags finden Sie im Abschnitt "Hinweise".
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -5760,7 +5760,7 @@ Gibt erweiterte Stile an, die bei der Stiländerung entfernt werden sollen.
 Gibt erweiterte Stile an, die bei der Stiländerung hinzugefügt werden sollen.
 
 *nFlags*<br/>
-Flags, die an [SetWindowPos](#setwindowpos)zu übertragen sind, oder 0 (null), wenn `SetWindowPos` nicht aufgerufen werden soll. Der Standardwert beträgt 0. Eine Liste der voreingestellten Flags finden Sie im Abschnitt "Hinweise".
+Flags, die an [SetWindowPos](#setwindowpos)zu übertragen sind, oder 0 (null), wenn `SetWindowPos` nicht aufgerufen werden soll. Der Standardwert ist 0. Eine Liste der voreingestellten Flags finden Sie im Abschnitt "Hinweise".
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -6542,7 +6542,7 @@ Gibt die Wiederholungs Anzahl an.
 *nFlags*<br/>
 Gibt den Scancode, den Schlüssel Übergangs Code, den vorherigen Schlüssel Zustand und Kontext Code an, wie in der folgenden Liste gezeigt:
 
-|Wert|BESCHREIBUNG|
+|Wert|Beschreibung|
 |-----------|-----------------|
 |0-7|Scan Code (vom OEM abhängigen Wert). Niedriges Byte von hohem Wort.|
 |8|Erweiterte Taste, z. b. eine Funktionstaste oder ein Schlüssel auf der numerischen Tastatur (1, wenn es sich um einen erweiterten Schlüssel handelt, andernfalls 0).|
@@ -7401,7 +7401,7 @@ Wiederholungs Anzahl (gibt an, wie oft der Tastatur Schlag wiederholt wird, wenn
 *nFlags*<br/>
 Gibt den Scancode, den Schlüssel Übergangs Code, den vorherigen Schlüssel Zustand und Kontext Code an, wie in der folgenden Liste gezeigt:
 
-|Wert|BESCHREIBUNG|
+|Wert|Beschreibung|
 |-----------|-----------------|
 |0-7|Scan Code (vom OEM abhängigen Wert).|
 |8|Erweiterter Schlüssel, z. b. eine Funktionstaste oder ein Schlüssel auf der numerischen Tastatur (1, wenn es sich um einen erweiterten Schlüssel handelt).|
@@ -7446,7 +7446,7 @@ Wiederholungs Anzahl (gibt an, wie oft der Tastatur Schlag wiederholt wird, wenn
 *nFlags*<br/>
 Gibt den Scancode, den Schlüssel Übergangs Code, den vorherigen Schlüssel Zustand und Kontext Code an, wie in der folgenden Liste gezeigt:
 
-|Wert|BESCHREIBUNG|
+|Wert|Beschreibung|
 |-----------|-----------------|
 |0-7|Scan Code (vom OEM abhängigen Wert). Niedriges Byte von hohem Wort.|
 |8|Erweiterte Taste, z. b. eine Funktionstaste oder ein Schlüssel auf der numerischen Tastatur (1, wenn es sich um einen erweiterten Schlüssel handelt, andernfalls 0).|
@@ -7772,7 +7772,7 @@ Enthält einen Zeiger auf den ausgewählten `CMenu` . Der Zeiger kann temporär 
 
 Das höchst wertige Wort des Rückgabewerts muss einen der folgenden Befehls Codes enthalten:
 
-|Wert|BESCHREIBUNG|
+|Wert|Beschreibung|
 |-----------|-----------------|
 |0|Weist Windows an, das Zeichen zu verwerfen, das der Benutzer gedrückt hat, und erstellt ein kurzes Signal auf dem System Sprecher.|
 |1|Weist Fenster an, das aktuelle Menü zu schließen.|
@@ -7989,7 +7989,7 @@ Diese Methode empfängt die [WM_MOUSEHOVER](/windows/win32/inputdev/wm-mousehove
 
 Der *nFlags* -Parameter kann eine Kombination aus modifiziererschlüsseln sein, die in der folgenden Tabelle aufgeführt sind. Weitere Informationen finden Sie unter Informationen [zu Maus Eingaben](/windows/win32/inputdev/about-mouse-input).
 
-|Modifizierertaste|BESCHREIBUNG|
+|Modifizierertaste|Beschreibung|
 |------------------|-----------------|
 |MK_CONTROL|Die STRG-Taste wird gedrückt.|
 |MK_LBUTTON|Die linke Maustaste ist gedrückt.|
@@ -10006,7 +10006,7 @@ in Gibt die Wiederholungs Anzahl für die aktuelle Nachricht an. Der Wert gibt a
 *nFlags*\
 in Flags, die den Scancode, den erweiterten Schlüssel, den Kontext Code, den vorherigen Schlüssel Zustand und den Übergangszustand angeben, wie in der folgenden Tabelle dargestellt:
 
-| Bits markieren | BESCHREIBUNG |
+| Bits markieren | Beschreibung |
 |--|--|
 | **0-7** | Gibt den Scancode an. Der Wert hängt vom Originalgerätehersteller (OEM) ab. |
 | **8** | Gibt einen erweiterten Schlüssel an, z. b. die Rechte ALT-Taste und die STRG-Taste, die auf einer erweiterten 101-oder 102-Tastatur-Tastatur angezeigt werden. Das Flag ist 1, wenn es sich bei dem Schlüssel um einen erweiterten Schlüssel handelt. Andernfalls ist der Wert 0. |
@@ -10375,7 +10375,7 @@ Diese Methode empfängt die [WM_XBUTTONDBLCLK](/windows/win32/inputdev/wm-xbutto
 
 Der *nFlags* -Parameter kann eine Kombination aus modifiziererschlüsseln sein, die in der folgenden Tabelle aufgeführt sind. Weitere Informationen finden Sie unter Informationen [zu Maus Eingaben](/windows/win32/inputdev/about-mouse-input).
 
-|Modifizierertaste|BESCHREIBUNG|
+|Modifizierertaste|Beschreibung|
 |------------------|-----------------|
 |MK_CONTROL|Die STRG-Taste wird gedrückt.|
 |MK_LBUTTON|Die linke Maustaste ist gedrückt.|
@@ -10416,7 +10416,7 @@ Diese Methode empfängt die [WM_XBUTTONDOWN](/windows/win32/inputdev/wm-xbuttond
 
 Der *nFlags* -Parameter kann eine Kombination aus modifiziererschlüsseln sein, die in der folgenden Tabelle aufgeführt sind. Weitere Informationen finden Sie unter Informationen [zu Maus Eingaben](/windows/win32/inputdev/about-mouse-input).
 
-|Modifizierertaste|BESCHREIBUNG|
+|Modifizierertaste|Beschreibung|
 |------------------|-----------------|
 |MK_CONTROL|Die STRG-Taste wird gedrückt.|
 |MK_LBUTTON|Die linke Maustaste ist gedrückt.|
@@ -10457,7 +10457,7 @@ Diese Methode empfängt die [WM_XBUTTONUP](/windows/win32/inputdev/wm-xbuttonup)
 
 Der *nFlags* -Parameter kann eine Kombination aus modifiziererschlüsseln sein, die in der folgenden Tabelle aufgeführt sind. Weitere Informationen finden Sie unter Informationen [zu Maus Eingaben](/windows/win32/inputdev/about-mouse-input).
 
-|Modifizierertaste|BESCHREIBUNG|
+|Modifizierertaste|Beschreibung|
 |------------------|-----------------|
 |MK_CONTROL|Die STRG-Taste wird gedrückt.|
 |MK_LBUTTON|Die linke Maustaste ist gedrückt.|

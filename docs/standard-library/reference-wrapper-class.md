@@ -18,14 +18,14 @@ helpviewer_keywords:
 - std::reference_wrapper [C++], type
 - std::reference_wrapper [C++], get
 ms.assetid: 90b8ed62-e6f1-44ed-acc7-9619bd58865a
-ms.openlocfilehash: 83b68d1fdf89519df0a26acd478467fddec8b662
-ms.sourcegitcommit: 3590dc146525807500c0477d6c9c17a4a8a2d658
+ms.openlocfilehash: 623e1480bdec85120e504c8dc71b28d017c8872a
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68240272"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845067"
 ---
-# <a name="referencewrapper-class"></a>reference_wrapper-Klasse
+# <a name="reference_wrapper-class"></a>reference_wrapper-Klasse
 
 Umschließt einen Verweis.
 
@@ -47,7 +47,7 @@ class reference_wrapper
 };
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Ein `reference_wrapper<Ty>`-Wrapper kann um einen Verweis auf ein Objekt oder eine Funktion des Typs `Ty` über eine Kopie erstellt und zugewiesen werden und enthält einen Zeiger, der auf ein Objekt dieses Typs zeigt. Ein `reference_wrapper` kann zum Speichern von Verweisen in Standardcontainern und zum Übergeben von Objekten durch einen Verweis auf `std::bind` verwendet werden.
 
@@ -59,31 +59,31 @@ Die Hilfsfunktionen [std::ref](functional-functions.md#ref) und [std::cref](func
 
 ### <a name="constructors"></a>Konstruktoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[reference_wrapper](#reference_wrapper)|Erstellt ein Objekt vom Typ `reference_wrapper`.|
 
-### <a name="typedefs"></a>Typedefs
+### <a name="typedefs"></a>TypeDefs
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[result_type](#result_type)|Der schwache Ergebnistyp des umschlossenen Verweises.|
-|[Typ](#type)|Der Typ des umschlossenen Verweises.|
+|[type](#type)|Der Typ des umschlossenen Verweises.|
 
-### <a name="functions"></a>Funktionen
+### <a name="functions"></a>Functions
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[get](#get)|Ruft den umschlossenen Verweis ab.|
 
 ### <a name="operators"></a>Operatoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[Operator Ty&amp;](#op_ty_amp)|Ruft einen Zeiger auf den umschlossenen Verweis ab.|
-|[Operator()](#op_call)|Ruft den umschlossenen Verweis auf.|
+|[Operator ()](#op_call)|Ruft den umschlossenen Verweis auf.|
 
-## <a name="get"></a> Erhalten
+## <a name="get"></a><a name="get"></a> Erhalten
 
 Ruft den umschlossenen Verweis ab.
 
@@ -91,7 +91,7 @@ Ruft den umschlossenen Verweis ab.
 Ty& get() const noexcept;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Memberfunktion gibt den umschlossenen Verweis zurück.
 
@@ -122,7 +122,7 @@ rwi = 1
 i = -1
 ```
 
-## <a name="op_ty_amp"></a> Operator Ty&amp;
+## <a name="operator-tyamp"></a><a name="op_ty_amp"></a> Operator Ty&amp;
 
 Ruft den umschlossenen Verweis auf.
 
@@ -130,7 +130,7 @@ Ruft den umschlossenen Verweis auf.
 operator Ty&() const noexcept;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Memberoperator gibt `*ptr`zurück.
 
@@ -158,7 +158,7 @@ i = 1
 (int)rwi = 1
 ```
 
-## <a name="op_call"></a> Operator()
+## <a name="operator"></a><a name="op_call"></a> Operator ()
 
 Ruft den umschlossenen Verweis auf.
 
@@ -169,13 +169,13 @@ auto operator()(Types&&... args);
 
 ### <a name="parameters"></a>Parameter
 
-*Typen*\
+*Solche*\
 Die Argumentlisttypen.
 
 *args*\
 Die Argumentliste.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Das Vorlagenmember `operator()` gibt `std::invoke(get(), std::forward<Types>(args)...)` zurück.
 
@@ -204,7 +204,7 @@ int main() {
 rwi(3) = -3
 ```
 
-## <a name="reference_wrapper"></a> reference_wrapper
+## <a name="reference_wrapper"></a><a name="reference_wrapper"></a> reference_wrapper
 
 Erstellt ein Objekt vom Typ `reference_wrapper`.
 
@@ -214,13 +214,13 @@ reference_wrapper(Ty& val) noexcept;
 
 ### <a name="parameters"></a>Parameter
 
-*Ty*\
+*Genossenschaft*\
 Der zu umschließende Typ.
 
-*val*\
+*ster*\
 Der zu umschließende Wert.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Konstruktor legt den gespeicherten Wert `ptr` auf `&val` fest.
 
@@ -255,7 +255,7 @@ rwi = 1
 i = -1
 ```
 
-## <a name="result_type"></a> RESULT_TYPE
+## <a name="result_type"></a><a name="result_type"></a> result_type
 
 Der schwache Ergebnistyp des umschlossenen Verweises.
 
@@ -263,7 +263,7 @@ Der schwache Ergebnistyp des umschlossenen Verweises.
 typedef R result_type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die `result_type`-Typedefinition ist ein Synonym für den schwachen Ergebnistyp einer umschlossenen Funktion. Diese Typdefinition gilt nur für Funktionstypen.
 
@@ -294,7 +294,7 @@ int main() {
 val = -3
 ```
 
-## <a name="type"></a> Typ
+## <a name="type"></a><a name="type"></a>-Typ
 
 Der Typ des umschlossenen Verweises.
 
@@ -302,7 +302,7 @@ Der Typ des umschlossenen Verweises.
 typedef Ty type;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Typedef stellt ein Synonym für das Vorlagenargument `Ty`dar.
 

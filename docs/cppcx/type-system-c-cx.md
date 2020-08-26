@@ -2,12 +2,12 @@
 title: Typsystem (C++/CX)
 ms.date: 02/03/2017
 ms.assetid: b67bee8a-b526-4872-969e-ef22724e88fe
-ms.openlocfilehash: b9d26f0fc79b2dc5000be6e6a06f51efd3f0b53f
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 242fbde1774ef4537eedce26cafff6b8625ac2a5
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87221548"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845145"
 ---
 # <a name="type-system-ccx"></a>Typsystem (C++/CX)
 
@@ -35,12 +35,11 @@ Die Metadaten in der WinMD-Datei stellen die veröffentlichte Oberfläche des Co
 
 Ob ein Typ oder eine Methode in den Metadaten sichtbar ist, hängt davon ab, welche Zugriffsmodifizierer auf diesen Typ oder diese Methode angewendet werden. Um sichtbar zu sein, muss ein Typ sowohl in einem Namespace als auch als öffentlich deklariert werden. Eine nicht öffentliche Verweisklasse ist als interner Hilfsprogrammtyp im Code zugelassen, wird jedoch nicht in den Metadaten angezeigt. Es sind jedoch auch in einer öffentlichen Verweisklasse nicht unbedingt alle Member sichtbar. In der folgenden Tabelle wird die Beziehung zwischen C++-zugriffsspezifiziererbezeichgern in einer öffentlichen Verweis Klasse und Windows-Runtime Sichtbarkeit von Metadaten aufgelistet
 
-|||
-|-|-|
-|**In Metadaten veröffentlicht**|**Nicht in Metadaten veröffentlicht**|
-|öffentlich|private|
-|protected|Interner Pool (internal)|
-|public protected|private protected|
+| In Metadaten veröffentlicht | Nicht in Metadaten veröffentlicht |
+|--|--|
+| öffentlich | private |
+| protected | internal |
+| public protected | private protected |
 
 Mit dem **Objektkatalog** können Sie den Inhalt von WinMD-Dateien anzeigen. Die Windows-Runtime Komponenten, die in Windows enthalten sind, befinden sich in der Datei Windows. winmd. Die default. winmd-Datei enthält die grundlegenden Typen, die in C++/CX verwendet werden, und Platform. winmd enthält zusätzliche Typen aus dem Platform-Namespace. Standardmäßig sind diese drei winmd-Dateien in jedem C++-Projekt für universelle Windows-Plattform-Apps enthalten.
 
@@ -169,7 +168,7 @@ Eine geschachtelte Variable ist ein Werttyp, der in einem Referenztyp in Situati
 
 Weitere Informationen finden Sie unter [Boxing](../cppcx/boxing-c-cx.md)definiert sind.
 
-### <a name="attributes"></a>Attribute
+### <a name="attributes"></a>Attributes
 
 Ein Attribut ist ein Metadatenwert, der auf beliebige Windows-Runtime Typen oder Typmember angewendet und zur Laufzeit überprüft werden kann. Der-Windows-Runtime definiert einen Satz allgemeiner Attribute im- `Windows::Foundation::Metadata` Namespace. Benutzerdefinierte Attribute in öffentlichen Schnittstellen werden von Windows-Runtime in dieser Version nicht unterstützt.
 

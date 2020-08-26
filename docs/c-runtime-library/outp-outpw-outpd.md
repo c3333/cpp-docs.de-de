@@ -41,12 +41,12 @@ helpviewer_keywords:
 - _outpw function
 - _outp function
 ms.assetid: c200fe22-41f6-46fd-b0be-ebb805b35181
-ms.openlocfilehash: ceaaefbbe6f9debfb5ac8e1e8f5f3d1bbb36c8a8
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: c66710fe31b5a657a4976bea7f0aa52aac3e3825
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86404059"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88837085"
 ---
 # <a name="outp-outpw-_outp-_outpw-_outpd"></a>outp, outpw, _outp _outpw, _outpd
 
@@ -91,7 +91,7 @@ Die Funktionen `_outp`, `_outpw`und `_outpd` schreiben in den angegebenen Ausgab
 
 Da diese Funktionen direkt in einen e/a-Port schreiben, können Sie nicht im Benutzermodus-Windows-Code verwendet werden.
 
-Informationen zur Verwendung von I/O-Ports im Windows-Betriebssystem finden Sie unter [serielle Kommunikation](https://docs.microsoft.com/previous-versions/ff802693(v=msdn.10)).
+Informationen zur Verwendung von I/O-Ports im Windows-Betriebssystem finden Sie unter [serielle Kommunikation](/previous-versions/ff802693(v=msdn.10)).
 
 Die `outp` -und- `outpw` Namen sind älter, als veraltet markierte Namen für die `_outp` -und- `_outpw` Funktionen. Weitere Informationen finden Sie unter [POSIX-Funktionsnamen](../error-messages/compiler-warnings/compiler-warning-level-3-c4996.md#posix-function-names).
 

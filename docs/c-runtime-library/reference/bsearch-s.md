@@ -28,12 +28,12 @@ helpviewer_keywords:
 - arrays [CRT], binary search
 - bsearch_s function
 ms.assetid: d5690d5e-6be3-4f1d-aa0b-5ca6dbded276
-ms.openlocfilehash: 91b015eb9005a9b447cdd9d74a38d7169bd90a73
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 20b4c482210f480730f7da4c89549d207ea6ca7d
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82913396"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845171"
 ---
 # <a name="bsearch_s"></a>bsearch_s
 
@@ -54,13 +54,13 @@ void *bsearch_s(
 
 ### <a name="parameters"></a>Parameter
 
-*key*\
+*wichtigen*\
 Zeiger auf den Schlüssel, nach dem gesucht werden soll.
 
 *sock*\
 Ein Zeiger auf die Basis der Suchdaten.
 
-*number*\
+*einigen*\
 Anzahl der Elemente.
 
 *Breite*\
@@ -80,15 +80,14 @@ Wenn ungültige Parameter an die Funktion übergeben werden, ruft Sie den Handle
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|||||||
+|*key*|*base*|*vergleichbar*|*Zahl*|*width*|**`errno`**|
 |-|-|-|-|-|-|
-|*key*|*base*|*vergleichbar*|*Zahl*|*width*|**errno**|
-|**Normal**|any|any|any|any|**Eingabe**|
-|any|**Normal**|any|!= 0|any|**Eingabe**|
+|**NULL**|any|any|any|any|**Eingabe**|
+|any|**NULL**|any|!= 0|any|**Eingabe**|
 |any|any|any|any|= 0|**Eingabe**|
-|any|any|**Normal**|ein|any|**Eingabe**|
+|any|any|**NULL**|ein|any|**Eingabe**|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **bsearch_s** -Funktion führt eine binäre Suche eines sortierten Arrays aus *Zahlen* Elementen durch, wobei jede *Breite* Byte groß ist. Der *Basiswert* ist ein Zeiger auf die Basis des zu durchsuchenden Arrays, und *Key* ist der Wert, der gesucht wird. Der *Compare* -Parameter ist ein Zeiger auf eine vom Benutzer bereitgestellte Routine, die den angeforderten Schlüssel mit einem Array Element vergleicht und einen der folgenden Werte zurückgibt, die die zugehörige Beziehung angeben:
 
@@ -104,7 +103,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**bsearch_s**|\<stdlib.h> und \<search.h>|
 

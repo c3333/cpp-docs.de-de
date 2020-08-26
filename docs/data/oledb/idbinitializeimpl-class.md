@@ -38,12 +38,12 @@ helpviewer_keywords:
 - m_dwStatus
 - m_pCUtlPropInfo
 ms.assetid: e4182f81-0443-44f5-a0d3-e7e075d6f883
-ms.openlocfilehash: 511d67586a7adc2b26cc6acbdf39beff78f9c38a
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: aff02e812d2806201a08164aeb4a8ef290550725
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87218324"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845535"
 ---
 # <a name="idbinitializeimpl-class"></a>IDBInitializeImpl-Klasse
 
@@ -69,20 +69,20 @@ Die von abgeleitete Klasse `IDBInitializeImpl` .
 
 ### <a name="methods"></a>Methoden
 
-|||
+| Name | Beschreibung |
 |-|-|
 |[IDBInitializeImpl](#idbinitializeimpl)|Der Konstruktor.|
 
 ### <a name="interface-methods"></a>Schnittstellenmethoden
 
-|||
+| Name | Beschreibung |
 |-|-|
 |[Initialisieren](#initialize)|Startet den Anbieter.|
 |[Uninitialize](#uninitialize)|Beendet den Anbieter.|
 
 ### <a name="data-members"></a>Datenelemente
 
-|||
+| Name | Beschreibung |
 |-|-|
 |[m_dwStatus](#dwstatus)|Datenquellenflags.|
 |[m_pCUtlPropInfo](#pcutlpropinfo)|Ein Zeiger auf die Implementierung von DB-Eigenschaften Informationen.|
@@ -91,7 +91,7 @@ Die von abgeleitete Klasse `IDBInitializeImpl` .
 
 Eine erforderliche Schnittstelle für Datenquellen Objekte und eine optionale Schnittstelle für Enumeratoren.
 
-## <a name="idbinitializeimplidbinitializeimpl"></a><a name="idbinitializeimpl"></a>Idbinitializeimpl:: idbinitializeimpl
+## <a name="idbinitializeimplidbinitializeimpl"></a><a name="idbinitializeimpl"></a> Idbinitializeimpl:: idbinitializeimpl
 
 Der Konstruktor.
 
@@ -105,7 +105,7 @@ IDBInitializeImpl();
 
 Initialisiert alle Datenmember.
 
-## <a name="idbinitializeimplinitialize"></a><a name="initialize"></a>Idbinitializeimpl:: Initialize
+## <a name="idbinitializeimplinitialize"></a><a name="initialize"></a> Idbinitializeimpl:: Initialize
 
 Initialisiert das Datenquellen Objekt, indem seine Eigenschafts Unterstützung vorbereitet wird.
 
@@ -119,7 +119,7 @@ STDMETHOD(Initialize)(void);
 
 Siehe [IDBInitialize:: Initialize](/previous-versions/windows/desktop/ms718026(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-## <a name="idbinitializeimpluninitialize"></a><a name="uninitialize"></a>Idbinitializeimpl:: Uninitialize
+## <a name="idbinitializeimpluninitialize"></a><a name="uninitialize"></a> Idbinitializeimpl:: Uninitialize
 
 Fügt das Datenquellen Objekt in einen nicht initialisierten Zustand ein, indem interne Ressourcen wie z. b. die Eigenschafts Unterstützung freigegeben werden.
 
@@ -133,7 +133,7 @@ STDMETHOD(Uninitialize)(void);
 
 Weitere Informationen finden Sie unter [IDBInitialize:: Uninitialize](/previous-versions/windows/desktop/ms719648(v=vs.85)) in der *OLE DB Programmierer-Referenz*.
 
-## <a name="idbinitializeimplm_dwstatus"></a><a name="dwstatus"></a>Idbinitializeimpl:: m_dwStatus
+## <a name="idbinitializeimplm_dwstatus"></a><a name="dwstatus"></a> Idbinitializeimpl:: m_dwStatus
 
 Datenquellenflags.
 
@@ -155,13 +155,13 @@ enum DATASOURCE_FLAGS {
 };
 ```
 
-|||
+| Wert | Beschreibung |
 |-|-|
 |`DSF_MASK_INIT`|Eine Maske, die die Wiederherstellung des nicht initialisierten Zustands ermöglicht.|
 |`DSF_PERSIST_DIRTY`|Legen Sie fest, ob das Datenquellen Objekt Persistenz erfordert (d. h., wenn Änderungen vorgenommen wurden).|
 |`DSF_INITIALIZED`|Legen Sie fest, ob die Datenquelle initialisiert wurde.|
 
-## <a name="idbinitializeimplm_pcutlpropinfo"></a><a name="pcutlpropinfo"></a>Idbinitializeimpl:: m_pCUtlPropInfo
+## <a name="idbinitializeimplm_pcutlpropinfo"></a><a name="pcutlpropinfo"></a> Idbinitializeimpl:: m_pCUtlPropInfo
 
 Ein Zeiger auf das Implementierungs Objekt für Informationen zu Daten Bank Eigenschaften.
 

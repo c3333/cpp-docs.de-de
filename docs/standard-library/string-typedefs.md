@@ -7,19 +7,19 @@ f1_keywords:
 - string/std::u32string
 - string/std::wstring
 ms.assetid: fdca01e9-f2f1-4b59-abda-0093d760b3cc
-ms.openlocfilehash: 8e662e4c13012f31014817489b61ee3ed6bc36e0
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 083209f0121ac38d8adf81975577257e4e23a393
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87202297"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845431"
 ---
 # <a name="ltstringgt-typedefs"></a>&lt;string&gt;-Typdefinitionen
 
-||||
-|-|-|-|
-|[string](#string)|[u16string](#u16string)|[u32string](#u32string)|
-|[wstring](#wstring)|
+[Schnür](#string)\
+[u16string](#u16string)\
+[u32string](#u32string)\
+[wstring](#wstring)
 
 ## <a name="string"></a><a name="string"></a>-Zeichenfolge
 
@@ -43,7 +43,7 @@ basic_string<char> str("");
 
 Eine Liste der String-Konstruktoren finden Sie unter [basic_string::basic_string](../standard-library/basic-string-class.md#basic_string).
 
-## <a name="u16string"></a><a name="u16string"></a>u16string
+## <a name="u16string"></a><a name="u16string"></a> u16string
 
 Ein Typ, der eine Spezialisierung der Klassen Vorlage [basic_string](../standard-library/basic-string-class.md) mit Elementen des Typs beschreibt **`char16_t`** .
 
@@ -57,7 +57,7 @@ typedef basic_string<char16_t, char_traits<char16_t>, allocator<char16_t>> u16st
 
 Eine Liste der String-Konstruktoren finden Sie unter [basic_string::basic_string](../standard-library/basic-string-class.md#basic_string).
 
-## <a name="u32string"></a><a name="u32string"></a>u32string
+## <a name="u32string"></a><a name="u32string"></a> u32string
 
 Ein Typ, der eine Spezialisierung der Klassen Vorlage [basic_string](../standard-library/basic-string-class.md) mit Elementen des Typs beschreibt **`char32_t`** .
 
@@ -71,7 +71,7 @@ typedef basic_string<char32_t, char_traits<char32_t>, allocator<char32_t>> u32st
 
 Eine Liste der String-Konstruktoren finden Sie unter [basic_string::basic_string](../standard-library/basic-string-class.md#basic_string).
 
-## <a name="wstring"></a><a name="wstring"></a>wstring
+## <a name="wstring"></a><a name="wstring"></a> wstring
 
 Ein Typ, der eine Spezialisierung der Klassen Vorlage [basic_string](../standard-library/basic-string-class.md) mit Elementen des Typs beschreibt **`wchar_t`** .
 

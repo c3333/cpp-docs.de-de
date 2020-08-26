@@ -108,12 +108,12 @@ helpviewer_keywords:
 - std::ios_base [C++], width
 - std::ios_base [C++], xalloc
 ms.assetid: 0f9e0abc-f70f-49bc-aa1f-003859f56cfe
-ms.openlocfilehash: e66b3bd9f5e8058a4724746ba9ec5abd14cdae3e
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: da7c8eee2653a34035f39fe272378ae63165bfc2
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87222462"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845496"
 ---
 # <a name="ios_base-class"></a>ios_base-Klasse
 
@@ -139,13 +139,13 @@ Ein Objekt der Klasse ios_base speichert auch streamstatusinformationen in einem
 
 ### <a name="constructors"></a>Konstruktoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[ios_base](#ios_base)|Erstellt `ios_base`-Objekte.|
 
 ### <a name="typedefs"></a>TypeDefs
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[event_callback](#event_callback)|Beschreibt eine Funktion, die an [register_call](#register_callback) übergeben wird.|
 |[`fmtflags`](#fmtflags)|Konstanten, mit denen das Aussehen der Ausgabe angegeben wird.|
@@ -155,13 +155,13 @@ Ein Objekt der Klasse ios_base speichert auch streamstatusinformationen in einem
 
 ### <a name="enums"></a>Enumerationen
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[event](#event)|Gibt Ereignistypen an.|
 
 ### <a name="constants"></a>Konstanten
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[adjustfield](#fmtflags)|Eine Bitmaske, die als `internal` &#124; `left` &#124; `right` definiert ist.|
 |[app](#openmode)|Gibt an, dass vor jedem Einfügevorgang bis zum Ende eines Streams gesucht werden soll.|
@@ -197,7 +197,7 @@ Ein Objekt der Klasse ios_base speichert auch streamstatusinformationen in einem
 
 ### <a name="functions"></a>Functions
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[Fehler](#failure)|Die Member-Klasse dient als Basisklasse für alle Ausnahmen, die von der Element Funktion [Clear](../standard-library/basic-ios-class.md#clear) in class template [basic_ios](../standard-library/basic-ios-class.md)ausgelöst werden.|
 |[flags](#flags)|Legt die aktuellen Flageinstellungen fest oder gibt sie zurück.|
@@ -216,7 +216,7 @@ Ein Objekt der Klasse ios_base speichert auch streamstatusinformationen in einem
 
 ### <a name="operators"></a>Operatoren
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[Operator =](#op_eq)|Der Zuweisungsoperator für `ios_base`-Objekte.|
 
@@ -251,7 +251,7 @@ Der Typ ist ein Aufzählungstyp, der ein Objekt beschreibt, das ein Rückruferei
 
 Ein Beispiel finden Sie unter [register_callback](#register_callback).
 
-## <a name="event_callback"></a><a name="event_callback"></a>event_callback
+## <a name="event_callback"></a><a name="event_callback"></a> event_callback
 
 Beschreibt eine Funktion, die an [register_call](#register_callback) übergeben wird.
 
@@ -281,7 +281,7 @@ Der Typ definiert einen Zeiger auf eine Funktion, die mit [register_callback](#r
 
 Ein Beispiel, in dem `event_callback` verwendet wird, finden Sie unter [register_call](#register_callback).
 
-## <a name="failure"></a><a name="failure"></a>Fehler
+## <a name="failure"></a><a name="failure"></a> Fehler
 
 Die Klasse `failure` definiert die Basisklasse für alle Typen von Objekten, die von Funktionen in der `iostreams`-Bibliothek als Ausnahmen ausgelöst wurden, um Fehler zu melden, die während der Streampuffervorgänge erkannt wurden.
 
@@ -333,7 +333,7 @@ int main ( )
 Caught an exception: ios_base::failbit set
 ```
 
-## <a name="flags"></a><a name="flags"></a>fahren
+## <a name="flags"></a><a name="flags"></a> fahren
 
 Legt die aktuellen Flageinstellungen fest oder gibt sie zurück.
 
@@ -379,7 +379,7 @@ int main ( )
 16896
 ```
 
-## <a name="fmtflags"></a><a name="fmtflags"></a>Fmtflags
+## <a name="fmtflags"></a><a name="fmtflags"></a> Fmtflags
 
 Konstanten, mit denen das Aussehen der Ausgabe angegeben wird.
 
@@ -455,7 +455,7 @@ Zusätzlich gibt es weitere nützliche Werte:
 
 Beispiele für Funktionen, die diese Formatflags ändern, finden Sie unter [\<iomanip>](../standard-library/iomanip.md) .
 
-## <a name="getloc"></a><a name="getloc"></a>getloc
+## <a name="getloc"></a><a name="getloc"></a> getloc
 
 Gibt das gespeicherte Gebietsschemaobjekt zurück.
 
@@ -485,7 +485,7 @@ int main( )
 C
 ```
 
-## <a name="imbue"></a><a name="imbue"></a>imbue
+## <a name="imbue"></a><a name="imbue"></a> imbue
 
 Ändert das Gebietsschema.
 
@@ -510,7 +510,7 @@ Die Member-Funktion speichert *_Loc* im locale-Objekt und meldet dann das Rückr
 
 Ein Beispiel finden Sie unter [basic_ios::imbue](../standard-library/basic-ios-class.md#imbue).
 
-## <a name="init"></a><a name="init"></a>Init
+## <a name="init"></a><a name="init"></a> Init
 
 Erstellt die Standardobjekte, wenn Sie erstellt werden `iostream` .
 
@@ -522,7 +522,7 @@ class Init { };
 
 Die-Klasse beschreibt ein Objekt, dessen Konstruktion sicherstellt, dass die Standard `iostream` Objekte ordnungsgemäß erstellt werden, sogar vor der Ausführung eines Konstruktors für ein beliebiges statisches Objekt.
 
-## <a name="ios_base"></a><a name="ios_base"></a>ios_base
+## <a name="ios_base"></a><a name="ios_base"></a> ios_base
 
 Konstruiert ios_base-Objekte.
 
@@ -534,7 +534,7 @@ ios_base();
 
 Der (geschützte) Konstruktor führt keine Aktion aus. Ein späterer Rückruf von `basic_ios::` [Init](../standard-library/basic-ios-class.md#init) muss das Objekt initialisieren, bevor es sicher zerstört werden kann. Daher ist die einzige sichere Verwendung für Class ios_base als Basisklasse für Klassen Vorlagen [basic_ios](../standard-library/basic-ios-class.md).
 
-## <a name="iostate"></a><a name="iostate"></a>iostate
+## <a name="iostate"></a><a name="iostate"></a> iostate
 
 Der Typ der Konstanten, die den Zustand eines Streams beschreiben.
 
@@ -562,7 +562,7 @@ Der Typ ist ein Bitmaskentyp, der ein Objekt beschreibt, das Informationen zum S
 
 Außerdem ist ein nützlicher Wert `goodbit` , bei dem keine der zuvor erwähnten Bits festgelegt ist ( `goodbit` garantiert NULL ist).
 
-## <a name="iword"></a><a name="iword"></a>iword
+## <a name="iword"></a><a name="iword"></a> iword
 
 Weist einen als `iword` zu speichernden Wert zu.
 
@@ -587,7 +587,7 @@ Zum Abrufen eines eindeutigen Indexes, der für alle Objekte vom Typ verwendet `
 
 [`xalloc`](#xalloc)Ein Beispiel für die Verwendung von finden Sie unter `iword` .
 
-## <a name="openmode"></a><a name="openmode"></a>OpenMode
+## <a name="openmode"></a><a name="openmode"></a> OpenMode
 
 Beschreibt, wie mit einem Stream interagiert wird.
 
@@ -637,7 +637,7 @@ int main ( )
 }
 ```
 
-## <a name="operator"></a><a name="op_eq"></a>Operator =
+## <a name="operator"></a><a name="op_eq"></a> Operator =
 
 Der Zuweisungsoperator für ios_base-Objekte.
 
@@ -648,7 +648,7 @@ ios_base& operator=(const ios_base& right);
 ### <a name="parameters"></a>Parameter
 
 *Richting*\
-Ein Objekt des Typs `ios_base`.
+Ein Objekt vom Typ `ios_base`.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -660,7 +660,7 @@ Der Operator kopiert die gespeicherte Formatinformation und erstellt gleichzeiti
 
 Dieser Operator wird nur von `ios_base` abgeleiteten Klassen verwendet.
 
-## <a name="precision"></a><a name="precision"></a>präziser
+## <a name="precision"></a><a name="precision"></a> präziser
 
 Gibt die Anzahl der anzuzeigenden Ziffern in einer Gleitkommazahl an.
 
@@ -706,7 +706,7 @@ int main( )
 31.312
 ```
 
-## <a name="pword"></a><a name="pword"></a>pword
+## <a name="pword"></a><a name="pword"></a> pword
 
 Weist einen als `pword` zu speichernden Wert zu.
 
@@ -731,7 +731,7 @@ Zum Abrufen eines eindeutigen Indexes, der für alle Objekte vom Typ verwendet `
 
 Unter [`xalloc`](#xalloc) finden Sie ein Beispiel für die Verwendung von `pword`.
 
-## <a name="register_callback"></a><a name="register_callback"></a>register_callback
+## <a name="register_callback"></a><a name="register_callback"></a> register_callback
 
 Gibt eine Rückruffunktion an.
 
@@ -839,7 +839,7 @@ in callback2
 an erase event
 ```
 
-## <a name="seekdir"></a><a name="seekdir"></a>seekdir
+## <a name="seekdir"></a><a name="seekdir"></a> seekdir
 
 Gibt den Startpunkt für Offsetvorgänge an.
 
@@ -888,7 +888,7 @@ int main ( )
 }
 ```
 
-## <a name="setf"></a><a name="setf"></a>Setf
+## <a name="setf"></a><a name="setf"></a> Setf
 
 Legt die angegebenen Flags fest.
 
@@ -942,7 +942,7 @@ int main( )
 }
 ```
 
-## <a name="sync_with_stdio"></a><a name="sync_with_stdio"></a>sync_with_stdio
+## <a name="sync_with_stdio"></a><a name="sync_with_stdio"></a> sync_with_stdio
 
 Stellt sicher, dass `iostream` und C-Lauf Zeit Bibliotheks Vorgänge in der Reihenfolge auftreten, in der Sie im Quellcode angezeigt werden.
 
@@ -965,7 +965,7 @@ Vorherige Einstellung für diese Funktion.
 
 Die statische Member-Funktion speichert ein `stdio` synchronisierungsflag, das anfänglich ist **`true`** . Wenn **`true`** , stellt dieses Flag sicher, dass Vorgänge in derselben Datei zwischen den [`iostreams`](../standard-library/iostreams-conventions.md) Funktionen und den in der C++-Standard Bibliothek definierten Funktionen ordnungsgemäß synchronisiert werden. Andernfalls ist die Synchronisierung möglicherweise nicht gewährleistet, aber die Leistung kann verbessert werden. Die Funktion speichert *_Sync* im `stdio` synchronisierungsflag und gibt ihren vorherigen gespeicherten Wert zurück. Sie können Sie nur zuverlässig anrufen, bevor Sie Vorgänge für die Standardstreams durchführen.
 
-## <a name="unsetf"></a><a name="unsetf"></a>Unsetf
+## <a name="unsetf"></a><a name="unsetf"></a> Unsetf
 
 Bewirkt, dass die angegebenen Flags deaktiviert werden.
 
@@ -988,7 +988,7 @@ Die Member-Funktion ruft effektiv [Flags](#flags)( `~` *_Mask* **& Flags**) auf 
 
 Unter [ios_base:: setf](#setf) finden Sie ein Beispiel für die Verwendung von `unsetf` .
 
-## <a name="width"></a><a name="width"></a>Breite
+## <a name="width"></a><a name="width"></a> Breite
 
 Legt die Länge des Ausgabestreams fest.
 
@@ -1033,7 +1033,7 @@ int main( ) {
 0
 ```
 
-## <a name="xalloc"></a><a name="xalloc"></a>xalloc
+## <a name="xalloc"></a><a name="xalloc"></a> xalloc
 
 Gibt an, dass eine Variable Teil des Streams ist.
 

@@ -82,12 +82,12 @@ helpviewer_keywords:
 - std::regex_constants [C++], optimize
 - std::regex_constants [C++], collate
 ms.assetid: 4a69c0ba-c46d-46e4-bd29-6f4efb805f26
-ms.openlocfilehash: ee016e5cee1bde94a49a1b339d6910d60db4cea1
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 422d29f16220ae2c2db93c9f84410316bf08f5e7
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81331959"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845054"
 ---
 # <a name="regex_constants-namespace"></a>regex_constants-Namespace
 
@@ -107,19 +107,19 @@ namespace regex_constants {
 
 Der Namespace `regex_constants` kapselt mehrere Flagtypen und ihre zugeordneten Flagwerte.
 
-|||
+|Name|Beschreibung|
 |-|-|
 |[error_type](#error_type)|Flags für die Berichterstellung bei Syntaxfehlern für reguläre Ausdrücke.|
 |[match_flag_type](#match_flag_type)|Flags für Optionen zum Vergleichen regulärer Ausdrücke.|
 |[syntax_option_type](#syntax_option_type)|Flags zum Auswählen von Syntaxoptionen.|
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** \<regex >
+**Header:**\<regex>
 
 **Namespace:** std
 
-## <a name="regex_constantserror_type"></a><a name="error_type"></a>regex_constants::error_type
+## <a name="regex_constantserror_type"></a><a name="error_type"></a> regex_constants:: error_type
 
 Flags für die Berichterstellung bei Syntaxfehlern für reguläre Ausdrücke.
 
@@ -180,7 +180,7 @@ Der Typ ist ein enumerierter Typ, der ein Objekt beschreibt, das Fehlerflags auf
 
 `error_backref`: Der Ausdruck enthielt einen ungültigen Rückverweis.
 
-## <a name="regex_constantsmatch_flag_type"></a><a name="match_flag_type"></a>regex_constants::match_flag_type
+## <a name="regex_constantsmatch_flag_type"></a><a name="match_flag_type"></a> regex_constants:: match_flag_type
 
 Flags für Optionen zum Vergleichen regulärer Ausdrücke.
 
@@ -238,7 +238,7 @@ Formatflags:
 
 `format_first_only`: nach der ersten Übereinstimmung nicht nach weiteren Übereinstimmungen suchen
 
-## <a name="regex_constantssyntax_option_type"></a><a name="syntax_option_type"></a>regex_constants::syntax_option_type
+## <a name="regex_constantssyntax_option_type"></a><a name="syntax_option_type"></a> regex_constants:: syntax_option_type
 
 Flags zum Auswählen von Syntaxoptionen.
 
@@ -288,13 +288,13 @@ Es gibt folgende Syntaxmodifikatoren:
 
 `collate`: für Übereinstimmungen soll Gebietsschema beachtet werden
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<regex>](../standard-library/regex.md)\
 [regex_error-Klasse](../standard-library/regex-error-class.md)\
 [\<regex> Funktionen](../standard-library/regex-functions.md)\
 [regex_iterator-Klasse](../standard-library/regex-iterator-class.md)\
-[\<regex> Operatoren](../standard-library/regex-operators.md)\
+[\<regex> Veranstalter](../standard-library/regex-operators.md)\
 [regex_token_iterator-Klasse](../standard-library/regex-token-iterator-class.md)\
 [regex_traits-Klasse](../standard-library/regex-traits-class.md)\
-[\<regex> typedefs](../standard-library/regex-typedefs.md)
+[\<regex> Typedefs](../standard-library/regex-typedefs.md)

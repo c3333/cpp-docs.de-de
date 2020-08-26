@@ -14,12 +14,12 @@ helpviewer_keywords:
 - IConvertTypeImpl class
 - CanConvert method
 ms.assetid: 7f81e79e-7d3f-4cbe-b93c-d632a94b15f6
-ms.openlocfilehash: e3b76be2a1f1edfcdc1139a3dd396835923c2b4a
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: b4309e794a83e6c13dcf0051791cd1762a6d5012
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80210690"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845561"
 ---
 # <a name="iconverttypeimpl-class"></a>IConvertTypeImpl-Klasse
 
@@ -36,17 +36,17 @@ class ATL_NO_VTABLE IConvertTypeImpl
 ### <a name="parameters"></a>Parameter
 
 *T*<br/>
-Die von `IConvertTypeImpl`abgeleitete Klasse.
+Die von abgeleitete Klasse `IConvertTypeImpl` .
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header:** atldb.h
+**Header:** „atldb.h“
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 ### <a name="interface-methods"></a>Schnittstellenmethoden
 
-|||
+| Name | Beschreibung |
 |-|-|
 |[CanConvert](#canconvert)|Enthält Informationen zur Verfügbarkeit von Typkonvertierungen in einem Befehl oder einem Rowset.|
 
@@ -54,7 +54,7 @@ Die von `IConvertTypeImpl`abgeleitete Klasse.
 
 Diese Schnittstelle ist für Befehle, Rowsets und Indexrowsets obligatorisch. `IConvertTypeImpl` implementiert die-Schnittstelle durch Delegieren an das von OLE DB bereitgestellte Konvertierungs Objekt.
 
-## <a name="iconverttypeimplcanconvert"></a><a name="canconvert"></a>Iconverttypeimpl:: CanConvert
+## <a name="iconverttypeimplcanconvert"></a><a name="canconvert"></a> Iconverttypeimpl:: CanConvert
 
 Enthält Informationen zur Verfügbarkeit von Typkonvertierungen in einem Befehl oder einem Rowset.
 
@@ -72,9 +72,9 @@ Weitere Informationen finden Sie unter [IConvertType:: CanConvert](/previous-ver
 
 ### <a name="remarks"></a>Bemerkungen
 
-Verwendet OLE DB Datenkonvertierung in `MSADC.DLL`.
+Verwendet OLE DB Datenkonvertierung in `MSADC.DLL` .
 
 ## <a name="see-also"></a>Weitere Informationen
 
 [OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
-[Architektur von OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-template-architecture.md)
+[Architektur der OLE DB-Anbieter Vorlage](../../data/oledb/ole-db-provider-template-architecture.md)

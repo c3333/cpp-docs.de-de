@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - idl_module attribute
 ms.assetid: 3578b337-e38a-4334-b747-15404c02dbc0
-ms.openlocfilehash: 6dd0a34d5d957838613bde2c9e05d5ef26a1f678
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 651d2e133d7ef08fce48feded1b7a5aff458adb1
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80168043"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845223"
 ---
 # <a name="idl_module"></a>idl_module
 
@@ -44,10 +44,10 @@ Optionale Die ID eines Hilfe Themas in einer. hlp-oder CHM-Datei.
 *helpcontext*<br/>
 Optionale Die Hilfe-ID für diese Typbibliothek.
 
-*hidden*<br/>
+*verbirgt*<br/>
 Optionale Ein-Parameter, der verhindert, dass die Bibliothek angezeigt wird. Weitere Informationen finden Sie unter [hidden](/windows/win32/Midl/hidden) MIDL-Attribut.
 
-*restricted*<br/>
+*begrenz*<br/>
 Optionale Member der Bibliothek können nicht willkürlich aufgerufen werden. Weitere Informationen finden Sie unter [restricted](/windows/win32/Midl/restricted) MIDL-Attribut.
 
 *Funktionsdeklaration*<br/>
@@ -55,7 +55,7 @@ Die Funktion, die Sie definieren.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Mit dem **idl_module** C++ -Attribut können Sie den Einstiegspunkt in einer DLL-Datei angeben, die es Ihnen ermöglicht, aus einer DLL-Datei zu importieren.
+Mit dem **idl_module** C++-Attribut können Sie den Einstiegspunkt in einer DLL-Datei angeben, die es Ihnen ermöglicht, aus einer DLL-Datei zu importieren.
 
 Das **idl_module** -Attribut verfügt über eine ähnliche Funktionalität wie das- [modulmittell](/windows/win32/Midl/module) -Attribut.
 
@@ -78,12 +78,10 @@ void FuncName(int i);
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-### <a name="attribute-context"></a>Attributkontext
-
-|||
+| Attribut Kontext | Wert |
 |-|-|
-|**Betrifft**|Überall|
-|**Wiederholbar**|Nein|
+|**Zielgruppe**|Überall|
+|**REPEATABLE**|Nein|
 |**Erforderliche Attribute**|Keine|
 |**Ungültige Attribute**|Keine|
 
@@ -93,4 +91,4 @@ Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net
 
 [IDL-Attribute](idl-attributes.md)<br/>
 [Eigenständige Attribute](stand-alone-attributes.md)<br/>
-[entry](entry.md)
+[ein](entry.md)

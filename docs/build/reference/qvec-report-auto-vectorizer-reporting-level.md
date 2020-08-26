@@ -2,12 +2,12 @@
 title: /Qvec-report (Auto-Vectorizer-Berichtsebene)
 ms.date: 11/04/2016
 ms.assetid: 4778c9a3-0692-4085-9b05-1bfeadf4c74a
-ms.openlocfilehash: 260cf89d50110f960eb6f320dccbb4a1d80f65bc
-ms.sourcegitcommit: 31a443c9998cf5cfbaff00fcf815b133f55b2426
+ms.openlocfilehash: 2007e80db0ee0aec362869315767505ec06ab109
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86373813"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88836867"
 ---
 # <a name="qvec-report-auto-vectorizer-reporting-level"></a>/Qvec-report (Auto-Vectorizer-Berichtsebene)
 
@@ -19,7 +19,7 @@ Aktiviert die Berichterstattungs Funktion des [automatischen-Vektorisierungs](..
 /Qvec-report:{1}{2}
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 **/Qvec-Report: 1**<br/>
 Gibt eine Informations Meldung für Schleifen aus, die vektorisiert sind.
@@ -46,4 +46,4 @@ Weitere Informationen zu Ursachen Codes und Meldungen finden Sie unter [vektoriz
 [/Q-Optionen (Vorgänge auf niedriger Ebene)](q-options-low-level-operations.md)<br/>
 [MSVC-Compileroptionen](compiler-options.md)<br/>
 [MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)<br/>
-[Vektorisierung in nativem Code in Visual Studio](https://docs.microsoft.com/archive/blogs/nativeconcurrency/auto-vectorizer-in-visual-studio-2012-overview)
+[Vektorisierung in nativem Code in Visual Studio](/archive/blogs/nativeconcurrency/auto-vectorizer-in-visual-studio-2012-overview)

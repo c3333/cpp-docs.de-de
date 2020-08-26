@@ -8,18 +8,18 @@ helpviewer_keywords:
 - data [C++], data access technologies
 - data access [C++], class libraries for databases
 ms.assetid: 95da6237-bbe2-480a-ae50-3a520051ceff
-ms.openlocfilehash: 42c36259b14a7f0341e383bb3a7f2760bab165aa
-ms.sourcegitcommit: fcc3aeb271449f8be80348740cffef39ba543407
+ms.openlocfilehash: a5421ff05fdbad7d78066bb95410aafe69bfaa51
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82538596"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88836945"
 ---
 # <a name="data-access-in-visual-c"></a>Datenzugriff in Visual C++
 
 Praktisch alle Datenbankprodukte, SQL und NoSQL, bieten eine Schnittstelle für native C++-Anwendungen. Die Branchenstandardschnittstelle ist ODBC, die von allen wichtigen Produkten für die SQL-Datenbank und vielen NoSQL-Produkten unterstützt wird. Wenden Sie sich bei Nicht-Microsoft-Produkten für weitere Informationen an den Hersteller. Drittanbieter-Bibliotheken mit verschiedenen Lizenzbedingungen sind ebenfalls verfügbar.
 
-Seit 2011 hat Microsoft ODBC als Standard für native Anwendungen zur Verbindung mit Microsoft SQL Server-Datenbanken sowohl lokal als auch in der Cloud ausgerichtet. Weitere Informationen finden Sie unter [Datenzugriffsprogrammierung \(MFC-ATL\)](data-access-programming-mfc-atl.md). Bei C++/CLI-Bibliotheken können die nativen ODBC-Treiber oder ADO.NET verwendet werden. Weitere Informationen finden Sie unter [Datenzugriff mit ADO.net (C++/CLI)](../dotnet/data-access-using-adonet-cpp-cli.md) und [zugreifen auf Daten in Visual Studio](https://docs.microsoft.com/visualstudio/data-tools/accessing-data-in-visual-studio).
+Seit 2011 hat Microsoft ODBC als Standard für native Anwendungen zur Verbindung mit Microsoft SQL Server-Datenbanken sowohl lokal als auch in der Cloud ausgerichtet. Weitere Informationen finden Sie unter [Datenzugriffsprogrammierung \(MFC-ATL\)](data-access-programming-mfc-atl.md). Bei C++/CLI-Bibliotheken können die nativen ODBC-Treiber oder ADO.NET verwendet werden. Weitere Informationen finden Sie unter [Datenzugriff mit ADO.net (C++/CLI)](../dotnet/data-access-using-adonet-cpp-cli.md) und [zugreifen auf Daten in Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio).
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 
@@ -43,16 +43,16 @@ Herstellen einer Verbindung mit Azure SQL-Datenbank aus C- oder C++-Anwendungen
 [ODBC-Treiber für SQL Server](/sql/connect/odbc/microsoft-odbc-driver-for-sql-server)<br/>
 Der aktuelle ODBC-Treiber bietet zuverlässigen Datenzugriff auf Microsoft SQL Server und Microsoft Azure SQL-Datenbank für Anwendungen auf C/C++-Basis. Er bietet Unterstützung für Funktionen, z.B. Always Encrypted, Azure Active Directory und Always On-Verfügbarkeitsgruppen. Auch für MacOS und Linux verfügbar.
 
-[OLE DB-Treiber für SQL Server](/sql/connect/oledb/oledb-driver-for-sql-server)<br/>
+[OLE DB-Treiber für SQL-Server](/sql/connect/oledb/oledb-driver-for-sql-server)<br/>
 Der neueste OLE DB-Treiber ist eine eigenständige Anwendungsprogrammierschnittstelle (API) für Datenzugriffe, die Microsoft SQL Server und Microsoft Azure SQL-Datenbank unterstützt.
 
 [Microsoft Azure C und C++ Developer Center](https://azure.microsoft.com/develop/cpp/)<br/>
 Azure vereinfacht die C++-Anwendungsentwicklung mit mehr Flexibilität, Skalierbarkeit und Zuverlässigkeit mithilfe von Tools, die Sie lieben werden.
 
-[Verwenden des Blob-Speichers mit C++](https://docs.microsoft.com/azure/storage/storage-c-plus-plus-how-to-use-blobs)<br/>
+[Verwenden des Blob-Speichers mit C++](/azure/storage/storage-c-plus-plus-how-to-use-blobs)<br/>
 Azure Blob Storage ist ein Dienst, bei dem unstrukturierte Daten in der Cloud als Objekte/Blobs gespeichert werden. In Blob Storage können alle Arten von Text- oder Binärdaten gespeichert werden, z. B. ein Dokument, eine Mediendatei oder ein Installer einer Anwendung. Der Blobspeicher wird auch als Objektspeicher bezeichnet.
 
-[ODBC-Programmierreferenz](https://docs.microsoft.com/sql/odbc/reference/odbc-programmer-s-reference)<br/>
+[ODBC-Programmierreferenz](/sql/odbc/reference/odbc-programmer-s-reference)<br/>
 Die ODBC-Schnittstelle dient zur Verwendung mit der Programmiersprache C. Die Verwendung der ODBC-Schnittstelle umfasst drei Bereiche: SQL-Anweisungen, ODBC-Funktionsaufrufe und C-Programmierung.
 
 ## <a name="see-also"></a>Weitere Informationen

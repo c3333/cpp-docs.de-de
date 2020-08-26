@@ -4,12 +4,12 @@ ms.date: 07/27/2020
 ms.topic: conceptual
 f1_keywords:
 - vs.codeanalysis.rulesets.native
-ms.openlocfilehash: b132400485c041b96e81736bcda04922b2cda88c
-ms.sourcegitcommit: 6e55aeb538b1c39af754f82d6f7738a18f5aa031
+ms.openlocfilehash: 2f2b11d060b2f02c5fc5874ef135e1ee3550b840
+ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87389817"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88845158"
 ---
 # <a name="use-rule-sets-to-specify-the-c-rules-to-run"></a>Verwenden von Regelsätzen zum Festlegen von C++-Regeln für die Ausführung
 
@@ -33,7 +33,7 @@ Zum Erstellen eines neuen benutzerdefinierten Regelsatzes speichern Sie diesen u
 
    - Wählen Sie den Regelsatz aus, den Sie anpassen möchten.
 
-     \- oder –
+     \- oder -
 
    - **\<Browse...>** Geben Sie einen vorhandenen Regelsatz an, der nicht in der Liste enthalten ist.
 
@@ -50,7 +50,7 @@ Zum Erstellen eines neuen benutzerdefinierten Regelsatzes speichern Sie diesen u
 
    - Wählen Sie den Regelsatz aus, den Sie anpassen möchten.
 
-     \- oder –
+     \- oder -
 
    - **\<Browse...>** Geben Sie einen vorhandenen Regelsatz an, der nicht in der Liste enthalten ist.
 
@@ -114,7 +114,7 @@ Das folgende Beispiel zeigt eine grundlegende Regel Satz Datei, die Sie als Ausg
 
 ## <a name="ruleset-schema"></a>RuleSet-Schema
 
-Das folgende RuleSet-Schema beschreibt das XML-Schema einer RuleSet-Datei. Das RuleSet-Schema wird in gespeichert *`%VSINSTALLDIR%\Team Tools\Static Analysis Tools\Schemas\RuleSet.xsd`* . Sie können Sie verwenden, um eigene RuleSets Programm gesteuert zu erstellen oder um zu überprüfen, ob Ihre benutzerdefinierten RuleSets das richtige Format einhalten. Weitere Informationen finden Sie unter Gewusst [wie: Erstellen eines XML-Dokuments auf Grundlage eines XSD-Schemas](https://docs.microsoft.com/visualstudio/xml-tools/how-to-create-an-xml-document-based-on-an-xsd-schema?view=vs-2019).
+Das folgende RuleSet-Schema beschreibt das XML-Schema einer RuleSet-Datei. Das RuleSet-Schema wird in gespeichert *`%VSINSTALLDIR%\Team Tools\Static Analysis Tools\Schemas\RuleSet.xsd`* . Sie können Sie verwenden, um eigene RuleSets Programm gesteuert zu erstellen oder um zu überprüfen, ob Ihre benutzerdefinierten RuleSets das richtige Format einhalten. Weitere Informationen finden Sie unter Gewusst [wie: Erstellen eines XML-Dokuments auf Grundlage eines XSD-Schemas](/visualstudio/xml-tools/how-to-create-an-xml-document-based-on-an-xsd-schema).
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -239,7 +239,7 @@ Das folgende RuleSet-Schema beschreibt das XML-Schema einer RuleSet-Datei. Das R
 
 Details zum Schema Element:
 
-| Schema-Element | BESCHREIBUNG |
+| Schema-Element | Beschreibung |
 |--------------------|--------------|
 | `TLocalization` | Lokalisierungs Informationen einschließlich Name der RuleSet-Datei, Beschreibung der RuleSet-Datei, Name der Ressourcenassembly, die die lokalisierte Ressource enthält, und Basisname der lokalisierten Ressource |
 | `TRuleHintPaths` | Dateipfade, die als Hinweise für die Suche nach RuleSet-Dateien verwendet werden |
