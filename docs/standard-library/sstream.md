@@ -95,13 +95,13 @@ Objekte des Typs `char *` können die-Funktion in [\<strstream>](../standard-lib
 
 ### <a name="manipulators"></a>Manipulatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|-|
 |[swap](../standard-library/sstream-functions.md#sstream_swap)|Tauscht die Werte zwischen zwei `sstream`-Objekten aus.|
 
 ### <a name="classes"></a>Klassen
 
-|Klasse|Beschreibung|
+|Klasse|BESCHREIBUNG|
 |-|-|
 |[basic_stringbuf](../standard-library/basic-stringbuf-class.md)|Beschreibt einen die Übertragung zu und aus einer Sequenz von in einem Arrayobjekt gespeicherten Elementen von Elementen des Typs `Elem` steuernden Streampuffer, dessen Zeichenmerkmale durch die Klasse `Tr` ermittelt werden.|
 |[basic_istringstream](../standard-library/basic-istringstream-class.md)|Beschreibt ein Objekt, das das Extrahieren von Elementen und codierten Objekten aus einem Streampuffer der Klasse [Basic_stringbuf](../standard-library/basic-stringbuf-class.md) < **Elem**, **TR**, `Alloc`> mit Elementen des Typs steuert `Elem` , dessen Zeichen Merkmale von der Klasse bestimmt werden `Tr` und deren Elemente durch eine Zuweisung der Klasse zugeordnet werden `Alloc` .|

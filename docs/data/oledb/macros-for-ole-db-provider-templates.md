@@ -63,7 +63,7 @@ Die OLE DB Vorlagen-Anbieter Makros bieten Funktionen in den folgenden Kategorie
 
 ## <a name="property-set-map-macros"></a>Eigenschaften Satz-Zuordnungs Makros
 
-| Name | Beschreibung |
+| Name | BESCHREIBUNG |
 |-|-|
 |[BEGIN_PROPERTY_SET](#begin_property_set)|Markiert den Anfang eines Eigenschaften Satzes.|
 |[BEGIN_PROPERTY_SET_EX](#begin_property_set_ex)|Markiert den Anfang eines Eigenschaften Satzes.|
@@ -77,7 +77,7 @@ Die OLE DB Vorlagen-Anbieter Makros bieten Funktionen in den folgenden Kategorie
 
 ## <a name="column-map-macros"></a>Spalten Zuordnungs Makros
 
-| Name | Beschreibung |
+| Name | BESCHREIBUNG |
 |-|-|
 |[BEGIN_PROVIDER_COLUMN_MAP](#begin_provider_column_map)|Markiert den Anfang der Karten Einträge für die Anbieter Spalte.|
 |[END_PROVIDER_COLUMN_MAP](#end_provider_column_map)|Markiert das Ende der Zuordnungs Einträge für die Anbieter Spalte.|
@@ -91,7 +91,7 @@ Die OLE DB Vorlagen-Anbieter Makros bieten Funktionen in den folgenden Kategorie
 
 ## <a name="schema-rowset-macros"></a>Schemarowsetmakros
 
-| Name | Beschreibung |
+| Name | BESCHREIBUNG |
 |-|-|
 |[BEGIN_SCHEMA_MAP](#begin_schema_map)|Markiert den Anfang einer Schema Zuordnung.|
 |[END_SCHEMA_MAP](#end_schema_map)|Markiert das Ende einer Schema Zuordnung.|

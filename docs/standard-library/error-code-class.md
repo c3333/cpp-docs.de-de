@@ -44,19 +44,19 @@ Ein Objekt vom Typ `error_code`-Klasse enthält einen Fehlercodewert und einen Z
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|-|
 |[error_code](#error_code)|Konstruiert ein Objekt vom Typ `error_code`.|
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|-|
 |[value_type](#value_type)|Ein Typ, der den gespeicherten Fehlercodewert darstellt.|
 
 ### <a name="functions"></a>Functions
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|-|
 |[assign](#assign)|Weist einen Fehlercodewert und die Kategorie an einen Fehlercode zu.|
 |[category](#category)|Gibt die Fehlerkategorie zurück.|
@@ -66,7 +66,7 @@ Ein Objekt vom Typ `error_code`-Klasse enthält einen Fehlercodewert und einen Z
 
 ### <a name="operators"></a>Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|-|
 |[Operator = =](#op_eq_eq)|Prüft auf Gleichheit zwischen `error_code`-Objekten.|
 |[Operator! =](#op_neq)|Prüft auf Ungleichheit zwischen `error_code`-Objekten.|

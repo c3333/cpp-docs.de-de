@@ -23,7 +23,7 @@ Die Microsoft Foundation Class-Bibliothek bietet die folgenden globalen Funktion
 
 ### <a name="collection-class-helpers"></a>Hilfsfunktionen für die Auflistungsklasse
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|-|
 |[CompareElements](#compareelements)|Gibt an, ob Elemente identisch sind.|
 |[CopyElements](#copyelements)|Kopiert Elemente aus einem Array in ein anderes.|

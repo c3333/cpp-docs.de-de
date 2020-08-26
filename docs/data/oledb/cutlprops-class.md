@@ -60,7 +60,7 @@ Die Klasse, die enthält `BEGIN_PROPSET_MAP` .
 
 ### <a name="methods"></a>Methoden
 
-| Name | Beschreibung |
+| Name | BESCHREIBUNG |
 |-|-|
 |[GetPropValue](#getpropvalue)|Ruft eine Eigenschaft aus einem Eigenschaften Satz ab.|
 |[IsValidValue](#isvalidvalue)|Wird zum Überprüfen eines Werts verwendet, bevor eine Eigenschaft festgelegt wird.|

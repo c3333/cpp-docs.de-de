@@ -126,7 +126,7 @@ Eine Accessor-Klasse.
 
 ### <a name="methods"></a>Methoden
 
-| Name | Beschreibung |
+| Name | BESCHREIBUNG |
 |-|-|
 |[AddRefRows](#addrefrows)|Erhöht den Verweis Zähler.|
 |[CBulkRowset](#cbulkrowset)|Konstruktor.|

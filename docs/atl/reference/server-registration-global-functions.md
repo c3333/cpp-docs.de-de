@@ -22,7 +22,7 @@ Diese Funktionen bieten Unterstützung für das registrieren und Aufheben der Re
 > [!IMPORTANT]
 > Die in der folgenden Tabelle aufgeführten Funktionen können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|-|
 |[AtlComModuleRegisterServer](#atlcommoduleregisterserver)|Diese Funktion wird aufgerufen, um alle Objekte in der Objektzuordnung zu registrieren.|
 |[AtlComModuleUnregisterServer](#atlcommoduleunregisterserver)|Diese Funktion wird aufgerufen, um die Registrierung aller Objekte in der Objektzuordnung aufzuheben.|

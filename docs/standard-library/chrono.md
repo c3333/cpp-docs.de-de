@@ -33,14 +33,14 @@ Ab Visual Studio 2015 hat sich die Implementierung von `steady_clock` geändert,
 
 ### <a name="classes"></a>Klassen
 
-|name|Beschreibung|
+|name|BESCHREIBUNG|
 |-|-|
 |[Duration-Klasse](../standard-library/duration-class.md)|Beschreibt einen Typ, der ein Zeitintervall enthält.|
 |[time_point-Klasse](../standard-library/time-point-class.md)|Beschreibt einen Typ, der einen bestimmten Zeitpunkt darstellt.|
 
 ### <a name="structs"></a>Strukturen
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|-|
 |[common_type-Struktur](../standard-library/common-type-structure.md)|Beschreibt Spezialisierung von Klassen Vorlagen [common_type](../standard-library/common-type-class.md) für Instanziierungen von `duration` und `time_point` .|
 |[duration_values-Struktur](../standard-library/duration-values-structure.md)|Stellt bestimmte Werte für den `duration`-Vorlagenparameter `Rep` bereit.|
@@ -51,14 +51,14 @@ Ab Visual Studio 2015 hat sich die Implementierung von `steady_clock` geändert,
 
 ### <a name="functions"></a>Functions
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|-|
 |[duration_cast](../standard-library/chrono-functions.md#duration_cast)|Wandelt einen `duration`-Objekt in einen angegebenen Typ um.|
 |[time_point_cast](../standard-library/chrono-functions.md#time_point_cast)|Wandelt einen `time_point`-Objekt in einen angegebenen Typ um.|
 
 ### <a name="operators"></a>Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|-|
 |[KOM](../standard-library/chrono-operators.md#operator-)|Operator für die Subtraktion oder Negation von `duration`- und `time_point`-Objekten.|
 |[Operator! =](../standard-library/chrono-operators.md#op_neq)|Ungleichheitsoperator, der mit `duration`- oder `time_point`-Objekten verwendet wird.|
@@ -76,7 +76,7 @@ Ab Visual Studio 2015 hat sich die Implementierung von `steady_clock` geändert,
 
 Weitere Informationen zu Verhältnis Typen, die in den folgenden Typedefs verwendet werden, finden Sie unter [\<ratio>](../standard-library/ratio.md) .
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|-|
 |`typedef duration<long long, nano> nanoseconds;`|Synonym für einen `duration` Typ, der über einen Teil Strichpunkt von einer Nanosekunde verfügt.|
 |`typedef duration<long long, micro> microseconds;`|Synonym für einen `duration` Typ, der über einen Teil Strichpunkt von einer Mikrosekunde verfügt.|
@@ -89,7 +89,7 @@ Weitere Informationen zu Verhältnis Typen, die in den folgenden Typedefs verwen
 
 **(C++ 11)** Der- \<chrono> Header definiert die folgenden [benutzerdefinierten Literale](../cpp/user-defined-literals-cpp.md) , die Sie für größere Benutzerfreundlichkeit, Typsicherheit und Verwaltbarkeit des Codes verwenden können. Diese Literale werden im `literals::chrono_literals`-Inlinenamespace definiert und sind im Bereich enthalten, wenn std::chrono innerhalb des Bereichs liegt.
 
-|Deklaration|Beschreibung|
+|Deklaration|BESCHREIBUNG|
 |-|-|
 |`hours operator "" h(unsigned long long Val)`|Gibt die Stunden als Integralwert an.|
 |`duration<double, ratio<3600> > operator "" h(long double Val)`|Gibt die Stunden als Gleitkommawert an.|

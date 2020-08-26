@@ -41,14 +41,14 @@ class CMFCPropertyGridToolTipCtrl : public CWnd
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|name|Beschreibung|
+|name|BESCHREIBUNG|
 |-|-|
 |[Cmfcpropertygridtooltipctrl:: cmfcpropertygridtooltipctrl](#cmfcpropertygridtooltipctrl)|Erstellt ein `CMFCPropertyGridToolTipCtrl`-Objekt.|
 |`CMFCPropertyGridToolTipCtrl::~CMFCPropertyGridToolTipCtrl`|Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|name|Beschreibung|
+|name|BESCHREIBUNG|
 |-|-|
 |[Cmfcpropertygridtooltipctrl:: Create](#create)|Erstellt ein Fenster für das QuickInfo-Steuerelement.|
 |[Cmfcpropertygridtooltipctrl::D eaktivierungs](#deactivate)|Deaktiviert das ToolTip-Steuerelement und blendet es aus.|

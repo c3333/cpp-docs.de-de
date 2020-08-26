@@ -21,19 +21,19 @@ Ein **_com_error** -Objekt stellt eine Ausnahme Bedingung dar, die von den Fehle
 
 ### <a name="construction"></a>Bauwesen
 
-| Name | Beschreibung |
+| Name | BESCHREIBUNG |
 |-|-|
 |[_com_error](../cpp/com-error-com-error.md)|Erstellt ein **_com_error** -Objekt.|
 
 ### <a name="operators"></a>Operatoren
 
-| Name | Beschreibung |
+| Name | BESCHREIBUNG |
 |-|-|
 |[Operator =](../cpp/com-error-operator-equal.md)|Weist ein vorhandenes **_com_error** Objekt einem anderen zu.|
 
 ### <a name="extractor-functions"></a>Funktionen des Extrahierungsprogramms
 
-| Name | Beschreibung |
+| Name | BESCHREIBUNG |
 |-|-|
 |[Fehler](../cpp/com-error-error.md)|Ruft das HRESULT ab, das an den Konstruktor übergeben wird.|
 |[ErrorInfo](../cpp/com-error-errorinfo.md)|Ruft das `IErrorInfo`-Objekt ab, das an den Konstruktor übergeben wurde.|
@@ -41,7 +41,7 @@ Ein **_com_error** -Objekt stellt eine Ausnahme Bedingung dar, die von den Fehle
 
 ### <a name="ierrorinfo-functions"></a>IErrorInfo-Funktionen
 
-| Name | Beschreibung |
+| Name | BESCHREIBUNG |
 |-|-|
 |[Beschreibung](../cpp/com-error-description.md)|Ruft die `IErrorInfo::GetDescription`-Funktion auf.|
 |[HelpContext](../cpp/com-error-helpcontext.md)|Ruft die `IErrorInfo::GetHelpContext`-Funktion auf.|
@@ -51,13 +51,13 @@ Ein **_com_error** -Objekt stellt eine Ausnahme Bedingung dar, die von den Fehle
 
 ### <a name="format-message-extractor"></a>FormatMessage-Extractor
 
-| Name | Beschreibung |
+| Name | BESCHREIBUNG |
 |-|-|
 |[ErrorMessage](../cpp/com-error-errormessage.md)|Ruft die Zeichen folgen Meldung für HRESULT ab, die im **_com_error** -Objekt gespeichert ist.|
 
 ### <a name="exepinfowcode-to-hresult-mappers"></a>ExepInfo.wCode für HRESULT-Zuordnungen
 
-| Name | Beschreibung |
+| Name | BESCHREIBUNG |
 |-|-|
 |[HRESULTToWCode](../cpp/com-error-hresulttowcode.md)|Ordnet 32-Bit-HRESULT einem 16-Bit-Wert zu `wCode` .|
 |[WCodeToHRESULT](../cpp/com-error-wcodetohresult.md)|Ordnet ein 16-Bit- `wCode` 32-Bit-HRESULT zu.|

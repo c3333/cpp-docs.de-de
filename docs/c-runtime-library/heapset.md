@@ -56,7 +56,7 @@ Füllzeichen.
 
 `_heapset` gibt eine der folgenden ganzzahligen Manifestkonstanten zurück, die in Malloc.h definiert sind.
 
-|Wert|Beschreibung|
+|Wert|BESCHREIBUNG|
 |-|-|
 | `_HEAPBADBEGIN`  | Ursprüngliche Headerinformationen ungültig oder nicht gefunden.  |
 | `_HEAPBADNODE`  | Heap beschädigt oder ungültiger Knoten gefunden.  |

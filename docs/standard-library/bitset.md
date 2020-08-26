@@ -28,7 +28,7 @@ Definiert das Klassen Vorlagen-Bitset und zwei unterstützende Vorlagen Funktion
 
 ### <a name="operators"></a>Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|-|
 |[Operator&](../standard-library/bitset-operators.md#op_amp)|Führt ein bitweises UND zwischen zwei Bitsets aus.|
 |[Operator<\<](../standard-library/bitset-operators.md#op_lt_lt)|Fügt eine Textdarstellung der Bitsequenz in den Standardausgabestream ein.|
@@ -38,7 +38,7 @@ Definiert das Klassen Vorlagen-Bitset und zwei unterstützende Vorlagen Funktion
 
 ### <a name="classes"></a>Klassen
 
-|name|Beschreibung|
+|name|BESCHREIBUNG|
 |-|-|
 |[bitset](../standard-library/bitset-class.md)|Die Klassen Vorlage beschreibt einen Objekttyp, der eine Sequenz speichert, die aus einer festgelegten Anzahl von Bits besteht, die eine kompakte Möglichkeit bieten, Flags für eine Menge von Elementen oder Bedingungen beizubehalten.|
 

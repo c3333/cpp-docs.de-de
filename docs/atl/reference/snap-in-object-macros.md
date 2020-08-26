@@ -22,7 +22,7 @@ ms.locfileid: "88835193"
 
 Diese Makros bieten Unterstützung für Snap-in-Erweiterungen.
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|-|
 |[BEGIN_EXTENSION_SNAPIN_NODEINFO_MAP](#begin_extension_snapin_nodeinfo_map)|Markiert den Anfang der Daten Klassen Zuordnung der Snap-in-Erweiterung für ein Snap-in-Objekt.|
 |[BEGIN_SNAPINTOOLBARID_MAP](#begin_snapintoolbarid_map)|Markiert den Anfang der Symbolleisten Zuordnung für ein Snap-in-Objekt.|

@@ -46,7 +46,7 @@ Numerische Algorithmen der C++-Standard Bibliothek, die für die numerische Vera
 
 ### <a name="function-templates"></a>Funktionsvorlagen
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|-|
 |[adjacent_find](algorithm-functions.md#adjacent_find)|Sucht zwei benachbarte Elemente, die entweder gleich sind oder eine angegebene Bedingung erfüllen.|
 |[all_of](algorithm-functions.md#all_of)|Gibt zurück, **`true`** Wenn eine Bedingung bei jedem Element im angegebenen Bereich vorhanden ist.|

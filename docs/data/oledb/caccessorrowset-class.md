@@ -62,7 +62,7 @@ Eine Rowsetklasse.
 
 ### <a name="methods"></a>Methoden
 
-| Name | Beschreibung |
+| Name | BESCHREIBUNG |
 |--|--|
 | [Zwick](#bind) | Erstellt Bindungen (wird verwendet, wenn `bBind` als **`false`** in [CCommand:: Open](../../data/oledb/ccommand-open.md)angegeben ist). |
 | [CAccessorRowset](#caccessorrowset) | Konstruktor. |

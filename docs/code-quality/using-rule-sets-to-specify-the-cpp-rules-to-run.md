@@ -239,7 +239,7 @@ Das folgende RuleSet-Schema beschreibt das XML-Schema einer RuleSet-Datei. Das R
 
 Details zum Schema Element:
 
-| Schema-Element | Beschreibung |
+| Schema-Element | BESCHREIBUNG |
 |--------------------|--------------|
 | `TLocalization` | Lokalisierungs Informationen einschließlich Name der RuleSet-Datei, Beschreibung der RuleSet-Datei, Name der Ressourcenassembly, die die lokalisierte Ressource enthält, und Basisname der lokalisierten Ressource |
 | `TRuleHintPaths` | Dateipfade, die als Hinweise für die Suche nach RuleSet-Dateien verwendet werden |
