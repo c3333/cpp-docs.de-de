@@ -1,22 +1,23 @@
 ---
 title: Einschränkungen bei Ereignishandlern
-ms.date: 11/04/2016
+description: Beschreibt die Einschränkungen beim springen in strukturierte Ausnahme Behandlungs Blöcke.
+ms.date: 08/24/2020
 helpviewer_keywords:
 - restrictions, exception handlers
 - exception handling [C++], exception handlers
 ms.assetid: 31d63524-0e8c-419f-b87c-061f4c0ea470
-ms.openlocfilehash: 1f80cb1574cbfef0783c7e55dcd198dfb822f566
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: c4182f065789533bf7599621d8d2829b2d52d6ed
+ms.sourcegitcommit: efc8c32205c9d610f40597556273a64306dec15d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87225903"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88898455"
 ---
 # <a name="restrictions-on-exception-handlers"></a>Einschränkungen bei Ereignishandlern
 
-Die Haupteinschränkung bei der Verwendung von Ausnahme Handlern im Code besteht darin, dass Sie keine-Anweisung verwenden können **`goto`** , um in einen **__try** -Anweisungsblock zu springen. Stattdessen müssen Sie den Anweisungsblock über die normale Ablaufsteuerung eingeben. Sie können aus einem **__try** -Anweisungsblock springen und Ausnahmehandler bei der Auswahl Schachteln.
+Die Haupteinschränkung bei der Verwendung von Ausnahme Handlern im Code besteht darin, dass Sie keine-Anweisung verwenden können **`goto`** , um in einen- **`__try`** Anweisungsblock zu springen. Stattdessen müssen Sie den Anweisungsblock über die normale Ablaufsteuerung eingeben. Sie können aus einem **`__try`** -Anweisungsblock herausspringen, und Sie können die von Ihnen ausgewählten Ausnahmehandler verschachteln.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Schreiben eines Ausnahme Handlers](../cpp/writing-an-exception-handler.md)<br/>
+[Schreiben eines Ausnahmehandlers](../cpp/writing-an-exception-handler.md)<br/>
 [Structured Exception Handling (C/C++)](../cpp/structured-exception-handling-c-cpp.md)

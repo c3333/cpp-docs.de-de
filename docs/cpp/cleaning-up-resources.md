@@ -1,6 +1,7 @@
 ---
 title: Bereinigen von Ressourcen
-ms.date: 11/04/2016
+description: Freigeben von Ressourcen während eines Beendigungs Handlers für die strukturierte Ausnahmebehandlung.
+ms.date: 08/24/2020
 helpviewer_keywords:
 - termination handlers [C++], cleaning up resources
 - exception handling [C++], cleaning up resources
@@ -9,28 +10,28 @@ helpviewer_keywords:
 - exception handling [C++], cleanup code
 - try-catch keyword [C++], termination handlers
 ms.assetid: 65753efe-6a27-4750-b90c-50635775c1b6
-ms.openlocfilehash: b172695044057f58771af0f4cfcb5ca869b36678
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: dae92a515db25b9985a890d7d08cc213f88ecfea
+ms.sourcegitcommit: efc8c32205c9d610f40597556273a64306dec15d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87229050"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88898433"
 ---
 # <a name="cleaning-up-resources"></a>Bereinigen von Ressourcen
 
-Während der Ausführung des Beendigungshandlers wissen Sie möglicherweise nicht, welche Ressourcen tatsächlich zugeordnet wurden, bevor der Beendigungshandler aufgerufen wurde. Es ist möglich, dass der **__try** -Anweisungsblock unterbrochen wurde, bevor alle Ressourcen zugewiesen wurden, sodass nicht alle Ressourcen geöffnet wurden.
+Während der Beendigung der handlerausführung wissen Sie möglicherweise nicht, welche Ressourcen abgerufen wurden, bevor der Beendigungs Handler aufgerufen wurde. Es ist möglich, dass der **`__try`** Anweisungsblock unterbrochen wurde, bevor alle Ressourcen abgerufen wurden, sodass nicht alle Ressourcen geöffnet wurden.
 
-Vorsichtshalber sollten Sie daher überprüfen, welche Ressourcen tatsächlich geöffnet sind, bevor Sie die Bereinigung der Abbruchbehandlung fortsetzen. Dazu wird diese Vorgehensweise empfohlen:
+Um sicher zu sein, sollten Sie überprüfen, welche Ressourcen geöffnet sind, bevor Sie mit der Bereinigung der Beendigungs Behandlung fortfahren. Dazu wird diese Vorgehensweise empfohlen:
 
 1. Initialisieren Sie die Handles mit dem Wert NULL.
 
-1. Weisen Sie im **__try** -Anweisungsblock Ressourcen zu. Beim Zuordnen der Ressourcen werden positive Werte für die Handles festgelegt.
+1. Rufen Sie im **`__try`** Anweisungsblock Ressourcen ab. Handles werden auf positive Werte festgelegt, wenn die Ressource abgerufen wird.
 
 1. Geben Sie im **`__finally`** Anweisungsblock jede Ressource frei, deren zugehörige handle-oder Flag-Variable ungleich 0 (null) oder nicht NULL ist.
 
 ## <a name="example"></a>Beispiel
 
-Der folgende Code verwendet beispielsweise einen Beendigungs Handler, um drei Dateien und einen Speicherblock zu schließen, die im **__try** Anweisungsblock zugeordnet wurden. Bevor eine Ressource bereinigt wird, überprüft der Code zunächst, ob die Ressource zugeordnet wurde.
+Der folgende Code verwendet beispielsweise einen Beendigungs Handler, um drei Dateien zu schließen und einen Speicherblock freizugeben. Diese Ressourcen wurden im- **`__try`** Anweisungsblock abgerufen. Vor dem Bereinigen einer Ressource prüft der Code zunächst, ob die Ressource abgerufen wurde.
 
 ```cpp
 // exceptions_Cleaning_up_Resources.cpp
@@ -70,7 +71,7 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Schreiben eines Beendigungshandlers](../cpp/writing-a-termination-handler.md)<br/>
 [Structured Exception Handling (C/C++)](../cpp/structured-exception-handling-c-cpp.md)

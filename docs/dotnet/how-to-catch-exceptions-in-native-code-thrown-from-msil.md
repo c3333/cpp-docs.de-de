@@ -1,25 +1,26 @@
 ---
-title: 'Gewusst wie: Abfangen von Ausnahmen, die von der MSIL ausgelöst wurden, in nativem Code'
+title: 'Vorgehensweise: Abfangen von Ausnahmen in nativem Code, die von MSIL ausgelöst wurden'
+description: Beispiele für das Abfangen von Ausnahmen in System eigenem Code, der von MSIL ausgelöst wird.
 ms.date: 11/04/2016
 helpviewer_keywords:
 - exceptions, catching
 - catching exceptions, thrown from MSIL
 - MSIL, catching exceptions in native code
 ms.assetid: c15afd2b-8505-43bf-8a4a-f1d41532a124
-ms.openlocfilehash: 6f2de640a2427bb1ea65d099742967454ca625f6
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: b68a771d27e091f86331703b55bc2eb52dfbb41b
+ms.sourcegitcommit: efc8c32205c9d610f40597556273a64306dec15d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87221353"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88898577"
 ---
-# <a name="how-to-catch-exceptions-in-native-code-thrown-from-msil"></a>Gewusst wie: Abfangen von Ausnahmen, die von der MSIL ausgelöst wurden, in nativem Code
+# <a name="how-to-catch-exceptions-in-native-code-thrown-from-msil"></a>Vorgehensweise: Abfangen von Ausnahmen in nativem Code, die von MSIL ausgelöst wurden
 
-In System eigenem Code können Sie die native C++-Ausnahme von MSIL erfassen.  Sie können CLR-Ausnahmen mit `__try` und abfangen **`__except`** .
+In System eigenem Code können Sie die native C++-Ausnahme von MSIL erfassen.  Sie können CLR-Ausnahmen mit **`__try`** und abfangen **`__except`** .
 
 Weitere Informationen finden Sie unter [strukturierte Ausnahmebehandlung (C/C++)](../cpp/structured-exception-handling-c-cpp.md) und [moderne C++ bewährte Methoden für Ausnahmen und Fehlerbehandlung](../cpp/errors-and-exception-handling-modern-cpp.md).
 
-## <a name="example"></a>Beispiel
+## <a name="example-1"></a>Beispiel 1
 
 Im folgenden Beispiel wird ein Modul mit zwei Funktionen definiert, von denen eine native Ausnahme ausgelöst wird, und eine andere, die eine MSIL-Ausnahme auslöst.
 
@@ -35,7 +36,7 @@ void Test2() {
 }
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-2"></a>Beispiel 2
 
 Im folgenden Beispiel wird ein Modul definiert, das eine native und eine MSIL-Ausnahme abfängt.
 

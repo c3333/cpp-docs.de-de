@@ -1,23 +1,28 @@
 ---
 title: Compilerfehler C2705
-ms.date: 11/04/2016
+description: Beschreibt den Microsoft C/C++-Compilerfehler C2705.
+ms.date: 08/25/2020
 f1_keywords:
 - C2705
 helpviewer_keywords:
 - C2705
 ms.assetid: 29249ea3-4ea7-4105-944b-bdb83e8d6852
-ms.openlocfilehash: 65d9ed2458f43e6c9a697be02ffc9b831259624c
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 40d0f70ee379f5d1347b7443817713a53e097f89
+ms.sourcegitcommit: efc8c32205c9d610f40597556273a64306dec15d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87225435"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88898752"
 ---
 # <a name="compiler-error-c2705"></a>Compilerfehler C2705
 
-' Bezeichnung ': Unzulässiger Sprung in den Bereich für den Ausnahmehandlerblock.
+> '*Bezeichnung*': Unzulässiger Sprung in den Bereich für den Ausnahmehandlerblock.
 
-Die Ausführung springt zu einer Bezeichnung innerhalb eines- **`try`** / **`catch`** ,- `__try` / **`__except`** ,- `__try` / **`__finally`** Blocks. Weitere Informationen finden Sie unter [Ausnahmebehandlung (Task Parallel Library)](../../cpp/exception-handling-in-visual-cpp.md).
+## <a name="remarks"></a>Hinweise
+
+Die Ausführung springt zu einer Bezeichnung innerhalb eines- **`try`** / **`catch`** ,- **`__try`** / **`__except`** oder- **`__try`** / **`__finally`** Blocks. Der Compiler lässt dieses Verhalten nicht zu. Weitere Informationen finden Sie unter [Ausnahmebehandlung](../../cpp/exception-handling-in-visual-cpp.md).
+
+## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird C2705 generiert:
 

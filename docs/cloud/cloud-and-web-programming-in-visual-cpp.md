@@ -3,12 +3,12 @@ title: Cloud- und Webprogrammierung in Visual C++
 ms.date: 05/14/2019
 ms.assetid: b63611f1-9723-44d0-ba7f-c3ebef341313
 ms.topic: overview
-ms.openlocfilehash: 4e50557733d474d68b8e503d00b28b2ae8cb7f09
-ms.sourcegitcommit: 7750e4c291d56221c8893120c56a1fe6c9af60d6
+ms.openlocfilehash: 675502e9ae50c9e69ad4555502000d128d5d4cbe
+ms.sourcegitcommit: efc8c32205c9d610f40597556273a64306dec15d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274643"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88898667"
 ---
 # <a name="cloud-and-web-programming-in-visual-c"></a>Cloud- und Webprogrammierung in Visual C++
 
@@ -30,7 +30,7 @@ In C++ haben Sie mehrere Optionen, um eine Verbindung mit dem Web und der Cloud 
 
 - [OneDrive and SharePoint in Microsoft Graph](https://dev.onedrive.com/README.htm) (OneDrive und SharePoint in Microsoft Graph)
 
-  Die OneDrive-API stellt eine Reihe von HTTP-Diensten bereit, über die Sie Ihre Anwendung mit Dateien und Ordnern in Office 365 und SharePoint Server 2016 verbinden können.
+  Die onedrive-API bietet eine Reihe von http-Diensten, mit denen Sie Ihre Anwendung mit Dateien und Ordnern in Microsoft 365 und SharePoint Server 2016 verbinden können.
 
 ## <a name="windows-and-cross-platform-networking-apis"></a>Windows- und plattformübergreifende Netzwerk-APIs
 
@@ -51,13 +51,13 @@ In C++ haben Sie mehrere Optionen, um eine Verbindung mit dem Web und der Cloud 
 
 - [IXMLHTTPRequest2-Schnittstelle](/windows/win32/api/msxml6/nn-msxml6-ixmlhttprequest2)
 
-  Stellt eine systemeigene COM-Schnittstelle bereit, die Sie in Windows-Runtime-Apps oder Windows-Desktop-Apps verwenden können, um über HTTP eine Verbindung mit dem Internet herzustellen und GET-, PUT- und andere HTTP-Befehle auszugeben. Weitere Informationen finden Sie unter [Exemplarische Vorgehensweise: Verbinden von Verwendungsaufgaben und XML-HTTP-Anforderungen](../parallel/concrt/walkthrough-connecting-using-tasks-and-xml-http-requests.md).
+  Stellt eine systemeigene COM-Schnittstelle bereit, die Sie in Windows-Runtime-Apps oder Windows-Desktop-Apps verwenden können, um über HTTP eine Verbindung mit dem Internet herzustellen und GET-, PUT- und andere HTTP-Befehle auszugeben. Weitere Informationen finden Sie unter Exemplarische Vorgehensweise [: Herstellen einer Verbindung mithilfe von Aufgaben und XML-HTTP-Anforderungen](../parallel/concrt/walkthrough-connecting-using-tasks-and-xml-http-requests.md).
 
 - [Windows Internet (WinInet)](/windows/win32/WinInet/portal)
 
   Eine Windows-API, die Sie in Windows-Desktop-Apps verwenden können, um eine Verbindung mit dem Internet herzustellen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [C++ in Visual Studio](../overview/visual-cpp-in-visual-studio.md) <br/>
 [Microsoft Azure C und C++ Developer Center](https://azure.microsoft.com/develop/cpp/) <br/>

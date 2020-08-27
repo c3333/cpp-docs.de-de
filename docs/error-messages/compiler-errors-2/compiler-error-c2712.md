@@ -1,27 +1,28 @@
 ---
 title: Compilerfehler C2712
-ms.date: 11/04/2016
+description: Beschreibt den Microsoft C/C++-Compilerfehler C2712.
+ms.date: 08/25/2020
 f1_keywords:
 - C2712
 helpviewer_keywords:
 - C2712
 ms.assetid: f7d4ffcc-7ed2-459b-8067-a728ce647071
-ms.openlocfilehash: a25c59fa5c9ba0102666f6c8922a61b063e7627a
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 2f0b883607241473a429919e06de9e975fa2e3c1
+ms.sourcegitcommit: efc8c32205c9d610f40597556273a64306dec15d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80202305"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88898694"
 ---
 # <a name="compiler-error-c2712"></a>Compilerfehler C2712
 
-> __try kann nicht in Funktionen verwendet werden, die eine Objektentladung benötigen
+> kann nicht `__try` in Funktionen verwendet werden, die das Entwickeln von Objekten erfordern
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Der Fehler C2712 kann auftreten, wenn Sie [/EHsc](../../build/reference/eh-exception-handling-model.md)verwenden, und eine Funktion mit strukturierter Ausnahmebehandlung enthält auch Objekte, die entlädt (Zerstörung).
+Der Fehler C2712 kann auftreten, wenn Sie verwenden [`/EHsc`](../../build/reference/eh-exception-handling-model.md) und eine Funktion mit strukturierter Ausnahmebehandlung auch Objekte enthält, die eine Entwickelung erfordern (Zerstörung).
 
-Lösungsvorschläge:
+Mögliche Lösungen:
 
 - Verschieben Sie Code, der SEH benötigt, zu einer anderen Funktion.
 
@@ -29,11 +30,11 @@ Lösungsvorschläge:
 
 - Kompilieren ohne /EHsc
 
-Fehler C2712 kann auch auftreten, wenn Sie eine Methode aufzurufen, die mit dem [__event](../../cpp/event.md) -Schlüsselwort deklariert wurde. Da das Ereignis in einer Multithread-Umgebung verwendet werden kann, generiert der Compiler Code, der die Bearbeitung des zugrunde liegenden Ereignis Objekts verhindert und den generierten Code dann in eine Seh [-try-schließlich-Anweisung](../../cpp/try-finally-statement.md)einschließt. Folglich wird Fehler C2712 auftreten, wenn Sie die Ereignismethode aufrufen und ein Argument, dessen Typ einen Destruktor enthält, als Wert übergeben. Eine Lösung besteht in diesem Fall darin, das Argument als konstanten Verweis zu übergeben.
+Fehler C2712 kann auch auftreten, wenn eine Methode aufgerufen wird, die mit dem- [`__event`](../../cpp/event.md) Schlüsselwort deklariert wurde. Da das-Ereignis in einer Multithread-Umgebung verwendet werden kann, generiert der Compiler Code, der die Bearbeitung des zugrunde liegenden Ereignis Objekts verhindert und den generierten Code dann in eine Seh- [ `try-finally` Anweisung](../../cpp/try-finally-statement.md)einschließt. Folglich wird Fehler C2712 auftreten, wenn Sie die Ereignismethode aufrufen und ein Argument, dessen Typ einen Destruktor enthält, als Wert übergeben. Eine Lösung besteht in diesem Fall darin, das Argument als konstanten Verweis zu übergeben.
 
-C2712 kann auch auftreten, wenn Sie mit **/clr: pure** kompilieren und ein statisches Array von Zeigern auf Funktionen in einem `__try`-Block deklarieren. Ein statischer Member erfordert, dass der Compiler die dynamische Initialisierung unter **/clr: pure**verwendet C++ , was eine Ausnahmebehandlung impliziert. Eine C++-Ausnahmebehandlung ist jedoch in einem `__try`-Block nicht zulässig.
+C2712 kann auch auftreten, wenn Sie mit kompilieren **`/clr:pure`** und ein statisches Array von Zeigern auf Funktionen in einem-Block deklarieren **`__try`** . Ein statischer Member erfordert, dass der Compiler die dynamische Initialisierung unter verwendet **`/clr:pure`** . Dies impliziert die C++-Ausnahmebehandlung. Die C++-Ausnahmebehandlung ist in einem-Block jedoch nicht zulässig **`__try`** .
 
-Die Compileroptionen **/clr: pure** und **/clr: Safe** sind in Visual Studio 2015 veraltet und werden in Visual Studio 2017 nicht unterstützt.
+Die **`/clr:pure`** **`/clr:safe`** Compileroptionen und sind in Visual Studio 2015 veraltet und werden in Visual Studio 2017 nicht unterstützt.
 
 ## <a name="example"></a>Beispiel
 
