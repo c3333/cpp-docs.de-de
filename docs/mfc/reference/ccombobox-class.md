@@ -1,6 +1,7 @@
 ---
 title: CComboBox-Klasse
-ms.date: 11/04/2016
+description: API-Referenz für die CComboBox-Klasse für das MFC-Windows-Kombinations Feld
+ms.date: 08/27/2020
 f1_keywords:
 - CComboBox
 - AFXWIN/CComboBox
@@ -108,12 +109,12 @@ helpviewer_keywords:
 - CComboBox [MFC], SetTopIndex
 - CComboBox [MFC], ShowDropDown
 ms.assetid: 4e73b5df-0d2e-4658-9706-38133fb10513
-ms.openlocfilehash: 79bcb973046c418f0bea148084da239075414790
-ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
+ms.openlocfilehash: 515a079ca4f6c3896733bbebec424f63455fb979
+ms.sourcegitcommit: c8f1605354724a13566bc3b0fac3c5d98265f1d0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88561673"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89062184"
 ---
 # <a name="ccombobox-class"></a>CComboBox-Klasse
 
@@ -129,13 +130,13 @@ class CComboBox : public CWnd
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[CComboBox:: CComboBox](#ccombobox)|Erstellt ein `CComboBox`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[CComboBox:: AddString](#addstring)|Fügt eine Zeichenfolge am Ende der Liste im Listenfeld eines Kombinations Felds oder an der sortierten Position für Listenfelder mit dem CBS_SORT Stil hinzu.|
 |[CComboBox:: Clear](#clear)|Löscht (löscht) die aktuelle Auswahl, sofern vorhanden, im Bearbeitungs Steuerelement.|
@@ -188,7 +189,7 @@ class CComboBox : public CWnd
 |[CComboBox:: settopindex](#settopindex)|Weist den Listenfeld Bereich des Kombinations Felds an, das Element mit dem angegebenen Index im oberen Bereich anzuzeigen.|
 |[CComboBox:: ShowDropDown](#showdropdown)|Blendet das Listenfeld eines Kombinations Felds ein, das die CBS_DROPDOWN oder CBS_DROPDOWNLIST Format aufweist, oder blendet es aus.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Ein Kombinations Feld besteht aus einem Listenfeld, das entweder mit einem statischen Steuerelement oder einem Bearbeitungs Steuerelement kombiniert wird. Der Listenfeld Bereich des Steuer Elements kann jederzeit angezeigt werden, oder er wird nur angezeigt, wenn der Benutzer den Dropdown Pfeil neben dem Steuerelement auswählt.
 
@@ -258,7 +259,7 @@ Wenn Sie ein- `CComboBox` Objekt in ein anderes Fenster Objekt einbetten, müsse
 
 `CComboBox`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 **Header:** afxwin.h
 
@@ -279,7 +280,7 @@ Verweist auf die mit NULL endende Zeichenfolge, die hinzugefügt werden soll.
 
 Wenn der Rückgabewert größer als oder gleich 0 ist, ist dies der null basierte Index der Zeichenfolge im Listenfeld. Der Rückgabewert ist CB_ERR, wenn ein Fehler auftritt. der Rückgabewert ist CB_ERRSPACE, wenn nicht genügend Speicherplatz zum Speichern der neuen Zeichenfolge zur Verfügung steht.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn das Listenfeld nicht mit dem [CBS_SORT](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) Stil erstellt wurde, wird die Zeichenfolge am Ende der Liste hinzugefügt. Andernfalls wird die Zeichenfolge in die Liste eingefügt, und die Liste wird sortiert.
 
@@ -312,7 +313,7 @@ Löscht (löscht) die aktuelle Auswahl, sofern vorhanden, im Bearbeitungs Steuer
 void Clear();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Um die aktuelle Auswahl zu löschen und den gelöschten Inhalt in die Zwischenablage einzufügen, verwenden Sie die Funktion zum [Ausschneiden](#cut) von Membern.
 
@@ -345,7 +346,7 @@ Gibt die relative Position der beiden in der-Struktur beschriebenen Elemente an 
 
 Eine Beschreibung von finden Sie unter [CWnd:: oncompareitem](../../mfc/reference/cwnd-class.md#oncompareitem) `COMPAREITEMSTRUCT` .
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Standardmäßig führt diese Member-Funktion keine Aktion aus. Wenn Sie ein Kombinations Feld zum Erstellen eines Besitzers mit dem LBS_SORT Stil erstellen, müssen Sie diese Element Funktion überschreiben, damit das Framework beim Sortieren neuer Elemente, die dem Listenfeld hinzugefügt werden, behilflich ist.
 
@@ -395,7 +396,7 @@ Gibt die Steuerelement-ID des Kombinations Felds an.
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Sie erstellen ein- `CComboBox` Objekt in zwei Schritten. Zuerst wird der-Konstruktor aufgerufen und dann aufgerufen `Create` , wodurch das Windows-Kombinations Feld erstellt und an das-Objekt angefügt wird `CComboBox` .
 
@@ -431,7 +432,7 @@ Löscht (schneidet) die aktuelle Auswahl im Kombinations Feld-Bearbeitungs Steue
 void Cut();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Um die aktuelle Auswahl zu löschen, ohne den gelöschten Text in der Zwischenablage zu platzieren, müssen [Sie die Funktion zum Löschen von](#clear) Membern
 
@@ -452,7 +453,7 @@ virtual void DeleteItem(LPDELETEITEMSTRUCT lpDeleteItemStruct);
 *lpdeleteitemstruct*<br/>
 Ein langer Zeiger auf eine Windows [deleteitemstruct](/windows/win32/api/winuser/ns-winuser-deleteitemstruct) -Struktur, die Informationen über das gelöschte Element enthält. Eine Beschreibung dieser Struktur finden Sie unter [CWnd:: ondeleteitem](../../mfc/reference/cwnd-class.md#ondeleteitem) .
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Bei der Standardimplementierung dieser Funktion wird keine Aktion ausgeführt. Überschreiben Sie diese Funktion, um das Kombinations Feld bei Bedarf neu zu zeichnen.
 
@@ -477,7 +478,7 @@ Gibt den Index der zu löschenden Zeichenfolge an.
 
 Wenn der Rückgabewert größer als oder gleich 0 ist, ist dies die Anzahl der Zeichen folgen, die in der Liste verbleiben. Der Rückgabewert ist CB_ERR, wenn *nIndex* einen Index angibt, der größer als die Anzahl der Elemente in der Liste ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Alle Elemente nach *nIndex* werden nun um eine Position nach unten verschoben. Wenn ein Kombinations Feld z. b. zwei Elemente enthält, führt das Löschen des ersten Elements dazu, dass das restliche Element jetzt an der ersten Position liegt. *nIndex*= 0 für das Element an der ersten Position.
 
@@ -523,7 +524,7 @@ Verweist auf eine Datei Spezifikations Zeichenfolge. Die Zeichenfolge kann Platz
 
 Wenn der Rückgabewert größer als oder gleich 0 ist, ist dies der null basierte Index des letzten Datei namens, der der Liste hinzugefügt wurde. Der Rückgabewert ist CB_ERR, wenn ein Fehler auftritt. der Rückgabewert ist CB_ERRSPACE, wenn nicht genügend Speicherplatz zum Speichern der neuen Zeichen folgen verfügbar ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion wird vom Windows-Steuerelement nicht unterstützt `ComboBoxEx` . Weitere Informationen zu diesem Steuerelement finden Sie unter [ComboBoxEx](/windows/win32/Controls/comboboxex-controls) -Steuerelemente in der Windows SDK.
 
@@ -544,7 +545,7 @@ virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
 *lpdrawitemstruct*<br/>
 Ein Zeiger auf eine [drawitemstruct](/windows/win32/api/winuser/ns-winuser-drawitemstruct) -Struktur, die Informationen über den erforderlichen Zeichentyp enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der- `itemAction` Member der- `DRAWITEMSTRUCT` Struktur definiert die Zeichnungs Aktion, die ausgeführt werden soll. Eine Beschreibung dieser Struktur finden Sie unter [CWnd:: OnDrawItem](../../mfc/reference/cwnd-class.md#ondrawitem) .
 
@@ -576,7 +577,7 @@ Verweist auf die auf NULL endenden Zeichenfolge, die das Präfix enthält, nach 
 
 Wenn der Rückgabewert größer als oder gleich 0 ist, ist dies der null basierte Index des übereinstimmenden Elements. Es ist CB_ERR, wenn die Suche nicht erfolgreich war.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion wird vom Windows-Steuerelement nicht unterstützt `ComboBoxEx` . Weitere Informationen zu diesem Steuerelement finden Sie unter [ComboBoxEx](/windows/win32/Controls/comboboxex-controls) -Steuerelemente in der Windows SDK.
 
@@ -606,7 +607,7 @@ Zeigt auf die zu suchende NULL-terminierte Zeichenfolge. Diese Zeichenfolge kann
 
 Der null basierte Index des übereinstimmenden Elements oder CB_ERR, wenn die Suche nicht erfolgreich war.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn das Kombinations Feld mit einem Besitzer Zeichnungs Stil, aber ohne den [CBS_HASSTRINGS](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) Stil erstellt wurde, `FindStringExact` versucht, den Double Word-Wert mit dem Wert von *lpszfind*abzugleichen.
 
@@ -631,7 +632,7 @@ Ein Zeiger auf die [comboboxinfo](/windows/win32/api/winuser/ns-winuser-combobox
 
 Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Member-Funktion emuliert die Funktionalität der [CB_GETCOMBOBOXINFO](/windows/win32/Controls/cb-getcomboboxinfo) Nachricht, wie in der Windows SDK beschrieben.
 
@@ -645,7 +646,7 @@ int GetCount() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der Elemente. Die zurückgegebene Anzahl ist ein Wert größer als der Indexwert des letzten Elements (der Index ist NULL basiert). Dies ist CB_ERR, wenn ein Fehler auftritt.
+Eine -Anzahl von Elementen. Die zurückgegebene Anzahl ist ein Wert größer als der Indexwert des letzten Elements (der Index ist NULL basiert). Dies ist CB_ERR, wenn ein Fehler auftritt.
 
 ### <a name="example"></a>Beispiel
 
@@ -679,7 +680,7 @@ In der ersten Überladung ein [CString](../../atl-mfc-shared/using-cstring.md) -
 
 In der zweiten Überladung true, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Hinweis Text ist eine Eingabeaufforderung, die im Eingabebereich des Kombinations Feld-Steuer Elements angezeigt wird. Der Hinweis Text wird angezeigt, bis der Benutzereingaben eingibt.
 
@@ -697,7 +698,7 @@ int GetCurSel() const;
 
 Der null basierte Index des derzeit ausgewählten Elements im Listenfeld eines Kombinations Felds oder CB_ERR, wenn kein Element ausgewählt ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `GetCurSel` Gibt einen Index in die Liste zurück.
 
@@ -750,7 +751,7 @@ int GetDroppedWidth() const;
 
 Bei Erfolg die zulässige Mindestbreite in Pixel. Andernfalls CB_ERR.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion gilt nur für Kombinations Felder mit dem [CBS_DROPDOWN](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) -oder [CBS_DROPDOWNLIST](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) -Stil.
 
@@ -788,7 +789,7 @@ BOOL GetExtendedUI() const;
 
 Ungleich 0 (null), wenn das Kombinations Feld über die erweiterte Benutzeroberfläche verfügt. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erweiterte Benutzeroberfläche kann wie folgt identifiziert werden:
 
@@ -814,7 +815,7 @@ UINT GetHorizontalExtent() const;
 
 Die scrollbare Breite des Listenfeld Teils des Kombinations Felds in Pixel.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dies gilt nur, wenn der Listenfeld Bereich des Kombinations Felds über eine horizontale Schiebe Leiste verfügt.
 
@@ -839,7 +840,7 @@ Enthält den NULL basierten Index eines Elements im Listenfeld des Kombinations 
 
 Der 32-Bit-Wert, der dem Element zugeordnet ist, oder CB_ERR, wenn ein Fehler auftritt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der 32-Bit-Wert kann mit dem *dwitemdata* -Parameter eines [SetItemData](#setitemdata) -Member-Funktions Aufrufes festgelegt werden. Verwenden `GetItemDataPtr` Sie die Member-Funktion, wenn der 32-Bit-Wert, der abgerufen werden soll, ein-Zeiger ist ( **`void`** <strong>\*</strong> ).
 
@@ -918,9 +919,10 @@ Ein Verweis auf eine `CString`.
 
 Die Länge (in Byte) der Zeichenfolge ohne das abschließende Null Zeichen. Wenn *nIndex* keinen gültigen Index angibt, wird der Rückgabewert CB_ERR.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-Die zweite Form dieser Member-Funktion füllt ein `CString` -Objekt mit dem Text des Elements.
+Die zweite Form dieser Member-Funktion füllt ein `CString` -Objekt mit dem Text des Elements. \
+Wenn *nIndex* ungültig ist, löst diese Funktion eine `E_INVALIDARG` Ausnahme aus (Fehlercode: `-2147024809` , `0x80070057` ).
 
 ### <a name="example"></a>Beispiel
 
@@ -959,7 +961,7 @@ LCID GetLocale() const;
 
 Der LCID-Wert (Locale Identifier) für die Zeichen folgen im Kombinations Feld.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Gebiets Schema wird z. b. verwendet, um die Sortierreihenfolge der Zeichen folgen in einem sortierten Kombinations Feld zu bestimmen.
 
@@ -979,7 +981,7 @@ int GetMinVisible() const;
 
 Die Mindestanzahl sichtbarer Elemente in der aktuellen Dropdown Liste.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode sendet die [CB_GETMINVISIBLE](/windows/win32/Controls/cb-setminvisible) Nachricht, die in der Windows SDK beschrieben wird.
 
@@ -995,7 +997,7 @@ int GetTopIndex() const;
 
 Der null basierte Index des ersten sichtbaren Elements im Listenfeld Bereich des Kombinations Felds, wenn erfolgreich, CB_ERR andernfalls.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Zuerst befindet sich Element 0 am oberen Rand des Listen Felds, aber wenn im Listenfeld ein Bildlauf durchgeführt wird, befindet sich möglicherweise ein anderes Element im oberen Bereich.
 
@@ -1025,7 +1027,7 @@ Gibt die Größe des Arbeitsspeichers in Bytes an, der für Element Zeichenfolge
 
 Wenn erfolgreich, wird die maximale Anzahl von Elementen, die der Listenfeld Bereich des Kombinations Felds speichern kann, bevor eine Speicher Belegungs Zuordnung benötigt wird, andernfalls CB_ERRSPACE, was bedeutet, dass nicht genügend Arbeitsspeicher verfügbar ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion wird aufgerufen, bevor dem Listenfeld Teil des eine große Anzahl von Elementen hinzugefügt wird `CComboBox` .
 
@@ -1059,7 +1061,7 @@ Zeigt auf die einzufügende nullterminierte Zeichenfolge.
 
 Der nullbasierte Index der Position, an der die Zeichenfolge eingefügt wurde. Der Rückgabewert beim Auftreten eines Fehlers ist CB_ERR. Der Rückgabewert ist CB_ERRSPACE, wenn zum Speichern der neuen Zeichenfolge nicht genügend Platz vorhanden ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Im Gegensatz zur Memberfunktion [AddString](#addstring) bewirkt die `InsertString` -Memberfunktion nicht die Sortierung einer Liste mit der Formatvorlage [CBS_SORT](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) .
 
@@ -1087,7 +1089,7 @@ Gibt die Länge (in Byte) des Texts an, den der Benutzer eingeben kann. Wenn die
 
 Ungleich NULL, wenn erfolgreich. Wenn ein Kombinations Feld mit der Format [CBS_DROPDOWNLIST](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) oder einem Kombinations Feld ohne Bearbeitungs Steuerelement aufgerufen wird, wird der Rückgabewert CB_ERR.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn das Kombinations Feld nicht über die Format [CBS_AUTOHSCROLL](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles)verfügt, wirkt sich das Festlegen des Text Limits auf einen höheren Wert als die Größe des Bearbeitungs Steuer Elements aus.
 
@@ -1110,7 +1112,7 @@ virtual void MeasureItem(LPMEASUREITEMSTRUCT lpMeasureItemStruct);
 *lpmeasureitemstruct*<br/>
 Ein langer Zeiger auf eine [measureitemstruct](/windows/win32/api/winuser/ns-winuser-measureitemstruct) -Struktur.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Standardmäßig führt diese Member-Funktion keine Aktion aus. Überschreiben Sie diese Member-Funktion, und füllen Sie die `MEASUREITEMSTRUCT` Struktur aus, um Fenster über die Abmessungen des Listen Felds im Kombinations Feld zu informieren. Wenn das Kombinations Feld mit dem [CBS_OWNERDRAWVARIABLE](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) -Format erstellt wird, ruft das Framework diese Member-Funktion für jedes Element im Listenfeld auf. Andernfalls wird dieser Member nur einmal aufgerufen.
 
@@ -1130,7 +1132,7 @@ Fügt die Daten aus der Zwischenablage in das Bearbeitungs Steuerelement des Kom
 void Paste();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Daten werden nur eingefügt, wenn die Zwischenablage Daten in CF_TEXT Format enthält.
 
@@ -1172,7 +1174,7 @@ Verweist auf die auf NULL endenden Zeichenfolge, die das Präfix enthält, nach 
 
 Der null basierte Index des ausgewählten Elements, wenn die Zeichenfolge gefunden wurde. Wenn die Suche nicht erfolgreich war, wird der Rückgabewert CB_ERR, und die aktuelle Auswahl wird nicht geändert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine Zeichenfolge wird nur ausgewählt, wenn die Anfangs Zeichen (vom Startpunkt) mit den Zeichen in der Präfix Zeichenfolge verglichen werden.
 
@@ -1199,7 +1201,7 @@ in Ein Zeiger auf einen null-terminierten Puffer, der den Hinweis Text enthält.
 
 TRUE, wenn die Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Hinweis Text ist eine Eingabeaufforderung, die im Eingabebereich des Kombinations Feld-Steuer Elements angezeigt wird. Der Hinweis Text wird angezeigt, bis der Benutzereingaben eingibt.
 
@@ -1234,7 +1236,7 @@ Gibt den NULL basierten Index der auszuwählen Zeichenfolge an. Wenn-1, wird die
 
 Der null basierte Index des Elements, das ausgewählt wird, wenn die Nachricht erfolgreich ist. Der Rückgabewert ist CB_ERR, wenn *nselect* größer als die Anzahl der Elemente in der Liste ist oder wenn *nselect* auf-1 festgelegt ist, wodurch die Auswahl gelöscht wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Bei Bedarf führt das Listenfeld einen Bildlauf in der Zeichenfolge durch (wenn das Listenfeld sichtbar ist). Der Text im Bearbeitungs Steuerelement des Kombinations Felds wird so geändert, dass die neue Auswahl angezeigt wird. Jede vorherige Auswahl im Listenfeld wird entfernt.
 
@@ -1259,7 +1261,7 @@ Die minimale zulässige Breite des Listenfeld Teils des Kombinations Felds in Pi
 
 Bei Erfolg die neue Breite des Listen Felds, andernfalls CB_ERR.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion gilt nur für Kombinations Felder mit dem [CBS_DROPDOWN](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) -oder [CBS_DROPDOWNLIST](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) -Stil.
 
@@ -1291,7 +1293,7 @@ Gibt die Endposition an. Wenn die Endposition auf-1 festgelegt ist, wird der ges
 
 Ungleich 0 (null), wenn die Member-Funktion erfolgreich ist. andernfalls 0. Es ist CB_ERR, wenn `CComboBox` das [CBS_DROPDOWNLIST](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) Format aufweist oder nicht über ein Listenfeld verfügt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Positionen sind NULL basiert. Um das erste Zeichen des Bearbeitungs Steuer Elements auszuwählen, geben Sie die Anfangsposition 0 an. Die Endposition ist für das Zeichen direkt nach dem letzten Zeichen, das ausgewählt werden soll. Wenn Sie z. b. die ersten vier Zeichen des Bearbeitungs Steuer Elements auswählen möchten, verwenden Sie die Startposition 0 und die Endposition 4.
 
@@ -1319,7 +1321,7 @@ Gibt an, ob das Kombinations Feld die erweiterte Benutzeroberfläche oder die St
 
 CB_OKAY, wenn der Vorgang erfolgreich ist, oder CB_ERR, wenn ein Fehler auftritt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erweiterte Benutzeroberfläche kann wie folgt identifiziert werden:
 
@@ -1346,7 +1348,7 @@ void SetHorizontalExtent(UINT nExtent);
 *nextent*<br/>
 Gibt die Anzahl der Pixel an, um die der Listenfeld Bereich des Kombinations Felds horizontal gescrollt werden kann.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die Breite des Listen Felds kleiner als dieser Wert ist, führt die horizontale Schiebe Leiste im Listenfeld einen horizontalen Bildlauf durch. Wenn die Breite des Listen Felds größer oder gleich diesem Wert ist, wird die horizontale Schiebe Leiste ausgeblendet oder, wenn das Kombinations Feld den [CBS_DISABLENOSCROLL](../../mfc/reference/styles-used-by-mfc.md#combo-box-styles) Stil hat, deaktiviert.
 
@@ -1376,7 +1378,7 @@ Enthält den neuen Wert, der dem Element zugeordnet werden soll.
 
 CB_ERR, wenn ein Fehler auftritt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden `SetItemDataPtr` Sie die Member-Funktion, wenn das 32-Bit-Element ein Zeiger sein soll.
 
@@ -1406,7 +1408,7 @@ Enthält den Zeiger, der dem Element zugeordnet werden soll.
 
 CB_ERR, wenn ein Fehler auftritt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dieser Zeiger bleibt für die Lebensdauer des Kombinations Felds gültig, auch wenn die relative Position des Elements im Kombinations Feld geändert werden kann, wenn Elemente hinzugefügt oder entfernt werden. Daher kann der Index des Elements innerhalb des Felds geändert werden, aber der Zeiger bleibt zuverlässig.
 
@@ -1440,7 +1442,7 @@ Gibt die Höhe der durch *nIndex*identifizierten Kombinations Feld Komponente in
 
 CB_ERR, wenn der Index oder die Höhe ungültig ist. andernfalls 0.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Höhe des Bearbeitungs Steuerelement-Teils (oder statischer Text) des Kombinations Felds wird unabhängig von der Höhe der Listenelemente festgelegt. Eine Anwendung muss sicherstellen, dass die Höhe des Bearbeitungs Steuer Elements (oder statischer Text) nicht kleiner ist als die Höhe eines bestimmten Listenfeld Elements.
 
@@ -1465,7 +1467,7 @@ Der neue LCID-Wert (Locale Identifier), der für das Kombinations Feld festgeleg
 
 Der vorherige LCID-Wert (Locale Identifier) für dieses Kombinations Feld.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn `SetLocale` nicht aufgerufen wird, wird das Standard Gebiets Schema vom System abgerufen. Dieses Standard Gebiets Schema für das System kann mithilfe der regionalen (oder internationalen) Anwendung der Systemsteuerung geändert werden.
 
@@ -1490,7 +1492,7 @@ in Gibt die Mindestanzahl von sichtbaren Elementen an.
 
 TRUE, wenn diese Methode erfolgreich ist. andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode sendet die [CB_SETMINVISIBLE](/windows/win32/Controls/cb-setminvisible) Nachricht, die in der Windows SDK beschrieben wird.
 
@@ -1523,7 +1525,7 @@ Gibt den NULL basierten Index des Listenfeld Elements an.
 
 NULL, wenn erfolgreich, oder CB_ERR, wenn ein Fehler auftritt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das System führt einen Bildlauf durch das Listenfeld durch, bis entweder das von *nIndex* angegebene Element oben im Listenfeld angezeigt wird oder der maximale scrollbereich erreicht wurde.
 
@@ -1544,7 +1546,7 @@ void ShowDropDown(BOOL bShowIt = TRUE);
 *bshowit*<br/>
 Gibt an, ob das Dropdown-Listenfeld angezeigt oder ausgeblendet werden soll. Der Wert true zeigt das Listenfeld an. Der Wert false blendet das Listenfeld aus.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Standardmäßig wird in einem Kombinations Feld dieses Stils das Listenfeld angezeigt.
 

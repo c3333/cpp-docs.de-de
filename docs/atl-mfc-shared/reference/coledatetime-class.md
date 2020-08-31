@@ -1,6 +1,7 @@
 ---
 title: COleDateTime-Klasse
-ms.date: 03/27/2019
+description: API-Referenz für die MFC COleDateTime-Klasse, die den `DATE` in der OLE-Automatisierung verwendeten Datentyp kapselt.
+ms.date: 08/27/2020
 f1_keywords:
 - COleDateTime
 - ATLCOMTIME/ATL::COleDateTime
@@ -34,12 +35,12 @@ helpviewer_keywords:
 - dates, handling in MFC
 - time, handling in MFC
 ms.assetid: e718f294-16ec-4649-88b6-a4dbae5178fb
-ms.openlocfilehash: 5cbc131a81afef1ee94069f39e79f22ce7addfcb
-ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
+ms.openlocfilehash: 9ebbab02860daaeb57c24d3e0901666861adfc2b
+ms.sourcegitcommit: c8f1605354724a13566bc3b0fac3c5d98265f1d0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88562466"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89062157"
 ---
 # <a name="coledatetime-class"></a>COleDateTime-Klasse
 
@@ -55,13 +56,13 @@ class COleDateTime
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[COleDateTime:: COleDateTime](#coledatetime)|Erstellt ein `COleDateTime`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[COleDateTime:: Format](#format)|Generiert eine formatierte Zeichen folgen Darstellung eines- `COleDateTime` Objekts.|
 |[COleDateTime:: getasdbtimestamp](#getasdbtimestamp)|Rufen Sie diese Methode auf, um die Zeit im `COleDateTime` Objekt als `DBTIMESTAMP` Datenstruktur zu erhalten.|
@@ -85,7 +86,7 @@ class COleDateTime
 
 ### <a name="public-operators"></a>Öffentliche Operatoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[COleDateTime:: Operator = =, COleDateTime:: Operator < usw.](#coledatetime_relational_operators)|Vergleicht zwei `COleDateTime` Werte.|
 |[COleDateTime:: Operator +, COleDateTime:: Operator-](#operator_add_-)|Werte hinzufügen und subtrahieren `COleDateTime` .|
@@ -95,12 +96,12 @@ class COleDateTime
 
 ### <a name="public-data-members"></a>Öffentliche Datenmember
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[COleDateTime:: m_dt](#m_dt)|Enthält den zugrunde liegenden `DATE` für dieses `COleDateTime` Objekt.|
 |[COleDateTime:: m_status](#m_status)|Enthält den Status dieses `COleDateTime` Objekts.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 `COleDateTime` weist keine Basisklasse auf.
 
@@ -108,11 +109,11 @@ Dies ist einer der möglichen Typen für den [Variant](/windows/win32/api/oaidl/
 
 Der `DATE` Typ wird als Gleit Komma Wert implementiert. Tage werden ab dem 30. Dezember 1899 und Mitternacht gemessen. In der folgenden Tabelle werden einige Datumsangaben und deren zugeordnete Werte angezeigt:
 
-|Date|Wert|
+|Datum|Wert|
 |----------|-----------|
 |29. Dezember 1899, Mitternacht|-1.0|
 |29. Dezember 1899, 6 A. M|-1.25|
-|30. Dezember 1899, Mitternacht|0,0|
+|30. Dezember 1899, Mitternacht|0.0|
 |31. Dezember 1899, Mitternacht|1.0|
 |1. Januar 1900, 6 Uhr|2,25|
 
@@ -136,7 +137,7 @@ Grundlegende arithmetische Operationen für die `COleDateTime` Werte verwenden d
 
 Weitere Informationen zu den `COleDateTime` Klassen und `COleDateTimeSpan` finden Sie im Artikel [Datum und Uhrzeit: Automatisierungsunterstützung](../../atl-mfc-shared/date-and-time-automation-support.md).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 **Header:** ATLComTime. h
 
@@ -158,7 +159,7 @@ bool operator>=(const COleDateTime& date) const throw();
 *date*<br/>
 Das zu vergleichende `COleDateTime`-Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 > [!NOTE]
 > Ein ATLASSERT-Vorgang tritt auf, wenn einer der beiden Operanden ungültig ist.
@@ -227,7 +228,7 @@ MS-und Time-Werte, die in einen Datums-/Uhrzeitwert konvertiert und in das neue-
 *Zeitstempel*<br/>
 Ein Verweis auf eine [DBTIMESTAMP](/dotnet/api/system.data.oledb.oledbtype) -Struktur, die die aktuelle lokale Uhrzeit enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Alle diese Konstruktoren erstellen neue `COleDateTime` Objekte, die mit dem angegebenen Wert initialisiert werden. In der folgenden Tabelle werden gültige Bereiche für jede Datums-und Uhrzeit Komponente angezeigt:
 
@@ -317,7 +318,7 @@ Die Ressourcen-ID für die Format Steuerelement Zeichenfolge.
 
 Ein `CString` , der den formatierten Datums-/Uhrzeitwert enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn der Status dieses `COleDateTime` Objekts NULL ist, ist der Rückgabewert eine leere Zeichenfolge. Wenn der Status ungültig ist, wird die Rückgabe Zeichenfolge durch die ATL_IDS_DATETIME_INVALID der Zeichen folgen Ressource angegeben.
 
@@ -353,7 +354,7 @@ Ein Verweis auf eine [DBTIMESTAMP](/dotnet/api/system.data.oledb.oledbtype) -Str
 
 Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Speichert die resultierende Zeit in der referenzierten Zeit *Stempel* Struktur. `DBTIMESTAMP`Für die Datenstruktur, die von dieser Funktion initialisiert wurde, wird der `fraction` Member auf NULL festgelegt.
 
@@ -378,7 +379,7 @@ Ein Verweis auf eine [SYSTEMTIME](/windows/win32/api/minwinbase/ns-minwinbase-sy
 
 Gibt true zurück, wenn erfolgreich; FALSE, wenn die Konvertierung fehlschlägt oder wenn das `COleDateTime` Objekt NULL oder ungültig ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `GetAsSystemTime` speichert die resultierende Zeit im referenzierten *SysTime* -Objekt. `SYSTEMTIME`Für die Datenstruktur, die von dieser Funktion initialisiert wurde, wird der `wMilliseconds` Member auf NULL festgelegt.
 
@@ -401,7 +402,7 @@ Ein Verweis auf eine- `UDATE` Struktur, die den konvertierten Datums-/Uhrzeitwer
 
 Gibt true zurück, wenn erfolgreich; FALSE, wenn die Konvertierung fehlschlägt oder wenn das `COleDateTime` Objekt NULL oder ungültig ist.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine- `UDATE` Struktur stellt ein "entpackte" Datum dar.
 
@@ -429,7 +430,7 @@ int GetDay() const throw();
 
 Der Tag des Monats, der durch den Wert dieses- `COleDateTime` Objekts dargestellt wird, oder, `COleDateTime::error` Wenn der Tag nicht abgerufen werden konnte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Gültige Rückgabewerte liegen zwischen 1 und 31.
 
@@ -455,7 +456,7 @@ Informationen zu anderen Element Funktionen, die den Wert dieses Objekts Abfrage
 
 ## <a name="coledatetimegetdayofweek"></a><a name="getdayofweek"></a> COleDateTime:: getdayolweek
 
-Ruft den Tag des Monats ab, der durch diesen Datums-/Uhrzeitwert dargestellt wird.
+Ruft den Wochentag ab, der durch diesen Datums-/Uhrzeitwert dargestellt wird.
 
 ```
 int GetDayOfWeek() const throw();
@@ -465,7 +466,7 @@ int GetDayOfWeek() const throw();
 
 Der Wochentag, der durch den Wert dieses-Objekts dargestellt `COleDateTime` wird, oder, `COleDateTime::error` Wenn der Wochentag nicht abgerufen werden konnte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Gültige Rückgabewerte liegen zwischen 1 und 7, wobei 1 = Sonntag, 2 = Montag usw.
 
@@ -501,7 +502,7 @@ int GetDayOfYear() const throw();
 
 Der Tag des Jahres, der durch den Wert dieses- `COleDateTime` Objekts dargestellt wird, oder, `COleDateTime::error` Wenn der Tag des Jahres nicht abgerufen werden konnte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Gültige Rückgabewerte liegen zwischen 1 und 366, wobei 1. Januar = 1 ist.
 
@@ -537,7 +538,7 @@ int GetHour() const throw();
 
 Die Stunde, die durch den Wert dieses- `COleDateTime` Objekts dargestellt wird, oder, `COleDateTime::error` Wenn die Stunde nicht abgerufen werden konnte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Gültige Rückgabewerte liegen zwischen 0 und 23.
 
@@ -573,7 +574,7 @@ int GetMinute() const throw();
 
 Die Minute, die durch den Wert dieses- `COleDateTime` Objekts dargestellt wird, oder, `COleDateTime::error` Wenn die Minute nicht abgerufen werden konnte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Gültige Rückgabewerte liegen zwischen 0 und 59.
 
@@ -609,7 +610,7 @@ int GetMonth() const throw();
 
 Der durch den Wert dieses-Objekts dargestellte Monat `COleDateTime` oder, `COleDateTime::error` Wenn der Monat nicht abgerufen werden konnte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Gültige Rückgabewerte liegen zwischen 1 und 12.
 
@@ -645,7 +646,7 @@ int GetSecond() const throw();
 
 Die zweite, die durch den Wert dieses- `COleDateTime` Objekts dargestellt wird, oder, `COleDateTime::error` Wenn die zweite nicht abgerufen werden konnte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Gültige Rückgabewerte liegen zwischen 0 und 59.
 
@@ -686,7 +687,7 @@ DateTimeStatus GetStatus() const throw();
 
 Gibt den Status dieses `COleDateTime` Werts zurück. Wenn Sie `GetStatus` für ein- `COleDateTime` Objekt, das mit dem Standardwert erstellt wurde, aufzurufen, wird gültig zurückgegeben. Wenn Sie `GetStatus` für ein- `COleDateTime` Objekt aufzurufen, das mit dem auf NULL festgelegten-Konstruktor initialisiert wurde, `GetStatus` gibt NULL zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Rückgabewert wird durch den `DateTimeStatus` enumerierten Typ definiert, der in der- `COleDateTime` Klasse definiert ist.
 
@@ -752,7 +753,7 @@ int GetYear() const throw();
 
 Das Jahr, das durch den Wert dieses- `COleDateTime` Objekts dargestellt wird, oder, `COleDateTime::error` Wenn das Jahr nicht abgerufen werden konnte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Gültige Rückgabewerte liegen zwischen 100 und 9999, einschließlich des Jahrhundert.
 
@@ -786,7 +787,7 @@ Die zugrunde liegende- `DATE` Struktur für dieses- `COleDateTime` Objekt.
 DATE m_dt;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 > [!CAUTION]
 > Durch Ändern des Werts in dem Objekt, auf `DATE` das der von dieser Funktion zurückgegebene Zeiger zugreift, wird der Wert dieses `COleDateTime` Objekts geändert. Der Status dieses Objekts wird nicht geändert `COleDateTime` .
@@ -801,7 +802,7 @@ Enthält den Status dieses `COleDateTime` Objekts.
 DateTimeStatus m_status;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der Typ dieses Datenmembers ist der Enumerationstyp `DateTimeStatus` , der in der-Klasse definiert ist `COleDateTime` . Weitere Informationen finden Sie unter [COleDateTime:: GetStatus](#getstatus).
 
@@ -822,7 +823,7 @@ COleDateTime& operator=(const FILETIME& filetimeSrc) throw();
 COleDateTime& operator=(const UDATE& uDate) throw();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese überladenen Zuweisungs Operatoren kopieren den Quell Datums-/Uhrzeitwert in dieses `COleDateTime` Objekt. Eine kurze Beschreibung der einzelnen überladenen Zuweisungs Operatoren folgt:
 
@@ -858,7 +859,7 @@ COleDateTime operator-(COleDateTimeSpan dateSpan) const throw();
 COleDateTimeSpan operator-(const COleDateTime& date) const throw();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `COleDateTime` -Objekte stellen Absolute Zeiten dar. [COleDateTimeSpan](../../atl-mfc-shared/reference/coledatetimespan-class.md) -Objekte stellen relative Zeiten dar. Mit den ersten beiden Operatoren können Sie einen Wert hinzufügen und `COleDateTimeSpan` von einem Wert subtrahieren `COleDateTime` . Mit dem dritten Operator können Sie einen Wert von einem anderen subtrahieren `COleDateTime` , um einen Wert zu erhalten `COleDateTimeSpan` .
 
@@ -887,7 +888,7 @@ COleDateTime& operator+=(COleDateTimeSpan dateSpan) throw();
 COleDateTime& operator-=(COleDateTimeSpan dateSpan) throw();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Operatoren ermöglichen es Ihnen, einen `COleDateTimeSpan` Wert zu und von diesem hinzuzufügen und zu subtrahieren `COleDateTime` . Wenn einer der Operanden NULL ist, ist der Status des resultierenden `COleDateTime` Werts Null.
 
@@ -909,7 +910,7 @@ Konvertiert einen `ColeDateTime` Wert in einen `DATE` .
 operator DATE() const throw();
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Dieser Operator gibt ein-Objekt zurück, `DATE` dessen Wert aus diesem-Objekt kopiert wird `COleDateTime` . Weitere Informationen zur Implementierung des- `DATE` Objekts finden Sie im Artikel [Datum und Uhrzeit: Automatisierungsunterstützung](../../atl-mfc-shared/date-and-time-automation-support.md).
 
@@ -947,7 +948,7 @@ Gibt die für die Konvertierung zu verwendende Gebiets Schema-ID an.
 
 Gibt true zurück, wenn die Zeichenfolge erfolgreich in einen Datums-/Uhrzeitwert konvertiert wurde, andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die Zeichenfolge erfolgreich in einen Datums-/Uhrzeitwert konvertiert wurde, wird der Wert dieses `COleDateTime` Objekts auf diesen Wert und seinen Status auf gültig festgelegt.
 
@@ -1002,7 +1003,7 @@ Gibt den Tag an, der in dieses-Objekt kopiert werden soll `COleDateTime` .
 
 0 (null), wenn der Wert dieses `COleDateTime` Objekts erfolgreich festgelegt wurde, andernfalls 1. Dieser Rückgabewert basiert auf dem `DateTimeStatus` enumerierten Typ. Weitere Informationen finden Sie unter der [SetStatus](#setstatus) -Member-Funktion.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das Datum wird auf die angegebenen Werte festgelegt. Die Uhrzeit wird auf die Zeit 0, Mitternacht festgelegt.
 
@@ -1076,7 +1077,7 @@ Geben Sie die Datums-und Uhrzeit Komponenten an, die in dieses Objekt kopiert we
 
 0 (null), wenn der Wert dieses `COleDateTime` Objekts erfolgreich festgelegt wurde, andernfalls 1. Dieser Rückgabewert basiert auf dem `DateTimeStatus` enumerierten Typ. Weitere Informationen finden Sie unter der [SetStatus](#setstatus) -Member-Funktion.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In der folgenden Tabelle finden Sie die Grenzen für die Parameterwerte:
 
@@ -1150,7 +1151,7 @@ void SetStatus(DateTimeStatus status) throw();
 *status*<br/>
 Der neue Statuswert für dieses- `COleDateTime` Objekt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der *Status* Parameterwert wird durch den `DateTimeStatus` enumerierten Typ definiert, der in der- `COleDateTime` Klasse definiert ist. Weitere Informationen finden Sie unter [COleDateTime:: GetStatus](#getstatus) .
 
@@ -1181,7 +1182,7 @@ Geben Sie die Zeit Komponenten an, die in dieses Objekt kopiert werden sollen `C
 
 0 (null), wenn der Wert dieses `COleDateTime` Objekts erfolgreich festgelegt wurde, andernfalls 1. Dieser Rückgabewert basiert auf dem `DateTimeStatus` enumerierten Typ. Weitere Informationen finden Sie unter der [SetStatus](#setstatus) -Member-Funktion.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Zeit wird auf die angegebenen Werte festgelegt. Das Datum wird auf Date 0 festgelegt, d. h. 30. Dezember 1899.
 

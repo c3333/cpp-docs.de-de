@@ -1,6 +1,7 @@
 ---
 title: snprintf, _snprintf, _snprintf_l, _snwprintf, _snwprintf_l
-ms.date: 11/04/2016
+description: API-Referenz für snprintf, _snprintf _snprintf_l, _snwprintf, _snwprintf_, das formatierte Daten in eine Zeichenfolge schreibt.
+ms.date: 08/27/2020
 api_name:
 - _snwprintf
 - _snprintf
@@ -51,12 +52,12 @@ helpviewer_keywords:
 - sntprintf function
 - formatted text [C++]
 ms.assetid: 5976c9c8-876e-4ac9-a515-39f3f7fd0925
-ms.openlocfilehash: a1d11efebad57bdcf44ca959384f449640dad701
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: b4d8865d5297afe3d48f2bb48cc85a0d10535dfd
+ms.sourcegitcommit: c8f1605354724a13566bc3b0fac3c5d98265f1d0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70948006"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89062197"
 ---
 # <a name="snprintf-_snprintf-_snprintf_l-_snwprintf-_snwprintf_l"></a>snprintf, _snprintf, _snprintf_l, _snwprintf, _snwprintf_l
 
@@ -131,7 +132,7 @@ int _snwprintf_l(
 
 ### <a name="parameters"></a>Parameter
 
-*buffer*<br/>
+*ert*<br/>
 Speicherort für die Ausgabe.
 
 *count*<br/>
@@ -150,13 +151,13 @@ Weitere Informationen finden Sie unter [Format Specification Syntax: printf and 
 
 ## <a name="return-value"></a>Rückgabewert
 
-**Len** ist die Länge der formatierten Daten Zeichenfolge, ohne das abschließende Null-Zeichen. Sowohl **len** als auch *count* sind in Bytes für **snprintf** und **_snprintf**, breit Zeichen für **_snwprintf**.
+**Len** ist die Länge der formatierten Daten Zeichenfolge, ohne das abschließende Null-Zeichen. Sowohl **len** als auch **Anzahl sind die** Anzahl der Zeichen für **snprintf** und **_snprintf**sowie die Anzahl der breit Zeichen für **_snwprintf**.
 
-Bei allen Funktionen, wenn **len** < *count*, **len** -Zeichen im *Puffer*gespeichert werden, wird ein NULL-Terminator angehängt, und **len** wird zurückgegeben.
+Bei allen Funktionen, wenn **len**  <  *count*, **len** -Zeichen im *Puffer*gespeichert werden, wird ein NULL-Terminator angehängt, und **len** wird zurückgegeben.
 
-Die **snprintf** -Funktion verkürzt die Ausgabe, wenn **len** größer oder gleich der *Anzahl*ist, indem ein NULL-Terminator bei `buffer[count-1]`platziert wird. Der zurückgegebene Wert ist **len**, die Anzahl der Zeichen, die ausgegeben worden wären *, wenn die Anzahl groß* genug wäre. Die **snprintf** -Funktion gibt einen negativen Wert zurück, wenn ein Codierungsfehler auftritt.
+Die **snprintf** -Funktion verkürzt die Ausgabe, wenn **len** größer oder gleich der *Anzahl*ist, indem ein NULL-Terminator bei platziert wird `buffer[count-1]` . Der zurückgegebene Wert ist **len**, die Anzahl der Zeichen, die ausgegeben worden wären *, wenn die Anzahl groß* genug wäre. Die **snprintf** -Funktion gibt einen negativen Wert zurück, wenn ein Codierungsfehler auftritt.
 
-Für alle anderen Funktionen als **snprintf**, wenn **len** = *count*, **len** -Zeichen im *Puffer*gespeichert werden, wird kein NULL-Terminator angehängt, und **len** wird zurückgegeben. Wenn die Anzahl der Anzahl der Zeichen im Puffer gespeichert ist, wird kein NULL-Terminator angefügt, und ein negativer Wert wird zurückgegeben. > 
+Für alle anderen Funktionen als **snprintf**, wenn **len**  =  *count*, **len** -Zeichen im *Puffer*gespeichert werden, wird kein NULL-Terminator angehängt, und **len** wird zurückgegeben. Wenn **len**  >  die*Anzahl*der *count* Anzahl der Zeichen im *Puffer*gespeichert ist, wird kein NULL-Terminator angefügt, und ein negativer Wert wird zurückgegeben.
 
 Wenn *buffer* ein NULL-Zeiger ist und *count* 0 (null) ist, wird **len** als Anzahl von Zeichen zurückgegeben, die zum Formatieren der Ausgabe erforderlich sind, ohne das abschließende Null-Zeichen. Um einen erfolgreichen Rückruf mit denselben *Argument* *-und* Gebiets Schema Parametern durchzuführen, weisen Sie einen Puffer zu, der mindestens **len** + 1 Zeichen enthält.
 
@@ -166,18 +167,18 @@ Weitere Informationen zu diesen und anderen Fehlercodes finden Sie unter [errno,
 
 ## <a name="remarks"></a>Hinweise
 
-Die **snprintf** -Funktion und die **_snprintf** -Familie von Funktionen formatieren und speichern *Anzahl* oder weniger Zeichen im *Puffer*. Die **snprintf** -Funktion speichert immer ein abschließendes NULL-Zeichen, wobei die Ausgabe bei Bedarf abgeschnitten wird. Die **_snprintf** -Funktions Familie fügt ein abschließendes NULL-Zeichen nur an, wenn die formatierte Zeichen folgen Länge streng kleiner als *count* -Zeichen ist. Jedes *Argument* (sofern vorhanden) wird konvertiert und entsprechend der entsprechenden Format Spezifikation im- *Format*ausgegeben. Das Format besteht aus normalen Zeichen und hat die gleiche Form und Funktion wie das *Format* -Argument für [printf](printf-printf-l-wprintf-wprintf-l.md). Wenn der Kopiervorgang zwischen Zeichenfolgen ausgeführt wird, die sich überschneiden, ist das Verhalten nicht definiert.
+Die **snprintf** -Funktion und die **_snprintf** -Funktions Familie formatieren und speichern *Anzahl* oder weniger Zeichen im *Puffer*. Die **snprintf** -Funktion speichert immer ein abschließendes NULL-Zeichen, wobei die Ausgabe bei Bedarf abgeschnitten wird. Die **_snprintf** -Funktions Familie fügt ein abschließendes NULL-Zeichen nur an, wenn die formatierte Zeichen folgen Länge streng kleiner als *count* -Zeichen ist. Jedes *Argument* (sofern vorhanden) wird konvertiert und entsprechend der entsprechenden Format Spezifikation im- *Format*ausgegeben. Das Format besteht aus normalen Zeichen und hat die gleiche Form und Funktion wie das *Format* -Argument für [printf](printf-printf-l-wprintf-wprintf-l.md). Wenn der Kopiervorgang zwischen Zeichenfolgen ausgeführt wird, die sich überschneiden, ist das Verhalten nicht definiert.
 
 > [!IMPORTANT]
-> Stellen Sie sicher, dass *format* keine benutzerdefinierte Zeichenfolge ist. Da die **_snprintf** -Funktionen keine NULL-Beendigung garantieren – insbesondere, wenn der Rückgabewert *count*ist – stellen Sie sicher, dass auf Sie Code folgt, der das NULL-Terminator hinzufügt. Weitere Informationen finden Sie unter [Vermeiden von Pufferüberläufen](/windows/win32/SecBP/avoiding-buffer-overruns).
+> Stellen Sie sicher, dass *format* keine benutzerdefinierte Zeichenfolge ist. Da die **_snprintf** Funktionen keine NULL-Beendigung garantieren – insbesondere, wenn der Rückgabewert *count*ist – stellen Sie sicher, dass auf Sie Code folgt, der das NULL-Terminator hinzufügt. Weitere Informationen finden Sie unter [Vermeiden von Pufferüberläufen](/windows/win32/SecBP/avoiding-buffer-overruns).
 
 Ab der ucrt in Visual Studio 2015 und Windows 10 ist **snprintf** nicht mehr identisch mit **_snprintf**. Das Verhalten der **snprintf** -Funktion ist jetzt mit C99 Standard kompatibel.
 
-**_snwprintf** ist eine breit Zeichen Version von **_snprintf**. die Zeigerargumente für **_snwprintf** sind Zeichen folgen mit breit Zeichen. Die Erkennung von Codierungs Fehlern in **_snwprintf** kann sich von der in **_snprintf**unterscheiden. **_snwprintf**, wie z. b. " **tauprintf**", schreibt die Ausgabe in eine Zeichenfolge anstelle eines Ziels vom Typ " **File**".
+**_snwprintf** ist eine breit Zeichen Version von **_snprintf**. die Zeigerargumente für **_snwprintf** sind Zeichen folgen mit breit Zeichen. Die Erkennung von Codierungs Fehlern in **_snwprintf** kann von der in **_snprintf**abweichen. **_snwprintf**, wie z. b. " **tauprintf**", schreibt die Ausgabe in eine Zeichenfolge anstelle eines Ziels vom Typ " **File**".
 
 Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch den Gebiets Schema Parameter, der anstelle des aktuellen Thread Gebiets Schemas übergeben wurde.
 
-In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sicheren Entsprechungen dieser Funktionen aufgerufen werden. Weitere Informationen finden Sie unter [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md).
+In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sicheren Entsprechungen dieser Funktionen aufgerufen werden. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -190,10 +191,10 @@ In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sich
 
 |-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
-|**snprintf**, **_snprintf**,  **_snprintf_l**|\<stdio.h>|
-|**_snwprintf**, **_snwprintf_l**|\<stdio.h> oder \<wchar.h>|
+|**snprintf**, **_snprintf**  **_snprintf_l**|\<stdio.h>|
+|**_snwprintf** **_snwprintf_l**|\<stdio.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -308,10 +309,10 @@ Output:
 character count = 69
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
-[sprintf, _sprintf_l, swprintf, _swprintf_l, \__swprintf_l](sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)<br/>
+[sprintf, _sprintf_l, Austausch printf, _swprintf_l, \_ _swprintf_l](sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)<br/>
 [fprintf, _fprintf_l, fwprintf, _fwprintf_l](fprintf-fprintf-l-fwprintf-fwprintf-l.md)<br/>
 [printf, _printf_l, wprintf, _wprintf_l](printf-printf-l-wprintf-wprintf-l.md)<br/>
 [scanf, _scanf_l, wscanf, _wscanf_l](scanf-scanf-l-wscanf-wscanf-l.md)<br/>

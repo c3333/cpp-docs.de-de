@@ -1,6 +1,7 @@
 ---
 title: strtod, _strtod_l, wcstod, _wcstod_l
-ms.date: 4/2/2020
+description: API-Referenz für Strtod, _strtod_l, wcstod, _wcstod_l, die Zeichen folgen in einen Wert mit doppelter Genauigkeit konvertieren.
+ms.date: 08/27/2020
 api_name:
 - wcstod
 - _wcstod_l
@@ -50,12 +51,12 @@ helpviewer_keywords:
 - _strtod_l function
 - string conversion, to floating point values
 ms.assetid: 0444f74a-ba2a-4973-b7f0-1d77ba88c6ed
-ms.openlocfilehash: 58cb9e72fc11f0120ed4d99fd5086a195244ac31
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 5a9c7fd36b28b0a709c2e21a5e23d8a71d5f8a15
+ms.sourcegitcommit: c8f1605354724a13566bc3b0fac3c5d98265f1d0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87233976"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89062171"
 ---
 # <a name="strtod-_strtod_l-wcstod-_wcstod_l"></a>strtod, _strtod_l, wcstod, _wcstod_l
 
@@ -106,9 +107,9 @@ Das zu verwendende Gebietsschema.
 
 Weitere Informationen zu diesem und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Jede Funktion konvertiert die *Eingabe Zeichenfolge* in eine **`double`** . Die " **strautod** "-Funktion konvertiert " *strausource* " in einen Wert mit doppelter Genauigkeit. der Wert von " **stretod** " stoppt das Lesen der Zeichenfolge " *Strauch* " beim ersten Zeichen, das nicht als Teil einer Zahl erkannt wird. Dieses Zeichen kann das abschließende Null-Zeichen sein. **wcstod** ist eine breit Zeichen Version von " **strantod**;". Das *unsource* -Argument ist eine Zeichenfolge mit breit Zeichen. Anderenfalls verhalten sich diese Funktionen identisch.
+Jede Funktion konvertiert die *Eingabe Zeichenfolge* in eine **`double`** . Die " **strautod** "-Funktion konvertiert " *strausource* " in einen Wert mit doppelter Genauigkeit. der Wert von " **stretod** " beendet das Lesen *der Zeichenfolge* "" in der Zeichenfolge "". Dieses Zeichen kann das abschließende Null-Zeichen sein. **wcstod** ist eine breit Zeichen Version von " **strantod**;". Das *unsource* -Argument ist eine Zeichenfolge mit breit Zeichen. Anderenfalls verhalten sich diese Funktionen identisch.
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
@@ -125,9 +126,24 @@ Wenn *endptr* nicht **null**ist, wird ein Zeiger auf das Zeichen, das die Überp
 
 der Wert von " **stretod** *" erwartet eine Zeichenfolge mit einer* der folgenden Formen:
 
-[*Leerzeichen*] [*Sign*] {*Ziffern* [*Basis* - *Ziffern*] *&#124; Basis* *Ziffern*} [{**e** &#124; **e**} [*Sign*] *Ziffern*] [*Leerzeichen*] [*Sign*] {**0x** &#124; **0x**} {*Hexziffern* [*Basis* *Hexziffern*] &#124; *Basis* *-Hexziffern*} [{**p** &#124; **p**}*[Sign*] *Hexziffern*] [*Leerzeichen*] [*Sign*] {**INF** &#124; **unendlich**} [*Leerzeichen*] [*Sign*] **NaN** [*Sequence*]
+[*Leerzeichen*] [*Sign*] {*Ziffern* [*Basis* - *Ziffern*] *&#124; Basis* *Ziffern*} [{**e** &#124; **e**} [*Sign*] *Ziffern*] [*Leerzeichen*] [*Sign*] {**0x** &#124; **0x**} {*hexdigits* [*Basis* *hexdigits*] &#124; *Basis-* *Hexziffern*} [**{p** &#124; **p**}*[Sign*] *Ziffern*] [*Leerzeichen*] [*Sign*] {**INF** &#124; **unendlich**} [*Leerzeichen*] [*Sign*] **NaN** [*Sequence*]
 
-Die optionalen führenden *leer* Zeichen können aus Leerzeichen und Tabstopp Zeichen bestehen, die ignoriert werden. das Vorzeichen ist entweder Pluszeichen (+) oder minus *Zeichen* (-); *Ziffern* sind eine oder mehrere Dezimalstellen. *Hexziffern* sind eine oder mehrere hexadezimale Ziffern. *Basis* ist das Basis-Punktzeichen, entweder ein Punkt (.) im Standard Gebiets Schema "C", oder der Gebiets Schema spezifische Wert, wenn das aktuelle Gebiets Schema anders *ist oder wenn das* Gebiets Schema angegeben ist. eine *Sequenz* ist eine Sequenz von alphanumerischen Zeichen oder Unterstrich Zeichen. In Dezimal-und hexadezimalen Zahlen Formularen, wenn keine Ziffern vor dem Basiszeichen stehen, muss mindestens eine Zeichenfolge nach dem Basispunkt Zeichen angezeigt werden. Im Dezimal Format kann ein Exponent folgen, der aus einem einführenden Buchstaben (**e** oder **e**) und einer optionalen Ganzzahl mit Vorzeichen besteht. Im hexadezimalen Format kann auf die hexadezimalen Ziffern ein Exponent folgen, der aus einem einführenden Buchstaben (**p** oder **p**) und einer optional signierten hexadezimalen Ganzzahl besteht, die den Exponent als Potenz von 2 darstellt. Wenn es in beiden Form keinen Exponententeil oder ein Basiszeichen gibt, wird davon ausgegangen, dass ein Basiszeichen auf die letzte Ziffer in der Zeichenfolge folgt. Die Groß-/Kleinschreibung wird in den **INF** -und **NaN** -Formularen ignoriert. Das erste Zeichen, das nicht in eines dieser Formulare passt, hält den Scanvorgang an.
+Die optionalen führenden *Leerräume* können aus Leerzeichen und Tabstopp Zeichen bestehen, die ignoriert werden.
+das Vorzeichen ist entweder Pluszeichen (+) oder minus *Zeichen* (-). \
+*Ziffern* sind eine oder mehrere Dezimalstellen. \
+*Hexziffern* sind eine oder mehrere hexadezimale Ziffern. \
+*Basis* ist das Basis-Punktzeichen, entweder ein Punkt (.) im Standard Gebiets Schema "C", oder der Gebiets Schema spezifische Wert, wenn das aktuelle Gebiets Schema anders *ist oder wenn das* Gebiets Schema angegeben wird.
+ Eine *Sequenz* ist eine Sequenz von alphanumerischen Zeichen oder Unterstrich Zeichen.
+
+In Dezimal-und hexadezimalen Zahlen Formularen, wenn keine Ziffern vor dem Basiszeichen stehen, muss mindestens eine Zeichenfolge nach dem Basispunkt Zeichen angezeigt werden. 
+
+Im Dezimal Format kann ein Exponent folgen, der aus einem einführenden Buchstaben (**e** oder **e**) und einer optionalen Ganzzahl mit Vorzeichen besteht. 
+
+Im hexadezimalen Format kann auf die hexadezimalen Ziffern ein Exponent folgen, der aus einem einführenden Buchstaben (**p** oder **p**) und einer optionalen ganzzahligen Ganzzahl mit Vorzeichen besteht, die den Exponent als Potenz von 2 darstellt.
+
+Wenn es in beiden Form keinen Exponententeil oder ein Basiszeichen gibt, wird davon ausgegangen, dass ein Basiszeichen auf die letzte Ziffer in der Zeichenfolge folgt.
+
+Die Groß-/Kleinschreibung wird in den **INF** -und **NaN** -Formularen ignoriert. Das erste Zeichen, das nicht in eines dieser Formulare passt, hält den Scanvorgang an.
 
 Die ucrt-Versionen dieser Funktionen unterstützen nicht die Konvertierung von Exponent-Buchstaben vom Fortran-Stil (**d** oder **d**). Diese nicht-standardmäßige Erweiterung wurde in früheren Versionen der CRT unterstützt. Sie ist möglicherweise eine fehlerhafte Änderung für Ihren Code. Die ucrt-Versionen unterstützen hexadezimale Zeichen folgen und Roundtrips von INF-und Nan-Werten, die in früheren Versionen nicht unterstützt wurden. Dies kann auch zu wichtigen Änderungen im Code führen. Beispielsweise würde die Zeichenfolge "0x1A" von " **strautod** " in früheren Versionen als 0,0 interpretiert werden, aber als 26,0 in der ucrt-Version.
 
@@ -205,7 +221,7 @@ string = 10110134932
    Stopped scan at: 932
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
