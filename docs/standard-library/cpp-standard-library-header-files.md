@@ -1,16 +1,17 @@
 ---
 title: Header Dateien der C++-Standardbibliothek
-ms.date: 07/23/2020
+description: Header Dateien der C++-Standardbibliothek, kategorisiert
+ms.date: 08/31/2020
 helpviewer_keywords:
 - header files, C++ Standard Library
 - C++ Standard Library, header files
 ms.assetid: e7bf497a-0f63-48d0-9b54-cb0eef4073c4
-ms.openlocfilehash: 845fda9e020727b71752f19c38bb8432d5cf7c25
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 0bbd67468c1df8b9e7c078f498d19f01f848149c
+ms.sourcegitcommit: e58918c45316d799c1952ca7797a85adbcd0c472
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87228296"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89281847"
 ---
 # <a name="c-standard-library-header-files"></a>Header Dateien der C++-Standardbibliothek
 
@@ -33,7 +34,7 @@ Header Dateien für die C++-Standardbibliothek und-Erweiterungen nach Kategorie.
 | Container Adapter | [\<queue>](queue.md), [\<stack>](stack.md) |
 | Container Sichten | [\<span>](span.md)<sup>20</sup> |
 | [Fehler-und Ausnahmebehandlung](../cpp/errors-and-exception-handling-modern-cpp.md) | [\<cassert>](cassert.md), [\<exception>](exception.md) , [\<stdexcept>](stdexcept.md) , [\<system_error>](system-error.md) <sup>11</sup> |
-| Allgemeine Hilfsprogramme | \<any><sup>17</sup>, [\<bitset>](bitset.md) , [\<cstdlib>](cstdlib.md) , \<execution> <sup>17</sup>, [\<functional>](functional.md) , [\<memory>](memory.md) , \<memory_resource> <sup>17</sup>, \<optional> <sup>17</sup>, [\<ratio>](ratio.md) <sup>11</sup> [\<scoped_allocator>](scoped-allocator.md) <sup>11</sup> [\<tuple>](tuple.md) <sup>11</sup> [\<type_traits>](type-traits.md) <sup>11</sup> [\<typeindex>](typeindex.md) <sup>11</sup> [\<utility>](utility.md) \<variant> <sup>17</sup> , 11, 11, 11, 11, 17 |
+| Allgemeine Hilfsprogramme | \<any><sup>17</sup>, [\<bit>](bit.md) <sup>20</sup>, [\<bitset>](bitset.md) , [\<cstdlib>](cstdlib.md) , \<execution> <sup>17</sup>, [\<functional>](functional.md) , [\<memory>](memory.md) , \<memory_resource> <sup>17</sup>, \<optional> <sup>17</sup>, [\<ratio>](ratio.md) <sup>11</sup>, [\<scoped_allocator>](scoped-allocator.md) <sup>11</sup>, [\<tuple>](tuple.md) <sup>11</sup>, [\<type_traits>](type-traits.md) <sup>11</sup>, [\<typeindex>](typeindex.md) <sup>11</sup>, [\<utility>](utility.md) \<variant> <sup>17</sup> |
 | [E/a und Formatierung](../text/string-and-i-o-formatting-modern-cpp.md) | [\<cinttypes>](cinttypes.md)<sup>11</sup>, [\<cstdio>](cstdio.md) , [\<filesystem>](filesystem.md) <sup>17</sup>, [\<fstream>](fstream.md) , [\<iomanip>](iomanip.md) , [\<ios>](ios.md) , [\<iosfwd>](iosfwd.md) , [\<iostream>](iostream.md) , [\<istream>](istream.md) , [\<ostream>](ostream.md) , [\<sstream>](sstream.md) , [\<streambuf>](streambuf.md) , [\<strstream>](strstream.md) <sup>c</sup>, \<syncstream> <sup>20</sup> |
 | Iterators | [\<iterator>](iterator.md) |
 | Sprachunterstützung | [\<cfloat>](cfloat.md), [\<climits>](climits.md) , [\<codecvt>](codecvt.md) <sup>11 a</sup>, \<compare> <sup>20</sup>, \<contract> <sup>20</sup>, \<coroutine> <sup>20</sup>, [\<csetjmp>](csetjmp.md) , [\<csignal>](csignal.md) , [\<cstdarg>](cstdarg.md) , [\<cstddef>](cstddef.md) , [\<cstdint>](cstdint.md) <sup>11</sup>, [\<cstdlib>](cstdlib.md) , [\<exception>](exception.md) , [\<initializer_list>](initializer-list.md) <sup>11</sup>, [\<limits>](limits.md) , [\<new>](new.md) , [\<typeinfo>](typeinfo.md) , \<version> <sup>20</sup> |
@@ -44,7 +45,7 @@ Header Dateien für die C++-Standardbibliothek und-Erweiterungen nach Kategorie.
 | Bereiche | \<ranges><sup>20</sup> |
 | Reguläre Ausdrücke | [\<regex>](regex.md)<sup>11:</sup> |
 | Zeichen folgen und Zeichendaten | [\<charconv>](charconv.md)<sup>17</sup>, [\<cctype>](cctype.md) , [\<cstdlib>](cstdlib.md) , [\<cstring>](cstring.md) , [\<cuchar>](cuchar.md) <sup>11</sup>, [\<cwchar>](cwchar.md) , [\<cwctype>](cwctype.md) , [\<regex>](regex.md) <sup>11</sup>, [\<string>](string.md) , [\<string_view>](string-view.md) <sup>17</sup> |
-| Time | [\<chrono>](chrono.md)<sup>11</sup>,[\<ctime>](ctime.md) |
+| Time | [\<chrono>](chrono.md)<sup>11</sup>, [\<ctime>](ctime.md) |
 
 <sup>11</sup> wurde im c++ 11-Standard hinzugefügt. \
 <sup>14</sup> hinzugefügt im c++ 14-Standard. \

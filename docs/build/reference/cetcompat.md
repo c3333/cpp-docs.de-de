@@ -1,17 +1,17 @@
 ---
 title: /CETCOMPAT (mit Stapel Schatten Stapel kompatibel)
-ms.date: 06/30/2020
+ms.date: 09/01/2020
 f1_keywords:
 - /CETCOMPAT
 helpviewer_keywords:
 - /CETCOMPAT linker option
 - /CETCOMPAT
-ms.openlocfilehash: 35078ac9e6177e34562db14b30f4ef8f987d98bc
-ms.sourcegitcommit: 83ea5df40917885e261089b103d5de3660314104
+ms.openlocfilehash: 7de7c2007c29769cb3ac8f89d07de8b00bf44c26
+ms.sourcegitcommit: e58918c45316d799c1952ca7797a85adbcd0c472
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85813562"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89281825"
 ---
 # <a name="cetcompat-cet-shadow-stack-compatible"></a>/CETCOMPAT (mit Stapel Schatten Stapel kompatibel)
 
@@ -27,7 +27,7 @@ Gibt an, ob ein ausführbares Bild als kompatibel mit dem Schattenstapel (Contro
 **`NO`**<br/>
 Gibt an, dass die ausführbare Datei nicht mit dem Stapel Schatten Stapel kompatibel sein soll.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Der Schatten Stapel für die Steuerung des Steuerungs Flusses (CET) ist eine Funktion des Computer Prozessors, die Funktionen zur Abwehr von auf der Basis von auf der Rückgabe orientierten Programmierung (auf der Grundlage von auf der Basis von Weitere Informationen finden Sie unter [Intel Control Flow Enforcement Technology Preview](https://software.intel.com/sites/default/files/managed/4d/2a/control-flow-enforcement-technology-preview.pdf).
 
@@ -45,7 +45,7 @@ Ab Visual Studio 2019 Version 16,7:
 
 1. Wählen Sie die Eigenschaft "für den **Stapel Schatten Stapel kompatibel** "
 
-1. Aktivieren Sie im Dropdown-Steuerelement die **`Yes (/CETCOMPAT)`** Aktivierung von eh-Fortsetzungs Metadaten, oder **`No (/CETCOMPAT:NO)`** Deaktivieren Sie Sie.
+1. Wählen Sie im Dropdown-Steuerelement aus, ob **`Yes (/CETCOMPAT)`** die Binärdatei als "Stapel-Schatten Stapel kompatibel" markiert werden soll, oder **`No (/CETCOMPAT:NO)`** Markieren Sie Sie als nicht kompatibel.
 
 In früheren Versionen von Visual Studio 2019:
 
@@ -53,7 +53,7 @@ In früheren Versionen von Visual Studio 2019:
 
 1. Wählen Sie die **Eigenschaften**Seite für die  >  **Linker**  >  **Linkerbefehlszeile** der Configuration Properties
 
-1. Fügen Sie im Bearbeitungs Steuerelement **zusätzliche Optionen** hinzu, *`/CETCOMPAT`* um eh-Fortsetzungs Metadaten zu aktivieren, oder, *`/CETCOMPAT:NO`* um es explizit zu deaktivieren.
+1. Fügen Sie im Bearbeitungs Steuerelement **zusätzliche Optionen** hinzu, *`/CETCOMPAT`* um die Binärdatei als "Stapel-Schatten Stapel kompatibel" zu markieren, oder, *`/CETCOMPAT:NO`* um Sie explizit als nicht kompatibel zu markieren.
 
 ### <a name="to-set-this-linker-option-programmatically"></a>So legen Sie diese Linkeroption programmgesteuert fest
 
@@ -61,4 +61,4 @@ Diese Option hat keine programmgesteuerte Entsprechung.
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Linkeroptionen](linker-options.md)
+[Linker-Optionen](linker-options.md)
