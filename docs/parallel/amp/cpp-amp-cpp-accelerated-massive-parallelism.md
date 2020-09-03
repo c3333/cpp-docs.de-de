@@ -5,12 +5,12 @@ helpviewer_keywords:
 - C++ AMP (see C++ Accelerated Massive Parallelism)
 - C++ Accelerated Massive Parallelism, getting started
 ms.assetid: e27824cb-3167-409b-8c3f-a0e476d8f349
-ms.openlocfilehash: 516b69a0371ceb9365e79d5465879711289076c0
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: 243c476b6536278eb09b26b24becb65276d6e48a
+ms.sourcegitcommit: 093f49b8b69daf86661adc125b1d2d7b1f0e0650
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86404859"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89427633"
 ---
 # <a name="c-amp-c-accelerated-massive-parallelism"></a>C++ AMP (C++ Accelerated Massive Parallelism)
 
@@ -18,7 +18,7 @@ ms.locfileid: "86404859"
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-|Titel|BESCHREIBUNG|
+|Titel|Beschreibung|
 |-----------|-----------------|
 |[Übersicht über C++ amp](../../parallel/amp/cpp-amp-overview.md)|Beschreibt die Hauptfunktionen von C++ AMP und der mathematischen Bibliothek.|
 |[Verwenden von Lambdas, Funktions Objekten und eingeschränkten Funktionen](../../parallel/amp/using-lambdas-function-objects-and-restricted-functions.md)|Beschreibt, wie Lambda-Ausdrücke, Funktions Objekte und eingeschränkte Funktionen in Aufrufen der [parallel_for_each](reference/concurrency-namespace-functions-amp.md#parallel_for_each) -Methode verwendet werden.|
@@ -37,6 +37,6 @@ ms.locfileid: "86404859"
 
 ## <a name="other-resources"></a>Weitere Ressourcen
 
-[Parallele Programmierung in nativem Code (Blog)](https://go.microsoft.com/fwlink/p/?linkid=238472)<br/>
-[C++ amp Beispiel Projekte zum herunterladen](https://go.microsoft.com/fwlink/p/?linkid=248508)<br/>
+[Parallele Programmierung in nativem Code (Blog)](/archive/blogs/nativeconcurrency/)<br/>
+[C++ amp Beispiel Projekte zum herunterladen](/archive/blogs/nativeconcurrency/c-amp-sample-projects-for-download)<br/>
 [Analysieren von C++ amp-Code mit der neben läufigkeits Schnellansicht](/archive/blogs/nativeconcurrency/analyzing-c-amp-code-with-the-concurrency-visualizer)

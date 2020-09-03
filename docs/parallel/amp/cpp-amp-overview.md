@@ -8,12 +8,12 @@ helpviewer_keywords:
 - C++ Accelerated Massive Parallelism, overview
 - C++ Accelerated Massive Parallelism
 ms.assetid: 9e593b06-6e3c-43e9-8bae-6d89efdd39fc
-ms.openlocfilehash: 249170e1e29d3ca8c488d15be8fa4ccd2b9070c1
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 2629f243f3db3b8fabbd87ee0a211380ac3d45a2
+ms.sourcegitcommit: 093f49b8b69daf86661adc125b1d2d7b1f0e0650
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87222757"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89427724"
 ---
 # <a name="c-amp-overview"></a>Übersicht über C++ AMP
 
@@ -225,7 +225,7 @@ Die `array_view`-Klasse verfügt über fast dieselben Member wie die `array`-Kla
 
 In der folgenden Tabelle werden die Übereinstimmungen und Unterschiede zwischen der `array`- und der `array_view`-Klasse zusammengefasst.
 
-|BESCHREIBUNG|array-Klasse|array_view-Klasse|
+|Beschreibung|array-Klasse|array_view-Klasse|
 |-----------------|-----------------|-----------------------|
 |Zeitpunkt der Bestimmung des Rangs|Beim Kompilieren|Beim Kompilieren|
 |Zeitpunkt der Bestimmung des Wertebereichs|Zur Laufzeit|Zur Laufzeit|
@@ -495,7 +495,7 @@ Die Nebenläufigkeitsschnellansicht unterstützt u. a. das Analysieren der Leist
 
 - [GPU-Aktivität (andere Prozesse)](/visualstudio/profiling/gpu-activity-other-processes)
 
-- [Kanäle (Thread Ansicht)](/visualstudio/profiling/channels-threads-view)
+- [Kanäle (Threadansicht)](/visualstudio/profiling/channels-threads-view)
 
 - [Analysieren von C++ amp-Code mit der neben läufigkeits Schnellansicht](/archive/blogs/nativeconcurrency/analyzing-c-amp-code-with-the-concurrency-visualizer)
 
@@ -508,4 +508,4 @@ Modulo und Division ganzer Zahlen ohne Vorzeichen weisen eine erheblich bessere 
 [C++ AMP (C++ Accelerated Massive Parallelism)](../../parallel/amp/cpp-amp-cpp-accelerated-massive-parallelism.md)<br/>
 [Syntax von Lambda Ausdrücken](../../cpp/lambda-expression-syntax.md)<br/>
 [Referenz (C++ AMP)](../../parallel/amp/reference/reference-cpp-amp.md)<br/>
-[Parallele Programmierung in nativem Code (Blog)](https://go.microsoft.com/fwlink/p/?linkid=238472)
+[Parallele Programmierung in nativem Code (Blog)](/archive/blogs/nativeconcurrency/)
