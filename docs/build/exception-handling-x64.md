@@ -1,16 +1,17 @@
 ---
 title: Ausnahmebehandlung bei x64-Systemen
+description: Übersicht über die Konventionen der Ausnahmebehandlung in Microsoft-C++ auf x64-Systemen.
 ms.date: 10/14/2019
 helpviewer_keywords:
 - C++ exception handling, x64
 - exception handling, x64
 ms.assetid: 41fecd2d-3717-4643-b21c-65dcd2f18c93
-ms.openlocfilehash: 3d973354f94ca8c9f2e0901e60f2a8009ac08cd6
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 1c55ecf8755e208b2f47acdfda185123ee0255e2
+ms.sourcegitcommit: efc8c32205c9d610f40597556273a64306dec15d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88835050"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88898567"
 ---
 # <a name="x64-exception-handling"></a>Ausnahmebehandlung bei x64-Systemen
 
@@ -180,7 +181,7 @@ Der Code für den Entladungsvorgang entspricht einem der folgenden Werte:
 
   Ein Computerframe wird übertragen.  Dieser Entladungscode wird verwendet, um die Auswirkungen von Hardwareunterbrechungen oder Ausnahmen aufzuzeichnen. Es gibt zwei Varianten. Wenn die Vorgangsinformationen gleich 0 (null) sind, wurde einer dieser Frames an den Stapel übertragen:
 
-  |Position|Wert|
+  |Standort|Wert|
   |-|-|
   |RSP + 32|SS|
   |RSP + 24|RSP (alt)|
@@ -190,7 +191,7 @@ Der Code für den Entladungsvorgang entspricht einem der folgenden Werte:
 
   Wenn die Vorgangsinformationen gleich 1 sind, wurde einer dieser Frames übertragen:
 
-  |Position|Wert|
+  |Standort|Wert|
   |-|-|
   |RSP + 40|SS|
   |RSP + 32|RSP (alt)|
@@ -221,7 +222,7 @@ Der Code für den Entladungsvorgang entspricht einem der folgenden Werte:
 
 Die Bedeutung der einzelnen Bits der Vorgangsinformationen hängt vom Opcode ab. Folgende Zuordnung wird verwendet, um ein allgemeines Register (Integer) zu codieren:
 
-|bit|Registrieren|
+|bit|Register|
 |-|-|
 |0|RAX|
 |1|RCX|
@@ -305,7 +306,7 @@ typedef struct _DISPATCHER_CONTEXT {
 } DISPATCHER_CONTEXT, *PDISPATCHER_CONTEXT;
 ```
 
-**ControlPc** ist der Wert des RIP innerhalb dieser Funktion. Dieser Wert ist entweder eine Ausnahmeadresse oder die Adresse, an der das Steuerelement die erstellende Funktion verlassen hat. Der RIP-Wert wird verwendet, um zu bestimmen, ob sich die Steuerung innerhalb dieser Funktion in einem geschützten Konstrukt befindet, z. B. in einem `__try`-Block für `__try`/ **`__except`** oder `__try`/ **`__finally`** .
+**ControlPc** ist der Wert des RIP innerhalb dieser Funktion. Dieser Wert ist entweder eine Ausnahmeadresse oder die Adresse, an der das Steuerelement die erstellende Funktion verlassen hat. Mit dem RIP-Wert wird bestimmt, ob sich die Steuerung innerhalb dieser Funktion in einem geschützten Konstrukt befindet, z. B. in einem **`__try`** -Block für **`__try`** / **`__except`** oder **`__try`** / **`__finally`** .
 
 **ImageBase** ist die Imagebasis (Ladeadresse) des Moduls, das diese Funktion enthält, die zu den im Funktionseintrag verwendeten 32-Bit-Offsets und den Entladeinformationen addiert werden soll, um relative Adressen aufzuzeichnen.
 

@@ -1,12 +1,12 @@
 ---
 title: Übersicht über ARM64-ABI-Konventionen
 ms.date: 03/27/2019
-ms.openlocfilehash: 07d58bbd64795235ad63a7b26b6f18fcffdcd1d2
-ms.sourcegitcommit: 069e3833bd821e7d64f5c98d0ea41fc0c5d22e53
+ms.openlocfilehash: bfe55513ffd24175dbe62efc6d5afcfd82f71e4c
+ms.sourcegitcommit: 7f378314c5692d897ead10b7f6c96d4cb2abd266
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74303268"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88972672"
 ---
 # <a name="overview-of-arm64-abi-conventions"></a>Übersicht über ARM64-ABI-Konventionen
 
@@ -205,13 +205,13 @@ Gleitkommawerte werden je nach Eignung in s0, d0 oder v0 zurückgegeben.
 
 HFA- und HVA-Werte werden je nach Eignung in s0–s3, d0–d3 oder v0–v3 zurückgegeben.
 
-Typen, die nach Wert zurückgegeben werden, werden anders behandelt, je nachdem, ob sie bestimmte Eigenschaften aufweisen. Typen, die alle der folgenden Eigenschaften aufweisen, d. h.
+Nach Wert zurückgegebene Typen werden anders verarbeitet, je nachdem, ob sie bestimmte Eigenschaften aufweisen und ob es sich bei der Funktion um einen nicht statische Memberfunktion handelt. Typen, die alle der folgenden Eigenschaften aufweisen, d. h.
 
 - sie werden von der Definition des C++14-Standards *aggregiert*, d. h., sie haben keine von Benutzern bereitgestellten Konstruktoren, keine privaten oder geschützten, nicht statischen Datenmember, keine Basisklassen und keine virtuellen Funktionen,
 - sie weisen einen trivialen Zuweisungsoperator für Kopien auf, und
 - sie haben einen trivialen Destruktor,
 
-verwenden den folgenden Rückgabestil:
+und sie werden von Nicht-Memberfunktionen oder statischen Memberfunktionen mit folgendem Rückgabeformat zurückgegeben:
 
 - Typen mit weniger oder gleich 8 Byte werden in x0 zurückgegeben.
 - Typen mit weniger oder gleich 16 Byte werden in x0 und x1 zurückgegeben. x0 enthält dabei die niedrigeren 8 Byte.

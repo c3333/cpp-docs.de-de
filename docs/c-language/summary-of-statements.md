@@ -1,66 +1,70 @@
 ---
-title: Zusammenfassung der Anweisungen
-ms.date: 11/04/2016
+title: Zusammenfassung der C-Anweisungen
+description: Hier finden Sie eine Zusammenfassung der Anweisungsgrammatik in der Microsoft C-Implementierung.
+ms.date: 08/24/2020
 ms.assetid: ce45d2fe-ec0e-459f-afb1-80ab6a7f0239
-ms.openlocfilehash: 122c79b53a8af8a384097dec51a14746a090b1cf
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 448aa7ccb8c78e20ef09f47f4a3c77f447c76f60
+ms.sourcegitcommit: efc8c32205c9d610f40597556273a64306dec15d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87220794"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88898395"
 ---
-# <a name="summary-of-statements"></a>Zusammenfassung der Anweisungen
+# <a name="summary-of-c-statements"></a>Zusammenfassung der C-Anweisungen
 
-*Anweisung*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*labeled-statement*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*compound-statement*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*expression-statement*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*selection-statement*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*iteration-statement*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*jump-statement*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*try-except-Anweisung* /\* Microsoft-spezifisch \*/<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*try-finally-Anweisung* /\* Microsoft-spezifisch \*/
+*`statement`*:<br/>
+&emsp;*`labeled-statement`*<br/>
+&emsp;*`compound-statement`*<br/>
+&emsp;*`expression-statement`*<br/>
+&emsp;*`selection-statement`*<br/>
+&emsp;*`iteration-statement`*<br/>
+&emsp;*`jump-statement`*<br/>
+&emsp; *`try-except-statement`*  /\* Microsoft-spezifisch \*/<br/>
+&emsp; *`try-finally-statement`*  /\* Microsoft-spezifisch \*/
 
-*jump-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **`goto`**  *Bezeichner*  **;**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**continue ;**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**break ;**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **`return`** *Ausdruck*<sub>opt</sub> **;**
+*`jump-statement`*:<br/>
+&emsp;**`goto`** *`identifier`* **`;`**<br/>
+&emsp;**`continue ;`**<br/>
+&emsp;**`break ;`**<br/>
+&emsp; **`return`** *`expression`* <sub>opt</sub> **`;`**<br/>
+&emsp; **`__leave ;`**  /\* Microsoft-spezifisch<sup>1</sup> \*/
 
-*compound-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **{** *Deklarationsliste*<sub>opt</sub> *Anweisungsliste*<sub>opt</sub> **}**
+*`compound-statement`*:<br/>
+&emsp; **`{`** *`declaration-list`* <sub>opt</sub> *`statement-list`* <sub>opt</sub> **`}`**
 
-*declaration-list*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*declaration*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*Deklarationsliste* *Deklaration*
+*`declaration-list`*:<br/>
+&emsp;*`declaration`*<br/>
+&emsp;*`declaration-list`* *`declaration`*
 
-*statement-list*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*statement*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*Anweisungsliste* *Anweisung*
+*`statement-list`*:<br/>
+&emsp;*`statement`*<br/>
+&emsp;*`statement-list`* *`statement`*
 
-*expression-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*Ausdruck*<sub>opt</sub> **;**
+*`expression-statement`*:<br/>
+&emsp; *`expression`* <sub>opt</sub> **`;`**
 
-*iteration-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**while (**  *Ausdruck*  **)**  *Anweisung*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **`do`**  *Anweisung*  **while (**  *Ausdruck*  **) ;**<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**for (**  *Ausdruck*<sub>opt</sub> **;** *Ausdruck*<sub>opt</sub> **;** *Ausdruck*<sub>opt</sub> **)** *Anweisung*
+*`iteration-statement`*:<br/>
+&emsp;**`while (`** *`expression`* **`)`** *`statement`*<br/>
+&emsp;**`do`** *`statement`* **`while (`** *`expression`* **`) ;`**<br/>
+&emsp; **`for (`** *`expression`* <sub>opt</sub> **`;`** *`expression`* <sub>opt</sub> **`;`** *`expression`* <sub>opt</sub> **`)`** *`statement`*
 
-*selection-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**if (**  *Ausdruck*  **)**  *Anweisung*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**if (**  *Ausdruck*  **)**  *Anweisung*  **`else`**  *Anweisung*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**switch (**  *Ausdruck*  **)**  *Anweisung*
+*`selection-statement`*:<br/>
+&emsp;**`if (`** *`expression`* **`)`** *`statement`*<br/>
+&emsp;**`if (`** *`expression`* **`)`** *`statement`* **`else`** *`statement`*<br/>
+&emsp;**`switch (`** *`expression`* **`)`** *`statement`*
 
-*labeled-statement*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*Bezeichner*  **:**  *Anweisung*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **`case`**  *konstanter-Ausdruck*  **:**  *Anweisung*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;**default :**  *Anweisung*
+*`labeled-statement`*:<br/>
+&emsp;*`identifier`* **`:`** *`statement`*<br/>
+&emsp;**`case`** *`constant-expression`* **`:`** *`statement`*<br/>
+&emsp;**`default :`** *`statement`*
 
-*try-except-Anweisung*:   /\* Microsoft-spezifisch \*/<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **__try**  *Verbundanweisung* **__except (**  *Ausdruck*  **)**  *Verbundanweisung*
+*`try-except-statement`* : /\* Microsoft-spezifisch \*/<br/>
+&emsp;**`__try`** *`compound-statement`* **`__except (`** *`expression`* **`)`** *`compound-statement`*
 
-*try-finally-Anweisung*:   /\* Microsoft-spezifisch \*/<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **__try**  *Verbundanweisung* **`__finally`**  *Verbundanweisung*
+*`try-finally-statement`* : /\* Microsoft-spezifisch \*/<br/>
+&emsp;**`__try`** *`compound-statement`* **`__finally`** *`compound-statement`*
+
+1 Das Schlüsselwort **`__leave`** ist nur im **`__try`** -Block einer *`try-except-statement`* oder einer *`try-finally-statement`* gültig.
 
 ## <a name="see-also"></a>Siehe auch
 
