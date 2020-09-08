@@ -1,6 +1,7 @@
 ---
 title: cos, cosf, cosl
-ms.date: 6/5/2020
+description: API-Referenz für cos, cosf und COSL; , die den Kosinuswert einer Gleit Komma Zahl berechnen.
+ms.date: 08/31/2020
 api_name:
 - cos
 - cosf
@@ -37,12 +38,12 @@ helpviewer_keywords:
 - trigonometric functions
 - cosines, calculating
 ms.assetid: ae90435e-6b68-4a47-a81f-be87d5c08f16
-ms.openlocfilehash: ee5cb2c3a05514b4f10f73a2b27199b8e3a5ac4b
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: b0e723708076067cf4d2ed896542ac08406a87ee
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87221925"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89556800"
 ---
 # <a name="cos-cosf-cosl"></a>cos, cosf, cosl
 
@@ -54,16 +55,15 @@ Berechnet den Kosinus.
 double cos( double x );
 float cosf( float x );
 long double cosl( long double x );
-```
+#define cos(X) // Requires C11 or higher
 
-```cpp
 float cos( float x );  // C++ only
 long double cos( long double x );  // C++ only
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*Stuben*\
 Winkel im Bogenmaß.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -75,9 +75,11 @@ Der Kosinus von *x*. Wenn *x* größer oder gleich 263 oder kleiner oder gleich-
 |± QNAN, IND|Keine|**_DOMAIN**|
 |± INF|**Ungültig**|**_DOMAIN**|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **cos** aufzurufen, die-oder-Werte verwenden und zurückgeben **`float`** **`long double`** . In einem C-Programm nimmt **cos** immer eine an und gibt Sie zurück **`double`** .
+Da C++ das überladen zulässt, können Sie über Ladungen von **cos** aufzurufen, die-oder-Werte verwenden und zurückgeben **`float`** **`long double`** . Wenn Sie in einem C-Programm nicht das- \<tgmath.h> Makro verwenden, um diese Funktion aufzurufen, verwendet **cos** immer, und gibt es zurück **`double`** .
+
+Wenn Sie das- \<tgmath.h> `cos()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
@@ -86,6 +88,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |-Routine zurückgegebener Wert|Erforderlicher C-Header|Erforderlicher C++-Header|
 |-------------|---------------------|-|
 |**cos**, **cosh**, **cosf**|\<math.h>|\<cmath> oder \<math.h>|
+|**cos ()** -Makro | \<tgmath.h> ||
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 

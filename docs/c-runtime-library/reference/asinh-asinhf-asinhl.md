@@ -1,6 +1,7 @@
 ---
 title: asinh, asinhf, asinhl
-ms.date: 4/2/2020
+description: API-Referenz für asinh, asinhf und asinhl , die den umgekehrten hyperbolischen Sinus eines Gleit Komma Werts berechnen.
+ms.date: 08/31/2020
 api_name:
 - asinh
 - asinhf
@@ -34,12 +35,12 @@ helpviewer_keywords:
 - asinhl function
 - asinhf function
 ms.assetid: 4488babe-1a7e-44ca-8b7b-c2db0a70084f
-ms.openlocfilehash: 0443648d33929082042881c14562b34356cb6063
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 332e6bfc95bd297d703d879cdd468b450cfdc763
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87232650"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89556787"
 ---
 # <a name="asinh-asinhf-asinhl"></a>asinh, asinhf, asinhl
 
@@ -51,9 +52,8 @@ Berechnet den umgekehrten hyperbolischen Sinus.
 double asinh( double x );
 float asinhf( float x );
 long double asinhl( long double x );
-```
+#define asinh(X) // Requires C11 or higher
 
-```cpp
 float asinh( float x );  // C++ only
 long double asinh( long double x );  // C++ only
 ```
@@ -71,17 +71,21 @@ Die **asinh** -Funktionen geben den umgekehrten hyberbolischen Sinus (hyperbolis
 |-----------|-------------------|--------------------------|
 |± QNAN, IND, INF|Keine|Keine|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Wenn Sie C++ verwenden, können Sie über Ladungen von **asinh** aufzurufen, die-oder-Werte verwenden und zurückgeben **`float`** **`long double`** . In einem C-Programm nimmt **asinh** immer an und gibt zurück **`double`** .
+Wenn Sie C++ verwenden, können Sie über Ladungen von **asinh** aufzurufen, die-oder-Werte verwenden und zurückgeben **`float`** **`long double`** . Wenn Sie in einem C-Programm das-Makro verwenden, \<tgmath.h> um diese Funktion aufzurufen, nimmt **asinh** immer an und gibt zurück **`double`** .
+
+Wenn Sie das- \<tgmath.h> `asinh()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
+
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher C-Header|Erforderlicher C++-Header|
 |--------------|--------------|------------------|
-|**asinh**, **asinhf**, **asinhl**|\<math.h>|\<cmath>oder \< Math. h<|
+|**asinh**, **asinhf**, **asinhl**|\<math.h>|\<cmath> oder \<math.h>|
+|**asinh ()** -Makro | \<tgmath.h> ||
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -113,7 +117,7 @@ sinh( 0.785398 ) = 0.868671
 asinh( 0.868671 ) = 0.785398
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [acosh, acoshf, acoshl](acosh-acoshf-acoshl.md)<br/>

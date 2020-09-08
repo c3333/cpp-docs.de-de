@@ -1,6 +1,7 @@
 ---
 title: sqrt, sqrtf, sqrtl
-ms.date: 6/5/2020
+description: API-Referenz für "sqrt", "sqrtf" und "sqrtl;" , die eine Quadratwurzel einer Gleit Komma Zahl berechnen.
+ms.date: 08/31/2020
 api_name:
 - sqrtl
 - sqrtf
@@ -37,12 +38,12 @@ helpviewer_keywords:
 - calculating square roots
 - square roots, calculating
 ms.assetid: 2ba9467b-f172-41dc-8f10-b86f68fa813c
-ms.openlocfilehash: 6b769be6bcb0fba8c322e3df7a9ac96e4e83a85d
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 17526b4e4a7eca5d36c01069dbe975bb035d1f58
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87229362"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89556774"
 ---
 # <a name="sqrt-sqrtf-sqrtl"></a>sqrt, sqrtf, sqrtl
 
@@ -66,16 +67,19 @@ float sqrtf(
 long double sqrtl(
    long double x
 );
+#define sqrt(x) // Requires C11 or higher
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*Stuben*\
 Nicht negativer Gleitkommawert
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **sqrt** aufzurufen, die- **`float`** oder- **`long double`** Typen verwenden. In einem C-Programm nimmt **sqrt** immer an und gibt es zurück **`double`** .
+Da C++ das überladen zulässt, können Sie über Ladungen von **sqrt** aufzurufen, die- **`float`** oder- **`long double`** Typen verwenden. Wenn Sie in einem C-Programm nicht das- \<tgmath.h> Makro verwenden, um diese Funktion aufzurufen, nimmt **sqrt** immer an, und gibt es zurück **`double`** .
+
+Wenn Sie das- \<tgmath.h> `sqrt()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
@@ -89,11 +93,12 @@ Die **sqrt** -Funktionen geben die Quadratwurzel von *x*zurück. Wenn *x* negati
 |- ∞|Keine|_DOMAIN|
 |x<0|Keine|_DOMAIN|
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|C-Header|C++-Header|
 |--------------|--------------|------------------|
 |**sqrt**, **sqrtf**, **sqrtl**|\<math.h>|\<cmath>|
+|**sqrt ()** -Makro | \<tgmath.h> ||
 
 Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
 
@@ -122,7 +127,7 @@ int main( void )
 The square root of 45.35 is 6.73
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [exp, expf, expl](exp-expf.md)<br/>
