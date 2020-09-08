@@ -1,6 +1,7 @@
 ---
 title: log, logf, logl, log10, log10f, log10l
-ms.date: 6/5/2020
+description: API-Referenz für Log, logf, logl, log10, log10f und log10l; die Logarithmen berechnen.
+ms.date: 9/1/2020
 api_name:
 - log10f
 - logf
@@ -48,12 +49,12 @@ helpviewer_keywords:
 - logf function
 - logarithms
 ms.assetid: 7adc77c2-04f7-4245-a980-21215563cfae
-ms.openlocfilehash: ddfe0198ab83f72868f383d6c35f040415893ad4
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: f308281705170308ec83e4a5efd9c7825ba47591
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87218597"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89556281"
 ---
 # <a name="log-logf-logl-log10-log10f-log10l"></a>log, logf, logl, log10, log10f, log10l
 
@@ -62,24 +63,24 @@ Berechnet die Logarithmen.
 ## <a name="syntax"></a>Syntax
 
 ```C
-double log( double x );
-float logf( float x );
-long double logl( double x );
-double log10( double x );
-float log10f ( float x );
-long double log10l( double x );
-```
+double log(double x);
+float logf(float x);
+long double logl(double x);
+double log10(double x);
+float log10f (float x);
+long double log10l(double x);
+#define log(X) // Requires C11 or higher
+#define log10(X) // Requires C11 or higher
 
-```cpp
-float log( float x );  // C++ only
-long double log( long double x );  // C++ only
-float log10( float x );  // C++ only
-long double log10( long double x );  // C++ only
+float log(float x);  // C++ only
+long double log(long double x);  // C++ only
+float log10(float x);  // C++ only
+long double log10(long double x);  // C++ only
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*Stuben*\
 Ein Wert, dessen Logarithmus gesucht wird.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -94,9 +95,11 @@ Die **Log** -Funktionen geben bei Erfolg den natürlichen Logarithmus (Basis *e*
 
 **Log** und **log10** verfügen über eine Implementierung, die Streaming SIMD Extensions 2 (SSE2) verwendet. Informationen und Einschränkungen zur Verwendung der SSE2-Implementierung finden Sie unter [_set_SSE2_enable](set-sse2-enable.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-C++ ermöglicht überladen, sodass Sie über Ladungen von **Log** und **log10** , die-oder-Werte verwenden und zurückgeben, aufgerufen werden können **`float`** **`long double`** . In einem C-Programm verwenden **Log** und **log10** immer eine und geben Sie zurück **`double`** .
+C++ ermöglicht überladen, sodass Sie über Ladungen von **Log** und **log10** , die-oder-Werte verwenden und zurückgeben, aufgerufen werden können **`float`** **`long double`** . Wenn Sie in einem C-Programm das \<tgmath.h> -Makro verwenden, um diese Funktion aufzurufen, nehmen **Log** und **log10** immer an und geben zurück **`double`** .
+
+Wenn Sie das- \<tgmath.h> `log()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
@@ -105,6 +108,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**Log**, **logf**, **logl**, **log10**, **log10f**, **log10l**|\<math.h>|
+|**Log** -Makro | \<tgmath.h> |
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 

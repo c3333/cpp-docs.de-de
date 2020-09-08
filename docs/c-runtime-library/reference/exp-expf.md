@@ -1,6 +1,7 @@
 ---
 title: exp, expf, expl
-ms.date: 4/2/2020
+description: API-Referenz für "EXP", "expf" und "Expl" , die den exponentiellen berechnen.
+ms.date: 08/31/2020
 api_name:
 - expf
 - expl
@@ -35,12 +36,12 @@ helpviewer_keywords:
 - calculating exponentials
 - exp function
 ms.assetid: 7070016d-1143-407e-9e9a-6b059bb88867
-ms.openlocfilehash: 9872a83ba3ec5346b7aed5fb51ee837d3ed827aa
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 44652e5d06d842bd2eb2e280409a1e55fc66f582
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87234171"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89555890"
 ---
 # <a name="exp-expf-expl"></a>exp, expf, expl
 
@@ -64,11 +65,12 @@ float expf(
 long double expl(
    long double x
 );
+#define exp(z) // Requires C11 or higher
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*Stuben*\
 Der Gleit Komma Wert, der die natürliche Logarithmus Basis *e* durch exponentiell berechnen soll.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -84,17 +86,20 @@ Die **Exp** -Funktionen geben den Exponentialwert des Gleit Komma Parameters *x*
 
 Die **Exp** -Funktion verfügt über eine Implementierung, die Streaming SIMD Extensions 2 (SSE2) verwendet. Informationen und Einschränkungen zur Verwendung der SSE2-Implementierung finden Sie unter [_set_SSE2_enable](set-sse2-enable.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-C++ ermöglicht überladen, sodass Sie über Ladungen von **Exp** aufzurufen können, die ein- **`float`** oder-Argument annehmen **`long double`** . In einem C-Programm übernimmt **Exp** immer und gibt einen zurück **`double`** .
+C++ ermöglicht überladen, sodass Sie über Ladungen von **Exp** aufzurufen können, die ein- **`float`** oder-Argument annehmen **`long double`** . Wenn Sie in einem C-Programm das-Makro verwenden, \<tgmath.h> um diese Funktion aufzurufen, verwendet **Exp** immer, und gibt es zurück **`double`** .
+
+Wenn Sie das- \<tgmath.h> `exp()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher C-Header|Erforderlicher C++-Header|
 |--------------|---------------------|---|
 |**Exp**, **expf**, **Expl**|\<math.h>|\<cmath> oder \<math.h>|
+|**Exp** -Makro| \<tgmath.h> || 
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -119,7 +124,7 @@ int main( void )
 exp( 2.302585 ) = 10.000000
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [log, logf, log10, log10f](log-logf-log10-log10f.md)<br/>

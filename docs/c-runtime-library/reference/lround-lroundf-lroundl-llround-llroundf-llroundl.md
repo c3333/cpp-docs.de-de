@@ -1,6 +1,7 @@
 ---
 title: lround, lroundf, lroundl, llround, llroundf, llroundl
-ms.date: 4/2/2020
+description: API-Referenz für lround, lroundf, lroundl, LlRound, llroundf und llroundl; , wodurch ein Gleit Komma Wert auf die nächste ganze Zahl gerundet wird.
+ms.date: 9/1/2020
 api_name:
 - llround
 - llroundf
@@ -46,12 +47,12 @@ helpviewer_keywords:
 - llroundf function
 - lroundl function
 ms.assetid: cfb88a35-54c6-469f-85af-f7d695dcfdd8
-ms.openlocfilehash: 0be17ceb579bfc7da7b9f47ac1b6942383eebb91
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: c5db62da7cdba58fdc58e8acbfe3aff0e2c386d6
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87216894"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89555318"
 ---
 # <a name="lround-lroundf-lroundl-llround-llroundf-llroundl"></a>lround, lroundf, lroundl, llround, llroundf, llroundl
 
@@ -90,11 +91,12 @@ long long llroundf(
 long long llroundl(
    long double x
 );
+#define lround(X) // Requires C11 or higher
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*Stuben*\
 Der zu rundende Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -105,9 +107,11 @@ Die **lround** -Funktion und die **LlRound** -Funktion geben die nächstgelegene
 |-----------|-------------------|-----------------------|
 |± **QNAN**, **IND**|Keine|**_DOMAIN**|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **lround** oder **LlRound** aufzurufen, die **`float`** -und-Werte verwenden und zurückgeben **`long double`** . In einem C-Programm verwenden **lround** und **LlRound** immer einen **`double`** .
+Da C++ das überladen zulässt, können Sie über Ladungen von **lround** oder **LlRound** aufzurufen, die **`float`** -und-Werte verwenden und zurückgeben **`long double`** . Wenn Sie in einem C-Programm diese Funktion nicht mit dem- \<tgmath.h> Makro aufzurufen, nehmen **lround** und **LlRound** immer eine auf und geben Sie zurück **`double`** .
+
+Wenn Sie das- \<tgmath.h> `lround()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
@@ -116,6 +120,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**lround**, **lroundf**, **lroundl**, **LlRound**, **llroundf**, **llroundl**|\<math.h>|
+|**lround** -Makro | \<tgmath.h> ||
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 

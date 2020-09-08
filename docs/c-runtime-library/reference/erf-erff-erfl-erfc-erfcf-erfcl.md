@@ -1,6 +1,7 @@
 ---
 title: erf, erff, erfl, erfc, erfcf, erfcl
-ms.date: 4/2/2020
+description: API-Referenz für ERF, erff, erfl, erfc, erfcf und erfcl; berechnet die Fehlerfunktion oder die komplementäre Fehlerfunktion eines Werts.
+ms.date: 9/1/2020
 api_name:
 - erff
 - erfl
@@ -46,12 +47,12 @@ helpviewer_keywords:
 - erfcf function
 - erfc function
 ms.assetid: 144d90d3-e437-41c2-a659-cd57596023b5
-ms.openlocfilehash: 5511e7a7d17c47deaaaf61eedf3c00eec12db119
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: ef83275515c66341798395bbfc2bb5b088e6cfb7
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87234184"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89555643"
 ---
 # <a name="erf-erff-erfl-erfc-erfcf-erfcl"></a>erf, erff, erfl, erfc, erfcf, erfcl
 
@@ -90,18 +91,20 @@ float erfcf(
 long double erfcl(
    long double x
 );
+#define erf(X) // Requires C11 or higher
+#define erfc(X) // Requires C11 or higher
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*Stuben*\
 Ein Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Die **ERF** -Funktionen geben die Gauß-Fehlerfunktion von *x*zurück. Die **erfc** -Funktionen geben die komplementäre Gauß-Fehlerfunktion von *x*zurück.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die **ERF** -Funktionen berechnen die Gauß-Fehlerfunktion von *x*, die wie folgt definiert ist:
 
@@ -109,18 +112,21 @@ Die **ERF** -Funktionen berechnen die Gauß-Fehlerfunktion von *x*, die wie folg
 
 Die komplementäre Gauß-Fehlerfunktion ist als 1-ERF (x) definiert. Die **ERF** -Funktionen geben einen Wert im Bereich von-1,0 bis 1,0 zurück. Es gibt keine Fehlerrückgabe. Die **erfc** -Funktionen geben einen Wert im Bereich 0 bis 2 zurück. Wenn *x* für **erfc**zu groß ist, wird die **errno** -Variable auf **ERANGE**festgelegt.
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **ERF** und **erfc** aufzurufen, die **`float`** -und-Typen verwenden und zurückgeben **`long double`** . In einem C-Programm verwenden **ERF** und **erfc** immer einen **`double`** .
+Da C++ das überladen zulässt, können Sie über Ladungen von **ERF** und **erfc** aufzurufen, die **`float`** -und-Typen verwenden und zurückgeben **`long double`** . Wenn Sie in einem C-Programm das \<tgmath.h> -Makro verwenden, um diese Funktion aufzurufen, nehmen **ERF** und **erfc** immer eine auf und geben zurück **`double`** .
+
+Wenn Sie das- \<tgmath.h> `erf()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
 |**ERF**, **erff**, **erfl**, **erfc**, **erfcf**, **erfcl**|\<math.h>|
+|**ERF** -Makro | \<tgmath.h> |
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>

@@ -1,5 +1,6 @@
 ---
 title: _rotl, _rotl64, _rotr, _rotr64
+description: API-Referenz für _rotl, _rotl64, _rotr und _rotr64; die Bits nach links (_rotl) oder nach rechts (_rotr) drehen.
 ms.date: 04/05/2018
 api_name:
 - _rotr64
@@ -43,16 +44,16 @@ helpviewer_keywords:
 - _rotr64 function
 - bits, rotating
 ms.assetid: cfce439b-366f-4584-8ab1-d527b13fcfc6
-ms.openlocfilehash: 0ae2df7d80778cd4c573192a13b1fd91fb358eef
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: d2fb6b2674ed7d50cff63ae45f22af63b0120597
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70949153"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89556592"
 ---
 # <a name="_rotl-_rotl64-_rotr-_rotr64"></a>_rotl, _rotl64, _rotr, _rotr64
 
-Rotiert Bits nach links ( **_rotl**) oder nach rechts ( **_rotr**).
+Rotiert Bits nach links (**_rotl**) oder nach rechts (**_rotr**).
 
 ## <a name="syntax"></a>Syntax
 
@@ -90,16 +91,16 @@ Der gedrehte Wert. Es gibt keine Fehlerrückgabe.
 
 ## <a name="remarks"></a>Hinweise
 
-Die **_rotl** -Funktion und die **_rotr** -Funktion drehen den *Wert* ohne Vorzeichen durch *UMSCHALT* Bits. **_rotl** dreht den Wert nach links. **_rotr** dreht den Wert nach rechts. Beide Funktionen umschließen Bits, die von einem Ende des *value* zum anderen Ende rotieren.
+Die Funktionen **_rotl** und **_rotr** drehen den *Wert* ohne Vorzeichen durch *UMSCHALT* Bits. **_rotl** dreht den Wert nach links. **_rotr** dreht den Wert nach rechts. Beide Funktionen umschließen Bits, die von einem Ende des *value* zum anderen Ende rotieren.
 
 ## <a name="requirements"></a>Anforderungen
 
 |-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
-|**_rotl**, **_rotl64**|\<stdlib.h>|
-|**_rotr**, **_rotr64**|\<stdlib.h>|
+|**_rotl** **_rotl64**|\<stdlib.h>|
+|**_rotr** **_rotr64**|\<stdlib.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="libraries"></a>Bibliotheken
 
@@ -132,7 +133,7 @@ int main( void )
 }
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
 ```Output
 0xfd93 rotated left three times is 0x7ec98
@@ -143,5 +144,5 @@ int main( void )
 
 ## <a name="see-also"></a>Siehe auch
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [_lrotl, _lrotr](lrotl-lrotr.md)<br/>

@@ -1,6 +1,7 @@
 ---
 title: trunc, truncf, truncl
-ms.date: 04/05/2018
+description: API-Referenz für trunc, truncf, truncl; , die die nächstgelegene Ganzzahl ermitteln, die kleiner oder gleich dem angegebenen Gleit Komma Wert ist.
+ms.date: 9/1/2020
 api_name:
 - trunc
 - truncf
@@ -33,12 +34,12 @@ helpviewer_keywords:
 - truncf function
 - truncl function
 ms.assetid: de2038ac-ac0b-483e-870c-e8992dcd4fd0
-ms.openlocfilehash: b47d07cbe1e86e3f53d3a562cd5e1b3dca7f4814
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: f1f2fde95bb944aa461bb95a9ad30fac204552b9
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87232390"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89556631"
 ---
 # <a name="trunc-truncf-truncl"></a>trunc, truncf, truncl
 
@@ -48,18 +49,16 @@ Bestimmt die nächste ganze Zahl, die kleiner oder gleich dem angegebenen Gleitk
 
 ```C
 double trunc( double x );
-float trunc( float x ); //C++ only
 long double truncl( long double x );
-```
+#define trunc(X) // Requires C11 or higher
 
-```cpp
 long double trunc( long double x ); //C++ only
 float trunc( float x ); //C++ only
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*Stuben*\
 Der abzuschneidende Wert.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -70,25 +69,28 @@ Andernfalls wird möglicherweise einer der folgenden Werte zurückgeben:
 
 |Problem|Rückgabewert|
 |-----------|------------|
-|*x* = ± unendlich|x|
-|*x* = ± 0|x|
+|*x* = ± unendlich|w|
+|*x* = ± 0|w|
 |*x* = Nan|NaN|
 
 Fehler werden gemäß den Angaben in [_matherr](matherr.md) gemeldet.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **trunc** aufzurufen, die- **`float`** und-Typen verwenden und zurückgeben **`long double`** . In einem C-Programm übernimmt **trunc** immer und gibt einen zurück **`double`** .
+Da C++ das überladen zulässt, können Sie über Ladungen von **trunc** aufzurufen, die- **`float`** und-Typen verwenden und zurückgeben **`long double`** . In einem C-Programm verwendet trunc immer, wenn Sie das- \<tgmath.h> Makro verwenden **trunc** , um diese Funktion aufzurufen, und gibt es zurück **`double`** .
+
+Wenn Sie das- \<tgmath.h> `trunc()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 Da die größten Gleitkommawerte exakte ganze Zahlen sind, wird diese Funktion nicht eigenständig überlaufen. Sie können diese Funktion jedoch möglicherweise bei der Rückgabe eines Werts in einen ganzzahligen Typ zum Überlaufen bringen.
 
 Sie können auch abrunden, indem Sie Gleitkommazahlen implizit in ganzzahlige konvertieren. Dies ist jedoch nur für die Werte möglich, die im Zieltyp gespeichert werden können.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|C-Header|C++-Header|
 |--------------|--------------|------------------|
 |**trunc**, **truncf**, **truncl**|\<math.h>|\<cmath>|
+|**trunc** -Makro | \<tgmath.h> ||
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 

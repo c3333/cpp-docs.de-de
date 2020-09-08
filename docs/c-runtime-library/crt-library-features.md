@@ -1,5 +1,6 @@
 ---
 title: CRT-Bibliotheksfunktionen
+description: Diese verschiedenen LIB-Dateien, die die Microsoft C-Laufzeitbibliotheken sowie die zugehörigen Compileroptionen und Präprozessordirektiven umfassen.
 ms.date: 08/20/2018
 helpviewer_keywords:
 - MSVCR71.dll
@@ -16,12 +17,12 @@ helpviewer_keywords:
 - libraries [C++], run-time
 - linking [C++], libraries
 ms.assetid: a889fd39-807d-48f2-807f-81492612463f
-ms.openlocfilehash: a350e2c45d9ccf83fb09a76f43b63a6b17273cff
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 20261b542f64f565421cc34dfa0bfbe01e8fa53d
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79438549"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89555565"
 ---
 # <a name="crt-library-features"></a>CRT-Bibliotheksfunktionen
 
@@ -31,14 +32,14 @@ In diesem Thema werden die verschiedenen LIB-Dateien erläutert, die die C-Laufz
 
 Die CRT (C Run-time Library, C-Laufzeitbibliothek) ist Bestandteil der C++-Standardbibliothek, die die ISO C99-Standardbibliothek umfasst. Die Visual C++-Bibliotheken, die die CRT implementieren, unterstützen die Entwicklung von nativem Code und Mischungen aus nativem und verwaltetem Code. Alle Versionen der CRT unterstützen Multithreaded-Entwicklung. Die meisten Bibliotheken unterstützen sowohl statisches Linken (Binden), um die Bibliothek direkt in Ihren Code einzubinden, oder dynamisches Linken, damit in Ihrem Code allgemeine DLL-Dateien verwendet werden können.
 
-Ab Visual Studio 2015 wurde die CRT in neue Binärdateien umgestaltet. Die UCRT (Universal CRT) enthält die Funktionen und globalen Elemente, die durch die Standard-C99 CRT-Bibliothek exportiert werden. Die UCRT ist nun eine Windows-Komponente und wird als Bestandteil von Windows 10 bereitgestellt. Die statische Bibliothek, die DLL-Importbibliothek und die Headerdateien für die UCRT sind jetzt im Windows 10 SDK zu finden. Wenn Sie Visual C++ installieren, installiert Visual Studio-Setup die Teilmenge des Windows 10 SDKs, die erforderlich ist, um die UCRT verwenden zu können. Sie können die UCRT unter jeder Version von Windows verwenden, die von Visual Studio 2015 und späteren Versionen unterstützt wird. Sie können die URCT über vcredist für unterstützte Versionen von Windows neu verteilen, die nicht Windows 10 sind. Weitere Informationen finden Sie unter [Redistributing Visual C++ Files](../windows/redistributing-visual-cpp-files.md).
+Ab Visual Studio 2015 wurde die CRT in neue Binärdateien umgestaltet. Die UCRT (Universal CRT) enthält die Funktionen und globalen Elemente, die durch die Standard-C99 CRT-Bibliothek exportiert werden. Die UCRT ist nun eine Windows-Komponente und wird als Bestandteil von Windows 10 bereitgestellt. Die statische Bibliothek, die DLL-Importbibliothek und die Headerdateien für die UCRT sind jetzt im Windows 10 SDK zu finden. Wenn Sie Visual C++ installieren, installiert Visual Studio-Setup die Teilmenge des Windows 10 SDKs, die erforderlich ist, um die UCRT verwenden zu können. Sie können die UCRT unter jeder Version von Windows verwenden, die von Visual Studio 2015 und späteren Versionen unterstützt wird. Sie können die URCT über vcredist für unterstützte Versionen von Windows neu verteilen, die nicht Windows 10 sind. Weitere Informationen finden Sie unter [Verteilen von Visual C++-Dateien](../windows/redistributing-visual-cpp-files.md).
 
 In der folgenden Tabelle sind die Bibliotheken aufgelistet, die die UCRT implementieren.
 
 |Bibliothek|Zugehörige DLL|Merkmale|Option|Präprozessordirektiven|
 |-------------|--------------------|---------------------|------------|-----------------------------|
 |libucrt.lib|Keine|Bindet die UCRT statisch in Ihren Code ein.|**/MT**|_MT|
-|libucrtd.lib|Keine|Die Debugversion der UCRT für statisches Linken. Nicht neu verteilbar.|**/MTd**|_DEBUG, _MT|
+|libucrtd.lib|Keine|Die Debugversion der UCRT für statisches Linken. Nicht neu verteilbar.|**/MTD**|_DEBUG, _MT|
 |ucrt.lib|ucrtbase.dll|DLL-Importbibliothek für die UCRT.|**/MD**|_MT, _DLL|
 |ucrtd.lib|ucrtbased.dll|DLL-Importbibliothek für die Debugversion der UCRT. Nicht neu verteilbar.|**/MDd**|_DEBUG, _MT, _DLL|
 
@@ -49,9 +50,9 @@ In der folgenden Tabelle sind die Bibliotheken aufgelistet, die die vcruntime-Bi
 |Bibliothek|Zugehörige DLL|Merkmale|Option|Präprozessordirektiven|
 |-------------|--------------------|---------------------|------------|-----------------------------|
 |libvcruntime.lib|Keine|Wird statisch in Ihren Code eingebunden.|**/MT**|_MT|
-|libvcruntimed.lib|Keine|Die Debugversion für statisches Linken. Nicht neu verteilbar.|**/MTd**|_MT, _DEBUG|
-|vcruntime.lib|vcruntime\<Version>.dll|DLL-Importbibliothek für die vcruntime.|**/MD**|_MT, _DLL|
-|vcruntimed.lib|vcruntime\<Version>d.dll|DLL-Importbibliothek für die Debug-vcruntime. Nicht neu verteilbar.|**/MDd**|_DEBUG, _MT, _DLL|
+|libvcruntimed.lib|Keine|Die Debugversion für statisches Linken. Nicht neu verteilbar.|**/MTD**|_MT, _DEBUG|
+|vcruntime.lib|vcruntime \<version> . dll|DLL-Importbibliothek für die vcruntime.|**/MD**|_MT, _DLL|
+|vcruntimed.lib|vcruntime- \<version>d.dll|DLL-Importbibliothek für die Debug-vcruntime. Nicht neu verteilbar.|**/MDd**|_DEBUG, _MT, _DLL|
 
 > [!NOTE]
 > Beim UCRT-Refactoring wurden die Concurrency Runtime-Funktionen in die Datei „concrt140.dll“ verschoben, die dem C++ Redistributable Package hinzugefügt wurde. Diese DLL ist für parallele C++-Container und -Algorithmen wie `concurrency::parallel_for` erforderlich. Darüber hinaus ist diese DLL unter Windows XP für die C++-Standardbibliothek zur Unterstützung von Synchronisierungsprimitiven erforderlich, da Windows XP über keine Bedingungsvariablen verfügt.
@@ -63,11 +64,11 @@ In der folgenden Tabelle sind die Bibliotheken aufgelistet, die die CRT-Initiali
 |Bibliothek|Merkmale|Option|Präprozessordirektiven|
 |-------------|---------------------|------------|-----------------------------|
 |libcmt.lib|Bindet den systemeigenen CRT-Startcode statisch in Ihren Code ein.|**/MT**|_MT|
-|libcmtd.lib|Bindet die Debugversion des systemeigenen CRT-Startcode statisch ein. Nicht neu verteilbar.|**/MTd**|_DEBUG, _MT|
+|libcmtd.lib|Bindet die Debugversion des systemeigenen CRT-Startcode statisch ein. Nicht neu verteilbar.|**/MTD**|_DEBUG, _MT|
 |msvcrt.lib|Statische Bibliothek für den systemeigenen CRT-Startcode zur Verwendung mit DLL UCRT und vcruntime.|**/MD**|_MT, _DLL|
 |msvcrtd.lib|Statische Bibliothek für die Debugversion des systemeigenen CRT-Startcodes zur Verwendung mit DLL UCRT und vcruntime. Nicht neu verteilbar.|**/MDd**|_DEBUG, _MT, _DLL|
-|msvcmrt.lib|Statische Bibliothek für den gemischten systemeigenen und verwalteten CRT-Startcode zur Verwendung mit DLL UCRT und vcruntime.|**/clr**||
-|msvcmrtd.lib|Statische Bibliothek für die Debugversion des gemischten systemeigenen und verwalteten CRT-Startcodes zur Verwendung mit DLL UCRT und vcruntime. Nicht neu verteilbar.|**/clr**||
+|msvcmrt.lib|Statische Bibliothek für den gemischten systemeigenen und verwalteten CRT-Startcode zur Verwendung mit DLL UCRT und vcruntime.|**/CLR**||
+|msvcmrtd.lib|Statische Bibliothek für die Debugversion des gemischten systemeigenen und verwalteten CRT-Startcodes zur Verwendung mit DLL UCRT und vcruntime. Nicht neu verteilbar.|**/CLR**||
 |msvcurt.lib|**Veraltet** Statische Bibliothek für die ausschließlich verwaltete CRT.|**/clr:pure**||
 |msvcurtd.lib|**Veraltet** Statische Bibliothek für die Debugversion der ausschließlich verwalteten CRT. Nicht neu verteilbar.|**/clr:pure**||
 
@@ -77,13 +78,13 @@ Die Verwendung der statisch verknüpften CRT bedeutet, dass alle von der C-Laufz
 
 Da eine durch das Verknüpfen mit einer statischen CRT erstellten DLL ihren eigenen CRT-Zustand besitzt, wird in einer DLL das statische Verknüpfen mit einer CRT nicht empfohlen, es sei denn, dass die daraus resultierenden Konsequenzen verstanden werden und erwünscht sind. Wenn Sie z. B. [_set_se_translator](../c-runtime-library/reference/set-se-translator.md) in einer ausführbaren Datei aufrufen, die die DLL lädt, die mit ihrer eigenen statischen CRT verknüpft ist, werden alle vom Code in der DLL generierten Hardwareausnahmen vom Konvertierungsprogramm nicht erfasst, wohingegen die vom Code in der Hauptausführungsdatei generierten Hardwareausnahmen erfasst werden.
 
-Wenn Sie den **/clr** -Compilerschalter verwenden, wird der Code mit der statischen Bibliothek msvcmrt.lib verknüpft. Die statische Bibliothek stellt einen Proxy zwischen dem verwalteten Code und der systemeigenen CRT bereit. Die statisch verknüpfte CRT (Option **/MT** oder Option **/MTd** ) können Sie nicht mit **/clr**verwenden. Verwenden Sie stattdessen die dynamisch verknüpften Bibliotheken ( **/MD** oder **/MDd**). Die reinen verwalteten CRT-Bibliotheken sind in Visual Studio 2015 als veraltet markiert und werden in Visual Studio 2017 nicht unterstützt.
+Wenn Sie den **/clr** -Compilerschalter verwenden, wird der Code mit der statischen Bibliothek msvcmrt.lib verknüpft. Die statische Bibliothek stellt einen Proxy zwischen dem verwalteten Code und der systemeigenen CRT bereit. Die statisch verknüpfte CRT (Option **/MT** oder Option **/MTd** ) können Sie nicht mit **/clr**verwenden. Verwenden Sie stattdessen die dynamisch verknüpften Bibliotheken (**/MD** oder **/MDd**). Die reinen verwalteten CRT-Bibliotheken sind in Visual Studio 2015 als veraltet markiert und werden in Visual Studio 2017 nicht unterstützt.
 
 Weitere Informationen zur Verwendung der CRT mit **/clr** finden Sie unter [Gemischte (native und verwaltete) Assemblys](../dotnet/mixed-native-and-managed-assemblies.md).
 
 Um eine Debugversion der Anwendung zu erstellen, muss das [_DEBUG](../c-runtime-library/debug.md) -Flag definiert sein und die Anwendung muss mit einer Debugversion von einer dieser Bibliotheken verknüpft sein. Weitere Informationen zur Verwendung der Debugversionen der Bibliotheksdateien finden Sie unter [CRT-Debugverfahren](/visualstudio/debugger/crt-debugging-techniques).
 
-Diese Version der CRT ist nicht vollständig mit dem Standard C99 konform. Insbesondere der \<tgmath.h>-Header und die CX_LIMITED_RANGE/FP_CONTRACT-Pragmamakros werden nicht unterstützt. Für bestimmte Elemente, etwa die Bedeutung von Parameterbezeichnern in Standard-E/A-Funktionen, werden standardmäßig frühere Interpretationen verwendet. Sie können die /Zc-Compileroptionen für Konformität verwenden und Linkeroptionen angeben, um einige Aspekte der Bibliothekskonformität zu steuern.
+Diese Version der CRT ist nicht vollständig mit dem Standard C99 konform. Insbesondere \<tgmath.h> werden die Header-und die CX_LIMITED_RANGE/FP_CONTRACT Pragma-Makros nicht unterstützt. Für bestimmte Elemente, etwa die Bedeutung von Parameterbezeichnern in Standard-E/A-Funktionen, werden standardmäßig frühere Interpretationen verwendet. Sie können die/Zc-compilerübereinstimmungs Optionen verwenden und Linkeroptionen angeben, um einige Aspekte der Bibliotheks Konformität zu steuern.
 
 ## <a name="c-standard-library"></a>C++-Standardbibliothek
 
@@ -91,7 +92,7 @@ Diese Version der CRT ist nicht vollständig mit dem Standard C99 konform. Insbe
 |----------------------------|---------------------|------------|-----------------------------|
 |libcpmt.lib|Multithreaded, statischer Link|**/MT**|_MT|
 |msvcprt.lib|Multithreaded, dynamischer Link (Importbibliothek für MSVCP*version*.dll)|**/MD**|_MT, _DLL|
-|libcpmtd.lib|Multithreaded, statischer Link|**/MTd**|_DEBUG, _MT|
+|libcpmtd.lib|Multithreaded, statischer Link|**/MTD**|_DEBUG, _MT|
 |msvcprtd.lib|Multithreaded, dynamischer Link (Importbibliothek für MSVCP*version*D.DLL)|**/MDd**|_DEBUG, _MT, _DLL|
 
 Wenn Sie eine Releaseversion des Projekts erstellen, wird abhängig von der ausgewählten Compileroption (Multithreaded, DLL, /clr) eine der grundlegenden C-Laufzeitbibliotheken (libcmt.lib, msvcmrt.lib, msvcrt.lib) standardmäßig verknüpft. Wenn Sie eine der [Headerdateien der C++-Standardbibliothek](../standard-library/cpp-standard-library-header-files.md) in den Code einfügen, wird von Visual C++ eine C++-Standardbibliothek automatisch zur Kompilierzeit eingebunden. Beispiel:
@@ -114,4 +115,4 @@ Beim Übergeben bestimmter CRT-Ressourcen (z.B. Dateihandles, Gebietsschemas und
 
 ## <a name="see-also"></a>Weitere Informationen
 
-- [C-Laufzeitbibliotheksreferenz](../c-runtime-library/c-run-time-library-reference.md)
+- [C-Lauf Zeit Bibliotheks Referenz](../c-runtime-library/c-run-time-library-reference.md)

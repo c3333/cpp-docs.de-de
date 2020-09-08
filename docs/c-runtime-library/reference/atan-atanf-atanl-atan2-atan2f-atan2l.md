@@ -1,6 +1,7 @@
 ---
 title: atan, atanf, atanl, atan2, atan2f, atan2l
-ms.date: 6/5/2020
+description: API-Referenz für atan, atanf, atanl, atan2, atan2f und atan2l; , die den Arkus Tangens eines Gleit Komma Werts berechnen.
+ms.date: 08/31/2020
 api_name:
 - atan2f
 - atan2l
@@ -45,12 +46,12 @@ helpviewer_keywords:
 - trigonometric functions
 - atan2f function
 ms.assetid: 7a87a18e-c94d-4727-9cb1-1bb5c2725ae4
-ms.openlocfilehash: ad6bed621a0f1b5dd686909e4bf579e915662079
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 1f1d33aac86d94ab3731dd5cf5b124af99ccb3f2
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87232611"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89555630"
 ---
 # <a name="atan-atanf-atanl-atan2-atan2f-atan2l"></a>atan, atanf, atanl, atan2, atan2f, atan2l
 
@@ -62,15 +63,15 @@ Berechnet den Arkus Tangens **von x** (**Atan**, **atanf**und **atanl**) oder de
 double atan( double x );
 float atanf( float x );
 long double atanl( long double x );
+#define atan(X) // Requires C11 or higher
+
+float atan( float x );  // C++ only
+long double atan( long double x );  // C++ only
 
 double atan2( double y, double x );
 float atan2f( float y, float x );
 long double atan2l( long double y, long double x );
-```
-
-```cpp
-float atan( float x );  // C++ only
-long double atan( long double x );  // C++ only
+#define atan2(Y, X) // Requires C11 or higher
 
 float atan2( float y, float x );  // C++ only
 long double atan2( long double y, long double x );  // C++ only
@@ -78,7 +79,7 @@ long double atan2( long double y, long double x );  // C++ only
 
 ### <a name="parameters"></a>Parameter
 
-*x*, *y*<br/>
+*x*, *y*\
 Alle Zahlen.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -91,13 +92,15 @@ Alle Zahlen.
 |-----------|-------------------|-----------------------|
 |± **QNAN**, **IND**|Keine|**_DOMAIN**|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die **Atan** -Funktion berechnet den Arkus Tangens (die umgekehrte Tangens Funktion) von *x*. **atan2** berechnet den Arkus Tangens von *y* / *x* ( *Wenn x* gleich 0 ist, gibt **atan2** den Wert 1 zurück, wenn *y* positiv ist, d/2, wenn *y* negativ ist, oder 0, wenn *y* gleich 0 ist.)
 
+Wenn Sie das- \<tgmath.h> `atan()` Makro oder das- `atan2()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
+
 **Atan** verfügt über eine Implementierung, die Streaming SIMD Extensions 2 (SSE2) verwendet. Informationen und Einschränkungen zur Verwendung der SSE2-Implementierung finden Sie unter [_set_SSE2_enable](set-sse2-enable.md).
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **Atan** und **atan2** , die-oder-Argumente annehmen, aufgerufen werden **`float`** **`long double`** . In einem C-Programm nehmen **Atan** und **atan2** immer **`double`** Argumente an und geben einen zurück **`double`** .
+Da C++ das überladen zulässt, können Sie über Ladungen von **Atan** und **atan2** , die-oder-Argumente annehmen, aufgerufen werden **`float`** **`long double`** . Wenn Sie in einem C-Programm das \<tgmath.h> -Makro verwenden, um diese Funktion aufzurufen, nehmen **Atan** und **atan2** immer **`double`** Argumente an und geben ein zurück **`double`** .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
@@ -106,6 +109,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |-Routine zurückgegebener Wert|Erforderlicher Header (C)|Erforderlicher Header (C++)|
 |-------------|---------------------|-|
 |**Atan**, **atan2**, **atanf**, **atan2f**, **atanl**, **atan2l**|\<math.h>|\<cmath> oder \<math.h>|
+|**Atan ()**, **atan2** -Makros | \<tgmath.h> ||
 
 ## <a name="example"></a>Beispiel
 
@@ -138,7 +142,7 @@ Arctangent of 5.000000: 1.373401
 Arctangent of 0.500000 / 5.000000: 0.099669
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [acos, acosf, acosl](acos-acosf-acosl.md)<br/>

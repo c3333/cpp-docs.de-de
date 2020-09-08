@@ -1,6 +1,6 @@
 ---
 title: snprintf, _snprintf, _snprintf_l, _snwprintf, _snwprintf_l
-description: API-Referenz für snprintf, _snprintf _snprintf_l, _snwprintf, _snwprintf_, das formatierte Daten in eine Zeichenfolge schreibt.
+description: API-Referenz für snprintf, _snprintf, _snprintf_l, _snwprintf und _snwprintf_; , der formatierte Daten in eine Zeichenfolge schreibt.
 ms.date: 08/27/2020
 api_name:
 - _snwprintf
@@ -52,12 +52,12 @@ helpviewer_keywords:
 - sntprintf function
 - formatted text [C++]
 ms.assetid: 5976c9c8-876e-4ac9-a515-39f3f7fd0925
-ms.openlocfilehash: b4d8865d5297afe3d48f2bb48cc85a0d10535dfd
-ms.sourcegitcommit: c8f1605354724a13566bc3b0fac3c5d98265f1d0
+ms.openlocfilehash: 9a851f08e50d11d3716ea59e00e5e9028b6cd6d5
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89062197"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89556111"
 ---
 # <a name="snprintf-_snprintf-_snprintf_l-_snwprintf-_snwprintf_l"></a>snprintf, _snprintf, _snprintf_l, _snwprintf, _snwprintf_l
 

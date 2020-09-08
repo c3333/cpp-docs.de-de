@@ -1,6 +1,7 @@
 ---
 title: scalbn, scalbnf, scalbnl, scalbln, scalblnf, scalblnl
-ms.date: 4/2/2020
+description: API-Referenz für scalbn, scalbnf, scalbnl, scalbln, scalblnf und scalblnl; Dadurch wird eine Gleit Komma Zahl mit einer ganzzahligen Potenz von multipliziert `FLT_RADIX` .
+ms.date: 9/1/2020
 api_name:
 - scalblnl
 - scalbnl
@@ -46,12 +47,12 @@ helpviewer_keywords:
 - scalbnf function
 - scalblnf function
 ms.assetid: df2f1543-8e39-4af4-a5cf-29307e64807d
-ms.openlocfilehash: 351f56629435754f74565d9674874d5a73915773
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 1a01811e5fcfb28c0557e0232d76649c867748b1
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87231376"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89556670"
 ---
 # <a name="scalbn-scalbnf-scalbnl-scalbln-scalblnf-scalblnl"></a>scalbn, scalbnf, scalbnl, scalbln, scalblnf, scalblnl
 
@@ -80,18 +81,14 @@ long double scalbnl(
    long double x,
    int exp
 );
+
+#define scalbn(X, INT) // Requires C11 or higher
+
 double scalbln(
    double x,
    long exp
 );
-float scalbln(
-   float x,
-   long exp
-);  // C++ only
-long double scalbln(
-   long double x,
-   long exp
-);  // C++ only
+
 float scalblnf(
    float x,
    long exp
@@ -100,14 +97,25 @@ long double scalblnl(
    long double x,
    long exp
 );
+
+#define scalbln(X, LONG) // Requires C11 or higher
+
+float scalbln(
+   float x,
+   long exp
+);  // C++ only
+long double scalbln(
+   long double x,
+   long exp
+);  // C++ only
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*Stuben*\
 Gleitkommawert.
 
-*exp*<br/>
+*Exp*\
 Ganzzahlexponent.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -116,19 +124,22 @@ Die **scalbn** -Funktionen geben den Wert von *x* \* **FLT_RADIX**<sup>Exp</sup>
 
 Weitere Informationen zu **errno** und möglichen Fehlerrückgabe Werten finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 **FLT_RADIX** ist in als System eigenes Gleit Komma Basis definiert \<float.h> ; in binären Systemen hat es den Wert 2, und **scalbn** entspricht [LDE XP](ldexp.md).
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **scalbn** und **scalbln** aufzurufen, die-oder-Typen verwenden und zurückgeben **`float`** **`long double`** . In einem C-Programm übernimmt **scalbn** immer und und **`double`** **`int`** gibt einen zurück **`double`** , und **scalbln** übernimmt immer **`double`** und **`long`** und gibt einen zurück **`double`** .
+Da C++ das überladen zulässt, können Sie über Ladungen von **scalbn** und **scalbln** aufzurufen, die-oder-Typen verwenden und zurückgeben **`float`** **`long double`** . Wenn Sie in einem C-Programm das \<tgmath.h> -Makro nicht zum aufruft dieser Funktion verwenden, verwendet **scalbn** immer **`double`** und und **`int`** gibt einen zurück **`double`** , und **scalbln** übernimmt immer **`double`** und und **`long`** gibt eine zurück **`double`** .
+
+Wenn Sie das-Makro oder das-Makro verwenden \<tgmath.h> `scalbn()` `scalbln` , bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|C-Header|C++-Header|
 |--------------|--------------|------------------|
 |**scalbn**, **scalbnf**, **scalbnl**, **scalbln**, **scalblnf**, **scalblnl**|\<math.h>|\<cmath>|
+|**scalbn ()-oder scalbln** -Makro | \<tgmath.h> ||
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 

@@ -36,16 +36,16 @@ helpviewer_keywords:
 - I/O [CRT], port
 - _inpw function
 ms.assetid: 5d9c2e38-fc85-4294-86d5-7282cc02d1b3
-ms.openlocfilehash: f7b822c4b694969407e32ba26026465fb39bd8d6
-ms.sourcegitcommit: 6b749db14b4cf3a2b8d581fda6fdd8cb98bc3207
+ms.openlocfilehash: aafcd633b2ee04c9ced1520d4ecd1520475d0fea
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82825828"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89556475"
 ---
 # <a name="inp-_inp-inpw-_inpw-_inpd"></a>INP, _inp, inpw, _inpw, _inpd
 
-Eingaben, von einem Port, einem Byte (`inp`, `_inp`), einem Wort (`inpw`, `_inpw`) oder einem doppelten Wort (`_inpd`).
+Eingaben, von einem Port, einem Byte ( `inp` , `_inp` ), einem Wort ( `inpw` , `_inpw` ) oder einem doppelten Wort ( `_inpd` ).
 
 > [!IMPORTANT]
 > Diese Funktionen sind veraltet. Ab Visual Studio 2015 sind Sie in CRT nicht verfügbar. \
@@ -74,17 +74,17 @@ E/A-Portnummer.
 
 Die Funktionen geben das aus `port`gelesene Byte, Wort oder Doppelwort zurück. Es gibt keine Fehlerrückgabe.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die Funktionen `_inp`, `_inpw`und `_inpd` lesen aus dem angegebenen Eingangsport jeweils ein Byte, ein Wort und ein Doppelwort. Der Eingabewert kann jede beliebige kurze ganze Zahl ohne Vorzeichen im Bereich von 0 bis 65.535 sein.
 
 Da diese Funktionen direkt aus einem E/A-Port lesen, können sie nicht im Benutzercode verwendet werden.
 
-Die `inp` - `inpw` und-Namen sind älter, als veraltet markierte `_inp` Namen `_inpw` für die-und-Funktionen. Weitere Informationen finden Sie unter [POSIX-Funktionsnamen](../error-messages/compiler-warnings/compiler-warning-level-3-c4996.md#posix-function-names).
+Die `inp` -und- `inpw` Namen sind älter, als veraltet markierte Namen für die `_inp` -und- `_inpw` Funktionen. Weitere Informationen finden Sie unter [POSIX-Funktionsnamen](../error-messages/compiler-warnings/compiler-warning-level-3-c4996.md#posix-function-names).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |`_inp`|\<conio.h>|
 |`_inpw`|\<conio.h>|

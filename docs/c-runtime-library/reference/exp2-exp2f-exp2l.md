@@ -1,6 +1,7 @@
 ---
 title: exp2, exp2f, exp2l
-ms.date: 4/2/2020
+description: API-Verweis für exp2 (), exp2f () und exp2l (), deren Compute 2 auf den angegebenen Wert aufgestuft wird.
+ms.date: 9/1/2020
 api_name:
 - exp2
 - exp2f
@@ -37,12 +38,12 @@ helpviewer_keywords:
 - exp2f function
 - exp2l function
 ms.assetid: 526e3e10-201a-4610-a886-533f44ece344
-ms.openlocfilehash: d2eb3f6d27e943110c5e82968d4fee949644601f
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 518525a38ef575583fde3b7732561f2fa553dd18
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87234158"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89556618"
 ---
 # <a name="exp2-exp2f-exp2l"></a>exp2, exp2f, exp2l
 
@@ -70,11 +71,12 @@ float exp2f(
 long double exp2l(
    long double x
 );
+#define exp2(X) // Requires C11 or higher
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*Stuben*\
 Der Wert des Exponenten.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -92,9 +94,11 @@ Bei erfolgreicher Ausführung wird der Basis-2-Exponent von *x*zurückgegeben, d
 
 Fehler werden gemäß den Angaben in [_matherr](matherr.md) gemeldet.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **exp2** aufzurufen, die **`float`** -und-Typen verwenden und zurückgeben **`long double`** . In einem C-Programm übernimmt **exp2** immer und gibt einen zurück **`double`** .
+Da C++ das überladen zulässt, können Sie über Ladungen von **exp2** aufzurufen, die **`float`** -und-Typen verwenden und zurückgeben **`long double`** . Wenn Sie in einem C-Programm das- \<tgmath.h> Makro zum aufruft dieser Funktion nicht verwenden, verwendet **exp2** immer, und gibt **`double`** es zurück, es sei denn, Sie verwenden das-Makro in <tgmath. h->.
+
+Wenn Sie das- \<tgmath.h> `exp2()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
@@ -102,11 +106,12 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 |-Routine zurückgegebener Wert|C-Header|C++-Header|
 |-------------|--------------|------------------|
-|**Exp**, **expf**, **Expl**|\<math.h>|\<cmath>|
+|**exp2**, **expf2**, **expl2**|\<math.h>|\<cmath>|
+|**exp2** -Makro | \<tgmath.h> ||
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Alphabetische Funktionsreferenz](crt-alphabetical-function-reference.md)<br/>
 [exp, expf, expl](exp-expf.md)<br/>

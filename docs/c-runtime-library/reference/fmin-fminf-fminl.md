@@ -1,6 +1,7 @@
 ---
 title: fmin, fminf, fminl
-ms.date: 04/05/2018
+description: API-Referenz für "vollständig", "vollständig", "f" und "f" , der den kleineren von zwei Werten bestimmt.
+ms.date: 9/1/2020
 api_name:
 - fmin
 - fminf
@@ -33,12 +34,12 @@ helpviewer_keywords:
 - fminf function
 - fminl function
 ms.assetid: 1916dfb5-99c1-4b0d-aefb-513525c3f2ac
-ms.openlocfilehash: d6cd16c298c3f4bedb8064d66efd2d4bbe20c22b
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 6a070835d809c6adcb5b7bfd57b5373886b348ca
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87216985"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89556709"
 ---
 # <a name="fmin-fminf-fminl"></a>fmin, fminf, fminl
 
@@ -71,14 +72,16 @@ long double fminl(
    long double x,
    long double y
 );
+
+#define fmin(x) // Requires C11 or higher
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*Stuben*\
 Der erste zu vergleichende Wert.
 
-*Teenie*<br/>
+*Teenie*\
 Der zweite zu vergleichende Wert.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -87,21 +90,24 @@ Bei erfolgreicher Ausführung wird der kleinere von *x* oder *y*zurückgegeben.
 
 |Eingabe|Ergebnis|
 |-----------|------------|
-|*x* ist NaN|*Teenie*|
+|*x* ist NaN|*y*|
 |*y* ist NaN|*x*|
 |*x* und *y* sind Nan|NaN|
 
 Die Funktion bewirkt nicht, dass [_matherr](matherr.md) aufgerufen wird, keine Gleit Komma Ausnahmen verursachen oder den Wert von **errno**ändern.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **FMIN** aufzurufen, die- **`float`** und-Typen verwenden und zurückgeben **`long double`** . In einem C-Programm nimmt die **Formatierung immer eine** an und gibt Sie zurück **`double`** .
+Da C++ das überladen zulässt, können Sie über Ladungen von **FMIN** aufzurufen, die- **`float`** und-Typen verwenden und zurückgeben **`long double`** . Wenn Sie in einem C-Programm das-Makro verwenden, \<tgmath.h> um diese Funktion aufzurufen, verwendet **FMIN** immer und gibt einen zurück **`double`** .
+
+Wenn Sie das- \<tgmath.h> `fmin()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 ## <a name="requirements"></a>Anforderungen
 
 |-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
-|" **f**" **, "f**" **, "f"**|Scher\<math.h><br />C++: \<math.h> oder\<cmath>|
+|" **f**" **, "f**" **, "f"**|Scher \<math.h><br />C++: \<math.h> oder \<cmath>|
+|**Mamin** -Makro | \<tgmath.h> ||
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 

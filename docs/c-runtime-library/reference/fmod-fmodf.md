@@ -1,6 +1,7 @@
 ---
 title: fmod, fmodf, fmodl
-ms.date: 4/2/2020
+description: API-Referenz für "f", "f" und "f" der den Gleit Komma Rest berechnet.
+ms.date: 9/1/2020
 api_name:
 - fmod
 - fmodf
@@ -34,12 +35,12 @@ helpviewer_keywords:
 - fmod function
 - floating-point numbers, calculating remainders
 ms.assetid: 6962d369-d11f-40b1-a6d7-6f67239f8a23
-ms.openlocfilehash: 4fa3df46358932b8a62a6b8529baed4a5c9e5c49
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 2b610dec79c98b973af09f8efb147ad6797f7946
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87216972"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89556085"
 ---
 # <a name="fmod-fmodf-fmodl"></a>fmod, fmodf, fmodl
 
@@ -68,30 +69,35 @@ long double fmodl(
    long double x,
    long double y
 );
+
+#define fmod(X, Y) // Requires C11 or higher
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*x*, *y*<br/>
+*x*, *y*\
 Gleitkommawerte.
 
 ## <a name="return-value"></a>Rückgabewert
 
 " **f** " gibt den Gleit Komma Rest von *x*  /  *y*zurück. Wenn der Wert von *y* 0,0 ist, gibt " **f** " einen stillen NaN-Wert zurück. Informationen zur Darstellung eines stillen Nan durch die **printf** -Familie finden Sie unter [printf](printf-printf-l-wprintf-wprintf-l.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die **Funktion "** f" berechnet den Gleit Komma Rest *f* von *x*  /  *y* , sodass *x*  =  *i* \* *y*  +  *f*, wobei *i* es sich um eine ganze Zahl handelt, *f* dasselbe Vorzeichen wie " *x*" hat und der absolute Wert von " *f* " kleiner ist als der absolute Wert von " *y*".
 
-C++ ermöglicht überladen, sodass Sie über Ladungen von **FMOD** abrufen können, die- **`float`** und-Werte verwenden und zurückgeben **`long double`** . In einem C-Programm übernimmt " **f** " immer zwei **`double`** Argumente und gibt einen zurück **`double`** .
+C++ ermöglicht überladen, sodass Sie über Ladungen von **FMOD** abrufen können, die- **`float`** und-Werte verwenden und zurückgeben **`long double`** . In einem C-Programm verwendet \<tgmath.h> **FMOD** immer zwei **`double`** Argumente und gibt einen zurück, es sei denn, Sie verwenden das-Makro, um diese Funktion aufzurufen **`double`** .
+
+Wenn Sie das- \<tgmath.h> `fmod()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
 |" **f**" **, "** f", " **f** ", "f"|\<math.h>|
+|**mamod** -Makro | \<tgmath.h> |
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 

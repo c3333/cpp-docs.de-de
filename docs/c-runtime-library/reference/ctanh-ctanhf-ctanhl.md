@@ -1,5 +1,6 @@
 ---
 title: ctanh, ctanhf, ctanhl
+description: API-Referenz für ctanh, ctanhf, ctanhl; berechnet den komplexen hyperbolischen Tangens einer komplexen Zahl.
 ms.date: 11/04/2016
 api_name:
 - ctanh
@@ -33,12 +34,12 @@ helpviewer_keywords:
 - ctanhl function
 - ctanhf function
 ms.assetid: 807f2cd1-8740-4988-afff-5911c346385b
-ms.openlocfilehash: dae59dcd4a71045b27c6ba9501580bf981b9828f
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 959d48853e3edac707a7daea615270b20dad37e7
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70941969"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89555865"
 ---
 # <a name="ctanh-ctanhf-ctanhl"></a>ctanh, ctanhf, ctanhl
 
@@ -66,7 +67,7 @@ _Lcomplex ctanhl(
 
 ### <a name="parameters"></a>Parameter
 
-*z*<br/>
+*z*\
 Eine komplexe Zahl, die einen Winkel als Bogenmaß darstellt
 
 ## <a name="return-value"></a>Rückgabewert
@@ -75,12 +76,12 @@ Der komplexe hyperbolische Tangens von *z*.
 
 |Eingabe|SEH-Ausnahme|**_matherr** Distanzieren|
 |-----------|-------------------|--------------------------|
-|± ∞, QNAN, IND|none|_DOMAIN|
+|± ∞, QNAN, IND|Keine|_DOMAIN|
 |± (Tan, tanf)|INVALID|_DOMAIN|
 
 ## <a name="remarks"></a>Hinweise
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **ctanh** aufzurufen, die **_Fcomplex** -und **_Lcomplex** -Werte verwenden und zurückgeben. In einem C-Programm nimmt **ctanh** immer einen **_Dcomplex** -Wert an und gibt diesen zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **ctanh** aufzurufen, die **_Fcomplex** -und **_Lcomplex** -Werte verwenden und zurückgeben. In einem C-Programm übernimmt **ctanh** immer einen **_Dcomplex** Wert und gibt ihn zurück.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -90,7 +91,7 @@ Da C++ das überladen zulässt, können Sie über Ladungen von **ctanh** aufzuru
 
 Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Alphabetische Funktionsreferenz](crt-alphabetical-function-reference.md)<br/>
 [catanh, catanhf, catanhl](catanh-catanhf-catanhl.md)<br/>

@@ -1,6 +1,7 @@
 ---
 title: acosh, acoshf, acoshl
-ms.date: 4/2/2020
+description: API-Referenz für acosh, acoshf und acoshl; , die den umgekehrten hyperbolischen Kosinus eines Gleit Komma Werts berechnen.
+ms.date: 08/31/2020
 api_name:
 - acoshf
 - acosh
@@ -37,12 +38,12 @@ helpviewer_keywords:
 - acosh function
 - acoshl function
 ms.assetid: 6985c4d7-9e2a-44ce-9a9b-5a43015f15f7
-ms.openlocfilehash: a6883c23d06115c8775dd919123671feac380b99
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: ef6d47ca07f96be84962303c13162b154086e5f2
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87220755"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89555110"
 ---
 # <a name="acosh-acoshf-acoshl"></a>acosh, acoshf, acoshl
 
@@ -54,16 +55,15 @@ Berechnet den umgekehrten hyperbolischen Cosinus.
 double acosh( double x );
 float acoshf( float x );
 long double acoshl( long double x );
-```
+#define acosh(X) // Requires C11 or higher
 
-```cpp
 float acosh( float x );  // C++ only
 long double acosh( long double x );  // C++ only
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*Stuben*\
 Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -75,17 +75,20 @@ Die **acosh** -Funktionen geben den umgekehrten hyberbolischen Kosinus (hyperbol
 |± QNAN, IND, INF|Keine|Keine|
 |*x* < 1|Keine|Keine|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Wenn Sie C++ verwenden, können Sie über Ladungen von **acosh** aufzurufen, die-oder-Werte verwenden und zurückgeben **`float`** **`long double`** . In einem C-Programm nimmt **acosh** immer an und gibt es zurück **`double`** .
+Wenn Sie C++ verwenden, können Sie über Ladungen von **acosh** aufzurufen, die-oder-Werte verwenden und zurückgeben **`float`** **`long double`** . Wenn Sie in einem C-Programm nicht das- \<tgmath.h> Makro verwenden, um diese Funktion aufzurufen, nimmt **acosh** immer an und gibt es zurück **`double`** .
+
+Wenn Sie das- \<tgmath.h> `acosh()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|C-Header|C++-Header|
 |--------------|--------------|------------------|
 |**acosh**, **acoshf**, **acoshl**|\<math.h>|\<cmath>|
+|**acosh ()** -Makro | \<tgmath.h> ||
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 

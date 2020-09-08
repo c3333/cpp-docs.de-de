@@ -1,6 +1,7 @@
 ---
 title: frexp, frexpf, frexpl
-ms.date: 4/2/2020
+description: API-Referenz für frexp, frexpf und frexpl; die die Mantisse und den Exponenten einer Gleit Komma Zahl abruft.
+ms.date: 9/1/2020
 api_name:
 - frexp
 - _o_frexp
@@ -32,12 +33,12 @@ helpviewer_keywords:
 - frexp function
 - floating-point functions, mantissa and exponent
 ms.assetid: 9b020f2e-3967-45ec-a6a8-d467a071aa55
-ms.openlocfilehash: 34d8877d4b8372a33fb5f0f6095a7027cae50555
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: a23de4160abcfab2518125bfa0fd35a389901674
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87220703"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89555747"
 ---
 # <a name="frexp-frexpf-frexpl"></a>frexp, frexpf, frexpl
 
@@ -58,6 +59,10 @@ long double frexpl(
    long double x,
    int * expptr
 );
+#define frexpl(X, INT_PTR) // Requires C11 or higher
+```
+
+```cpp
 float frexp(
    float x,
    int * expptr
@@ -70,29 +75,32 @@ long double frexp(
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*Stuben*\
 Gleitkommawert.
 
-*expptr*<br/>
+*expptr*\
 Zeiger auf gespeicherten Integer-Exponenten
 
 ## <a name="return-value"></a>Rückgabewert
 
 **frexp** gibt die Mantisse zurück. Wenn *x* gleich 0 ist, gibt die Funktion 0 für die Mantisse und den Exponenten zurück. Wenn *expptr* **null**ist, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legt diese Funktion **errno** auf **EINVAL** fest und gibt 0 zurück.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die **frexp** -Funktion teilt den Gleit Komma Wert (*x*) in eine Mantisse (*m*) und einen Exponenten (*n*) auf, sodass der absolute Wert von *m* größer oder gleich 0,5 und kleiner als 1,0 und *x*  =  *m* * 2<sup>*n*</sup>ist. Der ganzzahlige Exponent *n* wird an dem Speicherort gespeichert, auf den von *expptr*verwiesen wird.
 
-C++ ermöglicht überladen, sodass Sie über Ladungen von **frexp**abrufen können. In einem C-Programm übernimmt **frexp** immer **`double`** und einen- **`int`** Zeiger und gibt einen zurück **`double`** .
+C++ ermöglicht überladen, sodass Sie über Ladungen von **frexp**abrufen können. Wenn Sie in einem C-Programm das \<tgmath.h> -Makro zum aufruft dieser Funktion nicht verwenden, verwendet **frexp** immer **`double`** und einen- **`int`** Zeiger und gibt einen zurück **`double`** .
+
+Wenn Sie das- \<tgmath.h> `frexp()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
 |**frexp**, **frexpf**, **frexpl**|\<math.h>|
+|**frexp** -Makro | \<tgmath.h> |
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 

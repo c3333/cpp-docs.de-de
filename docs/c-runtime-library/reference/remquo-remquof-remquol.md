@@ -1,6 +1,7 @@
 ---
 title: remquo, remquof, remquol
-ms.date: 4/2/2020
+description: API-Referenz für remquo, remquof und remquol; , die den Rest von zwei ganzzahligen Werten berechnet und einen ganzzahligen Wert mit dem Vorzeichen und der ungefähren Größe des Quotienten an einem Speicherort speichert, der in einem Parameter angegeben ist.
+ms.date: 9/1/2020
 api_name:
 - remquof
 - remquo
@@ -34,12 +35,12 @@ helpviewer_keywords:
 - remquof function
 - remquo function
 ms.assetid: a1d3cb8b-8027-4cd3-8deb-04eb17f299fc
-ms.openlocfilehash: d1b5c60e2e6bd8ba4d5f3b4297dff4bd57c650f2
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: d99204ad9a80c6320869cbb72aee905981a5224d
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87216790"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554967"
 ---
 # <a name="remquo-remquof-remquol"></a>remquo, remquof, remquol
 
@@ -51,41 +52,43 @@ Berechnet den Rest von zwei ganzzahligen Werten und speichert einen ganzzahligen
 double remquo( double numer, double denom, int* quo );
 float remquof( float numer, float denom, int* quo );
 long double remquol( long double numer, long double denom, int* quo );
-```
+#define remquo(X, Y, INT_PTR) // Requires C11 or higher
 
-```cpp
 float remquo( float numer, float denom, int* quo ); /* C++ only */
 long double remquo( long double numer, long double denom, int* quo ); /* C++ only */
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*Zahl*<br/>
+*Zahl*\
 Der Zähler.
 
-*Denom*<br/>
+*Denom*\
 Der Nenner.
 
-*beizubehalten*<br/>
+*beizubehalten*\
 Ein Zeiger auf eine ganze Zahl zum Speichern eines Werts, der das Zeichen und die ungefähre Größe des Quotienten hat.
 
 ## <a name="return-value"></a>Rückgabewert
 
 **remquo** gibt den Gleit Komma Rest von *x*  /  *y*zurück. Wenn der Wert von *y* 0,0 ist, gibt **remquo** einen stillen NaN-Wert zurück. Informationen zur Darstellung eines stillen Nan durch die **printf** -Familie finden Sie unter [printf, _printf_l, wprintf, _wprintf_l](printf-printf-l-wprintf-wprintf-l.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die **remquo** -Funktion berechnet den Gleit Komma Rest *f* von *x*  /  *y* , sodass *x*  =  *i* \* *y*  +  *f*, bei *i* dem es sich um eine ganze Zahl handelt, *f* das gleiche Vorzeichen wie *x*hat und der absolute Wert von *f* kleiner ist als der absolute Wert von *y*.
 
-C++ ermöglicht überladen, sodass Sie über Ladungen von **remquo** aufgerufen werden können, die-oder-Werte verwenden und zurückgeben **`float`** **`long double`** . In einem C-Programm nimmt **remquo** immer zwei **`double`** Argumente an und gibt einen zurück **`double`** .
+C++ ermöglicht überladen, sodass Sie über Ladungen von **remquo** aufgerufen werden können, die-oder-Werte verwenden und zurückgeben **`float`** **`long double`** . Wenn Sie in einem C-Programm das-Makro verwenden, \<tgmath.h> um diese Funktion aufzurufen, nimmt **remquo** immer zwei **`double`** Argumente an und gibt einen zurück **`double`** .
+
+Wenn Sie das- \<tgmath.h> `remquo()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header (C)|Erforderlicher Header (C++)|
 |--------------|---------------------|-|
 |**remquo**, **remquof**, **remquol**|\<math.h>|\<cmath> oder \<math.h>|
+|**remquo** -Makro | \<tgmath.h> ||
 
 Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
 
@@ -114,7 +117,7 @@ The remainder of -10.00 / 3.00 is -1.000000
 Approximate signed quotient is -3
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [ldiv, lldiv](ldiv-lldiv.md)<br/>

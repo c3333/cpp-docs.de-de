@@ -1,5 +1,6 @@
 ---
 title: rand
+description: API-Referenz für Rand, die eine Pseudo Zufallszahl mit einem bekannten und vollständig reproduzierbaren Algorithmus generiert.
 ms.date: 4/2/2020
 api_name:
 - rand
@@ -31,16 +32,16 @@ helpviewer_keywords:
 - rand function
 - pseudorandom numbers
 - numbers, generating pseudorandom
-ms.openlocfilehash: 8f2a4d00310671e8ba80055e38e479e348562ac2
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 50c4f921c81ecad00abb19e6ce50158d450b170e
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82919527"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89555331"
 ---
 # <a name="rand"></a>rand
 
-Generiert eine Pseudo Zufalls-Zahl mithilfe eines bekannten und vollständig reproduzierbaren Algorithmus. Eine Programm gesteuert sichere Version dieser Funktion ist verfügbar. siehe [rand_s](rand-s.md). Die von **Rand** generierten Zahlen sind nicht kryptografisch sicher. Verwenden Sie zum Generieren einer kryptografisch sicheren Zufallszahlengenerierung [rand_s](rand-s.md) oder die in der C++-Standard Bibliothek in [ \<Random>](../../standard-library/random.md)deklarierten Funktionen.
+Generiert eine Pseudo Zufalls-Zahl mithilfe eines bekannten und vollständig reproduzierbaren Algorithmus. Eine Programm gesteuert sichere Version dieser Funktion ist verfügbar. siehe [rand_s](rand-s.md). Die von **Rand** generierten Zahlen sind nicht kryptografisch sicher. Verwenden Sie zum Generieren einer kryptografisch sicheren Zufallszahlengenerierung [rand_s](rand-s.md) oder die in der C++-Standard Bibliothek in deklarierten Funktionen [\<random>](../../standard-library/random.md) .
 
 ## <a name="syntax"></a>Syntax
 
@@ -56,13 +57,13 @@ int rand( void );
 
 Die **Rand** -Funktion gibt eine Pseudo Zufalls-Ganzzahl im Bereich 0 bis **RAND_MAX** (32767) zurück. Verwenden Sie die [srand](srand.md) -Funktion, um einen Ausgangswert für den Pseudozufallszahlen-Generator zu verwenden, bevor Sie **Rand**aufrufen.
 
-Die **Rand** -Funktion generiert eine bekannte Sequenz und ist nicht für die Verwendung als Kryptografiefunktion geeignet. Verwenden Sie zum Generieren einer kryptografisch sicheren Zufallszahlengenerierung [rand_s](rand-s.md) oder die in der C++-Standard Bibliothek in [ \<Random>](../../standard-library/random.md)deklarierten Funktionen. Informationen dazu, was bei **Rand** falsch ist und wie \<Random> diese Mängel behandelt, finden Sie in diesem Video, das [als schädlich angesehen](https://channel9.msdn.com/Events/GoingNative/2013/rand-Considered-Harmful)wird.
+Die **Rand** -Funktion generiert eine bekannte Sequenz und ist nicht für die Verwendung als Kryptografiefunktion geeignet. Verwenden Sie zum Generieren einer kryptografisch sicheren Zufallszahlengenerierung [rand_s](rand-s.md) oder die in der C++-Standard Bibliothek in deklarierten Funktionen [\<random>](../../standard-library/random.md) . Informationen zu den Fehlern bei **Rand** und zur Behebung \<random> dieser Mängel finden Sie in diesem Video mit dem Titel " [Rand" als schädlich angesehen](https://channel9.msdn.com/Events/GoingNative/2013/rand-Considered-Harmful).
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**rand**|\<stdlib.h>|
 
@@ -140,6 +141,6 @@ int main( void )
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [srand](srand.md)<br/>
 [rand_s](rand-s.md)<br/>

@@ -1,6 +1,7 @@
 ---
 title: remainder, remainderf, remainderl
-ms.date: 4/2/2020
+description: API-Referenz für Rest, restderf und restderl; , die den Rest des Quotienten von zwei Gleit Komma Werten berechnen, die auf den nächstgelegenen integralen Wert gerundet werden.
+ms.date: 9/1/2020
 api_name:
 - remainderl
 - remainder
@@ -34,12 +35,12 @@ helpviewer_keywords:
 - remainderl
 - remainder
 ms.assetid: 5f721fb3-8b78-4597-9bc0-ca9bcd1f1d0e
-ms.openlocfilehash: b880054430574b6ea1e8bc456774acc35cf116ad
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: ef2b326bef2288b52dba8988749e030ff0b46077
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87216803"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89556008"
 ---
 # <a name="remainder-remainderf-remainderl"></a>remainder, remainderf, remainderl
 
@@ -51,38 +52,40 @@ Berechnet den Rest des Quotienten aus zwei Gleitkommawerten, gerundet auf den n�
 double remainder( double x, double y );
 float remainderf( float x, float y );
 long double remainderl( long double x, long double y );
-```
+#define remainder(X, Y) // Requires C11 or higher
 
-```cpp
 float remainder( float x, float y ); /* C++ only */
 long double remainder( long double x, long double y ); /* C++ only */
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*Stuben*\
 Der Zähler.
 
-*Teenie*<br/>
+*Teenie*\
 Der Nenner.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Der Gleit Komma Rest von *x*  /  *y*. Wenn der Wert von *y* 0,0 ist, gibt **Rest** einen stillen NaN-Wert zurück. Informationen zur Darstellung eines stillen Nan durch die **printf** -Familie finden Sie unter [printf, _printf_l, wprintf, _wprintf_l](printf-printf-l-wprintf-wprintf-l.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die **Rest** -Funktionen berechnen den Gleit Komma Rest *r* von *x*  /  *y* , d. h. *x*  =  *n* \* *y*  +  *r*, wobei *n*die Ganzzahl ist, die dem Wert am nächsten liegt, bis zu *x*  /  *y* , und *n*ist auch immer, wenn &#124; *n*  -  *x*  /  *y* &#124; = 1/2. Wenn *r* = 0 ist, hat *r* das gleiche Vorzeichen wie *x*.
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **Restwerten** aufzurufen, die-oder-Werte verwenden und zurückgeben **`float`** **`long double`** . In einem C-Programm nimmt **Rest** immer zwei **`double`** Argumente an und gibt einen zurück **`double`** .
+Da C++ das überladen zulässt, können Sie über Ladungen von **Restwerten** aufzurufen, die-oder-Werte verwenden und zurückgeben **`float`** **`long double`** . Wenn Sie in einem C-Programm nicht das- \<tgmath.h> Makro verwenden, um diese Funktion aufzurufen, übernimmt **Rest** immer zwei **`double`** Argumente und gibt einen zurück **`double`** .
+
+Wenn Sie das- \<tgmath.h> `remainder()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header (C)|Erforderlicher Header (C++)|
 |--------------|---------------------|-|
 |**Restwert, Restwert, Restwert** **remainderf** **remainderl**|\<math.h>|\<cmath> oder \<math.h>|
+|**restmakro** | \<tgmath.h> ||
 
 Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
 
@@ -110,8 +113,8 @@ The remainder of -10.00 / 3.00 is -1.000000
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
-[ldiv, lldiv](ldiv-lldiv.md)<br/>
-[imaxdiv](imaxdiv.md)<br/>
-[fmod, fmodf](fmod-fmodf.md)<br/>
-[remquo, remquof, remquol](remquo-remquof-remquol.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)\
+[ldiv, lldiv](ldiv-lldiv.md)\
+[imaxdiv](imaxdiv.md)\
+["f", "f"](fmod-fmodf.md)\
+[remquo, remquof, remquol](remquo-remquof-remquol.md)

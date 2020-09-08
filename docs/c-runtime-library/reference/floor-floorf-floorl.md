@@ -1,6 +1,7 @@
 ---
 title: floor, floorf, floorl
-ms.date: 6/5/2020
+description: API-Referenz für Floor, floorf und floorl; , der den Fußboden eines Werts berechnet.
+ms.date: 9/1/2020
 api_name:
 - floorf
 - floorl
@@ -35,12 +36,12 @@ helpviewer_keywords:
 - calculating floors of values
 - floorl function
 ms.assetid: e9955f70-d659-414f-8050-132e13c8ff36
-ms.openlocfilehash: dd1b88f51dfd414fc1668199350db1e2c34b9f33
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 6af047d3da891270ab6a596dfc3ebef0941a91cf
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87218680"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89556735"
 ---
 # <a name="floor-floorf-floorl"></a>floor, floorf, floorl
 
@@ -64,11 +65,12 @@ float floorf(
 long double floorl(
    long double x
 );
+#define floor(X) // Requires C11 or higher
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*Stuben*\
 Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -81,17 +83,20 @@ Die **Floor** -Funktionen geben einen Gleit Komma Wert zurück, der die größte
 
 **Floor** verfügt über eine Implementierung, die Streaming SIMD Extensions 2 (SSE2) verwendet. Informationen und Einschränkungen zur Verwendung der SSE2-Implementierung finden Sie unter [_set_SSE2_enable](set-sse2-enable.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-C++ ermöglicht überladen, sodass Sie über Ladungen von **Floor** aufzurufen können, die **`float`** -und-Werte verwenden und zurückgeben **`long double`** . In einem C-Programm übernimmt **Floor** immer und gibt einen zurück **`double`** .
+C++ ermöglicht überladen, sodass Sie über Ladungen von **Floor** aufzurufen können, die **`float`** -und-Werte verwenden und zurückgeben **`long double`** . Wenn Sie in einem C-Programm das-Makro verwenden, \<tgmath.h> um diese Funktion aufzurufen, verwendet **Floor** immer, und gibt es zurück **`double`** .
+
+Wenn Sie das- \<tgmath.h> `floor()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
 |**Floor**, **floorf**, **floorl**|\<math.h>|
+|**Floor** -Makro | \<tgmath.h> ||
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 

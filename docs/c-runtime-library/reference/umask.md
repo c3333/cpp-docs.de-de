@@ -1,5 +1,6 @@
 ---
 title: _umask
+description: API-Referenz für _umask; Dadurch wird die standardmäßige Datei Berechtigungs Maske festgelegt.
 ms.date: 4/2/2020
 api_name:
 - _umask
@@ -31,16 +32,16 @@ helpviewer_keywords:
 - file permissions [C++]
 - files [C++], permission settings for
 ms.assetid: 5e9a13ba-5321-4536-8721-6afb6f4c8483
-ms.openlocfilehash: 84735374a936e47691df82247f0202ecfcd86d9d
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 3735ecd7ba194009945d3717982d7828ecee3c1e
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82913844"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554928"
 ---
 # <a name="_umask"></a>_umask
 
-Legt die Standard-Dateiberechtigungsmaske fest. Es ist eine sicherere Version dieser Funktion verfügbar. Informationen dazu finden Sie unter [_umask_s](umask-s.md).
+Legt die Standard-Dateiberechtigungsmaske fest. Weitere Informationen finden Sie unter [_umask_s](umask-s.md) für eine sicherere Version dieser Funktion. "
 
 ## <a name="syntax"></a>Syntax
 
@@ -77,7 +78,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**_umask**|\<io.h>, \<sys/stat.h>, \<sys/types.h>|
 

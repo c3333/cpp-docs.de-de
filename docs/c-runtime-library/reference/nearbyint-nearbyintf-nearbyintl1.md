@@ -1,6 +1,7 @@
 ---
 title: nearbyint, nearbyintf, nearbyintl
-ms.date: 4/2/2020
+description: API-Referenz für nearbyint, nearbyintf und nearbyintl; rundet den angegebenen Gleit Komma Wert auf eine ganze Zahl auf und gibt diesen Wert in einem Gleit Komma Format zurück.
+ms.date: 9/1/2020
 api_name:
 - nearbyint
 - nearbyintf
@@ -37,12 +38,12 @@ helpviewer_keywords:
 - nearbyintf function
 - nearbyintl function
 ms.assetid: dd39cb68-96b0-434b-820f-6ff2ea65584f
-ms.openlocfilehash: 898544f5b191eb68e0ed6f17d7c3c7df849e8d11
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 9717559518032c6f1f2126c7ded7cb90603bce64
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87216855"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89556384"
 ---
 # <a name="nearbyint-nearbyintf-nearbyintl"></a>nearbyint, nearbyintf, nearbyintl
 
@@ -54,16 +55,15 @@ Rundet den angegebenen Gleitkommawert auf eine ganze Zahl und gibt diesen Wert i
 double nearbyint( double x );
 float nearbyintf( float x );
 long double nearbyintl( long double x );
-```
+#define nearbyint( X ) // Requires C11 or higher
 
-```cpp
 float nearbyint( float x ); //C++ only
 long double nearbyint( long double x ); //C++ only
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*Stuben*\
 Der zu rundende Wert.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -78,21 +78,24 @@ Wenn erfolgreich, wird *x*(auf die nächste ganze Zahl gerundet) zurückgegeben,
 
 Fehler werden nicht über [_matherr](matherr.md)gemeldet; Diese Funktion meldet insbesondere keine **FE_INEXACT** Ausnahmen.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Der primäre Unterschied zwischen dieser Funktion und [rint](rint-rintf-rintl.md) besteht darin, dass diese Funktion nicht die inexakte Gleit Komma Ausnahme auslöst.
 
 Da die maximalen Gleitkommawerte genaue ganze Zahlen sind, überläuft diese Funktion nie von selbst. Stattdessen ist es möglich, dass der Rückgabewert je nach Version der verwendeten Funktion von der Ausgabe überlaufen wird.
 
-C++ ermöglicht überladen, sodass Sie über Ladungen von **nearbyint** aufzurufen können, die-oder-Parameter verwenden und zurückgeben **`float`** **`long double`** . In einem C-Programm übernimmt **nearbyint** immer zwei Double-Werte und gibt einen Double-Wert zurück.
+C++ ermöglicht überladen, sodass Sie über Ladungen von **nearbyint** aufzurufen können, die-oder-Parameter verwenden und zurückgeben **`float`** **`long double`** . Wenn Sie in einem C-Programm diese Funktion nicht mit dem- \<tgmath.h> Makro aufzurufen, verwendet **nearbyint** immer zwei Double-Werte und gibt einen Double-Wert zurück.
+
+Wenn Sie das- \<tgmath.h> `nearbyint()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|C-Header|C++-Header|
 |--------------|--------------|------------------|
 |**nearbyint**, **nearbyintf**, **nearbyintl**|\<math.h>|\<cmath> oder \<math.h>|
+|**nearbyint** -Makro | \<tgmath.h> ||
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 

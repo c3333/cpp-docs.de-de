@@ -1,6 +1,7 @@
 ---
 title: asin, asinf, asinl
-ms.date: 4/2/2020
+description: API-Referenz für ASIN, asinf und asinl; , die den Arkus Sinus eines Gleit Komma Werts berechnen.
+ms.date: 08/31/2020
 api_name:
 - asinf
 - asinl
@@ -34,12 +35,12 @@ helpviewer_keywords:
 - trigonometric functions
 - arcsine function
 ms.assetid: ca05f9ea-b711-49f6-9f32-2f4019abfd69
-ms.openlocfilehash: 98f7babfbfcbfcdbf36b79b70aac33f002e3bc90
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 7167debcfb605ab05720d9441943439ea9982324
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87189440"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89556657"
 ---
 # <a name="asin-asinf-asinl"></a>asin, asinf, asinl
 
@@ -51,16 +52,15 @@ Berechnet den Arkussinus.
 double asin( double x );
 float asinf ( float x );
 long double asinl( long double x );
-```
+#define asin(X) // Requires C11 or higher
 
-```cpp
 float asin( float x );  // C++ only
 long double asin( long double x );  // C++ only
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*Stuben*\
 Wert, dessen Arkussinus berechnet werden soll.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -75,9 +75,11 @@ Wenn *x* kleiner als-1 oder größer als 1 ist, gibt **ASIN** standardmäßig ei
 |± **QNAN**, **IND**|Keine|**_DOMAIN**|
 |&#124;x&#124;>1|**Ungültig**|**_DOMAIN**|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **ASIN** mit **`float`** -und-Werten aufzurufen **`long double`** . In einem C-Programm übernimmt **ASIN** immer und gibt einen zurück **`double`** .
+Da C++ das überladen zulässt, können Sie über Ladungen von **ASIN** mit **`float`** -und-Werten aufzurufen **`long double`** . Wenn Sie in einem C-Programm das-Makro verwenden, \<tgmath.h> um diese Funktion aufzurufen, übernimmt **ASIN** immer und gibt einen zurück **`double`** .
+
+Wenn Sie das- \<tgmath.h> `asin()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
@@ -86,6 +88,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |-Routine zurückgegebener Wert|Erforderlicher Header (C)|Erforderlicher Header (C++)|
 |-------------|---------------------|-|
 |**ASIN**, **asinf**, **asinl**|\<math.h>|\<cmath> oder \<math.h>|
+|**ASIN ()** -Makro | \<tgmath.h> ||
 
 ## <a name="example"></a>Beispiel
 

@@ -1,6 +1,7 @@
 ---
 title: copysign, copysignf, copysignl, _copysign, _copysignf, _copysignl
-ms.date: 04/05/2018
+description: API-Verweis zum Zurückgeben eines Werts, der die Größe eines Arguments und das Vorzeichen eines anderen Arguments mithilfe von copysign () hat.
+ms.date: 9/1/2020
 api_name:
 - copysignf
 - copysignl
@@ -39,12 +40,12 @@ helpviewer_keywords:
 - _copysign function
 - copysignf function
 ms.assetid: 009216d6-72a2-402d-aa6c-91d924b2c9e4
-ms.openlocfilehash: 4dea95240dcbd3dbbf221ff7af80a9e3ee554e23
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 8f9ffe56e82f6a82da15fde3f8efea60fc1c0f9f
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87221938"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554863"
 ---
 # <a name="copysign-copysignf-copysignl-_copysign-_copysignf-_copysignl"></a>copysign, copysignf, copysignl, _copysign, _copysignf, _copysignl
 
@@ -81,14 +82,15 @@ long double _copysignl(
    long double x,
    long double y
 );
+#define copysign(X, Y) // Requires C11 or higher
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*Stuben*\
 Der Gleitkommawert, der als Betrag des Ergebnisses zurückgegeben wird.
 
-*Teenie*<br/>
+*Teenie*\
 Der Gleitkommawert, der als Zeichen des Ergebnisses zurückgegeben wird.
 
 [Floating-Point Support Routines (Routinen für die Gleitkommaunterstützung)](../../c-runtime-library/floating-point-support.md)
@@ -97,9 +99,11 @@ Der Gleitkommawert, der als Zeichen des Ergebnisses zurückgegeben wird.
 
 Die **copysign** -Funktionen geben einen Gleit Komma Wert zurück, der die Größe von *x* und das Vorzeichen von *y*kombiniert. Es gibt keine Fehlerrückgabe.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **copysign** aufzurufen, die-oder-Werte verwenden und zurückgeben **`float`** **`long double`** . In einem C-Programm übernimmt **copysign** immer und gibt einen zurück **`double`** .
+Da C++ das überladen zulässt, können Sie über Ladungen von **copysign** aufzurufen, die-oder-Werte verwenden und zurückgeben **`float`** **`long double`** . In einem C-Programm verwendet copysign immer, wenn Sie das- \<tgmath.h> Makro verwenden **copysign** , um diese Funktion aufzurufen, und gibt es zurück **`double`** .
+
+Wenn Sie das- \<tgmath.h> `copysign()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -107,6 +111,7 @@ Da C++ das überladen zulässt, können Sie über Ladungen von **copysign** aufz
 |-------------|---------------------|
 |**_copysign**|\<float.h>|
 |**copysign**, **copysignf**, **copysignl**, **_copysignf** **_copysignl**|\<math.h>|
+|**copysign** -Makro | \<tgmath.h> |
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 

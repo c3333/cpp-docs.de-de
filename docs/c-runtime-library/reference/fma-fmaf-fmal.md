@@ -1,6 +1,7 @@
 ---
 title: fma, fmaf, fmal
-ms.date: 4/2/2020
+description: API-Referenz für FMA, f MAF und f Dabei werden zwei Werte multipliziert, ein Dritter Wert hinzugefügt und dann das Ergebnis gerundet, ohne dass die Genauigkeit aufgrund von Vermittler Rundungen verloren geht.
+ms.date: 9/1/2020
 api_name:
 - fma
 - fmaf
@@ -37,16 +38,16 @@ helpviewer_keywords:
 - fmaf function
 - fmal function
 ms.assetid: 584a6037-da1e-4e86-9f0c-97aae86de0c0
-ms.openlocfilehash: d82565ed53f311ef1b2cf5942d207bf96090bd13
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: e9ae92c28f24b6281d73450c7cabaad775a84d42
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87216998"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89556696"
 ---
 # <a name="fma-fmaf-fmal"></a>fma, fmaf, fmal
 
-Multipliziert zwei Werte, addiert einen dritten und rundet das Ergebnis, ohne Genauigkeit aufgrund von vorherigen Rundungen einzubüßen.
+Multipliziert zwei Werte, fügt einen dritten Wert hinzu und rundet dann das Ergebnis, ohne dass die Genauigkeit aufgrund von Vermittler Umrundungen verloren geht.
 
 ## <a name="syntax"></a>Syntax
 
@@ -80,17 +81,19 @@ long double fmal(
    long double  y,
    long double z
 );
+
+#define fma(X, Y, Z) // Requires C11 or higher
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*Stuben*\
 Der erste zu multiplizierende Wert.
 
-*Teenie*<br/>
+*Teenie*\
 Der zweite zu multiplizierende Wert.
 
-*z*<br/>
+*z*\
 Der hinzuzufügende Wert.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -110,19 +113,22 @@ Andernfalls wird möglicherweise einer der folgenden Werte zurückgeben:
 
 Fehler werden gemäß den Angaben in [_matherr](matherr.md) gemeldet.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **FMA** aufzurufen, die- **`float`** und-Typen verwenden und zurückgeben **`long double`** . In einem C-Programm übernimmt **FMA** immer und gibt einen zurück **`double`** .
+Da C++ das überladen zulässt, können Sie über Ladungen von **FMA** aufzurufen, die- **`float`** und-Typen verwenden und zurückgeben **`long double`** . Wenn Sie in einem C-Programm das- \<tgmath.h> Makro nicht zum aufruft dieser Funktion verwenden, verwendet **FMA** immer, und gibt es zurück **`double`** .
+
+Wenn Sie das- \<tgmath.h> `fma()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 Diese Funktion berechnet den Wert mit unendlicher Genauigkeit und rundet das endgültige Ergebnis dann.
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|C-Header|C++-Header|
 |--------------|--------------|------------------|
 |**FMA**, f **MAF**, **f**|\<math.h>|\<cmath>|
+|**FMA** -Makro | \<tgmath.h> ||
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 

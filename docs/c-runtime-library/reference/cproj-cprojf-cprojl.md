@@ -1,6 +1,7 @@
 ---
 title: cproj, cprojf, cprojl
-ms.date: 11/04/2016
+description: API-Referenz für cproj, cprojf und cprojl; , die die Projektion einer komplexen Zahl in der Reimann-Kugel abrufen.
+ms.date: 9/2/2020
 api_name:
 - cproj
 - cprojf
@@ -33,12 +34,12 @@ helpviewer_keywords:
 - cprojf function
 - cprojl function
 ms.assetid: 32b49623-13bf-4cae-802e-7912d75030fe
-ms.openlocfilehash: fdeefe10814b887af04d6f4adbb01300785e8b46
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: fcc3c0a42c8c6392130ad58ed12c4985e7ad4907
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70938956"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89555942"
 ---
 # <a name="cproj-cprojf-cprojl"></a>cproj, cprojf, cprojl
 
@@ -62,11 +63,12 @@ _Fcomplex cprojf(
 _Lcomplex cprojl(
    _Lcomplex z
 );
+#define cproj(X) // Requires C11 or higher
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*z*<br/>
+*z*\
 Eine komplexe Zahl.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -75,17 +77,20 @@ Die Projektion von *z* in der Reimann-Kugel.
 
 ## <a name="remarks"></a>Hinweise
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **cproj** aufzurufen, die **_Fcomplex** -und **_Lcomplex** -Werte verwenden und zurückgeben. In einem C-Programm nimmt **cproj** immer einen **_Dcomplex** -Wert an und gibt diesen zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **cproj** aufzurufen, die **_Fcomplex** -und **_Lcomplex** -Werte verwenden und zurückgeben. Wenn Sie in einem C-Programm das-Makro verwenden, \<tgmath.h> um diese Funktion aufzurufen, führt **cproj** immer einen **_Dcomplex** Wert aus und gibt ihn zurück.
+
+Wenn Sie das- \<tgmath.h> `cproj()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 ## <a name="requirements"></a>Anforderungen
 
 |-Routine zurückgegebener Wert|C-Header|C++-Header|
 |-------------|--------------|------------------|
 |**cproj**, **cprojf**, **cprojl**|\<complex.h>|\<ccomplex>|
+|**cproj** -Makro | \<tgmath.h> ||
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Alphabetische Funktionsreferenz](crt-alphabetical-function-reference.md)<br/>
 [norm, normf, norml](norm-normf-norml1.md)<br/>

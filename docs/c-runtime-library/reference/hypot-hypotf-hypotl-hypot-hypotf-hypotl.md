@@ -1,6 +1,7 @@
 ---
 title: hypot, hypotf, hypotl, _hypot, _hypotf, _hypotl
-ms.date: 4/2/2020
+description: API-Referenz für hypot, hypotf, hypotl, _hypot, _hypotf und _hypotl; , die die Hypotenuse berechnen.
+ms.date: 9/1/2020
 api_name:
 - _hypotf
 - hypot
@@ -44,12 +45,12 @@ helpviewer_keywords:
 - calculating hypotenuses
 - _hypot function
 ms.assetid: 6a13887f-bd53-43fc-9d77-5b42d6e49925
-ms.openlocfilehash: 16db920d6e7d3836eb4a395b2029e2f9329f2681
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 199e330dcd78c372a0279cac9f0e96cb47c561e8
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82919835"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89556449"
 ---
 # <a name="hypot-hypotf-hypotl-_hypot-_hypotf-_hypotl"></a>hypot, hypotf, hypotl, _hypot, _hypotf, _hypotl
 
@@ -82,11 +83,12 @@ long double _hypotl(
    long double x,
    long double y
 );
+#define hypotf(X, Y) // Requires C11 or higher
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*x*, *y*<br/>
+*x*, *y*\
 Gleitkommawerte.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -97,17 +99,20 @@ Weitere Informationen zu Rückgabecodes finden Sie unter [errno, _doserrno, _sys
 
 ## <a name="remarks"></a>Hinweise
 
-Die **hypot** -Funktionen berechnen die Länge der Hypotenuse eines rechtwinkligen Dreiecks mit der Länge der beiden Seiten *x* und *y* (d. h. die Quadratwurzel von *x*<sup>2</sup> + *y*<sup>2</sup>).
+Die **hypot** -Funktionen berechnen die Länge der Hypotenuse eines rechtwinkligen Dreiecks mit der Länge der beiden Seiten *x* und *y* (d. h. die Quadratwurzel von *x*<sup>2</sup>  +  *y*<sup>2</sup>).
 
 Die Versionen der Funktionen mit führenden Unterstrichen unterstützen die Kompatibilität mit früheren Standards. Ihr Verhalten ist mit den Versionen identisch, die keine führende Unterstriche haben. Es empfiehlt sich, die Versionen ohne führende Unterstriche für neuen Code zu verwenden.
+
+Wenn Sie das- \<tgmath.h> `hypot()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**hypot**, **hypotf**, **hypotl**, **_hypot** **_hypotf**, **_hypotl**|\<math.h>|
+|**hypot** -Makro | \<tgmath.h> |
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -135,6 +140,6 @@ If a right triangle has sides 3.0 and 4.0, its hypotenuse is 5.0
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [_cabs](cabs.md)<br/>
 [_matherr](matherr.md)<br/>

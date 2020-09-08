@@ -1,5 +1,6 @@
 ---
 title: _itoa, _itow Funktionen
+description: API-Referenz für _itoa und _itow; , die eine ganze Zahl in eine Zeichenfolge konvertieren.
 ms.date: 4/2/2020
 api_name:
 - itoa
@@ -113,16 +114,16 @@ helpviewer_keywords:
 - converting numbers, to strings
 - _itoa function
 ms.assetid: 46592a00-77bb-4e73-98c0-bf629d96cea6
-ms.openlocfilehash: 7fd776c860e8f3ba071d7fad10c99dfb7b3bf2d7
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: c8d64dcc1efdb9371feb98d8674a7a2c41c7ab3a
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88843494"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89555462"
 ---
 # <a name="itoa-_itoa-ltoa-_ltoa-ultoa-_ultoa-_i64toa-_ui64toa-_itow-_ltow-_ultow-_i64tow-_ui64tow"></a>itoa, _itoa, ltoa, _ltoa, ultoa, _ultoa, _i64toa, _ui64toa, _itow, _ltow, _ultow, _i64tow, _ui64tow
 
-Konvertiert eine ganze Zahl in eine Zeichenfolge. Sicherere Versionen dieser Funktionen sind verfügbar. Weitere Informationen finden Sie [unter _itoa_s _itow_s Functions](itoa-s-itow-s.md).
+Konvertiert eine ganze Zahl in eine Zeichenfolge. Sicherere Versionen dieser Funktionen sind verfügbar. Informationen dazu finden Sie unter [_itoa_s _itow_s Functions](itoa-s-itow-s.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -195,7 +196,7 @@ Länge des Puffers in Einheiten des Zeichen Typs. Dieser Parameter wird aus dem 
 
 Jede dieser Funktionen gibt einen Zeiger auf den *Puffer*zurück. Es gibt keine Fehlerrückgabe.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die Funktionen **_itoa**, **_ltoa**, **_ultoa**, **_i64toa**und **_ui64toa** konvertieren die Ziffern des angegebenen *Wert* Arguments in eine auf NULL endenden Zeichenfolge und speichern das Ergebnis (bis zu 33 Zeichen für **_itoa**, **_ltoa**und **_ultoa**und 65 für **_i64toa** und **_ui64toa**) im *Puffer*. Wenn *Basis* dem Wert 10 entspricht und der *Wert* negativ ist, ist das erste Zeichen der gespeicherten Zeichenfolge das Minuszeichen ( **-** ). Die Funktionen **_itow**, **_ltow**, **_ultow**, **_i64tow**und **_ui64tow** sind breit Zeichen Versionen von **_itoa**, **_ltoa**, **_ultoa**, **_i64toa**bzw. **_ui64toa**.
 

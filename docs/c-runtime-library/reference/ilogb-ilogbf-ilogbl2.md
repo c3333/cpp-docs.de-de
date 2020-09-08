@@ -1,6 +1,7 @@
 ---
 title: ilogb, ilogbf, ilogbl2
-ms.date: 04/05/2018
+description: API-Referenz für ilogb, ilogbf und ilogbl2; , die eine ganze Zahl abrufen, die den unausgewogenen Basis-2-Exponent des angegebenen Werts darstellt.
+ms.date: 9/1/2020
 api_name:
 - ilogb
 - ilogbf
@@ -33,12 +34,12 @@ helpviewer_keywords:
 - ilogbf function
 - ilogbl function
 ms.assetid: 9ef19d57-1caa-41d5-8233-2faad3562fcb
-ms.openlocfilehash: 6feea7a242a066f669429944226f4ca6022505b6
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: b27c329cca1edb9d30bb6b9b641f94d174c9c406
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87232520"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89556371"
 ---
 # <a name="ilogb-ilogbf-ilogbl"></a>ilogb, ilogbf, ilogbl
 
@@ -66,11 +67,13 @@ int ilogbf(
 int ilogbl(
    long double x
 );
+
+#define ilogbl(X) // Requires C11 or higher
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*Stuben*\
 Der angegebene Wert.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -86,9 +89,11 @@ Andernfalls wird einer der folgenden Werte zurückgegeben, der in definiert ist 
 
 Fehler werden gemäß den Angaben in [_matherr](matherr.md) gemeldet.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **ilogb** aufzurufen, die- **`float`** und-Typen verwenden und zurückgeben **`long double`** . In einem C-Programm nimmt **ilogb** immer eine an und gibt Sie zurück **`double`** .
+Da C++ das überladen zulässt, können Sie über Ladungen von **ilogb** aufzurufen, die- **`float`** und-Typen verwenden und zurückgeben **`long double`** . Wenn Sie in einem C-Programm nicht das- \<tgmath.h> Makro verwenden, um diese Funktion aufzurufen, verwendet **ilogb** immer und gibt einen zurück **`double`** .
+
+Wenn Sie das- \<tgmath.h> `ilogb()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 Das Aufrufen dieser Funktion ähnelt dem Aufrufen der entsprechenden **logb** -Funktion und dem anschließenden Umwandeln des Rückgabewerts in **`int`** .
 
@@ -97,6 +102,7 @@ Das Aufrufen dieser Funktion ähnelt dem Aufrufen der entsprechenden **logb** -F
 |-Routine zurückgegebener Wert|C-Header|C++-Header|
 |-------------|--------------|------------------|
 |**ilogb**, **ilogbf**, **ilogbl**|\<math.h>|\<cmath>|
+|**ilogb** -Makro | \<tgmath.h> ||
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 

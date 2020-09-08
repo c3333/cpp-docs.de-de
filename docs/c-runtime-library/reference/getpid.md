@@ -1,5 +1,6 @@
 ---
 title: _getpid
+description: API-Referenz für _getpid, die die Prozess Identifizierung abruft.
 ms.date: 11/04/2016
 api_name:
 - _getpid
@@ -26,12 +27,12 @@ helpviewer_keywords:
 - _getpid function
 - process identification numbers
 ms.assetid: d3e13bae-9a0c-4f33-86d3-ec9df9519285
-ms.openlocfilehash: b0848e5eb01f39c009fcdc650ea551f18e23c6fb
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: fc2de8e0b6e87d04bd9ae29ce3a945c048af00e2
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70954997"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89556488"
 ---
 # <a name="_getpid"></a>_getpid
 
@@ -52,7 +53,7 @@ Gibt die Prozess-ID zurück, die vom System abgerufen wird. Es gibt keine Fehler
 
 ## <a name="remarks"></a>Hinweise
 
-Die **_getpid** -Funktion Ruft die Prozess-ID aus dem System ab. Die Prozess-ID macht den Aufrufvorgang eindeutig identifizierbar.
+Die **_getpid** Funktion Ruft die Prozess-ID aus dem System ab. Die Prozess-ID macht den Aufrufvorgang eindeutig identifizierbar.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -60,7 +61,7 @@ Die **_getpid** -Funktion Ruft die Prozess-ID aus dem System ab. Die Prozess-ID 
 |-------------|---------------------|
 |**_getpid**|\<process.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -85,7 +86,7 @@ int main( void )
 Process id: 3584
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Prozess- und Umgebungssteuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
+[Prozess-und Umgebungs Steuerung](../../c-runtime-library/process-and-environment-control.md)<br/>
 [_mktemp, _wmktemp](mktemp-wmktemp.md)<br/>

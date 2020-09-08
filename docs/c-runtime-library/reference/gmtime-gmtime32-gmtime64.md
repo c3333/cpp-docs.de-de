@@ -1,5 +1,6 @@
 ---
 title: gmtime, _gmtime32, _gmtime64
+description: API-Referenz für gmtime, _gmtime32 und _gmtime64; , die einen time_t Wert in eine TM-Struktur konvertieren.
 ms.date: 4/2/2020
 api_name:
 - _gmtime32
@@ -37,12 +38,12 @@ helpviewer_keywords:
 - gmtime64 function
 - time structure conversion
 ms.assetid: 315501f3-477e-475d-a414-ef100ee0db27
-ms.openlocfilehash: 86919e2ba6f5e301f1dffd87dfb4ecd22ce416e2
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: b3dd09e828b972f05a4c45c30ebc3e5edb68f551
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87234106"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89556462"
 ---
 # <a name="gmtime-_gmtime32-_gmtime64"></a>gmtime, _gmtime32, _gmtime64
 
@@ -65,7 +66,7 @@ Zeiger auf die gespeicherte Zeit. Die Zeit wird in Sekunden dargestellt, die sei
 
 Ein Zeiger auf eine Struktur des Typs [tm](../../c-runtime-library/standard-types.md). Die Felder der zurückgegebenen Struktur enthalten den ausgewerteten Wert des *sourcetime* -Arguments in UTC und nicht in Ortszeit. Jedes der Struktur Felder ist **`int`** wie folgt vom Typ:
 
-|Feld|Beschreibung|
+|Feld|BESCHREIBUNG|
 |-|-|
 |**tm_sec**|Sekunden nach Minute (0-59).|
 |**tm_min**|Minuten nach Stunde (0-59).|
@@ -85,9 +86,9 @@ Sowohl die 32-Bit-als auch die 64-Bit-Version von **gmtime**, [mktime](mktime-mk
 
 Diese Funktionen überprüfen ihre Parameter. Wenn *sourcetime* ein NULL-Zeiger ist oder der *sourcetime* -Wert negativ ist, rufen diese Funktionen einen Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, geben die Funktionen **null** zurück und legen **errno** auf **EINVAL**fest.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die **_gmtime32** -Funktion unterteilt den *sourcetime* -Wert und speichert ihn in einer statisch zugeordneten Struktur vom Typ **TM**, die zeitlich definiert ist. Micha. Der Wert von *sourcetime* wird in der Regel durch einen Aufruf der [time](time-time32-time64.md) -Funktion abgerufen.
+Die **_gmtime32** -Funktion unterteilt den *sourcetime* -Wert und speichert ihn in einer statisch zugeordneten Struktur vom Typ **TM**, die in Time. H definiert ist. Der Wert von *sourcetime* wird in der Regel durch einen Aufruf der [time](time-time32-time64.md) -Funktion abgerufen.
 
 > [!NOTE]
 > In den meisten Fällen versucht die Zielumgebung zu bestimmen, ob die Sommerzeit wirksam ist. Die C-Laufzeitbibliothek geht davon aus, dass die Regeln der Vereinigten Staaten für die Implementierung der Berechnung der Sommerzeit (DST, Daylight Saving Time) angewendet werden.
@@ -135,7 +136,7 @@ int main( void )
 Coordinated universal time is Tue Feb 12 23:11:31 2002
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Zeitmanagement](../../c-runtime-library/time-management.md)<br/>
 [asctime, _wasctime](asctime-wasctime.md)<br/>

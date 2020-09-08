@@ -1,5 +1,6 @@
 ---
 title: clog, clogf, clogl
+description: API-Referenz für Clog, clogf und clogl , die den natürlichen Logarithmus einer komplexen Zahl mit einem Verzweigungs Ausschnitt entlang der negativen reellen Achse abrufen.
 ms.date: 11/04/2016
 api_name:
 - clog
@@ -33,12 +34,12 @@ helpviewer_keywords:
 - clogf function
 - clogl function
 ms.assetid: 870b9b0b-6618-46f3-bfcf-da595cbd5e18
-ms.openlocfilehash: 76ee6e4e81c275c8cbed0f74914521c0b44499bb
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 255f83a93c5c7a0c724fad143f028c2832be3173
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70942921"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89555071"
 ---
 # <a name="clog-clogf-clogl"></a>clog, clogf, clogl
 
@@ -66,7 +67,7 @@ _Lcomplex clogl(
 
 ### <a name="parameters"></a>Parameter
 
-*z*<br/>
+*z*\
 Die Basis des Logarithmus.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -85,17 +86,17 @@ Die möglichen Rückgabewerte sind:
 
 ## <a name="remarks"></a>Hinweise
 
-Da C++ das überladen zulässt, können Sie über Ladungen von **Clog** aufzurufen, die **_Fcomplex** -und **_Lcomplex** -Werte verwenden und zurückgeben. In einem C-Programm nimmt **Clog** immer einen **_Dcomplex** -Wert an und gibt diesen zurück.
+Da C++ das überladen zulässt, können Sie über Ladungen von **Clog** aufzurufen, die **_Fcomplex** -und **_Lcomplex** -Werte verwenden und zurückgeben. In einem C-Programm nimmt **Clog** immer einen **_Dcomplex** Wert an und gibt diesen zurück.
 
 ## <a name="requirements"></a>Anforderungen
 
 |-Routine zurückgegebener Wert|C-Header|C++-Header|
 |-------------|--------------|------------------|
-|**clog**,               **clogf**, **clogl**|\<complex.h>|\<ccomplex>|
+|**Clog**,               **clogf**, **clogl**|\<complex.h>|\<ccomplex>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Alphabetische Funktionsreferenz](crt-alphabetical-function-reference.md)<br/>
 [cexp, cexpf, cexpl](cexp-cexpf-cexpl.md)<br/>

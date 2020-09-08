@@ -1,6 +1,7 @@
 ---
 title: log2, log2f, log2l
-ms.date: 4/2/2020
+description: API-Referenz für log2, log2f und log2l; , mit dem der binäre Logarithmus (Basis 2) des angegebenen Werts bestimmt wird.
+ms.date: 9/1/2020
 api_name:
 - log2
 - log2l
@@ -26,12 +27,12 @@ api_type:
 topic_type:
 - apiref
 ms.assetid: 94d11b38-70b7-4d3a-94ac-523153c92b2e
-ms.openlocfilehash: 58da7790e6fbce915c16a02a1b0d972a6fe1049e
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 37319560891dbd64030495750aaf347d9dedd7e7
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82911420"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89555357"
 ---
 # <a name="log2-log2f-log2l"></a>log2, log2f, log2l
 
@@ -59,11 +60,13 @@ float log2f(
 long double log2l(
    long double x
 );
+
+#define log2(X) // Requires C11 or higher
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*Stuben*\
 Der Wert, um den Basis 2-Logarithmus zu bestimmen.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -86,7 +89,7 @@ Fehler werden gemäß den Angaben in [_matherr](matherr.md) gemeldet.
 
 ## <a name="remarks"></a>Hinweise
 
-Wenn x eine ganze Zahl ist, gibt diese Funktion im Grunde den NULL basierten Index des signifikantesten 1 Bits von *x*zurück.
+Wenn *x* eine ganze Zahl ist, gibt diese Funktion im Grunde den NULL basierten Index des signifikantesten 1 Bits von *x*zurück.
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
@@ -95,6 +98,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |Funktion|C-Header|C++-Header|
 |--------------|--------------|------------------|
 |**log2**, **log2f**, **log2l**|\<math.h>|\<cmath>|
+|**log2** -Makro | \<tgmath.h> ||
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 

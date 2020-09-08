@@ -1,5 +1,6 @@
 ---
 title: _lrotl, _lrotr
+description: 'API-Referenz für _lrotl und _lrotr; die Bits nach links (_lrotl) oder nach rechts (_lrotr) drehen. '
 ms.date: 04/04/2018
 api_name:
 - _lrotl
@@ -34,16 +35,16 @@ helpviewer_keywords:
 - _lrotl function
 - bits, rotating
 ms.assetid: d42f295b-35f9-49d2-9ee4-c66896ffe68e
-ms.openlocfilehash: ea78aeb8829a80abae345b4e9e6ac3a7bbaddf8b
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: ccd14f7aa6ba3c1278063593aecee20c6789110d
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70953030"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89555006"
 ---
 # <a name="_lrotl-_lrotr"></a>_lrotl, _lrotr
 
-Rotiert Bits nach links ( **_lrotl**) oder nach rechts ( **_lrotr**).
+Rotiert Bits nach links (**_lrotl**) oder nach rechts (**_lrotr**).
 
 ## <a name="syntax"></a>Syntax
 
@@ -66,15 +67,15 @@ Beide Funktionen geben den rotierten Wert zurück. Es gibt keine Fehlerrückgabe
 
 ## <a name="remarks"></a>Hinweise
 
-Die **_lrotl** -Funktion und die **_lrotr** -Funktion drehen den *Wert* durch *UMSCHALT* Bits. **_lrotl** dreht den Wert nach links, um signifikantere Bits zu erhalten. **_lrotr** dreht den Wert nach rechts, um weniger signifikante Bits zu erhalten. Beide Funktionen umschließen Bits, die von einem Ende des *value* zum anderen Ende rotieren.
+Die Funktionen **_lrotl** und **_lrotr** drehen den *Wert* durch *UMSCHALT* Bits. **_lrotl** dreht den Wert nach links, um signifikantere Bits zu erhalten. **_lrotr** dreht den Wert nach rechts, um weniger signifikante Bits zu erhalten. Beide Funktionen umschließen Bits, die von einem Ende des *value* zum anderen Ende rotieren.
 
 ## <a name="requirements"></a>Anforderungen
 
 |-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
-|**_lrotl**, **_lrotr**|\<stdlib.h>|
+|**_lrotl** **_lrotr**|\<stdlib.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -100,7 +101,7 @@ int main( void )
 0xfac35791 rotated right four bits is 0x1fac3579
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [_rotl, _rotl64, _rotr, _rotr64](rotl-rotl64-rotr-rotr64.md)<br/>

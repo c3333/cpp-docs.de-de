@@ -1,6 +1,7 @@
 ---
 title: fabs, fabsf, fabsl
-ms.date: 4/2/2020
+description: API-Referenz für Fabs, fabsf und fabsl; , die den absoluten Wert eines Gleit Komma Werts berechnen.
+ms.date: 08/31/2020
 api_name:
 - fabsf
 - fabs
@@ -37,12 +38,12 @@ helpviewer_keywords:
 - fabs function
 - fabsl function
 ms.assetid: 23bca210-f408-4f5e-b46b-0ccaaec31e36
-ms.openlocfilehash: 52ec65e744cd0ee04068ddc6cfd537ea1ae2b9f0
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: a819172fc94224ff4c51c8fc342b142ffbe05ae7
+ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87234119"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554837"
 ---
 # <a name="fabs-fabsf-fabsl"></a>fabs, fabsf, fabsl
 
@@ -66,11 +67,13 @@ float fabsf(
 long double fabsl(
    long double x
 );
+
+#define fabs(X) // Requires C11 or higher
 ```
 
 ### <a name="parameters"></a>Parameter
 
-*x*<br/>
+*Stuben*\
 Gleitkommawert.
 
 ## <a name="return-value"></a>Rückgabewert
@@ -81,17 +84,20 @@ Die **Fabs** -Funktionen geben den absoluten Wert des Arguments *x*zurück. Es g
 |-----------|-------------------|-----------------------|
 |± QNAN,IND|Keine|_DOMAIN|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-C++ ermöglicht überladen, sodass Sie über Ladungen von **Fabs** aufzurufen können, wenn Sie den- \<cmath> Header einschließen. In einem C-Programm übernimmt **Fabs** immer und gibt einen zurück **`double`** .
+C++ ermöglicht überladen, sodass Sie über Ladungen von **Fabs** aufzurufen können, wenn Sie den- \<cmath> Header einschließen. Wenn Sie in einem C-Programm das-Makro verwenden, \<tgmath.h> um diese Funktion aufzurufen, nimmt **Fabs** immer eine an und gibt Sie zurück **`double`** .
+
+Wenn Sie das- \<tgmath.h> `fabs()` Makro verwenden, bestimmt der Typ des Arguments, welche Version der Funktion ausgewählt ist. Weitere Informationen finden Sie unter [Type-Generic Math](../../c-runtime-library/tgmath.md) .
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher C-Header|Erforderlicher C++-Header|
 |--------------|-----------------------|---------------------------|
 |**Fabs**, **fabsf**, **fabsl**|\<math.h>|\<cmath> oder \<math.h>|
+|**Fabs** -Makro | \<tgmath.h> ||
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -99,7 +105,7 @@ Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](
 
 Ein Beispiel hierfür finden Sie unter [abs](abs-labs-llabs-abs64.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [abs, labs, llabs, _abs64](abs-labs-llabs-abs64.md)<br/>
