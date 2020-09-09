@@ -1,21 +1,22 @@
 ---
 title: Partielle Klassen (C++/CX)
+description: Deklarieren und Verwenden von partiellen Klassen in C++/CX.
 ms.date: 12/30/2016
 ms.assetid: 69d93575-636c-4564-8cca-6dfba0c7e328
-ms.openlocfilehash: 1f5583354481248e8df201be200fe99da61791dd
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 70225069c948a50b38ac3642113cf940c86cf8da
+ms.sourcegitcommit: 0df2b7ab4e81284c5248e4584767591dcc1950c3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87185462"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89609062"
 ---
 # <a name="partial-classes-ccx"></a>Partielle Klassen (C++/CX)
 
-Eine partielle Klasse ist ein Konstrukt, das Szenarien unterstützt, in denen Sie einen Teil einer Klassendefinition ändern. Software, die automatisch Code generiert – beispielsweise der XAML Designer – ändert ebenfalls Code in der gleichen Klasse. Durch die Verwendung einer partiellen Klasse können Sie verhindern, dass der Designer Ihren Code überschreibt. In einem Visual Studio-Projekt wird der Modifizierer `partial` automatisch auf die generierte Datei angewendet.
+Eine partielle Klasse ist ein Konstrukt, das Szenarien unterstützt, in denen Sie einen Teil einer Klassendefinition ändern. Software, die automatisch Code generiert – beispielsweise der XAML Designer – ändert ebenfalls Code in der gleichen Klasse. Durch die Verwendung einer partiellen Klasse können Sie verhindern, dass der Designer Ihren Code überschreibt. In einem Visual Studio-Projekt wird der- **`partial`** Modifizierer automatisch auf die generierte Datei angewendet.
 
 ## <a name="syntax"></a>Syntax
 
-Um eine partielle Klasse zu definieren, verwenden Sie das Schlüsselwort `partial` direkt vor dem Klassenschlüssel. Andernfalls wäre dies eine normale Klassendefinition. Ein Schlüsselwort wie `partial ref class` ist ein Kontextschlüsselwort, das Leerzeichen enthält. Partielle Definitionen werden in den folgenden Konstrukten unterstützt.
+Um eine partielle Klasse zu definieren, verwenden Sie das **`partial`** Schlüsselwort direkt vor dem Klassen Schlüssel von, was andernfalls eine normale Klassendefinition wäre. Ein Schlüsselwort wie **`partial ref class`** ist ein kontextbezogenes Schlüsselwort, das Leerzeichen enthält. Partielle Definitionen werden in den folgenden Konstrukten unterstützt.
 
 - **`class`** oder **`struct`**
 
@@ -25,7 +26,7 @@ Um eine partielle Klasse zu definieren, verwenden Sie das Schlüsselwort `partia
 
 - **`enum`** oder **`enum class`**
 
-- `ref interface`, **`interface class`** , **`interface struct`** oder **' __interface**
+- **`ref interface`**, **`interface class`** , **`interface struct`** oder **`__interface`**
 
 - **`union`**
 
@@ -35,7 +36,7 @@ Dieses Beispiel veranschaulicht eine partielle **`ref class`** :
 
 ## <a name="contents"></a>Inhalte
 
-Eine partielle Klassendefinition kann alles enthalten, was die vollständige Klassendefinition enthalten kann, wenn das Schlüsselwort `partial` ausgelassen wird. Mit einer Ausnahme schließt dies jedes gültige Konstrukt ein, z. B. Basisklassen, Datenmember, Memberfunktionen, Enumerationen, Friend-Deklarationen und Attribute. Inlinedefinitionen statischer Datenmember sind zulässig.
+Eine partielle Klassendefinition kann alles enthalten, was die vollständige Klassendefinition enthalten kann, wenn das **`partial`** Schlüsselwort ausgelassen wurde. Mit einer Ausnahme schließt dies jedes gültige Konstrukt ein, z. B. Basisklassen, Datenmember, Memberfunktionen, Enumerationen, Friend-Deklarationen und Attribute. Inlinedefinitionen statischer Datenmember sind zulässig.
 
 Die eine Ausnahme ist die Klassen-Barrierefreiheit. Beispielsweise ist die Anweisung `public partial class MyInvalidClass {/* ... */};` fehlerhaft. Zugriffsspezifizierer, die in einer partiellen Klassendefinition für MyInvalidClass verwendet werden, wirken sich nicht auf die Standard-Barrierefreiheit in einer nachfolgenden partiellen oder vollständigen Klassendefinition für MyInvalidClass aus.
 
@@ -45,13 +46,13 @@ Das folgende Codefragment zeigt die Barrierefreiheit. In der ersten partiellen K
 
 ## <a name="declaration"></a>Deklaration
 
-Eine partielle Definition einer Klasse, wie etwa *MyClass* , ist lediglich eine Deklaration von „MyClass“. Das heißt, sie führt nur den Namen *MyClass*ein. *MyClass* kann in keiner Weise verwendet werden, für die eine Klassendefinition erforderlich ist, z. B. wenn die Größe von *MyClass* bekannt sein muss oder eine Basis oder ein Member von *MyClass*verwendet werden soll. *MyClass* gilt nur dann als definiert, wenn der Compiler auf eine nicht partielle Definition von *MyClass*trifft.
+Eine partielle Definition einer Klasse, wie z `MyClass` . b., ist nur eine Deklaration von MyClass. Das heißt, es wird nur der Name eingeführt `MyClass` . `MyClass` kann nicht auf eine Weise verwendet werden, für die eine Klassendefinition erforderlich ist, z. b. das Wissen der Größe von `MyClass` oder der Verwendung einer Basis oder eines Members von `MyClass` . `MyClass` gilt nur dann als definiert, wenn der Compiler auf eine nicht partielle Definition von trifft `MyClass` .
 
-Im folgenden Beispiel wird das Deklarationsverhalten einer partiellen Klasse demonstriert. Nach Deklaration Nr. 1 kann *MyClass* verwendet werden, als ob sie als Vorwärtsdeklaration geschrieben wäre, `ref class MyClass;`. Deklaration Nr. 2 ist mit Deklaration Nr. 1 äquivalent. Deklaration Nr. 3 ist gültig, da sie eine Vorwärtsdeklaration für eine Klasse ist. Deklaration Nr. 4 ist jedoch ungültig, da
+Im folgenden Beispiel wird das Deklarationsverhalten einer partiellen Klasse demonstriert. Nach der Deklaration #1 `MyClass` kann so verwendet werden, als ob Sie als vorwärts Deklaration geschrieben wäre `ref class MyClass;` . Deklaration Nr. 2 ist mit Deklaration Nr. 1 äquivalent. Deklaration Nr. 3 ist gültig, da sie eine Vorwärtsdeklaration für eine Klasse ist. Deklaration Nr. 4 ist jedoch ungültig, da
 
-*MyClass* ist nicht vollständig definiert.
+`MyClass` nicht vollständig definiert ist.
 
-Deklaration Nr. 5 verwendet nicht das Schlüsselwort `partial` , und die Deklaration definiert *MyClass*vollständig. Daher ist Deklaration Nr. 6 gültig.
+Deklarations #5 verwendet nicht das **`partial`** Schlüsselwort, und die Deklaration definiert vollständig `MyClass` . Daher ist Deklaration Nr. 6 gültig.
 
 [!code-cpp[Cx_partial#03](../cppcx/codesnippet/CPP/partialclassexample/class1.h#03)]
 
@@ -59,7 +60,7 @@ Deklaration Nr. 5 verwendet nicht das Schlüsselwort `partial` , und die Deklara
 
 Es kann null oder mehr partielle Klassendefinitionen für jede vollständige Definition einer Klasse geben.
 
-Jede partielle Klassendefinition einer Klasse muss lexikalisch der einen vollständigen Definition dieser Klasse vorausgehen, braucht jedoch Vorwärtsdeklarationen der Klasse nicht vorauszugehen. Wenn es keine vollständige Definition der Klasse gibt, können die partiellen Klassendeklarationen nur Vorwärtsdeklarationen sein.
+Jede partielle Klassendefinition einer Klasse muss lexikalisch der vollständigen Definition dieser Klasse vorangestellt sein, aber es müssen keine vorwärts Deklarationen der Klasse vorangestellt werden. Wenn es keine vollständige Definition der Klasse gibt, können die partiellen Klassendeklarationen nur Vorwärtsdeklarationen sein.
 
 Alle Klassen Schlüssel, z **`class`** . b. und, müssen mit identisch sein **`struct`** . Beispielsweise ist der Code `partial class X {}; struct X {};`ein.
 
@@ -85,11 +86,11 @@ Eine partielle Klasse kann keine Vorlage sein.
 
 Eine partielle Klasse kann nicht über eine Übersetzungseinheit hinausgehen.
 
-Das `partial` Schlüsselwort wird nur in Kombination mit dem- **`ref class`** Schlüsselwort oder dem **`value class`** Schlüsselwort unterstützt.
+Das **`partial`** Schlüsselwort wird nur in Kombination mit dem- **`ref class`** Schlüsselwort oder dem **`value class`** Schlüsselwort unterstützt.
 
 ### <a name="examples"></a>Beispiele
 
-Im folgenden Beispiel wird die Klasse `Address` für zwei Codedateien definiert. Der Designer ändert `Address.details.h` , und Sie ändern `Address.h`. Nur die Klassendefinition in der ersten Datei verwendet das Schlüsselwort `partial` .
+Im folgenden Beispiel wird die Klasse `Address` für zwei Codedateien definiert. Der Designer ändert `Address.details.h` , und Sie ändern `Address.h`. Nur die Klassendefinition in der ersten Datei verwendet das **`partial`** Schlüsselwort.
 
 [!code-cpp[cx_partial#07](../cppcx/codesnippet/CPP/partialclassexample/address.details.h#07)]
 

@@ -1,6 +1,7 @@
 ---
 title: /U, /u (Symboldefinitionen aufheben)
-ms.date: 06/08/2020
+description: Verwenden Sie die Microsoft C/C++-Compiler/U-und/U-Optionen, um Präprozessorsymbole zu definieren.
+ms.date: 09/03/2020
 f1_keywords:
 - VC.Project.VCCLCompilerTool.UndefinePreprocessorDefinitions
 - VC.Project.VCCLWCECompilerTool.UndefinePreprocessorDefinitions
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - /U compiler option [C++]
 - U compiler option [C++]
 ms.assetid: 7bc0474f-6d1f-419b-807d-0d8816763b2a
-ms.openlocfilehash: 4d7a2b3d5df2b22dc53eb7b58bfb78cdb1824b26
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 78effabba2fa72e5ab7f2dfc6ef91f22383b063f
+ms.sourcegitcommit: 0df2b7ab4e81284c5248e4584767591dcc1950c3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84616662"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89609192"
 ---
 # <a name="u-u-undefine-symbols"></a>/U, /u (Symboldefinitionen aufheben)
 
@@ -44,14 +45,14 @@ Standardmäßig kann der Compiler eine große Anzahl von Microsoft-spezifischen 
 
 | Symbol | Funktion |
 |--|--|
-| `_CHAR_UNSIGNED` | Der Standard Zeichentyp ist "unsigned". Wird definiert, wenn die [**`/J`**](j-default-char-type-is-unsigned.md) Option angegeben wird. |
-| `_CPPRTTI` | Definiert für Code, der mit der-Option kompiliert wurde [**`/GR`**](gr-enable-run-time-type-information.md) . |
-| `_CPPUNWIND` | Definiert für Code, der mit der-Option kompiliert wurde [**`/EHsc`**](eh-exception-handling-model.md) . |
-| `_DLL` | Wird definiert, wenn die [**`/MD`**](md-mt-ld-use-run-time-library.md) Option angegeben wird. |
+| `_CHAR_UNSIGNED` | Der Standard Zeichentyp ist "unsigned". Wird definiert, wenn die [`/J`](j-default-char-type-is-unsigned.md) Option angegeben wird. |
+| `_CPPRTTI` | Definiert für Code, der mit der-Option kompiliert wurde [`/GR`](gr-enable-run-time-type-information.md) . |
+| `_CPPUNWIND` | Definiert für Code, der mit der-Option kompiliert wurde [`/EHsc`](eh-exception-handling-model.md) . |
+| `_DLL` | Wird definiert, wenn die [`/MD`](md-mt-ld-use-run-time-library.md) Option angegeben wird. |
 | `_M_IX86` | Standardmäßig auf 600 für x86-Ziele definiert. |
 | `_MSC_VER` | Definiert als eindeutiger ganzzahliger Wert für jede Compilerversion. Weitere Informationen finden Sie unter [vordefinierte Makros](../../preprocessor/predefined-macros.md). |
 | `_WIN32` | Definiert für Win32-Anwendungen. Immer definiert. |
-| `_MT` | Wird definiert, wenn die Option [ **`/MD`** oder **`/MT`** ](md-mt-ld-use-run-time-library.md) angegeben wird. |
+| `_MT` | Wird definiert, wenn die [`/MD`](md-mt-ld-use-run-time-library.md) [`/MT`](md-mt-ld-use-run-time-library.md) Option oder angegeben wird. |
 
 Eine komplette Liste der Microsoft-spezifischen vordefinierten Makros finden Sie unter [vordefinierte Makros](../../preprocessor/predefined-macros.md).
 
@@ -67,11 +68,11 @@ Eine komplette Liste der Microsoft-spezifischen vordefinierten Makros finden Sie
 
 - Siehe <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.UndefineAllPreprocessorDefinitions%2A> oder <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.UndefinePreprocessorDefinitions%2A>.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
 [Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)<br/>
-[**`/J`**(Standardmäßiger char-Typ ist nicht signiert)](j-default-char-type-is-unsigned.md)<br/>
-[**`/GR`**(Lauf Zeittyp Informationen aktivieren)](gr-enable-run-time-type-information.md)<br/>
-[**`/EH`**(Ausnahme Behandlungsmodell)](eh-exception-handling-model.md)<br/>
+[**`/J`** (Standardmäßiger char-Typ ist nicht signiert)](j-default-char-type-is-unsigned.md)<br/>
+[**`/GR`** (Lauf Zeittyp Informationen aktivieren)](gr-enable-run-time-type-information.md)<br/>
+[**`/EH`** (Ausnahme Behandlungsmodell)](eh-exception-handling-model.md)<br/>
 [**`/MD`**, **`/MT`** , **`/LD`** (Lauf Zeit Bibliothek verwenden)](md-mt-ld-use-run-time-library.md)

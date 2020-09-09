@@ -5,12 +5,12 @@ ms.topic: reference
 f1_keywords:
 - event/Microsoft::WRL::Callback
 ms.assetid: afb15d25-3230-44f7-b321-e17c54872943
-ms.openlocfilehash: 138ad9d5d3bd4cf9e5263845f950dbbe7971fde6
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 8615b92f9b46dcfc6e36867c51eeefdb7a5f5e81
+ms.sourcegitcommit: 0df2b7ab4e81284c5248e4584767591dcc1950c3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80214135"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89609091"
 ---
 # <a name="callback-function-wrl"></a>Callback-Funktion (WRL)
 
@@ -24,7 +24,7 @@ template<
    typename TCallback
 >
 ComPtr<TDelegateInterface> Callback(
-   TCallbackcallback
+   TCallback callback
 );
 template<
    typename TDelegateInterface,
@@ -240,9 +240,9 @@ Die Memberfunktion, die beim Eintreten eines Ereignisses aufgerufen wird.
 
 Ein Objekt, dessen Memberfunktion die angegebene Rückrufmethode ist.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Die Basis eines Delegatobjekts muss `IUnknown`und nicht `IInspectable`sein.
+Die Basis eines Delegatobjekts muss sein `IUnknown` , nicht `IInspectable` .
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
@@ -252,4 +252,4 @@ Die Basis eines Delegatobjekts muss `IUnknown`und nicht `IInspectable`sein.
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Microsoft::WRL-Namespace](microsoft-wrl-namespace.md)
+[Microsoft:: WRL-Namespace](microsoft-wrl-namespace.md)

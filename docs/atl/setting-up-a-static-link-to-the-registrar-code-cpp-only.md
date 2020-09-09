@@ -1,29 +1,30 @@
 ---
-title: Das Einrichten eines statischen Links zum Registrierungscode (nur C++)
-ms.date: 11/04/2016
+title: Einrichten eines statischen Links zum Registrierungscode (nur C++)
+description: Es wird erläutert, wie Sie C++-Code statisch mit dem ATL-Registrierungscode verknüpfen.
+ms.date: 09/03/2020
 helpviewer_keywords:
 - statically linking to ATL Registrar code
 - linking [C++], to ATL Registrar code
 ms.assetid: 835f5885-87a6-48fa-91e6-60988ee65538
-ms.openlocfilehash: b95bd17abca3237710956f3a1bf1b1d6fa9df51e
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: f08f7d9433ae1344c7a98a5c52502d03bad21e91
+ms.sourcegitcommit: 0df2b7ab4e81284c5248e4584767591dcc1950c3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62196664"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89609161"
 ---
-# <a name="setting-up-a-static-link-to-the-registrar-code-c-only"></a>Das Einrichten eines statischen Links zum Registrierungscode (nur C++)
+# <a name="setting-up-a-static-link-to-the-registrar-code-c-only"></a>Einrichten eines statischen Links zum Registrierungscode (nur C++)
 
-C++-Clients können mit eine statische Verknüpfung zum Code der Registrierung erstellen. Statische Verknüpfung von der Registrierungsstelle Parser wird ein Releasebuild ca. 5 KB hinzugefügt.
+C++-Clients können einen statischen Link zum Registrierungscode erstellen. Die statische Verknüpfung des Parsers der Registrierungsstelle fügt ungefähr 5 KB zu einem Releasebuild hinzu.
 
-Die einfachste Möglichkeit zum Einrichten der statischen Verknüpfung wird angenommen, Sie haben angegeben [DECLARE_REGISTRY_RESOURCEID](reference/registry-macros.md#declare_registry_resourceid) in der Deklaration des Objekts. (Dies ist der Standardspezifikation verwendet die ATL)
+Die einfachste Methode zum Einrichten statischer Verknüpfungen geht davon aus, dass Sie [`DECLARE_REGISTRY_RESOURCEID`](reference/registry-macros.md#declare_registry_resourceid) in der Deklaration des Objekts angegeben haben. (Dies ist die Standardspezifikation, die von ATL verwendet wird.)
 
-## <a name="to-create-a-static-link-using-declareregistryresourceid"></a>Zum Erstellen eines statischen Links mit Hilfe von DECLARE_REGISTRY_RESOURCEID
+## <a name="to-create-a-static-link-using-declare_registry_resourceid"></a>So erstellen Sie einen statischen Link mithilfe von `DECLARE_REGISTRY_RESOURCEID`
 
-1. Geben Sie [/d](../build/reference/d-preprocessor-definitions.md)  **\_ATL\_statische\_Registrierung** anstelle von **/d \_ATL\_DLL**.
+1. Geben Sie **`/D _ATL_STATIC_REGISTRY`** anstelle von **`/D _ATL_DLL`** in der CL-Befehlszeile an. Weitere Informationen finden Sie unter [`/D`](../build/reference/d-preprocessor-definitions.md).
 
-1. Kompilieren Sie neu.
+1. RECOMPILE.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Registrierungskomponente (Registrar)](../atl/atl-registry-component-registrar.md)
+[Registrierungs Komponente (Registrierungs Komponente)](../atl/atl-registry-component-registrar.md)

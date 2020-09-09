@@ -1,15 +1,15 @@
 ---
 title: C/C++-Projekteigenschaften (Visual Studio)
 description: Referenzhandbuch zu den Eigenschaften Seiteneigenschaften von Visual Studio Microsoft C/C++-Projekt.
-ms.date: 07/08/2020
+ms.date: 09/03/2020
 ms.topic: article
 ms.assetid: 16375038-4917-4bd0-9a2a-26343c1708b7
-ms.openlocfilehash: d1ade2959351d6e60b1d80554bbfa34074dda725
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: a96400e27b48b734d4002d9cef13fd52f9ccc7a5
+ms.sourcegitcommit: 0df2b7ab4e81284c5248e4584767591dcc1950c3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87229739"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89609164"
 ---
 # <a name="cc-property-pages"></a>C/C++-Eigenschaften Seiten
 
@@ -78,7 +78,7 @@ Behandelt Compilerwarnungen als Fehler. Bei einem neuen Projekt ist es mögliche
 
 ### <a name="warning-version"></a>Warnungs Version
 
-Blenden Sie Warnungen aus, die nach einer bestimmten Version des Compilers eingeführt wurden. Legt fest [`/Wv:xx`\[`.yy`\[`.zzzzz`\]\]](wx-treat-linker-warnings-as-errors.md) .
+Blenden Sie Warnungen aus, die nach einer bestimmten Version des Compilers eingeführt wurden. Legt fest [`/Wv:xx[.yy[.zzzzz]]`](wx-treat-linker-warnings-as-errors.md) .
 
 ### <a name="diagnostics-format"></a>Diagnose Format
 
@@ -102,15 +102,15 @@ Kompilierung mit mehreren Prozessoren
 
 ### <a name="optimization"></a>Optimization
 
-Wählen Sie die Option für die Codeoptimierung aus. Wählen Sie Benutzer definiert, um bestimmte Optimierungs Optionen zu verwenden. Legt [/od](od-disable-debug.md), [/O1,/O2](o-options-optimize-code.md)fest.
+Wählen Sie die Option für die Codeoptimierung aus. Wählen Sie Benutzer definiert, um bestimmte Optimierungs Optionen zu verwenden. Legt [`/Od`](od-disable-debug.md) , [ `/O1` , `/O2` ](o-options-optimize-code.md)fest.
 
 #### <a name="choices"></a>Auswahl
 
 - **Benutzerdefiniert**: Benutzerdefinierte Optimierung
 - **Deaktiviert**: Deaktivieren der Optimierung.
-- **Maximale Optimierung (Größe bevorzugen)** : äquivalent zu**`/Os /Oy /Ob2 /Gs /GF /Gy`**
-- **Maximale Optimierung (Geschwindigkeit bevorzugen)** : äquivalent zu**`/Oi /Ot /Oy /Ob2 /Gs /GF /Gy`**
-- **Optimierungen (Geschwindigkeit bevorzugen)** : äquivalent zu**`/Oi /Ot /Oy /Ob2`**
+- **Maximale Optimierung (Größe bevorzugen)** : äquivalent zu **`/Os /Oy /Ob2 /Gs /GF /Gy`**
+- **Maximale Optimierung (Geschwindigkeit bevorzugen)** : äquivalent zu **`/Oi /Ot /Oy /Ob2 /Gs /GF /Gy`**
+- **Optimierungen (Geschwindigkeit bevorzugen)** : äquivalent zu **`/Oi /Ot /Oy /Ob2`**
 
 ### <a name="inline-function-expansion"></a>Inline Funktionserweiterung
 
@@ -118,7 +118,7 @@ Wählen Sie die Ebene der [Inline Funktions](../../cpp/inline-functions-cpp.md) 
 
 #### <a name="choices"></a>Auswahl
 
-- **Standard**
+- **Default**
 - **Deaktiviert** : deaktiviert die Inline Erweiterung, die standardmäßig aktiviert ist.
 - **Nur __inline** : erweitert nur Funktionen, die als **`inline`** , oder markiert sind **`__forceinline`** **`__inline`** . Oder in einer C++ Member-Funktion, die innerhalb einer Klassen Deklaration definiert ist.
 - **Alle geeigneten** -erweitert Funktionen **`inline`** , die als oder gekennzeichnet sind **`__inline`** , und jede andere Funktion, die der Compiler auswählt. (Die Erweiterung erfolgt nach dem Ermessen des Compilers, häufig als *Automatisches inlining*bezeichnet.)
@@ -133,8 +133,8 @@ Gibt an, ob Codegröße oder Code Geschwindigkeit bevorzugt werden soll. "Global
 
 #### <a name="choices"></a>Auswahl
 
-- Bevorzugen Sie kleinen Code zugunsten von **geringem Code** . Minimiert die Größe von exe-und DLLs, indem der Compiler angewiesen wird, die Größe gegenüber der Geschwindigkeit zu bevorzugen.
-- **Schnellen Code** bevorzugen, schnellen Code bevorzugen. Maximiert die Geschwindigkeit von EXEs und DLLs, indem der Compiler angewiesen wird, die Geschwindigkeit der Größe zu bevorzugen. (Dieser Wert ist die Standardeinstellung.)
+- **Kleinen Code bevorzugen** : minimiert die Größe von exe-und DLLs, indem der Compiler angewiesen wird, die Größe gegenüber der Geschwindigkeit zu bevorzugen.
+- **Schnellen Code bevorzugen** : maximiert die Geschwindigkeit von exe-und DLLs, indem der Compiler angewiesen wird, die Geschwindigkeit der Größe zu bevorzugen. (Dieser Wert ist die Standardeinstellung.)
 - **Weder** keine Größen-und Geschwindigkeits Optimierung.
 
 ### <a name="omit-frame-pointers"></a>Frame Zeiger weglassen
@@ -147,7 +147,7 @@ Aktiviert die Speicherplatz Optimierung bei Verwendung von Fibers und Thread lok
 
 ### <a name="whole-program-optimization"></a>Optimierung des gesamten Programms
 
-Ermöglicht Modul übergreifende Optimierungen durch verzögern der Codegenerierung bis zur Verknüpfungs Zeit. Erfordert die Linkeroption "Link-Zeit Code Generierung". Legt fest [`/GL`](gl-whole-program-optimization.md) .
+Ermöglicht Modul übergreifende Optimierungen durch verzögern der Codegenerierung bis zur Verknüpfungs Zeit. Erfordert die Link- **Zeit Code Generierung der Linkeroption**. Legt fest [`/GL`](gl-whole-program-optimization.md) .
 
 ## <a name="cc-preprocessor-properties"></a>C/C++-präprozessoreigenschaften
 
@@ -177,7 +177,7 @@ Preprocess ohne #line Direktiven.
 
 ### <a name="keep-comments"></a>Kommentare beibehalten
 
-Unterdrückt die kommentarleiste aus dem Quellcode. erfordert, dass eine der Vorverarbeitungs Optionen festgelegt wird. Legt fest [`/C`](c-preserve-comments-during-preprocessing.md) .
+Unterdrückt die kommentarleiste aus dem Quellcode. erfordert, dass mindestens eine der **Vorverarbeitungs** Optionen festgelegt wird. Legt fest [`/C`](c-preserve-comments-during-preprocessing.md) .
 
 ## <a name="cc-code-generation-properties"></a>Eigenschaften der C/C++-Code Generierung
 
@@ -212,7 +212,7 @@ Grundlegende Lauf Zeit Fehlerüberprüfungen aktivieren, nicht kompatibel mit al
 
 - **Stapel Rahmen** : aktiviert die Lauf Zeit Fehlerüberprüfung für Stapel Rahmen.
 - **Nicht initialisierte Variablen** : meldet, wenn eine Variable verwendet wird, ohne initialisiert worden zu sein.
-- **Both (/RTC1, equiv. to/RTCsu)** -Äquivalent von/RTCsu.
+- **Both (/RTC1, equiv. to/RTCsu)** -Äquivalent von **`/RTCsu`** .
 - **Standard** -standardmäßige Laufzeitüberprüfungen.
 
 ### <a name="runtime-library"></a>Laufzeitbibliothek
@@ -223,8 +223,8 @@ Dient zum Angeben der zu verknüpfenden Laufzeitbibliothek. Legt [ `/MT` , `/MTd
 
 - **Multithread** : bewirkt, dass die Anwendung die statische Multithread-Version der Lauf Zeit Bibliothek verwendet.
 - **Multithread-Debug** : Definiert _DEBUG und _MT. Diese Option bewirkt auch, dass der Compiler den Bibliotheksnamen " *LIBCMTD. lib* " in der *`.obj`* Datei platziert, sodass der Linker " *LIBCMTD. lib* " zum Auflösen externer Symbole verwendet.
-- **Multithread-DLL** : bewirkt, dass Ihre Anwendung die Multithread-und dll-spezifische Version der Lauf Zeit Bibliothek verwendet. Definiert _MT und _DLL und bewirkt, dass der Compiler den Bibliotheksnamen " *msvcrt. lib* " in der *`.obj`* Datei platziert.
-- **Multithreaded-Debug-DLL** : Definiert _DEBUG, _MT und _DLL und bewirkt, dass Ihre Anwendung die Multithread-und dll-spezifische Version der Lauf Zeit Bibliothek verwendet. Außerdem bewirkt dies, dass der Compiler den Bibliotheksnamen " *msvcrtd. lib* " in der *`.obj`* Datei platziert.
+- **Multithread-DLL** : bewirkt, dass Ihre Anwendung die Multithread-und dll-spezifische Version der Lauf Zeit Bibliothek verwendet. Definiert `_MT` und `_DLL` und bewirkt, dass der Compiler den Bibliotheksnamen " *msvcrt. lib* " in der *`.obj`* Datei platziert.
+- **Multithreaded-Debug-DLL** : `_DEBUG` definiert `_MT` , und `_DLL` und bewirkt, dass die Anwendung die Multithread-und dll-spezifische Version der Lauf Zeit Bibliothek verwendet. Außerdem bewirkt dies, dass der Compiler den Bibliotheksnamen " *msvcrtd. lib* " in der *`.obj`* Datei platziert.
 
 ### <a name="struct-member-alignment"></a>Ausrichtung von Strukturmembern
 
@@ -259,7 +259,7 @@ Guard-Sicherheitsüberprüfung hilft bei der Erkennung von versuchen, eine Verte
 
 ### <a name="enable-function-level-linking"></a>Funktionslevel-Linking aktivieren
 
-Ermöglicht dem Compiler, einzelne Funktionen in Form von kompilierten Funktionen (COMDATs) zu kompilieren. Zur Bearbeitung erforderlich, funktionieren weiterhin. Legt [/Gy](gy-enable-function-level-linking.md)fest.
+Ermöglicht dem Compiler, einzelne Funktionen in Form von kompilierten Funktionen (COMDATs) zu kompilieren. Zur Bearbeitung erforderlich, funktionieren weiterhin. Legt fest [`/Gy`](gy-enable-function-level-linking.md) .
 
 ### <a name="enable-parallel-code-generation"></a>Parallele Code Generierung aktivieren
 
@@ -267,15 +267,15 @@ Ermöglicht dem Compiler, parallelen Code für Schleifen zu generieren, die mith
 
 ### <a name="enable-enhanced-instruction-set"></a>Erweiterten Anweisungs Satz aktivieren
 
-Ermöglicht die Verwendung von Anweisungen, die auf Prozessoren mit erweiterten Anweisungs Sätzen gefunden werden. Zum Beispiel die Erweiterungen SSE, SSE2, AVX und AVX2 für IA-32. Und, die AVX-und AVX2-Erweiterungen für x64. Derzeit **`/arch:SSE`** **`/arch:SSE2`** sind und nur verfügbar, wenn Sie für die x86-Architektur entwickeln. Wenn keine Option angegeben ist, verwendet der Compiler Anweisungen, die auf Prozessoren gefunden werden, die SSE2 unterstützen. Die Verwendung erweiterter Anweisungen kann mit deaktiviert werden **`/arch:IA32`** . Weitere Informationen finden Sie unter [`/arch (x86)`](arch-x86.md) [`/arch (x64)`](arch-x64.md) und [`/arch (ARM)`](arch-arm.md) .
+Ermöglicht die Verwendung von Anweisungen, die auf Prozessoren mit erweiterten Anweisungs Sätzen gefunden werden. Zum Beispiel die Erweiterungen SSE, SSE2, AVX und AVX2 für IA-32. Und, die AVX-und AVX2-Erweiterungen für x64. Derzeit **`/arch:SSE`** **`/arch:SSE2`** sind und nur verfügbar, wenn Sie für die x86-Architektur entwickeln. Wenn keine Option angegeben ist, verwendet der Compiler Anweisungen, die auf Prozessoren gefunden werden, die SSE2 unterstützen. Die Verwendung erweiterter Anweisungen kann mit deaktiviert werden **`/arch:IA32`** . Weitere Informationen finden Sie unter [`/arch (x86)`](arch-x86.md) , [`/arch (x64)`](arch-x64.md) und [`/arch (ARM)`](arch-arm.md) .
 
 #### <a name="choices"></a>Auswahl
 
-- **Streaming SIMD Extensions** Streaming SIMD Extensions. Sationen**`/arch:SSE`**
-- **Streaming SIMD Extensions 2** -Streaming SIMD Extensions 2. Sationen**`/arch:SSE2`**
-- **Erweiterte Vektor Erweiterungen** -Erweiterte Vektor Erweiterungen. Sationen**`/arch:AVX`**
-- **Erweiterte Vektor Erweiterungen 2** -Erweiterte Vektor Erweiterungen 2. Sationen**`/arch:AVX2`**
-- **Keine erweiterten Anweisungen** -keine erweiterten Anweisungen. Sationen**`/arch:IA32`**
+- **Streaming SIMD Extensions** Streaming SIMD Extensions. Sationen  **`/arch:SSE`**
+- **Streaming SIMD Extensions 2** -Streaming SIMD Extensions 2. Sationen  **`/arch:SSE2`**
+- **Erweiterte Vektor Erweiterungen** -Erweiterte Vektor Erweiterungen. Sationen  **`/arch:AVX`**
+- **Erweiterte Vektor Erweiterungen 2** -Erweiterte Vektor Erweiterungen 2. Sationen  **`/arch:AVX2`**
+- **Keine erweiterten Anweisungen** -keine erweiterten Anweisungen. Sationen  **`/arch:IA32`**
 - **Nicht festgelegt** -nicht festgelegt.
 
 ### <a name="floating-point-model"></a>Gleit Komma Modell
@@ -290,11 +290,11 @@ Legt das Gleitkommamodell fest. Legt [ `/fp:precise` , `/fp:strict` , `/fp:fast`
 
 ### <a name="enable-floating-point-exceptions"></a>Gleit Komma Ausnahmen aktivieren
 
-Verlässliches Modell für Gleitkommaausnahmen. Ausnahmen werden sofort ausgelöst, nachdem Sie ausgelöst wurden. Legt [/fp: außer](fp-specify-floating-point-behavior.md)fest.
+Verlässliches Modell für Gleitkommaausnahmen. Ausnahmen werden sofort ausgelöst, nachdem Sie ausgelöst wurden. Legt fest [`/fp:except`](fp-specify-floating-point-behavior.md) .
 
 ### <a name="create-hotpatchable-image"></a>Hotpatchfähiges Image erstellen
 
-Wenn Hotpatching vor auf ON fest steht, stellt der Compiler sicher, dass die erste Anweisung jeder Funktion zwei Bytes beträgt, wie für das Hotpatching vor erforderlich. Legt [/hotpatch](hotpatch-create-hotpatchable-image.md)fest.
+Wenn Hotpatching vor auf ON fest steht, stellt der Compiler sicher, dass die erste Anweisung jeder Funktion zwei Bytes beträgt, wie für das Hotpatching vor erforderlich. Legt fest [`/hotpatch`](hotpatch-create-hotpatchable-image.md) .
 
 ### <a name="spectre-mitigation"></a>Spectre-Entschärfung
 
@@ -317,23 +317,23 @@ Aktiviert oder unterdrückt den Konformitäts Modus. Legt fest [`/permissive-`](
 
 ### <a name="treat-wchar_t-as-built-in-type"></a>Wchar_t als integrierten Typ behandeln
 
-Wenn angegeben, wird der Typ zu einem systemeigenen Typ, der auf **`wchar_t`** **`__wchar_t`** die gleiche Weise wie **`short`** zugeordnet wird **`__int16`** . [`/Zc:wchar_t`](zc-wchar-t-wchar-t-is-native-type.md)ist standardmäßig aktiviert.
+Wenn angegeben, wird der Typ zu einem systemeigenen Typ, der auf **`wchar_t`** **`__wchar_t`** die gleiche Weise wie **`short`** zugeordnet wird **`__int16`** . [`/Zc:wchar_t`](zc-wchar-t-wchar-t-is-native-type.md) ist standardmäßig aktiviert.
 
 ### <a name="force-conformance-in-for-loop-scope"></a>Konformität in for-Schleifen Bereich erzwingen
 
-Wird zum Implementieren des standardmäßigen C++-Verhaltens für die for-Anweisung-Schleifen mit Microsoft-Erweiterungen verwendet. Legt fest [ `/Za` `/Ze` (Spracherweiterungen deaktivieren](za-ze-disable-language-extensions.md)). [`/Zc:forScope`](zc-forscope-force-conformance-in-for-loop-scope.md)ist standardmäßig aktiviert.
+Implementiert das C++-Standardverhalten für die- `for` Anweisungs Schleifen mit Microsoft-Erweiterungen. Legt fest [ `/Za` `/Ze` (Spracherweiterungen deaktivieren](za-ze-disable-language-extensions.md)). [`/Zc:forScope`](zc-forscope-force-conformance-in-for-loop-scope.md) ist standardmäßig aktiviert.
 
 ### <a name="remove-unreferenced-code-and-data"></a>Entfernen von nicht referenzierten Code und Daten
 
-Wenn angegeben, generiert der Compiler keine Symbol Informationen für nicht referenzierten Code und Daten mehr.
+Wenn dieser Wert angegeben wird, generiert der Compiler keine Symbol Informationen für nicht referenzierten Code und Daten mehr.
 
 ### <a name="enforce-type-conversion-rules"></a>Typkonvertierungsregeln erzwingen
 
-Wird verwendet, um einen Rvalue-Verweistyp als Ergebnis eines Umwandlungs Vorgangs pro c++ 11-Standard zu identifizieren.
+Wird verwendet, um einen Rvalue-Verweistyp als Ergebnis eines Umwandlungs Vorgangs entsprechend dem c++ 11-Standard zu identifizieren.
 
 ### <a name="enable-run-time-type-information"></a>Laufzeit-Typeninformation aktivieren
 
-Fügt Code für die Überprüfung der C++-Objekttypen während der Laufzeit hinzu (Laufzeit-Typinformationen). Legt [ `/GR` , `/GR-` ](gr-enable-run-time-type-information.md)fest.
+Fügt Code zum Überprüfen von C++-Objekttypen zur Laufzeit hinzu (*Lauf Zeittyp Informationen*oder RTTI). Legt [ `/GR` , `/GR-` ](gr-enable-run-time-type-information.md)fest.
 
 ### <a name="open-mp-support"></a>Open MP-Unterstützung
 
@@ -345,7 +345,7 @@ Bestimmt den C++-Sprachstandard, den der Compiler ermöglicht. Verwenden Sie nac
 
 #### <a name="choices"></a>Auswahl
 
-- **Standard**
+- **Default**
 - **ISO c++ 14 Standard**
 - **ISO c++ 17 Standard**
 - **Vorschau: Features aus dem neuesten C++ Working Draft**
@@ -362,8 +362,8 @@ Ermöglicht die Erstellung oder Verwendung eines vorkompilierten Headers währen
 
 #### <a name="choices"></a>Auswahl
 
-- **Create** -weist den Compiler an, eine vorkompilierte Header Datei (. pch) zu erstellen, die den Zustand der Kompilierung zu einem bestimmten Zeitpunkt darstellt.
-- **Use** : weist den Compiler an, eine vorhandene vorkompilierte Header Datei (. pch) in der aktuellen Kompilierung zu verwenden.
+- **Create** -weist den Compiler an, eine vorkompilierte Header Datei () zu erstellen *`.pch`* , die den Zustand der Kompilierung zu einem bestimmten Zeitpunkt darstellt.
+- **Use** : weist den Compiler an, eine vorhandene vorkompilierte Header *`.pch`* Datei () in der aktuellen Kompilierung zu verwenden.
 - **Vorkompilierte Header** werden nicht verwendet. es werden keine vorkompilierten Header verwendet.
 
 ### <a name="precompiled-header-file"></a>Vorkompilierte Headerdatei
@@ -388,9 +388,9 @@ Gibt die Inhalte der Ausgabedatei für die Assemblysprache an. Legt [ `/FA` , `/
 
 - **Keine Auflistung** -keine Auflistung.
 - Assemblyausschließliches **auflisten** : Assemblycode;*`.asm`*
-- **Assembly mit Computercode** , Computer-und Assemblycode;*`.cod`*
-- **Assembly mit Quellcode** -Quell Code und Assemblycode;*`.asm`*
-- **Assembly, Computercode und Quellassembly** , Computercode und Quellcode;*`.cod`*
+- **Assembly mit Computercode** , Computer-und Assemblycode; *`.cod`*
+- **Assembly mit Quellcode** -Quell Code und Assemblycode; *`.asm`*
+- **Assembly, Computercode und Quellassembly** , Computercode und Quellcode; *`.cod`*
 
 ### <a name="use-unicode-for-assembler-listing"></a>Unicode für assemblyauflistung verwenden
 
@@ -434,10 +434,10 @@ Wählen Sie die Standard Aufruf Konvention für Ihre Anwendung aus (kann von ein
 
 #### <a name="choices"></a>Auswahl
 
-- **`__cdecl`**: Gibt die **`__cdecl`** Aufruf Konvention für alle Funktionen außer C++-Element Funktionen und-Funktionen an, die als oder gekennzeichnet sind **`__stdcall`** **`__fastcall`** .
-- **`__fastcall`**: Gibt die **`__fastcall`** Aufruf Konvention für alle Funktionen außer C++-Element Funktionen und-Funktionen an, die als oder gekennzeichnet sind **`__cdecl`** **`__stdcall`** . Alle **`__fastcall`** Funktionen müssen über Prototypen verfügen.
-- **`__stdcall`**: Gibt die **`__stdcall`** Aufruf Konvention für alle Funktionen außer C++-Element Funktionen und-Funktionen an, die als oder gekennzeichnet sind **`__cdecl`** **`__fastcall`** . Alle **`__stdcall`** Funktionen müssen über Prototypen verfügen.
-- **`__vectorcall`**: Gibt die **`__vectorcall`** Aufruf Konvention für alle Funktionen mit Ausnahme der C++-Element Funktionen und-Funktionen an, die als **`__cdecl`** , oder markiert sind **`__fastcall`** **`__stdcall`** . Alle **`__vectorcall`** Funktionen müssen über Prototypen verfügen.
+- **`__cdecl`** : Gibt die **`__cdecl`** Aufruf Konvention für alle Funktionen außer C++-Element Funktionen und-Funktionen an, die als oder gekennzeichnet sind **`__stdcall`** **`__fastcall`** .
+- **`__fastcall`** : Gibt die **`__fastcall`** Aufruf Konvention für alle Funktionen außer C++-Element Funktionen und-Funktionen an, die als oder gekennzeichnet sind **`__cdecl`** **`__stdcall`** . Alle **`__fastcall`** Funktionen müssen über Prototypen verfügen.
+- **`__stdcall`** : Gibt die **`__stdcall`** Aufruf Konvention für alle Funktionen außer C++-Element Funktionen und-Funktionen an, die als oder gekennzeichnet sind **`__cdecl`** **`__fastcall`** . Alle **`__stdcall`** Funktionen müssen über Prototypen verfügen.
+- **`__vectorcall`** : Gibt die **`__vectorcall`** Aufruf Konvention für alle Funktionen mit Ausnahme der C++-Element Funktionen und-Funktionen an, die als **`__cdecl`** , oder markiert sind **`__fastcall`** **`__stdcall`** . Alle **`__vectorcall`** Funktionen müssen über Prototypen verfügen.
 
 ### <a name="compile-as"></a>Kompilieren als
 
