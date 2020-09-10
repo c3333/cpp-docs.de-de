@@ -51,12 +51,12 @@ helpviewer_keywords:
 - _strtod_l function
 - string conversion, to floating point values
 ms.assetid: 0444f74a-ba2a-4973-b7f0-1d77ba88c6ed
-ms.openlocfilehash: aa6f40c91f9be906e3f51df5788483410f6077a3
-ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
+ms.openlocfilehash: 1e75fe39c8ab7020a088307421926327d4043ba8
+ms.sourcegitcommit: efed9ed109862c6c2a042f2663b680e8ca4e16a1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89554954"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89933826"
 ---
 # <a name="strtod-_strtod_l-wcstod-_wcstod_l"></a>strtod, _strtod_l, wcstod, _wcstod_l
 
@@ -107,7 +107,7 @@ Das zu verwendende Gebietsschema.
 
 Weitere Informationen zu diesem und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Jede Funktion konvertiert die *Eingabe Zeichenfolge* in eine **`double`** . Die " **strautod** "-Funktion konvertiert " *strausource* " in einen Wert mit doppelter Genauigkeit. der Wert von " **stretod** " beendet das Lesen *der Zeichenfolge* "" in der Zeichenfolge "". Dieses Zeichen kann das abschließende Null-Zeichen sein. **wcstod** ist eine breit Zeichen Version von " **strantod**;". Das *unsource* -Argument ist eine Zeichenfolge mit breit Zeichen. Anderenfalls verhalten sich diese Funktionen identisch.
 
@@ -120,7 +120,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 |**_tcstod**|**strtod**|**strtod**|**wcstod**|
 |**_tcstod_l**|**_strtod_l**|**_strtod_l**|**_wcstod_l**|
 
-Die **LC_NUMERIC** Kategorieeinstellung des aktuellen Gebiets Schemas bestimmt die Erkennung des Basispunkt Zeichens in " *strinsource*". Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Funktionen ohne das **_l** -Suffix verwenden das aktuelle Gebiets Schema. **_strtod_l** ist mit **_strtod_l** identisch, außer dass Sie *stattdessen das* übergebene Gebiets Schema verwenden. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
+Die **LC_NUMERIC** Kategorieeinstellung des aktuellen Gebiets Schemas bestimmt die Erkennung des Basispunkt Zeichens in " *strinsource*". Weitere Informationen finden Sie unter [setlocale](setlocale-wsetlocale.md). Die Funktionen ohne das **_l** -Suffix verwenden das aktuelle Gebiets Schema. **_strtod_l** ist mit **_strtod** identisch, außer der erste verwendet stattdessen *das übergebene* Gebiets Schema. Weitere Informationen finden Sie unter [Locale](../../c-runtime-library/locale.md).
 
 Wenn *endptr* nicht **null**ist, wird ein Zeiger auf das Zeichen, das die Überprüfung beendet hat, an dem Speicherort gespeichert, auf den von *endptr*verwiesen wird. Wenn keine Konvertierung ausgeführt werden kann (keine gültigen Ziffern gefunden oder ungültige Basis angegeben), wird der Wert von " *strinsource* " an dem Speicherort gespeichert, auf den von *endptr*verwiesen wird.
 
@@ -221,7 +221,7 @@ string = 10110134932
    Stopped scan at: 932
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Datenkonvertierung](../../c-runtime-library/data-conversion.md)<br/>
 [Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>

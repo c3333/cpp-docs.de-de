@@ -64,6 +64,8 @@
       href: ../c-runtime-library/crt-initialization.md
     - name: Globaler Status in der CRT
       href: ../c-runtime-library/global-state.md
+    - name: Typgenerische Mathematik
+      href: ../c-runtime-library/tgmath.md
 - name: Universelle C-Laufzeitroutinen nach Kategorie
   expanded: false
   items:
