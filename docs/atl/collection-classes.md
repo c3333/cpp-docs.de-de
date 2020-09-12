@@ -1,22 +1,22 @@
 ---
-title: ATL-Auflistungsklassen
+title: Sammlungs Klassen in ATL
 ms.date: 11/04/2016
 ms.topic: reference
 helpviewer_keywords:
 - collection classes
 ms.assetid: eff95de6-78ef-4212-9d7d-1dacbdd4cc58
-ms.openlocfilehash: 09c0a64ff34a86c5581fe552ce2dbf0d12ea8e96
-ms.sourcegitcommit: 180f63704f6ddd07a4172a93b179cf0733fd952d
+ms.openlocfilehash: a93810b91cefd897b55cae4760ade32374900eb3
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70739529"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90041418"
 ---
 # <a name="collection-classes"></a>Auflistungsklassen
 
 Die folgenden Klassen bieten Unterstützung für Arrays, Listen, Zuordnungen und Merkmale von Methoden für Vergleiche und den Element Zugriff.
 
-- [CAtlArray](../atl/reference/catlarray-class.md): Diese Klasse implementiert ein Arrayobjekt.
+- [CAtlArray](../atl/reference/catlarray-class.md) . Diese Klasse implementiert ein Array Objekt.
 
 - Die [Kategorie](../atl/reference/catllist-class.md) Diese Klasse stellt Methoden zum Erstellen und Verwalten eines Listen Objekts bereit.
 
@@ -78,7 +78,7 @@ Die folgenden Klassen bieten Unterstützung für Arrays, Listen, Zuordnungen und
 
 - [Csimplemapeer qualhelperfalse](../atl/reference/csimplemapequalhelperfalse-class.md) Diese Klasse ist ein Hilfsprogramm für die [CSimpleMap](../atl/reference/csimplemap-class.md) -Klasse.
 
-- [Cstringelementmerkmalen](../atl/reference/cstringelementtraits-class.md) Diese Klasse bietet statische Funktionen, die von Auflistungs Klassen `CString` verwendet werden, die-Objekte
+- [Cstringelementmerkmalen](../atl/reference/cstringelementtraits-class.md) Diese Klasse bietet statische Funktionen, die von Auflistungs Klassen verwendet werden, die- `CString` Objekte
 
 - [Cstringelementtraitsi](../atl/reference/cstringelementtraitsi-class.md) Diese Klasse stellt statische Funktionen für Zeichen folgen bereit, die in Auflistungs Klassen Objekten gespeichert sind. Sie ähnelt [cstringelementmerkmalen](../atl/reference/cstringelementtraits-class.md), führt jedoch Vergleiche ohne Berücksichtigung der Groß-und Kleinschreibung durch.
 
@@ -86,9 +86,9 @@ Die folgenden Klassen bieten Unterstützung für Arrays, Listen, Zuordnungen und
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-[ATL-Auflistungsklassen](../atl/atl-collection-classes.md)
+[ATL-Auflistungs Klassen Übersicht](../atl/atl-collection-classes.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Klassen Übersicht](../atl/atl-class-overview.md)<br/>
-[Auflistungsklassen](../atl/atl-collection-classes.md)
+[Klassenübersicht](../atl/atl-class-overview.md)<br/>
+[Auflistungs Klassen](../atl/atl-collection-classes.md)

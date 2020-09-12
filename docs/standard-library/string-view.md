@@ -1,15 +1,16 @@
 ---
 title: '&lt;string_view&gt;'
-ms.date: 04/18/2019
+description: Eine Übersicht über `basic_string_view` , die auf eine Konstante zusammenhängende Sequenz von char-like-Objekten verweist.
+ms.date: 9/4/2020
 helpviewer_keywords:
 - string_view header
 ms.assetid: a2fb9d00-d7ae-4170-bfea-2dc337aa37cf
-ms.openlocfilehash: 13b6f5c63b9426fc4c31527f0d1ae8291d07807f
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: f74f6c5855f71b0df46f585e874002cdb4308e42
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87222211"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90039910"
 ---
 # <a name="ltstring_viewgt"></a>&lt;string_view&gt;
 
@@ -23,7 +24,7 @@ Definiert die Klassen Vorlage `basic_string_view` und verwandte Typen und Operat
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die string_view Familie von Vorlagen Spezialisierungsmöglichkeiten bietet eine effiziente Möglichkeit, einen schreibgeschützten, Ausnahme sicheren, nicht besitzenden Handle an die Zeichendaten aller Zeichen folgen ähnlichen Objekte zu übergeben, wobei das erste Element der Sequenz an Position 0 (null) ist. Ein Funktionsparameter des Typs `string_view` (bei dem es sich um eine typedef für handelt `basic_string_view<char>` ) kann Argumente wie `std::string` , ** \* char**oder eine beliebige andere Zeichen folgen ähnliche Klasse von schmalen Zeichen annehmen, für die eine implizite Konvertierung in `string_view` definiert ist. Ebenso kann ein Parameter von `wstring_view` `u16string_view` oder `u32string_view` jeden beliebigen Zeichen Folgentyp akzeptieren, für den eine implizite Konvertierung definiert ist. Weitere Informationen finden Sie unter [basic_string_view-Klasse](../standard-library/basic-string-view-class.md).
+Die `string_view` Familie der Vorlagen Spezialisierungsmöglichkeiten bietet eine effiziente Möglichkeit zum Übergeben eines schreibgeschützten, Ausnahme sicheren, nicht besitzenden Handles an die Zeichendaten beliebiger Zeichen folgen ähnlicher Objekte mit dem ersten Element der Sequenz an Position NULL. Ein Funktionsparameter des Typs `string_view` (bei dem es sich um eine typedef für handelt `basic_string_view<char>` ) kann Argumente wie `std::string` , `char*` oder eine beliebige andere Zeichen folgen ähnliche Klasse von schmalen Zeichen annehmen, für die eine implizite Konvertierung in `string_view` definiert ist. Ebenso kann ein Parameter von `wstring_view` `u16string_view` oder `u32string_view` jeden beliebigen Zeichen Folgentyp akzeptieren, für den eine implizite Konvertierung definiert ist. Weitere Informationen finden Sie unter [basic_string_view-Klasse](../standard-library/basic-string-view-class.md).
 
 ### <a name="typedefs"></a>TypeDefs
 
@@ -67,7 +68,7 @@ Die- \<string_view> Operatoren können- `string_view` Objekte mit Objekten von k
 
 - **Namespace:** std
 
-- **Compileroption:** Std: c++ 17 (oder höher)
+- **Compileroption:** [Std: c++ 17](../build/reference/std-specify-language-standard-version.md) oder höher.
 
 ## <a name="see-also"></a>Weitere Informationen
 

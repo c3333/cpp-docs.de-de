@@ -28,12 +28,12 @@ helpviewer_keywords:
 - std::bit [C++], countr_zero
 - std::bit [C++], countr_one
 - std::bit [C++], popcount
-ms.openlocfilehash: f06e181a4fe6683adb0cc63c016cbd879f2fc574
-ms.sourcegitcommit: e58918c45316d799c1952ca7797a85adbcd0c472
+ms.openlocfilehash: a2408df9aa13c6e714f615561871397be17fc4a3
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89281808"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90039810"
 ---
 # <a name="ltbitgt-functions"></a>&lt;&gt;Bitfunktionen
 
@@ -111,7 +111,7 @@ Anstatt `reinterpret_cast` , oder zu verwenden `memcpy()` , `bit_cast()` ist ein
 
 Diese Überladung ist nur an der Überladungs Auflösung beteiligt, wenn:
 -  `sizeof(To) == sizeof(From)`
-- `To` und `From` sind [is_trivially_copyable](https://docs.microsoft.com/cpp/standard-library/is-trivially-copyable-class?view=vs-2019`).
+- `To` und `From` sind [is_trivially_copyable](is-trivially-copyable-class.md).
 
 Diese Funktions Vorlage ist `constexpr` nur dann, wenn `To` , `From` und die Typen ihrer unter Objekte sind:
 - kein Union-oder Zeigertyp
@@ -724,13 +724,13 @@ rotr(0b10000000,-1) = 0b00000001
 
 Diese Vorlagen Funktion ist nur an der Überladungs Auflösung beteiligt, wenn `T` ein ganzzahliger Typ ohne Vorzeichen ist. Beispiel: `unsigned int` , `unsigned long` , `unsigned short` , `unsigned char` usw.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:**\<bit>
 
 **Namespace:** std
 
-`/std:c++latest` ist erforderlich
+[/Std: c + + Latest](../build/reference/std-specify-language-standard-version.md) ist erforderlich.
 
 ## <a name="see-also"></a>Weitere Informationen
 

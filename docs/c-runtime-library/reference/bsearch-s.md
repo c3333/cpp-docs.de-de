@@ -28,12 +28,12 @@ helpviewer_keywords:
 - arrays [CRT], binary search
 - bsearch_s function
 ms.assetid: d5690d5e-6be3-4f1d-aa0b-5ca6dbded276
-ms.openlocfilehash: 20b4c482210f480730f7da4c89549d207ea6ca7d
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 348638b2a6b5a97491d9929b22a983b43794da9a
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88845171"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90041626"
 ---
 # <a name="bsearch_s"></a>bsearch_s
 
@@ -80,7 +80,7 @@ Wenn ungültige Parameter an die Funktion übergeben werden, ruft Sie den Handle
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|*key*|*base*|*vergleichbar*|*Zahl*|*width*|**`errno`**|
+|*key*|*base*|*vergleichbar*|*Zahl*|*width*|**`errno`** Wert|
 |-|-|-|-|-|-|
 |**NULL**|any|any|any|any|**Eingabe**|
 |any|**NULL**|any|!= 0|any|**Eingabe**|
@@ -91,7 +91,7 @@ Wenn ungültige Parameter an die Funktion übergeben werden, ruft Sie den Handle
 
 Die **bsearch_s** -Funktion führt eine binäre Suche eines sortierten Arrays aus *Zahlen* Elementen durch, wobei jede *Breite* Byte groß ist. Der *Basiswert* ist ein Zeiger auf die Basis des zu durchsuchenden Arrays, und *Key* ist der Wert, der gesucht wird. Der *Compare* -Parameter ist ein Zeiger auf eine vom Benutzer bereitgestellte Routine, die den angeforderten Schlüssel mit einem Array Element vergleicht und einen der folgenden Werte zurückgibt, die die zugehörige Beziehung angeben:
 
-|Von der *Vergleichs* Routine zurückgegebener Wert|Beschreibung|
+|Von der *Vergleichs* Routine zurückgegebener Wert|BESCHREIBUNG|
 |-----------------------------------------|-----------------|
 |\< 0|Der Schlüssel ist kleiner als das Arrayelement.|
 |0|Schlüssel und Arrayelement sind gleich.|

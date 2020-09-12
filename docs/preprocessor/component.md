@@ -8,12 +8,12 @@ helpviewer_keywords:
 - component pragma
 - pragmas, component
 ms.assetid: 7b66355e-3201-4c14-8190-f4a2a81a604a
-ms.openlocfilehash: 578c590bdb4223f173e0249c18d0eea4e78a18db
-ms.sourcegitcommit: 6e1c1822e7bcf3d2ef23eb8fac6465f88743facf
+ms.openlocfilehash: 73b308fdc426be9b403b808d4e638b4f5c1e9149
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70220478"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90040729"
 ---
 # <a name="component-pragma"></a>component-Pragma
 
@@ -21,11 +21,11 @@ Steuert die Auflistung von Browseinformationen oder Abhängigkeitsinformationen 
 
 ## <a name="syntax"></a>Syntax
 
-> **#pragma Komponente (Browser,** { **on** | **Off** } [ **,** **Verweise** [ **,** *Name* ]] **)**  \
-> **#pragma Komponente (minrebuild,** { **on** | **Off** } **)**  \
-> **#pragma Komponente (mintypeingefo,** { **on** | **Off** } **)**
+> **#pragma Komponente (Browser,** { **on** \| **Off** } \[ **,** **Verweise** \[ **,** *Name* ]] **)** \
+> **#pragma Komponente (minrebuild,** { **on** \| **Off** } **)** \
+> **#pragma Komponente (mintypeingefo,** { **on** \| **Off** } **)**
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 ### <a name="browser"></a>Browser
 
@@ -72,18 +72,18 @@ Um zu verhindern, dass der Präprozessor den *Namen* erweitert (z. b. das Erweit
 
 ### <a name="minimal-rebuild"></a>Minimale Neuerstellung
 
-Für das Feature veraltet [/GM (minimale Neuerstellung aktivieren)](../build/reference/gm-enable-minimal-rebuild.md) ist es erforderlich, dass C++ der Compiler Klassen Abhängigkeitsinformationen erstellt und speichert, die Speicherplatz benötigen. Um Speicherplatz zu sparen, können Sie `#pragma component( minrebuild, off )` immer dann verwenden, wenn Sie keine Abhängigkeitsinformationen erfassen müssen, beispielsweise in nicht ändernden Header Dateien. Fügen `#pragma component( minrebuild, on )` Sie nach der nicht ändernden Klasse ein, um die Abhängigkeits Sammlung wieder zu aktivieren.
+Das Feature veraltet [/GM (minimale Neuerstellung aktivieren)](../build/reference/gm-enable-minimal-rebuild.md) erfordert, dass der Compiler C++-Klassen Abhängigkeitsinformationen erstellt und speichert, die Speicherplatz benötigen. Um Speicherplatz zu sparen, können Sie `#pragma component( minrebuild, off )` immer dann verwenden, wenn Sie keine Abhängigkeitsinformationen erfassen müssen, beispielsweise in nicht ändernden Header Dateien. Fügen `#pragma component( minrebuild, on )` Sie nach der nicht ändernden Klasse ein, um die Abhängigkeits Sammlung wieder zu aktivieren.
 
 ### <a name="reduce-type-information"></a>Typinformationen verringern
 
-Die `mintypeinfo` -Option reduziert die Debuginformationen für den angegebenen Bereich. Diese Informationen haben einen beträchtlichen Umfang und wirken sich auf PDB- und OBJ-Dateien aus. Sie können Klassen und Strukturen im mintypeinfo-Bereich nicht debuggen. Die Verwendung der mintypeinfo-Option kann hilfreich sein, um die folgende Warnung zu vermeiden:
+Die- `mintypeinfo` Option reduziert die Debuginformationen für den angegebenen Bereich. Diese Informationen haben einen beträchtlichen Umfang und wirken sich auf PDB- und OBJ-Dateien aus. Sie können Klassen und Strukturen im mintypeinfo-Bereich nicht debuggen. Die Verwendung der mintypeinfo-Option kann hilfreich sein, um die folgende Warnung zu vermeiden:
 
 ```cmd
 LINK : warning LNK4018: too many type indexes in PDB "filename", discarding subsequent type information
 ```
 
-Weitere Informationen finden Sie in der Compileroption [/GM (minimale Neuerstellung aktivieren)](../build/reference/gm-enable-minimal-rebuild.md) .
+Weitere Informationen finden Sie in der Compileroption [/GM (minimale Neuerstellung aktivieren)](../build/reference/gm-enable-minimal-rebuild.md)  .
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Pragma-Direktiven und das __Pragma-Schlüsselwort](../preprocessor/pragma-directives-and-the-pragma-keyword.md)
+[Pragma-Anweisungen und das __pragma-Schlüsselwort](../preprocessor/pragma-directives-and-the-pragma-keyword.md)

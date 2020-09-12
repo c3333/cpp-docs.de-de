@@ -2,19 +2,19 @@
 title: Installieren und Konfigurieren von Tools zum Erstellen mit iOS
 ms.date: 10/17/2019
 ms.assetid: d0c311c9-9eb9-42c5-ba07-25604362cd28
-ms.openlocfilehash: 87c02f5399465c6131fad2bb9839698699d1e488
-ms.sourcegitcommit: a673f6a54cc97e3d4cd032b10aa8dce7f0539d39
+ms.openlocfilehash: 26dea080f3d3f05885f348dcaf1c66a0db2a36b5
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "79470004"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90041990"
 ---
 # <a name="install-and-configure-tools-to-build-using-ios"></a>Installieren und Konfigurieren von Tools zum Erstellen mit iOS
 
 Sie können Visual Studio mit den Tools für die plattformübergreifende **mobile Entwicklung mit C++** verwenden, um iOS-Code im iOS-Simulator oder auf einem iOS-Gerät zu bearbeiten, zu debuggen und bereitzustellen. Aufgrund von Lizenzierungseinschränkungen muss der Code jedoch remote auf einem Mac erstellt und ausgeführt werden. Zum Erstellen und Ausführen von iOS-Apps mithilfe von Visual Studio müssen Sie den Remote-Agent ( [vcremote](https://www.npmjs.com/package/vcremote)) auf Ihrem Macintosh-Computer einrichten und konfigurieren. Der Remote-Agent verarbeitet Buildanforderungen von Visual Studio und führt die App auf einem iOS-Gerät, das mit dem Macintosh-Computer verbunden ist, oder im iOS-Simulator auf dem Macintosh-Computer aus.
 
 > [!NOTE]
-> Informationen zur Verwendung von in der Cloud gehosteten Mac-Diensten anstelle eines Macs finden Sie unter [Konfigurieren von Visual Studio zum Herstellen der Verbindung zu Ihrem in der Cloud gehosteten Mac](/visualstudio/cross-platform/tools-for-cordova/tips-workarounds/host-a-mac-in-the-cloud?view=toolsforcordova-2017#configure-visual-studio-to-connect-to-your-cloud-hosted-mac). Die Anweisungen gelten für das Erstellen mit Visual Studio Tools for Apache Cordova. Um die Anweisungen für den Build mit C++ zu verwenden, müssen Sie `vcremote` durch `remotebuild` ersetzen.
+> Informationen zur Verwendung von in der Cloud gehosteten Mac-Diensten anstelle eines Macs finden Sie unter [Konfigurieren von Visual Studio zum Herstellen der Verbindung zu Ihrem in der Cloud gehosteten Mac](/visualstudio/cross-platform/tools-for-cordova/tips-workarounds/host-a-mac-in-the-cloud?view=toolsforcordova-2017&preserve-view=true#configure-visual-studio-to-connect-to-your-cloud-hosted-mac). Die Anweisungen gelten für das Erstellen mit Visual Studio Tools for Apache Cordova. Um die Anweisungen für den Build mit C++ zu verwenden, müssen Sie `vcremote` durch `remotebuild` ersetzen.
 
 Lesen Sie nach der Installation der Tools zum Entwickeln mit iOS in diesem Artikel nach, wie Sie den Remote-Agent schnell für die iOS-Entwicklung in Visual Studio und auf Ihrem Mac konfigurieren und aktualisieren können.
 
@@ -52,29 +52,29 @@ Um den Remote-Agent für die Entwicklung von Code für iOS installieren und verw
 
    Wenn Sie manuell signieren möchten, müssen Sie für Ihre App ein Bereitstellungsprofil erstellen. Ausführliche Informationen zum Erstellen von Bereitstellungsprofilen finden Sie unter [Create a development provisioning profile](https://help.apple.com/developer-account/#/devf2eb157f8) (Erstellen eines Bereitstellungs-Entwicklungsprofils) in der iOS Developer Library.
 
-- [Node.js](https://nodejs.org/), Version 12.14.1, und npm, Version 6.13.4
+- [Node.js](https://nodejs.org/) Version 12.14.1 und NPM-Version 6.13.4
 
-   Installieren Sie die Node.js-Version 12.14.1 auf Ihrem Mac. Wenn Sie das Node.js-Paket installieren, sollte es die npm-Version 6.13.4 aufweisen. Andere Versionen von Node.js und npm unterstützen möglicherweise einige im Remote-Agent `vcremote` verwendete Module nicht, was zu einem Fehler bei der `vcremote`-Installation führen kann. Sie sollten Node.js mithilfe eines Paket-Managers wie [Node Version Manager](https://nodejs.org/en/download/package-manager/#nvm) installieren. Vermeiden Sie es, den Befehl `sudo` zum Installieren von Node.js zu verwenden, da dieser in einigen Modulen zu Fehlern bei der Installation führt, wenn `sudo` verwendet wird.
+   Installieren Sie die Version 12.14.1 von Node.js auf Ihrem Mac. Wenn Sie das Node.js Paket installieren, sollte es die NPM-Version 6.13.4. Andere Versionen von Node.js und npm unterstützen möglicherweise einige im Remote-Agent `vcremote` verwendete Module nicht, was zu einem Fehler bei der `vcremote`-Installation führen kann. Es wird empfohlen, Node.js mithilfe eines Paket-Managers wie dem [Knoten Versions Manager](https://nodejs.org/en/download/package-manager/#nvm)zu installieren. Verwenden Sie den Befehl nicht `sudo` , um Node.js zu installieren, da einige Module bei der Verwendung von nicht installiert werden können `sudo` .
 
-## <a name="Install"></a> Installieren des Remote-Agents für iOS
+## <a name="install-the-remote-agent-for-ios"></a><a name="Install"></a> Installieren des Remote-Agents für iOS
 
 Wenn Sie die Workload „Mobile Entwicklung mit C++“ installieren, kann Visual Studio mit [vcremote](https://www.npmjs.com/package/vcremote)kommunizieren. Dies ist ein Remote-Agent, der auf Ihrem Mac ausgeführt wird und mit dem Dateien übertragen, die iOS-App erstellt und ausgeführt sowie Debugbefehle gesendet werden können.
 
 Stellen Sie vor der Installation des Remote-Agents sicher, dass alle [erforderlichen Komponenten](#prerequisites) vorhanden sind und Sie die Schritte unter [Installieren der plattformübergreifenden mobilen Entwicklung mit C++](../cross-platform/install-visual-cpp-for-cross-platform-mobile-development.md#install-the-tools) ausgeführt haben.
 
-### <a name="DownloadInstall"></a> Herunterladen und Installieren des Remote-Agenten
+### <a name="to-download-and-install-the-remote-agent"></a><a name="DownloadInstall"></a> Herunterladen und Installieren des Remote-Agenten
 
-- Überprüfen Sie in der Terminal-App Ihres Mac, ob die aktuell verwendete Node.js-Version die erforderliche Version 12.14.1 ist. Führen Sie den folgenden Befehl aus, um die Version zu ermitteln:
+- Überprüfen Sie in der Terminal-app auf Ihrem Mac, ob es sich bei der derzeit verwendeten Node.js Version um die erforderliche Version 12.14.1 handelt. Um die Version zu überprüfen, führen Sie den folgenden Befehl aus:
 
   `node -v`
   
-  Wenn nicht die richtige Version verwendet wird, können Sie in den Voraussetzungen der Installationsanleitung für Node.js folgen. Starten Sie dann Node.js neu.
+  Wenn es nicht die richtige Version ist, müssen Sie ggf. die Node.js Installationsanweisungen in den Voraussetzungen befolgen. Starten Sie dann Node.js neu.
 
-- Nachdem Sie überprüft haben, ob die erforderliche Node.js-Version verwendet wird, führen Sie diesen Befehl aus, um vcremote unter dieser Node.js-Version zu installieren:
+- Nachdem Sie die erforderliche Node.js überprüft haben, führen Sie den folgenden Befehl aus, um "v|" unter dieser Node.js Version zu installieren:
 
    `npm install -g --unsafe-perm vcremote`
 
-   Es empfiehlt sich, eine switch-Anweisung für eine globale Installation ( **-g**) auszuführen. Dies ist jedoch nicht erforderlich. Wenn Sie sich nicht für die Ausführung einer switch-Anweisung für eine globale Installation entscheiden, wird vcremote unter dem aktuell in der Terminal-App aktiven Pfad installiert.
+   Der Schalter für die globale Installation (**-g**) wird empfohlen, ist jedoch nicht erforderlich. Wenn Sie den Schalter für die globale Installation nicht verwenden, wird VUP unter dem aktuellen aktiven Pfad in der Terminal-app installiert.
 
    Während der Installation werden `vcremote` installiert und der Entwicklermodus auf Ihrem Mac aktiviert. [Homebrew](https://brew.sh/) und zwei npm-Pakete, `vcremote-lib` und `vcremote-utils`, werden ebenfalls installiert. Nach Abschluss der Installation ist es sicher, alle Warnungen über übersprungene optionale Abhängigkeiten zu ignorieren.
 
@@ -83,11 +83,11 @@ Stellen Sie vor der Installation des Remote-Agents sicher, dass alle [erforderli
 
 Wenn Sie auf eine neue Version von Visual Studio aktualisiert haben, müssen Sie diese Aktualisierung auch auf dem Remote-Agent vornehmen. Wiederholen Sie die Schritte zum Herunterladen und Installieren des Remote-Agents, um diesen zu aktualisieren.
 
-## <a name="Start"></a> Starten des Remote-Agents
+## <a name="start-the-remote-agent"></a><a name="Start"></a> Starten des Remote-Agents
 
 Der Remote-Agent muss ausgeführt werden, damit Visual Studio den iOS-Code erstellen und ausführen kann. Visual Studio muss mit dem Remote-Agent gekoppelt werden, bevor eine Kommunikation stattfinden kann. Standardmäßig wird der Remote-Agent im Modus für sichere Verbindung ausgeführt. Dazu muss Visual Studio mit einer PIN gekoppelt werden.
 
-### <a name="RemoteAgentStartServer"></a> So starten Sie den Remote-Agenten
+### <a name="to-start-the-remote-agent"></a><a name="RemoteAgentStartServer"></a> So starten Sie den Remote-Agenten
 
 - Geben Sie über die Terminal-App auf Ihrem Mac Folgendes ein:
 
@@ -121,9 +121,9 @@ Sobald Sie den Remote-Agenten gestartet haben, können Sie ihn von Visual Studio
 
 #### <a name="to-stop-the-remote-agent"></a>So beenden Sie den Remote-Agenten
 
-- Drücken Sie im Terminalfenster, in dem `vcremote` ausgeführt wird, **UMSCHALT**+**C**.
+- Geben Sie im Terminal Fenster `vcremote` , in dem ausgeführt wird, das **Steuer**Element + **C**ein.
 
-## <a name="ConfigureVS"></a> Konfigurieren des Remote-Agents in Visual Studio
+## <a name="configure-the-remote-agent-in-visual-studio"></a><a name="ConfigureVS"></a> Konfigurieren des Remote-Agents in Visual Studio
 
 Um von Visual Studio aus eine Verbindung mit dem Remote-Agent herzustellen, müssen Sie die Remotekonfiguration in den Visual Studio-Optionen angeben.
 
@@ -137,7 +137,7 @@ Um von Visual Studio aus eine Verbindung mit dem Remote-Agent herzustellen, müs
 
 1. Wählen Sie in der Menüleiste von Visual Studio **Extras**, **Optionen**aus.
 
-1. Erweitern Sie im Dialogfeld **Optionen** **Plattformübergreifend**, **C++** , **iOS**.
+1. Erweitern Sie im Dialogfeld **Optionen****Plattformübergreifend**, **C++**, **iOS**.
 
 1. Geben Sie in die Felder **Hostname** und **Port** die Werte ein, die vom Remote-Agent angegeben wurden, als Sie diesen gestartet haben. Der Hostname kann der DNS-Name oder die IP-Adresse Ihres Macs sein. Der Standardport ist 3030.
 
@@ -154,13 +154,13 @@ Um von Visual Studio aus eine Verbindung mit dem Remote-Agent herzustellen, müs
 
    Wenn die Kopplung nicht erfolgreich ist, stellen Sie sicher, dass der Remote-Agent ausgeführt wird. Führen Sie dazu die unter [Start the remote agent](#Start)beschriebenen Schritte aus. Wenn zu viel Zeit verstrichen ist, seit die Remote-Agent-PIN generiert wurde, führen Sie die Schritte unter [Generate a new security PIN](#GeneratePIN) auf dem Mac aus, und versuchen Sie es dann erneut. Versuchen Sie bei Verwendung der Hostname Ihres Macs stattdessen mit der IP-Adresse im Feld **Hostname** .
 
-1. Aktualisieren Sie den Namen des Ordners im Feld **Remotestamm**, um den Ordner in Ihrem Stammverzeichnis ( *~* ) auf dem Mac anzugeben, der von dem Remote-Agent verwendet wird. Standardmäßig verwendet der Remote-Agent `/Users/<username>/vcremote` als Remotestamm.
+1. Aktualisieren Sie den Namen des Ordners im Feld **Remotestamm**, um den Ordner in Ihrem Stammverzeichnis (*~*) auf dem Mac anzugeben, der von dem Remote-Agent verwendet wird. Standardmäßig verwendet der Remote-Agent `/Users/<username>/vcremote` als Remotestamm.
 
 1. Wählen Sie **OK** aus, um die Verbindungseinstellungen für die Remotekopplung zu speichern.
 
 Visual Studio verwendet jedes Mal dieselben Information, um die Verbindung mit dem Remote-Agent auf Ihrem Mac herzustellen. Es ist nicht erforderlich, Visual Studio erneut mit dem Remote-Agent zu koppeln, es sei denn, Sie generieren ein neues Sicherheitszertifikat auf Ihrem Mac oder ändern dessen Hostnamen oder IP-Adresse.
 
-## <a name="GeneratePIN"></a> Generate a new security PIN
+## <a name="generate-a-new-security-pin"></a><a name="GeneratePIN"></a> Generate a new security PIN
 
 Wenn Sie den Remote-Agent erstmals starten, ist die generierte PIN für einen begrenzten Zeitraum (standardmäßig 10 Minuten) gültig. Wenn Sie Visual Studio nicht vor Ablauf dieses Zeitraums mit dem Remote-Agent koppeln, müssen Sie eine neue PIN generieren.
 
@@ -174,7 +174,7 @@ Wenn Sie den Remote-Agent erstmals starten, ist die generierte PIN für einen be
 
    Der Remote-Agent generiert eine neue temporäre PIN. Wiederholen Sie die Schritte unter [Konfigurieren des Remote-Agents in Visual Studio](#ConfigureVS), um Visual Studio mithilfe der neuen PIN zu koppeln.
 
-## <a name="GenerateCert"></a> Generieren eines neuen Serverzertifikats
+## <a name="generate-a-new-server-certificate"></a><a name="GenerateCert"></a> Generieren eines neuen Serverzertifikats
 
 Aus Sicherheitsgründen sind die Serverzertifikate, die Visual Studio mit dem Remote-Agent koppeln, an die IP oder den Hostnamen Ihres Macs gebunden. Wenn sich diese Werte geändert haben, müssen Sie ein neues Serverzertifikat generieren und anschließend Visual Studio mit den neuen Werte neu konfigurieren.
 
@@ -196,7 +196,7 @@ Aus Sicherheitsgründen sind die Serverzertifikate, die Visual Studio mit dem Re
 
 1. Wiederholen Sie die Schritte unter [Konfigurieren des Remote-Agents in Visual Studio](#ConfigureVS), um Visual Studio mithilfe der neuen PIN zu koppeln.
 
-## <a name="ConfigureMac"></a> Configure the remote agent on the Mac
+## <a name="configure-the-remote-agent-on-the-mac"></a><a name="ConfigureMac"></a> Configure the remote agent on the Mac
 
 Sie können den Remote-Agent mit verschiedenen Befehlszeilenoptionen konfigurieren. Beispielsweise können Sie den Port zum Überwachen der Build-Anforderungen und die maximale Anzahl an Builds angeben, die auf dem Dateisystem verwaltet werden sollen. Die Standardgrenze ist 10 Builds. Der Remote-Agent entfernt beim Herunterfahren die überzähligen Builds.
 

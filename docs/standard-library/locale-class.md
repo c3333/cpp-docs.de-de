@@ -21,12 +21,12 @@ helpviewer_keywords:
 - std::locale [C++], facet
 - std::locale [C++], id
 ms.assetid: 7dd6d271-472d-4750-8fb5-ea8f55fbef62
-ms.openlocfilehash: 94063b2c66d201da3b0e822a7118b3e48020ed3c
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 55aeaf27b1c31ef0dba68d0ead3633590777cbdf
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88833256"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90040600"
 ---
 # <a name="locale-class"></a>locale-Klasse
 
@@ -159,14 +159,14 @@ Numerische Formatierungsregeln für nachfolgende Einfügungen in `cout` bleiben 
 
 ### <a name="static-functions"></a>Statische Funktionen
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|-|
 |[Klassisch](#classic)|Die statische Memberfunktion gibt ein Gebietsschemaobjekt zurück, das das klassische C-Gebietsschema darstellt.|
 |[global](#global)|Setzt das Standardgebietsschema für das Programm zurück.|
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|Beschreibung|
+|Operator|BESCHREIBUNG|
 |-|-|
 |[Operator =](#op_eq)|Weist ein Gebiets Schema zu.|
 |[Operator! =](#op_neq)|Prüft zwei Gebietsschemen auf Ungleichheit.|
@@ -175,7 +175,7 @@ Numerische Formatierungsregeln für nachfolgende Einfügungen in `cout` bleiben 
 
 ### <a name="classes"></a>Klassen
 
-|Klasse|Beschreibung|
+|Klasse|BESCHREIBUNG|
 |-|-|
 |[facet](#facet_class)|Eine Klasse, die als Basisklasse für alle Gebietsschemafacets dient.|
 |[`id`](#id_class)|Die Memberklasse stellt eine einzigartige Facetidentifikation bereit, die als Index zum Suchen von Facets in einem Gebietsschema verwendet wird.|
@@ -622,7 +622,7 @@ loc3 (English_United States.1252) are not equal.
 
 ## <a name="localeoperator"></a><a name="op_call"></a> locale:: Operator ()
 
-Vergleicht zwei- `basic_string` Objekte gemäß den lexikografischen Vergleichs Regeln, die durch den Std:: COLLATE-Aspekt dieses Gebiets Schemas definiert werden <charT> .
+Vergleicht zwei- `basic_string` Objekte gemäß den lexikografischen Vergleichs Regeln, die durch den Facetten dieses Gebiets Schemas definiert werden `std::collate<charT>` .
 
 ```cpp
 template <class CharType, class Traits, class Allocator>

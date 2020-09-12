@@ -2,12 +2,12 @@
 title: Einstufen von Typen und Membern als veraltet (C++/CX)
 ms.date: 12/30/2016
 ms.assetid: b20b01c1-a439-4ff0-8cf3-d7280c492813
-ms.openlocfilehash: 6cd880af7e206b4c7338e53615594ec2c65c59fc
-ms.sourcegitcommit: 180f63704f6ddd07a4172a93b179cf0733fd952d
+ms.openlocfilehash: 6d61b00690cc087c3baced6d96d0b6c8d73b5850
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70740497"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90040326"
 ---
 # <a name="deprecating-types-and-members-ccx"></a>Einstufen von Typen und Membern als veraltet (C++/CX)
 
@@ -39,23 +39,27 @@ public:
 
 In der folgenden Tabelle werden die Konstrukte aufgeführt, auf die das veraltete Attribut angewendet werden kann:
 
-| |
-|-|
-|XAML-Steuerelement|
-|delegate|
-|event|
-|Enumerationsfeld|
-|enum|
-|struct|
-|Methode|
-|class|
-|interface|
-|property|
-|struct field|
-|parameterized constructor|
+:::row:::
+   :::column span="":::
+      klassi
+      Führers
+      Enumeration
+      Aufzählungs Feld \
+      Veranstalter
+      interface
+   :::column-end:::
+   :::column span="":::
+      anzuwenden
+      parametrisierter Konstruktor \
+      property\
+      Struktur
+      Strukturfeld \
+      XAML-Steuerelement
+   :::column-end:::
+:::row-end:::
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Typsystem](../cppcx/type-system-c-cx.md)<br/>
-[C++-/CX-Programmiersprachenreferenz](../cppcx/visual-c-language-reference-c-cx.md)<br/>
-[Referenz zu Namespaces](../cppcx/namespaces-reference-c-cx.md)
+[Typensystem](../cppcx/type-system-c-cx.md)<br/>
+[C++/CX-Sprachreferenz](../cppcx/visual-c-language-reference-c-cx.md)<br/>
+[Namespaces-Referenz](../cppcx/namespaces-reference-c-cx.md)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - -fp compiler option [C++]
 - /fp compiler option [C++]
 ms.assetid: 10469d6b-e68b-4268-8075-d073f4f5d57e
-ms.openlocfilehash: f85f9b397ef3ab5bd070be1f4c81845405b14020
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 7a8ae885bbbf00ae916505bf5df646b32268a17a
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87234379"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90040911"
 ---
 # <a name="fp-specify-floating-point-behavior"></a>/fp (Gleitkommaverhalten festlegen)
 
@@ -43,11 +43,11 @@ Wenn Ihr Gleit Komma Code nicht von der Reihenfolge der Vorgänge und Ausdrücke
 
 #### <a name="strict"></a>strict
 
-`/fp:strict`weist ein ähnliches Verhalten auf, d. h. `/fp:precise` der Compiler behält die Quell Reihenfolge und die Rundungs Eigenschaften von Gleit Komma Code bei, wenn er Objektcode für den Zielcomputer generiert und optimiert und den Standard bei der Verarbeitung spezieller Werte beachtet. Außerdem kann das Programm zur Laufzeit sicher auf die Gleit Komma Umgebung zugreifen oder diese ändern.
+`/fp:strict` weist ein ähnliches Verhalten auf, d. h. `/fp:precise` der Compiler behält die Quell Reihenfolge und die Rundungs Eigenschaften von Gleit Komma Code bei, wenn er Objektcode für den Zielcomputer generiert und optimiert und den Standard bei der Verarbeitung spezieller Werte beachtet. Außerdem kann das Programm zur Laufzeit sicher auf die Gleit Komma Umgebung zugreifen oder diese ändern.
 
 Unter `/fp:strict` generiert der Compiler Code, der dem Programm das sichere Aufheben der Maskierung von Gleit Komma Ausnahmen, das Lesen oder Schreiben von Gleit Komma Status Registern oder das Ändern der Rundungs Modi ermöglicht. Bei der Ausdrucks Auswertung wird die Genauigkeit des Quellcodes an vier bestimmten Punkten gerundet: bei den Zuweisungen bei Typecasts, bei Übergabe eines Gleit Komma Arguments an einen Funktions Aufruf, und wenn ein Gleit Komma Wert von einem Funktions Aufrufwert zurückgegeben wird. Zwischenberechnungen können bei der computergenauigkeit durchgeführt werden. Typecasts können verwendet werden, um Zwischenberechnungen explizit zu runden. Der Compiler führt keine algebraischen Transformationen für Gleit Komma Ausdrücke aus, z. b. Neuzuordnung oder Verteilung, es sei denn, die Transformation erzeugt ein bitweises identisches Ergebnis. Ausdrücke, die spezielle Werte (NaN, + unendlich,-unendlich,-0,0) einschließen, werden gemäß den IEEE-754-Spezifikationen verarbeitet. Beispielsweise wird `x != x` zu ausgewertet, **`true`** Wenn x NaN ist. Gleit Komma Kontraste werden nicht unter generiert `/fp:strict` .
 
-`/fp:strict`ist Rechen intensiver als der Grund `/fp:precise` dafür, dass der Compiler zusätzliche Anweisungen zum Abfangen von Ausnahmen einfügen und es Programmen ermöglicht, zur Laufzeit auf die Gleit Komma Umgebung zuzugreifen oder diese zu ändern. Wenn Ihr Code diese Funktion nicht verwendet, aber die Reihenfolge und Rundung von Quell Code erfordert, oder auf besondere Werte basiert, verwenden Sie `/fp:precise` . Andernfalls sollten Sie die Verwendung von in Erwägung gezogen `/fp:fast` , wodurch schneller und kleinerer Code erzeugt werden kann.
+`/fp:strict` ist Rechen intensiver als der Grund `/fp:precise` dafür, dass der Compiler zusätzliche Anweisungen zum Abfangen von Ausnahmen einfügen und es Programmen ermöglicht, zur Laufzeit auf die Gleit Komma Umgebung zuzugreifen oder diese zu ändern. Wenn Ihr Code diese Funktion nicht verwendet, aber die Reihenfolge und Rundung von Quell Code erfordert, oder auf besondere Werte basiert, verwenden Sie `/fp:precise` . Andernfalls sollten Sie die Verwendung von in Erwägung gezogen `/fp:fast` , wodurch schneller und kleinerer Code erzeugt werden kann.
 
 #### <a name="fast"></a>fast
 
@@ -55,7 +55,7 @@ Die- `/fp:fast` Option ermöglicht es dem Compiler, Gleit Komma Operationen neu 
 
 Unter `/fp:fast` generiert der Compiler Code, der in der standardmäßigen Gleit Komma Umgebung ausgeführt werden soll, und geht davon aus, dass die Gleit Komma Umgebung nicht zur Laufzeit aufgerufen oder geändert wird. Das heißt, es wird davon ausgegangen, dass der Code keine Gleit Komma Ausnahmen, Lese-oder Schreibvorgänge von Gleit Komma Status Registern oder die Rundungs Modi ändert.
 
-`/fp:fast`ist für Programme vorgesehen, die keine strikte Quell Code Anordnung und Rundung von Gleit Komma Ausdrücken benötigen, und die Standardregeln für die Verarbeitung spezieller Werte wie z. b. NaN nicht benötigen. Wenn Ihr Gleit Komma Code die Beibehaltung der Quell Code Ordnung und-Rundung erfordert oder das Standardverhalten spezieller Werte verwendet, verwenden Sie [/fp: präzise](#precise). Wenn Ihr Code auf die Gleit Komma Umgebung zugreift oder diese ändert, um Rundungs Modi zu ändern, die Maskierung von Gleit Komma Ausnahmen aufzuheben oder den Gleit Komma Status zu überprüfen, verwenden Sie [/fp: strict](#strict).
+`/fp:fast` ist für Programme vorgesehen, die keine strikte Quell Code Anordnung und Rundung von Gleit Komma Ausdrücken benötigen, und die Standardregeln für die Verarbeitung spezieller Werte wie z. b. NaN nicht benötigen. Wenn Ihr Gleit Komma Code die Beibehaltung der Quell Code Ordnung und-Rundung erfordert oder das Standardverhalten spezieller Werte verwendet, verwenden Sie [/fp: präzise](#precise). Wenn Ihr Code auf die Gleit Komma Umgebung zugreift oder diese ändert, um Rundungs Modi zu ändern, die Maskierung von Gleit Komma Ausnahmen aufzuheben oder den Gleit Komma Status zu überprüfen, verwenden Sie [/fp: strict](#strict).
 
 #### <a name="except"></a>davon
 
@@ -73,7 +73,7 @@ Die Option [/Za](za-ze-disable-language-extensions.md) (ANSI-Kompatibilität) is
 
 Der Compiler stellt drei pragma-Direktiven bereit, um das Gleit Komma Verhalten zu überschreiben, das in der Befehlszeile angegeben ist: [float_control](../../preprocessor/float-control.md), [fenv_access](../../preprocessor/fenv-access.md)und [fp_contract](../../preprocessor/fp-contract.md). Sie können diese Direktiven verwenden, um Gleit Komma Verhalten auf Funktionsebene und nicht innerhalb einer Funktion zu steuern. Beachten Sie, dass diese Anweisungen nicht direkt mit den `/fp` Optionen übereinstimmen. Diese Tabelle zeigt, wie die `/fp` Optionen und pragma-Direktiven einander zugeordnet werden. Weitere Informationen finden Sie in der Dokumentation für die einzelnen Optionen und pragma-Direktiven.
 
-||float_control (präzise)|float_control (außer)|fenv_access|fp_contract|
+| Option | float_control (präzise) | float_control (außer) | fenv_access | fp_contract |
 |-|-|-|-|-|
 |`/fp:fast`|aus|aus|aus|on|
 |`/fp:precise`|on|aus|aus|on|
@@ -266,7 +266,7 @@ Unter `/O2` `/fp:fast` dem generierten Code wurde vereinfacht, da alle Typumwand
 
 - Siehe <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.floatingPointModel%2A>.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
 [MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)<br/>

@@ -28,12 +28,12 @@ helpviewer_keywords:
 - arrays [CRT], binary search
 - bsearch function
 ms.assetid: e0ad2f47-e7dd-49ed-8288-870457a14a2c
-ms.openlocfilehash: 7843c1cd15a4bd39e1b24676402d635bd5f2de90
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 3a6083f39e12182ae512f5327b5f7d8d89deb2a2
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82913382"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90039546"
 ---
 # <a name="bsearch"></a>bsearch
 
@@ -53,13 +53,13 @@ void *bsearch(
 
 ### <a name="parameters"></a>Parameter
 
-*key*\
+*wichtigen*\
 Zeiger auf den Schlüssel, nach dem gesucht werden soll.
 
 *sock*\
 Ein Zeiger auf die Basis der Suchdaten.
 
-*number*\
+*einigen*\
 Anzahl der Elemente.
 
 *Breite*\
@@ -72,23 +72,23 @@ Rückruffunktion, die zwei Elemente vergleicht. Der erste ist ein Zeiger auf den
 
 **bsearch** gibt einen Zeiger auf ein Vorkommen von *Key* in dem Array zurück, auf das von *Base*verwiesen wird. Wenn *Key* nicht gefunden wird, gibt die Funktion **null**zurück. Wenn das Array nicht in aufsteigender Reihenfolge sortiert ist oder doppelte Datensätze mit identischen Schlüsseln enthält, ist das Ergebnis nicht vorhersehbar.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **bsearch** -Funktion führt eine binäre Suche eines sortierten Arrays von *Zahlen* Elementen durch, wobei jede *Breite* Byte groß ist. Der *Basiswert* ist ein Zeiger auf die Basis des zu durchsuchenden Arrays, und *Key* ist der Wert, der gesucht wird. Der *Compare* -Parameter ist ein Zeiger auf eine vom Benutzer bereitgestellte Routine, die den angeforderten Schlüssel mit einem Array Element vergleicht. Sie gibt einen der folgenden Werte zurück, die ihre Beziehung angeben:
 
-|Von der *Vergleichs* Routine zurückgegebener Wert|Beschreibung|
+|Von der *Vergleichs* Routine zurückgegebener Wert|BESCHREIBUNG|
 |-----------------------------------------|-----------------|
-|\< 0|Der Schlüssel ist kleiner als das Arrayelement.|
-|0|Schlüssel und Arrayelement sind gleich.|
-|> 0|Der Schlüssel ist größer als das Arrayelement.|
+|`< 0`|Der Schlüssel ist kleiner als das Arrayelement.|
+|`0`|Schlüssel und Arrayelement sind gleich.|
+|`> 0`|Der Schlüssel ist größer als das Arrayelement.|
 
-Diese Funktion überprüft ihre Parameter. Wenn *Compare*, *Key* oder *Number* **null**ist, oder wenn *Base* **null** und *Number* ungleich NULL ist, oder wenn *Width* gleich 0 (null) ist, ruft die Funktion den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf `EINVAL` festgelegt, und die Funktion gibt **null**zurück.
+Diese Funktion überprüft ihre Parameter. Wenn *Compare*, *Key* oder *Number* **null**ist, oder wenn *Base* **null** und *Number* ungleich NULL ist, oder wenn *Width* gleich 0 (null) ist, ruft die Funktion den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, wird **errno** auf festgelegt, `EINVAL` und die Funktion gibt **null**zurück.
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**bsearch**|\<stdlib.h> und \<search.h>|
 

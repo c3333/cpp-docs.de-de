@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - scheduler policies
 ms.assetid: 58fb68bd-4a57-40a8-807b-6edb6f083cd9
-ms.openlocfilehash: d074646a333090138c916bc4d3b7a2e072731b3d
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: a962c00d23c41d97087e705d395b601afc7b1910
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87228413"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90042042"
 ---
 # <a name="scheduler-policies"></a>Planerrichtlinien
 
@@ -26,17 +26,17 @@ Bei Verwendung der Parallelität [:: CurrentScheduler:: Create](reference/curren
 
 Die Enumeration " [parallelcurrency::P olicyelementkey](reference/concurrency-namespace-enums.md#policyelementkey) " definiert die dem Taskplaner zugeordneten Richtlinien Schlüssel. In der folgenden Tabelle werden die Richtlinien Schlüssel und der Standardwert beschrieben, der von der Common Language Runtime für diese verwendet wird.
 
-|Richtlinien Schlüssel|BESCHREIBUNG|Standardwert|
-|----------------|-----------------|-------------------|
-|`SchedulerKind`|Ein [parallelcurrency:: SchedulerType](reference/concurrency-namespace-enums.md#schedulertype) -Wert, der den Typ der Threads angibt, die zum Planen von Tasks verwendet werden sollen.|`ThreadScheduler`(verwenden Sie normale Threads). Dies ist der einzige gültige Wert für diesen Schlüssel.|
-|`MaxConcurrency`|Ein- **`unsigned int`** Wert, der die maximale Anzahl von Parallelitäts Ressourcen angibt, die vom Scheduler verwendet werden.|[Parallelität:: MaxExecutionResources](reference/concurrency-namespace-constants1.md#maxexecutionresources)|
-|`MinConcurrency`|Ein- **`unsigned int`** Wert, der die Mindestanzahl von Parallelitäts Ressourcen angibt, die vom Scheduler verwendet werden.|`1`|
-|`TargetOversubscriptionFactor`|Ein- **`unsigned int`** Wert, der angibt, wie viele Threads den einzelnen Verarbeitungs Ressourcen zuzuordnen sind.|`1`|
-|`LocalContextCacheSize`|Ein- **`unsigned int`** Wert, der die maximale Anzahl von Kontexten angibt, die in der lokalen Warteschlange jedes virtuellen Prozessors zwischengespeichert werden können.|`8`|
-|`ContextStackSize`|Ein- **`unsigned int`** Wert, der die Größe des Stapels in Kilobyte angibt, die für jeden Kontext reserviert werden soll.|`0`(Standard Stapelgröße verwenden)|
-|`ContextPriority`|Ein- **`int`** Wert, der die Thread Priorität jedes Kontexts angibt. Dies kann ein beliebiger Wert sein, den Sie an [SetThreadPriority](/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreadpriority) oder übergeben können `INHERIT_THREAD_PRIORITY` .|`THREAD_PRIORITY_NORMAL`|
-
-|`SchedulingProtocol`| Ein " [parallelcurrency:: SchedulingProtocolType](reference/concurrency-namespace-enums.md#schedulingprotocoltype) "-Wert, der den zu verwendenden Planungs Algorithmus angibt. | `EnhanceScheduleGroupLocality` | |`DynamicProgressFeedback`| Ein [parallelcurrency::D ynamicprogressfeedbacktype](reference/concurrency-namespace-enums.md#dynamicprogressfeedbacktype) -Wert, der angibt, ob Ressourcen entsprechend den Statistik basierten Statusinformationen ausgeglichen werden sollen.<br /><br /> **Hinweis** Legen Sie diese Richtlinie nicht auf fest, `ProgressFeedbackDisabled` da Sie für die Verwendung durch die Laufzeit reserviert ist. |`ProgressFeedbackEnabled`|
+| Richtlinien Schlüssel | BESCHREIBUNG | Standardwert |
+|--|--|--|
+| `SchedulerKind` | Ein [parallelcurrency:: SchedulerType](reference/concurrency-namespace-enums.md#schedulertype) -Wert, der den Typ der Threads angibt, die zum Planen von Tasks verwendet werden sollen. | `ThreadScheduler` (verwenden Sie normale Threads). Dies ist der einzige gültige Wert für diesen Schlüssel. |
+| `MaxConcurrency` | Ein- **`unsigned int`** Wert, der die maximale Anzahl von Parallelitäts Ressourcen angibt, die vom Scheduler verwendet werden. | [Parallelität:: MaxExecutionResources](reference/concurrency-namespace-constants1.md#maxexecutionresources) |
+| `MinConcurrency` | Ein- **`unsigned int`** Wert, der die Mindestanzahl von Parallelitäts Ressourcen angibt, die vom Scheduler verwendet werden. | `1` |
+| `TargetOversubscriptionFactor` | Ein- **`unsigned int`** Wert, der angibt, wie viele Threads den einzelnen Verarbeitungs Ressourcen zuzuordnen sind. | `1` |
+| `LocalContextCacheSize` | Ein- **`unsigned int`** Wert, der die maximale Anzahl von Kontexten angibt, die in der lokalen Warteschlange jedes virtuellen Prozessors zwischengespeichert werden können. | `8` |
+| `ContextStackSize` | Ein- **`unsigned int`** Wert, der die Größe des Stapels in Kilobyte angibt, die für jeden Kontext reserviert werden soll. | `0` (Standard Stapelgröße verwenden) |
+| `ContextPriority` | Ein- **`int`** Wert, der die Thread Priorität jedes Kontexts angibt. Dies kann ein beliebiger Wert sein, den Sie an [SetThreadPriority](/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreadpriority) oder übergeben können `INHERIT_THREAD_PRIORITY` . | `THREAD_PRIORITY_NORMAL` |
+| `SchedulingProtocol` | Ein " [parallelcurrency:: SchedulingProtocolType](reference/concurrency-namespace-enums.md#schedulingprotocoltype) "-Wert, der den zu verwendenden Planungs Algorithmus angibt. | `EnhanceScheduleGroupLocality` |
+| `DynamicProgressFeedback` | Ein [parallelcurrency::D ynamicprogressfeedbacktype](reference/concurrency-namespace-enums.md#dynamicprogressfeedbacktype) -Wert, der angibt, ob Ressourcen entsprechend den Statistik basierten Statusinformationen ausgeglichen werden sollen.<br /><br /> **Hinweis** Legen Sie diese Richtlinie nicht auf fest, `ProgressFeedbackDisabled` da Sie für die Verwendung durch die Laufzeit reserviert ist. | `ProgressFeedbackEnabled` |
 
 Jeder Planer verwendet seine eigene Richtlinie, wenn er Tasks plant. Die Richtlinien, die einem Scheduler zugeordnet sind, wirken sich nicht auf das Verhalten anderer Planer aus. Außerdem können Sie die Scheduler-Richtlinie nicht ändern, nachdem Sie das-Objekt erstellt haben `Scheduler` .
 
@@ -51,8 +51,8 @@ Verwenden Sie die [Concurrency:: CurrentScheduler:: GetPolicy](reference/current
 
 Beispiele, in denen bestimmte Scheduler-Richtlinien zum Steuern des Verhaltens des Zeit Planungs Moduls verwendet werden, finden Sie unter Gewusst [wie: Angeben spezifischer Scheduler-Richtlinien](../../parallel/concrt/how-to-specify-specific-scheduler-policies.md) und Gewusst [wie: Erstellen von Agents, die bestimmte planerrichtlinien verwenden](../../parallel/concrt/how-to-create-agents-that-use-specific-scheduler-policies.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Taskplaner](../../parallel/concrt/task-scheduler-concurrency-runtime.md)<br/>
+[Aufgabenplanung](../../parallel/concrt/task-scheduler-concurrency-runtime.md)<br/>
 [Vorgehensweise: Angeben spezifischer Scheduler-Richtlinien](../../parallel/concrt/how-to-specify-specific-scheduler-policies.md)<br/>
 [Gewusst wie: Erstellen von Agents, die bestimmte planerrichtlinien verwenden](../../parallel/concrt/how-to-create-agents-that-use-specific-scheduler-policies.md)

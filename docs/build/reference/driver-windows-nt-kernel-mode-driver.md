@@ -10,12 +10,12 @@ helpviewer_keywords:
 - DRIVER linker option
 - /DRIVER linker option
 ms.assetid: aeee8e28-5d97-40f5-ba16-9f370fe8a1b8
-ms.openlocfilehash: 5639344ede4007bd66a3d51043f4acb423426b94
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: c935c20d6c1c009cff64d48e0c0122c8b91bbba3
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88842974"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90041158"
 ---
 # <a name="driver-windows-nt-kernel-mode-driver"></a>/DRIVER (Treiber für den Kernelmodus von Windows NT)
 
@@ -33,9 +33,9 @@ Wenn **/Driver** nicht angegeben ist, werden diese Bits nicht vom Linker festgel
 
 Wenn **/Driver** angegeben wird:
 
-- **/Fixed: No** ist in Kraft. Weitere Informationen finden Sie unter [/FIXED (Feste Basisadresse)](fixed-fixed-base-address.md).
+- **/Fixed: No** ist in Kraft. Weitere Informationen finden Sie unter [/Fixed (Fixed base address)](fixed-fixed-base-address.md).
 
-- Die Erweiterung der Ausgabedatei wird auf. sys festgelegt. Verwenden Sie **/out** , um den Standard Dateinamen und die Erweiterung zu ändern Weitere Informationen finden Sie unter [/OUT (Ausgabedateiname)](out-output-file-name.md).
+- Die Erweiterung der Ausgabedatei wird auf. sys festgelegt. Verwenden Sie **/out** , um den Standard Dateinamen und die Erweiterung zu ändern Weitere Informationen finden Sie unter [/out (Name der Ausgabedatei)](out-output-file-name.md).
 
 ### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Linkeroption in der Visual Studio-Entwicklungsumgebung fest
 
@@ -49,7 +49,7 @@ Wenn **/Driver** angegeben wird:
 
 ### <a name="to-set-this-linker-option-programmatically"></a>So legen Sie diese Linkeroption programmgesteuert fest
 
-- Siehe [VCLinkerTool. Driver-Eigenschaft](/dotnet/api/microsoft.visualstudio.vcprojectengine.vclinkertool.driver?view=visualstudiosdk-2017#Microsoft_VisualStudio_VCProjectEngine_VCLinkerTool_driver).
+- Siehe [VCLinkerTool. Driver-Eigenschaft](/dotnet/api/microsoft.visualstudio.vcprojectengine.vclinkertool.driver).
 
 ## <a name="see-also"></a>Weitere Informationen
 

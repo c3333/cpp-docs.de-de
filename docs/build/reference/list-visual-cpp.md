@@ -1,5 +1,5 @@
 ---
-title: '&lt;Liste > (C++ Dokumentations Kommentare)'
+title: '&lt;Listen> (C++-Dokumentations Kommentare)'
 ms.date: 11/04/2016
 f1_keywords:
 - list
@@ -7,20 +7,20 @@ helpviewer_keywords:
 - list C++ XML tag
 - <list> C++ XML tag
 ms.assetid: c792a10b-0451-422c-9aa0-604116e69d64
-ms.openlocfilehash: 102cf9f7b1b867a012f662ce786d97012826abd1
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 24f9b17c67b8f951743fd51c04266b05dad235c7
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79439305"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90041964"
 ---
-# <a name="ltlistgt"></a>&lt;list&gt;
+# <a name="ltlistgt-and-ltlistheadergt"></a>&lt;List &gt; und &lt; lisderader&gt;
 
 Der \<listheader>-Block wird verwendet, um die Überschriftenzeile einer Tabelle oder einer Definitionsliste zu definieren. Bei der Definition einer Tabelle müssen Sie nur einen Eintrag für „term“ in der Überschrift angeben.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```xml
 <list type="bullet" | "number" | "table">
    <listheader>
       <term>term</term>
@@ -35,19 +35,19 @@ Der \<listheader>-Block wird verwendet, um die Überschriftenzeile einer Tabelle
 
 #### <a name="parameters"></a>Parameter
 
-*term*<br/>
+*zeitig*<br/>
 Ein zu definierender Begriff, der in `description` definiert wird.
 
 *description*<br/>
 Entweder ein Element einer Aufzählung oder nummerierten Liste oder die Definition eines `term`.
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Jedes Element der Liste wird mit einem \<item>-Block angegeben. Beim Erstellen einer Definitionsliste müssen Sie sowohl `term` als auch `description` angeben. Für eine Tabelle, eine Auflistung oder eine nummerierte Liste muss jedoch nur ein Eintrag für `description` angegeben werden.
 
 Eine Liste oder Tabelle kann so viele \<item>-Blöcke besitzen wie nötig.
 
-Dokumentationskommentare werden zu einer Datei verarbeitet, indem sie mit [/doc](doc-process-documentation-comments-c-cpp.md) kompiliert werden.
+Kompilieren Sie mit [/doc](doc-process-documentation-comments-c-cpp.md) , um Dokumentations Kommentare in einer Datei zu verarbeiten.
 
 ## <a name="example"></a>Beispiel
 

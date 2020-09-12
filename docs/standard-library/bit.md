@@ -6,12 +6,12 @@ f1_keywords:
 - <bit>
 helpviewer_keywords:
 - bit header
-ms.openlocfilehash: 7a87071d30756714e19c971281f642ce16f09d61
-ms.sourcegitcommit: 3628707bc17c99aac7aac27eb126cc2eaa4d07b4
+ms.openlocfilehash: 5652d0af767520710ee08b1827e0df27c477ee6d
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89194762"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90040053"
 ---
 # <a name="ltbitgt"></a>&lt;bit&gt;
 
@@ -19,13 +19,13 @@ Definiert Funktionen für den Zugriff auf, die Bearbeitung und Verarbeitung einz
 
 Beispielsweise gibt es Funktionen zum Rotieren von Bits, zum Ermitteln der Anzahl von aufeinander folgenden oder gelöschten Bits. Informationen dazu, ob eine Zahl eine ganzzahlige Potenz von zwei ist, die kleinste Anzahl von Bits zum Darstellen einer Zahl finden usw.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:**\<bit>
 
 **Namespace:** std
 
-`/std:c++latest` ist erforderlich
+[/Std: c + + Latest](../build/reference/std-specify-language-standard-version.md) ist erforderlich.
 
 ## <a name="members"></a>Member
 

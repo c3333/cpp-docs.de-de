@@ -5,12 +5,12 @@ f1_keywords:
 - functional/std::default_searcher
 helpviewer_keywords:
 - std::default_searcher [C++]
-ms.openlocfilehash: 3b5b05dfa2613f9eeaaa18fa8066bcd44f57d1be
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 307fc6da3b383690e0b65bff2a72f386a37d6711
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87203727"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90039689"
 ---
 # <a name="default_searcher-class"></a>default_searcher-Klasse
 
@@ -36,14 +36,14 @@ class default_searcher
 
 ## <a name="members"></a>Member
 
-| | |
+| Member | BESCHREIBUNG |
 | - | - |
 | **Konstruktor** | |
-| [default_searcher](#default-searcher-constructor) | |
+| [default_searcher](#default-searcher-constructor) | Erstellt eine Searcher-Instanz. |
 | **Operatoren** | |
-| [Operator ()](#operator-call) | |
+| [Operator ()](#operator-call) | Ruft den Vorgang für die Sequenz auf. |
 
-## <a name="default_searcher-constructor"></a><a name="default-searcher-constructor"></a>default_searcher-Konstruktor
+## <a name="default_searcher-constructor"></a><a name="default-searcher-constructor"></a> default_searcher-Konstruktor
 
 Erstellt ein `default_searcher` Funktions Objekt, indem die zu suchende Sequenz und ein Gleichheits Prädikat verwendet werden.
 
@@ -76,7 +76,7 @@ Löst eine beliebige Ausnahme aus, die vom Kopierkonstruktor der Typen *BinaryPr
 
 Diese Klasse ist neu in c++ 17. C++ 20 hat den Konstruktor erstellt **`constexpr`** .
 
-## <a name="operator"></a><a name="operator-call"></a>Operator ()
+## <a name="operator"></a><a name="operator-call"></a> Operator ()
 
 Der calloperator des Funktions Operators. Sucht innerhalb der Argument Sequenz `[first, last)` nach der Sequenz, die für den Konstruktor angegeben wird.
 

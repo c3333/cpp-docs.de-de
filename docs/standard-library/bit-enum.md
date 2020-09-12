@@ -1,19 +1,19 @@
 ---
-title: dendian-Aufzählung
+title: endian-Enumerator
 description: Enumeration, die verwendet wird, um die Enumeration von skalaren Typen anzugeben.
 ms.date: 08/27/2020
 f1_keywords:
 - bit/std::endian
 helpviewer_keywords:
 - std::endian
-ms.openlocfilehash: 78df181e20d0e5d72508bd0fc86118528a312d6b
-ms.sourcegitcommit: 3628707bc17c99aac7aac27eb126cc2eaa4d07b4
+ms.openlocfilehash: b535bc009fbdc0b047444a6bc2ca36eed7a6d1cb
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89194759"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90040079"
 ---
-# <a name="endian-enum"></a>dendian-Aufzählung
+# <a name="endian-enum"></a>endian-Enumerator
 
 Gibt die enumerität aller skalaren Typen an.
 
@@ -38,13 +38,13 @@ enum class endian {
 
 Alle nativen skalaren Typen sind Little-Endian für die Plattformen, die Microsoft Visual C++ Ziele (x86, x64, arm, ARM64).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:**\<bit>
 
 **Namespace:** std
 
-`/std:c++latest` ist erforderlich
+[/Std: c + + Latest](../build/reference/std-specify-language-standard-version.md) ist erforderlich.
 
 ## <a name="see-also"></a>Weitere Informationen
 

@@ -17,12 +17,12 @@ helpviewer_keywords:
 - optimization, linker
 - /OPT linker option
 ms.assetid: 8f229863-5f53-48a8-9478-243a647093ac
-ms.openlocfilehash: 874c4b974348d1bef8c8c3837f46c1c27d6d304b
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 7f576d971425a67fc533bb417583173617615e3b
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87215191"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90040404"
 ---
 # <a name="opt-optimizations"></a>/OPT (Optimierungen)
 
@@ -30,9 +30,9 @@ Steuert die Optimierungen, die während eines Builds von LINK ausgeführt werden
 
 ## <a name="syntax"></a>Syntax
 
-> **/OPT:**{**ref**  |  **NOREF**} \
-> **/OPT:**{**ICF**[ **=** _Iterationen_] | **NOICF**} \
-> **/OPT:**{**LBR**  |  **nolbr**}
+> **/OPT:**{**ref** \| **NOREF**} \
+> **/OPT:**{**ICF**- \[ **=** _Iterationen_] \| **NOICF**} \
+> **/OPT:**{**LBR** \| **nolbr**}
 
 ## <a name="arguments"></a>Argumente
 

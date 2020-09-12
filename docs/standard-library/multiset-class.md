@@ -1,6 +1,7 @@
 ---
 title: multiset-Klasse
-ms.date: 11/04/2016
+description: API-Referenz für die STL-Klasse (C++ Standard Template Library) `multiset` , die zum Speichern und Abrufen von Daten aus einer Auflistung verwendet wird, in der die Werte der enthaltenen Elemente nicht eindeutig sein müssen und in denen Sie als Schlüsselwerte dienen, nach denen die Daten automatisch geordnet werden.
+ms.date: 9/9/2020
 f1_keywords:
 - set/std::multiset
 - set/std::multiset::allocator_type
@@ -22,6 +23,7 @@ f1_keywords:
 - set/std::multiset::cbegin
 - set/std::multiset::cend
 - set/std::multiset::clear
+- set/std::multiset::contains
 - set/std::multiset::count
 - set/std::multiset::crbegin
 - set/std::multiset::crend
@@ -64,6 +66,7 @@ helpviewer_keywords:
 - std::multiset [C++], cbegin
 - std::multiset [C++], cend
 - std::multiset [C++], clear
+- std::multiset [C++], contains
 - std::multiset [C++], count
 - std::multiset [C++], crbegin
 - std::multiset [C++], crend
@@ -86,16 +89,16 @@ helpviewer_keywords:
 - std::multiset [C++], upper_bound
 - std::multiset [C++], value_comp
 ms.assetid: 630e8c10-0ce9-4ad9-8d79-9e91a600713f
-ms.openlocfilehash: 69a884a2b60e7838154586dd0dcc8c1d54681b53
-ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
+ms.openlocfilehash: e857a4f6369b9aa939b5dcba17e02efaf81600b0
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88561166"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90040950"
 ---
 # <a name="multiset-class"></a>multiset-Klasse
 
-Die multiset-Klasse der C++-Standardbibliothek wird zum Speichern und Abrufen von Daten aus Auflistungen verwendet, in denen die Werte der jeweiligen Elemente nicht eindeutig sein müssen und in denen sie als die Schlüsselwerte dienen, nach denen die Daten automatisch sortiert werden. Der Schlüsselwert eines Elements in einer Multimenge darf nicht direkt geändert werden. Stattdessen müssen alte Werte gelöscht und Elemente mit neuen Werten eingefügt werden.
+Die multiset-Klasse der C++-Standardbibliothek wird zum Speichern und Abrufen von Daten aus Auflistungen verwendet, in denen die Werte der jeweiligen Elemente nicht eindeutig sein müssen und in denen sie als die Schlüsselwerte dienen, nach denen die Daten automatisch sortiert werden. Der Schlüsselwert eines Elements in einem `multiset` darf nicht direkt geändert werden. Stattdessen müssen alte Werte gelöscht und Elemente mit neuen Werten eingefügt werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -107,19 +110,19 @@ class multiset
 ### <a name="parameters"></a>Parameter
 
 *Wichtigen*\
-Der in der Multimenge zu speichernde Elementdatentyp.
+Der in `multiset` zu speichernde Elementdatentyp.
 
 *Vergleichbar*\
-Der Typ, der ein Funktionsobjekt bereitstellt, das zwei Elementwerte als Sortierschlüssel vergleichen kann, um deren relative Reihenfolge in der Multimenge zu bestimmen. Das binäre Prädikat **less** \<Key> ist der Standardwert.
+Der Typ, der ein Funktions Objekt bereitstellt, das zwei Element Werte als Sortierschlüssel vergleichen kann, um ihre relative Reihenfolge in der zu bestimmen `multiset` . Das binäre Prädikat **less** \<Key> ist der Standardwert.
 
-In C ++ 14 können Sie heterogenes Nachschlagen durch Angabe des `std::less<>` oder `std::greater<>` Prädikats, das keine Typparameter aufweist, aktivieren. Weitere Informationen finden Sie unter [Heterogenes Nachschlagen in assoziativen Containern](../standard-library/stl-containers.md#sequence_containers).
+In c++ 14 können Sie heterogenes Nachschlagen durch Angabe des- `std::less<>` oder- `std::greater<>` Prädikats aktivieren, das keine Typparameter aufweist. Weitere Informationen finden [Sie unter heterogenes Nachschlagen in assoziativen Containern](../standard-library/stl-containers.md#sequence_containers) .
 
 *Allocator*\
-Der Typ, mit dem das gespeicherte Zuordnungsobjekt dargestellt wird, mit dem Details zum Belegen und Freigeben des Arbeitsspeichers der Multimenge gekapselt werden. Der Standardwert ist `allocator<Key>`.
+Der Typ, der das gespeicherte Zuweisungs Objekt darstellt, das Details zur `multiset` Zuordnung und Freigabe von Arbeitsspeicher für den Speicher kapselt. Der Standardwert ist `allocator<Key>`.
 
 ## <a name="remarks"></a>Hinweise
 
-Auf die multiset-Klasse der C++-Standardbibliothek treffen die folgenden Punkte zu:
+Die Klasse der C++-Standard Bibliothek `multiset` ist:
 
 - Ein assoziativer Container, der ein Container variabler Größe ist, der den effizienten Abruf von Elementwerten auf Grundlage eines zugeordneten Schlüsselwerts unterstützt.
 
@@ -127,21 +130,21 @@ Auf die multiset-Klasse der C++-Standardbibliothek treffen die folgenden Punkte 
 
 - Sortiert, da die Elemente anhand von Schlüsselwerten innerhalb des Containers mit einer angegebenen Vergleichsfunktion sortiert werden.
 
-- Mehrfach insofern, als die Elemente keine eindeutigen Schlüssel aufweisen müssen, damit ein Schlüsselwert über viele zugeordnete Elementdatenwerte verfügen kann.
+- Mehrere in dem Sinne, dass die Elemente keine eindeutigen Schlüssel aufweisen müssen, damit einem Schlüsselwert viele Element Werte zugeordnet werden können.
 
 - Ein einfacher assoziativer Container, da die Elementwerte den Schlüsselwerten entsprechen.
 
 - Eine Klassen Vorlage, da die von ihr bereitgestellte Funktionalität generisch und daher unabhängig vom jeweiligen Typ der Daten ist, die als Elemente enthalten sind. Der zu verwendende Datentyp wird stattdessen in der Klassenvorlage zusammen mit der Vergleichsfunktion und der Zuweisung als Parameter angegeben.
 
-Der von der multiset-Klasse bereitgestellte Iterator ist bidirektional. Die Klassenmemberfunktionen [insert](#insert) and [multiset](#multiset) weisen jedoch Versionen auf, die einen abgeschwächten Eingabeiterator als Vorlagenparameter akzeptieren. Die Funktionalitätsanforderungen dieses Eingabeiterators sind weniger umfangreich als die Anforderungen, die von der Klasse bidirektionaler Iteratoren gewährleistet werden. Die verschiedenen Iteratorkonzepte bilden eine Family, die durch Verfeinerungen in ihrer Funktionen verknüpft ist. Jedes Iteratorkonzept weist einen eigenen Satz von Anforderungen auf, und die damit funktionierenden Algorithmen müssen die Annahmen hinsichtlich der von diesem Iteratortyp bereitgestellten Anforderungen begrenzen. Es kann davon ausgegangen werden, dass ein Eingabeiterator möglicherweise so dereferenziert wird, dass er auf ein Objekt verweist und dieses möglicherweise zum folgenden Iterator in der Sequenz erhöht. Obwohl es sich dabei nur um eine Mindestmenge von Funktionen handelt, reichen sie aus, um auf sinnvolle Weise über einen Bereich von Iteratoren [ `First`, `Last`) im Zusammenhang mit den Klassenmemberfunktionen zu sprechen.
+Der von der-Klasse bereitgestellte Iterator `multiset` ist ein bidirektionaler Iterator, aber die-Klassenmember-Funktionen [Insert](#insert) und Multiset verfügen über Versionen, die als Vorlagen Parameter einen schwächeren eingabeiterator akzeptieren [multiset](#multiset) , dessen Funktionsanforderungen minimal sind, als die von der Klasse der bidirektionalen Iteratoren garantierten. Die verschiedenen Iteratorkonzepte bilden eine Family, die durch Verfeinerungen in ihrer Funktionen verknüpft ist. Jedes Iteratorkonzept weist einen eigenen Satz von Anforderungen auf, und die damit funktionierenden Algorithmen müssen die Annahmen hinsichtlich der von diesem Iteratortyp bereitgestellten Anforderungen begrenzen. Es kann davon ausgegangen werden, dass ein Eingabeiterator möglicherweise so dereferenziert wird, dass er auf ein Objekt verweist und dieses möglicherweise zum folgenden Iterator in der Sequenz erhöht. Obwohl es sich dabei nur um eine Mindestmenge von Funktionen handelt, reichen sie aus, um auf sinnvolle Weise über einen Bereich von Iteratoren [ `First`, `Last`) im Zusammenhang mit den Klassenmemberfunktionen zu sprechen.
 
-Die Auswahl des Containertyps sollte im Allgemeinen auf Grundlage des für die Anwendung erforderlichen Suchen und Einfügetyps erfolgen. Assoziative Container sind für Such-, Einfüge- und Entfernvorgänge optimiert. Die Memberfunktionen, die diese Vorgänge explizit unterstützen, sind effizient und führen sie in einer Zeit aus, die zum Logarithmus der Elementanzahl im Container im Durchschnitt proportional ist. Das Einfügen von Elementen führt nicht dazu, dass Iteratoren ungültig werden, und durch das Entfernen von Elementen werden nur solche Iteratoren ungültig, die speziell auf die entfernten Elemente gezeigt haben.
+Die Auswahl des Containertyps sollte im Allgemeinen auf Grundlage des für die Anwendung erforderlichen Suchen und Einfügetyps erfolgen. Assoziative Container sind auf Such-, Einfüge- und Entfernvorgänge optimiert. Die Member-Funktionen, die diese Vorgänge explizit unterstützen, sind effizient und werden in einer Zeit ausgeführt, die im Durchschnitt proportional zum Logarithmus der Anzahl von Elementen im Container ist. Durch das Einfügen von Elementen werden keine Iteratoren ungültig, und durch das Entfernen von Elementen werden nur die Iteratoren ungültig, die auf die entfernten Elemente verwiesen haben.
 
-Die Multimenge sollte der ausgewählte assoziative Container sein, wenn die Bedingungen, mit denen die Werte von der Anwendung den Schlüsseln zugeordnet werden, erfüllt werden. Die Elemente einer Multimenge können Mehrfache sein und als eigene Sortierschlüssel dienen, sodass Schlüssel nicht eindeutig sind. Ein Modell für diesen Typ der Struktur ist eine geordnete Liste von z. B. Wörtern, in denen die Wörter möglicherweise mehrmals auftreten. Wenn mehrfaches Vorkommen der Wörter nicht zugelassen wurde, ist eine Menge die geeignete Containerstruktur. Wenn eindeutige Definitionen als Werte zur Liste von eindeutigen Schlüsselwörtern angefügt wurden, ist eine Zuordnung eine äquivalente Struktur, um diese Daten zu enthalten. Wenn stattdessen die Definitionen nicht eindeutig sind, ist eine Mehrfachzuordnung der geeignete Container.
+`multiset`Sollte der ausgewählte assoziative Container sein, wenn die Bedingungen, mit denen die Werte den Schlüsseln zugeordnet werden, von der Anwendung erfüllt werden. Die Elemente eines `multiset` können mehrere sein und als eigene Sortierschlüssel dienen, sodass Schlüssel nicht eindeutig sind. Ein Modell für diesen Typ der Struktur ist eine geordnete Liste von z. B. Wörtern, in denen die Wörter möglicherweise mehrmals auftreten. Wenn mehrfaches Vorkommen der Wörter nicht zugelassen wurde, ist eine Menge die geeignete Containerstruktur. Wenn eindeutige Definitionen als Werte zur Liste von eindeutigen Schlüsselwörtern angefügt wurden, ist eine Zuordnung eine äquivalente Struktur, um diese Daten zu enthalten. Wenn stattdessen die Definitionen nicht eindeutig sind, ist ein `multimap` der Container der Wahl.
 
-Das multiset ordnet die Sequenz, die es steuert, durch Aufrufen eines gespeicherten Funktions Objekts vom Typ " *Compare*" an. Bei diesem gespeicherten Objekt handelt es sich um eine Vergleichsfunktion, auf die durch Aufrufen der Memberfunktion [key_comp](#key_comp) zugegriffen werden kann. Im Allgemeinen müssen die Elemente der Vorwärtsiteratoren etwas weniger als vergleichbar sein, um diese Sortierung zu erstellen, sodass beliebige zwei Elemente möglicherweise als gleichwertig bestimmt werden (in dem Sinne, dass keins geringer als das Andere ist), oder dass eins geringer als das Andere ist. Dies führt zu einer Sortierung zwischen den nicht gleichwertigen Elementen. Etwas technischer betrachtet ist die Vergleichsfunktion ein binäres Prädikat, das eine strenge schwache Sortierung im mathematischen Sinn verursacht. Bei einem binären *f*( *x*, *y*)-Prädikat handelt es sich um ein Funktions Objekt, das die zwei Argument Objekte *x* und *y* aufweist sowie einen Rückgabewert von **`true`** oder **`false`** . Eine Sortierung, die auf eine Menge angewendet wird, ist eine strenge schwache Sortierung, wenn das binäre Prädikat irreflexiv, antisymmetrisch und transitiv ist und wenn die Äquivalenz transitiv ist, wobei die beiden Objekte x und y als äquivalent definiert werden, wenn sowohl *f*( *x,y*) als auch *f*( *y,x*) FALSE sind. Wenn der stärkere Gleichheitszustand zwischen Schlüsseln die Äquivalenz ersetzt, erfolgt die Sortierung total (d. h., alle Elemente werden zueinander sortiert), und die verglichenen Schlüssel sind von den einander nicht mehr zu unterscheiden.
+`multiset`Ordnet die Sequenz, die es steuert, durch Aufrufen eines gespeicherten Funktions Objekts vom Typ " *Compare*" an. Bei diesem gespeicherten Objekt handelt es sich um eine Vergleichsfunktion, auf die durch Aufrufen der Memberfunktion [key_comp](#key_comp) zugegriffen werden kann. Im Allgemeinen müssen die Elemente lediglich weniger als vergleichbar sein, um diese Reihenfolge zu erstellen, sodass Sie bei jedem der beiden Elemente entweder so bestimmt werden kann, dass Sie äquivalent sind (in dem Sinne, dass keines kleiner als das andere ist) oder dass eins kleiner als das andere ist. Dies führt zu einer Sortierung zwischen den nicht gleichwertigen Elementen. Etwas technischer betrachtet ist die Vergleichsfunktion ein binäres Prädikat, das eine strenge schwache Sortierung im mathematischen Sinn verursacht. Bei einem binären *f*(*x*, *y*)-Prädikat handelt es sich um ein Funktions Objekt, das die zwei Argument Objekte *x* und *y* aufweist sowie einen Rückgabewert von **`true`** oder **`false`** . Eine für einen Satz vorgegebene Reihenfolge ist eine strikte schwache Reihenfolge, wenn das binäre Prädikat unreflexiv, antisymmetrisch und transitiv ist und wenn die Äquivalenz transitiv ist, wobei die beiden Objekte x und y als Äquivalent definiert werden, wenn sowohl *f*(*x, y*) als auch *f*(*y, x*) false sind. Wenn der stärkere Gleichheitszustand zwischen Schlüsseln die Äquivalenz ersetzt, erfolgt die Sortierung total (d. h., alle Elemente werden zueinander sortiert), und die verglichenen Schlüssel sind von den einander nicht mehr zu unterscheiden.
 
-In C ++ 14 können Sie heterogenes Nachschlagen durch Angabe des `std::less<>` oder `std::greater<>` Prädikats, das keine Typparameter aufweist, aktivieren. Weitere Informationen finden Sie unter [Heterogenes Nachschlagen in assoziativen Containern](../standard-library/stl-containers.md#sequence_containers).
+In c++ 14 können Sie heterogenes Nachschlagen durch Angabe des- `std::less<>` oder- `std::greater<>` Prädikats aktivieren, das keine Typparameter aufweist. Weitere Informationen finden [Sie unter heterogenes Nachschlagen in assoziativen Containern](../standard-library/stl-containers.md#sequence_containers) .
 
 ### <a name="constructors"></a>Konstruktoren
 
@@ -156,7 +159,7 @@ In C ++ 14 können Sie heterogenes Nachschlagen durch Angabe des `std::less<>` o
 |[allocator_type](#allocator_type)|Eine Typedef für die `allocator`-Klasse für das `multiset`-Objekt.|
 |[const_iterator](#const_iterator)|Eine typedef für einen bidirektionalen Iterator, der ein- **`const`** Element in der lesen kann `multiset` .|
 |[const_pointer](#const_pointer)|Eine typedef für einen Zeiger auf ein- **`const`** Element in einem-Element `multiset` .|
-|[const_reference](#const_reference)|Eine typedef für einen Verweis auf ein **`const`** -Element, das in einem `multiset` zum Lesen und Ausführen von- **`const`** Vorgängen gespeichert ist.|
+|[const_reference](#const_reference)|Eine typedef für einen Verweis auf ein **`const`** -Element, das in einem `multiset` zum Lesen und durch **`const`** Arbeiten von Vorgängen gespeichert ist.|
 |[const_reverse_iterator](#const_reverse_iterator)|Eine typedef für einen bidirektionalen Iterator, der ein beliebiges- **`const`** Element in der lesen kann `multiset` .|
 |[difference_type](#difference_type)|Ein Ganzzahltyp mit Vorzeichen für die Anzahl von Elementen einer `multiset` in einem Bereich zwischen Elementen, auf die von Iteratoren gezeigt wird.|
 |[Iterator](#iterator)|Eine Typedef für einen bidirektionalen Iterator, der ein beliebiges Element in einer `multiset` lesen oder ändern kann.|
@@ -177,9 +180,10 @@ In C ++ 14 können Sie heterogenes Nachschlagen durch Angabe des `std::less<>` o
 |[cbegin](#cbegin)|Gibt einen konstanten Iterator zurück, der das erste Element in der `multiset` adressiert.|
 |[cend](#cend)|Gibt einen konstanten Iterator zurück, der den Speicherort adressiert, der dem letzten Element eines `multiset`-Elements nachfolgt.|
 |[Löschen](#clear)|Löscht alle Elemente einer `multiset` auf.|
+|[enthält](#contains)<sup>c++ 20</sup>|Überprüfen Sie, ob ein Element mit dem angegebenen Schlüssel in vorhanden ist `multiset` .|
 |[count](#count)|Gibt die Anzahl von Elementen in einer `multiset` zurück, deren Schlüssel dem als Parameter angegebenen Schlüssel entspricht.|
-|[crbegin](#crbegin)|Gibt einen const-Iterator zurück, der das erste Element in einer umgekehrten Menge adressiert.|
-|[crend](#crend)|Gibt einen const-Iterator zurück, der den Speicherort adressiert, der dem letzten Element einer umgekehrten Menge nachfolgt.|
+|[crbegin](#crbegin)|Gibt einen konstanten Iterator zurück, der das erste Element im umgekehrten `multiset`-Element adressiert.|
+|[crend](#crend)|Gibt einen konstanten Iterator zurück, der den Speicherort adressiert, der dem letzten Element eines umgekehrten `multiset`-Elements nachfolgt.|
 |[emplace](#emplace)|Fügt ein Element ein, das vor Ort in ein `multiset`-Element erstellt wird.|
 |[emplace_hint](#emplace_hint)|Fügt ein Element ein, das vor Ort mit einem Platzierungshinweis in ein `multiset`-Element erstellt wird.|
 |[empty](#empty)|Testet, ob ein `multiset`-Element leer ist.|
@@ -296,7 +300,7 @@ Ein **`const`** bidirektionaler-Access-Iterator, der auf das erste Element des B
 
 ### <a name="remarks"></a>Bemerkungen
 
-Bei dem Rückgabewert `cbegin` können die Elemente im Bereich nicht geändert werden.
+Beim Rückgabewert `cbegin` können die Elemente im Bereich nicht geändert werden.
 
 Sie können diese Memberfunktion anstelle der `begin()`-Memberfunktion verwenden, um sicherzustellen, dass der Rückgabewert `const_iterator` ist. Normalerweise wird sie zusammen mit dem [auto](../cpp/auto-cpp.md)-Typableitungs-Schlüsselwort verwendet, wie im folgenden Beispiel gezeigt. In diesem Beispiel sollte `Container` ein änderbarer (nicht) Container sein, **`const`** der und unterstützt `begin()` `cbegin()` .
 
@@ -334,7 +338,7 @@ auto i2 = Container.cend();
 // i2 is Container<T>::const_iterator
 ```
 
-Der von `cend` zurückgegebene Wert darf nicht dereferenziert werden.
+Der von zurückgegebene Wert `cend` darf nicht dereferenziert werden.
 
 ## <a name="multisetclear"></a><a name="clear"></a> multiset:: Clear
 
@@ -384,7 +388,7 @@ typedef implementation-defined const_iterator;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Ein `const_iterator`-Typ kann nicht zum Ändern des Werts eines Elements verwendet werden.
+Ein-Typ `const_iterator` kann nicht zum Ändern des Werts eines Elements verwendet werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -400,13 +404,13 @@ typedef typename allocator_type::const_pointer const_pointer;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Ein `const_pointer`-Typ kann nicht zum Ändern des Werts eines Elements verwendet werden.
+Ein-Typ `const_pointer` kann nicht zum Ändern des Werts eines Elements verwendet werden.
 
 In den meisten Fällen sollte ein [Iterator](#iterator) für den Zugriff auf Elemente in einem multiset-Objekt verwendet werden.
 
 ## <a name="multisetconst_reference"></a><a name="const_reference"></a> multiset:: const_reference
 
-Ein Typ, der einen Verweis auf ein-Element bereitstellt, das **`const`** in einer Multimenge zum Lesen und Ausführen von **`const`** Vorgängen gespeichert ist.
+Ein Typ, der einen Verweis auf ein-Element bereitstellt, das **`const`** in einer Multimenge zum Lesen und erledigen von **`const`** Vorgängen gespeichert ist.
 
 ```cpp
 typedef typename allocator_type::const_reference const_reference;
@@ -436,7 +440,7 @@ int main( )
         << Ref1 << "." << endl;
 
    // The following line would cause an error because the
-   // const_reference cannot be used to modify the multiset
+   // const_reference can't be used to modify the multiset
    // Ref1 = Ref1 + 5;
 }
 ```
@@ -455,11 +459,62 @@ typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Ein `const_reverse_iterator`-Typ kann nicht den Wert eines Elements ändern. Er wird verwendet, um die Multimenge in umgekehrter Reihenfolge zu durchlaufen.
+Ein `const_reverse_iterator` -Typ kann nicht den Wert eines Elements ändern und wird verwendet, um die Multimenge in umgekehrter Reihenfolge zu durchlaufen.
 
 ### <a name="example"></a>Beispiel
 
 Im Beispiel für [rend](#rend) wird verdeutlicht, wie ein `const_reverse_iterator` deklariert und verwendet wird.
+
+## <a name="multisetcontains"></a><a name="contains"></a> multiset:: enthält
+
+Überprüfen Sie, ob ein Element mit dem angegebenen Schlüssel in vorhanden ist `multiset` .
+
+```cpp
+bool contains(const Key& key) const;
+template<class K> bool contains(const K& key) const;
+```
+
+### <a name="parameters"></a>Parameter
+
+*Km*\
+Der Typ des Schlüssels.
+
+*wichtigen*\
+Der Schlüsselwert des Elements, nach dem gesucht werden soll.
+
+### <a name="return-value"></a>Rückgabewert
+
+`true` , wenn sich das Element im Container befindet. `false` andernfalls.
+
+### <a name="remarks"></a>Bemerkungen
+
+`contains()` ist neu in c++ 20. Um es zu verwenden, geben Sie die [/Std: c + + Latest](../build/reference/std-specify-language-standard-version.md) -Compileroption an.
+
+`template<class K> bool contains(const K& key) const` ist nur an der Überladungs Auflösung beteiligt, wenn `key_compare` transparent ist. Weitere Informationen finden [Sie unter heterogenes Nachschlagen in assoziativen Containern](https://docs.microsoft.com/cpp/standard-library/stl-containers#heterogeneous-lookup-in-associative-containers-c14) .
+
+### <a name="example"></a>Beispiel
+
+```cpp
+// Requires /std:c++latest
+#include <set>
+#include <iostream>
+
+int main()
+{
+    std::multiset<int> theMultiSet = {1, 2};
+
+    std::cout << std::boolalpha; // so booleans show as 'true' or 'false'
+    std::cout << theMultiSet.contains(2) << '\n';
+    std::cout << theMultiSet.contains(3) << '\n';
+    
+    return 0;
+}
+```
+
+```Output
+true
+false
+```
 
 ## <a name="multisetcount"></a><a name="count"></a> multiset:: count
 
@@ -504,7 +559,7 @@ int main()
     ms1.insert(1);
     ms1.insert(2);
 
-    // Elements do not need to be unique in multiset,
+    // Elements don't need to be unique in multiset,
     // so duplicates are allowed and counted.
     i = ms1.count(1);
     cout << "The number of elements in ms1 with a sort key of 1 is: "
@@ -542,7 +597,7 @@ Ein umgekehrter bidirektionaler const-Iterator, mit dem das erste Element in ein
 
 `crbegin` wird bei einer umgekehrten Multimenge auf dieselbe Weise wie „begin“ bei einer Multimenge verwendet.
 
-Bei dem Rückgabewert von `crbegin`kann das Multisetobjekt nicht geändert werden.
+Mit dem Rückgabewert von `crbegin` kann das multiset-Objekt nicht geändert werden.
 
 Mit `crbegin` lässt sich eine Multimenge rückwärts durchlaufen.
 
@@ -590,11 +645,11 @@ Ein bidirektionaler const_reverse-Iterator, der den Speicherort adressiert, der 
 
 `crend` wird bei einer umgekehrten Multimenge auf dieselbe Weise wie [end](#end) bei einer Multimenge verwendet.
 
-Bei dem Rückgabewert von `crend`kann das Multisetobjekt nicht geändert werden.
+Mit dem Rückgabewert von `crend` kann das multiset-Objekt nicht geändert werden.
 
 Mit `crend` lässt sich überprüfen, ob ein umgekehrter Iterator das Ende seiner Multimenge erreicht hat.
 
-Der von `crend` zurückgegebene Wert darf nicht dereferenziert werden.
+Der von zurückgegebene Wert `crend` darf nicht dereferenziert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -632,7 +687,7 @@ typedef typename allocator_type::difference_type difference_type;
 
 `difference_type` ist der Typ, der beim Subtrahieren oder Inkrementieren über Iteratoren des Containers zurückgegeben wird. `difference_type` wird normalerweise verwendet, um die Anzahl von Elementen im Bereich [`first`, `last`) zwischen den Iteratoren `first` und `last` darzustellen. Dazu gehört das Element, auf das durch `first` gezeigt wird und der Bereich von Elementen bis zu (aber nicht einschließlich) dem Element, auf das durch `last` gezeigt wird.
 
-Bitte beachten Sie, dass `difference_type` einerseits zwar für alle Iteratoren verfügbar ist, die die Anforderungen für einen Eingabeiterator erfüllen (gilt auch für die Klasse bidirektionaler Iteratoren, die von umkehrbaren Containern wie „set“ unterstützt werden), die Subtraktion zwischen Iteratoren andererseits jedoch nur von denjenigen Iteratoren mit zufälligem Zugriff unterstützt wird, die durch einen Container mit zufälligem Zugriff wie z.B. „vector“ bereitgestellt werden.
+Obwohl `difference_type` für alle Iteratoren verfügbar ist, die die Anforderungen eines eingabeiterators erfüllen, der die Klasse von bidirektionalen Iteratoren einschließt, die von umkehrbaren Containern wie Set unterstützt werden, wird die Subtraktion zwischen Iteratoren nur von zufälligen zugriffsiteratoren unterstützt, die von einem zufälligen Zugriffs Container wie Vector bereitgestellt werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -663,7 +718,7 @@ int main( )
    df_typ10 = count( ms1_bIter, ms1_eIter, 10 );
    df_typ20 = count( ms1_bIter, ms1_eIter, 20 );
 
-   // The keys, and hence the elements, of a multiset are not unique
+   // The keys, and hence the elements, of a multiset aren't unique
    cout << "The number '5' occurs " << df_typ5
         << " times in multiset ms1.\n";
    cout << "The number '10' occurs " << df_typ10
@@ -714,7 +769,7 @@ Ein Iterator zum neu eingefügten Element.
 
 Von dieser Funktion werden keine Verweise auf Containerelemente für ungültig erklärt, aber möglicherweise werden alle Iteratoren für den Containers für ungültig erklärt.
 
-Wird während des Einbaus eine Ausnahme ausgelöst, wird der Zustand des Containers nicht geändert.
+Wenn während der Einfügevorgänge eine Ausnahme ausgelöst wird, wird der Zustand des Containers nicht geändert.
 
 ### <a name="example"></a>Beispiel
 
@@ -784,7 +839,7 @@ Ein Iterator zum neu eingefügten Element.
 
 Von dieser Funktion werden keine Verweise auf Containerelemente für ungültig erklärt, aber möglicherweise werden alle Iteratoren für den Containers für ungültig erklärt.
 
-Wird während des Einbaus eine Ausnahme ausgelöst, wird der Zustand des Containers nicht geändert.
+Wenn während der Einfügevorgänge eine Ausnahme ausgelöst wird, wird der Zustand des Containers nicht geändert.
 
 Ein Codebeispiel finden Sie unter [set::emplace_hint](../standard-library/set-class.md#emplace_hint).
 
@@ -808,7 +863,7 @@ bool empty() const;
 #include <set>
 #include <iostream>
 
-int main( )
+int main()
 {
    using namespace std;
    multiset <int> ms1, ms2;
@@ -849,7 +904,7 @@ Der "past-the-end"-Iterator. Wenn die Multimenge leer ist, dann gilt `multiset::
 
 **end** wird verwendet, um zu überprüfen, ob ein Iterator das Ende seiner Multimenge übergeben hat.
 
-Der von **end** zurückgegebene Wert darf nicht dereferenziert werden.
+Der von **End** zurückgegebene Wert darf nicht dereferenziert werden.
 
 Ein Codebeispiel finden Sie unter [multiset::find](#find).
 
@@ -1197,7 +1252,7 @@ Die Einzelelement-Memberfunktionen mit Hinweis (3) und (4) geben einen Iterator 
 
 Von dieser Funktion werden keine Zeiger oder Verweise für ungültig erklärt, aber möglicherweise werden alle Iteratoren für den Containers für ungültig erklärt.
 
-Wird beim Einfügen von nur einem Element eine Ausnahme ausgelöst, wird der Zustand des Containers nicht geändert. Wird beim Einfügen mehrerer Elementen eine Ausnahme ausgelöst, wird der Container in einem nicht angegebenen doch gültigen Zustand belassen.
+Beim Einfügen von nur einem Element wird der Zustand des Containers nicht geändert, wenn eine Ausnahme ausgelöst wird. Wird beim Einfügen mehrerer Elementen eine Ausnahme ausgelöst, wird der Container in einem nicht angegebenen doch gültigen Zustand belassen.
 
 Das [value_type](../standard-library/map-class.md#value_type)-Element eines Containers ist eine Typedef, die dem Container angehört, und beim Satz ist `multiset<V>::value_type` vom Typ `const V`.
 
@@ -1331,7 +1386,7 @@ Das gespeicherte Objekt definiert die Memberfunktion
 
 Sie gibt nur dann TRUE zurück, wenn *x* in der Sortierreihenfolge *y* vorausgeht.
 
-[key_compare](#key_compare) und [value_compare](#value_compare) sind Synonyme für den Vorlagenparameter `Compare`. Beide Typen werden für die Klassen „set“ und „multiset“ bereitgestellt, in der sie identisch sind. Sie sind unterschiedlich in der Kompatibilität mit den Klassen „map“ und „multimap“.
+Sowohl [key_compare](#key_compare) als auch [Value_compare](#value_compare) sind Synonyme für den Vorlagen Parameter `Compare` . Beide Typen werden für die Klassen "Set" und "Multiset" bereitgestellt, in denen Sie identisch sind. Dies gilt für die Kompatibilität mit den Klassen Zuordnung und Multimap, wo Sie sich unterscheiden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1605,7 +1660,7 @@ Der vierte Konstruktor gibt eine Kopie des Multiset- *Rechts*an.
 
 Der fünfte Konstruktor gibt eine Kopie der Multimenge an, indem nach *Rechts*verschoben wird.
 
-Die sechsten, siebten und achten Konstruktoren geben ein initializer_list-Element an, aus dem die Elemente kopiert werden.
+Die 6., 7. und 8. Konstruktoren geben einen initializer_list an, aus dem die Elemente kopiert werden sollen.
 
 Mit den folgenden drei Konstruktoren wird der `[First, Last)`-Bereich einer Multimenge kopiert, wobei sich die Explizitheit bei Angabe des Typs der Vergleichsfunktion und der Zuweisung erhöht.
 
@@ -1798,7 +1853,7 @@ Ein umgekehrter bidirektionaler Iterator, mit dem das erste Element in einem umg
 
 `rbegin` wird bei einer umgekehrten Multimenge auf dieselbe Weise wie „rbegin“ bei einer Multimenge verwendet.
 
-Wenn der Rückgabewert von `rbegin` einem `const_reverse_iterator` zugewiesen wird, kann das Multiset-Objekt nicht geändert werden. Wenn der Rückgabewert von `rbegin` einem `reverse_iterator` zugewiesen wird, kann das Multiset-Objekt geändert werden.
+Wenn der Rückgabewert von `rbegin` einem zugewiesen wird `const_reverse_iterator` , kann das multiset-Objekt nicht geändert werden. Wenn der Rückgabewert von `rbegin` einem `reverse_iterator` zugewiesen wird, kann das Multiset-Objekt geändert werden.
 
 Mit `rbegin` lässt sich eine Multimenge rückwärts durchlaufen.
 
@@ -1911,11 +1966,11 @@ Ein bidirektionaler const_reverse-Iterator, der den Speicherort adressiert, der 
 
 `rend` wird bei einer umgekehrten Multimenge auf dieselbe Weise wie [end](#end) bei einer Multimenge verwendet.
 
-Wenn der Rückgabewert von `rend` einem `const_reverse_iterator` zugewiesen wird, kann das Multiset-Objekt nicht geändert werden. Wenn der Rückgabewert von `rend` einem `reverse_iterator` zugewiesen wird, kann das Multiset-Objekt geändert werden.
+Wenn der Rückgabewert von `rend` einem zugewiesen wird `const_reverse_iterator` , kann das multiset-Objekt nicht geändert werden. Wenn der Rückgabewert von `rend` einem `reverse_iterator` zugewiesen wird, kann das Multiset-Objekt geändert werden.
 
 Mit `rend` lässt sich überprüfen, ob ein umgekehrter Iterator das Ende seiner Multimenge erreicht hat.
 
-Der von `rend` zurückgegebene Wert darf nicht dereferenziert werden.
+Der von zurückgegebene Wert `rend` darf nicht dereferenziert werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1976,7 +2031,7 @@ typedef std::reverse_iterator<iterator> reverse_iterator;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Mit einem `reverse_iterator`-Typ lässt sich die Multimenge in umgekehrter Reihenfolge durchlaufen.
+Ein-Typ `reverse_iterator` wird verwendet, um die Multimenge in umgekehrter Reihenfolge zu durchlaufen.
 
 ### <a name="example"></a>Beispiel
 
@@ -2191,9 +2246,9 @@ Das gespeicherte Objekt definiert die Memberfunktion
 
 **bool-Operator**(Konstante **Schlüssel&** `_xVal` , **Konstanten Schlüssel&** `_yVal` );
 
-Sie gibt nur dann TRUE zurück, wenn `_xVal` in der Sortierreihenfolge `_yVal` vorausgeht und sich davon unterscheidet.
+gibt true zurück, wenn `_xVal` `_yVal` in der Sortierreihenfolge vorausgeht und nicht gleich ist.
 
-[key_compare](#key_compare) und [value_compare](#value_compare) sind Synonyme für den Vorlagenparameter `Compare`. Beide Typen werden für die Klassen „set“ und „multiset“ bereitgestellt, in der sie identisch sind. Sie sind unterschiedlich in der Kompatibilität mit den Klassen „map“ und „multimap“.
+Sowohl [key_compare](#key_compare) als auch [Value_compare](#value_compare) sind Synonyme für den Vorlagen Parameter `Compare` . Beide Typen werden für die Klassen "Set" und "Multiset" bereitgestellt, in denen Sie identisch sind. Dies gilt für die Kompatibilität mit den Klassen Zuordnung und Multimap, wo Sie sich unterscheiden.
 
 ### <a name="example"></a>Beispiel
 
@@ -2258,7 +2313,7 @@ typedef key_compare value_compare;
 
 `value_compare` ist ein Synonym für den Vorlagenparameter `Compare`.
 
-Beachten Sie, dass sowohl [key_compare](#key_compare) als auch `value_compare` Synonyme für den Vorlagen Parameter sind `Compare` . Beide Typen werden für die Klassen „set“ und „multiset“ bereitgestellt, in der sie identisch sind. Sie sind unterschiedlich in der Kompatibilität mit den Klassen „map“ und „multimap“.
+Beide [key_compare](#key_compare) und `value_compare` sind Synonyme für den Vorlagen Parameter `Compare` . Beide Typen werden für die Klassen "Set" und "Multiset" bereitgestellt, in denen Sie identisch sind. Dies gilt für die Kompatibilität mit den Klassen Zuordnung und Multimap, wo Sie sich unterscheiden.
 
 Weitere Informationen zu `Compare` finden Sie im Abschnitt „Hinweise“ unter [multiset-Klasse](../standard-library/multiset-class.md).
 
@@ -2278,7 +2333,7 @@ typedef Key value_type;
 
 `value_type` ist ein Synonym für den Vorlagenparameter `Key`.
 
-Beachten Sie, dass sowohl [key_type](#key_type) als auch `value_type` Synonyme für den Vorlagen Parameter sind `Key` . Beide Typen werden für die Klassen „set“ und „multiset“ bereitgestellt, in der sie identisch sind. Sie sind unterschiedlich in der Kompatibilität mit den Klassen „map“ und „multimap“.
+Beide [key_type](#key_type) und `value_type` sind Synonyme für den Vorlagen Parameter `Key` . Beide Typen werden für die Klassen "Set" und "Multiset" bereitgestellt, in denen Sie identisch sind. Dies gilt für die Kompatibilität mit den Klassen Zuordnung und Multimap, wo Sie sich unterscheiden.
 
 Weitere Informationen zu `Key` finden Sie im Abschnitt „Hinweise“.
 

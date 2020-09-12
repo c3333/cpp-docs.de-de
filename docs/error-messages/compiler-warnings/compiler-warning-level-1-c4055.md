@@ -1,25 +1,25 @@
 ---
-title: Compilerwarnung (Stufe 1) C4052
+title: Compilerwarnung (Stufe 1) C4055
 ms.date: 11/04/2016
 f1_keywords:
 - C4055
 helpviewer_keywords:
 - C4055
 ms.assetid: f9955421-16ab-46e5-8f9d-bf1639a519ef
-ms.openlocfilehash: e9fcb4356d993d86b622fd49c4a75d587554f7c2
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 47883f60c3205125a8ee88b804c1d622b3ba0b41
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62388604"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90041028"
 ---
 # <a name="compiler-warning-level-1-c4055"></a>Compilerwarnung (Stufe 1) C4055
 
-> "*Konvertierung*': von Datenzeiger '*type1*'zu Funktionszeiger'*Typ2*"
+> '*Konvertierung*': von Datenzeiger '*Typ1*' zu Funktionszeiger '*Typ2*'
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-**Veraltet:** Diese Warnung wird von Visual Studio 2017 und höheren Versionen nicht generiert.
+**Veraltet:** Diese Warnung wird nicht von Visual Studio 2017 und höheren Versionen generiert.
 
 Ein Datenzeiger wird (möglicherweise falsch) in einen Funktionszeiger umgewandelt. Dies ist unter „/Za“ eine Warnung der Stufe 1 und unter „/Ze“ eine Warnung der Stufe 4.
 

@@ -1,20 +1,21 @@
 ---
 title: /Zc (Übereinstimmung)
-ms.date: 03/06/2018
+description: Die/Zc-konformitätscompileroptionen aktivieren bzw. deaktivieren die Unterstützung für kompatibles oder abwärts kompatibles Verhalten.
+ms.date: 09/10/2020
 helpviewer_keywords:
 - /Zc compiler options [C++]
 - -Zc compiler options [C++]
 - Conformance compiler options
 - Zc compiler options [C++]
 ms.assetid: db1cc175-6e93-4a2e-9396-c3725d2d8f71
-ms.openlocfilehash: 6d6d3b7736fd1775372a3b2093c53e177db5099e
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 13e06cd75f1ee684c2ee1ad6239aeb77b805675e
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87234353"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90041522"
 ---
-# <a name="zc-conformance"></a>`/Zc`Konformitäts
+# <a name="zc-conformance"></a>`/Zc` Konformitäts
 
 Mit den **`/Zc`** Compileroptionen können Sie das Standard-oder Microsoft-spezifische Compilerverhalten angeben.
 
@@ -38,6 +39,7 @@ Dies sind die **`/Zc`** Compileroptionen:
 | [`/ZcimplicitNoexcept`](zc-implicitnoexcept-implicit-exception-specifiers.md) | Aktivieren Sie implizit **`noexcept`** für erforderliche Funktionen (standardmäßig aktiviert). |
 | [`/Zc:inline`](zc-inline-remove-unreferenced-comdat.md) | Entfernen Sie die Funktion oder die Daten, auf die nicht verwiesen wird, wenn es sich um COMDAT handelt oder nur eine interne Verknüpfung aufweist |
 | [`/Zc:noexceptTypes`](zc-noexcepttypes.md) | Erzwingen von c++ 17- **`noexcept`** Regeln (standardmäßig in c++ 17 oder höher). |
+| [`/Zc:preprocessor`](zc-preprocessor.md) | Verwenden Sie den neuen konformen Präprozessor (standardmäßig deaktiviert, außer in C11/C17). |
 | [`/Zc:referenceBinding`](zc-referencebinding-enforce-reference-binding-rules.md) | Ein temporärer UDT wird nicht an einen nicht konstanten Lvalue-Verweis gebunden (standardmäßig deaktiviert). |
 | [`/Zc:rvalueCast`](zc-rvaluecast-enforce-type-conversion-rules.md) | Standard mäßige C++ explizite Typkonvertierungs Regeln erzwingen (standardmäßig deaktiviert). |
 | [`/Zc:sizedDealloc`](zc-sizeddealloc-enable-global-sized-dealloc-functions.md) | Ermöglicht die Aufhebung der Zuordnung von c++ 14 globalen Größen (standardmäßig aktiviert). |
@@ -51,7 +53,7 @@ Dies sind die **`/Zc`** Compileroptionen:
 
 Weitere Informationen über Konformitätsprobleme in Visual C++ finden Sie unter [Nonstandard Behavior](../../cpp/nonstandard-behavior.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
 [MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)

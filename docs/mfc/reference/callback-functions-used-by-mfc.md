@@ -7,28 +7,26 @@ helpviewer_keywords:
 - functions [MFC], callback
 - callback functions [MFC]
 ms.assetid: b2a6857c-fdd3-45ec-8fd8-2e71fac77582
-ms.openlocfilehash: 19c0bd3a0685abe36c020a5dda930f5683a4baa9
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 553e87320828590c9e1e9204b54622f2f1ca6d80
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87183434"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90040885"
 ---
 # <a name="callback-functions-used-by-mfc"></a>Von MFC verwendete Rückruffunktionen
 
 Drei Rückruf Funktionen werden in der Microsoft Foundation Class-Bibliothek angezeigt. Diese Rückruf Funktionen werden an [CDC:: enujubjects](../../mfc/reference/cdc-class.md#enumobjects), [CDC:: graystring](../../mfc/reference/cdc-class.md#graystring)und [CDC:: abtabortproc](../../mfc/reference/cdc-class.md#setabortproc)übermittelt. Beachten Sie, dass alle Rückruf Funktionen vor der Rückgabe an Windows MFC-Ausnahmen abfangen müssen, da Ausnahmen nicht über Rückruf Grenzen hinweg ausgelöst werden können. Weitere Informationen zu Ausnahmen finden Sie im Artikel [Ausnahmen](../../mfc/exception-handling-in-mfc.md).
 
-|Name||
-|----------|-----------------|
-|[Rückruffunktion für CDC::EnumObjects](#enum_objects)||
-|[Rückruffunktion für CDC::GrayString](#graystring)||
-|[Rückruffunktion für CDC::SetAbortProc](#setabortproc)||
+[Rückruffunktion für CDC:: enumujects](#enum_objects)\
+[Rückruffunktion für CDC:: graystring](#graystring)\
+[Rückruffunktion für CDC::SetAbortProc](#setabortproc)
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxwin.h
 
-## <a name="callback-function-for-cdcenumobjects"></a><a name="enum_objects"></a>Rückruffunktion für CDC:: enumujects
+## <a name="callback-function-for-cdcenumobjects"></a><a name="enum_objects"></a> Rückruffunktion für CDC:: enumujects
 
 Der *objectfunc* -Name ist ein Platzhalter für den von der Anwendung bereitgestellten Funktionsnamen.
 
@@ -56,7 +54,7 @@ Die Rückruffunktion gibt zurück **`int`** . Der Wert dieser Rückgabe ist Benu
 
 Der tatsächliche Name muss exportiert werden.
 
-## <a name="callback-function-for-cdcgraystring"></a><a name="graystring"></a>Rückruffunktion für CDC:: graystring
+## <a name="callback-function-for-cdcgraystring"></a><a name="graystring"></a> Rückruffunktion für CDC:: graystring
 
 *OutputFunc* ist ein Platzhalter für den von der Anwendung bereitgestellten Rückruf Funktionsnamen.
 
@@ -88,7 +86,7 @@ Der Rückgabewert der Rückruffunktion muss "true" sein, um den Erfolg anzugeben
 
 Die Rückruffunktion (*OutputFunc*) muss ein Bild relativ zu den Koordinaten (0, 0) anstelle von (*x*, *y*) zeichnen.
 
-## <a name="callback-function-for-cdcsetabortproc"></a><a name="setabortproc"></a>Rückruffunktion für CDC:: abtabortproc
+## <a name="callback-function-for-cdcsetabortproc"></a><a name="setabortproc"></a> Rückruffunktion für CDC:: abtabortproc
 
 Der Name *abortfunc* ist ein Platzhalter für den von der Anwendung bereitgestellten Funktionsnamen.
 

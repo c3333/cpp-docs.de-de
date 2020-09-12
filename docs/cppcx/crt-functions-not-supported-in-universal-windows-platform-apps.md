@@ -3,12 +3,12 @@ title: In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Fu
 description: Referenzhandbuch zu CRT-Funktionen, die in universelle Windows-Plattform-apps nicht unterstützt werden
 ms.date: 04/16/2020
 ms.assetid: cbfc957d-6c60-48f4-97e3-1ed8526743b4
-ms.openlocfilehash: cfe5fbc1ce505c255e074dda2c3a240b46754eee
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 793283a5c20f04e58de22fcfca5ede1926de369c
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88845717"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90041834"
 ---
 # <a name="crt-functions-not-supported-in-universal-windows-platform-apps"></a>In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Funktionen
 
@@ -18,7 +18,7 @@ In der folgenden Tabelle sind die CRT-Funktionen aufgelistet, die beim Erstellen
 
 ## <a name="unsupported-crt-functions"></a>Nicht unterstützte CRT-Funktionen
 
-|Funktion|Beschreibung|Problemumgehung|
+| Funktion | BESCHREIBUNG | Problemumgehung |
 |-|-|-|
 |`_beep` `_sleep` `_seterrormode`|Diese Funktionen waren in früheren Versionen der CRT veraltet. Darüber hinaus sind die entsprechenden Win32-APIs für Apps für die universelle Windows-Plattform nicht verfügbar.|Keine Problemumgehung.|
 |`chdir` `_chdrive` `getcwd`|Diese Funktionen sind veraltet oder nicht threadsicher.|Verwenden `_chdir` Sie `_getcwd` und verwandte Funktionen.|
@@ -33,12 +33,12 @@ In der folgenden Tabelle sind die CRT-Funktionen aufgelistet, die beim Erstellen
 |`_getsystime` `_setsystime`|Dies waren veraltete APIs in früheren CRT-Versionen. Darüber hinaus kann ein Benutzer die Systemzeit in einer App für die universelle Windows-Plattform aufgrund fehlender Berechtigungen nicht festlegen.|Um nur die Systemzeit zu erhalten, verwenden Sie die Win32-API `GetSystemTime`. Die Systemzeit kann nicht festgelegt werden.|
 |`_environ``_putenv` `_putenv_s` `_searchenv` `_searchenv_s` `_dupenv_s` `_wputenv` `_wputenv_s` `_wsearchenv` getenv getenv_s putrev `_wdupenv_s` `_wenviron` `_wgetenv` `_wgetenv_s` `_wsearchenv_s``tzset`|Umgebungsvariablen sind für Apps für die universelle Windows-Plattform nicht verfügbar.|Keine Problemumgehung. Verwenden Sie zum Festlegen der Zeitzone `_tzset` .|
 |`_loaddll` `_getdllprocaddr` `_unloaddll`|Dies waren veraltete Funktionen in früheren CRT-Versionen. Außerdem kann ein Benutzer keine DLLs laden, mit Ausnahme derjenigen, die im selben Anwendungspaket enthalten sind.|Verwenden Sie die Win32-APIs `LoadPackagedLibrary`, `GetProcAddress`und `FreeLibrary` zum Laden und Verwenden verpackter DLL-Dateien.|
-|`_wexecl``_wexecle` `_wexeclp` `_wexeclpe` `_wexecv` `_wexecve` `_wexecvp` `_wexecvpe` `_execl` `_execle` `_execlp` `_execlpe` `_execv` `_execve` `_execvp` `_execvpe` `_spawnl` `_spawnle` `_spawnlp` `_spawnlpe` `_spawnv` `_spawnve` `_spawnvp` `_spawnvpe` `_wspawnl` `_wspawnle` `_wspawnlp` `_wspawnlpe` `_wspawnv` `_wspawnve` `_wspawnvp` `_wspawnvpe` `_wsystem` `execl` `execle` `execlp` `execlpe` `execv` `execve` `execvp` `execvpe`' ' spawnl ` ` spawnle ` ` spawnlp ` ` spawnlpe ` ` spawnv ` ` spawnve ` ` spawnvp ` ` spawnvpe ` ` System '|Die Funktionalität ist in Apps für die universelle Windows-Plattform nicht verfügbar. Eine App für die universelle Windows-Plattform kann keine andere App für die universelle Windows-Plattform oder eine Desktop-App aufrufen.|Keine Problemumgehung.|
+|`_wexecl` `_wexecle` `_wexeclp` `_wexeclpe` `_wexecv` `_wexecve` `_wexecvp` `_wexecvpe` `_execl` `_execle` `_execlp` `_execlpe` `_execv` `_execve` `_execvp` `_execvpe` `_spawnl` `_spawnle` `_spawnlp` `_spawnlpe` `_spawnv` `_spawnve` `_spawnvp` `_spawnvpe` `_wspawnl` `_wspawnle` `_wspawnlp` `_wspawnlpe` `_wspawnv` `_wspawnve` `_wspawnvp` `_wspawnvpe` `_wsystem` `execl` `execle` `execlp` `execlpe` `execv` `execve` `execvp` `execvpe` `spawnl` `spawnle` `spawnlp` `spawnlpe` `spawnv` `spawnve` `spawnvp` `spawnvpe` `system`|Die Funktionalität ist in Apps für die universelle Windows-Plattform nicht verfügbar. Eine App für die universelle Windows-Plattform kann keine andere App für die universelle Windows-Plattform oder eine Desktop-App aufrufen.|Keine Problemumgehung.|
 |`_heapwalk` `_heapadd` `_heapchk` `_heapset` `_heapused`|Diese Funktionen werden in der Regel bei der Arbeit mit dem Heap verwendet. Entsprechende Win32-APIs werden in Apps für die universelle Windows-Plattform jedoch nicht unterstützt. Zudem können Apps keine privaten Heaps mehr erstellen oder verwenden.|Keine Problemumgehung. Allerdings ist `_heapwalk` nur zu Debugzwecken in der DEBUG CRT verfügbar. Diese Funktionen können nicht in Apps verwendet werden, die in die Microsoft Store hochgeladen werden.|
 
 Die folgenden Funktionen sind in der CRT für UWP-apps verfügbar. Sie sollten Sie jedoch nur verwenden, wenn Sie die entsprechenden Win32-oder Windows-Runtime-APIs nicht verwenden können, z. b. Wenn Sie große Codebasen portieren:
 
-|Functions|Problemumgehung|
+| Functions | Problemumgehung |
 |-|-|
 |Einzelbyte-Zeichenfolgenfunktionen, z. B. `strcat`, `strcpy`, `strlwr`usw.|Erstellen Sie Ihre UWP-apps strikt in Unicode, weil alle Win32-APIs und Windows-Runtime APIs, die verfügbar gemacht werden, nur Unicode-Zeichensätze verwenden.  Single-Byte-Funktionen wurden für die Portierung umfangreicher Codebasen verbleiben, sollten aber andernfalls vermieden werden. Die entsprechenden wide char-Funktionen sollten stattdessen verwendet werden, wenn möglich.|
 |Stream-E/A- und Datei-E/A-Funktionen auf niedriger Ebene, z. B. `fopen`, `open`usw.|Diese Funktionen sind synchron, was für UWP-apps nicht empfehlenswert ist. Verwenden Sie in Ihren Apps für die universelle Windows-Plattform asynchrone APIs, um Dateien zu öffnen, aus Dateien zu lesen und in Dateien zu schreiben, damit das Sperren des UI-Threads verhindert wird. Beispiele für derartige APIs finden Sie in der `Windows::Storage::FileIO` -Klasse.|
@@ -47,7 +47,7 @@ Die folgenden Funktionen sind in der CRT für UWP-apps verfügbar. Sie sollten S
 
 Die zuvor erwähnten APIs und die folgenden APIs sind in Windows 8. x Store-Apps und Windows Phone 8. x-apps nicht verfügbar.
 
-|Functions|Beschreibung|Problemumgehung|
+| Functions | BESCHREIBUNG | Problemumgehung |
 |-|-|-|
 |`_beginthread` `_beginthreadex` `_endthread` `_endthreadex`|Threading-Win32-APIs sind in Windows 8.x Store-Apps nicht verfügbar.|Verwenden Sie stattdessen `Windows Runtime Windows::System::Threading::ThreadPool` oder `concurrency::task` .|
 |`_chdir` `_wchdir` `_getcwd` `_getdcwd` `_wgetcwd` `_wgetdcwd`|Das Konzept des Arbeitsverzeichnisses gilt nicht für Windows 8.x Store-Apps.|Verwenden Sie stattdessen vollständige Pfade.|

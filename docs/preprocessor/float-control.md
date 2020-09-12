@@ -9,12 +9,12 @@ helpviewer_keywords:
 - float_control pragma
 - pragmas, float_control
 ms.assetid: 4f4ba5cf-3707-413e-927d-5ecdbc0a9a43
-ms.openlocfilehash: 5f907bfeb3f92f788fe951854ddc32accc83ae03
-ms.sourcegitcommit: a673f6a54cc97e3d4cd032b10aa8dce7f0539d39
+ms.openlocfilehash: 02a8e8d80616623693fff04aca02355c505b4c3b
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78166783"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90041925"
 ---
 # <a name="float_control-pragma"></a>float_control-Pragma
 
@@ -23,35 +23,35 @@ Gibt Gleitkommaverhalten für eine Funktion an.
 ## <a name="syntax"></a>Syntax
 
 > **#pragma float_control**\
-> **#pragma float_control (präzise,** { **on** | **Off** } [ **, Push** ] **)** \
-> **#pragma float_control (außer,** { **on** | **Off** } [ **, Push** ] **)** \
-> **#pragma float_control (** { **Push** | **Pop** } **)**
+> **#pragma float_control (präzise,** { **on**  |  **Off** } [ **, Push** ] **)**\
+> **#pragma float_control (außer,** { **on**  |  **Off** } [ **, Push** ] **)**\
+> **#pragma float_control (** { **Push**  |  **Pop** } **)**
 
 ## <a name="options"></a>Optionen
 
-**genauer**, **bei** | **aus** **Push**\
+**präzise**, **ein**/  |  **aus**, **Push**\
 Gibt an, ob eine genaue Gleit Komma Semantik aktiviert (**on**) oder deaktiviert (**Off**) werden soll. Weitere Informationen zu Unterschieden mit der **/fp: precise** -Compileroption finden Sie im Abschnitt "Hinweise". Mit dem optionalen **pushtoken** wird die aktuelle Einstellung für **float_control** auf dem internen compilerstapel übertragen.
 
-**mit Ausnahme** **von** |  **Push**\
+**außer**, **bei**  |  **Off**, **Push**\
 Gibt an, ob eine Gleit Komma Ausnahme Semantik aktiviert (**on**) oder deaktiviert (**Off**) werden soll. Mit dem optionalen **pushtoken** wird die aktuelle Einstellung für **float_control** auf dem internen compilerstapel übertragen.
 
 **mit Ausnahme** von kann nur auf **on** festgelegt werden, wenn **präzise** ebenfalls auf **on**festgelegt ist.
 
-**Push** -\
+**Push**\
 Überträgt die aktuelle **float_control** -Einstellung auf den internen compilerstapel.
 
-**Pop** -\
+**Chor**\
 Entfernt die **float_control** Einstellung von der obersten Position des internen Compilerstapels und legt diese die neue **float_control** Einstellung fest.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Das **float_control** -Pragma hat nicht das gleiche Verhalten wie die [/FP](../build/reference/fp-specify-floating-point-behavior.md) -Compileroption. Das **float_control** -Pragma steuert nur einen Teil des Gleit Komma Verhaltens. Es muss mit [fp_contract](../preprocessor/fp-contract.md) und [fenv_access](../preprocessor/fenv-access.md) -Pragmas kombiniert werden, um die **/FP** -Compileroptionen neu zu erstellen. In der folgenden Tabelle werden die entsprechenden Pragma-Einstellungen für die einzelnen Compileroptionen angezeigt:
 
-| | float_control (präzise, \*) | float_control (außer, \*) | fp_contract (\*) | fenv_access (\*) |
+| Option | float_control (genau, \* ) | float_control (außer, \* ) | fp_contract ( \* ) | fenv_access ( \* ) |
 |-|-|-|-|-|
-| /fp:strict             | auf  | auf  | aus | auf  |
-| /fp: präzise            | auf  | aus | auf  | aus |
-| /fp: schnell               | aus | aus | auf  | aus |
+| /fp:strict             | on  | on  | aus | on  |
+| /fp:precise            | on  | aus | on  | aus |
+| /fp:fast               | aus | aus | on  | aus |
 
 Anders ausgedrückt: Sie müssen möglicherweise mehrere Pragmas in Kombination verwenden, um die Befehlszeilenoptionen **/fp: fast**, **/fp: precise**und **/fp: strict** zu emulieren.
 
@@ -127,7 +127,7 @@ int main( ) {
 Pass
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Pragma-Direktiven und das __Pragma-Schlüsselwort](../preprocessor/pragma-directives-and-the-pragma-keyword.md)\
 [fenv_access](../preprocessor/fenv-access.md)\

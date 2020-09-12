@@ -1,16 +1,17 @@
 ---
 title: '&lt;Spanne&gt;'
+description: API-Referenz für den STL-Namespace (Standard Template Library), der eine vereinfachte Ansicht für eine zusammenhängende Sequenz von Objekten bereitstellt.
 ms.date: 05/28/2020
 f1_keywords:
 - <span>
 helpviewer_keywords:
 - span header
-ms.openlocfilehash: 7d21023c90472e5c2e1b28d9fa85e517da4a21ae
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: f4c6b141dfea6464e58d06e221a39a693469d31c
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846185"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90039871"
 ---
 # <a name="ltspangt"></a>&lt;Spanne&gt;
 
@@ -50,33 +51,33 @@ int main()
 
 **Namespace:** std
 
-**Compileroption:** /Std: c + + Latest
+**Compileroption:** [/Std: c + + Latest](../build/reference/std-specify-language-standard-version.md)
 
 ## <a name="members"></a>Member
 
 ### <a name="classes"></a>Klassen
 
-|name|Beschreibung|
+|name|BESCHREIBUNG|
 |-|:-|
 |[Spanne](span-class.md)| Stellt eine Ansicht für eine zusammenhängende Sequenz von-Objekten bereit. |
 
 ### <a name="operators"></a>Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|:-|
 |[Operator =](span-class.md#op_eq)| Spannen Zuweisung |
 |[KOM\[\]](span-class.md#op_at)| Elementzugriff |
 
 ### <a name="functions"></a>Functions
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|:-|
 | [as_bytes](span-functions.md#as_bytes)| Die zugrunde liegenden schreibgeschützten Bytes der Spanne werden angezeigt. |
 | [as_writable_bytes](span-functions.md#as_writable_bytes) | Die zugrunde liegenden Bytes der Spanne werden angezeigt. |
 
 ### <a name="constants"></a>Konstanten
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|:-|
 | **dynamic_extent** | Gibt an, dass die Spannen Größe zur Laufzeit und nicht zur Kompilierzeit bestimmt wird. Wenn die Anzahl der Elemente in der Spanne zum Zeitpunkt der Kompilierung bekannt ist, wird Sie als `Extent` Vorlagen Parameter angegeben. Wenn die Zahl bis zur Laufzeit nicht bekannt ist, geben Sie `dynamic_extent` stattdessen an. |
 

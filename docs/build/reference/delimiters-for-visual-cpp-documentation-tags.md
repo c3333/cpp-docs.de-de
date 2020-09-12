@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - XML documentation, delimiters
 ms.assetid: debfbdd9-63fa-4c58-a18e-a4d203d241d7
-ms.openlocfilehash: a5a0534ba74cc9b125e94d4ece133c2449700a67
-ms.sourcegitcommit: 7d64c5f226f925642a25e07498567df8bebb00d4
-ms.translationtype: HT
+ms.openlocfilehash: e8e312eacb46d82270d7ca1782b04d06012b207d
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65446542"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90041535"
 ---
 # <a name="delimiters-for-visual-c-documentation-tags"></a>Trennzeichen für Visual C++-Dokumentationstags
 
@@ -17,9 +17,9 @@ Die Verwendung von Dokumentationstags erfordert Trennzeichen, die dem Compiler a
 
 Sie können die folgenden Arten von Trennzeichen mit den XML-Dokumentationstags verwenden:
 
-| | |
+| Trennzeichen | BESCHREIBUNG |
 |-|-|
-| `///` | Dies ist die Form, die in den Dokumentationsbeispielen dargestellt und vom Visual Studio verwendet C++ -Projektvorlagen.  |
+| `///` | Dies ist das Formular, das in den Dokumentations Beispielen angezeigt und von den Visual Studio C++-Projektvorlagen verwendet wird.  |
 | `/** */`  | Dies sind mehrzeilige Trennzeichen.  |
 
 Für die Verwendung von `/** */`-Trennzeichen gibt es einige Formatierungsregeln:
@@ -68,6 +68,6 @@ Einige Beispiele:
     */
     ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [XML-Dokumentation](xml-documentation-visual-cpp.md)

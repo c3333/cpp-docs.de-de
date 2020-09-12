@@ -2,12 +2,12 @@
 title: Grafiken (C++ AMP)
 ms.date: 11/04/2016
 ms.assetid: 190a98a4-5f7d-442e-866b-b374ca74c16f
-ms.openlocfilehash: e0ea4de44f5215f47fe8c1a5e018bd91a82708ac
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 3f68766c2c38b74df6e57aaa52419baf5d1151a3
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182810"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90041457"
 ---
 # <a name="graphics-c-amp"></a>Grafiken (C++ AMP)
 
@@ -27,7 +27,7 @@ Der `norm` -Typ und der- `unorm` Typ sind skalare Typen, die den Wertebereich ei
 
 Die kurz Vektor Bibliothek bietet einige Funktionen des [Vektor Typs](https://go.microsoft.com/fwlink/p/?linkid=248500) , der in HLSL definiert ist und in der Regel verwendet wird, um Texels zu definieren. Ein Kurzvektor ist eine Datenstruktur, die ein bis vier Werte desselben Typs enthält. Die unterstützten Typen sind **`double`** , **`float`** , **`int`** , `norm` , `uint` und `unorm` . In der folgenden Tabelle werden Typnamen aufgeführt. Für jeden Typ gibt es auch einen entsprechenden **`typedef`** , der keinen Unterstrich im Namen hat. Die Typen mit unterstrichen befinden sich im [Namespace "parallelcurrency:: graphics](../../parallel/amp/reference/concurrency-graphics-namespace.md)". Die Typen, die keine Unterstriche aufweisen, befinden sich im [Namespace "parallelcurrency:: Graphics::d irect3d](../../parallel/amp/reference/concurrency-graphics-direct3d-namespace.md) ", sodass Sie eindeutig von den grundlegenden Typen, wie z. b. und, getrennt sind **`__int8`** **`__int16`** .
 
-||Length 2|Länge 3|Länge 4|
+|Typ|Length 2|Länge 3|Länge 4|
 |-|--------------|--------------|--------------|
 |double|double_2<br /><br /> double2|double_3<br /><br /> double3|double_4<br /><br /> double4|
 |float|float_2<br /><br /> float2|float_3<br /><br /> float3|float_4<br /><br /> float4|
@@ -342,7 +342,7 @@ Beachten Sie, wie eine Texturansicht mit nicht konstantem Elementtyp und einer K
 
 Der Elementtyp `texture_view` (seine Konstanz sowie die Anzahl der Komponenten) spielt ebenfalls eine Rolle bei der Frage, ob die Ansicht Textursampling unterstützt und wie auf Mipmapebenen zugegriffen werden kann:
 
-|type|Komponenten|Lesen|Schreiben|Stichproben|Mipmapzugriff|
+|Typ|Komponenten|Lesen|Schreiben|Stichproben|Mipmapzugriff|
 |----------|----------------|----------|-----------|--------------|-------------------|
 |texture_view\<const T, N>|1, 2, 4|Ja|Nein (1)|Ja|Ja, kann indexiert werden. Bereich wird bei der Instanziierung bestimmt.|
 |Texture_view\<T, N>|1<br /><br /> 2, 4|Ja<br /><br /> Nein (2)|Ja<br /><br /> Ja|Nein (1)<br /><br /> Nein (1)|Ja, eine Ebene. Ebene wird bei der Instanziierung bestimmt.<br /><br /> Ja, eine Ebene. Ebene wird bei der Instanziierung bestimmt.|

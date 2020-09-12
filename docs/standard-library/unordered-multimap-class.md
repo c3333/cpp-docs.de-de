@@ -1,6 +1,7 @@
 ---
 title: unordered_multimap-Klasse
-ms.date: 11/04/2016
+description: API-Übersicht für die Container Klasse der C++-Standard Bibliothek `unordered_multimap` .
+ms.date: 9/9/2020
 f1_keywords:
 - unordered_map/std::unordered_multimap
 - unordered_map/std::unordered_multimap::allocator_type
@@ -26,6 +27,7 @@ f1_keywords:
 - unordered_map/std::unordered_multimap::cbegin
 - unordered_map/std::unordered_multimap::cend
 - unordered_map/std::unordered_multimap::clear
+- unordered_map/std::unordered_multimap::contains
 - unordered_map/std::unordered_multimap::count
 - unordered_map/std::unordered_multimap::emplace
 - unordered_map/std::unordered_multimap::emplace_hint
@@ -73,6 +75,7 @@ helpviewer_keywords:
 - std::unordered_multimap::cbegin
 - std::unordered_multimap::cend
 - std::unordered_multimap::clear
+- std::unordered_multimap::contains
 - std::unordered_multimap::count
 - std::unordered_multimap::emplace
 - std::unordered_multimap::emplace_hint
@@ -137,12 +140,12 @@ helpviewer_keywords:
 - std::unordered_multimap::size
 - std::unordered_multimap::swap
 ms.assetid: 4baead6c-5870-4b85-940f-a47d6b891c27
-ms.openlocfilehash: 3f30d7c8f322e053e91d9e14db0e7166a6031bd8
-ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
+ms.openlocfilehash: 5ca739e4c10fbca6cfd85b182e0052bcad19bf21
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88562505"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90042068"
 ---
 # <a name="unordered_multimap-class"></a>unordered_multimap-Klasse
 
@@ -178,7 +181,7 @@ Die Zuweisungsklasse.
 
 ## <a name="members"></a>Member
 
-|Typendefinition|BESCHREIBUNG|
+|Typendefinition|Beschreibung|
 |-|-|
 |[allocator_type](#allocator_type)|Der Typ einer Zuweisung für die Speicherverwaltung.|
 |[const_iterator](#const_iterator)|Der Typ eines konstanten Iterators für die gesteuerte Sequenz.|
@@ -200,12 +203,13 @@ Die Zuweisungsklasse.
 |Memberfunktion|BESCHREIBUNG|
 |-|-|
 |[beginnen](#begin)|Legt den Anfang der kontrollierten Sequenz fest.|
-|[Rost](#bucket)|Ruft die Bucketnummer für einen Schlüsselwert ab.|
+|[bucket](#bucket)|Ruft die Bucketnummer für einen Schlüsselwert ab.|
 |[bucket_count](#bucket_count)|Ruft die Anzahl von Buckets ab.|
 |[bucket_size](#bucket_size)|Ruft die Größe eines Buckets ab.|
 |[cbegin](#cbegin)|Legt den Anfang der kontrollierten Sequenz fest.|
 |[cend](#cend)|Legt das Ende der kontrollierten Sequenz fest.|
 |[Löschen](#clear)|Entfernt alle Elemente.|
+|[enthält](#contains)<sup>c++ 20</sup>|Überprüft, ob ein Element mit dem angegebenen Schlüssel in vorhanden ist `unordered_multimap` .|
 |[count](#count)|Sucht die Anzahl von Elementen, die einem angegebenen Schlüssel entsprechen.|
 |[emplace](#emplace)|Fügt ein Element hinzu, das direkt erstellt wird.|
 |[emplace_hint](#emplace_hint)|Fügt ein Element hinzu, das direkt mit Hinweis erstellt wird.|
@@ -852,6 +856,57 @@ int main()
 
 ```Output
 [c, 3] [b, 2] [a, 1]
+```
+
+## <a name="unordered_multimapcontains"></a><a name="contains"></a> unordered_multimap:: enthält
+
+Überprüft, ob ein Element mit dem angegebenen Schlüssel in vorhanden ist `unordered_multimap` .
+
+```cpp
+bool contains(const Key& key) const;
+template<class K> bool contains(const K& key) const;
+```
+
+### <a name="parameters"></a>Parameter
+
+*Km*\
+Der Typ des Schlüssels.
+
+*wichtigen*\
+Der Schlüsselwert des Elements, nach dem gesucht werden soll.
+
+### <a name="return-value"></a>Rückgabewert
+
+`true` , wenn sich das Element im Container befindet. `false` andernfalls.
+
+### <a name="remarks"></a>Bemerkungen
+
+`contains()` ist neu in c++ 20. Um es zu verwenden, geben Sie die [/Std: c + + Latest](../build/reference/std-specify-language-standard-version.md) -Compileroption an.
+
+`template<class K> bool contains(const K& key) const` ist nur an der Überladungs Auflösung beteiligt, wenn `key_compare` transparent ist.
+
+### <a name="example"></a>Beispiel
+
+```cpp
+// Requires /std:c++latest
+#include <unordered_map>
+#include <iostream>
+
+int main()
+{
+    std::unordered_multimap<int, bool> theUnorderedMultimap = {{0, false}, {1,true}};
+
+    std::cout << std::boolalpha; // so booleans show as 'true' or 'false'
+    std::cout << theUnorderedMultimap.contains(1) << '\n';
+    std::cout << theUnorderedMultimap.contains(2) << '\n';
+
+    return 0;
+}
+```
+
+```Output
+true
+false
 ```
 
 ## <a name="unordered_multimapcount"></a><a name="count"></a> unordered_multimap:: count

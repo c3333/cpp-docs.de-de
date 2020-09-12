@@ -12,14 +12,14 @@ author: corob-msft
 ms.author: corob
 ms.workload:
 - cplusplus
-ms.openlocfilehash: a79cb91a6b0e6ca633540fd37f7a0e1ece53b712
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 341cae04742d72fdcc7483e74977bf413854df82
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88845783"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90039650"
 ---
-# <a name="steady_clock-struct"></a>steady_clock-Struktur
+# <a name="high_resolution_clock-struct"></a>high_resolution_clock-Struktur
 
 Stellt eine *high_resolution* Uhr dar.
 
@@ -33,7 +33,7 @@ class high_resolution_clock
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |`duration`|Ein Synonym für `nanoseconds` , das in definiert ist \<chrono> .|
 |`period`|Ein Synonym für `nano` , das in definiert ist \<ratio> .|
@@ -42,12 +42,12 @@ class high_resolution_clock
 
 ## <a name="functions"></a>Functions
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|-|
 |`now`|Gibt die aktuelle Uhrzeit als- `time_point` Wert zurück.|
 
 ## <a name="constants"></a>Konstanten
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |----------|-----------------|
 |`is_steady`|Enthält **`true`** . Eine `high_resolution_clock` ist *gleichmäßig*.|

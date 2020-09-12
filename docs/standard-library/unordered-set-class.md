@@ -1,6 +1,7 @@
 ---
 title: unordered_set-Klasse
-ms.date: 11/04/2016
+description: API-Referenz für die Container Klasse der C++-Standard Bibliothek `unordered_set` , die zum Speichern und Abrufen von Daten aus einer ungeordneten Auflistung verwendet wird.
+ms.date: 9/9/2020
 f1_keywords:
 - unordered_set/std::unordered_set
 - unordered_set/std::unordered_set::allocator_type
@@ -26,6 +27,7 @@ f1_keywords:
 - unordered_set/std::unordered_set::cend
 - unordered_set/std::unordered_set::clear
 - unordered_set/std::unordered_set::count
+- unordered_set/std::unordered_set::contains
 - unordered_set/std::unordered_set::emplace
 - unordered_set/std::unordered_set::emplace_hint
 - unordered_set/std::unordered_set::empty
@@ -71,6 +73,7 @@ helpviewer_keywords:
 - std::unordered_set::cbegin
 - std::unordered_set::cend
 - std::unordered_set::clear
+- std::unordered_set::contains
 - std::unordered_set::count
 - std::unordered_set::emplace
 - std::unordered_set::emplace_hint
@@ -134,16 +137,16 @@ helpviewer_keywords:
 - std::unordered_set::size
 - std::unordered_set::swap
 ms.assetid: ac08084e-05a7-48c0-9ae4-d40c529922dd
-ms.openlocfilehash: 5eb8a6902324ee069ff275e77b97703ba6ba3356
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 396465b24e9d7cf0facbe324c7b01479fe8e9b6b
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88839516"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90040040"
 ---
 # <a name="unordered_set-class"></a>unordered_set-Klasse
 
-In der Klassen Vorlage wird ein Objekt beschrieben, das eine Sequenz von Elementen variabler Länge vom Typ steuert `const Key` . Die Sequenz wird grob durch eine Hashfunktion sortiert, die die Sequenz in eine geordnete Gruppe von Untersequenzen, so genannte Buckets, unterteilt. Innerhalb jedes Buckets bestimmt eine Vergleichsfunktion, ob ein Elementpaar eine entsprechende Reihenfolge hat. Jedes Element dient sowohl als Sortierschlüssel als auch als Wert. Die Sequenz wird so dargestellt, dass die Suche, das Einfügen und das Entfernen eines beliebigen Elements mit einer Reihen von Vorgängen möglich ist, die unabhängig von der Anzahl von Elementen in der Sequenz (konstante Zeit) sein können, zumindest, wenn alle Buckets von ungefähr gleicher Länge sind. Im schlimmsten Fall, d. h., wenn sich alle Elemente in einem Bucket befinden, ist die Anzahl von Vorgängen proportional zur Anzahl von Elementen in der Sequenz (lineare Zeit). Darüber hinaus führt das Einfügen eines Elements nicht dazu, dass Iteratoren ungültig werden, und durch das Entfernen eines Elements werden nur solche Iteratoren ungültig, die auf das entfernte Element gezeigt haben.
+In der Klassen Vorlage wird ein Objekt beschrieben, das eine Sequenz von Elementen variabler Länge vom Typ steuert `const Key` . Die Sequenz wird grob durch eine Hashfunktion sortiert, die die Sequenz in eine geordnete Gruppe von Untersequenzen, so genannte Buckets, unterteilt. Innerhalb jedes Bucket bestimmt eine Vergleichsfunktion, ob ein Element Paar eine entsprechende Reihenfolge aufweist. Jedes Element dient sowohl als Sortierschlüssel als auch als Wert. Die Sequenz wird so dargestellt, dass die Suche, das Einfügen und das Entfernen eines beliebigen Elements mit einer Reihen von Vorgängen möglich ist, die unabhängig von der Anzahl von Elementen in der Sequenz (konstante Zeit) sein können, zumindest, wenn alle Buckets von ungefähr gleicher Länge sind. Im schlimmsten Fall, d. h., wenn sich alle Elemente in einem Bucket befinden, ist die Anzahl von Vorgängen proportional zur Anzahl von Elementen in der Sequenz (lineare Zeit). Durch das Einfügen eines Elements werden keine Iteratoren ungültig, und durch das Entfernen eines Elements werden nur solche Iteratoren ungültig, die auf das entfernte Element zeigen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -174,7 +177,7 @@ Die Zuweisungsklasse.
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|-|
 |[allocator_type](#allocator_type)|Der Typ einer Zuweisung für die Speicherverwaltung.|
 |[const_iterator](#const_iterator)|Der Typ eines konstanten Iterators für die gesteuerte Sequenz.|
@@ -194,15 +197,16 @@ Die Zuweisungsklasse.
 
 ### <a name="functions"></a>Functions
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|-|
 |[beginnen](#begin)|Legt den Anfang der kontrollierten Sequenz fest.|
-|[Rost](#bucket)|Ruft die Bucketnummer für einen Schlüsselwert ab.|
+|[bucket](#bucket)|Ruft die Bucketnummer für einen Schlüsselwert ab.|
 |[bucket_count](#bucket_count)|Ruft die Anzahl von Buckets ab.|
 |[bucket_size](#bucket_size)|Ruft die Größe eines Buckets ab.|
 |[cbegin](#cbegin)|Legt den Anfang der kontrollierten Sequenz fest.|
 |[cend](#cend)|Legt das Ende der kontrollierten Sequenz fest.|
 |[Löschen](#clear)|Entfernt alle Elemente.|
+|[enthält](#contains)<sup>c++ 20</sup>|Überprüfen Sie, ob ein Element mit dem angegebenen Schlüssel in vorhanden ist `unordered_set` .|
 |[count](#count)|Sucht die Anzahl von Elementen, die einem angegebenen Schlüssel entsprechen.|
 |[emplace](#emplace)|Fügt ein Element hinzu, das direkt erstellt wird.|
 |[emplace_hint](#emplace_hint)|Fügt ein Element hinzu, das direkt mit Hinweis erstellt wird.|
@@ -226,7 +230,7 @@ Die Zuweisungsklasse.
 
 ### <a name="operators"></a>Operatoren
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|-|
 |[unordered_set:: Operator =](#op_eq)|Kopiert eine Hashtabelle.|
 
@@ -236,9 +240,9 @@ Das Objekt sortiert die Sequenz, die es steuert, indem es zwei gespeicherte Obje
 
 Das Objekt speichert auch einen Höchstlastfaktor, der die maximal erwünschte durchschnittliche Anzahl von Elementen pro Bucket angibt. Wenn das Einfügen eines Elements bewirkt, dass [unordered_set:: load_factor](#load_factor) `()` den maximalen Lastfaktor überschreitet, erhöht der Container die Anzahl der Bucket und erstellt die Hash Tabelle nach Bedarf neu.
 
-Die tatsächliche Reihenfolge der Elemente in der gesteuerten Sequenz hängt von der Hashfunktion, von der Vergleichsfunktion, von der Einfügereihenfolge, vom Höchstlastfaktor und von der aktuellen Anzahl von Buckets ab. Sie können die Reihenfolge der Elemente in der gesteuerten Sequenz im Allgemeinen nicht vorhersagen. Sie können allerdings sicher sein, dass jede Teilmenge von Elementen, die die entsprechende Reihenfolge aufweisen, in der gesteuerten Sequenz benachbart sind.
+Die tatsächliche Reihenfolge der Elemente in der gesteuerten Sequenz hängt von der Hashfunktion, von der Vergleichsfunktion, von der Einfügereihenfolge, vom Höchstlastfaktor und von der aktuellen Anzahl von Buckets ab. Sie können die Reihenfolge der Elemente in der gesteuerten Sequenz nicht im allgemeinen Vorhersagen. Sie können allerdings sicher sein, dass jede Teilmenge von Elementen, die die entsprechende Reihenfolge aufweisen, in der gesteuerten Sequenz benachbart sind.
 
-Das-Objekt reserviert und freigibt Speicher für die Sequenz, die es steuert, mithilfe eines gespeicherten zuordnerobjekts vom Typ [unordered_set:: allocator_type](#allocator_type). Ein solches zuordnerobjekt muss dieselbe externe Schnittstelle wie ein Objekt vom Typ aufweisen `allocator` . Beachten Sie, dass das gespeicherte Zuweisungsobjekt nicht kopiert wird, wenn das Containerobjekt zugewiesen wird.
+Das-Objekt reserviert und freigibt Speicher für die Sequenz, die es steuert, mithilfe eines gespeicherten zuordnerobjekts vom Typ [unordered_set:: allocator_type](#allocator_type). Ein solches zuordnerobjekt muss dieselbe externe Schnittstelle wie ein Objekt vom Typ aufweisen `allocator` . Das gespeicherte Zuweisungs Objekt wird nicht kopiert, wenn das Container Objekt zugewiesen wird.
 
 ## <a name="unordered_setallocator_type"></a><a name="allocator_type"></a> unordered_set:: allocator_type
 
@@ -566,7 +570,7 @@ Ein **`const`** Forward-Access-Iterator, der auf das erste Element des Bereichs 
 
 ### <a name="remarks"></a>Bemerkungen
 
-Bei dem Rückgabewert `cbegin` können die Elemente im Bereich nicht geändert werden.
+Beim Rückgabewert `cbegin` können die Elemente im Bereich nicht geändert werden.
 
 Sie können diese Memberfunktion anstelle der `begin()`-Memberfunktion verwenden, um sicherzustellen, dass der Rückgabewert `const_iterator` ist. Normalerweise wird sie zusammen mit dem [auto](../cpp/auto-cpp.md)-Typableitungs-Schlüsselwort verwendet, wie im folgenden Beispiel gezeigt. In diesem Beispiel sollte `Container` ein änderbarer (nicht) Container sein, **`const`** der und unterstützt `begin()` `cbegin()` .
 
@@ -604,7 +608,7 @@ auto i2 = Container.cend();
 // i2 isContainer<T>::const_iterator
 ```
 
-Der von `cend` zurückgegebene Wert darf nicht dereferenziert werden.
+Der von zurückgegebene Wert `cend` darf nicht dereferenziert werden.
 
 ## <a name="clear"></a><a name="clear"></a> Klartext
 
@@ -680,7 +684,7 @@ typedef T1 const_iterator;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt ein Objekt, das als konstanter Forward-Iterator für die gesteuerte Sequenz fungieren kann. Er wird hier als Synonym für einen durch Implementierung definierten `T1`-Typ beschrieben.
+Der Typ beschreibt ein Objekt, das als konstanter Forward-Iterator für die gesteuerte Sequenz fungieren kann. Sie wird hier als Synonym für den von der Implementierung definierten Typ beschrieben `T1` .
 
 ### <a name="example"></a>Beispiel
 
@@ -722,7 +726,7 @@ typedef T5 const_local_iterator;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt ein Objekt, das als konstanter Vorwärtsiterator für ein Bucket dienen kann. Er wird hier als Synonym für einen durch Implementierung definierten `T5`-Typ beschrieben.
+Der Typ beschreibt ein Objekt, das als konstanter Vorwärtsiterator für ein Bucket dienen kann. Sie wird hier als Synonym für den von der Implementierung definierten Typ beschrieben `T5` .
 
 ### <a name="example"></a>Beispiel
 
@@ -849,6 +853,57 @@ int main()
 [c] [b] [a]
 ```
 
+## <a name="contains"></a><a name="contains"></a> Inhalt
+
+Überprüft, ob ein Element mit dem angegebenen Schlüssel in vorhanden ist `unordered_set` .
+
+```cpp
+bool contains(const Key& key) const;
+template<class K> bool contains(const K& key) const;
+```
+
+### <a name="parameters"></a>Parameter
+
+*Km*\
+Der Typ des Schlüssels.
+
+*wichtigen*\
+Der Schlüsselwert des Elements, nach dem gesucht werden soll.
+
+### <a name="return-value"></a>Rückgabewert
+
+`true` , wenn sich das Element im Container befindet. `false` andernfalls.
+
+### <a name="remarks"></a>Bemerkungen
+
+`contains()` ist neu in c++ 20. Um es zu verwenden, geben Sie die [/Std: c + + Latest](../build/reference/std-specify-language-standard-version.md) -Compileroption an.
+
+`template<class K> bool contains(const K& key) const` ist nur an der Überladungs Auflösung beteiligt, wenn `key_compare` transparent ist.
+
+### <a name="example"></a>Beispiel
+
+```cpp
+// Requires /std:c++latest
+#include <unordered_set>
+#include <iostream>
+
+int main()
+{
+    std::unordered_set<int> theUnorderedSet = { 1, 2 };
+
+    std::cout << std::boolalpha; // so booleans show as 'true' or 'false'
+    std::cout << theUnorderedSet.contains(2) << '\n';
+    std::cout << theUnorderedSet.contains(3) << '\n';
+    
+    return 0;
+}
+```
+
+```Output
+true
+false
+```
+
 ## <a name="count"></a><a name="count"></a> Countdown
 
 Sucht die Anzahl von Elementen, die einem angegebenen Schlüssel entsprechen.
@@ -913,7 +968,7 @@ typedef T3 difference_type;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Ganzzahltyp mit Vorzeichen beschreibt ein Objekt, das die Differenz zwischen den Adressen von zwei beliebigen Elementen in der gesteuerten Sequenz darstellen kann. Er wird hier als Synonym für einen durch Implementierung definierten `T3`-Typ beschrieben.
+Der Ganzzahltyp mit Vorzeichen beschreibt ein Objekt, das die Differenz zwischen den Adressen von zwei beliebigen Elementen in der gesteuerten Sequenz darstellen kann. Sie wird hier als Synonym für den von der Implementierung definierten Typ beschrieben `T3` .
 
 ### <a name="example"></a>Beispiel
 
@@ -985,7 +1040,7 @@ Um auf die Iteratorkomponente eines `pr`-Paares zuzugreifen, das von dieser Memb
 
 Durch diese Funktion werden keine Iteratoren oder Verweise ungültig.
 
-Wird bei der Einfügung eine Ausnahme ausgelöst, die aber in der Hashfunktion des Containers nicht auftritt, wird der Container nicht geändert. Wenn die Ausnahme in der Hashfunktion ausgelöst wird, ist das Ergebnis nicht definiert.
+Wenn während des Einfügens eine Ausnahme ausgelöst wird, aber nicht in der Hash Funktion des Containers auftritt, wird der Container nicht geändert. Wenn die Ausnahme in der Hashfunktion ausgelöst wird, ist das Ergebnis nicht definiert.
 
 Ein Codebeispiel finden Sie unter [Set:: emplace](../standard-library/set-class.md#emplace).
 
@@ -1006,7 +1061,7 @@ Args&&... args);
 Die Argumente, die weitergeleitet werden, um ein Element zu erstellen, das in das unordered_set-Element eingefügt werden soll, es sei denn, das unordened_set-Element erhält bereits das Element, oder allgemeiner: ein Element, dessen Schlüssel gleichwertig sortiert wird, ist bereits erhalten.
 
 *Was*\
-Ein Hinweis bezüglich des Platzes, an dem mit der Suche nach dem richtigen Einfügepunkt begonnen wird.
+Ein Hinweis auf den Ort, an dem mit der Suche nach dem richtigen Einfügepunkt begonnen werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -1018,7 +1073,7 @@ Wenn die Einfügung fehlerhaft war, da das Element bereits vorhanden ist, wird e
 
 Durch diese Funktion werden keine Iteratoren oder Verweise ungültig.
 
-Wird bei der Einfügung eine Ausnahme ausgelöst, die aber in der Hashfunktion des Containers nicht auftritt, wird der Container nicht geändert. Wenn die Ausnahme in der Hashfunktion ausgelöst wird, ist das Ergebnis nicht definiert.
+Wenn während des Einfügens eine Ausnahme ausgelöst wird, aber nicht in der Hash Funktion des Containers auftritt, wird der Container nicht geändert. Wenn die Ausnahme in der Hashfunktion ausgelöst wird, ist das Ergebnis nicht definiert.
 
 Ein Codebeispiel finden Sie unter [set::emplace_hint](../standard-library/set-class.md#emplace_hint).
 
@@ -1491,7 +1546,7 @@ Die Einzelelement-Memberfunktionen mit Hinweis (3) und (4) geben einen Iterator 
 
 Durch diese Funktion werden keine Iteratoren, Zeiger oder Verweise ungültig.
 
-Wird beim Einfügen von nur einem Element eine Ausnahme ausgelöst, die jedoch nicht in der Hashfunktion des Containers auftritt, wird der Zustand des Containers nicht geändert. Wenn die Ausnahme in der Hashfunktion ausgelöst wird, ist das Ergebnis nicht definiert. Wird beim Einfügen mehrerer Elementen eine Ausnahme ausgelöst, wird der Container in einem nicht angegebenen doch gültigen Zustand belassen.
+Wenn beim Einfügen von nur einem Element eine Ausnahme ausgelöst wird, die jedoch nicht in der Hash Funktion des Containers auftritt, wird der Zustand des Containers nicht geändert. Wenn die Ausnahme in der Hashfunktion ausgelöst wird, ist das Ergebnis nicht definiert. Wird beim Einfügen mehrerer Elementen eine Ausnahme ausgelöst, wird der Container in einem nicht angegebenen doch gültigen Zustand belassen.
 
 Um auf die iteratorkomponente eines zuzugreifen, der `pair` `pr` von den Element Funktionen mit einem Element zurückgegeben wird, verwenden `pr.first` Sie, um den Iterator innerhalb des zurückgegebenen Paars zu dereferenzieren, verwenden `*pr.first` Sie, und geben Sie ein Element an. Um auf die- **`bool`** Komponente zuzugreifen, verwenden Sie `pr.second` . Eine Beispiel finden Sie unter Beispielcode weiter unten in diesem Artikel.
 
@@ -1744,7 +1799,7 @@ typedef T4 local_iterator;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Typ beschreibt ein Objekt, das als ein Vorwärtsiterator für ein Bucket dienen kann. Er wird hier als Synonym für einen durch Implementierung definierten `T4`-Typ beschrieben.
+Der Typ beschreibt ein Objekt, das als ein Vorwärtsiterator für ein Bucket dienen kann. Sie wird hier als Synonym für den von der Implementierung definierten Typ beschrieben `T4` .
 
 ### <a name="example"></a>Beispiel
 
@@ -2293,7 +2348,7 @@ typedef T2 size_type;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der unsignierte Ganzzahltyp beschreibt ein Objekt, das die Länge jeder kontrollierten Sequenz darstellen kann. Er wird hier als Synonym für einen durch Implementierung definierten `T2`-Typ beschrieben.
+Der unsignierte Ganzzahltyp beschreibt ein Objekt, das die Länge jeder kontrollierten Sequenz darstellen kann. Sie wird hier als Synonym für den von der Implementierung definierten Typ beschrieben `T2` .
 
 ### <a name="example"></a>Beispiel
 
@@ -2466,9 +2521,9 @@ Alle Konstruktoren initialisieren auch einige gespeicherte Werte. Für den Kopie
 
 Die Mindestanzahl von Buchern ist das Argument *bucket_count*, falls vorhanden. Andernfalls ist es ein Standardwert, der hier als durch die Implementierung definierter Wert beschrieben wird `N0` .
 
-Das Hash Funktions Objekt ist der Argument *Hash*, falls vorhanden. Andernfalls ist der Wert `Hash()` .
+Das Hash Funktions Objekt ist der Argument *Hash*, falls vorhanden. Andernfalls ist es `Hash()` .
 
-Das Vergleichs Funktions Objekt ist das Argument *Comp*, falls es vorhanden ist. Andernfalls ist der Wert `Comp()` .
+Das Vergleichs Funktions Objekt ist das Argument *Comp*, falls es vorhanden ist. Andernfalls ist es `Comp()` .
 
 Das *Zuordnungs*Objekt ist das Argument Al, falls es vorhanden ist. Andernfalls ist der Wert `Alloc()` .
 

@@ -13,12 +13,12 @@ helpviewer_keywords:
 - -D compiler option [C++]
 - D compiler option [C++]
 ms.assetid: b53fdda7-8da1-474f-8811-ba7cdcc66dba
-ms.openlocfilehash: b10d611d38508f5696dd3b72fb8458e9b61082c8
-ms.sourcegitcommit: 389c559918d9bfaf303d262ee5430d787a662e92
+ms.openlocfilehash: 7c8a500820c8cc4655c409f4628d72a69acafa5a
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71230398"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90040937"
 ---
 # <a name="d-preprocessor-definitions"></a>/D (Präprozessordefinitionen)
 
@@ -26,18 +26,18 @@ Definiert ein Vorverarbeitungssymbol für eine Quelldatei.
 
 ## <a name="syntax"></a>Syntax
 
-> **/D** ]Name | [`=` [{ | String*Number* }]] \`#` \[
-> **/D** \[ ]Name [[{`=` StringNumber | }]] |  `"``#``"`
+> **/D** \[ ]_Name_ \[ `=` \| `#` \[ { *String* \| *Number* }]] \
+> **/D** \[ ] `"` _Name_ \[ `=` \| `#` \[ { *String* \| *Number* }]]`"`
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Sie können dieses Symbol mit `#if` oder `#ifdef` zur bedingten Kompilierung von Quellcode verwenden. Die Symbol Definition bleibt wirksam, bis Sie im Code neu definiert wird oder im Code durch eine `#undef` -Direktive nicht definiert ist.
+Sie können dieses Symbol mit `#if` oder `#ifdef` zur bedingten Kompilierung von Quellcode verwenden. Die Symbol Definition bleibt wirksam, bis Sie im Code neu definiert wird oder im Code durch eine-Direktive nicht definiert ist `#undef` .
 
-**/D** hat denselben Effekt wie eine `#define` Direktive am Anfang einer Quell Code Datei. Der Unterschied besteht darin, dass **/D** Anführungszeichen in der Befehlszeile entfernt `#define` und eine-Direktive Sie beibehält. Zwischen dem **/D** und dem Symbol können Leerzeichen stehen. Es dürfen keine Leerzeichen zwischen dem Symbol und dem Gleichheitszeichen oder zwischen dem Gleichheitszeichen und einem zugewiesenen Wert vorhanden sein.
+**/D** hat denselben Effekt wie eine `#define` Direktive am Anfang einer Quell Code Datei. Der Unterschied besteht darin, dass **/D** Anführungszeichen in der Befehlszeile entfernt und eine- `#define` Direktive Sie beibehält. Zwischen dem **/D** und dem Symbol können Leerzeichen stehen. Es dürfen keine Leerzeichen zwischen dem Symbol und dem Gleichheitszeichen oder zwischen dem Gleichheitszeichen und einem zugewiesenen Wert vorhanden sein.
 
-Standardmäßig wird einem Symbol der Wert 1 zugeordnet. `/D name` entspricht beispielsweise `/D name=1`. Im Beispiel am Ende dieses Artikels wird die Definition von `TEST` gedruckt. `1`
+Standardmäßig wird einem Symbol der Wert 1 zugeordnet. `/D name` entspricht beispielsweise `/D name=1`. Im Beispiel am Ende dieses Artikels wird die Definition von `TEST` gedruckt `1` .
 
-Das Kompilieren mithilfe `/D name=` von bewirkt, dass der Symbol *Name* keinen zugeordneten Wert hat. Obwohl das Symbol trotzdem zur bedingten Codekompilierung verwendet werden kann, ergibt das Symbol keinen Wert. Wenn Sie zum Beispiel mithilfe von `/DTEST=` kompilieren, tritt ein Fehler auf. Dieses Verhalten ähnelt der Verwendung von `#define` mit oder ohne Wert.
+Das Kompilieren mithilfe von `/D name=` bewirkt, dass der Symbol *Name* keinen zugeordneten Wert hat. Obwohl das Symbol trotzdem zur bedingten Codekompilierung verwendet werden kann, ergibt das Symbol keinen Wert. Wenn Sie in diesem Beispiel mithilfe von kompilieren `/DTEST=` , tritt ein Fehler auf. Dieses Verhalten ähnelt der Verwendung von `#define` mit oder ohne Wert.
 
 Die **/D** -Option unterstützt keine Funktions ähnlichen Makro Definitionen. Wenn Sie Definitionen einfügen möchten, die nicht in der Befehlszeile definiert werden können, berücksichtigen Sie die Compileroption [/fi (Name erzwungene Includedatei)](fi-name-forced-include-file.md) .
 
@@ -55,13 +55,13 @@ Mit dem folgenden Befehl werden alle Vorkommen des Schlüsselworts `__far` aus T
 CL /D __far= TEST.C
 ```
 
-Die **cl** -Umgebungsvariable kann nicht auf eine Zeichenfolge festgelegt werden, die das Gleichheitszeichen enthält. Wenn Sie **/D** in Verbindung mit der **cl** -Umgebungsvariablen verwenden möchten, müssen Sie das`#`Nummern Zeichen () anstelle des Gleichheitszeichens angeben:
+Die **cl** -Umgebungsvariable kann nicht auf eine Zeichenfolge festgelegt werden, die das Gleichheitszeichen enthält. Wenn Sie **/D** in Verbindung mit der **cl** -Umgebungsvariablen verwenden möchten, müssen Sie das Nummern Zeichen ( `#` ) anstelle des Gleichheitszeichens angeben:
 
 ```cmd
 SET CL=/DTEST#0
 ```
 
-Wenn Sie ein Vorverarbeitungssymbol an der Eingabeaufforderung definieren, sollten Sie Compileranalyseregeln sowie Shell-Analyseregeln berücksichtigen. Wenn Sie z. b. ein Vorverarbeitungs Symbol für das Prozent`%`Zeichen () in Ihrem Programm definieren möchten, geben Sie an`%%`der Eingabeaufforderung zwei Prozentzeichen () an. Wenn Sie nur eine Angabe angeben, wird ein Fehler bei der Verarbeitung ausgegeben.
+Wenn Sie ein Vorverarbeitungssymbol an der Eingabeaufforderung definieren, sollten Sie Compileranalyseregeln sowie Shell-Analyseregeln berücksichtigen. Wenn Sie z. b. ein Vorverarbeitungs Symbol für das Prozentzeichen ( `%` ) in Ihrem Programm definieren möchten, geben Sie `%%` an der Eingabeaufforderung zwei Prozentzeichen () an. Wenn Sie nur eine Angabe angeben, wird ein Fehler bei der Verarbeitung ausgegeben.
 
 ```cmd
 CL /DTEST=%% TEST.C
@@ -71,13 +71,13 @@ CL /DTEST=%% TEST.C
 
 1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Wählen Sie im linken Bereich **Konfigurations Eigenschaften**, **CC++/** , **Präprozessor**aus.
+1. Wählen Sie im linken Bereich **Konfigurations Eigenschaften**, **C/C++**, **Präprozessor**aus.
 
 1. Öffnen Sie im rechten Bereich in der rechten Spalte der Eigenschaft **Präprozessordefinitionen** das Dropdown Menü, und wählen Sie **Bearbeiten**aus.
 
 1. Fügen Sie im Dialogfeld **Präprozessordefinitionen** (eine pro Zeile) ein, ändern oder löschen Sie eine oder mehrere Definitionen. Klicken Sie auf **OK**, um die Änderungen zu speichern.
 
-   Sie müssen das Optionen Präfix "/D" nicht für die hier angegebenen Definitionen einschließen. Auf der Eigenschaften Seite werden Definitionen durch Semikolons (`;`) getrennt.
+   Sie müssen das Optionen Präfix "/D" nicht für die hier angegebenen Definitionen einschließen. Auf der Eigenschaften Seite werden Definitionen durch Semikolons () getrennt `;` .
 
 ### <a name="to-set-this-compiler-option-programmatically"></a>So legen Sie diese Compileroption programmgesteuert fest
 
@@ -104,7 +104,7 @@ int main( )
 TEST defined 1
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Compileroptionen](compiler-options.md)\
 [MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)\
