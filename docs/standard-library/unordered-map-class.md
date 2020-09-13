@@ -1,6 +1,7 @@
 ---
 title: unordered_map-Klasse
-ms.date: 11/04/2016
+description: API-Referenz für die Container Klasse der C++ `unordered_map` -Standard Bibliothek, die eine Sequenz von Elementen variabler Länge steuert.
+ms.date: 9/9/2020
 f1_keywords:
 - unordered_map/std::unordered_map
 - unordered_map/std::unordered_map::allocator_type
@@ -27,6 +28,7 @@ f1_keywords:
 - unordered_map/std::unordered_map::cbegin
 - unordered_map/std::unordered_map::cend
 - unordered_map/std::unordered_map::clear
+- unordered_map/std::unordered_map::contains
 - unordered_map/std::unordered_map::count
 - unordered_map/std::unordered_map::emplace
 - unordered_map/std::unordered_map::emplace_hint
@@ -74,6 +76,7 @@ helpviewer_keywords:
 - std::unordered_map::cbegin
 - std::unordered_map::cend
 - std::unordered_map::clear
+- std::unordered_map::contains
 - std::unordered_map::count
 - std::unordered_map::emplace
 - std::unordered_map::emplace_hint
@@ -138,12 +141,12 @@ helpviewer_keywords:
 - std::unordered_map::size
 - std::unordered_map::swap
 ms.assetid: 7cf7cfa1-16e7-461c-a9b2-3b8d8ec24e0d
-ms.openlocfilehash: bde29e2d6148dd5aa5c39ac6a923048694e3a32d
-ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
+ms.openlocfilehash: 8fe2e153e3a7483d9c4698ef4a87e281ace653fc
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88562443"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90042136"
 ---
 # <a name="unordered_map-class"></a>unordered_map-Klasse
 
@@ -179,7 +182,7 @@ Die Zuweisungsklasse.
 
 ## <a name="members"></a>Member
 
-|Typendefinition|BESCHREIBUNG|
+|Typendefinition|Beschreibung|
 |-|-|
 |[allocator_type](#allocator_type)|Der Typ einer Zuweisung für die Speicherverwaltung.|
 |[const_iterator](#const_iterator)|Der Typ eines konstanten Iterators für die gesteuerte Sequenz.|
@@ -202,13 +205,14 @@ Die Zuweisungsklasse.
 |-|-|
 |[at](#at)|Sucht ein Element mit dem angegebenen Schlüssel.|
 |[beginnen](#begin)|Legt den Anfang der kontrollierten Sequenz fest.|
-|[Rost](#bucket)|Ruft die Bucketnummer für einen Schlüsselwert ab.|
+|[bucket](#bucket)|Ruft die Bucketnummer für einen Schlüsselwert ab.|
 |[bucket_count](#bucket_count)|Ruft die Anzahl von Buckets ab.|
 |[bucket_size](#bucket_size)|Ruft die Größe eines Buckets ab.|
 |[cbegin](#cbegin)|Legt den Anfang der kontrollierten Sequenz fest.|
 |[cend](#cend)|Legt das Ende der kontrollierten Sequenz fest.|
 |[Löschen](#clear)|Entfernt alle Elemente.|
 |[count](#count)|Sucht die Anzahl von Elementen, die einem angegebenen Schlüssel entsprechen.|
+|[enthält](#contains)<sup>c++ 20</sup>|Überprüfen Sie, ob ein Element mit dem angegebenen Schlüssel in vorhanden ist `unordered_map` .|
 |[emplace](#emplace)|Fügt ein Element hinzu, das direkt erstellt wird.|
 |[emplace_hint](#emplace_hint)|Fügt ein Element hinzu, das direkt mit Hinweis erstellt wird.|
 |[empty](#empty)|Testet, ob keine Elemente vorhanden sind.|
@@ -900,6 +904,58 @@ int main()
 
 ```Output
 [c, 3] [b, 2] [a, 1]
+```
+
+## <a name="unordered_mapcontains"></a><a name="contains"></a> unordered_map:: enthält
+
+Überprüft, ob ein-Element `unordered_map` mit dem angegebenen Schlüssel vorhanden ist.
+Eingeführt in c++ 20.
+
+```cpp
+bool contains(const Key& key) const;
+<class K> bool contains(const K& key) const;
+```
+
+### <a name="parameters"></a>Parameter
+
+*Km*\
+Der Typ des Schlüssels.
+
+*wichtigen*\
+Der Schlüsselwert des Elements, nach dem gesucht werden soll.
+
+### <a name="return-value"></a>Rückgabewert
+
+`true` , wenn sich das Element im Container befindet. `false` andernfalls. 
+
+### <a name="remarks"></a>Bemerkungen
+
+`contains()` ist neu in c++ 20. Um es zu verwenden, geben Sie die [/Std: c + + Latest](../build/reference/std-specify-language-standard-version.md) -Compileroption an.
+
+`template<class K> bool contains(const K& key) const` ist nur an der Überladungs Auflösung beteiligt, wenn `key_compare` transparent ist.
+
+### <a name="example"></a>Beispiel
+
+```cpp
+// Requires /std:c++latest
+#include <unordered_map>
+#include <iostream>
+
+int main()
+{
+    std::unordered_map<int, bool> theUnorderedMap = {{0, false}, {1,true}};
+
+    std::cout << std::boolalpha; // so booleans show as 'true' or 'false'
+    std::cout << theUnorderedMap.contains(1) << '\n';
+    std::cout << theUnorderedMap.contains(2) << '\n';
+    
+    return 0;
+}
+```
+
+```Output
+true
+false
 ```
 
 ## <a name="unordered_mapcount"></a><a name="count"></a> unordered_map:: count

@@ -1,6 +1,7 @@
 ---
 title: unordered_multiset-Klasse
-ms.date: 11/04/2016
+description: API-Referenz für die Container Klasse der C++-Standard Bibliothek `unordered_multiset` , die ein Objekt beschreibt, das zum Speichern und Abrufen von Daten aus einer Auflistung verwendet wird, in der die Werte der enthaltenen Elemente nicht eindeutig sein müssen und als Schlüsselwerte dienen. Die Daten werden nicht automatisch geordnet.
+ms.date: 9/10/2020
 f1_keywords:
 - unordered_set/std::unordered_multiset
 - unordered_set/std::unordered_multiset::allocator_type
@@ -25,6 +26,7 @@ f1_keywords:
 - unordered_set/std::unordered_multiset::cbegin
 - unordered_set/std::unordered_multiset::cend
 - unordered_set/std::unordered_multiset::clear
+- unordered_set/std::unordered_multiset::contains
 - unordered_set/std::unordered_multiset::count
 - unordered_set/std::unordered_multiset::emplace
 - unordered_set/std::unordered_multiset::emplace_hint
@@ -71,6 +73,7 @@ helpviewer_keywords:
 - std::unordered_multiset::cbegin
 - std::unordered_multiset::cend
 - std::unordered_multiset::clear
+- std::unordered_multiset::contains
 - std::unordered_multiset::count
 - std::unordered_multiset::emplace
 - std::unordered_multiset::emplace_hint
@@ -134,12 +137,12 @@ helpviewer_keywords:
 - std::unordered_multiset::size
 - std::unordered_multiset::swap
 ms.assetid: 70c8dfc5-492a-4af2-84f5-1aa9cb04b71c
-ms.openlocfilehash: 83b2b1a97972fa63f7cf7d2b9a6a48b49dbeda8d
-ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
+ms.openlocfilehash: 8252ecc7051c1bad2ca1e7683ea32206dd0f10f4
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88562518"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90042029"
 ---
 # <a name="unordered_multiset-class"></a>unordered_multiset-Klasse
 
@@ -171,7 +174,7 @@ Die Zuweisungsklasse.
 
 ## <a name="members"></a>Member
 
-|Typendefinition|BESCHREIBUNG|
+|Typendefinition|Beschreibung|
 |-|-|
 |[allocator_type](#allocator_type)|Der Typ einer Zuweisung für die Speicherverwaltung.|
 |[const_iterator](#const_iterator)|Der Typ eines konstanten Iterators für die gesteuerte Sequenz.|
@@ -192,12 +195,13 @@ Die Zuweisungsklasse.
 |Memberfunktion|BESCHREIBUNG|
 |-|-|
 |[beginnen](#begin)|Legt den Anfang der kontrollierten Sequenz fest.|
-|[Rost](#bucket)|Ruft die Bucketnummer für einen Schlüsselwert ab.|
+|[bucket](#bucket)|Ruft die Bucketnummer für einen Schlüsselwert ab.|
 |[bucket_count](#bucket_count)|Ruft die Anzahl von Buckets ab.|
 |[bucket_size](#bucket_size)|Ruft die Größe eines Buckets ab.|
 |[cbegin](#cbegin)|Legt den Anfang der kontrollierten Sequenz fest.|
 |[cend](#cend)|Legt das Ende der kontrollierten Sequenz fest.|
 |[Löschen](#clear)|Entfernt alle Elemente.|
+|[enthält](#contains)<sup>c++ 20</sup>|Überprüft, ob ein Element mit dem angegebenen Schlüssel vorhanden ist.|
 |[count](#count)|Sucht die Anzahl von Elementen, die einem angegebenen Schlüssel entsprechen.|
 |[emplace](#emplace)|Fügt ein Element hinzu, das direkt erstellt wird.|
 |[emplace_hint](#emplace_hint)|Fügt ein Element hinzu, das direkt mit Hinweis erstellt wird.|
@@ -843,6 +847,57 @@ int main()
 
 ```Output
 [c] [b] [a]
+```
+
+## <a name="unordered_multisetcontains"></a><a name="contains"></a> unordered_multiset:: enthält
+
+Überprüft, ob ein Element mit dem angegebenen Schlüssel in vorhanden ist `unordered_multiset` .
+
+```cpp
+bool contains(const Key& key) const;
+template<class K> bool contains(const K& key) const;
+```
+
+### <a name="parameters"></a>Parameter
+
+*Km*\
+Der Typ des Schlüssels.
+
+*wichtigen*\
+Der Schlüsselwert des Elements, nach dem gesucht werden soll.
+
+### <a name="return-value"></a>Rückgabewert
+
+`true` , wenn sich das Element im Container befindet. `false` andernfalls.
+
+### <a name="remarks"></a>Bemerkungen
+
+`contains()` ist neu in c++ 20. Um es zu verwenden, geben Sie die [/Std: c + + Latest](../build/reference/std-specify-language-standard-version.md) -Compileroption an.
+
+`template<class K> bool contains(const K& key) const` ist nur an der Überladungs Auflösung beteiligt, wenn `key_compare` transparent ist.
+
+### <a name="example"></a>Beispiel
+
+```cpp
+// Requires /std:c++latest
+#include <unordered_set>
+#include <iostream>
+
+int main()
+{
+    std::unordered_multiset<int> theUnorderedMultiset = { 1, 2, 3 };
+
+    std::cout << std::boolalpha; // so booleans show as 'true' or 'false'
+    std::cout << theUnorderedMultiset.contains(1) << '\n';
+    std::cout << theUnorderedMultiset.contains(4) << '\n';
+
+    return 0;
+}
+```
+
+```Output
+true
+false
 ```
 
 ## <a name="unordered_multisetcount"></a><a name="count"></a> unordered_multiset:: count

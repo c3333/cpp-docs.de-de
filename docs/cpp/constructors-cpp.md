@@ -6,12 +6,12 @@ helpviewer_keywords:
 - objects [C++], creating
 - instance constructors
 ms.assetid: 3e9f7211-313a-4a92-9584-337452e061a9
-ms.openlocfilehash: f5340f2e56a367734293d661d9d89eb0db522fd2
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 3694dc72860892d778533de2e40898faf9cc287d
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88842051"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90042159"
 ---
 # <a name="constructors-c"></a>Konstruktoren (C++)
 
@@ -643,7 +643,7 @@ Derived d4 calls: Base()*/
 
 ::: moniker range=">=vs-2017"
 
-**Visual Studio 2017 und**höher: **`using`** bei der Anweisung im **/Std: c++ 17** -Modus werden alle Konstruktoren der Basisklasse mit Ausnahme derjenigen, die in der abgeleiteten Klasse eine identische Signatur aufweisen, in den Gültigkeitsbereich integriert. Im Allgemeinen empfiehlt es sich, erbende Konstruktoren zu verwenden, wenn die abgeleitete Klasse keine neuen Datenmember oder Konstruktoren deklariert. Weitere Informationen finden Sie [unter Verbesserungen in Visual Studio 2017 Version 15,7](../overview/cpp-conformance-improvements.md?view=vs-2017#improvements_157).
+**Visual Studio 2017 und**höher: **`using`** bei der Anweisung im **/Std: c++ 17** -Modus werden alle Konstruktoren der Basisklasse mit Ausnahme derjenigen, die in der abgeleiteten Klasse eine identische Signatur aufweisen, in den Gültigkeitsbereich integriert. Im Allgemeinen empfiehlt es sich, erbende Konstruktoren zu verwenden, wenn die abgeleitete Klasse keine neuen Datenmember oder Konstruktoren deklariert.
 
 ::: moniker-end
 
