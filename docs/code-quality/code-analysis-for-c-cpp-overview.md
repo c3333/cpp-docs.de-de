@@ -16,16 +16,16 @@ helpviewer_keywords:
 - '#pragma directives, code analysis'
 - C, code analysis
 ms.assetid: 81f0c9e8-f471-4de5-aac4-99db336a8809
-ms.openlocfilehash: 26168e66fcb2809bc1eab68d3c8fa1ccf7495568
-ms.sourcegitcommit: 7bea0420d0e476287641edeb33a9d5689a98cb98
+ms.openlocfilehash: e5f5b75057985dc769c8f1ab84765d628dc42fcc
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "79467262"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90040301"
 ---
 # <a name="code-analysis-for-cc-overview"></a>Übersicht über die Codeanalyse für C/C++
 
-Das c/C++ Code Analysis-Tool stellt Informationen zu möglichen Fehlern in Ihrem cC++ /Quellcode-Code bereit. Zu den Codierungsfehlern, die das Tool am häufigsten findet, zählen Pufferüberläufe, nicht initialisierter Speicher, Dereferenzierungen von NULL-Zeigern sowie Speicher- und Ressourcenverluste. Das Tool kann auch Überprüfungen anhand der [ C++ wichtigsten Richtlinien](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md)ausführen.
+Das c/C++-Code Analysetool enthält Informationen zu möglichen Fehlern in Ihrem c/C++-Quellcode. Zu den Codierungsfehlern, die das Tool am häufigsten findet, zählen Pufferüberläufe, nicht initialisierter Speicher, Dereferenzierungen von NULL-Zeigern sowie Speicher- und Ressourcenverluste. Das Tool kann auch Überprüfungen des [C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md)ausführen.
 
 ## <a name="ide-integrated-development-environment-integration"></a>Integration der IDE (integrierte Entwicklungsumgebung)
 
@@ -45,11 +45,11 @@ C:\>cl /analyze Sample.cpp
 
 ## <a name="pragma-support"></a>#pragma Unterstützung
 
-Sie können die `#pragma`-Direktive verwenden, um Warnungen als Fehler zu behandeln. Aktivieren oder deaktivieren Sie Warnungen, und unterdrücken Sie Warnungen für einzelne Codezeilen. Weitere Informationen finden Sie unter [Pragma-Direktiven und das __Pragma-Schlüsselwort](/cpp/preprocessor/pragma-directives-and-the-pragma-keyword).
+Sie können die- `#pragma` Direktive verwenden, um Warnungen als Fehler zu behandeln, Warnungen zu aktivieren oder zu deaktivieren und Warnungen für einzelne Codezeilen zu unterdrücken. Weitere Informationen finden Sie unter [Pragma-Direktiven und das __Pragma-Schlüsselwort](/cpp/preprocessor/pragma-directives-and-the-pragma-keyword).
 
 ## <a name="annotation-support"></a>Unterstützung der Anmerkung
 
-Mithilfe von Anmerkungen wird die Codeanalyse genauer. Sie enthalten zusätzliche Informationen zu Vorabbedingungen und nachträglichen Bedingungen für Funktionsparameter und Rückgabetypen. Weitere Informationen finden Sie unter [Verwenden von Sal-Anmerkungen zum Reduzieren vonC++ C/Code-Fehlern](../code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects.md).
+Mithilfe von Anmerkungen wird die Codeanalyse genauer. Sie enthalten zusätzliche Informationen zu Vorabbedingungen und nachträglichen Bedingungen für Funktionsparameter und Rückgabetypen. Weitere Informationen finden Sie unter [Verwenden von Sal-Anmerkungen zum Reduzieren von C/C++-Code Fehlern](../code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects.md).
 
 ## <a name="run-analysis-tool-as-part-of-check-in-policy"></a>Ausführen des Analysetools im Rahmen einer Eincheckrichtlinie
 
@@ -57,15 +57,15 @@ Möglicherweise möchten Sie festlegen, dass beim Quellcode-Check-In stets besti
 
 ## <a name="team-build-integration"></a>Team Build-Integration
 
-Sie können die integrierten Funktionen des Buildsystems verwenden, um das Code Analysetool als Schritt des Azure devops-Buildprozesses auszuführen. Weitere Informationen finden Sie unter [Azure Pipelines](/azure/devops/pipelines/index?view=vsts).
+Sie können die integrierten Funktionen des Buildsystems verwenden, um das Code Analysetool als Schritt des Azure devops-Buildprozesses auszuführen. Weitere Informationen finden Sie unter [Azure Pipelines](/azure/devops/pipelines/index).
 
 ## <a name="see-also"></a>Weitere Informationen
 
 - [Schnellstart: Code Analyse für C/C++](quick-start-code-analysis-for-c-cpp.md)
-- [Exemplarische Vorgehensweise: analysierenC++ von C/Code auf Fehler](walkthrough-analyzing-c-cpp-code-for-defects.md)
-- [Codeanalyse für C/C++-Warnungen](code-analysis-for-c-cpp-warnings.md)
+- [Exemplarische Vorgehensweise: Analysieren von C/C++-Code auf Fehler](walkthrough-analyzing-c-cpp-code-for-defects.md)
+- [Code Analyse für C/C++-Warnungen](code-analysis-for-c-cpp-warnings.md)
 - [Verwenden der Überprüfungen für C++ Core Guidelines](using-the-cpp-core-guidelines-checkers.md)
-- [C++Referenz zu Kern Richtlinien Prüfung](code-analysis-for-cpp-corecheck.md)
-- [Verwenden von Regelsätzen zum angeben C++ der Regeln, die ausgeführt werden sollen](using-rule-sets-to-specify-the-cpp-rules-to-run.md)
+- [C++ Core Guidelines Checker-Referenz](code-analysis-for-cpp-corecheck.md)
+- [Verwenden von Regelsätzen zum Angeben der C++ Regeln, die ausgeführt werden sollen](using-rule-sets-to-specify-the-cpp-rules-to-run.md)
 - [Analysieren der Treiber Qualität mithilfe von Code Analyse Tools](/windows-hardware/drivers/develop/analyzing-driver-quality-by-using-code-analysis-tools)
-- [Code Analyse für Treiber Warnungen](/windows-hardware/drivers/devtest/prefast-for-drivers-warnings)
+- [Codeanalyse für Treiberwarnungen](/windows-hardware/drivers/devtest/prefast-for-drivers-warnings)
