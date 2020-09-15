@@ -1,6 +1,7 @@
 ---
 title: realloc
-ms.date: 4/2/2020
+description: API-Referenz für rezuweisung (); , wodurch Speicherblöcke neu zugewiesen werden.
+ms.date: 9/11/2020
 api_name:
 - realloc
 - _o_realloc
@@ -37,12 +38,12 @@ helpviewer_keywords:
 - _frealloc function
 - reallocate memory blocks
 ms.assetid: 2b2239de-810b-4b11-9438-32ab0a244185
-ms.openlocfilehash: 72c38021452940553bad770160ecc5db7ea546d0
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: c68909b2f5d73959465d63af522ceeb00c8ce23e
+ms.sourcegitcommit: b492516cc65120250b9ea23f96f7f63f37f99fae
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87216816"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90075815"
 ---
 # <a name="realloc"></a>realloc
 
@@ -59,31 +60,34 @@ void *realloc(
 
 ### <a name="parameters"></a>Parameter
 
-*memblock*<br/>
+*`memblock`*\
 Zeiger zum vorherigen belegten Speicherblock.
 
-*size*<br/>
+*`size`*\
 Neue Größe in Bytes.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**rezuzuweisung** gibt einen **`void`** Zeiger auf den neu belegten (und möglicherweise verschob baren) Speicherblock zurück.
+**`realloc`** Gibt einen **`void`** Zeiger auf den neu belegten (und möglicherweise verschobenden) Speicherblock zurück.
 
-Wenn nicht genügend Arbeitsspeicher verfügbar ist, um den Block auf die angegebene Größe auszudehnen, bleibt der ursprüngliche Block unverändert, und **null** wird zurückgegeben.
+Wenn nicht genügend Arbeitsspeicher verfügbar ist, um den Block auf die angegebene Größe auszudehnen, bleibt der ursprüngliche Block unverändert, und **`NULL`** wird zurückgegeben.
 
-Wenn die *Größe* 0 (null) ist, wird der Block, auf den *memblock* zeigt, freigegeben. der Rückgabewert ist **null**, und *memblock* zeigt auf einen freigegebenen Block.
+Wenn *`size`* 0 (null) ist, wird der Block, auf den von verwiesen wird, *`memblock`* freigegeben. der Rückgabewert ist **`NULL`** , und *`memblock`* zeigt auf einen freigegebenen Block.
 
-Der Rückgabewert zeigt auf einen Speicherplatz, der für die Speicherung eines beliebigen Objekttyps geeignet ist. Um einen Zeiger auf einen anderen Typ als zu erhalten **`void`** , verwenden Sie eine Typumwandlung für den Rückgabewert.
+Der Rückgabewert zeigt auf einen Speicherplatz, der für die Speicherung eines beliebigen Objekt Typs geeignet ist. Um einen Zeiger auf einen anderen Typ als zu erhalten **`void`** , verwenden Sie eine Typumwandlung für den Rückgabewert.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die **rezubelegungs** Funktion ändert die Größe eines zugeordneten Speicherblocks. Das *memblock* -Argument zeigt auf den Anfang des Speicherblocks. Wenn *memblock* **null**ist, verhält sich **rezuweisung** genauso wie **malloc** und ordnet einen neuen Block der *Größe* Bytes zu. Wenn *memblock* nicht **null**ist, sollte es sich um einen Zeiger handeln, der von einem vorherigen **czuzuordnungsbefehl**, **malloc**oder **rezuweisung**zurückgegeben wurde.
+> [!NOTE]
+> **`realloc`** wurde nicht aktualisiert, um das C17-Verhalten zu implementieren, da das neue Verhalten nicht mit dem Windows-Betriebssystem kompatibel ist.
 
-Das *size* -Argument gibt die neue Größe des Blocks in Bytes an. Der Inhalt des Blocks bleibt bis zum Minimum von neuer und alter Größe unverändert, obwohl sich der neue Block an einem anderen Speicherort befinden kann. Da sich der neue Block an einem neuen Speicherort befinden kann, ist der von **rebelegc** zurückgegebene Zeiger nicht garantiert der Zeiger, der durch das *memblock* -Argument weitergeleitet wird. **rebelegc** weist im Fall eines Puffer Wachstums keinen neu belegten Speicherplatz auf.
+Die- **`realloc`** Funktion ändert die Größe eines zugeordneten Speicherblocks. Das- *`memblock`* Argument zeigt auf den Anfang des Speicherblocks. Wenn *`memblock`* **`NULL`** den Wert hat, **`realloc`** verhält sich wie **`malloc`** und ordnet einen neuen Block von *`size`* Bytes zu. Wenn *`memblock`* nicht ist **`NULL`** , sollte es sich um einen Zeiger handeln, der von einem vorherigen-Befehl von, oder zurückgegeben wurde **`calloc`** **`malloc`** **`realloc`** .
 
-**realloc** legt **errno** auf " **tomem** " fest, wenn die Speicher Belegung fehlschlägt oder wenn die Menge an Angeforderter Arbeitsspeicher **_HEAP_MAXREQ**überschreitet. Informationen hierzu und über andere Fehlercodes finden Sie unter [errno, _doserrno, _sys_errlist, and _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
+Das- *`size`* Argument gibt die neue Größe des Blocks in Bytes an. Der Inhalt des Blocks bleibt bis zum Minimum von neuer und alter Größe unverändert, obwohl sich der neue Block an einem anderen Speicherort befinden kann. Da sich der neue-Block an einem neuen Speicherort befinden kann, ist der Zeiger, der von zurückgegeben wird, **`realloc`** nicht garantiert der Zeiger, der durch das Argument geleitet wird *`memblock`* . **`realloc`** weist im Fall eines Puffer Wachstums keinen neu belegten Speicherplatz auf.
 
-**rezuzuweisung** ruft **malloc** auf, um den neuen handlermodus mit der C++ [_set_new_mode](set-new-mode.md) -Funktion festzulegen. Der neue handlermodus gibt an, ob **malloc** bei einem Fehler die neue Handlerroutine aufrufen soll, wie Sie von [_set_new_handler](set-new-handler.md)festgelegt wird. Standardmäßig ruft **malloc** die neue Handlerroutine nicht bei einem Fehler auf, um Arbeitsspeicher zuzuweisen. Sie können dieses Standardverhalten außer Kraft setzen, sodass die neue Handlerroutine von **malloc** auf die gleiche Weise aufgerufen wird, wenn die Zuordnung von **realloc** **`new`** aus demselben Grund fehlschlägt. Um den Standardwert zu überschreiben, rufen Sie
+**`realloc`** legt **`errno`** auf fest, **`ENOMEM`** Wenn die Speicher Belegung fehlschlägt oder wenn die Menge an Angeforderter Arbeitsspeicher überschreitet **`_HEAP_MAXREQ`** . Informationen hierzu und über andere Fehlercodes finden Sie unter [errno, _doserrno, _sys_errlist, and _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
+
+**`realloc`** Ruft auf, um mit **`malloc`** der C++ [_set_new_mode](set-new-mode.md) -Funktion den neuen handlermodus festzulegen. Der neue handlermodus gibt an, ob bei einem Fehler **`malloc`** die neue Handlerroutine aufgerufen werden soll, die von [_set_new_handler](set-new-handler.md)festgelegt wird. Standardmäßig **`malloc`** Ruft die neue Handlerroutine nicht bei einem Fehler auf, um Arbeitsspeicher zuzuweisen. Sie können dieses Standardverhalten außer Kraft setzen, sodass **`realloc`** **`malloc`** die neue Handlerroutine bei einem Fehler beim Zuordnen von Arbeitsspeicher auf dieselbe Weise aufgerufen wird, die der **`new`** Operator bei einem Fehler aus demselben Grund bewirkt. Um den Standardwert zu überschreiben, rufen Sie
 
 ```C
 _set_new_mode(1);
@@ -91,9 +95,9 @@ _set_new_mode(1);
 
 rechtzeitig im Programm auf, oder stellen Sie eine Verknüpfung mit NEWMODE.OBJ (siehe [Linkoptionen](../../c-runtime-library/link-options.md)) her.
 
-Wenn die Anwendung mit einer Debugversion der C-Laufzeitbibliotheken verknüpft ist, wird **rezuzuweisung** zu [_realloc_dbg](realloc-dbg.md)aufgelöst. Weitere Informationen dazu, wie der Heap während des Debugprozesses verwaltet wird, finden Sie unter [The CRT Debug Heap (CRT-Debugheap)](/visualstudio/debugger/crt-debug-heap-details).
+Wenn die Anwendung mit einer Debugversion der C-Laufzeitbibliotheken verknüpft ist, wird **`realloc`** in [_realloc_dbg](realloc-dbg.md)aufgelöst. Weitere Informationen dazu, wie der Heap während des Debugprozesses verwaltet wird, finden Sie unter [The CRT Debug Heap (CRT-Debugheap)](/visualstudio/debugger/crt-debug-heap-details).
 
-**rezuweisung** ist `__declspec(noalias)` als und gekennzeichnet `__declspec(restrict)` , was bedeutet, dass die Funktion globale Variablen garantiert nicht ändert und dass der zurückgegebene Zeiger keinen Alias hat. Weitere Informationen finden Sie unter [noalias](../../cpp/noalias.md) und [restrict](../../cpp/restrict.md).
+**`realloc`** ist `__declspec(noalias)` als und gekennzeichnet `__declspec(restrict)` , was bedeutet, dass die Funktion globale Variablen garantiert nicht ändert und dass der zurückgegebene Zeiger keinen Alias hat. Weitere Informationen finden Sie unter [noalias](../../cpp/noalias.md) und [restrict](../../cpp/restrict.md).
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
@@ -101,7 +105,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 |-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
-|**realloc**|\<stdlib.h> und \<malloc.h>|
+|**`realloc`**|\<stdlib.h> und \<malloc.h>|
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
@@ -154,7 +158,7 @@ Size of block after realloc of 1000 more longs: 8000
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Speicher Belegung](../../c-runtime-library/memory-allocation.md)<br/>
-[calloc](calloc.md)<br/>
-[Kosten](free.md)<br/>
-[malloc](malloc.md)<br/>
+[Speicher Belegung](../../c-runtime-library/memory-allocation.md)\
+[calloc](calloc.md)\
+[Kosten](free.md)\
+[malloc](malloc.md)
