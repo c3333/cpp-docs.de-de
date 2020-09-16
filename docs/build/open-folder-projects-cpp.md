@@ -4,12 +4,12 @@ ms.date: 12/02/2019
 helpviewer_keywords:
 - Open Folder Projects in Visual Studio
 ms.assetid: abd1985e-3717-4338-9e80-869db5435175
-ms.openlocfilehash: 73d6ff9fb9411b146082989d581ed35298b911ad
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 9d9f59817a499f4d529363c88adc57154268c0bc
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87229804"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90039585"
 ---
 # <a name="open-folder-support-for-c-build-systems-in-visual-studio"></a>„Ordner öffnen“-Unterstützung für C++-Buildsysteme in Visual Studio
 
@@ -31,7 +31,7 @@ CMake ist in die Visual Studio-IDE als Komponente der Workload für C++-Desktope
 
 Wenn Sie die Visual Studio-IDE mit einem Buildsystem oder einem Compilertoolset verwenden möchten, das nicht direkt unterstützt wird, klicken Sie im Hauptmenü auf **Datei > Öffnen > Ordner**, oder drücken Sie **STRG+UMSCHALT+ALT+O**. Navigieren Sie zu dem Ordner, der Ihre Quellcodedateien enthält. Wenn Sie das Projekt erstellen, IntelliSense konfigurieren und Debugparameter festlegen möchten, fügen Sie drei JSON-Dateien hinzu:
 
-| | |
+| Datei | BESCHREIBUNG |
 |-|-|
 |CppProperties.json|Geben Sie benutzerdefinierte Konfigurationsinformationen für das Durchsuchen an. Erstellen Sie diese Datei bei Bedarf im Stammordner des Projekts. (Wird in CMake-Projekten nicht verwendet.)|
 |tasks.vs.json|Angeben von benutzerdefinierten Buildbefehlen. Der Zugriff erfolgt über das Kontextmenüelement **Tasks konfigurieren** im **Projektmappen-Explorer**.|

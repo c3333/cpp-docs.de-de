@@ -3,12 +3,12 @@ title: Erstellen plattformübergreifender C++-Projekte in Visual Studio
 description: Hier erfahren Sie, wie Sie ein Open Source-CMake-Projekt in C++ in Visual Studio für Linux und Windows erstellen, kompilieren und debuggen können.
 ms.topic: tutorial
 ms.date: 01/08/2020
-ms.openlocfilehash: aac536f488cf22adf5aa835c9fe5b884fc5d7298
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 3fdd9b1dfb5075f3a71f62bc4f1e2f3c646f9e6b
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81328746"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90040482"
 ---
 # <a name="tutorial-create-c-cross-platform-projects-in-visual-studio"></a>Tutorial: Erstellen plattformübergreifender C++-Projekte in Visual Studio
 
@@ -155,7 +155,7 @@ In diesem Schritt debuggen wir ein Beispielprogramm, das die Bullet Physics-Bibl
 
    Wenn Sie bereits eine Remoteverbindung hinzugefügt haben, können Sie das Fenster über **Extras > Optionen > Plattformübergreifend > Verbindungs-Manager > Hinzufügen** öffnen.
 
-1. Geben Sie die [Verbindungsinformationen Ihres Linux-Computers](/cpp/linux/connect-to-your-remote-linux-computer) ein, und klicken Sie anschließend auf **Verbinden**. Visual Studio fügt diesen Computer in „CMakeSettings.json“ als Standardverbindung für **Linux-Debug** hinzu. Außerdem werden die Header von Ihrem Remotecomputer abgerufen, damit Sie [spezifische IntelliSense-Funktionen für diese Remoteverbindung](/cpp/linux/configure-a-linux-project?view=vs-2019#remote_intellisense) verwenden können. Anschließend sendet Visual Studio Ihre Dateien an den Remotecomputer und generiert den CMake-Cache auf dem Remotesystem. Diese Schritte können abhängig von der Netzwerkgeschwindigkeit und der Leistung Ihres Remotecomputers einige Zeit in Anspruch nehmen. Der Vorgang ist abgeschlossen, wenn im CMake-Ausgabefenster „Extrahieren von Zielinformationen abgeschlossen“ angezeigt wird.
+1. Geben Sie die [Verbindungsinformationen Ihres Linux-Computers](../linux/connect-to-your-remote-linux-computer.md) ein, und klicken Sie anschließend auf **Verbinden**. Visual Studio fügt diesen Computer in „CMakeSettings.json“ als Standardverbindung für **Linux-Debug** hinzu. Außerdem werden die Header von Ihrem Remotecomputer abgerufen, damit Sie [spezifische IntelliSense-Funktionen für diese Remoteverbindung](../linux/configure-a-linux-project.md#remote_intellisense) verwenden können. Anschließend sendet Visual Studio Ihre Dateien an den Remotecomputer und generiert den CMake-Cache auf dem Remotesystem. Diese Schritte können abhängig von der Netzwerkgeschwindigkeit und der Leistung Ihres Remotecomputers einige Zeit in Anspruch nehmen. Der Vorgang ist abgeschlossen, wenn im CMake-Ausgabefenster „Extrahieren von Zielinformationen abgeschlossen“ angezeigt wird.
 
 ## <a name="set-a-breakpoint-build-and-run-on-linux"></a>Festlegen eines Breakpoints, Erstellen und Ausführen unter Linux
 

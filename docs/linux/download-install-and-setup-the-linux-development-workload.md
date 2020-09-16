@@ -3,12 +3,12 @@ title: Installieren der C++-Workload unter Linux in Visual Studio
 description: In diesem Artikel finden Sie Informationen zum Herunterladen, Installieren und Einrichten der Linux-Workload für C++ in Visual Studio.
 ms.date: 05/03/2020
 ms.assetid: e11b40b2-f3a4-4f06-b788-73334d58dfd9
-ms.openlocfilehash: bc75610aaefe2a3bdd919cbc4dd81413202794c6
-ms.sourcegitcommit: 8a01ae145bc65f5bc90d6e47b4a1bdf47b073ee7
+ms.openlocfilehash: 3f8e6eb8285652078e5f26ca58601bc6ccfa80d1
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82765746"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90040976"
 ---
 # <a name="download-install-and-set-up-the-linux-workload"></a>Herunterladen, Installieren und Einrichten der Linux-Workload
 
@@ -56,7 +56,7 @@ Unter Windows 10 können Sie Ihre bevorzugte Linux-Distribution im WSL (Windows-
 
 Linux-Projekte in Visual Studio erfordern die Installation der folgenden Abhängigkeiten in Ihrem Linux-Remotesystem oder WSL:
 
-- **Compiler:** Visual Studio 2019 bietet vollständige Unterstützung für GCC und [Clang](/cpp/build/clang-support-cmake?view=vs-2019).
+- **Compiler:** Visual Studio 2019 bietet vollständige Unterstützung für GCC und [Clang](../build/clang-support-cmake.md).
 - **gdb:** Visual Studio startet gdb automatisch auf dem Linux-System und nutzt das Front-End des Visual Studio-Debuggers, um unter Linux Funktionen für zuverlässiges Debuggen zu bieten.
 - **rsync** und **zip**: Die Einbindung von rsync und zip ermöglicht Visual Studio das Extrahieren von Headerdateien aus Ihrem Linux-System in das Windows-Dateisystem zur Verwendung durch IntelliSense.
 - **make**

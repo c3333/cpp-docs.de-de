@@ -9,12 +9,12 @@ helpviewer_keywords:
 - classes [C++], adding members
 - add member function wizard [C++]
 ms.assetid: 55b25ddb-541d-44ed-957c-974ef91cfc85
-ms.openlocfilehash: c5423cfb8e2ea1b39001ec512c9c7f460d6a1a19
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 0e63771e3e01c3829e20d2fe62fa2caf0f8b26f5
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87228686"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90040781"
 ---
 # <a name="add-a-member-function"></a>Hinzufügen einer Memberfunktion
 
@@ -44,12 +44,25 @@ Sobald Sie mithilfe des Assistenten eine Memberfunktion hinzugefügt haben, kön
 
   Legt den Rückgabetyp für die hinzugefügte Memberfunktion fest. Sie können einen eigenen Rückgabetyp bereitstellen oder einen aus der Liste der verfügbaren Typen auswählen. Weitere Informationen zu Typen finden Sie unter [Grundlegende Typen](../cpp/fundamental-types-cpp.md).
 
-  | | | |
-  |---|---|---|
-  | **`char`** | **`int`** | **`unsigned int`** |
-  | **`double`** | **`long`** | **`unsigned long`** |
-  | **`float`** | **`short`** | **`void`** |
-  | `HRESULT` | **`unsigned char`** | |
+:::row:::
+   :::column span="":::
+      **`char`**\
+      **`double`**\
+      **`float`**\
+      **`int`**
+   :::column-end:::
+   :::column span="":::
+      **`long`**\
+      **`short`**\
+      **`unsigned char`**\
+      **`unsigned int`**
+   :::column-end:::
+   :::column span="":::
+      **`unsigned long`**\
+      **`void`**\
+      `HRESULT`
+   :::column-end:::
+:::row-end:::
 
 - **Funktionsname**
 
@@ -59,11 +72,23 @@ Sobald Sie mithilfe des Assistenten eine Memberfunktion hinzugefügt haben, kön
 
   Legt den Parametertyp fest, den Sie für die Memberfunktion hinzufügen, falls diese über Parameter verfügt. Sie können einen eigenen Parametertyp bereitstellen oder einen aus der Liste der verfügbaren Typen auswählen.
 
-  | | | |
-  |---|---|---|
-  | **`char`** | **`int`** | **`unsigned char`** |
-  | **`double`** | **`long`** | **`unsigned int`** |
-  | **`float`** | **`short`** | **`unsigned long`** |
+:::row:::
+   :::column span="":::
+      **`char`**\
+      **`double`**\
+      **`float`**
+   :::column-end:::
+   :::column span="":::
+      **`int`**\
+      **`long`**\
+      **`short`**
+   :::column-end:::
+   :::column span="":::
+      **`unsigned char`**\
+      **`unsigned int`**\
+      **`unsigned long`**
+   :::column-end:::
+:::row-end:::
 
 - **Parametername**
 

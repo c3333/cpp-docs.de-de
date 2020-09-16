@@ -7,12 +7,12 @@ helpviewer_keywords:
 - libraries [C++], DLLs
 - DLLs [C++], walkthroughs
 ms.assetid: 3ae94848-44e7-4955-bbad-7d40f493e941
-ms.openlocfilehash: 37dc59dfb77af9fff240c0d44b21de84b17d073b
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: adca441a1b1b4e5e7b7efa44c4a292a8f1ddec35
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77127841"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90042198"
 ---
 # <a name="walkthrough-create-and-use-your-own-dynamic-link-library-c"></a>Exemplarische Vorgehensweise: Erstellen und Verwenden Ihrer eigenen Dynamic Link Library (C++)
 
@@ -54,7 +54,7 @@ Links mit weiteren Informationen zu DLLs finden Sie im Artikel [Erstellen von C/
 
 ::: moniker range="vs-2015"
 
-- Eine Kopie von Visual Studio. Informationen zum Herunterladen und Installieren von Visual Studio 2015 finden Sie unter [Installieren von Visual Studio 2015](/visualstudio/install/install-visual-studio-2015?view=vs-2015). Verwenden Sie eine **benutzerdefinierte** Installation, um den C++-Compiler und die Tools zu installieren, da diese nicht standardmäßig installiert werden.
+- Eine Kopie von Visual Studio. Informationen zum Herunterladen und Installieren von Visual Studio 2015 finden Sie unter [Installieren von Visual Studio 2015](/visualstudio/install/install-visual-studio-2015?view=vs-2015&preserve-view=true). Verwenden Sie eine **benutzerdefinierte** Installation, um den C++-Compiler und die Tools zu installieren, da diese nicht standardmäßig installiert werden.
 
 ::: moniker-end
 

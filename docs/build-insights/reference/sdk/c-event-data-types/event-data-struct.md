@@ -9,12 +9,12 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: ccba320a8bb9279b874fae2484c71af913253148
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 468fc30d337e5cfc5ab90f7558904fc90588c3df
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87229921"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90041821"
 ---
 # <a name="event_data-structure"></a>EVENT_DATA-Struktur
 
@@ -58,7 +58,7 @@ typedef struct EVENT_DATA_TAG
 
 ## <a name="members"></a>Member
 
-|  |  |
+| name | BESCHREIBUNG |
 |--|--|
 | `EventId` | Eine Zahl, die das Ereignis identifiziert. Eine Liste der Ereignisbezeichner finden Sie unter [EVENT_ID](event-id-enum.md). |
 | `EventInstanceId` | Eine Zahl, die das aktuelle Ereignis innerhalb einer Stapelüberwachung eindeutig identifiziert. Dieser Wert ändert sich nicht, wenn dieselbe Stapelüberwachung mehrmals analysiert oder erneut protokolliert wird. Verwenden Sie dieses Feld, um ein und dasselbe Ereignis in mehreren Durchläufen der Stapelüberwachung zur Analyse oder erneuten Protokollierung zu identifizieren. |
