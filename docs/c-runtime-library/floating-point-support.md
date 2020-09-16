@@ -1,6 +1,7 @@
 ---
 title: Mathematische Unterstützung und Gleitkommaunterstützung
-ms.date: 01/31/2019
+description: Beschreibt die Gleit Komma Unterstützung in der Microsoft Universal C-Lauf Zeit Bibliothek (ucrt).
+ms.date: 9/14/2020
 f1_keywords:
 - c.math
 helpviewer_keywords:
@@ -8,16 +9,18 @@ helpviewer_keywords:
 - math routines
 - floating-point numbers
 ms.assetid: e4fcaf69-5c8e-4854-a9bb-1f412042131e
-ms.openlocfilehash: ca1648719a4a98efc56ea3f543336b803c81c40f
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 99a5de3ce816e64d4b477c8c1d3226da5f8f292e
+ms.sourcegitcommit: a6b97f5d78299ad93675de2fe0f0561f528d26c7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87226228"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90569603"
 ---
 # <a name="math-and-floating-point-support"></a>Mathematische Unterstützung und Gleitkommaunterstützung
 
 Die universelle C-Laufzeitbibliothek (UCRT) stellt viele integrale Funktionen und Gleitkommafunktionen in der mathematischen Bibliothek bereit, einschließlich der laut ISO C99 erforderlichen Funktionen. Die Gleitkommafunktionen werden implementiert, damit die Leistung und Richtigkeit gleichwertig sichergestellt wird. Da das korrekt gerundete Ergebnis nur sehr teuer errechenbar ist, wurden diese Funktionen dazu entworfen, eine starke Annäherung an das korrekt gerundete Ergebnis zu erzielen. In den meisten Fällen liegt das erzeugte Ergebnis innerhalb von +/-1 an der letzten Nachkommastelle des korrekt gerundeten Ergebnisses, obwohl die Ungenauigkeit auch größer ausfallen kann.
+
+Bei ISO C Standard 11 (C11) und höher stellt der- \<tgmath.h> Header zusätzlich zum einschließen \<math.h> von und \<complex.h> Makros bereit, die eine entsprechende mathematische Funktion auf der Grundlage der Parametertypen aufrufen. Weitere Informationen finden Sie unter [Type-Generic Math](tgmath.md) .
 
 Viele der Gleitkommafunktionen in der mathematischen Bibliothek haben unterschiedliche Implementierungen für verschiedene CPU-Architekturen. Die 32-Bit-x86-CRT hat möglicherweise eine andere Implementierung als die 64-Bit x64 CRT. Darüber hinaus haben möglicherweise einige der Funktionen mehrere Implementierungen für eine bestimmte CPU-Architektur. Eine möglichst effiziente Implementierung wird je nach den von der CPU unterstützten Anweisungssets dynamisch zur Laufzeit ausgewählt. In der 32-Bit-x86-CRT haben einige Funktionen eine x87- und eine SSE2-Implementierung. Wenn eine CPU verwendet wird, die SSE2 unterstützt, wird die schnellere SSE2-Implementierung verwendet. Wenn eine CPU verwendet wird, die SSE2 nicht unterstützt, wird die langsamere x87-Implementierung verwendet. Da verschiedene Implementierungen der Funktionen der mathematischen Bibliothek verschiedene CPU-Anweisungen und andere Algorithmen verwenden, um Ergebnisse zu erzielen, unterscheiden sich die Ergebnisse in den verschiedenen CPUs möglicherweise. In den meisten Fällen liegen die Ergebnisse innerhalb +/-1 ULP des korrekt gerundeten Ergebnisses, die tatsächlichen Ergebnisse können jedoch in den CPUs variieren.
 
@@ -25,7 +28,7 @@ Frühere 16-Bit-Versionen von Microsoft C/C++ und Microsoft Visual C++ den- **`l
 
 ## <a name="supported-math-and-floating-point-routines"></a>Unterstützte mathematische und Gleitkommaroutinen
 
-|-Routine zurückgegebener Wert|Zweck|
+|-Routine zurückgegebener Wert|Verwendung|
 |-|-|
 [abs, labs, llabs, _abs64](../c-runtime-library/reference/abs-labs-llabs-abs64.md)|Berechnet den absoluten Wert eines Ganzzahltyps
 [acos, acosf, acosl](../c-runtime-library/reference/acos-acosf-acosl.md)|Berechnet den Arkuskosinus
@@ -34,9 +37,9 @@ Frühere 16-Bit-Versionen von Microsoft C/C++ und Microsoft Visual C++ den- **`l
 [asinh, asinhf, asinhl](../c-runtime-library/reference/asinh-asinhf-asinhl.md)|Berechnet den hyperbolischen Arkussinus
 [atan, atanf, atanl, atan2, atan2f, atan2l](../c-runtime-library/reference/atan-atanf-atanl-atan2-atan2f-atan2l.md)|Berechnet den Arkustangens
 [atanh, atanhf, atanhl](../c-runtime-library/reference/atanh-atanhf-atanhl.md)|Berechnet den hyperbolischen Arkustangens
-[_atodbl, _atodbl_l](../c-runtime-library/reference/atodbl-atodbl-l-atoldbl-atoldbl-l-atoflt-atoflt-l.md)|Konvertiert eine Gebiets Schema spezifische Zeichenfolge in eine.**`double`**
-[atof, _atof_l](../c-runtime-library/reference/atof-atof-l-wtof-wtof-l.md)|Konvertiert eine Zeichenfolge in eine**`double`**
-[_atoflt, _atoflt_l, _atoldbl, _atoldbl_l](../c-runtime-library/reference/atodbl-atodbl-l-atoldbl-atoldbl-l-atoflt-atoflt-l.md)|Konvertiert eine Gebiets Schema spezifische Zeichenfolge in eine **`float`** oder eine**`long double`**
+[_atodbl, _atodbl_l](../c-runtime-library/reference/atodbl-atodbl-l-atoldbl-atoldbl-l-atoflt-atoflt-l.md)|Konvertiert eine Gebiets Schema spezifische Zeichenfolge in eine. **`double`**
+[atof, _atof_l](../c-runtime-library/reference/atof-atof-l-wtof-wtof-l.md)|Konvertiert eine Zeichenfolge in eine **`double`**
+[_atoflt, _atoflt_l, _atoldbl, _atoldbl_l](../c-runtime-library/reference/atodbl-atodbl-l-atoldbl-atoldbl-l-atoflt-atoflt-l.md)|Konvertiert eine Gebiets Schema spezifische Zeichenfolge in eine **`float`** oder eine **`long double`**
 [cbrt, cbrtf, cbrtl](../c-runtime-library/reference/cbrt-cbrtf-cbrtl.md)|Berechnet die Kubikwurzel
 [ceil, ceilf, ceill](../c-runtime-library/reference/ceil-ceilf-ceill.md)|Berechnet den Höchstwert
 [_chgsign, _chgsignf, _chgsignl](../c-runtime-library/reference/chgsign-chgsignf-chgsignl.md)|Berechnet das additive Inverse (Gegenzahl)
@@ -126,16 +129,16 @@ Frühere 16-Bit-Versionen von Microsoft C/C++ und Microsoft Visual C++ den- **`l
 [sinh, sinhf, sinhl](../c-runtime-library/reference/sinh-sinhf-sinhl.md)|Berechnet den hyperbolischen Sinus
 [sqrt, sqrtf, sqrtl](../c-runtime-library/reference/sqrt-sqrtf-sqrtl.md)|Berechnet die Quadratwurzel
 [_status87, _statusfp, _statusfp2](../c-runtime-library/reference/status87-statusfp-statusfp2.md)|Ruft das Gleitkommastatuswort ab
-[strtof, _strtof_l](../c-runtime-library/reference/strtof-strtof-l-wcstof-wcstof-l.md)|Konvertiert eine Zeichenfolge in eine**`float`**
-[strtold, _strtold_l](../c-runtime-library/reference/strtold-strtold-l-wcstold-wcstold-l.md)|Konvertiert eine Zeichenfolge in eine**`long double`**
+[strtof, _strtof_l](../c-runtime-library/reference/strtof-strtof-l-wcstof-wcstof-l.md)|Konvertiert eine Zeichenfolge in eine **`float`**
+[strtold, _strtold_l](../c-runtime-library/reference/strtold-strtold-l-wcstold-wcstold-l.md)|Konvertiert eine Zeichenfolge in eine **`long double`**
 [tan, tanf, tanl](../c-runtime-library/reference/tan-tanf-tanl.md)|Berechnet den Tangens
 [tanh, tanhf, tanhl](../c-runtime-library/reference/tanh-tanhf-tanhl.md)|Berechnet den hyperbolischen Tangens
 [tgamma, tgammaf, tgammal](../c-runtime-library/reference/tgamma-tgammaf-tgammal.md)|Berechnet die Gammafunktion
 [trunc, truncf, truncl](../c-runtime-library/reference/trunc-truncf-truncl.md)|Verkürzt die Nachkommastellen
-[_wtof, _wtof_l](../c-runtime-library/reference/atof-atof-l-wtof-wtof-l.md)|Konvertiert eine Breite Zeichenfolge in eine**`double`**
+[_wtof, _wtof_l](../c-runtime-library/reference/atof-atof-l-wtof-wtof-l.md)|Konvertiert eine Breite Zeichenfolge in eine **`double`**
 [_y0, _y1 _yn](../c-runtime-library/reference/bessel-functions-j0-j1-jn-y0-y1-yn.md)|Berechnet die Bessel-Funktion
 
 ## <a name="see-also"></a>Siehe auch
 
-[Universelle C-Laufzeitroutinen nach Kategorie](../c-runtime-library/run-time-routines-by-category.md)<br/>
-[Gleitkommaprimitive](../c-runtime-library/reference/floating-point-primitives.md)<br/>
+[Universelle C-Lauf Zeit Routinen nach Kategorie](../c-runtime-library/run-time-routines-by-category.md)\
+[Gleitkommaprimitive](../c-runtime-library/reference/floating-point-primitives.md)

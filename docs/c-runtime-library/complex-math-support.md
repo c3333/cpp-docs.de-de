@@ -1,5 +1,6 @@
 ---
 title: C-Unterstützung für komplexe Mathematik
+description: Beschreibt die Unterstützung komplexer mathematischer Sprachen in der Microsoft c-Lauf Zeit Bibliothek (CRT)
 ms.date: 05/14/2019
 f1_keywords:
 - c.complex
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - complex numbers, math routines
 - math routines
 - complex numbers
-ms.openlocfilehash: dac032940ed9d96764b64809c5f8901ac273898b
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 0616f846030e5d5260b5d781884387614e12051d
+ms.sourcegitcommit: a6b97f5d78299ad93675de2fe0f0561f528d26c7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87215178"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90569547"
 ---
 # <a name="c-complex-math-support"></a>C-Unterstützung für komplexe Mathematik
 
@@ -97,6 +98,7 @@ Da komplexe Zahlen keinen nativen Typ im Microsoft-Compiler darstellen, werden d
 |[_Cmulcc, _FCmulcc, _LCmulcc](../c-runtime-library/reference/cmulcc-fcmulcc-lcmulcc.md)|Addition zweier komplexer Zahlen|
 |[_Cmulcr, _FCmulcr, _LCmulcr](../c-runtime-library/reference/cmulcr-fcmulcr-lcmulcr.md)|Multiplikation einer komplexe Zahl und einer Gleitkommazahl|
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Universelle C-Laufzeitroutinen nach Kategorie](../c-runtime-library/run-time-routines-by-category.md)<br/>
+[Typgenerische Mathematik](tgmath.md)\
+[Universelle C-Laufzeitroutinen nach Kategorie](../c-runtime-library/run-time-routines-by-category.md)
