@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C4944
 ms.assetid: e2905eb1-2e3b-4fab-a48b-c0cae0fd997f
-ms.openlocfilehash: f9db36d52647b55c292a15ca724822f8b8b47e9c
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 72280bf19d50b0fc1f4c0738d5fc7d7b8a478e5c
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80199199"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90684312"
 ---
 # <a name="compiler-warning-level-1-c4944"></a>Compilerwarnung (Stufe 1) C4944
 
@@ -19,7 +19,7 @@ ms.locfileid: "80199199"
 
 Es wurde ein Symbol in einer Quellcodedatei definiert, und dann wurde in einer #using-Anweisung auf eine Assembly verwiesen, die das Symbol ebenfalls definiert. Das Symbol in der Assembly wird ignoriert.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Im folgenden Beispiel wird eine Komponente mit einem Typ namens 'ClassA' erstellt.
 
@@ -31,8 +31,6 @@ public class ClassA {
    public int i;
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 In den folgenden Beispielen wird C4944 generiert:
 

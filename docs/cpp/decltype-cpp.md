@@ -9,12 +9,12 @@ helpviewer_keywords:
 - operators [C++], type of an expression
 - operators [C++], deduce expression type
 ms.assetid: 6dcf8888-8196-4f13-af50-51e3797255d4
-ms.openlocfilehash: 270500d2353c2d14a23ddad378521488cdec136f
-ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
+ms.openlocfilehash: 9e769bbef66bd1b55b9d445874f00d37a736025e
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88561387"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90683480"
 ---
 # <a name="decltype--c"></a>decltype (C++)
 
@@ -56,7 +56,7 @@ const A* a = new A();
 
 Überprüfen Sie als nächstes die Typen, die von den vier **`decltype`** Anweisungen in der folgenden Tabelle zurückgegeben werden.
 
-|-Anweisung.|type|Notizen|
+|Anweisung|type|Hinweise|
 |---------------|----------|-----------|
 |`decltype(fx());`|`const int&&`|Ein [rvalue-Verweis](../cpp/rvalue-reference-declarator-amp-amp.md) auf einen **`const int`** .|
 |`decltype(var);`|**`int`**|Der Typ der `var`-Variablen.|
@@ -100,7 +100,7 @@ Weiterleitungsfunktionen umschließen Aufrufe von anderen Funktionen. Denken Sie
 
 In diesem Szenario können Sie keinen geeigneten Typausdruck ohne den **`decltype`** Typspezifizierer schreiben. Der **`decltype`** Typspezifizierer ermöglicht generische Weiterleitungs Funktionen, weil er erforderliche Informationen darüber nicht verliert, ob eine Funktion einen Verweistyp zurückgibt. Ein Codebeispiel für eine Weiterleitungsfunktion finden Sie im vorherigen `myFunc`-Vorlagenfunktionsbeispiel.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Im folgenden Codebeispiel wird der spät angegebene Rückgabetyp der `Plus()`-Vorlagenfunktion deklariert. Die- `Plus` Funktion verarbeitet die zwei-Operanden mit der-Überladung **`operator+`** . Folglich sind die Interpretation des Plus-Operators ( **`+`** ) und der Rückgabetyp der `Plus` Funktion von den Typen der Funktionsargumente abhängig.
 
@@ -174,8 +174,6 @@ Hello, world!
 x3.Dump() = 42
 ```
 
-## <a name="example"></a>Beispiel
-
 **Visual Studio 2017 und höher:** Der Compiler analysiert **`decltype`** Argumente, wenn die Vorlagen deklariert und nicht instanziiert werden. Wenn daher eine nicht abhängige Spezialisierung im-Argument gefunden wird **`decltype`** , wird Sie nicht auf die Instanziierung zurückgestellt und wird sofort verarbeitet, und alle resultierenden Fehler werden zu diesem Zeitpunkt diagnostiziert.
 
 Das folgende Beispiel zeigt einen solchen Compilerfehler, der zum Zeitpunkt der Deklaration ausgelöst wird:
@@ -199,7 +197,7 @@ constexpr bool test2 = !IsCallable<int*, int>::value;
 static_assert(test2, "PASS2");
 ```
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 Visual Studio 2010 oder höhere Versionen.
 

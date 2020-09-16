@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C4789
 ms.assetid: 5800c301-5afb-4af0-85c1-ceb54d775234
-ms.openlocfilehash: 36278615631d017db1d1c2fc4eecf8c1612892de
-ms.sourcegitcommit: a930a9b47bd95599265d6ba83bb87e46ae748949
+ms.openlocfilehash: 1e089c45598a53ff337e389feb2a6983a2997041
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76518399"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90684624"
 ---
 # <a name="compiler-warning-level-1-c4789"></a>Compilerwarnung (Stufe 1) C4789
 
 > der Puffer "*Bezeichner*" der Größe von *N* Bytes wird überlaufen. *M* Bytes werden ab Offset *L* geschrieben.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 **C4789** warnt vor Pufferüberläufen, wenn bestimmte CRT-Funktionen (C Run-Time) verwendet werden. Sie kann auch Größen Konflikte melden, wenn Parameter weitergegeben werden oder Zuweisungen vorgenommen werden. Die Warnung ist möglich, wenn die Datengrößen zum Zeitpunkt der Kompilierung bekannt sind. Diese Warnung gilt für Situationen, in denen die typische Datengrößen-Konflikterkennung umgangen wird.
 
@@ -42,9 +42,9 @@ Visual C++ generiert diese Warnung möglicherweise für einen Codepfad, der nie 
 #pragma warning( pop )
 ```
 
-Diese Ausdrucksweise verhindert C++ , dass die Warnung für diesen spezifischen Codeblock von Visual erzeugt wird. `#pragma warning(push)` behält den vorhandenen Zustand bei, bevor dieser von `#pragma warning(disable: 4789)` geändert wird. `#pragma warning(pop)` stellt den gepushten Zustand wieder her und entfernt die Auswirkungen der `#pragma warning(disable:4789)`. Weitere Informationen zur C++ Präprozessordirektive `#pragma`finden Sie unter [Warning](../../preprocessor/warning.md) -und [pragma-Direktiven und das __Pragma-Schlüsselwort](../../preprocessor/pragma-directives-and-the-pragma-keyword.md).
+Diese Ausdrucksweise verhindert, dass Visual C++ die Warnung für diesen spezifischen Codeblock erzeugt. `#pragma warning(push)` behält den vorhandenen Zustand bei, bevor dieser von `#pragma warning(disable: 4789)` geändert wird. `#pragma warning(pop)` stellt den gepushten Zustand wieder her und entfernt die Auswirkungen der `#pragma warning(disable:4789)`. Weitere Informationen zur C++-Präprozessordirektive finden Sie unter `#pragma` [Warning](../../preprocessor/warning.md) -und [pragma-Direktiven und das __Pragma-Schlüsselwort](../../preprocessor/pragma-directives-and-the-pragma-keyword.md).
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Im folgenden Beispiel wird C4789 generiert.
 
@@ -67,8 +67,6 @@ int main()
     memcpy(&c, &w, sizeof(wchar_t));
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgende Beispiel wird außerdem C4789 generiert.
 

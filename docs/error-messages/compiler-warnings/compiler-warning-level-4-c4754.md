@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C4754
 ms.assetid: e0e4606a-754a-4f42-a274-21a34978d21d
-ms.openlocfilehash: f55d40044fef58275ad0e1fbd281b5f1af43c243
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 85c99feee72d94f50ec19394cf8aec7a3c9811bc
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80198132"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90684979"
 ---
 # <a name="compiler-warning-level-4-c4754"></a>Compilerwarnung (Stufe 4) C4754
 
@@ -21,7 +21,7 @@ Die Warnung C4754 wird ausgegeben, da das Ergebnis des Vergleichs immer identisc
 
 Konvertierungsregeln für Ganzzahlen sind komplex und enthalten viele subtile Fehlermöglichkeiten. Als Alternative zum Beheben der einzelnen C4754-Warnungen können Sie den Code so aktualisieren, dass die [safeint-Bibliothek](../../safeint/safeint-library.md)verwendet wird.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 In diesem Beispiel wird C4754 generiert:
 
@@ -58,8 +58,6 @@ Um die Warnung zu vermeiden, können Sie die Zuweisungsanweisung so ändern, das
 unsigned long long x =
    (unsigned long long)a + (unsigned long long)b;
 ```
-
-## <a name="example"></a>Beispiel
 
 Im nächsten Beispiel wird ebenfalls C4754 generiert.
 

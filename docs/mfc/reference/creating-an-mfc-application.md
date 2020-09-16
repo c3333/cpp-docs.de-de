@@ -6,16 +6,16 @@ helpviewer_keywords:
 - MFC, creating applications
 - MFC applications
 ms.assetid: b8b8aa08-9c49-404c-8078-b42079ac18f0
-ms.openlocfilehash: 115ca6b4ab32482707cffd08ef575c93b2f3bfa9
-ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.openlocfilehash: 7e7435a8538c04867a810e525e053109a7abc04d
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90040092"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90683454"
 ---
 # <a name="creating-an-mfc-application"></a>Erstellen einer MFC-Anwendung
 
-Eine MFC-Anwendung ist eine ausführbare Anwendung für Windows, die auf der Microsoft Foundation Class (MFC)-Bibliothek basiert. Ausführbare MFC-Dateien werden im Allgemeinen in fünf Typen unterteilt: standardmäßige Windows-Anwendungen, Dialogfelder, Formular basierte Anwendungen, Explorer-Anwendungen und Webbrowser-Anwendungen. Weitere Informationen finden Sie unter
+Eine MFC-Anwendung ist eine ausführbare Anwendung für Windows, die auf der Microsoft Foundation Class (MFC)-Bibliothek basiert. Ausführbare MFC-Dateien werden im Allgemeinen in fünf Typen unterteilt: standardmäßige Windows-Anwendungen, Dialogfelder, Formular basierte Anwendungen, Explorer-Anwendungen und Webbrowser-Anwendungen. Weitere Informationen finden Sie in folgenden Quellen:
 
 - [Schreiben von Anwendungen für Windows mithilfe von Klassen](../../mfc/using-the-classes-to-write-applications-for-windows.md)
 
@@ -42,7 +42,7 @@ Die einfachste Möglichkeit zum Erstellen einer MFC-Anwendung ist die Verwendung
 
 Weitere Informationen finden Sie unter [Erstellen einer Formular basierten MFC-Anwendung](creating-a-forms-based-mfc-application.md).
 
-![Visual Studio 2019 MFC-Anwendungs-Assistent](media/mfc-app-wizard.png)
+![Screenshot des MFC-Anwendungs-Assistenten in Visual Studio 2019.](media/mfc-app-wizard.png)
 
 ## <a name="to-create-an-mfc-console-application"></a>So erstellen Sie eine MFC-Konsolenanwendung
 
@@ -53,7 +53,7 @@ Bei einer MFC-Konsolenanwendung handelt es sich um ein Befehlszeilenprogramm, da
 1. Ändern Sie den Projektnamen nach Bedarf, und klicken Sie auf **weiter** , um den **Windows-Desktop-Assistenten**zu öffnen.
 1. Aktivieren Sie das Feld **MFC-Header** , und legen Sie bei Bedarf weitere Werte **fest.**
 
-![Dialogfeld "Visual Studio 2019 Windows-Desktop Projekt"](media/windows-desktop-wizard.png)
+![Screenshot des Windows-Desktop-Assistenten in Visual Studio 2019.](media/windows-desktop-wizard.png)
 
 ::: moniker-end
 
@@ -68,7 +68,7 @@ Bei einer MFC-Konsolenanwendung handelt es sich um ein Befehlszeilenprogramm, da
 
 Weitere Informationen finden Sie unter [Erstellen einer Formular basierten MFC-Anwendung](creating-a-forms-based-mfc-application.md).
 
-![Visual Studio 2017 MFC-Anwendungs-Assistent](media/mfc-app-wizard.png)
+![Screenshot des MFC-Anwendungs-Assistenten in Visual Studio 2017.](media/mfc-app-wizard.png)
 
 ## <a name="to-create-an-mfc-console-application"></a>So erstellen Sie eine MFC-Konsolenanwendung
 
@@ -80,7 +80,7 @@ Bei einer MFC-Konsolenanwendung handelt es sich um ein Befehlszeilenprogramm, da
 1. Ändern Sie den Projektnamen nach Bedarf, und klicken Sie auf **OK** , um den **Windows-Desktop-Assistenten**zu öffnen.
 1. Aktivieren Sie das Feld **MFC-Header** , und legen Sie bei Bedarf weitere Werte **fest.**
 
-![Dialogfeld "Visual Studio 2017 Windows-Desktop Projekt"](media/windows-desktop-wizard-2017.png)
+![Screenshot des Windows-Desktop-Assistenten in Visual Studio 2017.](media/windows-desktop-wizard-2017.png)
 
 ::: moniker-end
 
@@ -95,7 +95,7 @@ Bei einer MFC-Konsolenanwendung handelt es sich um ein Befehlszeilenprogramm, da
 
 Weitere Informationen finden Sie unter [Erstellen einer Formular basierten MFC-Anwendung](creating-a-forms-based-mfc-application.md).
 
-![Visual Studio 2015 MFC-Anwendungs-Assistent](media/mfc-app-wizard-2015.png)
+![Screenshot des MFC-Anwendungs-Assistenten in Visual Studio 2015.](media/mfc-app-wizard-2015.png)
 
 ## <a name="to-create-an-mfc-console-application"></a>So erstellen Sie eine MFC-Konsolenanwendung
 

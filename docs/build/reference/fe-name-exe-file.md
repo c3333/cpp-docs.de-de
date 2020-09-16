@@ -10,12 +10,12 @@ helpviewer_keywords:
 - /Fe compiler option [C++]
 - Fe compiler option [C++]
 ms.assetid: 49f594fd-5e94-45fe-a1bf-7c9f2abb6437
-ms.openlocfilehash: f0bd8f3a96555cc29d06f74fb44a73bbed32889b
-ms.sourcegitcommit: 6b749db14b4cf3a2b8d581fda6fdd8cb98bc3207
+ms.openlocfilehash: 72eada34c6a64a8b4591afbee03b686f3da3ee11
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82825577"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90685410"
 ---
 # <a name="fe-name-exe-file"></a>/Fe (Name der EXE-Datei)
 
@@ -43,7 +43,7 @@ Wenn Sie die Option [/c (Kompilieren ohne Verknüpfen)](c-compile-without-linkin
 
 1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Öffnen Sie die **Eigenschaften** > Seite**Allgemeine** Linker-Eigenschaft für den**Linker** > .
+1. Öffnen Sie die **Eigenschaften**  >  **Linker**  >  Seite**Allgemeine** Linker-Eigenschaft für den Linker.
 
 1. Ändern Sie die Eigenschaft **Ausgabedatei** . Klicken Sie auf **OK**, um die Änderungen zu speichern.
 
@@ -51,17 +51,15 @@ Wenn Sie die Option [/c (Kompilieren ohne Verknüpfen)](c-compile-without-linkin
 
 - Siehe <xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.OutputFile%2A>.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
-Die folgende Befehlszeile kompiliert alle C-Quelldateien und verknüpft Sie mit dem aktuellen Verzeichnis. Die resultierende ausführbare Datei hat den Namen "Process. exe" und wird im Verzeichnis "c:\benutzer\benutzername\repos\my project\bin" erstellt.
+Die folgende Befehlszeile kompiliert alle C-Quelldateien und verknüpft Sie mit dem aktuellen Verzeichnis. Die resultierende ausführbare Datei wird PROCESS.exe benannt und im Verzeichnis "c:\users\benutzername\repos\my project\bin" erstellt.
 
 ```
 CL /Fe"C:\Users\User Name\repos\My Project\bin\PROCESS" *.C
 ```
 
-## <a name="example"></a>Beispiel
-
-Mit der folgenden Befehlszeile wird eine ausführbare `C:\BIN` Datei in mit dem gleichen Basis Namen wie die erste Quelldatei im aktuellen Verzeichnis erstellt:
+Mit der folgenden Befehlszeile wird eine ausführbare Datei in `C:\BIN` mit dem gleichen Basis Namen wie die erste Quelldatei im aktuellen Verzeichnis erstellt:
 
 ```
 CL /FeC:\BIN\ *.C
@@ -69,7 +67,7 @@ CL /FeC:\BIN\ *.C
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Ausgabedatei (/F) Optionen](output-file-f-options.md)<br/>
+[Ausgabedatei Optionen (/F)](output-file-f-options.md)<br/>
 [MSVC-Compileroptionen](compiler-options.md)<br/>
-[Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)<br/>
-[Festlegen des Pfadnamens](specifying-the-pathname.md)<br/>
+[MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)<br/>
+[Angeben des Pfadnamens](specifying-the-pathname.md)<br/>

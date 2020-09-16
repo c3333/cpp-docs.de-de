@@ -1,5 +1,5 @@
 ---
-title: Intrinsische _InterlockedAdd-Funktionen
+title: _InterlockedAdd intrinsische Funktionen
 ms.date: 09/02/2019
 f1_keywords:
 - _InterlockedAdd64_acq_cpp
@@ -26,14 +26,14 @@ helpviewer_keywords:
 - _InterlockedAdd_acq intrinsic
 - _InterlockedAdd64_rel intrinsic
 ms.assetid: 3d319603-ea9c-4fdd-ae61-e52430ccc3b1
-ms.openlocfilehash: c540cfe6abd8ae6dc2933e7fb21e2a331c21ea71
-ms.sourcegitcommit: 6e1c1822e7bcf3d2ef23eb8fac6465f88743facf
+ms.openlocfilehash: efe1444273f17c8f0544d2c51b98923169032e61
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70217735"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90683896"
 ---
-# <a name="_interlockedadd-intrinsic-functions"></a>Intrinsische _InterlockedAdd-Funktionen
+# <a name="_interlockedadd-intrinsic-functions"></a>_InterlockedAdd intrinsische Funktionen
 
 **Microsoft-spezifisch**
 
@@ -90,26 +90,26 @@ Beide Funktionen geben das Ergebnis der Addition zurück.
 
 ## <a name="requirements"></a>Anforderungen
 
-|Systemintern|Architektur|
+|Intrinsic|Aufbau|
 |---------------|------------------|
-|`_InterlockedAdd`|ARM, ARM64|
-|`_InterlockedAdd_acq`|ARM, ARM64|
-|`_InterlockedAdd_nf`|ARM, ARM64|
-|`_InterlockedAdd_rel`|ARM, ARM64|
-|`_InterlockedAdd64`|ARM, ARM64|
-|`_InterlockedAdd64_acq`|ARM, ARM64|
-|`_InterlockedAdd64_nf`|ARM, ARM64|
-|`_InterlockedAdd64_rel`|ARM, ARM64|
+|`_InterlockedAdd`|Arm, ARM64|
+|`_InterlockedAdd_acq`|Arm, ARM64|
+|`_InterlockedAdd_nf`|Arm, ARM64|
+|`_InterlockedAdd_rel`|Arm, ARM64|
+|`_InterlockedAdd64`|Arm, ARM64|
+|`_InterlockedAdd64_acq`|Arm, ARM64|
+|`_InterlockedAdd64_nf`|Arm, ARM64|
+|`_InterlockedAdd64_rel`|Arm, ARM64|
 
-**Header Datei** \<intrin. h->
+**Headerdatei** \<intrin.h>
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die Versionen dieser Funktionen mit den Suffixen `_acq` oder `_rel` führen eine ineinander greifende Addition gemäß der Semantiken zum Abrufen oder Freigeben durch. Das Abrufen der *Semantik* bedeutet, dass das Ergebnis des Vorgangs für alle Threads und Prozessoren sichtbar gemacht wird, bevor spätere Speicher Lese-und Schreibvorgänge ausgeführt werden. „Acquire“ ist bei der Eingabe eines kritischen Abschnitts nützlich. Die *releasesemantik* bedeutet, dass alle Speicher Lese-und-Schreibvorgänge für alle Threads und Prozessoren sichtbar gemacht werden, bevor das Ergebnis des Vorgangs selbst sichtbar gemacht wird. „Release“ ist beim Verlassen eines kritischen Abschnitts nützlich. Die intrinsischen `_nf` Funktionen mit dem Suffix ("No fence") fungieren nicht als Arbeitsspeicher Barriere.
+Die Versionen dieser Funktionen mit den Suffixen `_acq` oder `_rel` führen eine ineinander greifende Addition gemäß der Semantiken zum Abrufen oder Freigeben durch. Das Abrufen der *Semantik* bedeutet, dass das Ergebnis des Vorgangs für alle Threads und Prozessoren sichtbar gemacht wird, bevor spätere Speicher Lese-und Schreibvorgänge ausgeführt werden. „Acquire“ ist bei der Eingabe eines kritischen Abschnitts nützlich. Die *releasesemantik* bedeutet, dass alle Speicher Lese-und-Schreibvorgänge für alle Threads und Prozessoren sichtbar gemacht werden, bevor das Ergebnis des Vorgangs selbst sichtbar gemacht wird. „Release“ ist beim Verlassen eines kritischen Abschnitts nützlich. Die intrinsischen Funktionen mit dem `_nf` Suffix ("No fence") fungieren nicht als Arbeitsspeicher Barriere.
 
 Diese Routinen sind nur als systeminterne Funktionen verfügbar.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 ```cpp
 // interlockedadd.cpp
@@ -130,13 +130,11 @@ int main()
 }
 ```
 
-## <a name="output"></a>Ausgabe
+## <a name="output"></a>Output
 
 ```Output
 0xffffff00 0xff0000 0xffffff00
 ```
-
-## <a name="example"></a>Beispiel
 
 ```cpp
 // interlockedadd64.cpp
@@ -160,7 +158,7 @@ int main()
 }
 ```
 
-## <a name="output"></a>Ausgabe
+## <a name="output"></a>Output
 
 ```Output
 ff0000000000 + ff0000ffffffff = ffff00ffffffff
@@ -172,4 +170,4 @@ Return value: ffff00ffffffff
 ## <a name="see-also"></a>Siehe auch
 
 [Systeminterne Compilerfunktionen](../intrinsics/compiler-intrinsics.md)\
-[Konflikt mit dem x86-Compiler](../build/x64-software-conventions.md#conflicts-with-the-x86-compiler)
+[Konflikte mit dem x86-Compiler](../build/x64-software-conventions.md#conflicts-with-the-x86-compiler)

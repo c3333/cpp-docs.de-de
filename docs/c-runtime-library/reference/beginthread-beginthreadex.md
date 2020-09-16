@@ -35,12 +35,12 @@ helpviewer_keywords:
 - _beginthreadex function
 - beginthread function
 ms.assetid: 0df64740-a978-4358-a88f-fb0702720091
-ms.openlocfilehash: 29458f2d752f1fe59778b752480e268f8243f15e
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 5060c4b34005c1cc066e002d20ca70cbfea0fbef
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87234275"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90684819"
 ---
 # <a name="_beginthread-_beginthreadex"></a>_beginthread, _beginthreadex
 
@@ -157,7 +157,7 @@ Nur Multithread-Versionen von [C-Laufzeitbibliotheken](../../c-runtime-library/c
 
 Um **_beginthread** oder **_beginthreadex**verwenden zu können, muss die Anwendung mit einer der C-Laufzeitbibliotheken von Multithread verknüpft werden.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Im folgenden Beispiel werden **_beginthread** und **_endthread**verwendet.
 
@@ -277,8 +277,6 @@ void Bounce( void * parg )
 
 Drücken Sie zum Beenden der Beispielanwendung eine beliebige Taste.
 
-## <a name="example"></a>Beispiel
-
 Der folgende Beispielcode veranschaulicht, wie Sie das Thread Handle verwenden können, das von **_beginthreadex** mit der Synchronisierungs-API [WaitForSingleObject](/windows/win32/api/synchapi/nf-synchapi-waitforsingleobject)zurückgegeben wird. Der Hauptthread wartet auf das Beenden des zweiten Threads, bevor er fortsetzt. Wenn der zweite Thread **_endthreadex**aufruft, bewirkt dies, dass das Thread Objekt in den signalisierten Zustand wechselt. Damit kann der primäre Thread fortgesetzt werden. Dies kann nicht mit **_beginthread** und **_endthread**erfolgen, da **_endthread** **CloseHandle**aufruft, das das Thread Objekt zerstört, bevor es auf den signalisierten Zustand festgelegt werden kann.
 
 ```cpp
@@ -327,7 +325,7 @@ In second thread...
 Counter should be 1000000; it is-> 1000000
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 - [Prozess-und Umgebungs Steuerung](../../c-runtime-library/process-and-environment-control.md)
 - [_endthread, _endthreadex](endthread-endthreadex.md)

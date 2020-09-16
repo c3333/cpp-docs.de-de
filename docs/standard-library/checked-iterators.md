@@ -10,12 +10,12 @@ helpviewer_keywords:
 - iterators, checked
 - checked iterators
 ms.assetid: cfc87df8-e3d9-403b-ab78-e9483247d940
-ms.openlocfilehash: 4918cd9df34e5c728c4aa2d90d4eb7f55784e4c2
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 2327638208f30908cd3429ae656ce569f5821195
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88845691"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90684902"
 ---
 # <a name="checked-iterators"></a>Checked Iterators
 
@@ -73,7 +73,7 @@ Ein überprüfter Iterator bezieht sich auf einen Iterator, der `invalid_paramet
 
 Die Iteratoradaptoren, die überprüfte Iteratoren unterstützen, sind die [checked_array_iterator-Klasse](../standard-library/checked-array-iterator-class.md) und die [unchecked_array_iterator-Klasse](../standard-library/unchecked-array-iterator-class.md).
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Wenn Sie mit _ITERATOR_DEBUG_LEVEL auf 1 oder 2 festgelegt haben, tritt ein Laufzeitfehler auf, wenn Sie versuchen, auf ein Element zuzugreifen, das sich außerhalb der Grenzen des Containers befindet, indem Sie den Indizierungs Operator bestimmter Klassen verwenden.
 
@@ -102,8 +102,6 @@ int main()
 
 Dieses Programm gibt „67“ aus und zeigt dann ein Assertionsfehlerdialogfeld mit zusätzlichen Informationen zu dem Fehler an.
 
-## <a name="example"></a>Beispiel
-
 Wenn Sie die Kompilierung mit _ITERATOR_DEBUG_LEVEL auf 1 oder 2 festlegen, tritt ein Laufzeitfehler auf, wenn Sie versuchen, mithilfe von oder in Containerklassen auf ein Element zuzugreifen, `front` `back` Wenn der Container leer ist.
 
 ```cpp
@@ -125,8 +123,6 @@ int main()
 ```
 
 Dieses Programm zeigt ein Assertionsfehlerdialogfeld mit zusätzlichen Informationen zu dem Fehler an.
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Code werden verschiedene Anwendungsfälle für Iteratoren mit Kommentaren veranschaulicht. Standardmäßig ist _ITERATOR_DEBUG_LEVEL in Debugbuilds auf 2 und in Einzelhandels Builds auf 0 (null) festgelegt.
 

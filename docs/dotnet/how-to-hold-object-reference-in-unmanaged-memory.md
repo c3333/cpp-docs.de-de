@@ -8,18 +8,18 @@ helpviewer_keywords:
 - references, to objects in native functions
 - gcroot keyword [C++], object reference in native function
 ms.assetid: a61eb8ce-3982-477d-8d3d-2173fd57166d
-ms.openlocfilehash: 2f2471e36d7551cab9edb68d7babeb1419e8e20c
-ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
+ms.openlocfilehash: 13d5bd37a0f5e0b065aecb8c5b264fb70685363f
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "79544952"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90684507"
 ---
 # <a name="how-to-hold-object-reference-in-unmanaged-memory"></a>Gewusst wie: Objektverweis in nicht verwaltetem Arbeitsspeicher
 
-Sie können gcroot. h verwenden, das <xref:System.Runtime.InteropServices.GCHandle>umschließt, um einen CLR-Objekt Verweis im nicht verwalteten Speicher zu speichern. Alternativ können Sie `GCHandle` direkt verwenden.
+Sie können gcroot. h, das umschließt <xref:System.Runtime.InteropServices.GCHandle> , verwenden, um einen CLR-Objekt Verweis im nicht verwalteten Speicher zu speichern. Alternativ können Sie direkt verwenden `GCHandle` .
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 ```cpp
 // hold_object_reference.cpp
@@ -55,9 +55,7 @@ int main() {
 StringWrapper::x == ManagedString
 ```
 
-## <a name="example"></a>Beispiel
-
-`GCHandle` bietet Ihnen die Möglichkeit, einen verwalteten Objekt Verweis in nicht verwaltetem Speicher zu speichern.  Verwenden Sie die <xref:System.Runtime.InteropServices.GCHandle.Alloc%2A>-Methode, um ein undurchsichtiges Handle für ein verwaltetes Objekt zu erstellen, und <xref:System.Runtime.InteropServices.GCHandle.Free%2A>, um es freizugeben. Außerdem können Sie mit der <xref:System.Runtime.InteropServices.GCHandle.Target%2A>-Methode den Objekt Verweis aus dem Handle in verwaltetem Code abrufen.
+`GCHandle` bietet Ihnen die Möglichkeit, einen verwalteten Objekt Verweis in nicht verwaltetem Speicher zu speichern.  Verwenden Sie die <xref:System.Runtime.InteropServices.GCHandle.Alloc%2A> -Methode, um ein nicht transparentes Handle für ein verwaltetes Objekt zu erstellen und <xref:System.Runtime.InteropServices.GCHandle.Free%2A> es freizugeben. Außerdem können Sie mit der- <xref:System.Runtime.InteropServices.GCHandle.Target%2A> Methode den Objekt Verweis aus dem Handle in verwaltetem Code abrufen.
 
 ```cpp
 // hold_object_reference_2.cpp
@@ -94,6 +92,6 @@ int main() {
 StringWrapper::m_handle == ManagedString
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Verwenden von C++-Interop (implizites PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md)
+[Verwenden von C++ Interop (implizites PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md)

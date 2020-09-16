@@ -12,12 +12,12 @@ helpviewer_keywords:
 - LIBPATH environment variable
 - preprocessor, directives
 ms.assetid: 870b15e5-f361-40a8-ba1c-c57d75c8809a
-ms.openlocfilehash: 0da255957e92a570750da2687bf1444df2e6ab13
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 0245eb15219585421be83def0258415ab4b573b6
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87219429"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90684260"
 ---
 # <a name="using-directive-ccli"></a>#using-Direktive (C++/CLI)
 
@@ -72,7 +72,7 @@ Der Compiler sucht nach Verweisen im folgenden Pfad:
 
 - Verzeichnisse der LIBPATH-Umgebungsvariable.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Sie können eine Assembly erstellen, die auf eine zweite Assembly verweist, die wiederum auf eine dritte Assembly verweist. Sie müssen nur explizit auf die dritte Assembly verweisen, wenn Sie explizit einen ihrer Typen verwenden.
 
@@ -81,8 +81,6 @@ Sie können eine Assembly erstellen, die auf eine zweite Assembly verweist, die 
 // compile with: /clr /LD
 public ref class A {};
 ```
-
-## <a name="example"></a>Beispiel
 
 ```cpp
 // using_assembly_B.cpp
@@ -94,8 +92,6 @@ public:
    void Test() {}
 };
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel meldet der Compiler keinen Fehler, wenn auf *using_assembly_A.dll*verwiesen wird, da das Programm keinen der in *using_assembly_A. cpp*definierten Typen verwendet.
 

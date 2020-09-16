@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - LNK1313
 ms.assetid: 5df0b72e-bb3f-428c-8d84-6084238f9827
-ms.openlocfilehash: a2314f160dc6add45547082c7804ec5e2c8f2349
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 03ff61a1f3501b3ea106138e957a657ed064e645
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80194862"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90683441"
 ---
 # <a name="linker-tools-error-lnk1313"></a>Linkertoolfehler LNK1313
 
@@ -19,11 +19,11 @@ ms.locfileid: "80194862"
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die aktuelle Version von Visual C++ unterstützt das Verknüpfen von systemeigenen oder gemischten verwalteten/systemeigenen. obj-Dateien mit mit **/clr: pure**kompilierten OBJ-Dateien nicht.
+Die aktuelle Version von Visual C++ unterstützt nicht das Verknüpfen von systemeigenen oder gemischten verwalteten/nativen. obj-Dateien mit mit **/clr: pure**kompilierten OBJ-Dateien.
 
 Die **/clr: pure** -Compileroption ist in Visual Studio 2015 veraltet und wird in Visual Studio 2017 nicht unterstützt.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 ```cpp
 // LNK1313.cpp
@@ -32,16 +32,12 @@ Die **/clr: pure** -Compileroption ist in Visual Studio 2015 veraltet und wird i
 int main() {}
 ```
 
-## <a name="example"></a>Beispiel
-
 ```cpp
 // LNK1313_b.cpp
 // compile with: /c /clr
 // an IJW module
 void test(){}
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgende Beispiel wird LNK1313 generiert.
 

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C3491
 ms.assetid: 7f0e71b2-46a0-4d25-bd09-6158a280f509
-ms.openlocfilehash: f6f20d9af424fdd4254fc15e0580d62b9dfba144
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 8e59dd44b81846d48dc5bf7172ce17444f75e6ef
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87184474"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90685709"
 ---
 # <a name="compiler-error-c3491"></a>Compilerfehler C3491
 
@@ -25,7 +25,7 @@ Ein nicht änderbarer Lambda-Ausdruck kann den Wert einer Variablen nicht änder
 
 - übergeben Sie die Variable per Verweis an die Erfassungsliste des Lambda-Ausdrucks.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Im folgenden Beispiel wird C3491 generiert, da der Text eines nicht änderbaren Lambda-Ausdrucks die Erfassungsvariable `m`ändert:
 
@@ -39,8 +39,6 @@ int main()
 }
 ```
 
-## <a name="example"></a>Beispiel
-
 Im folgenden Beispiel wird C3491 aufgelöst, indem der Lambda-Ausdruck mit dem- **`mutable`** Schlüsselwort deklariert wird:
 
 ```cpp
@@ -53,6 +51,6 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Lambda-Ausdrücke](../../cpp/lambda-expressions-in-cpp.md)

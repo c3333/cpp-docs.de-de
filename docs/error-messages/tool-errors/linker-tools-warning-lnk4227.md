@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - LNK4227
 ms.assetid: 941a0414-9964-4e02-8487-f9daa42ef7f9
-ms.openlocfilehash: 7b75cff4f03370951245bde1b485d538ffdb4007
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 7ac3ef2b6ad8f05a454dafe5e6a7ea0abc07a066
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80182941"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90685488"
 ---
 # <a name="linker-tools-warning-lnk4227"></a>Linkertoolwarnung LNK4227
 
@@ -23,13 +23,13 @@ Der Linker hat bei der Zusammenführung metadatenunterschiede erkannt:
 
 - Eine oder mehrere Quell Code Dateien in einer Kompilierung.
 
-Beispielsweise kann Linkertoolwarnung LNK4227 auftreten, wenn Sie über zwei globale Funktionen mit demselben Namen verfügen, die Parameterinformationen jedoch unterschiedlich deklariert sind (d. h., Deklarationen sind nicht in allen Kompilierungen konsistent). Verwenden Sie Ildasm. exe/Text/Metadata- *object_file* für jede obj-Datei, um zu sehen, wie sich die Typen unterscheiden.
+Beispielsweise kann Linkertoolwarnung LNK4227 auftreten, wenn Sie über zwei globale Funktionen mit demselben Namen verfügen, die Parameterinformationen jedoch unterschiedlich deklariert sind (d. h., Deklarationen sind nicht in allen Kompilierungen konsistent). Verwenden Sie ildasm.exe/Text/Metadata *object_file* in jeder OBJ-Datei, um zu sehen, wie sich die Typen unterscheiden.
 
 Linkertoolwarnung LNK4227 wird auch verwendet, um Probleme zu melden, die von einem anderen Tool stammen. Suchen Sie nach der Warnmeldung, um weitere Informationen zu finden.
 
 Die metadatenprobleme müssen korrigiert werden, um die Warnung zu beheben.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Linkertoolwarnung LNK4227 wird generiert, wenn eine Assembly, auf die verwiesen wird, anders signiert wurde als die Assembly, die darauf verweist.
 
@@ -62,9 +62,7 @@ ref class MyClass
 };
 ```
 
-## <a name="example"></a>Beispiel
-
-Linkertoolwarnung LNK4227 kann auch generiert werden, wenn Versionsnummern im falschen Format an Assemblyattribute übermittelt werden.  Die "*"-Notation ist spezifisch für die `AssemblyVersionAttribute`.  Um diese Warnung zu beheben, verwenden Sie nur Zahlen in den anderen Versions Attributen als `AssemblyVersionAttribute`.
+Linkertoolwarnung LNK4227 kann auch generiert werden, wenn Versionsnummern im falschen Format an Assemblyattribute übermittelt werden.  Die *-Notation ist für spezifisch `AssemblyVersionAttribute` .  Um diese Warnung zu beheben, verwenden Sie nur Zahlen in den Versions Attributen, die nicht sind `AssemblyVersionAttribute` .
 
 Im folgenden Beispiel wird Linkertoolwarnung LNK4227 generiert:
 

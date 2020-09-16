@@ -6,12 +6,12 @@ helpviewer_keywords:
 - compilation, native types in /clr
 - /clr compiler option [C++], using native types
 ms.assetid: 3a505c90-4adb-4942-9cf9-7d1fdcbc01e7
-ms.openlocfilehash: b506c3d825c4c26236a4ac3fc9682067a011315a
-ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
+ms.openlocfilehash: 88a678a19043d3229218dd69afbf8548348817df
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "79545204"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90683961"
 ---
 # <a name="how-to-use-a-native-type-in-a-clr-compilation"></a>Gewusst wie: Verwenden eines systemeigenen Typs in einer /clr-Kompilierung
 
@@ -19,9 +19,9 @@ Sie können einen systemeigenen Typ in einer **/CLR** -Kompilierung definieren, 
 
 Jede Assembly muss die Definition aller systemeigenen Typen enthalten, die Sie verwenden wird.
 
-Weitere Informationen finden Sie unter [/clr (Common Language Runtime-Kompilierung)](../build/reference/clr-common-language-runtime-compilation.md).
+Weitere Informationen finden Sie unter [/CLR (Common Language Runtime-Kompilierung)](../build/reference/clr-common-language-runtime-compilation.md).
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 In diesem Beispiel wird eine Komponente erstellt, die einen systemeigenen Typ definiert und verwendet.
 
@@ -39,8 +39,6 @@ public ref struct ManagedClass {
    }
 };
 ```
-
-## <a name="example"></a>Beispiel
 
 In diesem Beispiel wird ein Client definiert, der die-Komponente verwendet. Beachten Sie, dass es sich um einen Fehler handelt, der auf den systemeigenen Typ zugreifen kann, es sei denn, er ist in kompiliert.
 
@@ -61,6 +59,6 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Verwenden von C++-Interop (implizites PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md)
+[Verwenden von C++ Interop (implizites PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md)

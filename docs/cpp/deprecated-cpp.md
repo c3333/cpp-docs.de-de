@@ -7,12 +7,12 @@ helpviewer_keywords:
 - __declspec keyword [C++], deprecated
 - deprecated __declspec keyword
 ms.assetid: beef1129-9434-4cb3-8392-f1eb29e04805
-ms.openlocfilehash: 243c75f4726927c54989c33c1738e38938aa5f64
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 44cb33bae43b32b12dda95423aec5484f61aa596
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87221678"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90683415"
 ---
 # <a name="deprecated-c"></a>deprecated (C++)
 
@@ -28,7 +28,7 @@ Mit den unten aufgeführten Ausnahmen bietet die- **`deprecated`** Deklaration d
 
 Wenn der Compiler auf die Verwendung eines veralteten Bezeichners oder des Standard [`[[deprecated]]`](attributes.md) Attributs stößt, wird eine [C4996](../error-messages/compiler-warnings/compiler-warning-level-3-c4996.md) -Warnung ausgelöst.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Im folgenden Beispiel wird gezeigt, wie Funktionen als veraltet gekennzeichnet werden und wie eine Meldung angegeben wird, die bei Verwendung einer veralteten Funktion zur Kompilierzeit angezeigt wird.
 
@@ -48,8 +48,6 @@ int main() {
    func3(1);   // C4996
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird gezeigt, wie Klassen als veraltet gekennzeichnet werden und wie eine Meldung angegeben wird, die bei Verwendung einer veralteten Klasse zur Kompilierzeit angezeigt wird.
 

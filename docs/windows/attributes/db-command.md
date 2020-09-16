@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - db_command attribute
 ms.assetid: 714c3e15-85d7-408b-9a7c-88505c3e5d24
-ms.openlocfilehash: d9ee1ed1bede6a5deaeae0be3783d6abbd05a0d9
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 868ff862cc41543c8ebc7880a5d1a9a7e6b103f3
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88831371"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90684585"
 ---
 # <a name="db_command"></a>db_command
 
@@ -46,7 +46,7 @@ Die *Befehlssyntax* lautet wie folgt:
 
 > **( \[ ** *BindType* **]** *szVar1* \[ , *szVar2* \[ , *nVar3* \[ ,...]] **)**
 
-Dabei gilt:
+Dabei gilt Folgendes:
 
 - **(** kennzeichnet den Anfang des Datenbindungsblocks.
 
@@ -123,7 +123,7 @@ Mit**db_command** können Befehle ausgeführt werden, die kein Resultset zurück
 
 Wenn der Consumer-Attribut Anbieter dieses Attribut auf eine Klasse anwendet, benennt der Compiler die Klasse in den \_ *yourclassname*-Accessor um, wobei *yourclassname* der Name ist, den Sie der Klasse gegeben haben, und der Compiler erstellt außerdem eine Klasse namens *yourclassname*, die vom \_ *yourclassname*-Accessor abgeleitet wird.  In dieser Klassenansicht werden beide Klassen angezeigt.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 In diesem Beispiel wird ein Befehl definiert, der die Vor- und Nachnamen aus einer Tabelle auswählt, in der die Statusspalte „CA“ entspricht. **db_command** erstellt und liest ein Rowset, für das Sie sowohl über den Assistenten generierte Funktionen wie [OpenAll und CloseAll](../../data/oledb/consumer-wizard-generated-methods.md)als auch `CRowset` -Memberfunktionen wie [MoveNext](../../data/oledb/crowset-movenext.md)ausführen können.
 
@@ -163,8 +163,6 @@ struct CAuthors {
 };
 ```
 
-## <a name="example"></a>Beispiel
-
 ```cpp
 // db_command.cpp
 // compile with: /c
@@ -192,8 +190,6 @@ int main(int argc, _TCHAR* argv[]) {
    CoUninitialize();
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 In diesem Beispiel wird `db_source` auf die Datenquellenklasse `CMySource`angewendet und `db_command` auf die Befehlsklassen `CCommand1` und `CCommand2`.
 
@@ -236,7 +232,7 @@ int main() {
 }
 ```
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 | Attribut Kontext | Wert |
 |-|-|
