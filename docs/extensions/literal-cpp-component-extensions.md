@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - literal keyword [C++]
 ms.assetid: 6b1a1f36-2e1d-4a23-8eb6-172f4f3c477f
-ms.openlocfilehash: 2470d5680f7538af2db7bda3611abad11b827970
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 2687352c02bed609ffaa60ee8b1df40b51126d21
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87214255"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686729"
 ---
 # <a name="literal-ccli-and-ccx"></a>literal (C++/CLI und C++/CX)
 
@@ -31,7 +31,7 @@ Eine als **literal** markierte Variable (Datenmember) in einer **/clr**-Kompilie
 
 (Es gibt keine Hinweise für diese Sprachfunktion, die nur für Windows-Runtime gelten.)
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Anforderungen
 
 Compileroption: `/ZW`
 
@@ -49,7 +49,7 @@ Weitere Informationen finden Sie unter [Static](../cpp/storage-classes-cpp.md) u
 
 **literal** ist ein kontextbezogenes Schlüsselwort. Weitere Informationen finden Sie unter [Kontextbezogene Schlüsselwörter](context-sensitive-keywords-cpp-component-extensions.md).
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Dieses Beispiel zeigt, dass eine **literalvariable** impliziert **`static`** .
 
@@ -64,8 +64,6 @@ int main() {
    int value = X::i;
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 Das folgende Beispiel zeigt die Auswirkungen von „literal“ in den Metadaten:
 
@@ -87,8 +85,6 @@ Beachten Sie den Unterschied in den Metadaten für `sc` und `lit`: die `modopt`-
 ```
 .field public static literal int32 lit = int32(0x0000000A)
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden in C# erstellten Beispiel wird auf die im vorherigen Beispiel erstellten Metadaten verwiesen, und es zeigt die Auswirkungen der **literal**- und **static const**-Variablen:
 
@@ -121,7 +117,7 @@ class B {
 }
 ```
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 Compileroption: `/clr`
 

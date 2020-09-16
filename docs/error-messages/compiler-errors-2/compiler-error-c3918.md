@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C3918
 ms.assetid: a8b3a90a-3fe1-4244-a5ff-a31cdae97d98
-ms.openlocfilehash: ff2b59338c707767fa1d3c382feaa1bfcdf29ce2
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: cd9c40ef90715e9beca43a114dba475ab29b5e78
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74758488"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686037"
 ---
 # <a name="compiler-error-c3918"></a>Compilerfehler C3918
 
@@ -19,7 +19,7 @@ die Verwendung erfordert, dass "Member" ein Datenmember ist.
 
 C3918 kann aus verschiedenen Gründen im Zusammenhang mit Ereignissen auftreten.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 C3918 kann auftreten, wenn ein Klassenmember im aktuellen Kontext erforderlich ist. Im folgenden Beispiel wird C3918 generiert.
 
@@ -40,8 +40,6 @@ public:
    }
 };
 ```
-
-## <a name="example"></a>Beispiel
 
 C3918 wird auch ausgelöst, wenn Sie versuchen, ein triviales Ereignis auf NULL zu überprüfen (der Ereignis Name stellt keinen direkten Zugriff auf den Sicherungs Speicher Delegaten für das Ereignis bereit).
 
@@ -65,8 +63,6 @@ ref struct EventSource : public IEFace {
    }
 };
 ```
-
-## <a name="example"></a>Beispiel
 
 C3918 kann auch auftreten, wenn Sie fälschlicherweise ein Ereignis abonnieren. Im folgenden Beispiel wird C3918 generiert.
 

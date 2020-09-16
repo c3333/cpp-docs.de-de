@@ -8,12 +8,12 @@ helpviewer_keywords:
 - where keyword [C++]
 - constraints, C++
 ms.assetid: eb828cc9-684f-48a3-a898-b327700c0a63
-ms.openlocfilehash: d001cab897323d86d284958f322d155120a726a5
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 829f11c9f0c3935f9a415cae381cfc12d88df18a
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87219753"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686755"
 ---
 # <a name="constraints-on-generic-type-parameters-ccli"></a>Einschränkungen für generische Typparameter (C++/CLI)
 
@@ -100,7 +100,7 @@ Als Zusammenfassung: Verwenden Sie Einschränkungen in Ihrem Code entsprechend d
 
 - Einschränkungen können auch Klassentypen sein, wie z.B. abstrakte Basisklasse. Einschränkungen können jedoch keine Werttypen oder versiegelte Klassen sein.
 
-- Einschränkungen können nicht selbst Typparameter sein, können aber Typparameter in einem offenen konstruierten Typ enthalten. Zum Beispiel:
+- Einschränkungen können nicht selbst Typparameter sein, können aber Typparameter in einem offenen konstruierten Typ enthalten. Beispiel:
 
     ```cpp
     // generics_constraints_4.cpp
@@ -113,7 +113,7 @@ Als Zusammenfassung: Verwenden Sie Einschränkungen in Ihrem Code entsprechend d
     ref class G2{};
     ```
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Das folgende Beispiel veranschaulicht die Verwendung von Einschränkungen zum Aufrufen von Instanzmethoden in Typparametern.
 
@@ -174,8 +174,6 @@ int main() {
 "parent" is not a senior
 "grandfather" is a senior
 ```
-
-## <a name="example"></a>Beispiel
 
 Wenn ein generischer Typparameter als Einschränkung verwendet wird, wird dies als reine Typeinschränkung bezeichnet. Reine Typeinschränkungen sind nützlich, wenn eine Memberfunktion mit eigenem Typparameter diesen Parameter auf den Typparameter des enthaltenden Typs einschränken muss.
 

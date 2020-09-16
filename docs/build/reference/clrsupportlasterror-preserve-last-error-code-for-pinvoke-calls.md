@@ -7,12 +7,12 @@ helpviewer_keywords:
 - /CLRSUPPORTLASTERROR linker option
 - -CLRSUPPORTLASTERROR linker option
 ms.assetid: b7057990-4154-4b1d-9fc9-6236f7be7575
-ms.openlocfilehash: 071846e18dfef6cad0b7c5fb983dac3f6c85a689
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: ccf13971bf77fb8e960b781e4a1aa2a0e06a5d61
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88839165"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686102"
 ---
 # <a name="clrsupportlasterror-preserve-last-error-code-for-pinvoke-calls"></a>/CLRSUPPORTLASTERROR (Letzten Fehlercode für PInvoke-Aufrufe beibehalten)
 
@@ -49,7 +49,7 @@ Sie können die Auswirkungen auf die Leistung minimieren, indem Sie eine Verknü
 
 - Siehe <xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.AdditionalOptions%2A>.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Im folgenden Beispiel wird eine native dll mit einer exportierten Funktion definiert, die den letzten Fehler ändert.
 
@@ -65,8 +65,6 @@ __declspec(dllexport) double MySqrt(__int64 n) {
    return sqrt(double(n));
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird die dll verwendet, und es wird gezeigt, wie **/CLRSUPPORTLASTERROR**verwendet wird.
 

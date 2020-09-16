@@ -20,12 +20,12 @@ helpviewer_keywords:
 - CNetAddressCtrl [MFC], GetAllowType
 - CNetAddressCtrl [MFC], SetAllowType
 ms.assetid: cb4c6aca-3f49-4b52-b76c-65f57096155b
-ms.openlocfilehash: 30fc510272afc90ae37b583e807d10c3374df052
-ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
+ms.openlocfilehash: e92ea79727248afd84dd08058ea8f23cc8d14f44
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88562128"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686586"
 ---
 # <a name="cnetaddressctrl-class"></a>CNetAddressCtrl-Klasse
 
@@ -41,13 +41,13 @@ class CNetAddressCtrl : public CEdit
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[CNetAddressCtrl:: CNetAddressCtrl](#cnetaddressctrl)|Erstellt ein `CNetAddressCtrl`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[CNetAddressCtrl:: Create](#create)|Erstellt ein Netzwerk Adress Steuerelement mit angegebenen Stilen und fügt es an das aktuelle- `CNetAddressCtrl` Objekt an.|
 |[CNetAddressCtrl:: kreateex](#createex)|Erstellt ein Netzwerk Adress Steuerelement mit den angegebenen erweiterten Stilen und fügt es an das aktuelle- `CNetAddressCtrl` Objekt an.|
@@ -66,13 +66,11 @@ In der folgenden Abbildung wird ein Dialogfeld angezeigt, das ein Netzwerk Adres
 
 ![Dialogfeld mit einem Netzwerkadressen-Steuerelement und InfoTipps.](../../mfc/reference/media/cnetaddctrl.png "Dialogfeld mit einem Netzwerkadressen-Steuerelement und InfoTipps.")
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Das folgende Codebeispiel ist ein Teil eines Dialog Felds, in dem eine Netzwerkadresse überprüft wird. Mit den Ereignis Handlern für drei Options Felder wird angegeben, dass die Netzwerkadresse einen von drei Adresstypen aufweisen kann. Der Benutzer gibt eine Adresse in das Textfeld des Netzwerk Steuer Elements ein und drückt dann eine Schaltfläche, um die Adresse zu überprüfen. Wenn die Adresse gültig ist, wird eine Erfolgsmeldung angezeigt. Andernfalls wird die vordefinierte Infotipp-Fehlermeldung angezeigt.
 
 [!code-cpp[NVC_MFC_CNetAddressCtrl_s1#1](../../mfc/reference/codesnippet/cpp/cnetaddressctrl-class_1.cpp)]
-
-## <a name="example"></a>Beispiel
 
 Mit dem folgenden Codebeispiel aus der Dialog Header Datei werden die [NC_ADDRESS](/windows/win32/api/shellapi/ns-shellapi-nc_address) -und [NET_ADDRESS_INFO](/windows/win32/shell/hkey-type) Variablen definiert, die für die [CNetAddressCtrl:: GetAddress](#getaddress) -Methode erforderlich sind.
 
@@ -90,7 +88,7 @@ Mit dem folgenden Codebeispiel aus der Dialog Header Datei werden die [NC_ADDRES
 
 `CNetAddressCtrl`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 **Header:** afxcmn.h
 

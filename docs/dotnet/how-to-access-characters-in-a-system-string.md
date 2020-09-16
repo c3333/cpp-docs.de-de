@@ -7,20 +7,20 @@ helpviewer_keywords:
 - examples [C++], strings
 - strings [C++], accessing characters
 ms.assetid: cfc89756-aef3-4988-907e-fb236dcb7087
-ms.openlocfilehash: a91f82d0377b9065c2927e61e9f2a558a49985f0
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: cb62eb0fecbee202e4d01635a60da565241822ee
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87221366"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686794"
 ---
 # <a name="how-to-access-characters-in-a-systemstring"></a>Gewusst wie: Zugriff auf Zeichen in einem System::String
 
 Sie können auf die Zeichen eines- <xref:System.String> Objekts zugreifen, um Hochleistungs Aufrufe von nicht verwalteten Funktionen auszuführen, die Zeichen folgen akzeptieren `wchar_t*` . Die-Methode gibt einen inneren Zeiger auf das erste Zeichen des- <xref:System.String> Objekts aus. Dieser Zeiger kann direkt manipuliert oder fixiert werden und an eine Funktion, die eine gewöhnliche Zeichenfolge erwartet, an Sie übermittelt werden **`wchar_t`** .
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
-`PtrToStringChars`Gibt einen zurück <xref:System.Char> , bei dem es sich um einen inneren Zeiger handelt (wird auch als bezeichnet `byref` ). Dies unterliegt der Garbage Collection. Sie müssen diesen Zeiger nicht anheften, es sei denn, Sie übergeben ihn an eine native Funktion.
+`PtrToStringChars` Gibt einen zurück <xref:System.Char> , bei dem es sich um einen inneren Zeiger handelt (wird auch als bezeichnet `byref` ). Dies unterliegt der Garbage Collection. Sie müssen diesen Zeiger nicht anheften, es sei denn, Sie übergeben ihn an eine native Funktion.
 
 Betrachten Sie folgenden Code.  Das `ppchar` anhechern ist nicht erforderlich, da ein innerer Zeiger ist, und wenn das Garbage Collector die Zeichenfolge verschiebt, auf die es verweist, wird es ebenfalls aktualisiert `ppchar` . Ohne [pin_ptr (C++/CLI)](../extensions/pin-ptr-cpp-cli.md)ist der Code funktionsfähig und führt nicht zu Leistungseinbußen, die durch anhenung verursacht werden.
 
@@ -45,8 +45,6 @@ int main() {
 ```Output
 abcdefg
 ```
-
-## <a name="example"></a>Beispiel
 
 In diesem Beispiel wird gezeigt, wo anheften benötigt wird.
 
@@ -74,8 +72,6 @@ int main() {
 ```Output
 7
 ```
-
-## <a name="example"></a>Beispiel
 
 Ein innerer Zeiger verfügt über alle Eigenschaften eines nativen C++-Zeigers. Beispielsweise können Sie damit eine verknüpfte Datenstruktur durchlaufen und Einfügungen und Löschungen nur mit einem Zeiger ausführen:
 

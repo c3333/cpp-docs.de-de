@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - implements attribute
 ms.assetid: 9cf0858b-cb7d-4d3c-81a6-97d87ed00d25
-ms.openlocfilehash: e18e874473925c0198b8645162546c9abe13b3ef
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 946972a9a7c3041c75e82865acb35feb4a97254a
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88842350"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686742"
 ---
 # <a name="implements-c"></a>implements (C++)
 
@@ -36,7 +36,7 @@ Eine durch Kommas getrennte Liste der dispinterface, die ein Member der IDL-Co-K
 
 Standardmäßig werden nur COM-Schnittstellen, die Basisklassen von sind, `coclass` in der IDL-Co-Klasse hinzugefügt. **implementiert** das Erzwingen von IDL-Membern durch andere Schnittstellen `coclass` .
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 | Attribut Kontext | Wert |
 |-|-|
@@ -47,7 +47,7 @@ Standardmäßig werden nur COM-Schnittstellen, die Basisklassen von sind, `cocla
 
 Weitere Informationen finden Sie unter [Attributkontexte](cpp-attributes-com-net.md#contexts).
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Das folgende Beispiel besteht aus drei Teilen: einer IDL-Datei und der zugehörigen h-Datei sowie einer C++-Datei.
 
@@ -96,8 +96,6 @@ library odod
    };
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 Und der folgenden h-Datei, die auch für den Compiler verfügbar sein muss.
 
@@ -376,8 +374,6 @@ CBar;
 #endif
 #endif
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Programm, ohne implementiert, werden, und in der `IBar1` `IBar2` `ISna` generierten IDL nicht in enthalten sein `coclass` .
 

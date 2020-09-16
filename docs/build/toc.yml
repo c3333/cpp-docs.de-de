@@ -583,6 +583,8 @@
                   href: ../build/reference/gz-enable-stack-frame-run-time-error-checking.md
                 - name: /H (Länge externer Namen beschränken)
                   href: ../build/reference/h-restrict-length-of-external-names.md
+                - name: /headerUnit (Headereinheit IFC verwenden)
+                  href: ../build/reference/headerunit.md
                 - name: /HELP (Compilerbefehlszeilenhilfe)
                   href: ../build/reference/help-compiler-command-line-help.md
                 - name: /homeparams (Registerparameter in den Stapel kopieren)
@@ -603,6 +605,10 @@
                   href: ../build/reference/ln-create-msil-module.md
                 - name: '/MD, /MT, /LD (Runtimebibliothek verwenden)'
                   href: ../build/reference/md-mt-ld-use-run-time-library.md
+                - name: '/module:exportHeader (Headereinheiten erstellen)'
+                  href: ../build/reference/module-exportheader.md
+                - name: '/module:reference (IFC des benannten Moduls verwenden)'
+                  href: ../build/reference/module-reference.md
                 - name: /MP (Mit mehreren Prozessen erstellen)
                   href: ../build/reference/mp-build-with-multiple-processes.md
                 - name: /nologo (Startbanner unterdrücken) (C/C++)
@@ -675,6 +681,8 @@
                   href: ../build/reference/std-specify-language-standard-version.md
                 - name: '/Tc, /Tp, /TC, /TP (Quelldateityp angeben)'
                   href: ../build/reference/tc-tp-tc-tp-specify-source-file-type.md
+                - name: /translateInclude (Include-Direktiven in Import-Direktiven übersetzen)
+                  href: ../build/reference/translateinclude.md
                 - name: '/U, /u (Symboldefinitionen aufheben)'
                   href: ../build/reference/u-u-undefine-symbols.md
                 - name: /utf-8 (Quelle und ausführbare Zeichensätze auf UTF-8 festlegen)

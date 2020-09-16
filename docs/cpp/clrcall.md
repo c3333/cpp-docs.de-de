@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - __clrcall keyword [C++]
 ms.assetid: 92096695-683a-40ed-bf65-0c8443572152
-ms.openlocfilehash: 6eb1a05eaf6669daa4cb7142ff16a57f7caf39cd
-ms.sourcegitcommit: a6d63c07ab9ec251c48bc003ab2933cf01263f19
+ms.openlocfilehash: 85e9025c26cc821cdbd8e5218e184f05e2b96b24
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74857605"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90685830"
 ---
 # <a name="__clrcall"></a>__clrcall
 
@@ -23,15 +23,15 @@ Einstiegspunkte sind separate, vom Compiler generierte Funktionen. Wenn eine Fun
 
 Wenn **__clrcall** nicht angegeben ist, verwendet der Compiler den systemeigenen Einstiegspunkt, wenn die Adresse einer nativen Funktion übernommen wird. **__clrcall** gibt an, dass die Funktion verwaltet wird, und es ist nicht erforderlich, den Übergang von verwaltet zu System eigen zu durchlaufen. In diesem Fall verwendet der Compiler den verwalteten Einstiegspunkt.
 
-Wenn `/clr` (nicht `/clr:pure` oder `/clr:safe`) verwendet wird und **__clrcall** nicht verwendet wird, gibt die Adresse einer Funktion immer die Adresse der systemeigenen Einstiegspunkt Funktion zurück. Wenn **__clrcall** verwendet wird, wird die native Einstiegspunkt Funktion nicht erstellt, sodass Sie die Adresse der verwalteten Funktion und keine Einstiegspunkt-Thunk-Funktion erhalten. Weitere Informationen finden Sie unter [Double Thunking](../dotnet/double-thunking-cpp.md). Die Compileroptionen **/clr: pure** und **/clr: Safe** sind in Visual Studio 2015 veraltet und werden in Visual Studio 2017 nicht unterstützt.
+Wenn `/clr` (nicht `/clr:pure` oder `/clr:safe` ) verwendet wird und **__clrcall** nicht verwendet wird, gibt die Adresse einer Funktion immer die Adresse der systemeigenen Einstiegspunkt Funktion zurück. Wenn **__clrcall** verwendet wird, wird die native Einstiegspunkt Funktion nicht erstellt, sodass Sie die Adresse der verwalteten Funktion und keine Einstiegspunkt-Thunk-Funktion erhalten. Weitere Informationen finden Sie unter [Double Thunking](../dotnet/double-thunking-cpp.md). Die Compileroptionen **/clr: pure** und **/clr: Safe** sind in Visual Studio 2015 veraltet und werden in Visual Studio 2017 nicht unterstützt.
 
 [/CLR (Common Language Runtime-Kompilierung)](../build/reference/clr-common-language-runtime-compilation.md) impliziert, dass alle Funktionen und Funktionszeiger **__clrcall** werden und der Compiler nicht zulässt, dass eine Funktion in der Kompilierung etwas anderes als **__clrcall**markiert wird. Wenn **/clr: pure** verwendet wird, können **__clrcall** nur für Funktionszeiger und externe Deklarationen angegeben werden.
 
-Sie können **__clrcall** Funktionen direkt aus vorhandenem C++ Code aufzurufen, der mithilfe von **/CLR** kompiliert wurde, sofern diese Funktion über eine MSIL-Implementierung verfügt. **__clrcall** Funktionen können nicht direkt aus Funktionen aufgerufen werden, die über Inline-ASM verfügen, und auch CPU-spezifische intrinisics aufrufen, auch wenn diese Funktionen mit `/clr`kompiliert werden.
+Sie können **__clrcall** Funktionen aus vorhandenem C++-Code, der mithilfe von **/CLR** kompiliert wurde, direkt aufzurufen, sofern diese Funktion über eine MSIL-Implementierung verfügt. **__clrcall** Funktionen können nicht direkt aus Funktionen aufgerufen werden, die über Inline-ASM verfügen, und auch CPU-spezifische intrinisics aufrufen, auch wenn diese Funktionen mit kompiliert werden `/clr` .
 
-**__clrcall** Funktionszeiger sind nur für die Verwendung in der Anwendungsdomäne bestimmt, in der Sie erstellt wurden.  Anstatt **__clrcall** Funktionszeiger über Anwendungs Domänen hinweg zu übergeben, verwenden Sie <xref:System.CrossAppDomainDelegate>. Weitere Informationen finden Sie unter [Anwendungs Domänen und C++Visualisierung ](../dotnet/application-domains-and-visual-cpp.md).
+**__clrcall** Funktionszeiger sind nur für die Verwendung in der Anwendungsdomäne bestimmt, in der Sie erstellt wurden.  Anstatt **__clrcall** Funktionszeiger über Anwendungs Domänen hinweg zu übergeben, verwenden Sie <xref:System.CrossAppDomainDelegate> . Weitere Informationen finden Sie unter [Anwendungs Domänen und Visual C++](../dotnet/application-domains-and-visual-cpp.md).
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Beachten Sie, dass beim Deklarieren einer Funktion mit **__clrcall**Code bei Bedarf generiert wird. Wenn beispielsweise die-Funktion aufgerufen wird.
 
@@ -70,8 +70,6 @@ in Func1
 in Func1
 ```
 
-## <a name="example"></a>Beispiel
-
 Das folgende Beispiel zeigt, wie ein Funktionszeiger so definiert werden kann, dass deklariert wird, dass der Funktionszeiger nur von verwaltetem Code aufgerufen wird. Dies ermöglicht es dem Compiler, die verwaltete Funktion direkt aufzurufen und den systemeigenen Einstiegspunkt (doppeltes Thunk-Problem) zu vermeiden.
 
 ```cpp
@@ -90,7 +88,7 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Argumentübergabe und Benennungskonventionen](../cpp/argument-passing-and-naming-conventions.md)<br/>
-[Stichwörter](../cpp/keywords-cpp.md)
+[Argument Übergabe und Benennungs Konventionen](../cpp/argument-passing-and-naming-conventions.md)<br/>
+[Schlüsselwörter](../cpp/keywords-cpp.md)

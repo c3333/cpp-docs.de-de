@@ -6,26 +6,26 @@ f1_keywords:
 helpviewer_keywords:
 - C3904
 ms.assetid: 08297605-e4f2-4c6c-b637-011f1fd40631
-ms.openlocfilehash: 1861810f4598fa81d1b7662a57651b1648de1317
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: b2c5737a4442761cbaa84b532907e579eddb423d
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74749047"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686064"
 ---
 # <a name="compiler-error-c3904"></a>Compilerfehler C3904
 
 ' Property_accessor ': Es müssen zahlen Parameter angegeben werden.
 
-Überprüfen Sie die Anzahl der Parameter in den `get` und `set` Methoden auf Eigenschafts Dimensionen.
+Überprüfen Sie die Anzahl der Parameter in der `get` -Methode und der- `set` Methode auf Eigenschaften Dimensionen.
 
-- Die Anzahl der Parameter für die `get`-Methode muss gleich der Anzahl der Dimensionen der Eigenschaft oder 0 (null) für nicht indizierte Eigenschaften sein.
+- Die Anzahl der Parameter für die `get` Methode muss gleich der Anzahl der Dimensionen der Eigenschaft oder 0 (null) für nicht indizierte Eigenschaften sein.
 
-- Die Anzahl der Parameter der `set`-Methode muss eine höhere Anzahl als die Anzahl der Dimensionen der Eigenschaft sein.
+- Die Anzahl der Parameter der- `set` Methode muss eine höhere Anzahl als die Anzahl der Dimensionen der-Eigenschaft sein.
 
 Weitere Informationen finden Sie unter [property](../../extensions/property-cpp-component-extensions.md).
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Im folgenden Beispiel wird C3904 generiert.
 
@@ -46,8 +46,6 @@ ref class X {
    };
 };
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird C3904 generiert.
 

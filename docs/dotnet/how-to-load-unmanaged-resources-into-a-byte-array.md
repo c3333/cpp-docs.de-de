@@ -7,18 +7,18 @@ helpviewer_keywords:
 - unmanaged resources, loading into Byte array
 - native resources
 ms.assetid: cdada6cd-6d42-437a-a90f-44a0b18d6a93
-ms.openlocfilehash: 425def1cd0557298985148d7bb9f74da489643e8
-ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
+ms.openlocfilehash: b2b98ff3c4bbd857e3f5d861c1e0e8e2bd2f357b
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "79544958"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90685804"
 ---
 # <a name="how-to-load-unmanaged-resources-into-a-byte-array"></a>Gewusst wie: Laden von nicht verwalteten Ressourcen in ein Byte-Array
 
-In diesem Thema werden verschiedene Möglichkeiten zum Laden von nicht verwalteten Ressourcen in ein <xref:System.Byte> Array erläutert.
+In diesem Thema werden verschiedene Möglichkeiten zum Laden von nicht verwalteten Ressourcen in ein- <xref:System.Byte> Array erläutert.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Wenn Sie die Größe ihrer nicht verwalteten Ressource kennen, können Sie ein CLR-Array vorab zuordnen und dann die Ressource mithilfe eines Zeigers auf den Array Block des CLR-Arrays in das Array laden.
 
@@ -54,8 +54,6 @@ int main() {
 0123456789
 ```
 
-## <a name="example"></a>Beispiel
-
 In diesem Beispiel wird gezeigt, wie Daten aus einem nicht verwalteten Speicherblock in ein verwaltetes Array kopiert werden.
 
 ```cpp
@@ -75,6 +73,6 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Verwenden von C++-Interop (implizites PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md)
+[Verwenden von C++ Interop (implizites PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md)

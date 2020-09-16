@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - db_column attribute
 ms.assetid: 58da4afc-f69c-4ae6-af9a-3f9515f56081
-ms.openlocfilehash: 98f546a243016fa85f6d71159ab2fc0a7963bae3
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 2828a33a31d806c04cfce76a3156674778efbe6e
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88833114"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686482"
 ---
 # <a name="db_column"></a>db_column
 
@@ -58,7 +58,7 @@ Wenn der Consumer-Attribut Anbieter dieses Attribut auf eine Klasse anwendet, be
 
 Ein Beispiel für dieses Attribut, das in einer Anwendung verwendet wird, finden [Sie unter MultiRead](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/ATL/OLEDB/Consumer).
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 In diesem Beispiel wird eine Spalte in einer Tabelle an einen Datenmember gebunden, und es werden die **`long`** Felder Status und Länge angegeben.
 
@@ -78,8 +78,6 @@ class CProducts {
 };
 ```
 
-## <a name="example"></a>Beispiel
-
 In diesem Beispiel werden vier Spalten **`long`** `DB_NUMERIC` in dieser Reihenfolge an eine, eine Zeichenfolge, einen Zeitstempel und eine ganze Zahl gebunden.
 
 ```cpp
@@ -98,7 +96,7 @@ class CProducts {
 };
 ```
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 | Attribut Kontext | Wert |
 |-|-|

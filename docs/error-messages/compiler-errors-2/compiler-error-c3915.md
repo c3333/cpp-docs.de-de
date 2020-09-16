@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C3915
 ms.assetid: 2b0a5e5f-3aec-4a4b-9157-233031817084
-ms.openlocfilehash: 26fdcd3b7989d9030249133e6dc1d277aa1a9f44
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: d83a837a24fe36b61d3f0fccae4dbe4e93cd3261
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74756278"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686050"
 ---
 # <a name="compiler-error-c3915"></a>Compilerfehler C3915
 
@@ -21,7 +21,7 @@ Ein Typ verfügt nicht über eine indizierte Standard Eigenschaft.
 
 Weitere Informationen finden Sie unter [property](../../extensions/property-cpp-component-extensions.md).
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Im folgenden Beispiel wird C3915 generiert.
 
@@ -46,9 +46,7 @@ int main() {
 }
 ```
 
-## <a name="example"></a>Beispiel
-
-C3915 kann auch auftreten, wenn Sie versuchen, einen Standardindexer in derselben Kompilierungen zu verwenden, in der er mit <xref:System.Reflection.DefaultMemberAttribute>definiert wurde.
+C3915 kann auch auftreten, wenn Sie versuchen, einen Standardindexer in derselben Kompilierungen zu verwenden, in der er mit definiert wurde <xref:System.Reflection.DefaultMemberAttribute> .
 
 Im folgenden Beispiel wird C3915 generiert.
 

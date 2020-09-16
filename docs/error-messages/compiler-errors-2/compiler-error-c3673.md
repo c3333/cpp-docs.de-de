@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - C3673
 ms.assetid: bb6d2079-05af-4e2c-be0e-75c892e6c590
-ms.openlocfilehash: 50585904f125dcb572043b568978d65eb1c61e80
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 80e9a80d822a9da0e9ae388991f3dbc78bfca0db
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74758085"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686716"
 ---
 # <a name="compiler-error-c3673"></a>Compilerfehler C3673
 
 ' type ': die Klasse hat keinen Kopierkonstruktor.
 
-Zum Kopieren von Objekten von CLR-Verweis Typen ist ein benutzerdefinierter Konstruktor erforderlich. Weitere Informationen finden [ C++ Sie unter Stapel Semantik für Verweis Typen](../../dotnet/cpp-stack-semantics-for-reference-types.md).
+Zum Kopieren von Objekten von CLR-Verweis Typen ist ein benutzerdefinierter Konstruktor erforderlich. Weitere Informationen finden Sie unter [C++ Stack-Semantik für Verweis Typen](../../dotnet/cpp-stack-semantics-for-reference-types.md).
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Im folgenden Beispiel wird C3673 generiert.
 
@@ -38,8 +38,6 @@ int main() {
    R s = r;   // C3673
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird C3673 generiert.
 

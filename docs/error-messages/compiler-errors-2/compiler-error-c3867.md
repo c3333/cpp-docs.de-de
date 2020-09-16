@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - C3867
 ms.assetid: bc5de03f-e01a-4407-88c3-2c63f0016a1e
-ms.openlocfilehash: 7e3f52b2b69058549cb8aa3e14d2a4b4048fc4e4
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 40825bf92a892917f815c955ee4ba1fb6fa906c3
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74756850"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686417"
 ---
 # <a name="compiler-error-c3867"></a>Compilerfehler C3867
 
-"Func": Funktionsaufrufe fehlen Argumentliste; Verwenden von "& Func" zum Erstellen eines Zeigers auf einen Member
+"Func": Funktionsaufrufe fehlen Argumentliste; Verwenden von "&Func" zum Erstellen eines Zeigers auf einen Member
 
 Sie haben versucht, die Adresse einer Memberfunktion zu verwenden, ohne die Memberfunktion mit dem Klassennamen und dem address-of-Operator zu qualifizieren.
 
 Dieser Fehler kann auch infolge einer compilerübereinstimmungs-Arbeit generiert werden, die für Visual Studio 2005 ausgeführt wurde: Erweiterte Zeiger-zu-Member-Konformität. Code, der vor Visual Studio 2005 kompiliert wurde, generiert jetzt C3867.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Der Compiler kann „C3867“ mit einem irreführenden Auflösungsvorschlag ausgegeben. Verwenden Sie nach Möglichkeit die am stärksten abgeleitete Klasse.
 
@@ -44,8 +44,6 @@ void Derived::Bar() {
    &Derived::Test;   // OK
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird C3867 generiert und gezeigt, wie Sie diesen Fehler beheben.
 
@@ -77,8 +75,6 @@ int main() {
 }
 ```
 
-## <a name="example"></a>Beispiel
-
 Im folgenden Beispiel wird C3867 generiert und gezeigt, wie Sie diesen Fehler beheben.
 
 ```cpp
@@ -95,8 +91,6 @@ int main() {
    void (X::*pmf2)() = &X::mf;
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird C3867 generiert.
 
@@ -119,8 +113,6 @@ public:
    }
 };
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird C3867 generiert.
 

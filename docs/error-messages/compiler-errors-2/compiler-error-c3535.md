@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C3535
 ms.assetid: 24449c98-f681-484d-a00b-32533dca3a88
-ms.openlocfilehash: 60ffd5d8decd5c9065ca55cfed34383278359f3e
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 673fe6a8b5eb6dfcd9caa841b18d5b47fb7858bf
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87228790"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686089"
 ---
 # <a name="compiler-error-c3535"></a>Compilerfehler C3535
 
@@ -27,7 +27,7 @@ Der Typ der Variablen, die vom- **`auto`** Schlüsselwort deklariert wurde, kann
 
 1. Stellen Sie sicher, dass der Initialisierungs Ausdruck ein Zeigertyp ist, wenn die Deklaration ein Zeiger auf einen Typ ist.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Im folgenden Beispiel wird C3535 erzeugt, da der Initialisierungs Ausdruck als ausgewertet wird **`void`** .
 
@@ -42,8 +42,6 @@ int main()
 }
 ```
 
-## <a name="example"></a>Beispiel
-
 Im folgenden Beispiel wird C3535 erzeugt, da die-Anweisung Variable `x` als Zeiger auf einen abgeleiteten Typ deklariert, aber der Typ des initialisiererausdrucks ist Double. Folglich kann der Compiler den Typ der Variablen nicht ableiten.
 
 ```cpp
@@ -55,8 +53,6 @@ int main()
    return 0;
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird C3535 erzeugt, da die Variable `p` einen Zeiger auf einen abgeleiteten Typ deklariert, der Initialisierungs Ausdruck jedoch kein Zeigertyp ist.
 

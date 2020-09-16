@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Windows applications [C++], Win32
 - Windows Desktop applications [C++]
 - Windows API [C++]
-ms.openlocfilehash: c29178c9640aa9f9eb70e03f624bcd54ab96b42c
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 01b1f4a1d021dee6d1d7afbf55bbd13211af247d
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87231571"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686599"
 ---
 # <a name="walkthrough-create-a-traditional-windows-desktop-application-c"></a>Exemplarische Vorgehensweise: Erstellen einer herkömmlichen Windows-Desktop Anwendung (C++)
 
@@ -43,7 +43,7 @@ Führen Sie diese Schritte aus, um Ihr erstes Windows-Desktop Projekt zu erstell
 
 ### <a name="to-create-a-windows-desktop-project-in-visual-studio-2019"></a>So erstellen Sie ein Windows-Desktop Projekt in Visual Studio 2019
 
-1. Klicken Sie im Hauptmenü auf **Datei** > **Neu** > **Projekt**, um das Dialogfeld **Neues Projekt erstellen** zu öffnen.
+1. Wählen Sie im Hauptmenü **Datei** > **Neu** > **Projekt** aus, um das Dialogfeld **Neues Projekt erstellen** zu öffnen.
 
 1. Legen Sie am oberen Rand des Dialog Felds **Sprache** auf **C++**, legen Sie **Platform** auf **Windows**fest, und legen Sie **Projekttyp** auf **Desktop**fest.
 
@@ -55,11 +55,11 @@ Führen Sie diese Schritte aus, um Ihr erstes Windows-Desktop Projekt zu erstell
 
 1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt **desktopapp** , wählen Sie **Hinzufügen**aus, und wählen Sie dann **Neues Element**aus.
 
-   ![Neues Element zum desktopapp-Projekt hinzufügen](../build/media/desktop-app-project-add-new-item-153.gif "Neues Element zum desktopapp-Projekt hinzufügen")
+   ![Kurzes Video, das zeigt, wie Benutzer in Visual Studio 2019 ein neues Element zum desktopapp-Projekt hinzufügen.](../build/media/desktop-app-project-add-new-item-153.gif "Neues Element zum desktopapp-Projekt hinzufügen")
 
 1. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **C++-Datei (.cpp)**. Geben Sie im Feld **Name** einen Namen für die Datei ein, z. b. *hellowindowsdesktop. cpp*. Wählen Sie **Hinzufügen** aus.
 
-   ![Cpp-Datei zum desktopapp-Projekt hinzufügen](../build/media/desktop-app-add-cpp-file-153.png "Cpp-Datei zum desktopapp-Projekt hinzufügen")
+   ![Screenshot des Dialog Felds "Neues Element hinzufügen" in Visual Studio 2019 mit installierter > Visual C plus plus ausgewählt und die Option "C plus plus Datei" hervorgehoben.](../build/media/desktop-app-add-cpp-file-153.png "Cpp-Datei zum desktopapp-Projekt hinzufügen")
 
 Das Projekt wird jetzt erstellt, und die Quelldatei wird im Editor geöffnet. Fahren Sie fort, indem Sie [den Code erstellen](#create-the-code).
 
@@ -75,17 +75,17 @@ Das Projekt wird jetzt erstellt, und die Quelldatei wird im Editor geöffnet. Fa
 
    Geben Sie im Feld **Name** einen Namen für das Projekt ein, z. b. *desktopapp*. Wählen Sie **OK** aus.
 
-   ![Benennen des desktopapp-Projekts](../build/media/desktop-app-new-project-name-153.png "Benennen des desktopapp-Projekts")
+   ![Screenshot des Dialog Felds "Neues Projekt" in Visual Studio 2017 mit installierter > Visual C plus plus > Windows-Desktop ausgewählt ist, wird die Option Windows-Desktop-Assistent hervorgehoben und desktopapp in das Textfeld Name eingegeben.](../build/media/desktop-app-new-project-name-153.png "Benennen des desktopapp-Projekts")
 
 1. Wählen Sie im Dialogfeld **Windows-Desktop Projekt** unter **Anwendungstyp**die Option **Windows-Anwendung (. exe)** aus. Wählen Sie unter **Zusätzliche Optionen**die Option **Leeres Projekt**aus. Vergewissern Sie sich, dass der **Vorkompilierte Header** nicht ausgewählt Klicken Sie auf **OK**, um das Projekt zu erstellen.
 
 1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt **desktopapp** , wählen Sie **Hinzufügen**aus, und wählen Sie dann **Neues Element**aus.
 
-   ![Neues Element zum desktopapp-Projekt hinzufügen](../build/media/desktop-app-project-add-new-item-153.gif "Neues Element zum desktopapp-Projekt hinzufügen")
+   ![Kurzes Video, das zeigt, wie Benutzer in Visual Studio 2017 ein neues Element zum desktopapp-Projekt hinzufügen.](../build/media/desktop-app-project-add-new-item-153.gif "Neues Element zum desktopapp-Projekt hinzufügen")
 
 1. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **C++-Datei (.cpp)**. Geben Sie im Feld **Name** einen Namen für die Datei ein, z. b. *hellowindowsdesktop. cpp*. Wählen Sie **Hinzufügen** aus.
 
-   ![Cpp-Datei zum desktopapp-Projekt hinzufügen](../build/media/desktop-app-add-cpp-file-153.png "Cpp-Datei zum desktopapp-Projekt hinzufügen")
+   ![Screenshot des Dialog Felds "Neues Element hinzufügen" in Visual Studio 2017 mit installierter > Visual C plus plus ausgewählt und die Option "C plus plus Datei" hervorgehoben.](../build/media/desktop-app-add-cpp-file-153.png "Cpp-Datei zum desktopapp-Projekt hinzufügen")
 
 Das Projekt wird jetzt erstellt, und die Quelldatei wird im Editor geöffnet. Fahren Sie fort, indem Sie [den Code erstellen](#create-the-code).
 
@@ -101,7 +101,7 @@ Das Projekt wird jetzt erstellt, und die Quelldatei wird im Editor geöffnet. Fa
 
    Geben Sie im Feld **Name** einen Namen für das Projekt ein, z. b. *desktopapp*. Wählen Sie **OK** aus.
 
-   ![Benennen des desktopapp-Projekts](../build/media/desktop-app-new-project-name-150.png "Benennen des desktopapp-Projekts")
+   ![Screenshot des Dialog Felds "Neues Projekt" in Visual Studio 2015 mit installierter > Vorlagen > Visual C plus plus > Win32-Projekt Option und "desktopapp" in das Textfeld "Name" eingegeben haben.](../build/media/desktop-app-new-project-name-150.png "Benennen des desktopapp-Projekts")
 
 1. Wählen Sie auf der Seite **Übersicht** des **Win32-Anwendungs-Assistenten**die Option **weiter**aus.
 
@@ -111,11 +111,11 @@ Das Projekt wird jetzt erstellt, und die Quelldatei wird im Editor geöffnet. Fa
 
 1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt desktopapp, wählen Sie **Hinzufügen**aus, und wählen Sie dann **Neues Element**aus.
 
-   ![Neues Element zum desktopapp-Projekt hinzufügen](../build/media/desktop-app-project-add-new-item-150.gif "Neues Element zum desktopapp-Projekt hinzufügen")
+   ![Kurzes Video, das zeigt, wie Benutzer in Visual Studio 2015 ein neues Element zum desktopapp-Projekt hinzufügen.](../build/media/desktop-app-project-add-new-item-150.gif "Neues Element zum desktopapp-Projekt hinzufügen")
 
 1. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **C++-Datei (.cpp)**. Geben Sie im Feld **Name** einen Namen für die Datei ein, z. b. *hellowindowsdesktop. cpp*. Wählen Sie **Hinzufügen** aus.
 
-   ![Cpp-Datei zum desktopapp-Projekt hinzufügen](../build/media/desktop-app-add-cpp-file-150.png "Cpp-Datei zum desktopapp-Projekt hinzufügen")
+   ![Screenshot des Dialog Felds "Neues Element hinzufügen" in Visual Studio 2015 mit installierter > Visual C plus plus ausgewählt und die Option "C plus plus Datei" hervorgehoben.](../build/media/desktop-app-add-cpp-file-150.png "Cpp-Datei zum desktopapp-Projekt hinzufügen")
 
 Das Projekt wird jetzt erstellt, und die Quelldatei wird im Editor geöffnet.
 
@@ -388,7 +388,7 @@ Als Nächstes erfahren Sie, wie Sie den Code für eine Windows-Desktop Anwendung
    }
    ```
 
-   `HDC`im Code ist ein Handle für einen Gerätekontext, der zum Zeichnen im Client Bereich des Fensters verwendet wird. Verwenden `BeginPaint` Sie die `EndPaint` Funktionen und, um die Zeichnung im Client Bereich vorzubereiten und abzuschließen. `BeginPaint`Gibt ein Handle für den Anzeigegeräte Kontext zurück, der zum Zeichnen im Client Bereich verwendet wird. `EndPaint`beendet die Zeichnungs Anforderung und gibt den Gerätekontext frei.
+   `HDC` im Code ist ein Handle für einen Gerätekontext, der zum Zeichnen im Client Bereich des Fensters verwendet wird. Verwenden `BeginPaint` Sie die `EndPaint` Funktionen und, um die Zeichnung im Client Bereich vorzubereiten und abzuschließen. `BeginPaint` Gibt ein Handle für den Anzeigegeräte Kontext zurück, der zum Zeichnen im Client Bereich verwendet wird. `EndPaint` beendet die Zeichnungs Anforderung und gibt den Gerätekontext frei.
 
 1. Eine Anwendung verarbeitet in der Regel viele andere Nachrichten. Beispielsweise [WM_CREATE](/windows/win32/winmsg/wm-create) , wenn ein Fenster erstmalig erstellt wird, und [WM_DESTROY](/windows/win32/winmsg/wm-destroy) , wenn das Fenster geschlossen wird. Der folgende Code zeigt eine grundlegende, jedoch vollständige `WndProc` -Funktion.
 
@@ -588,7 +588,7 @@ Wie bereits versprochen, ist hier der gesamte Code für die funktionierende Anwe
 
    ![Ausführen des desktopapp-Projekts](../build/media/desktop-app-project-run-157.PNG "Ausführen des desktopapp-Projekts")
 
-Glückwunsch! Sie haben diese exemplarische Vorgehensweise abgeschlossen und eine herkömmliche Windows-Desktop Anwendung erstellt.
+Herzlichen Glückwunsch! Sie haben diese exemplarische Vorgehensweise abgeschlossen und eine herkömmliche Windows-Desktop Anwendung erstellt.
 
 ## <a name="see-also"></a>Weitere Informationen
 

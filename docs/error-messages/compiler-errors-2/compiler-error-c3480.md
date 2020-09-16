@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C3480
 ms.assetid: 7b2e055a-9604-4d13-861b-b38bda1a6940
-ms.openlocfilehash: 255fb12d587a94aac798814736f0b26770f608b0
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: a2fa1a8b02cf05d332210f359ae3ff33ed7d6e35
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74760477"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686305"
 ---
 # <a name="compiler-error-c3480"></a>Compilerfehler C3480
 
@@ -23,7 +23,7 @@ Die Lambdaerfassungsvariable stammt nicht aus einem einschließenden Funktionsbe
 
 - Entfernen Sie die Variable aus der Erfassungsliste des Lambda-Ausdrucks.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Im folgenden Beispiel wird C3480 generiert, da die Variable `global` nicht aus einem einschließenden Funktionsbereich stammt:
 
@@ -36,8 +36,6 @@ int main()
    [&global] { global = 5; }(); // C3480
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird C3480 durch Entfernen der Variablen `global` aus der Erfassungsliste des Lambdaausdrucks behoben:
 

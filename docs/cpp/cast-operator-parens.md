@@ -5,12 +5,12 @@ helpviewer_keywords:
 - cast operators [C++]
 - () cast operator
 ms.assetid: 4c99eb92-1b19-4a5d-9840-5d8c29b8453e
-ms.openlocfilehash: 491e8ea3bc3ff81e88825700de6a549324a0d5af
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 6b1abfc4e2798f973951a24ea27f35b2dcf6cca7
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80190156"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686318"
 ---
 # <a name="cast-operator-"></a>Umwandlungsoperator: ()
 
@@ -28,7 +28,7 @@ Jeder unäre Ausdruck wird als Umwandlungsausdruck betrachtet.
 
 Der Compiler behandelt *cast-expression* als *type-name*-Typ, nachdem eine Typumwandlung vorgenommen wurde. Umwandlungen können verwendet werden, um Objekte eines beliebigen skalaren Typs in einen oder aus einem anderen skalaren Typ zu konvertieren. Explizite Typumwandlungen werden über die gleichen Regeln eingeschränkt, die die Auswirkungen von impliziten Konvertierungen bestimmen. Zusätzliche Einschränkungen für Typumwandlungen ergeben sich möglicherweise aus den tatsächlichen Größen oder der Darstellung bestimmter Typen.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 ```cpp
 // expre_CastOperator.cpp
@@ -47,8 +47,6 @@ int main()
     cout << "i = " << i << endl;
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 ```cpp
 // expre_CastOperator2.cpp
@@ -121,7 +119,7 @@ Raw Bytes after cast:   Exciting
 ## <a name="see-also"></a>Weitere Informationen
 
 [Ausdrücke mit unären Operatoren](../cpp/expressions-with-unary-operators.md)<br/>
-[C++-Built-in-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)<br/>
+[Integrierte C++-Operatoren, Rangfolge und Assoziativität](../cpp/cpp-built-in-operators-precedence-and-associativity.md)<br/>
 [Operator für die explizite Typkonvertierung: ()](../cpp/explicit-type-conversion-operator-parens.md)<br/>
-[Umwandlungsoperatoren](../cpp/casting-operators.md)<br/>
-[Umwandlungsoperatoren](../c-language/cast-operators.md)
+[Umwandlungs Operatoren](../cpp/casting-operators.md)<br/>
+[Umwandlungs Operatoren](../c-language/cast-operators.md)

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C4250
 ms.assetid: d47f7249-6b5a-414b-b2d4-56e5d246a782
-ms.openlocfilehash: e0feb1cb7131b4388c87213a85ff1c921f636e1b
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 10064784e1124ac365475f00b3577d22f5e7f3f1
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80162035"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686521"
 ---
 # <a name="compiler-warning-level-2-c4250"></a>Compilerwarnung (Stufe 2) C4250
 
@@ -22,6 +22,8 @@ Mindestens zwei Member haben denselben Namen. Die in `class2` wird geerbt, da Si
 Um C4250 zu unterdrücken, verwenden Sie das [Warning](../../preprocessor/warning.md) -Pragma.
 
 Da eine virtuelle Basisklasse von mehreren abgeleiteten Klassen gemeinsam genutzt wird, ist ein Name in einer abgeleiteten Klasse ein Name in einer Basisklasse. Bei der folgenden Klassenhierarchie gibt es z. b. zwei Definitionen von Func, die innerhalb des Diamanten geerbt wurden: die Vbc:: Func ()-Instanz durch die schwache Klasse und die dominante:: Func () durch die dominierende Klasse. Ein nicht qualifizierter Aufruf von Func () über ein Diamant Klassenobjekt ruft immer die dominieren:: Func ()-Instanz auf.  Wenn die schwache Klasse eine Instanz von Func () einführen würde, würde keine der Definitionen dominieren, und der-Befehl würde als mehrdeutig gekennzeichnet werden.
+
+## <a name="examples"></a>Beispiele
 
 ```cpp
 // C4250.cpp
@@ -44,8 +46,6 @@ int main() {
    d.func();   // C4250
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird C4250 generiert.
 
@@ -77,8 +77,6 @@ int main() {
    cout << eObject.operator int() << endl;
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 Dieses Beispiel zeigt eine komplexere Situation. Im folgenden Beispiel wird C4250 generiert.
 

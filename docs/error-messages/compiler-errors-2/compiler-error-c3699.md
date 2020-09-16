@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - C3699
 ms.assetid: 47c29afc-ab8b-4238-adfe-788dd6e00b3b
-ms.openlocfilehash: ec902266550e591623894823e6336bd2436bfbd5
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: d313168e8033395da1749e000e52421939f77af4
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74758033"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686651"
 ---
 # <a name="compiler-error-c3699"></a>Compilerfehler C3699
 
 "Operator": Diese Dereferenzierung kann nicht für den Typ "Typ" verwendet werden.
 
-Es wurde versucht, eine Dereferenzierung zu verwenden, die auf `type`nicht zulässig ist.
+Es wurde versucht, Dereferenzierung zu verwenden, die für nicht zulässig ist `type` .
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Im folgenden Beispiel wird C3699 generiert.
 
@@ -34,8 +34,6 @@ int main() {
 }
 ```
 
-## <a name="example"></a>Beispiel
-
 Eine triviale Eigenschaft kann keinen Verweistyp aufweisen. Weitere Informationen finden Sie unter [property](../../extensions/property-cpp-component-extensions.md) . Im folgenden Beispiel wird C3699 generiert.
 
 ```cpp
@@ -46,8 +44,6 @@ ref struct C {
    property System::String ^ y;   // OK
 };
 ```
-
-## <a name="example"></a>Beispiel
 
 Das Äquivalent eines "Zeiger auf eine Zeiger"-Syntax ist ein Handle für einen nach Verfolgungs Verweis. Im folgenden Beispiel wird C3699 generiert.
 

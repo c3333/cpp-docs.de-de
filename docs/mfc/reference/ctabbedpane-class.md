@@ -1,5 +1,5 @@
 ---
-title: CTabbedPane-Klasse
+title: Ctabbedpane-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CTabbedPane
@@ -28,18 +28,18 @@ helpviewer_keywords:
 - CTabbedPane [MFC], m_bTabsAlwaysTop
 - CTabbedPane [MFC], m_pTabWndRTC
 ms.assetid: f4dc5215-b789-4f2d-8c62-477aceda3578
-ms.openlocfilehash: 17351eaed585ec34117a2ef825964fd51bd0d86b
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: cfc0a3099b1d5ff9bd1093cc911745bd61cde64c
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81365949"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686638"
 ---
-# <a name="ctabbedpane-class"></a>CTabbedPane-Klasse
+# <a name="ctabbedpane-class"></a>Ctabbedpane-Klasse
 
 Implementiert die Funktionalität eines Bereichs mit abtrennbaren Registerkarten.
 
-oder genauer, siehe den Quellcode im **Ordner\\\\VC\\atlmfc src mfc** Ihrer Visual Studio-Installation.
+oder ausführlichere Informationen finden Sie im Quellcode, der sich im Ordner **VC \\ atlmfc \\ src \\ MFC** Ihrer Visual Studio-Installation befindet.
 
 ## <a name="syntax"></a>Syntax
 
@@ -51,27 +51,27 @@ class CTabbedPane : public CBaseTabbedPane
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
-|`CTabbedPane::CTabbedPane`|Der Standardkonstruktor.|
+|`CTabbedPane::CTabbedPane`|Standardkonstruktor|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
-|[CTabbedPane::DetachPane](#detachpane)|(Überschreibt [CBaseTabbedPane::DetachPane](../../mfc/reference/cbasetabbedpane-class.md#detachpane).)|
+|[CTabbedPane::DetachPane](#detachpane)|(Überschreibt [cbasetabbedpane::D etachpane](../../mfc/reference/cbasetabbedpane-class.md#detachpane).)|
 |[CTabbedPane::EnableTabAutoColor](#enabletabautocolor)|Aktiviert oder deaktiviert die automatische Registerkartenfärbung.|
-|[CTabbedPane::FloatTab](#floattab)|Überschreibt einen Bereich, jedoch nur, wenn sich der Bereich derzeit in einer abnehmbaren Registerkarte befindet. (Überschreibt [CBaseTabbedPane::FloatTab](../../mfc/reference/cbasetabbedpane-class.md#floattab).)|
+|[CTabbedPane::FloatTab](#floattab)|Gibt einen Bereich aus, aber nur, wenn sich der Bereich derzeit in einer ablösbaren Registerkarte befindet. (überschreibt [cbasetabbedpane:: floattab](../../mfc/reference/cbasetabbedpane-class.md#floattab).)|
 |[CTabbedPane::GetTabArea](#gettabarea)|Gibt die Größe und Position des Registerkartenbereichs im Fenster im Registerkartenformat zurück.|
 |[CTabbedPane::GetTabWnd](#gettabwnd)||
-|[CTabbedPane::HasAutoHideMode](#hasautohidemode)|Bestimmt, ob der Bereich im Registerkartenformat automatisch in den Hintergrundmodus gewechselt werden kann. (Überschreibt [CBaseTabbedPane::HasAutoHideMode](../../mfc/reference/cbasetabbedpane-class.md#hasautohidemode).)|
+|[CTabbedPane::HasAutoHideMode](#hasautohidemode)|Bestimmt, ob der Bereich im Registerkartenformat automatisch in den Hintergrundmodus gewechselt werden kann. (Überschreibt [cbasetabbedpane:: hasautohidemode](../../mfc/reference/cbasetabbedpane-class.md#hasautohidemode).)|
 |[CTabbedPane::IsTabLocationBottom](#istablocationbottom)|Bestimmt, ob sich die Registerkarten am unteren Rand des Fensters befinden.|
 |[CTabbedPane::ResetTabs](#resettabs)|Setzt alle Bereiche im Registerkartenformat auf den Standardstatus zurück.|
 |[CTabbedPane::SetTabAutoColors](#settabautocolors)|Legt eine Liste benutzerdefinierter Farben fest, die verwendet werden kann, wenn die Funktion für automatische Farben aktiviert ist.|
 
 ### <a name="data-members"></a>Datenelemente
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[CTabbedPane::m_bTabsAlwaysTop](#m_btabsalwaystop)|Die Standardposition für Registerkarten in der Anwendung.|
 |[CTabbedPane::m_pTabWndRTC](#m_ptabwndrtc)|Laufzeitklasseninformationen für ein benutzerdefiniertes `CMFCTabCtrl`-abgeleitetes Objekt.|
@@ -80,13 +80,13 @@ class CTabbedPane : public CBaseTabbedPane
 
 Das Framework erstellt automatisch eine Instanz dieser Klasse, wenn ein Benutzer einen Bereich an einen anderen anfügt, indem es auf die Beschriftung des zweiten Bereichs verweist. Alle der vom Framework erstellten Bereiche im Registerkartenformat besitzen eine ID von "-1".
 
-Um reguläre Registerkarten anstelle von Registerkarten im Outlook-Stil anzugeben, übergeben Sie den AFX_CBRS_REGULAR_TABS-Stil an die [CDockablePane::CreateEx-Methode.](../../mfc/reference/cdockablepane-class.md#createex)
+Um reguläre Registerkarten anstelle von Registerkarten im Outlook-Stil anzugeben, übergeben Sie den AFX_CBRS_REGULAR_TABS Stil an die [CDockablePane:: foateex](../../mfc/reference/cdockablepane-class.md#createex) -Methode.
 
 Wenn Sie einen Bereich im Registerkartenformat mit abtrennbaren Registerkarten erstellen, kann der Bereich automatisch durch das Framework zerstört werden. Speichern Sie daher nicht den Zeiger. Um einen Zeiger zum Bereich im Registerkartenformat zu erhalten, rufen Sie die `CBasePane::GetParentTabbedPane`-Methode auf.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
-In diesem Beispiel erstellen wir ein `CTabbedPane`-Objekt. Als Nächstes verwenden wir [CBaseTabbedPane::AddTab,](../../mfc/reference/cbasetabbedpane-class.md#addtab) um zusätzliche Registerkarten anzuhängen.
+In diesem Beispiel erstellen wir ein `CTabbedPane`-Objekt. Als nächstes verwenden wir [cbasetabbedpane:: addTab](../../mfc/reference/cbasetabbedpane-class.md#addtab) , um zusätzliche Registerkarten anzufügen.
 
 ```cpp
 CTabbedPane* pTabbededBar = new CTabbedPane (TRUE);
@@ -117,9 +117,7 @@ pTabbededBar->EnableDocking(CBRS_ALIGN_ANY);
 DockPane(pTabbededBar);
 ```
 
-## <a name="example"></a>Beispiel
-
-Eine weitere Möglichkeit zum Erstellen eines Registerkarten-Steuerleistenobjekts ist die Verwendung von [CDockablePane::AttachToTabWnd](../../mfc/reference/cdockablepane-class.md#attachtotabwnd). Die `AttachToTabWnd` Methode erstellt dynamisch ein Registerkartenbereichsobjekt mithilfe von Laufzeitklasseninformationen, die von [CDockablePane::SetTabbedPaneRTC](../../mfc/reference/cdockablepane-class.md#settabbedpanertc)festgelegt wurden.
+Eine weitere Möglichkeit zum Erstellen eines Steuer leisten Objekts im Registerkarten Format ist die Verwendung von [CDockablePane:: attachdetabwnd](../../mfc/reference/cdockablepane-class.md#attachtotabwnd). Die- `AttachToTabWnd` Methode erstellt dynamisch ein Pane-Objekt im Registerkarten Format mit Lauf Zeit Klassen Informationen, die von [CDockablePane:: settabbedpanertc](../../mfc/reference/cdockablepane-class.md#settabbedpanertc)festgelegt werden.
 
 In diesem Beispiel erstellen wir einen dynamischen Bereich im Registerkartenformat, fügen zwei Registerkarten an und legen die zweite Registerkarte als nicht entfernbar fest.
 
@@ -143,7 +141,7 @@ pTabbedBar->GetUnderlyingWindow ()->EnableTabDetach (1,
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[Cobject](../../mfc/reference/cobject-class.md)
+[CObject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -161,9 +159,9 @@ pTabbedBar->GetUnderlyingWindow ()->EnableTabDetach (1,
 
 ## <a name="requirements"></a>Anforderungen
 
-**Kopfzeile:** afxTabbedPane.h
+**Header:** afxtabbedpane. h
 
-## <a name="ctabbedpanedetachpane"></a><a name="detachpane"></a>CTabbedPane::DetachPane
+## <a name="ctabbedpanedetachpane"></a><a name="detachpane"></a> Ctabbedpane::D etachpane
 
 ```
 virtual BOOL DetachPane(
@@ -173,15 +171,15 @@ virtual BOOL DetachPane(
 
 ### <a name="parameters"></a>Parameter
 
-[in] *pBar*<br/>
+in *pbar*<br/>
 
-[in] *bHide*<br/>
+in *Bhide*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="ctabbedpaneenabletabautocolor"></a><a name="enabletabautocolor"></a>CTabbedPane::EnableTabAutoColor
+## <a name="ctabbedpaneenabletabautocolor"></a><a name="enabletabautocolor"></a> Ctabbedpane:: enabletabautocolor
 
 Aktiviert oder deaktiviert die automatische Registerkartenfärbung.
 
@@ -191,18 +189,18 @@ static void EnableTabAutoColor(BOOL bEnable = TRUE);
 
 ### <a name="parameters"></a>Parameter
 
-*bEnable*<br/>
-[in] TRUE, um die automatische Färbung von Registerkarten zu aktivieren; andernfalls FALSE.
+*benabel*<br/>
+in TRUE, um die automatische Farbgebung von Registerkarten zu aktivieren. andernfalls false.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie diese statische Methode, um die automatische Färbung von Registerkarten in allen Registerkarten in der Anwendung zu aktivieren oder zu deaktivieren. Wenn diese Funktion aktiviert ist, wird jede Registerkarte mit einer eigenen Farbe gefüllt. Sie können die Liste der Farben finden, die zum Färben der Registerkarten verwendet werden, indem Sie die [CMFCBaseTabCtrl::GetAutoColors-Methode](../../mfc/reference/cmfcbasetabctrl-class.md#getautocolors) aufrufen.
+Verwenden Sie diese statische Methode, um die automatische Farbgebung von Registerkarten in allen Bereichen im Registerkarten Format in der Anwendung zu aktivieren oder zu deaktivieren. Wenn diese Funktion aktiviert ist, wird jede Registerkarte mit ihrer eigenen Farbe gefüllt. Sie finden die Liste der Farben, die zum Durchführen der Farben der Registerkarten verwendet werden, indem Sie die [cmfcbasetabctrl:: getautocolors](../../mfc/reference/cmfcbasetabctrl-class.md#getautocolors) -Methode aufrufen.
 
-Sie können die Liste der Farben angeben, die für Registerkarten verwendet werden, indem Sie [CTabbedPane::SetTabAutoColors](#settabautocolors)aufrufen.
+Sie können die Liste der Farben angeben, die für Registerkarten verwendet werden, indem Sie [ctabbedpane:: settabautocolors](#settabautocolors)aufrufen.
 
 Diese Option ist standardmäßig deaktiviert.
 
-## <a name="ctabbedpanefloattab"></a><a name="floattab"></a>CTabbedPane::FloatTab
+## <a name="ctabbedpanefloattab"></a><a name="floattab"></a> Ctabbedpane:: floattab
 
 ```
 virtual BOOL FloatTab(
@@ -214,18 +212,18 @@ virtual BOOL FloatTab(
 
 ### <a name="parameters"></a>Parameter
 
-[in] *pBar*<br/>
-[in] *nTabID*<br/>
-[in] *dockMethode*<br/>
-[in] *bHide*<br/>
+in *pbar*<br/>
+in *ntabid*<br/>
+in *dockmethod*<br/>
+in *Bhide*<br/>
 
 ### <a name="return-value"></a>Rückgabewert
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="ctabbedpanegettabarea"></a><a name="gettabarea"></a>CTabbedPane::GetTabArea
+## <a name="ctabbedpanegettabarea"></a><a name="gettabarea"></a> Ctabbedpane:: gettabarea
 
-Gibt die Größe und Position des Tabstoppbereichs im Registerkartenfenster zurück.
+Gibt die Größe und Position des Registerkarten Bereichs im Fenster im Registerkarten Format zurück.
 
 ```
 virtual void GetTabArea(
@@ -235,19 +233,19 @@ virtual void GetTabArea(
 
 ### <a name="parameters"></a>Parameter
 
-*rectTabAreaTop*<br/>
-[out] Enthält die Größe und Position des oberen Tabalsbereichs in Bildschirmkoordinaten.
+*recttabareon*<br/>
+vorgenommen Enthält die Größe und Position des oberen Registerkarten Bereichs in Bildschirm Koordinaten.
 
-*rectTabAreaBottom*<br/>
-[out] Enthält die Größe und Position des unteren Tabalsbereichs in Bildschirmkoordinaten.
+*recttabareabottom*<br/>
+vorgenommen Enthält die Größe und Position des unteren Registerkarten Bereichs in Bildschirm Koordinaten.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das Framework ruft diese Methode auf, um zu bestimmen, wie ein Bereich angedockt wird, den ein Benutzer zieht. Wenn der Benutzer einen Bereich über den Registerkartenbereich des Zielbereichs zieht, versucht das Framework, ihn als neue Registerkarte des Zielbereichs hinzuzufügen. Andernfalls wird versucht, den Bereich an die Seite des Zielbereichs anzudocken, wodurch ein neuer Bereichscontainer mit einem Bereichsteiler erstellt wird, der die beiden Bereiche trennt.
+Das Framework ruft diese Methode auf, um zu bestimmen, wie ein Bereich Andocken soll, den ein Benutzer zieht. Wenn der Benutzer einen Bereich über den Registerkarten Bereich des Zielbereichs zieht, versucht das Framework, ihn als neue Registerkarte im Zielbereich hinzuzufügen. Andernfalls wird versucht, den Bereich an der Seite des Zielbereichs anzudocken. Dies umfasst das Erstellen eines neuen Bereichs Containers mit einem Bereichs Teiler, der die beiden Bereiche trennt.
 
-Überschreiben Sie diese `CTabbedPane`Methode in einer -derived-Klasse, um dieses Verhalten zu ändern.
+Überschreiben Sie diese Methode in einer `CTabbedPane` von abgeleiteten Klasse, um dieses Verhalten zu ändern.
 
-## <a name="ctabbedpanegettabwnd"></a><a name="gettabwnd"></a>CTabbedPane::GetTabWnd
+## <a name="ctabbedpanegettabwnd"></a><a name="gettabwnd"></a> Ctabbedpane:: gettabwnd
 
 ```
 CMFCTabCtrl* GetTabWnd() const;
@@ -257,7 +255,7 @@ CMFCTabCtrl* GetTabWnd() const;
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="ctabbedpanehasautohidemode"></a><a name="hasautohidemode"></a>CTabbedPane::HasAutoHideMode
+## <a name="ctabbedpanehasautohidemode"></a><a name="hasautohidemode"></a> Ctabbedpane:: hasautohidemode
 
 ```
 virtual BOOL HasAutoHideMode() const;
@@ -267,7 +265,7 @@ virtual BOOL HasAutoHideMode() const;
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="ctabbedpaneistablocationbottom"></a><a name="istablocationbottom"></a>CTabbedPane::IsTabLocationBottom
+## <a name="ctabbedpaneistablocationbottom"></a><a name="istablocationbottom"></a> Ctabbedpane:: istablocationbottom
 
 Bestimmt, ob sich die Registerkarten am unteren Rand des Fensters befinden.
 
@@ -277,11 +275,11 @@ virtual BOOL IsTabLocationBottom() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-TRUE, wenn sich der Tabstoppbereich am unteren Rand des Registerkartenfensters befindet. andernfalls FALSE.
+TRUE, wenn sich der Registerkarten Bereich unten im Fenster im Registerkarten Format befindet. andernfalls false.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="ctabbedpanem_btabsalwaystop"></a><a name="m_btabsalwaystop"></a>CTabbedPane::m_bTabsAlwaysTop
+## <a name="ctabbedpanem_btabsalwaystop"></a><a name="m_btabsalwaystop"></a> Ctabbedpane:: m_bTabsAlwaysTop
 
 Die Standardposition für Registerkarten in der Anwendung.
 
@@ -291,13 +289,13 @@ AFX_IMPORT_DATA static BOOL m_bTabsAlwaysTop;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Legen Sie diesen statischen Member auf TRUE fest, um zu erzwingen, dass alle Registerkarten in der Anwendung oben im Registerkartenbereich angezeigt werden.
+Legen Sie dieses statische Element auf "true" fest, um zu erzwingen, dass alle Registerkarten in der Anwendung oben im Registerkarten Bereich angezeigt werden.
 
-Sie müssen diesen Wert festlegen, bevor ein Registerkartenbereich erstellt wurde.
+Dieser Wert muss festgelegt werden, bevor ein Bereich im Registerkarten Format erstellt wurde.
 
 Der Standardwert ist FALSE.
 
-## <a name="ctabbedpanem_ptabwndrtc"></a><a name="m_ptabwndrtc"></a>CTabbedPane::m_pTabWndRTC
+## <a name="ctabbedpanem_ptabwndrtc"></a><a name="m_ptabwndrtc"></a> Ctabbedpane:: m_pTabWndRTC
 
 Laufzeitklasseninformationen für ein benutzerdefiniertes `CMFCTabCtrl`-abgeleitetes Objekt.
 
@@ -307,9 +305,9 @@ AFX_IMPORT_DATA static CRuntimeClass* m_pTabWndRTC;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Legen Sie diese statische Membervariable auf einen Zeiger `CMFCTabCtrl`auf die Laufzeitklasseninformationen eines -derived-Objekts fest, wenn Sie ein benutzerdefiniertes Registerkartenfenster in einem Registerkartenbereich verwenden.
+Legen Sie diese statische Member-Variable auf einen Zeiger auf die Lauf Zeit Klassen Informationen eines von `CMFCTabCtrl` abgeleiteten Objekts fest, wenn Sie ein benutzerdefiniertes Fenster im Registerkarten Format verwenden.
 
-## <a name="ctabbedpaneresettabs"></a><a name="resettabs"></a>CTabbedPane::ResetTabs
+## <a name="ctabbedpaneresettabs"></a><a name="resettabs"></a> Ctabbedpane:: resettabs
 
 Setzt alle Bereiche im Registerkartenformat auf den Standardstatus zurück.
 
@@ -319,11 +317,11 @@ static void ResetTabs();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Rufen Sie diese Methode auf, um alle Registerkartenbereiche in ihren Standardzustand zurückzuversetzen. Beim Aufruf setzt diese Methode die Rahmengrößen und den automatischen Farbstatus aller Registerkartenbereiche zurück.
+Mit dieser Methode können Sie alle Bereiche im Registerkarten Format auf ihren Standardzustand zurücksetzen. Wenn diese Methode aufgerufen wird, setzt diese Methode die Rahmengrößen und den automatischen Farb Status aller Bereiche im Registerkarten Format zurück.
 
-## <a name="ctabbedpanesettabautocolors"></a><a name="settabautocolors"></a>CTabbedPane::SetTabAutoColors
+## <a name="ctabbedpanesettabautocolors"></a><a name="settabautocolors"></a> Ctabbedpane:: settabautocolors
 
-Legt eine Liste benutzerdefinierter Farben fest, die verwendet werden, wenn die automatische Farbfunktion aktiviert ist.
+Legt eine Liste benutzerdefinierter Farben fest, die verwendet werden, wenn die Funktion für automatische Farben aktiviert ist.
 
 ```
 static void SetTabAutoColors(const CArray<COLORREF, COLORREF>& arColors);
@@ -331,19 +329,19 @@ static void SetTabAutoColors(const CArray<COLORREF, COLORREF>& arColors);
 
 ### <a name="parameters"></a>Parameter
 
-*arColors*<br/>
-[in] Enthält das zu setzende Farbarray.
+*arcolors*<br/>
+in Enthält das Array von Farben, die festgelegt werden sollen.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie diese Methode, um die Liste der Farben anzupassen, die verwendet werden, wenn die automatische Farbfunktion aktiviert ist. Dies ist eine statische Funktion und wirkt sich auf alle Registerkartenbereiche in der Anwendung aus.
+Verwenden Sie diese Methode, um die Liste der Farben anzupassen, die verwendet werden, wenn die Funktion für automatische Farben aktiviert ist. Dies ist eine statische Funktion und wirkt sich auf alle Bereiche im Registerkarten Format in der Anwendung aus.
 
-Verwenden Sie [CTabbedPane::EnableTabAutoColor,](#enabletabautocolor) um die funktion für die automatische Farbe zu aktivieren oder zu deaktivieren.
+Verwenden Sie [ctabbedpane:: enabletabautocolor](#enabletabautocolor) , um das Feature für automatische Farben zu aktivieren oder zu deaktivieren.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
+[Hierarchie Diagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)<br/>
 [CDockablePane-Klasse](../../mfc/reference/cdockablepane-class.md)<br/>
-[CBaseTabbedPane-Klasse](../../mfc/reference/cbasetabbedpane-class.md)<br/>
+[Cbasetabbedpane-Klasse](../../mfc/reference/cbasetabbedpane-class.md)<br/>
 [CMFCOutlookBar-Klasse](../../mfc/reference/cmfcoutlookbar-class.md)

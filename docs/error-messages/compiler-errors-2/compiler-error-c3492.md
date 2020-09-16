@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C3492
 ms.assetid: b1dc6342-9133-4b1f-a9c3-e8c65d20d121
-ms.openlocfilehash: 37129c198096be91a8104aedcb508732d79e3630
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: bdaeb8797eb71b205f737d08e74430f161cb8caa
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74738309"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686547"
 ---
 # <a name="compiler-error-c3492"></a>Compilerfehler C3492
 
@@ -23,7 +23,7 @@ Sie können ein Member einer unbenannten Union nicht erfassen.
 
 - Weisen Sie der Union einen Namen zu, und übergeben Sie die vollständige Union-Struktur an die Erfassungsliste des Lambdaausdrucks.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Im folgenden Beispiel wird C3492 generiert, da ein Member einer anonymen Union erfasst wird:
 
@@ -42,8 +42,6 @@ int main()
    [&x](char ch) { x = ch; }(ch); // C3492
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird C3492 behoben, indem der Union ein Name zugewiesen und die vollständige Union-Struktur an die Erfassungsliste des Lambdaausdrucks übergeben wird.
 
