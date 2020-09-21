@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C2676
 ms.assetid: 838a5e34-c92f-4f65-a597-e150bf8cf737
-ms.openlocfilehash: 1b999875aa1c7ef34065c0a36046c634308075f5
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 94e56581f6583fa69e46d4deb3d82663a65cd1d1
+ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87218194"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90743190"
 ---
 # <a name="compiler-error-c2676"></a>Compilerfehler C2676
 
@@ -19,7 +19,7 @@ Binärer 'Operator': 'Typ' definiert diesen Operator oder eine Konvertierung in 
 
 Um den Operator zu verwenden, müssen Sie ihn für den angegebenen Typ überladen oder eine Konvertierung in einen Typ definieren, für den der Operator definiert ist.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Im folgenden Beispiel wird C2676 generiert.
 
@@ -50,8 +50,6 @@ int main() {
                // and then the builtin-operator==(int, int)
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 C2676 kann auch auftreten, wenn Sie versuchen, eine Zeigerarithmetik für den **`this`** Zeiger eines Verweis Typs durchzuführen.
 

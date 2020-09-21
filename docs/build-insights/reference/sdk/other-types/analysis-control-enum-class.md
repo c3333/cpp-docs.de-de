@@ -1,6 +1,6 @@
 ---
-title: AnalysisControl-Enumerumklasse
-description: Die C++ Build Insights SDK AnalysisControl-Enumerierungsreferenz.
+title: AnalysisControl-Enumerationsklasse
+description: Der AnalysisControl-Enumerationsverweis des C++ Build Insights SDK.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,31 +9,31 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: e9431f878390127f2cefbe8f0ee42ca509e147de
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.openlocfilehash: a7b7fc0ce404f414b3ec07449bdc110d578fa101
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81323639"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90042016"
 ---
-# <a name="analysiscontrol-enum-class"></a>AnalysisControl-Enumerumklasse
+# <a name="analysiscontrol-enum-class"></a>AnalysisControl-Enumerationsklasse
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `AnalysisControl` Enumerierungsklasse wird verwendet, um den Fluss einer Analyse- oder Reloggingsitzung zu steuern. Geben `AnalysisControl` Sie einen Code von einer [IAnalyzer-](ianalyzer-class.md) oder [IRelogger-Memberfunktion](irelogger-class.md) zurück, um zu steuern, was als nächstes geschehen soll.
+Mit der `AnalysisControl`-Enumerationsklasse wird der Fluss einer Analysesitzung oder Neuprotokollierungssitzung gesteuert. Durch Rückgabe eines `AnalysisControl`-Codes von einer [IAnalyzer](ianalyzer-class.md)- oder [IRelogger](irelogger-class.md)-Memberfunktion wird gesteuert, was als Nächstes geschehen sollte.
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
-|  |  |
+| name | BESCHREIBUNG |
 |--|--|
-| `BLOCK` | Verhindert, dass sich das aktuelle Ereignis in der Analyse- oder Reloggergruppe weiter ausbreitet. |
-| `CANCEL` | Brechen Sie die aktuelle Analyse- oder Neuprotokollierungssitzung ab. |
-| `CONTINUE` | Setzen Sie die aktuelle Analyse- oder Neuprotokollierungssitzung normal fort. Verteilen Sie das aktuelle Ereignis an das nächste Mitglied der Analyse oder der Neuprotokollierungsgruppe. |
-| `FAILURE` | Brechen Sie die aktuelle Analyse- oder Reloggingsitzung ab, und signalisieren Sie einen Fehler. |
+| `BLOCK` | Verhindert, dass das aktuelle Ereignis in der Analyzer- oder Reloggergruppe weitergegeben wird. |
+| `CANCEL` | Abbrechen der aktuellen Analyse- oder Neuprotokollierungssitzung. |
+| `CONTINUE` | Normale Fortsetzung der aktuellen Analyse- oder Neuprotokollierungssitzung. Weitergeben des aktuellen Ereignisses an den nächsten Analyzer- oder Reloggergruppenmember. |
+| `FAILURE` | Abbrechen der aktuellen Analyse- oder Neuprotokollierungssitzung und Signalisieren eines Fehlers. |
 
 ::: moniker-end

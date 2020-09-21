@@ -2,7 +2,7 @@
 title: Vordefinierte Makros
 description: In diesem Artikel werden die vordefinierten Präprozessormakros des Microsoft C++-Compilers aufgelistet und beschrieben.
 ms.custom: update_every_version
-ms.date: 06/08/2020
+ms.date: 09/11/2020
 f1_keywords:
 - _ATL_VER
 - __ATOM__
@@ -65,6 +65,11 @@ f1_keywords:
 - _RTC_CONVERSION_CHECKS_ENABLED
 - __STDC__
 - __STDC_HOSTED__
+- __STDC_NO_ATOMICS__
+- __STDC_NO_COMPLEX__
+- __STDC_NO_THREADS__
+- __STDC_NO_VLA__
+- __STDC_VERSION__
 - __STDCPP_THREADS__
 - __TIME__
 - __TIMESTAMP__
@@ -142,6 +147,11 @@ helpviewer_keywords:
 - _RTC_CONVERSION_CHECKS_ENABLED macro
 - __STDC__ macro
 - __STDC_HOSTED__ macro
+- __STDC_NO_ATOMICS__ macro
+- __STDC_NO_COMPLEX__ macro
+- __STDC_NO_THREADS__ macro
+- __STDC_NO_VLA__ macro
+- __STDC_VERSION__ macro
 - __STDCPP_THREADS__ macro
 - __TIME__ macro
 - __TIMESTAMP__ macro
@@ -215,6 +225,11 @@ no-loc:
 - _RTC_CONVERSION_CHECKS_ENABLED
 - __STDC__
 - __STDC_HOSTED__
+- __STDC_NO_ATOMICS__
+- __STDC_NO_COMPLEX__
+- __STDC_NO_THREADS__
+- __STDC_NO_VLA__
+- __STDC_VERSION__
 - __STDCPP_THREADS__
 - __TIME__
 - __TIMESTAMP__
@@ -225,18 +240,18 @@ no-loc:
 - _WIN64
 - _WINRT_DLL
 - __func__
-ms.openlocfilehash: 1c7b2f18aede84d8067c36537f33261554c16c17
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 85b467a0ac3db67b2715a849966618697437658b
+ms.sourcegitcommit: b492516cc65120250b9ea23f96f7f63f37f99fae
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87222640"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90075698"
 ---
 # <a name="predefined-macros"></a>Vordefinierte Makros
 
 Der Microsoft C-/C++-Compiler (MSVC) definiert vorab bestimmte Präprozessormakros abhängig von der Programmiersprache (C oder C++), vom Kompilierungsziel und von den ausgewählten Compileroptionen.
 
-MSVC unterstützt die vordefinierten Präprozessormakros, die laut dem ANSI/ISO-Standard C99 und den ISO-Standards C++14 und C++17 erforderlich sind. Die Implementierung unterstützt auch mehrere weitere Microsoft-spezifische Präprozessormakros. Einige Makros werden nur für bestimmte Buildumgebungen oder Compileroptionen definiert. Sofern nicht angegeben, werden die Makros über eine Übersetzungseinheit definiert, als ob sie als **`/D`** -Compileroptionsargumente angegeben würden. Wenn sie definiert wurden, werden die Makros vor der Kompilierung auf die vom Präprozessor angegebenen Werte erweitert. Von den vordefinierten Makros werden keine Argumente akzeptiert, und sie können nicht neu definiert werden.
+MSVC unterstützt die vordefinierten Präprozessormakros, die laut den ANSI/ISO-Standards C99, C11 und C17 sowie den ISO-Standards C++14 und C++17 erforderlich sind. Die Implementierung unterstützt auch mehrere weitere Microsoft-spezifische Präprozessormakros. Einige Makros werden nur für bestimmte Buildumgebungen oder Compileroptionen definiert. Sofern nicht angegeben, werden die Makros über eine Übersetzungseinheit definiert, als ob sie als **`/D`** -Compileroptionsargumente angegeben würden. Wenn sie definiert wurden, werden die Makros vor der Kompilierung auf die vom Präprozessor angegebenen Werte erweitert. Von den vordefinierten Makros werden keine Argumente akzeptiert, und sie können nicht neu definiert werden.
 
 ## <a name="standard-predefined-identifier"></a>Vordefinierter Standardbezeichner
 
@@ -252,7 +267,7 @@ Der Compiler unterstützt diesen vordefinierten Bezeichner, der von ISO C99 und 
 
 ## <a name="standard-predefined-macros"></a>Vordefinierte Standardmakros
 
-Der Compiler unterstützt diese vordefinierten Makros, die von den ISO-Standards C99 und C++17 angegeben werden.
+Der Compiler unterstützt diese vordefinierten Makros, die von den ISO-Standards C99, C11 und C17 sowie C++17 angegeben werden.
 
 - `__cplusplus` Dieser Wert wird als literale ganze Zahl definiert, wenn die Übersetzungseinheit als C++ kompiliert wird. Andernfalls wird er nicht definiert.
 
@@ -265,6 +280,16 @@ Der Compiler unterstützt diese vordefinierten Makros, die von den ISO-Standards
 - `__STDC__` Dieser Wert wird nur als 1 definiert, wenn er als C kompiliert und die Compileroption [ **`/Za`** ](../build/reference/za-ze-disable-language-extensions.md) angegeben wird. Andernfalls wird er nicht definiert.
 
 - `__STDC_HOSTED__` Dieser Wert wird als 1 definiert, wenn es sich bei der Implementierung um eine *gehostete Implementierung* handelt, die die gesamte erforderliche Standardbibliothek unterstützt. Andernfalls wird er als 0 definiert.
+
+- `__STDC_NO_ATOMICS__` wird als 1 definiert, wenn die Implementierung keine optionalen Standardatomics unterstützt. Die MSVC-Implementierung definiert dies als 1, wenn sie als C kompiliert und eine der [ **`/std`** ](../build/reference/std-specify-language-standard-version.md)-Optionen (C11 oder C17) angegeben wird.
+
+- `__STDC_NO_COMPLEX__` wird als 1 definiert, wenn die Implementierung keine optionalen komplexen Standardzahlen unterstützt. Die MSVC-Implementierung definiert dies als 1, wenn sie als C kompiliert und eine der [ **`/std`** ](../build/reference/std-specify-language-standard-version.md)-Optionen (C11 oder C17) angegeben wird.
+
+- `__STDC_NO_THREADS__` wird als 1 definiert, wenn die Implementierung keine optionalen Standardthreads unterstützt. Die MSVC-Implementierung definiert dies als 1, wenn sie als C kompiliert und eine der [ **`/std`** ](../build/reference/std-specify-language-standard-version.md)-Optionen (C11 oder C17) angegeben wird.
+
+- `__STDC_NO_VLA__` wird als 1 definiert, wenn die Implementierung keine variable Standardlängenarrays unterstützt. Die MSVC-Implementierung definiert dies als 1, wenn sie als C kompiliert und eine der [ **`/std`** ](../build/reference/std-specify-language-standard-version.md)-Optionen (C11 oder C17) angegeben wird.
+
+- `__STDC_VERSION__` wird definiert, wenn das Makro als C kompiliert und eine der **`/std`** -Optionen (C11 oder C17) angegeben wird. Für [ **`/std:c11`** ](../build/reference/std-specify-language-standard-version.md) wird es auf `201112L` und für [ **`/std:c17`** ](../build/reference/std-specify-language-standard-version.md) auf `201710L` erweitert.
 
 - `__STDCPP_THREADS__` Dieser Wert wird nur dann als 1 definiert, wenn ein Programm über mehr als einen Ausführungsthread verfügen kann und als C++ kompiliert wird. Andernfalls wird er nicht definiert.
 
@@ -458,13 +483,13 @@ MSVC unterstützt diese zusätzlichen vordefinierten Makros.
    |--|--|
    | Visual Studio 6.0 | 1200 |
    | Visual Studio .NET 2002 (7.0) | 1300 |
-   | Visual Studio .NET 2003 (7.1) | 1\.310 |
+   | Visual Studio .NET 2003 (7.1) | 1.310 |
    | Visual Studio 2005 (8.0) | 1400 |
    | Visual Studio 2008 (9.0) | 1500 |
    | Visual Studio 2010 (10.0) | 1600 |
-   | Visual Studio 2012 (11.0) | 1700 |
+   | Visual Studio 2012 (11.0) | 1.700 |
    | Visual Studio 2013 (12.0) | 1800 |
-   | Visual Studio 2015 (14.0) | 1\.900 |
+   | Visual Studio 2015 (14.0) | 1.900 |
    | Visual Studio 2017 RTW (15.0) | 1910 |
    | Visual Studio 2017 Version 15.3 | 1911 |
    | Visual Studio 2017 Version 15.5 | 1912 |
@@ -480,6 +505,7 @@ MSVC unterstützt diese zusätzlichen vordefinierten Makros.
    | Visual Studio 2019 Version 16.5 | 1925 |
    | Visual Studio 2019, Version 16.6 | 1926 |
    | Visual Studio 2019, Version 16.7 | 1927 |
+   | Visual Studio 2019, Version 16.8 | 1928 |
 
    Verwenden Sie den `>=`-Operator, um eine bestimmte oder eine höhere Version von Visual Studio auf Compilerreleases oder -updates zu überprüfen. Sie können ihn in einer bedingten Anweisung verwenden, um `_MSC_VER` mit dieser bekannten Version zu vergleichen. Wenn Sie über mehrere sich gegenseitig ausschließende Versionen verfügen, ordnen Sie Ihre Vergleiche in absteigender Reihenfolge nach der Versionsnummer an. Mit diesem Code wird beispielsweise auf Compiler überprüft, die in Visual Studio 2017 oder höher veröffentlicht wurden. Als Nächstes überprüft er auf Compiler, die in Visual Studio 2015 oder höher veröffentlicht wurden. Anschließend überprüft er auf alle Compiler, die in Visual Studio-Versionen vor Visual Studio 2015 veröffentlicht wurden:
 

@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - functions [ATL], error reporting
 ms.assetid: 11339c02-98cd-428d-b3b9-7deeb155a6a3
-ms.openlocfilehash: b4af5dd3839672152c53c902b73c1ea51b7feb6b
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 10aca6862f6989c126981a9f6437c61f1c07bdae
+ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88835467"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90742787"
 ---
 # <a name="debugging-and-error-reporting-global-functions"></a>Globale Funktionen zum Debuggen und zur Fehlerberichterstattung
 
@@ -39,7 +39,7 @@ HRESULT AtlHresultFromLastError();
 
 `AtlHresultFromLastError` Ruft `GetLastError` auf, um den letzten Fehler abzurufen, und gibt den Fehler zurück, nachdem er mithilfe des HRESULT_FROM_WIN32-Makros in ein HRESULT-Wert umgerechnet wurde
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Anforderungen
 
 **Header:** atlcomcli. h
 
@@ -63,7 +63,7 @@ Konvertiert einen Win32-Fehlercode unter Verwendung des Makro HRESULT_FROM_WIN32
 > [!NOTE]
 > Verwenden Sie anstelle von `HRESULT_FROM_WIN32(GetLastError())` die Funktion [atlhresultfromlasterror](debugging-and-error-reporting-global-functions.md#atlhresultfromlasterror).
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Anforderungen
 
 **Header:** atlcomcli. h
 
@@ -158,7 +158,7 @@ Die Zeichenfolge *lpszentsc* wird als Textbeschreibung des Fehlers verwendet. We
 > [!CAUTION]
 > Verwenden Sie `AtlReportError` in C++ catch-Handlern nicht. Einige über schreibungen dieser Funktionen verwenden intern die ATL-Zeichen folgen Konvertierungs Makros, die wiederum die `_alloca` Funktion intern verwenden. Die Verwendung von `AtlReportError` in einem C++ catch-Handler kann Ausnahmen in C++ catch-Handlern verursachen.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Anforderungen
 
 **Header:** Atlcom. h
 
@@ -195,7 +195,7 @@ Bei ATL-Projekten ist es möglich, eine eigene Implementierung dieser Funktion b
 
 [!code-cpp[NVC_ATL_Windowing#95](../../atl/codesnippet/cpp/debugging-and-error-reporting-global-functions_2.h)]
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Anforderungen
 
 **Header:** atldef. h
 
@@ -217,7 +217,7 @@ Wenn _ATL_NO_EXCEPTIONS nicht in einem ATL-Projekt definiert ist, löst die Funk
 
 Wenn _ATL_NO_EXCEPTIONS definiert ist, verursacht die Funktion einen Fehler bei der Übersetzung, anstatt eine Ausnahme auszulösen.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Anforderungen
 
 **Header:** atldef. h
 

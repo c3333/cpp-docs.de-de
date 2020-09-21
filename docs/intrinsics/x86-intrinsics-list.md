@@ -1,6 +1,6 @@
 ---
 title: Liste der intrinsischen Funktionen für x86
-description: Referenzliste der systeminternen x64-Funktionen (amd64), die vom Microsoft C++-Compiler in Visual Studio unterstützt werden.
+description: Verweis Liste der systeminternen x86-Funktionen, die vom Microsoft C++-Compiler in Visual Studio unterstützt werden.
 ms.date: 02/28/2020
 f1_keywords:
 - intrin/_addcarry_u16
@@ -2309,12 +2309,12 @@ helpviewer_keywords:
 - _xsaveopt x86 intrinsic
 - _xsetbv x86 intrinsic
 - _xtest x86 intrinsic
-ms.openlocfilehash: f13be5ddaa79382e3d58e96b2f4aaa0d7f9d6566
-ms.sourcegitcommit: 65fead53d56d531d71be42216056aca5f44def11
+ms.openlocfilehash: a5892b809e74e04806f27f06437b9fbedae68754
+ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88610919"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90741877"
 ---
 # <a name="x86-intrinsics-list"></a>Liste der intrinsischen Funktionen für x86
 
@@ -3627,7 +3627,7 @@ Die folgende Tabelle enthält die systeminternen Funktionen, die auf x86-Prozess
 |[_xsetbv](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_xsetbv)|XSAVE [2]|immintrin.h|void-_xsetbv (Ganzzahl ohne Vorzeichen int, Ganzzahl ohne Vorzeichen \_ _int64)|
 |[_xtest](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_xtest)|XTEST [2]|immintrin.h|unsigned char _xtest(void)|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Systeminterne Compilerfunktionen](compiler-intrinsics.md)\
 [Systeminterne ARM-Funktionen](arm-intrinsics.md)\

@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - Platform::Array Class
 ms.assetid: 7815ab40-88c5-42b0-83b8-081cef0cda31
-ms.openlocfilehash: 00b73b9fb113066c6948c49ec7d2039748284800
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 4903c18f981c87c418a6ab08595816ce22a7413c
+ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88837759"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90742943"
 ---
 # <a name="platformarray-class"></a>Platform::Array-Klasse
 
@@ -58,7 +58,7 @@ Weitere Informationen dazu, wann und wie Platform:: Array verwendet wird, finden
 
 Diese Klasse wird im Header "vccorlib.h" definiert, der automatisch vom Compiler eingeschlossen wird. Es ist in IntelliSense, aber nicht in Objektkatalog sichtbar, da es sich nicht um einen in Platform. winmd definierten öffentlichen Typ handelt.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Anforderungen
 
 Compileroption: **/ZW**
 
@@ -66,7 +66,7 @@ Compileroption: **/ZW**
 
 Initialisiert ein eindimensionales, änderbares Array von Typen, die vom Klassen Vorlagen Parameter *T*angegeben werden.
 
-## <a name="syntax"></a>Syntax
+### <a name="syntax"></a>Syntax
 
 ```cpp
 Array(unsigned int size);
@@ -92,7 +92,7 @@ Weitere Informationen zum Erstellen von Instanzen von Platform:: Array finden Si
 
 Ruft einen Verweis auf das Arrayelement an der angegebenen Indexposition ab.
 
-## <a name="syntax"></a>Syntax
+### <a name="syntax"></a>Syntax
 
 ```cpp
 T& get(unsigned int index)  const;
@@ -111,7 +111,7 @@ Das durch den `index`-Parameter spezifizierte Arrayelement.
 
 Ruft ein Handle für das aktuelle Array ab.
 
-## <a name="syntax"></a>Syntax
+### <a name="syntax"></a>Syntax
 
 ```cpp
 property Array^ Value;

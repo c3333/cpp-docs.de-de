@@ -1,6 +1,6 @@
 ---
 title: /ERRORREPORT (interne Linkerfehler melden)
-description: Referenzhandbuch zu den Befehlszeilenoptionen von Microsoft NMAKE.
+description: Weitere Informationen zur Verwendung von/errorreport.
 ms.date: 02/09/2020
 f1_keywords:
 - /ERRORREPORT
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - ERRORREPORT linker option
 - -ERRORREPORT linker option
 ms.assetid: f5fab595-a2f1-4eb0-ab5c-1c0fbd3d8c28
-ms.openlocfilehash: 5e919d4f7eb59524b9145c8e3e59613e60aef1d2
-ms.sourcegitcommit: 8414cd91297dea88c480e208c7b5301db9972f19
+ms.openlocfilehash: 7d16904da8490018235278347f23e37339739415
+ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77257688"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90742735"
 ---
 # <a name="errorreport-report-internal-linker-errors"></a>/ERRORREPORT (Weiterleiten von internen Linkerfehlern)
 
@@ -23,7 +23,7 @@ Die **/errorreport** -Option ist veraltet. Ab Windows Vista wird die Fehlerberic
 
 ## <a name="syntax"></a>Syntax
 
-> **/Errorreport:** \[ **keine** \| **Eingabeaufforderung** \| **warte \| Schlange** **senden** ]
+> **/Errorreport:** \[ **keine** \| **Eingabeaufforderung** \| **Warteschlange** \| **senden** ]
 
 ## <a name="remarks"></a>Bemerkungen
 
@@ -33,7 +33,7 @@ Die **/errorreport** -Argumente werden von den Windows-Fehlerberichterstattung D
 
 1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Öffnen Sie die Eigenschaften Seite " **Konfigurations Eigenschaften** > **Linker** > **erweitert** .
+1. Öffnen Sie die **Eigenschaften**  >  **Linker**  >  Seite**Erweiterte** Eigenschaft Linker Linker.
 
 1. Ändern Sie die Eigenschaft **Fehlerberichterstattung** .
 
@@ -43,5 +43,5 @@ Die **/errorreport** -Argumente werden von den Windows-Fehlerberichterstattung D
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[MSVC-linkerverweis](linking.md)\
-[MSVC (Linkeroptionen)](linker-options.md)
+[MSVC (linkerreferenz)](linking.md)\
+[Linkeroptionen](linker-options.md)

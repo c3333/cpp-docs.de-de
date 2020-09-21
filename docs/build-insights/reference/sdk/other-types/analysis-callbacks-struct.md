@@ -1,6 +1,6 @@
 ---
-title: ANALYSIS_CALLBACKS Struktur
-description: Das C++ Build Insights SDK ANALYSIS_CALLBACKS Strukturreferenz.
+title: ANALYSIS_CALLBACKS-Struktur
+description: Der Verweis auf die ANALYSIS_CALLBACKS-Struktur im C++ Build Insights SDK.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 3c6de999b19657f999f884075ee53e21a4d2f2b5
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.openlocfilehash: a24755befdd446051ae376b49d3dca06c7bc3320
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81323513"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90041041"
 ---
-# <a name="analysis_callbacks-structure"></a>ANALYSIS_CALLBACKS Struktur
+# <a name="analysis_callbacks-structure"></a>ANALYSIS_CALLBACKS-Struktur
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `ANALYSIS_CALLBACKS` Struktur wird beim Initialisieren eines [ANALYSIS_DESCRIPTOR](analysis-descriptor-struct.md) oder [RELOG_DESCRIPTOR](relog-descriptor-struct.md) Objekts verwendet. Es gibt an, welche Funktionen während der Analyse oder Neuprotokollierung einer ETW-Ablaufverfolgung (Event Tracing for Windows) aufzurufen sind.
+Die `ANALYSIS_CALLBACKS`-Struktur wird beim Initialisieren eines [ANALYSIS_DESCRIPTOR](analysis-descriptor-struct.md)- oder [RELOG_DESCRIPTOR](relog-descriptor-struct.md)-Objekts verwendet. Sie gibt an, welche Funktionen während der Analyse oder Neuprotokollierung einer Ereignisablaufverfolgung für Windows (Event Tracing for Windows, ETW) aufgerufen werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -45,23 +45,23 @@ typedef struct ANALYSIS_CALLBACKS_TAG
 
 ## <a name="members"></a>Member
 
-|  |  |
+| name | BESCHREIBUNG |
 |--|--|
 | `OnStartActivity` | Wird aufgerufen, um ein Aktivitätsstartereignis zu verarbeiten. |
 | `OnStopActivity` | Wird aufgerufen, um ein Aktivitätsstoppereignis zu verarbeiten. |
 | `OnSimpleEvent` | Wird aufgerufen, um ein einfaches Ereignis zu verarbeiten. |
-| `OnTraceInfo` | Für Analysesitzungen, die am Anfang jedes Analysedurchlaufs aufgerufen werden. Für Relogging-Sitzungen, die zu Beginn jedes Analysedurchlaufs und erneut zu Beginn des Relogging-Durchlaufs aufgerufen werden. Diese Funktion wird erst aufgerufen, nachdem OnBeginAnalysisPass aufgerufen wurde. |
-| `OnBeginAnalysis` | Für Analysesitzungen, die aufgerufen werden, bevor ein Analysedurchlauf begonnen hat. Für Relogging-Sitzungen, die zweimal aufgerufen werden, bevor die Analysephase begonnen hat: einmal, um den Beginn der Relogging-Sitzung anzukündigen, und noch einmal, um den Beginn der Analysephase anzukündigen. |
-| `OnEndAnalysis` | Bei Analysesitzungen wird diese Funktion aufgerufen, nachdem alle Analysedurchläufe beendet wurden. Bei Relogging-Sitzungen wird diese Funktion aufgerufen, wenn alle Analysedurchläufe der Analysephase beendet sind. Dann wird es wieder aufgerufen, nachdem der Relogging-Pass beendet wurde. |
-| `OnBeginAnalysisPass` | Wird aufgerufen, wenn ein Analysedurchlauf oder der Relogging-Durchlauf vor der Verarbeitung eines Ereignisses aufgerufen wird. |
-| `OnEndAnalysisPass` | Wird aufgerufen, wenn ein Analysedurchlauf oder der Relogging-Durchlauf nach der Verarbeitung aller Ereignisse beendet wird. |
+| `OnTraceInfo` | Wird für Analysesitzungen zu Beginn jedes Analysedurchlaufs aufgerufen. Wird für Neuprotokollierungssitzungen zu Beginn der einzelnen Analysedurchläufe und wieder am Anfang des Neuprotokollierungsdurchlaufs aufgerufen. Diese Funktion wird nur nach dem Aufruf von OnBeginAnalysisPass aufgerufen. |
+| `OnBeginAnalysis` | Wird für Analysesitzungen aufgerufen, bevor ein Analysedurchlauf begonnen hat. Wird für Neuprotokollierungssitzungen zweimal vor Beginn der Analysephase aufgerufen: einmal, um den Beginn der Neuprotokollierungssitzung anzukündigen, und noch einmal, um den Beginn der Analysephase anzukündigen. |
+| `OnEndAnalysis` | Für Analysesitzungen wird diese Funktion aufgerufen, nachdem alle Analysedurchläufe beendet wurden. Für Neuprotokollierungssitzungen wird diese Funktion aufgerufen, wenn alle Analysedurchläufe der Analysephase beendet wurden. Anschließend wird sie erneut aufgerufen, nachdem der Neuprotokollierungsdurchlauf beendet wurde. |
+| `OnBeginAnalysisPass` | Wird beim Start eines Analyse- oder Neuprotokollierungsdurchlaufs aufgerufen, bevor ein Ereignis verarbeitet wird. |
+| `OnEndAnalysisPass` | Wird beim Ende eines Analyse- oder Neuprotokollierungsdurchlaufs aufgerufen, nachdem alle Ereignisse verarbeitet wurden. |
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die Analysephase einer Relogging-Sitzung wird als Teil der Relogging-Sitzung betrachtet und kann mehrere Analysedurchläufe enthalten. Aus diesem `OnBeginAnalysis` Grund wird zu Beginn einer Relogging-Sitzung zweimal hintereinander aufgerufen. `OnEndAnalysis`wird am Ende der Analysephase aufgerufen, bevor die Relogging-Phase und erneut am Ende der Relogging-Phase gestartet wird. Die Relogging-Phase enthält immer einen einzelnen Relogging-Durchlauf.
+Die Analysephase einer Neuprotokollierungssitzung wird als Teil der Neuprotokollierungssitzung angesehen und kann mehrere Analysedurchläufe enthalten. Aus diesem Grund wird `OnBeginAnalysis` zu Beginn einer Neuprotokollierungssitzung zweimal in einer Zeile aufgerufen. `OnEndAnalysis` wird am Ende der Analysephase aufgerufen, bevor die Neuprotokollierungsphase gestartet wird, und wieder am Ende der Neuprotokollierungsphase. Die Neuprotokollierungsphase enthält immer einen einzelnen Neuprotokollierungsdurchlauf.
 
-Es ist möglich, dass Analysatoren sowohl Teil der Analyse- als auch der Relogging-Phase einer Relogging-Sitzung sind. Diese Analysatoren können bestimmen, welche Phase derzeit läuft, `OnEndAnalysis` indem sie die OnBeginAnalysis- und Anrufpaare nachverfolgen. Zwei `OnBeginAnalysis` Anrufe `OnEndAnalysis` ohne Aufruf bedeutet, dass die Analysephase im Gange ist. Zwei `OnBeginAnalysis` Anrufe `OnEndAnalysis` und ein Anruf bedeuten, dass die Relogging-Phase im Gange ist. Zwei OnBeginAnalysis `OnEndAnalysis` und zwei Aufrufe bedeuten, dass beide Phasen beendet wurden.
+Analysetools können sowohl Teil der Analyse als auch der Neuprotokollierungsphase einer Neuprotokollierungssitzung sein. Diese Analysetoolmodule können bestimmen, welche Phase zurzeit durchgeführt wird, indem sie die OnBeginAnalysis- und `OnEndAnalysis`-Aufrufpaare nachverfolgen. Zwei `OnBeginAnalysis`-Aufrufe ohne `OnEndAnalysis`-Aufruf bedeutet, dass die Analysephase durchgeführt wird. Zwei `OnBeginAnalysis`-Aufrufe und ein `OnEndAnalysis`-Aufruf bedeutet, dass die Phase der Neuprotokollierung durchgeführt wird. Zwei OnBeginAnalysis- und zwei `OnEndAnalysis`-Aufrufe bedeutet, dass beide Phasen beendet wurden.
 
-Alle Elemente `ANALYSIS_CALLBACKS` der Struktur müssen auf eine gültige Funktion verweisen. Weitere Informationen zu den akzeptierten Funktionssignaturen finden Sie unter [OnAnalysisEventFunc](on-analysis-event-func-typedef.md), [OnTraceInfoFunc](on-trace-info-func-typedef.md)und [OnBeginEndPassFunc](on-begin-end-pass-func-typedef.md).
+Alle Member der `ANALYSIS_CALLBACKS`-Struktur müssen auf eine gültige Funktion verweisen. Weitere Informationen zu den akzeptierten Funktionssignaturen finden Sie unter [OnAnalysisEventFunc](on-analysis-event-func-typedef.md), [OnTraceInfoFunc](on-trace-info-func-typedef.md) und [OnBeginEndPassFunc](on-begin-end-pass-func-typedef.md).
 
 ::: moniker-end

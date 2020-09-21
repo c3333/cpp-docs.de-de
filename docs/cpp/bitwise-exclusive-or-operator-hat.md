@@ -1,9 +1,10 @@
 ---
 title: 'Bitweiser Operator für exklusives ODER: ^'
 description: Die exklusive Syntax der C++-Standardsprache oder-Operator Syntax und die Verwendung.
-ms.date: 07/23/2020
+ms.date: 09/21/2020
 f1_keywords:
 - xor_cpp
+- ^
 helpviewer_keywords:
 - operators [C++], bitwise
 - exclusive OR operator
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - OR operator [C++], bitwise exclusive
 - operators [C++], logical
 ms.assetid: f9185d85-65d5-4f64-a6d6-679758d52217
-ms.openlocfilehash: b76c3d84d9548a73084b254a4179d1f679c33626
-ms.sourcegitcommit: f2a135d69a2a8ef1777da60c53d58fe06980c997
+ms.openlocfilehash: 4823c245ffca7032347e37c0c25c2963407733a7
+ms.sourcegitcommit: f656092eebbcb148ca4d3b7a6a8508eff8f7e85f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87521160"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90836627"
 ---
 # <a name="bitwise-exclusive-or-operator-"></a>Bitweiser Operator für exklusives ODER: ^
 
@@ -32,10 +33,11 @@ Der bitweise exklusive OR-Operator ( **`^`** ) vergleicht jedes Bit seines erste
 
 Beide Operanden für den Operator müssen ganzzahlige Typen aufweisen. Die üblichen arithmetischen Konvertierungen, die in [Standard Konvertierungen](standard-conversions.md) abgedeckt werden, werden auf die Operanden angewendet.
 
+Weitere Informationen zur alternativen Verwendung des **`^`** Zeichens in C++/CLI und C++/CX finden [Sie unter handle to Object Operator (^) (C++/CLI und C++/CX)](../extensions/handle-to-object-operator-hat-cpp-component-extensions.md).
+
 ## <a name="operator-keyword-for-"></a>Operator Schlüsselwort für ^
 
 C++ gibt **`xor`** als Alternative Schreibweise für an **`^`** . In C wird die alternative Schreibweise als Makro in der \<iso646.h> Kopfzeile bereitgestellt. In C++ ist die alternative Schreibweise ein Schlüsselwort. die Verwendung von \<iso646.h> oder der C++-Entsprechung \<ciso646> ist als veraltet markiert. In Microsoft C++ ist die- [`/permissive-`](../build/reference/permissive-standards-conformance.md) oder- [`/Za`](../build/reference/za-ze-disable-language-extensions.md) Compileroption erforderlich, um die alternative Schreibweise zu aktivieren.
-
 
 ## <a name="example"></a>Beispiel
 

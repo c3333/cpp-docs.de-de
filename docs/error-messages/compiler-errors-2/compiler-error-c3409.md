@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C3409
 ms.assetid: e372d9fa-230c-4b28-b6d3-6ad81ccf9dbb
-ms.openlocfilehash: 0bf8b918f254c05bfe57034e25611c8dc17a783a
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 360fedc6cadf275704a790c257c42ac8bde7873d
+ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87231961"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90742059"
 ---
 # <a name="compiler-error-c3409"></a>Compilerfehler C3409
 
@@ -35,7 +35,7 @@ Der Compiler generiert diesen Fehler möglicherweise, wenn Sie eckige Klammern a
 
    Weitere Informationen zur Syntax von Lambda Ausdrücken finden Sie unter [Lambda](../../cpp/lambda-expression-syntax.md)-Ausdruckssyntax.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Im folgenden Beispiel wird C3409 generiert.
 
@@ -53,8 +53,6 @@ __interface x {};
 [coclass, uuid("00000000-0000-0000-0000-000000000001")]
 class b : public x {};
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird C3409 generiert, da ein Lambda-Ausdruck die **`mutable`** Spezifikation verwendet, aber keine Parameterliste bereitstellt. Der Compiler kann nicht feststellen, ob die eckigen Klammern Teil der Definition eines Lambda-Ausdrucks oder eines Attribut Blocks sind.
 

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C2027
 ms.assetid: a39150c0-ec04-45ec-934c-a838bfe76627
-ms.openlocfilehash: 62cf208d9d0025afba06d32a15b9a1e50777c473
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 59d0e5d5a5f0957f2d73cdb863ccee9a2dd2a026
+ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74751000"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90743255"
 ---
 # <a name="compiler-error-c2027"></a>Compilerfehler C2027
 
@@ -19,7 +19,7 @@ Verwendung des nicht definierten Typs "Typ"
 
 Ein Typ kann erst verwendet werden, nachdem er definiert wurde. Um den Fehler zu beheben, stellen Sie sicher, dass der Typ vollständig definiert ist, bevor Sie darauf verweisen.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Im folgenden Beispiel wird C2027 generiert.
 
@@ -41,9 +41,7 @@ int main() {
 }
 ```
 
-## <a name="example"></a>Beispiel
-
-Es ist möglich, einen Zeiger auf einen deklarierten, aber nicht definierten Typ zu deklarieren. Lässt C++ jedoch keinen Verweis auf einen nicht definierten Typ zu.
+Es ist möglich, einen Zeiger auf einen deklarierten, aber nicht definierten Typ zu deklarieren. C++ lässt jedoch keinen Verweis auf einen nicht definierten Typ zu.
 
 Im folgenden Beispiel wird C2027 generiert.
 

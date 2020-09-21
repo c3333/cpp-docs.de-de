@@ -6,12 +6,12 @@ ms.technology: cpp-language
 ms.assetid: 475da6e9-0d78-4b4e-bd23-f41c406c4efe
 author: corob-msft
 ms.author: corob
-ms.openlocfilehash: 84572d44cd994da07d44e736983270a1e7acd1ec
-ms.sourcegitcommit: b51703a96ee35ee2376d5f0775b70f03ccbe6d9a
+ms.openlocfilehash: d9fbbc4f0eddba0ae6a7dbc3250a26d36155506e
+ms.sourcegitcommit: b492516cc65120250b9ea23f96f7f63f37f99fae
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88086980"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90075789"
 ---
 # <a name="microsoft-c-language-conformance-table"></a>Microsoft C++-Sprachkonformität: Tabelle
 
@@ -432,7 +432,7 @@ Die Compileroption [`/Zc:noexceptTypes`](../build/reference/zc-noexcepttypes.md)
 
 <a name="note_B"></a> __B__ Wird im Modus [`/permissive-`](../build/reference/permissive-standards-conformance.md) in Visual Studio 2017 Version 15.7 unterstützt. Weitere Informationen finden Sie im Blogbeitrag [Two-phase name lookup support comes to MSVC](https://devblogs.microsoft.com/cppblog/two-phase-name-lookup-support-comes-to-msvc/) (Unterstützung der Namenssuche in zwei Phasen in MSVC).
 
-<a name="note_C"></a> __C__ Der Support des Compilers für die C99-Präprozessorregeln ist in Visual Studio 2017 unvollständig. Wir haben den Präprozessor überarbeitet und die Auslieferung der Änderungen in Visual Studio 2017, Version 15.8, mit der Compileroption [/experimental:preprocessor](../build/reference/experimental-preprocessor.md) gestartet.
+<a name="note_C"></a> __C__ Ab Visual Studio 2017 Version 15.8 bietet der Compiler über den [/experimental:preprocessor](../build/reference/experimental-preprocessor.md)-Compilerschalter Unterstützung für den C99-Präprozessor. Ab Visual Studio 2019 Version 16.6 implementiert der Compiler den C99-Präprozessor vollständig über den [`/Zc:preprocessor`](../build/reference/zc-conformance.md)-Schalter. Er ist standardmäßig aktiviert, wenn der Compilerschalter `/std:c11` oder `/std:c17` angegeben wird.
 
 <a name="note_D"></a>__G__ Unterstützt unter [`/std:c++14`](../build/reference/std-specify-language-standard-version.md), mit einer unterdrückbaren Warnung ([`C4984`](../error-messages/compiler-warnings/compiler-warning-c4984.md)).
 
@@ -450,7 +450,7 @@ Die Compileroption [`/Zc:noexceptTypes`](../build/reference/zc-noexcepttypes.md)
 
 <a name="note_byte"></a> __byte__ `std::byte` wird durch [`/std:c++17`](../build/reference/std-specify-language-standard-version.md) (oder [`/std:c++latest`](../build/reference/std-specify-language-standard-version.md)) aktiviert. Da jedoch in einigen Fällen Konflikte mit den Windows SDK-Headern auftreten können, ist ein differenziertes Makro für die Abwahl vorhanden. Die Deaktivierung erfolgt durch Definieren von `_HAS_STD_BYTE` als `0`.
 
-<a name="note_C11"></a> __C11__ Die Universal CRT implementierte die Teile der C11-Standardbibliothek, die für C++17 erforderlich sind, mit Ausnahme der `strftime()`-Bezeichner in C99 für die alternative E/O-Konvertierung, dem exklusiven `fopen()`-Modus in C11 und der `aligned_alloc()`-Funktion in C11. Die Implementierung der letztgenannten Funktion ist unwahrscheinlich, da C11 `aligned_alloc()` auf eine Weise angibt, die mit der Microsoft-Implementierung von `free()` nicht kompatibel ist. Insbesondere muss `free()` in der Lage sein, hochgradig ausgerichtete Zuweisungen zu verarbeiten.
+<a name="note_C11"></a> __C11__ Compilerunterstützung für C11 erfordert Visual Studio Version 16.8 oder höher. Die Unterstützung der C11-Bibliothek erfordert Windows SDK-Version 20211 oder höher. Die Universal CRT implementiert die Teile der C11-Standardbibliothek, die für C++17 erforderlich sind, mit Ausnahme der `strftime()`-Bezeichner für die alternative E/O-Konvertierung von C99 und von `aligned_alloc()` von C11. Das Letztere wird wahrscheinlich nicht implementiert, da das Windows-Betriebssystem keine ausgerichteten Zuordnungen unterstützt.
 
 <a name="note_rem"></a> __rem__ Diese Features werden entfernt, wenn die Compileroption [`/std:c++17`](../build/reference/std-specify-language-standard-version.md) (oder [`/std:c++latest`](../build/reference/std-specify-language-standard-version.md)) angegeben wird. Diese Features können erneut aktiviert werden, um die Umstellung auf neuere Sprachmodi zu vereinfachen, indem diese Makros verwendet werden: `_HAS_AUTO_PTR_ETC`, `_HAS_FUNCTION_ALLOCATOR_SUPPORT`, `_HAS_OLD_IOSTREAMS_MEMBERS` und `_HAS_UNEXPECTED`.
 

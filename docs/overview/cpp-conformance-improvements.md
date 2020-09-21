@@ -3,12 +3,12 @@ title: Verbesserungen an C++ bei der Übereinstimmung mit Standards
 ms.date: 08/04/2020
 description: Microsoft C++ in Visual Studio  bewegt sich auf die vollständige Konformität mit dem Sprachstandard C++20 zu.
 ms.technology: cpp-language
-ms.openlocfilehash: a28281eb7b47dcfc633467c96e520c7e97e26777
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 3a0e21bf08fcf7861feedd3fd43666bd3768deee
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88841388"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90042120"
 ---
 # <a name="c-conformance-improvements-in-visual-studio"></a>Verbesserungen der C++-Konformität in Visual Studio
 
@@ -744,7 +744,7 @@ int main() {
 
 ### <a name="preprocessor-output-preserves-newlines"></a>Präprozessorausgabe behält Zeilenumbrüche bei
 
-Der experimentelle Präprozessor behält bei der Verwendung von **`/P`** oder **`/E`** mit **`/experimental:preprocessor`** nun Zeilenumbrüche und Leerzeichen bei. Diese Änderung kann mithilfe von **`/d1experimental:preprocessor:oldWhitespace`** deaktiviert werden.
+Der experimentelle Präprozessor behält bei der Verwendung von **`/P`** oder **`/E`** mit **`/experimental:preprocessor`** nun Zeilenumbrüche und Leerzeichen bei.
 
 Gehen wir von folgender Beispielquelle aus:
 
@@ -1972,7 +1972,7 @@ int main()
 
 ### <a name="copy-list-initialization"></a>copy-list-Initialisierung
 
-In Visual Studio 2017 werden ordnungsgemäß Compilerfehler im Zusammenhang mit der Objekterstellung bei Verwendung von Initialisiererlisten erzeugt. Diese Fehler wurden in Visual Studio 2015 nicht erfasst und konnten zu Abstürzen oder einem nicht definierten Laufzeitverhalten führen. Laut N4594 13.3.1.7p1 muss der Compiler in der copy-list-Initialisierung einen expliziten Konstruktor für die Überladungsauflösung berücksichtigen, aber einen Fehler auslösen, wenn diese Überladung tatsächlich gewählt wird. However, it must raise an error if that particular overload gets chosen.
+In Visual Studio 2017 werden ordnungsgemäß Compilerfehler im Zusammenhang mit der Objekterstellung bei Verwendung von Initialisiererlisten erzeugt. Diese Fehler wurden in Visual Studio 2015 nicht erfasst und konnten zu Abstürzen oder einem nicht definierten Laufzeitverhalten führen. Laut N4594 13.3.1.7p1 muss der Compiler in der copy-list-Initialisierung einen expliziten Konstruktor für die Überladungsauflösung berücksichtigen, aber einen Fehler auslösen, wenn diese Überladung tatsächlich gewählt wird. Er muss jedoch einen Fehler auslösen, wenn diese bestimmte Überladung ausgewählt wird.
 
 Die folgenden beiden Beispiele kompilieren in Visual Studio 2015, aber nicht in Visual Studio 2017.
 

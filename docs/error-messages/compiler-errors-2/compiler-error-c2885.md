@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C2885
 ms.assetid: 7743e5f3-a034-44b4-9ee8-5a6254c27f8c
-ms.openlocfilehash: 9b6b7bb54d5dce48dc6fce517eb0c909b0284da2
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 1953cb8fb9f80c5c1f967e10583c2b7303075f59
+ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87233443"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90742670"
 ---
 # <a name="compiler-error-c2885"></a>Compilerfehler C2885
 
@@ -19,9 +19,9 @@ ms.locfileid: "87233443"
 
 Sie haben fälschlicherweise eine [using](../../cpp/using-declaration.md) -Deklaration verwendet.
 
-## <a name="example"></a>Beispiel
-
 Dieser Fehler kann als Folge von compilerübereinstimmungs-Voreinstellungen generiert werden, die für Visual Studio 2005 ausgeführt wurden: Es ist nicht mehr zulässig, eine **`using`** Deklaration für einen schsted Typ zu haben. Sie müssen explizit jeden Verweis qualifizieren, den Sie für den schsted Typ vornehmen, den Typ in einen Namespace einfügen oder eine typedef erstellen.
+
+## <a name="examples"></a>Beispiele
 
 Im folgenden Beispiel wird C2885 generiert.
 
@@ -51,8 +51,6 @@ int main () {
    X13.i = 9;
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 Wenn Sie das- **`using`** Schlüsselwort mit einem Klassenmember verwenden, erfordert C++, dass Sie dieses Element in einer anderen Klasse (einer abgeleiteten Klasse) definieren.
 

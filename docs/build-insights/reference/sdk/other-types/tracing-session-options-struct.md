@@ -1,6 +1,6 @@
 ---
-title: TRACING_SESSION_OPTIONS Struktur
-description: Das C++ Build Insights SDK TRACING_SESSION_OPTIONS Strukturreferenz.
+title: TRACING_SESSION_OPTIONS-Struktur
+description: Der Verweis auf die TRACING_SESSION_OPTIONS-Struktur im C++ Build Insights SDK.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 5aeb6299aea8dc0661b9469ee524e7aa4d010aca
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.openlocfilehash: c8a248d884b5232fbc5332db1a68533220ef2fab
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81323427"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90041262"
 ---
-# <a name="tracing_session_options-structure"></a>TRACING_SESSION_OPTIONS Struktur
+# <a name="tracing_session_options-structure"></a>TRACING_SESSION_OPTIONS-Struktur
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `TRACING_SESSION_OPTIONS` Struktur wird beim Initialisieren einer [ANALYSIS_DESCRIPTOR](analysis-descriptor-struct.md) oder [RELOG_DESCRIPTOR](relog-descriptor-struct.md) Struktur verwendet. Es beschreibt, welche Ereignisse während der Sammlung einer Ablaufverfolgung erfasst werden sollen.
+Die `TRACING_SESSION_OPTIONS`-Struktur wird beim Initialisieren einer [ANALYSIS_DESCRIPTOR](analysis-descriptor-struct.md)- oder [RELOG_DESCRIPTOR](relog-descriptor-struct.md)-Struktur verwendet. Sie beschreibt, welche Ereignisse während der Erfassung einer Ablaufverfolgung erfasst werden müssen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -40,9 +40,9 @@ typedef struct TRACING_SESSION_OPTIONS_TAG
 
 ## <a name="members"></a>Member
 
-|  |  |
+| name | BESCHREIBUNG |
 |--|--|
-| `SystemEventFlags` | Eine Bitmaske, die die zu erfassenden Systemereignisse beschreibt. Weitere Informationen finden Sie [unter TRACING_SESSION_SYSTEM_EVENT_FLAGS](tracing-session-system-event-flags-constants.md). |
+| `SystemEventFlags` | Eine Bitmaske, die die zu erfassenden Systemereignisse beschreibt. Weitere Informationen finden Sie unter [TRACING_SESSION_SYSTEM_EVENT_FLAGS](tracing-session-system-event-flags-constants.md). |
 | `MsvcEventFlags` | Eine Bitmaske, die die zu erfassenden MSVC-Ereignisse beschreibt. Weitere Informationen finden Sie unter [TRACING_SESSION_MSVC_EVENT_FLAGS](tracing-session-msvc-event-flags-constants.md). |
 
 ::: moniker-end

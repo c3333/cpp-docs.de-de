@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C3469
 ms.assetid: e23b0e5c-c704-4e67-a868-bf02c2055d85
-ms.openlocfilehash: 546de5a65f6e4c2fd370ba781d01945df2bbfce5
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 32d61e022de47b95ce3e84f1575cc090c74d70e3
+ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74760542"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90742800"
 ---
 # <a name="compiler-error-c3469"></a>Compilerfehler C3469
 
@@ -19,11 +19,11 @@ ms.locfileid: "74760542"
 
 Typweiterleitung kann nicht für generische Klassen verwendet werden.
 
-Weitere Informationen finden Sie unter [TypweiterleitungC++(/CLI)](../../extensions/type-forwarding-cpp-cli.md).
+Weitere Informationen finden Sie unter [Typweiterleitung (C++/CLI)](../../extensions/type-forwarding-cpp-cli.md).
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
-Im folgenden Beispiel wird eine Komponente erstellt:
+Im folgenden Beispiel wird eine Komponente erstellt.
 
 ```cpp
 // C3469.cpp
@@ -33,8 +33,6 @@ public ref class GR {};
 
 public ref class GR2 {};
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird C3466 generiert:
 

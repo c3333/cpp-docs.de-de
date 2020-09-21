@@ -38,12 +38,12 @@ helpviewer_keywords:
 - files [C++], opening
 - fopen function
 ms.assetid: e868993f-738c-4920-b5e4-d8f2f41f933d
-ms.openlocfilehash: 2bf1a1001f661b1ba972e7a5e699276591dda08a
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: b7889009fe2de3c5256d6caf6cb5afa8792919c4
+ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87216959"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90743060"
 ---
 # <a name="fopen-_wfopen"></a>fopen, _wfopen
 
@@ -123,7 +123,7 @@ Wenn *mode* der Modus **"a, CCS =**_Encoding_**"** ist, versucht **fopen** zuers
 
 Der Zeichen folgen *Modus* gibt die Art des Zugriffs, der für die Datei angefordert wird, wie folgt an.
 
-|*mode*|Zugriff|
+|*mode*|Access|
 |-|-|
 | **r** | Öffnet zum Lesen. Wenn die Datei nicht vorhanden ist oder nicht gefunden werden kann, schlägt der **fopen** -Befehl fehl. |
 | **Löw** | Öffnet eine leere Datei zum Schreiben. Wenn die angegebene Datei vorhanden ist, wird ihr Inhalt zerstört. |
@@ -142,7 +142,7 @@ Zusätzlich zu den früheren Werten können die folgenden Zeichen an den- *Modus
 
 |*mode* modusmodifizierer|Übersetzungsmodus|
 |-|-|
-| **Bund** | Öffnen im Textmodus (übersetzt). |
+| **t** | Öffnen im Textmodus (übersetzt). |
 | **b** | Im binären (nicht übersetzten) Modus öffnen; Übersetzungen mit Wagen Rücklauf-und Zeilenvorschub Zeichen werden unterdrückt. |
 
 Im Textmodus wird STRG + Z bei der Eingabe als EOF-Zeichen interpretiert. In Dateien, die für das Lesen/Schreiben mithilfe von **"a +"** geöffnet sind, prüft " **f** ", ob am Ende der Datei STRG + Z angezeigt wird, und entfernt diese, wenn dies möglich ist. Dies geschieht, da die Verwendung von [fseek](fseek-fseeki64.md) und **ftell** zum Verschieben innerhalb einer Datei, die mit STRG + Z endet, dazu führen kann, dass sich [fseek](fseek-fseeki64.md) in der Nähe des Datei Endes nicht ordnungsgemäß verhält.
@@ -157,8 +157,9 @@ Die folgenden Optionen können an den- *Modus* angehängt werden, um zusätzlich
 
 |*mode* modusmodifizierer|Verhalten|
 |-|-|
-| **scher** | Aktivieren Sie das commitflag für den zugeordneten *Dateinamen* , damit der Inhalt des Datei Puffers direkt auf den Datenträger geschrieben wird, wenn entweder **fflush** oder **_flushall** aufgerufen wird. |
-| **n** | Setzen Sie das commitflag für den zugeordneten *Dateinamen* auf "No-Commit" zurück. Dies ist die Standardoption. Dabei wird auch das globale Commitflag überschrieben, wenn Sie das Programm mit COMMODE.OBJ verknüpfen. Der Standardwert des globalen Commitflags lautet "no-commit", es sei denn, Sie verknüpfen das Programm explizit mit COMMODE.OBJ (siehe [Link Options](../../c-runtime-library/link-options.md)). |
+| **x** | Erzwingt, dass die Funktion fehlschlägt, wenn *filename* bereits vorhanden ist. Kann nur mit den Bezeichner "w" oder "w +" verwendet werden. |
+| **c** | Aktivieren Sie das commitflag für den zugeordneten *Dateinamen* , damit der Inhalt des Datei Puffers direkt auf den Datenträger geschrieben wird, wenn entweder **fflush** oder **_flushall** aufgerufen wird. |
+| **n** | Setzen Sie das commitflag für den zugeordneten *Dateinamen* auf "No-Commit" zurück. Dies ist die Standardeinstellung. Dabei wird auch das globale Commitflag überschrieben, wenn Sie das Programm mit COMMODE.OBJ verknüpfen. Der Standardwert des globalen Commitflags lautet "no-commit", es sei denn, Sie verknüpfen das Programm explizit mit COMMODE.OBJ (siehe [Link Options](../../c-runtime-library/link-options.md)). |
 | **N** | Gibt an, dass die Datei nicht von untergeordneten Prozessen geerbt wird. |
 | **S** | Gibt an, dass das Zwischenspeichern für den sequenziellen Zugriff vom Datenträger optimiert, aber nicht darauf beschränkt ist. |
 | **R** | Gibt an, dass das Zwischenspeichern für den zufälligen Zugriff vom Datenträger optimiert, aber nicht darauf beschränkt ist. |
@@ -177,8 +178,9 @@ Gültige Zeichen für die *moduszeichenfolge, die in* **fopen** verwendet wird, 
 |**w**|** \_ O \_ wronly** (in der Regel ** \_ o \_ wronly** &#124; ** \_ o \_ ** -&#124; ** \_ o \_ trunc**)|
 |**w +**|** \_ O \_ rdwr** (in der Regel ** \_ o \_ rdwr** &#124; ** \_ o \_ ** &#124; ** \_ o \_ trunc**)|
 |**b**|**\_O- \_ Binärdatei**|
-|**Bund**|**\_O- \_ Text**|
-|**scher**|Keine|
+|**t**|**\_O- \_ Text**|
+|**x**|**\_O \_ excl**|
+|**c**|Keine|
 |**n**|Keine|
 |**S**|**\_\_sequenziell**|
 |**R**|**\_O \_ Random**|
@@ -190,7 +192,7 @@ Gültige Zeichen für die *moduszeichenfolge, die in* **fopen** verwendet wird, 
 
 Wenn Sie den **RB** -Modus verwenden, müssen Sie Ihren Code nicht portieren. Wenn Sie davon ausgehen, den Großteil einer großen Datei zu lesen, oder die Netzwerkleistung nicht relevant ist, können Sie auch überlegen, ob Sie die Speicher Abbild-Win32-Dateien als Option verwenden möchten.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 |Funktion|Erforderlicher Header|
 |--------------|---------------------|
@@ -201,7 +203,7 @@ Wenn Sie den **RB** -Modus verwenden, müssen Sie Ihren Code nicht portieren. We
 
 Die *Optionen "* **c**", " **n**", " **t** **", "** **R**", " **t**" und " **D** " sind Microsoft-Erweiterungen für " **f Open** " und " **_fdopen** .
 
-## <a name="example-1"></a>Beispiel 1
+## <a name="example-1"></a>Beispiel 1
 
 Das folgende Programm öffnet zwei Dateien.  Er verwendet **fclose** , um die erste Datei zu schließen, und **_fcloseall** , um alle verbleibenden Dateien zu schließen.
 

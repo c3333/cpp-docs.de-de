@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C3461
 ms.assetid: bd66833a-545d-445a-bdfe-dee771a450a4
-ms.openlocfilehash: d1bf4af63bac2aaee1da4bb98f23c3b15e98c671
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: c5195e0a9bba1bc9e5962f3d3ae1795bb098be3d
+ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74756629"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90742878"
 ---
 # <a name="compiler-error-c3461"></a>Compilerfehler C3461
 
@@ -19,19 +19,17 @@ ms.locfileid: "74756629"
 
 Die Typweiterleitung ist nur bei CLR-Typen möglich.  Weitere Informationen finden Sie unter [Klassen und Strukturen](../../extensions/classes-and-structs-cpp-component-extensions.md) .
 
-Weitere Informationen finden Sie unter [TypweiterleitungC++(/CLI)](../../extensions/type-forwarding-cpp-cli.md).
+Weitere Informationen finden Sie unter [Typweiterleitung (C++/CLI)](../../extensions/type-forwarding-cpp-cli.md).
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
-Im folgenden Beispiel wird eine Komponente erstellt:
+Im folgenden Beispiel wird eine Komponente erstellt.
 
 ```cpp
 // C3461.cpp
 // compile with: /clr /LD
 public ref class R {};
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird C3461 generiert:
 

@@ -15,12 +15,12 @@ f1_keywords:
 - AFXLAYOUT/CMFCDynamicLayout::LoadResource
 - AFXLAYOUT/CMFCDynamicLayout::SetMinSize
 ms.assetid: c2df2976-f049-47fc-9cf0-abe3e01948bc
-ms.openlocfilehash: 77dd3a84a0c76b92495bb062eeb83ff013933087
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.openlocfilehash: 1c5d73897f7028768476c82824f8c0b6d530aea2
+ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81752387"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90742904"
 ---
 # <a name="cmfcdynamiclayout-class"></a>CMFCDynamicLayout-Klasse
 
@@ -36,14 +36,14 @@ class CMFCDynamicLayout : public CObject
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |`CMFCDynamicLayout::CMFCDynamicLayout`|Erstellt ein `CMFCDynamicLayout`-Objekt.|
 |`CMFCDynamicLayout::~CMFCDynamicLayout`|Destruktor.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
 |[CMFCDynamicLayout::AddItem](#additem)|Fügt der Liste von Fenstern, die vom dynamischen Layout-Manager gesteuert werden, ein untergeordnetes Fenster hinzu, in der Regel ein Steuerelement.|
 |[CMFCDynamicLayout::Adjust](#adjust)|Fügt der Liste von Fenstern, die vom dynamischen Layout-Manager gesteuert werden, ein untergeordnetes Fenster hinzu, in der Regel ein Steuerelement.|
@@ -54,19 +54,19 @@ class CMFCDynamicLayout : public CObject
 |[CMFCDynamicLayout::HasItem](#hasitem)|Überprüft, ob dem dynamischen Layout ein untergeordnetes Steuerelement hinzugefügt wurde.|
 |[CMFCDynamicLayout::IsEmpty](#isempty)|Überprüft, ob einem dynamischen Layout keine untergeordneten Fenster hinzugefügt wurden.|
 |[CMFCDynamicLayout::LoadResource](#loadresource)|Liest das dynamische Layout aus der AFX_DIALOG_LAYOUT-Ressource und wendet das Layout dann auf das Hostfenster an.|
-|statisches [CMFCDynamicLayout::MoveHorizontal](#movehorizontal)|Ruft einen [MoveSettings-Wert](#movesettings_structure) ab, der definiert, wie stark ein untergeordnetes Steuerelement horizontal verschoben wird, wenn der Benutzer die Größe seines Hostingfensters ändert.|
-|statisches [CMFCDynamicLayout::MoveHorizontalAndVertical](#movehorizontalandvertical)|Ruft einen [MoveSettings-Wert](#movesettings_structure) ab, der definiert, wie stark ein untergeordnetes Steuerelement horizontal verschoben wird, wenn der Benutzer die Größe seines Hostingfensters ändert.|
-|statisches [CMFCDynamicLayout::MoveNone](#movenone)|Ruft einen [MoveSettings-Wert](#movesettings_structure) ab, der keine vertikale oder horizontale Bewegung für ein untergeordnetes Steuerelement darstellt.|
-|statisches [CMFCDynamicLayout::MoveVertical](#movevertical)|Ruft einen [MoveSettings-Wert](#movesettings_structure) ab, der definiert, wie stark ein untergeordnetes Steuerelement vertikal verschoben wird, wenn der Benutzer die Größe seines Hostingfensters ändert.|
+|static [cmfcdynamiclayout:: muvehorizontal](#movehorizontal)|Ruft einen " [muvesettings](#movesettings_structure) "-Wert ab, der definiert, wie viel ein untergeordnetes Steuerelement horizontal verschoben wird, wenn der Benutzer seine Größe ändert.|
+|static [cmfcdynamiclayout:: muvehorizontalandvertical](#movehorizontalandvertical)|Ruft einen " [muvesettings](#movesettings_structure) "-Wert ab, der definiert, wie viel ein untergeordnetes Steuerelement horizontal verschoben wird, wenn der Benutzer seine Größe ändert.|
+|static [cmfcdynamiclayout:: muvenone](#movenone)|Ruft einen " [muvesettings](#movesettings_structure) "-Wert ab, der für ein untergeordnetes Steuerelement keine Bewegung, vertikal oder horizontal darstellt.|
+|static [cmfcdynamiclayout:: muvevertical](#movevertical)|Ruft einen " [muvesettings](#movesettings_structure) "-Wert ab, der definiert, wie viel ein untergeordnetes Steuerelement vertikal verschoben wird, wenn der Benutzer seine Größe ändert.|
 |[CMFCDynamicLayout::SetMinSize](#setminsize)|Legt die Größe des Fensters fest, unterhalb derer das Layout nicht angepasst wird.|
-|statisches [CMFCDynamicLayout::SizeHorizontal](#sizehorizontal)|Ruft einen [SizeSettings-Wert](#sizesettings_structure) ab, der definiert, wie stark die Größe eines untergeordneten Steuerelements horizontal geändert wird, wenn der Benutzer die Größe seines Hostingfensters ändert.|
-|statisches [CMFCDynamicLayout::SizeHorizontalAndVertical](#sizehorizontalandvertical)|Ruft einen [SizeSettings-Wert](#sizesettings_structure) ab, der definiert, wie stark die Größe eines untergeordneten Steuerelements horizontal geändert wird, wenn der Benutzer die Größe seines Hostingfensters ändert.|
-|statisches [CMFCDynamicLayout::SizeNone](#sizenone)|Ruft einen [SizeSettings-Wert](#sizesettings_structure) ab, der keine Größenänderung für ein untergeordnetes Steuerelement darstellt.|
-|statisches [CMFCDynamicLayout::SizeVertical](#sizevertical)|Ruft einen [SizeSettings-Wert](#sizesettings_structure) ab, der definiert, wie stark die Größe eines untergeordneten Steuerelements vertikal geändert wird, wenn der Benutzer die Größe seines Hostingfensters ändert.|
+|static [cmfcdynamiclayout:: sizehorizontal](#sizehorizontal)|Ruft einen [sizesettings](#sizesettings_structure) -Wert ab, der definiert, wie stark die Größe eines untergeordneten Steuer Elements horizontal geändert wird, wenn der Benutzer die Größe des Host Fensters ändert.|
+|static [cmfcdynamiclayout:: sizehorizontalandvertical](#sizehorizontalandvertical)|Ruft einen [sizesettings](#sizesettings_structure) -Wert ab, der definiert, wie stark die Größe eines untergeordneten Steuer Elements horizontal geändert wird, wenn der Benutzer die Größe des Host Fensters ändert.|
+|static [cmfcdynamiclayout:: sizenone](#sizenone)|Ruft einen [sizesettings](#sizesettings_structure) -Wert ab, der keine Größenänderung für ein untergeordnetes Steuerelement darstellt.|
+|statisches [cmfcdynamiclayout:: sizevertical](#sizevertical)|Ruft einen [sizesettings](#sizesettings_structure) -Wert ab, der definiert, wie viel die Größe eines untergeordneten Steuer Elements vertikal geändert wird, wenn der Benutzer seine Größe ändert.|
 
 ## <a name="nested-types"></a>Geschachtelte Typen
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |----------|-----------------|
 |[CMFCDynamicLayout::MoveSettings-Struktur](#movesettings_structure)|Kapselt Daten für die Verschiebung für Steuerelemente in einem dynamischen Layout.|
 |[CMFCDynamicLayout::SizeSettings Structure](#sizesettings_structure)|Kapselt Daten für die Größenänderung für Steuerelemente in einem dynamischen Layout.|
@@ -75,15 +75,15 @@ class CMFCDynamicLayout : public CObject
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[Cobject](../../mfc/reference/cobject-class.md)
+[CObject](../../mfc/reference/cobject-class.md)
 
 [CMFCDynamicLayout](../../mfc/reference/cmfctoolbarbutton-class.md)
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
-**Kopfzeile:** afxlayout.h
+**Header:** afxlayout. h
 
-## <a name="cmfcdynamiclayoutadditem"></a><a name="additem"></a>CMFCDynamicLayout::AddItem
+## <a name="cmfcdynamiclayoutadditem"></a><a name="additem"></a> Cmfcdynamiclayout:: AddItem
 
 Fügt der Liste von Fenstern, die vom dynamischen Layout-Manager gesteuert werden, ein untergeordnetes Fenster hinzu, in der Regel ein Steuerelement.
 
@@ -99,7 +99,7 @@ BOOL AddItem(
 
 ### <a name="parameters"></a>Parameter
 
-*Hwnd*<br/>
+*HWND*<br/>
 Das Handle zum hinzuzufügenden Fenster.
 
 *nID*<br/>
@@ -108,7 +108,7 @@ Die ID des hinzuzufügenden untergeordneten Steuerelements.
 *moveSettings*<br/>
 Eine Struktur, die beschreibt, wie das Steuerelement verschoben werden soll, wenn sich die Fenstergröße ändert.
 
-*sizeEinstellungen*<br/>
+*sizeSettings*<br/>
 Eine Struktur, die beschreibt, wie die Größe des Steuerelements geändert werden soll, wenn sich die Fenstergröße ändert.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -119,7 +119,7 @@ Eine Struktur, die beschreibt, wie die Größe des Steuerelements geändert werd
 
 Die Position und Größe eines untergeordneten Steuerelements werden dynamisch geändert, wenn die Größe eines Hostingfensters geändert wird.
 
-## <a name="cmfcdynamiclayoutadjust"></a><a name="adjust"></a>CMFCDynamicLayout::Anpassen
+## <a name="cmfcdynamiclayoutadjust"></a><a name="adjust"></a> Cmfcdynamiclayout:: Adjust
 
 Fügt der Liste von Fenstern, die vom dynamischen Layout-Manager gesteuert werden, ein untergeordnetes Fenster hinzu, in der Regel ein Steuerelement.
 
@@ -131,7 +131,7 @@ void Adjust();
 
 Die Position und Größe eines untergeordneten Steuerelements werden dynamisch geändert, wenn die Größe eines Hostingfensters geändert wird.
 
-## <a name="cmfcdynamiclayoutcreate"></a><a name="create"></a>CMFCDynamicLayout::Erstellen
+## <a name="cmfcdynamiclayoutcreate"></a><a name="create"></a> Cmfcdynamiclayout:: Create
 
 Speichert und überprüft das Hostfenster.
 
@@ -150,7 +150,7 @@ Ein Zeiger zum Hostfenster.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="cmfcdynamiclayoutgethostwnd"></a><a name="gethostwnd"></a>CMFCDynamicLayout::GetHostWnd
+## <a name="cmfcdynamiclayoutgethostwnd"></a><a name="gethostwnd"></a> Cmfcdynamiclayout:: gethostwnd
 
 Gibt einen Zeiger auf ein Hostfenster zurück.
 
@@ -166,7 +166,7 @@ Ein Zeiger zum Hostfenster.
 
 Standardmäßig alle untergeordneten Steuerelementpositionen, die in Bezug auf dieses Fenster neuberechnet wurden.
 
-## <a name="cmfcdynamiclayoutgetminsize"></a><a name="getminsize"></a>CMFCDynamicLayout::GetMinSize
+## <a name="cmfcdynamiclayoutgetminsize"></a><a name="getminsize"></a> Cmfcdynamiclayout:: getminsize
 
 Gibt die Größe des Fensters zurück, unterhalb derer das Layout nicht angepasst wird.
 
@@ -182,7 +182,7 @@ Legt die Größe des Fensters fest, unterhalb derer das Layout nicht angepasst w
 
 Die Position und Größe eines untergeordneten Steuerelements werden dynamisch geändert, wenn die Größe eines Hostingfensters geändert wird. Es gibt jedoch eine Mindestgröße, unterhalb derer das Layout nicht angepasst wird. Der Benutzer kann die Größe des Fensters auf eine kleinere Größe ändern, Teile des Fensters werden jedoch aus der Ansicht ausgeblendet.
 
-## <a name="cmfcdynamiclayoutgetwindowrect"></a><a name="getwindowrect"></a>CMFCDynamicLayout::GetWindowRect
+## <a name="cmfcdynamiclayoutgetwindowrect"></a><a name="getwindowrect"></a> Cmfcdynamiclayout:: GetWindowRect
 
 Ruft das Rechteck für den aktuellen Client-Bereich des Fensters ab.
 
@@ -197,7 +197,7 @@ Nach Rückgabe der Funktion enthält dieser Parameter das umschließende Rechtec
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="cmfcdynamiclayouthasitem"></a><a name="hasitem"></a>CMFCDynamicLayout::HasItem
+## <a name="cmfcdynamiclayouthasitem"></a><a name="hasitem"></a> Cmfcdynamiclayout:: hasitem
 
 Überprüft, ob dem dynamischen Layout ein untergeordnetes Steuerelement hinzugefügt wurde.
 
@@ -207,7 +207,7 @@ BOOL HasItem(HWND hwnd);
 
 ### <a name="parameters"></a>Parameter
 
-*Hwnd*<br/>
+*HWND*<br/>
 Erstellt ein Handle für das Steuerelement-Fenster.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -216,7 +216,7 @@ TRUE, wenn das Layout bereits dieses Element besitzt; andernfalls FALSE.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="cmfcdynamiclayoutisempty"></a><a name="isempty"></a>CMFCDynamicLayout::IsEmpty
+## <a name="cmfcdynamiclayoutisempty"></a><a name="isempty"></a> Cmfcdynamiclayout:: IsEmpty
 
 Überprüft, ob einem dynamischen Layout keine untergeordneten Fenster hinzugefügt wurden.
 
@@ -230,7 +230,7 @@ TRUE, wenn das Layout keine Elemente aufweist, ansonsten FALSE.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="cmfcdynamiclayoutloadresource"></a><a name="loadresource"></a>CMFCDynamicLayout::LoadResource
+## <a name="cmfcdynamiclayoutloadresource"></a><a name="loadresource"></a> Cmfcdynamiclayout:: LoadResource
 
 Liest das dynamische Layout aus der AFX_DIALOG_LAYOUT-Ressource und wendet das Layout dann auf das Hostfenster an.
 
@@ -245,7 +245,7 @@ static BOOL LoadResource(CWnd* pHostWnd,
 *pHostWnd*<br/>
 Ein Zeiger zum Hostfenster.
 
-*lpResource*<br/>
+*lpresource*<br/>
 Ein Zeiger zum Puffer, der die AFX_DIALOG_LAYOUT-Ressource enthält.
 
 *dwSize*<br/>
@@ -257,9 +257,9 @@ TRUE, wenn die Ressource geladen und auf das Hostfenster angewendet wird; andern
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="cmfcdynamiclayoutmovehorizontal"></a><a name="movehorizontal"></a>CMFCDynamicLayout::MoveHorizontal
+## <a name="cmfcdynamiclayoutmovehorizontal"></a><a name="movehorizontal"></a> Cmfcdynamiclayout:: muvehorizontal
 
-Ruft einen [MoveSettings-Wert](#movesettings_structure) ab, der definiert, wie stark ein untergeordnetes Steuerelement horizontal verschoben wird, wenn der Benutzer die Größe seines Hostingfensters ändert.
+Ruft einen " [muvesettings](#movesettings_structure) "-Wert ab, der definiert, wie viel ein untergeordnetes Steuerelement horizontal verschoben wird, wenn der Benutzer seine Größe ändert.
 
 ```
 static MoveSettings MoveHorizontal(int nRatio);
@@ -267,18 +267,18 @@ static MoveSettings MoveHorizontal(int nRatio);
 
 ### <a name="parameters"></a>Parameter
 
-*nRatio*<br/>
+*nratio*<br/>
 Definiert einen Prozentwert, der angibt, wie weit ein untergeordnetes Steuerelement horizontal verschoben wird, wenn der Benutzer die Größe des Hostfensters ändert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [MoveSettings-Wert,](#movesettings_structure) der das angeforderte Verschiebungsverhältnis kapselt.
+Ein [movesettings](#movesettings_structure) -Wert, der das angeforderte Verschiebungs Verhältnis kapselt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="cmfcdynamiclayoutmovehorizontalandvertical"></a><a name="movehorizontalandvertical"></a>CMFCDynamicLayout::MoveHorizontalAndVertical
+## <a name="cmfcdynamiclayoutmovehorizontalandvertical"></a><a name="movehorizontalandvertical"></a> Cmfcdynamiclayout:: muvehorizontalandvertical
 
-Ruft einen [MoveSettings-Wert](#movesettings_structure) ab, der definiert, wie stark ein untergeordnetes Steuerelement horizontal verschoben wird, wenn der Benutzer die Größe seines Hostingfensters ändert.
+Ruft einen " [muvesettings](#movesettings_structure) "-Wert ab, der definiert, wie viel ein untergeordnetes Steuerelement horizontal verschoben wird, wenn der Benutzer seine Größe ändert.
 
 ```
 static MoveSettings MoveHorizontalAndVertical(int nXRatio int nYRatio);
@@ -286,21 +286,21 @@ static MoveSettings MoveHorizontalAndVertical(int nXRatio int nYRatio);
 
 ### <a name="parameters"></a>Parameter
 
-*nXRatio*<br/>
+*nxratio*<br/>
 Definiert einen Prozentwert, der angibt, wie weit ein untergeordnetes Steuerelement horizontal verschoben wird, wenn der Benutzer die Größe des Hostfensters ändert.
 
-*nYRatio*<br/>
+*nyratio*<br/>
 Definiert einen Prozentwert, der angibt, wie weit ein untergeordnetes Steuerelement vertikal verschoben wird, wenn der Benutzer die Größe des Hostfensters ändert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [MoveSettings-Wert,](#movesettings_structure) der das angeforderte Verschiebungsverhältnis kapselt.
+Ein [movesettings](#movesettings_structure) -Wert, der das angeforderte Verschiebungs Verhältnis kapselt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="cmfcdynamiclayoutmovenone"></a><a name="movenone"></a>CMFCDynamicLayout::MoveNone
+## <a name="cmfcdynamiclayoutmovenone"></a><a name="movenone"></a> Cmfcdynamiclayout:: "muvenone"
 
-Ruft einen [MoveSettings-Wert](#movesettings_structure) ab, der keine vertikale oder horizontale Bewegung für ein untergeordnetes Steuerelement darstellt.
+Ruft einen " [muvesettings](#movesettings_structure) "-Wert ab, der für ein untergeordnetes Steuerelement keine Bewegung, vertikal oder horizontal darstellt.
 
 ```
 static MoveSettings MoveNone();
@@ -308,11 +308,11 @@ static MoveSettings MoveNone();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [MoveSettings-Wert,](#movesettings_structure) der das Steuerelement fixiert, sodass es nicht verschoben wird, wenn der Benutzer die Größe des Hostfensters ändert.
+Ein [movesettings](#movesettings_structure) -Wert, der das Steuerelement an Ort und Stelle korrigiert, sodass es nicht verschoben wird, wenn der Benutzer die Größe des Host Fensters ändert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="cmfcdynamiclayoutmovesettings-structure"></a><a name="movesettings_structure"></a>CMFCDynamicLayout::MoveSettings-Struktur
+## <a name="cmfcdynamiclayoutmovesettings-structure"></a><a name="movesettings_structure"></a> Cmfcdynamiclayout:: muvesettings-Struktur
 
 Kapselt Daten für die Verschiebung für Steuerelemente in einem dynamischen Layout.
 
@@ -324,7 +324,7 @@ struct CMFCDynamicLayout::MoveSettings;
 
 Dies ist eine geschachtelte Klasse innerhalb von `CMFCDynamicLayout`.
 
-## <a name="cmfcdynamiclayoutmovesettingsishorizontal"></a>CMFCDynamicLayout::MoveSettings::IsHorizontal
+## <a name="cmfcdynamiclayoutmovesettingsishorizontal"></a>Cmfcdynamiclayout:: muvesettings:: IsHorizontal
 
 Überprüft, ob die Verschiebungsdaten eine horizontale Verschiebung ungleich null angeben.
 
@@ -332,11 +332,11 @@ Dies ist eine geschachtelte Klasse innerhalb von `CMFCDynamicLayout`.
 BOOL IsHorizontal() const
 ```
 
-## <a name="return-value"></a>Rückgabewert
+### <a name="return-value"></a>Rückgabewert
 
 „True“, wenn das `MoveSettings`-Objekt eine horizontale Verschiebung ungleich null angibt.
 
-## <a name="cmfcdynamiclayoutmovesettingsisnone"></a>CMFCDynamicLayout::MoveSettings::IsNone
+## <a name="cmfcdynamiclayoutmovesettingsisnone"></a>Cmfcdynamiclayout:: muvesettings:: isNone
 
 Überprüft, ob die Verschiebungsdaten keine Verschiebung angeben.
 
@@ -344,11 +344,11 @@ BOOL IsHorizontal() const
 BOOL IsNone() const
 ```
 
-## <a name="return-value"></a>Rückgabewert
+### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn das `MoveSettings`-Objekt keine Veschiebung angibt.
 
-## <a name="cmfcdynamiclayoutmovesettingsisvertical"></a>CMFCDynamicLayout::MoveSettings::IsVertical
+## <a name="cmfcdynamiclayoutmovesettingsisvertical"></a>Cmfcdynamiclayout:: muvesettings:: isvertical
 
 Überprüft, ob die Verschiebungsdaten eine vertikale Verschiebung ungleich 0 angeben.
 
@@ -356,13 +356,13 @@ TRUE, wenn das `MoveSettings`-Objekt keine Veschiebung angibt.
 BOOL IsVertical() const
 ```
 
-## <a name="return-value"></a>Rückgabewert
+### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn das `MoveSettings`-Objekt eine vertikale Verschiebung ungleich 0 angibt.
 
-## <a name="cmfcdynamiclayoutmovevertical"></a><a name="movevertical"></a>CMFCDynamicLayout::MoveVertical
+## <a name="cmfcdynamiclayoutmovevertical"></a><a name="movevertical"></a> Cmfcdynamiclayout:: muvevertical
 
-Ruft einen [MoveSettings-Wert](#movesettings_structure) ab, der definiert, wie stark ein untergeordnetes Steuerelement vertikal verschoben wird, wenn der Benutzer die Größe seines Hostingfensters ändert.
+Ruft einen " [muvesettings](#movesettings_structure) "-Wert ab, der definiert, wie viel ein untergeordnetes Steuerelement vertikal verschoben wird, wenn der Benutzer seine Größe ändert.
 
 ```
 static MoveSettings MoveVertical(int nRatio);
@@ -370,16 +370,16 @@ static MoveSettings MoveVertical(int nRatio);
 
 ### <a name="parameters"></a>Parameter
 
-*nRatio*<br/>
+*nratio*<br/>
 Definiert einen Prozentwert, der angibt, wie weit ein untergeordnetes Steuerelement vertikal verschoben wird, wenn der Benutzer die Größe des Hostfensters ändert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [MoveSettings-Wert,](#movesettings_structure) der das angeforderte Verschiebungsverhältnis kapselt.
+Ein [movesettings](#movesettings_structure) -Wert, der das angeforderte Verschiebungs Verhältnis kapselt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="cmfcdynamiclayoutsetminsize"></a><a name="setminsize"></a>CMFCDynamicLayout::SetMinSize
+## <a name="cmfcdynamiclayoutsetminsize"></a><a name="setminsize"></a> Cmfcdynamiclayout:: setminsize
 
 Legt die Größe des Fensters fest, unterhalb derer das Layout nicht angepasst wird.
 
@@ -396,9 +396,9 @@ Die gewünschte Fenstergröße, unterhalb derer das Layout nicht angepasst wird.
 
 Die Position und Größe eines untergeordneten Steuerelements werden dynamisch geändert, wenn die Größe eines Hostingfensters geändert wird. Es gibt jedoch eine Mindestgröße, unterhalb derer das Layout nicht angepasst wird. Der Benutzer kann die Größe des Fensters auf eine kleinere Größe ändern, Teile des Fensters werden jedoch aus der Ansicht ausgeblendet.
 
-## <a name="cmfcdynamiclayoutsizehorizontal"></a><a name="sizehorizontal"></a>CMFCDynamicLayout::SizeHorizontal
+## <a name="cmfcdynamiclayoutsizehorizontal"></a><a name="sizehorizontal"></a> Cmfcdynamiclayout:: sizehorizontal
 
-Ruft einen [SizeSettings-Wert](#sizesettings_structure) ab, der definiert, wie stark die Größe eines untergeordneten Steuerelements horizontal geändert wird, wenn der Benutzer die Größe seines Hostingfensters ändert.
+Ruft einen [sizesettings](#sizesettings_structure) -Wert ab, der definiert, wie stark die Größe eines untergeordneten Steuer Elements horizontal geändert wird, wenn der Benutzer die Größe des Host Fensters ändert.
 
 ```
 static SizeSettings SizeHorizontal(int nRatio);
@@ -406,18 +406,18 @@ static SizeSettings SizeHorizontal(int nRatio);
 
 ### <a name="parameters"></a>Parameter
 
-*nRatio*<br/>
+*nratio*<br/>
 Definiert einen Prozentwert, der angibt, inwieweit die Größe eines untergeordneten Steuerelements horizontal angepasst wird, wenn der Benutzer die Größe des Hostfensters ändert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [SizeSettings-Wert,](#sizesettings_structure) der das angeforderte Größenverhältnis kapselt.
+Ein [sizesettings](#sizesettings_structure) -Wert, der das angeforderte Größenverhältnis kapselt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="cmfcdynamiclayoutsizehorizontalandvertical"></a><a name="sizehorizontalandvertical"></a>CMFCDynamicLayout::SizeHorizontalAndVertical
+## <a name="cmfcdynamiclayoutsizehorizontalandvertical"></a><a name="sizehorizontalandvertical"></a> Cmfcdynamiclayout:: sizehorizontalandvertical
 
-Ruft einen [SizeSettings-Wert](#sizesettings_structure) ab, der definiert, wie stark die Größe eines untergeordneten Steuerelements horizontal geändert wird, wenn der Benutzer die Größe seines Hostingfensters ändert.
+Ruft einen [sizesettings](#sizesettings_structure) -Wert ab, der definiert, wie stark die Größe eines untergeordneten Steuer Elements horizontal geändert wird, wenn der Benutzer die Größe des Host Fensters ändert.
 
 ```
 static SizeSettings SizeHorizontalAndVertical(int nXRatio int nYRatio);
@@ -425,21 +425,21 @@ static SizeSettings SizeHorizontalAndVertical(int nXRatio int nYRatio);
 
 ### <a name="parameters"></a>Parameter
 
-*nXRatio*<br/>
+*nxratio*<br/>
 Definiert einen Prozentwert, der angibt, inwieweit die Größe eines untergeordneten Steuerelements horizontal angepasst wird, wenn der Benutzer die Größe des Hostfensters ändert.
 
-*nYRatio*<br/>
+*nyratio*<br/>
 Definiert einen Prozentwert, der angibt, inwieweit die Größe eines untergeordneten Steuerelements vertikal angepasst wird, wenn der Benutzer die Größe des Hostfensters ändert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [SizeSettings-Wert,](#sizesettings_structure) der das angeforderte Größenverhältnis kapselt.
+Ein [sizesettings](#sizesettings_structure) -Wert, der das angeforderte Größenverhältnis kapselt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="cmfcdynamiclayoutsizenone"></a><a name="sizenone"></a>CMFCDynamicLayout::SizeNone
+## <a name="cmfcdynamiclayoutsizenone"></a><a name="sizenone"></a> Cmfcdynamiclayout:: sizenone
 
-Ruft einen [SizeSettings-Wert](#sizesettings_structure) ab, der keine Größenänderung für ein untergeordnetes Steuerelement darstellt.
+Ruft einen [sizesettings](#sizesettings_structure) -Wert ab, der keine Größenänderung für ein untergeordnetes Steuerelement darstellt.
 
 ```
 static SizeSettings SizeNone();
@@ -447,11 +447,11 @@ static SizeSettings SizeNone();
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [SizeSettings-Wert,](#sizesettings_structure) der das Steuerelement mit einer bestimmten Größe fixiert, sodass er die Größe nicht ändert, wenn der Benutzer die Größe des Hostfensters ändert.
+Ein [sizesettings](#sizesettings_structure) -Wert, der das Steuerelement in einer bestimmten Größe korrigiert, sodass die Größe nicht geändert wird, wenn der Benutzer die Größe des Host Fensters ändert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-## <a name="cmfcdynamiclayoutsizesettings-structure"></a><a name="sizesettings_structure"></a>CMFCDynamicLayout::SizeSettings-Struktur
+## <a name="cmfcdynamiclayoutsizesettings-structure"></a><a name="sizesettings_structure"></a> Cmfcdynamiclayout:: sizesettings-Struktur
 
 Kapselt Daten für die Größenänderung für Steuerelemente in einem dynamischen Layout.
 
@@ -463,7 +463,7 @@ struct CMFCDynamicLayout::SizeSettings;
 
 Dies ist eine geschachtelte Klasse innerhalb von `CMFCDynamicLayout`.
 
-## <a name="cmfcdynamiclayoutsizesettingsishorizontal"></a>CMFCDynamicLayout::SizeSettings::IsHorizontal
+## <a name="cmfcdynamiclayoutsizesettingsishorizontal"></a>Cmfcdynamiclayout:: sizesettings:: IsHorizontal
 
 Überprüft, ob die Größenanpassungsdaten eine horizontale Größenanpassung ungleich null angeben.
 
@@ -471,11 +471,11 @@ Dies ist eine geschachtelte Klasse innerhalb von `CMFCDynamicLayout`.
 BOOL IsHorizontal() const
 ```
 
-## <a name="return-value"></a>Rückgabewert
+### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn das `SizeSettings`-Objekt eine horizontale Größenanpassung ungleich null angibt.
 
-## <a name="cmfcdynamiclayoutsizesettingsisnone"></a>CMFCDynamicLayout::SizeSettings::IsNone
+## <a name="cmfcdynamiclayoutsizesettingsisnone"></a>Cmfcdynamiclayout:: sizesettings:: isNone
 
 Überprüft, ob die Größenanpassungsdaten keine Größenanpassung angeben.
 
@@ -483,11 +483,11 @@ TRUE, wenn das `SizeSettings`-Objekt eine horizontale Größenanpassung ungleich
 BOOL IsNone() const
 ```
 
-## <a name="return-value"></a>Rückgabewert
+### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn das `SizeSettings`-Objekt keine Größenanpassung angibt.
 
-## <a name="cmfcdynamiclayoutsizesettingsisvertical"></a>CMFCDynamicLayout::SizeSettings::IsVertical
+## <a name="cmfcdynamiclayoutsizesettingsisvertical"></a>Cmfcdynamiclayout:: sizesettings:: isvertical
 
 Überprüft, ob die Größenanpassungsdaten eine vertikale Größenanpassung ungleich null angeben.
 
@@ -495,13 +495,13 @@ TRUE, wenn das `SizeSettings`-Objekt keine Größenanpassung angibt.
 BOOL IsVertical() const
 ```
 
-## <a name="return-value"></a>Rückgabewert
+### <a name="return-value"></a>Rückgabewert
 
 TRUE, wenn das `SizeSettings`-Objekt eine vertikale Größenanpassung ungleich null angibt.
 
-## <a name="cmfcdynamiclayoutsizevertical"></a><a name="sizevertical"></a>CMFCDynamicLayout::SizeVertical
+## <a name="cmfcdynamiclayoutsizevertical"></a><a name="sizevertical"></a> Cmfcdynamiclayout:: sizevertical
 
-Ruft einen [SizeSettings-Wert](#sizesettings_structure) ab, der definiert, wie stark die Größe eines untergeordneten Steuerelements vertikal geändert wird, wenn der Benutzer die Größe seines Hostingfensters ändert.
+Ruft einen [sizesettings](#sizesettings_structure) -Wert ab, der definiert, wie viel die Größe eines untergeordneten Steuer Elements vertikal geändert wird, wenn der Benutzer seine Größe ändert.
 
 ```
 static SizeSettings SizeVertical(int nRatio);
@@ -509,16 +509,16 @@ static SizeSettings SizeVertical(int nRatio);
 
 ### <a name="parameters"></a>Parameter
 
-*nRatio*<br/>
+*nratio*<br/>
 Definiert einen Prozentwert, der angibt, inwieweit die Größe eines untergeordneten Steuerelements vertikal angepasst wird, wenn der Benutzer die Größe des Hostfensters ändert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein [SizeSettings-Wert,](#sizesettings_structure) der das angeforderte Größenverhältnis kapselt.
+Ein [sizesettings](#sizesettings_structure) -Wert, der das angeforderte Größenverhältnis kapselt.
 
 ### <a name="remarks"></a>Bemerkungen
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
+[Hierarchie Diagramm](../../mfc/hierarchy-chart.md)<br/>
 [Klassen](../../mfc/reference/mfc-classes.md)

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C3462
 ms.assetid: 56b75f35-9fad-42d9-a969-eeca5d709bec
-ms.openlocfilehash: 56227f124d49630d8776f291ada302bd6cd6e983
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: f267d195ba851a9d585961848062fa271168aeb8
+ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74756603"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90743333"
 ---
 # <a name="compiler-error-c3462"></a>Compilerfehler C3462
 
@@ -19,19 +19,17 @@ ms.locfileid: "74756603"
 
 Das TypeForwardedTo-Attribut muss auf einen Typ in den Metadaten angewendet werden, auf die verwiesen wird.
 
-Weitere Informationen finden Sie unter [TypweiterleitungC++(/CLI)](../../extensions/type-forwarding-cpp-cli.md).
+Weitere Informationen finden Sie unter [Typweiterleitung (C++/CLI)](../../extensions/type-forwarding-cpp-cli.md).
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
-Im folgenden Beispiel wird eine Komponente erstellt:
+Im folgenden Beispiel wird eine Komponente erstellt.
 
 ```cpp
 // C3462.cpp
 // compile with: /clr /LD
 public ref class R {};
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird C3462 generiert:
 

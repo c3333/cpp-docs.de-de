@@ -1,6 +1,6 @@
 ---
-title: FUNCTION_FORCE_INLINEE_DATA Struktur
-description: Das C++ Build Insights SDK FUNCTION_FORCE_INLINEE_DATA Strukturreferenz.
+title: FUNCTION_FORCE_INLINEE_DATA-Struktur
+description: Der Verweis auf die FUNCTION_FORCE_INLINEE_DATA-Struktur im C++ Build Insights SDK.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: a4781c9157130cb46e92906017af98710f5637b2
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.openlocfilehash: d64a23c603d1f30726f30ffc91c1889c51138ef6
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81325493"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90041704"
 ---
-# <a name="function_force_inlinee_data-structure"></a>FUNCTION_FORCE_INLINEE_DATA Struktur
+# <a name="function_force_inlinee_data-structure"></a>FUNCTION_FORCE_INLINEE_DATA-Struktur
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `FUNCTION_FORCE_INLINEE_DATA` Struktur beschreibt eine kraftinlineige Funktion.
+Die `FUNCTION_FORCE_INLINEE_DATA`-Struktur beschreibt eine erzwungene Inlinefunktion.
 
 ## <a name="syntax"></a>Syntax
 
@@ -40,9 +40,9 @@ typedef struct FUNCTION_FORCE_INLINEE_DATA_TAG
 
 ## <a name="members"></a>Member
 
-|  |  |
+| name | BESCHREIBUNG |
 |--|--|
-| `Name` | Der Name der Funktion, kodiert in UTF-8. |
+| `Name` | Der in UTF-8 codierte Name der Funktion. |
 | `Size` | Die Größe der Funktion als eine Reihe von Zwischenanweisungen. |
 
 ::: moniker-end

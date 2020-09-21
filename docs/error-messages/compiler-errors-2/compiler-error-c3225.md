@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C3225
 ms.assetid: f5f66973-256e-4298-ac46-c87819cbde34
-ms.openlocfilehash: 1caa1e7ce787ffc14e615c946b5d670c75e0332a
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: ed645535300e0a7c4d27f8bed43d3143bae7e97a
+ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74757617"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90742865"
 ---
 # <a name="compiler-error-c3225"></a>Compilerfehler C3225
 
@@ -21,7 +21,7 @@ Das generische Typargument war nicht vom richtigen Typ.
 
 Weitere Informationen finden Sie unter [Generics](../../extensions/generics-cpp-component-extensions.md).
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Es ist nicht möglich, einen generischen Typ mit einem systemeigenen Typ zu instanziieren. Im folgenden Beispiel wird C3225 generiert.
 
@@ -41,9 +41,7 @@ int main() {
 }
 ```
 
-## <a name="example"></a>Beispiel
-
-Im folgenden Beispiel wird eine-Komponente C#mithilfe von erstellt. Beachten Sie, dass die-Einschränkung angibt, dass der generische Typ nur mit einem Werttyp instanziiert werden kann.
+Im folgenden Beispiel wird eine Komponente mit c# erstellt. Beachten Sie, dass die-Einschränkung angibt, dass der generische Typ nur mit einem Werttyp instanziiert werden kann.
 
 ```
 // C3225_b.cs
@@ -52,9 +50,7 @@ Im folgenden Beispiel wird eine-Komponente C#mithilfe von erstellt. Beachten Sie
 public class MyList<T> where T: struct {}
 ```
 
-## <a name="example"></a>Beispiel
-
-In diesem Beispiel wird C#die-erstellte Komponente verwendet und verstößt gegen die Einschränkung, dass myList nur mit einem anderen Werttyp als <xref:System.Nullable>instanziiert werden kann. Im folgenden Beispiel wird C3225 generiert.
+Dieses Beispiel verwendet die von c# erstellte Komponente und verstößt gegen die Einschränkung, dass myList nur mit einem anderen Werttyp als instanziiert werden kann <xref:System.Nullable> . Im folgenden Beispiel wird C3225 generiert.
 
 ```cpp
 // C3225_c.cpp

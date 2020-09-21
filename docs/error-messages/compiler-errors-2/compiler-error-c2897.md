@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C2897
 ms.assetid: a88349e2-823f-42a0-8660-0653b677afa4
-ms.openlocfilehash: 1433faade0a41ad8b63a3b40cb5d02f724bde658
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 22e63ce92a6d526f08e68bedb35de104be339dc3
+ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74760773"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90743372"
 ---
 # <a name="compiler-error-c2897"></a>Compilerfehler C2897
 
@@ -19,9 +19,7 @@ ein debugtor/Finalizer kann keine Funktions Vorlage sein.
 
 Dekonstruktoren oder Finalizer können nicht überladen werden. Daher ist das Deklarieren eines Debuggers als Vorlage (die eine Gruppe von Debuggern definieren würde) nicht zulässig.
 
-Im folgenden Beispiel wird C2897 generiert:
-
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Im folgenden Beispiel wird C2897 generiert.
 
@@ -33,8 +31,6 @@ public:
    template<typename T> ~X() {}   // C2897
 };
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird C2897 generiert.
 

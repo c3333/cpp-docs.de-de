@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BackInsertIterator Class
 ms.assetid: aecee1ff-100d-4129-b84b-1966f0923dbf
-ms.openlocfilehash: 56393fd522ecd0e2f161dfa5b9fe8230563c0f65
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: f5c82a776a537d469d42a16bd4f425e7bb2c13aa
+ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87223485"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90742930"
 ---
 # <a name="platformcollectionsbackinsertiterator-class"></a>Platform::Collections::BackInsertIterator-Klasse
 
@@ -35,7 +35,7 @@ Der Elementtyp in der aktuellen Auflistung.
 
 Die BackInsertIterator-Klasse implementiert die Regeln, die für die [back_insert_iterator Class](../standard-library/back-insert-iterator-class.md)erforderlich sind.
 
-### <a name="members"></a>Member
+### <a name="members"></a>Members
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
@@ -55,17 +55,17 @@ Die BackInsertIterator-Klasse implementiert die Regeln, die für die [back_inser
 
 `BackInsertIterator`
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Anforderungen
 
 **Header:** collection.h
 
 **Namespace:** Platform::Collections
 
-## <a name="backinsertiteratorbackinsertiterator-constructor"></a><a name="ctor"></a>Backinsertiterator:: backinsertiterator-Konstruktor
+## <a name="backinsertiteratorbackinsertiterator-constructor"></a><a name="ctor"></a> Backinsertiterator:: backinsertiterator-Konstruktor
 
 Initialisiert eine neue Instanz der `BackInsertIterator`-Klasse.
 
-## <a name="syntax"></a>Syntax
+### <a name="syntax"></a>Syntax
 
 ```
 explicit BackInsertIterator(
@@ -81,11 +81,11 @@ Ein IVector- \<T> Objekt.
 
 Ein `BackInsertIterator` fügt Elemente nach dem letzten Element des Objekts ein, das vom Parameter `v` angegeben wird.
 
-## <a name="backinsertiteratoroperator-operator"></a><a name="operator-assign"></a>Backinsertiterator:: Operator =-Operator
+## <a name="backinsertiteratoroperator-operator"></a><a name="operator-assign"></a> Backinsertiterator:: Operator =-Operator
 
 Fügt das angegebene Objekt am Ende der aktuellen sequenziellen Auflistung an.
 
-## <a name="syntax"></a>Syntax
+### <a name="syntax"></a>Syntax
 
 ```
 BackInsertIterator& operator=( const T& t);
@@ -93,18 +93,18 @@ BackInsertIterator& operator=( const T& t);
 
 #### <a name="parameters"></a>Parameter
 
-*Bund*<br/>
+*t*<br/>
 Das Objekt, das der aktuellen Auflistung angefügt werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Ein Verweis auf den aktuellen BackInsertIterator.
 
-## <a name="backinsertiteratoroperator-operator"></a><a name="operator-dereference"></a>Backinsertiterator:: Operator *-Operator
+## <a name="backinsertiteratoroperator-operator"></a><a name="operator-dereference"></a> Backinsertiterator:: Operator *-Operator
 
 Ruft einen Verweis auf den aktuellen BackInsertIterator ab.
 
-## <a name="syntax"></a>Syntax
+### <a name="syntax"></a>Syntax
 
 ```
 BackInsertIterator& operator*();
@@ -118,11 +118,11 @@ Ein Verweis auf den aktuellen BackInsertIterator.
 
 Dieser Operator gibt einen Verweis auf den aktuellen BackInsertIterator zurück; nicht auf ein Element in der aktuellen Sammlung.
 
-## <a name="backinsertiteratoroperator-operator"></a><a name="operator-increment"></a>Backinsertiterator:: Operator + +-Operator
+## <a name="backinsertiteratoroperator-operator"></a><a name="operator-increment"></a> Backinsertiterator:: Operator + +-Operator
 
 Gibt einen Verweis auf den aktuellen BackInsertIterator zurück. Der Iterator ist unverändert.
 
-## <a name="syntax"></a>Syntax
+### <a name="syntax"></a>Syntax
 
 ```
 BackInsertIterator& operator++();
@@ -140,6 +140,6 @@ Im ersten Syntaxbeispiel wird der aktuelle BackInsertIterator absichtlich präin
 
 Dieser Operator ändert jedoch nicht wirklich den BackInsertIterator. Stattdessen gibt dieser Operator einen Verweis auf den unveränderten, aktuellen Iterator zurück. Dies entspricht dem Verhalten von [Operator *](#operator-dereference).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Platform-Namespace](platform-namespace-c-cx.md)

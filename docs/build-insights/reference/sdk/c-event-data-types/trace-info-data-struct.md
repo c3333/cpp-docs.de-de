@@ -1,6 +1,6 @@
 ---
-title: TRACE_INFO_DATA Struktur
-description: Das C++ Build Insights SDK TRACE_INFO_DATA Strukturreferenz.
+title: TRACE_INFO_DATA-Struktur
+description: Der Verweis auf die TRACE_INFO_DATA-Struktur im C++ Build Insights SDK.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 70ae17a376f79cad7a669d81e482f551afd0ec62
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.openlocfilehash: 38683ff2c5c5165b5fe2a1969ccf80fbfca3693f
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81325278"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90040456"
 ---
-# <a name="trace_info_data-structure"></a>TRACE_INFO_DATA Struktur
+# <a name="trace_info_data-structure"></a>TRACE_INFO_DATA-Struktur
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `TRACE_INFO_DATA` Struktur beschreibt eine Spur, die analysiert oder neu protokolliert wird.
+Die `TRACE_INFO_DATA`-Struktur beschreibt, wie eine Ablaufverfolgung analysiert oder erneut protokolliert wird.
 
 ## <a name="syntax"></a>Syntax
 
@@ -42,15 +42,15 @@ typedef struct TRACE_INFO_DATA_TAG
 
 ## <a name="members"></a>Member
 
-|  |  |
+| name | BESCHREIBUNG |
 |--|--|
 | `LogicalProcessorCount` | Die Anzahl der logischen Prozessoren auf dem Computer, auf dem die Ablaufverfolgung erfasst wurde. |
-| `TickFrequency` | Die Anzahl der Ticks pro Sekunde, die bei der Auswertung einer in Ticks gemessenen Dauer verwendet werden sollen. |
-| `StartTimestamp` | Dieses Feld wird auf einen Tick-Wert festgelegt, der zum Zeitpunkt des Startens der Ablaufverfolgung erfasst wurde. |
-| `StopTimestamp` | Dieses Feld wird auf einen Tick-Wert festgelegt, der zum Zeitpunkt des Anhaltens der Ablaufverfolgung erfasst wurde. |
+| `TickFrequency` | Die Anzahl von Ticks pro Sekunde, die beim Auswerten einer in Ticks gemessenen Dauer verwendet werden soll. |
+| `StartTimestamp` | Dieses Feld ist auf einen Taktwert festgelegt, der zum Startzeitpunkt der Ablaufverfolgung aufgezeichnet wurde. |
+| `StopTimestamp` | Dieses Feld ist auf einen Taktwert festgelegt, der zum Stoppzeitpunkt der Ablaufverfolgung aufgezeichnet wurde. |
 
 ## <a name="remarks"></a>Bemerkungen
 
-Subtrahieren Sie `StartTimestamp` von, `StopTimestamp` um die Anzahl der Ticks zu erhalten, die während der gesamten Spur verstrichen sind. Verwenden `TickFrequency` Sie diese Datei, um den resultierenden Wert in eine Zeiteinheit zu konvertieren. Ein Beispiel, das Ticks in Zeiteinheiten konvertiert, finden Sie [unter EVENT_DATA](event-data-struct.md).
+Subtrahieren Sie `StartTimestamp` von `StopTimestamp`, um die Anzahl der Takte zu erhalten, die während der gesamten Ablaufverfolgung verstrichen sind. Nutzen Sie `TickFrequency` zur Konvertierung des resultierenden Werts in eine Zeiteinheit. Ein Beispiel für das Konvertieren von Takten in Zeiteinheiten finden Sie unter [EVENT_DATA](event-data-struct.md).
 
 ::: moniker-end

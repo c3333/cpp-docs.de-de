@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C2039
 ms.assetid: f9dfd521-9b36-4454-a69c-d63f45b606bb
-ms.openlocfilehash: 67c64de676c624369fb5a8bc07b9b5de4833fe7f
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 6dc79db11f08ce00cdb86e930173c052cd5187ed
+ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74757682"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90742683"
 ---
 # <a name="compiler-error-c2039"></a>Compilerfehler C2039
 
@@ -19,7 +19,7 @@ ms.locfileid: "74757682"
 
 Ein Member einer Struktur, Klasse oder Union wird vom Code nicht korrekt aufgerufen, oder es wird nicht ordnungsgemäß auf diesen Member verwiesen.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Im folgenden Beispiel wird C2039 generiert.
 
@@ -35,8 +35,6 @@ int main() {
 }
 ```
 
-## <a name="example"></a>Beispiel
-
 Im folgenden Beispiel wird C2039 generiert.
 
 ```cpp
@@ -49,8 +47,6 @@ int main() {
    Console::WriteLine( "{0}", DateTime::Now::get());   // OK
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird C2039 generiert.
 
@@ -68,8 +64,6 @@ int S::get_Count() { return 0; }   // C2039
 int S::Count::get() { return 0; }   // OK
 ```
 
-## <a name="example"></a>Beispiel
-
 C2039 kann auch auftreten, wenn Sie auf einen Standardindexer falsch zuzugreifen. Im folgenden Beispiel wird eine in C# erstellte Komponente definiert.
 
 ```
@@ -84,8 +78,6 @@ public class B {
    }
 };
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird C2039 generiert.
 
@@ -103,8 +95,6 @@ int main() {
    Console::WriteLine(n);
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 C2039 kann auch auftreten, wenn Sie Generics verwenden. Im folgenden Beispiel wird C2039 generiert.
 
@@ -128,8 +118,6 @@ int main() {
    f(gcnew R());
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 C2039 kann auftreten, wenn Sie versuchen, verwaltete oder nicht verwaltete Ressourcen freizugeben. Weitere Informationen finden Sie unter [debugtoren und Finalizer](../../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md#BKMK_Destructors_and_finalizers).
 

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C2146
 ms.assetid: 6bfb7de6-6723-4486-9350-c66ef88d7a64
-ms.openlocfilehash: c1a790902af92d72eb73be7fc2321762ab01fd8c
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: ff9dc9861643afa364db4b6364fa5e7bb33e8c8c
+ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87214762"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90742618"
 ---
 # <a name="compiler-error-c2146"></a>Compilerfehler C2146
 
@@ -25,7 +25,7 @@ Der Compiler hat `token` Stattdessen erwartet und gefunden `identifier` .  Mögl
 
 Dieser Fehler kann durch einen typografischen Fehler verursacht werden. Fehler [C2065](../../error-messages/compiler-errors-1/compiler-error-c2065.md) in der Regel liegt dieser Fehler vor.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Im folgenden Beispiel wird C2146 generiert.
 
@@ -43,8 +43,6 @@ int main() {
    int t x;   // C2146 : missing semicolon before 'x'
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 Dieser Fehler kann auch infolge einer compilerübereinstimmungs-Arbeit generiert werden, die für Visual Studio .NET 2003: Fehlendes **`typename`** Schlüsselwort abgeschlossen wurde.
 
@@ -68,8 +66,6 @@ X<T>::Y func() { }   // C2146
 template <typename T>
 typename X<T>::Y func() { }
 ```
-
-## <a name="example"></a>Beispiel
 
 Diese Fehlermeldung wird auch aufgrund von compilerübereinstimmungs-Aufgaben angezeigt, die für Visual Studio .NET 2003 ausgeführt wurden: explizite Spezialisierungen finden keine Vorlagen Parameter mehr aus der primären Vorlage.
 

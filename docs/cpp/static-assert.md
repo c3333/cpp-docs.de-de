@@ -7,12 +7,12 @@ helpviewer_keywords:
 - assertions [C++], static_assert
 - static_assert
 ms.assetid: 28dd3668-e78c-4de8-ba68-552084743426
-ms.openlocfilehash: 55181193e0364c1c6b758365c674f8e2c8a3f4c7
-ms.sourcegitcommit: 1839405b97036891b6e4d37c99def044d6f37eff
+ms.openlocfilehash: b30af5fcf5d4f58143e657d84e743ef09a34e268
+ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88560633"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90742969"
 ---
 # <a name="static_assert"></a>static_assert
 
@@ -44,21 +44,21 @@ Der Compiler überprüft die- **`static_assert`** Deklaration auf Syntax Fehler,
 
 Sie können das **`static_assert`** Schlüsselwort im Namespace, in der Klasse oder im Block Bereich verwenden. (Das- **`static_assert`** Schlüsselwort ist technisch gesehen eine Deklaration, obwohl es keinen neuen Namen in Ihr Programm einführt, da es im Namespace Bereich verwendet werden kann.)
 
-## <a name="description"></a>BESCHREIBUNG
+## <a name="description-of-static_assert-with-namespace-scope"></a>Beschreibung des static_assert mit Namespace-Gültigkeitsbereich
 
 Im folgenden Beispiel verfügt die- **`static_assert`** Deklaration über einen Namespace Bereich. Da der Compiler die Größe des Typs `void *` kennt, wird der Ausdruck sofort ausgewertet.
 
-## <a name="example"></a>Beispiel
+## <a name="example-of-static_assert-with-namespace-scope"></a>Beispiel für static_assert mit Namespace-Gültigkeitsbereich
 
 ```cpp
 static_assert(sizeof(void *) == 4, "64-bit code generation is not supported.");
 ```
 
-## <a name="description"></a>BESCHREIBUNG
+## <a name="description-of-static_assert-with-class-scope"></a>Beschreibung der static_assert mit dem Klassen Bereich
 
 Im folgenden Beispiel verfügt die- **`static_assert`** Deklaration über einen Klassen Bereich. Der **`static_assert`** überprüft, ob ein Vorlagen Parameter ein *Plain Old Data* (Pod)-Typ ist. Der Compiler überprüft die **`static_assert`** Deklaration, wenn er deklariert wird, wertet den *Constant-Expression-* Parameter jedoch erst aus, wenn die `basic_string` Klassen Vorlage in instanziiert wird `main()` .
 
-## <a name="example"></a>Beispiel
+## <a name="example-of-static_assert-with-class-scope"></a>Beispiel für static_assert mit Klassen Bereich
 
 ```cpp
 #include <type_traits>
@@ -83,7 +83,7 @@ int main()
 }
 ```
 
-## <a name="description"></a>BESCHREIBUNG
+## <a name="description"></a>Beschreibung
 
 Im folgenden Beispiel verfügt die- **`static_assert`** Deklaration über einen Block Bereich. **`static_assert`** Mit wird überprüft, ob die Größe der VMPage-Struktur gleich der Seitegröße des virtuellen Arbeitsspeichers des Systems ist.
 

@@ -1,6 +1,6 @@
 ---
-title: FUNCTION_DATA Struktur
-description: Das C++ Build Insights SDK FUNCTION_DATA Strukturreferenz.
+title: FUNCTION_DATA-Struktur
+description: Der Verweis auf die FUNCTION_DATA-Struktur im C++ Build Insights SDK.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: ec715192e3480932d351cdb4be1443c329a4868b
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.openlocfilehash: 1034ce01bba6422d0c47fc34b308cafcc113e32b
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81325541"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90041743"
 ---
-# <a name="function_data-structure"></a>FUNCTION_DATA Struktur
+# <a name="function_data-structure"></a>FUNCTION_DATA-Struktur
 
 ::: moniker range="<=vs-2015"
 
-Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
 ::: moniker range=">=vs-2017"
 
-Die `FUNCTION_DATA` Struktur beschreibt eine Funktion.
+Die `FUNCTION_DATA`-Struktur beschreibt eine Funktion.
 
 ## <a name="syntax"></a>Syntax
 
@@ -39,8 +39,8 @@ typedef struct FUNCTION_DATA_TAG
 
 ## <a name="members"></a>Member
 
-|  |  |
+| name | BESCHREIBUNG |
 |--|--|
-| `Name` | Der Name der Funktion, kodiert in UTF-8. |
+| `Name` | Der in UTF-8 codierte Name der Funktion. |
 
 ::: moniker-end

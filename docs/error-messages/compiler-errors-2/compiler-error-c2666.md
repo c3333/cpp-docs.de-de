@@ -6,18 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - C2666
 ms.assetid: 78364d15-c6eb-439a-9088-e04a0176692b
-ms.openlocfilehash: ca779269d573e3e5d270fccad6afe6220083fa42
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: ebe41a4c4aa090e609d3352635d4e1fc06e22454
+ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74755992"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90743216"
 ---
 # <a name="compiler-error-c2666"></a>Compilerfehler C2666
 
 "Bezeichner": Zahl Überladungen haben ähnliche Konvertierungen
 
 Eine überladene Funktion oder Operator ist mehrdeutig.   Formale Parameterlisten können für den Compiler zu ähnlich sein, um die Mehrdeutigkeit aufzulösen.  Um diesen Fehler zu beheben, müssen Sie einen oder mehrere der eigentlichen Parameter explizit umwandeln.
+
+## <a name="examples"></a>Beispiele
 
 Im folgenden Beispiel wird C2666 generiert:
 
@@ -41,11 +43,9 @@ Dieser Fehler kann auch infolge einer compilerübereinstimmungs-Arbeit generiert
 
 - die Qualifikations Konvertierung ist nicht mit der Identitäts Konvertierung identisch.
 
-Für die binären Operatoren \<, >, \<= und > = wird ein übergebener Parameter jetzt implizit in den Typ des Operanden konvertiert, wenn der Parametertyp einen benutzerdefinierten Konvertierungs Operator definiert, der in den Typ des Operanden konvertiert werden soll. Es gibt jetzt potenzielle Mehrdeutigkeit.
+Für die binären Operatoren \<, > \<=, and > = wird ein übergebener Parameter jetzt implizit in den Typ des Operanden konvertiert, wenn der Typ des Parameters einen benutzerdefinierten Konvertierungs Operator für die Konvertierung in den Typ des Operanden definiert. Es gibt jetzt potenzielle Mehrdeutigkeit.
 
-Für Code, der in Visual Studio .NET 2003 und Visual Studio .NET-Versionen von Visual C++Studio gültig ist, müssen Sie den-Klassen Operator explizit mithilfe der Funktions Syntax aufzurufen.
-
-## <a name="example"></a>Beispiel
+Für Code, der sowohl in der Visual Studio .NET 2003-als auch in der Visual Studio .NET-Version von Visual C++ gültig ist, wird der-Klassen Operator explizit mithilfe der Funktions Syntax aufgerufen.
 
 ```cpp
 // C2666b.cpp
@@ -101,8 +101,6 @@ int main()
         printf_s("str1.operator char*() < str2\n");
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird C2666 generiert.
 

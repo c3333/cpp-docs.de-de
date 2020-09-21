@@ -1,19 +1,20 @@
 ---
 title: 'Exemplarische Vorgehensweise: Kompilieren eines C-Programms in der Befehlszeile'
+description: Exemplarische Vorgehensweise, die zeigt, wie ein einfaches C-Programm im „Hallo Welt“-Stil erstellt wird.
 ms.custom: conceptual
-ms.date: 04/25/2019
+ms.date: 9/10/2020
 helpviewer_keywords:
 - command-line applications [C++], C programs
 - Visual C, compiling
 - compiling programs [C++]
 - C program compiling [C++]
 ms.assetid: 7e74cc2d-54b1-49de-b7ad-d3ae6b39ab8d
-ms.openlocfilehash: d807fa75b32b515c2222fec9ea9d070266303e33
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 57276f61ca8ff848db0313935bc1841de50f9874
+ms.sourcegitcommit: b492516cc65120250b9ea23f96f7f63f37f99fae
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81335259"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90075607"
 ---
 # <a name="walkthrough-compile-a-c-program-on-the-command-line"></a>Exemplarische Vorgehensweise: Kompilieren eines C-Programms in der Befehlszeile
 
@@ -178,9 +179,9 @@ Der Compiler, „cl.exe“, bietet viele weitere Optionen, die Sie zum Erstellen
 
 Sie können NMAKE und Makefiles oder MSBuild und Projektdateien zum Konfigurieren und Erstellen komplexerer Projekte in der Befehlszeile verwenden. Weitere Informationen zur Verwendung dieser Tools finden Sie unter [NMAKE-Referenz](reference/nmake-reference.md) und [MSBuild](msbuild-visual-cpp.md).
 
-Die C- und C++-Sprachen sind ähnlich, aber nicht identisch. Der Microsoft C/C++-Compiler (MSVC) verwendet eine einfache Regel, um zu bestimmen, welche Sprache zum Kompilieren des Codes verwendet werden soll. Standardmäßig behandelt der MSVC-Compiler alle auf „.c“ endenden Dateien als C-Quellcode und alle auf „.cpp“ endenden Dateien als C++-Quellcode. Wenn Sie erzwingen möchten, dass vom Compiler alle Dateien unabhängig von der Dateierweiterung als C behandelt werden, verwenden Sie die Compileroption [/Tc](reference/tc-tp-tc-tp-specify-source-file-type.md).
+Die C- und C++-Sprachen sind ähnlich, aber nicht identisch. Der Microsoft C/C++-Compiler (MSVC) verwendet eine einfache Regel, um zu bestimmen, welche Sprache zum Kompilieren des Codes verwendet werden soll. Standardmäßig behandelt der MSVC-Compiler alle auf „.c“ endenden Dateien als C-Quellcode und alle auf „.cpp“ endenden Dateien als C++-Quellcode. Wenn Sie erzwingen möchten, dass vom Compiler alle Dateien unabhängig von der Dateierweiterung als C behandelt werden, verwenden Sie die Compileroption [/TC](reference/tc-tp-tc-tp-specify-source-file-type.md).
 
-MSVC ist mit dem ISO C99-Standard konform, jedoch nicht streng konform. In den meisten Fällen wird der portierbare C-Code wie erwartet kompiliert und ausgeführt. Die meisten Änderungen in ISO C11 werden von Visual C++ nicht unterstützt. Bestimmte Bibliotheksfunktionen und POSIX-Funktionsnamen werden von MSVC als veraltet markiert. Die Funktionen werden unterstützt, aber die bevorzugten Namen wurden geändert. Weitere Informationen finden Sie unter [Sicherheitsfunktionen in der CRT](../c-runtime-library/security-features-in-the-crt.md) und [Compilerwarnung C4996 (Stufe 3)](../error-messages/compiler-warnings/compiler-warning-level-3-c4996.md).
+MSVC ist mit dem ISO C99-Standard konform, jedoch nicht streng konform. In den meisten Fällen wird der portierbare C-Code wie erwartet kompiliert und ausgeführt. Visual C++ bietet Unterstützung für die Änderungen in ISO C11/C17. Verwenden Sie zum Kompilieren mit der Unterstützung von C11/C17 das Compilerflag `/std:c11` oder `/std:c17`. Bestimmte Bibliotheksfunktionen und POSIX-Funktionsnamen werden von MSVC als veraltet markiert. Die Funktionen werden unterstützt, aber die bevorzugten Namen wurden geändert. Weitere Informationen finden Sie unter [Sicherheitsfunktionen in der CRT](../c-runtime-library/security-features-in-the-crt.md) und [Compilerwarnung C4996 (Stufe 3)](../error-messages/compiler-warnings/compiler-warning-level-3-c4996.md).
 
 ## <a name="see-also"></a>Siehe auch
 
