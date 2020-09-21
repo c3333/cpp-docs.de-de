@@ -12,16 +12,16 @@ helpviewer_keywords:
 - IView class [MFC]
 - views [MFC], classes
 ms.assetid: 9321f299-486e-4551-bee9-d2c4a7b91548
-ms.openlocfilehash: dfe77699a51ad2670c703d02e13e9062e76debcd
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.openlocfilehash: 9233ee5a8330c4b2c79ebc7b79e0616612c00204
+ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81751283"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90743424"
 ---
 # <a name="iview-interface"></a>IView-Schnittstelle
 
-Implementiert mehrere Methoden, die [CWinFormsView](../../mfc/reference/cwinformsview-class.md) zum Senden von Ansichtsbenachrichtigungen an ein verwaltetes Steuerelement verwendet.
+Implementiert mehrere Methoden, die [CWinFormsView](../../mfc/reference/cwinformsview-class.md) verwendet, um Ansichts Benachrichtigungen an ein verwaltetes Steuerelement zu senden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -33,27 +33,27 @@ interface class IView
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
-|[IView::OnActivateView](#onactivateview)|Wird von MFC aufgerufen, wenn eine Ansicht aktiviert oder deaktiviert ist.|
-|[IView::OnInitialUpdate](#oninitialupdate)|Wird vom Framework aufgerufen, nachdem die Ansicht zuerst an das Dokument angefügt wurde, aber bevor die Ansicht zuerst angezeigt wird.|
-|[IView::OnUpdate](#onupdate)|Wird von MFC aufgerufen, nachdem das Dokument der Ansicht geändert wurde; Diese Funktion ermöglicht es der Ansicht, ihre Anzeige zu aktualisieren, um Änderungen widerzuspiegeln.|
+|[IView:: OnActivateView](#onactivateview)|Wird von MFC aufgerufen, wenn eine Ansicht aktiviert oder deaktiviert wird.|
+|[IView:: OnInitialUpdate](#oninitialupdate)|Wird von Framework aufgerufen, nachdem die Ansicht zum ersten Mal an das Dokument angefügt wurde, aber bevor die Ansicht anfänglich angezeigt wird.|
+|[IView:: OnUpdate](#onupdate)|Wird von MFC aufgerufen, nachdem das Dokument der Ansicht geändert wurde. Diese Funktion ermöglicht der Ansicht, Ihre Anzeige zu aktualisieren, um Änderungen widerzuspiegeln.|
 
-## <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Bemerkungen
 
-`IView`implementiert mehrere Methoden, die `CWinFormsView` zum Weiterleiten von allgemeinen Ansichtsbenachrichtigungen an ein gehostetes verwaltetes Steuerelement verwendet werden. Dies sind [OnInitialUpdate](#oninitialupdate), [OnUpdate](#onupdate) und [OnActivateView](#onactivateview).
+`IView` implementiert verschiedene Methoden, `CWinFormsView` mit denen allgemeine Ansichts Benachrichtigungen an ein gehosteter verwaltetes Steuerelement weitergeleitet werden. Dabei handelt es sich um [OnInitialUpdate](#oninitialupdate), [OnUpdate](#onupdate) und [OnActivateView](#onactivateview).
 
-`IView`ist ähnlich wie [CView](../../mfc/reference/cview-class.md), wird jedoch nur mit verwalteten Ansichten und Steuerelementen verwendet.
+`IView` ähnelt [CView](../../mfc/reference/cview-class.md), wird jedoch nur mit verwalteten Sichten und Steuerelementen verwendet.
 
-Weitere Informationen zur Verwendung von Windows Forms finden Sie unter [Verwenden einer Windows Form Benutzersteuerung in MFC](../../dotnet/using-a-windows-form-user-control-in-mfc.md).
+Weitere Informationen zur Verwendung von Windows Forms finden Sie unter [Verwenden eines Windows Form-Benutzer Steuer Elements in MFC](../../dotnet/using-a-windows-form-user-control-in-mfc.md).
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
-Header: afxwinforms.h (definiert in assembly atlmfc-lib-mfcmifc80.dll)
+Header: afxwinforms. h (in Assemblyatlmfc\lib\mfcmifc80.dll definiert)
 
-## <a name="iviewonactivateview"></a><a name="onactivateview"></a>IView::OnActivateView
+## <a name="iviewonactivateview"></a><a name="onactivateview"></a> IView:: OnActivateView
 
-Wird von MFC aufgerufen, wenn eine Ansicht aktiviert oder deaktiviert ist.
+Wird von MFC aufgerufen, wenn eine Ansicht aktiviert oder deaktiviert wird.
 
 ```cpp
 void OnActivateView(bool activate);
@@ -64,15 +64,15 @@ void OnActivateView(bool activate);
 *aktivieren*<br/>
 Gibt an, ob die Ansicht aktiviert oder deaktiviert wird.
 
-## <a name="iviewoninitialupdate"></a><a name="oninitialupdate"></a>IView::OnInitialUpdate
+## <a name="iviewoninitialupdate"></a><a name="oninitialupdate"></a> IView:: OnInitialUpdate
 
-Wird vom Framework aufgerufen, nachdem die Ansicht zuerst an das Dokument angefügt wurde, aber bevor die Ansicht zuerst angezeigt wird.
+Wird von Framework aufgerufen, nachdem die Ansicht zum ersten Mal an das Dokument angefügt wurde, aber bevor die Ansicht anfänglich angezeigt wird.
 
 ```cpp
 void OnInitialUpdate();
 ```
 
-## <a name="iviewonupdate"></a><a name="onupdate"></a>IView::OnUpdate
+## <a name="iviewonupdate"></a><a name="onupdate"></a> IView:: OnUpdate
 
 Wird von MFC aufgerufen, nachdem das Dokument der Ansicht geändert wurde.
 
@@ -80,9 +80,9 @@ Wird von MFC aufgerufen, nachdem das Dokument der Ansicht geändert wurde.
 void OnUpdate();
 ```
 
-## <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Bemerkungen
 
-Mit dieser Funktion kann die Ansicht ihre Anzeige aktualisieren, um Änderungen widerzuspiegeln.
+Diese Funktion ermöglicht der Ansicht, Ihre Anzeige zu aktualisieren, um Änderungen widerzuspiegeln.
 
 ## <a name="see-also"></a>Weitere Informationen
 

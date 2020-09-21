@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C2171
 ms.assetid: a80343b5-ab3f-4413-b6f1-3ce9d7e519e5
-ms.openlocfilehash: 7d74cec63c0fb74ed8d6589a43c3b82c94633002
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: da9e24b6b5857ca61a7eefc00a5ae455c59e8e44
+ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74758397"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90743398"
 ---
 # <a name="compiler-error-c2171"></a>Compilerfehler C2171
 
@@ -19,7 +19,7 @@ ms.locfileid: "74758397"
 
 Ein unärer Operator wird zusammen mit einem ungültigen Operandentyp verwendet.
 
-## <a name="example"></a>Beispiel
+## <a name="examples"></a>Beispiele
 
 Im folgenden Beispiel wird C2171 generiert:
 
@@ -34,8 +34,6 @@ int main() {
    d2 = ~d3;
 }
 ```
-
-## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird C2171 generiert:
 

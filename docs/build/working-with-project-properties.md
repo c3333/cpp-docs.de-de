@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Visual C++ projects, properties
 - projects [C++], properties
 ms.assetid: 9b0d6f8b-7d4e-4e61-aa75-7d14944816cd
-ms.openlocfilehash: 6c05dd00324113819dd145e46bf10dfeb96a66a3
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 17b54311670f78cda78403c273cfbf57d43e84da
+ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80078235"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90042185"
 ---
 # <a name="set-compiler-and-build-properties"></a>Festlegen der Compiler- und Buildeigenschaften
 
@@ -90,13 +90,13 @@ Ein benutzerdefiniertes Makro wird in einem Eigenschaftenblatt gespeichert. Wenn
 
 ## <a name=""></a><a name="property_editor">Eigenschaften-Editor</a>
 
-Mit dem Eigenschaften-Editor können Sie bestimmte Zeichenfolgeneigenschaften ändern und Makros als Werte auswählen. Um auf den Eigenschaften-Editor zuzugreifen, wählen Sie eine Eigenschaft auf einer Eigenschaftenseite aus, und klicken Sie rechts auf die Schaltfläche mit dem Pfeil nach unten. Wenn die Dropdownliste die Option **\<Bearbeiten>** enthält, können Sie auf diese klicken, um den Eigenschaften-Editor für diese Eigenschaft anzuzeigen.
+Mit dem Eigenschaften-Editor können Sie bestimmte Zeichenfolgeneigenschaften ändern und Makros als Werte auswählen. Um auf den Eigenschaften-Editor zuzugreifen, wählen Sie eine Eigenschaft auf einer Eigenschaftenseite aus, und klicken Sie rechts auf die Schaltfläche mit dem Pfeil nach unten. Wenn die Dropdownliste **\<Edit>** enthält, können Sie dies auswählen, um den Eigenschaften-Editor für diese Eigenschaft anzuzeigen.
 
-![Dropdownliste Eigenschaften-Editor](media/property_editor_dropdown.png "Dropdownliste Eigenschaften-Editor")
+![Ein Eigenschaften-Dropdown-Steuerelement wird zum Zugriff auf den Eigenschaften-Editor verwendet.](media/property_editor_dropdown.png "Eigenschaften-Editor-Dropdownliste")
 
 Im Eigenschaften-Editor können Sie auf die Schaltfläche **Makros** klicken, um die verfügbaren Makros und deren aktuelle Werte anzuzeigen. Die folgende Abbildung zeigt den Eigenschaften-Editor für die Eigenschaft **Zusätzliche Includeverzeichnisse**, nachdem auf die Schaltfläche **Makros** geklickt wurde. Wenn das Kontrollkästchen **Vom übergeordneten Projekt erben oder Projektstandard** aktiviert ist und Sie einen neuen Wert hinzufügen, wird dieser an alle Werte angefügt, die derzeit vererbt werden. Wenn Sie das Kontrollkästchen deaktivieren, ersetzt der neue Wert die vererbten Werte. In den meisten Fällen bleibt das Kontrollkästchen aktiviert.
 
-![Eigenschaften-Editor, Visual C&#43;&#43;](media/propertyeditorvc.png "Eigenschaften-Editor VC")
+![Dialogfeld „Eigenschaften-Editor“ für die Eigenschaft „Includeverzeichnisse“](media/propertyeditorvc.png "Eigenschaften-Editor VC")
 
 ## <a name="add-an-include-directory-to-the-set-of-default-directories"></a>Hinzufügen eines Includeverzeichnisses zu den Standardverzeichnissen
 
