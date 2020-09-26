@@ -16,12 +16,12 @@ helpviewer_keywords:
 - CAxWindow class
 - ATL, hosting ActiveX controls
 ms.assetid: 85e79261-43e4-4770-bde0-1ff87f222b0f
-ms.openlocfilehash: 1301baef874ac4e482a1b2a7f0a2ee6b1b63396f
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: b74ecb9af2decf92f873cef8d016907b6c9474cf
+ms.sourcegitcommit: d9c94dcabd94537e304be0261b3263c2071b437b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88833828"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353076"
 ---
 # <a name="caxwindow-class"></a>CAxWindow-Klasse
 
@@ -40,7 +40,7 @@ class CAxWindow : public CWindow
 
 ### <a name="methods"></a>Methoden
 
-|Funktion|Beschreibung|
+|Funktion|BESCHREIBUNG|
 |-|-|
 |[AttachControl](#attachcontrol)|Fügt ein vorhandenes ActiveX-Steuerelement an das- `CAxWindow` Objekt an.|
 |[CAxWindow](#caxwindow)|Erstellt ein `CAxWindow`-Objekt.|
@@ -54,11 +54,11 @@ class CAxWindow : public CWindow
 
 ### <a name="operators"></a>Operatoren
 
-|Operator|Beschreibung|
+|Operator|BESCHREIBUNG|
 |-|-|
 |[Operator =](#operator_eq)|Weist einem vorhandenen-Objekt ein HWND zu `CAxWindow` .|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Diese Klasse stellt Methoden zum Bearbeiten eines Fensters bereit, das ein ActiveX-Steuerelement hostet. Das Hosting wird von " **AtlAxWin80"** bereitgestellt, das von umschließt wird `CAxWindow` .
 
@@ -94,7 +94,7 @@ vorgenommen Ein Zeiger auf den `IUnknown` des Hosts (das- `AxWin` Objekt).
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das anzufügende Steuerelement Objekt muss vor dem Aufrufen von ordnungsgemäß initialisiert werden `AttachControl` .
 
@@ -158,7 +158,7 @@ Die Ressourcen-ID einer HTML-Ressource. Das WebBrowser-Steuerelement wird erstel
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn die zweite Version dieser Methode verwendet wird, wird ein HTML-Steuerelement erstellt und an die durch *dwresid*identifizierte Ressource gebunden.
 
@@ -170,7 +170,7 @@ Weitere Informationen finden Sie unter [CAxWindow2T:: kreatecontrollic](../../at
 
 ### <a name="example"></a>Beispiel
 
-Ein Beispiel, das verwendet, finden Sie unter Hosting von ActiveX-Steuer [Elementen mithilfe von ATL AxHost](../../atl/hosting-activex-controls-using-atl-axhost.md) `CreateControl` .
+Ein Beispiel, das verwendet, finden Sie unter Hosting von ActiveX-Steuer [Elementen mithilfe von ATL AxHost](../../atl/atl-control-containment-faq.md#hosting-activex-controls-using-atl-axhost) `CreateControl` .
 
 ## <a name="caxwindowcreatecontrolex"></a><a name="createcontrolex"></a> CAxWindow:: kreatecontrolex
 
@@ -234,7 +234,7 @@ in Die Ressourcen-ID einer HTML-Ressource. Das WebBrowser-Steuerelement wird ers
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Methode ähnelt [CAxWindow:: anatecontrol](#createcontrol), aber im Gegensatz zu dieser Methode `CreateControlEx` können Sie auch einen Schnittstellen Zeiger auf das neu erstellte Steuerelement empfangen und eine Ereignis Senke für den Empfang von Ereignissen einrichten, die vom Steuerelement ausgelöst werden.
 
@@ -242,7 +242,7 @@ Weitere Informationen finden Sie unter [CAxWindow2T:: anatecontrollicex](../../a
 
 ### <a name="example"></a>Beispiel
 
-Ein Beispiel, das verwendet, finden Sie unter Hosting von ActiveX-Steuer [Elementen mithilfe von ATL AxHost](../../atl/hosting-activex-controls-using-atl-axhost.md) `CreateControlEx` .
+Ein Beispiel, das verwendet, finden Sie unter Hosting von ActiveX-Steuer [Elementen mithilfe von ATL AxHost](../../atl/atl-control-containment-faq.md#hosting-activex-controls-using-atl-axhost) `CreateControlEx` .
 
 ## <a name="caxwindowgetwndclassname"></a><a name="getwndclassname"></a> CAxWindow:: getwndclassname
 
@@ -323,7 +323,7 @@ in Die Schnittstelle, für die abgefragt wird.
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die-Schnittstelle des Hosts ermöglicht den Zugriff auf die zugrunde liegende Funktionalität des Fenster-hostingcodes, der von implementiert wird `AxWin` .
 
@@ -361,7 +361,7 @@ in Ein Zeiger auf eine- `IDocHostUIHandlerDispatch` Schnittstelle.
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die externe `IDocHostUIHandlerDispatch` Schnittstelle wird von Steuerelementen verwendet, die die Host Website nach der- `IDocHostUIHandlerDispatch` Schnittstelle Abfragen. Das WebBrowser-Steuerelement ist ein Steuerelement, das dies bewirkt.
 

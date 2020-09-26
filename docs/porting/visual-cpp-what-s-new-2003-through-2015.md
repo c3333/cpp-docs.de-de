@@ -2,12 +2,12 @@
 title: 'Visual C++: Neuerungen von 2003 bis 2015'
 ms.date: 07/02/2019
 ms.assetid: c4afde6f-3d75-40bf-986f-be57e3818e26
-ms.openlocfilehash: 8c73cf5fbd35c747f648ad2475a9ad49162a58d9
-ms.sourcegitcommit: 6e55aeb538b1c39af754f82d6f7738a18f5aa031
+ms.openlocfilehash: eb76e5455f053717859d0ac571b9d1110d11c33b
+ms.sourcegitcommit: d9c94dcabd94537e304be0261b3263c2071b437b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87389934"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91352634"
 ---
 # <a name="visual-c-what39s-new-2003-through-2015"></a>Visual C++: Neuerungen von 2003 bis 2015
 
@@ -32,7 +32,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
 - [Verbesserungen bei der Übereinstimmung mit Standards in Visual Studio 2015 Update 3](#VS_Update3)
 
-### <a name="conformance-improvements-in-visual-studio-2015"></a><a name="VS_RTM"></a>Verbesserungen der Konformität in Visual Studio 2015
+### <a name="conformance-improvements-in-visual-studio-2015"></a><a name="VS_RTM"></a> Verbesserungen der Konformität in Visual Studio 2015
 
 - **/Zc:forScope-Option**
 
@@ -510,7 +510,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
    Sowohl in Visual Studio 2013 als auch in Visual Studio 2015 generiert der Compiler einen Kopierkonstruktor für eine Klasse, die über einen benutzerdefinierten Bewegungskonstruktor verfügt, jedoch über keinen benutzerdefinierten Kopierkonstruktor. In Dev14 wird dieser implizit generierte Kopierkonstruktor ebenfalls als „= delete“ gekennzeichnet.
 
-### <a name="conformance-improvements-in-visual-studio-2015-update-1"></a><a name="VS_Update1"></a>Verbesserungen der Konformität in Visual Studio 2015 Update 1
+### <a name="conformance-improvements-in-visual-studio-2015-update-1"></a><a name="VS_Update1"></a> Verbesserungen der Konformität in Visual Studio 2015 Update 1
 
 - **Private virtuelle Basisklassen und indirekte Vererbung**
 
@@ -1013,7 +1013,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
     }
    ```
 
-### <a name="conformance-improvements-in-visual-studio-2015-update-2"></a><a name="VS_Update2"></a>Verbesserungen der Konformität in Visual Studio 2015 Update 2
+### <a name="conformance-improvements-in-visual-studio-2015-update-2"></a><a name="VS_Update2"></a> Verbesserungen der Konformität in Visual Studio 2015 Update 2
 
 - **Zusätzliche Warnungen und Fehler können als Ergebnis der Teilunterstützung für den Ausdruck SFINAE ausgegeben werden**
 
@@ -1273,7 +1273,7 @@ Obwohl diese Unterschiede sich auf Ihren Quellcode oder andere Buildartefakte au
 
    Ein Korrigieren von Code, der in dieser Weise geschrieben ist, kann erfordern, dass die Operatordefinitionen aus einer Headerdatei in eine entsprechende Quelldatei verschoben werden.
 
-### <a name="conformance-improvements-in-visual-studio-2015-update-3"></a><a name="VS_Update3"></a>Verbesserungen der Konformität in Visual Studio 2015 Update 3
+### <a name="conformance-improvements-in-visual-studio-2015-update-3"></a><a name="VS_Update3"></a> Verbesserungen der Konformität in Visual Studio 2015 Update 3
 
 - **std::is_convertable erkennt jetzt Selbstzuweisung** (Standardbibliothek) Frühere Versionen des Typmerkmals `std::is_convertable` haben die Selbstzuweisung eines Klassentyps nicht ordnungsgemäß anerkannt, wenn der Kopierkonstruktor gelöscht wurde oder privat war. Nun `std::is_convertable<>::value` ist ordnungsgemäß auf festgelegt, **`false`** Wenn Sie auf einen Klassentyp mit einem gelöschten oder privaten Kopierkonstruktor angewendet wird.
 
@@ -1552,8 +1552,8 @@ Unterstützung für diese C++14-Funktionen:
 - Die transparenten Operatorfunktionselemente less<>, greater<>, plus<>, multiplies<> usw.
 - make_unique\<T>(Args) und make_unique<T[]>(n)
 - Die Nicht-Memberfunktionen cbegin()/cend(), rbegin()/rend() und crbegin()/crend().
-- \<atomic>Es wurden zahlreiche Leistungsverbesserungen erhalten.
-- \<type_traits>Es wurden wichtige Stabilisierungs-und Code Fehlerbehebungen erhalten.
+- \<atomic> Es wurden zahlreiche Leistungsverbesserungen erhalten.
+- \<type_traits> Es wurden wichtige Stabilisierungs-und Code Fehlerbehebungen erhalten.
 
 ### <a name="breaking-changes"></a>Aktuelle Änderungen
 
@@ -1790,7 +1790,7 @@ Die Code Coverage wurde aktualisiert, um Binärdateien zur Runtime dynamisch zu 
 **Die Schlüsselwörter „nullptr“ und „__nullptr“.** Mit MSVC können Sie das **`nullptr`** Schlüsselwort mit nativem Code oder mit verwaltetem Code verwenden. Das **`nullptr`** Schlüsselwort gibt an, dass ein Objekt Handle, ein innerer Zeiger oder ein System eigener Zeigertyp nicht auf ein Objekt verweist. Der Compiler interpretiert **`nullptr`** als verwalteten Code, wenn Sie die `/clr` -Compileroption verwenden, und systemeigenen Code, wenn Sie die-Option nicht verwenden `/clr` .
 Das Microsoft-spezifische **__nullptr** -Schlüsselwort hat dieselbe Bedeutung wie **`nullptr`** , es gilt jedoch nur für nativen Code. Wenn Sie systemeigenen C/C++-Code mit der- `/clr` Compileroption kompilieren, kann der Compiler nicht bestimmen, ob das **`nullptr`** Schlüsselwort ein System eigener oder ein verwalteter Begriff ist. Verwenden Sie das nullptr-Schlüsselwort, um den verwalteten Begriff anzugeben, und **__nullptr** , um den systemeigenen Begriff anzugeben, um die Absicht für den Compiler klar zu machen.
 
-**`/Zc:trigraphs`Compileroption.** Standardmäßig ist die Unterstützung von Trigraphen deaktiviert. Verwenden Sie die- **`/Zc:trigraphs`** Compileroption zum Aktivieren der Unterstützung von Unterstützung
+**`/Zc:trigraphs` Compileroption.** Standardmäßig ist die Unterstützung von Trigraphen deaktiviert. Verwenden Sie die- **`/Zc:trigraphs`** Compileroption zum Aktivieren der Unterstützung von Unterstützung
 Ein Trigraph besteht aus zwei aufeinander folgenden Fragezeichen (??) gefolgt von einem eindeutigen dritten Zeichen. Der Compiler ersetzt einen Trigraphen durch ein entsprechendes Interpunktionszeichen. Der Compiler ersetzt z.B. den Trigraphen ??= durch das Nummernzeichen #. Verwenden Sie Trigraphen in C-Quelldateien, die einen Zeichensatz aufweisen, der einige Interpunktionszeichen nicht enthält.
 
 **Neue Option „Profilgesteuerte Optimierung“.** Bei PogoSafeMode handelt es sich um eine neue Option zur profilgesteuerten Optimierung, über die Sie angeben können, ob der abgesicherte oder der schnelle Modus bei der Optimierung der Anwendung verwendet werden soll. Der abgesicherte Modus ist zwar threadsicher, aber langsamer als der schnelle Modus. Der schnelle Modus stellt das Standardverhalten dar.
@@ -1878,7 +1878,7 @@ Da IntelliSense nur die Informationen verarbeitet, die zum jeweiligen Zeitpunkt 
 
 **MFC-Klassen-Assistent.** Mit Visual C++ 2010 wird das praktische Tool „MFC-Klassenassistent“ wieder eingeführt. Der MFC-Klassenassistent stellt eine praktische Möglichkeit dar, um einem Projekt Klassen, Meldungen und Variablen hinzuzufügen, ohne Quelldateien manuell verändern zu müssen.
 
-**ATL-Steuerelement-Assistent.** Der ATL-Steuerelement-Assistent füllt das Feld `ProgID` nicht mehr automatisch auf. Wenn ein ATL-Steuerelement keine `ProgID` besitzt, können andere Tools möglicherweise nicht damit arbeiten. Beispielsweise verlangt das Dialogfeld **Insert Active Control** (Aktives Steuerelement einfügen), dass Steuerelemente eine `ProgID` aufweisen. Weitere Informationen zu diesem Dialogfeld finden Sie unter **Insert ActiveX Control Dialog Box („Dialogfeld ‚ActiveX-Steuerelement einfügen‘“)**.
+**ATL-Steuerelement-Assistent.** Der ATL-Steuerelement-Assistent füllt das Feld `ProgID` nicht mehr automatisch auf. Wenn ein ATL-Steuerelement keine `ProgID` besitzt, können andere Tools möglicherweise nicht damit arbeiten. Beispielsweise verlangt das Dialogfeld **Insert Active Control** (Aktives Steuerelement einfügen), dass Steuerelemente eine `ProgID` aufweisen. Weitere Informationen zum Dialogfeld finden Sie unter [Einfügen von ActiveX](../windows/adding-editing-or-deleting-controls.md#insert-activex-controls)-Steuerelementen.
 
 ### <a name="microsoft-macro-assembler-reference"></a>Referenz zum Microsoft Macro Assembler
 
@@ -2052,7 +2052,7 @@ In diesem Release sind bedeutende Änderungen des Compilers enthalten.
 - Der `restrictdeclspec`-Modifizierer wurde hinzugefügt.
 - **`__thiscall`** ist jetzt ein Schlüsselwort.
 - **`__unaligned`** Das Schlüsselwort ist jetzt dokumentiert.
-- **`volatile`**(C++) hat in Bezug auf Optimierungen ein aktualisiertes Verhalten.
+- **`volatile`** (C++) hat in Bezug auf Optimierungen ein aktualisiertes Verhalten.
 
 ### <a name="new-preprocessor-features"></a>Neue Präprozessorfeatures
 
@@ -2185,7 +2185,7 @@ In diesem Release sind bedeutende Änderungen des Compilers enthalten.
 - Zu jedem Funktionsthema wurde ein Abschnitt zu .NET Framework-Äquivalenten hinzugefügt.
 - Mehrere Zeichen folgen Funktionen haben jetzt die Möglichkeit, Zeichen folgen zu kürzen, anstatt einen Fehler zu haben, wenn Ausgabepuffer zu klein sind. siehe **_TRUNCATE**.
 - `_set_se_translator` erfordert jetzt die Verwendung der `/EHa`-Compileroption.
-- `fpos_t`befindet sich jetzt **`__int64`** unter `/Za` (für C-Code) und wenn __stdc__ manuell festgelegt wird (für C++-Code). Dabei handelt es sich um eine **`struct`** .
+- `fpos_t` befindet sich jetzt **`__int64`** unter `/Za` (für C-Code) und wenn __stdc__ manuell festgelegt wird (für C++-Code). Dabei handelt es sich um eine **`struct`** .
 - „_CRT_DISABLE_PERFCRIT_LOCKS“ kann die E/A-Leistung von Programmen mit einem Thread verbessern.
 - POSIX-Namen wurden als veraltet markiert und durch ISO-konforme C++-Namen ersetzt (verwenden Sie z.B. `_getch` anstelle von `getch`).
 - Neue Linkoptionen für OBJ-Dateien sind im reinen Modus verfügbar.
@@ -2214,7 +2214,7 @@ In diesem Release sind bedeutende Änderungen des Compilers enthalten.
 - Die intrinsische _InterlockedIncrement-Funktion wird jetzt dokumentiert.
 - Die intrinsische _ReadWriteBarrier-Funktion wurde hinzugefügt.
 
-### <a name="attributes"></a>Attributes
+### <a name="attributes"></a>Attribute
 
 - Das Attribut `implements` wird jetzt dokumentiert.
 
@@ -2233,6 +2233,6 @@ Die folgenden Linkerparameter wurden hinzugefügt:
 
 Das .SAFESEH-Verzeichnis und die `/safeseh`-ml.exe-Option wurden hinzugefügt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Visual C++-Handbuch: Portieren und Aktualisieren](visual-cpp-porting-and-upgrading-guide.md)

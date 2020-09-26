@@ -21,12 +21,12 @@ helpviewer_keywords:
 - properties [C++], resources
 - resources [C++], properties
 ms.assetid: e20a29ec-d6fb-4ead-98f3-431a0e23aaaf
-ms.openlocfilehash: 5f12b126db7c0e040f06640d3ecd201007d73968
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 2552f9eea79aa0a3545d9746d85cacfbd9a3f25d
+ms.sourcegitcommit: d9c94dcabd94537e304be0261b3263c2071b437b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80167887"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353167"
 ---
 # <a name="resource-editors-c"></a>Ressourcen-Editoren (C++)
 
@@ -39,22 +39,22 @@ Wenn Sie eine Ressource erstellen oder öffnen, wird automatisch der entsprechen
 
 |Verwenden Sie...|Zur Bearbeitung von...|
 |----------------|----------------|
-|[Zugriffstasten-Editor](../windows/accelerator-editor.md)|Zugriffstasten Tabellen in Visual C++ Studio-Projekten.|
-|[Binary Editor](binary-editor.md)|Binäre Daten und benutzerdefinierte Ressourcen in Visual C++-, Visual Basic- oder Visual C#-Projekten.|
-|[Dialog-Editor](../windows/dialog-editor.md)|Dialog Felder in Visual Studio C++ -Projekten.|
-|[Bildbearbeitung](../windows/image-editor-for-icons.md)|Bitmaps, Symbole, Cursor und andere Bilddateien in Visual C++-, Visual Basic- oder Visual C#-Projekten.|
-|[Menü-Editor](../windows/menu-editor.md)|Menü Ressourcen in Visual Studio C++ -Projekten.|
+|[Zugriffstasten-Editor](../windows/accelerator-editor.md)|Zugriffstasten Tabellen in Visual Studio C++-Projekten.|
+|[Binär-Editor](binary-editor.md)|Binäre Daten und benutzerdefinierte Ressourcen in Visual C++-, Visual Basic- oder Visual C#-Projekten.|
+|[Dialog-Editor](../windows/dialog-editor.md)|Dialog Felder in Visual Studio C++-Projekten.|
+|[Bild-Editor](../windows/image-editor-for-icons.md)|Bitmaps, Symbole, Cursor und andere Bilddateien in Visual C++-, Visual Basic- oder Visual C#-Projekten.|
+|[Menü-Editor](../windows/menu-editor.md)|Menü Ressourcen in Visual Studio C++-Projekten.|
 |[Ribbon-Editor](../mfc/ribbon-designer-mfc.md)|Menübandressourcen in MFC-Projekten.|
-|[Zeichenfolgen-Editor](../windows/string-editor.md)|Zeichen folgen Tabellen in Visual C++ Studio-Projekten.|
-|[Symbolleisten-Editor](../windows/toolbar-editor.md)|Symbolleisten Ressourcen in Visual C++ Studio-Projekten. Der **Symbol** leisten-Editor ist Teil des **Bild-Editors**.|
-|[Versionsinfo-Editor](../windows/version-information-editor.md)|Versionsinformationen in Visual Studio C++ -Projekten.|
+|[Zeichen folgen-Editor](../windows/string-editor.md)|Zeichen folgen Tabellen in Visual Studio C++-Projekten.|
+|[Symbolleisten-Editor](../windows/toolbar-editor.md)|Symbolleisten Ressourcen in Visual Studio C++-Projekten. Der **Symbol** leisten-Editor ist Teil des **Bild-Editors**.|
+|[Versions Informations-Editor](../windows/version-information-editor.md)|Versionsinformationen in Visual Studio C++-Projekten.|
 
 > [!NOTE]
 > Wenn das Projekt noch keine RC-Datei enthält, finden Sie weitere Informationen unter Gewusst [wie: Erstellen von Ressourcen](../windows/how-to-create-a-resource-script-file.md).
 
 ## <a name="view-and-edit-resources"></a>Anzeigen und Bearbeiten von Ressourcen
 
-Für jeden Ressourcentyp ist ein Ressourcen-Editor für diesen Ressourcentyp spezifisch. Mithilfe des zugeordneten Editors können Sie die Elemente einer Ressource neu anordnen, ändern, hinzufügen oder ändern. Sie können eine Ressource auch im [Textformat](../windows/how-to-open-a-resource-script-file-in-text-format.md) und im [Binärformat](../windows/opening-a-resource-for-binary-editing.md)bearbeiten.
+Für jeden Ressourcentyp ist ein Ressourcen-Editor für diesen Ressourcentyp spezifisch. Mithilfe des zugeordneten Editors können Sie die Elemente einer Ressource neu anordnen, ändern, hinzufügen oder ändern. Sie können eine Ressource auch im Textformat und im Binärformat bearbeiten. Weitere Informationen finden Sie unter Gewusst [wie: Erstellen von Ressourcen](../windows/how-to-create-a-resource-script-file.md).
 
 Einige Ressourcentypen sind einzelne Dateien, die importiert und auf verschiedene Arten verwendet werden können. Dazu zählen Bitmaps, Symbole, Cursor, Symbolleisten und HTML-Dateien. Diese Ressourcen verfügen über Dateinamen und [Ressourcen](../windows/symbols-resource-identifiers.md)Bezeichner. Andere, z. b. Dialogfelder, Menüs und Zeichen folgen Tabellen in Win32-Projekten, sind nur als Teil einer Ressourcen Skriptdatei (. RC) oder einer Ressourcen Vorlagen Datei (. rct) vorhanden.
 
@@ -73,7 +73,7 @@ Sie können im [Ressourcenansicht](how-to-create-a-resource-script-file.md#creat
 
 #### <a name="to-view-a-win32-resource-in-a-resource-editor"></a>So zeigen Sie eine Win32-Ressource in einem Ressourcen-Editor an
 
-1. Wechseln Sie zur Menü **Ansicht** > **anderen Windows** > **Ressourcenansicht**.
+1. Wechseln Sie zum Menü **anzeigen**  >  **anderer Windows**-  >  **Ressourcenansicht**.
 
 1. Wenn das **Ressourcenansicht** Fenster nicht das oberste Fenster ist, wählen Sie die Registerkarte **Ressourcenansicht** aus, um Sie oben zu verschieben.
 
@@ -96,7 +96,7 @@ Sie können im [Ressourcenansicht](how-to-create-a-resource-script-file.md#creat
 
 Da verwaltete Projekte keine Ressourcen Skriptdateien verwenden, müssen Sie Ihre Ressourcen aus **Projektmappen-Explorer**öffnen. Verwenden Sie die [Bild](../windows/image-editor-for-icons.md) Bearbeitung und den [Binär-Editor](binary-editor.md) , um mit Ressourcen Dateien in verwalteten Projekten zu arbeiten. Verwaltete Ressourcen, die Sie bearbeiten möchten, müssen verknüpfte Ressourcen sein, und Visual Studio-Ressourcen-Editoren unterstützen die Bearbeitung von eingebetteten Ressourcen nicht
 
-- Um eine verwaltete Ressource in einem Ressourcen-Editor anzuzeigen, doppelklicken Sie in **Projektmappen-Explorer**auf die Ressource, z *. b. bitmap1. bmp*, und die Ressource wird im entsprechenden Editor geöffnet.
+- Um eine verwaltete Ressource in einem Ressourcen-Editor anzuzeigen, doppelklicken Sie in **Projektmappen-Explorer**auf die Ressource, z. b. *Bitmap1.bmp*, und die Ressource wird im entsprechenden Editor geöffnet.
 
 - Zum Löschen einer vorhandenen verwalteten Ressource klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf die Ressource, die Sie löschen möchten, und wählen Sie **Löschen**aus.
 
@@ -118,7 +118,7 @@ Die folgenden Ressourcen bieten keine visuelle Vorschau: Accelerator, Manifest, 
 1. Wählen Sie im [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window)die Schaltfläche **Eigenschaften Seiten** aus.
 
    > [!TIP]
-   > Verwenden Sie eine Verknüpfung, wechseln Sie zur Menü **Ansicht** > **Eigenschaften Seiten**.
+   > Verwenden Sie eine Verknüpfung, wechseln Sie zu Menü **Anzeige**  >  **Eigenschaften Seiten**.
 
    Die **Eigenschaften** Seite für die Ressource wird geöffnet und zeigt eine Vorschau der Ressource an. Mithilfe der nach- **oben** -und **nach-unten** -Taste können Sie im Struktur Steuerelement in **Ressourcenansicht** oder im Dokument Fenster navigieren. Die **Eigenschaften** Seite wird geöffnet und zeigt alle Ressourcen an, die sich im Fokus befinden und in der Vorschau angezeigt werden können.
 
@@ -128,6 +128,6 @@ Keine
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Arbeiten mit Ressourcendateien](../windows/working-with-resource-files.md)<br/>
-[Ressourcendateien](../windows/resource-files-visual-studio.md)<br/>
-[Ressourcenbezeichner (Symbole)](../windows/symbols-resource-identifiers.md)<br/>
+[Working with Resource Files (Arbeiten mit Ressourcendateien)](../windows/working-with-resource-files.md)<br/>
+[Ressourcen Dateien](../windows/resource-files-visual-studio.md)<br/>
+[Ressourcen Bezeichner (Symbole)](../windows/symbols-resource-identifiers.md)<br/>

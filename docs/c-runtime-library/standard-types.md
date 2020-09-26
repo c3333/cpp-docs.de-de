@@ -160,12 +160,12 @@ helpviewer_keywords:
 - CRT_REPORT_HOOK type
 - _finddata_t type
 ms.assetid: 23312dd2-4a6a-4d70-9b48-2a5d0d8c9f28
-ms.openlocfilehash: 38906579a449941d6dad767afa97a32d63fe3445
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: bf90adbdbc739a2dd26d8e59ab38e56aef3bd312
+ms.sourcegitcommit: d9c94dcabd94537e304be0261b3263c2071b437b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87231272"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91352933"
 ---
 # <a name="standard-types"></a>Standardtypen
 
@@ -199,21 +199,21 @@ Die Microsoft-Laufzeitbibliothek definiert die folgenden Standardtypen und TypeD
 |`_CRT_REPORT_HOOK`,<br /><br /> `_CRT_REPORT_HOOKW`,<br /><br /> `_CRT_REPORT_HOOKW_M`|Eine Typendefinition für eine Rückruffunktion, die in [_CrtDbgReport](../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md) aufgerufen wird.<br /><br /> Die Parameter für diese Funktion sind: Berichttyp, Ausgabenachricht und der Rückgabewert der Rückruffunktion.|CRTDBG.H|
 |`dev_t`, `_dev_t` kurze ganze Zahl oder ganze Zahl ohne Vorzeichen|Stellt Gerätehandles dar.|SYS\TYPES.H|
 |`_diskfree_t`-Struktur|Enthält Informationen über ein Laufwerk. Wird von [_getdiskfree](../c-runtime-library/reference/getdiskfree.md)verwendet **.**|DOS.H und DIRECT.H|
-|`div_t`-, `ldiv_t`- und `lldiv_t`-Strukturen|Speichern Werte, die von [div](../c-runtime-library/reference/div.md), [ldiv](../c-runtime-library/reference/ldiv-lldiv.md) und [lldiv](../c-runtime-library/reference/ldiv-lldiv.md) zurückgegeben werden.|STDLIB.H|
+|`div_t`-, `ldiv_t`- und `lldiv_t`-Strukturen|Speichern Werte, die von [div](reference/div.md), [ldiv](../c-runtime-library/reference/ldiv-lldiv.md) und [lldiv](../c-runtime-library/reference/ldiv-lldiv.md) zurückgegeben werden.|STDLIB.H|
 |`errno_t`-Integer|Wird für einen Parameter oder einen Funktionsrückgabetyp verwendet, der Fehlercodes von `errno` behandelt.|STDDEF.H,<br /><br /> CRTDEFS.H|
 |`_exception`-Struktur|Speichert Fehlerinformationen für [_matherr](../c-runtime-library/reference/matherr.md).|MATH.H|
 |`_EXCEPTION_POINTERS`|Enthält einen Ausnahmedatensatz. Weitere Informationen finden Sie unter [EXCEPTION_POINTERS](/windows/win32/api/winnt/ns-winnt-exception_pointers).|FPIEEE.H|
 |`FILE`-Struktur|Speichert Informationen zum aktuellen Zustand des Streams; wird in allen E/A-Operationen eines Streams verwendet.|STDIO.H|
 |`_finddata_t`-, `_wfinddata_t`-, `_finddata32_t`-, `_wfinddata32_t`-, `_finddatai64_t`-, `_wfinddatai64_t`-, `__finddata64_t`-, `__wfinddata64_t`-, `__finddata32i64_t`-, `__wfinddata32i64_t`-, `__finddata64i32_t`-, `__wfinddata64i32_t`-Strukturen|Speichern Dateiattributinformationen, die von [_findfirst, _wfindfirst und verwandten Funktionen](../c-runtime-library/reference/findfirst-functions.md) sowie [_findnext, _wfindnext und verwandten Funktionen](../c-runtime-library/reference/findnext-functions.md) zurückgegeben werden. Informationen über Strukturmember finden Sie unter [Dateinamen-Suchfunktionen](../c-runtime-library/filename-search-functions.md).|IO.H, WCHAR.H|
 |`_FPIEEE_RECORD`-Struktur|Enthält Informationen zur IEEE-Gleitkommaausnahme; wird an einen benutzerdefinierten Traphandler durch [_fpieee_flt](../c-runtime-library/reference/fpieee-flt.md) übergeben.|FPIEEE.H|
-|`fpos_t`(lange ganze Zahl, **`__int64`** oder Struktur, abhängig von der Zielplattform)|Wird von [fgetpos](../c-runtime-library/reference/fgetpos.md) und [fsetpos](../c-runtime-library/reference/fsetpos.md) verwendet, um Informationen für die eindeutige Angabe aller Positionen in einer Datei aufzuzeichnen.|STDIO.H|
+|`fpos_t` (lange ganze Zahl, **`__int64`** oder Struktur, abhängig von der Zielplattform)|Wird von [fgetpos](../c-runtime-library/reference/fgetpos.md) und [fsetpos](../c-runtime-library/reference/fsetpos.md) verwendet, um Informationen für die eindeutige Angabe aller Positionen in einer Datei aufzuzeichnen.|STDIO.H|
 |`_fsize_t` (lange ganze Zahl ohne Vorzeichen)|Wird verwendet, um die Größe einer Datei anzuzeigen.|IO.H,<br /><br /> WCHAR.H|
 |`_HEAPINFO`-Struktur|Enthält Informationen zum nächsten Heapeintrag für [_heapwalk](../c-runtime-library/reference/heapwalk.md).|MALLOC.H|
 |`_HFILE` (void \*)|Ein Betriebssystem-Dateihandle.|CRTDBG.H|
 |`imaxdiv_t`|Der Typ des Werts, der von der [imaxdiv](../c-runtime-library/reference/imaxdiv.md)-Funktion zurückgegeben wird und den Quotienten und den Rest enthält.|inttypes.h|
 |`ino_t`, `_ino_t` (kurz ohne Vorzeichen)|Zur Rückgabe von Statusinformationen.|WCHAR.H|
 |`intmax_t`|Ein ganzzahliger Typ mit Vorzeichen, der beliebige Werte eines ganzzahligen Typs mit Vorzeichen darstellen kann.|stdint.h|
-|`intptr_t`(lange ganze Zahl oder **`__int64`** , abhängig von der Zielplattform)|Speichert einen Zeiger (oder HANDLE) auf Win32- und Win64-Plattformen.|STDDEF.H und andere Includedateien|
+|`intptr_t` (lange ganze Zahl oder **`__int64`** , abhängig von der Zielplattform)|Speichert einen Zeiger (oder HANDLE) auf Win32- und Win64-Plattformen.|STDDEF.H und andere Includedateien|
 |`jmp_buf`-Array|Wird von [setjmp](../c-runtime-library/reference/setjmp.md) und [longjmp](../c-runtime-library/reference/longjmp.md) verwendet, um die Programmumgebung zu sichern und wiederherzustellen.|SETJMP.H|
 |`lconv`-Struktur|Enthält Formatierungsregeln für numerische Werte in verschiedenen Ländern/Regionen. Wird durch [localeconv](../c-runtime-library/reference/localeconv.md) verwendet.|LOCALE.H|
 |`_LDOUBLE`,<br /><br /> `_LONGDOUBLE`,<br /><br /> `_LDBL12` (long double- oder vorzeichenloses Zeichenarray)|Wird verwendet, um einen long double-Wert darzustellen.|STDLIB.H|
@@ -222,7 +222,7 @@ Die Microsoft-Laufzeitbibliothek definiert die folgenden Standardtypen und TypeD
 |langer `off_t`, `_off_t`-Integer|Stellt den Dateioffsetwert dar.|WCHAR.H, SYS\TYPES.H|
 |`_onexit_t`,<br /><br /> `_onexit_m_t`-Zeiger|Wird durch [_onexit, _onexit_m](../c-runtime-library/reference/onexit-onexit-m.md) zurückgegeben.|STDLIB.H|
 |`_PNH`-Zeiger auf eine Funktion|Typ des Arguments für [_set_new_handler](../c-runtime-library/reference/set-new-handler.md).|NEW.H|
-|`ptrdiff_t`(lange ganze Zahl oder **`__int64`** , abhängig von der Zielplattform)|Ergebnis der Subtraktion von zwei Zeigern.|CRTDEFS.H|
+|`ptrdiff_t` (lange ganze Zahl oder **`__int64`** , abhängig von der Zielplattform)|Ergebnis der Subtraktion von zwei Zeigern.|CRTDEFS.H|
 |`_purecall_handler`,<br /><br /> `_purecall_handler_m`|Eine Typendefinition für eine Rückruffunktion, die aufgerufen wird, wenn eine reine virtuelle Funktion aufgerufen wird. Wird von [_get_purecall_handler, _set_purecall_handler](../c-runtime-library/reference/get-purecall-handler-set-purecall-handler.md) verwendet. Eine `_purecall_handler`-Funktion sollte einen ungültigen void-Rückgabetyp haben.|STDLIB.H|
 |`_RTC_error_fn`-Typendefinition|Eine Typendefinition für eine Funktion, die Laufzeitfehler-Überprüfungen behandelt. Wird in [_RTC_SetErrorFunc](../c-runtime-library/reference/rtc-seterrorfunc.md) verwendet.|RTCAPI.H|
 |`_RTC_error_fnW`-Typendefinition|Eine Typendefinition für eine Funktion, die Laufzeitfehler-Überprüfungen behandelt. Wird in [_RTC_SetErrorFuncW](../c-runtime-library/reference/rtc-seterrorfuncw.md) verwendet.|RTCAPI.H|
@@ -242,7 +242,7 @@ Die Microsoft-Laufzeitbibliothek definiert die folgenden Standardtypen und TypeD
 |`__timeb64`-Struktur|Wird durch [_ftime64](../c-runtime-library/reference/ftime-ftime32-ftime64.md) und [_ftime_s _ftime32_s, _ftime64_s](../c-runtime-library/reference/ftime-s-ftime32-s-ftime64-s.md) verwendet, um die aktuelle Systemzeit zu speichern.|SYS\TIMEB.H|
 |`tm`-Struktur|Wird durch [asctime, _wasctime](../c-runtime-library/reference/asctime-wasctime.md), [asctime_s, _wasctime_s](../c-runtime-library/reference/asctime-s-wasctime-s.md), [gmtime, _gmtime32, _gmtime64](../c-runtime-library/reference/gmtime-gmtime32-gmtime64.md), [gmtime_s, _gmtime32_s, _gmtime64_s](../c-runtime-library/reference/gmtime-s-gmtime32-s-gmtime64-s.md), [localtime, _localtime32, _localtime64](../c-runtime-library/reference/localtime-localtime32-localtime64.md), [localtime_s, _localtime32_s, _localtime64_s](../c-runtime-library/reference/localtime-s-localtime32-s-localtime64-s.md), [mktime, _mktime32, _mktime64](../c-runtime-library/reference/mktime-mktime32-mktime64.md) und [strftime, wcsftime, _strftime_l, _wcsftime_l](../c-runtime-library/reference/strftime-wcsftime-strftime-l-wcsftime-l.md) verwendet, um Uhrzeitinformationen zu speichern und abzurufen.|TIME.H|
 |`uintmax_t`|Ein ganzzahliger Typ ohne Vorzeichen, der einen beliebigen Wert eines ganzzahligen Typs ohne Vorzeichen darstellen kann.|stdint.h|
-|`uintptr_t`(lange ganze Zahl oder **`__int64`** , abhängig von der Zielplattform)|Eine ganze Zahl ohne Vorzeichen oder eine __int64-Version ohne Vorzeichen von `intptr_t`.|STDDEF.H und andere Includedateien|
+|`uintptr_t` (lange ganze Zahl oder **`__int64`** , abhängig von der Zielplattform)|Eine ganze Zahl ohne Vorzeichen oder eine __int64-Version ohne Vorzeichen von `intptr_t`.|STDDEF.H und andere Includedateien|
 |`unexpected_function`|Eine Typendefinition für eine Rückruffunktion, die aufgerufen wird, wenn [unexpected](../c-runtime-library/reference/unexpected-crt.md) aufgerufen wird. Wird von [set_unexpected](../c-runtime-library/reference/set-unexpected-crt.md) verwendet.|EH.H|
 |`_utimbuf`-Struktur|Speichert Dateizugriffs- und Änderungszeiten, die von [_utime, _wutime](../c-runtime-library/reference/utime-utime32-utime64-wutime-wutime32-wutime64.md) und [_futime, _futime32, _futime64](../c-runtime-library/reference/futime-futime32-futime64.md) verwendet werden, um Datumsangaben zu Dateiänderungen zu ändern.|SYS\UTIME.H|
 |`_utimbuf32`-Struktur|Speichert Dateizugriffs- und Änderungszeiten, die von [_utime, _utime32, _utime64, _wutime, _wutime32, _wutime64](../c-runtime-library/reference/utime-utime32-utime64-wutime-wutime32-wutime64.md) und [_futime, _futime32, _futime64](../c-runtime-library/reference/futime-futime32-futime64.md) verwendet werden, um Datumsangaben zu Dateiänderungen zu ändern.|SYS\UTIME.H|

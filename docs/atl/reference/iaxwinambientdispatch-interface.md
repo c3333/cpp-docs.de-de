@@ -35,12 +35,12 @@ f1_keywords:
 helpviewer_keywords:
 - IAxWinAmbientDispatch interface
 ms.assetid: 55ba6f7b-7a3c-4792-ae47-c8a84b683ca9
-ms.openlocfilehash: a53481a57676b5b4a253a3501d3536e5115907a7
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: dbd682451ca5499aef4b16b3b51feba8411bdd12
+ms.sourcegitcommit: d9c94dcabd94537e304be0261b3263c2071b437b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88833412"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91352959"
 ---
 # <a name="iaxwinambientdispatch-interface"></a>IAxWinAmbientDispatch-Schnittstelle
 
@@ -59,7 +59,7 @@ interface IAxWinAmbientDispatch : IDispatch
 
 ### <a name="methods"></a>Methoden
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|-|
 |[get_AllowContextMenu](#get_allowcontextmenu)|Die- `AllowContextMenu` Eigenschaft gibt an, ob das gehostete Steuerelement sein eigenes Kontextmenü anzeigen darf.|
 |[get_AllowShowUI](#get_allowshowui)|Die- `AllowShowUI` Eigenschaft gibt an, ob für das gehostete Steuerelement eine eigene Benutzeroberfläche angezeigt werden darf.|
@@ -90,7 +90,7 @@ interface IAxWinAmbientDispatch : IDispatch
 |[put_OptionKeyPath](#put_optionkeypath)|Die- `OptionKeyPath` Eigenschaft gibt den Registrierungsschlüssel Pfad zu den Benutzereinstellungen an.|
 |[put_UserMode](#put_usermode)|Die- `UserMode` Eigenschaft gibt den Umgebungs Benutzermodus des Containers an.|
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Diese Schnittstelle wird durch die ActiveX-Steuerelemente des ATL-Steuer Elements verfügbar gemacht. Ruft die-Methoden für diese Schnittstelle auf, um die Umgebungs Eigenschaften festzulegen, die für das gehostete Steuerelement verfügbar sind, oder um andere Aspekte des Container Verhaltens anzugeben. Um die von bereitgestellten Eigenschaften zu ergänzen `IAxWinAmbientDispatch` , verwenden Sie [iaxwinambientdispatchex](../../atl/reference/iaxwinambientdispatchex-interface.md).
 
@@ -98,7 +98,7 @@ Diese Schnittstelle wird durch die ActiveX-Steuerelemente des ATL-Steuer Element
 
 Wenn Sie mit ATL90.dll verknüpfen, lädt **AxHost** die Typinformationen aus der Typbibliothek in der dll.
 
-Weitere Informationen finden Sie unter Hosting von ActiveX-Steuer [Elementen mithilfe von ATL AxHost](../../atl/hosting-activex-controls-using-atl-axhost.md) .
+Weitere Informationen finden Sie unter Hosting von ActiveX-Steuer [Elementen mithilfe von ATL AxHost](../../atl/atl-control-containment-faq.md#hosting-activex-controls-using-atl-axhost) .
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
@@ -127,7 +127,7 @@ vorgenommen Die Adresse einer Variablen, die den aktuellen Wert dieser Eigenscha
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet VARIANT_TRUE als Standardwert dieser Eigenschaft.
 
@@ -148,7 +148,7 @@ vorgenommen Die Adresse einer Variablen, die den aktuellen Wert dieser Eigenscha
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet VARIANT_FALSE als Standardwert dieser Eigenschaft.
 
@@ -169,7 +169,7 @@ vorgenommen Die Adresse einer Variablen, die den aktuellen Wert dieser Eigenscha
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet VARIANT_TRUE als Standardwert dieser Eigenschaft.
 
@@ -190,7 +190,7 @@ vorgenommen Die Adresse einer Variablen, die den aktuellen Wert dieser Eigenscha
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet COLOR_BTNFACE oder COLOR_WINDOW als Standardwert dieser Eigenschaft (abhängig davon, ob das übergeordnete Element des Host Fensters ein Dialogfeld ist oder nicht).
 
@@ -211,7 +211,7 @@ vorgenommen Die Adresse einer Variablen, die den aktuellen Wert dieser Eigenscha
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet VARIANT_FALSE als Standardwert dieser Eigenschaft.
 
@@ -232,7 +232,7 @@ vorgenommen Die Adresse einer Variablen, die den aktuellen Wert dieser Eigenscha
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet DOCHOSTUIDBLCLK_DEFAULT als Standardwert dieser Eigenschaft.
 
@@ -253,7 +253,7 @@ vorgenommen Die Adresse einer Variablen, die den aktuellen Wert dieser Eigenscha
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet DOCHOSTUIFLAG_NO3DBORDER als Standardwert dieser Eigenschaft.
 
@@ -274,7 +274,7 @@ vorgenommen Die Adresse eines `IFontDisp` Schnittstellen Zeigers, der zum Empfan
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet die standardmäßige GUI-Schriftart oder die System Schriftart als Standardwert dieser Eigenschaft.
 
@@ -295,7 +295,7 @@ vorgenommen Die Adresse einer Variablen, die den aktuellen Wert dieser Eigenscha
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet die Textfarbe des System Fensters als Standardwert dieser Eigenschaft.
 
@@ -316,7 +316,7 @@ vorgenommen Die Adresse einer Variablen, die den aktuellen Wert dieser Eigenscha
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet das Standard Gebiets Schema des Benutzers als Standardwert dieser Eigenschaft.
 
@@ -339,7 +339,7 @@ vorgenommen Die Adresse einer Variablen, die den aktuellen Wert dieser Eigenscha
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet VARIANT_TRUE als Standardwert dieser Eigenschaft.
 
@@ -377,7 +377,7 @@ vorgenommen Die Adresse einer Variablen, die den aktuellen Wert dieser Eigenscha
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung gibt immer VARIANT_FALSE als Wert dieser Eigenschaft zurück.
 
@@ -398,7 +398,7 @@ vorgenommen Die Adresse einer Variablen, die den aktuellen Wert dieser Eigenscha
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung gibt immer VARIANT_FALSE als Wert dieser Eigenschaft zurück.
 
@@ -419,7 +419,7 @@ vorgenommen Die Adresse einer Variablen, die den aktuellen Wert dieser Eigenscha
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet VARIANT_TRUE als Standardwert dieser Eigenschaft.
 
@@ -440,7 +440,7 @@ in Der neue Wert dieser Eigenschaft.
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet VARIANT_TRUE als Standardwert dieser Eigenschaft.
 
@@ -461,7 +461,7 @@ in Der neue Wert dieser Eigenschaft.
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet VARIANT_FALSE als Standardwert dieser Eigenschaft.
 
@@ -482,7 +482,7 @@ in Der neue Wert dieser Eigenschaft.
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet VARIANT_TRUE als Standardwert dieser Eigenschaft.
 
@@ -503,7 +503,7 @@ in Der neue Wert dieser Eigenschaft.
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet COLOR_BTNFACE oder COLOR_WINDOW als Standardwert dieser Eigenschaft (abhängig davon, ob das übergeordnete Element des Host Fensters ein Dialogfeld ist oder nicht).
 
@@ -524,7 +524,7 @@ in Der neue Wert dieser Eigenschaft.
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet VARIANT_FALSE als Standardwert dieser Eigenschaft.
 
@@ -545,7 +545,7 @@ in Der neue Wert dieser Eigenschaft.
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet DOCHOSTUIDBLCLK_DEFAULT als Standardwert dieser Eigenschaft.
 
@@ -566,7 +566,7 @@ in Der neue Wert dieser Eigenschaft.
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet DOCHOSTUIFLAG_NO3DBORDER als Standardwert dieser Eigenschaft.
 
@@ -587,7 +587,7 @@ in Der neue Wert dieser Eigenschaft.
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet die standardmäßige GUI-Schriftart oder die System Schriftart als Standardwert dieser Eigenschaft.
 
@@ -608,7 +608,7 @@ in Der neue Wert dieser Eigenschaft.
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet die Textfarbe des System Fensters als Standardwert dieser Eigenschaft.
 
@@ -629,7 +629,7 @@ in Der neue Wert dieser Eigenschaft.
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet das Standard Gebiets Schema des Benutzers als Standardwert dieser Eigenschaft.
 
@@ -650,7 +650,7 @@ in Der neue Wert dieser Eigenschaft.
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet VARIANT_TRUE als Standardwert dieser Eigenschaft.
 
@@ -688,7 +688,7 @@ in Der neue Wert dieser Eigenschaft.
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die ATL-Host Objekt Implementierung verwendet VARIANT_TRUE als Standardwert dieser Eigenschaft.
 

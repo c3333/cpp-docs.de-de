@@ -6,12 +6,12 @@ helpviewer_keywords:
 - header files, C++ Standard Library
 - C++ Standard Library, header files
 ms.assetid: e7bf497a-0f63-48d0-9b54-cb0eef4073c4
-ms.openlocfilehash: 0bbd67468c1df8b9e7c078f498d19f01f848149c
-ms.sourcegitcommit: e58918c45316d799c1952ca7797a85adbcd0c472
+ms.openlocfilehash: dfadfb99e10fdb916b3fb4dc515f89e6f9252fde
+ms.sourcegitcommit: d9c94dcabd94537e304be0261b3263c2071b437b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89281847"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91352881"
 ---
 # <a name="c-standard-library-header-files"></a>Header Dateien der C++-Standardbibliothek
 
@@ -23,11 +23,11 @@ Header Dateien für die C++-Standardbibliothek und-Erweiterungen nach Kategorie.
 
 | Category | Header |
 | - | - |
-| [Algorithmen](../cpp/algorithms-modern-cpp.md) | [\<algorithm>](algorithm.md), [\<cstdlib>](cstdlib.md), [\<numeric>](numeric.md) |
+| [Algorithmen](./algorithms.md) | [\<algorithm>](algorithm.md), [\<cstdlib>](cstdlib.md), [\<numeric>](numeric.md) |
 | Atomarische Vorgänge |  [\<atomic>](atomic.md)<sup>11:</sup> |
 | Wrapper für die C-Bibliothek | [\<cassert>](cassert.md), [\<ccomplex>](ccomplex.md) <sup>11 a</sup>b, [\<cctype>](cctype.md) , [\<cerrno>](cerrno.md) , [\<cfenv>](cfenv.md) <sup>11</sup>, [\<cfloat>](cfloat.md) , [\<cinttypes>](cinttypes.md) <sup>11</sup>, [\<ciso646>](ciso646.md) <sup>b</sup>, [\<climits>](climits.md) , [\<clocale>](clocale.md) , [\<cmath>](cmath.md) , [\<csetjmp>](csetjmp.md) , [\<csignal>](csignal.md) , [\<cstdalign>](cstdalign.md) <sup>11 a b</sup>, [\<cstdarg>](cstdarg.md) , [\<cstdbool>](cstdbool.md) <sup>11 a b</sup>, [\<cstddef>](cstddef.md) , [\<cstdint>](cstdint.md) <sup>11</sup>, [\<cstdio>](cstdio.md) , [\<cstdlib>](cstdlib.md) , [\<cstring>](cstring.md) , [\<ctgmath>](ctgmath.md) <sup>11 a b</sup>, [\<ctime>](ctime.md) , [\<cuchar>](cuchar.md) <sup>11</sup>, [\<cwchar>](cwchar.md) ,[\<cwctype>](cwctype.md) |
 | Konzepte | \<concepts><sup>20</sup> |
-| [Container](../cpp/containers-modern-cpp.md) | |
+| [Container](./stl-containers.md) | |
 | Sequenz Container | [\<array>](array.md)<sup>11</sup>, [\<deque>](deque.md) , [\<forward_list>](forward-list.md) <sup>11</sup>, [\<list>](list.md) ,[\<vector>](vector.md) |
 | Geordnete assoziative Container| [\<map>](map.md), [\<set>](set.md) |
 | Ungeordnete assoziative Container | [\<unordered_map>](unordered-map.md)<sup>11</sup>, [\<unordered_set>](unordered-set.md) <sup>11</sup> |
@@ -61,9 +61,9 @@ Header Dateien für die C++-Standardbibliothek und-Erweiterungen nach Kategorie.
 
 |Category|Header|
 |-|-|
-|[Algorithmen](../cpp/algorithms-modern-cpp.md)|[\<algorithm>](algorithm.md)|
+|[Algorithmen](./algorithms.md)|[\<algorithm>](algorithm.md)|
 |Wrapper für die C-Bibliothek|[\<cassert>](cassert.md), [\<cctype>](cctype.md), [\<cerrno>](cerrno.md), [\<cfenv>](cfenv.md), [\<cfloat>](cfloat.md), [\<cinttypes>](cinttypes.md), [\<ciso646>](ciso646.md), [\<climits>](climits.md), [\<clocale>](clocale.md), [\<cmath>](cmath.md), [\<csetjmp>](csetjmp.md), [\<csignal>](csignal.md), [\<cstdarg>](cstdarg.md), [\<cstdbool>](cstdbool.md), [\<cstddef>](cstddef.md), [\<cstdint>](cstdint.md), [\<cstdio>](cstdio.md), [\<cstdlib>](cstdlib.md), [\<cstring>](cstring.md), [\<ctgmath>](ctgmath.md), [\<ctime>](ctime.md), [\<cwchar>](cwchar.md), [\<cwctype>](cwctype.md)|
-|[Container](../cpp/containers-modern-cpp.md)||
+|[Container](./stl-containers.md)||
 |Sequenz Container|[\<array>](array.md), [\<deque>](deque.md), [\<forward_list>](forward-list.md), [\<list>](list.md), [\<vector>](vector.md)|
 |Geordnete assoziative Container| [\<map>](map.md), [\<set>](set.md)|
 |Ungeordnete assoziative Container|[\<unordered_map>](unordered-map.md), [\<unordered_set>](unordered-set.md)|

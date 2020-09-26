@@ -33,12 +33,12 @@ helpviewer_keywords:
 - keyboard shortcuts [C++], property changing
 - accelerator tables [C++], changing properties
 ms.assetid: 013c30b6-5d61-4f1c-acef-8bd15bed7060
-ms.openlocfilehash: fdd8a4be8830dc4b2ac1a559194828a4d2f56ab0
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: c98ff1fd44b73b3f204e9b952836c387f7f21146
+ms.sourcegitcommit: d9c94dcabd94537e304be0261b3263c2071b437b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84623482"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353089"
 ---
 # <a name="accelerator-editor-c"></a>Zugriffstasten-Editor (C++)
 
@@ -72,9 +72,9 @@ Im folgenden sind die rechtlichen Einträge für die **modifizierereigenschaft**
    |Wert|BESCHREIBUNG|
    |-----------|-----------------|
    |**None**|Der Benutzer drückt nur den **Schlüssel** Wert.<br/><br/>Dieser Wert wird am effektivsten mit den ASCII/ANSI-Werten 001 bis 026 verwendet, der als ^ A bis ^ Z (**STRG + A** bis **STRG + Z**) interpretiert wird.|
-   |**ALT**|Der Benutzer muss vor dem **Schlüssel** Wert **alt** drücken.|
-   |**Drücken**|Der Benutzer muss vor dem **Schlüssel** Wert **STRG** drücken, der mit dem ASCII-Typ nicht gültig ist.|
-   |**Schuss**|Der Benutzer muss vor dem Schlüsselwert **UMSCHALT** **Taste** drücken.|
+   |**Alt**|Der Benutzer muss vor dem **Schlüssel** Wert **alt** drücken.|
+   |**Ctrl**|Der Benutzer muss vor dem **Schlüssel** Wert **STRG** drücken, der mit dem ASCII-Typ nicht gültig ist.|
+   |**Shift**|Der Benutzer muss vor dem Schlüsselwert **UMSCHALT** **Taste** drücken.|
    |**STRG + ALT**|Der Benutzer muss vor dem **Schlüssel** Wert **STRG** und **alt** drücken, und der ASCII-Typ ist ungültig.|
    |**STRG + UMSCHALT**|Der Benutzer muss **STRG** und **UMSCHALT** vor dem **Schlüssel** Wert drücken, nicht gültig mit dem ASCII-Typ.|
    |**Alt + Umschalttaste**|Der Benutzer muss **alt** und **UMSCHALT** vor dem **Schlüssel** Wert drücken, der mit dem ASCII-Typ nicht gültig ist.|
@@ -84,7 +84,7 @@ Die **Key** -Eigenschaft legt den eigentlichen Schlüssel fest, der als Zugriffs
 
 Im folgenden sind die rechtlichen Einträge für die Key-Eigenschaft in der Zugriffs **Tasten** Tabelle aufgeführt:
 
-   |Wert|Beschreibung|
+   |Wert|BESCHREIBUNG|
    |-----------|-----------------|
    |Eine ganze Zahl zwischen 0 und 255 im Dezimal Format.|Der-Wert bestimmt wie folgt, ob der-Wert als ASCII oder ANSI behandelt wird:<br/><br/>   -Einstellige Zahlen werden immer als der entsprechende Schlüssel interpretiert, nicht als ASCII-oder ANSI-Werte.<br/>   -Werte von 1 bis 26 werden bei vorangestellten Nullen als ^ A bis ^ Z interpretiert, was den ASCII-Wert der Buchstaben des Alphabets darstellt, wenn mit der **STRG** -Taste gedrückt wird.<br/>   -Die Werte aus 27-32 werden immer als dreistellige Dezimalwerte von 027 bis 032 interpretiert.<br/>   -Werte zwischen 033 und 255, ob mit 0 (null) oder nicht, werden als ANSI-Werte interpretiert.|
    |Ein einzelnes Tastatur Zeichen.|Großbuchstabe A-Z oder die Zahlen 0-9 können entweder ASCII-oder Virtual Key-Werte sein. Jedes andere Zeichen ist nur ASCII.|
@@ -184,13 +184,13 @@ Die folgenden Verfahren beziehen sich auf die Verwendung von Standard Eigenschaf
 1. Wechseln Sie zum [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window) , und geben Sie die Werte ein, die von allen ausgewählten Accelerators gemeinsam genutzt werden sollen.
 
 > [!NOTE]
-> Jeder Modifiziererwert wird im **Eigenschaften** Fenster als boolesche Eigenschaft angezeigt. Wenn Sie einen [Modifiziererwert](../windows/accelerator-modifier-property.md) im **Eigenschaften** Fenster ändern, behandelt die Zugriffstasten Tabelle den neuen Modifizierer als Ergänzung zu allen zuvor gefundenen Modifizierern. Wenn Sie daher einen Modifiziererwert festlegen, müssen Sie alle festlegen, um sicherzustellen, dass jede Zugriffstaste die gleichen **Modifizierereinstellungen** gemeinsam nutzt.
+> Jeder Modifiziererwert wird im **Eigenschaften** Fenster als boolesche Eigenschaft angezeigt. Wenn Sie einen Modifiziererwert im **Eigenschaften** Fenster ändern, behandelt die Zugriffstasten Tabelle den neuen Modifizierer als Ergänzung zu allen zuvor gefundenen Modifizierern. Wenn Sie daher einen Modifiziererwert festlegen, müssen Sie alle festlegen, um sicherzustellen, dass jede Zugriffstaste die gleichen **Modifizierereinstellungen** gemeinsam nutzt.
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
 Win32
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ressourcen-Editoren](resource-editors.md)<br/>
 [Zugriffstasten](predefined-accelerator-keys.md)<br/>

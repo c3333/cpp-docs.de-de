@@ -4,12 +4,12 @@ description: Hier werden die neuen Programmierausdrücke in modernem C++ und der
 ms.date: 05/17/2020
 ms.topic: conceptual
 ms.assetid: 1cb1b849-ed9c-4721-a972-fd8f3dab42e2
-ms.openlocfilehash: f2b9159e74ba7ce37c7eab1513826da939a3be49
-ms.sourcegitcommit: f1752bf90b4f869633a859ace85439ca19e208b2
+ms.openlocfilehash: 05c1fe80086e5b98d3f8a9c66c6759fddab39fa0
+ms.sourcegitcommit: d9c94dcabd94537e304be0261b3263c2071b437b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "87232195"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353050"
 ---
 # <a name="welcome-back-to-c---modern-c"></a>Willkommen zurück bei C++ (Modern C++)
 
@@ -75,7 +75,7 @@ Wenn eine Leistungsoptimierung erforderlich ist, erwägen Sie folgende Verwendun
 
 - Unsortierte assoziative Container wie [`unordered_map`](../standard-library/unordered-map-class.md) – diese erzeugen weniger Aufwand pro Element und führen stetig Lookupvorgänge durch, aber es ist schwieriger, sie korrekt und effizient zu verwenden.
 
-- Ein sortiertes `vector`-Element – Weitere Informationen finden Sie unter [Algorithmen](../cpp/algorithms-modern-cpp.md).
+- Ein sortiertes `vector`-Element – Weitere Informationen finden Sie unter [Algorithmen](../standard-library/algorithms.md).
 
 Verwenden Sie keine C-Arrays. Verwenden Sie für ältere APIs, die direkten Zugriff auf die Daten benötigen, stattdessen Zugriffsmethoden wie `f(vec.data(), vec.size());`. Weitere Informationen zu Containern finden Sie unter [C++-Standardbibliothekcontainer](../standard-library/stl-containers.md).
 

@@ -42,12 +42,12 @@ helpviewer_keywords:
 - RichEdit 1.0 control
 - rich edit controls [C++], RichEdit 1.0
 ms.assetid: 73cef03f-5c8c-456a-87d1-1458dff185cf
-ms.openlocfilehash: 90e4eb659de6d1d5ed1488365f6637de2d537e57
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 79ea16e2d1737063040302a1ce111d275ae28e27
+ms.sourcegitcommit: d9c94dcabd94537e304be0261b3263c2071b437b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88831683"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91352751"
 ---
 # <a name="how-to-add-edit-or-delete-controls-c"></a>Vorgehensweise: Hinzufügen, bearbeiten oder Löschen von Steuerelementen (C++)
 
@@ -201,13 +201,13 @@ Um RichEdit-Steuerelemente verwenden zu können, müssen Sie aufzurufen `LoadLib
 >
 > Sie können die aktuelle [CRichEditCtrl](../mfc/reference/cricheditctrl-class.md) -Klasse mit dem älteren RichEdit 1,0-Steuerelement verwenden, `CRichEditCtrl` ist jedoch nur für die Unterstützung des RichEdit-Steuer Elements 2,0 vorgesehen. Da RichEdit 1,0 und RichEdit 2,0 ähnlich sind, funktionieren die meisten Methoden. Es gibt jedoch einige Unterschiede zwischen den Steuerelementen 1,0 und 2,0, sodass einige Methoden möglicherweise falsch funktionieren oder überhaupt nicht funktionieren.
 
-### <a name="activex-controls"></a>ActiveX-Steuerelemente
+## <a name="insert-activex-controls"></a>ActiveX-Steuerelemente einfügen
 
 Visual Studio ermöglicht Ihnen das Einfügen von ActiveX-Steuerelementen in Ihr Dialogfeld. Weitere Informationen finden Sie unter [MFC-ActiveX](../mfc/mfc-activex-controls.md) - [Steuer](../mfc/activex-control-containers.md)Elemente und ActiveX-Steuerelement Container.
 
 Im Dialogfeld **ActiveX-Steuerelement einfügen** können Sie ActiveX-Steuerelemente in das Dialogfeld einfügen, während Sie den Dialogfeld- [Editor](dialog-editor.md)verwenden. Dieses Dialogfeld enthält die folgenden Eigenschaften:
 
-|Eigenschaft|Beschreibung|
+|Eigenschaft|BESCHREIBUNG|
 |---|---|
 |**ActiveX-Steuerelement**|Zeigt eine Liste von ActiveX-Steuerelementen an.<br/><br/>Das Einfügen eines Steuer Elements aus diesem Dialogfeld generiert keine Wrapper Klasse. Wenn Sie eine Wrapper Klasse benötigen, verwenden Sie [Klassenansicht](/visualstudio/ide/viewing-the-structure-of-code) , um einen zu erstellen, siehe [Hinzufügen einer Klasse](../ide/adding-a-class-visual-cpp.md).<br/><br/>Wenn ein ActiveX-Steuerelement in diesem Dialogfeld nicht angezeigt wird, versuchen Sie, das Steuerelement gemäß den Anweisungen des Herstellers zu installieren.|
 |**Path**|Zeigt die Datei an, in der das ActiveX-Steuerelement gefunden wurde.|
@@ -215,7 +215,7 @@ Im Dialogfeld **ActiveX-Steuerelement einfügen** können Sie ActiveX-Steuerelem
 > [!CAUTION]
 > Der Vertrieb ist möglicherweise nicht für alle ActiveX-Steuerelemente auf Ihrem System rechtlich zulässig. Lesen Sie den Lizenzvertrag für die Software, die die Steuerelemente installiert hat, oder wenden Sie sich an das Softwareunternehmen.
 
-#### <a name="to-add-an-activex-control"></a>Hinzufügen eines ActiveX-Steuer Elements
+### <a name="to-add-an-activex-control"></a>Hinzufügen eines ActiveX-Steuer Elements
 
 1. Öffnen Sie ein Dialogfeld im **Dialog-Editor**.
 
@@ -230,7 +230,7 @@ Im Dialogfeld **ActiveX-Steuerelement einfügen** können Sie ActiveX-Steuerelem
 > [!TIP]
 > Mithilfe des Kontextmenüs im **Dialog-Editor** können Sie schnell registrierte ActiveX-Steuerelemente zu einem Dialog Feld hinzufügen, oder Sie können dem Fenster **Toolbox** ActiveX-Steuerelemente hinzufügen, um den Zugriff zu vereinfachen.
 
-#### <a name="to-edit-properties-for-an-activex-control"></a>So bearbeiten Sie die Eigenschaften für ein ActiveX-Steuerelement
+### <a name="to-edit-properties-for-an-activex-control"></a>So bearbeiten Sie die Eigenschaften für ein ActiveX-Steuerelement
 
 ActiveX-Steuerelemente, die von unabhängigen Anbietern bereitgestellt werden, verfügen möglicherweise über eigene Eigenschaften und Merkmale. Diese Eigenschaften werden im **Eigenschaften** Fenster angezeigt. Alle Eigenschaften Seiten, die von den Writern des ActiveX-Steuer Elements erstellt werden, werden im Dialogfeld **Eigenschaften Seiten** angezeigt. (Um die **Eigenschaften Seite** für ein bestimmtes ActiveX-Steuerelement anzuzeigen, wählen Sie die Schaltfläche **Eigenschaften Seite** in der [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window)) aus.
 

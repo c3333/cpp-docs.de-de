@@ -1,5 +1,5 @@
 ---
-title: Symbolleisten-C++Editor ()
+title: Symbolleisten-Editor (C++)
 ms.date: 02/14/2019
 f1_keywords:
 - vc.editors.toolbar.F1
@@ -50,33 +50,33 @@ helpviewer_keywords:
 - buttons [C++], tool tips
 - Toolbar editor [C++], creating tool tips
 ms.assetid: aa9f0adf-60f6-4f79-ab05-bc330f15ec43
-ms.openlocfilehash: 72c42a06da8276d118c6c204f838ed4b31d142b9
-ms.sourcegitcommit: 389c559918d9bfaf303d262ee5430d787a662e92
+ms.openlocfilehash: ca7f031cbdcfc3378a0917e84b257fd7212563e1
+ms.sourcegitcommit: d9c94dcabd94537e304be0261b3263c2071b437b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "69514690"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353024"
 ---
-# <a name="toolbar-editor-c"></a>Symbolleisten-C++Editor ()
+# <a name="toolbar-editor-c"></a>Symbolleisten-Editor (C++)
 
 Mit dem Symbolleisten- **Editor** können Sie Symbolleisten Ressourcen erstellen und Bitmaps in Symbolleisten Ressourcen konvertieren. Der **Symbol** leisten-Editor verwendet eine grafische Anzeige, um eine Symbolleiste und Schaltflächen anzuzeigen, die der Darstellung in einer fertiggestellten Anwendung sehr ähnlich sind.
 
 Das Fenster des Symbolleisten- **Editors** zeigt zwei Ansichten eines Schaltflächen Bilds an, identisch mit dem **Bild-Editor** -Fenster. In einem geteilten Balken werden die beiden Bereiche getrennt, und Sie können den Trennbalken von Seite zu Seite ziehen, um die relativen Größen der Bereiche zu ändern. Im aktiven Bereich wird ein Auswahl Rahmen angezeigt, und oberhalb der beiden Ansichten des Bilds befindet sich die Symbolleiste des Antragstellers.
 
-![Symbol leisten-Editor ](../mfc/media/vctoolbareditor.gif "vctoolbareditor")<br/>
+![Symbolleisten-Editor](../mfc/media/vctoolbareditor.gif "vctoolbareditor")<br/>
 **Symbolleisten-Editor**
 
 Der **Symbol** leisten-Editor ähnelt dem **Bild-Editor** in der Funktionalität, und die Menü Elemente, die Grafiktools und das Bitmap-Raster zwischen den beiden sind identisch. Im Menü " **Bild** " gibt es einen Menübefehl, mit dem Sie zwischen dem Symbolleisten- **Editor** und dem **Bild-Editor**wechseln können. Weitere Informationen zur Verwendung der **Grafik** Symbolleiste, der **Farb** Palette oder des **bildmenüs** finden Sie unter [Bild](../windows/image-editor-for-icons.md)Bearbeitung.
 
-Sie können eine neue Symbolleiste in einem C++ Projekt erstellen, indem Sie eine Bitmap umrechnen. Die Grafik aus der Bitmap wird in die Schaltflächen Bilder für eine Symbolleiste konvertiert. In der Regel enthält die Bitmap mehrere Schaltflächen Bilder auf einer einzelnen Bitmap, wobei für jede Schaltfläche ein Bild angezeigt wird. Bilder können eine beliebige Größe aufweisen, da der Standardwert 16 Pixel breit und die Höhe des Bilds ist. Sie können die Größe der Schaltflächen Bilder im Dialogfeld **neue Symbolleisten Ressource** angeben, wenn Sie im Bild- **Editor**im Menü **Bild** den Befehl **Symbolleiste** auswählen.
+Sie können eine neue Symbolleiste in einem C++-Projekt erstellen, indem Sie eine Bitmap umrechnen. Die Grafik aus der Bitmap wird in die Schaltflächen Bilder für eine Symbolleiste konvertiert. In der Regel enthält die Bitmap mehrere Schaltflächen Bilder auf einer einzelnen Bitmap, wobei für jede Schaltfläche ein Bild angezeigt wird. Bilder können eine beliebige Größe aufweisen, da der Standardwert 16 Pixel breit und die Höhe des Bilds ist. Sie können die Größe der Schaltflächen Bilder im Dialogfeld **neue Symbolleisten Ressource** angeben, wenn Sie im Bild- **Editor**im Menü **Bild** den Befehl **Symbolleiste** auswählen.
 
-Im Dialogfeld **neue Symbolleisten Ressource** können Sie die Breite und die Höhe der Schaltflächen angeben, die einer Symbolleisten Ressource in einem C++ Projekt hinzugefügt werden. Der Standardwert ist 16 × 15 Pixel.
+Im Dialogfeld **neue Symbolleisten Ressource** können Sie die Breite und die Höhe der Schaltflächen angeben, die einer Symbolleisten Ressource in einem C++-Projekt hinzugefügt werden. Der Standardwert ist 16 × 15 Pixel.
 
 Eine Bitmap, die zum Erstellen einer Symbolleiste verwendet wird, hat eine maximale Breite von 2048. Wenn Sie also die **Schaltflächen breite** auf *512*festlegen, können Sie nur vier Schaltflächen verwenden. Wenn Sie die Breite auf *513*festlegen, können nur drei Schaltflächen vorhanden sein.
 
 Das Dialogfeld **neue Symbolleisten Ressource** verfügt über die folgenden Eigenschaften:
 
-|Eigenschaft|Beschreibung|
+|Eigenschaft|BESCHREIBUNG|
 |---|---------------|
 |**Schaltflächen breite**|Hier können Sie die Breite der Symbolleisten Schaltflächen, die Sie von einer Bitmap-Ressource in eine Symbolleisten Ressource wandeln, eingeben.|
 |**Schaltflächen Höhe**|Hier können Sie die Höhe der Symbolleisten Schaltflächen, die Sie von einer Bitmap-Ressource in eine Symbolleisten Ressource wandeln, eingeben.|
@@ -88,16 +88,16 @@ Standardmäßig wird eine neue Schaltfläche oder eine leere Schaltfläche am re
 
 Eine Symbolleisten-Schaltfläche verfügt über die folgenden Eigenschaften:
 
-|Eigenschaft|Beschreibung|
+|Eigenschaft|BESCHREIBUNG|
 |--------------|-----------------|
 |**ID**|Definiert die ID für die Schaltfläche. Die Dropdown Liste enthält allgemeine **ID** -Namen.|
 |**Width**|Legt die Breite der Schaltfläche fest. Es werden 16 Pixel empfohlen.|
 |**Height**|Legt die Höhe der Schaltfläche fest. Durch die Höhe einer Schaltfläche wird die Höhe aller Schaltflächen auf der Symbolleiste geändert. Es wird 15 Pixel empfohlen.|
-|**Eingabeaufforderung**|Definiert die in der Statusleiste angezeigte Meldung. Durch das hinzu **fügen von** *\n* und eines Namens wird der Symbolleisten Schaltfläche eine QuickInfo Weitere Informationen finden Sie unter [Erstellen einer](../windows/creating-a-tool-tip-for-a-toolbar-button.md)QuickInfo.|
+|**Eingabeaufforderung**|Definiert die in der Statusleiste angezeigte Meldung. Durch das hinzu **fügen von** *\n* und eines Namens wird der Symbolleisten Schaltfläche eine QuickInfo Weitere Informationen finden [Sie unter So erstellen Sie eine QuickInfo für eine Symbolleisten Schaltfläche](#to-create-a-tool-tip-for-a-toolbar-button).|
 
 **Breite** und **Höhe** gelten für alle Schaltflächen. Eine Bitmap, die zum Erstellen einer Symbolleiste verwendet wird, hat eine maximale Breite von 2048. Wenn Sie also die Schaltflächen breite auf *512*festlegen, können Sie nur vier Schaltflächen haben. Wenn Sie die Breite auf *513*festlegen, können Sie nur drei Schaltflächen verwenden.
 
-## <a name="how-to"></a>Gewusst wie
+## <a name="how-to"></a>Vorgehensweise
 
 Der **Symbol** leisten-Editor ermöglicht Ihnen Folgendes:
 
@@ -107,13 +107,13 @@ Der **Symbol** leisten-Editor ermöglicht Ihnen Folgendes:
 
 1. Wählen Sie im Dialogfeld **Ressource hinzufügen** in der Liste **Ressourcentyp** die Option **Symbolleiste** aus, und wählen Sie dann **neu**aus.
 
-   Wenn neben dem Ressourcentyp der **Symbolleiste** ein Pluszeichen ( **+** ) angezeigt wird, bedeutet dies, dass Toolbar-Vorlagen verfügbar sind. Wählen Sie das Pluszeichen aus, um die Liste der Vorlagen zu erweitern, wählen Sie eine Vorlage aus, und wählen Sie **neu**aus.
+   Wenn ein Pluszeichen ( **+** ) neben dem Ressourcentyp der **Symbolleiste** angezeigt wird, bedeutet dies, dass Toolbar-Vorlagen verfügbar sind. Wählen Sie das Pluszeichen aus, um die Liste der Vorlagen zu erweitern, wählen Sie eine Vorlage aus, und wählen Sie **neu**aus.
 
 ### <a name="to-convert-bitmaps-to-toolbar-resources"></a>So konvertieren Sie Bitmaps in Symbolleisten Ressourcen
 
 1. Öffnen Sie eine vorhandene Bitmap-Ressource im [Bild-Editor](../windows/image-editor-for-icons.md). Wenn die Bitmap nicht bereits in der *RC* -Datei vorhanden ist, klicken Sie mit der rechten Maustaste auf die *RC* -Datei, und wählen Sie **importieren**aus. Navigieren Sie dann zu der Bitmap, die Sie der *RC* -Datei hinzufügen möchten, und wählen Sie **Öffnen**
 
-1. Wechseln Sie zum Menü **Bild** > Symbolleisten- **Editor**.
+1. Wechseln Sie zum Menü **Bild**  >  **Symbol**leisten-Editor.
 
    Das Dialogfeld **neue Symbolleisten Ressource** wird angezeigt. Sie können die Breite und Höhe der Symbolbilder entsprechend der Bitmap ändern. Das Symbolleisten Bild wird dann im Symbolleisten- **Editor**angezeigt.
 
@@ -134,7 +134,7 @@ Der **Symbol** leisten-Editor ermöglicht Ihnen Folgendes:
 
    - Weisen Sie der leeren Schaltfläche am rechten Ende der Symbolleiste eine ID zu. Hierzu können Sie die **ID** -Eigenschaft im [Eigenschaften Fenster](/visualstudio/ide/reference/properties-window)bearbeiten. Beispielsweise können Sie einer Symbolleisten-Schaltfläche die gleiche ID wie eine Menüoption geben. Verwenden Sie in diesem Fall das Dropdown-Listenfeld, um die **ID** der Menüoption auszuwählen.
 
-   - Wählen Sie im Bereich **Symbolleisten Ansicht** am rechten Ende der Symbolleiste die Schaltfläche leer aus, und beginnen Sie mit dem zeichnen. Eine Standard Schaltflächen-Befehls-ID wird zugewiesen (ID_BUTTON\<n >).
+   - Wählen Sie im Bereich **Symbolleisten Ansicht** am rechten Ende der Symbolleiste die Schaltfläche leer aus, und beginnen Sie mit dem zeichnen. Eine Standard Schaltflächen-Befehls-ID wird zugewiesen (ID_BUTTON \<n> ).
 
 #### <a name="to-add-an-image-to-a-toolbar-as-a-button"></a>So fügen Sie einer Symbolleiste ein Bild als Schaltfläche hinzu
 
@@ -145,11 +145,11 @@ Der **Symbol** leisten-Editor ermöglicht Ihnen Folgendes:
    > [!NOTE]
    > Wenn Sie das Bild in Visual Studio öffnen, wird es im Bild- **Editor**geöffnet. Sie können das Bild auch in anderen Grafikprogrammen öffnen.
 
-1. Wechseln Sie zum Menü **Bearbeiten** > **Kopieren**.
+1. Wechseln Sie zum **Menü "**  >  **Kopieren**".
 
 1. Wechseln Sie zu Ihrer Symbolleiste, indem Sie die zugehörige Registerkarte am oberen Rand des Quell Fensters auswählen.
 
-1. Wechseln Sie zum Menü **Bearbeiten** > **Einfügen**.
+1. Wechseln Sie zum **Menü "**  >  **Einfügen**".
 
    Das Bild wird auf der Symbolleiste als neue Schaltfläche angezeigt.
 
@@ -175,7 +175,7 @@ Ziehen Sie im Bereich der **Symbolleisten Ansicht** die Schaltfläche, die Sie v
 
 #### <a name="to-change-the-properties-of-a-toolbar-button"></a>So ändern Sie die Eigenschaften einer Symbolleisten-Schaltfläche
 
-1. Wählen Sie C++ in einem Projekt die Symbolleisten Schaltfläche aus.
+1. Wählen Sie in einem C++-Projekt die Symbolleisten Schaltfläche aus.
 
 1. Geben Sie im [Eigenschaften Fenster](/visualstudio/ide/reference/properties-window)die neue ID in der **ID** -Eigenschaft ein, oder wählen Sie in der Dropdown Liste eine neue **ID**aus.
 
@@ -183,7 +183,7 @@ Ziehen Sie im Bereich der **Symbolleisten Ansicht** die Schaltfläche, die Sie v
 
 1. Wählen Sie die Symbolleisten Schaltfläche
 
-1. Fügen Sie im [Fenster Eigenschaften](/visualstudio/ide/reference/properties-window)im Feld **Eingabeaufforderung** eine Beschreibung der Schaltfläche für die Statusleiste hinzu, und fügen Sie nach der Meldung `\n` und den QuickInfo-Namen hinzu.
+1. Fügen Sie im [Fenster Eigenschaften](/visualstudio/ide/reference/properties-window)im Feld **Eingabeaufforderung** eine Beschreibung der Schaltfläche für die Statusleiste und nach der Meldung hinzufügen `\n` und den QuickInfo-Namen hinzu.
 
 Um z. b. die QuickInfo für die Schaltfläche " **Drucken** " in **WordPad**anzuzeigen:
 
@@ -191,18 +191,18 @@ Um z. b. die QuickInfo für die Schaltfläche " **Drucken** " in **WordPad**anzu
 
 1. Zeigen Sie mit dem Mauszeiger auf die **Druck** Symbolleisten-Schaltfläche, und beachten Sie, dass das Wort `Print` jetzt unter dem Mauszeiger ist.
 
-1. Sehen Sie sich die Statusleiste am unteren Rand des **WordPad** -Fensters an, und beachten Sie, dass nun der Text `Prints the active document`angezeigt wird.
+1. Sehen Sie sich die Statusleiste am unteren Rand des **WordPad** -Fensters an, und beachten Sie, dass der Text jetzt angezeigt wird `Prints the active document` .
 
 `Print` ist der QuickInfo-Name und `Prints the active document` die Beschreibung der Schaltfläche für die Statusleiste.
 
-Wenn Sie diesen Effekt mithilfe des Symbolleisten- **Editors**wünschen, legen Sie die Eigenschaft **prompt** auf `Prints the active document\nPrint`fest.
+Wenn Sie diesen Effekt mithilfe des Symbolleisten- **Editors**wünschen, legen Sie die Eigenschaft **prompt** auf fest `Prints the active document\nPrint` .
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 MFC oder ATL
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Ressourcen-Editoren](../windows/resource-editors.md)
-[Menüs und andere Ressourcen](/windows/win32/menurc/resources)<br/>
+[Ressourcen-Editoren](../windows/resource-editors.md) 
+ [Menüs und weitere Ressourcen](/windows/win32/menurc/resources)<br/>
 [Eigenschaften von Symbolleisten-Schaltflächen](../windows/toolbar-button-properties.md)<br/>

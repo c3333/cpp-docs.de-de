@@ -18,12 +18,12 @@ f1_keywords:
 helpviewer_keywords:
 - composite controls, global functions
 ms.assetid: 536884cd-e863-4c7a-ab0a-604dc60a0bbe
-ms.openlocfilehash: 467925baf59598d743650d4f98d210f789f2b179
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: fe9d9a3a0538e2e5744987adcd64e67562711ea8
+ms.sourcegitcommit: d9c94dcabd94537e304be0261b3263c2071b437b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88833555"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353115"
 ---
 # <a name="composite-control-global-functions"></a>Globale Funktionen des zusammengesetzten Steuer Elements
 
@@ -32,7 +32,7 @@ Diese Funktionen bieten Unterstützung für das Erstellen von Dialogfeldern und 
 > [!IMPORTANT]
 > Die in der folgenden Tabelle aufgeführten Funktionen können nicht in Anwendungen verwendet werden, die in der Windows-Runtime ausgeführt werden.
 
-|Funktion|Beschreibung|
+|Funktion|BESCHREIBUNG|
 |-|-|
 |[AtlAxDialogBox](#atlaxdialogbox)|Erstellt ein modales Dialogfeld aus einer vom Benutzer angegebenen Dialogfeldvorlage. Das resultierende Dialogfeld kann ActiveX-Steuerelemente enthalten.|
 |[AtlAxCreateDialog](#atlaxcreatedialog)|Erstellt ein nicht modales Dialogfeld aus einer vom Benutzer angegebenen Dialogfeldvorlage. Das resultierende Dialogfeld kann ActiveX-Steuerelemente enthalten.|
@@ -86,7 +86,7 @@ in Gibt den Wert an, der dem Dialogfeld im *LPARAM* -Parameter der WM_INITDIALOG
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn Sie `AtlAxDialogBox` mit einer Dialogfeld Vorlage verwenden möchten, die ein ActiveX-Steuerelement enthält, geben Sie eine gültige CLSID, eine AppID oder eine URL-Zeichenfolge als *Textfeld* des **Steuer** Element Abschnitts der Dialogfeld Ressource an, zusammen mit "AtlAxWin80" als *Klassennamen* Feld unterhalb desselben Abschnitts. Das folgende Beispiel zeigt, wie ein gültiger **Steuer** Element Abschnitt aussehen könnte:
 
@@ -95,7 +95,7 @@ CONTROL    "{04FE35E9-ADBC-4f1d-83FE-8FA4D1F71C7F}", IDC_TEST,
     "AtlAxWin80", WS_GROUP | WS_TABSTOP, 0, 0, 100, 100
 ```
 
-Weitere Informationen zum Bearbeiten von Ressourcen [Skripts finden Sie unter Gewusst wie: Öffnen einer Ressourcen Skriptdatei im Text Format](../../windows/how-to-open-a-resource-script-file-in-text-format.md). Weitere Informationen zum Steuern von Ressourcen Definitions Anweisungen finden Sie unter [allgemeine Steuerelement Parameter](/windows/win32/menurc/common-control-parameters) unter Windows SDK: SDK Tools.
+Weitere Informationen zum Bearbeiten von Ressourcen Skripts finden [Sie unter Gewusst wie: Erstellen von Ressourcen](../../windows/how-to-create-a-resource-script-file.md). Weitere Informationen zum Steuern von Ressourcen Definitions Anweisungen finden Sie unter [allgemeine Steuerelement Parameter](/windows/win32/menurc/common-control-parameters) unter Windows SDK: SDK Tools.
 
 Weitere Informationen zu Dialogfeldern im Allgemeinen finden Sie unter [Dialogbox](/windows/win32/api/winuser/nf-winuser-dialogboxw) [und in](/windows/win32/api/winuser/nf-winuser-createdialogparamw) der Windows SDK.
 
@@ -133,7 +133,7 @@ in Gibt den Wert an, der dem Dialogfeld im *LPARAM* -Parameter der WM_INITDIALOG
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das resultierende Dialogfeld kann ActiveX-Steuerelemente enthalten.
 
@@ -182,7 +182,7 @@ vorgenommen Die Adresse eines Zeigers, der den `IUnknown` des Containers empfän
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese globale Funktion gibt Ihnen dasselbe Ergebnis wie das Aufrufen von [atlaxcreatecontrolex](#atlaxcreatecontrolex)(*lpszname*, *HWND*, *pStream*, NULL, NULL, NULL, null);.
 
@@ -243,7 +243,7 @@ Ein Zeiger auf die- `IUnknown` Schnittstelle des Sink-Objekts, das mit dem Verbi
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `AtlAxCreateControlEx` ähnelt [atlaxkreatecontrol](#atlaxcreatecontrol) , ermöglicht Ihnen aber auch das Empfangen eines Schnittstellen Zeigers auf das neu erstellte Steuerelement und das Einrichten einer Ereignis Senke für den Empfang von Ereignissen, die vom Steuerelement ausgelöst werden.
 
@@ -298,7 +298,7 @@ Einer der HRESULT-Standardwerte.
 
 ### <a name="example"></a>Beispiel
 
-Ein Beispiel für die Verwendung von finden Sie unter Hosting von ActiveX-Steuer [Elementen mithilfe von ATL AxHost](../../atl/hosting-activex-controls-using-atl-axhost.md) `AtlAxCreateControlLic` .
+Ein Beispiel für die Verwendung von finden Sie unter Hosting von ActiveX-Steuer [Elementen mithilfe von ATL AxHost](../../atl/atl-control-containment-faq.md#hosting-activex-controls-using-atl-axhost) `AtlAxCreateControlLic` .
 
 ## <a name="atlaxcreatecontrollicex"></a><a name="atlaxcreatecontrollicex"></a> Atlaxkreatecontrollicex
 
@@ -359,13 +359,13 @@ Der BSTR, der die Lizenz für das Steuerelement enthält.
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `AtlAxCreateControlLicEx` ähnelt [atlaxkreatecontrollic](#atlaxcreatecontrollic) , ermöglicht Ihnen aber auch das Empfangen eines Schnittstellen Zeigers auf das neu erstellte Steuerelement und das Einrichten einer Ereignis Senke für den Empfang von Ereignissen, die vom Steuerelement ausgelöst werden.
 
 ### <a name="example"></a>Beispiel
 
-Ein Beispiel für die Verwendung von finden Sie unter Hosting von ActiveX-Steuer [Elementen mithilfe von ATL AxHost](../../atl/hosting-activex-controls-using-atl-axhost.md) `AtlAxCreateControlLicEx` .
+Ein Beispiel für die Verwendung von finden Sie unter Hosting von ActiveX-Steuer [Elementen mithilfe von ATL AxHost](../../atl/atl-control-containment-faq.md#hosting-activex-controls-using-atl-axhost) `AtlAxCreateControlLicEx` .
 
 ## <a name="atlaxattachcontrol"></a><a name="atlaxattachcontrol"></a> Atlaxattachcontrol
 
@@ -393,7 +393,7 @@ vorgenommen Ein Zeiger auf einen Zeiger auf den `IUnknown` des Container Objekts
 
 Einer der HRESULT-Standardwerte.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Verwenden Sie [atlaxkreatecontrolex](#atlaxcreatecontrolex) und [atlaxkreatecontrol](#atlaxcreatecontrol) , um ein Steuerelement gleichzeitig zu erstellen und anzufügen.
 
@@ -472,7 +472,7 @@ ATLAPI_(BOOL) AtlAxWinInit();
 
 Ungleich 0 (null), wenn die Initialisierung des Steuer Elements, das den Code Hostingcode andernfalls false.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion muss vor der Verwendung der ATL-Steuerelement-Hosting-API aufgerufen werden. Nach einem Aufruf dieser Funktion kann die **"AtlAxWin"** -Fenster Klasse in Aufrufen von " [kreatewindow](/windows/win32/api/winuser/nf-winuser-createwindoww) " oder " [kreatewindowex](/windows/win32/api/winuser/nf-winuser-createwindowexw)" verwendet werden, wie im Windows SDK beschrieben.
 
@@ -488,7 +488,7 @@ inline BOOL AtlAxWinTerm();
 
 Gibt immer true zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Funktion ruft einfach [unregisterclass](/windows/win32/api/winuser/nf-winuser-unregisterclassw) auf, wie im Windows SDK beschrieben.
 
@@ -528,7 +528,7 @@ vorgenommen Ein Zeiger auf die neben Versionsnummer der Typbibliothek, die die D
 
 Ein HRESULT-Standardwert.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `AtlGetObjectSourceInterface` kann die Schnittstellen-ID der standardmäßigen Quell Schnittstelle zusammen mit der LIBID-und der Haupt-und neben Versionsnummer der Typbibliothek bereitstellen, die diese Schnittstelle beschreibt.
 

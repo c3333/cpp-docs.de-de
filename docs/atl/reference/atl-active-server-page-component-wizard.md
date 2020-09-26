@@ -4,12 +4,12 @@ ms.date: 05/09/2019
 helpviewer_keywords:
 - ASP components, creating in ATL
 ms.assetid: 5a5cb904-dbbf-44ea-ad3d-2ddd14c1d3c5
-ms.openlocfilehash: a78beeab663ef1b467cdec32ca51132e8134a9b2
-ms.sourcegitcommit: fc1de63a39f7fcbfe2234e3f372b5e1c6a286087
+ms.openlocfilehash: 3e29d049c50f0410daf16b4bd1322676fd499fd2
+ms.sourcegitcommit: d9c94dcabd94537e304be0261b3263c2071b437b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65707040"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91352673"
 ---
 # <a name="atl-active-server-page-component-wizard"></a>ATL-Assistent für Active Server Page-Komponenten
 
@@ -25,7 +25,7 @@ Dieser Assistent fügt eine ASP-Komponente (Active Server Pages) in das Projekt 
 
 Mit diesem Assistenten können Sie das Threadingmodell und die Aggregationsunterstützung der Komponente angeben. Sie können auch Unterstützung für die Schnittstelle für Fehlerinformationen, Verbindungspunkte und das Marshalling mit freiem Threading angeben.
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Hinweise
 
 Ab Visual Studio 2008 werden mit dem von diesem Assistenten generierten Registrierungsskript die zugehörigen COM-Komponenten nicht unter **HKEY_LOCAL_MACHINE**, sondern unter **HKEY_CURRENT_USER** registriert. Um dieses Verhalten zu ändern, legen Sie die Option **Komponente für alle Benutzer registrieren** des ATL-Assistenten fest.
 
@@ -67,7 +67,7 @@ Stellt Informationen für die C++-Klasse bereit, die für das Objekt erstellt wu
 
    Standardmäßig werden bei nicht attributierten Projekten alle Objekte, die Sie nach dem Festlegen dieser Option hinzufügen, als attributiert festgelegt (das Kontrollkästchen ist aktiviert). Sie können das Kontrollkästchen deaktivieren, um ein Objekt hinzuzufügen, das keine Attribute verwendet.
 
-   Weitere Informationen finden Sie unter [Anwendungseinstellungen, ATL-Projekt-Assistent](../../atl/reference/application-settings-atl-project-wizard.md) und [Grundlegende Funktionsweise von Attributen](../../windows/basic-mechanics-of-attributes.md).
+   Weitere Informationen finden Sie [unter Anwendungseinstellungen, ATL-Projekt-Assistent](../../atl/reference/application-settings-atl-project-wizard.md) und [grundlegende Funktionsweise von Attributen](../../windows/attributes/cpp-attributes-com-net.md#basic-mechanics-of-attributes) .
 
 ### <a name="com"></a>COM
 
@@ -77,7 +77,7 @@ Stellt Informationen über die COM-Funktionalität für das Objekt bereit.
 
    Legt den Namen der Komponentenklasse fest, die eine Liste der vom Objekt unterstützten Schnittstellen enthält. Wenn Ihr Projekt oder dieses Objekt Attribute verwendet, können Sie diese Option nicht ändern, weil ATL das Attribut **coclass** nicht enthält.
 
-- **Type**
+- **Typ**
 
    Legt die Objektbeschreibung fest, die in der Registrierung für die Co-Klasse angezeigt wird.
 
@@ -91,6 +91,6 @@ Stellt Informationen über die COM-Funktionalität für das Objekt bereit.
 
 ::: moniker-end
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [ATL Active Server Page-Komponente](../../atl/reference/adding-an-atl-active-server-page-component.md)

@@ -89,12 +89,12 @@ helpviewer_keywords:
 - std::multiset [C++], upper_bound
 - std::multiset [C++], value_comp
 ms.assetid: 630e8c10-0ce9-4ad9-8d79-9e91a600713f
-ms.openlocfilehash: e857a4f6369b9aa939b5dcba17e02efaf81600b0
-ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.openlocfilehash: cb28b0b31188fcf7fefef95ddb44c9aab813e6ac
+ms.sourcegitcommit: d9c94dcabd94537e304be0261b3263c2071b437b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90040950"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353180"
 ---
 # <a name="multiset-class"></a>multiset-Klasse
 
@@ -223,7 +223,7 @@ Ein Typ, der die Zuweisungsklasse für das Multiset-Objekt darstellt.
 typedef Allocator allocator_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `allocator_type` ist ein Synonym für den Vorlagenparameter `Allocator`.
 
@@ -298,7 +298,7 @@ const_iterator cbegin() const;
 
 Ein **`const`** bidirektionaler-Access-Iterator, der auf das erste Element des Bereichs zeigt oder die Position direkt hinter dem Ende eines leeren Bereichs (für einen leeren Bereich `cbegin() == cend()` ).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Beim Rückgabewert `cbegin` können die Elemente im Bereich nicht geändert werden.
 
@@ -324,7 +324,7 @@ const_iterator cend() const;
 
 Ein **`const`** bidirektionaler-Access-Iterator, der direkt hinter das Ende des Bereichs zeigt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `cend` wird verwendet, um zu testen, ob ein Iterator das Ende seines Bereichs übergeben hat.
 
@@ -386,7 +386,7 @@ Ein Typ, der einen bidirektionalen Iterator bereitstellt, mit dem ein- **`const`
 typedef implementation-defined const_iterator;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein-Typ `const_iterator` kann nicht zum Ändern des Werts eines Elements verwendet werden.
 
@@ -402,7 +402,7 @@ Ein Typ, der einen Zeiger auf ein- **`const`** Element in einer Multimenge berei
 typedef typename allocator_type::const_pointer const_pointer;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein-Typ `const_pointer` kann nicht zum Ändern des Werts eines Elements verwendet werden.
 
@@ -457,7 +457,7 @@ Ein Typ, der einen bidirektionalen Iterator bereitstellt, mit dem jedes beliebig
 typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein `const_reverse_iterator` -Typ kann nicht den Wert eines Elements ändern und wird verwendet, um die Multimenge in umgekehrter Reihenfolge zu durchlaufen.
 
@@ -486,7 +486,7 @@ Der Schlüsselwert des Elements, nach dem gesucht werden soll.
 
 `true` , wenn sich das Element im Container befindet. `false` andernfalls.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `contains()` ist neu in c++ 20. Um es zu verwenden, geben Sie die [/Std: c + + Latest](../build/reference/std-specify-language-standard-version.md) -Compileroption an.
 
@@ -533,7 +533,7 @@ Der Schlüssel der Elemente, die aus „multiset“ abgeglichen werden.
 
 Die Anzahl der Elemente im „multiset“, deren Sortierschlüssel mit dem Parameterschlüssel übereinstimmt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Memberfunktion ermöglicht die Rückgabe der Anzahl von Elementen *x* im Bereich
 
@@ -593,7 +593,7 @@ const_reverse_iterator crbegin() const;
 
 Ein umgekehrter bidirektionaler const-Iterator, mit dem das erste Element in einem umgekehrten Multiset adressiert wird bzw. mit dem das ehemals letzte Element in dem nicht umgekehrten Multiset adressiert wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `crbegin` wird bei einer umgekehrten Multimenge auf dieselbe Weise wie „begin“ bei einer Multimenge verwendet.
 
@@ -641,7 +641,7 @@ const_reverse_iterator crend() const;
 
 Ein bidirektionaler const_reverse-Iterator, der den Speicherort adressiert, der dem letzten Element in einer umgekehrten Multimenge folgt (d.h. den Speicherort, der dem ersten Element in der nicht umgekehrten Multimenge vorangegangen war).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `crend` wird bei einer umgekehrten Multimenge auf dieselbe Weise wie [end](#end) bei einer Multimenge verwendet.
 
@@ -683,7 +683,7 @@ Ein Ganzzahltyp mit Vorzeichen, mit dem sich die Anzahl von Elementen einer Mult
 typedef typename allocator_type::difference_type difference_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `difference_type` ist der Typ, der beim Subtrahieren oder Inkrementieren über Iteratoren des Containers zurückgegeben wird. `difference_type` wird normalerweise verwendet, um die Anzahl von Elementen im Bereich [`first`, `last`) zwischen den Iteratoren `first` und `last` darzustellen. Dazu gehört das Element, auf das durch `first` gezeigt wird und der Bereich von Elementen bis zu (aber nicht einschließlich) dem Element, auf das durch `last` gezeigt wird.
 
@@ -765,7 +765,7 @@ Die weitergeleiteten Argumente zur Konstruktion eines Elements, dass in die Mult
 
 Ein Iterator zum neu eingefügten Element.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Von dieser Funktion werden keine Verweise auf Containerelemente für ungültig erklärt, aber möglicherweise werden alle Iteratoren für den Containers für ungültig erklärt.
 
@@ -835,7 +835,7 @@ Die Position, an dem mit der Suche nach dem richtigen Einfügepunkt begonnen wir
 
 Ein Iterator zum neu eingefügten Element.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Von dieser Funktion werden keine Verweise auf Containerelemente für ungültig erklärt, aber möglicherweise werden alle Iteratoren für den Containers für ungültig erklärt.
 
@@ -900,7 +900,7 @@ iterator end();
 
 Der "past-the-end"-Iterator. Wenn die Multimenge leer ist, dann gilt `multiset::end() == multiset::begin()`.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 **end** wird verwendet, um zu überprüfen, ob ein Iterator das Ende seiner Multimenge übergeben hat.
 
@@ -1023,7 +1023,7 @@ Bei den ersten beiden Memberfunktionen ist es ein bidirektionaler Iterator, der 
 
 Für die dritte Memberfunktion wird die Anzahl der von der Multimenge entfernten Elemente zurückgegeben.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein Codebeispiel finden Sie unter [set::erase](../standard-library/set-class.md#erase).
 
@@ -1046,7 +1046,7 @@ Der Schlüsselwert, der durch den Sortierschlüssel eines Elements aus dem durch
 
 Ein Iterator, der entweder auf den Speicherort eines Elements mit einem benutzerdefinierten Schlüssel oder, wenn für den Schlüssel keine Übereinstimmung gefunden wird, auf den Speicherort verweist, der dem letzten Element in der Multimenge ( `multiset::end()`) folgt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Member-Funktion gibt einen Iterator zurück, der auf ein Element in der Multimenge verweist, dessen Schlüssel dem Argument *Schlüssel* unter einem binären Prädikat entspricht, das eine Reihenfolge auf Grundlage einer weniger-als-Kompatibilitäts Beziehung auslöst.
 
@@ -1125,7 +1125,7 @@ allocator_type get_allocator() const;
 
 Die von der Multimenge verwendete Zuweisung.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Zuweisungen für die Multiset-Klasse geben an, wie die Klasse Speicherplatz verwaltet. Für die meisten Programmieranforderungen reichen die Standard-Zuweisungen aus C++-Standardbibliothek-Containerklassen aus. Schreiben und Verwenden Ihrer eigener Zuweisungsklasse ist ein C++ -Thema für Fortgeschrittene.
 
@@ -1248,7 +1248,7 @@ Die Einzelelement-Memberfunktionen (1) und (2) geben einen Iterator an die Posit
 
 Die Einzelelement-Memberfunktionen mit Hinweis (3) und (4) geben einen Iterator zurück, der auf die Position zeigt, an der das neue Element in die Multimenge eingefügt wurde.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Von dieser Funktion werden keine Zeiger oder Verweise für ungültig erklärt, aber möglicherweise werden alle Iteratoren für den Containers für ungültig erklärt.
 
@@ -1378,7 +1378,7 @@ Gibt das Funktionsobjekt zurück, das dem Vorlagenparameter `Compare` entspricht
 
 Weitere Informationen zu `Compare` finden Sie im Abschnitt „Hinweise“ unter [multiset-Klasse](../standard-library/multiset-class.md).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das gespeicherte Objekt definiert die Memberfunktion
 
@@ -1447,7 +1447,7 @@ Ein Typ, der ein Funktionsobjekt bereitstellt, das zwei Sortierschlüssel vergle
 typedef Compare key_compare;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `key_compare` ist ein Synonym für den Vorlagenparameter `Compare`.
 
@@ -1465,7 +1465,7 @@ Ein Typ, der ein Funktionsobjekt bereitstellt, das zwei Sortierschlüssel vergle
 typedef Key key_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `key_type` ist ein Synonym für den Vorlagenparameter `Key`.
 
@@ -1646,7 +1646,7 @@ Die Position des ersten Elements nach dem zu kopierenden Elementbereich.
 *IList*\
 Das initializer_list-Element, aus dem die Elemente kopiert werden sollen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Alle Konstruktoren speichern ein Zuweisungsobjekt eines bestimmten Typs, das Arbeitsspeicher für die Multimenge verwaltet und später zurückgegeben werden kann, indem [get_allocator](#get_allocator) aufgerufen wird. Der Zuweisungsparameter wird häufig aus den Klassendeklarationen und den Vorverarbeitungsmakros weggelassen, die zum Ersetzen alternativer Zuweisungen verwendet werden.
 
@@ -1780,7 +1780,7 @@ multiset& operator=(multiset&& right);
 *Richting*\
 Das `multiset`-Element, aus dem Elemente kopiert oder verschoben werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `operator=` kopiert oder verschiebt die Elemente *direkt* in dieses `multiset` , je nach verwendetem Referenztyp (lvalue oder Rvalue). Elemente, die sich vor dem Ausführen von `operator=` in diesem `multiset` befinden, werden verworfen.
 
@@ -1829,7 +1829,7 @@ Ein Typ, der einen Zeiger auf ein Element in einer Multimenge bereitstellt.
 typedef typename allocator_type::pointer pointer;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein **pointer**-Typ kann zum Ändern des Werts eines Elements verwendet werden.
 
@@ -1849,7 +1849,7 @@ reverse_iterator rbegin();
 
 Ein umgekehrter bidirektionaler Iterator, mit dem das erste Element in einem umgekehrten Multiset adressiert wird bzw. mit dem das ehemals letzte Element in dem nicht umgekehrten Multiset adressiert wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `rbegin` wird bei einer umgekehrten Multimenge auf dieselbe Weise wie „rbegin“ bei einer Multimenge verwendet.
 
@@ -1962,7 +1962,7 @@ reverse_iterator rend();
 
 Ein bidirektionaler const_reverse-Iterator, der den Speicherort adressiert, der dem letzten Element in einer umgekehrten Multimenge folgt (d.h. den Speicherort, der dem ersten Element in der nicht umgekehrten Multimenge vorangegangen war).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `rend` wird bei einer umgekehrten Multimenge auf dieselbe Weise wie [end](#end) bei einer Multimenge verwendet.
 
@@ -2029,7 +2029,7 @@ Ein Typ, der einen bidirektionalen Iterator bereitstellt, mit dem ein Element in
 typedef std::reverse_iterator<iterator> reverse_iterator;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Ein-Typ `reverse_iterator` wird verwendet, um die Multimenge in umgekehrter Reihenfolge zu durchlaufen.
 
@@ -2104,7 +2104,7 @@ void swap(
 *Richting*\
 Das Multimengenargument, das die Elemente bereitstellt, die mit der Zielmultimenge getauscht werden sollen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Memberfunktion macht keine Verweise, Zeiger oder Iteratoren ungültig, die Elemente in zwei Multimengen bezeichnen, deren Elemente ausgetauscht werden.
 
@@ -2240,7 +2240,7 @@ Gibt das Funktionsobjekt zurück, das dem Vorlagenparameter `Compare` entspricht
 
 Weitere Informationen zu `Compare` finden Sie im Abschnitt „Hinweise“ unter [multiset-Klasse](../standard-library/multiset-class.md).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Das gespeicherte Objekt definiert die Memberfunktion
 
@@ -2309,7 +2309,7 @@ Der Typ, der ein Funktionsobjekt bereitstellt, das zwei Sortierschlüssel vergle
 typedef key_compare value_compare;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `value_compare` ist ein Synonym für den Vorlagenparameter `Compare`.
 
@@ -2329,7 +2329,7 @@ Ein Typ, der in seiner Funktion als Wert ein als Element gespeichertes Objekt al
 typedef Key value_type;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `value_type` ist ein Synonym für den Vorlagenparameter `Key`.
 
@@ -2374,6 +2374,6 @@ The multiset has elements: 10 20.
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Schütt](../cpp/containers-modern-cpp.md)\
+[Schütt](./stl-containers.md)\
 [Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)\
 [C++-Standard Bibliotheks Referenz](../standard-library/cpp-standard-library-reference.md)

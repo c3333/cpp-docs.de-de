@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - auto keyword [C++]
 ms.assetid: e9d495d7-601c-4547-b897-998389a311f4
-ms.openlocfilehash: 675f6919b6804cfb1d2c5395d046cb5fa39e625d
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: be268635e61005efbdb01ed8c4eec79c7cb9b800
+ms.sourcegitcommit: d9c94dcabd94537e304be0261b3263c2071b437b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87229193"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353037"
 ---
 # <a name="auto-c"></a>`auto` (C++)
 
@@ -27,7 +27,7 @@ Leitet den Typ einer deklarierten Variable vom entsprechenden Initialisierungsau
 
 > **`[](auto`***param1* **`, auto`** *Param2***`) {};`**
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Das- **`auto`** Schlüsselwort weist den Compiler an, den Initialisierungs Ausdruck einer deklarierten Variable oder einen Lambda-Ausdrucks Parameter zu verwenden, um den Typ abzuleiten.
 
@@ -65,7 +65,7 @@ Sie können **`auto`** in Verbindung mit dem **`decltype`** Typspezifizierer ver
 
 ## <a name="references-and-cv-qualifiers"></a>Verweise und CV-Qualifizierer
 
-Beachten Sie, dass mithilfe von **`auto`** Drop Verweise, **`const`** Qualifizierer und **`volatile`** Qualifizierer Betrachten Sie das folgenden Beispiel:
+Beachten Sie, dass mithilfe von **`auto`** Drop Verweise, **`const`** Qualifizierer und **`volatile`** Qualifizierer Betrachten Sie das folgende Beispiel:
 
 ```cpp
 // cl.exe /analyze /EHsc /W4
@@ -122,7 +122,7 @@ int main()
 
 In der folgenden Tabelle sind die Einschränkungen der Verwendung des **`auto`** -Schlüssel Worts und die entsprechende Diagnose Fehlermeldung aufgeführt, die der Compiler ausgibt.
 
-|Fehlernummer|Beschreibung|
+|Fehlernummer|BESCHREIBUNG|
 |------------------|-----------------|
 |[C3530](../error-messages/compiler-errors-2/compiler-error-c3530.md)|Das **`auto`** Schlüsselwort kann nicht mit einem anderen Typspezifizierer kombiniert werden.|
 |[C3531](../error-messages/compiler-errors-2/compiler-error-c3531.md)|Ein Symbol, das mit dem- **`auto`** Schlüsselwort deklariert wird, muss über einen Initialisierer verfügen.|
@@ -218,12 +218,11 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[`auto`Schlüsselwort](../cpp/auto-keyword.md)<br/>
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
-[`/Zc:auto`(Typ der deduce-Variable)](../build/reference/zc-auto-deduce-variable-type.md)<br/>
-[`sizeof`KOM](../cpp/sizeof-operator.md)<br/>
+[`/Zc:auto` (Typ der deduce-Variable)](../build/reference/zc-auto-deduce-variable-type.md)<br/>
+[`sizeof` KOM](../cpp/sizeof-operator.md)<br/>
 [`typeid`](../extensions/typeid-cpp-component-extensions.md)<br/>
 [`operator new`](new-operator-cpp.md)<br/>
 [Deklarationen und Definitionen](declarations-and-definitions-cpp.md)<br/>

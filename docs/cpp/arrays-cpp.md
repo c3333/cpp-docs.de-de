@@ -6,16 +6,16 @@ helpviewer_keywords:
 - multidimensional arrays [C++]
 - arrays [C++]
 ms.assetid: 3f5986aa-485c-4ba4-9502-67e2ef924238
-ms.openlocfilehash: cb949f9a17a6b751dae40202bf82e6cb321b526b
-ms.sourcegitcommit: 4eda68a0b3c23d8cefa56b7ba11583412459b32f
+ms.openlocfilehash: 6d002f2baa6657c13ffc603e74828ab60585d3a9
+ms.sourcegitcommit: d9c94dcabd94537e304be0261b3263c2071b437b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87565962"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91352790"
 ---
 # <a name="arrays-c"></a>Arrays (C++)
 
-Ein Array ist eine Sequenz von Objekten desselben Typs, die einen zusammenhängenden Speicherbereich belegen. Herkömmliche Arrays im C-Stil sind die Quelle vieler Fehler, sind aber immer noch üblich, insbesondere in älteren Codebasen. In modern C++ wird dringend empfohlen, [Std:: Vector](../standard-library/vector-class.md) oder [Std:: Array](../standard-library/array-class-stl.md) anstelle von Arrays im C-Stil zu verwenden, die in diesem Abschnitt beschrieben werden. Beide Standard Bibliothekstypen speichern ihre Elemente als zusammenhängenden Speicherblock. Allerdings bieten Sie viel größere Typsicherheit und unterstützen Iteratoren, die sicher auf einen gültigen Speicherort innerhalb der Sequenz zeigen. Weitere Informationen finden Sie unter [Container (Modern C++)](containers-modern-cpp.md).
+Ein Array ist eine Sequenz von Objekten desselben Typs, die einen zusammenhängenden Speicherbereich belegen. Herkömmliche Arrays im C-Stil sind die Quelle vieler Fehler, sind aber immer noch üblich, insbesondere in älteren Codebasen. In modern C++ wird dringend empfohlen, [Std:: Vector](../standard-library/vector-class.md) oder [Std:: Array](../standard-library/array-class-stl.md) anstelle von Arrays im C-Stil zu verwenden, die in diesem Abschnitt beschrieben werden. Beide Standard Bibliothekstypen speichern ihre Elemente als zusammenhängenden Speicherblock. Allerdings bieten Sie viel größere Typsicherheit und unterstützen Iteratoren, die sicher auf einen gültigen Speicherort innerhalb der Sequenz zeigen. Weitere Informationen finden Sie unter [Container](../standard-library/stl-containers.md).
 
 ## <a name="stack-declarations"></a>Stapel Deklarationen
 
