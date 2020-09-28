@@ -5,12 +5,12 @@ ms.date: 01/08/2020
 helpviewer_keywords:
 - CMake in Visual C++
 ms.assetid: 444d50df-215e-4d31-933a-b41841f186f8
-ms.openlocfilehash: 49ba53eaa8ac075ab6d3b2a66f33160c5c3ec410
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a4eea2b321bc07fc40c9a42b3ce515435e808ee4
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81329163"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90685031"
 ---
 # <a name="cmake-projects-in-visual-studio"></a>CMake-Projekte in Visual Studio
 
@@ -27,7 +27,7 @@ Die Komponente **C++-CMake-Tools für Windows** verwendet die Funktion [Ordner �
 
 Die Komponente **C++-CMake-Tools für Windows** wird als Teil der Workloads **Desktopentwicklung mit C++** und **Linux Entwicklung mit C++** installiert. Weitere Informationen finden Sie unter [Erstellen und Konfigurieren eines Linux-CMake-Projekts](../linux/cmake-linux-project.md).
 
-![CMake-Komponente in der Workload „Desktopentwicklung mit C++“](media/cmake-install-2019.png)
+![Screenshot des Dropdownmenüs „Desktopentwicklung mit C plus plus“, in dem die Option „C plus plus C Make-Tools für Windows“ gekennzeichnet ist.](media/cmake-install-2019.png)
 
 Weitere Informationen finden Sie unter [Install the C++ Linux workload in Visual Studio (Installieren der C++-Workload unter Linux in Visual Studio)](../linux/download-install-and-setup-the-linux-development-workload.md).
 
@@ -160,7 +160,7 @@ Visual Studio 2017 bietet umfangreiche Unterstützung für CMake einschließlic
 
 Die Komponente **Visual C++-Tools für CMake** wird standardmäßig als Teil der Workloads **Desktopentwicklung mit C++** und **Linux Entwicklung mit C++** installiert.
 
-![CMake-Komponente in der Workload „Desktopentwicklung mit C++“](media/cmake-install.png)
+![Screenshot der Registerkarte „Einzelne Komponenten“, in dem die Option „Visual C plus plus-Tools für C Make“ gekennzeichnet ist.](media/cmake-install.png)
 
 Weitere Informationen finden Sie unter [Install the C++ Linux workload in Visual Studio (Installieren der C++-Workload unter Linux in Visual Studio)](../linux/download-install-and-setup-the-linux-development-workload.md).
 

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - libraries [C++], DLLs
 - DLLs [C++], walkthroughs
 ms.assetid: 3ae94848-44e7-4955-bbad-7d40f493e941
-ms.openlocfilehash: adca441a1b1b4e5e7b7efa44c4a292a8f1ddec35
-ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.openlocfilehash: 6639165856f09db25a2b96c41db2bb94ab93aa99
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90042198"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90683623"
 ---
 # <a name="walkthrough-create-and-use-your-own-dynamic-link-library-c"></a>Exemplarische Vorgehensweise: Erstellen und Verwenden Ihrer eigenen Dynamic Link Library (C++)
 
@@ -91,7 +91,7 @@ Mit den folgenden Aufgaben erstellen Sie ein Projekt für Ihre DLL, fügen Code 
 
 Wenn die Projektmappe erstellt wird, sehen Sie das generierte Projekt und die Quelldateien in Visual Studio im Fenster **Projektmappen-Explorer**.
 
-![Generierte Projektmappe in Visual Studio](media/mathlibrary-solution-explorer-162.png "Generierte Projektmappe in Visual Studio")
+![Screenshot des Visual Studio 2019-Fensters „Projektmappen-Explorer“, in dem die MathLibrary hervorgehoben ist](media/mathlibrary-solution-explorer-162.png "Generierte Projektmappe in Visual Studio")
 
 ::: moniker-end
 
@@ -103,13 +103,13 @@ Wenn die Projektmappe erstellt wird, sehen Sie das generierte Projekt und die Qu
 
 1. Klicken Sie im linken Bereich des Dialogfelds **Neues Projekt** auf **Installiert** > **Visual C++**  > **Windows Desktop**. Klicken Sie im mittleren Bereich auf **Dynamic Link Library (DLL)** . Geben Sie *MathLibrary* in das Feld **Name** ein, um einen Namen für das Projekt anzugeben. Behalten Sie die Standardwerte für **Speicherort** und **Projektmappenname** bei. Legen Sie **Projektmappe** auf **Neue Projektmappe erstellen** fest. Aktivieren Sie ggf. **	Projektmappenverzeichnis erstellen**.
 
-   ![Benennen des MathLibrary-Projekts](media/mathlibrary-new-project-name-159.png "Benennen des MathLibrary-Projekts")
+   ![Screenshot des Visual Studio 2017-Dialogfelds „Neues Projekt“, in dem „MathLibrary“ im Textfeld „Name“ eingegeben ist](media/mathlibrary-new-project-name-159.png "Benennen des MathLibrary-Projekts")
 
 1. Wählen Sie die Schaltfläche **OK** aus, um das Projekt zu erstellen.
 
 Wenn die Projektmappe erstellt wird, sehen Sie das generierte Projekt und die Quelldateien in Visual Studio im Fenster **Projektmappen-Explorer**.
 
-![Generierte Projektmappe in Visual Studio](media/mathlibrary-solution-explorer-159.png "Generierte Projektmappe in Visual Studio")
+![Screenshot des Visual Studio 2017-Fensters „Projektmappen-Explorer“, in dem die MathLibrary hervorgehoben ist](media/mathlibrary-solution-explorer-159.png "Generierte Projektmappe in Visual Studio")
 
 ::: moniker-end
 
@@ -121,7 +121,7 @@ Wenn die Projektmappe erstellt wird, sehen Sie das generierte Projekt und die Qu
 
 1. Erweitern Sie im linken Bereich des Dialogfelds **Neues Projekt** den Eintrag **Installiert** > **Vorlagen**, und wählen Sie **Visual C++** aus. Klicken Sie dann im mittleren Bereich auf **Win32-Konsolenanwendung**. Geben Sie *MathLibrary* in das Bearbeitungsfeld **Name** ein, um einen Namen für das Projekt anzugeben. Behalten Sie die Standardwerte für **Speicherort** und **Projektmappenname** bei. Legen Sie **Projektmappe** auf **Neue Projektmappe erstellen** fest. Aktivieren Sie ggf. **	Projektmappenverzeichnis erstellen**.
 
-   ![Benennen des MathLibrary-Projekts](media/mathlibrary-project-name.png "Benennen des MathLibrary-Projekts")
+   ![Screenshot des Visual Studio 2015-Dialogfelds „Neues Projekt“, in dem „MathLibrary“ im Textfeld „Name“ eingegeben ist](media/mathlibrary-project-name.png "Benennen des MathLibrary-Projekts")
 
 1. Klicken Sie auf **OK**, um das Dialogfeld **Neues Projekt** zu schließen und den **Win32-Anwendungs-Assistenten** zu starten.
 
@@ -135,7 +135,7 @@ Wenn die Projektmappe erstellt wird, sehen Sie das generierte Projekt und die Qu
 
 Wenn der Assistent die Projektmappe erstellt hat, sehen Sie das generierte Projekt und die Quelldateien in Visual Studio im Fenster **Projektmappen-Explorer**.
 
-![Generierte Projektmappe in Visual Studio](media/mathlibrary-solution-explorer-153.png "Generierte Projektmappe in Visual Studio")
+![Screenshot des Visual Studio 2015-Fensters „Projektmappen-Explorer“, in dem die MathLibrary hervorgehoben ist](media/mathlibrary-solution-explorer-153.png "Generierte Projektmappe in Visual Studio")
 
 ::: moniker-end
 
@@ -405,7 +405,7 @@ Es empfiehlt sich, den Includepfad in Ihrem Clientprojekt so festzulegen, dass d
 
 1. Geben Sie auf der Seite **Neues Projekt konfigurieren** in das Feld **Projektname** den Namen *MathClient* ein, um einen Namen für das Projekt festzulegen. Behalten Sie die Standardwerte für **Speicherort** und **Projektmappenname** bei. Legen Sie **Projektmappe** auf **Neue Projektmappe erstellen** fest. Deaktivieren Sie bei Bedarf die Option **Legen Sie die Projektmappe und das Projekt im selben Verzeichnis ab**.
 
-   ![Benennen des Clientprojekts](media/mathclient-project-name-2019.png "Benennen des Clientprojekts")
+   ![Screenshot des Dialogfelds „Neues Projekt erstellen“, in dem die Option „Konsolenanwendung“ hervorgehoben ist](media/mathclient-project-name-2019.png "Benennen des Clientprojekts")
 
 1. Klicken Sie auf die Schaltfläche **Erstellen**, um das Clientprojekt zu erstellen.
 
@@ -421,7 +421,7 @@ Es wird ein kleines Konsolenanwendungsprojekt für Sie erstellt. Der Name der Ha
 
 1. Wählen Sie im linken Bereich des Dialogfelds **Neues Projekt** unter **Installiert** > **Visual C++** den Eintrag **Windows Desktop** aus. Klicken Sie im mittleren Bereich auf **Windows-Konsolenanwendung**. Geben Sie *MathClient* als Projektnamen im Bearbeitungsfeld **Name** ein.  Behalten Sie die Standardwerte für **Speicherort** und **Projektmappenname** bei. Legen Sie **Projektmappe** auf **Neue Projektmappe erstellen** fest. Aktivieren Sie ggf. **	Projektmappenverzeichnis erstellen**.
 
-   ![Benennen des Clientprojekts](media/mathclient-new-project-name-159.png "Benennen des Clientprojekts")
+   ![Screenshot des Dialogfelds „Neues Projekt“, in dem „Installiert“ > „Visual C plus plus“ > „Windows-Desktop“ ausgewählt, „Windows-Konsolenanwendung“ hervorgehoben und im Textfeld „Name“ der Text „MathClient“ eingegeben ist.](media/mathclient-new-project-name-159.png "Benennen des Clientprojekts")
 
 1. Klicken Sie auf **OK**, um das Client-App-Projekt zu erstellen.
 
@@ -437,7 +437,7 @@ Es wird ein kleines Konsolenanwendungsprojekt für Sie erstellt. Der Name der Ha
 
 1. Wählen Sie im linken Bereich des Dialogfelds **Neues Projekt** unter **Installiert** > **Vorlagen** > **Visual C++** den Eintrag **Win32** aus. Wählen Sie im mittleren Bereich **Win32-Konsolenanwendung**aus. Geben Sie *MathClient* als Projektnamen im Bearbeitungsfeld **Name** ein. Behalten Sie die Standardwerte für **Speicherort** und **Projektmappenname** bei. Legen Sie **Projektmappe** auf **Neue Projektmappe erstellen** fest. Aktivieren Sie ggf. **	Projektmappenverzeichnis erstellen**.
 
-   ![Benennen des Clientprojekts](media/mathclient-project-name.png "Benennen des Clientprojekts")
+   ![Screenshot des Dialogfelds „Neues Projekt“, in dem „Installiert“ > „Vorlagen“ > „Visual C plus plus“ > „Win32“ ausgewählt, „Win32-Konsolenanwendung Visual C plus plus“ hervorgehoben und im Textfeld „Name“ der Text „MathClient“ eingegeben ist](media/mathclient-project-name.png "Benennen des Clientprojekts")
 
 1. Klicken Sie auf **OK**, um das Dialogfeld **Neues Projekt** zu schließen und den **Win32-Anwendungs-Assistenten** zu starten. Wählen Sie auf der Seite **Übersicht** des Dialogfelds **Win32-Anwendungs-Assistent** die Schaltfläche **Weiter** .
 

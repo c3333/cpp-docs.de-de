@@ -4,12 +4,12 @@ description: Die neuen Features und Korrekturen in Microsoft C/C++-Compiler und
 ms.date: 05/19/2020
 ms.technology: cpp-ide
 ms.assetid: 8801dbdb-ca0b-491f-9e33-01618bff5ae9
-ms.openlocfilehash: 1a0fc228b6c91b1e529db6676c1a1193f5db99e1
-ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.openlocfilehash: a21bb8f8c629b3d9c8c765958d6a52891c90898a
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90041678"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90684744"
 ---
 # <a name="whats-new-for-c-in-visual-studio"></a>Neuerungen bei C++ in Visual Studio
 
@@ -649,7 +649,7 @@ Das Clang/C2-Toolset, das im Lieferumfang von Visual Studio 2017 enthalten ist, 
 
 Visual Studio liefert nun die C++-Kernprüfungen zum Erzwingen der [C++-Kernrichtlinien](https://github.com/isocpp/CppCoreGuidelines). Aktivieren Sie die Prüfungen auf den Projekteigenschaftenseiten in den **Erweiterungen für die Codeanalyse**. Die Erweiterungen werden dann beim Ausführen der Codeanalyse eingeschlossen. Weitere Informationen finden Sie unter [Verwenden der C++-Core-Richtlinienprüfungen](/cpp/code-quality/using-the-cpp-core-guidelines-checkers).
 
-![Zeigt die Verwendung der Eigenschaftenseite „Codeanalyse“, um C++ Core Check-Regelsätze auszuwählen.](media/CppCoreCheck.png "CppCoreCheck-Eigenschaftenseite")
+![Screenshot des Dialogfelds „Eigenschaftenseiten“, in dem „Konfigurationseigenschaften“ > „Codeanalyse“ > „Allgemein“ ausgewählt ist und im Abschnitt „Diesen Regelsatz ausführen“ eine Reihe von Core-Prüfungen aufgeführt werden](media/CppCoreCheck.png "CppCoreCheck-Eigenschaftenseite")
 
 ##### <a name="visual-studio-2017-version-153"></a>Visual Studio 2017 Version 15.3
 
@@ -697,7 +697,7 @@ Visual Studio-Grafikdiagnosetools: Mit diesen Tools können Sie Rendering- und L
 
 - **Suchen und Filtern in der Objekttabelle:** Diese Option stellt eine schnelle und einfache Möglichkeit dar, die gesuchten Ressourcen zu finden.
 
-  ![Zeigt die Position der Filter- und Suchsteuerelemente im Fenster „Objekttabelle“ an.](media/search.png)
+  ![Screenshot des Abschnitts „Objekttabelle“, in dem das Dropdown „Typ“ und das Suchfeld gekennzeichnet sind.](media/search.png)
 
 - **Ressourcenverlauf:** In dieser neue Ansicht wurde der gesamte Änderungsverlaufs einer Ressource und deren Verwendung während des Renderns eines aufgezeichneten Frames optimiert. Um den Verlauf für jede Ressource aufzurufen, klicken Sie auf das Uhrsymbol neben jeden Ressourcenlink.
 

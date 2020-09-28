@@ -3,12 +3,12 @@ title: Konfigurieren eines auf MSBuild basierenden C++-Projekts für Linux in Vi
 ms.date: 08/06/2020
 description: Konfigurieren Sie ein neues auf MSBuild basierendes Linux-Projekt in Visual Studio, damit Sie einen Build erstellen können.
 ms.assetid: 4d7c6adf-54b9-4b23-bd23-5de0c825b768
-ms.openlocfilehash: 7f4664dfc364cbd9a3b499e02de4cf0e7f44fe78
-ms.sourcegitcommit: 2034f8e744a8b36cff8b15e9a5cfe684afebadfb
+ms.openlocfilehash: 4e99645eea89682b4beac5452da01755ea555ec4
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88043862"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90685955"
 ---
 # <a name="configure-a-linux-msbuild-c-project-in-visual-studio"></a>Konfigurieren eines auf MSBuild basierenden C++-Projekts für Linux in Visual Studio
 
@@ -110,13 +110,13 @@ Navigieren Sie zum Verwalten Ihres Header-Caches zu **Extras > Optionen > Plattf
 
 ::: moniker range="vs-2017"
 
-![IntelliSense-Remoteheader](media/remote-header-intellisense.png)
+![Screenshot des Dialogfelds „Optionen“, in dem „Plattformübergreifend“ > „Verbindungs-Manager“ > „IntelliSense-Manager für Remoteheader“ ausgewählt ist](media/remote-header-intellisense.png)
 
 ::: moniker-end
 
 ::: moniker range="vs-2019"
 
-![IntelliSense-Remoteheader](media/connection-manager-vs2019.png)
+![Screenshot des Dialogfelds „Optionen“, in dem „Plattformübergreifend“ > „Verbindungs-Manager“ ausgewählt ist](media/connection-manager-vs2019.png)
 
 Sie können die Protokollierung aktivieren, um Probleme zu beheben:
 

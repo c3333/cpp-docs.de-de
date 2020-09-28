@@ -3,12 +3,12 @@ title: Erstellen eines auf MSBuild basierenden C++-Projekts für Linux in Visual
 ms.date: 08/04/2020
 description: Erstellen Sie ein neues MSBuild-basiertes Linux-Projekt in Visual Studio.
 ms.assetid: 5d7c1d67-bc31-4f96-8622-2b4cf91372fd
-ms.openlocfilehash: 86d8b8fd2abe8970b5146d4ab08dc4251b5562d5
-ms.sourcegitcommit: 2034f8e744a8b36cff8b15e9a5cfe684afebadfb
+ms.openlocfilehash: 559a868ebdea7e3b835a82c31849d0e2fdeaa6c9
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88043849"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686690"
 ---
 # <a name="create-a-linux-msbuild-c-project-in-visual-studio"></a>Erstellen eines auf MSBuild basierenden C++-Projekts für Linux in Visual Studio
 
@@ -31,7 +31,7 @@ Führen Sie folgende Schritte aus, um ein neues Linux-Projekt in Visual Studio 
 1. Wählen Sie in Visual Studio **Datei > Neues Projekt** aus, oder drücken Sie **STRG + UMSCHALT + N**.
 1. Wählen Sie **Visual C++ > Plattformübergreifend > Linux** und anschließend den Projekttyp aus, den Sie erstellen möchten. Geben Sie einen **Namen** und einen **Speicherort** an, und klicken Sie dann auf **OK**.
 
-   ![Neues Linux-Projekt](media/newproject.png)
+   ![Screenshot des Dialogfelds „Neues Projekt“, in dem „Visual C plus plus“ > „Plattformübergreifend“ > „Linux“ ausgewählt ist, alle Projekttypen gekennzeichnet sind und die Textfelder „Name“ und „Speicherort“ gekennzeichnet sind](media/newproject.png)
 
    | Projekttyp | Beschreibung |
    | ------------ | --- |
@@ -61,7 +61,7 @@ Führen Sie folgende Schritte aus, um ein neues Linux-Projekt in Visual Studio 
 1. Wählen Sie in Visual Studio **Datei > Neues Projekt** aus, oder drücken Sie **STRG + UMSCHALT + N**.
 1. Legen Sie die **Sprache** auf **C++** fest, und suchen Sie nach „Linux“. Wählen Sie den zu erstellenden Projekttyp aus, und klicken Sie dann auf **Weiter**. Geben Sie einen **Namen** und einen **Speicherort** an, und klicken Sie auf **Erstellen**.
 
-   ![Neues Linux-Projekt](media/newproject-vs2019.png)
+   ![Screenshot des Dialogfelds „Neues Projekt hinzufügen“, in dem Suchfeld der Text „Linux“ eingegeben ist](media/newproject-vs2019.png)
 
    | Projekttyp | Beschreibung |
    | ------------ | --- |

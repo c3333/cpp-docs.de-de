@@ -2,18 +2,18 @@
 title: Zusammenarbeit mit Live Share für C++ in Visual Studio
 description: Verwenden Sie Live Share für C++ in Visual Studio, um Code in Echtzeit zu bearbeiten und zu teilen.
 ms.date: 05/24/2019
-ms.openlocfilehash: 0ebdd77d0e277778b48cf69024b24841f775d968
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.openlocfilehash: 60830ad6c6b98f644e1c3ddb2e78fbf7397ae919
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81377286"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90684520"
 ---
 # <a name="collaborate-using-live-share-for-c"></a>Zusammenarbeiten mithilfe von Live Share für C++
 
 In Visual Studio 2019 und Visual Studio Code können Sie **Live Share** für die Zusammenarbeit an C++-Projekten in Echtzeit verwenden. Mit **Live Share** kann eine andere Person Ihren Code bearbeiten und debuggen ohne Ihr Projekt oder die zugehörigen Abhängigkeiten zu installieren. Die Bearbeitungen des Anderen werden angezeigt, und jede Bearbeitung wird mit dem Namen der Person markiert, die die Veränderung vorgenommen hat.
 
-![C&#43;&#43; Live Share Editing](../ide/media/live-share-edit-cpp.png "Live-Freigabebearbeitung in C++")
+![C&#43;&#43; – Live Share-Bearbeitung](../ide/media/live-share-edit-cpp.png "Live Share-Bearbeitung in C++")
 
 ## <a name="live-share-host-and-guests"></a>Live Share-Gastgeber und -Gäste
 
@@ -33,17 +33,17 @@ Der Gastgeber und die Gäste können diese IntelliSense-Funktionen verwenden:
 - Markieren von Verweisen
 - Diagnose/Fehler/Wellenlinien
 
-![C&#43;&#43; Live Share Debugging](../ide/media/live-share-debug-cpp.png "Live-Freigabe-Debugging in C++")
+![C&#43;&#43; Live Share-Debuggen](../ide/media/live-share-debug-cpp.png "Live Share-Debuggen in C++")
 
 ## <a name="start-and-end-a-live-share-session"></a>Starten und Beenden einer Live Share-Sitzung
 
-Um eine Live-Freigabesitzung in Visual Studio zu starten, klicken Sie oben rechts auf die Schaltfläche Freigeben, oder wechseln Sie zur > **Dateistart-Zusammenarbeitssitzung**. **File** Daraufhin wird ein Link generiert, den Sie mit Ihren Projektmitarbeitern teilen können.
+Klicken Sie oben rechts auf die Schaltfläche „Freigeben“ oder auf **Datei** > **Start Collaboration Session** (Zusammenarbeitssitzung starten), um eine Live Share-Sitzung in Visual Studio zu starten. Daraufhin wird ein Link generiert, den Sie mit Ihren Projektmitarbeitern teilen können.
 
-![C&#43;&#43; Live-Share-Taste](../ide/media/live-share-button-cpp.png "Live Share Button")
+![Kleiner Screenshot der Schaltfläche „Live Share“](../ide/media/live-share-button-cpp.png "Schaltfläche „Live Share“")
 
 Wählen Sie zum Beenden einer Sitzung **End Collaboration Session** (Zusammenarbeitssitzung beenden) in der Dropdownliste **Freigabe** aus.
 
-![C&#43;&#43; Live-Share-Taste](../ide/media/live-share-end-session-cpp.png "Live Share Button")
+![Screenshot der Dropdownliste „Freigabe“, in der die Option zum Beenden der Zusammenarbeitssitzung hervorgehoben ist](../ide/media/live-share-end-session-cpp.png "Schaltfläche „Live Share“")
 
 ## <a name="for-more-information"></a>Weitere Informationen finden Sie unter
 
@@ -52,5 +52,5 @@ Weitere Informationen zu **Live Share** in Visual Studio finden Sie unter [What 
 ## <a name="see-also"></a>Weitere Informationen
 
 [Schreiben und Umgestalten von Code (C++)](writing-and-refactoring-code-cpp.md)</br>
-[Navigieren in C++-Code in Visual Studio](navigate-code-cpp.md)</br>
-[Lesen und verstehen von C++-Code](read-and-understand-code-cpp.md)</br>
+[Navigate your C++ code base in Visual Studio (Navigieren in Ihrer C++-Codebasis in Visual Studio)](navigate-code-cpp.md)</br>
+[Read and understand C++ code (Lesen und Verstehen von C++-Code)](read-and-understand-code-cpp.md)</br>

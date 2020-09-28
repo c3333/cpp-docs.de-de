@@ -3,12 +3,12 @@ title: Bereitstellen, Ausführen und Debuggen Ihres auf MSBuild basierenden C++-
 description: Informationen zum Kompilieren, Ausführen und Debuggen von Code für das Remoteziel in einem auf MSBuild basierenden C++-Projekt für Linux in Visual Studio.
 ms.date: 08/08/2020
 ms.assetid: f7084cdb-17b1-4960-b522-f84981bea879
-ms.openlocfilehash: 55e066201e99245db4c63902c51223047e40e687
-ms.sourcegitcommit: 2034f8e744a8b36cff8b15e9a5cfe684afebadfb
+ms.openlocfilehash: 4200e30b445f4a09fc60083db0067996c96ea953
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88043888"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686703"
 ---
 # <a name="deploy-run-and-debug-your-linux-msbuild-project"></a>Bereitstellen, Ausführen und Debuggen Ihres Linux-MSBuild-Projekts
 
@@ -38,7 +38,7 @@ Es gibt mehrere Möglichkeiten für den Umgang mit dem Linux-Projekt sowie zum D
 
    GDB wird zum Debuggen von Anwendungen verwendet, die unter Linux ausgeführt werden. Beim Debuggen auf einem Remotesystem (nicht WSL) stehen gdb für die Ausführung zwei verschiedene Modi zur Verfügung, die über die Option **Debugmodus** auf der Eigenschaftenseite **Debuggen** des Projekts ausgewählt werden können:
 
-   ![GDB-Optionen](media/vs2019-debugger-settings.png)
+   ![Screenshot des Dialogfelds „Eigenschaftenseiten“ der Linux-Konsolen-App in Visual Studio 2019, in dem „Konfigurationseigenschaften“ > „Debuggen“ ausgewählt ist und der Debugmodus hervorgehoben und in der Dropdownliste die Option G B D ausgewählt und hervorgehoben ist](media/vs2019-debugger-settings.png)
 
    ::: moniker-end
 
@@ -46,7 +46,7 @@ Es gibt mehrere Möglichkeiten für den Umgang mit dem Linux-Projekt sowie zum D
 
    GDB wird zum Debuggen von Anwendungen verwendet, die unter Linux ausgeführt werden. Für die Ausführung stehen GDB zwei verschiedene Modi zur Verfügung, die über die Option **Debugging Mode** (Debugmodus) auf der Eigenschaftenseite **Debugging** (Debuggen) des Projekts ausgewählt werden können:
 
-   ![GDB-Optionen](media/vs2017-debugger-settings.png)
+   ![Screenshot des Dialogfelds „Eigenschaftenseiten“ der Linux-Konsolen-App in Visual Studio 2017, in dem „Konfigurationseigenschaften“ > „Debuggen“ ausgewählt ist und der Debugmodus hervorgehoben und in der Dropdownliste die Option G B D ausgewählt und hervorgehoben ist](media/vs2017-debugger-settings.png)
 
    ::: moniker-end
 

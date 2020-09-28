@@ -5,12 +5,12 @@ ms.custom: mvc
 ms.date: 04/20/2020
 ms.topic: tutorial
 ms.assetid: 45138d70-719d-42dc-90d7-1d0ca31a2f54
-ms.openlocfilehash: 07e88da9a8a3712e1d37e319c29fd25aebce8ea7
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.openlocfilehash: 333bb6ce1f3ea0db6b07d70ddd60d4a4be337abd
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81749307"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686508"
 ---
 # <a name="create-a-c-console-app-project"></a>Erstellen eines C++-Konsolen-App-Projekts
 
@@ -32,7 +32,7 @@ Visual Studio verwendet *Projekte*, um Code für eine App zu ordnen, und *Projek
 
 1. Geben Sie im Dialogfeld **Neues Projekt konfigurieren** in das Bearbeitungsfeld **Projektname** *HelloWorld* ein. Klicken Sie auf **Erstellen**, um das Projekt zu erstellen.
 
-   ![Benennen und Erstellen des neuen Projekts](media/vs2019-configure-new-project-hello-world.png "Benennen und Erstellen des neuen Projekts")
+   ![Screenshot des Dialogfelds „Neues Projekt konfigurieren“, bei dem im Textfeld „Projektname“ der Text „HelloWorld“ eingegeben ist](media/vs2019-configure-new-project-hello-world.png "Benennen und Erstellen des neuen Projekts")
 
    Visual Studio erstellt daraufhin ein neues Projekt. Nun können Sie Ihren Quellcode dort hinzufügen und bearbeiten. Standardmäßig fügt die Konsolen-App-Vorlage als Quellcode eine „Hallo Welt“-App ein:
 
@@ -52,7 +52,7 @@ Visual Studio verwendet *Projekte*, um Code für eine App zu ordnen, und *Projek
 
 1. Wählen Sie im Dialogfeld **Neues Projekt** **Installiert > Visual C++** aus, sofern dies nicht bereits ausgewählt ist, und dann die Vorlage **Leeres Projekt**. Geben Sie in das Feld **Name** *HelloWorld* ein. Klicken Sie auf **OK**, um das Projekt zu erstellen.
 
-   ![Benennen und Erstellen des neuen Projekts](media/vscpp-concierge-project-name-callouts.png "Benennen und Erstellen des neuen Projekts")
+   ![Screenshot des Dialogfelds „Neues Projekt“, in dem „Installiert“ > „Visual C plus plus“ ausgewählt und gekennzeichnet ist, die Option „Leeres Projekt“ gekennzeichnet ist und im Textfeld „Name“ der Text „HelloWorld“ eingegeben ist](media/vscpp-concierge-project-name-callouts.png "Benennen und Erstellen des neuen Projekts")
 
 Visual Studio erstellt daraufhin ein neues leeres Projekt. Sie können das Projekt nun für die Art von App anpassen, die Sie erstellen möchten, und Ihre Quellcodedateien hinzufügen. Diesen Schritt führen Sie als Nächstes durch.
 

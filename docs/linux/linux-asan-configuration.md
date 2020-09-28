@@ -2,12 +2,12 @@
 title: Konfigurieren von Linux-Projekten zum Verwenden von AddressSanitizer
 description: In diesem Artikel wird beschrieben, wie Sie C++-Linux-Projekte in Visual Studio konfigurieren, um AddressSanitizer verwenden zu können.
 ms.date: 06/07/2019
-ms.openlocfilehash: 80e9ab46c948f2062391ae723c3425c435bd4507
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 0e862e09d8178ce35fe26f2be138d7f6843b5ef1
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81364313"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686664"
 ---
 # <a name="configure-linux-projects-to-use-address-sanitizer"></a>Konfigurieren von Linux-Projekten zum Verwenden von AddressSanitizer
 
@@ -49,11 +49,11 @@ Klicken Sie mit der rechten Maustaste auf die Datei „CMakeLists.txt“ im **Pr
 
 Stellen Sie sicher, dass Sie im linken Bereich des Dialogfelds eine Linux-Konfiguration ausgewählt haben (z. B. **Linux-Debug**):
 
-![Linux-Debugkonfiguration](media/linux-debug-configuration.png)
+![Screenshot des linken Bereichs, in dem „Linux-Debug“ als eine der Konfigurationsoptionen aufgeführt ist](media/linux-debug-configuration.png)
 
 Die ASan-Optionen finden Sie unter **Allgemein**. Geben Sie die ASan-Runtimeflags im Format „flag=value“ (Flag=Wert) ein, und verwenden Sie dabei Semikolons.
 
-![Linux-Debugkonfiguration](media/cmake-settings-asan-options.png)
+![Screenshot der Option „AddressSanitizer aktivieren“ mit einigen AdressSanitizier-Laufzeitflags](media/cmake-settings-asan-options.png)
 
 ## <a name="install-the-asan-debug-symbols"></a>Installieren der ASan-Debugsymbole
 

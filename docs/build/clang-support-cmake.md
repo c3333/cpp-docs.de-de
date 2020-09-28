@@ -4,12 +4,12 @@ ms.date: 07/01/2019
 ms.description: Configure a CMake project in Visual Studio to use the Clang/LLVM toolchain.
 helpviewer_keywords:
 - Clang support for C++ CMake projects
-ms.openlocfilehash: 46bfe788c13df3a37dd9cba654d16cfe4c3fe177
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: a23526cf5216e4cc37c3131a0d1ba94a6e923f56
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81323180"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686430"
 ---
 # <a name="clangllvm-support-in-visual-studio-cmake-projects"></a>Clang-/LLVM-Unterstützung in CMake-Projekten in Visual Studio
 
@@ -57,7 +57,7 @@ Führen Sie die folgenden Schritte durch, um eine bestehende Konfiguration für 
 
 1. Wählen Sie unter **Allgemein** aus dem Dropdownmenü **Toolset** das gewünschte Clang-Toolset aus:
 
-   ![CMake-Clang-Toolset](media/cmake-clang-toolset.png)
+   ![Screenshot des Dialogfelds „Allgemein“, in dem das Toolset ausgewählt und „c lang c l x 86“ hervorgehoben ist](media/cmake-clang-toolset.png)
 
 ## <a name="custom-clang-locations"></a>Benutzerdefinierte Clang-Speicherorte
 
@@ -68,7 +68,7 @@ Standardmäßig sucht Visual Studio an zwei Stellen nach Clang:
 
 Sie können einen anderen Speicherort angeben, indem Sie die CMake-Variablen **CMAKE_C_COMPILER** und **CMAKE_CXX_COMPILER** in den **CMake-Einstellungen** festlegen:
 
-![CMake-Clang-Toolset](media/clang-location-cmake.png)
+![Screenshot des Dialogfelds „C Make-Einstellungen“, in dem „C Make C X X Compiler“ hervorgehoben ist](media/clang-location-cmake.png)
 
 ## <a name="clang-compatibility-modes"></a>Clang-Kompatibilitätsmodi
 

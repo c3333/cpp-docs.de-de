@@ -4,12 +4,12 @@ description: Verwenden Sie den C++-Code-Editor in Visual Studio, um Ihren Code z
 ms.date: 05/31/2019
 ms.assetid: 56ffb9e9-514f-41f4-a3cf-fd9ce2daf3b6
 ms.topic: overview
-ms.openlocfilehash: 43c4529ae0c5ac5a8c4fae2ae402ed3c6e222c37
-ms.sourcegitcommit: 426e327c9f7c3a3b02300e3f924f9786d62958e9
+ms.openlocfilehash: bf34bf39bc41841be72c9400ec63c501d7aa56a3
+ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84206218"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90686331"
 ---
 # <a name="edit-and-refactor-c-code-in-visual-studio"></a>Bearbeiten und Umgestalten von C++-Code in Visual Studio
 
@@ -98,11 +98,11 @@ Bei einigen Fehlern und häufigen Codemustern schlägt der Editor eine **Schnell
 
 Im folgenden Beispiel wurde ein `vector`-Objekt deklariert, aber es konnte keine Definition gefunden werden, weshalb der Editor vorschlägt, die nötige Headerdatei einzubeziehen:
 
-![C&#43;&#43; Schnelle Problembehebung](../ide/media/quick-fix-for-header-cpp.png "Schnelle Problembehebung in C++")
+![Screenshot mit Fehlerwellenlinien und der Schnellkorrektur im Editor](../ide/media/quick-fix-for-header-cpp.png "Schnelle Problembehebung in C++")
 
 Der Editor bietet zudem Schnellkorrekturen für mögliche Refactorings. Wenn Sie beispielsweise eine Klasse in einer Headerdatei deklarieren, schlägt Visual Studio für diese eine Definition in einer separaten CPP-Datei vor.
 
-![C&#43;&#43; Schnelle Problembehebung](../ide/media/quick-fix.png "Schnelle Problembehebung in C++")
+![Screenshot der Schnellkorrektur, in dem die Schnellkorrektur für die Definition von „Create“ für den Kanalrouteniterator in „Channels dot C p p“ hervorgehoben ist](../ide/media/quick-fix.png "Schnelle Problembehebung in C++")
 
 ## <a name="change-tracking"></a>Änderungsnachverfolgung
 
