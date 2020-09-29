@@ -6,26 +6,26 @@ helpviewer_keywords:
 - .NET Framework [C++], Debug class
 - Debug class
 ms.assetid: 076bd528-1b6f-4e8a-a372-eb5849cf969a
-ms.openlocfilehash: 3a262a0d2ef429cb94f4648eb7c7180e7b130279
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 47e1b949cb6e998508a3bd362b1c74961cf4cc23
+ms.sourcegitcommit: 94893973211d0b254c8bcdcf0779997dcc136b0c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62393778"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91414151"
 ---
 # <a name="debug-class-ccli"></a>Debug-Klasse (C++/CLI)
 
-Bei Verwendung <xref:System.Diagnostics.Debug> in Visual C++-Anwendung, das Verhalten ändert nicht zwischen einem Debugbuild und ein Releasebuild erstellt.
+Wenn Sie <xref:System.Diagnostics.Debug> in einer Visual C++ Anwendung verwenden, ändert sich das Verhalten nicht zwischen einem Debug-und einem Releasebuild.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Das Verhalten für <xref:System.Diagnostics.Trace> entspricht das Verhalten für die Debug-Klasse, aber richtet sich nach dem Symbol TRACE definiert. Dies bedeutet, dass Sie müssen `#ifdef` jeder ablaufverfolgungsbezogenen-Code für das Debugverhalten in einem Releasebuild zu verhindern.
+Das Verhalten für <xref:System.Diagnostics.Trace> ist identisch mit dem Verhalten der Debug-Klasse, hängt jedoch von der definierten Symbol Ablauf Verfolgung ab. Dies bedeutet, dass Sie `#ifdef` alle Ablauf Verfolgungs bezogenen Codes benötigen, um das Debugverhalten in einem Releasebuild zu verhindern.
 
-## <a name="example"></a>Beispiel
+## <a name="example-always-executes-output-statements"></a>Beispiel: führt immer Ausgabe Anweisungen aus
 
-### <a name="description"></a>Beschreibung
+### <a name="description"></a>BESCHREIBUNG
 
-Im folgende Beispiel führt immer die ausgabeanweisungen, unabhängig davon, ob Sie die Kompilierung mit **DDEBUG** oder **/DTRACE**.
+Im folgenden Beispiel werden immer die OUTPUT-Anweisungen ausgeführt, unabhängig davon, ob Sie mit **/DDEBUG** oder **/DTrace**kompilieren.
 
 ### <a name="code"></a>Code
 
@@ -49,7 +49,7 @@ int main() {
 }
 ```
 
-### <a name="output"></a>Output
+### <a name="output"></a>Ausgabe
 
 ```Output
     Entering Main
@@ -58,11 +58,11 @@ Hello World.
 test
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-use-ifdef-and-endif-directives"></a>Beispiel: Verwenden von #ifdef und #endif Direktiven
 
-### <a name="description"></a>Beschreibung
+### <a name="description"></a>BESCHREIBUNG
 
-Um das erwartete Verhalten zu erhalten (d. h. keine Ausgabe von "test" gedruckt, für einen Releasebuild), müssen Sie verwenden die `#ifdef` und `#endif` Anweisungen. Im vorhergehenden Beispielcode gezeigt wird unten geändert, um diese Lösung zu veranschaulichen:
+Um das erwartete Verhalten (d. h. keine "Test Ausgabe" für einen Releasebuild gedruckt) zu erhalten, müssen Sie die `#ifdef` -Direktive und die- `#endif` Direktive verwenden. Das vorherige Codebeispiel wurde unten geändert, um diese Lösung zu veranschaulichen:
 
 ### <a name="code"></a>Code
 

@@ -5,18 +5,18 @@ ms.topic: reference
 helpviewer_keywords:
 - generics [C++], consuming from .NET languages
 ms.assetid: e6330ef5-e907-432e-b527-7a22f5899639
-ms.openlocfilehash: 303fa73f09220b2139d681bf3109fd843299a900
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: bea22a0d9fdc5c1ddbd9da2af7078228a6315e80
+ms.sourcegitcommit: 94893973211d0b254c8bcdcf0779997dcc136b0c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80172411"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91414138"
 ---
 # <a name="consuming-generics-ccli"></a>Verwenden von Generics (C++/CLI)
 
 Generics, die in einer Sprache für .NET (oder UWP) erstellt wurden, können möglicherweise in anderen Sprachen verwendet werden. Im Gegensatz zu Vorlagen bleibt ein Generic in einer kompilierten Assembly immer noch generisch. Der generische Typ kann also in einer anderen Assembly und sogar in einer anderen Sprache als die Assembly, in der der generische Typ definiert wurde, instanziiert werden.
 
-## <a name="example"></a>Beispiel
+## <a name="example-generic-class-defined-in-c"></a>Beispiel: in C definierte generische Klasse #
 
 ### <a name="description"></a>BESCHREIBUNG
 
@@ -80,7 +80,7 @@ public class CircularList<ItemType> {
 }
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-consume-assembly-authored-in-c"></a>Beispiel: Verwenden der in C erstellten Assembly #
 
 ### <a name="description"></a>BESCHREIBUNG
 
@@ -118,6 +118,6 @@ int main() {
 10
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Generics](generics-cpp-component-extensions.md)

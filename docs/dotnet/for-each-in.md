@@ -1,6 +1,7 @@
 ---
 title: for each, in
-ms.date: 11/04/2016
+description: C++/CLI für jede, in der Anweisungs Beschreibung und in Beispielen.
+ms.date: 09/25/2020
 ms.topic: reference
 f1_keywords:
 - cliext::foreach
@@ -10,16 +11,16 @@ f1_keywords:
 helpviewer_keywords:
 - for each keyword [C++]
 ms.assetid: 0c3a364b-2747-43f3-bb8d-b7d3b7023f79
-ms.openlocfilehash: f1f5523eb22bd8a839da9b3f73dd6c3718b4fd63
-ms.sourcegitcommit: 6b749db14b4cf3a2b8d581fda6fdd8cb98bc3207
+ms.openlocfilehash: 7f228a773dfcbe791e26ea3e1bd8cfba7f3ab028
+ms.sourcegitcommit: 94893973211d0b254c8bcdcf0779997dcc136b0c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82825791"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91413918"
 ---
 # <a name="for-each-in"></a>for each, in
 
-Durchläuft ein Array oder eine Auflistung. Dieses nicht standardmäßige Schlüsselwort ist sowohl in C++/CLI und nativen C++-Projekten verfügbar. Seine Verwendung wird jedoch nicht empfohlen. Verwenden Sie stattdessen eine Standard [Bereichs basierte for-Anweisung (C++)](../cpp/range-based-for-statement-cpp.md) .
+Durchläuft ein Array oder eine Auflistung. Dieses nicht standardmäßige Schlüsselwort ist sowohl in C++/CLI und nativen C++-Projekten verfügbar. Die Verwendung wird jedoch nicht empfohlen. Verwenden Sie stattdessen eine Standard [Bereichs basierte for-Anweisung (C++)](../cpp/range-based-for-statement-cpp.md) .
 
 ## <a name="all-runtimes"></a>Alle Laufzeiten
 
@@ -34,7 +35,7 @@ Durchläuft ein Array oder eine Auflistung. Dieses nicht standardmäßige Schlü
 *type*<br/>
 Der `identifier`-Typ.
 
-*Bezeichner*<br/>
+*identifier*<br/>
 Die Iterationsvariable, die das Auflistungselement darstellt.  Wenn `identifier` ein nach [Verfolgungs Verweis Operator](../extensions/tracking-reference-operator-cpp-component-extensions.md)ist, können Sie das Element ändern.
 
 *expression*<br/>
@@ -45,21 +46,11 @@ Eine oder mehrere auszuführende Anweisungen.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die `for each`-Anweisung wird zum Durchlaufen einer Auflistung verwendet. Sie können Elemente in einer Auflistung ändern, aber keine Elemente hinzufügen oder löschen.
+Die `for each`-Anweisung wird zum Durchlaufen einer Auflistung verwendet. Sie können Elemente in einer Auflistung ändern, aber Sie können keine Elemente hinzufügen oder löschen.
 
 Die- *Anweisungen* werden für jedes Element im Array oder in der Auflistung ausgeführt. Nachdem die Iteration alle Elemente in der Auflistung durchlaufen hat, wird die Steuerung an die nächste Anweisung, die auf den `for each`-Block folgt, übergeben.
 
-`for each`und `in` sind [kontextabhängige Schlüsselwörter](../extensions/context-sensitive-keywords-cpp-component-extensions.md).
-
-Weitere Informationen finden Sie unter:
-
-- [Eine C++-Standardbibliotheksauflistung mit der for-each-Klausel durchlaufen](../dotnet/iterating-over-stl-collection-by-using-for-each.md)
-
-- [Vorgehensweise: Durchlaufen von Arrays mit der for-each-Klausel](../dotnet/how-to-iterate-over-arrays-with-for-each.md)
-
-- [Vorgehensweise: Durchlaufen einer generischen Auflistung mit der for-each-Klausel](../dotnet/how-to-iterate-over-a-generic-collection-with-for-each.md)
-
-- [Vorgehensweise: Durchlaufen einer benutzerdefinierten Auflistung mit der for-each-Klausel](../dotnet/how-to-iterate-over-a-user-defined-collection-with-for-each.md)
+`for each` und `in` sind [kontextabhängige Schlüsselwörter](../extensions/context-sensitive-keywords-cpp-component-extensions.md).
 
 ## <a name="windows-runtime"></a>Windows-Runtime
 
@@ -97,8 +88,6 @@ int main() {
 }
 ```
 
-**Ausgabe**
-
 ```Output
 abcd
 
@@ -107,14 +96,14 @@ Testing
 
 ## <a name="common-language-runtime"></a>Common Language Runtime
 
-**Anmerkungen**
+### <a name="remarks"></a>Bemerkungen
 
 Die CLR-Syntax ist identisch mit der Syntax **all Runtimes** , außer wie folgt.
 
 *expression*<br/>
-Ein verwalteter Arrayausdruck oder eine Auflistung. Das Auflistungs Element muss so lauten, dass der Compiler es <xref:System.Object> von in den *Bezeichnertyp* konvertieren kann.
+Ein verwalteter Arrayausdruck oder eine Auflistung. Das Auflistungs Element muss so lauten, dass der Compiler es von <xref:System.Object> in den *Bezeichnertyp* konvertieren kann.
 
-*Expression* wertet einen Typ aus, der <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>oder einen Typ implementiert, der eine `GetEnumerator` Methode definiert, die entweder einen Typ zurück <xref:System.Collections.IEnumerator> gibt, der implementiert oder alle in `IEnumerator`definierten Methoden deklariert.
+*Expression* wertet einen Typ aus, der <xref:System.Collections.IEnumerable> , <xref:System.Collections.Generic.IEnumerable%601> oder einen Typ implementiert, der eine `GetEnumerator` Methode definiert, die entweder einen Typ zurückgibt, der implementiert <xref:System.Collections.IEnumerator> oder alle in definierten Methoden deklariert `IEnumerator` .
 
 ### <a name="requirements"></a>Requirements (Anforderungen)
 
@@ -149,8 +138,6 @@ int main() {
 }
 ```
 
-**Ausgabe**
-
 ```Output
 abcd
 
@@ -159,4 +146,5 @@ Testing
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Komponentenerweiterungen für Laufzeitplattformen](../extensions/component-extensions-for-runtime-platforms.md)
+[Komponenten Erweiterungen für laufzeitplattformen](../extensions/component-extensions-for-runtime-platforms.md)\
+[Range-based for-Anweisung (C++)](../cpp/range-based-for-statement-cpp.md)

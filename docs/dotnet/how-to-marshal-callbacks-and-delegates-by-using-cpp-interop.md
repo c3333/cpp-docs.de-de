@@ -10,26 +10,26 @@ helpviewer_keywords:
 - marshaling [C++], callbacks and delegates
 - callbacks [C++], marshaling
 ms.assetid: 2313e9eb-5df9-4367-be0f-14b4712d8d2d
-ms.openlocfilehash: 592eae0ff59baddb79b810d46669b78ecc801155
-ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
+ms.openlocfilehash: 5d0427962ddb7d6409f07b99c0f618b340ee00df
+ms.sourcegitcommit: 94893973211d0b254c8bcdcf0779997dcc136b0c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "79544940"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91414294"
 ---
 # <a name="how-to-marshal-callbacks-and-delegates-by-using-c-interop"></a>Gewusst wie: Marshallen von Rückrufen und Delegaten mit C++-Interop
 
-In diesem Thema wird das Marshalling von Rückrufen und Delegaten (der verwalteten Version eines Rückrufs) zwischen verwaltetem und nicht verwaltetem Code mithilfe von Visual C++veranschaulicht.
+In diesem Thema wird das Marshalling von Rückrufen und Delegaten (der verwalteten Version eines Rückrufs) zwischen verwaltetem und nicht verwaltetem Code mithilfe von Visual C++ veranschaulicht.
 
 In den folgenden Codebeispielen werden [verwaltete und nicht verwaltete #pragma-](../preprocessor/managed-unmanaged.md) Direktiven verwendet, um verwaltete und nicht verwaltete Funktionen in der gleichen Datei zu implementieren. die Funktionen können jedoch auch in separaten Dateien definiert werden. Dateien, die nur nicht verwaltete Funktionen enthalten, müssen nicht mit [/CLR (Common Language Runtime-Kompilierung)](../build/reference/clr-common-language-runtime-compilation.md)kompiliert werden.
 
-## <a name="example"></a>Beispiel
+## <a name="example-configure-unmanaged-api-to-trigger-managed-delegate"></a>Beispiel: Konfigurieren der nicht verwalteten API, um einen verwalteten Delegaten zu initiieren
 
-Im folgenden Beispiel wird veranschaulicht, wie Sie eine nicht verwaltete API so konfigurieren, dass Sie einen verwalteten Delegaten auslöst. Ein verwalteter Delegat wird erstellt, und eine der Interop-Methoden (<xref:System.Runtime.InteropServices.Marshal.GetFunctionPointerForDelegate%2A>) wird verwendet, um den zugrunde liegenden Einstiegspunkt für den Delegaten abzurufen. Diese Adresse wird dann an die nicht verwaltete Funktion weitergegeben, die Sie aufruft, ohne dass Sie wissen, dass Sie als verwaltete Funktion implementiert ist.
+Im folgenden Beispiel wird veranschaulicht, wie Sie eine nicht verwaltete API so konfigurieren, dass Sie einen verwalteten Delegaten auslöst. Ein verwalteter Delegat wird erstellt, und eine der Interop-Methoden, <xref:System.Runtime.InteropServices.Marshal.GetFunctionPointerForDelegate%2A> , wird verwendet, um den zugrunde liegenden Einstiegspunkt für den Delegaten abzurufen. Diese Adresse wird dann an die nicht verwaltete Funktion weitergegeben, die Sie aufruft, ohne dass Sie wissen, dass Sie als verwaltete Funktion implementiert ist.
 
 Beachten Sie, dass es möglich, aber nicht notwendig ist, den Delegaten mithilfe von [pin_ptr (C++/CLI)](../extensions/pin-ptr-cpp-cli.md) anzuheften, um zu verhindern, dass er vom Garbage Collector wieder gefunden oder verworfen wird. Der Schutz vor einem vorzeitigen Garbage Collection ist erforderlich, aber das Anhebungs bietet mehr Schutz als notwendig, da es die Erfassung verhindert, aber auch die Verlagerung verhindert.
 
-Wenn ein Delegat von einem Garbage Collection neu angeordnet wird, wirkt er sich nicht auf den zugrunde liegenden verwalteten Rückruf aus, sodass <xref:System.Runtime.InteropServices.GCHandle.Alloc%2A> verwendet wird, um einen Verweis auf den Delegaten hinzuzufügen und so die Verschiebung des Delegaten zu ermöglichen, aber die Beseitigung zu verhindern. Wenn Sie GCHandle anstelle von pin_ptr verwenden, wird das Fragmentierungs Potenzial des verwalteten Heaps reduziert.
+Wenn ein Delegat durch einen Garbage Collection neu angeordnet wird, wirkt er sich nicht auf den zugrunde liegenden verwalteten Rückruf aus. er <xref:System.Runtime.InteropServices.GCHandle.Alloc%2A> wird daher verwendet, um einen Verweis auf den Delegaten hinzuzufügen, der die Verlagerung des Delegaten ermöglicht, aber die Beseitigung verhindert. Wenn Sie GCHandle anstelle von pin_ptr verwenden, wird das Fragmentierungs Potenzial des verwalteten Heaps reduziert.
 
 ```cpp
 // MarshalDelegate1.cpp
@@ -77,9 +77,9 @@ int main() {
 }
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-function-pointer-stored-by-unmanaged-api"></a>Beispiel: Funktionszeiger, der von der nicht verwalteten API gespeichert wird
 
-Das folgende Beispiel ähnelt dem vorherigen Beispiel, aber in diesem Fall wird der bereitgestellte Funktionszeiger von der nicht verwalteten API gespeichert, sodass er jederzeit aufgerufen werden kann, sodass Garbage Collection für eine beliebige Zeitspanne unterdrückt werden muss. Im folgenden Beispiel wird eine globale Instanz von <xref:System.Runtime.InteropServices.GCHandle> verwendet, um zu verhindern, dass der Delegat unabhängig vom Funktionsbereich verschoben wird. Wie im ersten Beispiel erläutert, ist die Verwendung von pin_ptr für diese Beispiele unnötig, aber in diesem Fall funktioniert nicht trotzdem, da der Bereich eines pin_ptr auf eine einzelne Funktion beschränkt ist.
+Das folgende Beispiel ähnelt dem vorherigen Beispiel, aber in diesem Fall wird der bereitgestellte Funktionszeiger von der nicht verwalteten API gespeichert, sodass er jederzeit aufgerufen werden kann, sodass Garbage Collection für eine beliebige Zeitspanne unterdrückt werden muss. Im folgenden Beispiel wird eine globale Instanz von verwendet, <xref:System.Runtime.InteropServices.GCHandle> um zu verhindern, dass der Delegat unabhängig vom Funktionsbereich verschoben wird. Wie im ersten Beispiel erläutert, ist die Verwendung von pin_ptr für diese Beispiele unnötig, aber in diesem Fall funktioniert nicht trotzdem, da der Bereich eines pin_ptr auf eine einzelne Funktion beschränkt ist.
 
 ```cpp
 // MarshalDelegate2.cpp
@@ -139,6 +139,6 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Verwenden von C++-Interop (implizites PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md)
+[Verwenden von C++ Interop (implizites PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md)

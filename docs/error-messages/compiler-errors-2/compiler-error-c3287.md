@@ -1,25 +1,28 @@
 ---
 title: Compilerfehler C3287
-ms.date: 11/04/2016
+description: Beschreibt den Microsoft C++-Compilerfehler C3287.
+ms.date: 09/25/2020
 f1_keywords:
 - C3287
 helpviewer_keywords:
 - C3287
 ms.assetid: c1fa73d2-2c82-4136-a7da-0e75e3b420ad
-ms.openlocfilehash: f0f3441b749e3ae074e18e1132dcc4003eba3ba3
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 4067355ef1bc1992d0f8519656bcd1063179aef4
+ms.sourcegitcommit: 94893973211d0b254c8bcdcf0779997dcc136b0c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74749606"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91414319"
 ---
 # <a name="compiler-error-c3287"></a>Compilerfehler C3287
 
-Der Typ 'Typ' (Rückgabetyp von 'GetEnumerator') muss eine passende öffentliche MoveNext-Memberfunktion und eine öffentliche Current-Eigenschaft aufweisen.
+> der Typ "*Type*" (Rückgabetyp von GetEnumerator) muss über eine passende Public-Member-Funktion und eine öffentliche Current-Eigenschaft verfügen.
+
+## <a name="remarks"></a>Bemerkungen
 
 Benutzerdefinierte Auflistungsklassen müssen Definitionen für `MoveNext` und `Current`enthalten.
 
-Weitere Informationen finden Sie unter [How to: Iterate Over a User-Defined Collection with for each](../../dotnet/how-to-iterate-over-a-user-defined-collection-with-for-each.md) .
+Weitere Informationen finden Sie unter [for each in](../../dotnet/for-each-in.md).
 
 ## <a name="example"></a>Beispiel
 

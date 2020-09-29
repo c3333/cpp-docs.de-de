@@ -1,6 +1,7 @@
 ---
 title: strerror_s, _strerror_s, _wcserror_s, __wcserror_s
-ms.date: 06/09/2020
+description: Funktionen mit Sicherheitsverbesserungen, um eine System Fehlermeldung zu erhalten oder eine vom Benutzer bereitgestellte Fehlermeldung auszugeben.
+ms.date: 09/25/2020
 api_name:
 - __wcserror_s
 - _strerror_s
@@ -46,12 +47,12 @@ helpviewer_keywords:
 - wcserror_s function
 - error messages, getting
 ms.assetid: 9e5b15a0-efe1-4586-b7e3-e1d7c31a03d6
-ms.openlocfilehash: 91be8803a0695670e7afe673b25b54fccde40a9c
-ms.sourcegitcommit: 8167c67d76de58a7c2df3b4dcbf3d53e3b151b77
+ms.openlocfilehash: 4e594a37425714ef521c083785120e2262225b19
+ms.sourcegitcommit: 94893973211d0b254c8bcdcf0779997dcc136b0c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84664325"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91414619"
 ---
 # <a name="strerror_s-_strerror_s-_wcserror_s-__wcserror_s"></a>strerror_s, _strerror_s, _wcserror_s, __wcserror_s
 
@@ -80,6 +81,9 @@ errno_t __wcserror_s(
    size_t sizeInWords,
    const wchar_t *strErrMsg
 );
+```
+
+```cpp
 template <size_t size>
 errno_t strerror_s(
    char (&buffer)[size],
@@ -104,26 +108,26 @@ errno_t __wcserror_s(
 
 ### <a name="parameters"></a>Parameter
 
-*ert*<br/>
+*ert*\
 Puffer für die Fehlerzeichenfolge.
 
-*sizeInBytes*<br/>
+*sizeInBytes*\
 Die Anzahl von Bytes im Puffer.
 
-*sizin words*<br/>
+*sizin words*\
 Die Anzahl der Wörter im Puffer.
 
-*errnum*<br/>
+*errnum*\
 Fehlernummer.
 
-*"Strauch Meldung"*<br/>
+*"Strauch Meldung"*\
 Vom Benutzer angegebene Meldung.
 
 ## <a name="return-value"></a>Rückgabewert
 
 Null, wenn erfolgreich, Fehlercode bei Fehler.
 
-### <a name="error-condtions"></a>Fehlerbedingungen
+### <a name="error-conditions"></a>Fehlerbedingungen
 
 |*ert*|*sizin Bytes/sizeIn words*|*"Strauch Meldung"*|Inhalt des *Puffers*|
 |--------------|------------------------|-----------------|--------------------------|
@@ -131,6 +135,8 @@ Null, wenn erfolgreich, Fehlercode bei Fehler.
 |any|0|any|nicht geändert|
 
 ## <a name="remarks"></a>Bemerkungen
+
+Die **strerror_s** -Funktion ist Thread sicher.
 
 Die **strerror_s** -Funktion ordnet *errnum* einer Fehlermeldungs Zeichenfolge zu und gibt die Zeichenfolge im *Puffer*zurück. **_strerror_s** nimmt die Fehlernummer nicht an. Er verwendet den aktuellen Wert von **errno** , um die entsprechende Meldung zu bestimmen. Weder **strerror_s** noch **_strerror_s** gibt die Nachricht tatsächlich aus: dafür müssen Sie eine Ausgabefunktion wie z. b. [fprintf](fprintf-fprintf-l-fwprintf-fwprintf-l.md)aufrufen:
 
@@ -142,7 +148,7 @@ if (( _access( "datafile",2 )) == -1 )
 }
 ```
 
-Wenn " *strauerrmsg* " den Wert **null**hat, gibt **_strerror_s** eine Zeichenfolge im *Puffer* zurück, die die System Fehlermeldung für den letzten Bibliotheks Rückruf enthält, der einen Fehler verursacht hat. Die Fehlermeldungszeichenfolge wird durch das Zeilenumbruchzeichen ('\n') beendet. Wenn " *stringermsg* " nicht gleich **null**ist, gibt **_strerror_s** eine Zeichenfolge im *Puffer* zurück, die (in der richtigen Reihenfolge) die Zeichen folgen Meldung, einen Doppelpunkt, ein Leerzeichen, die System Fehlermeldung für den letzten Bibliotheks Aufrufern, der einen Fehler erzeugt, und ein Zeilen Vorzeichen Die Zeichenfolgenmeldung darf höchstens 94 Zeichen lang sein.
+Wenn " *stringenmsg* " **null**ist, gibt **_strerror_s** eine Zeichenfolge im *Puffer* zurück, die die System Fehlermeldung für den letzten Bibliotheks Rückruf enthält, der einen Fehler verursacht hat. Die Fehlermeldungszeichenfolge wird durch das Zeilenumbruchzeichen ('\n') beendet. Wenn " *darerrmsg* " nicht gleich **null**ist, gibt **_strerror_s** eine Zeichenfolge im *Puffer* zurück, die (in der richtigen Reihenfolge) die Zeichen folgen Meldung, einen Doppelpunkt, ein Leerzeichen, die System Fehlermeldung für den letzten Bibliotheks Befehl, der einen Fehler erzeugt hat, und ein Zeilen vorzeitiges Zeichen enthält. Die Zeichenfolgenmeldung darf höchstens 94 Zeichen lang sein.
 
 Diese Funktionen schneiden die Fehlermeldung ab, wenn Ihre Länge die Größe des Puffers-1 überschreitet. Die resultierende Zeichenfolge im *Puffer* wird immer mit Null beendet.
 
@@ -181,7 +187,7 @@ Betrachten Sie das Beispiel für [perror](perror-wperror.md).
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
-[clearerr](clearerr.md)<br/>
-[ferror](ferror.md)<br/>
-[perror, _wperror](perror-wperror.md)<br/>
+[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)\
+[clearerr](clearerr.md)\
+[ferror](ferror.md)\
+[perror, _wperror](perror-wperror.md)

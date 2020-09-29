@@ -1,5 +1,5 @@
 ---
-title: 'Vorgehensweise: verbessern der Leistung mit GenerikaC++(/CLI)'
+title: 'Vorgehensweise: Verbessern der Leistung mit Generics (C++/CLI)'
 ms.date: 10/12/2018
 ms.topic: reference
 helpviewer_keywords:
@@ -8,20 +8,20 @@ helpviewer_keywords:
 - C++, generics
 - generics [C++], performance
 ms.assetid: f14a175b-301f-46cc-86e4-c82d35f9aa3e
-ms.openlocfilehash: a460456a383fcb3eb81e17c1ad5817f790f3c399
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 039c5b069351249e51d961d9d1757ed6b09ef99c
+ms.sourcegitcommit: 94893973211d0b254c8bcdcf0779997dcc136b0c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80181940"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91414164"
 ---
-# <a name="how-to-improve-performance-with-generics-ccli"></a>Vorgehensweise: verbessern der Leistung mit GenerikaC++(/CLI)
+# <a name="how-to-improve-performance-with-generics-ccli"></a>Vorgehensweise: Verbessern der Leistung mit Generics (C++/CLI)
 
 Mit Generics können Sie wiederverwendbaren Code auf Basis eines Typparameters erstellen. Der tatsächliche Typ des Typparameters wird zurückgestellt, bis er vom Clientcode aufgerufen wird. Weitere Informationen zu Generika finden Sie unter [Generics](generics-cpp-component-extensions.md).
 
 In diesem Artikel wird erläutert, wie Generics die Leistung einer Anwendung steigern können, die Sammlungen verwendet.
 
-## <a name="example"></a>Beispiel
+## <a name="example-two-main-drawbacks-of-net-framework-collections"></a>Beispiel: zwei Haupt Nachteile .NET Framework Auflistungen
 
 Im <xref:System.Collections?displayProperty=fullName>-Namespace von .NET Framework sind viele Sammlungsklassen enthalten. Die meisten dieser Sammlungen werden für Objekte des Typs <xref:System.Object?displayProperty=fullName> eingesetzt. Dadurch können Sammlungen jeden beliebigen Typ speichern, da alle Typen in .NET Framework, auch Werttypen, von <xref:System.Object?displayProperty=fullName> abgeleitet sind. Dieser Ansatz hat jedoch zwei Nachteile.
 
@@ -78,7 +78,7 @@ Popped a String: Seven
 Popped an int: 7
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-benefit-of-using-generic-collection"></a>Beispiel: Vorteil der Verwendung der generischen Sammlung
 
 Der neue <xref:System.Collections.Generic?displayProperty=fullName>-Namespace enthält viele der gleichen Sammlungen, die im <xref:System.Collections?displayProperty=fullName>-Namespace enthalten sind, aber sie wurden so geändert, dass sie generische Typparameter akzeptieren. Dies beseitigt die zwei Nachteile nicht generischer Sammlungen: das Boxing und Unboxing von Werttypen und die Unfähigkeit, die in den Sammlungen zu speichernden Typen anzugeben. Die Vorgänge an den beiden Sammlungen sind identisch. Sie unterscheiden sich nur in der Weise, wie sie instanziiert werden.
 
@@ -124,6 +124,6 @@ int main()
 14
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Generics](generics-cpp-component-extensions.md)

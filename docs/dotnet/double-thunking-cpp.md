@@ -8,12 +8,12 @@ helpviewer_keywords:
 - /clr compiler option [C++], double thunking
 - interoperability [C++], double thunking
 ms.assetid: a85090b2-dc3c-498a-b40c-340db229dd6f
-ms.openlocfilehash: 6b2d3b4415b81dc5a9b7d0e36c154d9ee74b98ee
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 3f0fc5567baaa0c4f3fea410770963adf51e8366
+ms.sourcegitcommit: 94893973211d0b254c8bcdcf0779997dcc136b0c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87221483"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91414008"
 ---
 # <a name="double-thunking-c"></a>Doppeltes Thunking (C++)
 
@@ -29,7 +29,7 @@ Ebenso gilt: Wenn Sie ([dllexport, dllimport](../cpp/dllexport-dllimport.md)) ei
 
 Der Compiler wurde aktualisiert, um unnötige doppelte Thunking zu verringern. Beispielsweise wird jede Funktion mit einem verwalteten Typ in der Signatur (einschließlich Rückgabetyp) implizit als markiert `__clrcall` .
 
-## <a name="example"></a>Beispiel
+## <a name="example-double-thunking"></a>Beispiel: Doppeltes Thunking
 
 ### <a name="description"></a>BESCHREIBUNG
 
@@ -87,7 +87,7 @@ after calling struct S
 __thiscall T::~T(void)
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-effect-of-double-thunking"></a>Beispiel: Auswirkung von Double-Thunking
 
 ### <a name="description"></a>BESCHREIBUNG
 

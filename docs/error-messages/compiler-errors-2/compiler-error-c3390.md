@@ -1,27 +1,32 @@
 ---
 title: Compilerfehler C3390
-ms.date: 11/04/2016
+description: Microsoft C++-Compilerfehler C3390, seine Ursache und deren Behebung.
+ms.date: 09/26/2020
 f1_keywords:
 - C3390
 helpviewer_keywords:
 - C3390
 ms.assetid: 84800a87-c8e6-45aa-82ae-02f816dc8d97
-ms.openlocfilehash: 4c0544df55fc71ace697d7e0a53ba303706e1378
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 467b379d7f5a349a217b566dc55b28d5fbd789da
+ms.sourcegitcommit: 94893973211d0b254c8bcdcf0779997dcc136b0c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80201122"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91414359"
 ---
 # <a name="compiler-error-c3390"></a>Compilerfehler C3390
 
-"Typargument": Ungültiges Typargument für den generischen Parameter "Param" von "generischer_Typ" (generisch). Muss ein Referenztyp sein.
+> '*type_arg*': Ungültiges Typargument für den generischen Parameter '*param*' von '*generic_type*' (generisch), muss ein Verweistyp sein.
 
-Ein generischer Typ wurde fehlerhaft instanziiert.  Überprüfen Sie die Typdefinition.  Weitere Informationen finden Sie unter [Generics](../../extensions/generics-cpp-component-extensions.md).
+Ein generischer Typ wurde fehlerhaft instanziiert. Überprüfen Sie die Typdefinition.
+
+## <a name="remarks"></a>Bemerkungen
+
+Weitere Informationen finden Sie unter [Generics](../../extensions/generics-cpp-component-extensions.md).
 
 ## <a name="example"></a>Beispiel
 
-Im ersten Beispiel wird C# verwendet, um eine Komponente zu erstellen, die einen generischen Typ mit bestimmten Einschränkungen enthält, die beim Erstellen von C++generischen Typen in/CLR. nicht unterstützt werden. Weitere Informationen finden Sie unter [Einschränkungen für Typparameter](/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters).
+Im ersten Beispiel wird c# verwendet, um eine Komponente zu erstellen, die einen generischen Typ enthält. Dieser Typ weist bestimmte Einschränkungen auf, die beim Erstellen von generischen Typen in C++ nicht unterstützt werden/CLI. Weitere Informationen finden Sie unter [Einschränkungen für Typparameter](/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters).
 
 ```csharp
 // C3390.cs
@@ -33,7 +38,7 @@ where V : struct
 where N : new() {}
 ```
 
-Wenn die C3390. dll-Komponente verfügbar ist, generiert das folgende Beispiel C3390.
+Wenn die C3390.dll-Komponente verfügbar ist, wird im folgenden Beispiel C3390 generiert.
 
 ```cpp
 // C3390_b.cpp
@@ -45,6 +50,6 @@ ref struct N { N() {} };
 
 int main () {
    GR<V, V, N^>^ gr2;   // C3390 first type must be a ref type
-   GR<R^, V, N^>^ gr2b; // OK
+   GR<R^, V, N^>^ gr2b; // OK - do this instead
 }
 ```

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - generic classes
 - generics [C++], declaring generic classes
 ms.assetid: 0beb99e1-1ec4-4fee-9836-ce9657d67a3a
-ms.openlocfilehash: 894bbffcc73693e5d0976831d65df54b09c853d2
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: fd287d8e9fe08ccd42436569eafee3f6935700e2
+ms.sourcegitcommit: 94893973211d0b254c8bcdcf0779997dcc136b0c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87216023"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91414125"
 ---
 # <a name="generic-classes-ccli"></a>Generische Klassen (C++/CLI)
 
@@ -41,7 +41,7 @@ In der oben stehenden Syntax werden die folgenden Begriffe verwendet:
 (Optional) Zusätzliche deklarative Informationen. Weitere Informationen zu Attributen und Attributklassen finden Sie unter „Attribute“.
 
 *class-key*<br/>
-Entweder **`class`** oder.**`typename`**
+Entweder **`class`** oder. **`typename`**
 
 *type-parameter-identifier(s)*: durch Trennzeichen getrennte Liste der Bezeichner, die die Namen der Typparameter angeben.
 
@@ -157,7 +157,7 @@ Dieser Abschnitt veranschaulicht die Verwendung von Instanz- und statischen Feld
 
 Instanzvariablen einer generischen Klasse können Typen und Variableninitialisierer aufweisen, die beliebige Typparameter aus der einschließenden Klasse enthalten.
 
-## <a name="example"></a>Beispiel
+## <a name="example-different-generic-classes"></a>Beispiel: verschiedene generische Klassen
 
 Im folgenden Beispiel werden drei verschiedene Instanzen der generischen-Klasse MyClass \<ItemType> mithilfe der entsprechenden Typargumente erstellt ( **`int`** , **`double`** und **String**).
 
@@ -205,7 +205,7 @@ Bei Erstellung eines neuen generischen Typs werden neue Instanzen aller statisch
 
 Statische Variablen können beliebige Typparameter aus der einschließenden Klasse verwenden.
 
-## <a name="example"></a>Beispiel
+## <a name="example-use-static-variables"></a>Beispiel: Verwenden statischer Variablen
 
 Das folgende Beispiel veranschaulicht die Verwendung statischer Felder und eines statischen Konstruktors innerhalb einer generischen Klasse.
 
@@ -282,7 +282,7 @@ Die Signatur einer nicht generischen Methode kann einen oder mehrere Typparamete
 
 Der Text solcher Methoden kann auch diese Typparameter verwenden.
 
-## <a name="example"></a>Beispiel
+## <a name="example-declare-non-generic-method"></a>Beispiel: Deklarieren einer nicht generischen Methode
 
 Das folgende Beispiel deklariert die nicht generische Methode `ProtectData` in der generischen Klasse `MyClass<ItemType>`. Die Methode verwendet den Klassentypparameter `ItemType` in ihrer Signatur in einem offenen konstruierten Typ.
 
@@ -341,9 +341,9 @@ Amount: $123.00**
 
 ## <a name="generic-methods-in-generic-classes"></a>Generische Methoden in generischen Klassen
 
-Sie können generische Methoden sowohl in generischen als auch in nicht generischen Klassen deklarieren. Zum Beispiel:
+Sie können generische Methoden sowohl in generischen als auch in nicht generischen Klassen deklarieren. Beispiel:
 
-## <a name="example"></a>Beispiel
+## <a name="example-declare-generic-and-non-generic-methods"></a>Beispiel: Deklarieren von generischen und nicht generischen Methoden
 
 ```cpp
 // generics_method2.cpp
@@ -369,7 +369,7 @@ Die nicht generische Methode ist dennoch generisch in dem Sinne, dass sie vom Ty
 
 Alle Typen von Methoden in generischen Klassen können generisch sein, einschließlich statischer, virtueller und Instanzmethoden.
 
-## <a name="example"></a>Beispiel
+## <a name="example-declare-and-use-generic-methods"></a>Beispiel: Deklarieren und Verwenden von generischen Methoden
 
 Das folgende Beispiel veranschaulicht das Deklarieren und Verwenden von generischen Methoden innerhalb von generischen Klassen:
 
@@ -453,9 +453,9 @@ Da es keine Möglichkeit gibt, auf den äußeren Typparameter zu verweisen, gibt
 
 Wenn konstruierte geschachtelte generische Typen benannt werden, wird der Typparameter für den äußeren Typ nicht in der Typparameterliste für den inneren Typ eingeschlossen, auch wenn der innere Typ durch den Typparameter des äußeren Typs implizit parametrisiert wird. Im oben genannten Fall würde der Name eines konstruierten Typs `Outer<int>::Inner<string>` lauten.
 
-Das folgende Beispiel veranschaulicht das Erstellen und Lesen einer verknüpften Liste mithilfe von geschachtelten Typen in generischen Klassen.
+## <a name="example-build-and-read-linked-list"></a>Beispiel: Erstellen und Lesen einer verknüpften Liste
 
-## <a name="example"></a>Beispiel
+Das folgende Beispiel veranschaulicht das Erstellen und Lesen einer verknüpften Liste mithilfe von geschachtelten Typen in generischen Klassen.
 
 ```cpp
 // generics_linked_list.cpp
@@ -556,7 +556,7 @@ Reading nodes:
 
 - Eigenschaften, Ereignisse, Indexer und Operatoren selbst können nicht parametrisiert werden.
 
-## <a name="example"></a>Beispiel
+## <a name="example-declare-instance-property"></a>Beispiel: Deklarieren der Instance-Eigenschaft
 
 Dieses Beispiel zeigt Deklarationen einer Instanzeigenschaft innerhalb einer generischen Klasse.
 
@@ -596,7 +596,7 @@ int main() {
 John, 234
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-generic-class-with-event"></a>Beispiel: generische Klasse mit Ereignis
 
 Das nächste Beispiel zeigt eine generische Klasse mit einem Ereignis.
 
@@ -663,7 +663,7 @@ int main() {
 
 Die Regeln für das Deklarieren und Verwenden von generischen Strukturen sind die gleichen wie die für generische Klassen, mit Ausnahme der Unterschiede, die in der Visual C++-Sprachreferenz dokumentiert sind.
 
-## <a name="example"></a>Beispiel
+## <a name="example-declare-generic-struct"></a>Beispiel: Deklarieren einer generischen Struktur
 
 Im folgenden Beispiel wird eine generische Struktur, `MyGenStruct` , mit einem Feld, `myField` , deklariert und diesem Feld Werte verschiedener Typen ( **`int`** , **`double`** ,) zugewiesen `String^` .
 

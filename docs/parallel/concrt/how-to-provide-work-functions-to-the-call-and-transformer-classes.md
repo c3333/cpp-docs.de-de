@@ -6,12 +6,12 @@ helpviewer_keywords:
 - using the transformer class [Concurrency Runtime]
 - using the call class [Concurrency Runtime]
 ms.assetid: df715ce4-8507-41ca-b204-636d11707a73
-ms.openlocfilehash: cecb8b2e6ab3f3ac8b010007018b76e6f58e0ed8
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: b629d0e0e11388e212c56b8e1f6bea290368c884
+ms.sourcegitcommit: 94893973211d0b254c8bcdcf0779997dcc136b0c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87205885"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91414346"
 ---
 # <a name="how-to-provide-work-functions-to-the-call-and-transformer-classes"></a>Gewusst wie: Bereitstellen von Arbeitsfunktionen für die call- und transformer-Klassen
 
@@ -21,7 +21,7 @@ Im ersten Beispiel wird gezeigt, wie ein Lambdaausdruck an ein `call`-Objekt üb
 
 Zu Illustrationszwecken wird in allen Beispielen dieses Themas die `call`-Klasse verwendet. Ein Beispiel, in dem die- `transformer` Klasse verwendet wird, finden Sie unter Gewusst [wie: Verwenden von Transformer in einer Daten Pipeline](../../parallel/concrt/how-to-use-transformer-in-a-data-pipeline.md).
 
-## <a name="example"></a>Beispiel
+## <a name="example-call-class"></a>Beispiel: callclass
 
 Im folgenden Beispiel wird aufgezeigt, wie die `call`-Klasse häufig verwendet wird. In diesem Beispiel wird eine Lambda-Funktion an den `call`-Konstruktor übergeben.
 
@@ -33,13 +33,13 @@ Folgende Ergebnisse werden zurückgegeben:
 13 squared is 169.
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-call-class-with-function-object"></a>Beispiel: "callclass" mit Funktions Objekt
 
 Das folgende Beispiel ähnelt dem vorherigen mit der Ausnahme, dass die `call`-Klasse zusammen mit einem Funktionsobjekt (Funktionselement) verwendet wird.
 
 [!code-cpp[concrt-call-functor#1](../../parallel/concrt/codesnippet/cpp/how-to-provide-work-functions-to-the-call-and-transformer-classes_2.cpp)]
 
-## <a name="example"></a>Beispiel
+## <a name="example-functions-to-bind-call-object"></a>Beispiel: Funktionen zum Binden des callobject
 
 Das folgende Beispiel ähnelt dem vorherigen, mit der Ausnahme, dass es die Funktionen [Std:: bind1st](../../standard-library/functional-functions.md#bind1st) und [Std:: mem_fun](../../standard-library/functional-functions.md#mem_fun) verwendet, um ein- `call` Objekt an eine Klassenmethode zu binden.
 

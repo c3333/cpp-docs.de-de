@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - override specifiers in native compilation, overriding
 ms.assetid: d0551836-9ac7-41eb-a6e9-a4b3ef60767d
-ms.openlocfilehash: c5ed413f403fb12f116633c0e39f9e7b32b2e9f8
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 92bdc41cf9ebe2389f2d22dab211029899283266
+ms.sourcegitcommit: 94893973211d0b254c8bcdcf0779997dcc136b0c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87221327"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91414593"
 ---
 # <a name="how-to-declare-override-specifiers-in-native-compilations-ccli"></a>Gewusst wie: Deklarieren von Überschreibungsbezeichnern in nativen Kompilierungen (C++/CLI)
 
@@ -18,7 +18,7 @@ ms.locfileid: "87221327"
 > [!NOTE]
 > Die ISO c++ 11-Standard Sprache verfügt über den [Überschreibungs](../cpp/override-specifier.md) Bezeichner und den [endgültigen](../cpp/final-specifier.md) Bezeichner. beide werden in Visual Studio `final` anstelle von in Code unterstützt, der **`sealed`** als System eigen reine Kompilierung verwendet werden soll.
 
-## <a name="example"></a>Beispiel
+## <a name="example-sealed-is-valid"></a>Beispiel: versiegelt ist gültig.
 
 ### <a name="description"></a>BESCHREIBUNG
 
@@ -47,7 +47,7 @@ public:
 };
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-override-is-valid"></a>Beispiel: außer Kraft Setzung ist gültig
 
 ### <a name="description"></a>BESCHREIBUNG
 
@@ -69,7 +69,7 @@ public:
 };
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-abstract-is-valid"></a>Beispiel: abstract ist gültig.
 
 ### <a name="description"></a>BESCHREIBUNG
 
@@ -86,6 +86,6 @@ int main() {
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Überschreibungs Spezifizierer](../extensions/override-specifiers-cpp-component-extensions.md)

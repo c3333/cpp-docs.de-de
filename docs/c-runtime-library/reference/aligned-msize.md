@@ -28,12 +28,12 @@ helpviewer_keywords:
 - aligned_msize function
 - _aligned_msize function
 ms.assetid: 10995edc-2110-4212-9ca9-5e0220a464f4
-ms.openlocfilehash: e3ff243ba9a135cf660d09fc5b3690f531702aab
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 1037c63af17a844959bc72e42da2c33267b43004
+ms.sourcegitcommit: 94893973211d0b254c8bcdcf0779997dcc136b0c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82912912"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91414034"
 ---
 # <a name="_aligned_msize"></a>_aligned_msize
 
@@ -42,7 +42,7 @@ Gibt die Größe eines im Heap belegten Speicherblocks zurück.
 ## <a name="syntax"></a>Syntax
 
 ```C
-size_t _msize(
+size_t _aligned_msize(
    void *memblock,
    size_t alignment,
    size_t offset
@@ -64,21 +64,21 @@ Der Offset in der Speicherbelegung zum Erzwingen der Ausrichtung.
 
 Gibt die Größe (in Bytes) als ganze Zahl ohne Vorzeichen zurück.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **_aligned_msize** -Funktion gibt die Größe des Speicherblocks (in Bytes) zurück, der durch einen [_aligned_malloc](aligned-malloc.md) -oder [_aligned_realloc](aligned-realloc.md)-aufrufungs-aufgerufen wird. Die *Ausrichtungs* -und *Offset* Werte müssen mit den Werten identisch sein, die an die Funktion, die den Block zugeordnet hat, übermittelt wurden.
 
 Wenn die Anwendung mit einer Debugversion der C-Laufzeitbibliotheken verknüpft ist, wird **_aligned_msize** in [_aligned_msize_dbg](aligned-msize-dbg.md)aufgelöst. Weitere Informationen dazu, wie der Heap während des Debugprozesses verwaltet wird, finden Sie unter [The CRT Debug Heap (CRT-Debugheap)](/visualstudio/debugger/crt-debug-heap-details).
 
-Diese Funktion überprüft seine Parameter. Wenn *memblock* ein NULL-Zeiger ist oder die *Ausrichtung* keine Potenz von 2 ist, ruft **_msize** einen Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn der Fehler behandelt wird, legt die Funktion **errno** auf **EINVAL** fest und gibt-1 zurück.
+Diese Funktion überprüft seine Parameter. Wenn *memblock* ein NULL-Zeiger ist oder die *Ausrichtung* keine Potenz von 2 ist, ruft **_aligned_msize** einen Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn der Fehler behandelt wird, legt die Funktion **errno** auf **EINVAL** fest und gibt-1 zurück.
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
-|**_msize**|\<malloc.h>|
+|**_aligned_msize**|\<malloc.h>|
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 

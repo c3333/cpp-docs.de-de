@@ -1,6 +1,7 @@
 ---
 title: Symbolleisten-Editor (C++)
-ms.date: 02/14/2019
+description: Mit dem Symbolleisten-Editor von Visual Studio können Sie Symbolleisten Ressourcen erstellen und Bitmaps in Symbolleisten Ressourcen konvertieren.
+ms.date: 09/26/2020
 f1_keywords:
 - vc.editors.toolbar.F1
 - vc.editors.toolbar
@@ -50,29 +51,29 @@ helpviewer_keywords:
 - buttons [C++], tool tips
 - Toolbar editor [C++], creating tool tips
 ms.assetid: aa9f0adf-60f6-4f79-ab05-bc330f15ec43
-ms.openlocfilehash: ca7f031cbdcfc3378a0917e84b257fd7212563e1
-ms.sourcegitcommit: d9c94dcabd94537e304be0261b3263c2071b437b
+ms.openlocfilehash: 042bfafb1e55d45145306a8c388e1e3559fa9a33
+ms.sourcegitcommit: 94893973211d0b254c8bcdcf0779997dcc136b0c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91353024"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91413800"
 ---
 # <a name="toolbar-editor-c"></a>Symbolleisten-Editor (C++)
 
-Mit dem Symbolleisten- **Editor** können Sie Symbolleisten Ressourcen erstellen und Bitmaps in Symbolleisten Ressourcen konvertieren. Der **Symbol** leisten-Editor verwendet eine grafische Anzeige, um eine Symbolleiste und Schaltflächen anzuzeigen, die der Darstellung in einer fertiggestellten Anwendung sehr ähnlich sind.
+Mit dem Symbolleisten- **Editor** können Sie Symbolleisten Ressourcen erstellen und Bitmaps in Symbolleisten Ressourcen konvertieren. Der **Symbol** leisten-Editor verwendet eine grafische Anzeige. Es zeigt eine Symbolleiste und Schaltflächen an, die genau so aussehen wie in einer fertigen Anwendung.
 
-Das Fenster des Symbolleisten- **Editors** zeigt zwei Ansichten eines Schaltflächen Bilds an, identisch mit dem **Bild-Editor** -Fenster. In einem geteilten Balken werden die beiden Bereiche getrennt, und Sie können den Trennbalken von Seite zu Seite ziehen, um die relativen Größen der Bereiche zu ändern. Im aktiven Bereich wird ein Auswahl Rahmen angezeigt, und oberhalb der beiden Ansichten des Bilds befindet sich die Symbolleiste des Antragstellers.
+Das Fenster des Symbolleisten- **Editors** zeigt zwei Ansichten eines Schaltflächen Bilds an, identisch mit dem **Bild-Editor** -Fenster. Die beiden Bereiche sind durch einen Fensterteiler getrennt. Um die relative Größe der Bereiche zu ändern, können Sie den Trennbalken von Seite zu Seite ziehen. Im aktiven Bereich wird ein Auswahl Rahmen angezeigt, und oberhalb der beiden Ansichten des Bilds befindet sich die Symbolleiste des Antragstellers.
 
 ![Symbolleisten-Editor](../mfc/media/vctoolbareditor.gif "vctoolbareditor")<br/>
 **Symbolleisten-Editor**
 
-Der **Symbol** leisten-Editor ähnelt dem **Bild-Editor** in der Funktionalität, und die Menü Elemente, die Grafiktools und das Bitmap-Raster zwischen den beiden sind identisch. Im Menü " **Bild** " gibt es einen Menübefehl, mit dem Sie zwischen dem Symbolleisten- **Editor** und dem **Bild-Editor**wechseln können. Weitere Informationen zur Verwendung der **Grafik** Symbolleiste, der **Farb** Palette oder des **bildmenüs** finden Sie unter [Bild](../windows/image-editor-for-icons.md)Bearbeitung.
+Der **Symbol** leisten-Editor ähnelt dem **Bild-Editor** in der Funktionalität. Die Menü Elemente, Grafiktools und das Bitmap-Raster zwischen den beiden sind identisch. Im Menü " **Bild** " gibt es einen Menübefehl, mit dem Sie zwischen dem Symbolleisten- **Editor** und dem **Bild-Editor**wechseln können. Weitere Informationen zur Verwendung der **Grafik** Symbolleiste, der **Farb** Palette oder des **bildmenüs** finden Sie unter [Bild](../windows/image-editor-for-icons.md)Bearbeitung.
 
-Sie können eine neue Symbolleiste in einem C++-Projekt erstellen, indem Sie eine Bitmap umrechnen. Die Grafik aus der Bitmap wird in die Schaltflächen Bilder für eine Symbolleiste konvertiert. In der Regel enthält die Bitmap mehrere Schaltflächen Bilder auf einer einzelnen Bitmap, wobei für jede Schaltfläche ein Bild angezeigt wird. Bilder können eine beliebige Größe aufweisen, da der Standardwert 16 Pixel breit und die Höhe des Bilds ist. Sie können die Größe der Schaltflächen Bilder im Dialogfeld **neue Symbolleisten Ressource** angeben, wenn Sie im Bild- **Editor**im Menü **Bild** den Befehl **Symbolleiste** auswählen.
+Sie können eine neue Symbolleiste in einem C++-Projekt erstellen, indem Sie eine Bitmap umrechnen. Die Grafik aus der Bitmap wird in die Schaltflächen Bilder für eine Symbolleiste konvertiert. In der Regel enthält die Bitmap mehrere Schaltflächen Bilder auf einer einzelnen Bitmap, wobei für jede Schaltfläche ein Bild angezeigt wird. Bilder können eine beliebige Größe aufweisen, da der Standardwert 16 Pixel breit und die Höhe des Bilds ist. Sie können die Größe der Schaltflächen Bilder im Dialogfeld **neue Symbolleisten Ressource** angeben. Zum Angeben von Größen wählen Sie im Bild- **Editor**im Menü **Bild** die Option Symbolleisten- **Editor** aus.
 
 Im Dialogfeld **neue Symbolleisten Ressource** können Sie die Breite und die Höhe der Schaltflächen angeben, die einer Symbolleisten Ressource in einem C++-Projekt hinzugefügt werden. Der Standardwert ist 16 × 15 Pixel.
 
-Eine Bitmap, die zum Erstellen einer Symbolleiste verwendet wird, hat eine maximale Breite von 2048. Wenn Sie also die **Schaltflächen breite** auf *512*festlegen, können Sie nur vier Schaltflächen verwenden. Wenn Sie die Breite auf *513*festlegen, können nur drei Schaltflächen vorhanden sein.
+Eine Bitmap, die zum Erstellen einer Symbolleiste verwendet wird, hat eine maximale Breite von 2048. Wenn Sie die **Schaltflächen breite** auf *512*festlegen, können nur vier Schaltflächen vorhanden sein. Wenn Sie die Breite auf *513*festgelegt haben, können Sie nur drei Schaltflächen haben.
 
 Das Dialogfeld **neue Symbolleisten Ressource** verfügt über die folgenden Eigenschaften:
 
@@ -84,7 +85,7 @@ Das Dialogfeld **neue Symbolleisten Ressource** verfügt über die folgenden Eig
 > [!NOTE]
 > Die Bilder werden auf die angegebene Breite und Höhe zugeschnitten, und die Farben werden so angepasst, dass Standard Symbolleisten Farben (16 Farben) verwendet werden.
 
-Standardmäßig wird eine neue Schaltfläche oder eine leere Schaltfläche am rechten Ende der Symbolleiste angezeigt. Sie können diese Schaltfläche verschieben, bevor Sie Sie bearbeiten. Wenn Sie eine neue Schaltfläche erstellen, wird rechts neben der bearbeiteten Schaltfläche eine weitere leere Schaltfläche angezeigt. Wenn Sie eine Symbolleiste speichern, wird die leere Schaltfläche nicht gespeichert.
+Standardmäßig wird eine neue Schaltfläche oder eine leere Schaltfläche am rechten Ende der Symbolleiste angezeigt. Sie können diese Schaltfläche verschieben, bevor Sie Sie bearbeiten. Wenn Sie eine neue Schaltfläche erstellen, wird rechts neben der bearbeiteten Schaltfläche eine weitere leere Schaltfläche angezeigt. Die leere Schaltfläche wird nicht gespeichert, wenn Sie eine Symbolleiste speichern.
 
 Eine Symbolleisten-Schaltfläche verfügt über die folgenden Eigenschaften:
 
@@ -95,7 +96,7 @@ Eine Symbolleisten-Schaltfläche verfügt über die folgenden Eigenschaften:
 |**Height**|Legt die Höhe der Schaltfläche fest. Durch die Höhe einer Schaltfläche wird die Höhe aller Schaltflächen auf der Symbolleiste geändert. Es wird 15 Pixel empfohlen.|
 |**Eingabeaufforderung**|Definiert die in der Statusleiste angezeigte Meldung. Durch das hinzu **fügen von** *\n* und eines Namens wird der Symbolleisten Schaltfläche eine QuickInfo Weitere Informationen finden [Sie unter So erstellen Sie eine QuickInfo für eine Symbolleisten Schaltfläche](#to-create-a-tool-tip-for-a-toolbar-button).|
 
-**Breite** und **Höhe** gelten für alle Schaltflächen. Eine Bitmap, die zum Erstellen einer Symbolleiste verwendet wird, hat eine maximale Breite von 2048. Wenn Sie also die Schaltflächen breite auf *512*festlegen, können Sie nur vier Schaltflächen haben. Wenn Sie die Breite auf *513*festlegen, können Sie nur drei Schaltflächen verwenden.
+**Breite** und **Höhe** gelten für alle Schaltflächen. Eine Bitmap, die zum Erstellen einer Symbolleiste verwendet wird, hat eine maximale Breite von 2048. Dies bedeutet, dass Sie, wenn Sie die Schaltflächen breite auf *512*festlegen, nur vier Schaltflächen haben können. Wenn Sie die Breite auf *513*festlegen, können nur drei Schaltflächen vorhanden sein.
 
 ## <a name="how-to"></a>Vorgehensweise
 
@@ -111,7 +112,7 @@ Der **Symbol** leisten-Editor ermöglicht Ihnen Folgendes:
 
 ### <a name="to-convert-bitmaps-to-toolbar-resources"></a>So konvertieren Sie Bitmaps in Symbolleisten Ressourcen
 
-1. Öffnen Sie eine vorhandene Bitmap-Ressource im [Bild-Editor](../windows/image-editor-for-icons.md). Wenn die Bitmap nicht bereits in der *RC* -Datei vorhanden ist, klicken Sie mit der rechten Maustaste auf die *RC* -Datei, und wählen Sie **importieren**aus. Navigieren Sie dann zu der Bitmap, die Sie der *RC* -Datei hinzufügen möchten, und wählen Sie **Öffnen**
+1. Öffnen Sie eine vorhandene Bitmap-Ressource im [Bild-Editor](../windows/image-editor-for-icons.md). Wenn die Bitmap nicht bereits in der *RC* -Datei vorhanden ist, klicken Sie mit der rechten Maustaste auf die *RC* -Datei, und wählen Sie **importieren**aus. Navigieren Sie dann zu der Bitmap, die Sie der *RC* -Datei hinzufügen möchten, und wählen Sie **Öffnen**aus.
 
 1. Wechseln Sie zum Menü **Bild**  >  **Symbol**leisten-Editor.
 
@@ -130,7 +131,7 @@ Der **Symbol** leisten-Editor ermöglicht Ihnen Folgendes:
 
 1. Erweitern Sie in [Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources) den Ressourcen Ordner (z *. b. Projekt1. RC*).
 
-1. Erweitern Sie den **Symbol** leisten Ordner, und wählen Sie eine Symbolleiste zum Bearbeiten aus. führen Sie dann einen der folgenden Schritte aus
+1. Erweitern Sie den **Symbol** leisten Ordner, und wählen Sie eine zu bearbeitende Symbolleiste aus.
 
    - Weisen Sie der leeren Schaltfläche am rechten Ende der Symbolleiste eine ID zu. Hierzu können Sie die **ID** -Eigenschaft im [Eigenschaften Fenster](/visualstudio/ide/reference/properties-window)bearbeiten. Beispielsweise können Sie einer Symbolleisten-Schaltfläche die gleiche ID wie eine Menüoption geben. Verwenden Sie in diesem Fall das Dropdown-Listenfeld, um die **ID** der Menüoption auszuwählen.
 
@@ -157,18 +158,18 @@ Der **Symbol** leisten-Editor ermöglicht Ihnen Folgendes:
 
 Ziehen Sie im Bereich der **Symbolleisten Ansicht** die Schaltfläche, die Sie verschieben möchten, an die neue Position auf der Symbolleiste.
 
-- Wenn Sie Schaltflächen von einer Symbolleiste kopieren möchten, halten Sie die **STRG** -Taste gedrückt, und ziehen Sie die Schaltfläche im Bereich der **Symbolleisten Ansicht** entweder an die neue Position auf der Symbolleiste oder an eine Position auf einer anderen Symbolleiste.
+- Zum Kopieren von Schaltflächen von einer Symbolleiste halten Sie die **STRG** -Taste gedrückt. Ziehen Sie die Schaltfläche im Bereich der **Symbolleisten Ansicht** an die neue Position auf der Symbolleiste. Oder ziehen Sie es an einen Speicherort auf einer anderen Symbolleiste.
 
 - Zum Löschen einer Symbolleisten-Schaltfläche Wählen Sie die Symbolleisten Schaltfläche aus und ziehen Sie aus der Symbolleiste
 
-- Um Leerzeichen zwischen Schaltflächen auf einer Symbolleiste einzufügen oder zu entfernen, ziehen Sie Sie entweder auf der Symbolleiste von oder auf eine andere.
+- Um Leerzeichen zwischen Schaltflächen auf einer Symbolleiste einzufügen oder zu entfernen, ziehen Sie Sie auf der Symbolleiste entweder von oder auf einander.
 
 |Aktion|Schritt|
 |------|------|
 |So fügen Sie ein Leerzeichen vor einer Schaltfläche ein, auf die kein Leerzeichen folgt|Ziehen Sie die Schaltfläche nach rechts oder nach unten, bis die Schaltfläche weiter ungefähr in der Mitte überlappt.|
 |So fügen Sie ein Leerzeichen vor einer Schaltfläche ein, auf die ein Leerzeichen folgt und den nachfolgenden Bereich beibehalten|Ziehen Sie die Schaltfläche, bis der Rechte oder untere Rand nur die Schaltfläche "weiter" berührt oder nur überlappt.|
 |So fügen Sie ein Leerzeichen vor einer Schaltfläche ein, der ein Leerzeichen folgt, und schließen Sie den folgenden Bereich|Ziehen Sie die Schaltfläche nach rechts oder nach unten, bis die Schaltfläche weiter ungefähr in der Mitte überlappt.|
-|So entfernen Sie ein Leerzeichen zwischen Schaltflächen auf einer Symbolleiste|Ziehen Sie die Schaltfläche auf der einen Seite des Leerraums in Richtung der Schaltfläche auf der anderen Seite des Leerraums, bis die Schaltfläche "weiter" überschneidet.|
+|So entfernen Sie ein Leerzeichen zwischen Schaltflächen auf einer Symbolleiste|Wählen Sie die Schaltfläche auf einer Seite des leer Zeichens aus. Ziehen Sie es auf die Schaltfläche auf der anderen Seite des Leerraums, bis die Schaltfläche weiter ungefähr in der Mitte überlappt.|
 
 > [!NOTE]
 > Wenn Sie auf der Seite der Schaltfläche, die Sie ziehen, nicht auf die Schaltfläche klicken, und Sie die Schaltfläche mehr als die Hälfte nach der angrenzenden Schaltfläche ziehen, fügt der Symbolleisten- **Editor** ein Leerzeichen auf der gegenüberliegenden Seite der Schaltfläche ein, die Sie ziehen.
@@ -203,6 +204,5 @@ MFC oder ATL
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Ressourcen-Editoren](../windows/resource-editors.md) 
- [Menüs und weitere Ressourcen](/windows/win32/menurc/resources)<br/>
-[Eigenschaften von Symbolleisten-Schaltflächen](../windows/toolbar-button-properties.md)<br/>
+[Ressourcen-Editoren](../windows/resource-editors.md)\
+[Menüs und weitere Ressourcen](/windows/win32/menurc/resources)
