@@ -12,12 +12,12 @@ helpviewer_keywords:
 - GetString method
 - SetString method
 ms.assetid: 138dc4de-c7c3-478c-863e-431e48249027
-ms.openlocfilehash: 927ea5ceef9ac74ae3cc1e06a47969b537209002
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 891c80a7c21fd046fba393b494ed6d84f731db6f
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88838164"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91498670"
 ---
 # <a name="cdynamicstringaccessor-class"></a>CDynamicStringAccessor-Klasse
 
@@ -34,7 +34,7 @@ class CDynamicStringAccessorT : public CDynamicAccessor
 
 **Header**: atldbcli. h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -51,7 +51,7 @@ Der systemeigene Typ der Spaltendaten im Datenspeicher spielt keine Rolle. solan
 
 Verwenden `CDynamicStringAccessor` Sie Methoden zum Abrufen von Spalten Informationen. Mit diesen Spalten Informationen können Sie einen Accessor dynamisch zur Laufzeit erstellen.
 
-Die Spalten Informationen werden in einem Puffer gespeichert, der von dieser Klasse erstellt und verwaltet wird. Rufen Sie mithilfe von [GetString](../../data/oledb/cdynamicstringaccessor-getstring.md)Daten aus dem Puffer ab, oder speichern Sie Sie mithilfe von [SetString](../../data/oledb/cdynamicstringaccessor-setstring.md)im Puffer.
+Die Spalten Informationen werden in einem Puffer gespeichert, der von dieser Klasse erstellt und verwaltet wird. Rufen Sie mithilfe von [GetString](#getstring)Daten aus dem Puffer ab, oder speichern Sie Sie mithilfe von [SetString](#setstring)im Puffer.
 
 Eine Erläuterung und Beispiele für die Verwendung der dynamischen [Accessorklassen finden Sie unter Verwenden dynamischer Accessoren](../../data/oledb/using-dynamic-accessors.md).
 

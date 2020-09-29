@@ -39,12 +39,12 @@ helpviewer_keywords:
 - operator<= member [STL/CLR]
 - operator< member [STL/CLR]
 ms.assetid: fb48cb75-d5ef-47ce-b526-bf60dc86c552
-ms.openlocfilehash: b21f9ec2ace54281f30f8f32134c7fb3466a1faa
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 271bc01f5c8fd9dd07bfa03035ae3d0204ebd8e7
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87214853"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91500586"
 ---
 # <a name="utility-stlclr"></a>utility (STL/CLR)
 
@@ -64,11 +64,11 @@ Fügen Sie den STL/CLR-Header ein `<cliext/utility>` , um die Vorlagen Klasse `p
 
 ## <a name="declarations"></a>Deklarationen
 
-|Klasse|BESCHREIBUNG|
+|Klasse|Beschreibung|
 |-----------|-----------------|
 |[pair (STL/CLR)](#pair)|Wrappen Sie ein Element Paar.|
 
-|Operator|BESCHREIBUNG|
+|Operator|Beschreibung|
 |--------------|-----------------|
 |[Operator = = (Pair) (STL/CLR)](#op_eq)|Gleicher Vergleich.|
 |[Operator! = (Pair) (STL/CLR)](#op_neq)|Paar ungleich Vergleich.|
@@ -77,13 +77,13 @@ Fügen Sie den STL/CLR-Header ein `<cliext/utility>` , um die Vorlagen Klasse `p
 |[Operator> (Pair) (STL/CLR)](#op_gt)|Paar größer als-Vergleich.|
 |[operator>= (pair) (STL/CLR)](#op_gteq)|Paar größer oder gleich-Vergleich.|
 
-|Funktion|BESCHREIBUNG|
+|Funktion|Beschreibung|
 |--------------|-----------------|
 |[make_pair (STL/CLR)](#make_pair)|Erstellen Sie ein paar aus einem Paar von Werten.|
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
-## <a name="pair-stlclr"></a><a name="pair"></a>Pair (STL/CLR)
+## <a name="pair-stlclr"></a><a name="pair"></a> Pair (STL/CLR)
 
 Die Vorlagen Klasse beschreibt ein Objekt, das ein paar von Werten umschließt.
 
@@ -103,24 +103,24 @@ Der Typ des ersten umschließenden Werts.
 *Value2*<br/>
 Der Typ des zweiten umschließenden Werts.
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
-|Typendefinition|BESCHREIBUNG|
+|Typendefinition|Beschreibung|
 |---------------------|-----------------|
 |[pair::first_type (STL/CLR)](#first_type)|Der Typ des ersten umschließenden Werts.|
 |[pair::second_type (STL/CLR)](#second_type)|Der Typ des zweiten umschließenden Werts.|
 
-|Member-Objekt|BESCHREIBUNG|
+|Member-Objekt|Beschreibung|
 |-------------------|-----------------|
 |[pair::first (STL/CLR)](#first)|Der erste gespeicherte Wert.|
 |[pair::second (STL/CLR)](#second)|Der zweite gespeicherte Wert.|
 
-|Memberfunktion|BESCHREIBUNG|
+|Memberfunktion|Beschreibung|
 |---------------------|-----------------|
 |[pair::pair (STL/CLR)](#pair_pair)|Erstellt ein Pair-Objekt.|
 |[pair::swap (STL/CLR)](#swap)|Tauscht den Inhalt zweier Paare aus.|
 
-|Operator|BESCHREIBUNG|
+|Operator|Beschreibung|
 |--------------|-----------------|
 |[pair::operator= (STL/CLR)](#op_as)|Ersetzt das gespeicherte paar von Werten.|
 
@@ -128,7 +128,7 @@ Der Typ des zweiten umschließenden Werts.
 
 Das-Objekt speichert ein Wertepaar. Sie verwenden diese Vorlagen Klasse, um zwei Werte in einem einzelnen Objekt zu kombinieren. Außerdem speichert das-Objekt `cliext::pair` (hier beschrieben) nur verwaltete Typen. zum Speichern eines Paares nicht verwalteter Typen verwenden Sie `std::pair` , deklariert in `<utility>` .
 
-## <a name="pairfirst-stlclr"></a><a name="first"></a>Pair:: First (STL/CLR)
+## <a name="pairfirst-stlclr"></a><a name="first"></a> Pair:: First (STL/CLR)
 
 Der erste umschließende Wert.
 
@@ -165,7 +165,7 @@ int main()
 [x, 3]
 ```
 
-## <a name="pairfirst_type-stlclr"></a><a name="first_type"></a>Pair:: first_type (STL/CLR)
+## <a name="pairfirst_type-stlclr"></a><a name="first_type"></a> Pair:: first_type (STL/CLR)
 
 Der Typ des ersten umschließenden Werts.
 
@@ -202,7 +202,7 @@ int main()
 [x, 3]
 ```
 
-## <a name="pairoperator-stlclr"></a><a name="op_as"></a>Pair:: Operator = (STL/CLR)
+## <a name="pairoperator-stlclr"></a><a name="op_as"></a> Pair:: Operator = (STL/CLR)
 
 Ersetzt das gespeicherte paar von Werten.
 
@@ -246,7 +246,7 @@ int main()
 [x, 3]
 ```
 
-## <a name="pairpair-stlclr"></a><a name="pair_pair"></a>Pair::p Air (STL/CLR)
+## <a name="pairpair-stlclr"></a><a name="pair_pair"></a> Pair::p Air (STL/CLR)
 
 Erstellt ein Pair-Objekt.
 
@@ -282,11 +282,11 @@ Der Konstruktor:
 
 `pair(pair<Value1, Value2>% right);`
 
-Initialisiert das gespeicherte Paar mit `right.` [Pair:: First (STL/CLR)](../dotnet/pair-first-stl-clr.md) und `right.` [Pair:: Second (STL/CLR)](../dotnet/pair-second-stl-clr.md).
+Initialisiert das gespeicherte Paar mit `right.` [Pair:: First (STL/CLR)](#first) und `right.` [Pair:: Second (STL/CLR)](#second).
 
 `pair(pair<Value1, Value2>^ right);`
 
-Initialisiert das gespeicherte Paar mit `right->` [Pair:: First (STL/CLR)](../dotnet/pair-first-stl-clr.md) und `right>` [Pair:: Second (STL/CLR)](../dotnet/pair-second-stl-clr.md).
+Initialisiert das gespeicherte Paar mit `right->` [Pair:: First (STL/CLR)](#first) und `right>` [Pair:: Second (STL/CLR)](#second).
 
 Der Konstruktor:
 
@@ -331,7 +331,7 @@ int main()
 [x, 3]
 ```
 
-## <a name="pairsecond-stlclr"></a><a name="second"></a>Pair:: Second (STL/CLR)
+## <a name="pairsecond-stlclr"></a><a name="second"></a> Pair:: Second (STL/CLR)
 
 Der zweite umschließende Wert.
 
@@ -368,7 +368,7 @@ int main()
 [x, 3]
 ```
 
-## <a name="pairsecond_type-stlclr"></a><a name="second_type"></a>Pair:: second_type (STL/CLR)
+## <a name="pairsecond_type-stlclr"></a><a name="second_type"></a> Pair:: second_type (STL/CLR)
 
 Der Typ des zweiten umschließenden Werts.
 
@@ -405,7 +405,7 @@ int main()
 [x, 3]
 ```
 
-## <a name="pairswap-stlclr"></a><a name="swap"></a>Pair:: Swap (STL/CLR)
+## <a name="pairswap-stlclr"></a><a name="swap"></a> Pair:: Swap (STL/CLR)
 
 Tauscht den Inhalt zweier Paare aus.
 
@@ -474,7 +474,7 @@ x x x x x
 a b c
 ```
 
-## <a name="make_pair-stlclr"></a><a name="make_pair"></a>make_pair (STL/CLR)
+## <a name="make_pair-stlclr"></a><a name="make_pair"></a> make_pair (STL/CLR)
 
 Einen `pair` aus einem Paar von Werten erstellen.
 
@@ -527,7 +527,7 @@ int main()
 [y, 4]
 ```
 
-## <a name="operator-pair-stlclr"></a><a name="op_neq"></a>Operator! = (Pair) (STL/CLR)
+## <a name="operator-pair-stlclr"></a><a name="op_neq"></a> Operator! = (Pair) (STL/CLR)
 
 Paar ungleich Vergleich.
 
@@ -581,7 +581,7 @@ int main()
 [x 3] != [x 4] is True
 ```
 
-## <a name="operatorlt-pair-stlclr"></a><a name="op_lt"></a>Operator &lt; (Pair) (STL/CLR)
+## <a name="operatorlt-pair-stlclr"></a><a name="op_lt"></a> Operator &lt; (Pair) (STL/CLR)
 
 Paar kleiner als-Vergleich.
 
@@ -635,7 +635,7 @@ int main()
 [x 3] < [x 4] is True
 ```
 
-## <a name="operatorlt-pair-stlclr"></a><a name="op_lteq"></a>Operator &lt; = (Pair) (STL/CLR)
+## <a name="operatorlt-pair-stlclr"></a><a name="op_lteq"></a> Operator &lt; = (Pair) (STL/CLR)
 
 Paar kleiner oder gleich-Vergleich.
 
@@ -689,7 +689,7 @@ int main()
 [x 4] <= [x 3] is False
 ```
 
-## <a name="operator-pair-stlclr"></a><a name="op_eq"></a>Operator = = (Pair) (STL/CLR)
+## <a name="operator-pair-stlclr"></a><a name="op_eq"></a> Operator = = (Pair) (STL/CLR)
 
 Gleicher Vergleich.
 
@@ -743,7 +743,7 @@ int main()
 [x 3] == [x 4] is False
 ```
 
-## <a name="operatorgt-pair-stlclr"></a><a name="op_gt"></a>Operator &gt; (Pair) (STL/CLR)
+## <a name="operatorgt-pair-stlclr"></a><a name="op_gt"></a> Operator &gt; (Pair) (STL/CLR)
 
 Paar größer als-Vergleich.
 
@@ -797,7 +797,7 @@ int main()
 [x 4] > [x 3] is True
 ```
 
-## <a name="operatorgt-pair-stlclr"></a><a name="op_gteq"></a>Operator &gt; = (Pair) (STL/CLR)
+## <a name="operatorgt-pair-stlclr"></a><a name="op_gteq"></a> Operator &gt; = (Pair) (STL/CLR)
 
 Paar größer oder gleich-Vergleich.
 

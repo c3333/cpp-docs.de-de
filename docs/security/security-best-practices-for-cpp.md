@@ -8,12 +8,12 @@ helpviewer_keywords:
 - security [C++]
 - security [C++], best practices
 ms.assetid: 86acaccf-cdb4-4517-bd58-553618e3ec42
-ms.openlocfilehash: 12b2db55a393928683e65c8faca49595fbbebc51
-ms.sourcegitcommit: 6e55aeb538b1c39af754f82d6f7738a18f5aa031
+ms.openlocfilehash: 63c5567cf1b06d52aa4b458a9ca127039e5c5daf
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87389960"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91499588"
 ---
 # <a name="security-best-practices-for-c"></a>Empfohlene Vorgehensweisen bezüglich der Sicherheit in C++
 
@@ -23,21 +23,21 @@ Dieser Artikel enthält Informationen über Sicherheitstools und Vorgehensweisen
 
 Diese Sicherheitsfunktionen sind in den Microsoft C++-Compiler und-Linker integriert:
 
-[`/guard`(Ablauf Steuerungs Schutz aktivieren)](../build/reference/guard-enable-control-flow-guard.md)<br/>
+[`/guard` (Ablauf Steuerungs Schutz aktivieren)](../build/reference/guard-enable-control-flow-guard.md)<br/>
 Veranlasst den Compiler, die Ablauf Steuerung für indirekte Aufruf Ziele zum Zeitpunkt der Kompilierung zu analysieren und dann Code einzufügen, um die Ziele zur Laufzeit zu überprüfen.
 
-[`/GS`(Puffer-Sicherheitsüberprüfung)](../build/reference/gs-buffer-security-check.md)<br/>
+[`/GS` (Puffer-Sicherheitsüberprüfung)](../build/reference/gs-buffer-security-check.md)<br/>
 Der Compiler wird angewiesen, Überlauferkennungscode in Funktionen einzufügen, die Angriffen ausgesetzt sein können. Wenn ein Überlauf erkannt wird, wird die Programmausführung angehalten. Diese Option ist standardmäßig aktiviert.
 
-[`/SAFESEH`(Abbild verfügt über sichere Ausnahmehandler)](../build/reference/safeseh-image-has-safe-exception-handlers.md)<br/>
+[`/SAFESEH` (Abbild verfügt über sichere Ausnahmehandler)](../build/reference/safeseh-image-has-safe-exception-handlers.md)<br/>
 Der Linker wird angewiesen, dem Ausgabeabbild eine Tabelle mit den Adressen aller Ausnahmehandler hinzuzufügen. Zur Laufzeit verwendet das Betriebssystem diese Tabelle, um sicherzustellen, dass nur rechtmäßige Ausnahmehandler ausgeführt werden. Dadurch wird verhindert, dass in böswilligen Angriffen zur Laufzeit eingeschleuste Ausnahmehandler ausgeführt werden. Diese Option ist standardmäßig deaktiviert.
 
 [`/NXCOMPAT`](../build/reference/nxcompat.md), [ `/NXCOMPAT` (Kompatibel mit der Daten Ausführungs Verhinderung)](../build/reference/nxcompat-compatible-with-data-execution-prevention.md) Diese Compileroptionen und Linkeroptionen aktivieren die Kompatibilität mit der Daten Ausführungs Verhinderung. DEP schützt die CPU vor der Ausführung von Seiten, die keine Codepages sind.
 
-[`/analyze`(Code Analyse)](../build/reference/analyze-code-analysis.md)<br/>
-Diese Compileroption aktiviert die Codeanalyse, die über potentielle Sicherheitslücken wie Pufferüberlauf, nicht initialisierten Speicher, Dereferenzierung von NULL-Zeigern und Speicherverlusten Bericht erstattet. Diese Option ist standardmäßig deaktiviert. Weitere Informationen finden Sie unter [Übersicht über die Code Analyse für C/C++](/cpp/code-quality/code-analysis-for-c-cpp-overview).
+[`/analyze` (Code Analyse)](../build/reference/analyze-code-analysis.md)<br/>
+Diese Compileroption aktiviert die Codeanalyse, die über potentielle Sicherheitslücken wie Pufferüberlauf, nicht initialisierten Speicher, Dereferenzierung von NULL-Zeigern und Speicherverlusten Bericht erstattet. Diese Option ist standardmäßig deaktiviert. Weitere Informationen finden Sie unter [Übersicht über die Code Analyse für C/C++](../code-quality/code-analysis-for-c-cpp-overview.md).
 
-[`/DYNAMICBASE`(Adressraum Layout Randomization verwenden)](../build/reference/dynamicbase-use-address-space-layout-randomization.md)<br/>
+[`/DYNAMICBASE` (Adressraum Layout Randomization verwenden)](../build/reference/dynamicbase-use-address-space-layout-randomization.md)<br/>
 Diese Linkeroption ermöglicht das Erstellen eines ausführbaren Images, das am Anfang der Ausführung an anderen Orten im Arbeitsspeicher geladen werden kann. Durch diese Option lässt sich die Position des Stapels im Arbeitsspeicher auch schlechter vorhersagen.
 
 ## <a name="security-enhanced-crt"></a>CRT mit erweiterter Sicherheit
@@ -64,7 +64,7 @@ Codeanalyse für verwalteten Code, auch bekannt als FxCop, überprüft Assemblys
 
 - Lokalisierung
 
-- Benennungskonventionen
+- Namenskonventionen
 
 - Leistung
 

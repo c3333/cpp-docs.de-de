@@ -22,12 +22,12 @@ helpviewer_keywords:
 - GetMoniker method
 - Open method
 ms.assetid: 25805f1b-26e3-402f-af83-1b5fe5ddebf7
-ms.openlocfilehash: f3e3a61028768144cbef17912952622f19ad0242
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: dfc358c06179d50cbf6442863fd2ed2c533cd00a
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88838151"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91498541"
 ---
 # <a name="cenumerator-class"></a>CEnumerator-Klasse
 
@@ -44,13 +44,13 @@ class CEnumerator :
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
 | Name | Beschreibung |
 |-|-|
-|[Sich](#find)|Durchsucht die verfügbaren Anbieter (Datenquellen) mit dem angegebenen Namen.|
+|[Suchen](#find)|Durchsucht die verfügbaren Anbieter (Datenquellen) mit dem angegebenen Namen.|
 |[GetMoniker](#getmoniker)|Ruft die- `IMoniker` Schnittstelle für den aktuellen Datensatz ab.|
 |[Öffnen](#open)|Öffnet den Enumerator.|
 
@@ -97,7 +97,7 @@ HRESULT GetMoniker(LPMONIKER* ppMoniker,
 #### <a name="parameters"></a>Parameter
 
 *ppmoniker*<br/>
-vorgenommen Der Moniker, der aus dem anzeigen Amen ([ceneneratoraccessor:: m_szParseName](../../data/oledb/cenumeratoraccessor-m-szparsename.md)) der aktuellen Zeile analysiert wurde.
+vorgenommen Der Moniker, der aus dem anzeigen Amen ([ceneneratoraccessor:: m_szParseName](./cenumeratoraccessor-class.md#szparsename)) der aktuellen Zeile analysiert wurde.
 
 *lpszdisplayname*<br/>
 in Der anzuteilbare Anzeige Name.

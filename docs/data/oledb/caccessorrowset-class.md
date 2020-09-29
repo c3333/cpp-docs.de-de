@@ -27,12 +27,12 @@ helpviewer_keywords:
 - FreeRecordMemory method
 - GetColumnInfo method
 ms.assetid: bd4f58ed-cebf-4d43-8985-1e5fcbf06953
-ms.openlocfilehash: 9ad4292b69d0219aa1732638ae250758e4456f4b
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: d9dd2eec3948896487b5b977d1107db1f4a1046b
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88843286"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91498724"
 ---
 # <a name="caccessorrowset-class"></a>CAccessorRowset-Klasse
 
@@ -58,13 +58,13 @@ Eine Rowsetklasse.
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
-| Name | BESCHREIBUNG |
+| Name | Beschreibung |
 |--|--|
-| [Zwick](#bind) | Erstellt Bindungen (wird verwendet, wenn `bBind` als **`false`** in [CCommand:: Open](../../data/oledb/ccommand-open.md)angegeben ist). |
+| [Zwick](#bind) | Erstellt Bindungen (wird verwendet, wenn `bBind` als **`false`** in [CCommand:: Open](./ccommand-class.md#open)angegeben ist). |
 | [CAccessorRowset](#caccessorrowset) | Konstruktor. |
 | [Schließen](#close) | Schließt das Rowset und alle Accessoren. |
 | [FreeRecordMemory](#freerecordmemory) | Gibt alle Spalten im aktuellen Datensatz frei, die freigegeben werden müssen. |
@@ -76,7 +76,7 @@ Die-Klasse `TAccessor` verwaltet den-Accessor. Die Klasse *TRowset* verwaltet da
 
 ## <a name="caccessorrowsetbind"></a><a name="bind"></a> CAccessorRowset:: Bind
 
-Erstellt die Bindungen, wenn Sie `bBind` als **`false`** in [CCommand:: Open](../../data/oledb/ccommand-open.md)angegeben haben.
+Erstellt die Bindungen, wenn Sie `bBind` als **`false`** in [CCommand:: Open](./ccommand-class.md#open)angegeben haben.
 
 ### <a name="syntax"></a>Syntax
 

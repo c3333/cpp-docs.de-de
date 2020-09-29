@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C3743
 ms.assetid: 7ca9a76e-7b60-46d1-ab8b-18600cf1a306
-ms.openlocfilehash: c0e2082dc87c6236aa11dd3094d056b0024dfc2f
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: b4bb198ae883e53e7947ce7f123bb0d3f092aaf3
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74752469"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91500404"
 ---
 # <a name="compiler-error-c3743"></a>Compilerfehler C3743
 
 eine gesamte Schnittstelle kann nur ein Hook/unhook erhalten werden, wenn der Parameter "layout_dependent" event_receiver "true" ist.
 
-Die [__unhook](../../cpp/unhook.md) -Funktion variiert in Abhängigkeit von der Anzahl der Parameter, die Sie benötigt, basierend auf dem Wert, der an den Parameter `layout_dependent` in der [event_receiver](../../windows/event-receiver.md) -Klasse übergeben wird.
+Die [__unhook](../../cpp/unhook.md) -Funktion variiert in Abhängigkeit von der Anzahl der Parameter, die Sie auf Grundlage des Werts annimmt, der an den- `layout_dependent` Parameter in der [event_receiver](../../windows/attributes/event-receiver.md) -Klasse übergeben wird.
 
 Im folgenden Beispiel wird C3743 generiert:
 

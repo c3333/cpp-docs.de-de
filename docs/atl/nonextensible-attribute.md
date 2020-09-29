@@ -5,19 +5,19 @@ helpviewer_keywords:
 - nonextensible attribute
 - dual interfaces, nonextensible attribute
 ms.assetid: 02a4a18b-ffd3-4d53-8fd1-feb1c05ad5ac
-ms.openlocfilehash: cc57acb8bd7bc3e32c764606da651f57316ceabf
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: fda2a0d43144b6e9832e061e7198b3f3e65f8b86
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62250102"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91500105"
 ---
 # <a name="nonextensible-attribute"></a>nonextensible-Attribut
 
-Wenn eine duale Schnittstelle zur Laufzeit nicht erweitert wird (d. h. Sie wird nicht angeben, Methoden oder Eigenschaften über `IDispatch::Invoke` , die nicht über die Vtable verfügbar sind), gelten die **nonextensible** Attribut zu Ihrer Schnittstelle die Definition. Dieses Attribut stellt die Informationen zur Clientsprachen (z. B. Visual Basic), die zum Aktivieren der Überprüfung der vollständigen Code zum Zeitpunkt der Kompilierung verwendet werden kann. Wenn dieses Attribut nicht angegeben wird, möglicherweise Fehler im Clientcode bleiben bis zur Laufzeit ausgeblendet.
+Wenn eine duale Schnittstelle nicht zur Laufzeit erweitert wird (d. h. Sie stellen keine Methoden oder Eigenschaften über bereit, die `IDispatch::Invoke` über die Vtable nicht verfügbar sind), sollten Sie das **nicht erweiterbare** Attribut auf ihre Schnittstellen Definition anwenden. Dieses Attribut stellt Informationen für Client Sprachen (z. b. Visual Basic) bereit, die verwendet werden können, um die vollständige Code Überprüfung zur Kompilierzeit zu aktivieren. Wenn dieses Attribut nicht angegeben wird, können Fehler bis zur Laufzeit im Client Code verborgen bleiben.
 
-Weitere Informationen zu den **nonextensible** -Attribut und ein Beispiel finden Sie unter [nonextensible](../windows/nonextensible.md).
+Weitere Informationen über das **nonextensible** -Attribut und ein Beispiel finden Sie unter [nonextensible](../windows/attributes/nonextensible.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Duale Schnittstellen und ATL](../atl/dual-interfaces-and-atl.md)

@@ -53,12 +53,12 @@ helpviewer_keywords:
 - top_item member [STL/CLR]
 - value_type member [STL/CLR]
 ms.assetid: 6ee96b9f-8a33-4cf7-b7e0-6535c24bdefb
-ms.openlocfilehash: 5f5cfbb4f6125c1c72550018735b377e1507ab08
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 316899aae024fbc8d9e568d6b5684ec4cfb11558
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87214885"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91499662"
 ---
 # <a name="stack-stlclr"></a>stack (STL/CLR)
 
@@ -94,7 +94,7 @@ Der Typ des zugrunde liegenden Containers.
 
 ## <a name="declarations"></a>Deklarationen
 
-|Typendefinition|BESCHREIBUNG|
+|Typendefinition|Beschreibung|
 |---------------------|-----------------|
 |[stack::const_reference (STL/CLR)](#const_reference)|Der Typ eines konstanten Verweises auf ein Element.|
 |[stack::container_type (STL/CLR)](#container_type)|Der Typ des zugrunde liegenden Containers.|
@@ -105,7 +105,7 @@ Der Typ des zugrunde liegenden Containers.
 |[stack::size_type (STL/CLR)](#size_type)|Der Typ eines Abstands mit Vorzeichen zwischen zwei Elementen.|
 |[stack::value_type (STL/CLR)](#value_type)|Der Typ eines Elements.|
 
-|Memberfunktion|BESCHREIBUNG|
+|Memberfunktion|Beschreibung|
 |---------------------|-----------------|
 |[stack::assign (STL/CLR)](#assign)|Ersetzt alle Elemente.|
 |[stack::empty (STL/CLR)](#empty)|Testet, ob keine Elemente vorhanden sind.|
@@ -117,11 +117,11 @@ Der Typ des zugrunde liegenden Containers.
 |[stack::top (STL/CLR)](#top)|Greift auf das letzte Element zu.|
 |[stack::to_array (STL/CLR)](#to_array)|Kopiert die gesteuerte Sequenz in ein neues Array.|
 
-|Eigenschaft|BESCHREIBUNG|
+|Eigenschaft|Beschreibung|
 |--------------|-----------------|
 |[stack::top_item (STL/CLR)](#top_item)|Greift auf das letzte Element zu.|
 
-|Operator|BESCHREIBUNG|
+|Operator|Beschreibung|
 |--------------|-----------------|
 |[stack::operator= (STL/CLR)](#op_as)|Ersetzt die kontrollierte Sequenz.|
 |[Operator! = (Stack) (STL/CLR)](#op_neq)|Bestimmt, ob ein-Objekt ungleich einem `stack` anderen `stack` Objekt ist.|
@@ -133,7 +133,7 @@ Der Typ des zugrunde liegenden Containers.
 
 ## <a name="interfaces"></a>Schnittstellen
 
-|Schnittstelle|BESCHREIBUNG|
+|Schnittstelle|Beschreibung|
 |---------------|-----------------|
 |<xref:System.ICloneable>|Duplizieren eines Objekts.|
 |IStack\<Value, Container>|Verwalten Sie einen generischen Container Adapter.|
@@ -142,9 +142,9 @@ Der Typ des zugrunde liegenden Containers.
 
 Das-Objekt ordnet Speicher für die Sequenz zu, die er durch einen zugrunde liegenden Container (vom Typ *Container*) steuert und freigibt, der *Wert* Elemente speichert und Bedarfs gesteuert wächst. Das-Objekt schränkt den Zugriff auf Push und Pop nur das letzte Element ein und implementiert eine letzte in-Out-Warteschlange (auch als LIFO-Warteschlange oder Stapel bezeichnet).
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
-## <a name="stackassign-stlclr"></a><a name="assign"></a>Stack:: Assign (STL/CLR)
+## <a name="stackassign-stlclr"></a><a name="assign"></a> Stack:: Assign (STL/CLR)
 
 Ersetzt alle Elemente.
 
@@ -198,7 +198,7 @@ a b c
 a b c
 ```
 
-## <a name="stackconst_reference-stlclr"></a><a name="const_reference"></a>Stack:: const_reference (STL/CLR)
+## <a name="stackconst_reference-stlclr"></a><a name="const_reference"></a> Stack:: const_reference (STL/CLR)
 
 Der Typ eines konstanten Verweises auf ein Element.
 
@@ -242,7 +242,7 @@ int main()
 c b a
 ```
 
-## <a name="stackcontainer_type-stlclr"></a><a name="container_type"></a>Stack:: container_type (STL/CLR)
+## <a name="stackcontainer_type-stlclr"></a><a name="container_type"></a> Stack:: container_type (STL/CLR)
 
 Der Typ des zugrunde liegenden Containers.
 
@@ -284,7 +284,7 @@ int main()
 a b c
 ```
 
-## <a name="stackdifference_type-stlclr"></a><a name="difference_type"></a>Stapel::d ifference_type (STL/CLR)
+## <a name="stackdifference_type-stlclr"></a><a name="difference_type"></a> Stapel::d ifference_type (STL/CLR)
 
 Die Typen eines Abstands mit Vorzeichen zwischen zwei Elementen.
 
@@ -342,7 +342,7 @@ pushing 2 = -2
 popping 3 = 3
 ```
 
-## <a name="stackempty-stlclr"></a><a name="empty"></a>Stack:: Empty (STL/CLR)
+## <a name="stackempty-stlclr"></a><a name="empty"></a> Stack:: Empty (STL/CLR)
 
 Testet, ob keine Elemente vorhanden sind.
 
@@ -354,7 +354,7 @@ bool empty();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt „true“ für eine leere gesteuerte Sequenz zurück. Dies entspricht [Stack:: Size (STL/CLR)](../dotnet/stack-size-stl-clr.md) `() == 0` . Sie verwenden es, um zu testen, ob der Stapel leer ist.
+Die Memberfunktion gibt „true“ für eine leere gesteuerte Sequenz zurück. Dies entspricht [Stack:: Size (STL/CLR)](#size) `() == 0` . Sie verwenden es, um zu testen, ob der Stapel leer ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -396,7 +396,7 @@ size() = 0
 empty() = True
 ```
 
-## <a name="stackgeneric_container-stlclr"></a><a name="generic_container"></a>Stack:: generic_container (STL/CLR)
+## <a name="stackgeneric_container-stlclr"></a><a name="generic_container"></a> Stack:: generic_container (STL/CLR)
 
 Der Typ der generischen Schnittstelle für den Container Adapter.
 
@@ -459,7 +459,7 @@ a b c d
 a b c d e
 ```
 
-## <a name="stackgeneric_value-stlclr"></a><a name="generic_value"></a>Stack:: generic_value (STL/CLR)
+## <a name="stackgeneric_value-stlclr"></a><a name="generic_value"></a> Stack:: generic_value (STL/CLR)
 
 Der Typ eines Elements, das mit der generischen-Schnittstelle für den Container verwendet werden soll.
 
@@ -517,7 +517,7 @@ a b c
 c b a
 ```
 
-## <a name="stackget_container-stlclr"></a><a name="get_container"></a>Stack:: get_container (STL/CLR)
+## <a name="stackget_container-stlclr"></a><a name="get_container"></a> Stack:: get_container (STL/CLR)
 
 Greift auf den zugrunde liegenden Container zu.
 
@@ -559,7 +559,7 @@ int main()
 a b c
 ```
 
-## <a name="stackoperator-stlclr"></a><a name="op_as"></a>Stack:: Operator = (STL/CLR)
+## <a name="stackoperator-stlclr"></a><a name="op_as"></a> Stack:: Operator = (STL/CLR)
 
 Ersetzt die kontrollierte Sequenz.
 
@@ -613,7 +613,7 @@ a b c
 a b c
 ```
 
-## <a name="stackpop-stlclr"></a><a name="pop"></a>Stack::p op (STL/CLR)
+## <a name="stackpop-stlclr"></a><a name="pop"></a> Stack::p op (STL/CLR)
 
 Entfernt das letzte Element.
 
@@ -661,7 +661,7 @@ a b c
 a b
 ```
 
-## <a name="stackpush-stlclr"></a><a name="push"></a>Stack::p USH (STL/CLR)
+## <a name="stackpush-stlclr"></a><a name="push"></a> Stack::p USH (STL/CLR)
 
 Fügt ein neues letztes Element hinzu.
 
@@ -702,7 +702,7 @@ int main()
 a b c
 ```
 
-## <a name="stackreference-stlclr"></a><a name="reference"></a>Stack:: Reference (STL/CLR)
+## <a name="stackreference-stlclr"></a><a name="reference"></a> Stack:: Reference (STL/CLR)
 
 Der Typ eines Verweises auf ein Element.
 
@@ -751,7 +751,7 @@ a b c
 a b x
 ```
 
-## <a name="stacksize-stlclr"></a><a name="size"></a>Stack:: Size (STL/CLR)
+## <a name="stacksize-stlclr"></a><a name="size"></a> Stack:: Size (STL/CLR)
 
 Ermittelt die Anzahl von Elementen.
 
@@ -763,7 +763,7 @@ size_type size();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt die Länge der gesteuerten Sequenz zurück. Sie verwenden Sie, um die Anzahl der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden. Wenn Sie nur für Sie wichtig sind, ob die Sequenz eine Größe ungleich NULL aufweist, finden Sie weitere Informationen unter [Stack:: Empty (STL/CLR)](../dotnet/stack-empty-stl-clr.md) `()` .
+Die Memberfunktion gibt die Länge der gesteuerten Sequenz zurück. Sie verwenden Sie, um die Anzahl der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden. Wenn Sie nur für Sie wichtig sind, ob die Sequenz eine Größe ungleich NULL aufweist, finden Sie weitere Informationen unter [Stack:: Empty (STL/CLR)](#empty) `()` .
 
 ### <a name="example"></a>Beispiel
 
@@ -805,7 +805,7 @@ size() = 2 after popping
 size() = 4 after adding 2
 ```
 
-## <a name="stacksize_type-stlclr"></a><a name="size_type"></a>Stack:: size_type (STL/CLR)
+## <a name="stacksize_type-stlclr"></a><a name="size_type"></a> Stack:: size_type (STL/CLR)
 
 Der Typ eines Abstands mit Vorzeichen zwischen zwei Elementen.
 
@@ -854,7 +854,7 @@ a b c
 size difference = 2
 ```
 
-## <a name="stackstack-stlclr"></a><a name="stack"></a>Stack:: Stack (STL/CLR)
+## <a name="stackstack-stlclr"></a><a name="stack"></a> Stack:: Stack (STL/CLR)
 
 Erstellt ein Container Adapter Objekt.
 
@@ -947,7 +947,7 @@ x x x x x
 x x x x x
 ```
 
-## <a name="stackto_array-stlclr"></a><a name="to_array"></a>Stack:: to_array (STL/CLR)
+## <a name="stackto_array-stlclr"></a><a name="to_array"></a> Stack:: to_array (STL/CLR)
 
 Kopiert die gesteuerte Sequenz in ein neues Array.
 
@@ -997,7 +997,7 @@ a b c d
 a b c
 ```
 
-## <a name="stacktop-stlclr"></a><a name="top"></a>Stack:: Top (STL/CLR)
+## <a name="stacktop-stlclr"></a><a name="top"></a> Stack:: Top (STL/CLR)
 
 Greift auf das letzte Element zu.
 
@@ -1049,7 +1049,7 @@ top() = c
 a b x
 ```
 
-## <a name="stacktop_item-stlclr"></a><a name="top_item"></a>Stack:: top_item (STL/CLR)
+## <a name="stacktop_item-stlclr"></a><a name="top_item"></a> Stack:: top_item (STL/CLR)
 
 Greift auf das letzte Element zu.
 
@@ -1101,7 +1101,7 @@ top_item = c
 a b x
 ```
 
-## <a name="stackvalue_type-stlclr"></a><a name="value_type"></a>Stack:: value_type (STL/CLR)
+## <a name="stackvalue_type-stlclr"></a><a name="value_type"></a> Stack:: value_type (STL/CLR)
 
 Der Typ eines Elements.
 
@@ -1146,7 +1146,7 @@ int main()
 c b a
 ```
 
-## <a name="operator-stack-stlclr"></a><a name="op_neq"></a>Operator! = (Stack) (STL/CLR)
+## <a name="operator-stack-stlclr"></a><a name="op_neq"></a> Operator! = (Stack) (STL/CLR)
 
 Der Stapel entspricht nicht dem Vergleich.
 
@@ -1217,7 +1217,7 @@ a b d
 [a b c] != [a b d] is True
 ```
 
-## <a name="operatorlt-stack-stlclr"></a><a name="op_lt"></a>Operator &lt; (Stapel) (STL/CLR)
+## <a name="operatorlt-stack-stlclr"></a><a name="op_lt"></a> Operator &lt; (Stapel) (STL/CLR)
 
 Der Stapel ist kleiner als der Vergleich.
 
@@ -1240,7 +1240,7 @@ Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Operator-Funktion gibt true zurück, wenn für die niedrigste Position, `i` für die `!(right[i] < left[i])` Sie ebenfalls true ist `left[i] < right[i]` . Andernfalls `left->` wird [Stack:: Size (STL/CLR)](../dotnet/stack-size-stl-clr.md) zurückgegeben, `() <` `right->size()` um zu testen, ob *left* nach *Rechts* geordnet ist, wenn die beiden Stapel Element Weise verglichen werden.
+Die Operator-Funktion gibt true zurück, wenn für die niedrigste Position, `i` für die `!(right[i] < left[i])` Sie ebenfalls true ist `left[i] < right[i]` . Andernfalls `left->` wird [Stack:: Size (STL/CLR)](#size) zurückgegeben, `() <` `right->size()` um zu testen, ob *left* nach *Rechts* geordnet ist, wenn die beiden Stapel Element Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1288,7 +1288,7 @@ a b d
 [a b c] < [a b d] is True
 ```
 
-## <a name="operatorlt-stack-stlclr"></a><a name="op_lteq"></a>Operator &lt; = (Stack) (STL/CLR)
+## <a name="operatorlt-stack-stlclr"></a><a name="op_lteq"></a> Operator &lt; = (Stack) (STL/CLR)
 
 Stapel kleiner oder gleich-Vergleich.
 
@@ -1359,7 +1359,7 @@ a b d
 [a b d] <= [a b c] is False
 ```
 
-## <a name="operator-stack-stlclr"></a><a name="op_eq"></a>Operator = = (Stack) (STL/CLR)
+## <a name="operator-stack-stlclr"></a><a name="op_eq"></a> Operator = = (Stack) (STL/CLR)
 
 Stapel gleicher Vergleich.
 
@@ -1430,7 +1430,7 @@ a b d
 [a b c] == [a b d] is False
 ```
 
-## <a name="operatorgt-stack-stlclr"></a><a name="op_gt"></a>Operator &gt; (Stapel) (STL/CLR)
+## <a name="operatorgt-stack-stlclr"></a><a name="op_gt"></a> Operator &gt; (Stapel) (STL/CLR)
 
 Der Stapel ist größer als der Vergleich.
 
@@ -1501,7 +1501,7 @@ a b d
 [a b d] > [a b c] is True
 ```
 
-## <a name="operatorgt-stack-stlclr"></a><a name="op_gteq"></a>Operator &gt; = (Stack) (STL/CLR)
+## <a name="operatorgt-stack-stlclr"></a><a name="op_gteq"></a> Operator &gt; = (Stack) (STL/CLR)
 
 Stapel größer oder gleich-Vergleich.
 

@@ -5,12 +5,12 @@ ms.topic: reference
 helpviewer_keywords:
 - typeid keyword [C++]
 ms.assetid: e9706cae-e7c4-4d6d-b474-646d73df3e70
-ms.openlocfilehash: 56319fb773b8398f85f5fd82c812f0efdb7dde15
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: bfb226bc11f0fd7d3feddfb2c50ffe1aa6311d3d
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87225110"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91500387"
 ---
 # <a name="typeid--ccli-and-ccx"></a>typeid (C++/CLI und C++/CX)
 
@@ -74,7 +74,7 @@ Der Name eines Typs (abstrakter Deklarator), für den das `System::Type`-Objekt 
 
 **`typeid`** muss in der Lage sein, einen Typnamen (Typ) zur Kompilierzeit auszuwerten, wohingegen GetType den Typ auswertet, der zur Laufzeit zurückgegeben werden soll.
 
-**`typeid`** kann einen systemeigenen Typnamen oder Common Language Runtime Alias für den nativen Typnamen verwenden. Weitere Informationen finden [Sie unter .NET Framework Entsprechungen zu C++ Native Types (C++/CLI)](../dotnet/dotnet-framework-equivalents-to-cpp-native-types-cpp-cli.md) .
+**`typeid`** kann einen systemeigenen Typnamen oder Common Language Runtime Alias für den nativen Typnamen verwenden. Weitere Informationen finden [Sie unter .NET Framework Entsprechungen zu C++ Native Types (C++/CLI)](../dotnet/managed-types-cpp-cli.md#dotnet) .
 
 **`typeid`** kann auch mit systemeigenen Typen verwendet werden, obwohl trotzdem ein zurückgegeben wird `System::Type` .  Um eine Type_info Struktur zu erhalten, verwenden Sie den- [ `typeid` Operator](../cpp/typeid-operator.md).
 
@@ -188,6 +188,6 @@ int::typeid != pointer_to_int::typeid, as expected
 int::typeid == handle_to_int::typeid, as expected
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Komponenten Erweiterungen für .net und UWP](component-extensions-for-runtime-platforms.md)

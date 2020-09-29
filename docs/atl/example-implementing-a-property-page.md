@@ -4,12 +4,12 @@ ms.date: 05/09/2019
 helpviewer_keywords:
 - property pages, implementing
 ms.assetid: c30b67fe-ce08-4249-ae29-f3060fa8d61e
-ms.openlocfilehash: 688cd337d0754fc49ede0f39fd774c9990f7c79f
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: dd74dd4562a3c4a8bff2c58d5f1d801f5dd06fd8
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87224356"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91499611"
 ---
 # <a name="example-implementing-a-property-page"></a>Beispiel: Implementieren einer Eigenschaften Seite
 
@@ -133,7 +133,7 @@ Wenn Benutzer ihre Änderungen an den Objekten anwenden möchten, ruft die Site 
 
 Um diese Seite anzuzeigen, müssen Sie ein einfaches Hilfsobjekt erstellen. Das Hilfsobjekt bietet eine Methode, die die `OleCreatePropertyFrame`-API zum Anzeigen einer einzelnen Seite vereinfacht, die mit einem einzelnen Objekt verknüpft ist. Dieses Hilfsobjekt ist so konzipiert, dass es mit Visual Basic verwendet werden kann.
 
-Verwenden Sie das [Dialogfeld „Klasse hinzufügen“](../ide/add-class-dialog-box.md) und den [ATL-Assistenten für einfache Objekte](../atl/reference/atl-simple-object-wizard.md), um eine neue Klasse zu generieren, und verwenden Sie `Helper` als Kurznamen. Nach dem Erstellen fügen Sie eine Methode hinzu, wie in der unten stehenden Tabelle gezeigt.
+Verwenden Sie das [Dialogfeld „Klasse hinzufügen“](../ide/adding-a-class-visual-cpp.md#add-class-dialog-box) und den [ATL-Assistenten für einfache Objekte](../atl/reference/atl-simple-object-wizard.md), um eine neue Klasse zu generieren, und verwenden Sie `Helper` als Kurznamen. Nach dem Erstellen fügen Sie eine Methode hinzu, wie in der unten stehenden Tabelle gezeigt.
 
 |Element|Wert|
 |----------|-----------|

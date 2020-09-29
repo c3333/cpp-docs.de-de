@@ -7,12 +7,12 @@ helpviewer_keywords:
 - class types [C++], class statements
 - class keyword [C++]
 ms.assetid: dd23c09f-6598-4069-8bff-69c7f2518b9f
-ms.openlocfilehash: 6475bc3703ce1bd7cf6103f4be8c12edc36e98b9
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 1dfa0b5e2dd65567b965be756ff171a3df75370a
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87226007"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91499819"
 ---
 # <a name="class-c"></a>class (C++)
 
@@ -40,7 +40,7 @@ Das **`class`** Schlüsselwort.
 *MS-decl-spec*<br/>
 Optionale Speicherklassenspezifikation. Weitere Informationen finden Sie unter [__declspec](../cpp/declspec.md) -Schlüsselwort.
 
-*Tag*<br/>
+*das Tag*<br/>
 Der Typname, der für die Klasse angegeben wurde. Das Tag ist ein reserviertes Wort innerhalb des Gültigkeitsbereichs der Klasse. Das Tag ist optional. Wenn es nicht angegeben wird, wird eine anonyme Klasse definiert. Weitere Informationen finden Sie unter [Anonyme Klassentypen](../cpp/anonymous-class-types.md).
 
 *base-list*<br/>
@@ -50,7 +50,7 @@ Optionale Liste von Klassen oder Strukturen, von denen diese Klasse ihre Member 
 Liste von Klassenmembern. Weitere Informationen finden Sie unter [Übersicht über Klassenmember](../cpp/class-member-overview.md) .
 
 *Deklaratoren*<br/>
-Deklaratorliste, die die Namen von mindestens einer Instanz eines Klassentyps festlegt. Deklaratoren können Initialisiererlisten einschließen, wenn alle Datenmember der-Klasse sind **`public`** . Dies kommt häufiger in Strukturen vor, deren Datenmember **`public`** Standardmäßig sind, als in Klassen. Weitere Informationen finden Sie [unter Übersicht über Deklaratoren](../cpp/overview-of-declarators.md) .
+Deklaratorliste, die die Namen von mindestens einer Instanz eines Klassentyps festlegt. Deklaratoren können Initialisiererlisten einschließen, wenn alle Datenmember der-Klasse sind **`public`** . Dies kommt häufiger in Strukturen vor, deren Datenmember **`public`** Standardmäßig sind, als in Klassen. Weitere Informationen finden Sie [unter Übersicht über Deklaratoren](./declarations-and-definitions-cpp.md) .
 
 ## <a name="remarks"></a>Bemerkungen
 
@@ -140,7 +140,7 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
 [Klassen und Strukturen](../cpp/classes-and-structs-cpp.md)

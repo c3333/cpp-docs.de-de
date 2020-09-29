@@ -8,12 +8,12 @@ helpviewer_keywords:
 - __event keyword [C++]
 - events [C++], __event
 ms.assetid: d3019b3e-722e-48df-8536-c05878461f9e
-ms.openlocfilehash: 2adbadecacb41a8e92cd36f55da9b376b4e1b006
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: c1c9fa5a6df4cbb1c18e5d5406bdde0197d155b2
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87227516"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91498822"
 ---
 # <a name="__event"></a>__event
 
@@ -35,7 +35,7 @@ Je nachdem, ob Ereignisquelle und Empfänger systemeigenes C++, COM oder verwalt
 
 |Systemeigenes C++|COM|Verwaltet (.NET Framework)|
 |------------------|---------|--------------------------------|
-|Methode|—|method|
+|Methode|—|Methode|
 |—|interface|—|
 |—|—|Datenelement|
 
@@ -77,7 +77,7 @@ Beispielcode finden Sie [unter Ereignis Behandlung in com](../cpp/event-handling
 
 Weitere Informationen zum Codieren von Ereignissen in der neuen Syntax finden Sie unter [Event](../extensions/event-cpp-component-extensions.md).
 
-Verwaltete Ereignisse sind Datenmember oder Methoden. Bei Verwendung mit einem Ereignis muss der Rückgabetyp eines Delegaten mit dem [Common Language Specification](/dotnet/standard/language-independence-and-language-independent-components)kompatibel sein. Der Rückgabetyp des Ereignishandlers muss dem Rückgabetyp des Delegaten entsprechen. Weitere Informationen zu Delegaten finden Sie unter Delegaten [und Ereignisse](../dotnet/delegates-and-events.md). Wenn ein verwaltetes Ereignis ein Datenmember ist, muss ihr Typ ein Zeiger auf einen Delegaten sein.
+Verwaltete Ereignisse sind Datenmember oder Methoden. Bei Verwendung mit einem Ereignis muss der Rückgabetyp eines Delegaten mit dem [Common Language Specification](/dotnet/standard/language-independence-and-language-independent-components)kompatibel sein. Der Rückgabetyp des Ereignishandlers muss dem Rückgabetyp des Delegaten entsprechen. Weitere Informationen zu Delegaten finden Sie unter Delegaten [und Ereignisse](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md). Wenn ein verwaltetes Ereignis ein Datenmember ist, muss ihr Typ ein Zeiger auf einen Delegaten sein.
 
 In .NET Framework können Sie einen Datenmember behandeln, als wäre er eine Methode selbst (d. h. die `Invoke`-Methode des entsprechenden Delegaten). Sie müssen den Delegattyp vordefinieren, um einen verwalteten Ereignisdatenmember zu deklarieren. Im Gegensatz dazu definiert eine verwaltete Ereignismethode implizit den entsprechenden verwalteten Delegaten, sofern er noch nicht definiert ist. Sie können beispielsweise einen Ereigniswert wie `OnClick` als Ereignis wie folgt angeben:
 
@@ -127,7 +127,7 @@ public:
 };
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
 [Ereignis Behandlung](../cpp/event-handling.md)<br/>

@@ -5,16 +5,16 @@ helpviewer_keywords:
 - exception handling, converting from OpenMP to the Concurrency Runtime
 - converting from OpenMP to the Concurrency Runtime, exception handling
 ms.assetid: 03c28196-21ba-439e-8641-afab1c283e1a
-ms.openlocfilehash: 380a96eedb8a70965197c4a5ce0c5199bc268db5
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: ca2ee42d48d8fe9f66025b8f0d5eeb493fc91d10
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77141811"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91498466"
 ---
 # <a name="how-to-convert-an-openmp-loop-that-uses-exception-handling-to-use-the-concurrency-runtime"></a>Gewusst wie: Konvertieren einer OpenMP-Schleife, in der die Ausnahmebehandlung verwendet wird, zur Verwendung der Concurrency Runtime
 
-In diesem Beispiel wird veranschaulicht, wie eine [parallele](../../parallel/concrt/how-to-use-parallel-invoke-to-write-a-parallel-sort-routine.md#parallel)OpenMP-[for](../../parallel/openmp/reference/for-openmp.md) -Schleife konvertiert wird, die die Ausnahmebehandlung durchführt, um den Concurrency Runtime Ausnahme Behandlungs Mechanismus zu verwenden
+In diesem Beispiel wird veranschaulicht, wie eine [parallele](../../parallel/concrt/how-to-use-parallel-invoke-to-write-a-parallel-sort-routine.md#parallel)OpenMP-[for](../openmp/reference/openmp-directives.md#for-openmp) -Schleife konvertiert wird, die die Ausnahmebehandlung durchführt, um den Concurrency Runtime Ausnahme Behandlungs Mechanismus zu verwenden
 
 In OpenMP müssen Ausnahmen in einem parallelen Bereich im gleichen Bereich und vom gleichen Thread abgefangen und behandelt werden. Eine Ausnahme, die den parallelen Bereich umgeht, wird vom Handler für nicht behandelte Ausnahmen abgefangen, der den Prozess standardmäßig beendet.
 
@@ -22,7 +22,7 @@ Wenn Sie im Concurrency Runtime eine Ausnahme im Text einer Arbeitsfunktion ausl
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel wird veranschaulicht, wie Ausnahmen in einem OpenMP `parallel`-Bereich und in einem Aufruf von `parallel_for` behandelt werden. Die `do_work`-Funktion führt eine Speicher Belegungs Anforderung aus, die nicht erfolgreich ist und daher eine Ausnahme vom Typ [Std:: bad_alloc](../../standard-library/bad-alloc-class.md)auslöst. In der Version, die OpenMP verwendet, muss diese vom Thread, der diese Ausnahme auslöst, ebenfalls abgefangen werden. Mit anderen Worten muss die Ausnahme von jeder Iteration einer parallelen OpenMP-Schleife behandelt werden. In der Version mit der Concurrency Runtime wird eine Ausnahme, die von einem anderen Thread ausgelöst wird, vom Hauptthread abgefangen.
+In diesem Beispiel wird veranschaulicht, wie Ausnahmen in einem OpenMP `parallel`-Bereich und in einem Aufruf von `parallel_for` behandelt werden. Die `do_work` -Funktion führt eine Speicher Belegungs Anforderung aus, die nicht erfolgreich ist und daher eine Ausnahme vom Typ [Std:: bad_alloc](../../standard-library/bad-alloc-class.md)auslöst. In der Version, die OpenMP verwendet, muss diese vom Thread, der diese Ausnahme auslöst, ebenfalls abgefangen werden. Mit anderen Worten muss die Ausnahme von jeder Iteration einer parallelen OpenMP-Schleife behandelt werden. In der Version mit der Concurrency Runtime wird eine Ausnahme, die von einem anderen Thread ausgelöst wird, vom Hauptthread abgefangen.
 
 [!code-cpp[concrt-openmp#3](../../parallel/concrt/codesnippet/cpp/convert-an-openmp-loop-that-uses-exception-handling_1.cpp)]
 
@@ -54,12 +54,12 @@ Weitere Informationen zu `parallel_for` und anderen parallelen Algorithmen finde
 
 ## <a name="compiling-the-code"></a>Kompilieren des Codes
 
-Kopieren Sie den Beispielcode, und fügen Sie ihn in ein Visual Studio-Projekt ein, oder fügen Sie ihn in eine Datei mit dem Namen `concrt-omp-exceptions.cpp` ein, und führen Sie dann den folgenden Befehl in einem Visual Studio-Eingabe Aufforderungs Fenster aus.
+Kopieren Sie den Beispielcode, und fügen Sie ihn in ein Visual Studio-Projekt ein. Alternativ dazu können Sie ihn auch in eine Datei mit dem Namen einfügen `concrt-omp-exceptions.cpp` und dann den folgenden Befehl in einem Visual Studio-Eingabe Aufforderungs Fenster ausführen.
 
-> **cl. exe/EHsc/OpenMP ConcRT-OMP-Exceptions. cpp**
+> **cl.exe/EHsc/OpenMP ConcRT-OMP-Exceptions. cpp**
 
 ## <a name="see-also"></a>Weitere Informationen
 
 [Migrieren von OpenMP zur Concurrency Runtime](../../parallel/concrt/migrating-from-openmp-to-the-concurrency-runtime.md)<br/>
-[Behandlung von Ausnahmen](../../parallel/concrt/exception-handling-in-the-concurrency-runtime.md)<br/>
+[Ausnahmebehandlung](../../parallel/concrt/exception-handling-in-the-concurrency-runtime.md)<br/>
 [Parallele Algorithmen](../../parallel/concrt/parallel-algorithms.md)

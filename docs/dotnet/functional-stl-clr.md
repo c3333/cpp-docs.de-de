@@ -63,12 +63,12 @@ helpviewer_keywords:
 - unary_delegate_noreturn function [STL/CLR]
 - unary_negate function [STL/CLR]
 ms.assetid: 88738b8c-5d37-4375-970e-a4442bf5efde
-ms.openlocfilehash: 5cfec19ad8a25d3b44647e490b2c328a5639e675
-ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
+ms.openlocfilehash: 00d719df2fdba892d1d9362da2b2172bac9ca16f
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90743307"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91499706"
 ---
 # <a name="functional-stlclr"></a>functional (STL/CLR)
 
@@ -80,7 +80,7 @@ Fügen Sie den STL/CLR-Header `<cliext/functional>` ein, um eine Reihe von Vorla
 #include <functional>
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:**\<cliext/functional>
 
@@ -417,7 +417,7 @@ Das erste zu Umbruch Ende Argument.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Funktion gibt [binder1st (STL/CLR)](../dotnet/binder1st-stl-clr.md)zurück `<Fun>(functor, left)` . Sie verwenden Sie als bequeme Methode, um einen zwei-Argument-Funktor und das erste Argument in einem Funktor mit einem Argument zu wrappen, der ihn mit einem zweiten Argument aufruft.
+Die Vorlagen Funktion gibt [binder1st (STL/CLR)](#binder1st)zurück `<Fun>(functor, left)` . Sie verwenden Sie als bequeme Methode, um einen zwei-Argument-Funktor und das erste Argument in einem Funktor mit einem Argument zu wrappen, der ihn mit einem zweiten Argument aufruft.
 
 ### <a name="example"></a>Beispiel
 
@@ -498,7 +498,7 @@ Das zweite zu Umbruch Ende Argument.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Funktion gibt [binder2nd (STL/CLR)](../dotnet/binder2nd-stl-clr.md)zurück `<Fun>(functor, right)` . Sie verwenden Sie als bequeme Methode zum Einschließen eines funktors mit zwei Argumenten und des zweiten Arguments in einem Funktor mit einem Argument, der ihn mit einem ersten Argument aufruft.
+Die Vorlagen Funktion gibt [binder2nd (STL/CLR)](#binder2nd)zurück `<Fun>(functor, right)` . Sie verwenden Sie als bequeme Methode zum Einschließen eines funktors mit zwei Argumenten und des zweiten Arguments in einem Funktor mit einem Argument, der ihn mit einem ersten Argument aufruft.
 
 ### <a name="example"></a>Beispiel
 
@@ -2173,7 +2173,7 @@ Der zu wrappende Funktor.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Funktion gibt [Unary_negate (STL/CLR)](../dotnet/unary-negate-stl-clr.md)zurück `<Fun>(functor)` . Sie verwenden Sie als bequeme Methode zum Einbinden eines funktors mit einem Argument in einem Funktions tüktor, der seine logische Not-Methode bereitstellt.
+Die Vorlagen Funktion gibt [Unary_negate (STL/CLR)](#unary_negate)zurück `<Fun>(functor)` . Sie verwenden Sie als bequeme Methode zum Einbinden eines funktors mit einem Argument in einem Funktions tüktor, der seine logische Not-Methode bereitstellt.
 
 ### <a name="example"></a>Beispiel
 
@@ -2245,7 +2245,7 @@ Der zu wrappende Funktor.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Funktion gibt [binary_negate (STL/CLR)](../dotnet/binary-negate-stl-clr.md)zurück `<Fun>(functor)` . Sie verwenden Sie als bequeme Methode, um einen zwei-Argument-Funktions tüktor in einem Funktor zu wrappen, der seine logische Not-Methode bereitstellt.
+Die Vorlagen Funktion gibt [binary_negate (STL/CLR)](#negate)zurück `<Fun>(functor)` . Sie verwenden Sie als bequeme Methode, um einen zwei-Argument-Funktions tüktor in einem Funktor zu wrappen, der seine logische Not-Methode bereitstellt.
 
 ### <a name="example"></a>Beispiel
 

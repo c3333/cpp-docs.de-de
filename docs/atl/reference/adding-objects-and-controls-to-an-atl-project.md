@@ -11,12 +11,12 @@ helpviewer_keywords:
 - objects [C++], adding to ATL projects
 - ATL Control Wizard
 ms.assetid: c0adcbd0-07fe-4c55-a8fd-8c2c65ecdaad
-ms.openlocfilehash: b1bf4f85ccf7a0bb2d77bfb96c512349f581f193
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 6acd60d430f13906d11e9a9b3e7c5655ee94badb
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88832450"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91499304"
 ---
 # <a name="adding-objects-and-controls-to-an-atl-project"></a>Hinzufügen von Objekten und Steuerelementen zu einem ATL-Projekt
 
@@ -42,7 +42,7 @@ Sie können einen der ATL-Code-Assistenten verwenden, um Objekte oder Steuerelem
 
 1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektknoten, und klicken Sie im Kontextmenü auf **Hinzufügen**. Klicken Sie auf **Klasse hinzufügen**.
 
-   Das Dialogfeld [Klasse hinzufügen](../../ide/add-class-dialog-box.md) wird angezeigt.
+   Das Dialogfeld [Klasse hinzufügen](../../ide/adding-a-class-visual-cpp.md#add-class-dialog-box) wird angezeigt.
 
 1. Wählen Sie im Bereich **Kategorien** den Ordner **ATL** aus, und wählen Sie im Bereich **Vorlagen** das Objekt aus, das eingefügt werden soll. Klicken Sie auf **Öffnen**. Der Code-Assistent für das ausgewählte Objekt wird angezeigt.
 

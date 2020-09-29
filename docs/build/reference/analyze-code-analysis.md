@@ -12,14 +12,14 @@ helpviewer_keywords:
 - -analyze compiler option [C++]
 - analyze compiler option [C++]
 ms.assetid: 81da536a-e030-4bd4-be18-383927597d08
-ms.openlocfilehash: 643d8428e3760926832429db5a4425e078ed776b
-ms.sourcegitcommit: 6e55aeb538b1c39af754f82d6f7738a18f5aa031
+ms.openlocfilehash: e970872e89132aed52190b8688f2cdaccab5ea6f
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87389791"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91500088"
 ---
-# <a name="analyze-code-analysis"></a>`/analyze`(Code Analyse)
+# <a name="analyze-code-analysis"></a>`/analyze` (Code Analyse)
 
 Aktiviert Codeanalyse- und Steueroptionen.
 
@@ -84,14 +84,14 @@ Aktiviert das angegebene PREfast-Plug-in als Teil der Code Analyse Ausführungen
 
 ::: moniker range="<=vs-2017"
 
-LocalEspC.dll ist das Plug-in, das Parallelitäts bezogene Code Analyse Überprüfungen im Bereich der C261XX-Warnungen implementiert. Beispiel: [C26100](/cpp/code-quality/c26100), [C26101](/cpp/code-quality/c26101),..., [C26167](/cpp/code-quality/c26167).
+LocalEspC.dll ist das Plug-in, das Parallelitäts bezogene Code Analyse Überprüfungen im Bereich der C261XX-Warnungen implementiert. Beispiel: [C26100](../../code-quality/c26100.md), [C26101](../../code-quality/c26101.md),...,  [C26167](../../code-quality/c26167.md).
 
-Verwenden Sie diese Compileroption, um LocalEspC.dll auszuführen:**`/analyze:plugin LocalEspC.dll`**
+Verwenden Sie diese Compileroption, um LocalEspC.dll auszuführen: **`/analyze:plugin LocalEspC.dll`**
 
 ::: moniker-end
 ::: moniker range=">=vs-2019"
 
-ConcurrencyCheck.dll implementiert neben läufigkeits bezogene Code Analyse Überprüfungen im Bereich der C261XX-Warnungen. Beispiel: [C26100](/cpp/code-quality/c26100), [C26101](/cpp/code-quality/c26101),..., [C26167](/cpp/code-quality/c26167).
+ConcurrencyCheck.dll implementiert neben läufigkeits bezogene Code Analyse Überprüfungen im Bereich der C261XX-Warnungen. Beispiel: [C26100](../../code-quality/c26100.md), [C26101](../../code-quality/c26101.md),...,  [C26167](../../code-quality/c26167.md).
 
 Um ConcurrencyCheck.dll auszuführen, führen Sie zuerst den folgenden Befehl über eine Developer-Eingabeaufforderung aus:
 
@@ -136,14 +136,14 @@ Der folgende Beispiel benutzerdefinierte Regelsatz weist das Regel Modul an, nac
 ::: moniker-end
 
 **`/analyze:stacksize`***Zahl*\
-Der mit dieser Option verwendete *Number* -Parameter gibt die Größe (in Bytes) des Stapel Rahmens an, für den die Warnung [C6262](/cpp/code-quality/c6262) generiert wird. Der Leerraum vor der *Zahl* ist optional. Wenn dieser Parameter nicht angegeben wird, beträgt die Stapel Rahmengröße standardmäßig 16 KB.
+Der mit dieser Option verwendete *Number* -Parameter gibt die Größe (in Bytes) des Stapel Rahmens an, für den die Warnung [C6262](../../code-quality/c6262.md) generiert wird. Der Leerraum vor der *Zahl* ist optional. Wenn dieser Parameter nicht angegeben wird, beträgt die Stapel Rahmengröße standardmäßig 16 KB.
 
 **`/analyze:WX-`**\
 Code Analyse Warnungen werden nicht als Fehler behandelt, wenn Sie mit kompilieren **`/WX`** . Weitere Informationen finden Sie unter [ `/WX` (Warnstufe)](compiler-option-warning-level.md).
 
 ## <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie unter [Übersicht über die Code Analyse für c/C++](/cpp/code-quality/code-analysis-for-c-cpp-overview) und [Code Analyse für c/C++-Warnungen](/cpp/code-quality/code-analysis-for-c-cpp-warnings).
+Weitere Informationen finden Sie unter [Übersicht über die Code Analyse für c/C++](../../code-quality/code-analysis-for-c-cpp-overview.md) und [Code Analyse für c/C++-Warnungen](../../code-quality/code-analysis-for-c-cpp-warnings.md).
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
@@ -157,7 +157,7 @@ Weitere Informationen finden Sie unter [Übersicht über die Code Analyse für c
 
 1. Siehe <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.EnablePREfast%2A>.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Compileroptionen](compiler-options.md)\
 [MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)

@@ -5,36 +5,36 @@ helpviewer_keywords:
 - ATL projects, adding controls
 - controls [ATL], adding to projects
 ms.assetid: 10223e7e-fdb7-4163-80c6-44aeafa8e6ce
-ms.openlocfilehash: 836b19cef38549bcdf6cddeeda5bbb7fee08a1c1
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: fac1efeb3d373a8324828a8b10f0570f253f6103
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62261363"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91499286"
 ---
 # <a name="adding-an-atl-control"></a>Hinzufügen eines ATL-Steuerelements
 
-Verwenden Sie diesen Assistenten, um ein Benutzerobjekt für die Schnittstelle zu einem Projekt hinzuzufügen, das Schnittstellen für alle möglichen Container unterstützt. Um diese Schnittstellen zu unterstützen, dass das Projekt als eine ATL-Anwendung oder einer MFC-Anwendung, die ATL-Unterstützung enthält erstellt wurde. Sie können den [ATL-Projekt-Assistenten](../../atl/reference/atl-project-wizard.md) zum Erstellen einer ATL-Anwendung verwenden, oder [Ihrer MFC-Anwendung ein ATL-Objekt hinzufügen](../../mfc/reference/adding-atl-support-to-your-mfc-project.md), um die ATL-Unterstützung in einer MFC-Anwendung zu implementieren.
+Verwenden Sie diesen Assistenten, um einem Projekt, das Schnittstellen für alle potenziellen Container unterstützt, ein Benutzeroberflächen Objekt hinzuzufügen. Um diese Schnittstellen zu unterstützen, muss das Projekt als ATL-Anwendung oder als MFC-Anwendung erstellt worden sein, die ATL-Unterstützung enthält. Mit dem [ATL-Projekt-Assistenten](../../atl/reference/atl-project-wizard.md) können Sie eine ATL-Anwendung erstellen oder [ihrer MFC-Anwendung ein ATL-Objekt hinzufügen](../../mfc/reference/adding-atl-support-to-your-mfc-project.md) , um ATL-Unterstützung für eine MFC-Anwendung zu implementieren.
 
-## <a name="to-add-an-atl-control-to-your-project"></a>Um ein ATL-Steuerelement zu Ihrem Projekt hinzuzufügen.
+## <a name="to-add-an-atl-control-to-your-project"></a>So fügen Sie dem Projekt ein ATL-Steuerelement hinzu
 
-1. In einem **Projektmappen-Explorer** oder [Klassenansicht](/visualstudio/ide/viewing-the-structure-of-code), mit der rechten Maustaste in des Namens des Projekts, dem Sie die einfache ATL-Objekt hinzufügen möchten.
+1. Klicken Sie in **Projektmappen-Explorer** oder [Klassenansicht](/visualstudio/ide/viewing-the-structure-of-code)mit der rechten Maustaste auf den Namen des Projekts, dem Sie das einfache ATL-Objekt hinzufügen möchten.
 
-1. Klicken Sie auf **hinzufügen** aus dem Kontextmenü, und klicken Sie dann auf **Klasse hinzufügen**.
+1. Klicken Sie im Kontextmenü auf **Hinzufügen** , und klicken Sie dann auf **Klasse hinzufügen**.
 
-1. In der [Klasse hinzufügen](../../ide/add-class-dialog-box.md) im Dialogfeld im Bereich "Vorlagen", klicken Sie auf **ATL-Steuerelement**, und klicken Sie dann auf **hinzufügen** zum Anzeigen der [ATL-Steuerelement-Assistent](../../atl/reference/atl-control-wizard.md).
+1. Klicken Sie im Dialogfeld [Klasse hinzufügen](../../ide/adding-a-class-visual-cpp.md#add-class-dialog-box) im Bereich Vorlagen auf **ATL-Steuer**Element, und klicken Sie dann auf **Hinzufügen** , um den [ATL-Steuer](../../atl/reference/atl-control-wizard.md)Element-Assistenten anzuzeigen.
 
-Mithilfe der **ATL-Steuerelement-Assistent**, erstellen Sie einen von drei Arten von Steuerelementen:
+Mit dem **ATL-Steuer**Element-Assistenten können Sie einen von drei Typen von Steuerelementen erstellen:
 
-- Ein Standardsteuerelement
+- Ein Standard Steuerelement
 
-- Ein zusammengesetztes Steuerelement
+- Zusammengesetztes Steuerelement
 
-- DHTML-Steuerelements
+- Ein DHTML-Steuerelement
 
-Darüber hinaus können Sie die Größe des Steuerelements zu reduzieren und Entfernen von Schnittstellen, die nicht von den meisten Containern dazu verwendet werden **nur minimale Kontrolle** auf die **Optionen** Seite des Assistenten.
+Außerdem können Sie die Größe des Steuer Elements reduzieren und Schnittstellen entfernen, die nicht von den meisten Containern verwendet werden, indem Sie auf der Options Seite des Assistenten die **Option** **Minimal Steuerung** auswählen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hinzufügen von Funktionen zum zusammengesetzten Steuerelement](../../atl/adding-functionality-to-the-composite-control.md)<br/>
-[Grundlagen von ARL COM-Objekten](../../atl/fundamentals-of-atl-com-objects.md)
+[Grundlagen von ATL-COM-Objekten](../../atl/fundamentals-of-atl-com-objects.md)

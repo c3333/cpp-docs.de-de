@@ -19,12 +19,12 @@ helpviewer_keywords:
 - SelectStockFont method [MFC]
 - fonts [MFC], ActiveX controls
 ms.assetid: 7c51d602-3f5a-481d-84d1-a5d8a3a71761
-ms.openlocfilehash: 58f387ba6f4d7cdffb3ffc1f7be6f9acde8314f4
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 02c52d2544afdc9d13fc3ec67ad9eed757a3f277
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84618164"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91499691"
 ---
 # <a name="mfc-activex-controls-using-fonts"></a>MFC-ActiveX-Steuerelemente: Verwenden von Schriftarten
 
@@ -36,13 +36,13 @@ In diesem Artikel werden die folgenden Themen behandelt:
 
 - [Verwenden von benutzerdefinierten Schriftart Eigenschaften im Steuerelement](#_core_implementing_a_custom_font_property)
 
-## <a name="using-the-stock-font-property"></a><a name="_core_using_the_stock_font_property"></a>Verwenden der Eigenschaft "Stock Font"
+## <a name="using-the-stock-font-property"></a><a name="_core_using_the_stock_font_property"></a> Verwenden der Eigenschaft "Stock Font"
 
 Die Eigenschaften der vordefinierten Schriftart werden von der Klasse [COleControl](reference/colecontrol-class.md)vorrätig. Außerdem ist eine standardmäßige Schriftart Eigenschaften Seite verfügbar, die es dem Benutzer ermöglicht, verschiedene Attribute des Schriftart Objekts, z. b. Name, Größe und Stil, zu ändern.
 
 Greifen Sie über die Funktionen [getFont](reference/colecontrol-class.md#getfont), [setFont](reference/colecontrol-class.md#setfont)und [InternalGetFont](reference/colecontrol-class.md#internalgetfont) von auf das Schriftart Objekt zu `COleControl` . Der Benutzer des Steuer Elements greift auf das Schriftart Objekt über die `GetFont` -und- `SetFont` Funktionen auf dieselbe Weise wie jede andere Get/Set-Eigenschaft zu. Wenn der Zugriff auf das Schriftart Objekt innerhalb eines Steuer Elements erforderlich ist, verwenden Sie die- `InternalGetFont` Funktion.
 
-Wie unter [MFC-ActiveX-Steuerelemente: Eigenschaften](mfc-activex-controls-properties.md)erläutert, ist das Hinzufügen von vordefinierten Eigenschaften mit dem [Assistenten zum Hinzufügen](../ide/names-add-property-wizard.md)von Eigenschaften einfach Sie wählen die Eigenschaft Schriftart aus, und der Assistent zum Hinzufügen von Eigenschaften fügt automatisch den Eintrag für die Eingabe in die Dispatchzuordnung des Steuer Elements ein.
+Wie unter [MFC-ActiveX-Steuerelemente: Eigenschaften](mfc-activex-controls-properties.md)erläutert, ist das Hinzufügen von vordefinierten Eigenschaften mit dem [Assistenten zum Hinzufügen](../ide/adding-a-property-visual-cpp.md#names-add-property-wizard)von Eigenschaften einfach Sie wählen die Eigenschaft Schriftart aus, und der Assistent zum Hinzufügen von Eigenschaften fügt automatisch den Eintrag für die Eingabe in die Dispatchzuordnung des Steuer Elements ein.
 
 #### <a name="to-add-the-stock-font-property-using-the-add-property-wizard"></a>So fügen Sie mithilfe des Assistenten zum Hinzufügen von Eigenschaften die Eigenschaft "Lager Schriftart
 
@@ -90,7 +90,7 @@ Der Assistent zum Hinzufügen von Eigenschaften fügt dem dispatchmap des Steuer
 
 [!code-cpp[NVC_MFC_AxFont#3](codesnippet/cpp/mfc-activex-controls-using-fonts_3.cpp)]
 
-## <a name="modifying-the-ondraw-function"></a><a name="_core_modifying_the_ondraw_function"></a>Ändern der OnDraw-Funktion
+## <a name="modifying-the-ondraw-function"></a><a name="_core_modifying_the_ondraw_function"></a> Ändern der OnDraw-Funktion
 
 Die Standard Implementierung von `OnDraw` verwendet die Windows-System Schriftart für den gesamten Text, der im-Steuerelement angezeigt wird. Dies bedeutet, dass Sie den Code ändern müssen, `OnDraw` indem Sie das Schriftart Objekt in den Gerätekontext auswählen. Um dies zu erreichen, wenden Sie [COleControl:: SelectStockFont](reference/colecontrol-class.md#selectstockfont) an, und übergeben Sie den Gerätekontext des Steuer Elements, wie im folgenden Beispiel gezeigt:
 
@@ -98,7 +98,7 @@ Die Standard Implementierung von `OnDraw` verwendet die Windows-System Schriftar
 
 Nachdem die `OnDraw` Funktion so geändert wurde, dass das Schriftart Objekt verwendet wird, wird sämtlicher Text im Steuerelement mit Merkmalen aus der Stock Font-Eigenschaft des Steuer Elements angezeigt.
 
-## <a name="using-custom-font-properties-in-your-control"></a><a name="_core_using_custom_font_properties_in_your_control"></a>Verwenden von benutzerdefinierten Schriftart Eigenschaften im Steuerelement
+## <a name="using-custom-font-properties-in-your-control"></a><a name="_core_using_custom_font_properties_in_your_control"></a> Verwenden von benutzerdefinierten Schriftart Eigenschaften im Steuerelement
 
 Neben der Eigenschaft Stock Font kann das ActiveX-Steuerelement über benutzerdefinierte Schriftart Eigenschaften verfügen. Zum Hinzufügen einer benutzerdefinierten Schriftart Eigenschaft müssen Sie folgende Schritte ausführen:
 
@@ -108,7 +108,7 @@ Neben der Eigenschaft Stock Font kann das ActiveX-Steuerelement über benutzerde
 
 - [Implementieren einer neuen Schriftart Benachrichtigungs Schnittstelle](#_core_implementing_a_new_font_notification_interface)
 
-### <a name="implementing-a-custom-font-property"></a><a name="_core_implementing_a_custom_font_property"></a>Implementieren einer benutzerdefinierten Schriftart Eigenschaft
+### <a name="implementing-a-custom-font-property"></a><a name="_core_implementing_a_custom_font_property"></a> Implementieren einer benutzerdefinierten Schriftart Eigenschaft
 
 Um eine benutzerdefinierte Schriftart Eigenschaft zu implementieren, verwenden Sie den Assistenten zum Hinzufügen von Eigenschaften, um die Eigenschaft hinzuzufügen, und nehmen Sie dann einige Änderungen am Code vor. In den folgenden Abschnitten wird beschrieben, wie Sie die benutzerdefinierte `HeadingFont` Eigenschaft zum Beispiel Steuerelement hinzufügen.
 
@@ -198,7 +198,7 @@ Außerdem müssen Sie den count-Parameter des BEGIN_PROPPAGEIDS-Makros um 1 erh�
 
 Nachdem Sie diese Änderungen vorgenommen haben, erstellen Sie das gesamte Projekt neu, um die zusätzlichen Funktionen zu integrieren.
 
-### <a name="processing-font-notifications"></a><a name="_core_processing_font_notifications"></a>Verarbeiten von Schriftart Benachrichtigungen
+### <a name="processing-font-notifications"></a><a name="_core_processing_font_notifications"></a> Verarbeiten von Schriftart Benachrichtigungen
 
 In den meisten Fällen muss das Steuerelement wissen, wenn die Eigenschaften des Schriftart Objekts geändert wurden. Jedes Schriftart Objekt kann Benachrichtigungen bereitstellen, wenn es geändert wird, indem eine Member-Funktion der- `IFontNotification` Schnittstelle aufgerufen wird, die von implementiert wird `COleControl` .
 
@@ -211,7 +211,7 @@ Die voll tonlinien in der obigen Abbildung zeigen, dass beide Schriftart Objekte
 
 Eine Möglichkeit, zwischen den Benachrichtigungen des Schriftart Objekts des-Steuer Elements zu unterscheiden, besteht darin, eine separate Implementierung der- `IFontNotification` Schnittstelle für jedes Schriftart Objekt im-Steuerelement zu erstellen. Mit dieser Technik können Sie Ihren Zeichnungs Code optimieren, indem Sie nur die Zeichenfolge oder Zeichen folgen aktualisieren, die die zuletzt geänderte Schriftart verwenden. In den folgenden Abschnitten werden die erforderlichen Schritte zum Implementieren separater Benachrichtigungs Schnittstellen für eine zweite Schriftart Eigenschaft veranschaulicht. Die zweite Schriftart Eigenschaft wird als `HeadingFont` Eigenschaft angenommen, die im vorherigen Abschnitt hinzugefügt wurde.
 
-### <a name="implementing-a-new-font-notification-interface"></a><a name="_core_implementing_a_new_font_notification_interface"></a>Implementieren einer neuen Schriftart Benachrichtigungs Schnittstelle
+### <a name="implementing-a-new-font-notification-interface"></a><a name="_core_implementing_a_new_font_notification_interface"></a> Implementieren einer neuen Schriftart Benachrichtigungs Schnittstelle
 
 Um zwischen den Benachrichtigungen von zwei oder mehr Schriftarten zu unterscheiden, muss für jede im Steuerelement verwendete Schriftart eine neue Benachrichtigungs Schnittstelle implementiert werden. In den folgenden Abschnitten wird beschrieben, wie Sie eine neue Schriftart Benachrichtigungs Schnittstelle implementieren, indem Sie die Steuerelement Header-und Implementierungs Dateien ändern.
 
@@ -233,8 +233,8 @@ Die `AddRef` -Methode und die- `Release` Methode in der- `IPropertyNotifySink` S
 
 Nachdem diese Änderungen am Projekt vorgenommen wurden, erstellen Sie das Projekt neu, und testen Sie die Schnittstelle mit dem Test Container. Informationen zum Zugriff auf den Testcontainer finden Sie unter [Testen von Eigenschaften und Ereignissen mit dem Testcontainer](testing-properties-and-events-with-test-container.md) .
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-ActiveX-Steuerelemente](mfc-activex-controls.md)<br/>
-[MFC-ActiveX-Steuerelemente: Verwenden von Bildern in einem ActiveX-Steuerelement](mfc-activex-controls-using-pictures-in-an-activex-control.md)<br/>
-[MFC-ActiveX-Steuerelemente: Verwenden von vordefinierten Eigenschaftenseiten](mfc-activex-controls-using-stock-property-pages.md)
+[MFC ActiveX-Steuerelemente: Verwenden von Bildern in einem ActiveX-Steuerelement](mfc-activex-controls-using-pictures-in-an-activex-control.md)<br/>
+[MFC-ActiveX-Steuerelemente: Verwenden von vordefinierten Eigenschaften Seiten](mfc-activex-controls-using-stock-property-pages.md)

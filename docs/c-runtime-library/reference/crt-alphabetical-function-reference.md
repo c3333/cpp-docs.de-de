@@ -1,35 +1,35 @@
 ---
-title: Alphabetische Funktionsreferenz UCRT
+title: Referenz zur ucrt-alphabetischen Funktion
 ms.date: 01/31/2019
 f1_keywords:
 - vc.tables.runtime
 ms.assetid: c2169b0e-cd86-489a-a2fa-2ee15c03b5c2
-ms.openlocfilehash: 855af5b7518ba36418d58f1dc2ac5f0bb6e54208
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 73fd08ffa58aabfd9a40e0296b21d4a5baea8750
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62340338"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91499401"
 ---
-# <a name="ucrt-alphabetical-function-reference"></a>Alphabetische Funktionsreferenz UCRT
+# <a name="ucrt-alphabetical-function-reference"></a>Referenz zur ucrt-alphabetischen Funktion
 
-Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich CRT)-Bibliothek ist alphabetisch nach Routinen geordnet. Eine CRT-Routine basierend auf Funktionen finden Sie unter [universelle C-Laufzeitroutinen nach Kategorie](../../c-runtime-library/run-time-routines-by-category.md).
+Die Referenz Dokumentation für die universelle C-Laufzeit (ucrt, oft nur CRT) ist nach Routine alphabetisch angeordnet. Eine CRT-Routine basierend auf Funktionen finden Sie unter [universelle C-Lauf Zeit Routinen nach Kategorie](../../c-runtime-library/run-time-routines-by-category.md).
 
-## <a name="a"></a>A
+## <a name="a"></a>Ein
 
-[abort](abort.md)
+[Abbruch](abort.md)
 
-[abs](abs-labs-llabs-abs64.md)
+[Stäbchen](abs-labs-llabs-abs64.md)
 
 [_abs64](abs-labs-llabs-abs64.md)
 
-[access](access-crt.md)
+[zu](access-crt.md)
 
 [_access](access-waccess.md)
 
 [_access_s](access-s-waccess-s.md)
 
-[acos](acos-acosf-acosl.md)
+[ACOS](acos-acosf-acosl.md)
 
 [acosf](acos-acosf-acosl.md)
 
@@ -77,7 +77,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_amsg_exit](amsg-exit.md)
 
-[und](and.md)
+[and](and.md)
 
 [and_eq](and-eq.md)
 
@@ -85,7 +85,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [asctime_s](asctime-s-wasctime-s.md)
 
-[asin](asin-asinf-asinl.md)
+[ASIN](asin-asinf-asinl.md)
 
 [asinf](asin-asinf-asinl.md)
 
@@ -97,7 +97,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [asinl](asin-asinf-asinl.md)
 
-[assert](assert-macro-assert-wassert.md)
+[machung](assert-macro-assert-wassert.md)
 
 [_assert](assert-macro-assert-wassert.md)
 
@@ -107,7 +107,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_ASSERTE](assert-asserte-assert-expr-macros.md)
 
-[atan](atan-atanf-atanl-atan2-atan2f-atan2l.md)
+[Atan](atan-atanf-atanl-atan2-atan2f-atan2l.md)
 
 [atan2](atan-atanf-atanl-atan2-atan2f-atan2l.md)
 
@@ -191,7 +191,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_cabs](cabs.md)
 
-[cabs](cabs-cabsf-cabsl.md)
+[Cabs](cabs-cabsf-cabsl.md)
 
 [cabsf](cabs-cabsf-cabsl.md)
 
@@ -321,7 +321,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [clock](clock.md)
 
-[clog](clog-clogf-clogl.md)
+[Clog](clog-clogf-clogl.md)
 
 [clog10](clog10-clog10f-clog10l.md)
 
@@ -369,7 +369,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_copysignl](copysign-copysignf-copysignl-copysign-copysignf-copysignl.md)
 
-[cos](cos-cosf-cosl.md)
+[Erzeugnissen](cos-cosf-cosl.md)
 
 [cosf](cos-cosf-cosl.md)
 
@@ -521,7 +521,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [ctanl](ctan-ctanf-ctanl.md)
 
-[ctime](ctime-ctime32-ctime64-wctime-wctime32-wctime64.md)
+[CTime](ctime-ctime32-ctime64-wctime-wctime32-wctime64.md)
 
 [ctime_s](ctime-s-ctime32-s-ctime64-s-wctime-s-wctime32-s-wctime64-s.md)
 
@@ -585,7 +585,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_ecvt](ecvt.md)
 
-[ecvt](posix-ecvt.md)
+[ECVT](posix-ecvt.md)
 
 [_ecvt_s](ecvt-s.md)
 
@@ -593,11 +593,11 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_endthreadex](endthread-endthreadex.md)
 
-[eof](posix-eof.md)
+[EOF](posix-eof.md)
 
 [_eof](eof.md)
 
-[erf](erf-erff-erfl-erfc-erfcf-erfcl.md)
+[ERF](erf-erff-erfl-erfc-erfcf-erfcl.md)
 
 [erfc](erf-erff-erfl-erfc-erfcf-erfcl.md)
 
@@ -1027,7 +1027,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_getch_nolock](getch-nolock-getwch-nolock.md)
 
-[getchar](getchar-getwchar.md)
+[GetChar](getchar-getwchar.md)
 
 [_getchar_nolock](getchar-nolock-getwchar-nolock.md)
 
@@ -1199,7 +1199,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_isdigit_l](isdigit-iswdigit-isdigit-l-iswdigit-l.md)
 
-[isfinite](finite-finitef.md)
+[isFinite](finite-finitef.md)
 
 [isgraph](isgraph-iswgraph-isgraph-l-iswgraph-l.md)
 
@@ -1215,7 +1215,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_isleadbyte_l](isleadbyte-isleadbyte-l.md)
 
-[isless](floating-point-ordering.md)
+[islos](floating-point-ordering.md)
 
 [islessequal](floating-point-ordering.md)
 
@@ -1349,7 +1349,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_ismbstrail_l](ismbslead-ismbstrail-ismbslead-l-ismbstrail-l.md)
 
-[isnan](isnan-isnan-isnanf.md)
+[IsNaN](isnan-isnan-isnanf.md)
 
 [_isnan](isnan-isnan-isnanf.md)
 
@@ -1369,7 +1369,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_isspace_l](isspace-iswspace-isspace-l-iswspace-l.md)
 
-[isunordered](floating-point-ordering.md)
+[isunsortiert](floating-point-ordering.md)
 
 [isupper](isupper-isupper-l-iswupper-iswupper-l.md)
 
@@ -1441,7 +1441,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_isxdigit_l](isxdigit-iswxdigit-isxdigit-l-iswxdigit-l.md)
 
-[itoa](itoa-itow.md)
+[ITOA](itoa-itow.md)
 
 [_itoa](itoa-itow.md)
 
@@ -1463,7 +1463,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_jn](bessel-functions-j0-j1-jn-y0-y1-yn.md)
 
-[jn](j0-j1-jn.md)
+[14,30](j0-j1-jn.md)
 
 ## <a name="k"></a>K
 
@@ -1477,7 +1477,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [ldexp](ldexp.md)
 
-[ldiv](ldiv-lldiv.md)
+[ldiv](./div.md)
 
 [_lfind](lfind.md)
 
@@ -1493,7 +1493,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [llabs](abs-labs-llabs-abs64.md)
 
-[lldiv](ldiv-lldiv.md)
+[lldiv](./div.md)
 
 [llrint](lrint-lrintf-lrintl-llrint-llrintf-llrintl.md)
 
@@ -1523,13 +1523,13 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_lock_file](lock-file.md)
 
-[locking](posix-locking.md)
+[gelungen](posix-locking.md)
 
 [_locking](locking.md)
 
-[log](log-logf-log10-log10f.md)
+[angezeigt](log-logf-log10-log10f.md)
 
-[log10](log-logf-log10-log10f.md)
+[LOG10](log-logf-log10-log10f.md)
 
 [log10f](log-logf-log10-log10f.md)
 
@@ -1967,7 +1967,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 ## <a name="n"></a>N
 
-[nan](nan-nanf-nanl.md)
+[Ji](nan-nanf-nanl.md)
 
 [nanf](nan-nanf-nanl.md)
 
@@ -2019,7 +2019,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_open_osfhandle](open-osfhandle.md)
 
-[ oder ](or.md)
+[or](or.md)
 
 [or_eq](or-eq.md)
 
@@ -2033,7 +2033,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_popen](popen-wpopen.md)
 
-[pow](pow-powf-powl.md)
+[Pow](pow-powf-powl.md)
 
 [powf](pow-powf-powl.md)
 
@@ -2113,7 +2113,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [rand_s](rand-s.md)
 
-[read](posix-read.md)
+[dazu](posix-read.md)
 
 [_read](read.md)
 
@@ -2125,7 +2125,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_recalloc_dbg](recalloc-dbg.md)
 
-[remainder](remainder-remainderf-remainderl.md)
+[ergibt](remainder-remainderf-remainderl.md)
 
 [remainderf](remainder-remainderf-remainderl.md)
 
@@ -2143,7 +2143,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_resetstkoflw](resetstkoflw.md)
 
-[rewind](rewind.md)
+[Rewind](rewind.md)
 
 [rint](rint-rintf-rintl.md)
 
@@ -2167,7 +2167,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_rotr64](rotl-rotl64-rotr-rotr64.md)
 
-[round](round-roundf-roundl.md)
+[umgekehrt](round-roundf-roundl.md)
 
 [roundf](round-roundf-roundl.md)
 
@@ -2191,7 +2191,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_RTC_SetErrorType](rtc-seterrortype.md)
 
-## <a name="s"></a>S
+## <a name="s"></a>E
 
 [_scalb](scalb.md)
 
@@ -2295,7 +2295,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [signbit](signbit.md)
 
-[sin](sin-sinf-sinl.md)
+[Tod](sin-sinf-sinl.md)
 
 [sinf](sin-sinf-sinl.md)
 
@@ -2395,7 +2395,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_sprintf_s_l](sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l.md)
 
-[sqrt](sqrt-sqrtf-sqrtl.md)
+[SQRT](sqrt-sqrtf-sqrtl.md)
 
 [sqrtf](sqrt-sqrtf-sqrtl.md)
 
@@ -2459,7 +2459,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_strdup](strdup-wcsdup-mbsdup.md)
 
-[strdup](strdup-wcsdup.md)
+[StrDup](strdup-wcsdup.md)
 
 [_strdup_dbg](strdup-dbg-wcsdup-dbg.md)
 
@@ -2477,7 +2477,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_stricmp](stricmp-wcsicmp-mbsicmp-stricmp-l-wcsicmp-l-mbsicmp-l.md)
 
-[stricmp](stricmp-wcsicmp.md)
+[striCmp](stricmp-wcsicmp.md)
 
 [_stricmp_l](stricmp-wcsicmp-mbsicmp-stricmp-l-wcsicmp-l-mbsicmp-l.md)
 
@@ -2491,7 +2491,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_strlwr](strlwr-wcslwr-mbslwr-strlwr-l-wcslwr-l-mbslwr-l.md)
 
-[strlwr](strlwr-wcslwr.md)
+[strLwr](strlwr-wcslwr.md)
 
 [_strlwr_l](strlwr-wcslwr-mbslwr-strlwr-l-wcslwr-l-mbslwr-l.md)
 
@@ -2633,7 +2633,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_strupr](strupr-strupr-l-mbsupr-mbsupr-l-wcsupr-l-wcsupr.md)
 
-[strupr](strupr-wcsupr.md)
+[strUpr](strupr-wcsupr.md)
 
 [_strupr_l](strupr-strupr-l-mbsupr-mbsupr-l-wcsupr-l-wcsupr.md)
 
@@ -2645,7 +2645,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_strxfrm_l](strxfrm-wcsxfrm-strxfrm-l-wcsxfrm-l.md)
 
-[swab](posix-swab.md)
+[Swab](posix-swab.md)
 
 [_swab](swab.md)
 
@@ -2671,11 +2671,11 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_swscanf_s_l](sscanf-s-sscanf-s-l-swscanf-s-swscanf-s-l.md)
 
-[system](system-wsystem.md)
+[System](system-wsystem.md)
 
 ## <a name="t"></a>T
 
-[tan](tan-tanf-tanl.md)
+[ungs](tan-tanf-tanl.md)
 
 [tanf](tan-tanf-tanl.md)
 
@@ -2699,7 +2699,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_tempnam_dbg](tempnam-dbg-wtempnam-dbg.md)
 
-[terminate](terminate-crt.md)
+[aufzu](terminate-crt.md)
 
 [tgamma](tgamma-tgammaf-tgammal.md)
 
@@ -2731,13 +2731,13 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [toascii](toascii-toascii.md)
 
-[tolower](tolower-tolower-towlower-tolower-l-towlower-l.md)
+[ToLower](tolower-tolower-towlower-tolower-l-towlower-l.md)
 
 [_tolower](tolower-tolower-towlower-tolower-l-towlower-l.md)
 
 [_tolower_l](tolower-tolower-towlower-tolower-l-towlower-l.md)
 
-[toupper](toupper-toupper-towupper-toupper-l-towupper-l.md)
+[ToUpper](toupper-toupper-towupper-toupper-l-towupper-l.md)
 
 [_toupper](toupper-toupper-towupper-toupper-l-towupper-l.md)
 
@@ -2791,7 +2791,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [__uncaught_exception](uncaught-exception.md)
 
-[unexpected](unexpected-crt.md)
+[te](unexpected-crt.md)
 
 [ungetc](ungetc-ungetwc.md)
 
@@ -3385,7 +3385,7 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_write](write.md)
 
-[write](posix-write.md)
+[Schreibung](posix-write.md)
 
 [_wrmdir](rmdir-wrmdir.md)
 
@@ -3499,12 +3499,12 @@ Die Referenzdokumentation für die Universal C Runtime (UCRT, häufig lediglich 
 
 [_y1](bessel-functions-j0-j1-jn-y0-y1-yn.md)
 
-[y1](y0-y1-yn.md)
+[Y1](y0-y1-yn.md)
 
 [_yn](bessel-functions-j0-j1-jn-y0-y1-yn.md)
 
-[yn](y0-y1-yn.md)
+[y](y0-y1-yn.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[C-Laufzeitbibliotheksreferenz](../../c-runtime-library/c-run-time-library-reference.md)<br/>
+[C-Lauf Zeit Bibliotheks Referenz](../../c-runtime-library/c-run-time-library-reference.md)<br/>

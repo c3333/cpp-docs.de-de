@@ -1,5 +1,5 @@
 ---
-title: Eigenschaftenseite „Allgemein“ (Projekt)
+title: Eigenschaftenseite "Allgemein" (Projekt)
 ms.date: 07/17/2019
 f1_keywords:
 - VC.Project.VCConfiguration.IntermediateDirectory
@@ -25,18 +25,18 @@ helpviewer_keywords:
 - Clean Build option
 - output files, setting directory
 - Unicode, creating C++ build configuration
-ms.openlocfilehash: eb172e7bd76816458a0efff7b053d136f52076ab
-ms.sourcegitcommit: a673f6a54cc97e3d4cd032b10aa8dce7f0539d39
+ms.openlocfilehash: bb301f63bfd1e6839d7893cdc03d61e021409666
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78166757"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91500066"
 ---
-# <a name="general-property-page-project"></a>Eigenschaftenseite „Allgemein“ (Projekt)
+# <a name="general-property-page-project"></a>Eigenschaftenseite "Allgemein" (Projekt)
 
 ::: moniker range=">=vs-2019"
 
-Dieses Thema bezieht sich auf Visual Studio-Projekte für Windows. Informationen zu Linux-Projekten finden Sie unter [Referenz zu C++ Linux-Eigenschaften Seiten](../../linux/prop-pages-linux.md). Informationen zu cmake-Projekten finden Sie unter [cmake-Projekte in Visual Studio](../cmake-projects-in-visual-studio.md). Informationen zu Android-Projekten finden Sie unter [Allgemeine Projekt C++Eigenschaften (Android)](/cpp/cross-platform/general-android-prop-page). Informationen zu Android Makefile-Projekten finden Sie unter [Allgemeine Projekt C++ Eigenschaften (Android Makefile)](/cpp/cross-platform/general-makefile-android-prop-page) .
+Dieses Thema bezieht sich auf Visual Studio-Projekte für Windows. Informationen zu Linux-Projekten finden Sie unter [Linux C++ Eigenschaften Seiten Referenz](../../linux/prop-pages-linux.md). Informationen zu cmake-Projekten finden Sie unter [cmake-Projekte in Visual Studio](../cmake-projects-in-visual-studio.md). Informationen zu Android-Projekten finden Sie unter [allgemeine Projekteigenschaften (Android C++)](../../cross-platform/general-android-prop-page.md). Informationen zu Android Makefile-Projekten finden Sie unter [allgemeine Projekteigenschaften (Android C++ Makefile)](../../cross-platform/general-makefile-android-prop-page.md) .
 
 Wenn Sie in Projektmappen-Explorer mit der rechten Maustaste auf einen Projekt Knoten klicken und **Eigenschaften**auswählen, werden auf der Eigenschaften Seite **Allgemein** unter dem Knoten **Konfigurations Eigenschaften** im linken Bereich folgende Eigenschaften angezeigt:
 
@@ -90,11 +90,11 @@ Wenn Sie in Projektmappen-Explorer mit der rechten Maustaste auf einen Projekt K
 
    Sie können das in Visual Studio enthaltene Windows XP-Plattformtoolset installieren, um die aktuellen Versionen der Bibliotheken zum Erstellen von Windows XP- und Windows 2003-Serverprojekten zu verwenden. Informationen zum Herunterladen und Verwenden dieses Plattformtoolsets finden Sie unter [Konfigurieren von Programmen für Windows XP](../configuring-programs-for-windows-xp.md). Weitere Informationen zum Ändern des Plattformtoolsets finden Sie unter [Vorgehensweise: Ändern des Zielframeworks und des Plattformtoolsets](../how-to-modify-the-target-framework-and-platform-toolset.md).
 
-- **Plattformtoolset**
+- **Platt Form Toolset**
 
-   Ermöglicht eine Ausrichtung des Projekts auf andere Versionen der Visual C++-Bibliotheken und des Compilers. Visual Studio C++ -Projekte können entweder auf das von Visual Studio installierte Standard Toolset oder auf eines der Toolsets abzielen, die von mehreren früheren Versionen von Visual Studio installiert wurden. Hierzu zählen auch Toolsets, mit denen ausführbare Dateien erstellt werden können, die unter Windows XP ausgeführt werden können. Informationen zum Ändern des Plattformtoolsets finden Sie unter [How to: Modify the Target Framework and Platform Toolset (Vorgehensweise: Ändern des Zielframeworks und des Plattformtoolsets)](../how-to-modify-the-target-framework-and-platform-toolset.md).
+   Ermöglicht eine Ausrichtung des Projekts auf andere Versionen der Visual C++-Bibliotheken und des Compilers. Visual Studio C++ Projekte können entweder auf das von Visual Studio installierte Standard Toolset oder auf eines der Toolsets abzielen, die von mehreren früheren Versionen von Visual Studio installiert wurden. Hierzu zählen auch Toolsets, mit denen ausführbare Dateien erstellt werden können, die unter Windows XP ausgeführt werden können. Informationen zum Ändern des Plattformtoolsets finden Sie unter [How to: Modify the Target Framework and Platform Toolset (Vorgehensweise: Ändern des Zielframeworks und des Plattformtoolsets)](../how-to-modify-the-target-framework-and-platform-toolset.md).
 
-- **C++Sprach Standard**
+- **C++-sprach Standard**
 
    Gibt an, welcher Sprachstandard verwendet werden soll. Der Standardwert ist/Std: c++ 14. Geben Sie/Std: c++ 17 an, um c++ 17-Features zu verwenden, oder/Std: c++ + latest, um c++ 20 oder andere experimentelle Features zu verwenden. Weitere Informationen finden Sie unter [/Std (angeben der Standard Version für die Sprache)](std-specify-language-standard-version.md) .
 
@@ -118,7 +118,7 @@ Wenn Sie in Visual Studio 2015 und Visual Studio 2017 in **Projektmappen-Explore
 
    Gibt die niedrigste Version der Plattform an, auf der das Projekt ausgeführt werden kann. Diese Eigenschaft wird nur angezeigt, wenn der Projekttyp Sie unterstützt. Wenn Ihre App Features in einer neueren Version des Windows SDK nutzen, unter früheren Versionen aber weiterhin ohne diese Features ausgeführt werden kann (möglicherweise mit verringerter Funktionalität), kann der Wert dieser beiden Eigenschaften unterschiedlich sein. Ist dies der Fall, sollte in Ihrem Code zur Laufzeit die Version der Plattform geprüft werden, auf der er ausgeführt wird. Es sollte nicht versucht werden, Features zu verwenden, die in älteren Plattformversionen nicht verfügbar sind.
 
-   Das C++ Projekt System erzwingt diese Option nicht. Sie ist aus Gründen der Konsistenz mit anderen Sprachen wie C# und JavaScript sowie als Leitfaden für jede Person eingefügt, die Ihr Projekt verwendet. Visual C++ generiert keinen Fehler, wenn Sie ein Feature verwenden, das in der Mindestversion nicht verfügbar ist.
+   Das C++-Projekt System erzwingt diese Option nicht. Sie ist aus Gründen der Konsistenz mit anderen Sprachen wie C# und JavaScript sowie als Leitfaden für jede Person eingefügt, die Ihr Projekt verwendet. Visual C++ generiert keinen Fehler, wenn Sie ein Feature verwenden, das in der Mindestversion nicht verfügbar ist.
 
 - **Windows SDK Version (Visual Studio 2017)**
 
@@ -160,9 +160,9 @@ Wenn Sie in Visual Studio 2015 und Visual Studio 2017 in **Projektmappen-Explore
 
    Sie können Projektmakros verwenden, um den Verzeichnispfad zu ändern. Siehe [Allgemeine Makros für Buildbefehle und-Eigenschaften](common-macros-for-build-commands-and-properties.md).
 
-- **Plattformtoolset**
+- **Platt Form Toolset**
 
-   Ermöglicht eine Ausrichtung des Projekts auf andere Versionen der Visual C++-Bibliotheken und des Compilers. Visual Studio C++ -Projekte können entweder auf das von Visual Studio installierte Standard Toolset oder auf eines der Toolsets abzielen, die von mehreren früheren Versionen von Visual Studio installiert wurden. Hierzu zählen auch Toolsets, mit denen ausführbare Dateien erstellt werden können, die unter Windows XP ausgeführt werden können. Informationen zum Ändern des Plattformtoolsets finden Sie unter [How to: Modify the Target Framework and Platform Toolset (Vorgehensweise: Ändern des Zielframeworks und des Plattformtoolsets)](../how-to-modify-the-target-framework-and-platform-toolset.md).
+   Ermöglicht eine Ausrichtung des Projekts auf andere Versionen der Visual C++-Bibliotheken und des Compilers. Visual Studio C++ Projekte können entweder auf das von Visual Studio installierte Standard Toolset oder auf eines der Toolsets abzielen, die von mehreren früheren Versionen von Visual Studio installiert wurden. Hierzu zählen auch Toolsets, mit denen ausführbare Dateien erstellt werden können, die unter Windows XP ausgeführt werden können. Informationen zum Ändern des Plattformtoolsets finden Sie unter [How to: Modify the Target Framework and Platform Toolset (Vorgehensweise: Ändern des Zielframeworks und des Plattformtoolsets)](../how-to-modify-the-target-framework-and-platform-toolset.md).
 
 - **Verwalteten inkrementellen Build aktivieren**
 
@@ -232,4 +232,4 @@ Die Eigenschaften im Abschnitt “Projektstandards“ stellen änderbare Standar
 
 ## <a name="see-also"></a>Siehe auch
 
-[C++Referenz zur Projekteigenschaften Seite](property-pages-visual-cpp.md)
+[Windows C++-Projekteigenschaftenseitenverweis](property-pages-visual-cpp.md)

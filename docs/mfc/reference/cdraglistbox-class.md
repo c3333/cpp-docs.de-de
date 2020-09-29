@@ -20,16 +20,16 @@ helpviewer_keywords:
 - CDragListBox [MFC], Dropped
 - CDragListBox [MFC], ItemFromPt
 ms.assetid: fee20b42-60ae-4aa9-83f9-5a3d9b96e33b
-ms.openlocfilehash: 0d1ae94948e1143a5bac17985423c4bd1bfbaf65
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: b260d3a88fc8c3f2d341005c1e47cfd9ab668e1e
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81374029"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91500363"
 ---
 # <a name="cdraglistbox-class"></a>CDragListBox-Klasse
 
-Zusätzlich zur Bereitstellung der Funktionalität eines Windows-Listenfelds ermöglicht die Klasse dem `CDragListBox` Benutzer, Listenfeldelemente, z. B. Dateinamen, innerhalb des Listenfelds zu verschieben.
+Zusätzlich zur Bereitstellung der Funktionalität eines Windows-Listen Felds ermöglicht die- `CDragListBox` Klasse dem Benutzer das Verschieben von Listenfeld Elementen, z. b. Dateinamen, innerhalb des Listen Felds.
 
 ## <a name="syntax"></a>Syntax
 
@@ -37,38 +37,38 @@ Zusätzlich zur Bereitstellung der Funktionalität eines Windows-Listenfelds erm
 class CDragListBox : public CListBox
 ```
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
-|[CDragListBox::CDragListBox](#cdraglistbox)|Erstellt ein `CDragListBox`-Objekt.|
+|[CDragListBox:: CDragListBox](#cdraglistbox)|Erstellt ein `CDragListBox`-Objekt.|
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
-|[CDragListBox::BeginDrag](#begindrag)|Wird vom Framework aufgerufen, wenn ein Ziehvorgang gestartet wird.|
-|[CDragListBox::CancelDrag](#canceldrag)|Wird vom Framework aufgerufen, wenn ein Ziehvorgang abgebrochen wurde.|
-|[CDragListBox::D-Schäppeln](#dragging)|Wird vom Framework während eines Ziehvorgangs aufgerufen.|
-|[CDragListBox::DrawInsert](#drawinsert)|Zeichnet die Einfügelinie des Ziehlistenfelds.|
-|[CDragListBox::Dropped](#dropped)|Wird vom Framework aufgerufen, nachdem das Element gelöscht wurde.|
-|[CDragListBox::ItemFrompt](#itemfrompt)|Gibt die Koordinaten des gezogenen Elements zurück.|
+|[CDragListBox:: BeginDrag](#begindrag)|Wird von Framework aufgerufen, wenn ein Zieh Vorgang gestartet wird.|
+|[CDragListBox:: CancelDrag](#canceldrag)|Wird von Framework aufgerufen, wenn ein Zieh Vorgang abgebrochen wurde.|
+|[CDragListBox::D ragging](#dragging)|Wird von Framework während eines Zieh Vorgangs aufgerufen.|
+|[CDragListBox::D rawinsert](#drawinsert)|Zeichnet die einfügeanleitung des Zieh Listen Felds.|
+|[CDragListBox::D ropped](#dropped)|Wird von Framework aufgerufen, nachdem das Element gelöscht wurde.|
+|[CDragListBox:: itemfrompt](#itemfrompt)|Gibt die Koordinaten des Elements zurück, das gezogen wird.|
 
 ## <a name="remarks"></a>Bemerkungen
 
-Listenfelder mit dieser Funktion ermöglichen es Benutzern, die Elemente in einer Liste auf die für sie am nützlichsten emittorischste Weise zu bestellen. Standardmäßig verschiebt das Listenfeld das Element an den neuen Speicherort in der Liste. Objekte `CDragListBox` können jedoch so angepasst werden, dass Sie Elemente kopieren, anstatt sie zu verschieben.
+Listenfelder mit dieser Funktion ermöglichen es Benutzern, die Elemente in einer Liste in einer beliebigen Weise zu sortieren, die für Sie am nützlichsten ist. Standardmäßig wird das Element im Listenfeld an die neue Position in der Liste verschoben. `CDragListBox`Objekte können jedoch angepasst werden, um Elemente zu kopieren, anstatt Sie zu verschieben.
 
-Das Listenfeldsteuerelement, `CDragListBox` das der Klasse zugeordnet ist, darf nicht über die LBS_SORT oder den LBS_MULTIPLESELECT-Stil verfügen. Eine Beschreibung der Listenfeldstile finden Sie unter [List-Box Styles](../../mfc/reference/styles-used-by-mfc.md#list-box-styles).
+Das Listenfeld-Steuerelement, das der-Klasse zugeordnet ist, `CDragListBox` darf nicht über die LBS_SORT oder den LBS_MULTIPLESELECT Stil verfügen. Eine Beschreibung der Listenfeld Stile finden Sie unter [List-Box-Stile](../../mfc/reference/styles-used-by-mfc.md#list-box-styles).
 
-Um ein Drag-List-Feld in einem vorhandenen Dialogfeld Ihrer Anwendung zu verwenden, fügen Sie der Dialogfeldvorlage `Control` mithilfe `CDragListBox`des Dialogfeld-Editors ein Listenfeldsteuerelement hinzu, und weisen Sie dann eine Mitgliedsvariable (Kategorie und Variablentyp ) zu, die dem Listenfeldsteuerelement in der Dialogfeldvorlage entspricht.
+Um ein Listenfeld mit Drag & amp; Drop in ein vorhandenes Dialogfeld der Anwendung zu verwenden, fügen Sie der Dialogfeld Vorlage mithilfe des Dialog-Editors ein Listenfeld-Steuerelement hinzu, und weisen Sie dann eine Element Variable (von Kategorie `Control` und Variablentyp) zu, `CDragListBox` die dem Listenfeld-Steuerelement in der
 
-Weitere Informationen zum Zuweisen von Steuerelementen zu Membervariablen finden Sie unter [Shortcut for Defining Member Variables for Dialog Controls](../../windows/defining-member-variables-for-dialog-controls.md).
+Weitere Informationen zum Zuweisen von Steuerelementen zu Element Variablen finden Sie unter [Verknüpfung zum Definieren von Element Variablen für Dialog](../../windows/adding-editing-or-deleting-controls.md)Feld Steuerelemente.
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
-[Cobject](../../mfc/reference/cobject-class.md)
+[CObject](../../mfc/reference/cobject-class.md)
 
 [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)
 
@@ -78,13 +78,13 @@ Weitere Informationen zum Zuweisen von Steuerelementen zu Membervariablen finden
 
 `CDragListBox`
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** afxcmn.h
 
-## <a name="cdraglistboxbegindrag"></a><a name="begindrag"></a>CDragListBox::BeginDrag
+## <a name="cdraglistboxbegindrag"></a><a name="begindrag"></a> CDragListBox:: BeginDrag
 
-Wird vom Framework aufgerufen, wenn ein Ereignis auftritt, das einen Ziehvorgang starten könnte, z. B. durch Drücken der linken Maustaste.
+Wird von Framework aufgerufen, wenn ein Ereignis auftritt, das einen Zieh Vorgang, z. b. das Drücken der linken Maustaste, einleiten könnte.
 
 ```
 virtual BOOL BeginDrag(CPoint pt);
@@ -92,20 +92,20 @@ virtual BOOL BeginDrag(CPoint pt);
 
 ### <a name="parameters"></a>Parameter
 
-*Pt*<br/>
-Ein [CPoint-Objekt,](../../atl-mfc-shared/reference/cpoint-class.md) das die Koordinaten des gezogenen Elements enthält.
+*pt*<br/>
+Ein [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) -Objekt, das die Koordinaten des Elements enthält, das gezogen wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Wert ungleich Null, wenn das Ziehen zulässig ist, andernfalls 0.
+Ungleich 0 (null), wenn das ziehen zulässig ist, andernfalls 0.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Funktion, wenn Sie steuern möchten, was geschieht, wenn ein Ziehvorgang beginnt. Die Standardimplementierung erfasst die Maus und bleibt im Ziehmodus, bis der Benutzer auf die linke oder rechte Maustaste klickt oder ESC drückt, zu dem zeitpunkt der Ziehvorgang abgebrochen wird.
+Überschreiben Sie diese Funktion, wenn Sie steuern möchten, was geschieht, wenn ein Zieh Vorgang beginnt. Die Standard Implementierung erfasst die Maus und verbleibt im Zieh Modus, bis der Benutzer mit der linken oder rechten Maustaste klickt oder ESC drückt. zu diesem Zeitpunkt wird der Zieh Vorgang abgebrochen.
 
-## <a name="cdraglistboxcanceldrag"></a><a name="canceldrag"></a>CDragListBox::CancelDrag
+## <a name="cdraglistboxcanceldrag"></a><a name="canceldrag"></a> CDragListBox:: CancelDrag
 
-Wird vom Framework aufgerufen, wenn ein Ziehvorgang abgebrochen wurde.
+Wird von Framework aufgerufen, wenn ein Zieh Vorgang abgebrochen wurde.
 
 ```
 virtual void CancelDrag(CPoint pt);
@@ -113,14 +113,14 @@ virtual void CancelDrag(CPoint pt);
 
 ### <a name="parameters"></a>Parameter
 
-*Pt*<br/>
-Ein [CPoint-Objekt,](../../atl-mfc-shared/reference/cpoint-class.md) das die Koordinaten des gezogenen Elements enthält.
+*pt*<br/>
+Ein [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) -Objekt, das die Koordinaten des Elements enthält, das gezogen wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Überschreiben Sie diese Funktion, um eine spezielle Verarbeitung für ihr Listenfeldsteuerelement zu verarbeiten.
+Überschreiben Sie diese Funktion, um eine spezielle Verarbeitung für das Listenfeld-Steuerelement zu verarbeiten.
 
-## <a name="cdraglistboxcdraglistbox"></a><a name="cdraglistbox"></a>CDragListBox::CDragListBox
+## <a name="cdraglistboxcdraglistbox"></a><a name="cdraglistbox"></a> CDragListBox:: CDragListBox
 
 Erstellt ein `CDragListBox`-Objekt.
 
@@ -128,9 +128,9 @@ Erstellt ein `CDragListBox`-Objekt.
 CDragListBox();
 ```
 
-## <a name="cdraglistboxdragging"></a><a name="dragging"></a>CDragListBox::D-Schäppeln
+## <a name="cdraglistboxdragging"></a><a name="dragging"></a> CDragListBox::D ragging
 
-Wird vom Framework aufgerufen, wenn ein Listenfeldelement innerhalb des `CDragListBox` Objekts gezogen wird.
+Wird von Framework aufgerufen, wenn ein Listenfeld Element innerhalb des Objekts gezogen wird `CDragListBox` .
 
 ```
 virtual UINT Dragging(CPoint pt);
@@ -138,26 +138,26 @@ virtual UINT Dragging(CPoint pt);
 
 ### <a name="parameters"></a>Parameter
 
-*Pt*<br/>
-Ein [CPoint-Objekt,](../../atl-mfc-shared/reference/cpoint-class.md) das die x- und y-Bildschirmkoordinaten des Cursors enthält.
+*pt*<br/>
+Ein [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) -Objekt, das die x-und y-Bildschirm Koordinaten des Cursors enthält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Ressourcen-ID des anzuzeigenden Cursors. Folgende Werte sind möglich:
+Die Ressourcen-ID des Cursors, der angezeigt werden soll. Folgende Werte sind möglich:
 
-- DL_COPYCURSOR Gibt an, dass das Element kopiert wird.
+- DL_COPYCURSOR gibt an, dass das Element kopiert wird.
 
-- DL_MOVECURSOR Gibt an, dass das Element verschoben wird.
+- DL_MOVECURSOR gibt an, dass das Element verschoben wird.
 
-- DL_STOPCURSOR Gibt an, dass das aktuelle Ablageziel nicht akzeptabel ist.
+- DL_STOPCURSOR gibt an, dass das aktuelle Ablage Ziel nicht zulässig ist.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Das Standardverhalten gibt DL_MOVECURSOR zurück. Überschreiben Sie diese Funktion, wenn Sie zusätzliche Funktionen bereitstellen möchten.
 
-## <a name="cdraglistboxdrawinsert"></a><a name="drawinsert"></a>CDragListBox::DrawInsert
+## <a name="cdraglistboxdrawinsert"></a><a name="drawinsert"></a> CDragListBox::D rawinsert
 
-Wird vom Framework aufgerufen, um die Einfügelinie vor dem Element mit dem angegebenen Index zu zeichnen.
+Wird von Framework aufgerufen, um die einfügeanleitung vor dem Element mit dem angegeben Index zu zeichnen.
 
 ```
 virtual void DrawInsert(int nItem);
@@ -165,16 +165,16 @@ virtual void DrawInsert(int nItem);
 
 ### <a name="parameters"></a>Parameter
 
-*nItem*<br/>
-Nullbasierter Index der Einfügemarke.
+*nitem*<br/>
+NULL basierter Index der Einfügemarke.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Wert - 1 löscht die Einfügeanleitung. Überschreiben Sie diese Funktion, um das Erscheinungsbild oder Verhalten der Einfügeanleitung zu ändern.
+Mit dem Wert-1 wird die einfügeanleitung gelöscht. Überschreiben Sie diese Funktion, um die Darstellung oder das Verhalten der einfügeanleitung zu ändern.
 
-## <a name="cdraglistboxdropped"></a><a name="dropped"></a>CDragListBox::Dropped
+## <a name="cdraglistboxdropped"></a><a name="dropped"></a> CDragListBox::D ropped
 
-Wird vom Framework aufgerufen, wenn `CDragListBox` ein Element innerhalb eines Objekts abgelegt wird.
+Wird von Framework aufgerufen, wenn ein Element innerhalb eines- `CDragListBox` Objekts gelöscht wird.
 
 ```
 virtual void Dropped(
@@ -184,19 +184,19 @@ virtual void Dropped(
 
 ### <a name="parameters"></a>Parameter
 
-*nSrcIndex*<br/>
-Gibt den nullbasierten Index der gelöschten Zeichenfolge an.
+*nsrcindex*<br/>
+Gibt den NULL basierten Index der gelöschten Zeichenfolge an.
 
-*Pt*<br/>
-Ein [CPoint-Objekt,](../../atl-mfc-shared/reference/cpoint-class.md) das die Koordinaten der Ablagesite enthält.
+*pt*<br/>
+Ein [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) -Objekt, das die Koordinaten der Ablage Site enthält.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Das Standardverhalten kopiert das Listenfeldelement und seine Daten an den neuen Speicherort und löscht dann das ursprüngliche Element. Überschreiben Sie diese Funktion, um das Standardverhalten anzupassen, z. B. das Aktivieren von Kopien von Listenfeldelementen, die an andere Speicherorte innerhalb der Liste gezogen werden können.
+Das Standardverhalten kopiert das Listenfeld Element und die zugehörigen Daten an den neuen Speicherort und löscht dann das ursprüngliche Element. Überschreiben Sie diese Funktion, um das Standardverhalten anzupassen, z. b. das Aktivieren von Kopien von Listenfeld Elementen, die an andere Positionen in der Liste gezogen werden sollen.
 
-## <a name="cdraglistboxitemfrompt"></a><a name="itemfrompt"></a>CDragListBox::ItemFrompt
+## <a name="cdraglistboxitemfrompt"></a><a name="itemfrompt"></a> CDragListBox:: itemfrompt
 
-Rufen Sie diese Funktion auf, um den nullbasierten Index des Listenfeldelements abzurufen, das sich unter *pt*befindet.
+Rufen Sie diese Funktion auf, um den NULL basierten Index des Listenfeld Elements abzurufen, das sich unter *PT*befindet.
 
 ```
 int ItemFromPt(
@@ -206,19 +206,19 @@ int ItemFromPt(
 
 ### <a name="parameters"></a>Parameter
 
-*Pt*<br/>
-Ein [CPoint-Objekt,](../../atl-mfc-shared/reference/cpoint-class.md) das die Koordinaten eines Punktes im Listenfeld enthält.
+*pt*<br/>
+Ein [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) -Objekt, das die Koordinaten eines Punkts im Listenfeld enthält.
 
-*bAutoScroll*<br/>
-Ein Wert ungleich Null, wenn ein Bildlauf zulässig ist, andernfalls 0.
+*bauherum Scroll*<br/>
+Ungleich 0 (null), wenn Bildläufe zulässig sind, andernfalls 0.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Nullbasierter Index des Drag-Listen-Feldelements.
+NULL basierter Index des Zieh Listenfeld Elements.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-Beispiel TSTCON](../../overview/visual-cpp-samples.md)<br/>
 [CListBox-Klasse](../../mfc/reference/clistbox-class.md)<br/>
-[Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
+[Hierarchie Diagramm](../../mfc/hierarchy-chart.md)<br/>
 [CListBox-Klasse](../../mfc/reference/clistbox-class.md)

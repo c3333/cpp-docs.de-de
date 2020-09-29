@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C3739
 ms.assetid: acffe894-08b8-4bf2-9249-9501e6e2bad3
-ms.openlocfilehash: 48d0fef86908f3ba5a547417d0625febc5226454
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 7235d86ed00663b81aaddb87fdeae957c0f73053
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74752703"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91500429"
 ---
 # <a name="compiler-error-c3739"></a>Compilerfehler C3739
 
 "Class": die Syntax wird nur unterstützt, wenn der Parameter "layout_dependent" event_receiver "true" ist.
 
-Sie haben versucht, eine gesamte Ereignis Schnittstelle zu verbinden, `layout_dependent` auf [event_receiver](../../windows/event-receiver.md) Attribut jedoch nicht "true" ist. Sie müssen jeweils ein einzelnes Ereignis anschließen.
+Sie haben versucht, eine gesamte Schnittstelle von Ereignissen zu verbinden, aber wenn `layout_dependent` [event_receiver](../../windows/attributes/event-receiver.md) Attribut nicht true ist, müssen Sie ein einzelnes Ereignis gleichzeitig verbinden.
 
 Im folgenden Beispiel wird C3739 generiert:
 

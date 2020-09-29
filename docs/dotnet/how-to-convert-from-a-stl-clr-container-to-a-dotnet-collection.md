@@ -5,12 +5,12 @@ helpviewer_keywords:
 - STL/CLR Containers [STL/CLR]
 - STL/CLR, converting to .NET collections
 ms.assetid: 70b2dfd9-869c-4e0f-9a29-b1ee0cb0d107
-ms.openlocfilehash: f5e289c330c83ac0c630a5b1f8f97b8c65fc7efb
-ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
+ms.openlocfilehash: a4a754bbee08e93e2db9af50f98d7603fabcd8d4
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90686443"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91498505"
 ---
 # <a name="how-to-convert-from-a-stlclr-container-to-a-net-collection"></a>Gewusst wie: Umwandeln eines STL/CLR-Containers in eine .NET-Auflistung
 
@@ -20,7 +20,7 @@ In diesem Thema wird gezeigt, wie Sie STL/CLR-Container in ihre entsprechenden .
 
 1. Verwenden Sie eine der folgenden Methoden:
 
-   - Um einen Teil eines Containers zu konvertieren, nennen Sie die [make_collection](../dotnet/make-collection-stl-clr.md) -Funktion, und übergeben Sie den BEGIN-Iterator und den End-Iterator des STL/CLR-Containers, der in die .net-Auflistung kopiert werden soll. Diese Vorlagen Funktion nimmt einen STL/CLR-Iterator als Vorlagen Argument an. Das erste Beispiel veranschaulicht diese Methode.
+   - Um einen Teil eines Containers zu konvertieren, nennen Sie die [make_collection](./adapter-stl-clr.md#make_collection) -Funktion, und übergeben Sie den BEGIN-Iterator und den End-Iterator des STL/CLR-Containers, der in die .net-Auflistung kopiert werden soll. Diese Vorlagen Funktion nimmt einen STL/CLR-Iterator als Vorlagen Argument an. Das erste Beispiel veranschaulicht diese Methode.
 
    - Um einen gesamten Container zu konvertieren, wandeln Sie den Container in eine entsprechende .net-Auflistungs Schnittstelle oder Schnittstellen Auflistung um. Das zweite Beispiel veranschaulicht diese Methode.
 
@@ -113,4 +113,4 @@ Key: 74.00 Value: 74
 
 [STL/CLR-Bibliotheks Referenz](../dotnet/stl-clr-library-reference.md)<br/>
 [Gewusst wie: Konvertieren einer .net-Auflistung in einen STL/CLR-Container](../dotnet/how-to-convert-from-a-dotnet-collection-to-a-stl-clr-container.md)<br/>
-[range_adapter (STL/CLR)](../dotnet/range-adapter-stl-clr.md)
+[range_adapter (STL/CLR)](./adapter-stl-clr.md#range_adapter)

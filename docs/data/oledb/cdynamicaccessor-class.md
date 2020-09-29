@@ -124,12 +124,12 @@ helpviewer_keywords:
 - SetStatus method
 - SetValue method
 ms.assetid: 374b13b7-1f09-457d-9e6b-df260ff4d178
-ms.openlocfilehash: ecbc332fcdb7fee8f748a02b2f111d4d1abf3c0b
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 31cc996b8beedadf9cba5a46b3b4da20e19268b0
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88838203"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91498675"
 ---
 # <a name="cdynamicaccessor-class"></a>CDynamicAccessor-Klasse
 
@@ -145,7 +145,7 @@ class CDynamicAccessor : public CAccessorBase
 
 **Header**: atldbcli. h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -176,7 +176,7 @@ class CDynamicAccessor : public CAccessorBase
 
 Verwenden `CDynamicAccessor` Sie Methoden zum Abrufen von Spalten Informationen, wie z. b. Spaltennamen, Spalten Anzahl, Datentyp usw. Anschließend verwenden Sie diese Spalten Informationen, um einen Accessor dynamisch zur Laufzeit zu erstellen.
 
-Die Spalten Informationen werden in einem Puffer gespeichert, der von dieser Klasse erstellt und verwaltet wird. Abrufen von Daten aus dem Puffer mithilfe von [GetValue](../../data/oledb/cdynamicaccessor-getvalue.md).
+Die Spalten Informationen werden in einem Puffer gespeichert, der von dieser Klasse erstellt und verwaltet wird. Abrufen von Daten aus dem Puffer mithilfe von [GetValue](#getvalue).
 
 Eine Erläuterung und Beispiele für die Verwendung der dynamischen [Accessorklassen finden Sie unter Verwenden dynamischer Accessoren](../../data/oledb/using-dynamic-accessors.md).
 
@@ -217,10 +217,10 @@ CDynamicAccessor(DBBLOBHANDLINGENUM eBlobHandling = DBBLOBHANDLING_DEFAULT,
 #### <a name="parameters"></a>Parameter
 
 *eblobhandling*<br/>
-Gibt an, wie die Binary Large Object (BLOB)-Daten behandelt werden sollen. Der Standardwert ist DBBLOBHANDLING_DEFAULT. Unter [setblobhandling](../../data/oledb/cdynamicaccessor-setblobhandling.md) finden Sie eine Beschreibung der dbblobhandlingenum-Werte.
+Gibt an, wie die Binary Large Object (BLOB)-Daten behandelt werden sollen. Der Standardwert ist DBBLOBHANDLING_DEFAULT. Unter [setblobhandling](#setblobhandling) finden Sie eine Beschreibung der dbblobhandlingenum-Werte.
 
 *nblobsize*<br/>
-Die maximale BLOB-Größe in Bytes. Spaltendaten über diesen Wert werden als BLOB behandelt. Der Standardwert ist 8.000. Weitere Informationen finden Sie unter [setblobsizelimit](../../data/oledb/cdynamicaccessor-setblobsizelimit.md) .
+Die maximale BLOB-Größe in Bytes. Spaltendaten über diesen Wert werden als BLOB behandelt. Der Standardwert ist 8.000. Weitere Informationen finden Sie unter [setblobsizelimit](#setblobsizelimit) .
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -250,7 +250,7 @@ const DBBLOBHANDLINGENUM GetBlobHandling() const;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Gibt den von [setblobhandling](../../data/oledb/cdynamicaccessor-setblobhandling.md)festgelegten BLOB-Behandlungs Wert *eblobhandling* zurück.
+Gibt den von [setblobhandling](#setblobhandling)festgelegten BLOB-Behandlungs Wert *eblobhandling* zurück.
 
 ## <a name="cdynamicaccessorgetblobsizelimit"></a><a name="getblobsizelimit"></a> CDynamicAccessor:: getblobsizelimit
 
@@ -264,7 +264,7 @@ const DBLENGTH GetBlobSizeLimit() const;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Gibt den von [setblobsizelimit](../../data/oledb/cdynamicaccessor-setblobsizelimit.md)festgelegten BLOB-Behandlungs Wert *nblobsize* zurück.
+Gibt den von [setblobsizelimit](#setblobsizelimit)festgelegten BLOB-Behandlungs Wert *nblobsize* zurück.
 
 ## <a name="cdynamicaccessorgetbookmark"></a><a name="getbookmark"></a> CDynamicAccessor:: GetBookmark
 
