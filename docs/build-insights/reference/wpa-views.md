@@ -7,12 +7,12 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 8bbcc43ef19adfd85a3679a2136d471333a74a10
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: a5b13ee08becd472b3bc52319212b84a9c8ffc25
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87224096"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91508799"
 ---
 # <a name="reference-windows-performance-analyzer-views"></a>Referenz: Windows Performance Analyzer-Ansichten
 
@@ -28,7 +28,7 @@ Dieser Artikel enthält Details zu den einzelnen C++ Build Insights-Ansichten, d
 - Datenspaltenbeschreibungen
 - verfügbare Voreinstellungen für die Ansichten sowie den beabsichtigten Einsatzzweck und den bevorzugten Anzeigemodus
 
-Wenn Sie WPA noch nicht lange einsetzen, sollten Sie sich zunächst mit den [WPA-Grundlagen für C++ Build Insights](/cpp/build-insights/tutorials/wpa-basics) vertraut machen.
+Wenn Sie WPA noch nicht lange einsetzen, sollten Sie sich zunächst mit den [WPA-Grundlagen für C++ Build Insights](../tutorials/wpa-basics.md) vertraut machen.
 
 ## <a name="build-explorer"></a>Build-Explorer
 
@@ -130,9 +130,9 @@ Die Ansicht „Funktionen“ wird verwendet, um Funktionen mit übermäßig lang
 
 ## <a name="see-also"></a>Siehe auch
 
-[Erste Schritte mit C++ Build Insights](/cpp/build-insights/get-started-with-cpp-build-insights)\
+[Erste Schritte mit C++ Build Insights](../get-started-with-cpp-build-insights.md)\
 [Referenz: vcperf-Befehle](vcperf-commands.md)\
-[Tutorial: Windows Performance Analyzer-Grundlagen](/cpp/build-insights/tutorials/wpa-basics)\
+[Tutorial: Windows Performance Analyzer-Grundlagen](../tutorials/wpa-basics.md)\
 [Windows Performance Analyzer](/windows-hardware/test/wpt/windows-performance-analyzer)
 
 ::: moniker-end

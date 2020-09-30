@@ -3,20 +3,20 @@ title: launch.vs.json-Schemareferenz (C++)
 ms.date: 08/20/2019
 helpviewer_keywords:
 - launch.vs.json file [C++]
-ms.openlocfilehash: 1161e8fa8ac3751ca8cc2b96ec063cd6063bb245
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 1e235b5f1ff4d7573ddbe57ac4e3c7c9bdbc2eb8
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88841986"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91505675"
 ---
 # <a name="launchvsjson-schema-reference-c"></a>launch.vs.json-Schemareferenz (C++)
 
-Verwenden Sie die Datei *launch.vs.json*, um Debugparameter zu konfigurieren. Klicken Sie zum Erstellen der Datei mit der rechten Maustaste auf eine ausführbare Datei im **Projektmappen-Explorer**, und klicken Sie auf **Debug- und Starteinstellungen**. Wählen Sie die Option aus, die Ihrem Projekt am ehesten entspricht, und verwenden Sie dann die folgenden Eigenschaften, um die Konfiguration nach Bedarf anzupassen. Weitere Informationen zum Debuggen von CMake-Projekten finden Sie unter [Konfigurieren von CMake-Debugsitzungen](/cpp/build/configure-cmake-debugging-sessions).
+Verwenden Sie die Datei *launch.vs.json*, um Debugparameter zu konfigurieren. Klicken Sie zum Erstellen der Datei mit der rechten Maustaste auf eine ausführbare Datei im **Projektmappen-Explorer**, und klicken Sie auf **Debug- und Starteinstellungen**. Wählen Sie die Option aus, die Ihrem Projekt am ehesten entspricht, und verwenden Sie dann die folgenden Eigenschaften, um die Konfiguration nach Bedarf anzupassen. Weitere Informationen zum Debuggen von CMake-Projekten finden Sie unter [Konfigurieren von CMake-Debugsitzungen](./configure-cmake-debugging-sessions.md).
 
 ## <a name="default-properties"></a>Standardeigenschaften
 
-|Eigenschaft|type|BESCHREIBUNG|
+|Eigenschaft|Type|BESCHREIBUNG|
 |-|-|-|
 |`name`|string|Hiermit wird der Name des Eintrags in der Dropdownliste „Debugziel“ angegeben.|
 |`type`|string|Hiermit wird angegeben, ob es sich bei dem Projekt um eine DLL oder eine EXE-Datei handelt. (Standardmäßig handelt es sich um eine EXE-Datei.)|
@@ -35,7 +35,7 @@ Verwenden Sie die Datei *launch.vs.json*, um Debugparameter zu konfigurieren. Kl
 
 ## <a name="c-linux-properties"></a>C++-Linux-Eigenschaften
 
-|Eigenschaft|type|BESCHREIBUNG|
+|Eigenschaft|Type|BESCHREIBUNG|
 |-|-|-|
 |`program`|string|Hierbei handelt es sich um den vollständigen Pfad zur ausführbaren Programmdatei auf dem Remotecomputer. Wenn CMake verwendet wird, kann das Makro `${debugInfo.fullTargetPath}` als Wert für dieses Feld verwendet werden.|
 |`processId`|Ganze Zahl|Hierbei handelt es sich um die optionale Prozess-ID, an die der Debugger angefügt werden soll.|
@@ -65,7 +65,7 @@ externalConsole|boolean|Wenn „true“ festgelegt ist, wird eine Konsole für d
 
 Folgende Optionen können mit der Eigenschaft `setupCommands` verwendet werden:
 
-|Eigenschaft|type|BESCHREIBUNG|
+|Eigenschaft|Type|BESCHREIBUNG|
 |-|-|-|
 |`text`|string|Hiermit wird der auszuführende Debuggerbefehl angegeben.|
 |`description`|string|Hiermit wird eine optionale Beschreibung des Befehls angegeben.|
@@ -75,7 +75,7 @@ Folgende Optionen können mit der Eigenschaft `setupCommands` verwendet werden:
 
 Folgende Optionen können mit der Eigenschaft `pipeTransport` verwendet werden:
 
-|Eigenschaft|type|BESCHREIBUNG|
+|Eigenschaft|Type|BESCHREIBUNG|
 |-|-|-|
 |`pipeCwd`|string|Hiermit wird der vollqualifizierte Pfad zum Arbeitsverzeichnis für das Pipeprogramm angegeben.|
 |`pipeProgram`|string|Hiermit wird der vollqualifizierte auszuführende Pipebefehl angegeben.|
@@ -88,7 +88,7 @@ Folgende Optionen können mit der Eigenschaft `pipeTransport` verwendet werden:
 
 Folgende Optionen können mit der Eigenschaft `sourceFileMap` verwendet werden:
 
-|Eigenschaft|type|BESCHREIBUNG|
+|Eigenschaft|Type|BESCHREIBUNG|
 |-|-|-|
 |`editorPath`|string|Hiermit wird der Speicherort des Quellcodes angegeben, den der Editor sucht.|
 |`useForBreakpoints`|boolean|Beim Festlegen von Breakpoints sollte diese Quellzuordnung verwendet werden. Wenn **`false`** festgelegt ist, werden nur der Dateiname und die Zeilennummer zum Festlegen von Breakpoints verwendet. Wenn **`true`** festgelegt ist, werden Breakpoints nur dann mit dem vollständigen Pfad zur Datei und der Zeilennummer festgelegt, wenn diese Quellzuordnung verwendet wird. Andernfalls werden beim Festlegen von Breakpoints nur Dateiname und Zeilennummer verwendet. Der Standardwert lautet **`true`** .|

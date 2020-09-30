@@ -10,12 +10,12 @@ metadata:
   author: corob-msft
   ms.author: corob
   ms.date: 06/04/2020
-  ms.openlocfilehash: ac1e391207037bf88fd866181533662aa5856b69
-  ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+  ms.openlocfilehash: 6bfbf763e738a5c53f0b6df0b4790b762ab901f2
+  ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 08/25/2020
-  ms.locfileid: "88836970"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91509726"
 highlightedContent:
   items:
   - title: Installieren von Visual Studio und Wählen der C++-Workloads
@@ -36,23 +36,23 @@ conceptualContent:
   - title: Verwenden der Visual Studio-IDE
     links:
     - text: Starten einer Einführung zu Visual Studio
-      url: https://docs.microsoft.com/visualstudio/ide/visual-studio-ide
+      url: /visualstudio/ide/visual-studio-ide
       itemType: overview
     - text: Öffnen von Code aus einem Repository
-      url: https://docs.microsoft.com/visualstudio/get-started/tutorial-open-project-from-repo
+      url: /visualstudio/get-started/tutorial-open-project-from-repo
       itemType: tutorial
     - text: Schreiben und Bearbeiten von Code
-      url: https://docs.microsoft.com/visualstudio/ide/index-writing-code
+      url: /visualstudio/ide/index-writing-code
       itemType: tutorial
     - text: Erstellen des Codes
-      url: https://docs.microsoft.com/visualstudio/ide/compiling-and-building-in-visual-studio
+      url: /visualstudio/ide/compiling-and-building-in-visual-studio
       itemType: tutorial
     - text: Debuggen Ihres Codes
       itemType: tutorial
-      url: https://docs.microsoft.com/visualstudio/debugger/quickstart-debug-with-cplusplus
+      url: /visualstudio/debugger/quickstart-debug-with-cplusplus
     - text: Testen des Codes
       itemType: tutorial
-      url: https://docs.microsoft.com/visualstudio/test/writing-unit-tests-for-c-cpp
+      url: /visualstudio/test/writing-unit-tests-for-c-cpp
   - title: Schreiben von C++- und C-Apps in Visual Studio
     links:
     - text: Erstellen einer Konsolenrechner-App
@@ -147,7 +147,7 @@ additionalContent:
       - text: Entwicklung für die universelle Windows-Plattform
         url: cppcx/universal-windows-apps-cpp.md
       - text: Entwicklung für Windows-Desktop
-        url: windows/windows-desktop-applications-cpp.md
+        url: ./windows/desktop-applications-visual-cpp.md
       - text: Linux-Entwicklung
         url: linux/index.yml
       - text: Mobile Entwicklung
@@ -161,11 +161,11 @@ additionalContent:
       - text: Erstellen von Codeprojekten
         url: build/projects-and-build-systems-cpp.md
       - text: Debuggen Ihres Codes
-        url: https://docs.microsoft.com/visualstudio/debugger/debugging-native-code
+        url: /visualstudio/debugger/debugging-native-code
       - text: Analysieren Ihres Codes
         url: code-quality/index.yml
       - text: Verbessern der App-Leistung
-        url: https://docs.microsoft.com/visualstudio/profiling
+        url: /visualstudio/profiling
       - text: Portierung und Upgrade von Code
         url: porting/visual-cpp-porting-and-upgrading-guide.md
     - title: Bibliotheken
