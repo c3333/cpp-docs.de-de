@@ -1,19 +1,19 @@
 ---
-title: Aktualisieren C++ von Projekten aus früheren Versionen von Visual Studio
+title: Aktualisieren von C++-Projekten aus früheren Versionen von Visual Studio
 description: Hier erfahren Sie, wie ein Upgrade auf Microsoft Visual C++-Projekte aus älteren Visual Studio-Versionen ausgeführt wird.
 ms.date: 01/21/2020
 helpviewer_keywords:
 - 32-bit code porting
 - upgrading Visual C++ applications, 32-bit code
 ms.assetid: 18cdacaa-4742-43db-9e4c-2d9e73d8cc84
-ms.openlocfilehash: bc9fb5628c1a628b91f306c346f2bbb1dea13de8
-ms.sourcegitcommit: 7bea0420d0e476287641edeb33a9d5689a98cb98
+ms.openlocfilehash: 7a4ab98c196d601bc458fe33bb1e2cb45ac30088
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77416112"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91505898"
 ---
-# <a name="upgrade-c-projects-from-earlier-versions-of-visual-studio"></a>Aktualisieren C++ von Projekten aus früheren Versionen von Visual Studio
+# <a name="upgrade-c-projects-from-earlier-versions-of-visual-studio"></a>Aktualisieren von C++-Projekten aus früheren Versionen von Visual Studio
 
 Um ein Projekt zu aktualisieren, das in einer früheren Version von Visual Studio erstellt wurde, öffnen Sie einfach das Projekt in der aktuellen Version von Visual Studio. Visual Studio bietet die Option, um das Projekt auf das aktuelle Schema zu aktualisieren.
 
@@ -23,7 +23,7 @@ Wenn Sie **Ja**auswählen, wird das Projekt direkt aktualisiert. Sie kann nicht 
 
 ## <a name="upgrade-reports"></a>Aktualisieren von Berichten
 
-Wenn Sie ein Upgrade für ein Projekt durchführen, erhalten Sie einen Upgradebericht. Der Bericht wird auch als "upgradelta. htm" in Ihrem Projektordner gespeichert. Der Upgradebericht enthält eine Zusammenfassung der Probleme, die während der Konvertierung gefunden wurden. Darin sind einige Informationen zu vorgenommenen Änderungen aufgeführt. dazu gehören:
+Wenn Sie ein Upgrade für ein Projekt durchführen, erhalten Sie einen Upgradebericht. Der Bericht wird auch als UpgradeLog.htm im Projektordner gespeichert. Der Upgradebericht enthält eine Zusammenfassung der Probleme, die während der Konvertierung gefunden wurden. Darin sind einige Informationen zu vorgenommenen Änderungen aufgeführt. dazu gehören:
 
 - Projekteigenschaften.
 
@@ -41,15 +41,15 @@ Wenn Sie ein Upgrade für ein Projekt durchführen, erhalten Sie einen Upgradebe
 
 - Laufzeitfehler oder unerwartete Ergebnisse aufgrund von Verhaltensänderungen.
 
-- Fehler, die in den Tools eingeführt wurden. Wenn Sie ein Problem feststellen, melden Sie es dem C++ visuellen Team über die normalen Support Kanäle oder die [Visual Studio C++ Developer Community](https://developercommunity.visualstudio.com/spaces/62/index.html) -Seite.
+- Fehler, die in den Tools eingeführt wurden. Wenn Sie ein Problem feststellen, melden Sie es dem Visual C++-Team über die normalen Support Kanäle oder über die Seite [Visual Studio C++ Developer Community](https://developercommunity.visualstudio.com/spaces/62/index.html) .
 
 Einige aktualisierte Projekte und Projektmappen können ohne Änderung erfolgreich erstellt werden. Die meisten Projekte erfordern jedoch wahrscheinlich Änderungen an den Projekteinstellungen und dem Quellcode. Es gibt keine einzige korrekte Methode, um diese Probleme zu beheben, aber wir empfehlen die Verwendung eines stufenweisen Ansatzes. Bevor Sie beginnen, lesen Sie den [Überblick über mögliche Upgradeprobleme](../porting/overview-of-potential-upgrade-issues-visual-cpp.md) , um weitere Informationen zu vielen häufigen Fehlern zu erhalten.
 
-1. Legen Sie das Platt Form Toolset, C++ den sprach Standard und Windows SDK Version (falls zutreffend) auf die bevorzugten Versionen fest. (**Projekt** > **Eigenschaften** > **Konfigurations Eigenschaften** > **Allgemein**)
+1. Legen Sie das Platt Form Toolset, den C++-sprach Standard und Windows SDK Version (falls zutreffend) auf die bevorzugten Versionen fest. (**Projekt**  >  **Eigenschaften**  >  **Konfigurations Eigenschaften**  >  **Allgemein**)
 
-1. Wenn viele Fehler auftreten, können Sie einige Optionen temporär deaktivieren, während Sie Sie beheben. Wenn Sie die Option [/permissive-](../build/reference/permissive-standards-conformance.md) deaktivieren möchten, verwenden Sie ** > Eigenschaften** des **Projekts** > **Konfigurations Eigenschaften** > **C++ C-** / > **Sprache**. Um die [Code Analyse](/cpp/code-quality/code-analysis-for-c-cpp-overview) Option zu deaktivieren, verwenden Sie **Projekt** > **Eigenschaften** > **Konfigurations Eigenschaften** > **Code Analyse**.
+1. Wenn viele Fehler auftreten, können Sie einige Optionen temporär deaktivieren, während Sie Sie beheben. Um die [/permissive-](../build/reference/permissive-standards-conformance.md) -Option zu deaktivieren, verwenden Sie die **Projekt**  >  **Eigenschaften**  >  **Konfigurations Eigenschaften**  >  **C/C++**-  >  **Sprache**. Um die [Code Analyse](../code-quality/code-analysis-for-c-cpp-overview.md) Option zu deaktivieren, verwenden Sie **Projekt**  >  **Eigenschaften**  >  **Konfigurations Eigenschaften**  >  **Code Analyse**.
 
-1. Stellen Sie sicher, dass alle Abhängigkeiten vorhanden sind und dass die Includepfade oder Bibliotheks Speicherorte korrekt sind. (**Projekt** > **Eigenschaften** > **Konfigurations Eigenschaften** > **VC + +-Verzeichnisse**)
+1. Stellen Sie sicher, dass alle Abhängigkeiten vorhanden sind und dass die Includepfade oder Bibliotheks Speicherorte korrekt sind. (**Projekt**  >  **Eigenschaften**  >  **Konfigurations Eigenschaften**  >  **VC + +-Verzeichnisse**)
 
 1. Identifizieren und beheben Sie Fehler, die durch Verweise auf APIs verursacht werden, die nicht mehr vorhanden sind.
 
@@ -59,24 +59,24 @@ Einige aktualisierte Projekte und Projektmappen können ohne Änderung erfolgrei
 
 1. Aktivieren Sie die Code Analyse, um potenzielle Probleme oder veraltete Codierungs Muster zu identifizieren, die nicht mehr als akzeptabel erachtet werden. Wenn bei der Code Analyse viele Fehler ausgegeben werden, können Sie einige der Warnungen deaktivieren, damit Sie sich zunächst auf die wichtigsten Warnungen konzentrieren können. Die IDE kann für einige Arten von Problemen bei schnellen Korrekturen helfen.
 
-1. Sehen Sie sich andere Möglichkeiten zur Modernisierung des Codes an. Ersetzen Sie z. b. benutzerdefinierte Datenstrukturen und Algorithmen durch C++ solche aus der Standardbibliothek oder die Boost Open Source-Bibliothek. Durch die Verwendung von Standard Features vereinfachen Sie die Verwaltung des Codes durch andere Benutzer. Sie können sicher sein, dass dieser Code von vielen Experten im Standards Committee und der umfassenderen C++ Community gut getestet und überprüft wurde.
+1. Sehen Sie sich andere Möglichkeiten zur Modernisierung des Codes an. Ersetzen Sie z. b. benutzerdefinierte Datenstrukturen und Algorithmen durch die C++-Standardbibliothek oder die Boost Open Source-Bibliothek. Durch die Verwendung von Standard Features vereinfachen Sie die Verwaltung des Codes durch andere Benutzer. Sie können sicher sein, dass dieser Code von vielen Experten im Standards Committee und der breiteren C++-Community gut getestet und überprüft wurde.
 
-Um Fehlerbehebung zu beheben, versuchen Sie, eine Frage zu Stack Overflow oder [ C++ Entwickler-Community](https://developercommunity.visualstudio.com/spaces/62/index.html)zu suchen oder zu veröffentlichen.
+Um Fehlerbehebung zu beheben, versuchen Sie, eine Frage zu Stack Overflow-oder C++- [Entwickler Community](https://developercommunity.visualstudio.com/spaces/62/index.html)zu suchen oder zu veröffentlichen.
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 
 [Übersicht über mögliche Upgradeprobleme](overview-of-potential-upgrade-issues-visual-cpp.md)\
-[Aktualisieren Sie Ihren Code auf die universelle CRT](upgrade-your-code-to-the-universal-crt.md) -\
-[Aktualisieren von WINVER-und _WIN32_WINNT](modifying-winver-and-win32-winnt.md)\
-[Beheben Sie Ihre Abhängigkeiten von Bibliotheks internen](fix-your-dependencies-on-library-internals.md)\
-Probleme mit der Gleit [Komma Migration](floating-point-migration-issues.md)\
-[in Visual Studio 2019 veraltete Features\ C++ ](features-deprecated-in-visual-studio.md)
-[VCBuild im Vergleich zu MSBuild](build-system-changes.md) -\
-[Port-Drittanbieterbibliotheken](porting-third-party-libraries.md)
+[Aktualisieren Ihres Codes auf die universelle CRT](upgrade-your-code-to-the-universal-crt.md)\
+[Aktualisieren von WINVER und _WIN32_WINNT](modifying-winver-and-win32-winnt.md)\
+[Beheben der Abhängigkeiten von Bibliotheks internen Elementen](fix-your-dependencies-on-library-internals.md)\
+[Probleme mit der Gleit Komma Migration](floating-point-migration-issues.md)\
+[C++ Features, die in Visual Studio 2019 veraltet sind](features-deprecated-in-visual-studio.md)\
+[VCBuild im Vergleich zu MSBuild](build-system-changes.md)\
+[Portieren von Drittanbieterbibliotheken](porting-third-party-libraries.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Neuerungen bei Visual C++ in Visual Studio](../overview/what-s-new-for-visual-cpp-in-visual-studio.md)\
-[Visueller C++ Änderungs Verlauf 2003-2015](../porting/visual-cpp-change-history-2003-2015.md)\
+[Visual C++ Änderungs Verlauf 2003-2015](../porting/visual-cpp-change-history-2003-2015.md)\
 [Nicht dem Standard entsprechende Verhalten](../cpp/nonstandard-behavior.md)\
-[Port Daten Anwendungen](../data/data-access-programming-mfc-atl.md)
+[Portieren von Datenanwendungen](../data/data-access-programming-mfc-atl.md)

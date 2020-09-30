@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C3045
 ms.assetid: 9351ba3e-3d3f-455f-ac90-a810fa9fd947
-ms.openlocfilehash: 88c0c9747f98c6850f3e9b4341bdcdef915ac754
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: fc5c2b526133ea0de70d11c3a01269436701de79
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74761350"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91506291"
 ---
 # <a name="compiler-error-c3045"></a>Compilerfehler C3045
 
 Es wurde erwartet, dass auf die sections-Direktive von OpenMP eine Verbundanweisung folgt. '{' fehlt
 
-Ein durch geschweifte Klammern begrenzter Codeblock muss auf eine [sections](../../parallel/openmp/reference/sections-openmp.md) -Direktive folgen.
+Ein durch geschweifte Klammern begrenzter Codeblock muss auf eine [sections](../../parallel/openmp/reference/openmp-directives.md#sections-openmp) -Direktive folgen.
 
 Im folgenden Beispiel wird C3045 generiert:
 

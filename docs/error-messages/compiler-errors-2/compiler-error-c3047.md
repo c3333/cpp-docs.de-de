@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C3047
 ms.assetid: 91c14566-5958-433d-8549-0e8bc3196f76
-ms.openlocfilehash: c6b8530aa1a1d5b8a0bfa735a9cc759a698ae841
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 41312e09996e2fe007cdc13c0369b5154e720841
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74761324"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91506219"
 ---
 # <a name="compiler-error-c3047"></a>Compilerfehler C3047
 
 Vor einem strukturierten Block in einem sections-Bereich von OpenMP muss sich "#pragma omp section" befinden.
 
-Jeglicher Code in einem Codeblock, der durch eine [sections](../../parallel/openmp/reference/sections-openmp.md) -Direktive eingeführt wird, muss sich in einem Codeblock befinden, der durch eine `section` -Direktive eingeführt wird.
+Jeglicher Code in einem Codeblock, der durch eine [sections](../../parallel/openmp/reference/openmp-directives.md#sections-openmp) -Direktive eingeführt wird, muss sich in einem Codeblock befinden, der durch eine `section` -Direktive eingeführt wird.
 
 Im folgenden Beispiel wird C3047 generiert:
 

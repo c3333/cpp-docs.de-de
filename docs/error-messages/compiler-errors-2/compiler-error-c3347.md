@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C3347
 ms.assetid: e939ad29-0b78-4681-9618-9bdae5675cee
-ms.openlocfilehash: 9f62d66148aa75040f7bab5ea69931d2ef9c474a
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 105c34fff8b118682ae736683fae5f64a7323c81
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74755615"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91504824"
 ---
 # <a name="compiler-error-c3347"></a>Compilerfehler C3347
 
 'Arg': Das erforderliche Argument ist nicht im Attribut 'idl_modules' festgelegt.
 
-Ein erforderliches Argument wurde nicht an das [idl_module](../../windows/idl-module.md) -Attribut übergeben.
+Ein erforderliches Argument wurde nicht an das [idl_module](../../windows/attributes/idl-module.md) -Attribut übergeben.
 
 Im folgenden Beispiel wird C3347 generiert:
 

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - examples [MFC], dialog boxes
 - menu items [MFC], examples
 ms.assetid: e8692549-acd7-478f-9c5e-ba310ce8cccd
-ms.openlocfilehash: 281fa77f4954691002268d1e597146a615264695
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 1cada8124cd7ea71a24367626508782b522cc746
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84616036"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91506763"
 ---
 # <a name="example-displaying-a-dialog-box-via-a-menu-command"></a>Beispiel: Anzeigen eines Dialogfelds mit einem Menübefehl
 
@@ -31,14 +31,14 @@ Die Prozeduren verwenden die folgenden Namen und Werte:
 
 |Element|Name oder Wert|
 |----------|-------------------|
-|Anwendung|Display Dialog|
+|Application|Display Dialog|
 |Menübefehl|Befehl "Test" im Menü "Ansicht" Befehls-ID = ID_VIEW_TEST|
 |Dialogfeld|Dialogfeld "Test"; Class = CTestDialog; Header Datei = testDialog. h; Variable = testdlg, ptestdlg|
 |Befehls Handler|OnViewTest|
 
 ### <a name="to-display-a-modal-dialog-box"></a>So zeigen Sie ein modales Dialogfeld an
 
-1. Erstellen Sie den Menübefehl. Weitere Informationen finden Sie unter [Erstellen von Menüs oder Menü Elementen](../windows/creating-a-menu.md).
+1. Erstellen Sie den Menübefehl. Weitere Informationen finden Sie unter [Erstellen von Menüs oder Menü Elementen](../windows/menu-editor.md).
 
 1. Dialogfeld erstellen; siehe [Starten des Dialog-Editors](../windows/creating-a-new-dialog-box.md).
 
@@ -110,7 +110,7 @@ Die Prozeduren verwenden die folgenden Namen und Werte:
    m_pTestDlg->ShowWindow(SW_SHOW);
    ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Dialog Felder](dialog-boxes.md)<br/>
-[Modale und nicht modale Dialogfelder](modal-and-modeless-dialog-boxes.md)
+[Modale und nicht modale Dialog Felder](modal-and-modeless-dialog-boxes.md)

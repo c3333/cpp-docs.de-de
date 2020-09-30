@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C3020
 ms.assetid: f625c7a3-afaa-4bd8-9c1b-51891b832f36
-ms.openlocfilehash: 89b28ae396322859596b99ba56a28375e9c9d6d5
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: cb32ceaf71d0a1c121b6e01e4b49f1db79a84d79
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87232026"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91506504"
 ---
 # <a name="compiler-error-c3020"></a>Compilerfehler C3020
 
@@ -38,7 +38,7 @@ int main() {
 }
 ```
 
-Eine mit [Last private](../../parallel/openmp/reference/lastprivate.md) deklarierte Variable kann nicht als Index innerhalb einer parallelisierten Schleife verwendet werden.
+Eine mit [Last private](../../parallel/openmp/reference/openmp-clauses.md#lastprivate) deklarierte Variable kann nicht als Index innerhalb einer parallelisierten Schleife verwendet werden.
 
 Im folgenden Beispiel wird C3020 für den zweiten Last private-Wert verwendet, da Last private einen Schreibvorgang idx_a in der äußersten for-Schleife auslöst. Der erste Last private-Fehler gibt keinen Fehler aus, da Last private einen Schreibvorgang in idx_a außerhalb der äußersten for-Schleife auslöst (technisch gesehen am Ende der letzten Iterationen). Im folgenden Beispiel wird C3020 generiert.
 

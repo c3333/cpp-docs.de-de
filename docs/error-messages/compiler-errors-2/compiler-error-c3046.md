@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C3046
 ms.assetid: 2e53d835-faa1-4ec0-9807-41f3dc552635
-ms.openlocfilehash: d4af29ff6a5267dc80c52e8a3ea9d92cad8d8f7d
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: cd7c934babe37def934b644ff4657ad63eb7676d
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74761337"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91506235"
 ---
 # <a name="compiler-error-c3046"></a>Compilerfehler C3046
 
 Fehlender strukturierter Block in einem #pragma omp sections-Bereich von OpenMP.
 
-Eine [sections](../../parallel/openmp/reference/sections-openmp.md) -Direktive weist einen leeren Codeblock auf.
+Eine [sections](../../parallel/openmp/reference/openmp-directives.md#sections-openmp) -Direktive weist einen leeren Codeblock auf.
 
 Im folgenden Beispiel wird C3046 generiert:
 

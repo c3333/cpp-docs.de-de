@@ -5,12 +5,12 @@ helpviewer_keywords:
 - STL/CLR, converting from .NET collections
 - STL/CLR Containers [STL/CLR]
 ms.assetid: bb927c48-78e8-4150-bd0b-787c651f4a87
-ms.openlocfilehash: a7b2ee94f02e663690287ecfa6bc8a7230830a95
-ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
+ms.openlocfilehash: 4993571d479924edc71a277887a8bd95fc4fd463
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90686456"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91506429"
 ---
 # <a name="how-to-convert-from-a-net-collection-to-a-stlclr-container"></a>Gewusst wie: Umwandeln einer .Net-Auflistung in einen STL/CLR-Container
 
@@ -24,7 +24,7 @@ In diesem Thema wird gezeigt, wie Sie .NET-Auflistungen in ihre entsprechenden S
 
 ODER
 
-1. Erstellen Sie einen generischen STL/CLR-Container, indem Sie ein [Collection_adapter](../dotnet/collection-adapter-stl-clr.md) Objekt erstellen. Diese Vorlagen Klasse nimmt eine .net-Auflistungs Schnittstelle als Argument an. Informationen dazu, welche Schnittstellen unterstützt werden, finden Sie unter [Collection_adapter (STL/CLR)](../dotnet/collection-adapter-stl-clr.md).
+1. Erstellen Sie einen generischen STL/CLR-Container, indem Sie ein [Collection_adapter](./adapter-stl-clr.md#collection_adapter) Objekt erstellen. Diese Vorlagen Klasse nimmt eine .net-Auflistungs Schnittstelle als Argument an. Informationen dazu, welche Schnittstellen unterstützt werden, finden Sie unter [Collection_adapter (STL/CLR)](./adapter-stl-clr.md#collection_adapter).
 
 1. Kopieren Sie den Inhalt der .net-Auflistung in den Container. Hierzu können Sie einen STL/CLR- [Algorithmus](../dotnet/algorithm-stl-clr.md)verwenden oder die .net-Auflistung durchlaufen und eine Kopie der einzelnen Elemente in den STL/CLR-Container einfügen.
 

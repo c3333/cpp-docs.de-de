@@ -14,14 +14,14 @@ helpviewer_keywords:
 - common subexpression elimination
 - Og compiler option [C++]
 ms.assetid: d10630cc-b9cf-4e97-bde3-8d7ee79e9435
-ms.openlocfilehash: 7dde5e97bd8690dc491916de8fb279e80a2c9ed4
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 2d5baf4967f4f4f945540d2a7baef399974d2d42
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87215204"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91506580"
 ---
-# <a name="og-global-optimizations"></a>`/Og`(Globale Optimierungen)
+# <a name="og-global-optimizations"></a>`/Og` (Globale Optimierungen)
 
 Veraltet. Bietet lokale und globale Optimierungen, automatische Register Zuordnung und Schleifen Optimierung. Es wird empfohlen, stattdessen entweder [ `/O1` (Minimieren der Größe)](o1-o2-minimize-size-maximize-speed.md) oder [ `/O2` (Geschwindigkeit der Geschwindigkeit)](o1-o2-minimize-size-maximize-speed.md) zu verwenden.
 
@@ -77,7 +77,7 @@ Die folgenden Optimierungen sind unter verfügbar **`/Og`** :
    > [!NOTE]
    > Sie können die globale Optimierung auf Funktionsweise aktivieren oder deaktivieren, indem Sie das- `optimize` pragma mit der- `g` Option verwenden.
 
-Weitere Informationen finden Sie unter [ `/Oi` (generieren Sie intrinsische Funktionen)](oi-generate-intrinsic-functions.md) und [ `/Ox ` (aktivieren Sie die meisten Geschwindigkeits Optimierungen)](ox-full-optimization.md).
+Weitere Informationen finden Sie unter [ `/Oi` (generieren Sie intrinsische Funktionen)](oi-generate-intrinsic-functions.md) und [ `/Ox` (aktivieren Sie die meisten Geschwindigkeits Optimierungen)](ox-full-optimization.md).
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 

@@ -5,12 +5,12 @@ ms.topic: reference
 helpviewer_keywords:
 - generics [C++], consuming from .NET languages
 ms.assetid: e6330ef5-e907-432e-b527-7a22f5899639
-ms.openlocfilehash: bea22a0d9fdc5c1ddbd9da2af7078228a6315e80
-ms.sourcegitcommit: 94893973211d0b254c8bcdcf0779997dcc136b0c
+ms.openlocfilehash: 9abe97e3ec2b04bf631dcad7644f3c7dd668440e
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91414138"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91506000"
 ---
 # <a name="consuming-generics-ccli"></a>Verwenden von Generics (C++/CLI)
 
@@ -18,7 +18,7 @@ Generics, die in einer Sprache für .NET (oder UWP) erstellt wurden, können mö
 
 ## <a name="example-generic-class-defined-in-c"></a>Beispiel: in C definierte generische Klasse #
 
-### <a name="description"></a>BESCHREIBUNG
+### <a name="description"></a>Beschreibung
 
 Dieses Beispiel zeigt eine in C# definierte generische Klasse.
 
@@ -82,7 +82,7 @@ public class CircularList<ItemType> {
 
 ## <a name="example-consume-assembly-authored-in-c"></a>Beispiel: Verwenden der in C erstellten Assembly #
 
-### <a name="description"></a>BESCHREIBUNG
+### <a name="description"></a>Beschreibung
 
 In diesem Beispiel wird die in C# erstellte Assembly verwendet.
 

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - pair class
 ms.assetid: 539d3d67-80a2-4170-b347-783495d42109
-ms.openlocfilehash: 6ccbea23835326d1e1840d8454f86c0eb72a5a7d
-ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.openlocfilehash: 0a78d5074c37f4fbbfb736125626fa4b7fc7e275
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90042055"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91505755"
 ---
 # <a name="pair-structure"></a>pair-Struktur
 
@@ -75,7 +75,6 @@ Der erste (standardmäßige) Konstruktor initialisiert das erste Element des Paa
 Der zweite Konstruktor initialisiert das erste Element des Paars auf *Wert1* und das zweite auf *Wert2.*  Es ist definiert, wenn beide Typen kopierbar sind.
 
 Der dritte (Vorlagen-) Konstruktor initialisiert das erste Element des Paars mit `Right` . der **erste** und der zweite in `Right` . **Zweitens**.  Es ist definiert, wenn beide Typen des Paars aus den bereitgestellten Werttypen konstruierbar sind.
-
 
 Der vierte Konstruktor initialisiert das erste Element des Paars mit *Wert1* und das zweite auf *Wert2* mithilfe von [rvalue reference declarator:  &&](../cpp/rvalue-reference-declarator-amp-amp.md).  Es ist definiert, wenn beide Typen des Paars aus den bereitgestellten Werttypen konstruierbar sind.
 

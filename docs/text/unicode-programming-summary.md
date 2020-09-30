@@ -5,30 +5,30 @@ helpviewer_keywords:
 - Unicode [C++], programming with
 - Unicode [C++], MFC and C run-time functions
 ms.assetid: a4c9770f-6c9c-447c-996b-980920288bed
-ms.openlocfilehash: 130c9027a882de2aae7fb339e4761b0cc81b3a6a
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 5095e1c58db3e5c35eb9215367f2fbb064bc228a
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62410511"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91504701"
 ---
 # <a name="unicode-programming-summary"></a>Zusammenfassung der Unicode-Programmierung
 
 Wenn Sie von MFC- und C-Laufzeitunterstützung für Unicode profitieren möchten, müssen Sie folgende Schritte ausführen:
 
-- Definieren Sie `_UNICODE`.
+- Definieren Sie `_UNICODE` .
 
-   Definieren Sie das Symbol `_UNICODE` , bevor Sie ein Programm erstellen.
+   Definieren Sie das Symbol, `_UNICODE` bevor Sie das Programm erstellen.
 
 - Geben Sie den Einstiegspunkt an.
 
-   Auf der **erweitert** auf der Seite die **Linker** Ordner des Projekts [Eigenschaftenseiten](../ide/property-pages-visual-cpp.md) (Dialogfeld), legen die **Einstiegspunkt** Symbol `wWinMainCRTStartup`.
+   Legen Sie **auf der Seite** **erweitert** des linkerordners im Dialogfeld [Eigenschaften Seiten](../build/reference/property-pages-visual-cpp.md) des Projekts das Symbol für den **Einstiegspunkt** auf fest `wWinMainCRTStartup` .
 
 - Verwenden Sie portable Laufzeitfunktionen und Typen.
 
-   Verwenden Sie für die Behandlung von Unicode-Zeichenfolgen die richtigen C-Laufzeitfunktionen. Sie können die `wcs` Familie der Funktionen, aber Sie können auch die portablen (aktivierten) `_TCHAR` Makros. Diese Makros sind alle mit dem Präfix `_tcs`; sie ersetzen, eins zu eins, für die `str` Funktionsreihe. Diese Funktionen werden ausführlich beschrieben die [Internationalisierung](../c-runtime-library/internationalization.md) Teil der *Run-Time Library Reference*. Weitere Informationen finden Sie unter [Zuordnungen für generischen Text in tchar.h](../text/generic-text-mappings-in-tchar-h.md).
+   Verwenden Sie für die Behandlung von Unicode-Zeichenfolgen die richtigen C-Laufzeitfunktionen. Sie können die- `wcs` Funktions Familie verwenden, aber Sie bevorzugen möglicherweise die vollständig portablen (International aktivierten) `_TCHAR` Makros. Diese Makros verfügen alle über das Präfix `_tcs` . Sie ersetzen, eines für die `str` Funktions Familie. Diese Funktionen werden im Abschnitt [Internationalisierung](../c-runtime-library/internationalization.md) der *Lauf Zeit Bibliotheks Referenz*ausführlich beschrieben. Weitere Informationen finden Sie unter Zuordnungen für [generischen Text in Tchar. h](../text/generic-text-mappings-in-tchar-h.md).
 
-   Verwendung `_TCHAR` und die verknüpften portablen Datentypen, die in beschriebenen [-Unterstützung für Unicode](../text/support-for-unicode.md).
+   Verwenden Sie `_TCHAR` und die zugehörigen portablen Datentypen, die [unter Unterstützung für Unicode](../text/support-for-unicode.md)beschrieben werden.
 
 - Bearbeiten Sie Zeichenfolgenliterale vorschriftsmäßig.
 
@@ -38,7 +38,7 @@ Wenn Sie von MFC- und C-Laufzeitunterstützung für Unicode profitieren möchten
     L"this is a literal string"
     ```
 
-   als Unicode-Zeichenfolge interpretiert. Sie können dasselbe Präfix für Literalzeichen verwenden. Verwenden der `_T` Makro Literalzeichenfolgen generisch zu codieren, damit sie als Unicode-Zeichenfolgen als ANSI-Zeichenfolgen (einschließlich MBCS) ohne Unicode kompiliert. Verwenden Sie z. B. nicht:
+   als Unicode-Zeichenfolge interpretiert. Sie können dasselbe Präfix für Literalzeichen verwenden. Verwenden Sie das- `_T` Makro, um Literalzeichenfolgen generisch zu codieren, sodass Sie als Unicode-Zeichen folgen unter Unicode oder als ANSI-Zeichen folgen (einschließlich MBCS) ohne Unicode Verwenden Sie anstelle von
 
     ```cpp
     pWnd->SetWindowText( "Hello" );
@@ -50,14 +50,14 @@ Wenn Sie von MFC- und C-Laufzeitunterstützung für Unicode profitieren möchten
     pWnd->SetWindowText( _T("Hello") );
     ```
 
-   Mit `_UNICODE` definiert, `_T` übersetzt die literale Zeichenfolge auf das Formular mit dem Präfix L, andernfalls `_T` ohne dieses Präfix übersetzt.
+   Wenn `_UNICODE` definiert ist, `_T` übersetzt die Literalzeichenfolge in das l-Präfix-Formular; andernfalls `_T` übersetzt die Zeichenfolge ohne das l-Präfix.
 
     > [!TIP]
-    >  Die `_T` Makro ist identisch mit der `_TEXT` Makro.
+    >  Das- `_T` Makro ist identisch mit dem- `_TEXT` Makro.
 
 - Gehen Sie beim Übergeben von Zeichenfolgenlängen an Funktionen mit Bedacht vor.
 
-   Bei einigen Funktionen muss die Anzahl der Zeichen in einer Zeichenfolge angegeben werden, bei anderen Funktionen die Anzahl der Bytes. Z. B. wenn `_UNICODE` definiert ist, der folgende Aufruf von einem `CArchive` Objekt funktioniert nicht (`str` ist eine `CString`):
+   Bei einigen Funktionen muss die Anzahl der Zeichen in einer Zeichenfolge angegeben werden, bei anderen Funktionen die Anzahl der Bytes. Wenn z. b. `_UNICODE` definiert ist, funktioniert der folgende- `CArchive` Objekt Vorgang nicht ( `str` ist ein `CString` ):
 
     ```cpp
     archive.Write( str, str.GetLength( ) );    // invalid
@@ -79,18 +79,18 @@ Wenn Sie von MFC- und C-Laufzeitunterstützung für Unicode profitieren möchten
 
    Für `CDC::TextOut` ist eine Anzahl von Zeichen, nicht eine Anzahl von Bytes erforderlich.
 
-- Verwendung [Fopen_s, _wfopen_s](../c-runtime-library/reference/fopen-s-wfopen-s.md) um Unicode-Dateien zu öffnen.
+- Verwenden Sie [fopen_s _wfopen_s,](../c-runtime-library/reference/fopen-s-wfopen-s.md) um Unicode-Dateien zu öffnen.
 
-Zusammenfassend bieten MFC und die Laufzeitbibliothek folgende Unterstützung für Unicode-Programmierung:
+Zusammenfassend bietet MFC und die Lauf Zeit Bibliothek die folgende Unterstützung für die Unicode-Programmierung:
 
 - Mit Ausnahme der Memberfunktionen für Datenbankklassen sind alle MFC-Funktionen, einschließlich `CString`. `CString` stellt darüber hinaus Unicode/ANSI-Konvertierungsfunktionen bereit.
 
 - Die Laufzeitbibliothek stellt Unicode-Versionen aller Funktionen zur Behandlung von Zeichenfolgen zur Verfügung. (Die Laufzeitbibliothek enthält mit den _tcs-Makros auch portable, für Unicode Dies sind die `_tcs` Makros.)
 
-- TCHAR.h stellt portable Datentypen und die `_T` -Makro zum Übersetzen von Zeichenfolgenliteralen und Zeichen. Weitere Informationen finden Sie unter [Zuordnungen für generischen Text in tchar.h](../text/generic-text-mappings-in-tchar-h.md).
+- Tchar. h liefert portable Datentypen und das `_T` Makro zum Übersetzen von Literalzeichenfolgen und Zeichen. Weitere Informationen finden Sie unter Zuordnungen für [generischen Text in Tchar. h](../text/generic-text-mappings-in-tchar-h.md).
 
-- Die Laufzeitbibliothek enthält eine Breitzeichen-Version von `main`. Verwendung `wmain` , die Unicode-kompatible Anwendung machen.
+- Die Lauf Zeit Bibliothek stellt eine breit Zeichen Version von bereit `main` . Verwenden Sie `wmain` , um die Anwendung Unicode-kompatibel zu machen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Unterstützung für Unicode](../text/support-for-unicode.md)

@@ -35,18 +35,18 @@ helpviewer_keywords:
 - calculated symbols
 - shared symbols
 ms.assetid: 26541832-8dba-4177-b642-e08f94502ea7
-ms.openlocfilehash: a6d2661a3467365482ea12bdfff53f730165faa0
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 67a5c801c13038e7215473edecc2d41a8f7086e0
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84623067"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91505725"
 ---
 # <a name="how-to-manage-symbols"></a>Gewusst wie: Verwalten von Symbolen
 
 Wenn Sie eine neue Ressource oder ein neues Ressourcen Objekt erstellen, weist die Entwicklungsumgebung ihr einen standardmäßigen Symbolnamen zu, z `IDD_DIALOG1` . b.. Sie können den [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window) verwenden, um den Standard Symbolnamen zu ändern oder um den Namen eines beliebigen Symbols zu ändern, das bereits einer Ressource zugeordnet ist.
 
-Bei Symbolen, die einer einzelnen Ressource zugeordnet sind, können Sie auch das **Eigenschaften** Fenster verwenden, um den Symbolwert zu ändern. Sie können das [Dialogfeld Ressourcen Symbole](../windows/resource-symbols-dialog-box.md) verwenden, um den Wert von Symbolen zu ändern, die derzeit nicht einer Ressource zugewiesen sind.
+Bei Symbolen, die einer einzelnen Ressource zugeordnet sind, können Sie auch das **Eigenschaften** Fenster verwenden, um den Symbolwert zu ändern. Sie können das [Dialogfeld Ressourcen Symbole](./creating-new-symbols.md) verwenden, um den Wert von Symbolen zu ändern, die derzeit nicht einer Ressource zugewiesen sind.
 
 Normalerweise werden alle Symbol Definitionen in gespeichert `Resource.h` . Jedoch müssen Sie den Namen dieser Includedatei möglicherweise ändern, sodass Sie z. B. mit mehr als eine Ressourcendatei im selben Verzeichnis arbeiten können.
 
@@ -92,7 +92,7 @@ Symbolnamen weisen beschreibende Präfixe auf, die die Art der Ressource oder de
    Wenn Sie einen neuen Symbolnamen eingeben, wird ihm automatisch ein Wert zugewiesen.
 
 > [!NOTE]
-> Sie können das [Dialogfeld Ressourcen Symbole](../windows/resource-symbols-dialog-box.md) verwenden, um die Namen von Symbolen zu ändern, die derzeit nicht einer Ressource zugewiesen sind.
+> Sie können das [Dialogfeld Ressourcen Symbole](./creating-new-symbols.md) verwenden, um die Namen von Symbolen zu ändern, die derzeit nicht einer Ressource zugewiesen sind.
 
 ## <a name="symbol-value-restrictions"></a>Beschränkungen bei Symbolwerten
 
@@ -141,7 +141,7 @@ Einige Einschränkungen von Symbol Werten sind:
 
 ## <a name="change-or-delete-symbols"></a>Symbole ändern oder löschen
 
-Im [Dialogfeld Ressourcen Symbole](../windows/resource-symbols-dialog-box.md)können Sie vorhandene Symbole bearbeiten oder löschen, die nicht bereits einer Ressource oder einem Objekt zugewiesen sind.
+Im [Dialogfeld Ressourcen Symbole](./creating-new-symbols.md)können Sie vorhandene Symbole bearbeiten oder löschen, die nicht bereits einer Ressource oder einem Objekt zugewiesen sind.
 
 ### <a name="to-change-an-unassigned-symbol"></a>So ändern Sie ein nicht zugewiesenes Symbol
 
@@ -161,7 +161,7 @@ Wählen Sie im Dialogfeld **Ressourcen Symbole** das Symbol aus, das Sie lösche
 
 ## <a name="include-symbols"></a>Symbole einschließen
 
-Wenn die Entwicklungsumgebung erstmals eine durch eine andere Anwendung erstellte Ressourcendatei liest, markiert sie alle einbezogenen Headerdateien als schreibgeschützt. Sie können das [Dialogfeld Ressourcenincludes](../windows/resource-includes-dialog-box.md) verwenden, um zusätzliche schreibgeschützte Symbol Header Dateien hinzuzufügen.
+Wenn die Entwicklungsumgebung erstmals eine durch eine andere Anwendung erstellte Ressourcendatei liest, markiert sie alle einbezogenen Headerdateien als schreibgeschützt. Sie können das [Dialogfeld Ressourcenincludes](./how-to-include-resources-at-compile-time.md) verwenden, um zusätzliche schreibgeschützte Symbol Header Dateien hinzuzufügen.
 
 Ein Grund, weshalb Sie möglicherweise schreibgeschützte Symboldefinitionen verwenden möchten, ist der Plan, Symboldateien unter verschiedenen Projekten freizugeben.
 
@@ -185,7 +185,7 @@ Die Umgebung interpretiert diese berechneten Symbole ordnungsgemäß, sofern Fol
 
 ### <a name="to-include-shared-read-only-symbols-in-your-resource-file"></a>So beziehen Sie freigegebene (schreibgeschützte) Symbole in Ihrer Ressourcendatei ein
 
-1. Klicken Sie in [Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources)mit der rechten Maustaste auf die *RC* -Datei, und wählen Sie [Ressource enthält](../windows/resource-includes-dialog-box.md).
+1. Klicken Sie in [Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources)mit der rechten Maustaste auf die *RC* -Datei, und wählen Sie [Ressource enthält](./how-to-include-resources-at-compile-time.md).
 
 1. Verwenden Sie im Feld **Direktiven** für schreibgeschützte Symbole die `#include` Compilerdirektive, um die Datei anzugeben, in der die schreibgeschützten Symbole beibehalten werden sollen.
 
@@ -204,7 +204,7 @@ Die Umgebung interpretiert diese berechneten Symbole ordnungsgemäß, sofern Fol
 
 ### <a name="to-change-the-name-of-the-resource-symbol-header-file"></a>So ändern Sie den Namen den Symbolheaderdatei für die Ressource
 
-1. Klicken Sie in [Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources)mit der rechten Maustaste auf die *RC* -Datei, und wählen Sie [Ressource enthält](../windows/resource-includes-dialog-box.md).
+1. Klicken Sie in [Ressourcenansicht](how-to-create-a-resource-script-file.md#create-resources)mit der rechten Maustaste auf die *RC* -Datei, und wählen Sie [Ressource enthält](./how-to-include-resources-at-compile-time.md).
 
 1. Geben Sie im Feld **Symbol Header Datei** den neuen Namen für die Includedatei ein.
 
@@ -212,7 +212,7 @@ Die Umgebung interpretiert diese berechneten Symbole ordnungsgemäß, sofern Fol
 
 Win32
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ressourcen Bezeichner (Symbole)](symbols-resource-identifiers.md)<br/>
 [Gewusst wie: Erstellen von Symbolen](creating-new-symbols.md)<br/>

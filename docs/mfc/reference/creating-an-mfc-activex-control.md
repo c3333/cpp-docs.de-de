@@ -7,12 +7,12 @@ helpviewer_keywords:
 - MFC ActiveX controls [MFC], creating
 - ActiveX controls [MFC], creating
 ms.assetid: 8bd5a93c-d04d-414e-bb28-163fdc1c0dd5
-ms.openlocfilehash: 5e0a81d6a01632bcfadccd241f3a485e6d332627
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 19e9ca6f985423bb01a8dea38988c5dcf7285683
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80077462"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91505970"
 ---
 # <a name="creating-an-mfc-activex-control"></a>Erstellen eines MFC-ActiveX-Steuerelements
 
@@ -36,9 +36,9 @@ Die einfachste Möglichkeit zum Erstellen eines MFC-ActiveX-Steuer Elements ist 
 
 Nachdem Sie das Projekt erstellt haben, können Sie die in **Projektmappen-Explorer**erstellten Dateien anzeigen. Weitere Informationen zu den vom Assistenten erstellten Dateien im Projekt finden Sie in der projekteigenen Datei "Readme.txt". Weitere Informationen zu den Dateitypen finden Sie unter [Für Visual Studio C++-Projekte erstellte Dateitypen](../../build/reference/file-types-created-for-visual-cpp-projects.md).
 
-Nachdem Sie das Projekt erstellt haben, können Sie die Code-Assistenten verwenden, um [Funktionen](../../ide/add-member-function-wizard.md), [Variablen](../../ide/add-member-variable-wizard.md), [Ereignisse](../../ide/add-event-wizard.md), [Eigenschaften](../../ide/names-add-property-wizard.md)und [Methoden](../../ide/add-method-wizard.md)hinzuzufügen. Weitere Informationen zum Anpassen des ActiveX-Steuer Elements finden Sie unter [MFC-ActiveX](../../mfc/mfc-activex-controls.md)-Steuerelemente.
+Nachdem Sie das Projekt erstellt haben, können Sie die Code-Assistenten verwenden, um [Funktionen](../../ide/adding-a-member-function-visual-cpp.md#add-member-function-wizard), [Variablen](../../ide/adding-a-member-variable-visual-cpp.md#add-member-variable-wizard), [Ereignisse](../../ide/adding-an-event-visual-cpp.md#add-event-wizard), [Eigenschaften](../../ide/adding-a-property-visual-cpp.md#names-add-property-wizard)und [Methoden](../../ide/adding-a-method-visual-cpp.md#add-method-wizard)hinzuzufügen. Weitere Informationen zum Anpassen des ActiveX-Steuer Elements finden Sie unter [MFC-ActiveX](../../mfc/mfc-activex-controls.md)-Steuerelemente.
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Hinzufügen neuer Funktionen mit Code-Assistenten](../../ide/adding-functionality-with-code-wizards-cpp.md)<br/>
+[Adding Functionality with Code Wizards (Hinzufügen neuer Funktionen mit Code-Assistenten)](../../ide/adding-functionality-with-code-wizards-cpp.md)<br/>
 [Eigenschaftenseiten](../../build/reference/property-pages-visual-cpp.md)

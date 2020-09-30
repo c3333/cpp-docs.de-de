@@ -24,12 +24,12 @@ f1_keywords:
 helpviewer_keywords:
 - imaxdiv function
 ms.assetid: 7d90126f-fdc2-4986-9cdf-94e4c9123d26
-ms.openlocfilehash: 72bbb1198b79d79bb81acc35ce6c2a836fdd5f1d
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 298356da8e8e76c132b963ef4f71db6a3d0e74f7
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70954632"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91505626"
 ---
 # <a name="imaxdiv"></a>imaxdiv
 
@@ -54,11 +54,11 @@ Der Nenner.
 
 ## <a name="return-value"></a>Rückgabewert
 
-**imaxdiv** , aufgerufen mit Argumenten vom Typ [intmax_t](../../c-runtime-library/standard-types.md) gibt eine Struktur vom Typ [welches mithilfe](../../c-runtime-library/standard-types.md) zurück, die den Quotienten und den Rest enthält.
+**imaxdiv** wurde mit Argumenten vom Typ aufgerufen [intmax_t](../../c-runtime-library/standard-types.md) gibt eine Struktur vom Typ [imaxdiv_t](../../c-runtime-library/standard-types.md) zurück, die den Quotienten und den Rest enthält.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **imaxdiv** -Funktion dividiert den *Zahl* durch *denom* und berechnet dadurch den Quotienten und den Rest. Die **welches mithilfe** -Struktur enthält den Quotienten **intmax_t** **quot**und den Rest **intmax_t** **REM**. Das Zeichen des Quotienten entspricht dem Zeichen des mathematischen Quotienten. Der absolute Wert ist die größte ganze Zahl, die kleiner ist als der absolute Wert des mathematischen Quotienten. Wenn der Nenner 0 ist, wird das Programm mit einer Fehlermeldung beendet.
+Die **imaxdiv** -Funktion dividiert den *Zahl* durch *denom* und berechnet dadurch den Quotienten und den Rest. Die **imaxdiv_t** Struktur enthält den Quotienten **intmax_t** **quot**und den Rest **intmax_t** **REM**. Das Vorzeichen des Quotienten entspricht dem des mathematischen Quotienten. Der absolute Wert ist die größte ganze Zahl, die kleiner ist als der absolute Wert des mathematischen Quotienten. Wenn der Nenner 0 ist, wird das Programm mit einer Fehlermeldung beendet.
 
 ## <a name="requirements"></a>Anforderungen
 
@@ -66,7 +66,7 @@ Die **imaxdiv** -Funktion dividiert den *Zahl* durch *denom* und berechnet dadur
 |-------------|---------------------|
 |**imaxdiv**|\<inttypes.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -103,8 +103,8 @@ The call to imaxdiv(9460730470000000, 8766)
 results in a quotient of 1079252848505, and a remainder of 5170
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Gleitkommaunterstützung](../../c-runtime-library/floating-point-support.md)<br/>
+[Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)<br/>
 [div](div.md)<br/>
-[ldiv, lldiv](ldiv-lldiv.md)<br/>
+[ldiv, lldiv](./div.md)<br/>
