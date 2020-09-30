@@ -1,19 +1,21 @@
 ---
 title: CRT-Initialisierung
+description: Beschreibt, wie die CRT den globalen Zustand in nativem Code initialisiert.
+ms.topic: conceptual
 ms.date: 11/04/2016
 helpviewer_keywords:
 - CRT initialization [C++]
 ms.assetid: e7979813-1856-4848-9639-f29c86b74ad7
-ms.openlocfilehash: 03126b8fdf1c3824b114d822c269655c22e5ee9f
-ms.sourcegitcommit: 7d64c5f226f925642a25e07498567df8bebb00d4
-ms.translationtype: HT
+ms.openlocfilehash: 25f1e2a7e5b7d91c729bb45bd79ba9a8720cead1
+ms.sourcegitcommit: 9451db8480992017c46f9d2df23fb17b503bbe74
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65446686"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91589769"
 ---
 # <a name="crt-initialization"></a>CRT-Initialisierung
 
-In diesem Thema wird beschrieben, wie CRT globale Status in nativem Code initialisiert.
+In diesem Thema wird beschrieben, wie die CRT den globalen Zustand in nativem Code initialisiert.
 
 Standardmäßig enthält der Linker die CRT-Bibliothek, die einen eigenen Startcode bereitstellt. Dieser Startcode initialisiert die CRT-Bibliothek, ruft globale Initialisierer auf und ruft dann die vom Benutzer bereitgestellte `main`-Funktion für Konsolenanwendungen auf.
 
@@ -37,11 +39,11 @@ int main()
 
 Laut dem C/C++-Standard muss `func()` aufgerufen werden, bevor `main()` ausgeführt wird. Doch wer ruft diese Funktion auf?
 
-Eine Möglichkeit für die Beantwortung dieser Frage besteht darin, einen Haltepunkt in `func()` festzulegen, die Anwendung zu debuggen und den Stapel zu überprüfen. Dies ist möglich, da der CRT-Quellcode in Visual Studio enthalten ist.
+Eine Möglichkeit zum Ermitteln des Aufrufers besteht darin, einen Haltepunkt in festzulegen `func()` , die Anwendung zu Debuggen und den Stapel zu untersuchen. Dies ist möglich, da der CRT-Quellcode in Visual Studio enthalten ist.
 
-Wenn Sie die Funktionen im Stapel durchsuchen, werden Sie feststellen, dass CRT eine Liste der Funktionszeiger durchläuft und dabei jeden Einzelnen aufruft. Diese Funktionen ähneln entweder `func()` oder Konstruktoren für Klasseninstanzen.
+Wenn Sie die Funktionen im Stapel durchsuchen, sehen Sie, dass die CRT eine Liste von Funktions Zeigern aufruft. Diese Funktionen ähneln `func()` , oder Konstruktoren für Klassen Instanzen.
 
-CRT ruft die Liste der Funktionszeiger aus dem Microsoft Visual C++-Compiler ab. Wenn der Compiler einen globalen Initialisierer erkennt, generiert er einen dynamischen Initialisierer im Abschnitt `.CRT$XCU` (wobei `CRT` für den Namen des Abschnitts und `XCU` für den Gruppennamen steht). Um eine Liste dieser dynamischen Initialisierer abzurufen, führen Sie den Befehl **dumpbin/all main.obj** aus, und durchsuchen Sie dann den Abschnitt `.CRT$XCU` (sofern „main.cpp“ als C++-Datei und nicht als C-Datei kompiliert ist). Sie sieht ungefähr wie folgt aus:
+Die CRT Ruft die Liste der Funktionszeiger vom Microsoft C++-Compiler ab. Wenn der Compiler einen globalen Initialisierer sieht, generiert er einen dynamischen Initialisierer im `.CRT$XCU` Abschnitt, wobei `CRT` der Abschnitts Name und `XCU` der Gruppenname ist. Um eine Liste dynamischer Initialisierer zu erhalten, führen Sie den Befehl **(dumpbin/all Main. obj**aus, und Durchsuchen Sie dann den `.CRT$XCU` Abschnitt. Dies trifft zu, wenn Main. cpp als C++-Datei kompiliert wird, nicht als C-Datei. Dies sieht in etwa wie im folgenden Beispiel aus:
 
 ```
 SECTION HEADER #6
@@ -63,10 +65,10 @@ RAW DATA #6
   00000000: 00 00 00 00                                      ....
 
 RELOCATIONS #6
-                                                Symbol    Symbol
+                                               Symbol    Symbol
 Offset    Type              Applied To         Index     Name
---------  ----------------  -----------------  --------  ------
-00000000  DIR32                      00000000         C  ??__Egi@@YAXXZ (void __cdecl `dynamic initializer for 'gi''(void))
+--------  ----------------  -----------------  --------  -------
+00000000  DIR32             00000000           C         ??__Egi@@YAXXZ (void __cdecl `dynamic initializer for 'gi''(void))
 ```
 
 CRT definiert zwei Zeiger:
@@ -75,11 +77,11 @@ CRT definiert zwei Zeiger:
 
 - `__xc_z` in `.CRT$XCZ`
 
-Bei beiden Gruppen sind keine Symbole definiert, außer `__xc_a` und `__xc_z`.
+Keine der Gruppen hat andere Symbole definiert, außer `__xc_a` und `__xc_z` .
 
 Wenn der Linker verschiedene `.CRT`-Gruppen liest, fasst er sie in einem Bereich zusammen und sortiert sie in alphabetischer Reihenfolge. Dies bedeutet, dass die benutzerdefinierten globalen Initialisierer (die der Microsoft Visual C++-Compiler in `.CRT$XCU` einfügt) immer nach `.CRT$XCA` und vor `.CRT$XCZ` kommen.
 
-Der Abschnitt ähnelt der folgenden Ausgabe:
+Der Abschnitt ähnelt dem folgenden Beispiel:
 
 ```
 .CRT$XCA
@@ -91,8 +93,8 @@ Der Abschnitt ähnelt der folgenden Ausgabe:
             __xc_z
 ```
 
-Deshalb verwendet die CRT-Bibliothek `__xc_a` und `__xc_z`, um den Anfang und das Ende der Liste der globalen Initialisierer zu ermitteln. Grund hierfür ist die Art und Weise, wie sie im Arbeitsspeicher angeordnet werden, nachdem das Image geladen wurde.
+Daher verwendet die CRT-Bibliothek sowohl `__xc_a` als auch `__xc_z` , um den Anfang und das Ende der Liste der globalen Initialisierer zu ermitteln, da Sie nach dem Laden des Bilds im Arbeitsspeicher angeordnet werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[CRT-Bibliotheksfunktionen](../c-runtime-library/crt-library-features.md)
+[Funktionen der CRT-Bibliothek](../c-runtime-library/crt-library-features.md)

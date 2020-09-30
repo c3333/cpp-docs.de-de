@@ -3,12 +3,12 @@ title: Enumerationsklasse (C++/CLI und C++/CX)
 ms.date: 10/12/2018
 ms.topic: reference
 ms.assetid: 8010fa8c-bad6-45b4-8214-b4db64d7ffe1
-ms.openlocfilehash: a1b99cb2265c9a9bdb40a7239a21412123772570
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 9acf93976b2f7751e85bf3ed0ddd2735c29e121c
+ms.sourcegitcommit: 9451db8480992017c46f9d2df23fb17b503bbe74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87219715"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91590315"
 ---
 # <a name="enum-class--ccli-and-ccx"></a>Enumerationsklasse (C++/CLI und C++/CX)
 
@@ -59,13 +59,13 @@ Weitere Informationen und Beispiele finden Sie unter [Enums](../cppcx/enums-c-cx
 
 Beachten Sie, dass der Compiler Fehlermeldungen ausgibt, wenn der konstante Ausdruck, der den Wert eines Enumerators definiert, nicht durch den *underlying-type*dargestellt werden kann.  Der Compiler meldet jedoch keinen Fehler für einen Wert, der für den zugrunde liegenden Typ ungeeignet ist. Beispiel:
 
-- Wenn der *underlying-type* numerisch ist und ein Enumerator den maximalen Wert für diesen Typ angibt, kann der Wert der folgenden implizit definierten Enumeration nicht dargestellt werden.
+- Wenn der *zugrunde liegende Typ* numerisch ist und ein Enumerator den maximalen Wert für diesen Typ angibt, kann der Wert der nächsten implizit definierten Enumeration nicht dargestellt werden.
 
 - Wenn der *zugrunde liegende-Typ* ist **`bool`** und mehr als zwei Enumeratoren implizit definiert sind, können die Enumeratoren nach den ersten beiden nicht dargestellt werden.
 
 - Wenn der *underlying-type*`char16`ist und der Enumerationswert von 0xD800 bis 0xDFFF reicht, kann der Wert dargestellt werden. Der Wert ist jedoch logisch falsch, da er die Hälfte ein Unicode-Ersatzzeichenpaars darstellt und nicht isoliert angezeigt werden soll.
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Anforderungen
 
 Compileroption: `/ZW`
 
@@ -174,7 +174,7 @@ Weitere Informationen zu CLR-Enumerationen finden Sie unter:
 
 - [Zugrunde liegender Typ eines Enumerators](../dotnet/how-to-define-and-consume-enums-in-cpp-cli.md)
 
-### <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Anforderungen
 
 Compileroption: `/clr`
 

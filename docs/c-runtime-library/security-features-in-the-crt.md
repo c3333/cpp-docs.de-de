@@ -1,6 +1,8 @@
 ---
 title: Sicherheitsfunktionen in der CRT
-ms.date: 11/04/2016
+description: Eine Übersicht über die sicheren CRT-Funktionen in der Microsoft C-Laufzeit.
+ms.date: 09/29/2020
+ms.topic: conceptual
 f1_keywords:
 - _CRT_SECURE_NO_DEPRECATE
 - _CRT_NONSTDC_NO_WARNINGS
@@ -24,28 +26,28 @@ helpviewer_keywords:
 - CRT, security enhancements
 - parameters [C++], validation
 ms.assetid: d9568b08-9514-49cd-b3dc-2454ded195a3
-ms.openlocfilehash: 1b42c766a7b75cb3f4d5c20d715968905d529d04
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 963f5510350aa3be25586811889189d28a5f7b66
+ms.sourcegitcommit: 9451db8480992017c46f9d2df23fb17b503bbe74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81361008"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91589886"
 ---
 # <a name="security-features-in-the-crt"></a>Sicherheitsfunktionen in der CRT
 
 Viele alte CRT-Funktionen liegen in neueren, sichereren Versionen vor. Wenn eine sichere Funktion vorhanden ist, wird die ältere, weniger sichere Version als veraltet markiert, und die neue Version hat das `_s`-Suffix („sicher“).
 
-In diesem Kontext bedeutet „veraltet“ lediglich, dass die Verwendung einer Funktion nicht empfohlen wird; es gibt nicht an, dass geplant ist, die Funktion aus der CRT zu entfernen.
+In diesem Kontext bedeutet "deprecated", dass die Verwendung der Funktion nicht empfohlen wird. Dies bedeutet nicht, dass die Funktion aus der CRT entfernt werden soll.
 
-Sichere Funktionen verhindern weder Sicherheitsfehler, noch korrigieren sie sie; vielmehr fangen sie Fehler beim Auftreten ab. Sie führen zusätzliche Überprüfungen auf Fehlerbedingungen durch und rufen im Falle eines Fehlers einen Fehlerhandler auf (siehe [Parametervalidierung](../c-runtime-library/parameter-validation.md)).
+Die sicheren Funktionen verhindern oder korrigieren Sicherheitsfehler. Stattdessen fangen Sie Fehler ab, wenn Sie auftreten. Sie führen zusätzliche Überprüfungen auf Fehlerbedingungen aus. Wenn ein Fehler auftritt, wird ein Fehlerhandler aufgerufen (siehe [Parameter Validierung](../c-runtime-library/parameter-validation.md)).
 
-Die `strcpy`-Funktion kann z.B. nicht mitteilen, ob die Zeichenfolge, die sie kopiert, zu groß für den Zielpuffer ist. Ihr sicheres Gegenstück `strcpy_s` übernimmt allerdings die Größe des Puffers als Parameter, damit sie bestimmen kann, wann ein Pufferüberlauf erfolgt. Wenn Sie `strcpy_s` verwenden, um elf Zeichen in einen Zehnzeichenpuffer zu kopieren, liegt der Fehler bei Ihnen; `strcpy_s` kann Ihren Fehler nicht beheben, jedoch erkennen und Sie durch Aufrufen des Handlers für ungültige Parameter informieren.
+Die `strcpy` -Funktion kann z. b. nicht erkennen, ob die Zeichenfolge, die Sie kopiert, zu groß für den Ziel Puffer ist. Sein sicheres Pendant, `strcpy_s` , übernimmt die Größe des Puffers als Parameter. Damit kann ermittelt werden, ob ein Pufferüberlauf auftritt. Wenn Sie verwenden, `strcpy_s` um 11 Zeichen in einen 10-Zeichen Puffer zu kopieren, ist dies ein Fehler in Ihrem Teil `strcpy_s` . der Fehler kann nicht behoben werden. Es kann jedoch ihren Fehler erkennen und Sie durch Aufrufen des ungültigen Parameter Handlers informieren.
 
 ## <a name="eliminating-deprecation-warnings"></a>Beseitigen von Ablaufwarnungen
 
-Es gibt mehrere Möglichkeiten, um Ablaufwarnungen für die älteren, weniger sicheren Funktionen zu beseitigen. Die einfachste Möglichkeit ist, `_CRT_SECURE_NO_WARNINGS` zu definieren oder das [warning](../preprocessor/warning.md)-Pragma zu verwenden. Jede deaktiviert Ablaufwarnungen, aber die Sicherheitsprobleme, die die Warnung verursacht haben, sind natürlich noch vorhanden. Es ist wesentlich besser, Ablaufwarnungen aktiviert zu lassen und die neuen CRT-Sicherheitsfunktionen zu nutzen.
+Es gibt mehrere Möglichkeiten, um Ablaufwarnungen für die älteren, weniger sicheren Funktionen zu beseitigen. Die einfachste Möglichkeit ist, `_CRT_SECURE_NO_WARNINGS` zu definieren oder das [warning](../preprocessor/warning.md)-Pragma zu verwenden. Deaktiviert entweder die veralteten Warnungen, aber die Sicherheitsprobleme, die die Warnungen verursacht haben, sind weiterhin vorhanden. Es ist besser, die Einstellung für veraltete Warnungen zu aktivieren und die neuen CRT-Sicherheitsfunktionen zu nutzen.
 
-In C++ erfolgt dies am einfachsten mit der Verwendung von [sicheren Vorlagenüberladungen](../c-runtime-library/secure-template-overloads.md), die in vielen Fällen Ablaufwarnungen durch den Ersatz der Aufrufe veralteter Funktionen durch Aufrufe neuer, sicherer Versionen dieser Funktionen beseitigen. Ein Beispiel ist dieser veraltete Aufruf von `strcpy`:
+In C++ ist es am einfachsten, [sichere Vorlagen Überladungen](../c-runtime-library/secure-template-overloads.md)zu verwenden. Dadurch werden veraltete Warnungen eliminiert, indem Aufrufe von veralteten Funktionen durch Aufrufe von sicheren Versionen dieser Funktionen ersetzt werden. Ein Beispiel ist dieser veraltete Aufruf von `strcpy`:
 
 ```
 char szBuf[10];
@@ -60,25 +62,23 @@ Eine andere Quelle von Ablaufwarnungen, unabhängig von der Sicherheit, sind POS
 
 ## <a name="additional-security-features"></a>Zusätzliche Sicherheitsfunktionen
 
-Zu den wichtigsten Sicherheitsfunktionen zählen Folgende:
+Zu den Sicherheitsfeatures gehören:
 
-- `Parameter Validation`. An CRT-Funktionen übergebene Parameter werden sowohl in sicheren Funktionen als auch in vielen bereits vorhandenen Versionen der Funktionen überprüft. Diese Überprüfungen umfassen:
+- `Parameter Validation`. Überprüfen Sie die Parameter, und überprüfen Sie die Parameter, und viele ihrer unsicheren Gegenstücke. Die Validierung kann Folgendes umfassen:
 
-  - Überprüfung auf **NULL**-Werte, die den Funktionen übergeben werden.
-
+  - Überprüfen auf **null** -Werte.
   - Überprüfung von Enumerationswerten auf Gültigkeit.
-
   - Überprüfen, ob ganzzahlige Werte im gültigen Bereiche liegen.
 
 - Weitere Informationen finden Sie unter [Parametervalidierung](../c-runtime-library/parameter-validation.md).
 
-- Auf einen Handler für ungültige Parameter kann auch der Entwickler zugreifen. Wenn ein ungültiger Parameter festgestellt wird, bietet die CRT eine Möglichkeit, diese Probleme mit der [_set_invalid_parameter_handler, _set_thread_local_invalid_parameter_handler](../c-runtime-library/reference/set-invalid-parameter-handler-set-thread-local-invalid-parameter-handler.md)-Funktion zu überprüfen, anstatt dies zu bestätigen und die Anwendung zu beenden.
+- Auf einen Handler für ungültige Parameter kann auch der Entwickler zugreifen. Wenn eine Funktion einen ungültigen Parameter erkennt, und Sie die Anwendung nicht bestätigen und beenden, können Sie mit der CRT diese Probleme über [_set_invalid_parameter_handler _set_thread_local_invalid_parameter_handler](../c-runtime-library/reference/set-invalid-parameter-handler-set-thread-local-invalid-parameter-handler.md)überprüfen.
 
-- `Sized Buffers`. Die sicheren Funktionen erfordern, dass die Größe des Puffers an alle Funktionen übergeben wird, die in einen Puffer schreiben. Die sicheren Versionen überprüfen, ob der Puffer groß genug ist, bevor sie darin schreiben, um gefährliche Pufferüberlauffehler zu vermeiden, die die Ausführung bösartigen Codes zulassen könnten. Diese Funktionen geben in der Regel einen Fehlercode des Typs `errno` zurück und rufen den Handler für ungültige Parameter auf, wenn der Puffer zu klein ist. Funktionen, die wie `gets` aus Eingabepuffern lesen, haben sichere Versionen, die von Ihnen die Angabe einer maximalen Größe fordern.
+- `Sized Buffers`. Sie müssen die Puffergröße an eine beliebige sichere Funktion übergeben, die in einen Puffer schreibt. Die sicheren Versionen überprüfen, ob der Puffer groß genug ist, bevor Sie darin schreiben. Dadurch können gefährliche Pufferüberlauf Fehler vermieden werden, die die Ausführung von bösartigem Code ermöglichen. Diese Funktionen geben in der Regel einen `errno` Fehlercode zurück und rufen den Handler für ungültige Parameter auf, wenn die Größe des Puffers zu klein ist. Funktionen, die wie `gets` aus Eingabepuffern lesen, haben sichere Versionen, die von Ihnen die Angabe einer maximalen Größe fordern.
 
-- `Null termination`. Einige Funktionen, die potenziell nicht beendete Zeichenfolgen hinterlassen haben, haben sichere Versionen, die sicherstellen, dass Zeichenfolgen ordnungsgemäß mit NULL enden.
+- `Null termination`. Einige Funktionen, die potenziell nicht beendete Zeichen folgen hinterlassen, haben sichere Versionen, die sicherstellen, dass Zeichen folgen ordnungsgemäß auf Null enden.
 
-- `Enhanced error reporting`. Die sicheren Funktionen geben Fehlercodes mit mehr Fehlerinformationen zurück, als bei den bereits vorhandenen Funktionen verfügbar waren. Die sicheren Funktionen und viele der bereits vorhandenen Funktionen legen jetzt `errno` fest und geben häufig ebenfalls einen `errno`-Codetyp zurück, um eine bessere Fehlerberichterstattung zu bieten.
+- `Enhanced error reporting`. Die sicheren Funktionen geben Fehlercodes mit mehr Fehlerinformationen zurück, als mit den bereits vorhandenen Funktionen verfügbar waren. Die sicheren Funktionen und viele der bereits vorhandenen Funktionen legen nun fest `errno` und geben häufig auch einen `errno` Codetyp zurück, um eine bessere Fehlerberichterstattung bereitzustellen.
 
 - `Filesystem security`. Sichere Datei-E/A-APIs unterstützen sicheren Dateizugriff im Standardfall.
 
@@ -86,8 +86,8 @@ Zu den wichtigsten Sicherheitsfunktionen zählen Folgende:
 
 - `Format string syntax checking`. Ungültige Zeichenfolgen werden erkannt, z.B. Verwendung falscher Typfeldzeichen in `printf`-Formatzeichenfolgen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Parameterüberprüfung](../c-runtime-library/parameter-validation.md)<br/>
-[Sichere Vorlagenüberladungen](../c-runtime-library/secure-template-overloads.md)<br/>
-[CRT-Bibliotheksfunktionen](../c-runtime-library/crt-library-features.md)
+[Parameter Validierung](../c-runtime-library/parameter-validation.md)<br/>
+[Sichere Vorlagen Überladungen](../c-runtime-library/secure-template-overloads.md)<br/>
+[Funktionen der CRT-Bibliothek](../c-runtime-library/crt-library-features.md)

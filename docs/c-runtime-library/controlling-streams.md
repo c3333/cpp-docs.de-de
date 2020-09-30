@@ -1,6 +1,8 @@
 ---
 title: Steuern von Streams
+description: Eine Übersicht über das Arbeiten mit Streams in der Microsoft C-Lauf Zeit Bibliothek.
 ms.date: 11/04/2016
+ms.topic: conceptual
 f1_keywords:
 - Controlling Streams
 helpviewer_keywords:
@@ -8,12 +10,12 @@ helpviewer_keywords:
 - controlling streams
 - streams
 ms.assetid: 267e9013-9afc-45f6-91e3-ca093230d9d9
-ms.openlocfilehash: 85c7e1b22519287fbd03d89487d6639f197a8b63
-ms.sourcegitcommit: dedd4c3cb28adec3793329018b9163ffddf890a4
-ms.translationtype: HT
+ms.openlocfilehash: 0caa9eca7c960acbb581358c1a92afcc6a8af066
+ms.sourcegitcommit: 9451db8480992017c46f9d2df23fb17b503bbe74
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57743312"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91589717"
 ---
 # <a name="controlling-streams"></a>Steuern von Streams
 
@@ -37,6 +39,6 @@ Ein `FILE`-Objekt speichert den Status eines Streams wie Folgendes:
 
 Ändern Sie keine in einem `FILE`-Objekt oder in einem Dateipuffer gespeicherten Werte, das bzw. den Sie für die Verwendung mit diesem Objekt angeben. Sie können ein `FILE`-Objekt nicht kopieren und die Adresse der Kopie nicht als `stream`-Argument in eine Bibliotheksfunktion kopieren.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Dateien und Streams](../c-runtime-library/files-and-streams.md)

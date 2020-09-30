@@ -1,31 +1,37 @@
 ---
 title: Potenzielle Fehler bei der Übergabe von CRT-Objekten über DLL-Grenzen
+description: Eine Übersicht über mögliche Probleme, die bei der Übergabe von Microsoft C-Lauf Zeit Objekten über eine DLL-Grenze (Dynamic Link Library) auftreten können.
 ms.date: 11/04/2016
+ms.topic: conceptual
 helpviewer_keywords:
 - DLL conflicts [C++]
 ms.assetid: c217ffd2-5d9a-4678-a1df-62a637a96460
-ms.openlocfilehash: 10fbb128698b6422779d09a15fe3c1d25e8de5b5
-ms.sourcegitcommit: 7d64c5f226f925642a25e07498567df8bebb00d4
-ms.translationtype: HT
+ms.openlocfilehash: f6d831ac8b86be8a6669e8ee6c66da64507d129f
+ms.sourcegitcommit: 9451db8480992017c46f9d2df23fb17b503bbe74
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65446657"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91590185"
 ---
 # <a name="potential-errors-passing-crt-objects-across-dll-boundaries"></a>Potenzielle Fehler bei der Übergabe von CRT-Objekten über DLL-Grenzen
 
-Beim Übergeben von CRT-Objekten (C Run Time, C-Laufzeit) wie z.B. Dateihandles, Gebietsschemas und Umgebungsvariablen in eine oder aus einer DLL (Funktionsaufrufe über die DLL-Grenze hinweg), kann ein unerwartetes Verhalten auftreten, wenn die DLL und die Dateien, die die DLL aufrufen, unterschiedliche Kopien der CRT-Bibliotheken verwenden.
+Wenn Sie C-Lauf Zeit Objekte, z. b. Datei Handles, Gebiets Schemas und Umgebungsvariablen, mithilfe von Funktionsaufrufen über die DLL-Grenze in bzw. aus einer DLL übergeben, kann unerwartetes Verhalten auftreten, wenn die dll oder Dateien, die die DLL aufrufen, unterschiedliche Kopien der CRT-Bibliotheken verwenden.
 
-Ein ähnliches Problem kann auftreten, wenn Sie Speicher belegen (entweder explizit mit `new` oder `malloc` oder implizit mit `strdup`, `strstreambuf::str` usw.) und dann einen Zeiger über eine DLL-Grenze hinweg übergeben, wo er freigegeben wird. Dies kann eine Speicherzugriffsverletzung oder Heapbeschädigung verursachen, wenn die DLL und ihre Benutzer unterschiedliche Kopien der CRT-Bibliotheken verwenden.
+Ein verwandtes Problem kann auftreten, wenn Sie Speicher zuweisen (entweder explizit mit `new` oder `malloc` oder implizit mit `strdup` , `strstreambuf::str` usw.) und dann einen Zeiger über eine DLL-Grenze übergeben, in der er freigegeben wird. Dies kann zu einer Speicherzugriffs Verletzung oder einer Heap Beschädigung führen, wenn die dll und deren Consumer unterschiedliche Kopien der CRT-Bibliotheken verwenden.
 
-Ein anderes Symptom dieses Problems kann ein Fehler sein, der während des Debuggens im Ausgabefenster auftritt, wie z.B. der folgende:
-
-HEAP[]: Invalid Address specified to RtlValidateHeap(#,#) (HEAP[]: Ungültige Adresse für RtlValidateHeap(#,#) angegeben)
+Ein weiteres Symptom dieses Problems ist ein Fehler im Ausgabefenster während des Debuggens, wie z. b. `HEAP[]: Invalid Address specified to RtlValidateHeap(#,#)`
 
 ## <a name="causes"></a>Ursachen
 
-Jede Kopie der CRT-Bibliothek verfügt über einen eigenen Status, der von Ihrer App oder DLL im lokalen Threadspeicher gespeichert wird. Daher gelten CRT-Objekte wie Dateihandles, Umgebungsvariablen und Gebietsschemas nur für die Kopie der CRT in derjenigen App oder DLL, in der diese Objekte zugewiesen oder festgelegt sind. Wenn eine DLL und die zugehörigen App-Clients verschiedene Kopien der CRT-Bibliothek verwenden, können Sie diese CRT-Objekte nicht über die DLL-Grenze hinweg übergeben und damit rechnen, dass diese auf der anderen Seite ordnungsgemäß übernommen werden. Dies gilt insbesondere für CRT-Versionen vor der Universal CRT in Visual Studio 2015 und höher. Für jede mit Visual Studio 2013 oder früher erstellte Version von Visual Studio gab es eine versionsspezifische CRT-Bibliothek. Die internen Implementierungsdetails der CRT wie z.B. die Datenstrukturen und Benennungskonventionen unterschieden sich von Version zu Version. Die dynamische Verknüpfung von Code, der für eine Version der CRT kompiliert wurde, mit einer anderen Version der CRT-DLL wurde nie unterstützt. Die Verknüpfung funktionierte zwar zuweilen, das war aber eher Glück als Absicht.
+Jede Kopie der CRT-Bibliothek verfügt über einen eigenen Status, der von Ihrer App oder DLL im lokalen Threadspeicher gespeichert wird.
 
-Und da jede Kopie der CRT-Bibliothek einen eigenen Heap-Manager aufweist, ist das Belegen von Speicher in einer CRT-Bibliothek und das Übergeben des Zeigers über eine DLL-Grenze hinweg zur Freigabe durch eine andere Kopie der CRT-Bibliothek eine potenzielle Ursache für eine Beschädigung des Heaps. Wenn Sie Ihre DLL so konzipieren, dass sie CRT-Objekte über die Grenze hinweg übergibt oder Speicher belegt, der außerhalb der DLL freigegeben werden soll, müssen Sie die App-Clients der DLL so einrichten, dass sie dieselbe Kopie der CRT-Bibliothek verwenden wie die DLL. Die DLL und die DLL-Clients verwenden normalerweise nur dann die gleiche Kopie der CRT-Bibliothek, wenn beide zur Ladezeit mit der gleichen Version der CRT-DLL verknüpft sind. Da die von Visual Studio 2015 und später auch Windows 10 verwendete DLL-Version der Universal CRT-Bibliothek jetzt eine zentral bereitgestellte Windows-Komponente ist (ucrtbase.dll), kann sie für Apps verwendet werden, die mit Visual Studio 2015 und höher erstellt werden. Eine Einschränkung gilt aber auch hier: Auch wenn der CRT-Code identisch ist, können Sie Speicher, der in einem Heap belegt ist, nicht einer Komponente zuweisen, die einen anderen Heap verwendet.
+CRT-Objekte, z. b. Datei Handles, Umgebungsvariablen und Gebiets Schemas, sind nur für die Kopie der CRT in der APP oder dll gültig, in der diese Objekte zugeordnet oder festgelegt wurden. Wenn eine DLL und Ihre Clients unterschiedliche Kopien der CRT-Bibliothek verwenden, können Sie diese CRT-Objekte nicht über die DLL-Grenze hinweg übergeben und erwarten, dass Sie auf der anderen Seite ordnungsgemäß verwendet werden. Dies gilt für CRT-Versionen vor der universellen CRT in Visual Studio 2015 und höher.
+
+Für jede mit Visual Studio 2013 oder früher erstellte Version von Visual Studio gab es eine versionsspezifische CRT-Bibliothek. Interne Implementierungsdetails der CRT, wie z. b. Datenstrukturen und Benennungs Konventionen, unterscheiden sich in jeder Version. Das dynamische Verknüpfen von Code, der für eine Version der CRT kompiliert wurde, in eine andere Version der CRT-DLL wurde nie unterstützt. Gelegentlich funktioniert Sie, aber aufgrund von Glück und nicht über das Design.
+
+Da jede Kopie der CRT-Bibliothek über einen eigenen Heap-Manager verfügt, kann das belegen von Speicher in einer CRT-Bibliothek und das Übergeben des Zeigers über eine DLL-Grenze, die durch eine andere Kopie der CRT-Bibliothek freigegeben werden kann, zu Heap Beschädigungen führen. Wenn Sie die DLL so entwerfen, dass Sie CRT-Objekte über die DLL-Grenze hinweg übergibt, oder Arbeitsspeicher zuweist und davon ausgeht, dass Sie außerhalb der dll freigegeben werden, müssen die Clients der dll dieselbe Kopie der CRT-Bibliothek wie die DLL verwenden.
+
+Die DLL und die DLL-Clients verwenden normalerweise nur dann die gleiche Kopie der CRT-Bibliothek, wenn beide zur Ladezeit mit der gleichen Version der CRT-DLL verknüpft sind. Da die dll-Version der universellen CRT-Bibliothek, die von Visual Studio 2015 und höher unter Windows 10 verwendet wird, jetzt eine zentral bereitgestellte Windows-Komponente (ucrtbase.dll) ist, ist Sie für apps, die mit Visual Studio 2015 und höheren Versionen erstellt wurden, identisch. Auch wenn der CRT-Code identisch ist, können Sie in einem Heap zugeordnete Arbeitsspeicher nicht an eine Komponente übergeben, die einen anderen Heap verwendet.
 
 ## <a name="example"></a>Beispiel
 
@@ -33,9 +39,9 @@ Und da jede Kopie der CRT-Bibliothek einen eigenen Heap-Manager aufweist, ist da
 
 Dieses Beispiel übergibt ein Dateihandle über eine DLL-Grenze.
 
-Die DLL und die EXE-Datei wurden mit /MD erstellt, sodass sie sich eine einzige Kopie der CRT teilen.
+Die dll-und exe-Dateien werden mit erstellt `/MD` , sodass Sie eine einzige Kopie der CRT gemeinsam verwenden.
 
-Wenn Sie die Dateien mit „/MT“ neu erstellen, sodass sie getrennte Kopien der CRT verwenden, zieht die Ausführung der resultierenden „test1Main.exe“ eine Zugriffsverletzung nach sich.
+Wenn Sie mit neu erstellen `/MT` , sodass die einzelnen Kopien der CRT verwendet werden, führt das Ausführen der resultierenden **test1Main.exe** zu einer Zugriffsverletzung.
 
 ```cpp
 // test1Dll.cpp
@@ -116,12 +122,12 @@ int main( void )
 MYLIB has not been set.
 ```
 
-Wenn sowohl die DLL als auch die ausführbare Datei mit „/MD“ erstellt wurden, sodass nur eine einzige Kopie der CRT verwendet wird, wird das Programm erfolgreich ausgeführt und erzeugt folgende Ausgabe:
+Wenn die dll-und exe-Datei so erstellt werden, `/MD` dass nur eine Kopie der CRT verwendet wird, wird das Programm erfolgreich ausgeführt, und es wird die folgende Ausgabe erzeugt:
 
 ```
 New MYLIB variable is: c:\mylib;c:\yourlib
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[CRT-Bibliotheksfunktionen](../c-runtime-library/crt-library-features.md)
+[Funktionen der CRT-Bibliothek](../c-runtime-library/crt-library-features.md)

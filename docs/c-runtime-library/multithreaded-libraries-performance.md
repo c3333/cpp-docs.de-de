@@ -1,18 +1,20 @@
 ---
 title: Leistung von Multithreadbibliotheken
+description: Hier finden Sie eine Übersicht über die optimale Leistung der Multithreadbibliotheken der Microsoft C-Laufzeit.
 ms.date: 11/04/2016
+ms.topic: conceptual
 helpviewer_keywords:
 - threading [C++], performance
 - libraries, multithreaded
 - performance, multithreading
 - multithreaded libraries
 ms.assetid: faa5d808-087c-463d-8f0d-8c478d137296
-ms.openlocfilehash: 48f491b6d82acb566669302e4d607e85faf9012a
-ms.sourcegitcommit: dedd4c3cb28adec3793329018b9163ffddf890a4
-ms.translationtype: HT
+ms.openlocfilehash: edfbbf3055e9023c74cf0e154577d4b1853f557b
+ms.sourcegitcommit: 9451db8480992017c46f9d2df23fb17b503bbe74
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57748361"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91590198"
 ---
 # <a name="multithreaded-libraries-performance"></a>Leistung von Multithreadbibliotheken
 
@@ -34,6 +36,6 @@ Die Leistung von Multithreadbibliotheken wurde verbessert und erreicht fast die 
 
 - Das Verfügbarmachen des CRT-Heap-Handles ermöglicht Ihnen das Aktivieren des Windows Low Fragmentation Heap (LFH) für den CRT-Heap, wodurch die Leistung in Szenarien mit hoher Skalierung wesentlich verbessert werden kann.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[CRT-Bibliotheksfunktionen](../c-runtime-library/crt-library-features.md)
+[Funktionen der CRT-Bibliothek](../c-runtime-library/crt-library-features.md)

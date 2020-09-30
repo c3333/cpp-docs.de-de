@@ -1,5 +1,6 @@
 ---
 title: C-Laufzeitbibliotheksreferenz
+description: Links zu Informationen und verweisen für die Funktionen der Microsoft C-Lauf Zeit Bibliothek.
 ms.date: 11/04/2016
 f1_keywords:
 - c.runtime
@@ -8,55 +9,55 @@ helpviewer_keywords:
 - run-time libraries
 - CRT, reference
 ms.assetid: a503e11c-8dca-4846-84fb-025a826c32b8
-ms.openlocfilehash: 9193e5c38c01f9dddcf0a8cd324d07f5dd90cb5e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 99d8463ddd9dd7b9037cb96e214af7f9581ba074
+ms.sourcegitcommit: 9451db8480992017c46f9d2df23fb17b503bbe74
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81334434"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91590055"
 ---
 # <a name="c-run-time-library-reference"></a>C-Laufzeitbibliotheksreferenz
 
-Die Microsoft-Laufzeitbibliothek enthält Routinen zur Programmierung für das Microsoft Windows-Betriebssystem. Diese Routinen automatisieren viele allgemeine Programmieraufgaben, die in den Programmiersprachen C und C++ nicht enthalten sind.
+Die Microsoft-Laufzeitbibliothek enthält Routinen zur Programmierung für das Microsoft Windows-Betriebssystem. Diese Routinen automatisieren viele allgemeine Programmieraufgaben, die von den Programmiersprachen C# und C++ nicht bereitgestellt werden.
 
 Beispielprogramme sind in den einzelnen Referenzthemen für die meisten Routinen in der Bibliothek enthalten.
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 
-[C-Laufzeitbibliotheken](../c-runtime-library/crt-library-features.md)<br/>
+[C-Laufzeitbibliotheken](crt-library-features.md)\
 Erläutert die LIB-Dateien, aus denen die C-Laufzeitbibliotheken bestehen.
 
-[Universelle C-Laufzeitroutinen nach Kategorie](../c-runtime-library/run-time-routines-by-category.md)<br/>
+[Universelle C-Lauf Zeit Routinen nach Kategorie](run-time-routines-by-category.md)\
 Bietet Links zur Laufzeitbibliothek, aufgeschlüsselt nach Kategorie.
 
-[Globale Variablen und Standardtypen](../c-runtime-library/global-variables-and-standard-types.md)<br/>
+[Globale Variablen und Standard Typen](global-variables-and-standard-types.md)\
 Bietet Links zu den globalen Variablen und Standardtypen, die von der Laufzeitbibliothek bereitgestellt werden.
 
-[Globale Konstanten](../c-runtime-library/global-constants.md)<br/>
+[Globale Konstanten](global-constants.md)\
 Bietet Links zu den globalen Konstanten, die von der Laufzeitbibliothek definiert werden.
 
-[Globaler Staat](../c-runtime-library/global-state.md)<br/>
-Beschreibt den Umfang des globalen Status in der C-Laufzeitbibliothek.
+[Globaler Status](global-state.md)\
+Beschreibt den Bereich des globalen Zustands in der C-Lauf Zeit Bibliothek.
 
-[Alphabetische Funktionsreferenz](../c-runtime-library/reference/crt-alphabetical-function-reference.md)<br/>
+[Alphabetische Funktionsreferenz](reference/crt-alphabetical-function-reference.md)\
 Bietet ein Inhaltsverzeichnis als Einstiegspunkt in eine alphabetische Auflistung aller Funktionen der C-Laufzeitbibliothek.
 
-[Generic-Text-Mappings](../c-runtime-library/generic-text-mappings.md)<br/>
+[Zuordnungen für generischen Text](generic-text-mappings.md)\
 Bietet Links zu den in „Tchar.h“ definierten Zuordnungen für generischen Text.
 
-[Zeichenfolgen in Sprach- und Länder-/Regionseinstellungen](../c-runtime-library/locale-names-languages-and-country-region-strings.md)<br/>
+[Zeichen folgen für Sprache und Land/Region](locale-names-languages-and-country-region-strings.md)\
 Beschreibt die Verwendung der Funktion `setlocale`, um die Zeichenfolgen für Sprache und Land/Region festzulegen.
 
 ## <a name="related-sections"></a>Verwandte Abschnitte
 
-[Debugroutinen](../c-runtime-library/debug-routines.md)<br/>
+[Debugroutinen](debug-routines.md)\
 Bietet Links zu den Debugversionen der Laufzeitbibliotheksroutinen.
 
-[Laufzeitfehlerüberprüfung](../c-runtime-library/run-time-error-checking.md)<br/>
+[Lauf Zeit Fehlerüberprüfung](run-time-error-checking.md)\
 Bietet Links zu Funktionen, die Überprüfungen von Laufzeitfehlern unterstützen.
 
-[DLLs and Visual C++ run-time library behavior (Verhalten der Laufzeitbibliothek für DLLs und Visual C++)](../build/run-time-library-behavior.md)<br/>
+[Verhalten der Laufzeitbibliothek für DLLs und Visual C++](../build/run-time-library-behavior.md)\
 Erläutert den Einstiegspunkt und Startcode für eine DLL.
 
-[Debuggen](/visualstudio/debugger/debugging-in-visual-studio)<br/>
+[Suche](/visualstudio/debugger/debugging-in-visual-studio)\
 Stellt Links zum Visual Studio-Debugger für die Behebung logischer Fehler in Ihrer Anwendung oder in gespeicherten Prozeduren bereit.
