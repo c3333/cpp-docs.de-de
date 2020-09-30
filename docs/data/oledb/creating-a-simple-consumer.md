@@ -4,12 +4,12 @@ ms.date: 05/09/2019
 helpviewer_keywords:
 - OLE DB consumers, creating
 ms.assetid: ae32d657-72ea-4db8-9839-75cb5cff68ae
-ms.openlocfilehash: cc24df1f15d43c384e6bf3853766fad82cf51255
-ms.sourcegitcommit: fc1de63a39f7fcbfe2234e3f372b5e1c6a286087
-ms.translationtype: HT
+ms.openlocfilehash: 0b142a73f66a796f3e22bae0aeacb88dc018aea9
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65707712"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91501869"
 ---
 # <a name="creating-a-simple-consumer"></a>Erstellen eines einfachen Consumers
 
@@ -25,11 +25,11 @@ Verwenden Sie den **ATL-Projekt-Assistenten** und den **ATL-OLE DB-Consumer-Assi
 
 ## <a name="to-create-a-console-application-for-an-ole-db-consumer"></a>So erstellen Sie eine Konsolenanwendung für einen OLE DB-Consumer
 
-1. Klicken Sie im Menü **Datei** auf **Neu**und dann auf **Projekt**.
+1. Klicken Sie im Menü **Datei** auf **Neu** und dann auf **Projekt**.
 
    Das Dialogfeld **Neues Projekt** wird angezeigt.
 
-1. Klicken Sie im Bereich **Projekttypen** auf den Ordner **Installiert** > **Visual C++**  > **Windows Desktop**, und klicken Sie dann im Bereich **Templates** auf das Symbol **Windows Desktop-Assistent**. Geben Sie im Feld **Name** den Namen Ihres Projekts ein, z.B. *MyCons*.
+1. Klicken Sie im Bereich **Projekttypen** auf den Ordner **Installiert** > **Visual C++** > **Windows Desktop**, und klicken Sie dann im Bereich **Templates** auf das Symbol **Windows Desktop-Assistent**. Geben Sie im Feld **Name** den Namen Ihres Projekts ein, z.B. *MyCons*.
 
 1. Klicken Sie auf **OK**.
 
@@ -43,7 +43,7 @@ Verwenden Sie als Nächstes den **ATL-OLE DB-Consumer-Assistenten**, um ein OLE 
 
 ## <a name="to-create-a-consumer-with-the-atl-ole-db-consumer-wizard"></a>So erstellen Sie einen Consumer mit dem ATL-OLE DB-Consumer-Assistenten
 
-1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt `MyCons`.
+1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das `MyCons` Projekt.
 
 1. Klicken Sie im Kontextmenü auf **Hinzufügen**, und klicken Sie danach auf **Neues Element**.
 
@@ -64,7 +64,7 @@ Verwenden Sie als Nächstes den **ATL-OLE DB-Consumer-Assistenten**, um ein OLE 
    1. Geben Sie auf der Registerkarte **Verbindung** die erforderlichen Informationen an, wie z.B. den Servernamen, die Anmelde-ID und das Kennwort für Ihre Datenquelle und Datenbank auf dem Server.
 
       > [!NOTE]
-      > Es besteht ein Sicherheitsproblem mit dem Feature **Kennwortspeicherung zulassen** im Dialogfeld **Datenverknüpfungseigenschaften**. Der Abschnitt **Geben Sie Informationen zum Anmelden am Server ein** enthält zwei Optionsschaltflächen: **Integrierte Sicherheit von Windows NT verwenden** und **Bestimmten Benutzernamen und ein Kennwort verwenden**.
+      > Es besteht ein Sicherheitsproblem mit dem Feature **Kennwortspeicherung zulassen** im Dialogfeld **Datenverknüpfungseigenschaften**. In **Geben Sie Informationen**ein, um sich beim Server anzumelden, gibt es zwei Options Felder: Verwenden Sie die **integrierte Sicherheit von Windows NT** , und **verwenden Sie einen bestimmten Benutzernamen und ein Kennwort**.
 
       > [!NOTE]
       > Wenn Sie **Bestimmten Benutzernamen und ein Kennwort verwenden** aktivieren, erhalten Sie die Möglichkeit zur Speicherung des Kennworts (über das Kontrollkästchen **Kennwortspeicherung zulassen**). Diese Option ist jedoch nicht sicher. Es wird empfohlen, die Option **Integrierte Sicherheit von Windows NT verwenden** auszuwählen. Diese Option verwendet Windows NT, um Ihre Identität zu überprüfen.
@@ -82,7 +82,7 @@ Verwenden Sie als Nächstes den **ATL-OLE DB-Consumer-Assistenten**, um ein OLE 
 
 1. Der Assistent vervollständigt die Namen für `Class` und die **.h-Datei** basierend auf dem Namen der Tabelle, Sicht oder gespeicherten Prozedur, die Sie ausgewählt haben. Sie können diese Namen bearbeiten, wenn Sie möchten.
 
-1. Deaktivieren Sie das Kontrollkästchen **Attributiert**, sodass der Assistent den Consumercode mithilfe von [OLE DB-Vorlagenklassen](../../data/oledb/ole-db-consumer-templates-reference.md) anstatt mit den standardmäßigen [OLE DB-Consumerattributen](../../windows/ole-db-consumer-attributes.md) erstellt.
+1. Deaktivieren Sie das Kontrollkästchen **Attributiert**, sodass der Assistent den Consumercode mithilfe von [OLE DB-Vorlagenklassen](../../data/oledb/ole-db-consumer-templates-reference.md) anstatt mit den standardmäßigen [OLE DB-Consumerattributen](../../windows/attributes/ole-db-consumer-attributes.md) erstellt.
 
 1. Wählen Sie unter **Typ** den Eintrag **Befehl** aus.
 
@@ -108,6 +108,6 @@ Der Assistent generiert eine Befehlsklasse und eine Benutzerdatensatzklasse, wie
 
 ::: moniker-end
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Erstellen eines OLE DB-Consumers mit einem Assistenten](../../data/oledb/creating-an-ole-db-consumer-using-a-wizard.md)
+[Erstellen eines OLE DB Consumers mithilfe eines Assistenten](../../data/oledb/creating-an-ole-db-consumer-using-a-wizard.md)

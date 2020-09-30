@@ -14,12 +14,12 @@ helpviewer_keywords:
 - GetProperties method
 - SetProperties method
 ms.assetid: b3cf6aea-527e-4f0d-96e0-669178b021a2
-ms.openlocfilehash: f71ca7f5fb675916c9db7e5720e6c148f2131351
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: bd4dd73c79085a2c2d85a5dbacbfd20bc920108e
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88845574"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91501757"
 ---
 # <a name="icommandpropertiesimpl-class"></a>ICommandPropertiesImpl-Klasse
 
@@ -45,7 +45,7 @@ Ihre Properties-Klasse.
 
 **Header:** „atldb.h“
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="interface-methods"></a>Schnittstellenmethoden
 
@@ -56,7 +56,7 @@ Ihre Properties-Klasse.
 
 ## <a name="remarks"></a>Bemerkungen
 
-Dies ist für-Befehle obligatorisch. Die-Implementierung wird von einer statischen Funktion bereitgestellt, die durch das [BEGIN_PROPSET_MAP](../../data/oledb/begin-propset-map.md) -Makro definiert wird.
+Dies ist für-Befehle obligatorisch. Die-Implementierung wird von einer statischen Funktion bereitgestellt, die durch das [BEGIN_PROPSET_MAP](./macros-for-ole-db-provider-templates.md#begin_propset_map) -Makro definiert wird.
 
 ## <a name="icommandpropertiesimplgetproperties"></a><a name="getproperties"></a> Icommandpropertiesimpl:: GetProperties
 
@@ -77,7 +77,7 @@ Weitere Informationen finden Sie unter [ICommandProperties:: GetProperties](/pre
 
 ### <a name="remarks"></a>Bemerkungen
 
-Siehe [BEGIN_PROPSET_MAP](../../data/oledb/begin-propset-map.md).
+Siehe [BEGIN_PROPSET_MAP](./macros-for-ole-db-provider-templates.md#begin_propset_map).
 
 ## <a name="icommandpropertiesimplsetproperties"></a><a name="setproperties"></a> Icommandpropertiesimpl:: SetProperties
 

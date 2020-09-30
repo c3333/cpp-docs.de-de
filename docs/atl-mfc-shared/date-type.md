@@ -1,5 +1,5 @@
 ---
-title: DATUM-Typ
+title: Date-Typ
 ms.date: 11/04/2016
 f1_keywords:
 - DATE
@@ -11,16 +11,16 @@ helpviewer_keywords:
 - MFC, date and time
 - hour values representation
 ms.assetid: 695853ed-b614-4575-b793-b8c287372038
-ms.openlocfilehash: 6fd9fde83474ff4f439c0dd3989d4dc35fe1241a
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 5a6c1e1cca5b2cb978d6af4208377db1a2926357
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81317920"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91502174"
 ---
-# <a name="date-type"></a>DATUM-Typ
+# <a name="date-type"></a>Date-Typ
 
-Der DATE-Typ wird mit einer 8-Byte-Gleitkommanummer implementiert. Tage werden durch ganze Zahlenstufen dargestellt, beginnend mit dem 30. Dezember 1899, Mitternacht als Zeit Null. Stundenwerte werden als absolute Werte der Stellen hinter dem Dezimalpunkt dargestellt. Die folgende Tabelle veranschaulicht mehrere Datumsangaben zusammen mit ihrem numerischen Äquivalent vom DATUMstyp:
+Der Date-Typ wird mit einer 8-Byte-Gleit Komma Zahl implementiert. Tage werden durch ganze Zahlen dargestellt, beginnend mit dem 30. Dezember 1899, Mitternacht als zeitgleich 0 (null). Stundenwerte werden als absolute Werte der Stellen hinter dem Dezimalpunkt dargestellt. In der folgenden Tabelle werden mehrere Datumsangaben zusammen mit der numerischen Date Type-Entsprechung veranschaulicht:
 
 |Datum und Uhrzeit|Darstellung|
 |-------------------|--------------------|
@@ -28,43 +28,43 @@ Der DATE-Typ wird mit einer 8-Byte-Gleitkommanummer implementiert. Tage werden d
 |1. Januar 1900, Mitternacht|2.00|
 |4. Januar 1900, Mitternacht|5.00|
 |4. Januar 1900, 6 Uhr|5.25|
-|4. Januar 1900, 12 Uhr|5.50|
-|4. Januar 1900, 21.00 Uhr|5.875|
+|4. Januar 1900 Uhr Mittag|5.50|
+|4. Januar 1900, 9 Uhr|5.875|
 
-Der DATUMstyp DATE sowie `COleDateTime` die Klasse stellen Datums- und Uhrzeitangaben als klassische Zahlenzeile dar. Die `COleDateTime` Klasse enthält mehrere Methoden zum Bearbeiten von DATE-Werten, einschließlich der Konvertierung in und aus anderen gängigen Datumsformaten.
+Der Date-Date-Typ sowie die- `COleDateTime` Klasse stellt Datumsangaben und Uhrzeiten als klassische Zahlen Linie dar. Die `COleDateTime` -Klasse enthält mehrere Methoden zum Bearbeiten von Datums Werten, einschließlich der Konvertierung in und aus anderen gängigen Datumsformaten.
 
-Bei der Arbeit mit diesen Datums- und Uhrzeitformaten in Automation sind folgende Punkte zu beachten:
+Beachten Sie die folgenden Punkte, wenn Sie mit diesen Datums-und Uhrzeit Formaten in Automation arbeiten:
 
-- Datumsangaben werden in ortszeit angegeben. Die Synchronisierung muss manuell durchgeführt werden, wenn Sie mit Datumsangaben in verschiedenen Zeitzonen arbeiten.
+- Datumsangaben werden in Ortszeit angegeben. die Synchronisierung muss bei der Arbeit mit Datumsangaben in verschiedenen Zeitzonen manuell durchgeführt werden.
 
-- Die Datumstypen berücksichtigen nicht die Sommerzeit.
+- Die Datums Typen berücksichtigen nicht die Sommerzeit.
 
-- Die Datumszeitachse wird für Datumswerte kleiner als 0 (vor dem 30. Dezember 1899) diskontinuierlich. Dies liegt daran, dass der gesamte Zahlenteil des Datumswerts als signiert behandelt wird, während der Bruchteil als nicht signiert behandelt wird. Mit anderen Worten, der Gesamtenummernteil des Datumswerts kann positiv oder negativ sein, während der Bruchteil des Datumswerts immer zum gesamten logischen Datum addiert wird. Die folgende Tabelle veranschaulicht einige Beispiele:
+- Die Datums Zeitachse wird für Datumswerte kleiner als 0 (vor 30. Dezember 1899) diskontinuierlich. Dies liegt daran, dass der ganzzahlige Teil des Datums Werts als signiert behandelt wird, während der Bruch Teil als nicht signiert behandelt wird. Anders ausgedrückt: der ganzzahlige Teil des Datums Werts kann positiv oder negativ sein, während der Bruchteile des Datums Werts immer dem logischen Gesamt Datum hinzugefügt wird. In der folgenden Tabelle werden einige Beispiele veranschaulicht:
 
 |Datum und Uhrzeit|Darstellung|
 |-------------------|--------------------|
 |27. Dezember 1899, Mitternacht|-3.00|
-|28. Dezember 1899, 12.00 Uhr|-2.50|
+|28. Dezember 1899 Uhr|-2.50|
 |28. Dezember 1899, Mitternacht|-2.00|
 |29. Dezember 1899, Mitternacht|-1.00|
-|30. Dezember 1899, 18.00 Uhr|-0.75|
-|30. Dezember 1899, 12.00 Uhr|-0.50|
+|30. Dezember 1899, 6 Uhr|-0.75|
+|30. Dezember 1899 Uhr Uhr|-0.50|
 |30. Dezember 1899, 6 Uhr|-0.25|
 |30. Dezember 1899, Mitternacht|0.00|
 |30. Dezember 1899, 6 Uhr|0,25|
-|30. Dezember 1899, 12.00 Uhr|0,50|
-|30. Dezember 1899, 18.00 Uhr|0.75|
+|30. Dezember 1899 Uhr Uhr|0.50|
+|30. Dezember 1899, 6 Uhr|0,75|
 |31. Dezember 1899, Mitternacht|1.00|
 |1. Januar 1900, Mitternacht|2.00|
-|1. Januar 1900, 12 Uhr|2.50|
+|1. Januar 1900 Uhr Mittag|2,50|
 |2. Januar 1900, Mitternacht|3.00|
 
 > [!CAUTION]
-> Da 6:00 Uhr immer durch einen Bruchwert 0,25 dargestellt wird, unabhängig davon, ob die ganze Zahl, die den Tag darstellt, positiv (nach dem 30. Dezember 1899) oder negativ (vor dem 30. Dezember 1899) ist, würde ein einfacher Gleitkommavergleich fälschlicherweise jedes DATUM sortieren, das 6:00 Uhr an einem Tag vor dem 30.12.1899 darstellt, als *ein* DATUM, das 7:00 Uhr am selben Tag darstellt.
+> Beachten Sie Folgendes *: da 6:00* am immer durch einen Bruch Wert von 0,25 dargestellt wird, unabhängig davon, ob die ganze Zahl, die den Tag darstellt, positiv ist (nach dem 30. Dezember 1899) oder negativ (vor dem 30. Dezember 1899), würde ein einfacher Gleit Komma Vergleich fälschlicherweise ein beliebiges Datum sortieren, das 6:00 Uhr an einem Tag vor 12/30/1899 darstellt.
 
-Weitere Informationen zu Problemen im `COleDateTime` Zusammenhang mit dem DATUM und den Typen finden Sie unter [COleDateTime Class](../atl-mfc-shared/reference/coledatetime-class.md) and [Date and Time: Automation Support](../atl-mfc-shared/date-and-time-automation-support.md).
+Weitere Informationen zu Problemen, die sich auf das Datum und die Typen beziehen, finden Sie `COleDateTime` unter [COleDateTime-Klasse](../atl-mfc-shared/reference/coledatetime-class.md) und [Datum und Uhrzeit: Automatisierungsunterstützung](./date-and-time.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Datum und Uhrzeit](../atl-mfc-shared/date-and-time.md)<br/>
 [COleDateTime-Klasse](../atl-mfc-shared/reference/coledatetime-class.md)

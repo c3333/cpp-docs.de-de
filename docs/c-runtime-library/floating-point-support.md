@@ -9,12 +9,12 @@ helpviewer_keywords:
 - math routines
 - floating-point numbers
 ms.assetid: e4fcaf69-5c8e-4854-a9bb-1f412042131e
-ms.openlocfilehash: 99a5de3ce816e64d4b477c8c1d3226da5f8f292e
-ms.sourcegitcommit: a6b97f5d78299ad93675de2fe0f0561f528d26c7
+ms.openlocfilehash: d1caaf5c9c0cfc7a3b6650bcb72a66b4c0028e28
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90569603"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91502112"
 ---
 # <a name="math-and-floating-point-support"></a>Mathematische Unterstützung und Gleitkommaunterstützung
 
@@ -138,7 +138,7 @@ Frühere 16-Bit-Versionen von Microsoft C/C++ und Microsoft Visual C++ den- **`l
 [_wtof, _wtof_l](../c-runtime-library/reference/atof-atof-l-wtof-wtof-l.md)|Konvertiert eine Breite Zeichenfolge in eine **`double`**
 [_y0, _y1 _yn](../c-runtime-library/reference/bessel-functions-j0-j1-jn-y0-y1-yn.md)|Berechnet die Bessel-Funktion
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Universelle C-Lauf Zeit Routinen nach Kategorie](../c-runtime-library/run-time-routines-by-category.md)\
 [Gleitkommaprimitive](../c-runtime-library/reference/floating-point-primitives.md)

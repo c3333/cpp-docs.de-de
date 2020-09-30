@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C3059
 ms.assetid: 57220324-8286-4cab-a1ab-45385eb1eae0
-ms.openlocfilehash: 897ed2beb7634cec787f0776616d9a60596a979f
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: 9b1efc0969373b6a91b0800ae71477b2371814bb
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74756460"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91501444"
 ---
 # <a name="compiler-error-c3059"></a>Compilerfehler C3059
 
 "Var": Ein threadprivate-Symbol kann nicht in der <Klausel>-Klausel verwendet werden.
 
-Ein [threadprivate](../../parallel/openmp/reference/threadprivate.md) Symbol wurde in einer Klausel verwendet.
+Ein [threadprivate](../../parallel/openmp/reference/openmp-directives.md#threadprivate) Symbol wurde in einer Klausel verwendet.
 
 Im folgenden Beispiel wird C3059 generiert.
 

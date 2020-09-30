@@ -6,12 +6,12 @@ helpviewer_keywords:
 - OLE DB templates, about OLE DB templates
 - OLE DB templates
 ms.assetid: 0c780c1b-9bba-4788-8c33-8552d9f120ac
-ms.openlocfilehash: 722bfdf02dc89e061351fd2a87b5d019db10da6e
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 217db304c7d0b5723b7af383e07290f160cc9465
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80209884"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91500916"
 ---
 # <a name="ole-db-templates-attributes-and-other-implementations"></a>Vorlagen, Attribute und andere Implementierungen von OLE DB
 
@@ -41,11 +41,11 @@ Weitere Informationen finden Sie unter:
 
 ## <a name="ole-db-attributes"></a>OLE DB Attribute
 
-Die [OLE DB Consumerattribute](../../windows/ole-db-consumer-attributes.md) stellen eine bequeme Möglichkeit zum Erstellen von OLE DB Consumern dar. Die OLE DB Attribute fügen Code auf Grundlage der [OLE DB Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md) ein, um funktionierende OLE DB-Consumer und-Anbieter zu erstellen. Wenn Sie Funktionen angeben müssen, die von den Attributen nicht unterstützt werden, können Sie die OLE DB Vorlagen in Verbindung mit den Attributen in Ihrem Code verwenden.
+Die [OLE DB Consumerattribute](../../windows/attributes/ole-db-consumer-attributes.md) stellen eine bequeme Möglichkeit zum Erstellen von OLE DB Consumern dar. Die OLE DB Attribute fügen Code auf Grundlage der [OLE DB Consumervorlagen](../../data/oledb/ole-db-consumer-templates-reference.md) ein, um funktionierende OLE DB-Consumer und-Anbieter zu erstellen. Wenn Sie Funktionen angeben müssen, die von den Attributen nicht unterstützt werden, können Sie die OLE DB Vorlagen in Verbindung mit den Attributen in Ihrem Code verwenden.
 
 ## <a name="mfc-ole-db-classes"></a>MFC-OLE DB Klassen
 
-Die MFC-Bibliothek verfügt über eine Klasse, [COleDBRecordView](../../mfc/reference/coledbrecordview-class.md), die Datenbankdaten Sätze in Steuerelementen anzeigt. Die Ansicht ist eine direkt mit einem `CRowset` Objekt verbundene Formularansicht und zeigt die Felder des `CRowset` Objekts in den Steuerelementen der Dialogfeld Vorlage an. Außerdem stellt Sie eine Standard Implementierung für den Wechsel zum ersten, nächsten, vorherigen oder letzten Datensatz und eine Schnittstelle zum Aktualisieren des Datensatzes bereit, der derzeit in der Ansicht angezeigt wird. Weitere Informationen finden Sie unter `COleDBRecordView`.
+Die MFC-Bibliothek verfügt über eine Klasse, [COleDBRecordView](../../mfc/reference/coledbrecordview-class.md), die Datenbankdaten Sätze in Steuerelementen anzeigt. Die Ansicht ist eine Formularansicht, die direkt mit einem `CRowset` -Objekt verbunden ist und die Felder des `CRowset` -Objekts in den Steuerelementen der Dialogfeld Vorlage anzeigt. Außerdem stellt Sie eine Standard Implementierung für den Wechsel zum ersten, nächsten, vorherigen oder letzten Datensatz und eine Schnittstelle zum Aktualisieren des Datensatzes bereit, der derzeit in der Ansicht angezeigt wird. Weitere Informationen finden Sie unter `COleDBRecordView`.
 
 ## <a name="ole-db-sdk-interfaces"></a>OLE DB SDK-Schnittstellen
 
@@ -53,5 +53,5 @@ In Fällen, in denen die OLE DB Vorlagen OLE DB Funktionalität nicht unterstüt
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[OLE DB-Programmierung](../../data/oledb/ole-db-programming.md)<br/>
-[Übersicht über die OLE DB-Programmierung](../../data/oledb/ole-db-programming-overview.md)
+[OLE DB Programmierung](../../data/oledb/ole-db-programming.md)<br/>
+[Übersicht über OLE DB Programmierung](../../data/oledb/ole-db-programming-overview.md)

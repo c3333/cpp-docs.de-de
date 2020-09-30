@@ -8,12 +8,12 @@ helpviewer_keywords:
 - complex numbers, math routines
 - math routines
 - complex numbers
-ms.openlocfilehash: 0616f846030e5d5260b5d781884387614e12051d
-ms.sourcegitcommit: a6b97f5d78299ad93675de2fe0f0561f528d26c7
+ms.openlocfilehash: 60f5254a2378ed38d931f304bd5e1ebe833a3332
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90569547"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91502128"
 ---
 # <a name="c-complex-math-support"></a>C-Unterstützung für komplexe Mathematik
 
@@ -41,7 +41,7 @@ Der Header „math.h“ definiert einen separaten Typ, **struct _complex**, der 
 
 ## <a name="trigonometric-functions"></a>Trigonometrische Funktionen
 
-|Funktion|BESCHREIBUNG|
+|Funktion|Beschreibung|
 |-|-|
 |[cacos, cacosf, cacosl](../c-runtime-library/reference/cacos-cacosf-cacosl.md)|Berechnen des komplexen Arcuscosinuswerts einer komplexen Zahl|
 |[casin, casinf, casinl](../c-runtime-library/reference/casin-casinf-casinl.md)|Berechnen des komplexen Arcussinuswerts einer komplexen Zahl|
@@ -52,7 +52,7 @@ Der Header „math.h“ definiert einen separaten Typ, **struct _complex**, der 
 
 ## <a name="hyperbolic-functions"></a>Hyperbolische Funktionen
 
-|Funktion|BESCHREIBUNG|
+|Funktion|Beschreibung|
 |-|-|
 |[cacosh, cacoshf, cacoshl](../c-runtime-library/reference/cacosh-cacoshf-cacoshl.md)|Berechnen des komplexen hyperbolischen Arcuscosinuswerts einer komplexen Zahl|
 |[casinh, casinhf, casinhl](../c-runtime-library/reference/casinh-casinhf-casinhl.md)|Berechnen des komplexen hyperbolischen Arcussinuswerts einer komplexen Zahl|
@@ -63,7 +63,7 @@ Der Header „math.h“ definiert einen separaten Typ, **struct _complex**, der 
 
 ## <a name="exponential-and-logarithmic-functions"></a>Exponentielle und logarithmische Funktionen
 
-|Funktion|BESCHREIBUNG|
+|Funktion|Beschreibung|
 |-|-|
 |[cexp, cexpf, cexpl](../c-runtime-library/reference/cexp-cexpf-cexpl.md)|Berechnen der Exponentialzahl zur Basis *e* einer komplexen Zahl|
 |[clog, clogf, clogl](../c-runtime-library/reference/clog-clogf-clogl.md)|Berechnen des natürlichen Logarithmus zur Basis *e* einer komplexen Zahl|
@@ -71,7 +71,7 @@ Der Header „math.h“ definiert einen separaten Typ, **struct _complex**, der 
 
 ## <a name="power-and-absolute-value-functions"></a>Potenzfunktionen und Absolutwertfunktionen
 
-|Funktion|BESCHREIBUNG|
+|Funktion|Beschreibung|
 |-|-|
 |[cabs, cabsf, cabsl](../c-runtime-library/reference/cabs-cabsf-cabsl.md)|Berechnen des komplexen Absolutwerts (auch Norm, Modulo oder Größe genannt) für eine komplexe Zahl|
 |[cpow, cpowf, cpowl](../c-runtime-library/reference/cpow-cpowf-cpowl.md)|Berechnen der komplexen Potenzfunktion x<sup>y</sup>|
@@ -79,7 +79,7 @@ Der Header „math.h“ definiert einen separaten Typ, **struct _complex**, der 
 
 ## <a name="manipulation-functions"></a>Bearbeitungsfunktionen
 
-|Funktion|BESCHREIBUNG|
+|Funktion|Beschreibung|
 |-|-|
 |[_Cbuild, _FCbuild, _LCbuild](../c-runtime-library/reference/cbuild-fcbuild-lcbuild.md)|Erstellen einer komplexen Zahl aus realen und nicht realen Teilen|
 |[carg, cargf, cargl](../c-runtime-library/reference/carg-cargf-cargl.md)|Berechnen des Arguments (also des Phasenwinkels) einer komplexen Zahl|
@@ -93,12 +93,12 @@ Der Header „math.h“ definiert einen separaten Typ, **struct _complex**, der 
 
 Da komplexe Zahlen keinen nativen Typ im Microsoft-Compiler darstellen, werden die arithmetischen Standardoperatoren nicht für komplexe Typen definiert. Der Einfachheit halber werden diese komplexen mathematischen Bibliotheksfunktionen bereitgestellt, um die beschränkte Bearbeitung komplexer Zahlen im Benutzercode zu ermöglichen:
 
-|Funktion|BESCHREIBUNG|
+|Funktion|Beschreibung|
 |-|-|
 |[_Cmulcc, _FCmulcc, _LCmulcc](../c-runtime-library/reference/cmulcc-fcmulcc-lcmulcc.md)|Addition zweier komplexer Zahlen|
 |[_Cmulcr, _FCmulcr, _LCmulcr](../c-runtime-library/reference/cmulcr-fcmulcr-lcmulcr.md)|Multiplikation einer komplexe Zahl und einer Gleitkommazahl|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Typgenerische Mathematik](tgmath.md)\
 [Universelle C-Laufzeitroutinen nach Kategorie](../c-runtime-library/run-time-routines-by-category.md)

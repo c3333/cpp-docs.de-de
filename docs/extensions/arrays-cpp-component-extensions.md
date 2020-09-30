@@ -12,12 +12,12 @@ helpviewer_keywords:
 - multidimensional arrays
 - arrays [C++]
 ms.assetid: 49445812-d775-4db1-a231-869598dbb955
-ms.openlocfilehash: ecd8425bf7bcc9772d7b1327add79b89aea629a7
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 814be57caafed117a1403105d46326ac53682578
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80182239"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91500894"
 ---
 # <a name="arrays-ccli-and-ccx"></a>Arrays (C++/CLI und C++/CX)
 
@@ -32,7 +32,7 @@ Im Gegensatz zu standardmäßigem C++ ist die Indizierung kein Synonym für Zeig
 
 Weitere Informationen zu Arrays finden Sie hier:
 
-- [Vorgehensweise: Verwenden von Arrays in C++/CLI](../dotnet/how-to-use-arrays-in-cpp-cli.md)
+- [Gewusst wie: Verwenden von Arrays in C++/CLI](../dotnet/how-to-use-arrays-in-cpp-cli.md)
 
 - [Variable Argumentlisten (...) (C++/CLI)](variable-argument-lists-dot-dot-dot-cpp-cli.md)
 
@@ -52,13 +52,13 @@ Im ersten Beispiel der Syntax wird mit dem **ref new**-Aggregatschlüsselwort ei
     {initialization-list [,...]}
 ```
 
-*qualifiers*<br/>
-(Optional) Einer oder mehrere der folgenden Speicherklassenspezifizierer: [mutable](../cpp/mutable-data-members-cpp.md), [volatile](../cpp/volatile-cpp.md), [const](../cpp/const-cpp.md), [extern](../cpp/using-extern-to-specify-linkage.md), [static](../cpp/static-members-cpp.md).
+*und „Me.“*<br/>
+(Optional) Einer oder mehrere der folgenden Speicherklassenspezifizierer: [mutable](../cpp/mutable-data-members-cpp.md), [volatile](../cpp/volatile-cpp.md), [const](../cpp/const-cpp.md), [extern](../cpp/extern-cpp.md), [static](../cpp/static-members-cpp.md).
 
-*array-type*<br/>
+*Arraytyp*<br/>
 Der Typ der Arrayvariablen. Gültige Typen sind Windows-Runtime-Klassen und grundlegende Typen, Verweisklassen und -strukturen, Wertklassen und -strukturen und native Zeiger (`type*`).
 
-*rank*<br/>
+*gehören*<br/>
 (Optional) Die Anzahl der Dimensionen des Arrays. Muss 1 sein.
 
 *identifier*<br/>
@@ -108,13 +108,13 @@ Im ersten Beispiel der Syntax wird mit dem **gcnew**-Schlüsselwort ein Array zu
     {initialization-list [,...]}
 ```
 
-*qualifiers*<br/>
-(Optional) Einer oder mehrere der folgenden Speicherklassenspezifizierer: [mutable](../cpp/mutable-data-members-cpp.md), [volatile](../cpp/volatile-cpp.md), [const](../cpp/const-cpp.md), [extern](../cpp/using-extern-to-specify-linkage.md), [static](../cpp/static-members-cpp.md).
+*und „Me.“*<br/>
+(Optional) Einer oder mehrere der folgenden Speicherklassenspezifizierer: [mutable](../cpp/mutable-data-members-cpp.md), [volatile](../cpp/volatile-cpp.md), [const](../cpp/const-cpp.md), [extern](../cpp/extern-cpp.md), [static](../cpp/static-members-cpp.md).
 
-*array-type*<br/>
+*Arraytyp*<br/>
 Der Typ der Arrayvariablen. Gültige Typen sind Windows-Runtime-Klassen und grundlegende Typen, Verweisklassen und -strukturen, Wertklassen und -strukturen, native Zeiger (`type*`) und native POD-Typen (Plain Old Data).
 
-*rank*<br/>
+*gehören*<br/>
 (Optional) Die Anzahl der Dimensionen des Arrays. Der Standardwert ist 1, der Höchstwert 32. Jede Dimension des Arrays ist selbst ein Array.
 
 *identifier*<br/>
@@ -141,7 +141,7 @@ Alle verwalteten Arrays erben von `System::Array`. Eine beliebige Methode oder E
 
 Wenn Sie ein Array zuordnen, dessen Elementtyp Zeiger auf eine verwaltete Klasse ist, sind die Elemente 0-initialisiert.
 
-Wenn Sie ein Array zuordnen, dessen Elementtyp ein Werttyp `V` ist, wird der Standardkonstruktor für `V` auf jedes Arrayelement angewendet. Weitere Informationen finden Sie unter [.NET Framework-Entsprechungen der nativen Typen in C++ (C++/CLI)](../dotnet/dotnet-framework-equivalents-to-cpp-native-types-cpp-cli.md).
+Wenn Sie ein Array zuordnen, dessen Elementtyp ein Werttyp `V` ist, wird der Standardkonstruktor für `V` auf jedes Arrayelement angewendet. Weitere Informationen finden Sie unter [.NET Framework-Entsprechungen der nativen Typen in C++ (C++/CLI)](../dotnet/managed-types-cpp-cli.md#dotnet).
 
 Zur Kompilierzeit können Sie mit `__is_ref_array(type)` erkennen, ob ein Typ ein Common Language Runtime-Array (CLR) ist. Weitere Informationen finden Sie unter [Compilerunterstützung für Typmerkmale](compiler-support-for-type-traits-cpp-component-extensions.md).
 
@@ -170,4 +170,4 @@ int main() {
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Komponentenerweiterungen für .NET und UWP](component-extensions-for-runtime-platforms.md)
+[Komponenten Erweiterungen für .net und UWP](component-extensions-for-runtime-platforms.md)

@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C3055
 ms.assetid: 60446ee0-18dd-48fc-9059-f0a14229dce8
-ms.openlocfilehash: 0bfd045079a7f0fbbd078d3d859d5687e96338dd
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: ed0f031fcd0ff0c621556bf73572d720fc2c1352
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74761171"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91501624"
 ---
 # <a name="compiler-error-c3055"></a>Compilerfehler C3055
 
 'Symbol': Auf das Symbol kann erst verwiesen werden, wenn es in der threadprivate-Direktive verwendet wird.
 
-Es wurde auf ein Symbol verwiesen und dieses dann in einer [threadprivate](../../parallel/openmp/reference/threadprivate.md) -Klausel verwendet. Dies ist nicht zulässig.
+Es wurde auf ein Symbol verwiesen und dieses dann in einer [threadprivate](../../parallel/openmp/reference/openmp-directives.md#threadprivate) -Klausel verwendet. Dies ist nicht zulässig.
 
 Im folgenden Beispiel wird C3055 generiert:
 

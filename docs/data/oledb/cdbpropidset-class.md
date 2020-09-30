@@ -31,16 +31,16 @@ helpviewer_keywords:
 - operator=, property sets
 - SetGUID method
 ms.assetid: 52bb806c-9581-494d-9af7-50d8a4834805
-ms.openlocfilehash: 24cc621e522ed1939fe3127d97e8d54b75fa1618
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 4de218188326dad434c5b0d355a3a15d39bb576c
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88838294"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91502501"
 ---
 # <a name="cdbpropidset-class"></a>CDBPropIDSet-Klasse
 
-Erbt von der `DBPROPIDSET` -Struktur und fügt einen Konstruktor hinzu, der Schlüsselfelder und die [addpropertyid](../../data/oledb/cdbpropidset-addpropertyid.md) -Zugriffsmethode initialisiert.
+Erbt von der `DBPROPIDSET` -Struktur und fügt einen Konstruktor hinzu, der Schlüsselfelder und die [addpropertyid](#addpropertyid) -Zugriffsmethode initialisiert.
 
 ## <a name="syntax"></a>Syntax
 
@@ -52,7 +52,7 @@ class CDBPropIDSet : public tagDBPROPIDSET
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -126,7 +126,7 @@ in Eine GUID, die verwendet wird, um das- `guidPropertySet` Feld der [DBPROPIDSE
 
 ### <a name="remarks"></a>Bemerkungen
 
-Dieses Feld kann auch durch den- [Konstruktor](../../data/oledb/cdbpropidset-cdbpropidset.md) festgelegt werden. Diese Funktion wird aufgerufen, wenn Sie den Standardkonstruktor für diese Klasse verwenden.
+Dieses Feld kann auch durch den- [Konstruktor](#cdbpropidset) festgelegt werden. Diese Funktion wird aufgerufen, wenn Sie den Standardkonstruktor für diese Klasse verwenden.
 
 ## <a name="cdbpropidsetoperator-"></a><a name="op_equal"></a> Cdbpropidset:: Operator =
 

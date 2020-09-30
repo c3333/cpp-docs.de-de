@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - C3409
 ms.assetid: e372d9fa-230c-4b28-b6d3-6ad81ccf9dbb
-ms.openlocfilehash: 360fedc6cadf275704a790c257c42ac8bde7873d
-ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
+ms.openlocfilehash: d3800998ded1758ab1de92af689d9d4613c2c61e
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90742059"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91502333"
 ---
 # <a name="compiler-error-c3409"></a>Compilerfehler C3409
 
@@ -19,7 +19,7 @@ ms.locfileid: "90742059"
 
 ## <a name="remarks"></a>Bemerkungen
 
-Die eckigen Klammern wurden vom Compiler als [Attribut](../../windows/attributes-alphabetical-reference.md) Block interpretiert, aber es wurden keine Attribute gefunden.
+Die eckigen Klammern wurden vom Compiler als [Attribut](../../windows/attributes/attributes-alphabetical-reference.md) Block interpretiert, aber es wurden keine Attribute gefunden.
 
 Der Compiler generiert diesen Fehler möglicherweise, wenn Sie eckige Klammern als Teil der Definition eines Lambda-Ausdrucks verwenden. Dieser Fehler tritt auf, wenn der Compiler nicht bestimmen kann, ob die eckigen Klammern Teil der Definition eines Lambda-Ausdrucks oder eines Attribut Blocks sind. Weitere Informationen zu Lambda-Ausdrücken finden Sie unter [Lambda-Ausdrücke](../../cpp/lambda-expressions-in-cpp.md).
 
@@ -67,6 +67,6 @@ int main()
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[attribute](../../windows/attributes-alphabetical-reference.md)<br/>
+[attribute](../../windows/attributes/attributes-alphabetical-reference.md)<br/>
 [Lambda-Ausdrücke](../../cpp/lambda-expressions-in-cpp.md)<br/>
 [Syntax von Lambda Ausdrücken](../../cpp/lambda-expression-syntax.md)

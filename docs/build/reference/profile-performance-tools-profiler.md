@@ -7,12 +7,12 @@ helpviewer_keywords:
 - -PROFILE linker option
 - /PROFILE linker option
 ms.assetid: e676baa1-5063-47a3-a357-ba0d1f0d1699
-ms.openlocfilehash: cf07154c6b681e2ad30a85a62a0db996c3f3d911
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: 07952c979fd66291b1744521d83e4556f010d297
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80078308"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91500782"
 ---
 # <a name="profile-performance-tools-profiler"></a>/PROFILE (Leistungstools-Profiler)
 
@@ -38,7 +38,7 @@ Erstellt eine Ausgabedatei, die mit dem Leistungstoolprofiler verwendet werden k
 
 /Profile bewirkt, dass der Linker einen Verschiebungs Abschnitt im Programm Abbild generiert.  Ein Verschiebungs Abschnitt ermöglicht dem Profiler das Transformieren des Programm Images, um Profildaten zu erhalten.
 
-**/Profile** ist nur in der Enterprise-Version (Team Development) verfügbar.  Weitere Informationen zu PREfast finden Sie unter [Code Analyse für C/C++ Overview](/cpp/code-quality/code-analysis-for-c-cpp-overview).
+**/Profile** ist nur in der Enterprise-Version (Team Development) verfügbar.  Weitere Informationen zu PREfast finden Sie unter [Übersicht über die Code Analyse für C/C++](../../code-quality/code-analysis-for-c-cpp-overview.md).
 
 ### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Linkeroption in der Visual Studio-Entwicklungsumgebung fest
 
@@ -58,9 +58,9 @@ Erstellt eine Ausgabedatei, die mit dem Leistungstoolprofiler verwendet werden k
 
 ### <a name="to-set-this-linker-option-within-visual-studio-cmake-project"></a>So legen Sie diese Linkeroption innerhalb des Visual Studio cmake-Projekts fest
 
-**Cmake** -Projekt verfügt nicht über eine **Eigenschaften Seite**. die Linkeroptionen können durch Ändern der Datei "CMakeLists. txt" festgelegt werden.
+**Cmake** -Projekt verfügt nicht über eine **Eigenschaften Seite**. die Linkeroptionen können durch Ändern der CMakeLists.txt festgelegt werden.
 
-1. Öffnen Sie die Datei "CMakeLists. txt" im Stammverzeichnis des Projekts.
+1. Öffnen Sie die CMakeLists.txt im Stammverzeichnis des Projekts.
 
 1. Fügen Sie unten Code hinzu. Weitere Informationen finden Sie unter [cmake-Verweise](https://cmake.org/cmake/help/v3.0/command/set_target_properties.html) .
 

@@ -36,12 +36,12 @@ helpviewer_keywords:
 - calculating exponentials
 - exp function
 ms.assetid: 7070016d-1143-407e-9e9a-6b059bb88867
-ms.openlocfilehash: 44652e5d06d842bd2eb2e280409a1e55fc66f582
-ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
+ms.openlocfilehash: f6733f293f1c8f78e8143d9fdd395013147bbe83
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89555890"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91502095"
 ---
 # <a name="exp-expf-expl"></a>exp, expf, expl
 
@@ -86,7 +86,7 @@ Die **Exp** -Funktionen geben den Exponentialwert des Gleit Komma Parameters *x*
 
 Die **Exp** -Funktion verfügt über eine Implementierung, die Streaming SIMD Extensions 2 (SSE2) verwendet. Informationen und Einschränkungen zur Verwendung der SSE2-Implementierung finden Sie unter [_set_SSE2_enable](set-sse2-enable.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 C++ ermöglicht überladen, sodass Sie über Ladungen von **Exp** aufzurufen können, die ein- **`float`** oder-Argument annehmen **`long double`** . Wenn Sie in einem C-Programm das-Makro verwenden, \<tgmath.h> um diese Funktion aufzurufen, verwendet **Exp** immer, und gibt es zurück **`double`** .
 
@@ -94,12 +94,12 @@ Wenn Sie das- \<tgmath.h> `exp()` Makro verwenden, bestimmt der Typ des Argument
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|Erforderlicher C-Header|Erforderlicher C++-Header|
 |--------------|---------------------|---|
 |**Exp**, **expf**, **Expl**|\<math.h>|\<cmath> oder \<math.h>|
-|**Exp** -Makro| \<tgmath.h> || 
+|**Exp** -Makro| \<tgmath.h> ||
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 

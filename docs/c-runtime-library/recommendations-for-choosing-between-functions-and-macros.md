@@ -8,12 +8,12 @@ helpviewer_keywords:
 - functions [CRT], vs. macros
 - macros, vs. functions
 ms.assetid: 18a633d6-cf1c-470c-a649-fa7677473e2b
-ms.openlocfilehash: 8c47bf1924aeb94e2e4c9ee9358627cafcf90cba
-ms.sourcegitcommit: a6b97f5d78299ad93675de2fe0f0561f528d26c7
+ms.openlocfilehash: 67dafc0a9a2c2904fcdd30d5e0177251af8a190a
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90569529"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91500734"
 ---
 # <a name="recommendations-for-choosing-between-functions-and-macros"></a>Empfehlungen für die Wahl zwischen Funktionen und Macros
 
@@ -43,7 +43,7 @@ Wenn Sie zwischen einer Funktions- und Makroimplementierung einer Bibliotheksrou
 
 - **Typüberprüfung**: Wenn Sie eine Funktion deklarieren, kann der Compiler die Argumenttypen überprüfen. Da Sie kein Makro deklarieren können, kann der Compiler die Makroargumenttypen nicht überprüfen; obwohl er die Anzahl von Argumenten überprüfen kann, die Sie einem Makro übergeben.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Typgenerische Mathematik](tgmath.md)\
 [Funktionen der CRT-Bibliothek](../c-runtime-library/crt-library-features.md)

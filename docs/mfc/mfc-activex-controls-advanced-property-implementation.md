@@ -6,12 +6,12 @@ helpviewer_keywords:
 - properties [MFC], ActiveX controls
 - MFC ActiveX controls [MFC], properties
 ms.assetid: ec2e6759-5a8e-41d8-a275-99af8ff6f32e
-ms.openlocfilehash: f5abef4db2f9c6d375428c0b0fd313198ce6283f
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 017959c5809d324af6ab13247fd093a6df280dab
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84621217"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91502208"
 ---
 # <a name="mfc-activex-controls-advanced-property-implementation"></a>MFC-ActiveX-Steuerelemente: Weiterführende Eigenschaftenimplementierung
 
@@ -24,7 +24,7 @@ Dieser Artikel beschreibt Themen im Zusammenhang mit der Implementierung von erw
 
 - [Zurückgeben von Fehlercodes aus einer Eigenschaft](#_core_returning_error_codes_from_a_property)
 
-## <a name="read-only-and-write-only-properties"></a><a name="_core_read2donly_and_write2donly_properties"></a>Schreibgeschützte und Lese geschützte Eigenschaften
+## <a name="read-only-and-write-only-properties"></a><a name="_core_read2donly_and_write2donly_properties"></a> Schreibgeschützte und Lese geschützte Eigenschaften
 
 Der Assistent zum Hinzufügen von Eigenschaften bietet eine schnelle und einfache Methode zum Implementieren von schreibgeschützten oder Lese geschützten Eigenschaften für das Steuerelement.
 
@@ -38,7 +38,7 @@ Der Assistent zum Hinzufügen von Eigenschaften bietet eine schnelle und einfach
 
 1. Klicken Sie im Kontextmenü auf **Hinzufügen** , und klicken Sie dann auf **Eigenschaft hinzufügen**.
 
-   Dadurch wird der [Assistent zum Hinzufügen von Eigenschaften](../ide/names-add-property-wizard.md)geöffnet.
+   Dadurch wird der [Assistent zum Hinzufügen von Eigenschaften](../ide/adding-a-property-visual-cpp.md#names-add-property-wizard)geöffnet.
 
 1. Geben Sie im Feld **Eigenschaftsname** den Namen der Eigenschaft ein.
 
@@ -60,18 +60,18 @@ Wenn Sie möchten, dass eine Eigenschaft bedingt schreibgeschützt oder schreibg
 
 In diesem Codebeispiel `SetNotSupported` wird aufgerufen, wenn der `m_bReadOnlyMode` Datenmember " **true**" ist. Wenn der Wert **false**ist, wird die-Eigenschaft auf den neuen Wert festgelegt.
 
-## <a name="returning-error-codes-from-a-property"></a><a name="_core_returning_error_codes_from_a_property"></a>Zurückgeben von Fehler Codes aus einer Eigenschaft
+## <a name="returning-error-codes-from-a-property"></a><a name="_core_returning_error_codes_from_a_property"></a> Zurückgeben von Fehler Codes aus einer Eigenschaft
 
 Um anzugeben, dass beim Versuch, eine Eigenschaft zu erhalten oder festzulegen, ein Fehler aufgetreten ist, verwenden Sie die- `COleControl::ThrowError` Funktion, die einen SCODE (Statuscode) als Parameter annimmt. Sie können einen vordefinierten SCODE verwenden oder einen eigenen definieren. Eine Liste der vordefinierten scodes und Anweisungen zum Definieren von benutzerdefinierten scodes finden [Sie unter Behandeln von Fehlern in Ihrem ActiveX-Steuer](mfc-activex-controls-advanced-topics.md) Element im Artikel ActiveX-Steuerelemente: Weiterführende Themen.
 
 Hilfsfunktionen sind für die gängigsten vordefinierten scodes vorhanden, z. b. [COleControl:: SetNotSupported](reference/colecontrol-class.md#setnotsupported), [COleControl:: GetNotSupported](reference/colecontrol-class.md#getnotsupported)und [COleControl:: setnotzugelassene](reference/colecontrol-class.md#setnotpermitted).
 
 > [!NOTE]
-> `ThrowError`ist nur als Methode zum Zurückgeben eines Fehlers innerhalb der Get-oder Set-Funktion einer Eigenschaft oder einer Automatisierungs Methode vorgesehen. Dies ist das einzige Mal, dass der entsprechende Ausnahmehandler auf dem Stapel vorhanden ist.
+> `ThrowError` ist nur als Methode zum Zurückgeben eines Fehlers innerhalb der Get-oder Set-Funktion einer Eigenschaft oder einer Automatisierungs Methode vorgesehen. Dies ist das einzige Mal, dass der entsprechende Ausnahmehandler auf dem Stapel vorhanden ist.
 
 Weitere Informationen zum Melden von Ausnahmen in anderen Codebereichen finden Sie unter [COleControl:: FireError](reference/colecontrol-class.md#fireerror) und im Abschnitt [Behandeln von Fehlern in Ihrem ActiveX-Steuer](mfc-activex-controls-advanced-topics.md) Element im Artikel ActiveX-Steuerelemente: Weiterführende Themen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-ActiveX-Steuerelemente](mfc-activex-controls.md)<br/>
 [MFC-ActiveX-Steuerelemente: Eigenschaften](mfc-activex-controls-properties.md)<br/>

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - DDV (dialog data validation) [MFC]
 - data validation [MFC], message boxes
 ms.assetid: f070c309-2044-4ff2-8c92-1ec1ea84af58
-ms.openlocfilehash: 99540214d1b903c66d350145c08ab657d12ef8f7
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 9de2db002d7f06e797531c09af0a021c402eec7d
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84616754"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91502279"
 ---
 # <a name="dialog-data-validation"></a>Validieren von Dialogfelddaten
 
@@ -22,10 +22,10 @@ Sie können die Überprüfung zusätzlich zum Datenaustausch angeben, indem Sie 
 
 Sie können auch eigene benutzerdefinierte DDX-und DDV-Routinen definieren. Ausführliche Informationen zu diesen und anderen Aspekten von DDX und DDV finden [Sie unter MFC Technical Note 26](tn026-ddx-and-ddv-routines.md).
 
-Mit dem [Assistenten zum Hinzufügen von Mitgliedsvariablen](../ide/add-member-variable-wizard.md) werden alle DDX-und DDV-Aufrufe in der Datenzuordnung geschrieben.
+Mit dem [Assistenten zum Hinzufügen von Mitgliedsvariablen](../ide/adding-a-member-variable-visual-cpp.md#add-member-variable-wizard) werden alle DDX-und DDV-Aufrufe in der Datenzuordnung geschrieben.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Dialogdatenaustausch und -validierung](dialog-data-exchange-and-validation.md)<br/>
+[Dialog Datenaustausch und-Validierung](dialog-data-exchange-and-validation.md)<br/>
 [Arbeiten mit Dialogfeldern in MFC](life-cycle-of-a-dialog-box.md)<br/>
 [Dialogdatenaustausch](dialog-data-exchange.md)

@@ -57,12 +57,12 @@ helpviewer_keywords:
 - to_array member [STL/CLR]
 - value_type member [STL/CLR]
 ms.assetid: 9ea7dec3-ea98-48ff-87d0-a5afc924aaf2
-ms.openlocfilehash: ce4b3ca37fc5e13ace3058cb9ec9e9daad073b47
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 2d5c1d30704838cdb69516d68d328c90a094a08e
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87210929"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91502392"
 ---
 # <a name="queue-stlclr"></a>queue (STL/CLR)
 
@@ -98,7 +98,7 @@ Der Typ des zugrunde liegenden Containers.
 
 ## <a name="declarations"></a>Deklarationen
 
-|Typendefinition|BESCHREIBUNG|
+|Typendefinition|Beschreibung|
 |---------------------|-----------------|
 |[queue::const_reference (STL/CLR)](#const_reference)|Der Typ eines konstanten Verweises auf ein Element.|
 |[queue::container_type (STL/CLR)](#container_type)|Der Typ des zugrunde liegenden Containers.|
@@ -109,7 +109,7 @@ Der Typ des zugrunde liegenden Containers.
 |[queue::size_type (STL/CLR)](#size_type)|Der Typ eines Abstands mit Vorzeichen zwischen zwei Elementen.|
 |[queue::value_type (STL/CLR)](#value_type)|Der Typ eines Elements.|
 
-|Memberfunktion|BESCHREIBUNG|
+|Memberfunktion|Beschreibung|
 |---------------------|-----------------|
 |[queue::assign (STL/CLR)](#assign)|Ersetzt alle Elemente.|
 |[queue::back (STL/CLR)](#back)|Greift auf das letzte Element zu.|
@@ -122,12 +122,12 @@ Der Typ des zugrunde liegenden Containers.
 |[queue::size (STL/CLR)](#size)|Ermittelt die Anzahl von Elementen.|
 |[queue::to_array (STL/CLR)](#to_array)|Kopiert die gesteuerte Sequenz in ein neues Array.|
 
-|Eigenschaft|BESCHREIBUNG|
+|Eigenschaft|Beschreibung|
 |--------------|-----------------|
 |[queue::back_item (STL/CLR)](#back_item)|Greift auf das letzte Element zu.|
 |[queue::front_item (STL/CLR)](#front_item)|Greift auf das erste Element zu.|
 
-|Operator|BESCHREIBUNG|
+|Operator|Beschreibung|
 |--------------|-----------------|
 |[queue::operator= (STL/CLR)](#op_as)|Ersetzt die kontrollierte Sequenz.|
 |[Operator! = (Queue) (STL/CLR)](#op_neq)|Bestimmt, ob ein-Objekt ungleich einem `queue` anderen `queue` Objekt ist.|
@@ -139,7 +139,7 @@ Der Typ des zugrunde liegenden Containers.
 
 ## <a name="interfaces"></a>Schnittstellen
 
-|Schnittstelle|BESCHREIBUNG|
+|Schnittstelle|Beschreibung|
 |---------------|-----------------|
 |<xref:System.ICloneable>|Duplizieren eines Objekts.|
 |IQueue\<Value, Container>|Verwalten Sie einen generischen Container Adapter.|
@@ -148,9 +148,9 @@ Der Typ des zugrunde liegenden Containers.
 
 Das-Objekt ordnet Speicher für die Sequenz zu, die er durch einen zugrunde liegenden Container (vom Typ) steuert und freigibt, der `Container` `Value` Elemente speichert und Bedarfs gesteuert wächst. Das-Objekt schränkt den Zugriff ein, um nur das erste Element per Push zu übertragen und das letzte Element zu pingen. dabei wird eine First-in-First-Out-Warteschlange implementiert (auch als FIFO-Warteschlange bezeichnet).
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
-## <a name="queueassign-stlclr"></a><a name="assign"></a>Queue:: Assign (STL/CLR)
+## <a name="queueassign-stlclr"></a><a name="assign"></a> Queue:: Assign (STL/CLR)
 
 Ersetzt alle Elemente.
 
@@ -204,7 +204,7 @@ a b c
 a b c
 ```
 
-## <a name="queueback-stlclr"></a><a name="back"></a>Queue:: Back (STL/CLR)
+## <a name="queueback-stlclr"></a><a name="back"></a> Queue:: Back (STL/CLR)
 
 Greift auf das letzte Element zu.
 
@@ -256,7 +256,7 @@ back() = c
 a b x
 ```
 
-## <a name="queueback_item-stlclr"></a><a name="back_item"></a>Queue:: back_item (STL/CLR)
+## <a name="queueback_item-stlclr"></a><a name="back_item"></a> Queue:: back_item (STL/CLR)
 
 Greift auf das letzte Element zu.
 
@@ -308,7 +308,7 @@ back_item = c
 a b x
 ```
 
-## <a name="queueconst_reference-stlclr"></a><a name="const_reference"></a>Queue:: const_reference (STL/CLR)
+## <a name="queueconst_reference-stlclr"></a><a name="const_reference"></a> Queue:: const_reference (STL/CLR)
 
 Der Typ eines konstanten Verweises auf ein Element.
 
@@ -352,7 +352,7 @@ int main()
 a b c
 ```
 
-## <a name="queuecontainer_type-stlclr"></a><a name="container_type"></a>Queue:: container_type (STL/CLR)
+## <a name="queuecontainer_type-stlclr"></a><a name="container_type"></a> Queue:: container_type (STL/CLR)
 
 Der Typ des zugrunde liegenden Containers.
 
@@ -394,7 +394,7 @@ int main()
 a b c
 ```
 
-## <a name="queuedifference_type-stlclr"></a><a name="difference_type"></a>Queue::d ifference_type (STL/CLR)
+## <a name="queuedifference_type-stlclr"></a><a name="difference_type"></a> Queue::d ifference_type (STL/CLR)
 
 Die Typen eines Abstands mit Vorzeichen zwischen zwei Elementen.
 
@@ -452,7 +452,7 @@ pushing 2 = -2
 popping 3 = 3
 ```
 
-## <a name="queueempty-stlclr"></a><a name="empty"></a>Queue:: Empty (STL/CLR)
+## <a name="queueempty-stlclr"></a><a name="empty"></a> Queue:: Empty (STL/CLR)
 
 Testet, ob keine Elemente vorhanden sind.
 
@@ -464,7 +464,7 @@ bool empty();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt „true“ für eine leere gesteuerte Sequenz zurück. Dies entspricht [Queue:: Size (STL/CLR)](../dotnet/queue-size-stl-clr.md) `() == 0` . Sie verwenden es, um zu testen, ob die Warteschlange leer ist.
+Die Memberfunktion gibt „true“ für eine leere gesteuerte Sequenz zurück. Dies entspricht [Queue:: Size (STL/CLR)](#size) `() == 0` . Sie verwenden es, um zu testen, ob die Warteschlange leer ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -506,7 +506,7 @@ size() = 0
 empty() = True
 ```
 
-## <a name="queuefront-stlclr"></a><a name="front"></a>Queue:: Front (STL/CLR)
+## <a name="queuefront-stlclr"></a><a name="front"></a> Queue:: Front (STL/CLR)
 
 Greift auf das erste Element zu.
 
@@ -558,7 +558,7 @@ front() = a
 x b c
 ```
 
-## <a name="queuefront_item-stlclr"></a><a name="front_item"></a>Queue:: front_item (STL/CLR)
+## <a name="queuefront_item-stlclr"></a><a name="front_item"></a> Queue:: front_item (STL/CLR)
 
 Greift auf das erste Element zu.
 
@@ -610,7 +610,7 @@ front_item = a
 x b c
 ```
 
-## <a name="queuegeneric_container-stlclr"></a><a name="generic_container"></a>Queue:: generic_container (STL/CLR)
+## <a name="queuegeneric_container-stlclr"></a><a name="generic_container"></a> Queue:: generic_container (STL/CLR)
 
 Der Typ der generischen Schnittstelle für den Container Adapter.
 
@@ -673,7 +673,7 @@ a b c d
 a b c d e
 ```
 
-## <a name="queuegeneric_value-stlclr"></a><a name="generic_value"></a>Queue:: generic_value (STL/CLR)
+## <a name="queuegeneric_value-stlclr"></a><a name="generic_value"></a> Queue:: generic_value (STL/CLR)
 
 Der Typ eines Elements, das mit der generischen-Schnittstelle für den Container verwendet werden soll.
 
@@ -731,7 +731,7 @@ a b c
 a b c
 ```
 
-## <a name="queueget_container-stlclr"></a><a name="get_container"></a>Queue:: get_container (STL/CLR)
+## <a name="queueget_container-stlclr"></a><a name="get_container"></a> Queue:: get_container (STL/CLR)
 
 Greift auf den zugrunde liegenden Container zu.
 
@@ -772,7 +772,7 @@ int main()
 a b c
 ```
 
-## <a name="queueoperator-stlclr"></a><a name="op_as"></a>Queue:: Operator = (STL/CLR)
+## <a name="queueoperator-stlclr"></a><a name="op_as"></a> Queue:: Operator = (STL/CLR)
 
 Ersetzt die kontrollierte Sequenz.
 
@@ -826,7 +826,7 @@ a b c
 a b c
 ```
 
-## <a name="queuepop-stlclr"></a><a name="pop"></a>Queue::p op (STL/CLR)
+## <a name="queuepop-stlclr"></a><a name="pop"></a> Queue::p op (STL/CLR)
 
 Entfernt das letzte Element.
 
@@ -874,7 +874,7 @@ a b c
 b c
 ```
 
-## <a name="queuepush-stlclr"></a><a name="push"></a>Queue::p USH (STL/CLR)
+## <a name="queuepush-stlclr"></a><a name="push"></a> Queue::p USH (STL/CLR)
 
 Fügt ein neues letztes Element hinzu.
 
@@ -915,7 +915,7 @@ int main()
 a b c
 ```
 
-## <a name="queuequeue-stlclr"></a><a name="queue"></a>Queue:: Queue (STL/CLR)
+## <a name="queuequeue-stlclr"></a><a name="queue"></a> Queue:: Queue (STL/CLR)
 
 Erstellt ein Container Adapter Objekt.
 
@@ -1008,7 +1008,7 @@ x x x x x
 x x x x x
 ```
 
-## <a name="queuereference-stlclr"></a><a name="reference"></a>Queue:: Reference (STL/CLR)
+## <a name="queuereference-stlclr"></a><a name="reference"></a> Queue:: Reference (STL/CLR)
 
 Der Typ eines Verweises auf ein Element.
 
@@ -1057,7 +1057,7 @@ a b c
 a b x
 ```
 
-## <a name="queuesize-stlclr"></a><a name="size"></a>Queue:: Size (STL/CLR)
+## <a name="queuesize-stlclr"></a><a name="size"></a> Queue:: Size (STL/CLR)
 
 Ermittelt die Anzahl von Elementen.
 
@@ -1069,7 +1069,7 @@ size_type size();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt die Länge der gesteuerten Sequenz zurück. Sie verwenden Sie, um die Anzahl der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden. Wenn Sie nur für Sie wichtig sind, ob die Sequenz eine Größe ungleich NULL aufweist, finden Sie weitere Informationen unter [Queue:: Empty (STL/CLR)](../dotnet/queue-empty-stl-clr.md) `()` .
+Die Memberfunktion gibt die Länge der gesteuerten Sequenz zurück. Sie verwenden Sie, um die Anzahl der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden. Wenn Sie nur für Sie wichtig sind, ob die Sequenz eine Größe ungleich NULL aufweist, finden Sie weitere Informationen unter [Queue:: Empty (STL/CLR)](#empty) `()` .
 
 ### <a name="example"></a>Beispiel
 
@@ -1111,7 +1111,7 @@ size() = 2 after popping
 size() = 4 after adding 2
 ```
 
-## <a name="queuesize_type-stlclr"></a><a name="size_type"></a>Queue:: size_type (STL/CLR)
+## <a name="queuesize_type-stlclr"></a><a name="size_type"></a> Queue:: size_type (STL/CLR)
 
 Der Typ eines Abstands mit Vorzeichen zwischen zwei Elementen.
 
@@ -1160,7 +1160,7 @@ a b c
 size difference = 2
 ```
 
-## <a name="queueto_array-stlclr"></a><a name="to_array"></a>Queue:: to_array (STL/CLR)
+## <a name="queueto_array-stlclr"></a><a name="to_array"></a> Queue:: to_array (STL/CLR)
 
 Kopiert die gesteuerte Sequenz in ein neues Array.
 
@@ -1210,7 +1210,7 @@ a b c d
 a b c
 ```
 
-## <a name="queuevalue_type-stlclr"></a><a name="value_type"></a>Queue:: value_type (STL/CLR)
+## <a name="queuevalue_type-stlclr"></a><a name="value_type"></a> Queue:: value_type (STL/CLR)
 
 Der Typ eines Elements.
 
@@ -1255,7 +1255,7 @@ int main()
 a b c
 ```
 
-## <a name="operator-queue-stlclr"></a><a name="op_neq"></a>Operator! = (Queue) (STL/CLR)
+## <a name="operator-queue-stlclr"></a><a name="op_neq"></a> Operator! = (Queue) (STL/CLR)
 
 Die Warteschlange entspricht nicht dem Vergleich.
 
@@ -1326,7 +1326,7 @@ a b d
 [a b c] != [a b d] is True
 ```
 
-## <a name="operatorlt-queue-stlclr"></a><a name="op_lt"></a>Operator &lt; (Warteschlange) (STL/CLR)
+## <a name="operatorlt-queue-stlclr"></a><a name="op_lt"></a> Operator &lt; (Warteschlange) (STL/CLR)
 
 Warteschlange ist kleiner als der Vergleich.
 
@@ -1349,7 +1349,7 @@ Rechter zu vergleichender Container.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Operator-Funktion gibt true zurück, wenn für die niedrigste Position, `i` für die `!(right[i] < left[i])` Sie ebenfalls true ist `left[i] < right[i]` . Andernfalls `left->` wird [Queue:: Size (STL/CLR)](../dotnet/queue-size-stl-clr.md) zurückgegeben, `() <` `right->size()` um zu testen, ob *left* nach *Rechts* geordnet ist, wenn die beiden Warteschlangen Element Weise verglichen werden.
+Die Operator-Funktion gibt true zurück, wenn für die niedrigste Position, `i` für die `!(right[i] < left[i])` Sie ebenfalls true ist `left[i] < right[i]` . Andernfalls `left->` wird [Queue:: Size (STL/CLR)](#size) zurückgegeben, `() <` `right->size()` um zu testen, ob *left* nach *Rechts* geordnet ist, wenn die beiden Warteschlangen Element Weise verglichen werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -1397,7 +1397,7 @@ a b d
 [a b c] < [a b d] is True
 ```
 
-## <a name="operatorlt-queue-stlclr"></a><a name="op_lteq"></a>Operator &lt; = (Queue) (STL/CLR)
+## <a name="operatorlt-queue-stlclr"></a><a name="op_lteq"></a> Operator &lt; = (Queue) (STL/CLR)
 
 Warteschlange kleiner oder gleich-Vergleich.
 
@@ -1468,7 +1468,7 @@ a b d
 [a b d] <= [a b c] is False
 ```
 
-## <a name="operator-queue-stlclr"></a><a name="op_eq"></a>Operator = = (Queue) (STL/CLR)
+## <a name="operator-queue-stlclr"></a><a name="op_eq"></a> Operator = = (Queue) (STL/CLR)
 
 In Warteschlange gleicher Vergleich.
 
@@ -1539,7 +1539,7 @@ a b d
 [a b c] == [a b d] is False
 ```
 
-## <a name="operatorgt-queue-stlclr"></a><a name="op_gt"></a>Operator &gt; (Warteschlange) (STL/CLR)
+## <a name="operatorgt-queue-stlclr"></a><a name="op_gt"></a> Operator &gt; (Warteschlange) (STL/CLR)
 
 Warteschlange ist größer als der Vergleich.
 
@@ -1610,7 +1610,7 @@ a b d
 [a b d] > [a b c] is True
 ```
 
-## <a name="operatorgt-queue-stlclr"></a><a name="op_gteq"></a>Operator &gt; = (Queue) (STL/CLR)
+## <a name="operatorgt-queue-stlclr"></a><a name="op_gteq"></a> Operator &gt; = (Queue) (STL/CLR)
 
 Warteschlangen Vergleich größer oder gleich.
 

@@ -22,12 +22,12 @@ helpviewer_keywords:
 - m_strCommandText
 - SetCommandText method
 ms.assetid: 9c2715cc-1e55-4468-8327-85341617ed46
-ms.openlocfilehash: 8d435cd8c5c8723d008be98482631f081c967058
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 7d31933b162a74db31bdd3c65dc68e396a3896c4
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88845119"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91501718"
 ---
 # <a name="icommandtextimpl-class"></a>ICommandTextImpl-Klasse
 
@@ -50,13 +50,13 @@ Die von abgeleitete Befehls Klasse `ICommandTextImpl` .
 
 **Header:** altdb. h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="interface-methods"></a>Schnittstellenmethoden
 
 | Name | Beschreibung |
 |-|-|
-|[GetCommandText](#getcommandtext)|Gibt den Textbefehl zurück, der beim letzten Aufrufen von [SetCommandText](../../data/oledb/icommandtextimpl-setcommandtext.md)festgelegt wurde.|
+|[GetCommandText](#getcommandtext)|Gibt den Textbefehl zurück, der beim letzten Aufrufen von [SetCommandText](#setcommandtext)festgelegt wurde.|
 |[SetCommandText](#setcommandtext)|Legt den Befehls Text fest und ersetzt den vorhandenen Befehls Text.|
 
 ### <a name="data-members"></a>Datenelemente
@@ -71,7 +71,7 @@ Eine erforderliche Schnittstelle für Befehle.
 
 ## <a name="icommandtextimplgetcommandtext"></a><a name="getcommandtext"></a> ICommandTextImpl:: getcommandtext
 
-Gibt den Textbefehl zurück, der beim letzten Aufrufen von [SetCommandText](../../data/oledb/icommandtextimpl-setcommandtext.md)festgelegt wurde.
+Gibt den Textbefehl zurück, der beim letzten Aufrufen von [SetCommandText](#setcommandtext)festgelegt wurde.
 
 ### <a name="syntax"></a>Syntax
 

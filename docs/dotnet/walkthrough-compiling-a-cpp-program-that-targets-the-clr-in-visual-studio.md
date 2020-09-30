@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Visual C++, managed code
 - managed code [C++]
 ms.assetid: 339f89df-a5d2-4040-831a-ddbe25b5dce4
-ms.openlocfilehash: 63996af56f03890c9a78e95743367d47416d5d48
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 2fceb57e062b9179245ba235fb497ff526a6660e
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87214827"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91501690"
 ---
 # <a name="walkthrough-compile-a-ccli-program-that-targets-the-clr-in-visual-studio"></a>Exemplarische Vorgehensweise: Kompilieren eines C++/CLI-Programms, das auf die CLR in Visual Studio abzielt
 
@@ -84,7 +84,7 @@ Die folgenden Schritte variieren leicht, je nachdem, welche Version von Visual S
 
 1. Klicken Sie in Visual Studio in die neu erstellte Registerkarte, und geben Sie ein gültiges Visual C++-Programm ein, oder kopieren Sie eines der Beispielprogramme und fügen es ein.
 
-   Sie können beispielsweise das Beispielprogramm [How to: Write a Text File (C++/CLI) (Vorgehensweise: Schreiben einer Textdatei (C++/CLI))](how-to-write-a-text-file-cpp-cli.md) verwenden (im Knoten **Dateibehandlung und E/A** des Programmierhandbuchs).
+   Sie können beispielsweise das Beispielprogramm [How to: Write a Text File (C++/CLI) (Vorgehensweise: Schreiben einer Textdatei (C++/CLI))](./file-handling-and-i-o-cpp-cli.md#write_text) verwenden (im Knoten **Dateibehandlung und E/A** des Programmierhandbuchs).
 
    Wenn Sie das Beispielprogramm verwenden, beachten Sie, dass Sie das **`gcnew`** -Schlüsselwort anstelle von verwenden, **`new`** Wenn Sie ein .NET-Objekt erstellen und **`gcnew`** ein Handle ( `^` ) anstelle eines Zeigers () zurückgibt `*` :
 
@@ -92,7 +92,7 @@ Die folgenden Schritte variieren leicht, je nachdem, welche Version von Visual S
 
    Weitere Informationen zur C++/CLI-Syntax finden Sie unter [Komponenten Erweiterungen für laufzeitplattformen](../extensions/component-extensions-for-runtime-platforms.md).
 
-1. Klicken Sie im Menü **Erstellen** auf **Projektmappe erstellen**.
+1. Klicken Sie im Menü **Build** auf **Projektmappe erstellen**.
 
    Im **Ausgabefenster** werden Informationen zum Kompilierungsprozess angezeigt, z.B. der Speicherort des Buildprotokolls und eine Meldung über den Buildstatus.
 

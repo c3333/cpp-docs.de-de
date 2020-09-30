@@ -51,12 +51,12 @@ helpviewer_keywords:
 - m_bCancelWhenExecuting
 - m_bIsExecuting
 ms.assetid: ef285fef-0d66-45e6-a762-b03357098e3b
-ms.openlocfilehash: c88554d717888719ad6d805a2871489ce4b0df32
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 2f2d3938d63e5e67fc501d52d269c06f6b144ac8
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88845587"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91501827"
 ---
 # <a name="icommandimpl-class"></a>ICommandImpl-Klasse
 
@@ -75,19 +75,19 @@ class ATL_NO_VTABLE ICommandImpl : public CommandBase
 Die von abgeleitete Klasse `ICommandImpl` .
 
 *CommandBase*<br/>
-Eine Befehlsschnittstelle. Der Standardwert ist `ICommand`.
+Eine Befehlsschnittstelle. Der Standardwert lautet `ICommand`.
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** „atldb.h“
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
 | Name | Beschreibung |
 |-|-|
-|[Abbrechen](#cancel)|Bricht die Ausführung des aktuellen Befehls ab.|
+|[Kündigen](#cancel)|Bricht die Ausführung des aktuellen Befehls ab.|
 |[CancelExecution](#cancelexecution)|Bricht die Ausführung des aktuellen Befehls ab.|
 |[CreateRowset](#createrowset)|Erstellt ein Rowsetobjekt.|
 |[Ausführen](#execute)|Führt den Befehl aus.|
@@ -132,7 +132,7 @@ HRESULT CancelExecution();
 
 ## <a name="icommandimplcreaterowset"></a><a name="createrowset"></a> ICommandImpl:: kreaterowset
 
-Wird von [Execute](../../data/oledb/icommandimpl-execute.md) aufgerufen, um ein einzelnes Rowset zu erstellen.
+Wird von [Execute](#execute) aufgerufen, um ein einzelnes Rowset zu erstellen.
 
 ### <a name="syntax"></a>Syntax
 
@@ -201,7 +201,7 @@ Weitere Informationen finden Sie unter [ICommand:: Execute](/previous-versions/w
 
 Die angeforderte ausgehende Schnittstelle ist eine Schnittstelle, die vom Rowsetobjekt abgerufen wird, das diese Funktion erstellt.
 
-`Execute` Ruft " [kreaterowset](../../data/oledb/icommandimpl-createrowset.md)" auf. Überschreiben Sie die Standard Implementierung, um mehr als ein Rowset zu erstellen oder eigene Bedingungen zum Erstellen verschiedener Rowsets anzugeben.
+`Execute` Ruft " [kreaterowset](#createrowset)" auf. Überschreiben Sie die Standard Implementierung, um mehr als ein Rowset zu erstellen oder eigene Bedingungen zum Erstellen verschiedener Rowsets anzugeben.
 
 ## <a name="icommandimplgetdbsession"></a><a name="getdbsession"></a> ICommandImpl:: getdbsession
 

@@ -7,16 +7,16 @@ helpviewer_keywords:
 - stored procedures, defining
 - stored procedures, OLE DB
 ms.assetid: 54949b81-3275-4dd9-96e4-3eda1ed755f2
-ms.openlocfilehash: 9bab086bf6982eae5779d3199cfd2ac2c8efe77f
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 47f68bcf5c62aa54cc5ee60de166e1085f5a3fc5
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80211003"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91500929"
 ---
 # <a name="defining-stored-procedures"></a>Definieren von gespeicherten Prozeduren
 
-Bevor Sie eine gespeicherte Prozedur aufrufen, müssen Sie Sie zunächst mithilfe des [DEFINE_COMMAND](../../data/oledb/define-command.md) -Makros definieren. Wenn Sie den Befehl definieren, kennzeichnen Sie Parameter mit einem Fragezeichen (?) als Parameter Markierung:
+Bevor Sie eine gespeicherte Prozedur aufrufen, müssen Sie Sie zunächst mithilfe des [DEFINE_COMMAND](./macros-and-global-functions-for-ole-db-consumer-templates.md#define_command) -Makros definieren. Wenn Sie den Befehl definieren, kennzeichnen Sie Parameter mit einem Fragezeichen (?) als Parameter Markierung:
 
 ```cpp
 DEFINE_COMMAND_EX(CMySProcAccessor, _T("{INSERT {name, phone} INTO shippers (?,?)}"))
@@ -35,7 +35,7 @@ BEGIN_PARAM_MAP(CMySProcAccessor)
 END_PARAM_MAP()
 ```
 
-Im vorherigen Beispiel wird eine gespeicherte Prozedur im Laufe der Zeit definiert. Für eine effiziente Wiederverwendung von Code enthält eine Datenbank in der Regel einen Satz vordefinierter gespeicherter Prozeduren mit Namen wie `Sales by Year` oder `dt_adduserobject`. Sie können ihre Definitionen mithilfe SQL Server Enterprise-Managers anzeigen. Sie werden wie folgt aufgerufen (die Platzierung des *?* Parameter hängen von der-Schnittstelle der gespeicherten Prozedur ab):
+Im vorherigen Beispiel wird eine gespeicherte Prozedur im Laufe der Zeit definiert. Für eine effiziente Wiederverwendung von Code enthält eine Datenbank in der Regel einen Satz vordefinierter gespeicherter Prozeduren mit Namen wie `Sales by Year` oder `dt_adduserobject` . Sie können ihre Definitionen mithilfe SQL Server Enterprise-Managers anzeigen. Sie werden wie folgt aufgerufen (die Platzierung des *?* Parameter hängen von der-Schnittstelle der gespeicherten Prozedur ab):
 
 ```cpp
 DEFINE_COMMAND_EX(CMySProcAccessor, _T("{CALL \"Sales by Year\" (?,?) }"))
@@ -59,7 +59,7 @@ HRESULT OpenRowset()
 }
 ```
 
-Beachten Sie außerdem, dass Sie eine gespeicherte Prozedur mit dem Daten Bank Attribut [db_command](../../windows/db-command.md) wie folgt definieren können:
+Beachten Sie außerdem, dass Sie eine gespeicherte Prozedur mit dem Daten Bank Attribut [db_command](../../windows/attributes/db-command.md) wie folgt definieren können:
 
 ```cpp
 db_command("{ ? = CALL dbo.dt_adduserobject }")
@@ -67,4 +67,4 @@ db_command("{ ? = CALL dbo.dt_adduserobject }")
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Verwenden von gespeicherten Prozeduren](../../data/oledb/using-stored-procedures.md)
+[Gespeicherte Prozeduren verwenden](../../data/oledb/using-stored-procedures.md)

@@ -4,12 +4,12 @@ ms.date: 05/09/2019
 helpviewer_keywords:
 - OLE DB consumers, creating
 ms.assetid: e8241cfe-5faf-48f8-9de3-241203de020b
-ms.openlocfilehash: fff4146681e31f0f1fea9fbaa559de7c722740d2
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 65add1fe0d47253cd8d7ae7a273286d712ce9db2
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80211457"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91500663"
 ---
 # <a name="creating-a-consumer-without-using-a-wizard"></a>Erstellen eines Consumers ohne Assistent
 
@@ -17,7 +17,7 @@ Im folgenden Beispiel wird vorausgesetzt, dass Sie OLE DB-Consumerunterstützung
 
 So fügen Sie OLE DB-Consumerunterstützung ohne Verwendung des **ATL-OLE DB-Consumer-Assistenten** hinzu:
 
-- Fügen Sie in der Datei " *PCH. h* " die folgenden `#include`-Anweisungen an:
+- Fügen Sie in der Datei " *PCH. h* " die folgenden `#include` Anweisungen an:
 
     ```cpp
     #include <atlbase.h>
@@ -46,7 +46,7 @@ Programmgesteuert führt ein Consumer in der Regel die folgende Sequenz von Vorg
     HRESULT hr = CoInitialize(NULL);
     ```
 
-- Rufen Sie [CDataSource::Open](../../data/oledb/cdatasource-open.md) oder eine seine Varianten auf.
+- Rufen Sie [CDataSource::Open](./cdatasource-class.md#open) oder eine seine Varianten auf.
 
 - Öffnen Sie eine Verbindung mit der Datenquelle, öffnen Sie die Sitzung, und öffnen und initialisieren Sie das Rowset (und führen Sie auch ggf. einen Befehl aus):
 
@@ -68,7 +68,7 @@ Programmgesteuert führt ein Consumer in der Regel die folgende Sequenz von Vorg
     ds.Close();
     ```
 
-   Wenn Sie einen Befehl verwenden, sollten Sie `ReleaseCommand` nach `Close` aufrufen. Das Codebeispiel in [CCommand::Close](../../data/oledb/ccommand-close.md) zeigt Ihnen, wie Sie `Close` und `ReleaseCommand` aufrufen.
+   Wenn Sie einen Befehl verwenden, sollten Sie `ReleaseCommand` nach `Close` aufrufen. Das Codebeispiel in [CCommand::Close](./ccommand-class.md#close) zeigt Ihnen, wie Sie `Close` und `ReleaseCommand` aufrufen.
 
 - Rufen Sie `CoUnInitialize` auf, um die COM-Initialisierung aufzuheben. Dies wird im Hauptcode aufgerufen.
 
@@ -78,4 +78,4 @@ Programmgesteuert führt ein Consumer in der Regel die folgende Sequenz von Vorg
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Erstellen eines OLE DB-Consumers](../../data/oledb/creating-an-ole-db-consumer.md)
+[Erstellen eines OLE DB Consumers](../../data/oledb/creating-an-ole-db-consumer.md)

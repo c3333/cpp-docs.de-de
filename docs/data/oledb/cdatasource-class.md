@@ -56,12 +56,12 @@ helpviewer_keywords:
 - OpenWithPromptFileName method
 - OpenWithServiceComponents method
 ms.assetid: 99bf862c-9d5c-4117-9501-aa0e2672085c
-ms.openlocfilehash: 2ce5090d7e1c74607a82ddbb79afebe185a1dca7
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: f94cd631f1c6febdc07d53f84803b1203f4116bc
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88838346"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91502539"
 ---
 # <a name="cdatasource-class"></a>CDataSource-Klasse
 
@@ -77,7 +77,7 @@ class CDataSource
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -95,7 +95,7 @@ class CDataSource
 
 ## <a name="remarks"></a>Bemerkungen
 
-Eine oder mehrere Daten Bank Sitzungen können für eine einzelne Verbindung erstellt werden. Diese Sitzungen werden durch dargestellt `CSession` . Sie müssen [CDataSource:: Open](../../data/oledb/cdatasource-open.md) abrufen, um die Verbindung zu öffnen, bevor Sie eine Sitzung mit erstellen `CSession::Open` .
+Eine oder mehrere Daten Bank Sitzungen können für eine einzelne Verbindung erstellt werden. Diese Sitzungen werden durch dargestellt `CSession` . Sie müssen [CDataSource:: Open](#open) abrufen, um die Verbindung zu öffnen, bevor Sie eine Sitzung mit erstellen `CSession::Open` .
 
 Ein Beispiel für die Verwendung von finden Sie unter Beispiel für die Verwendung von `CDataSource` . [CatDB](../../overview/visual-cpp-samples.md)
 
@@ -159,7 +159,7 @@ Ein HRESULT-Standard.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Um eine einzelne Eigenschaft zu erhalten, verwenden Sie [GetProperty](../../data/oledb/cdatasource-getproperty.md).
+Um eine einzelne Eigenschaft zu erhalten, verwenden Sie [GetProperty](#getproperty).
 
 ## <a name="cdatasourcegetproperty"></a><a name="getproperty"></a> CDataSource:: GetProperty
 
@@ -190,7 +190,7 @@ Ein HRESULT-Standard.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Verwenden Sie " [GetProperties](../../data/oledb/cdatasource-getproperties.md)", um mehrere Eigenschaften zu erhalten.
+Verwenden Sie " [GetProperties](#getproperties)", um mehrere Eigenschaften zu erhalten.
 
 ## <a name="cdatasourceopen"></a><a name="open"></a> CDataSource:: Open
 

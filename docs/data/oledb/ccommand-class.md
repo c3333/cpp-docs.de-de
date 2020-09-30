@@ -49,12 +49,12 @@ helpviewer_keywords:
 - SetParameterInfo method
 - Unprepare method
 ms.assetid: 0760bfc5-b9ee-4aee-8e54-31bd78714d3a
-ms.openlocfilehash: beabe73ff4ce0e6be8aaccfcdc636adc1ba04d5c
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 109998dd742828b3c41672fa2afa8716e4687f6a
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88838437"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91501009"
 ---
 # <a name="ccommand-class"></a>CCommand-Klasse
 
@@ -78,7 +78,7 @@ class CCommand :
 Der Typ der Accessorklasse (z. b. `CDynamicParameterAccessor` , `CDynamicStringAccessor` oder `CEnumeratorAccessor` ), die vom Befehl verwendet werden soll. Der Standardwert ist. `CNoAccessor` dieser gibt an, dass die Klasse keine Parameter oder Ausgabespalten unterstützt.
 
 *TRowset*<br/>
-Der Typ der Rowsetklasse (z. b. `CArrayRowset` oder `CNoRowset` ), die vom Befehl verwendet werden soll. Der Standardwert ist `CRowset`.
+Der Typ der Rowsetklasse (z. b. `CArrayRowset` oder `CNoRowset` ), die vom Befehl verwendet werden soll. Der Standardwert lautet `CRowset`.
 
 *TMultiple*<br/>
 Um einen OLE DB Befehl zu verwenden, der mehrere Ergebnisse zurückgeben kann, geben Sie [CMultipleResults](../../data/oledb/cmultipleresults-class.md)an. Verwenden Sie andernfalls [CNoMultipleResults](../../data/oledb/cnomultipleresults-class.md). Weitere Informationen finden Sie unter [IMultipleResults](/previous-versions/windows/desktop/ms721289(v=vs.85)).
@@ -87,7 +87,7 @@ Um einen OLE DB Befehl zu verwenden, der mehrere Ergebnisse zurückgeben kann, g
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -104,7 +104,7 @@ Um einen OLE DB Befehl zu verwenden, der mehrere Ergebnisse zurückgeben kann, g
 |[Erstellen](#create)|Erstellt einen neuen Befehl für die angegebene Sitzung und legt dann den Befehls Text fest.|
 |[CreateCommand](#createcommand)|Erstellt einen neuen Befehl.|
 |[GetParameterInfo](#getparameterinfo)|Ruft eine Liste mit den Parametern des Befehls, deren Namen und deren Typen ab.|
-|[Erstellt](#prepare)|Überprüft und optimiert den aktuellen Befehl.|
+|[Vorbereiten](#prepare)|Überprüft und optimiert den aktuellen Befehl.|
 |[ReleaseCommand](#releasecommand)|Gibt ggf. den Parameter Accessor frei und gibt dann den Befehl frei.|
 |[SetParameterInfo](#setparameterinfo)|Gibt den systemeigenen Typ der einzelnen Befehlsparameter an.|
 |[Unprepare](#unprepare)|Verwirft den aktuellen Befehls Ausführungsplan.|
@@ -131,7 +131,7 @@ void Close();
 
 Ein Befehl verwendet ein Rowset, einen resultsetaccessor und (optional) einen Parameter Accessor (im Gegensatz zu Tabellen, die keine Parameter unterstützen und keinen Parameter Accessor benötigen).
 
-Wenn Sie einen Befehl ausführen, müssen Sie sowohl als `Close` auch [ReleaseCommand](../../data/oledb/ccommand-releasecommand.md) nach dem Befehl ausführen.
+Wenn Sie einen Befehl ausführen, müssen Sie sowohl als `Close` auch [ReleaseCommand](#releasecommand) nach dem Befehl ausführen.
 
 Wenn Sie denselben Befehl wiederholt ausführen möchten, sollten Sie jeden resultsetaccessor freigeben, indem Sie aufrufen, `Close` bevor Sie aufrufen `Execute` . Am Ende der Reihe sollten Sie den Parameter Accessor freigeben, indem Sie aufrufen `ReleaseCommand` . Ein weiteres häufiges Szenario ist das Aufrufen einer gespeicherten Prozedur mit Ausgabeparametern. Bei vielen Anbietern (z. b. der OLE DB Anbieter für SQL Server) ist der Zugriff auf die Ausgabeparameter Werte erst möglich, wenn Sie den resultsetaccessor schließen. Rufen `Close` Sie auf, um das zurückgegebene Rowset und den resultsetaccessor zu schließen, jedoch nicht den Parameter Accessor, damit Sie die Ausgabeparameter Werte abrufen können.
 
@@ -213,7 +213,7 @@ HRESULT Open(DBPROPSET *pPropSet = NULL,
 in Die Sitzung, in der der Befehl ausgeführt werden soll.
 
 *wszcommand*<br/>
-in Der Befehl, der ausgeführt werden soll, als Unicode-Zeichenfolge. Kann NULL sein, wenn verwendet wird `CAccessor` . in diesem Fall wird der Befehl aus dem Wert abgerufen, der an das [DEFINE_COMMAND](../../data/oledb/define-command.md) -Makro übermittelt wurde. Weitere Informationen finden Sie unter [ICommand:: Execute](/previous-versions/windows/desktop/ms718095(v=vs.85)) in der *OLE DB Programmierer-Referenz* .
+in Der Befehl, der ausgeführt werden soll, als Unicode-Zeichenfolge. Kann NULL sein, wenn verwendet wird `CAccessor` . in diesem Fall wird der Befehl aus dem Wert abgerufen, der an das [DEFINE_COMMAND](./macros-and-global-functions-for-ole-db-consumer-templates.md#define_command) -Makro übermittelt wurde. Weitere Informationen finden Sie unter [ICommand:: Execute](/previous-versions/windows/desktop/ms718095(v=vs.85)) in der *OLE DB Programmierer-Referenz* .
 
 *szCommand*<br/>
 in Identisch mit *wszcommand* mit der Ausnahme, dass dieser Parameter eine ANSI-Befehls Zeichenfolge annimmt. Die vierte Form dieser Methode kann einen NULL-Wert annehmen. Weitere Informationen finden Sie unter "Hinweise" weiter unten in diesem Thema.
@@ -253,14 +253,14 @@ Die zweite Form von `Open` erfordert eine ANSI-Befehls Zeichenfolge und keinen S
 
 Die dritte Form von `Open` ermöglicht, dass die Befehls Zeichenfolge aufgrund des Typs **`int`** mit dem Standardwert NULL NULL ist. Sie wird zum Aufrufen von oder bereitgestellt, `Open(session, NULL);` `Open(session);` da NULL vom Typ ist **`int`** . Diese Version erfordert und bestätigt, dass der **`int`** Parameter NULL ist.
 
-Verwenden Sie die vierte Form von `Open` , wenn Sie bereits einen Befehl erstellt haben und eine einzelne [Vorbereitung](../../data/oledb/ccommand-prepare.md) und mehrere Ausführungen ausführen möchten.
+Verwenden Sie die vierte Form von `Open` , wenn Sie bereits einen Befehl erstellt haben und eine einzelne [Vorbereitung](#prepare) und mehrere Ausführungen ausführen möchten.
 
 > [!NOTE]
 > `Open` Ruft `Execute` auf, das wiederum aufruft `GetNextResult` .
 
 ## <a name="ccommandcreate"></a><a name="create"></a> CCommand:: Create
 
-Ruft [CCommand:: kreatecommand](../../data/oledb/ccommand-createcommand.md) auf, um einen Befehl für die angegebene Sitzung zu erstellen, und ruft dann [ICommandText:: SetCommandText](/previous-versions/windows/desktop/ms709825(v=vs.85)) auf, um den Befehls Text anzugeben.
+Ruft [CCommand:: kreatecommand](#createcommand) auf, um einen Befehl für die angegebene Sitzung zu erstellen, und ruft dann [ICommandText:: SetCommandText](/previous-versions/windows/desktop/ms709825(v=vs.85)) auf, um den Befehls Text anzugeben.
 
 ### <a name="syntax"></a>Syntax
 
@@ -374,7 +374,7 @@ void CCommandBase::ReleaseCommand() throw();
 
 ### <a name="remarks"></a>Bemerkungen
 
-`ReleaseCommand` wird in Verbindung mit verwendet `Close` . Weitere Informationen zur Verwendung finden Sie unter [Close](../../data/oledb/ccommand-close.md) .
+`ReleaseCommand` wird in Verbindung mit verwendet `Close` . Weitere Informationen zur Verwendung finden Sie unter [Close](#close) .
 
 ## <a name="ccommandsetparameterinfo"></a><a name="setparameterinfo"></a> CCommand:: SetParameterInfo
 
