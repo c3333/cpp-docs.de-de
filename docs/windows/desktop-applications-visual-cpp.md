@@ -3,12 +3,12 @@ title: Desktopanwendungen (Visual C++)
 ms.date: 07/28/2019
 ms.assetid: a020b534-293c-44e2-aa48-516c43ddeb8f
 ms.topic: overview
-ms.openlocfilehash: f8e3dd386aee835ff383ba7567a5c320f206476e
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: 26448ca65b3162e2adfe6988dfd8c9e85432429c
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86404960"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91504444"
 ---
 # <a name="desktop-applications-visual-c"></a>Desktopanwendungen (Visual C++)
 
@@ -36,20 +36,20 @@ Jede Desktop Anwendung in C++ kann die Klassen und Funktionen der C-Laufzeit (CR
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 
-|Titel|BESCHREIBUNG|
+|Titel|Beschreibung|
 |-----------|-----------------|
-|[Windows-Konsolenanwendungen in C++](console-applications-in-visual-cpp.md)|Enthält Informationen über Konsolen-Apps. Eine Win32- oder Win64-Konsolenanwendung hat kein eigenes Fenster und keine Meldungsschleife. Sie wird im Konsolenfenster ausgeführt. Eingaben und Ausgaben werden von der Befehlszeile behandelt.|
+|[Windows-Konsolenanwendungen in C++](./overview-of-windows-programming-in-cpp.md)|Enthält Informationen über Konsolen-Apps. Eine Win32- oder Win64-Konsolenanwendung hat kein eigenes Fenster und keine Meldungsschleife. Sie wird im Konsolenfenster ausgeführt. Eingaben und Ausgaben werden von der Befehlszeile behandelt.|
 |[Exemplarische Vorgehensweise: Erstellen von Windows-Desktopanwendungen (C++)](walkthrough-creating-windows-desktop-applications-cpp.md)|Erstellen Sie eine einfache Windows-Desktop Anwendung.|
-|[Erstellen einer leeren Windows-Desktopanwendung](creating-an-empty-windows-desktop-application.md)|Erstellen eines Windows-Desktop Projekts, das keine Standard Dateien aufweist.|
-|[Hinzufügen von Dateien zu leeren Win32-Anwendungen](adding-files-to-an-empty-win32-applications.md)|Vorgehensweise beim Hinzufügen von Dateien zu einem leeren Projekt.|
+|[Erstellen einer leeren Windows-Desktopanwendung](./overview-of-windows-programming-in-cpp.md)|Erstellen eines Windows-Desktop Projekts, das keine Standard Dateien aufweist.|
+|[Hinzufügen von Dateien zu leeren Win32-Anwendungen](./overview-of-windows-programming-in-cpp.md)|Vorgehensweise beim Hinzufügen von Dateien zu einem leeren Projekt.|
 |[Working with Resource Files (Arbeiten mit Ressourcendateien)](working-with-resource-files.md)|Hinzufügen von Bildern, Symbolen, Zeichen folgen Tabellen und anderen Ressourcen zu einer Desktop Anwendung.|
 |[Ressourcen zum Erstellen eines Spiels mit DirectX (C++)](resources-for-creating-a-game-using-directx.md)|Links zu Inhalten zum Erstellen von spielen in C++.|
-|[Exemplarische Vorgehensweise: Erstellen und Verwenden einer statischen Bibliothek](walkthrough-creating-and-using-a-static-library-cpp.md)|So erstellen Sie eine lib-Binärdatei.|
+|[Exemplarische Vorgehensweise: Erstellen und Verwenden einer statischen Bibliothek](../build/walkthrough-creating-and-using-a-static-library-cpp.md)|So erstellen Sie eine lib-Binärdatei.|
 |[Gewusst wie: Verwenden des Windows 10 SDK in einer Windows-Desktop Anwendung](how-to-use-the-windows-10-sdk-in-a-windows-desktop-application.md)|Enthält Schritte zum Einrichten Ihres Projekts für das Erstellen mit dem Windows 10-SDK.|
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-|Titel|BESCHREIBUNG|
+|Titel|Beschreibung|
 |-----------|-----------------|
 |[Windows-Entwicklung](/windows/win32/index)|Enthält Informationen zur Windows-API und COM. (Einige Windows-APIs und Drittanbieter-DLLs werden als COM-Objekte implementiert).|
 |[Hilo: Entwickeln von C++-Anwendungen für Windows 7](/previous-versions/msdn10/ff708696(v=msdn.10))|Beschreibt, wie Sie eine vielseitige Windows-Desktopanwendung erstellen, die Windows-Animationen und Direct2D verwendet, um eine karussellbasierte Benutzeroberfläche zu erstellen.  Dieses Tutorial wurde seit Windows 7 nicht aktualisiert, bietet aber eine gründliche Einführung in die Win32-Programmierung.|

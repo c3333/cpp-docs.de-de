@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - db_accessor attribute
 ms.assetid: ec407a9f-24d7-4822-96d4-7cc6a0301815
-ms.openlocfilehash: 559838201e3d1c425b6b1bf7f3650d9635c44c97
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 2a4c5475007cbc516f1a06c6bf858089ba24311f
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88833139"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91503560"
 ---
 # <a name="db_accessor"></a>db_accessor
 
@@ -33,7 +33,7 @@ Ein boolescher Wert, der angibt, ob der Accessor automatisch abgerufen (true) od
 
 ## <a name="remarks"></a>Bemerkungen
 
-**Db_accessor** definiert den zugrunde liegenden OLE DB Accessor für nachfolgende `db_column` -und- `db_param` Attribute innerhalb derselben Klasse oder Funktion. **Db_accessor** auf Element Ebene verwendbar und zum Gruppieren von `db_column` Attributen verwendet, die an OLE DB `IAccessor` basierten Bindung teilnehmen. Sie wird in Verbindung mit dem- `db_table` Attribut oder dem- `db_command` Attribut verwendet. Das Aufrufen dieses Attributs ähnelt dem Aufrufen der Makros " [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md) " und " [END_ACCESSOR](../../data/oledb/end-accessor.md) ".
+**Db_accessor** definiert den zugrunde liegenden OLE DB Accessor für nachfolgende `db_column` -und- `db_param` Attribute innerhalb derselben Klasse oder Funktion. **Db_accessor** auf Element Ebene verwendbar und zum Gruppieren von `db_column` Attributen verwendet, die an OLE DB `IAccessor` basierten Bindung teilnehmen. Sie wird in Verbindung mit dem- `db_table` Attribut oder dem- `db_command` Attribut verwendet. Das Aufrufen dieses Attributs ähnelt dem Aufrufen der Makros " [BEGIN_ACCESSOR](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md#begin_accessor) " und " [END_ACCESSOR](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md#end_accessor) ".
 
 **Db_accessor** generiert ein Rowset und bindet es an die entsprechenden accessorzuordnungen. Wenn Sie **Db_accessor**nicht aufzurufen, wird der Accessor 0 automatisch generiert, und alle Spalten Bindungen werden diesem Accessorblock zugeordnet.
 

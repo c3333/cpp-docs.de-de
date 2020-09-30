@@ -50,12 +50,12 @@ helpviewer_keywords:
 - END_SCHEMA_MAP macro
 - SCHEMA_ENTRY macro
 ms.assetid: 909482c5-64ab-4e52-84a9-1c07091db183
-ms.openlocfilehash: 53ea92c2eece31829a7554c0f9accf2e56d727a9
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: e72204102bfa47a9dd162499030a38c07bbfe46c
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88840725"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91504016"
 ---
 # <a name="macros-for-ole-db-provider-templates"></a>Makros für OLE DB-Anbietervorlagen
 
@@ -63,7 +63,7 @@ Die OLE DB Vorlagen-Anbieter Makros bieten Funktionen in den folgenden Kategorie
 
 ## <a name="property-set-map-macros"></a>Eigenschaften Satz-Zuordnungs Makros
 
-| Name | BESCHREIBUNG |
+| Name | Beschreibung |
 |-|-|
 |[BEGIN_PROPERTY_SET](#begin_property_set)|Markiert den Anfang eines Eigenschaften Satzes.|
 |[BEGIN_PROPERTY_SET_EX](#begin_property_set_ex)|Markiert den Anfang eines Eigenschaften Satzes.|
@@ -77,7 +77,7 @@ Die OLE DB Vorlagen-Anbieter Makros bieten Funktionen in den folgenden Kategorie
 
 ## <a name="column-map-macros"></a>Spalten Zuordnungs Makros
 
-| Name | BESCHREIBUNG |
+| Name | Beschreibung |
 |-|-|
 |[BEGIN_PROVIDER_COLUMN_MAP](#begin_provider_column_map)|Markiert den Anfang der Karten Einträge für die Anbieter Spalte.|
 |[END_PROVIDER_COLUMN_MAP](#end_provider_column_map)|Markiert das Ende der Zuordnungs Einträge für die Anbieter Spalte.|
@@ -91,7 +91,7 @@ Die OLE DB Vorlagen-Anbieter Makros bieten Funktionen in den folgenden Kategorie
 
 ## <a name="schema-rowset-macros"></a>Schemarowsetmakros
 
-| Name | BESCHREIBUNG |
+| Name | Beschreibung |
 |-|-|
 |[BEGIN_SCHEMA_MAP](#begin_schema_map)|Markiert den Anfang einer Schema Zuordnung.|
 |[END_SCHEMA_MAP](#end_schema_map)|Markiert das Ende einer Schema Zuordnung.|
@@ -118,7 +118,7 @@ in Die Eigenschafts-GUID.
 
 #### <a name="example"></a>Beispiel
 
-Siehe [BEGIN_PROPSET_MAP](../../data/oledb/begin-propset-map.md).
+Siehe [BEGIN_PROPSET_MAP](#begin_propset_map).
 
 ### <a name="begin_property_set_ex"></a><a name="begin_property_set_ex"></a> BEGIN_PROPERTY_SET_EX
 
@@ -140,7 +140,7 @@ in UPROPSET_HIDDEN für alle Eigenschaften Sätze, die Sie nicht verfügbar mach
 
 #### <a name="example"></a>Beispiel
 
-Siehe [BEGIN_PROPSET_MAP](../../data/oledb/begin-propset-map.md).
+Siehe [BEGIN_PROPSET_MAP](#begin_propset_map).
 
 ### <a name="begin_propset_map"></a><a name="begin_propset_map"></a> BEGIN_PROPSET_MAP
 
@@ -208,7 +208,7 @@ in Die Eigenschafts-GUID.
 
 #### <a name="example"></a>Beispiel
 
-Siehe [BEGIN_PROPSET_MAP](../../data/oledb/begin-propset-map.md).
+Siehe [BEGIN_PROPSET_MAP](#begin_propset_map).
 
 ### <a name="end_propset_map"></a><a name="end_propset_map"></a> END_PROPSET_MAP
 
@@ -222,7 +222,7 @@ END_PROPSET_MAP()
 
 #### <a name="example"></a>Beispiel
 
-Siehe [BEGIN_PROPSET_MAP](../../data/oledb/begin-propset-map.md).
+Siehe [BEGIN_PROPSET_MAP](#begin_propset_map).
 
 ### <a name="property_info_entry"></a><a name="property_info_entry"></a> PROPERTY_INFO_ENTRY
 
@@ -241,11 +241,11 @@ PROPERTY_INFO_ENTRY(dwPropID)
 
 #### <a name="remarks"></a>Bemerkungen
 
-Dieses Makro legt den Wert der Eigenschaft vom Typ `DWORD` auf einen in ATLDB.H definierten Standardwert fest. Verwenden Sie [PROPERTY_INFO_ENTRY_VALUE](../../data/oledb/property-info-entry-value.md), um die Eigenschaft auf einen Wert Ihrer Wahl festzulegen. `VARTYPE`Verwenden Sie [PROPERTY_INFO_ENTRY_EX](../../data/oledb/property-info-entry-ex.md), um und [dbpropflags](/previous-versions/windows/desktop/ms724342(v=vs.85)) für die Eigenschaft gleichzeitig festzulegen.
+Dieses Makro legt den Wert der Eigenschaft vom Typ `DWORD` auf einen in ATLDB.H definierten Standardwert fest. Verwenden Sie [PROPERTY_INFO_ENTRY_VALUE](#property_info_entry_value), um die Eigenschaft auf einen Wert Ihrer Wahl festzulegen. `VARTYPE`Verwenden Sie [PROPERTY_INFO_ENTRY_EX](#property_info_entry_ex), um und [dbpropflags](/previous-versions/windows/desktop/ms724342(v=vs.85)) für die Eigenschaft gleichzeitig festzulegen.
 
 #### <a name="example"></a>Beispiel
 
-Siehe [BEGIN_PROPSET_MAP](../../data/oledb/begin-propset-map.md).
+Siehe [BEGIN_PROPSET_MAP](#begin_propset_map).
 
 ### <a name="property_info_entry_ex"></a><a name="property_info_entry_ex"></a> PROPERTY_INFO_ENTRY_EX
 
@@ -276,11 +276,11 @@ Entweder DBPROPOPTIONS_REQUIRED oder DBPROPOPTIONS_SETIFCHEAP. Normalerweise mü
 
 #### <a name="remarks"></a>Bemerkungen
 
-Mit diesem Makro können Sie den Wert der Eigenschaft des Typs `DWORD` sowie Optionen und Flags direkt angeben. Um lediglich einen in ATLDB.H definierten Standardwert für eine Eigenschaft festzulegen, verwenden Sie [PROPERTY_INFO_ENTRY](../../data/oledb/property-info-entry.md). Um einen Wert Ihrer Wahl für eine Eigenschaft festzulegen, verwenden Sie [PROPERTY_INFO_ENTRY_VALUE](../../data/oledb/property-info-entry-value.md).
+Mit diesem Makro können Sie den Wert der Eigenschaft des Typs `DWORD` sowie Optionen und Flags direkt angeben. Um lediglich einen in ATLDB.H definierten Standardwert für eine Eigenschaft festzulegen, verwenden Sie [PROPERTY_INFO_ENTRY](#property_info_entry). Um einen Wert Ihrer Wahl für eine Eigenschaft festzulegen, verwenden Sie [PROPERTY_INFO_ENTRY_VALUE](#property_info_entry_value).
 
 #### <a name="example"></a>Beispiel
 
-Siehe [BEGIN_PROPSET_MAP](../../data/oledb/begin-propset-map.md).
+Siehe [BEGIN_PROPSET_MAP](#begin_propset_map).
 
 ### <a name="property_info_entry_value"></a><a name="property_info_entry_value"></a> PROPERTY_INFO_ENTRY_VALUE
 
@@ -302,11 +302,11 @@ PROPERTY_INFO_ENTRY_VALUE(dwPropID, value)
 
 #### <a name="remarks"></a>Bemerkungen
 
-Mit diesem Makro können Sie den Eigenschafts Wert des Typs direkt angeben `DWORD` . , Um die-Eigenschaft auf den in Atldb definierten Standardwert festzulegen. H, [PROPERTY_INFO_ENTRY](../../data/oledb/property-info-entry.md)verwenden. Verwenden Sie [PROPERTY_INFO_ENTRY_EX](../../data/oledb/property-info-entry-ex.md), um den Wert, die Flags und die Optionen für die Eigenschaft festzulegen.
+Mit diesem Makro können Sie den Eigenschafts Wert des Typs direkt angeben `DWORD` . , Um die-Eigenschaft auf den in Atldb definierten Standardwert festzulegen. H, [PROPERTY_INFO_ENTRY](#property_info_entry)verwenden. Verwenden Sie [PROPERTY_INFO_ENTRY_EX](#property_info_entry_ex), um den Wert, die Flags und die Optionen für die Eigenschaft festzulegen.
 
 #### <a name="example"></a>Beispiel
 
-Siehe [BEGIN_PROPSET_MAP](../../data/oledb/begin-propset-map.md).
+Siehe [BEGIN_PROPSET_MAP](#begin_propset_map).
 
 ### <a name="begin_provider_column_map"></a><a name="begin_provider_column_map"></a> BEGIN_PROVIDER_COLUMN_MAP
 
@@ -341,7 +341,7 @@ END_PROVIDER_COLUMN_MAP()
 
 #### <a name="example"></a>Beispiel
 
-Siehe [BEGIN_PROVIDER_COLUMN_MAP](../../data/oledb/begin-provider-column-map.md).
+Siehe [BEGIN_PROVIDER_COLUMN_MAP](#begin_provider_column_map).
 
 ### <a name="provider_column_entry"></a><a name="provider_column_entry"></a> PROVIDER_COLUMN_ENTRY
 
@@ -394,7 +394,7 @@ Ermöglicht das Angeben des Spalten Datentyps.
 
 #### <a name="example"></a>Beispiel
 
-Siehe [BEGIN_PROVIDER_COLUMN_MAP](../../data/oledb/begin-provider-column-map.md).
+Siehe [BEGIN_PROVIDER_COLUMN_MAP](#begin_provider_column_map).
 
 ### <a name="provider_column_entry_gn"></a><a name="provider_column_entry_gn"></a> PROVIDER_COLUMN_ENTRY_GN
 
@@ -466,7 +466,7 @@ Ermöglicht es Ihnen, die Spaltengröße anzugeben.
 
 #### <a name="example"></a>Beispiel
 
-Siehe [BEGIN_PROVIDER_COLUMN_MAP](../../data/oledb/begin-provider-column-map.md).
+Siehe [BEGIN_PROVIDER_COLUMN_MAP](#begin_provider_column_map).
 
 ### <a name="provider_column_entry_str"></a><a name="provider_column_entry_str"></a> PROVIDER_COLUMN_ENTRY_STR
 
@@ -495,7 +495,7 @@ Verwenden Sie dieses Makro, wenn davon ausgegangen wird, dass die Spaltendaten [
 
 #### <a name="example"></a>Beispiel
 
-Siehe [BEGIN_PROVIDER_COLUMN_MAP](../../data/oledb/begin-provider-column-map.md).
+Siehe [BEGIN_PROVIDER_COLUMN_MAP](#begin_provider_column_map).
 
 ### <a name="provider_column_entry_type_length"></a><a name="provider_column_entry_type_length"></a> PROVIDER_COLUMN_ENTRY_TYPE_LENGTH
 
@@ -526,7 +526,7 @@ in Die Member-Variable in der Datenklasse, in der die Daten gespeichert werden.
 
 #### <a name="remarks"></a>Bemerkungen
 
-Ähnlich wie [PROVIDER_COLUMN_ENTRY_LENGTH](../../data/oledb/provider-column-entry-length.md) aber auch die Angabe des Datentyps der Spalte sowie der Größe ermöglicht.
+Ähnlich wie [PROVIDER_COLUMN_ENTRY_LENGTH](#provider_column_entry_length) aber auch die Angabe des Datentyps der Spalte sowie der Größe ermöglicht.
 
 ### <a name="provider_column_entry_wstr"></a><a name="provider_column_entry_wstr"></a> PROVIDER_COLUMN_ENTRY_WSTR
 

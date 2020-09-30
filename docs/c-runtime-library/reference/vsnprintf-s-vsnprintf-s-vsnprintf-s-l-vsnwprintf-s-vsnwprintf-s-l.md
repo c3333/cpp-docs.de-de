@@ -43,12 +43,12 @@ helpviewer_keywords:
 - _vsnwprintf_s function
 - formatted text [C++]
 ms.assetid: 147ccfce-58c7-4681-a726-ef54ac1c604e
-ms.openlocfilehash: 8c41a09ce35819403b2361dcf5ad53eb93b7a615
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: edb534eb533d63c9298b7b7e9aced1be3e8652d9
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70945291"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91502793"
 ---
 # <a name="vsnprintf_s-_vsnprintf_s-_vsnprintf_s_l-_vsnwprintf_s-_vsnwprintf_s_l"></a>vsnprintf_s, _vsnprintf_s, _vsnprintf_s_l, _vsnwprintf_s, _vsnwprintf_s_l
 
@@ -112,7 +112,7 @@ int _vsnwprintf_s(
 
 ### <a name="parameters"></a>Parameter
 
-*buffer*<br/>
+*ert*<br/>
 Speicherort für die Ausgabe.
 
 *sizeOfBuffer*<br/>
@@ -134,26 +134,36 @@ Weitere Informationen finden Sie unter [Formatangaben](../../c-runtime-library/f
 
 ## <a name="return-value"></a>Rückgabewert
 
-**vsnprintf_s**, **_vsnprintf_s** und **_vsnwprintf_s** geben die Anzahl der geschriebenen Zeichen ohne das abschließende Null-Zeichen oder einen negativen Wert zurück, wenn ein Ausgabefehler auftritt. **vsnprintf_s** ist mit **_vsnprintf_s**identisch. **vsnprintf_s** ist für die Kompatibilität mit dem ANSI-Standard enthalten. **_vnsprintf** wird aus Gründen der Abwärtskompatibilität beibehalten.
+**vsnprintf_s**, **_vsnprintf_s** und **_vsnwprintf_s** die Anzahl der geschriebenen Zeichen ohne das abschließende Null-Zeichen oder einen negativen Wert zurückgeben, wenn entweder das Abschneiden der Daten oder ein Ausgabefehler auftritt.
 
-Wenn der Speicher, der zum Speichern der Daten und der abschließende NULL-Wert erforderlich ist, *sizeOfBuffer*überschreitet, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben, es sei denn, *count* ist [_TRUNCATE](../../c-runtime-library/truncate.md). in diesem Fall Zeichenfolge, die in den *Puffer* passt, wird geschrieben, und-1 wird zurückgegeben. Wenn die Ausführung nach dem Handler für ungültige Parameter fortgesetzt wird, legen diese Funktionen den *Puffer* auf eine leere Zeichenfolge fest, legen **errno** auf **ERANGE**fest und geben-1 zurück.
+* Wenn *count* kleiner als *sizeOfBuffer* und die Anzahl der Daten Zeichen kleiner als oder gleich *count*ist, oder *count* [_TRUNCATE](../../c-runtime-library/truncate.md) und die Anzahl der Daten Zeichen kleiner als *sizeOfBuffer*ist, werden alle Daten geschrieben und die Anzahl der Zeichen zurückgegeben.
 
-Wenn der *Puffer* oder das *Format* ein **null** -Zeiger ist oder die *Anzahl* kleiner oder gleich 0 (null) ist, wird der Handler für ungültige Parameter aufgerufen. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EINVAL** fest und geben-1 zurück.
+* Wenn *count* kleiner als *sizeOfBuffer* ist, aber die Daten die *Anzahl* der Zeichen überschreiten, werden die ersten *Anzahl* Zeichen geschrieben. Die verbleibenden Daten werden abgeschnitten, und-1 wird zurückgegeben, ohne dass der Handler für ungültige Parameter aufgerufen wird.
+
+* Wenn *count* [_TRUNCATE](../../c-runtime-library/truncate.md) und die Anzahl der Zeichen von Daten dem *sizeOfBuffer*entspricht oder überschreitet, wird der Großteil der Zeichenfolge, die in den *Puffer* passt (mit abschließendem NULL-Wert), geschrieben. Die verbleibenden Daten werden abgeschnitten, und-1 wird zurückgegeben, ohne dass der Handler für ungültige Parameter aufgerufen wird.
+
+* Wenn *count* gleich oder größer als *sizeOfBuffer* ist, aber die Anzahl der Zeichen der Daten kleiner als *sizeOfBuffer*ist, werden alle Daten geschrieben (mit abschließendem NULL-Wert), und die Anzahl der Zeichen wird zurückgegeben.
+
+* Wenn *count* und die Anzahl der Daten Zeichen gleich dem Wert *sizeOfBuffer*sind, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die Ausführung nach dem Handler für ungültige Parameter fortgesetzt wird, legen diese Funktionen den *Puffer* auf eine leere Zeichenfolge fest, legen **errno** auf **ERANGE**fest und geben-1 zurück.
+
+* Wenn der *Puffer* oder das *Format* ein **null** -Zeiger ist oder die *Anzahl* kleiner oder gleich 0 (null) ist, wird der Handler für ungültige Parameter aufgerufen. Wenn die weitere Ausführung zugelassen wird, legen diese Funktionen **errno** auf **EINVAL** fest und geben-1 zurück.
 
 ### <a name="error-conditions"></a>Fehlerbedingungen
 
-|**Bedingung**|Zurück|**errno**|
+|**Condition**|Rückgabewert|**errno**|
 |-----------------|------------|-------------|
-|der *Puffer* ist **null** .|-1|**EINVAL**|
-|*Format* ist **null**|-1|**EINVAL**|
-|*Anzahl* < = 0|-1|**EINVAL**|
+|der *Puffer* ist **null** .|-1|**Eingabe**|
+|*Format* ist **null**|-1|**Eingabe**|
+|*Anzahl* <= 0|-1|**Eingabe**|
 |*sizeOfBuffer* zu klein (und *count* ! = **_TRUNCATE**)|-1 (und der *Puffer* auf eine leere Zeichenfolge festgelegt)|**ERANGE**|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
+
+**vsnprintf_s** ist mit **_vsnprintf_s**identisch. **vsnprintf_s** ist für die Kompatibilität mit dem ANSI-Standard enthalten. **_vnsprintf** wird aus Gründen der Abwärtskompatibilität beibehalten.
 
 Jede dieser Funktionen nimmt einen Zeiger auf eine Argumentliste und formatiert und schreibt dann bis zu *Zähl* Zeichen der angegebenen Daten in den Speicher, auf den der *Puffer* zeigt, und fügt einen abschließenden NULL-Wert an.
 
-Wenn *count* gleich [_TRUNCATE](../../c-runtime-library/truncate.md)ist, schreiben diese Funktionen den Großteil der Zeichenfolge, da Sie in den *Puffer* passt, wobei Platz für das abschließende Null-Zeichen bleibt. Wenn die gesamte Zeichenfolge (mit abschließendem NULL-Wert) in den *Puffer*passt, geben diese Funktionen die Anzahl der geschriebenen Zeichen zurück (ohne das abschließende Null-Zeichen). Andernfalls geben diese Funktionen "-1" zurück, um anzugeben, dass ein Abschneiden aufgetreten ist.
+Wenn *count* [_TRUNCATE](../../c-runtime-library/truncate.md)ist, schreiben diese Funktionen den Großteil der Zeichenfolge so, dass Sie in den *Puffer* passt, wobei Platz für das abschließende Null-Zeichen bleibt. Wenn die gesamte Zeichenfolge (mit abschließendem NULL-Wert) in den *Puffer*passt, geben diese Funktionen die Anzahl der geschriebenen Zeichen zurück (ohne das abschließende Null-Zeichen). Andernfalls geben diese Funktionen "-1" zurück, um anzugeben, dass ein Abschneiden aufgetreten ist.
 
 Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch den Gebiets Schema Parameter, der anstelle des aktuellen Thread Gebiets Schemas übergeben wurde.
 
@@ -163,7 +173,7 @@ Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, v
 > [!NOTE]
 > Um sicherzustellen, dass genügend Platz für das abschließende Null-Zeichen vorhanden ist, stellen Sie sicher, dass die *Anzahl* streng kleiner als die Pufferlänge ist, oder verwenden Sie **_TRUNCATE**.
 
-In C++ wird die Verwendung dieser Funktionen durch Vorlagenüberladungen vereinfacht; die Überladungen können automatisch Rückschlüsse auf die Pufferlänge ziehen (wodurch kein Größenargument mehr angegeben werden muss), und sie können automatisch die älteren, nicht sicheren Funktionen durch ihre neueren, sicheren Entsprechungen ersetzen. Weitere Informationen finden Sie unter [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md).
+In C++ wird die Verwendung dieser Funktionen durch Vorlagenüberladungen vereinfacht; die Überladungen können automatisch Rückschlüsse auf die Pufferlänge ziehen (wodurch kein Größenargument mehr angegeben werden muss), und sie können automatisch die älteren, nicht sicheren Funktionen durch ihre neueren, sicheren Entsprechungen ersetzen. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
 ### <a name="generic-text-routine-mappings"></a>Zuordnung generischer Textroutinen
 
@@ -177,12 +187,12 @@ In C++ wird die Verwendung dieser Funktionen durch Vorlagenüberladungen vereinf
 |-Routine zurückgegebener Wert|Erforderlicher Header|Optionale Header|
 |-------------|---------------------|----------------------|
 |**vsnprintf_s**|\<stdio.h> und \<stdarg.h>|\<varargs.h>*|
-|**_vsnprintf_s**, **_vsnprintf_s_l**|\<stdio.h> und \<stdarg.h>|\<varargs.h>*|
-|**_vsnwprintf_s**, **_vsnwprintf_s_l**|\<stdio.h> oder \<wchar.h> und \<stdarg.h>|\<varargs.h>*|
+|**_vsnprintf_s** **_vsnprintf_s_l**|\<stdio.h> und \<stdarg.h>|\<varargs.h>*|
+|**_vsnwprintf_s** **_vsnwprintf_s_l**|\<stdio.h> oder \<wchar.h> , und \<stdarg.h>|\<varargs.h>*|
 
 \* Benötigt für die Kompatibilität mit UNIX V.
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
 ## <a name="example"></a>Beispiel
 
@@ -216,11 +226,11 @@ nSize: 9, buff: Hi there!
 nSize: -1, buff: Hi there!
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
 [vprintf-Funktionen](../../c-runtime-library/vprintf-functions.md)<br/>
 [fprintf, _fprintf_l, fwprintf, _fwprintf_l](fprintf-fprintf-l-fwprintf-fwprintf-l.md)<br/>
 [printf, _printf_l, wprintf, _wprintf_l](printf-printf-l-wprintf-wprintf-l.md)<br/>
-[sprintf, _sprintf_l, swprintf, _swprintf_l, \__swprintf_l](sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)<br/>
+[sprintf, _sprintf_l, Austausch printf, _swprintf_l, \_ _swprintf_l](sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md)<br/>
 [va_arg, va_copy, va_end, va_start](va-arg-va-copy-va-end-va-start.md)<br/>

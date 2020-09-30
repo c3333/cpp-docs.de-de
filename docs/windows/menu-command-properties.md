@@ -17,31 +17,31 @@ helpviewer_keywords:
 - mnemonics [C++], uniqueness checking
 - Check Mnemonics command
 ms.assetid: 6d308205-3c9e-42f2-ab42-45e656940e45
-ms.openlocfilehash: 33b1260d088008a94d935f7e4fd7c18b0dd249e3
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: a950e7d0156d1b952782fddcdff26718fcf0e291
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80167939"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91504322"
 ---
 # <a name="menu-commands-c"></a>Menübefehle (C++)
 
 Die unten aufgeführten Informationen sind entsprechend den **Menü** Eigenschaften organisiert, die im [Eigenschaften Fenster](/visualstudio/ide/reference/properties-window) angezeigt werden, wenn Sie einen Menübefehl auswählen. Diese werden alphabetisch aufgelistet, obwohl das **Eigenschaften** Fenster auch das Anzeigen dieser Eigenschaften nach Kategorie ermöglicht.
 
-|Eigenschaft|BESCHREIBUNG|
+|Eigenschaft|Beschreibung|
 |--------------|-----------------|
-|**Break**|Einer der folgenden Werte ist möglich:<br/>  - **None**: keine Pause. Dies ist die Standardoption.<br/>  - **Spalte**: Bei statischen Menüs bewirkt dieser Wert, dass der Menübefehl in eine neue Zeile gesetzt wird.<br/>      Bei Popupmenüs bewirkt dieser Wert, dass der Menübefehl in eine neue Spalte gesetzt wird, ohne dass zwischen den Spalten eine Trennlinie angezeigt wird.<br/>      Diese Eigenschaft wirkt sich nicht im Menü-Editor, sondern erst zur Laufzeit auf die Darstellung des Menüs aus.<br />   - **Leiste**: identisch mit der **Spalte** , außer dass bei Popup Menüs der Wert die neue Spalte von der alten Spalte mit einer vertikalen Linie trennt.<br/>      Das Festlegen dieser Eigenschaft wirkt sich nicht im **Menü-Editor**, sondern nur zur Laufzeit auf die Darstellung des Menüs aus.|
-|**Beschriftung**|Text zur Beschreibung des Menübefehls (der Menüname). Einem der Buchstaben in der Beschriftung eines Menübefehls kann eine Zugriffstaste zugeordnet werden, indem ihm ein kaufmännisches Und-Zeichen (&) vorangestellt wird.|
-|**Aktiviert**|**True**gibt an, dass der Menübefehl anfänglich aktiviert ist. Typ: **bool**. Standardwert: **FALSE**.|
+|**Umbruch**|Einer der folgenden Werte ist möglich:<br/>  - **Keine: keine**Pause. Dies ist die Standardoption.<br/>  - **Spalte**: bei statischen Menüs fügt dieser Wert den Menübefehl in eine neue Zeile ein.<br/>      Bei Popupmenüs bewirkt dieser Wert, dass der Menübefehl in eine neue Spalte gesetzt wird, ohne dass zwischen den Spalten eine Trennlinie angezeigt wird.<br/>      Diese Eigenschaft wirkt sich nicht im Menü-Editor, sondern erst zur Laufzeit auf die Darstellung des Menüs aus.<br />   - **Leiste**: wie **Spalte** , außer dass bei Popup Menüs der Wert die neue Spalte von der alten Spalte mit einer vertikalen Linie trennt.<br/>      Das Festlegen dieser Eigenschaft wirkt sich nicht im **Menü-Editor**, sondern nur zur Laufzeit auf die Darstellung des Menüs aus.|
+|**Caption**|Text zur Beschreibung des Menübefehls (der Menüname). Einem der Buchstaben in der Beschriftung eines Menübefehls kann eine Zugriffstaste zugeordnet werden, indem ihm ein kaufmännisches Und-Zeichen (&) vorangestellt wird.|
+|**Überprüft**|**True**gibt an, dass der Menübefehl anfänglich aktiviert ist. Typ: **bool**. Standardwert: **false**.|
 |**Aktiviert**|Wenn **FALSE**, ist das Menüelement deaktiviert.|
-|**Grau**|**True**gibt an, dass der Menübefehl anfänglich ausgegraut und inaktiv ist. Typ: **bool**. Standardwert: **FALSE**.|
-|**Hilfe**|Richtet das Menüelement rechtsbündig aus. Standardwert: **FALSE**.<br/><br/>Der Menübefehl für die **Hilfe** befindet sich beispielsweise in allen Windows-Anwendungen immer ganz rechts. Wenn Sie diese Eigenschaft für ein Menüelement festlegen, wird das Element ganz rechts am Ende des Menüs angezeigt. Bezieht sich auf Elemente des Hauptmenüs.|
+|**Grau**|**True**gibt an, dass der Menübefehl anfänglich ausgegraut und inaktiv ist. Typ: **bool**. Standardwert: **false**.|
+|**Hilfe**|Richtet das Menüelement rechtsbündig aus. Standardwert: **false**.<br/><br/>Der Menübefehl für die **Hilfe** befindet sich beispielsweise in allen Windows-Anwendungen immer ganz rechts. Wenn Sie diese Eigenschaft für ein Menüelement festlegen, wird das Element ganz rechts am Ende des Menüs angezeigt. Bezieht sich auf Elemente des Hauptmenüs.|
 |**ID**|Ein Symbol, das in der Headerdatei definiert ist. Typ: **Symbol**, **ganze**Zahl oder **Zeichenfolge**in Anführungszeichen.<br/><br/>Sie können ein beliebiges Symbol verwenden, das üblicherweise in den Editoren verfügbar ist. Dies gilt auch, wenn das [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window) keine Dropdownliste enthält, aus der Sie auswählen können.|
 |**Popup**|**True**gibt an, dass der Menübefehl ein Popup Menü ist. Typ: **bool**. Standard: **true** für Menüs der obersten Ebene in einer Menüleiste, andernfalls **false**.|
-|**prompt**|Enthält Text, der in der Statusleiste angezeigt werden soll, wenn dieser Menübefehl markiert wird. Der Text wird mit dem Bezeichner des Menübefehls in der Zeichenfolgentabelle gespeichert.<br/><br/>Diese Eigenschaft ist für jeden Projekttyp verfügbar, wobei die Laufzeitfunktionalität jedoch MFC-spezifisch ist.|
-|**Rechtsbündig**|Richtet den Menübefehl auf der Menüleiste zur Laufzeit rechtsbündig aus. Typ: **bool**. Standardwert: **FALSE**.|
+|**Eingabeaufforderung**|Enthält Text, der in der Statusleiste angezeigt werden soll, wenn dieser Menübefehl markiert wird. Der Text wird mit dem Bezeichner des Menübefehls in der Zeichenfolgentabelle gespeichert.<br/><br/>Diese Eigenschaft ist für jeden Projekttyp verfügbar, wobei die Laufzeitfunktionalität jedoch MFC-spezifisch ist.|
+|**Rechtsbündig**|Richtet den Menübefehl auf der Menüleiste zur Laufzeit rechtsbündig aus. Typ: **bool**. Standardwert: **false**.|
 |**Von rechts nach links**|Ermöglicht die Darstellung der Menübefehle von rechts nach links, wenn die Benutzeroberfläche in eine Sprache übertragen werden soll, die von rechts nach links geschrieben wird, z. B. Hebräisch oder Arabisch.|
-|**Trennzeichen**|**True**gibt an, dass der Menübefehl ein Trennzeichen ist. Typ: **bool**. Standardwert: **FALSE**.|
+|**Trennzeichen**|**True**gibt an, dass der Menübefehl ein Trennzeichen ist. Typ: **bool**. Standardwert: **false**.|
 
 ## <a name="associate-menu-commands"></a>Menübefehle zuordnen
 
@@ -57,7 +57,7 @@ Häufig ist es wünschenswert, dass ein Menübefehl und eine Tastenkombination d
 
    - Geben Sie den Namen der Modifizierertaste (**STRG**, **alt**oder **UMSCHALT**) ein, gefolgt von einem Pluszeichen ( **+** ) und dem Namen, Buchstaben oder Symbol der zusätzlichen Taste.
 
-   Wenn Sie z. b. dem Befehl **Öffnen** im Menü **Datei** die Tastenkombination **STRG**+**O** zuweisen möchten, ändern Sie die **Beschriftung** des Menübefehls so, dass Sie wie der folgende Text aussieht:
+   Wenn Sie z. b. **STRG** + **O** zum Befehl **Öffnen** im Menü **Datei** zuweisen möchten, ändern Sie die **Beschriftung** des Menübefehls so, dass Sie wie der folgende Text aussieht:
 
    ```
    &Open...\tCtrl+O
@@ -65,17 +65,17 @@ Häufig ist es wünschenswert, dass ein Menübefehl und eine Tastenkombination d
 
    Der Menübefehl im **Menü-Editor** wird aktualisiert, um die neue Beschriftung bei der Eingabe widerzuspiegeln.
 
-1. [Erstellen Sie den Zugriffstastentabellen-Eintrag](../windows/adding-an-entry-to-an-accelerator-table.md) im **Zugriffstasten** -Editor, und weisen Sie ihm den gleichen Bezeichner wie dem Menübefehl zu. Verwenden Sie eine Tastenkombination, die Ihrer Ansicht nach leicht zu merken ist.
+1. [Erstellen Sie den Zugriffstastentabellen-Eintrag](./accelerator-editor.md) im **Zugriffstasten** -Editor, und weisen Sie ihm den gleichen Bezeichner wie dem Menübefehl zu. Verwenden Sie eine Tastenkombination, die Ihrer Ansicht nach leicht zu merken ist.
 
 Die MFC-Anwendung kann beschreibenden Text für jeden Menübefehl anzeigen, den ein Benutzer auswählen kann. Zeigen Sie beschreibenden Text an, indem Sie jedem Menübefehl mithilfe der Eigenschaft **prompt** im Fenster **Eigenschaften** eine Text Zeichenfolge zuweisen. Wenn eine Zeichenfolge in der [Zeichenfolgentabelle](../windows/string-editor.md) die gleiche ID wie der Befehl aufweist, zeigt eine MFC-Anwendung automatisch diese Zeichenfolgenressource in der Statusleiste der ausgeführten Anwendung an, wenn ein Benutzer auf ein Menüelement zeigt.
 
 - Wählen Sie im **Menü-Editor**den Menübefehl aus, um einem Menübefehl eine Text Zeichenfolge für eine Statusleiste in MFC-Anwendungen zuzuordnen. Geben Sie im [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window)den zugeordneten Statusleistentext im Feld **Eingabeaufforderung** ein.
 
-In einem C++ Projekt können Sie eine Zugriffstaste (ein mnetmonisches, mit dem der Benutzer das Menü mit der Tastatur auswählen kann) zu Ihren Menüs und Menübefehlen zuweisen.
+In einem C++-Projekt können Sie den Menüs und Menübefehlen eine Zugriffstaste (ein mnetmonisches, das dem Benutzer das Auswählen des Menüs mit der Tastatur ermöglicht) zuweisen.
 
-- Wenn Sie einem Menübefehl eine Zugriffstaste (Tastenkombination) zuweisen möchten, geben Sie ein kaufmännisches und-(`&`) vor einem Buchstaben im Menü Namen oder Befehlsnamen ein, um diesen Buchstaben als entsprechenden Zugriffsschlüssel anzugeben.
+- Wenn Sie einem Menübefehl eine Zugriffstaste (Tastenkombination) zuweisen möchten, geben Sie ein kaufmännisches und-( `&` ) vor einem Buchstaben im Menü Namen oder Befehlsnamen ein, um diesen Buchstaben als entsprechenden Zugriffsschlüssel anzugeben.
 
-   Beispiel: "& Datei" legt **alt**+**F** als Tastenkombination für das Menü **Datei** in Anwendungen fest, die für Microsoft Windows geschrieben wurden.
+   Beispiel: "&file" legt **alt** + **F** als Tastenkombination für das Menü **Datei** in Anwendungen fest, die für Microsoft Windows geschrieben wurden.
 
    Das Menüelement gibt einen sichtbaren Hinweis darauf, dass einem der Buchstaben eine Zugriffstaste zugeordnet ist. Der Buchstabe, der auf das kaufmännische Und-Zeichen folgt, wird unterstrichen dargestellt (abhängig vom Betriebssystem).
 

@@ -1,5 +1,5 @@
 ---
-title: 'Gewusst wie: Erstellen von SymbolenC++()'
+title: 'Vorgehensweise: Erstellen von Symbolen (C++)'
 ms.date: 02/14/2019
 f1_keywords:
 - vc.editors.symbol.creating
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - View Use button
 - resource editors [C++], resource symbols
 ms.assetid: 35168d31-3af6-4ecd-9362-3707d47b53f3
-ms.openlocfilehash: 1c69e8878885acd80c285691fb0861a476af03ea
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 008d2ab420034e628251c08222bf2e9f723deab1
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80160514"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91504502"
 ---
-# <a name="how-to-create-symbols-c"></a>Gewusst wie: Erstellen von SymbolenC++()
+# <a name="how-to-create-symbols-c"></a>Vorgehensweise: Erstellen von Symbolen (C++)
 
 Wenn Sie ein neues Projekt beginnen, ist es möglicherweise bequem, die erforderlichen Symbolnamen zuzuordnen, bevor Sie die Ressourcen erstellen, denen Sie zugewiesen werden.
 
@@ -37,15 +37,15 @@ Im Dialogfeld **Ressourcen Symbole** können Sie neue Ressourcen Symbole hinzuf�
 
 Das Dialogfeld enthält die folgenden Eigenschaften:
 
-|Eigenschaft|BESCHREIBUNG|
+|Eigenschaft|Beschreibung|
 |--------------------------|------------------------------------------|
-|**Name**|Zeigt den Namen des Symbols an.<br/><br/>Weitere Informationen finden Sie unter [Einschränkungen für Symbol Namen](../windows/symbol-name-restrictions.md).|
-|**Wert**|Zeigt den numerischen Wert des Symbols an.<br/><br/>Weitere Informationen finden Sie unter [Einschränkungen bei Symbol Werten](../windows/symbol-value-restrictions.md).|
+|**Name**|Zeigt den Namen des Symbols an.<br/><br/>Weitere Informationen finden Sie unter [Einschränkungen für Symbol Namen](./changing-a-symbol-or-symbol-name-id.md).|
+|**Wert**|Zeigt den numerischen Wert des Symbols an.<br/><br/>Weitere Informationen finden Sie unter [Einschränkungen bei Symbol Werten](./changing-a-symbol-or-symbol-name-id.md).|
 |**Wird verwendet**|Bei Auswahl dieser Option wird angegeben, dass das Symbol von einer oder mehreren Ressourcen verwendet wird.<br/><br/>Die Ressource oder Ressourcen sind im Feld **verwendet von** aufgeführt.|
 |**Schreibgeschützte Symbole anzeigen**|Bei Auswahl dieser Option werden schreibgeschützte Ressourcen angezeigt.<br/><br/>Standardmäßig werden im Dialogfeld " **Ressourcen Symbol** " nur die änderbaren Ressourcen in der Ressourcen Skriptdatei angezeigt. wenn diese Option aktiviert ist, werden änderbare Ressourcen in fettem Text angezeigt, und schreibgeschützte Ressourcen werden als nur-Text angezeigt.|
 |**Verwendet von**|Zeigt die Ressource bzw. Ressourcen an, in der/denen das in der Symbolliste markierte Symbol verwendet wird.<br/><br/>Um zum Editor für eine bestimmte Ressource zu wechseln, wählen Sie die Ressource im Feld **verwendet von** aus, und wählen Sie die Option **Verwendung anzeigen**aus.|
 |**Neu**|Öffnet das Dialogfeld **Neues Symbol** , in dem Sie den Namen und ggf. einen Wert für einen neuen symbolischen Ressourcen Bezeichner definieren können.|
-|**Änderung**|Öffnet das Dialogfeld **Symbol ändern** , in dem Sie den Namen oder den Wert eines Symbols ändern können.<br/><br/>Wenn das Symbol für ein Steuerelement oder eine Ressource in Gebrauch ist, kann das Symbol nur im entsprechenden Ressourcen-Editor geändert werden. Weitere Informationen finden Sie unter [Verwalten von Symbolen](../windows/changing-unassigned-symbols.md).|
+|**Änderung**|Öffnet das Dialogfeld **Symbol ändern** , in dem Sie den Namen oder den Wert eines Symbols ändern können.<br/><br/>Wenn das Symbol für ein Steuerelement oder eine Ressource in Gebrauch ist, kann das Symbol nur im entsprechenden Ressourcen-Editor geändert werden. Weitere Informationen finden Sie unter [Verwalten von Symbolen](./changing-a-symbol-or-symbol-name-id.md).|
 |**Verwendung anzeigen**|Öffnet die Ressource, die das Symbol enthält, im entsprechenden Ressourcen-Editor.|
 
 ## <a name="create-symbols"></a>Symbole erstellen
@@ -88,6 +88,6 @@ Win32
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Ressourcenbezeichner (Symbole)](../windows/symbols-resource-identifiers.md)<br/>
+[Ressourcen Bezeichner (Symbole)](../windows/symbols-resource-identifiers.md)<br/>
 [Gewusst wie: Verwalten von Symbolen](../windows/changing-a-symbol-or-symbol-name-id.md)<br/>
 [Vordefinierte Symbol-IDs](../windows/predefined-symbol-ids.md)<br/>

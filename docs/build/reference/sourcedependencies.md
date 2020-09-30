@@ -1,5 +1,5 @@
 ---
-title: /sourceDependencies (Berichts Abhängigkeiten auf Quell Ebene)
+title: /sourceDependencies (Abhängigkeiten auf Quellebene melden)
 description: Referenzhandbuch zur/sourceDependencies-Compileroption in Microsoft C++.
 ms.date: 07/29/2020
 f1_keywords:
@@ -7,18 +7,19 @@ f1_keywords:
 helpviewer_keywords:
 - /sourceDependencies compiler option
 - /sourceDependencies
-ms.openlocfilehash: 3198353ea7569c426a556522d6b931fe23c7f12c
-ms.sourcegitcommit: f2a135d69a2a8ef1777da60c53d58fe06980c997
+ms.openlocfilehash: 0c1866812435c777f6f1fd7ed7f9db788a8cf031
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520703"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91502845"
 ---
-# <a name="sourcedependencies-report-source-level-dependencies"></a>`/sourceDependencies`(Berichts Abhängigkeiten auf Quell Ebene)
+# <a name="sourcedependencies-report-source-level-dependencies"></a>`/sourceDependencies` (Berichts Abhängigkeiten auf Quell Ebene)
 
 Weist den Compiler an, eine JSON-Datei zu generieren, die die während der Kompilierung genutzten Abhängigkeiten auf Quell Ebene detailliert beschreibt.
 
 Die JSON-Datei enthält eine Liste der Quell Abhängigkeiten, die Folgendes umfassen:
+
 - Header Dateien (sowohl transitiv als auch direkt enthaltene Header).
 - Der verwendete PCH (wenn **`/Yu`** angegeben ist).
 - Importierte Module und importierte Header Einheiten (sowohl transitiv als auch direkt importierte Module/Header Einheiten).
@@ -96,7 +97,7 @@ Wir haben verwendet `...` , um die gemeldeten Pfade abzukürzen. der Bericht ent
 
 - Diese Option hat keine programmgesteuerte Entsprechung.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
 [Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)<br/>

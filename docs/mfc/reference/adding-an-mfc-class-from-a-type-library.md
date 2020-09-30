@@ -6,12 +6,12 @@ helpviewer_keywords:
 - MFC, adding classes from type libraries
 - type libraries, adding MFC classes from
 ms.assetid: aba40476-3cfb-47af-990e-ae2e9e0d79cf
-ms.openlocfilehash: 4e8d0f74a73048f172a8030d4bfb081c803e7170
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: 45bad00155cc1587980e6f3b25843a7a22e7e754
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86405116"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91503039"
 ---
 # <a name="adding-an-mfc-class-from-a-type-library"></a>Hinzufügen einer MFC-Klasse aus einer Typbibliothek
 
@@ -28,13 +28,13 @@ Eine Typbibliothek enthält eine binäre Beschreibung der Schnittstellen, die vo
 
 1. Klicken Sie im Kontextmenü auf die Option **Hinzufügen**, und klicken Sie danach auf **Klasse hinzufügen**.
 
-1. Klicken Sie im Dialogfeld [Klasse hinzufügen](../../ide/add-class-dialog-box.md) im Bereich Vorlagen auf **MFC-Klasse aus TypeLib**, und klicken Sie dann auf **Öffnen** , um den [Assistenten zum Hinzufügen von Klassen aus TypeLib](../../mfc/reference/add-class-from-typelib-wizard.md)anzuzeigen.
+1. Klicken Sie im Dialogfeld [Klasse hinzufügen](../../ide/adding-a-class-visual-cpp.md#add-class-dialog-box) im Bereich Vorlagen auf **MFC-Klasse aus TypeLib**, und klicken Sie dann auf **Öffnen** , um den [Assistenten zum Hinzufügen von Klassen aus TypeLib](../../mfc/reference/add-class-from-typelib-wizard.md)anzuzeigen.
 
 Im Assistenten können Sie mehr als eine Klasse in einer Typbibliothek hinzufügen. Ebenso können Sie Klassen aus mehreren Typbibliotheken in einer einzelnen Assistenten Sitzung hinzufügen.
 
-Der Assistent erstellt eine von [COleDispatchDriver](../../mfc/reference/coledispatchdriver-class.md)abgeleitete MFC-Klasse für jede Schnittstelle, die Sie aus der ausgewählten Typbibliothek hinzufügen. `COleDispatchDriver`implementiert die Clientseite der OLE-Automatisierung.
+Der Assistent erstellt eine von [COleDispatchDriver](../../mfc/reference/coledispatchdriver-class.md)abgeleitete MFC-Klasse für jede Schnittstelle, die Sie aus der ausgewählten Typbibliothek hinzufügen. `COleDispatchDriver` implementiert die Clientseite der OLE-Automatisierung.
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Automatisierungsclients](../../mfc/automation-clients.md)<br/>
-[Automatisierungsclients: Verwenden von Typbibliotheken](../../mfc/automation-clients-using-type-libraries.md)
+[Automatisierungs Clients](../../mfc/automation-clients.md)<br/>
+[Automatisierungs Clients: Verwenden von Typbibliotheken](../../mfc/automation-clients-using-type-libraries.md)

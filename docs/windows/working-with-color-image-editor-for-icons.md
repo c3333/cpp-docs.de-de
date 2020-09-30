@@ -1,5 +1,5 @@
 ---
-title: 'Vorgehensweise: Arbeiten mit Farben'
+title: 'Gewusst wie: Arbeiten mit Farben'
 ms.date: 02/15/2019
 f1_keywords:
 - vc.editors.image.color
@@ -62,173 +62,173 @@ helpviewer_keywords:
 - images [C++], colors
 - colors [C++], inverting
 ms.assetid: d34ff96f-241d-494f-abdd-13811ada8cd3
-ms.openlocfilehash: c424d2e613c51f901def13c4bf42a066797cc65c
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3c9134fde9053f57f8848a37b1442728f6111c98
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62387765"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91502949"
 ---
-# <a name="how-to-work-with-color"></a>Vorgehensweise: Arbeiten mit Farben
+# <a name="how-to-work-with-color"></a>Gewusst wie: Arbeiten mit Farben
 
-Die **Bildbearbeitung** enthält viele Features, die speziell behandelt und Anpassen von Farben. Sie können eine Vorder- oder Hintergrund Farbe festlegen, füllen von begrenzten Bereichen mit Farbe oder eine andere Farbe auf ein Bild, als die aktuelle Vorder- oder Hintergrund Farbe auswählen. Sie können die Tools verwenden, auf die [Symbolleiste der Bildbearbeitung](../windows/toolbar-image-editor-for-icons.md) zusammen mit den Farben (Palette) in der **Farben** um Images zu erstellen.
+Der **Bild-Editor** enthält viele Funktionen, mit denen Farben speziell behandelt und angepasst werden. Sie können eine Vordergrund-oder Hintergrundfarbe festlegen, gebundene Bereiche mit Farben Auffüllen oder eine Farbe auf einem Bild auswählen, die als aktuelle Vordergrund-oder Hintergrundfarbe verwendet werden soll. Sie können die Tools auf der [Bild-Editor-Symbolleiste](./image-editor-for-icons.md) zusammen mit der Farbpalette im Fenster **Farben** zum Erstellen von Bildern verwenden.
 
-Alle Farben für Monochrom und 16 Farben-Images werden angezeigt, der **Farben** Palette in der **Farben** Fenster. Zusammen mit 16 Standardfarben können Sie eigene benutzerdefinierten Farben erstellen. Ändern der Farben in der Palette ändert sich sofort auf die entsprechende Farbe im Bild aus.
+Alle Farben für monochrome und 16-farbige Bilder werden in der **Farbpalette im** Fenster **Farben** angezeigt. Zusammen mit den 16 Standardfarben können Sie eigene benutzerdefinierte Farben erstellen. Wenn Sie die Farben in der Palette ändern, wird die entsprechende Farbe im Bild sofort geändert.
 
-Beim Arbeiten mit 256-Farben-Symbol und der Cursor-Images, die **Farben** -Eigenschaft in der [Fenster "Eigenschaften"](/visualstudio/ide/reference/properties-window) verwendet wird. Weitere Informationen finden Sie unter [Erstellen eines 256-Farben-Symbols oder Cursors](creating-a-256-color-icon-or-cursor-image-editor-for-icons.md).
+Beim Arbeiten mit 256-Farben-Symbol-und Cursor Bildern wird die **Colors** -Eigenschaft in der [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window) verwendet. Weitere Informationen finden Sie unter [Erstellen eines 256-Farben-Symbols oder-Cursors](./creating-an-icon-or-other-image-image-editor-for-icons.md).
 
-True Color-Bilder können auch erstellt werden. Jedoch nicht "true" Farbmuster angezeigt, in der vollständigen Palette in der **Farben** Fenster; sie werden nur in den Vorder- oder Hintergrund Indikator Farbbereich. "True" Farben werden erstellt, mit der **benutzerdefinierte Farbauswahl** Dialogfeld.
+Es können auch True-Color-Bilder erstellt werden. Echte farbbeispiele werden jedoch nicht in der vollständigen Palette im Fenster **Farben** angezeigt. Sie werden nur im Vordergrund-oder Hintergrund Farbindikator Bereich angezeigt. Echte Farben werden mithilfe des Dialog Felds **Benutzerdefinierte Farbauswahl** erstellt.
 
-Sie können benutzerdefinierte Farbpaletten auf Datenträger speichern und erneut geladen werden, je nach Bedarf. Die zuletzt verwendeten Farben-Palette ist in der Registrierung gespeichert und beim nächsten start von Visual Studio automatisch geladen.
+Sie können angepasste Farbpaletten auf der Festplatte speichern und nach Bedarf erneut laden. Die verwendete Farbpalette wird in der Registrierung gespeichert und beim nächsten Start von Visual Studio automatisch geladen.
 
-Die **Farben** Fenster besteht aus zwei Teilen:
+Das Fenster " **Farben** " besteht aus zwei Teilen:
 
-- Die **Farben (Palette)**, dies ist ein Array der farbbeispiele, die Farben darstellen können. Sie können die Beispiele, Vordergrund- und Hintergrundfarben auszuwählen, wenn Sie die Grafiktools verwenden auswählen.
+- Die Farb **Palette**, bei der es sich um ein Array von Farb Beispielen handelt, die Farben darstellen, die Sie verwenden können. Wenn Sie die Grafiktools verwenden, können Sie die Beispiele auswählen, um Vordergrund-und Hintergrundfarben auszuwählen.
 
-- Die **Farbanzeige**, zeigt die Vordergrund- und Hintergrundfarben und Selektoren für die Bildschirm- und invertierte Farbe.
+- Der **Farbindikator**, der die Vordergrund-und Hintergrundfarben und Selektoren für Bildschirm-und umgekehrter Farbe anzeigt.
 
-   ![Fenster "Farben"](../windows/media/vccolorswindow.gif "VcColorsWindow")<br/>
-   **Farben** Fenster
+   ![Colors window](../windows/media/vccolorswindow.gif "vccolorswindow")<br/>
+   Fenster " **Farben** "
 
 > [!NOTE]
-> Die **Bildschirm Farbe** und **invertierte Farbe** Tools sind nur verfügbar für Symbole und Cursor.
+> Die Tools für die **Bildschirm Farbe** und die **Umkehrung der Farbe** sind nur für Symbole und Cursor verfügbar.
 
-Sie können die **Farben** -Fenster mit der [Symbolleiste der Bildbearbeitung](../windows/toolbar-image-editor-for-icons.md).
+Sie können das Fenster " **Farben** " mit der [Bild-Editor-Symbolleiste](./image-editor-for-icons.md)verwenden.
 
-- Zum Anzeigen der **Farben** Fenster mit der rechten Maustaste in ein **Bild-Editor** Bereich, und wählen Sie **Fenster "Farben" anzeigen**, oder wechseln Sie zum Menü [Image](../windows/image-menu-image-editor-for-icons.md)  >  **Anzeigen des Fensters "Farben"**.
+- Um das Fenster **Farben** anzuzeigen, klicken Sie mit der rechten Maustaste in einen **Bild Bearbeitungs** Bereich, und wählen Sie **Fenster Farben anzeigen**aus, oder wechseln Sie zum Menü [Bild](./image-editor-for-icons.md)  >  **Fenster Farben anzeigen**.
 
-- So blenden Sie aus der **Farben** Fenster lösen Sie das Fenster (diese Aktion ermöglicht das Fenster automatisch ausgeblendet, wenn er nicht verwendet wird), oder wählen die **schließen** Schaltfläche.
+- Um das Fenster " **Farben** " auszublenden, lösen Sie das Fenster aus (durch diese Aktion kann das Fenster automatisch ausgeblendet werden, wenn es nicht verwendet wird), oder klicken Sie auf die Schaltfläche " **Schließen** ".
 
-Die **Farben** Palette werden anfänglich 16 Standardfarben angezeigt. Mit den bereits angezeigten Farben können Sie auch eigene benutzerdefinierten Farben erstellen. Sie können dann speichern und Laden eine benutzerdefinierte Farbpalette.
+In der **Farb** Palette werden anfänglich 16 Standardfarben angezeigt. Mit den angezeigten Farben können Sie auch eigene benutzerdefinierte Farben erstellen. Sie können dann eine benutzerdefinierte Farbpalette speichern und laden.
 
-Die **benutzerdefinierte Farbauswahl** Dialogfeld können Sie die Farben anpassen, Sie für Ihr Image mit den folgenden Eigenschaften verwenden:
+Mit dem Dialogfeld **Benutzerdefinierte Farbauswahl** können Sie die Farben, die Sie für Ihr Bild verwenden, mit den folgenden Eigenschaften anpassen:
 
 |Eigenschaft|Beschreibung|
 |--------------------------|--------------------------|
-|**Farbverlauf Farbanzeige**|Ändert die Werte einer ausgewählten Farbe.<br/><br/>Positionieren Sie das Fadenkreuz, auf die Farbe, die Sie verwenden möchten, ändern und den Schieberegler nach oben oder unten auf die Brillanz oder RGB-Werte der Farbe zu ändern.|
-|**Helligkeits-Symbolleiste**|Legt die Helligkeit für die Farbe, die Sie, in Auswählen der **Farbverlauf Farbanzeige** Feld.<br/><br/>Wählen Sie aus, und ziehen Sie den weißen Pfeil der Balken für größere Helligkeit oder nach unten bei kleiner. Die **Farbe** Feld zeigt die Farbe, die Sie ausgewählt haben und die Auswirkungen der Helligkeit, die Sie festlegen.|
-|**Farbe**|Listet den Farbton (Farbwert für rad) der Farbe, die Sie definieren. Werte zwischen 0 und 240, in denen 0 ist rot, 60 ist gelb gekennzeichnet, 120 ist Grün, 180 beträgt Cyan, Magenta "200" lautet und 240 ist Blau.|
-|**Hue**|Listet den Farbton (Farbwert für rad) der Farbe, die Sie definieren. Werte zwischen 0 und 240, in denen 0 ist rot, 60 ist gelb gekennzeichnet, 120 ist Grün, 180 beträgt Cyan, Magenta "200" lautet und 240 ist Blau.|
-|**Sätt.:**|Gibt an, der Sättigungswert der Farbe, die Sie definieren. Die Sättigung ist die Menge des in einem angegebenen Farbton. Werte zwischen 0 und 240.|
-|**Lum**|Listet die Brillanz (Helligkeit) der Farbe, die Sie definieren. Werte zwischen 0 und 240.|
-|**Rot**|Gibt den Wert der Farbe, die Sie definieren. Werte zwischen 0 und 255 liegen.|
-|**Grün**|Gibt den grünen Wert der Farbe, die Sie definieren. Werte zwischen 0 und 255 liegen.|
-|**Blau**|Gibt den blauen Wert der Farbe, die Sie definieren. Werte zwischen 0 und 255 liegen.|
+|**Farbverlaufs Farbe anzeigen**|Ändert die Werte einer ausgewählten Farbe.<br/><br/>Positionieren Sie das Fadenkreuz auf der Farbe, die Sie ändern möchten, und verschieben Sie den Schieberegler nach oben oder unten, um die Werte für die Helligkeit oder RGB der Farbe zu ändern.|
+|**Leuchtkraft Leiste**|Legt die Helligkeit für die Farbe fest, die Sie im Anzeige Feld für Farb **Verlaufs Farben** auswählen.<br/><br/>Wählen Sie den weißen Pfeil nach oben aus, um die Helligkeit zu erhöhen oder um weniger Helligkeit zu drücken. Das Feld **Farbe** zeigt die Farbe an, die Sie ausgewählt haben, und die Auswirkung der von Ihnen festgelegten Helligkeit.|
+|**Farbe**|Listet den Farbton (Farbrad Wert) der Farbe auf, die Sie definieren. Die Werte liegen im Bereich von 0 bis 240, wobei 0 für Rot, 60 für Gelb, 120 für Grün, 180 den Wert Cyan, 200 den Wert Magenta und 240 den Wert Blue hat.|
+|**Farbton**|Listet den Farbton (Farbrad Wert) der Farbe auf, die Sie definieren. Die Werte liegen im Bereich von 0 bis 240, wobei 0 für Rot, 60 für Gelb, 120 für Grün, 180 den Wert Cyan, 200 den Wert Magenta und 240 den Wert Blue hat.|
+|**Sat**|Gibt den Sättigungswert der Farbe an, die Sie definieren. Sättigung ist die Menge der Farbe in einem angegebenen Farbton. Die Werte reichen von 0 bis 240.|
+|**Hell.:**|Listet die Helligkeit (Helligkeit) der Farbe auf, die Sie definieren. Die Werte reichen von 0 bis 240.|
+|**Rot**|Gibt den roten Wert der Farbe an, die Sie definieren. Die Werte reichen von 0 bis 255.|
+|**Grün**|Gibt den grünen Wert der Farbe an, die Sie definieren. Die Werte reichen von 0 bis 255.|
+|**Blau**|Gibt den blauen Wert der Farbe an, die Sie definieren. Die Werte reichen von 0 bis 255.|
 
-Sie können das Speichern und Laden eine **Farben** Palette mit benutzerdefinierten Farben an. In der Standardeinstellung die **Farben** zuletzt verwendete Farbpalette wird automatisch geladen, wenn Sie Visual Studio starten.
+Sie können eine **Farb** Palette, die angepasste Farben enthält, speichern und laden. Standardmäßig wird die zuletzt verwendete **Farb** Palette automatisch geladen, wenn Sie Visual Studio starten.
 
 > [!TIP]
-> Da die **Bildbearbeitung** hat keine Möglichkeit zum Wiederherstellen der standardmäßigen **Farben** Palette, speichern Sie die Standardeinstellung **Farben** unter einem Namen wie z. B.  *Standard.PAL* oder *default.pal* , damit Sie die Standardeinstellungen problemlos wiederherstellen können.
+> Da der **Bild-Editor** keine Möglichkeit zum Wiederherstellen der **Standard Farb** Palette hat, sollten Sie die **Standard** Farbpalette unter einem Namen wie " *Standard. PAL* " oder " *default. PAL* " speichern, damit Sie die Standardeinstellungen problemlos wiederherstellen können.
 
-Verwenden Sie die **Palettenfarben laden** Dialogfeld beim Laden von speziellen Farbpaletten, die für die Verwendung in Ihrem C++-Projekt mit folgenden Eigenschaften:
+Verwenden Sie das Dialogfeld **Palettenfarben laden** , um besondere Farbpaletten für die Verwendung in Ihrem C++-Projekt mit folgenden Eigenschaften zu laden:
 
 |Eigenschaft|Beschreibung|
 |-----------------|-----------------|
-|**Suchen in**|Gibt den Speicherort einer Datei oder eines Ordners gefunden werden sollen.<br/><br/>Wählen Sie den Pfeil, um einen anderen Speicherort auswählen, oder wählen Sie das Ordnersymbol auf der Symbolleiste können Sie Ebenen zu verschieben.|
-|**Dateiname**|Dient zur Eingabe der Name der Datei, die Sie öffnen möchten.<br/><br/>Um schnell eine Datei zu suchen, die Sie zuvor erstellt haben, wählen Sie den Dateinamen in der Dropdown-Liste, sofern verfügbar.<br/><br/>Wenn Sie für eine Datei durchsuchen, können Sie Sternchen (*) als Platzhalter verwenden. Sie können z. B. eingeben \*.\* um eine Liste aller Dateien anzuzeigen. Sie können auch den vollständigen Pfad einer Datei eingeben, z. B. *C:\My Documents\MyColorPalette.pal* oder  *\\\NetworkServer\MyFolder\MyColorPalette.pal*.|
-|**Dateityp**|Listet die Typen der anzuzeigenden Dateien.<br/><br/>Palette (*. PAL) ist der Standardtyp für die Datei für Farbpaletten.|
+|**Look in**|Gibt den Speicherort an, an dem Sie eine Datei oder einen Ordner suchen möchten.<br/><br/>Wählen Sie den Pfeil aus, um einen anderen Speicherort auszuwählen, oder wählen Sie auf der Symbolleiste das Ordnersymbol, um die Ebenen zu verschieben|
+|**Dateiname**|Hier können Sie den Namen der Datei eingeben, die Sie öffnen möchten.<br/><br/>Um schnell eine Datei zu finden, die Sie zuvor geöffnet haben, wählen Sie den Dateinamen in der Dropdown Liste aus, falls verfügbar.<br/><br/>Wenn Sie nach einer Datei suchen, können Sie Sternchen (*) als Platzhalter verwenden. Beispielsweise können Sie eingeben, \* \* um eine Liste aller Dateien anzuzeigen. Sie können auch den vollständigen Pfad einer Datei eingeben, z. b. *c:\My documents\mycolorpalette.PAL* oder * \\ \networkserver\myfolder\mycolorpalette.PAL*.|
+|**Dateityp**|Listet die anzuzeigenden Dateitypen auf.<br/><br/>Die Palette (*. PAL) ist der Standard Dateityp für Farbpaletten.|
 
-## <a name="how-to"></a>Gewusst wie
+## <a name="how-to"></a>Vorgehensweise
 
-### <a name="to-select-foreground-or-background-colors"></a>Auswählen von Vordergrund-oder Hintergrundfarben
+### <a name="to-select-foreground-or-background-colors"></a>So wählen Sie Vordergrund-oder Hintergrundfarben aus
 
-Mit Ausnahme der **Radierer**, tools auf die **Bildbearbeitung** Symbolleiste Zeichnen-Befehl in der aktuellen Vordergrund- oder Hintergrundfarbe, wenn Sie die linke oder rechte Maustaste drücken.
+Mit Ausnahme des **radiers**zeichnen Tools auf der **Bild-Editor** -Symbolleiste mit der aktuellen Vordergrund-oder Hintergrundfarbe, wenn Sie die linke oder Rechte Maustaste drücken.
 
-- Wählen Sie eine Vordergrundfarbe, mit der linken Maustaste, wählen Sie die gewünschte Farbe auf den **Farben** Palette.
+- Um eine Vordergrundfarbe auszuwählen, wählen Sie mit der linken Maustaste die gewünschte Farbe auf der Farb **Palette aus** .
 
-- Wählen Sie eine Hintergrundfarbe, mit der rechten Maustaste, wählen Sie die gewünschte Farbe auf den **Farben** Palette.
+- Um eine Hintergrundfarbe auszuwählen, wählen Sie mit der rechten Maustaste die gewünschte Farbe auf der **Farbpalette aus** .
 
-### <a name="to-fill-a-bounded-area-of-an-image-with-a-color"></a>Zum Füllen von begrenzten Bereichen eines Bilds mit einer Farbe
+### <a name="to-fill-a-bounded-area-of-an-image-with-a-color"></a>So füllen Sie einen begrenzten Bereich eines Bilds mit einer Farbe aus
 
-Die **Bildbearbeitung** bietet die **füllen** Tool für das Füllen alle Bildbereiche mit der aktuellen zeichnen oder die aktuelle Hintergrundfarbe.
+Der **Bild-Editor** bietet das **Füll** Tool zum Auffüllen eines beliebigen eingeschlossenen Bildbereichs mit der aktuellen Zeichenfarbe oder der aktuellen Hintergrundfarbe.
 
-### <a name="to-use-the-fill-tool"></a>Um das Füllwerkzeug verwenden
+### <a name="to-use-the-fill-tool"></a>So verwenden Sie das Füll Tool
 
-1. Verwenden der **Bildbearbeitung** Symbolleiste oder wechseln Sie zum Menü **Image** > **Tools** , und wählen Sie die **füllen** Tool.
+1. Verwenden Sie die Symbolleiste **Bild** Bearbeitung, oder wechseln Sie zu Menü **Bild**  >  **Tools** , und wählen Sie das **Füll** Tool aus.
 
-1. Wählen Sie ggf. die Farben zu zeichnen. In der [Farben (Palette)](../windows/colors-window-image-editor-for-icons.md), wählen Sie die linke Maustaste gedrückt, wählen Sie eine Vordergrundfarbe oder der rechten Maustaste auf eine Hintergrundfarbe auswählen.
+1. Wählen Sie bei Bedarf Zeichnungs Farben aus. Wählen Sie in der [Palette Farben](./image-editor-for-icons.md)die linke Maustaste aus, um eine Vordergrundfarbe oder die Rechte Maustaste auszuwählen, um eine Hintergrundfarbe auszuwählen.
 
-1. Verschieben der **Füllung** Tool, um den Bereich, die Sie füllen möchten.
+1. Verschieben Sie das **Füll** Werkzeug in den Bereich, den Sie ausfüllen möchten.
 
-1. Wählen Sie die linke oder rechte Maustaste-Schaltfläche bzw. mit der Vordergrund- oder die Hintergrundfarbe zu füllen.
+1. Klicken Sie mit der linken oder rechten Maustaste auf die Vordergrundfarbe bzw. die Hintergrundfarbe.
 
-### <a name="to-pick-up-a-color-from-an-image-to-use-elsewhere"></a>Um eine Farbe aus einem Image zu übernehmen, mit einer anderen Stelle
+### <a name="to-pick-up-a-color-from-an-image-to-use-elsewhere"></a>So wählen Sie eine Farbe von einem Bild für eine andere Verwendung aus
 
-Die **Farbe auswählen**, oder verwandelt, Tool macht eine beliebige Farbe auf das Bild der aktuellen Vordergrund- oder Hintergrundfarbe, je nachdem, ob Sie links oder die rechte Maustaste drücken. Zum Abbrechen der **Farbe auswählen** tool, und wählen Sie ein anderes Tool.
+Die **Auswahl Farbe**oder das Farb Pickup-Tool bewirkt, dass jede Farbe im Bild die aktuelle Vordergrundfarbe oder Hintergrundfarbe hat, je nachdem, ob Sie die linke oder die Rechte Maustaste drücken. Um das **Select Color** -Tool abzubrechen, wählen Sie ein anderes Tool aus.
 
-1. Verwenden der **Bildbearbeitung** Symbolleiste oder wechseln Sie zum Menü **Image** > **Tools** , und wählen Sie die **Farbe auswählen** Tool.
+1. Verwenden Sie die Symbolleiste des **Bild-Editors** oder wechseln Sie zu Menü **Bild**  >  **Tools** , und wählen Sie das **Farb** Tool aus.
 
-1. Wählen Sie die Farbe, die Sie aus dem Image übernehmen möchten.
+1. Wählen Sie die Farbe aus, die Sie aus dem Bild aufnehmen möchten.
 
    > [!NOTE]
-   > Nachdem Sie eine Farbe aus, übernehmen die **Bildbearbeitung** Datencenter erneut funktionsfähig, die zuletzt verwendete Tool.
+   > Nachdem Sie eine Farbe ausgewählt haben, aktiviert der **Bild-Editor** das zuletzt verwendete Tool erneut.
 
-1. Verwenden die linke Maustaste gedrückt für die Vordergrundfarbe darstellt, oder die rechte Maustaste der Hintergrundfarbe gezeichnet werden soll.
+1. Zeichnen Sie mit der linken Maustaste der Vordergrundfarbe oder mit der rechten Maustaste auf die Hintergrundfarbe.
 
-### <a name="to-choose-the-background"></a>Wählen Sie den Hintergrund
+### <a name="to-choose-the-background"></a>So wählen Sie den Hintergrund aus
 
-Beim Verschieben oder kopieren eine Auswahl aus einem Image, alle Pixel in der Auswahl, die mit die aktuellen Hintergrundfarbe übereinstimmen, sind standardmäßig transparent, und sie nicht am Zielspeicherort Pixel verdecken.
+Wenn Sie eine Auswahl aus einem Bild verschieben oder kopieren, sind alle Pixel in der Auswahl, die mit der aktuellen Hintergrundfarbe identisch sind, standardmäßig transparent, und Sie verbergen keine Pixel am Ziel Speicherort.
 
-Sie können über einen transparenten Hintergrund (Standard) wechseln, um ein nicht transparenter Hintergrund und wieder zurück. Wenn Sie eine Auswahltool verwenden, die **transparenten Hintergrund** und **nicht transparenter Hintergrund** Optionen angezeigt, der **Option** -Selektor auf die **Bildbearbeitung** Symbolleiste.
+Sie können von einem transparenten Hintergrund (Standard) zu einem nicht transparenten Hintergrund und wieder zurück wechseln. Wenn Sie ein Auswahlwerkzeug verwenden, werden die Optionen **transparenter Hintergrund** und **undurchsichtiger Hintergrund** im **options** -Editor auf der Symbolleiste der **Bild** Bearbeitung angezeigt.
 
-![Optionen im Hintergrund &#45; undurchsichtig oder durchsichtig](../windows/media/vcimageeditoropaqtranspback.gif "Optionen im Hintergrund &#45; undurchsichtig oder durchsichtig")<br/>
-**Transparente und undurchsichtige Optionen** auf die **Symbolleiste der Bildbearbeitung**
+![Hintergrund Optionen &#45; nicht transparent oder transparent](../windows/media/vcimageeditoropaqtranspback.gif "Hintergrund Optionen &#45; nicht transparent oder transparent")<br/>
+**Transparente und nicht transparente Optionen** auf der **Symbolleiste des Bild-Editors**
 
-#### <a name="to-switch-between-a-transparent-and-opaque-background"></a>So wechseln Sie zwischen einem transparente und undurchsichtige-Hintergrund
+#### <a name="to-switch-between-a-transparent-and-opaque-background"></a>So wechseln Sie zwischen transparentem und undurchsichtigem Hintergrund
 
-In der **Bildbearbeitung** -Symbolleiste auf die **Option** Auswahl, und wählen Sie dann den entsprechenden Hintergrund:
+Wählen Sie in der **Bild-Editor** -Symbolleiste die **Option** Auswahl aus, und wählen Sie dann den entsprechenden Hintergrund aus:
 
-- **Nicht transparenter Hintergrund (O)**: Vorhandene Bild wird von allen Bereichen der Auswahl verdeckt.
+- **Undurchsichtiger Hintergrund (O)**: das vorhandene Bild wird von allen Teilen der Auswahl verdeckt.
 
-- **Transparenter Hintergrund (T)**: Vorhandenes Bild zeigt Teile der Auswahl, die mit die aktuellen Hintergrundfarbe übereinstimmen.
+- **Transparenter Hintergrund (T)**: ein vorhandenes Bild wird durch Teile der Auswahl angezeigt, die der aktuellen Hintergrundfarbe entsprechen.
 
 > [!TIP]
-> Für eine Verknüpfung auf die **Image** Menü aktivieren oder deaktivieren Sie **Deckend zeichnen**.
+> Wählen Sie für eine Verknüpfung im Menü **Bild** die Option nicht transparent **Zeichnen**aus, oder löschen Sie Sie.
 
-Sie können die Farbe des Hintergrunds ändern, während eine Auswahl bereits aktiv ist ändern, welche Teile des Bilds transparent sind.
+Sie können die Hintergrundfarbe ändern, während eine Auswahl bereits wirksam ist, um zu ändern, welche Teile des Bilds transparent sind.
 
-### <a name="to-invert-the-colors-in-a-selection"></a>Um die Farben in einer Auswahl umkehren
+### <a name="to-invert-the-colors-in-a-selection"></a>So kehren Sie die Farben in einer Auswahl um
 
-Die **Bildbearbeitung** bietet eine bequeme Möglichkeit zum Invertieren von Farben im ausgewählten Teil des Bilds, sodass Sie erkennen können, wie ein Bild mit invertierten Farben aussieht.
+Der **Bild-Editor** bietet eine bequeme Möglichkeit, Farben im ausgewählten Teil des Bilds umzukehren, damit Sie feststellen können, wie ein Bild mit umgekehrten Farben angezeigt wird.
 
-Um die Farben in der aktuellen Auswahl umkehren möchten, wechseln Sie zum Menü **Image** > **Farben umkehren**.
+Zum Umkehren der Farben in der aktuellen Auswahl wechseln Sie zu Menü **Bild**  >  **Farben umkehren**.
 
-### <a name="to-customize-or-change-colors-on-the-colors-palette"></a>Zum Anpassen oder Ändern der Farben auf die Farben (Palette)
+### <a name="to-customize-or-change-colors-on-the-colors-palette"></a>So passen Sie Farben in der Farbpalette an oder ändern Sie
 
-1. Wechseln Sie zum Menü **Image** > **Farben anpassen**.
+1. Wechseln Sie zu Menü **Bild**  >  **Farben anpassen**.
 
-1. In der **benutzerdefinierte Farbauswahl** Dialogfeld Feld, definieren Sie die Farbe, indem Sie RGB- oder HSL-Werte in die entsprechenden Textfelder eingeben, oder wählen Sie eine Farbe in der **Farbverlauf Farbanzeige** Feld.
+1. Definieren Sie im Dialogfeld **Benutzerdefinierte Farbauswahl** die Farbe, indem Sie RGB-oder HSL-Werte in die entsprechenden Textfelder eingeben, oder wählen Sie eine Farbe im Anzeige Feld Farb **Verlaufs Farbe** aus.
 
-1. Legen Sie die Helligkeit durch Verschieben des Schiebereglers auf der **Helligkeit** Leiste.
+1. Legen Sie die Helligkeit fest, indem Sie den Schieberegler auf der Leiste für die **Leucht** Kraft bewegen.
 
-1. Viele benutzerdefinierte Farben werden gedithert. Wenn Sie der Volltonfarbe entspricht, die der Ditheringfarbe Farbe am nächsten möchten, doppelklicken Sie auf die **Farbe** Feld.
+1. Viele benutzerdefinierte Farben werden gedithert. Wenn Sie möchten, dass die voll Tonfarbe der Dithering-Farbe am nächsten ist, doppelklicken Sie auf das **Textfeld.**
 
-   Wenn Sie später die geditherte Farbe angezeigt werden sollen, verschieben Sie den Schieberegler auf die **Helligkeit** Balken- oder verschieben Sie das Fadenkreuz, in der **Farbverlauf Farbanzeige** Feld erneut aus, um das dithering wiederherzustellen.
+   Wenn Sie später entscheiden, dass Sie die Dithering-Farbe wünschen, verschieben Sie den Schieberegler auf der Leiste **Helligkeit** , oder verschieben Sie die kreuzhaare im Anzeige Feld Farb **Verlaufs Farbe** erneut, um das Dithering wiederherzustellen.
 
-1. Wählen Sie **OK** auf die neue Farbe hinzuzufügen.
+1. Wählen Sie **OK** aus, um die neue Farbe hinzuzufügen.
 
 ### <a name="to-save-a-custom-colors-palette"></a>So speichern Sie eine benutzerdefinierte Farbpalette
 
-1. Wechseln Sie zum Menü **Image** > **Palette speichern**.
+1. Wechseln Sie zu Menü **Bild**  >  **Palette speichern**.
 
 1. Navigieren Sie zu dem Verzeichnis, in dem Sie die Farbpalette speichern möchten, und geben Sie einen Namen für die Palette ein.
 
-1. Klicken Sie auf **Speichern**.
+1. Wählen Sie **Speichern** aus.
 
 ### <a name="to-load-a-custom-colors-palette"></a>So laden Sie eine benutzerdefinierte Farbpalette
 
-1. Wechseln Sie zum Menü **Image** > **Palette laden**.
+1. Wechseln Sie zum Menü **Bild**  >  **Laden Palette**.
 
-1. In der **Palettenfarben laden** Dialogfeld Feld, navigieren Sie zum richtigen Verzeichnis aus, und wählen Sie die Palette, die Sie laden möchten. **Farbe** Paletten werden mit der Erweiterung. PAL gespeichert.
+1. Navigieren Sie im Dialogfeld **Farb Palette laden** zum richtigen Verzeichnis, und wählen Sie die Palette aus, die Sie laden möchten. **Farb** Paletten werden mit der Dateierweiterung ". PAL" gespeichert.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-Keiner
+Keine
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Bildbearbeitung für Symbole](../windows/image-editor-for-icons.md)<br/>
-[Vorgehensweise: Erstellen eines Symbols oder anderen Bilds](../windows/creating-an-icon-or-other-image-image-editor-for-icons.md)<br/>
-[Vorgehensweise: Bearbeiten eines Bilds](../windows/selecting-an-area-of-an-image-image-editor-for-icons.md)<br/>
-[Vorgehensweise: Verwenden eines Zeichentools](../windows/using-a-drawing-tool-image-editor-for-icons.md)<br/>
+[Gewusst wie: Erstellen eines Symbols oder eines anderen Bilds](../windows/creating-an-icon-or-other-image-image-editor-for-icons.md)<br/>
+[Gewusst wie: Bearbeiten eines Bilds](../windows/selecting-an-area-of-an-image-image-editor-for-icons.md)<br/>
+[Gewusst wie: Verwenden eines Zeichnungs Tools](../windows/using-a-drawing-tool-image-editor-for-icons.md)<br/>
 [Zugriffstasten](../windows/accelerator-keys-image-editor-for-icons.md)<br/>

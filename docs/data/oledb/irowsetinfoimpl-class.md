@@ -25,12 +25,12 @@ helpviewer_keywords:
 - GetReferencedRowset method
 - GetSpecification method
 ms.assetid: 9c654155-7727-464e-bd31-143e68391a47
-ms.openlocfilehash: dfa3873917d5215d0069e504e0556c31744f4334
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 7ceaf30318c176b13cb6f81c8401501863b988a4
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88840387"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91504055"
 ---
 # <a name="irowsetinfoimpl-class"></a>IRowsetInfoImpl-Klasse
 
@@ -57,7 +57,7 @@ Eine benutzerdefinierbare Eigenschaften Klasse, bei der es sich standardmäßig 
 
 **Header:** altdb. h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="interface-methods"></a>Schnittstellenmethoden
 
@@ -69,7 +69,7 @@ Eine benutzerdefinierbare Eigenschaften Klasse, bei der es sich standardmäßig 
 
 ## <a name="remarks"></a>Bemerkungen
 
-Eine erforderliche Schnittstelle für Rowsets. Diese Klasse implementiert die Rowseteigenschaften mithilfe der in der Befehls Klasse definierten Eigenschaften [Satz](../../data/oledb/begin-propset-map.md) Zuordnung. Obwohl die Rowsetklasse anscheinend die Eigenschaften Sätze der Befehls Klasse verwendet, wird das Rowset mit einer eigenen Kopie der Lauf Zeiteigenschaften bereitgestellt, wenn es von einem Befehl oder einem Sitzungs Objekt erstellt wird.
+Eine erforderliche Schnittstelle für Rowsets. Diese Klasse implementiert die Rowseteigenschaften mithilfe der in der Befehls Klasse definierten Eigenschaften [Satz](./macros-for-ole-db-provider-templates.md#begin_propset_map) Zuordnung. Obwohl die Rowsetklasse anscheinend die Eigenschaften Sätze der Befehls Klasse verwendet, wird das Rowset mit einer eigenen Kopie der Lauf Zeiteigenschaften bereitgestellt, wenn es von einem Befehl oder einem Sitzungs Objekt erstellt wird.
 
 ## <a name="irowsetinfoimplgetproperties"></a><a name="getproperties"></a> Irowctinfoimpl:: GetProperties
 

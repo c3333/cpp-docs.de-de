@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - db_command attribute
 ms.assetid: 714c3e15-85d7-408b-9a7c-88505c3e5d24
-ms.openlocfilehash: 868ff862cc41543c8ebc7880a5d1a9a7e6b103f3
-ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
+ms.openlocfilehash: 5910e72b10d5b849d203d088564d79d0f80a7961
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90684585"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91504602"
 ---
 # <a name="db_command"></a>db_command
 
@@ -46,7 +46,7 @@ Die *Befehlssyntax* lautet wie folgt:
 
 > **( \[ ** *BindType* **]** *szVar1* \[ , *szVar2* \[ , *nVar3* \[ ,...]] **)**
 
-Dabei gilt Folgendes:
+Dabei gilt:
 
 - **(** kennzeichnet den Anfang des Datenbindungsblocks.
 
@@ -125,7 +125,7 @@ Wenn der Consumer-Attribut Anbieter dieses Attribut auf eine Klasse anwendet, be
 
 ## <a name="examples"></a>Beispiele
 
-In diesem Beispiel wird ein Befehl definiert, der die Vor- und Nachnamen aus einer Tabelle auswählt, in der die Statusspalte „CA“ entspricht. **db_command** erstellt und liest ein Rowset, für das Sie sowohl über den Assistenten generierte Funktionen wie [OpenAll und CloseAll](../../data/oledb/consumer-wizard-generated-methods.md)als auch `CRowset` -Memberfunktionen wie [MoveNext](../../data/oledb/crowset-movenext.md)ausführen können.
+In diesem Beispiel wird ein Befehl definiert, der die Vor- und Nachnamen aus einer Tabelle auswählt, in der die Statusspalte „CA“ entspricht. **db_command** erstellt und liest ein Rowset, für das Sie sowohl über den Assistenten generierte Funktionen wie [OpenAll und CloseAll](../../data/oledb/consumer-wizard-generated-methods.md)als auch `CRowset` -Memberfunktionen wie [MoveNext](../../data/oledb/crowset-class.md#movenext)ausführen können.
 
 Beachten Sie, dass Sie für diesen Code eine eigene Verbindungszeichenfolge bereitstellen müssen, die eine Verbindung mit der pubs-Datenbank herstellt. Informationen dazu, wie Sie dies in der Entwicklungsumgebung durchführen, finden Sie unter Gewusst [wie: Herstellen einer Verbindung mit einer Datenbank und Durchsuchen vorhandener Objekte](/sql/ssdt/how-to-connect-to-a-database-and-browse-existing-objects) und [Hinzufügen neuer Verbindungen](/visualstudio/data-tools/add-new-connections).
 
@@ -232,7 +232,7 @@ int main() {
 }
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 | Attribut Kontext | Wert |
 |-|-|

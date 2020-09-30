@@ -6,31 +6,31 @@ f1_keywords:
 - C1049
 helpviewer_keywords:
 - C1049
-ms.openlocfilehash: f2669eec4bafb24f26c405d4fa74a96fe5337d13
-ms.sourcegitcommit: 0cfc43f90a6cc8b97b24c42efcf5fb9c18762a42
+ms.openlocfilehash: 9b3cbe5d081e32680e5408fc4a6ddcd932db77a2
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73633303"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91503271"
 ---
 # <a name="fatal-error-c1049"></a>Schwerwiegender Fehler C1049
 
 > Ungültiges numerisches Argument „*value*“.
 
-Der CL. Der exe-Befehlszeilen Parser hat einen *Wert* gefunden, in dem ein numerisches Argument erwartet wurde.
+Der CL.EXE-Befehlszeilen Parser hat einen *Wert* gefunden, in dem ein numerisches Argument erwartet wurde.
 
 Ein C1049-Fehler kann auftreten, wenn der Compiler kein numerisches Argument für eine dieser Compileroptionen finden kann:
 
-[/constexpr: Tiefe](/cpp/build/reference/constexpr-control-constexpr-evaluation)\
-[/constexpr: Rückverfolgung](/cpp/build/reference/constexpr-control-constexpr-evaluation)\
-[/constexpr: Schritte](/cpp/build/reference/constexpr-control-constexpr-evaluation)
+[/constexpr: Tiefe](../../build/reference/constexpr-control-constexpr-evaluation.md)\
+[/constexpr: Rückverfolgung](../../build/reference/constexpr-control-constexpr-evaluation.md)\
+[/constexpr: Schritte](../../build/reference/constexpr-control-constexpr-evaluation.md)
 
-Befehlszeilen-Compileroptionen, die ein numerisches Argument erwarten, können auch `Command line error D8004`, `Command line error D8021`, `Command line warning D9002`, `Command line warning D9014`oder `Command line warning D9024`melden.
+Befehlszeilen-Compileroptionen, die ein numerisches Argument erwarten `Command line error D8004` , können auch,, `Command line error D8021` `Command line warning D9002` , oder melden `Command line warning D9014` `Command line warning D9024` .
 
 Um diesen Fehler zu beheben, überprüfen Sie die Befehlszeile auf falsch platzierte oder fehlende Argumente. Stellen Sie sicher, dass keine unerwarteten Leerzeichen zwischen Optionen und Argumenten vorhanden sind. Die letzte Befehlszeile kann von Makros, Umgebungsvariablen oder anderen buildsystemvorgängen generiert werden. Daher ist es wichtig, sich die tatsächliche Befehlszeile anzusehen, die an den Compiler übermittelt wurde.
 
 - In Befehls Dateien oder Makefiles können Sie einen **Echo** -Befehl verwenden, um die tatsächliche Befehlszeile zu melden.
 
-- Öffnen Sie in Visual Studio das Dialogfeld **Eigenschaften Seiten** des Projekts. Ändern Sie auf der Seite **Konfigurations Eigenschaften** > **CC++ /**  > **Allgemein** die Eigenschaft **Start Banner unterdrücken** auf **Nein**. Klicken Sie auf **OK**, um die Änderungen zu speichern. Das **Ausgabe** Fenster zeigt nun die Befehlszeile an, wenn Sie direkt nach der Copyright Linie erstellen.
+- Öffnen Sie in Visual Studio das Dialogfeld **Eigenschaften Seiten** des Projekts. Ändern Sie auf der Seite **Konfigurations Eigenschaften**  >  **C/C++**  >  **Allgemein** die Eigenschaft **Start Banner unterdrücken** in **Nein**. Klicken Sie auf **OK**, um die Änderungen zu speichern. Das **Ausgabe** Fenster zeigt nun die Befehlszeile an, wenn Sie direkt nach der Copyright Linie erstellen.
 
 Andere Buildsysteme verfügen möglicherweise über Protokolldateien oder ausführliche Optionen, um die tatsächlich verwendeten Befehle anzuzeigen. Weitere Informationen finden Sie in der Dokumentation des Buildsystems.

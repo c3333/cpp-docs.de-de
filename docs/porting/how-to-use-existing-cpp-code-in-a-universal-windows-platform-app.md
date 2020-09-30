@@ -3,12 +3,12 @@ title: 'Vorgehensweise: Verwenden von vorhandenem C++-Code in einer UWP-App (Uni
 description: Möglichkeiten, vorhandene Code-apps und-Bibliotheken in universelle Windows-Plattform-apps zu verwenden.
 ms.date: 09/04/2020
 ms.assetid: 87e5818c-3081-42f3-a30d-3dca2cf0645c
-ms.openlocfilehash: 1e946d588f1a14018ebb11a60b319c2d54658f25
-ms.sourcegitcommit: 0df2b7ab4e81284c5248e4584767591dcc1950c3
+ms.openlocfilehash: fd23c875d67654e96a828f4dba412dd74652912a
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89609135"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91503673"
 ---
 # <a name="how-to-use-existing-c-code-in-a-universal-windows-platform-app"></a>Vorgehensweise: Verwenden von vorhandenem C++-Code in einer UWP-App (Universelle Windows-Plattform)
 
@@ -30,7 +30,7 @@ Um Funktionalität für Aufrufer in anderen Sprachen verfügbar zu machen, könn
 
 Die vorherige Erörterung gilt nicht für COM-Komponenten, die anders behandelt werden müssen. Wenn Sie über einen com-Server in einer exe-oder DLL-Datei verfügen, können Sie ihn in einem universellen Windows-Projekt verwenden. Verpacken Sie diese als [com-Komponente ohne Registrierung](/windows/win32/sbscs/creating-registration-free-com-objects), fügen Sie Sie Ihrem Projekt als Inhalts Datei hinzu, und instanziieren Sie Sie mit [`CoCreateInstanceFromApp`](/windows/win32/api/combaseapi/nf-combaseapi-cocreateinstancefromapp) . Weitere Informationen finden Sie im Blogbeitrag [Using Free-COM DLL in Windows Store C++ Project (Verwenden von Free-COM-DLLs in Windows Store-C++-Projekten)](/archive/blogs/win8devsupport/using-free-com-dll-in-windows-store-c-project).
 
-Wenn Sie eine vorhandene COM-Bibliothek auf die UWP portieren möchten, können Sie Sie auch in eine Windows-Runtime Komponente konvertieren. Wir empfehlen die C++/WinRT-Bibliothek für solche Ports, aber es ist auch möglich, die [Windows-Runtime C++ Template Library (WRL)](../windows/windows-runtime-cpp-template-library-wrl.md)zu verwenden. Die WRL ist veraltet und unterstützt nicht alle Funktionen von ATL und OLE. Ob ein solcher Port möglich ist, hängt von den Features von com, ATL und OLE ab, die für die Komponente erforderlich sind.
+Wenn Sie eine vorhandene COM-Bibliothek auf die UWP portieren möchten, können Sie Sie auch in eine Windows-Runtime Komponente konvertieren. Wir empfehlen die C++/WinRT-Bibliothek für solche Ports, aber es ist auch möglich, die [Windows-Runtime C++ Template Library (WRL)](../cppcx/wrl/windows-runtime-cpp-template-library-wrl.md)zu verwenden. Die WRL ist veraltet und unterstützt nicht alle Funktionen von ATL und OLE. Ob ein solcher Port möglich ist, hängt von den Features von com, ATL und OLE ab, die für die Komponente erforderlich sind.
 
 Unabhängig davon, welche Entwicklungsszenarien Sie auswählen, sollten Sie eine Reihe von Makro Definitionen beachten. Sie können diese Makros in Ihrem Code verwenden, um Code bedingt in den klassischen Desktop-Win32-und UWP-Code zu kompilieren.
 

@@ -6,23 +6,23 @@ f1_keywords:
 helpviewer_keywords:
 - message handling [MFC], adding handlers
 ms.assetid: 4251cfce-76ca-443d-bd2f-6303afa6d942
-ms.openlocfilehash: bbd88225249ac18a2bb3ca4006e1edbe62fbddfc
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: c5ec71083c82a71c2b2aaa86a3e9dca37fc37b2b
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81371656"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91502991"
 ---
 # <a name="adding-an-mfc-message-handler"></a>Hinzufügen eines MFC-Meldungshandlers
 
-Sie können den [Klassen-Assistenten](mfc-class-wizard.md) oder das **Eigenschaftenfenster** in **cLass View** verwenden, um einer Klasse einen Nachrichtenhandler (eine Memberfunktion, die Windows-Nachrichten verarbeitet) hinzuzufügen und dem Nachrichtenhandler Windows-Nachrichten zuzuordnen. Sie können auch [einen Ereignishandler für jedes Dialogfeldsteuerelement](../../windows/adding-event-handlers-for-dialog-box-controls.md)hinzufügen.
+Mit dem Klassen- [Assistenten](mfc-class-wizard.md) oder dem **Eigenschaften** Fenster in der **Klassen Ansicht** können Sie einer Klasse einen Meldungs Handler (eine Member-Funktion, die Windows-Meldungen verarbeitet) hinzufügen und Windows-Meldungen dem Nachrichten Handler zuordnen. Sie können auch [einen Ereignishandler für ein beliebiges Dialogfeld-Steuer](../../windows/adding-editing-or-deleting-controls.md)Element hinzufügen.
 
-Mithilfe des **Klassen-Assistenten** oder **Eigenschaftenfensters** (in **der Klassenansicht**) zum Definieren von Nachrichten- und Ereignisbehandlungsfunktionen können Sie die Nachrichtenversandtabelle (oder Nachrichtenzuordnung) und die Klassenheaderdatei automatisch aktualisieren.
+Wenn Sie den **Klassen-Assistenten** oder das **Eigenschaften** Fenster (in **Klassenansicht**) zum Definieren von Funktionen zum Verarbeiten von Nachrichten und Ereignissen verwenden, können Sie die Nachrichten-Dispatch-Tabelle (oder Meldungs Zuordnung) und die Klassen Header Datei automatisch aktualisieren.
 
 > [!NOTE]
-> Sie können einer ATL-Klasse mithilfe des Klassen-Assistenten einen Nachrichtenhandler hinzufügen. Einige Ergebnisse können jedoch variieren. Weitere Informationen finden Sie im ATL-Thema [Hinzufügen eines ATL-Nachrichtenhandlers](../../atl/adding-an-atl-message-handler.md).
+> Mit dem Klassen-Assistenten können Sie einer ATL-Klasse einen Meldungs Handler hinzufügen. einige Ergebnisse können jedoch variieren. Weitere Informationen finden Sie im ATL-Thema [Hinzufügen eines ATL-Nachrichten Handlers](../../atl/adding-an-atl-message-handler.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Adding Functionality with Code Wizards (Hinzufügen neuer Funktionen mit Code-Assistenten)](../../ide/adding-functionality-with-code-wizards-cpp.md)<br/>
 [Adding a Class (Hinzufügen einer Klasse)](../../ide/adding-a-class-visual-cpp.md)<br/>

@@ -39,12 +39,12 @@ helpviewer_keywords:
 - Image editor [C++], grid settings
 - grid settings, Image editor
 ms.assetid: 586d2b8b-0348-4883-a85d-1ff0ddbf14dd
-ms.openlocfilehash: 47798b5d628484482dffdc963d6e8c7a809f42ee
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: bb028833aa0e9f0615ec7575dbe41feb173efedb
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80168015"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91504385"
 ---
 # <a name="image-editor-for-icons-c"></a>Bildbearbeitung für Symbole (C++)
 
@@ -57,7 +57,7 @@ Grafische Ressourcen sind die Images, die Sie für Ihre Anwendung definieren. Si
 
 Sie können auch die **Bild** Bearbeitung und den [Binär-Editor](binary-editor.md) verwenden, um mit Ressourcen Dateien in verwalteten Projekten zu arbeiten. Bei den zu bearbeitenden verwalteten Ressourcen muss es sich um verknüpfte Ressourcen handeln. Die Ressourcen-Editoren von Visual Studio unterstützen die Bearbeitung von eingebetteten Ressourcen nicht
 
-Zusätzlich zum Erstellen neuer grafischer Ressourcen können Sie [vorhandene Images](../windows/how-to-copy-resources.md#import-and-export-resources) zur Bearbeitung importieren und Sie dann zu Ihrem Projekt hinzufügen. Sie können auch Bilder öffnen und bearbeiten, die nicht Teil eines Projekts für die [eigenständige Bildbearbeitung](../windows/editing-an-image-outside-of-a-project-image-editor-for-icons.md)sind.
+Zusätzlich zum Erstellen neuer grafischer Ressourcen können Sie [vorhandene Images](../windows/how-to-copy-resources.md#import-and-export-resources) zur Bearbeitung importieren und Sie dann zu Ihrem Projekt hinzufügen. Sie können auch Bilder öffnen und bearbeiten, die nicht Teil eines Projekts für die [eigenständige Bildbearbeitung](./selecting-an-area-of-an-image-image-editor-for-icons.md)sind.
 
 Informationen zum Bild- **Editor**finden Sie unter [Erstellen eines Symbols oder eines anderen Bilds](../windows/creating-an-icon-or-other-image-image-editor-for-icons.md), [Bearbeiten eines Bilds](../windows/selecting-an-area-of-an-image-image-editor-for-icons.md), [Verwenden eines Zeichnungs Tools](../windows/using-a-drawing-tool-image-editor-for-icons.md), [Arbeiten mit Farben](../windows/working-with-color-image-editor-for-icons.md)und [Tasten](../windows/accelerator-keys-image-editor-for-icons.md)Kombinationen.
 
@@ -68,7 +68,7 @@ Informationen zum Bild- **Editor**finden Sie unter [Erstellen eines Symbols oder
 
 Das Menü **Bild** , das nur angezeigt wird, wenn der **Bild-Editor** aktiv ist, über Befehle zum Bearbeiten von Bildern, zum Verwalten von Farbpaletten und zum Festlegen der Fenster Optionen für den Bild- **Editor** verfügt. Außerdem sind Befehle zum Verwenden von Geräte Images bei der Arbeit mit Symbolen und Cursorn verfügbar.
 
-|Get-Help|BESCHREIBUNG|
+|Get-Help|Beschreibung|
 |---|---|
 |**Farben umkehren**|Kehrt Ihre Farben um.|
 |**Horizontal spiegeln**|Kippt das Bild oder die Markierung horizontal.|
@@ -81,16 +81,16 @@ Das Menü **Bild** , das nur angezeigt wird, wenn der **Bild-Editor** aktiv ist,
 |**Palette laden**|Öffnet das Dialogfeld **Farb Palette laden** , in dem Sie Palettenfarben laden können, die zuvor in eine PAL-Datei gespeichert wurden.|
 |**Palette speichern**|Speichert die Palettenfarben in einer PAL-Datei.|
 |**Nicht transparent zeichnen**|Wenn diese Option ausgewählt ist, wird die aktuelle Auswahl nicht transparent.<br/><br/>Wenn diese Option deaktiviert ist, wird die aktuelle Auswahl transparent.|
-|**Symbolleisten-Editor**|Öffnet das [Dialogfeld neue Symbolleisten Ressource](../windows/new-toolbar-resource-dialog-box.md).|
+|**Symbolleisten-Editor**|Öffnet das [Dialogfeld neue Symbolleisten Ressource](./toolbar-editor.md).|
 |**Raster Einstellungen**|Öffnet das Dialogfeld **Raster Einstellungen** , in dem Sie Raster für das Bild angeben können.|
-|**Neuer Bildtyp**|Öffnet das [Dialogfeld Neuer \<Gerät > Bildtyp](../windows/new-device-image-type-dialog-box-image-editor-for-icons.md).<br/><br/>Eine einzelne Symbol Ressource kann mehrere Bilder verschiedener Größen enthalten, und Windows kann abhängig davon, wie Sie angezeigt wird, die entsprechende Symbolgröße verwenden. Ein neuer Gerätetyp ändert nicht die Größe des Symbols, sondern erstellt stattdessen ein neues Bild innerhalb des Symbols. Gilt nur für Symbole und Cursor.|
-|**Aktuelles Symbol/Cursor Bildtyp**|Öffnet ein Untermenü, in dem die ersten neun verfügbaren Cursor-oder Symbolbilder aufgelistet sind. Mit dem letzten Befehl im Untermenü ( **mehr**) wird das [Dialogfeld \<Gerät > Abbild Öffnen geöffnet](../windows/open-device-image-dialog-box-image-editor-for-icons.md).|
+|**Neuer Bildtyp**|Öffnet das [ \<Device> Dialogfeld Neuer Bildtyp](./creating-an-icon-or-other-image-image-editor-for-icons.md).<br/><br/>Eine einzelne Symbol Ressource kann mehrere Bilder verschiedener Größen enthalten, und Windows kann abhängig davon, wie Sie angezeigt wird, die entsprechende Symbolgröße verwenden. Ein neuer Gerätetyp ändert nicht die Größe des Symbols, sondern erstellt stattdessen ein neues Bild innerhalb des Symbols. Gilt nur für Symbole und Cursor.|
+|**Aktuelles Symbol/Cursor Bildtyp**|Öffnet ein Untermenü, in dem die ersten neun verfügbaren Cursor-oder Symbolbilder aufgelistet sind. Mit dem letzten Befehl im Untermenü wird **das** [ \<Device> Dialogfeld Bild öffnen geöffnet](./creating-an-icon-or-other-image-image-editor-for-icons.md).|
 |**Bildtyp löschen**|Löscht das ausgewählte Geräte Image.|
 |**Tools**|Öffnet ein Untermenü, das alle Tools enthält, die auf der **Bild-Editor** -Symbolleiste verfügbar sind.|
 
 Im Dialogfeld **Raster Einstellungen** können Sie die Raster Einstellungen für das Bild angeben und Rasterlinien über dem bearbeiteten Bild anzeigen. Die Zeilen sind nützlich für die Bearbeitung des Bilds, werden jedoch nicht als Teil des Bilds gespeichert.
 
-|Eigenschaft|BESCHREIBUNG|
+|Eigenschaft|Beschreibung|
 |---|---|
 |**Pixel Raster**|Wenn dieses Kontrollkästchen aktiviert ist, wird ein Raster um jedes Pixel im **Bild-Editor**angezeigt.<br/><br/>Das Raster wird nur bei 4 × und höherer Auflösung angezeigt.|
 |**Kachel Raster**|Wenn diese Option ausgewählt ist, wird ein Raster um die Pixelblöcke im **Bild-Editor**angezeigt, die durch die Werte für den Raster Abstand angegeben werden.|
@@ -101,7 +101,7 @@ Im Dialogfeld **Raster Einstellungen** können Sie die Raster Einstellungen für
 
 Die Symbolleiste des **Bild-Editors** enthält Tools zum Zeichnen, zeichnen, eingeben von Text, löschen und Bearbeiten von Sichten. Sie enthält auch eine Options Auswahl, mit der Sie Optionen für die Verwendung der einzelnen Tools auswählen können. Beispielsweise können Sie aus verschiedenen Pinsel breiten, Vergrößerungsfaktoren und Linienstilen auswählen.
 
-Alle Tools, die auf der Symbolleiste des **Bild-Editors** verfügbar sind, sind auch über das Menü **Bild** > **Tools**verfügbar. Wählen Sie das gewünschte Tool oder die gewünschte Option aus, um die **Bild-Editor** -Symbolleiste und die **options** Auswahl zu verwenden.
+Alle Tools, die auf der Symbolleiste des **Bild-Editors** verfügbar sind, sind auch über die Menü **Bild**  >  **Tools**verfügbar. Wählen Sie das gewünschte Tool oder die gewünschte Option aus, um die **Bild-Editor** -Symbolleiste und die **options** Auswahl zu verwenden.
 
 ![Symbolleiste der Bildbearbeitung](../mfc/media/vcimageeditortoolbar.gif "vcimageeditor Toolbar")<br/>
 Symbolleiste der **Bild** Bearbeitung
@@ -111,7 +111,7 @@ Symbolleiste der **Bild** Bearbeitung
 
 Da viele der Zeichnungs Tools über die [Tastatur](../windows/accelerator-keys-image-editor-for-icons.md)verfügbar sind, ist es manchmal sinnvoll, die Bild- **Editor** -Symbolleiste auszublenden.
 
-- Zum Anzeigen oder Ausblenden der Symbolleiste des **Bild-Editors** wechseln Sie > **Symbolleisten** zur Menü **Ansicht** , und wählen Sie **Bild-Editor**aus.
+- Zum Anzeigen oder Ausblenden der Symbolleiste des **Bild-Editors** wechseln Sie zu Menü **anzeigen**Symbol  >  **leisten** , und wählen Sie **Bild-Editor**aus.
 
 > [!NOTE]
 > Elemente aus dieser Symbolleiste werden nicht verfügbar angezeigt, wenn eine Bilddatei aus dem aktuellen Projekt oder der aktuellen Projekt Mappe nicht im **Bild-Editor**geöffnet ist.
@@ -120,14 +120,14 @@ Da viele der Zeichnungs Tools über die [Tastatur](../windows/accelerator-keys-i
 
 Mit der **Option** Selector können Sie die Breite einer Linie, eines Pinselstrichs usw. angeben. Das Symbol auf der **options** Auswahl Schaltfläche ändert sich je nach ausgewähltem Tool.
 
-![Zeichnungs&#45;Form Auswahl auf der Symbolleiste des Bild-Editors](../mfc/media/vcimageeditortoolbaroptionselector.gif "vcimageeditortoolbaroptionselector")<br/>
+![Zeichnen&#45;Form Auswahl auf der Symbolleiste des Bild-Editors](../mfc/media/vcimageeditortoolbaroptionselector.gif "vcimageeditortoolbaroptionselector")<br/>
 **Options** Auswahl auf der Symbolleiste des **Bild-Editors**
 
 ### <a name="text-tool"></a>Texttool
 
 Mit dem Dialogfeld **Text Tool** können Sie einer Cursor-, Bitmap-oder Symbol Ressource Text hinzufügen.
 
-Um auf dieses Dialogfeld zuzugreifen, öffnen Sie den **Bild-Editor** , und navigieren Sie zu Menü **Bild** > **Tools**, und wählen Sie dann den Befehl **Text Tool** aus.
+Um auf dieses Dialogfeld zuzugreifen, öffnen Sie die **Bild** Bearbeitung, navigieren Sie zu Menu **Image**  >  **Tools**, und wählen Sie dann den Befehl **Text Tool** aus.
 
 > [!TIP]
 > Sie können mit der rechten Maustaste auf das Dialogfeld **Text Tool** klicken, um auf ein Standardkontext Menü zuzugreifen, das eine Liste der standardmäßigen Windows-Befehle enthält.
@@ -136,10 +136,10 @@ Um auf dieses Dialogfeld zuzugreifen, öffnen Sie den **Bild-Editor** , und navi
 
 Um auf dieses Dialogfeld zuzugreifen, wählen Sie die Schaltfläche **Schriftart** im Dialogfeld **Text Tool** aus. Es stehen folgende Eigenschaften zur Verfügung:
 
-|Eigenschaft|BESCHREIBUNG|
+|Eigenschaft|Beschreibung|
 |---|---|
 |**Schriftart**|Listet die verfügbaren Schriftarten auf.|
-|**Schriftschnitt**|Listet die verfügbaren Stile für die angegebene Schriftart auf.|
+|**Schriftart Stil**|Listet die verfügbaren Stile für die angegebene Schriftart auf.|
 |**Größe**|Listet die verfügbaren Punktgrößen für die angegebene Schriftart auf.|
 |**Beispiel**|Zeigt ein Beispiel dazu, wie Text mit den angegebenen Schriftart Einstellungen angezeigt wird.|
 |**Skript**|Listet die verfügbaren sprach Skripts für die angegebene Schriftart auf.<br/><br/>Wenn Sie ein anderes sprach Skript auswählen, steht der Zeichensatz für diese Sprache zum Erstellen von mehrsprachigen Dokumenten zur Verfügung.|
@@ -148,13 +148,13 @@ Um auf dieses Dialogfeld zuzugreifen, wählen Sie die Schaltfläche **Schriftart
 
 Im folgenden finden Sie ein Beispiel für das Hinzufügen von Text zu einem Symbol in einer Windows-Anwendung und das Bearbeiten der Schriftart des Texts.
 
-1. Erstellen Sie C++ eine Windows Forms-Anwendung. Weitere Informationen finden Sie unter Vorgehens [Weise: Erstellen von Windows Forms Anwendungen](/previous-versions/visualstudio/visual-studio-2008/s69bf10x(v%3dvs.90)). Dem Projekt wird standardmäßig eine Datei " *app. ico* " hinzugefügt.
+1. Erstellen Sie eine C++-Windows Forms Anwendung. Weitere Informationen finden Sie unter Vorgehens [Weise: Erstellen von Windows Forms Anwendungen](/previous-versions/visualstudio/visual-studio-2008/s69bf10x(v%3dvs.90)). Dem Projekt wird standardmäßig eine Datei " *app. ico* " hinzugefügt.
 
 1. Doppelklicken Sie in **Projektmappen-Explorer**auf die Datei *app. ico*. Der **Bild-Editor** wird geöffnet.
 
-1. Wechseln Sie zu Menü **Bild** > **Tools** , und wählen Sie **Text Tool**aus.
+1. Wechseln Sie zu Menü **Bild**  >  **Tools** , und wählen Sie **Texttool**aus.
 
-1. Geben *C++* Sie im Dialogfeld **Text Tool** den leeren Textbereich ein. Dieser Text wird in einem Feld, das in der Größe geändert werden kann, in der oberen linken Ecke von *app. ico* im **Bild-Editor**angezeigt.
+1. Geben Sie im Dialogfeld **Text Tool** *C++* in den leeren Textbereich ein. Dieser Text wird in einem Feld, das in der Größe geändert werden kann, in der oberen linken Ecke von *app. ico* im **Bild-Editor**angezeigt.
 
 1. Ziehen Sie im **Bild-Editor**das Feld mit der Größe der Größe in den Mittelpunkt der *app. ico* , um die Lesbarkeit des Texts zu verbessern.
 
@@ -206,7 +206,7 @@ Standardmäßig zeigt der **Bild-Editor** die Ansicht im linken Bereich in der t
 
 Für alle **Bild Bearbeitungs** Bereiche mit einem Vergrößerungsfaktor von 4 oder höher können Sie ein Raster anzeigen, in dem die einzelnen Pixel im Bild getrennt sind.
 
-1. Wechseln Sie zu Menü **Bild** > **Raster Einstellungen**.
+1. Wechseln Sie zu Menü **Bild**  >  **Raster Einstellungen**.
 
 1. Aktivieren Sie das Kontrollkästchen **Pixel Raster** , um das Raster anzuzeigen, oder deaktivieren Sie das Kontrollkästchen, um das Raster auszublenden.
 
@@ -216,5 +216,5 @@ Keine
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Ressourcen-Editor](../windows/resource-editors.md)<br/>
+[Ressourcen-Editoren](../windows/resource-editors.md)<br/>
 [Symbole](/windows/win32/menurc/icons)

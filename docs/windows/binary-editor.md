@@ -21,12 +21,12 @@ helpviewer_keywords:
 - data resources [C++]
 - resources [C++], creating
 ms.assetid: 2483c48b-1252-4dbc-826b-82e6c1a0e9cb
-ms.openlocfilehash: 955cce012ac30c3413d7d458e263643d0aefa711
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 078d702232cde49a4666551a8d9fcbb320173450
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84615351"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91503534"
 ---
 # <a name="binary-editor-c"></a>Binär-Editor (C++)
 
@@ -116,7 +116,7 @@ Sie können eine neue benutzerdefinierte Ressource oder Daten Ressource erstelle
 
 1. Wählen Sie **OK** aus, um Ihre Änderungen aufzuzeichnen.
 
-Eine weitere Möglichkeit zum Erstellen einer benutzerdefinierten Ressource ist das Importieren einer externen Datei als benutzerdefinierte Ressource. Weitere Informationen finden Sie unter Gewusst [wie: Verwalten von Ressourcen](../windows/how-to-import-and-export-resources.md).
+Eine weitere Möglichkeit zum Erstellen einer benutzerdefinierten Ressource ist das Importieren einer externen Datei als benutzerdefinierte Ressource. Weitere Informationen finden Sie unter Gewusst [wie: Verwalten von Ressourcen](./how-to-copy-resources.md).
 
 > [!NOTE]
 > Das Erstellen neuer benutzerdefinierter oder Datenressourcen erfordert Win32.
@@ -125,6 +125,6 @@ Eine weitere Möglichkeit zum Erstellen einer benutzerdefinierten Ressource ist 
 
 Keine
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Ressourcen-Editoren](resource-editors.md)

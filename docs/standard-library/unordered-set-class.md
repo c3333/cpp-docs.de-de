@@ -137,12 +137,12 @@ helpviewer_keywords:
 - std::unordered_set::size
 - std::unordered_set::swap
 ms.assetid: ac08084e-05a7-48c0-9ae4-d40c529922dd
-ms.openlocfilehash: 396465b24e9d7cf0facbe324c7b01479fe8e9b6b
-ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.openlocfilehash: 0feff4e595be7929fd0bc80eb53a0a65a9a61f43
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90040040"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91502956"
 ---
 # <a name="unordered_set-class"></a>unordered_set-Klasse
 
@@ -173,11 +173,11 @@ Der Gleichheitsvergleich-Funktionsobjekttyp.
 *Zuordnungseinheits*\
 Die Zuweisungsklasse.
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |-|-|
 |[allocator_type](#allocator_type)|Der Typ einer Zuweisung für die Speicherverwaltung.|
 |[const_iterator](#const_iterator)|Der Typ eines konstanten Iterators für die gesteuerte Sequenz.|
@@ -197,7 +197,7 @@ Die Zuweisungsklasse.
 
 ### <a name="functions"></a>Functions
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |-|-|
 |[beginnen](#begin)|Legt den Anfang der kontrollierten Sequenz fest.|
 |[bucket](#bucket)|Ruft die Bucketnummer für einen Schlüsselwert ab.|
@@ -230,7 +230,7 @@ Die Zuweisungsklasse.
 
 ### <a name="operators"></a>Operatoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |-|-|
 |[unordered_set:: Operator =](#op_eq)|Kopiert eine Hashtabelle.|
 
@@ -894,7 +894,7 @@ int main()
     std::cout << std::boolalpha; // so booleans show as 'true' or 'false'
     std::cout << theUnorderedSet.contains(2) << '\n';
     std::cout << theUnorderedSet.contains(3) << '\n';
-    
+
     return 0;
 }
 ```

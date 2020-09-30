@@ -7,14 +7,14 @@ helpviewer_keywords:
 - -Zc:externConstexpr compiler option (C++)
 - extern constexpr variables (C++)
 ms.assetid: 4da5e33a-2e4d-4ed2-8616-bd8f43265c27
-ms.openlocfilehash: 7546ab6d81137a2abb053cd18f0d5d74913c3b00
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: db5a8892bcc11538c3ff883a0e9a3a27db0ee14f
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87211904"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91502807"
 ---
-# <a name="zcexternconstexpr-enable-extern-constexpr-variables"></a>`/Zc:externConstexpr`(Externe constexpr-Variablen aktivieren)
+# <a name="zcexternconstexpr-enable-extern-constexpr-variables"></a>`/Zc:externConstexpr` (Externe constexpr-Variablen aktivieren)
 
 Die- **`/Zc:externConstexpr`** Compileroption weist den Compiler an, dem C++-Standard zu entsprechen und externe Verknüpfungen für **`constexpr`** Variablen zuzulassen. Standardmäßig gibt Visual Studio immer eine **`constexpr`** interne Variablen Verknüpfung aus, auch wenn Sie das- **`extern`** Schlüsselwort angeben.
 
@@ -38,5 +38,5 @@ Wenn eine Header Datei eine deklarierte Variable enthält `extern constexpr` , m
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[`/Zc`Konformitäts](zc-conformance.md)<br/>
-[`auto`Schlüsselwort](../../cpp/auto-keyword.md)
+[`/Zc` Konformitäts](zc-conformance.md)<br/>
+[Schlüsselwort `auto`](../../cpp/auto-cpp.md)

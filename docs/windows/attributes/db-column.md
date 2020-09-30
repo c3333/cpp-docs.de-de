@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - db_column attribute
 ms.assetid: 58da4afc-f69c-4ae6-af9a-3f9515f56081
-ms.openlocfilehash: 2828a33a31d806c04cfce76a3156674778efbe6e
-ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
+ms.openlocfilehash: 05f734a9b083d93f2501172d9455b7889c65a5a6
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90686482"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91503540"
 ---
 # <a name="db_column"></a>db_column
 
@@ -50,7 +50,7 @@ Optionale Eine Element Variable, die zum Speichern der Größe der Spalte in Byt
 
 ## <a name="remarks"></a>Bemerkungen
 
-**Db_column** bindet die angegebene Tabellenspalte an eine Variable im Rowset. Dabei werden Elementdaten begrenzt, die an OLE DB basierten Bindung teilnehmen können `IAccessor` . Mit diesem Attribut wird die Spalten Zuordnung festgelegt, die normalerweise mithilfe der OLE DB Consumer-Makros [BEGIN_COLUMN_MAP](../../data/oledb/begin-column-map.md), [END_COLUMN_MAP](../../data/oledb/end-column-map.md)und [COLUMN_ENTRY](../../data/oledb/column-entry.md)definiert wird. Diese bearbeiten die OLE DB [DBBINDING-Struktur](/previous-versions/windows/desktop/ms716845(v=vs.85)) , um die angegebene Spalte zu binden. Jeder Member, den Sie mit dem **Db_column** -Attribut markieren, belegt einen Eintrag in der Spalten Zuordnung in Form eines Spalten Eintrags. Daher wird dieses Attribut aufgerufen, wenn Sie die Spalten Zuordnung, d. h. in der Befehls-oder Tabellen Klasse, einfügen würden.
+**Db_column** bindet die angegebene Tabellenspalte an eine Variable im Rowset. Dabei werden Elementdaten begrenzt, die an OLE DB basierten Bindung teilnehmen können `IAccessor` . Mit diesem Attribut wird die Spalten Zuordnung festgelegt, die normalerweise mithilfe der OLE DB Consumer-Makros [BEGIN_COLUMN_MAP](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md#begin_column_map), [END_COLUMN_MAP](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md#end_column_map)und [COLUMN_ENTRY](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md#column_entry)definiert wird. Diese bearbeiten die OLE DB [DBBINDING-Struktur](/previous-versions/windows/desktop/ms716845(v=vs.85)) , um die angegebene Spalte zu binden. Jeder Member, den Sie mit dem **Db_column** -Attribut markieren, belegt einen Eintrag in der Spalten Zuordnung in Form eines Spalten Eintrags. Daher wird dieses Attribut aufgerufen, wenn Sie die Spalten Zuordnung, d. h. in der Befehls-oder Tabellen Klasse, einfügen würden.
 
 Verwenden Sie **Db_column** in Verbindung mit den Attributen [Db_table](db-table.md) oder [db_command](db-command.md) .
 
@@ -96,7 +96,7 @@ class CProducts {
 };
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 | Attribut Kontext | Wert |
 |-|-|

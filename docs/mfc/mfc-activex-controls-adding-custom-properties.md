@@ -5,12 +5,12 @@ helpviewer_keywords:
 - MFC ActiveX controls [MFC], properties
 - properties [MFC], custom
 ms.assetid: 85af5167-74c7-427b-b8f3-e0d7b73942e5
-ms.openlocfilehash: 805fffcc6cafe92df91af6b01bb53240a0d70f51
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: af1ca2d63abcb112bfe1e7d7538dbf70fb817ae5
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87230492"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91503878"
 ---
 # <a name="mfc-activex-controls-adding-custom-properties"></a>MFC-ActiveX-Steuerelemente: Hinzufügen von benutzerdefinierten Eigenschaften
 
@@ -40,7 +40,7 @@ Benutzerdefinierte Eigenschaften sind in vier Arten von Implementierungen enthal
 
    Parametrisierte Implementierung wird vom Assistenten zum Hinzufügen von Eigenschaften unterstützt. Eine parametrisierte Eigenschaft (manchmal als Eigenschafts Array bezeichnet) kann verwendet werden, um über eine einzelne Eigenschaft des Steuer Elements auf einen Satz von Werten zuzugreifen. Das Dispatch Map Entry-Makro für diese Implementierung ist DISP_PROPERTY_PARAM. Weitere Informationen zum Implementieren dieses Typs finden Sie unter [Implementieren einer parametrisierten Eigenschaft](mfc-activex-controls-advanced-topics.md) im Artikel ActiveX-Steuerelemente: Weiterführende Themen.
 
-## <a name="using-the-add-property-wizard-to-add-a-custom-property"></a><a name="_core_using_classwizard_to_add_a_custom_property"></a>Verwenden des Assistenten zum Hinzufügen von Eigenschaften zum Hinzufügen einer benutzerdefinierten Eigenschaft
+## <a name="using-the-add-property-wizard-to-add-a-custom-property"></a><a name="_core_using_classwizard_to_add_a_custom_property"></a> Verwenden des Assistenten zum Hinzufügen von Eigenschaften zum Hinzufügen einer benutzerdefinierten Eigenschaft
 
 Im folgenden Verfahren wird das Hinzufügen der benutzerdefinierten Eigenschaft CircleOffset veranschaulicht, die die Implementierung der Get/Set-Methode verwendet. Die benutzerdefinierte Eigenschaft CircleOffset ermöglicht dem Benutzer des Steuer Elements, den Kreis von der Mitte des umgebenden Rechtecks des Steuer Elements zu versetzen. Die Vorgehensweise zum Hinzufügen benutzerdefinierter Eigenschaften mit einer anderen Implementierung als Get/Set-Methoden ist sehr ähnlich.
 
@@ -56,7 +56,7 @@ Diese Prozedur kann auch verwendet werden, um weitere benutzerdefinierte Eigensc
 
 1. Klicken Sie im Kontextmenü auf **Hinzufügen** , und klicken Sie dann auf **Eigenschaft hinzufügen**.
 
-   Dadurch wird der [Assistent zum Hinzufügen von Eigenschaften](../ide/names-add-property-wizard.md)geöffnet.
+   Dadurch wird der [Assistent zum Hinzufügen von Eigenschaften](../ide/adding-a-property-visual-cpp.md#names-add-property-wizard)geöffnet.
 
 1. Geben Sie im Feld **Eigenschafts Name den Namen** *CircleOffset*ein.
 
@@ -68,7 +68,7 @@ Diese Prozedur kann auch verwendet werden, um weitere benutzerdefinierte Eigensc
 
 1. Klicken Sie auf **Fertig stellen**.
 
-## <a name="add-property-wizard-changes-for-custom-properties"></a><a name="_core_classwizard_changes_for_custom_properties"></a>Hinzufügen von Eigenschaften-Assistenten Änderungen für benutzerdefinierte Eigenschaften
+## <a name="add-property-wizard-changes-for-custom-properties"></a><a name="_core_classwizard_changes_for_custom_properties"></a> Hinzufügen von Eigenschaften-Assistenten Änderungen für benutzerdefinierte Eigenschaften
 
 Wenn Sie die benutzerdefinierte Eigenschaft CircleOffset hinzufügen, nimmt der Assistent zum Hinzufügen von Eigenschaften Änderungen am Header vor (. H) und die-Implementierung (. Cpp-Dateien der Steuerelement Klasse.
 

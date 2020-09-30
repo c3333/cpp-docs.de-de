@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Windows applications [C++], Win32
 - Windows Desktop applications [C++]
 - Windows API [C++]
-ms.openlocfilehash: 01b1f4a1d021dee6d1d7afbf55bbd13211af247d
-ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
+ms.openlocfilehash: c729fa183a03860de012e64d110f3b3ac7e7e8d0
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90686599"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91503654"
 ---
 # <a name="walkthrough-create-a-traditional-windows-desktop-application-c"></a>Exemplarische Vorgehensweise: Erstellen einer herkömmlichen Windows-Desktop Anwendung (C++)
 
@@ -73,7 +73,7 @@ Das Projekt wird jetzt erstellt, und die Quelldatei wird im Editor geöffnet. Fa
 
 1. Erweitern Sie im Dialogfeld **Neues Projekt** im linken Bereich den Knoten **installiert**  >  **Visual C++**, und wählen Sie dann **Windows-Desktop**aus. Wählen Sie im mittleren Bereich die Option **Windows-Desktop-Assistent**aus.
 
-   Geben Sie im Feld **Name** einen Namen für das Projekt ein, z. b. *desktopapp*. Wählen Sie **OK** aus.
+   Geben Sie im Feld **Name** einen Namen für das Projekt ein, z. b. *desktopapp*. Klicken Sie auf **OK**.
 
    ![Screenshot des Dialog Felds "Neues Projekt" in Visual Studio 2017 mit installierter > Visual C plus plus > Windows-Desktop ausgewählt ist, wird die Option Windows-Desktop-Assistent hervorgehoben und desktopapp in das Textfeld Name eingegeben.](../build/media/desktop-app-new-project-name-153.png "Benennen des desktopapp-Projekts")
 
@@ -99,7 +99,7 @@ Das Projekt wird jetzt erstellt, und die Quelldatei wird im Editor geöffnet. Fa
 
 1. Erweitern Sie im Dialogfeld **Neues Projekt** im linken Bereich **installierte**  >  **Vorlagen**  >  **Visual C++**, und wählen Sie dann **Win32**aus. Wählen Sie im mittleren Bereich **Win32-Projekt**aus.
 
-   Geben Sie im Feld **Name** einen Namen für das Projekt ein, z. b. *desktopapp*. Wählen Sie **OK** aus.
+   Geben Sie im Feld **Name** einen Namen für das Projekt ein, z. b. *desktopapp*. Klicken Sie auf **OK**.
 
    ![Screenshot des Dialog Felds "Neues Projekt" in Visual Studio 2015 mit installierter > Vorlagen > Visual C plus plus > Win32-Projekt Option und "desktopapp" in das Textfeld "Name" eingegeben haben.](../build/media/desktop-app-new-project-name-150.png "Benennen des desktopapp-Projekts")
 
@@ -141,7 +141,7 @@ Als Nächstes erfahren Sie, wie Sie den Code für eine Windows-Desktop Anwendung
    Informationen zu den Parametern und Rückgabe Werten dieser Funktion finden Sie unter [WinMain Entry Point](/windows/win32/api/winbase/nf-winbase-winmain).
 
    > [!NOTE]
-   > Was sind diese zusätzlichen Wörter, wie z. b. `CALLBACK` , oder `HINSTANCE` `_In_` ? Die herkömmliche Windows-API verwendet häufig Typedefs-und Präprozessormakros, um einige Details von Typen und Platt Form spezifischem Code, z. b. Aufruf Konventionen, **`__declspec`** Deklarationen und compilerpragmas, zu abstrahieren. In Visual Studio können Sie die Funktion "IntelliSense [Quick Info](/visualstudio/ide/using-intellisense#quick-info) " verwenden, um zu sehen, was diese Typedefs und Makros definieren. Zeigen Sie mit der Maus auf das gewünschte Wort, oder wählen Sie es aus, und drücken Sie **STRG** + **K**, **STRG** + **I** für ein kleines Popup Fenster, das die Definition enthält. Weitere Informationen finden Sie unter [Verwenden von IntelliSense](/visualstudio/ide/using-intellisense). Parameter und Rückgabe Typen verwenden oftmals *SAL* -Anmerkungen, um Programmierfehler zu erfassen. Weitere Informationen finden Sie unter [Verwenden von Sal-Anmerkungen zum Reduzieren von C/C++-Code Fehlern](/cpp/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects).
+   > Was sind diese zusätzlichen Wörter, wie z. b. `CALLBACK` , oder `HINSTANCE` `_In_` ? Die herkömmliche Windows-API verwendet häufig Typedefs-und Präprozessormakros, um einige Details von Typen und Platt Form spezifischem Code, z. b. Aufruf Konventionen, **`__declspec`** Deklarationen und compilerpragmas, zu abstrahieren. In Visual Studio können Sie die Funktion "IntelliSense [Quick Info](/visualstudio/ide/using-intellisense#quick-info) " verwenden, um zu sehen, was diese Typedefs und Makros definieren. Zeigen Sie mit der Maus auf das gewünschte Wort, oder wählen Sie es aus, und drücken Sie **STRG** + **K**, **STRG** + **I** für ein kleines Popup Fenster, das die Definition enthält. Weitere Informationen finden Sie unter [Verwenden von IntelliSense](/visualstudio/ide/using-intellisense). Parameter und Rückgabe Typen verwenden oftmals *SAL* -Anmerkungen, um Programmierfehler zu erfassen. Weitere Informationen finden Sie unter [Verwenden von Sal-Anmerkungen zum Reduzieren von C/C++-Code Fehlern](../code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects.md).
 
 1. Für Windows-Desktop Programme ist &lt; Windows. h> erforderlich. &lt;Tchar. h> definiert das `TCHAR` Makro, das letztendlich zu aufgelöst wird, **`wchar_t`** Wenn das Unicode-Symbol im Projekt definiert ist. andernfalls wird es in aufgelöst **`char`** .  Wenn Sie immer mit aktiviertem Unicode erstellen, benötigen Sie keinen TCHAR und können einfach **`wchar_t`** direkt verwenden.
 
@@ -592,4 +592,4 @@ Herzlichen Glückwunsch! Sie haben diese exemplarische Vorgehensweise abgeschlos
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Windows-Desktop Anwendungen](../windows/windows-desktop-applications-cpp.md)
+[Windows-Desktop Anwendungen](./desktop-applications-visual-cpp.md)

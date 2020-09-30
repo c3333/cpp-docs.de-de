@@ -8,12 +8,12 @@ helpviewer_keywords:
 - menus [C++], shortcut keys
 - keyboard shortcuts [C++], menu association
 ms.assetid: f234c5f2-4ec3-4c9e-834a-b5dd297625b9
-ms.openlocfilehash: beb4e878138da3dc2905c86e18fedc658d7ceecf
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 4f838caa8ca9e4a996fa4cb8018d663c6c7aecea
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80215149"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91504299"
 ---
 # <a name="accelerator-keys-c"></a>Zugriffstasten (C++)
 
@@ -21,7 +21,7 @@ ms.locfileid: "80215149"
 
 Es gibt eine Anzahl vordefinierter Zugriffstasten, die Teil eines Windows-Anwendungsprojekts sein können. Einige dieser virtuellen Tasten sind für die Windows-Umgebung. Andere unterstützen Browser-oder Unicode-Anwendungen. Dieser Tasten können in beliebigen Zugriffstasten verwendet werden.
 
-|Key|BESCHREIBUNG|
+|Schlüssel|Beschreibung|
 |---------|-----------------|
 |VK_ACCEPT|(IME) akzeptieren|
 |VK_BROWSER_BACK|Windows Browser, **zurück** -Taste|
@@ -55,15 +55,15 @@ Es gibt eine Anzahl vordefinierter Zugriffstasten, die Teil eines Windows-Anwend
 |VK_OEM_1|Windows Für die US-Standardtastatur lautet der Schlüssel " **;:".**|
 |VK_OEM_102|Windows Entweder die Spitze Klammer Taste oder die Taste für den umgekehrten Schrägstrich auf der RT 102-Key-Tastatur|
 |VK_OEM_2|Windows Für die US-Standardtastatur lautet der **/?** Schlüssel|
-|VK_OEM_3|Windows Für die US-Standardtastatur die **`~** -Taste|
+|VK_OEM_3|Windows Für die US-Standardtastatur der **`~** Schlüssel|
 |VK_OEM_4|Windows Für die US-Standardtastatur ist die **[{** -Taste|
-|VK_OEM_5|Windows Für die US-Standardtastatur die **\\&#124;**  -Taste|
+|VK_OEM_5|Windows Für die US-Standardtastatur die ** \\&#124;** -Taste|
 |VK_OEM_6|Windows Für die US-Standardtastatur die Taste **]}**|
 |VK_OEM_7|Windows Für die US-Standardtastatur ist der Schlüssel "einfache Anführungszeichen/doppelte Anführungszeichen".|
 |VK_OEM_COMMA|Windows Für ein beliebiges Land/eine Region **, den Schlüssel**|
-|VK_OEM_MINUS|Windows Für ein beliebiges Land/eine Region die **-** Key|
+|VK_OEM_MINUS|Windows Für ein beliebiges Land/eine Region der **-** Schlüssel|
 |VK_OEM_PERIOD|Windows Für ein beliebiges Land/eine Region ist der **.** Schlüssel|
-|VK_OEM_PLUS|Windows Für ein beliebiges Land/eine Region die **+** Key|
+|VK_OEM_PLUS|Windows Für ein beliebiges Land/eine Region der **+** Schlüssel|
 |VK_PACKET|Windows Wird verwendet, um Unicode-Zeichen so zu übergeben, als wären Sie Tastatureingaben.|
 |VK_RCONTROL|**Right Strg** -Taste|
 |VK_RMENU|**Rechte Menü** Taste|
@@ -77,7 +77,7 @@ Es gibt eine Anzahl vordefinierter Zugriffstasten, die Teil eines Windows-Anwend
 
 ## <a name="accelerator-key-association"></a>Zugriffstasten Zuordnung
 
-In vielen Fällen möchten Sie über ein Menüelement und eine Tastenkombination verfügen, um denselben Programmbefehl auszugeben. Sie führen diese Aktion aus, indem Sie dem Menü Element denselben Ressourcen Bezeichner (ID) und einen Eintrag in der Zugriffstasten Tabelle Ihrer Anwendung zuweisen. Sie können die Beschriftung des Menüelements ändern, um den Namen der Zugriffstaste anzuzeigen. Weitere Informationen über Menü Elemente und Zugriffstasten finden Sie unter [Menübefehle](../windows/associating-a-menu-command-with-an-accelerator-key.md).
+In vielen Fällen möchten Sie über ein Menüelement und eine Tastenkombination verfügen, um denselben Programmbefehl auszugeben. Sie führen diese Aktion aus, indem Sie dem Menü Element denselben Ressourcen Bezeichner (ID) und einen Eintrag in der Zugriffstasten Tabelle Ihrer Anwendung zuweisen. Sie können die Beschriftung des Menüelements ändern, um den Namen der Zugriffstaste anzuzeigen. Weitere Informationen über Menü Elemente und Zugriffstasten finden Sie unter [Menübefehle](./menu-command-properties.md).
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - name decoration [C++]
 - names [C++], decorated
 ms.assetid: a4e9ae8e-b239-4454-b401-4102793cb344
-ms.openlocfilehash: 20e7f5855b771caf23217e5c17db50a890e28113
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 0cda21b1650fa660175248c15560a7ab0b251d07
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87223849"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91504252"
 ---
 # <a name="decorated-names"></a>Ergänzte Namen
 
@@ -22,7 +22,7 @@ Die ergänzten Benennungs Konventionen haben sich in verschiedenen Versionen von
 > [!NOTE]
 > Bibliotheken, die mit Visual Studio 2015 erstellt wurden, können von Anwendungen genutzt werden, die mit Visual Studio 2017 oder Visual Studio 2019 erstellt wurden.
 
-## <a name="using-decorated-names"></a><a name="Using"></a>Verwenden von ergänzten Namen
+## <a name="using-decorated-names"></a><a name="Using"></a> Verwenden von ergänzten Namen
 
 In der Regel müssen Sie den ergänzten Namen nicht kennen, um Code schreiben zu können, der erfolgreich kompiliert werden kann und richtige Verknüpfungen aufweist. Ergänzte Namen sind ein internes Implementierungsdetail des Compilers und Linkers. Die Tools können den Name in der Regel auch in seiner nicht ergänzten Form behandeln. Ein ergänzter Name ist jedoch manchmal erforderlich, wenn Sie einen Funktionsnamen zum Linker oder anderen Tools angeben. Um zum Beispiel überladene C++-Funktionen, Member von Namespaces, Klassenkonstruktoren, Destruktoren und spezielle Memberfunktionen angeben zu können, müssen Sie den ergänzten Namen verwenden. Weitere Informationen zu den Optionskennzeichnungen und anderen Situationen, in denen ergänzte Namen erforderlich sind, finden Sie in der Dokumentation zu den von Ihnen verwendeten Tools und Optionen.
 
@@ -30,7 +30,7 @@ Wenn Sie den Funktionsnamen, die Klasse, die Aufrufkonvention, den Rückgabetyp 
 
 Die Namensergänzung ist auch dann wichtig, wenn eine Verknüpfen mit Code erfolgt, der in einer anderen Programmiersprache geschrieben wurde oder andere Compiler verwendet. Verschiedene Compilern verwenden unterschiedliche Konventionen für die Namensergänzung. Wenn Ihre ausführbare Datei eine Verknüpfung zu Code enthält, der in einer anderen Sprache geschrieben wurde, müssen Sie insbesondere darauf achten, dass die exportierten und importierten Namen und Aufrufkonventionen übereinstimmen. Der assemblysprachencode muss die MSVC-ergänzten Namen und Aufruf Konventionen verwenden, um einen Link zu einem mit MSVC geschriebenen Quellcode zu verknüpfen
 
-## <a name="format-of-a-c-decorated-name"></a><a name="Format"></a>Format eines ergänzten Namens C++
+## <a name="format-of-a-c-decorated-name"></a><a name="Format"></a> Format eines ergänzten Namens C++
 
 Ein ergänzter Name für eine C++-Funktion enthält die folgenden Informationen:
 
@@ -53,7 +53,7 @@ Die Namen der Funktion und der Klasse werden im ergänzten Namen codiert. Der Re
 |`int a(char){int i=3;return i;};`|`?a@@YAHD@Z`|
 |`void __stdcall b::c(float){};`|`?c@b@@AAGXM@Z`|
 
-## <a name="format-of-a-c-decorated-name"></a><a name="FormatC"></a>Format eines von C ergänzten Namens
+## <a name="format-of-a-c-decorated-name"></a><a name="FormatC"></a> Format eines von C ergänzten Namens
 
 Das Format einer Ergänzung für eine C-Funktion hängt von der Aufrufkonvention ab, die in der Deklaration verwendet wird. Dies isst in der folgenden Tabelle dargestellt. Dies ist auch das Ergänzungsformat, das verwendet wird, wenn C++-Code mit einer `extern "C"` Verknüpfung deklariert wird. Die Standard Aufruf Konvention ist **`__cdecl`** . Beachten Sie, dass Funktion in einer 64-Bit-Umgebung nicht ergänzt werden.
 
@@ -64,7 +64,7 @@ Das Format einer Ergänzung für eine C-Funktion hängt von der Aufrufkonvention
 |**`__fastcall`**|Vorangestellte und nachfolgende Zeichen ( **`@`** ) gefolgt von einer Dezimalzahl, die die Anzahl der Bytes in der Parameterliste darstellt.|
 |**`__vectorcall`**|Zwei nachfolgende @-Zeichen ( **`@@`** ), gefolgt von einer Dezimalzahl von Bytes in der Parameterliste|
 
-## <a name="viewing-decorated-names"></a><a name="Viewing"></a>Anzeigen von ergänzten Namen
+## <a name="viewing-decorated-names"></a><a name="Viewing"></a> Anzeigen von ergänzten Namen
 
 Sie erhalten das ergänzte Format eines Symbolnamens, wenn Sie die Quelldatei mit den Daten, dem Objekt oder der Funktionsdefinition bzw. dem Prototypen kompiliert haben. Um ergänzte Namen im Programm zu untersuchen, können Sie eine der folgenden Methoden verwenden:
 
@@ -82,7 +82,7 @@ Sie erhalten das ergänzte Format eines Symbolnamens, wenn Sie die Quelldatei mi
 
 2. Um das ergänzte Format eines Symbols zu finden, suchen Sie nach dem nicht ergänzten Namen in Klammern. Der ergänzte Name befindet sich in der gleichen Zeile, nach einem Pipe-Zeichen (&#124;) und vor dem nicht ergänzten Namen.
 
-## <a name="viewing-undecorated-names"></a><a name="Undecorated"></a>Anzeigen von nicht ergänzten Namen
+## <a name="viewing-undecorated-names"></a><a name="Undecorated"></a> Anzeigen von nicht ergänzten Namen
 
 Mit „undname.exe“ können Sie einen ergänzten Namen in das nicht ergänzte Format konvertieren. Dieses Beispiel zeigt, wie dies funktioniert:
 
@@ -95,7 +95,7 @@ Undecoration of :- "?func1@a@@AAEXH@Z"
 is :- "private: void __thiscall a::func1(int)"
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Zusätzliche MSVC-Buildtools](c-cpp-build-tools.md)<br/>
-[Verwenden von "extern" zur Angabe der Verknüpfung](../../cpp/using-extern-to-specify-linkage.md)
+[Verwenden von "extern" zur Angabe der Verknüpfung](../../cpp/extern-cpp.md)

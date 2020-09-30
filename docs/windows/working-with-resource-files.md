@@ -6,19 +6,19 @@ helpviewer_keywords:
 - resources [C++], about resource files
 - resource files [C++], about resource files
 ms.assetid: 2699a539-b369-4b78-80f0-df03eb7b6780
-ms.openlocfilehash: 142a9120e0b6b95e659fcb47c275653fbefd8cbe
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 3e387a1cefb6577760a34c7957d4f5019b1d49ef
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80165885"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91502902"
 ---
 # <a name="working-with-resource-files"></a>Arbeiten mit Ressourcendateien
 
 > [!WARNING]
 > Dieser Abschnitt gilt für in C++ erstellte Windows-Desktopanwendungen.
 >
-> Informationen zu Ressourcen in universelle Windows-Plattform C++in geschriebenen apps finden Sie unter [Definieren von App-Ressourcen](/windows/uwp/app-resources/)oder Hinzufügen von C++Ressourcen zu/CLI (verwalteten) Projekten. Weitere Informationen finden Sie unter [Ressourcen in Desktop-Apps](/dotnet/framework/resources/index) im Entwicklerhandbuch zu .NET Framework.
+> Weitere Informationen zu Ressourcen in universelle Windows-Plattform in C++ geschriebenen apps finden Sie unter [Definieren von App-Ressourcen](/windows/uwp/app-resources/)oder Hinzufügen von Ressourcen zu C++/CLI (verwalteten) Projekten. Weitere Informationen finden Sie unter [Ressourcen in Desktop-Apps](/dotnet/framework/resources/index) im Entwicklerhandbuch zu .NET Framework.
 
 Ressourcen können aus einer Vielzahl von Elementen bestehen, wie z. b.:
 
@@ -38,13 +38,13 @@ Informationen zum Globalisieren und Lokalisieren von Ressourcen in verwalteten a
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 
-[Ressourcendateien](../windows/resource-files-visual-studio.md)<br/>
+[Ressourcen Dateien](../windows/resource-files-visual-studio.md)<br/>
 Beschreibt Ressourcen Dateien und wie Sie in Windows-Desktop Anwendungen verwendet werden. Enthält auch Links zu Artikeln, in denen die Verwendung von Ressourcen Dateien beschrieben wird.
 
-[Ressourcenbezeichner (Symbole)](../windows/symbols-resource-identifiers.md)<br/>
+[Ressourcen Bezeichner (Symbole)](../windows/symbols-resource-identifiers.md)<br/>
 Beschreiben Symbole und bieten Informationen zur Verwendung des Dialogfelds **Ressourcensymbole** , um Symbole in Ihren Projekten zu verwalten.
 
-[Ressourcen-Editor](../windows/resource-editors.md)<br/>
+[Ressourcen-Editoren](../windows/resource-editors.md)<br/>
 Beschreibt die Ressourcen-Editoren, die in Visual Studio bereitgestellt werden, und die Ressourcentypen, die Sie mit jedem Editor ändern können. Bietet auch Links zu detaillierten Informationen zur Verwendung der einzelnen Editor.
 
 ## <a name="related-sections"></a>Verwandte Abschnitte
@@ -57,5 +57,5 @@ Bietet Links zu Informationen über die Verwendung des Dokumentationssatzes, Sup
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Windows-Desktop Anwendungen](../windows/windows-desktop-applications-cpp.md)<br/>
+[Windows-Desktop Anwendungen](./desktop-applications-visual-cpp.md)<br/>
 [Menüs und weitere Ressourcen](/windows/win32/menurc/resources)

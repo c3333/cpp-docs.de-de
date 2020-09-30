@@ -20,12 +20,12 @@ helpviewer_keywords:
 - Data property
 - combo boxes [C++], testing values
 ms.assetid: 60a85435-aa30-4c5c-98b6-42fb045b9eb2
-ms.openlocfilehash: 91b6365334b977957ff6bd6c25278d4088961a2c
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 59d81c0b835171132ebf29739a4e130191a87769
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87222068"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91504447"
 ---
 # <a name="how-to-define-control-access-and-values-c"></a>Gewusst wie: Definieren von Steuerelement Zugriff und-Werten (C++)
 
@@ -103,14 +103,14 @@ Sie können einem Kombinations Feld-Steuerelement Werte hinzufügen, solange der
 
 1. Drücken Sie die **Eingabe** Taste, wenn Sie die Werte hinzugefügt haben.
 
-Informationen zum Vergrößern des Dropdown Bereichs eines Kombinations Felds finden Sie unter [Festlegen der Größe des Kombinations Felds und der Dropdown Liste](setting-the-size-of-the-combo-box-and-its-drop-down-list.md).
+Informationen zum Vergrößern des Dropdown Bereichs eines Kombinations Felds finden Sie unter [Festlegen der Größe des Kombinations Felds und der Dropdown Liste](./arrangement-of-controls-on-dialog-boxes.md).
 
 > [!NOTE]
 > Sie können Win32-Projekten keine Werte hinzufügen, indem Sie dieses Verfahren verwenden (die **Data** -Eigenschaft ist für Win32-Projekte ausgegraut). Da Win32-Projekte keine Bibliotheken aufweisen, die diese Funktion hinzufügen, müssen Sie einem Kombinations Feld mit einem Win32-Projekt Programm gesteuert Werte hinzufügen.
 
 ### <a name="to-test-the-appearance-of-values-in-a-combo-box"></a>So testen Sie die Darstellung von Werten in einem Kombinations Feld
 
-1. Nachdem Sie die Werte in die **Daten** Eigenschaft eingegeben haben, wählen Sie die Schaltfläche **Testen** auf der [Symbolleiste des Dialog-Editors](../windows/showing-or-hiding-the-dialog-editor-toolbar.md)
+1. Nachdem Sie die Werte in die **Daten** Eigenschaft eingegeben haben, wählen Sie die Schaltfläche **Testen** auf der [Symbolleiste des Dialog-Editors](./dialog-editor.md)
 
 1. Versuchen Sie, einen Bildlauf nach unten durchführen. Werte werden genau so angezeigt, wie Sie im **Eigenschaften** Fenster in der Eigenschaft **Daten** eingegeben werden. Es gibt keine Rechtschreibprüfung oder Groß-/Kleinschreibung.
 
@@ -118,7 +118,7 @@ Informationen zum Vergrößern des Dropdown Bereichs eines Kombinations Felds fi
 
 ## <a name="radio-button-values"></a>Optionsfeld Werte
 
-Wenn Sie einem Dialogfeld Options Felder hinzufügen, behandeln Sie Sie als Gruppe, indem Sie im **Eigenschaften** Fenster für die erste Schaltfläche in der Gruppe eine **Gruppen** Eigenschaft festlegen. Eine Steuerelement-ID für das betreffende Optionsfeld wird dann im [Assistent zum Hinzufügen von Membervariablen](../ide/add-member-variable-wizard.md)angezeigt und ermöglicht das Hinzufügen einer Membervariablen zur Gruppe der Optionsfelder.
+Wenn Sie einem Dialogfeld Options Felder hinzufügen, behandeln Sie Sie als Gruppe, indem Sie im **Eigenschaften** Fenster für die erste Schaltfläche in der Gruppe eine **Gruppen** Eigenschaft festlegen. Eine Steuerelement-ID für das betreffende Optionsfeld wird dann im [Assistent zum Hinzufügen von Membervariablen](../ide/adding-a-member-variable-visual-cpp.md#add-member-variable-wizard)angezeigt und ermöglicht das Hinzufügen einer Membervariablen zur Gruppe der Optionsfelder.
 
 Sie können mehr als eine Gruppe von Options Feldern in einem Dialogfeld auswählen. Fügen Sie jede Gruppe mithilfe des folgenden Verfahrens hinzu.
 
@@ -139,7 +139,7 @@ Sie können mehr als eine Gruppe von Options Feldern in einem Dialogfeld auswäh
 
 1. Klicken **Sie mit**der rechten Maustaste auf das erste Optionsfeld-Steuerelement in der Aktivier Reihenfolge (das bestimmende Steuerelement und das Element, bei dem die **Group** -Eigenschaft auf **true**festgelegt ist)
 
-1. Aktivieren Sie im [Assistent zum Hinzufügen von Membervariablen](../ide/add-member-variable-wizard.md)das Kontrollkästchen **Steuerungsvariable** , und aktivieren Sie dann das Optionsfeld **Wert** .
+1. Aktivieren Sie im [Assistent zum Hinzufügen von Membervariablen](../ide/adding-a-member-variable-visual-cpp.md#add-member-variable-wizard)das Kontrollkästchen **Steuerungsvariable** , und aktivieren Sie dann das Optionsfeld **Wert** .
 
    - Geben Sie im Feld **Variablenname** einen Namen für die neue Membervariable ein.
 

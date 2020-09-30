@@ -88,12 +88,12 @@ helpviewer_keywords:
 - m_iRowset
 - m_rgRowHandles
 ms.assetid: 6a9189af-7556-45b1-adcb-9d62bb36704c
-ms.openlocfilehash: 470755744783272245ca3aa8e4b57e2943db5fae
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 27a07d10256147d3c3ed383744ba1ee5fdfd06a1
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88840400"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91504070"
 ---
 # <a name="irowsetimpl-class"></a>IRowsetImpl-Klasse
 
@@ -130,19 +130,19 @@ Speichereinheit für alle Zeilen Handles, die vom Anbieter gehalten werden.
 
 **Header:** „atldb.h“
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
 | Name | Beschreibung |
 |-|-|
 |[AddRefRows](#addrefrows)|Fügt einem vorhandenen Zeilenhandle einen Verweiszähler hinzu.|
-|[CreateRow](#createrow)|Wird von [GetNextRows](../../data/oledb/irowsetimpl-getnextrows.md) aufgerufen, um einen neuen zuzuordnen `HROW` . Wird nicht direkt vom Benutzer aufgerufen.|
+|[CreateRow](#createrow)|Wird von [GetNextRows](#getnextrows) aufgerufen, um einen neuen zuzuordnen `HROW` . Wird nicht direkt vom Benutzer aufgerufen.|
 |[GetData](#getdata)|Ruft Daten von der Zeilenkopie des Rowsets ab.|
 |[GetDBStatus](#getdbstatus)|Gibt den Status für das angegebene Feld zurück.|
 |[GetNextRows](#getnextrows)|Ruft Zeilen sequenziell ab und speichert die vorherige Position.|
 |[IRowsetImpl](#irowsetimpl)|Der Konstruktor. Wird nicht direkt vom Benutzer aufgerufen.|
-|[RefRows](#refrows)|Wird von [adressfrows](../../data/oledb/irowsetimpl-addrefrows.md) und [ReleaseRows](../../data/oledb/irowsetimpl-releaserows.md)aufgerufen. Wird nicht direkt vom Benutzer aufgerufen.|
+|[RefRows](#refrows)|Wird von [adressfrows](#addrefrows) und [ReleaseRows](#releaserows)aufgerufen. Wird nicht direkt vom Benutzer aufgerufen.|
 |[ReleaseRows](#releaserows)|Gibt Zeilen frei.|
 |[Restart Position](#restartposition)|Positioniert die nächste Abruf Position an der Anfangsposition. Das heißt, die Position, zu der das Rowset erstmalig erstellt wurde.|
 |[SetDBStatus](#setdbstatus)|Legt die Statusflags für das angegebene Feld fest.|
@@ -153,7 +153,7 @@ Speichereinheit für alle Zeilen Handles, die vom Anbieter gehalten werden.
 |-|-|
 |[m_bCanFetchBack](#bcanfetchback)|Gibt an, ob ein Anbieter das rückwärts abrufen unterstützt.|
 |[m_bCanScrollBack](#bcanscrollback)|Gibt an, ob der Cursor von einem Anbieter Rückwärtsscrollen kann.|
-|[m_bReset](#breset)|Gibt an, ob ein Anbieter seine Cursorposition zurückgesetzt hat. Dies hat eine besondere Bedeutung, wenn Sie Rückwärtsscrollen oder rückwärts in [GetNextRows](../../data/oledb/irowsetimpl-getnextrows.md)abrufen.|
+|[m_bReset](#breset)|Gibt an, ob ein Anbieter seine Cursorposition zurückgesetzt hat. Dies hat eine besondere Bedeutung, wenn Sie Rückwärtsscrollen oder rückwärts in [GetNextRows](#getnextrows)abrufen.|
 |[m_iRowset](#irowset)|Ein Index für das Rowset, das den Cursor darstellt.|
 |[m_rgRowHandles](#rgrowhandles)|Eine Liste der Zeilen Handles.|
 
@@ -180,7 +180,7 @@ Weitere Informationen finden Sie unter [IRowset:: adressfrows](/previous-version
 
 ## <a name="irowsetimplcreaterow"></a><a name="createrow"></a> Irowctimpl:: kreaterow
 
-Eine Hilfsmethode, die von [GetNextRows](../../data/oledb/irowsetimpl-getnextrows.md) aufgerufen wird, um einen neuen zuzuordnen `HROW` .
+Eine Hilfsmethode, die von [GetNextRows](#getnextrows) aufgerufen wird, um einen neuen zuzuordnen `HROW` .
 
 ### <a name="syntax"></a>Syntax
 
@@ -203,7 +203,7 @@ Ein Array von `HROW` s, das mit den neu erstellten Zeilen Handles an den Aufrufe
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn die Zeile vorhanden ist, ruft diese Methode " [adressfrows](../../data/oledb/irowsetimpl-addrefrows.md) " auf und gibt zurück. Andernfalls wird eine neue Instanz der RowClass-Vorlagen Variablen zugewiesen, und Sie wird [m_rgRowHandles](../../data/oledb/irowsetimpl-m-rgrowhandles.md)hinzugefügt.
+Wenn die Zeile vorhanden ist, ruft diese Methode " [adressfrows](#addrefrows) " auf und gibt zurück. Andernfalls wird eine neue Instanz der RowClass-Vorlagen Variablen zugewiesen, und Sie wird [m_rgRowHandles](#rgrowhandles)hinzugefügt.
 
 ## <a name="irowsetimplgetdata"></a><a name="getdata"></a> Irowctimpl:: GetData
 
@@ -288,7 +288,7 @@ Normalerweise ist es nicht erforderlich, diese Methode direkt aufzurufen.
 
 ## <a name="irowsetimplrefrows"></a><a name="refrows"></a> Irowantimpl:: refrows
 
-Wird von [adressfrows](../../data/oledb/irowsetimpl-addrefrows.md) und [ReleaseRows](../../data/oledb/irowsetimpl-releaserows.md) aufgerufen, um einen Verweis Zähler für ein vorhandenes Zeilen Handle zu erhöhen oder freizugeben.
+Wird von [adressfrows](#addrefrows) und [ReleaseRows](#releaserows) aufgerufen, um einen Verweis Zähler für ein vorhandenes Zeilen Handle zu erhöhen oder freizugeben.
 
 ### <a name="syntax"></a>Syntax
 
@@ -415,7 +415,7 @@ unsigned m_bReset:1;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn der Consumer [GetNextRows](../../data/oledb/irowsetimpl-getnextrows.md) mit einem negativen `lOffset` oder *Crows* aufruft und den Wert `m_bReset` true hat, `GetNextRows` wechselt zum Ende des Rowsets. Wenn `m_bReset` false ist, empfängt der Consumer in Übereinstimmung mit der OLE DB Spezifikation einen Fehlercode. Das `m_bReset` Flag wird auf festgelegt, **`true`** Wenn das Rowset erstmalig erstellt wird, und wenn der Consumer [IRowsetImpl:: RestartPosition](../../data/oledb/irowsetimpl-restartposition.md)aufruft. Wird auf festgelegt, **`false`** Wenn aufgerufen wird `GetNextRows` .
+Wenn der Consumer [GetNextRows](#getnextrows) mit einem negativen `lOffset` oder *Crows* aufruft und den Wert `m_bReset` true hat, `GetNextRows` wechselt zum Ende des Rowsets. Wenn `m_bReset` false ist, empfängt der Consumer in Übereinstimmung mit der OLE DB Spezifikation einen Fehlercode. Das `m_bReset` Flag wird auf festgelegt, **`true`** Wenn das Rowset erstmalig erstellt wird, und wenn der Consumer [IRowsetImpl:: RestartPosition](#restartposition)aufruft. Wird auf festgelegt, **`false`** Wenn aufgerufen wird `GetNextRows` .
 
 ## <a name="irowsetimplm_irowset"></a><a name="irowset"></a> IRow-timpl:: m_iRowset
 

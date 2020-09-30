@@ -5,16 +5,16 @@ ms.topic: reference
 helpviewer_keywords:
 - code analysis, C++ core check
 ms.assetid: f1429463-136e-41ed-8a75-a8dbf0b4fd89
-ms.openlocfilehash: e85ce8baed9a1ef39e0ab759ab86a5b570a42fa6
-ms.sourcegitcommit: 6e55aeb538b1c39af754f82d6f7738a18f5aa031
+ms.openlocfilehash: a4dc50395a1da0eda68148123651123cf1607184
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87389947"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91503387"
 ---
 # <a name="c-core-guidelines-checker-reference"></a>C++ Core Guidelines Checker-Referenz
 
-In diesem Abschnitt werden C++ Core Guidelines Überprüfungs Warnungen aufgeführt. Weitere Informationen zur Code Analyse finden Sie unter [ `/analyze` (Code Analyse)](/cpp/build/reference/analyze-code-analysis) und [Schnellstart: Code Analyse für C/C++](../code-quality/quick-start-code-analysis-for-c-cpp.md).
+In diesem Abschnitt werden C++ Core Guidelines Überprüfungs Warnungen aufgeführt. Weitere Informationen zur Code Analyse finden Sie unter [ `/analyze` (Code Analyse)](../build/reference/analyze-code-analysis.md) und [Schnellstart: Code Analyse für C/C++](../code-quality/quick-start-code-analysis-for-c-cpp.md).
 
 > [!NOTE]
 > Einige Warnungen gehören zu mehr als einer Gruppe, und nicht alle Warnungen enthalten ein vollständiges Referenz Thema.
@@ -196,7 +196,7 @@ Diese Funktionsaufruf *Funktion* kann verwenden, `constexpr` Wenn die Auswertung
 Nicht in Slice. Weitere Informationen finden Sie unter [C++ Core Guidelines es. 63](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es63-dont-slice).
 
 [C26465 NO_CONST_CAST_UNNECESSARY](c26465.md)\
-Verwenden Sie nicht, um eine Umwandlung durchführen `const_cast` `const` . `const_cast`ist nicht erforderlich. constness oder Volatilität wird nicht durch diese Konvertierung entfernt. Weitere Informationen finden Sie unter [C++ Core Guidelines Type. 3](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#Pro-type-constcast).
+Verwenden Sie nicht, um eine Umwandlung durchführen `const_cast` `const` . `const_cast` ist nicht erforderlich. constness oder Volatilität wird nicht durch diese Konvertierung entfernt. Weitere Informationen finden Sie unter [C++ Core Guidelines Type. 3](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#Pro-type-constcast).
 
 [C26466 NO_STATIC_DOWNCAST_POLYMORPHIC](c26466.md)\
 Verwenden Sie keine `static_cast` downcasts. Eine Umwandlung von einem polymorphen Typ sollte dynamic_cast verwenden. Weitere Informationen finden Sie unter [C++ Core Guidelines Type. 2](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#Pro-type-downcast).
@@ -264,7 +264,7 @@ Bevorzugen Sie `gsl::at()` anstelle des nicht überprüften Index Operators. Wei
 Verwenden Sie ggf `gsl::finally` ., wenn die endgültige Aktion beabsichtigt ist Weitere Informationen finden Sie unter [C++ Core Guidelines: gsl. util: Utilities](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#SS-utilities).
 
 [C26449 NO_SPAN_FROM_TEMPORARY](c26449.md)\
-`gsl::span`oder, `std::string_view` das aus einem temporären erstellt wurde, ist ungültig, wenn die temporäre ungültig erklärt wird. Weitere Informationen finden Sie unter [C++ Core Guidelines: gsl. View: views](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#gslview-views).
+`gsl::span` oder, `std::string_view` das aus einem temporären erstellt wurde, ist ungültig, wenn die temporäre ungültig erklärt wird. Weitere Informationen finden Sie unter [C++ Core Guidelines: gsl. View: views](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#gslview-views).
 
 ## <a name="deprecated-warnings"></a>Veraltete Warnungen
 
@@ -280,6 +280,6 @@ Die folgenden Warnungen sind in einem frühzeitigen experimentellen Regelsatz de
 - 26425 ASSIGNING_TO_STATIC
 - 26499 NO_LIFETIME_TRACKING
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verwenden der C++ Core Guidelines-Checker](using-the-cpp-core-guidelines-checkers.md)

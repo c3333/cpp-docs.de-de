@@ -3,12 +3,12 @@ title: Visual Studio-IDE-Tools zum Aktualisieren von C++-Code
 description: Der C++-Code-Editor und die Code Analysetools in Visual Studio helfen Ihnen beim modernisieren Ihrer C++-Codebasis.
 ms.date: 11/13/2019
 ms.topic: conceptual
-ms.openlocfilehash: 0d43da784e1e2f7789ac17ec01163ce29944e93d
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: d6368445d16232ff968b7116b0f0313e97aa144c
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87205729"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91503764"
 ---
 # <a name="visual-studio-ide-tools-for-upgrading-c-code"></a>Visual Studio-IDE-Tools zum Aktualisieren von C++-Code
 
@@ -24,7 +24,7 @@ Visual Studio unterstützt Sie bei der Aktualisierung von Legacy-C++-Code mit Co
 
 - Code, der allen Versionen des Standards entspricht, aber in modernem C++ nicht mehr als bewährte Vorgehensweise gilt.
 
-   Führen Sie die [Code Analyse](/cpp/code-quality/code-analysis-for-c-cpp-overview)aus, um Code zu identifizieren, in dem Änderungen empfohlen werden.
+   Führen Sie die [Code Analyse](../code-quality/code-analysis-for-c-cpp-overview.md)aus, um Code zu identifizieren, in dem Änderungen empfohlen werden.
 
 ## <a name="open-and-convert-a-legacy-project"></a>Öffnen und Konvertieren eines Legacy Projekts
 
@@ -74,7 +74,7 @@ Code Analysefehler und-Warnungen werden auch im **Fehlerliste** wie Compilerfehl
 
 ![Code Analyse Warnungen in Fehlerliste](media/code-analysis-error-list.png "Code Analyse Warnungen in Fehlerliste")
 
-Sie können ändern, welche Regeln aktiv sind, und benutzerdefinierte RuleSets erstellen. Weitere Informationen zur Verwendung der Code Analyse finden Sie unter Übersicht über die [Code Analyse für C/C++](/cpp/code-quality/code-analysis-for-c-cpp-overview).
+Sie können ändern, welche Regeln aktiv sind, und benutzerdefinierte RuleSets erstellen. Weitere Informationen zur Verwendung der Code Analyse finden Sie unter Übersicht über die [Code Analyse für C/C++](../code-quality/code-analysis-for-c-cpp-overview.md).
 
 ## <a name="use-quick-actions-to-modernize-code"></a>Verwenden von schnellen Aktionen zur Modernisierung von Code
 

@@ -1,5 +1,5 @@
 ---
-title: 'Vorgehensweise: Erstellen von RessourcenC++()'
+title: 'Vorgehensweise: Erstellen von Ressourcen (C++)'
 ms.date: 02/14/2019
 f1_keywords:
 - vc.resvw.add.MFC
@@ -35,14 +35,14 @@ helpviewer_keywords:
 - resources [C++], templates
 - .rct files [C++]
 ms.assetid: 82be732a-cdcd-4a58-8de7-976d1418f86b
-ms.openlocfilehash: 5527b7c46b728a4a009a56fca3fea52bf5ef9bf3
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 88618a5b1184ce9774a58f575a3fbff2d5e63ba4
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80214421"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91504433"
 ---
-# <a name="how-to-create-resources-c"></a>Vorgehensweise: Erstellen von RessourcenC++()
+# <a name="how-to-create-resources-c"></a>Vorgehensweise: Erstellen von Ressourcen (C++)
 
 Sie können Ressourcen für Ihr Projekt erstellen, indem Sie folgende Schritte ausführen:
 
@@ -69,9 +69,9 @@ Bevor Sie neue Ressourcen erstellen und zu Ihrem Projekt hinzufügen, müssen Si
    > [!NOTE]
    > Verwechseln Sie den Projektordner nicht mit dem Projektmappenordner in **Projektmappen-Explorer**. Wenn Sie den Fokus auf den **Projektmappenordner** legen, haben Sie nicht die gleichen Optionen für **Neues Element hinzufügen** .
 
-1. Wechseln Sie im Menü zu **Projekt** > **Neues Element hinzufügen**.
+1. Wechseln Sie im Menü zu **Projekt**  >  **Hinzufügen Neues Element**.
 
-1. Wählen Sie **den C++ visuellen** Ordner aus, und wählen Sie im rechten Bereich **Ressourcen Datei (. RC)** aus.
+1. Wählen Sie den Ordner **Visual C++** aus, und wählen Sie im rechten Bereich **Ressourcen Datei (. RC)** aus.
 
 1. Geben Sie im Textfeld **Name** einen Namen für die Ressourcen Skriptdatei ein, und wählen Sie **Öffnen**aus.
 
@@ -82,7 +82,7 @@ Sie können Ressourcen in einer Ressourcen Skriptdatei anzeigen, ohne dass ein P
 > [!NOTE]
 > Einige Befehle sind nur verfügbar, wenn die Datei eigenständig geöffnet wird. das bedeutet, dass Sie außerhalb eines Projekts, ohne dass das Projekt zuerst geladen wird. Wenn Sie z. b. den Befehl " **Speichern** unter" verwenden und eine Datei mit einem anderen Format oder Dateinamen speichern möchten, muss die Datei eigenständig geöffnet werden.
 
-- Um eine Ressourcen Skriptdatei außerhalb eines Projekts zu öffnen, navigieren Sie im Menü zu **Datei** > **Öffnen**, und wählen Sie dann **Datei**aus. Navigieren Sie zur Ressourcen Skriptdatei, markieren Sie die Datei, und wählen Sie **Öffnen**aus.
+- Um eine Ressourcen Skriptdatei außerhalb eines Projekts zu öffnen, navigieren Sie im Menü zu **Datei**  >  **Öffnen**, und wählen Sie dann **Datei**aus. Navigieren Sie zur Ressourcen Skriptdatei, markieren Sie die Datei, und wählen Sie **Öffnen**aus.
 
     > [!NOTE]
     > Es kann vorkommen, dass Sie den Inhalt der Ressourcen Skriptdatei Ihres Projekts anzeigen möchten, ohne die Ressourcen-Editoren zum Öffnen einer Ressource zu verwenden. Beispielsweise möchten Sie möglicherweise nach einer Zeichenfolge über alle Dialogfelder in der Ressourcendatei hinweg suchen, ohne dass Sie dafür jedes einzeln öffnen müssen. Sie können die Ressourcen Datei problemlos im Textformat öffnen, um alle darin enthaltenen Ressourcen anzuzeigen und globale Vorgänge abzuschließen, die vom Text-Editor unterstützt werden.
@@ -108,57 +108,57 @@ Sie können eine Ressource als neue Standardressource erstellen, d. h. eine Ress
 Verwenden Sie das Fenster **Ressourcenansicht** , um Ressourcen Dateien anzuzeigen, die in Ihren Projekten enthalten sind. Wenn Sie den obersten Ordner erweitern, z. b *. Projekt1. RC*, werden die Ressourcentypen in dieser Datei angezeigt. Erweitern Sie jeden Ressourcentyp, um die einzelnen Ressourcen dieses Typs anzuzeigen.
 
 > [!TIP]
-> Um das Fenster **Ressourcenansicht** zu öffnen, navigieren Sie zur Menü **Ansicht** > **anderen Fenstern** > **Ressourcenansicht** , oder drücken Sie **STRG**+**UMSCHALT**+**E**.
+> Um das Fenster **Ressourcenansicht** zu öffnen, navigieren Sie **View**zum Menü  >  **Weitere Fenster**  >  **Ressourcenansicht** anzeigen, oder drücken Sie **STRG** + **UMSCHALT** + **E**.
 
 Sie können auch mit der rechten Maustaste auf das **Ressourcenansicht** Fenster klicken, um ein Kontextmenü mit Befehlen zu öffnen, oder Doppelklicken Sie auf die Titelleiste, um das Fenster anzudocken und das Fenster abzudocken. Klicken Sie mit der rechten Maustaste auf die Titelleiste für Befehle, mit denen das Verhalten des Fensters gesteuert wird. Weitere Informationen finden Sie unter [Windows-Verwaltung](/visualstudio/ide/customizing-window-layouts-in-visual-studio).
 
-Das **Ressourcenansicht** Fenster umfasst das Dialogfeld **Ressource hinzufügen** mit den folgenden Eigenschaften zum Hinzufügen von C++ Ressourcen zu einem Windows-Desktop Anwendungsprojekt:
+Das **Ressourcenansicht** Fenster umfasst das Dialogfeld **Ressource hinzufügen** mit den folgenden Eigenschaften zum Hinzufügen von Ressourcen zu einem C++-Windows-Desktop Anwendungsprojekt:
 
-| Eigenschaft | BESCHREIBUNG |
+| Eigenschaft | Beschreibung |
 |---|---|
-| **Ressourcentyp** | Geben Sie die Art der Ressource an, die Sie erstellen möchten.<br/><br/>Sie können die Ressourcen Kategorien Cursor und Dialogfeld erweitern, um zusätzliche Ressourcen anzuzeigen, die sich in befinden *. \Microsoft Visual Studio \<Version\>\vc\vkresourcetemplates\\< LCID\>\mfc.rct*. Wenn Sie RCT-Dateien hinzufügen müssen, platzieren Sie Sie entweder hier, oder geben Sie einen anderen [Includepfad](../windows/how-to-specify-include-directories-for-resources.md)an. Ressourcen, die auf der obersten Ebene in der Strukturansicht angezeigt werden, sind die Standard Ressourcen, die von Visual Studio bereitgestellt werden. Ressourcen in RCT-Dateien werden auf der zweiten Ebene unter der entsprechenden Kategorie angezeigt. Es gibt keine Voreinstellungs Beschränkung für die Anzahl von RCT-Dateien, die Sie hinzufügen können.<br/><br/> |
+| **Ressourcentyp** | Geben Sie die Art der Ressource an, die Sie erstellen möchten.<br/><br/>Sie können die Ressourcen Kategorien Cursor und Dialogfeld erweitern, um zusätzliche Ressourcen anzuzeigen, die sich in befinden *. \Microsoft Visual Studio \<version\> \vc\vkresourcetemplates \\<LCID \> \mfc.rct*. Wenn Sie RCT-Dateien hinzufügen müssen, platzieren Sie Sie entweder hier, oder geben Sie einen anderen [Includepfad](./how-to-include-resources-at-compile-time.md)an. Ressourcen, die auf der obersten Ebene in der Strukturansicht angezeigt werden, sind die Standard Ressourcen, die von Visual Studio bereitgestellt werden. Ressourcen in RCT-Dateien werden auf der zweiten Ebene unter der entsprechenden Kategorie angezeigt. Es gibt keine Voreinstellungs Beschränkung für die Anzahl von RCT-Dateien, die Sie hinzufügen können.<br/><br/> |
 | **Neu** | Erstellen Sie eine Ressource basierend auf dem Typ, der im Feld **Ressourcentyp** ausgewählt ist, und öffnen Sie die Ressource im entsprechenden Editor.<br/><br/>Wenn Sie z. b. eine Dialogfeld Ressource erstellen, wird die Ressource im [Dialog-Editor](../windows/dialog-editor.md)geöffnet. |
 | **Importieren** | Öffnen Sie das Dialogfeld **importieren** , um zu der Ressource zu navigieren, die Sie in das aktuelle Projekt importieren möchten.<br/><br/>Sie können eine Bitmap, ein Symbol, einen Cursor, HTML und einen Sound () importieren. WAV) oder benutzerdefinierte Ressourcen Datei. |
-| **Benutzerdefiniert** | Öffnen Sie das Dialogfeld **neue benutzerdefinierte Ressource** , um eine benutzerdefinierte Ressource zu erstellen.<br/><br/>Enthält auch eine **Ressourcentyp** Eigenschaft, die ein Textfeld bereitstellt, in das Sie den Namen des benutzerdefinierten Ressourcentyps eingeben können. Visual C++ nutzt beim Beenden automatisch den Namen. Benutzerdefinierte Ressourcen werden nur im [Binär-Editor](../windows/binary-editor.md)bearbeitet. |
+| **Benutzerdefiniert** | Öffnen Sie das Dialogfeld **neue benutzerdefinierte Ressource** , um eine benutzerdefinierte Ressource zu erstellen.<br/><br/>Enthält auch eine **Ressourcentyp** Eigenschaft, die ein Textfeld bereitstellt, in das Sie den Namen des benutzerdefinierten Ressourcentyps eingeben können. Visual C++ den Namen beim Beenden automatisch in Großbuchstaben. Benutzerdefinierte Ressourcen werden nur im [Binär-Editor](../windows/binary-editor.md)bearbeitet. |
 
-Wenn Sie eine neue Ressource erstellen, weist C++ das visuelle Element einen eindeutigen Namen zu, z. b. `IDD_Dialog1`. Sie können diese Ressourcen-ID anpassen, indem Sie die Ressourcen Eigenschaften entweder im zugehörigen Ressourcen-Editor oder im [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window)bearbeiten.
+Wenn Sie eine neue Ressource erstellen, weist Visual C++ ihr einen eindeutigen Namen zu, z. b `IDD_Dialog1` .. Sie können diese Ressourcen-ID anpassen, indem Sie die Ressourcen Eigenschaften entweder im zugehörigen Ressourcen-Editor oder im [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window)bearbeiten.
 
 > [!NOTE]
-> Geben Sie keinen Ressourcennamen oder eine ID an, der von Visual Studio reserviert ist. Reservierte Namen sind `DESIGNINFO`, `HWB`und `TEXTINCLUDE`, und die reservierte ID wird `255`.
+> Geben Sie keinen Ressourcennamen oder eine ID an, der von Visual Studio reserviert ist. Reservierte Namen sind `DESIGNINFO` , `HWB` und `TEXTINCLUDE` , und die reservierte ID ist `255` .
 
 ### <a name="to-create-a-resource"></a>So erstellen Sie eine Ressource
 
-- Wählen Sie in **Ressourcenansicht**die RC-Datei aus, und klicken Sie dann auf **Bearbeiten** > **Ressource hinzufügen** , und wählen Sie den Ressourcentyp aus, den Sie dem Projekt hinzufügen
+- Wählen Sie in **Ressourcenansicht**die RC-Datei aus, und wählen **Sie dann**  >  **Ressource hinzufügen** , und wählen Sie den Ressourcentyp aus, den Sie dem Projekt hinzufügen möchten.
 
    > [!TIP]
    > Sie können auch in **Ressourcenansicht** mit der rechten Maustaste auf die RC-Datei klicken und im Kontextmenü **Ressource hinzufügen** auswählen.
 
-- Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektordner, wählen Sie > **Ressource hinzu** **fügen aus** , und wählen Sie den Ressourcentyp aus, den Sie dem Projekt hinzufügen
+- Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektordner, wählen Sie **hinzu**fügen  >  **Ressource** hinzufügen aus, und wählen Sie den Ressourcentyp aus, den Sie dem Projekt
 
    > [!NOTE]
    > Wenn Sie nicht bereits über eine RC-Datei in Ihrem Projekt verfügen, wird ein solcher Schritt erstellt. Anschließend können Sie diesen Schritt wiederholen, um der neuen RC-Datei spezifische Ressourcentypen hinzuzufügen.
 
-- Klicken Sie in [Klassenansicht](/visualstudio/ide/viewing-the-structure-of-code)mit der rechten Maustaste auf die Klasse, wählen Sie > **Ressource** **hinzufügen aus** , und wählen Sie den Ressourcentyp aus, den Sie dem Projekt hinzufügen
+- Klicken Sie in [Klassenansicht](/visualstudio/ide/viewing-the-structure-of-code)mit der rechten Maustaste auf die Klasse **, wählen Sie**Ressource hinzufügen aus,  >  **Add Resource** und wählen Sie den Typ der Ressource aus, die dem Projekt hinzugefügt werden
 
-- Verwenden Sie das Menü **Projekt** > **Ressource hinzufügen**.
+- Verwenden Sie das Menü **Projekt**  >  **Ressource hinzufügen**.
 
-## <a name="use-resource-templates"></a>Verwenden von Ressourcen Vorlagen
+## <a name="use-resource-templates"></a>Verwenden von Ressourcenvorlagen
 
 Eine Ressourcen Vorlage ist eine angepasste Ressource, die Sie als RCT-Datei gespeichert haben. Eine Ressourcen Vorlage dient als Ausgangspunkt für das Erstellen von Ressourcen. Ressourcen Vorlagen sparen Zeit bei der Entwicklung zusätzlicher Ressourcen oder Ressourcengruppen, die Features gemeinsam nutzen, wie z. b. Standard Steuerelemente oder wiederholte Elemente. Wenn Sie z. b. eine Hilfe Schaltfläche mit einem Firmenlogo Symbol in mehrere Dialogfelder einschließen möchten, erstellen Sie eine neue Dialogfeld Vorlage, und passen Sie Sie mit der Schaltfläche Hilfe und dem Logo an.
 
 Nachdem Sie eine Ressourcen Vorlage angepasst haben, speichern Sie die Änderungen im Vorlagen Ordner oder in dem im Include-Pfad angegebenen Speicherort, sodass die neue Ressourcen Vorlage unter dem Ressourcentyp im Dialogfeld **Ressource hinzufügen** angezeigt wird. Nun können Sie die neue Ressourcen Vorlage beliebig oft verwenden.
 
 > [!NOTE]
-> Der Ressourcen-Editor stellt automatisch eine eindeutige Ressourcen-ID bereit. Sie können die [Ressourcen Eigenschaften](../windows/changing-the-properties-of-a-resource.md) nach Bedarf überarbeiten.
+> Der Ressourcen-Editor stellt automatisch eine eindeutige Ressourcen-ID bereit. Sie können die [Ressourcen Eigenschaften](./resource-editors.md) nach Bedarf überarbeiten.
 
 > [!NOTE]
-> Platzieren Sie sprachspezifische Vorlagen Dateien in Unterverzeichnissen des Hauptvorlagen Verzeichnisses. Beispielsweise werden nur englische Vorlagen Dateien *..\\< Verzeichnis der Ressourcen Vorlage\>\ 1033*.
+> Platzieren Sie sprachspezifische Vorlagen Dateien in Unterverzeichnissen des Hauptvorlagen Verzeichnisses. Beispielsweise werden nur englische Vorlagen Dateien in *.. \\<Ressourcen Vorlagen Verzeichnis \> \ 1033*angezeigt.
 >
-> Visual Studio sucht nach neuen RCT-Dateien in *\Programme\Microsoft Visual Studio \<Version\>\vc\vkresourcetemplates*, *\Programme\Microsoft Visual Studio \<Version > \vc\vkresourcetemplates\\< LCID\>* (z. b. eine LCID von 1033 für Englisch) oder an einer beliebigen Stelle im [include-Pfad](../windows/how-to-specify-include-directories-for-resources.md). Wenn Sie Ihre RCT-Dateien lieber an einem anderen Speicherort speichern möchten, müssen Sie den Speicherort zum Includepfad hinzufügen.
+> Visual Studio sucht nach neuen RCT-Dateien in " *\Programme\Microsoft Visual Studio \<version\> \vc\vkresourcetemplates*", " *\Programme\Microsoft Visual Studio \<version> \vc\vkresourcetemplates", \\<LCID \> * (z. b. eine LCID von 1033 für Englisch) oder an einer beliebigen Stelle im include- [Pfad](./how-to-include-resources-at-compile-time.md). Wenn Sie Ihre RCT-Dateien lieber an einem anderen Speicherort speichern möchten, müssen Sie den Speicherort zum Includepfad hinzufügen.
 
 ### <a name="to-create-and-use-a-resource-template"></a>So erstellen und verwenden Sie eine Ressourcen Vorlage
 
-1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie **Hinzufügen** > **Neues Element hinzufügen**.
+1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie **Hinzufügen**  >  **Neues Element**hinzufügen.
 
 1. Wählen Sie im Bereich **Vorlagen:** die Option **Ressourcen Vorlagen Datei (. rct)** aus.
 
@@ -180,7 +180,7 @@ Nachdem Sie eine Ressourcen Vorlage angepasst haben, speichern Sie die Änderung
 
 ### <a name="to-convert-an-existing-resource-file-to-a-template"></a>So konvertieren Sie eine vorhandene Ressourcen Datei in eine Vorlage
 
-Navigieren Sie mit der geöffneten Ressourcen Skriptdatei im Menü zu **Datei** > speichern Sie **\<*Dateinamen*> als**. Geben Sie einen Speicherort an, und wählen Sie **OK**.
+Navigieren Sie bei geöffneter Ressourcen Skriptdatei im Menü zu **Datei**  >  **Speichern unter \<*filename*> **. Geben Sie einen Speicherort an, und wählen Sie **OK**.
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
@@ -188,6 +188,6 @@ Win32
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Ressourcendateien](../windows/resource-files-visual-studio.md)<br/>
+[Ressourcen Dateien](../windows/resource-files-visual-studio.md)<br/>
 [Gewusst wie: Verwalten von Ressourcen](../windows/how-to-copy-resources.md)<br/>
-[Vorgehensweise: Einfügen von Ressourcen zur Kompilierungszeit](../windows/how-to-include-resources-at-compile-time.md)<br/>
+[Gewusst wie: einschließen von Ressourcen zur Kompilierzeit](../windows/how-to-include-resources-at-compile-time.md)<br/>

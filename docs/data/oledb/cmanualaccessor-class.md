@@ -30,12 +30,12 @@ helpviewer_keywords:
 - CreateAccessor method
 - CreateParameterAccessor method
 ms.assetid: a0088074-7135-465c-b228-69097a50b8cc
-ms.openlocfilehash: 32ab31734b8c6e3f72053e1e4f2a8a9233b73995
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 24938812ea254fe0150cbabf58dd72bf45ebd0a1
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88838099"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91504101"
 ---
 # <a name="cmanualaccessor-class"></a>CManualAccessor-Klasse
 
@@ -51,7 +51,7 @@ class CManualAccessor : public CAccessorBase
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -104,7 +104,7 @@ in Ein Zeiger auf die Variable, die an den Spalten Status gebunden werden soll, 
 
 ### <a name="remarks"></a>Bemerkungen
 
-Um diese Funktion verwenden zu können, müssen Sie zuerst "up- [Accessor](../../data/oledb/cmanualaccessor-createaccessor.md)" aufrufen. Sie können keine weiteren Einträge hinzufügen, als die Anzahl der in angegebenen Spalten `CreateAccessor` .
+Um diese Funktion verwenden zu können, müssen Sie zuerst "up- [Accessor](#createaccessor)" aufrufen. Sie können keine weiteren Einträge hinzufügen, als die Anzahl der in angegebenen Spalten `CreateAccessor` .
 
 ## <a name="cmanualaccessoraddparameterentry"></a><a name="addparameterentry"></a> CManualAccessor:: AddParameterEntry
 
@@ -148,7 +148,7 @@ in Gibt an, ob der Parameter, mit dem die Bindung verknüpft ist, ein Eingabe-, 
 
 ### <a name="remarks"></a>Bemerkungen
 
-Um diese Funktion verwenden zu können, müssen Sie zuerst den Befehl "" für "" als " [" aufrufen.](../../data/oledb/cmanualaccessor-createparameteraccessor.md)
+Um diese Funktion verwenden zu können, müssen Sie zuerst den Befehl "" für "" als " [" aufrufen.](#createparameteraccessor)
 
 ## <a name="cmanualaccessorcreateaccessor"></a><a name="createaccessor"></a> CManualAccessor:: erkreateaccessor
 
@@ -165,7 +165,7 @@ HRESULT CreateAccessor(int nBindEntries,
 #### <a name="parameters"></a>Parameter
 
 *nbindentries*<br/>
-in Anzahl der Spalten. Diese Zahl sollte mit der Anzahl der Aufrufe der [CManualAccessor:: AddBindEntry](../../data/oledb/cmanualaccessor-addbindentry.md) -Funktion identisch sein.
+in Anzahl der Spalten. Diese Zahl sollte mit der Anzahl der Aufrufe der [CManualAccessor:: AddBindEntry](#addbindentry) -Funktion identisch sein.
 
 *pBuffer*<br/>
 in Ein Zeiger auf den Puffer, in dem die Ausgabespalten gespeichert werden.
@@ -210,7 +210,7 @@ Einer der HRESULT-Standardwerte.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Sie müssen diese Funktion aufrufen, bevor Sie [AddParameterEntry](../../data/oledb/cmanualaccessor-addparameterentry.md)aufrufen.
+Sie müssen diese Funktion aufrufen, bevor Sie [AddParameterEntry](#addparameterentry)aufrufen.
 
 ## <a name="see-also"></a>Weitere Informationen
 
