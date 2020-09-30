@@ -89,12 +89,12 @@ helpviewer_keywords:
 - std::set [C++], upper_bound
 - std::set [C++], value_comp
 ms.assetid: 8991f9aa-5509-4440-adc1-371512d32018
-ms.openlocfilehash: cb19b0d9987ef4ff4624602426930c9f9920dbcd
-ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.openlocfilehash: 2898c06d998653a25ce771c80086ef8aef27a60b
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90040014"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91509948"
 ---
 # <a name="set-class"></a>set-Klasse
 
@@ -148,13 +148,13 @@ Der von einer Set-Klasse bereitgestellte Iterator ist ein bidirektionaler Iterat
 
 ### <a name="constructors"></a>Konstruktoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |-|-|
 |[set](#set)|Erstellt einen Satz, der leer oder die Kopie eines ganzen anderen Satzes oder eines Teils davon ist.|
 
 ### <a name="typedefs"></a>TypeDefs
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |-|-|
 |[allocator_type](#allocator_type)|Ein Typ, der die `allocator`-Klasse für das Set-Objekt darstellt.|
 |[const_iterator](#const_iterator)|Ein Typ, der einen bidirektionalen Iterator bereitstellt, mit dem ein- **`const`** Element im Satz gelesen werden kann.|
@@ -174,7 +174,7 @@ Der von einer Set-Klasse bereitgestellte Iterator ist ein bidirektionaler Iterat
 
 ### <a name="functions"></a>Functions
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |-|-|
 |[beginnen](#begin)|Gibt einen Iterator zurück, der auf das erste Element im `set`-Objekt verweist.|
 |[cbegin](#cbegin)|Gibt einen konstanten Iterator zurück, der das erste Element in der `set` adressiert.|
@@ -205,7 +205,7 @@ Der von einer Set-Klasse bereitgestellte Iterator ist ein bidirektionaler Iterat
 
 ### <a name="operators"></a>Operatoren
 
-|Name|BESCHREIBUNG|
+|Name|Beschreibung|
 |-|-|
 |[Operator =](#op_eq)|Ersetzt die Elemente eines Satzes durch eine Kopie eines anderen Satzes.|
 
@@ -490,7 +490,7 @@ Der Schlüsselwert des Elements, nach dem gesucht werden soll.
 
 `contains()` ist neu in c++ 20. Um es zu verwenden, geben Sie die [/Std: c + + Latest](../build/reference/std-specify-language-standard-version.md) -Compileroption an.
 
-`template<class K> bool contains(const K& key) const` ist nur an der Überladungs Auflösung beteiligt, wenn `key_compare` transparent ist. Weitere Informationen finden [Sie unter heterogenes Nachschlagen in assoziativen Containern](https://docs.microsoft.com/cpp/standard-library/stl-containers#heterogeneous-lookup-in-associative-containers-c14) .
+`template<class K> bool contains(const K& key) const` ist nur an der Überladungs Auflösung beteiligt, wenn `key_compare` transparent ist. Weitere Informationen finden [Sie unter heterogenes Nachschlagen in assoziativen Containern](./stl-containers.md#heterogeneous-lookup-in-associative-containers-c14) .
 
 ### <a name="example"></a>Beispiel
 

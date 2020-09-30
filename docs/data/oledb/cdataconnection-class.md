@@ -61,12 +61,12 @@ helpviewer_keywords:
 - operator CSession*
 - CSession* operator
 ms.assetid: 77432d85-4e20-49ec-a0b0-142137828471
-ms.openlocfilehash: 118b8d09b90899eca0f257e319aabbefd92f359f
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: c456f4bf5891f550fcd9523fa376333d66e079a6
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88838399"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91509110"
 ---
 # <a name="cdataconnection-class"></a>CDataConnection-Klasse
 
@@ -82,7 +82,7 @@ class CDataConnection
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -108,12 +108,12 @@ class CDataConnection
 
 `CDataConnection` ist eine nützliche Klasse zum Erstellen von Clients, da Sie erforderliche Objekte (Datenquelle und Sitzung) und einige der Aufgaben kapselt, die Sie beim Herstellen einer Verbindung mit einer Datenquelle ausführen müssen.
 
-Ohne `CDataConnection` müssen Sie ein-Objekt erstellen `CDataSource` , seine [OpenFromInitializationString](../../data/oledb/cdatasource-openfrominitializationstring.md) -Methode aufzurufen, dann eine Instanz eines [CSession](../../data/oledb/csession-class.md) -Objekts erstellen, seine [Open](../../data/oledb/csession-open.md) -Methode aufzurufen und dann ein [CCommand](../../data/oledb/ccommand-class.md) -Objekt erstellen und seine *-Methoden aufzurufen `Open` .
+Ohne `CDataConnection` müssen Sie ein-Objekt erstellen `CDataSource` , seine [OpenFromInitializationString](./cdatasource-class.md#openfrominitializationstring) -Methode aufzurufen, dann eine Instanz eines [CSession](../../data/oledb/csession-class.md) -Objekts erstellen, seine [Open](./csession-class.md#open) -Methode aufzurufen und dann ein [CCommand](../../data/oledb/ccommand-class.md) -Objekt erstellen und seine *-Methoden aufzurufen `Open` .
 
 Mit `CDataConnection` müssen Sie nur ein Verbindungs Objekt erstellen, ihm eine Initialisierungs Zeichenfolge übergeben und dann diese Verbindung zum Öffnen der Befehle verwenden. Wenn Sie die Verbindung mit der Datenbank wiederholt verwenden möchten, empfiehlt es sich, die Verbindung offen zu halten, und `CDataConnection` bietet eine bequeme Möglichkeit, dies zu erreichen.
 
 > [!NOTE]
-> Wenn Sie eine Datenbankanwendung erstellen, die mehrere Sitzungen verarbeiten muss, müssen Sie [opennewsession](../../data/oledb/cdataconnection-opennewsession.md)verwenden.
+> Wenn Sie eine Datenbankanwendung erstellen, die mehrere Sitzungen verarbeiten muss, müssen Sie [opennewsession](#opennewsession)verwenden.
 
 ## <a name="cdataconnectioncdataconnection"></a><a name="cdataconnection"></a> Cdataconnetction:: cdataconnetction
 
@@ -258,7 +258,7 @@ operator const CDataSource*() throw();
 
 Dieser Operator gibt einen Zeiger auf das enthaltene `CDataSource` Objekt zurück, sodass Sie ein-Objekt übergeben können, `CDataConnection` in dem ein `CDataSource` Zeiger erwartet wird.
 
-Ein Verwendungs Beispiel finden Sie unter [Operator CDataSource&](../../data/oledb/cdataconnection-operator-cdatasource-amp.md) .
+Ein Verwendungs Beispiel finden Sie unter [Operator CDataSource&](#op_cdata_amp) .
 
 ## <a name="cdataconnectionoperator-csessionamp"></a><a name="op_csession_amp"></a> Cdataconnetction:: Operator CSession&amp;
 
@@ -298,7 +298,7 @@ Dieser Operator gibt einen Zeiger auf das enthaltene `CSession` Objekt zurück, 
 
 ### <a name="example"></a>Beispiel
 
-Ein Verwendungs Beispiel finden Sie unter [Operator CSession&](../../data/oledb/cdataconnection-operator-csession-amp.md) .
+Ein Verwendungs Beispiel finden Sie unter [Operator CSession&](#op_csession_amp) .
 
 ## <a name="see-also"></a>Weitere Informationen
 

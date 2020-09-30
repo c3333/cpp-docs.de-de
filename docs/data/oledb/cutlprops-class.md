@@ -29,12 +29,12 @@ helpviewer_keywords:
 - OnPropertyChanged method
 - SetPropValue method
 ms.assetid: bb525178-765c-4e23-a110-c0fd70c05437
-ms.openlocfilehash: 46fa266c5a8328bbcf7cfd1257ce1ff3e38ed2bb
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 1e9e636824ff67ee93587637c0e098e625229c06
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88845665"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91509089"
 ---
 # <a name="cutlprops-class"></a>CUtlProps-Klasse
 
@@ -56,11 +56,11 @@ Die Klasse, die enthält `BEGIN_PROPSET_MAP` .
 
 **Header:** „atldb.h“
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
-| Name | BESCHREIBUNG |
+| Name | Beschreibung |
 |-|-|
 |[GetPropValue](#getpropvalue)|Ruft eine Eigenschaft aus einem Eigenschaften Satz ab.|
 |[IsValidValue](#isvalidvalue)|Wird zum Überprüfen eines Werts verwendet, bevor eine Eigenschaft festgelegt wird.|
@@ -72,9 +72,9 @@ Die Klasse, die enthält `BEGIN_PROPSET_MAP` .
 
 Der größte Teil dieser Klasse ist ein Implementierungsdetail.
 
-`CUtlProps` enthält zwei Member zum internen Festlegen von Eigenschaften: [GetPropValue](../../data/oledb/cutlprops-getpropvalue.md) und [SetPropValue](../../data/oledb/cutlprops-setpropvalue.md).
+`CUtlProps` enthält zwei Member zum internen Festlegen von Eigenschaften: [GetPropValue](#getpropvalue) und [SetPropValue](#setpropvalue).
 
-Weitere Informationen zu den in einer Eigenschaften Satz Zuordnung verwendeten Makros finden Sie unter [BEGIN_PROPSET_MAP](../../data/oledb/begin-propset-map.md) und [END_PROPSET_MAP](../../data/oledb/end-propset-map.md).
+Weitere Informationen zu den in einer Eigenschaften Satz Zuordnung verwendeten Makros finden Sie unter [BEGIN_PROPSET_MAP](./macros-for-ole-db-provider-templates.md#begin_propset_map) und [END_PROPSET_MAP](./macros-for-ole-db-provider-templates.md#end_propset_map).
 
 ## <a name="cutlpropsgetpropvalue"></a><a name="getpropvalue"></a> Cutlrequips:: GetPropValue
 
@@ -163,7 +163,7 @@ Wenn ein Consumer ein Objekt öffnet und eine optionale Schnittstelle anfordert,
 
 - `IRowsetScroll`
 
-Wenn Sie andere Schnittstellen verarbeiten möchten, überschreiben Sie diese Funktion in der Datenquelle, der Sitzung, dem Befehl oder der Rowsetklasse, um Funktionen zu verarbeiten. Die außer Kraft Setzung sollte die normalen Eigenschaften der Eigenschaften "Set/Get" durchlaufen, um sicherzustellen, dass Einstellungs Eigenschaften auch alle verketteten Eigenschaften festlegen (siehe [OnPropertyChanged](../../data/oledb/cutlprops-onpropertychanged.md)).
+Wenn Sie andere Schnittstellen verarbeiten möchten, überschreiben Sie diese Funktion in der Datenquelle, der Sitzung, dem Befehl oder der Rowsetklasse, um Funktionen zu verarbeiten. Die außer Kraft Setzung sollte die normalen Eigenschaften der Eigenschaften "Set/Get" durchlaufen, um sicherzustellen, dass Einstellungs Eigenschaften auch alle verketteten Eigenschaften festlegen (siehe [OnPropertyChanged](#onpropertychanged)).
 
 ## <a name="cutlpropsonpropertychanged"></a><a name="onpropertychanged"></a> Cutl-Eigenschaften:: OnPropertyChanged
 

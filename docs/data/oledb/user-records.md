@@ -15,12 +15,12 @@ helpviewer_keywords:
 - accessors [C++], static
 - BEGIN_ACCESSOR macro, example
 ms.assetid: 2de9e5eb-53ce-42b1-80fa-57d46600a80c
-ms.openlocfilehash: 94a70b48793d44eda4fd76d9b59460418cfbc032
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 2de4cc9227da9d4ad8a012dacd85500ab698c4ae
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80209442"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91509428"
 ---
 # <a name="user-records"></a>Benutzerdatensätze
 
@@ -64,7 +64,7 @@ Wenn Sie den **ATL OLE DB-Consumer-Assistenten** zum Erstellen eines Consumers v
 
 Weitere Informationen zu den Szenarien, in denen Sie mehrere Accessoren verwenden müssen, finden Sie unter [Verwenden mehrerer Zugriffsmethoden für ein Rowset](../../data/oledb/using-multiple-accessors-on-a-rowset.md).
 
-Im folgenden Beispiel wird der Benutzerdatensatz geändert, sodass mehrere Accessoren für das Rowset unterstützt werden. Anstelle von BEGIN_COLUMN_MAP und END_COLUMN_MAP werden [BEGIN_ACCESSOR_MAP](../../data/oledb/begin-accessor-map.md) und [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md) für jeden Accessor verwendet. Das BEGIN_ACCESSOR-Makro gibt die Accessorzahl (Offset von 0 (null)) an, und ob der Accessor ein Autoaccessor ist. Autoaccessoren rufen `GetData` auf, um Daten automatisch bei einem Aufruf von [MoveNext](../../data/oledb/crowset-movenext.md) abzurufen. Bei nicht automatischen Accessoren müssen Sie die Daten explizit abrufen. Verwenden Sie einen nicht automatischen Accessor bei der Bindung eines großen Datenfelds (z.B. eines Bitmapbilds), das Sie nicht für jeden Datensatz abrufen möchten.
+Im folgenden Beispiel wird der Benutzerdatensatz geändert, sodass mehrere Accessoren für das Rowset unterstützt werden. Anstelle von BEGIN_COLUMN_MAP und END_COLUMN_MAP werden [BEGIN_ACCESSOR_MAP](./macros-and-global-functions-for-ole-db-consumer-templates.md#begin_accessor_map) und [BEGIN_ACCESSOR](./macros-and-global-functions-for-ole-db-consumer-templates.md#begin_accessor) für jeden Accessor verwendet. Das BEGIN_ACCESSOR-Makro gibt die Accessorzahl (Offset von 0 (null)) an, und ob der Accessor ein Autoaccessor ist. Autoaccessoren rufen `GetData` auf, um Daten automatisch bei einem Aufruf von [MoveNext](./crowset-class.md#movenext) abzurufen. Bei nicht automatischen Accessoren müssen Sie die Daten explizit abrufen. Verwenden Sie einen nicht automatischen Accessor bei der Bindung eines großen Datenfelds (z.B. eines Bitmapbilds), das Sie nicht für jeden Datensatz abrufen möchten.
 
 ```cpp
 class CMultiArtists

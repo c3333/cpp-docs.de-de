@@ -7,12 +7,12 @@ helpviewer_keywords:
 - updating rowsets
 - rowsets
 ms.assetid: 39588758-5c72-4254-a10d-cc2b1f473357
-ms.openlocfilehash: 22e362170d645574b40070c6db39c2576d3ae9c8
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 134ab73428b7535bb34094b7d5b1952fd61a3d69
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87212942"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91509444"
 ---
 # <a name="updating-rowsets"></a>Aktualisieren von Rowsets
 
@@ -20,11 +20,11 @@ Eine grundlegende Datenbankoperation stellt das Aktualisieren des Datenspeichers
 
 Consumer können Rowsetdaten mithilfe folgender Methoden aktualisieren: Festlegen von Spaltenwerten innerhalb einer Zeile, Einfügen einer Zeile und Löschen einer Zeile. Um diese Operationen vornehmen zu können, implementiert die OLE DB-Vorlagenklasse [CRowset](../../data/oledb/crowset-class.md) die [IRowsetChange](/previous-versions/windows/desktop/ms715790(v=vs.85))-Schnittstelle und überschreibt die folgenden Schnittstellenmethoden:
 
-- [SetData](../../data/oledb/crowset-setdata.md) ändert Spaltenwerte in einer Zeile eines Rowsets. Dies entspricht dem SQL-Befehl UPDATE.
+- [SetData](./crowset-class.md#setdata) ändert Spaltenwerte in einer Zeile eines Rowsets. Dies entspricht dem SQL-Befehl UPDATE.
 
-- [Insert](../../data/oledb/crowset-insert.md) fügt eine Zeile in ein Rowset ein. Dies entspricht dem SQL-Befehl INSERT.
+- [Insert](./crowset-class.md#insert) fügt eine Zeile in ein Rowset ein. Dies entspricht dem SQL-Befehl INSERT.
 
-- [Delete](../../data/oledb/crowset-delete.md) löscht Zeilen aus einem Rowset. Dies entspricht dem SQL-Befehl DELETE.
+- [Delete](./crowset-class.md#delete) löscht Zeilen aus einem Rowset. Dies entspricht dem SQL-Befehl DELETE.
 
 ## <a name="supporting-update-operations"></a>Unterstützen von Aktualisierungsoperationen
 
@@ -52,7 +52,7 @@ Bei den Operationen zum Ändern, Einfügen oder Löschen können Fehler auftrete
 
 ## <a name="setting-data-in-rows"></a>Festlegen von Daten in Zeilen
 
-[CRowset::SetData](../../data/oledb/crowset-setdata.md) legt Datenwerte in einer oder mehreren Spalten der aktuellen Zeile fest. Der folgende Code legt die Werte von Datenmembern fest, die an die Spalten `Name` und `Units in Stock` der Tabelle `Products` gebunden sind. Anschließend wird `SetData` aufgerufen, um diese Werte in die hundertste Zeile des Rowsets zu schreiben:
+[CRowset::SetData](./crowset-class.md#setdata) legt Datenwerte in einer oder mehreren Spalten der aktuellen Zeile fest. Der folgende Code legt die Werte von Datenmembern fest, die an die Spalten `Name` und `Units in Stock` der Tabelle `Products` gebunden sind. Anschließend wird `SetData` aufgerufen, um diese Werte in die hundertste Zeile des Rowsets zu schreiben:
 
 ```cpp
 // Instantiate a rowset based on the user record class
@@ -74,13 +74,13 @@ HRESULT hr = product.SetData();
 
 ## <a name="inserting-rows-into-rowsets"></a>Einfügen von Zeilen in Rowsets
 
-[CRowset::Insert](../../data/oledb/crowset-insert.md) erstellt und initialisiert eine neue Zeile unter Verwendung von Daten aus dem Accessor. `Insert` erstellt eine vollständig neue Zeile nach der aktuellen Zeile. Sie müssen angeben, ob die aktuelle Zeile unverändert bleiben soll oder zur nächsten Zeile inkrementiert werden soll. Hierzu müssen Sie den Parameter *bGetRow* festlegen:
+[CRowset::Insert](./crowset-class.md#insert) erstellt und initialisiert eine neue Zeile unter Verwendung von Daten aus dem Accessor. `Insert` erstellt eine vollständig neue Zeile nach der aktuellen Zeile. Sie müssen angeben, ob die aktuelle Zeile unverändert bleiben soll oder zur nächsten Zeile inkrementiert werden soll. Hierzu müssen Sie den Parameter *bGetRow* festlegen:
 
 ```cpp
 HRESULT Insert(int nAccessor = 0, bool bGetRow = false)
 ```
 
-- **`false`**(der Standardwert) gibt an, dass die aktuelle Zeile zur nächsten Zeile Inkrement erhöht wird (in diesem Fall verweist Sie auf die eingefügte Zeile).
+- **`false`** (der Standardwert) gibt an, dass die aktuelle Zeile zur nächsten Zeile Inkrement erhöht wird (in diesem Fall verweist Sie auf die eingefügte Zeile).
 
 - **`true`** Gibt an, dass die aktuelle Zeile dort bleibt, wo Sie ist.
 
@@ -131,13 +131,13 @@ m_dwQuantityPerUnitLength = 10;        // "Pack of 10" has 10 characters
 HRESULT hr = product.Insert();
 ```
 
-Ein ausführlicheres Beispiel finden Sie unter [CRowset::Insert](../../data/oledb/crowset-insert.md).
+Ein ausführlicheres Beispiel finden Sie unter [CRowset::Insert](./crowset-class.md#insert).
 
 Weitere Informationen zum Festlegen der Datenmember für Status und Länge finden Sie unter [Feldstatus-Datenmember in vom Assistenten generierten Accessoren](../../data/oledb/field-status-data-members-in-wizard-generated-accessors.md).
 
 ## <a name="deleting-rows-from-rowsets"></a>Löschen von Zeilen aus Rowsets
 
-[CRowset::Delete](../../data/oledb/crowset-delete.md) löscht die aktuelle Zeile aus dem Rowset. Der folgende Code ruft `Delete` auf, um die hundertste Zeile des Rowsets zu entfernen:
+[CRowset::Delete](./crowset-class.md#delete) löscht die aktuelle Zeile aus dem Rowset. Der folgende Code ruft `Delete` auf, um die hundertste Zeile des Rowsets zu entfernen:
 
 ```cpp
 // Instantiate a rowset based on the user record class
@@ -156,9 +156,9 @@ HRESULT hr = product.Delete();
 
 Wenn nichts anderes festgelegt ist, bewirkt das Aufrufen der `SetData`-Methode, der `Insert`-Methode und der `Delete`-Methode eine unverzügliche Aktualisierung des Datenspeichers. Sie können Aktualisierungen jedoch verzögern. Der Consumer speichert hierbei alle Änderungen in einem lokalen Cache und überträgt sie an den Datenspeicher, wenn eine der folgenden Aktualisierungsmethoden aufgerufen wird:
 
-- [CRowset::Update](../../data/oledb/crowset-update.md) überträgt alle Änderungen, die seit dem letzten Sammeln oder dem letzten `Update`-Aufruf an der aktuellen Zeile vorgenommen wurden.
+- [CRowset::Update](./crowset-class.md#update) überträgt alle Änderungen, die seit dem letzten Sammeln oder dem letzten `Update`-Aufruf an der aktuellen Zeile vorgenommen wurden.
 
-- [CRowset::UpdateAll](../../data/oledb/crowset-updateall.md) überträgt alle Änderungen, die seit dem letzten Sammeln oder dem letzten `Update`-Aufruf an allen Zeilen vorgenommen wurden.
+- [CRowset::UpdateAll](./crowset-class.md#updateall) überträgt alle Änderungen, die seit dem letzten Sammeln oder dem letzten `Update`-Aufruf an allen Zeilen vorgenommen wurden.
 
 Der Begriff „Aktualisieren“ wird für die Aktualisierungsmethoden mit der spezifischen Bedeutung „Änderungen auf Befehl“ verwendet und darf nicht mit dem SQL-Befehl **UPDATE** verwechselt werden (`SetData` entspricht dem SQL-Befehl **UPDATE**).
 
@@ -204,7 +204,7 @@ Um sicherzustellen, dass vorgenommene Änderungen übertragen werden, sollten Si
 
 Wenn beispielsweise der erste `Update`-Aufruf im oben stehenden Code fehlen würde, bliebe Zeile 100 unverändert, während Zeile 101 geändert würde. Nach diesem Punkt müsste die Anwendung entweder `UpdateAll` aufrufen oder zu Zeile 100 zurückgehen und `Update` aufrufen, damit diese Zeile aktualisiert würde.
 
-Schließlich ist einer der Hauptgründe für die Verwendung verzögerter Aktualisierungen die Möglichkeit, sie rückgängig machen zu können. Wenn Sie [CRowset::Undo](../../data/oledb/crowset-undo.md) aufrufen, wird der lokale Änderungscache auf den Status des Datenspeichers vor dem Ausführen der Änderungen zurückgesetzt. Dabei müssen Sie beachten, dass `Undo` den Status des lokalen Cache nicht um einen einzelnen Schritt (also auf den Zustand vor der letzten Änderung) zurücksetzt, sondern den lokalen Cache für die ganze Zeile bereinigt. Darüber hinaus wirkt sich `Undo` nur auf die aktuelle Zeile aus.
+Schließlich ist einer der Hauptgründe für die Verwendung verzögerter Aktualisierungen die Möglichkeit, sie rückgängig machen zu können. Wenn Sie [CRowset::Undo](./crowset-class.md#undo) aufrufen, wird der lokale Änderungscache auf den Status des Datenspeichers vor dem Ausführen der Änderungen zurückgesetzt. Dabei müssen Sie beachten, dass `Undo` den Status des lokalen Cache nicht um einen einzelnen Schritt (also auf den Zustand vor der letzten Änderung) zurücksetzt, sondern den lokalen Cache für die ganze Zeile bereinigt. Darüber hinaus wirkt sich `Undo` nur auf die aktuelle Zeile aus.
 
 ## <a name="see-also"></a>Weitere Informationen
 

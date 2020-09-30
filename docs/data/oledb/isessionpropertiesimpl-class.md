@@ -12,12 +12,12 @@ helpviewer_keywords:
 - GetProperties method
 - SetProperties method
 ms.assetid: ca0ba254-c7dc-4c52-abec-cf895a0c6a63
-ms.openlocfilehash: 57a94ccd8ee3871742e9c8360c56381f85053380
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: d664f32226498326ffb092f1d3248fbdbf614d50
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88844833"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91509759"
 ---
 # <a name="isessionpropertiesimpl-class"></a>ISessionPropertiesImpl-Klasse
 
@@ -44,7 +44,7 @@ Eine benutzerdefinierbare Eigenschaften Klasse, bei der es sich standardmäßig 
 
 **Header:** „atldb.h“
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="interface-methods"></a>Schnittstellenmethoden
 
@@ -55,7 +55,7 @@ Eine benutzerdefinierbare Eigenschaften Klasse, bei der es sich standardmäßig 
 
 ## <a name="remarks"></a>Bemerkungen
 
-Eine erforderliche Schnittstelle für Sitzungen. Diese Klasse implementiert Sitzungs Eigenschaften durch Aufrufen einer statischen Funktion, die durch die [Eigenschaften Satz](../../data/oledb/begin-propset-map.md)Zuordnung definiert ist. Die Eigenschaften Satz Zuordnung sollte in ihrer Sitzungs Klasse angegeben werden.
+Eine erforderliche Schnittstelle für Sitzungen. Diese Klasse implementiert Sitzungs Eigenschaften durch Aufrufen einer statischen Funktion, die durch die [Eigenschaften Satz](./macros-for-ole-db-provider-templates.md#begin_propset_map)Zuordnung definiert ist. Die Eigenschaften Satz Zuordnung sollte in ihrer Sitzungs Klasse angegeben werden.
 
 ## <a name="isessionpropertiesimplgetproperties"></a><a name="getproperties"></a> Isessionpropertiesimpl:: GetProperties
 

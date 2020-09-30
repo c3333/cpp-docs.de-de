@@ -4,12 +4,12 @@ ms.date: 08/19/2019
 helpviewer_keywords:
 - OLE DB consumers, implementing
 ms.assetid: 13828167-23a4-4e94-8b6c-878262fda464
-ms.openlocfilehash: 2f290f2a17c51682c75fbc09118757e5fd12c4f7
-ms.sourcegitcommit: 9d4ffb8e6e0d70520a1e1a77805785878d445b8a
+ms.openlocfilehash: 9e93b40313a215dfe5872b33dc7d41641204a2f1
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "79544705"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91508968"
 ---
 # <a name="implementing-a-simple-consumer"></a>Implementieren eines einfachen Consumers
 
@@ -72,7 +72,7 @@ Ein Lesezeichen ist eine Spalte, die Zeilen in der Tabelle eindeutig identifizie
 
 - Fordern Sie eine Lesezeichenspalte vom Anbieter an, indem Sie die Eigenschaft `DBPROP_IRowsetLocate` festlegen.
 
-- Fügen Sie der Spaltenübersicht mit dem Makro [BOOKMARK_ENTRY](../../data/oledb/bookmark-entry.md) einen Lesezeicheneintrag hinzu.
+- Fügen Sie der Spaltenübersicht mit dem Makro [BOOKMARK_ENTRY](./macros-and-global-functions-for-ole-db-consumer-templates.md#bookmark_entry) einen Lesezeicheneintrag hinzu.
 
 Mit den vorherigen Schritten erhalten Sie Lesezeichenunterstützung und ein Lesezeichenobjekt, mit dem Sie arbeiten können. Dieses Codebeispiel veranschaulicht ein Lesezeichen wie folgt:
 
@@ -80,7 +80,7 @@ Mit den vorherigen Schritten erhalten Sie Lesezeichenunterstützung und ein Lese
 
 - Geben Sie die Rowsetdaten in die Datei zeilenweise aus.
 
-- Verschieben Sie den Rowsetsursor auf das Lesezeichen, indem Sie [MoveToBookmark](../../data/oledb/crowset-movetobookmark.md) aufrufen.
+- Verschieben Sie den Rowsetsursor auf das Lesezeichen, indem Sie [MoveToBookmark](./crowset-class.md#movetobookmark) aufrufen.
 
 - Geben Sie die mit Lesezeichen versehene Zeile aus, und hängen Sie sie an das Ende der Datei an.
 
@@ -205,6 +205,6 @@ Weitere Informationen über Lesezeichen finden Sie unter [Verwenden von Lesezeic
 
 ::: moniker-end
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Erstellen eines OLE DB-Consumers mit einem Assistenten](../../data/oledb/creating-an-ole-db-consumer-using-a-wizard.md)
+[Erstellen eines OLE DB Consumers mithilfe eines Assistenten](../../data/oledb/creating-an-ole-db-consumer-using-a-wizard.md)

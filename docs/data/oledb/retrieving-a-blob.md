@@ -6,18 +6,18 @@ helpviewer_keywords:
 - BLOB (binary large object), retrieving
 - OLE DB, BLOBs (binary large objects)
 ms.assetid: 2893eb0a-5c05-4016-8914-1e40ccbaf0b3
-ms.openlocfilehash: 23bc20355e1e2b17ac20cf975df2ff58d6553ef9
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 352841595e8b197407ccb52a22c8b0502d314c98
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62404545"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91509513"
 ---
 # <a name="retrieving-a-blob"></a>Abrufen eines BLOBs
 
-Sie können ein binary large Object (BLOB) auf verschiedene Weise abrufen. Sie können `DBTYPE_BYTES` Abrufen von BLOBs als eine Folge von Bytes oder einer Schnittstelle wie `ISequentialStream`. Weitere Informationen finden Sie unter [BLOBS und OLE-Objekte](/previous-versions/windows/desktop/ms711511(v=vs.85)) in die **OLE DB-Programmierreferenz**.
+Sie können eine Binary Large Object (BLOB) auf unterschiedliche Weise abrufen. Sie können verwenden `DBTYPE_BYTES` , um das BLOB als Sequenz von Bytes abzurufen oder eine Schnittstelle wie zu verwenden `ISequentialStream` . Weitere Informationen finden Sie unter [BLOB-und OLE-Objekte](/previous-versions/windows/desktop/ms711511(v=vs.85)) in der **OLE DB Programmierer-Referenz**.
 
-Der folgende Code zeigt, wie Sie ein BLOB mit abrufen `ISequentialStream`. Das Makro [BLOB_ENTRY](../../data/oledb/blob-entry.md) können Sie die Schnittstelle und die Flags, die die Schnittstelle zum angeben. Nach dem Öffnen der Tabelle an, der Code ruft `Read` wiederholt auf `ISequentialStream` , Bytes aus dem BLOB zu lesen. Der Code ruft `Release` auf den Schnittstellenzeiger vor dem Aufruf von dispose `MoveNext` zum Abrufen des nächsten Datensatzes.
+Der folgende Code zeigt, wie ein BLOB mithilfe von abgerufen wird `ISequentialStream` . Mit dem-Makro [BLOB_ENTRY](./macros-and-global-functions-for-ole-db-consumer-templates.md#blob_entry) können Sie die-Schnittstelle und die für die-Schnittstelle verwendeten Flags angeben. Nach dem Öffnen der Tabelle ruft der Code `Read` wiederholt auf, `ISequentialStream` um Bytes aus dem BLOB zu lesen. Der Code ruft `Release` auf, um den Schnittstellen Zeiger zu verwerfen, bevor aufgerufen wird `MoveNext` , um den nächsten Datensatz abzurufen.
 
 ```cpp
 class CCategories
@@ -31,7 +31,7 @@ END_COLUMN_MAP()
 };
 ```
 
-Klicken Sie dann verwendet mit dem folgenden Code:
+Anschließend wird der folgende Code verwendet:
 
 ```cpp
 CTable<CAccessor<CCategories>> categories;
@@ -51,9 +51,9 @@ while (categories.MoveNext() == S_OK)
 }
 ```
 
-Weitere Informationen zu Makros, die BLOB-Daten behandelt, finden Sie unter **Spaltenzuordnungsmakros** in [Makros und globale Funktionen für OLE DB-Consumervorlagen](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md).
+Weitere Informationen zu Makros, die BLOB-Daten verarbeiten, finden Sie Unterspalten Zuordnungs **Makros** in [Makros und globalen Funktionen für OLE DB Consumervorlagen](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md).
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Verwenden von Zugriffsmethoden](../../data/oledb/using-accessors.md)<br/>
-[Makros und globale Funktionen für OLE-Consumervorlagen](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)<br/>
+[Verwenden von Accessoren](../../data/oledb/using-accessors.md)<br/>
+[Makros und globale Funktionen für OLE DB Consumervorlagen](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)<br/>

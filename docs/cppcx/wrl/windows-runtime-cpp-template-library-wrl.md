@@ -3,12 +3,12 @@ title: Windows Runtime C++ Template Library (WRL)
 ms.date: 11/04/2016
 ms.topic: overview
 ms.assetid: b915afce-553b-44a7-b8dc-0ab601758eb0
-ms.openlocfilehash: 10e2303fa5498079fc1f9bb6f82aa909c9a6c3ee
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 12bda00d6687340fbddfb8f81bbb83b6c2bd98a6
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88840534"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91509797"
 ---
 # <a name="windows-runtime-c-template-library-wrl"></a>Windows Runtime C++ Template Library (WRL)
 
@@ -32,7 +32,7 @@ Die Windows-Runtime C++-Vorlagen Bibliothek und C++/CX bieten unterschiedliche V
 - C++/CX stellt com HRESULT-Werte als Ausnahmen dar. Wenn Sie eine CodeBase geerbt haben, die com verwendet, oder eine CodeBase, die keine Ausnahmen verwendet, stellen Sie möglicherweise fest, dass die Windows-Runtime C++-Vorlagen Bibliothek eine natürlichere Möglichkeit zum Arbeiten mit der Windows-Runtime ist, da keine Ausnahmen verwendet werden müssen.
 
    > [!NOTE]
-   > Die Windows-Runtime C++-Vorlagen Bibliothek verwendet HRESULT-Werte und löst keine Ausnahmen aus. Außerdem verwendet die Windows-Runtime C++-Vorlagen Bibliothek intelligente Zeiger und das RAII-Muster, um sicherzustellen, dass Objekte ordnungsgemäß zerstört werden, wenn der Anwendungscode eine Ausnahme auslöst. Weitere Informationen zu intelligenten Zeigern und RAII finden Sie unter [intelligente Zeiger](../../cpp/smart-pointers-modern-cpp.md) und [Objekt eigene Ressourcen (RAII)](../../cpp/objects-own-resources-raii.md).
+   > Die Windows-Runtime C++-Vorlagen Bibliothek verwendet HRESULT-Werte und löst keine Ausnahmen aus. Außerdem verwendet die Windows-Runtime C++-Vorlagen Bibliothek intelligente Zeiger und das RAII-Muster, um sicherzustellen, dass Objekte ordnungsgemäß zerstört werden, wenn der Anwendungscode eine Ausnahme auslöst. Weitere Informationen zu intelligenten Zeigern und RAII finden Sie unter [intelligente Zeiger](../../cpp/smart-pointers-modern-cpp.md) und [Objekt eigene Ressourcen (RAII)](../../cpp/object-lifetime-and-resource-management-modern-cpp.md).
 
 - Der Zweck und das Design der Windows-Runtime C++-Vorlagen Bibliothek sind von der Active Template Library (ATL) inspiriert, bei der es sich um einen Satz von Vorlagen basierten C++-Klassen handelt, die die Programmierung von COM-Objekten vereinfachen. Da Windows-Runtime C++-Vorlagen Bibliothek Standard-C++ verwendet, um die Windows-Runtime zu umschließen, können Sie viele vorhandene COM-Komponenten, die in ATL geschrieben sind, leichter in den Windows-Runtime portieren und damit interagieren. Wenn Sie ATL bereits kennen, werden Sie möglicherweise feststellen, dass die Programmierung von Windows-Runtime C++-Vorlagen Bibliothek einfacher ist.
 

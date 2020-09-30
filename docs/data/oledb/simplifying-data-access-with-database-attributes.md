@@ -11,12 +11,12 @@ helpviewer_keywords:
 - OLE DB consumers [C++], database attributes
 - attributes [C++], OLE DB consumer
 ms.assetid: 560d2456-e307-4cb7-ba7b-4d0ed674697f
-ms.openlocfilehash: d22f8a25bc7bb58f72346a15edb51f062c44e1b4
-ms.sourcegitcommit: 44eeb065c3148d0484de791080a3f963109744fc
+ms.openlocfilehash: faee3ea47a6d96b09729d9d4b5bfa21584096d31
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79546176"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91509470"
 ---
 # <a name="simplifying-data-access-with-database-attributes"></a>Vereinfachen des Datenzugriffs mit Datenbankattributen
 
@@ -28,26 +28,26 @@ Um die Verwendung von Datenbankattributen zu veranschaulichen, zeigen die folgen
 
 Wenn Sie die beiden Dateien vergleichen, können Sie sehen, wie viel einfacher Sie sind, Attribute zu verwenden. Zu den Unterschieden zählen folgende:
 
-- Mithilfe von Attributen müssen Sie nur eine Klasse deklarieren: `CAuthors`, während Sie mit Vorlagen zwei deklarieren müssen: `CAuthorsNoAttrAccessor` und `CAuthorsNoAttr`.
+- Mithilfe von Attributen müssen Sie nur eine Klasse deklarieren: `CAuthors` , während Sie mit Vorlagen zwei deklarieren müssen: `CAuthorsNoAttrAccessor` und `CAuthorsNoAttr` .
 
-- Der `db_source`-Aufrufe in der attributierten Version entspricht dem `OpenDataSource()`-Befehl in der Vorlagen Deklaration.
+- Der-Befehl `db_source` in der attributierten Version entspricht dem- `OpenDataSource()` Rückruf in der Vorlagen Deklaration.
 
-- Der `db_table`-Aufrufe in der attributierten Version entspricht der folgenden Vorlagen Deklaration:
+- Der-Befehl `db_table` in der attributierten Version entspricht der folgenden Vorlagen Deklaration:
 
     ```cpp
     class CAuthorsNoAttr : public CTable<CAccessor<CAuthorsNoAttrAccessor>>
     ```
 
-- Die `db_column` Aufrufe in der attributierten Version entsprechen der Spalten Zuordnung (siehe `BEGIN_COLUMN_MAP ... END_COLUMN_MAP`) in der Vorlagen Deklaration.
+- Die `db_column` Aufrufe in der attributierten Version entsprechen der Spalten Zuordnung (siehe `BEGIN_COLUMN_MAP ... END_COLUMN_MAP` ) in der Vorlagen Deklaration.
 
-Die Attribute fügen eine Deklaration der Benutzerdaten Satz-Klasse für Sie ein. Die Benutzerdaten Satz-Klasse ist gleich `CAuthorsNoAttrAccessor` in der Vorlagen Deklaration. Wenn die Tabellen Klasse `CAuthors`ist, wird die eingefügte Benutzerdaten Satz Klasse `CAuthorsAccessor`benannt, und Sie können die Deklaration nur in injiziertem Code anzeigen. Weitere Informationen finden Sie unter "Attribut-injizierte Benutzerdaten Satz Klassen" in [Benutzerdaten Sätzen](../../data/oledb/user-records.md).
+Die Attribute fügen eine Deklaration der Benutzerdaten Satz-Klasse für Sie ein. Die Benutzerdaten Satz-Klasse entspricht `CAuthorsNoAttrAccessor` in der Vorlagen Deklaration. Wenn die Tabellen Klasse ist `CAuthors` , wird die eingefügte Benutzerdaten Satz-Klasse benannt `CAuthorsAccessor` , und Sie können die Deklaration nur in injiziertem Code anzeigen. Weitere Informationen finden Sie unter "Attribut-injizierte Benutzerdaten Satz Klassen" in [Benutzerdaten Sätzen](../../data/oledb/user-records.md).
 
-Sowohl im attributierten als auch im Vorlagen Code müssen Sie die Rowseteigenschaften mithilfe von `CDBPropSet::AddProperty`festlegen.
+Sowohl im attributierten als auch im auf Vorlagen basierenden Code müssen die Rowseteigenschaften mit festgelegt werden `CDBPropSet::AddProperty` .
 
-Informationen zu den in diesem Thema erläuterten Attributen finden Sie unter [OLE DB Consumer-Attribute](../../windows/ole-db-consumer-attributes.md).
+Informationen zu den in diesem Thema erläuterten Attributen finden Sie unter [OLE DB Consumer-Attribute](../../windows/attributes/ole-db-consumer-attributes.md).
 
 > [!NOTE]
-> Die folgenden `include`-Anweisungen sind erforderlich, um die folgenden Beispiele zu kompilieren:
+> Die folgenden `include` Anweisungen sind erforderlich, um die folgenden Beispiele zu kompilieren:
 
 > ```cpp
 > #include <atlbase.h>
@@ -57,7 +57,7 @@ Informationen zu den in diesem Thema erläuterten Attributen finden Sie unter [O
 
 ## <a name="table-and-accessor-declaration-using-attributes"></a>Tabellen-und Accessor-Deklaration mithilfe von Attributen
 
-Der folgende Code ruft `db_source` auf und `db_table` für die Table-Klasse. `db_source` gibt die zu verwendende Datenquelle und die zu verwendende Verbindung an. `db_table` fügt den entsprechenden Vorlagen Code ein, um eine Tabellen Klasse zu deklarieren. `db_column` die Spalten Zuordnung angeben und die Accessor-Deklaration einfügen. Sie können OLE DB Consumer-Attribute in jedem Projekt verwenden, das ATL unterstützt.
+Der folgende Code ruft `db_source` und `db_table` für die Table-Klasse auf. `db_source` Gibt die zu verwendende Datenquelle und die zu verwendende Verbindung an. `db_table` Fügt den entsprechenden Vorlagen Code ein, um eine Tabellen Klasse zu deklarieren. `db_column` Angeben der Spalten Zuordnung und Einfügen der Accessordeklaration Sie können OLE DB Consumer-Attribute in jedem Projekt verwenden, das ATL unterstützt.
 
 Im folgenden finden Sie die Tabellen-und Accessordeklaration mit Attributen:
 
@@ -200,6 +200,6 @@ HRESULT hr = Open(m_session, "Authors", pPropSet);
 };
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[OLE DB-Consumerattribute](../../windows/ole-db-consumer-attributes.md)
+[OLE DB Consumer-Attribute](../../windows/attributes/ole-db-consumer-attributes.md)

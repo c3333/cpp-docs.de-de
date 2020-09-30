@@ -28,12 +28,12 @@ helpviewer_keywords:
 - std::bit [C++], countr_zero
 - std::bit [C++], countr_one
 - std::bit [C++], popcount
-ms.openlocfilehash: a2408df9aa13c6e714f615561871397be17fc4a3
-ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.openlocfilehash: 94e44493b9356b3a0717c42aa1bed510ebe460dd
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90039810"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91509983"
 ---
 # <a name="ltbitgt-functions"></a>&lt;&gt;Bitfunktionen
 
@@ -106,14 +106,17 @@ std::bit_cat<int>(f) = 7f800000
 Auf Low-Level-Code muss häufig ein Objekt eines Typs als ein anderer Typ interpretiert werden. Das neu interpretierte Objekt hat die gleiche Bitdarstellung wie das ursprüngliche, aber ist ein anderer Typ.
 
 Anstatt `reinterpret_cast` , oder zu verwenden `memcpy()` , `bit_cast()` ist eine bessere Möglichkeit, diese Konvertierungen durchführen zu können. Dies ist aus folgenden Gründen besser:
-- `bit_cast()` ist gleich `constexpr`.
+
+- `bit_cast()` ist `constexpr`.
 - `bit_cast()` erfordert, dass die Typen trivial kopiert werden können und dieselbe Größe aufweisen. Dies verhindert potenzielle Probleme, die bei Verwendung von und auftreten könnten, `reinterpret_cast` `memcpy` da Sie verwendet werden könnten, um nicht triviale kopierbare Typen versehentlich zu konvertieren. Kann auch `memcpy()` verwendet werden, um versehentlich zwischen Typen zu kopieren, die nicht die gleiche Größe aufweisen. Beispielsweise ein Double (8 Bytes) in ein unsigniertes int (4 Bytes) oder umgekehrt.
 
 Diese Überladung ist nur an der Überladungs Auflösung beteiligt, wenn:
--  `sizeof(To) == sizeof(From)`
+
+- `sizeof(To) == sizeof(From)`
 - `To` und `From` sind [is_trivially_copyable](is-trivially-copyable-class.md).
 
 Diese Funktions Vorlage ist `constexpr` nur dann, wenn `To` , `From` und die Typen ihrer unter Objekte sind:
+
 - kein Union-oder Zeigertyp
 - kein Zeiger auf Member-Typ
 - nicht flüchtig qualifiziert
@@ -490,7 +493,7 @@ Diese Vorlagen Funktion ist nur an der Überladungs Auflösung beteiligt, wenn `
 ## <a name="has_single_bit"></a>`has_single_bit`
 
 Überprüfen Sie, ob für einen Wert nur ein Bit festgelegt ist. Dies entspricht dem Testen, ob ein Wert eine Potenz von zwei ist.
- 
+
 ```cpp
 template <class T>
 [[nodiscard]] constexpr bool has_single_bit(T value) noexcept;
@@ -544,7 +547,7 @@ Diese Vorlagen Funktion ist nur an der Überladungs Auflösung beteiligt, wenn `
 ## <a name="popcount"></a>`popcount`
 
 Zählen Sie die Anzahl der Bits, die in einem ganzzahligen Wert ohne Vorzeichen auf einen festgelegt sind.
- 
+
 ```cpp
 template<class T>
 [[nodiscard]] constexpr int popcount(T value) noexcept;
@@ -603,7 +606,7 @@ Diese Vorlagen Funktion ist nur an der Überladungs Auflösung beteiligt, wenn `
 ## <a name="rotl"></a>`rotl`
 
 Rotiert die Bits eines ganzzahligen Werts ohne Vorzeichen so oft wie angegeben. Bits, die "aus dem äußersten linken Bit" ausfallen, werden in das äußteste Bit gedreht.
- 
+
 ```cpp
 template<class T>
 [[nodiscard]] constexpr T rotl(T value, int s) noexcept;
@@ -665,7 +668,7 @@ Diese Vorlagen Funktion ist nur an der Überladungs Auflösung beteiligt, wenn `
 ## <a name="rotr"></a>`rotr`
 
 Rotiert die Bits von `value` right um die angegebene Anzahl von Uhrzeitangaben. Bits, die auf das äußteste Bit zurückgreifen, werden zurück in das äußteste Bit gedreht.
- 
+
 ```cpp
 template<class T>
 [[nodiscard]] constexpr T rotr(T value, int s) noexcept;

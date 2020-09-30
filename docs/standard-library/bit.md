@@ -6,12 +6,12 @@ f1_keywords:
 - <bit>
 helpviewer_keywords:
 - bit header
-ms.openlocfilehash: 5652d0af767520710ee08b1827e0df27c477ee6d
-ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.openlocfilehash: f9742ce1e15a817923c144544eb3bb6325e76765
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90040053"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91509950"
 ---
 # <a name="ltbitgt"></a>&lt;bit&gt;
 
@@ -27,17 +27,17 @@ Beispielsweise gibt es Funktionen zum Rotieren von Bits, zum Ermitteln der Anzah
 
 [/Std: c + + Latest](../build/reference/std-specify-language-standard-version.md) ist erforderlich.
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="types"></a>Typen
 
-| Typ | BESCHREIBUNG |
+| Type | Beschreibung |
 |--------|----------|
 | [Endian](bit-enum.md) | Gibt die enumeralität von skalaren Typen an. |
 
 ### <a name="functions"></a>Functions
 
-| Funktion | BESCHREIBUNG |
+| Funktion | Beschreibung |
 |-----|-----|
 |[bit_cast](bit-functions.md#bit_cast) | Interpretiert die Objektdarstellung von einem Typ in einen anderen. |
 |[bit_ceil](bit-functions.md#bit_ceil) | Ermittelt die kleinste Potenz von zwei größer als oder gleich einem Wert. |

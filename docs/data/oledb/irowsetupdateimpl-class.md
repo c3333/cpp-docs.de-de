@@ -49,12 +49,12 @@ helpviewer_keywords:
 - IsUpdateAllowed method
 - m_mapCachedData
 ms.assetid: f85af76b-ab6f-4f8b-8f4a-337c9679d68f
-ms.openlocfilehash: 7a63062a02ebcc6c8a89fadceb36dc81bc9af88c
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 88ee9257655c96195339ded79f2dd4d3b7c7caf5
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88844924"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91509776"
 ---
 # <a name="irowsetupdateimpl-class"></a>IRowsetUpdateImpl-Klasse
 
@@ -84,7 +84,7 @@ class IRowsetUpdateImpl : public IRowsetChangeImpl<
 *T*<br/>
 Eine von abgeleitete Klasse `IRowsetUpdateImpl` .
 
-*Storage*<br/>
+*Speicher*<br/>
 Der Benutzerdaten Satz.
 
 *Update Array*<br/>
@@ -100,7 +100,7 @@ Die Speichereinheit für alle Zeilen Handles, die vom Anbieter gehalten werden.
 
 **Header:** „atldb.h“
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="interface-methods-used-with-irowsetchange"></a>Schnittstellen Methoden (mit IRowsetChange verwendet)
 
@@ -116,7 +116,7 @@ Die Speichereinheit für alle Zeilen Handles, die vom Anbieter gehalten werden.
 |[GetPendingRows](#getpendingrows)|Gibt eine Liste von Zeilen mit ausstehenden Änderungen zurück.|
 |[GetRowStatus](#getrowstatus)|Gibt den Status der angegebenen Zeilen zurück.|
 |[Rückgängig](#undo)|Macht Änderungen an der Zeile seit dem letzten Abrufen oder aktualisieren unverändert.|
-|[Aktualisieren](#update)|Überträgt alle Änderungen, die seit dem letzten Abrufen oder aktualisieren an der Zeile vorgenommen wurden.|
+|[Update](#update)|Überträgt alle Änderungen, die seit dem letzten Abrufen oder aktualisieren an der Zeile vorgenommen wurden.|
 
 ### <a name="implementation-methods-callback"></a>Implementierungs Methoden (Rückruf)
 
@@ -163,7 +163,7 @@ Weitere Informationen finden Sie unter [IRowsetChange:: SetData](/previous-versi
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode überschreibt die [IRowsetChangeImpl:: SetData](../../data/oledb/irowsetchangeimpl-setdata.md) -Methode, beinhaltet jedoch das Zwischenspeichern ursprünglicher Daten, um die sofortige oder verzögerte Verarbeitung des Vorgangs zuzulassen.
+Diese Methode überschreibt die [IRowsetChangeImpl:: SetData](./irowsetchangeimpl-class.md#setdata) -Methode, beinhaltet jedoch das Zwischenspeichern ursprünglicher Daten, um die sofortige oder verzögerte Verarbeitung des Vorgangs zuzulassen.
 
 ## <a name="irowsetupdateimplgetoriginaldata"></a><a name="getoriginaldata"></a> IRowsetUpdateImpl:: GetOriginalData
 
@@ -278,7 +278,7 @@ Informationen zu anderen Parametern finden Sie unter [IRowsetUpdate:: Update](/p
 
 ### <a name="remarks"></a>Bemerkungen
 
-Änderungen werden durch Aufrufen von [IRowsetChangeImpl:: FlushData](../../data/oledb/irowsetchangeimpl-flushdata.md)übertragen. Der Consumer muss [CRowset:: Update](../../data/oledb/crowset-update.md) anrufen, damit die Änderungen wirksam werden. Legen Sie *prgRowStatus* auf einen geeigneten Wert fest, wie in den [Zeilen](/previous-versions/windows/desktop/ms722752(v=vs.85)) Status in der *OLE DB Programmierer-Referenz*beschrieben.
+Änderungen werden durch Aufrufen von [IRowsetChangeImpl:: FlushData](./irowsetchangeimpl-class.md#flushdata)übertragen. Der Consumer muss [CRowset:: Update](./crowset-class.md#update) anrufen, damit die Änderungen wirksam werden. Legen Sie *prgRowStatus* auf einen geeigneten Wert fest, wie in den [Zeilen](/previous-versions/windows/desktop/ms722752(v=vs.85)) Status in der *OLE DB Programmierer-Referenz*beschrieben.
 
 ## <a name="irowsetupdateimplisupdateallowed"></a><a name="isupdateallowed"></a> IRowsetUpdateImpl:: IsUpdateAllowed
 
@@ -305,7 +305,7 @@ vorgenommen Der Status, der an den Benutzer zurückgegeben wird.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie feststellen, dass ein Update zulässig sein soll, wird S_OK zurückgegeben. Andernfalls wird E_FAIL zurückgegeben. Wenn Sie ein Update zulassen, müssen Sie auch `DBROWSTATUS` in [IRowsetUpdateImpl:: Update](../../data/oledb/irowsetupdateimpl-update.md) auf einen entsprechenden [Zeilen Status](/previous-versions/windows/desktop/ms722752(v=vs.85))festlegen.
+Wenn Sie feststellen, dass ein Update zulässig sein soll, wird S_OK zurückgegeben. Andernfalls wird E_FAIL zurückgegeben. Wenn Sie ein Update zulassen, müssen Sie auch `DBROWSTATUS` in [IRowsetUpdateImpl:: Update](#update) auf einen entsprechenden [Zeilen Status](/previous-versions/windows/desktop/ms722752(v=vs.85))festlegen.
 
 ## <a name="irowsetupdateimplm_mapcacheddata"></a><a name="mapcacheddata"></a> IRowsetUpdateImpl:: m_mapCachedData
 

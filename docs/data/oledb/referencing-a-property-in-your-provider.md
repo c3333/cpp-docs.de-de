@@ -6,12 +6,12 @@ helpviewer_keywords:
 - references, to properties in providers
 - referencing properties in providers
 ms.assetid: bfbb3851-5eed-467a-a179-4a97a9515525
-ms.openlocfilehash: d70a1901c457d9fbdbe8712d84999e256a54d0c2
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: ecb11c54d4c5926fbead0196c441ec23e8b0891f
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80209769"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91509521"
 ---
 # <a name="referencing-a-property-in-your-provider"></a>Verweisen auf eine Eigenschaft im Anbieter
 
@@ -25,7 +25,7 @@ Erstellen Sie ein [CDBPropSet](../../data/oledb/cdbpropset-class.md) -Objekt, in
 CDBPropSet propset(DBPROPSET_ROWSET);
 ```
 
-Wenden Sie [AddProperty](../../data/oledb/cdbpropset-addproperty.md)an, und übergeben Sie dabei die eigen schafts-ID und einen Wert, der der Eigenschaft zugewiesen werden soll. Der Typ des Werts hängt von der Eigenschaft ab, die Sie verwenden.
+Wenden Sie [AddProperty](./cdbpropset-class.md#addproperty)an, und übergeben Sie dabei die eigen schafts-ID und einen Wert, der der Eigenschaft zugewiesen werden soll. Der Typ des Werts hängt von der Eigenschaft ab, die Sie verwenden.
 
 ```cpp
 CDBPropSet propset(DBPROPSET_ROWSET);
@@ -35,7 +35,7 @@ propset.AddProperty(DBPROP_IRowsetChange, true);
 propset.AddProperty(DBPROP_UPDATABILITY, DBPROPVAL_UP_INSERT | DBPROPVAL_UP_CHANGE | DBPROPVAL_UP_DELETE);
 ```
 
-Verwenden Sie die `IRowset`-Schnittstelle zum Abrufen von `GetProperties`. Übergeben Sie den Eigenschaften Satz als Parameter. Dies ist der abschließende Code:
+Verwenden Sie die- `IRowset` Schnittstelle zum aufzurufen `GetProperties` . Übergeben Sie den Eigenschaften Satz als Parameter. Dies ist der abschließende Code:
 
 ```cpp
 CAgentRowset<CCustomCommand>* pRowset = (CAgentRowset<CCustomCommand>*) pThis;
@@ -68,4 +68,4 @@ if (pPropSet)
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Arbeiten mit OLE DB-Anbietervorlagen](../../data/oledb/working-with-ole-db-provider-templates.md)
+[Arbeiten mit OLE DB Anbieter Vorlagen](../../data/oledb/working-with-ole-db-provider-templates.md)

@@ -6,30 +6,30 @@ helpviewer_keywords:
 - architecture [C++], OLE DB Provider
 - OLE DB provider templates, object model
 ms.assetid: 639304a3-f9e0-44dc-8d0c-0ebd2455b363
-ms.openlocfilehash: 65a7e5b8f169d06ca11d8d27ec99ce3db4b63014
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 89e07f95853c3611b7cceaef3f247c220c630add
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62283986"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91509545"
 ---
 # <a name="ole-db-provider-template-architecture"></a>Architektur von OLE DB-Anbietervorlagen
 
 ## <a name="data-sources-and-sessions"></a>Datenquellen und Sitzungen
 
-Die OLE DB-Anbieterarchitektur enthält ein Datenquellenobjekt und eine oder mehrere Sitzungen. Das Objekt ist das erste Objekt, das jeder Anbieter instanziieren muss. Wenn eine Consumer-Anwendung Daten benötigt, wird gleichzeitig das Datenquellenobjekt, um den Anbieter zu starten. Das Datenquellenobjekt erstellt ein Sitzungsobjekt (mithilfe der `IDBCreateSession` Schnittstelle) über die der Consumer auf das Datenquellenobjekt stellt eine Verbindung her. ODBC-Programmierer können sich das Objekt als äquivalent zu vorstellen der `HENV` und das Sitzungsobjekt als Entsprechung zu den `HDBC`.
+Die OLE DB Anbieter Architektur enthält ein Datenquellen Objekt und eine oder mehrere Sitzungen. Das Datenquellen Objekt ist das erste Objekt, das von jedem Anbieter instanziiert werden muss. Wenn eine Consumeranwendung Daten benötigt, erstellt Sie das Datenquellen Objekt, um den Anbieter zu starten. Das Datenquellen Objekt erstellt ein Sitzungs Objekt (mithilfe der- `IDBCreateSession` Schnittstelle), über das der Consumer eine Verbindung mit dem Datenquellen Objekt herstellt. ODBC-Programmierer können sich das Datenquellen Objekt als gleichwertig mit dem `HENV` -Objekt und dem Session-Objekt vorstellen `HDBC` .
 
 ![Anbieterarchitektur](../../data/oledb/media/vc4twb1.gif "Anbieterarchitektur")
 
-Zusammen mit den Quelldateien erstellt die **OLE DB-Anbieterassistent**, die OLE DB-Vorlagen implementiert ein Datenquellenobjekt. Eine Sitzung ist ein Objekt, der OLE DB entspricht `TSession`.
+In Verbindung mit den vom **Assistenten für OLE DB Anbieter**erstellten Quelldateien implementieren die OLE DB Vorlagen ein Datenquellen Objekt. Eine Sitzung ist ein Objekt, das der OLE DB entspricht `TSession` .
 
-## <a name="mandatory-and-optional-interfaces"></a>Erforderliche und optionale Schnittstellen
+## <a name="mandatory-and-optional-interfaces"></a>Obligatorische und optionale Schnittstellen
 
-Der OLE DB-Anbietervorlagen bieten vorgefertigte Implementierungen für alle erforderlichen Schnittstellen. Erforderliche und optionale Schnittstellen werden von OLE DB für verschiedene Typen von Objekten definiert:
+Die OLE DB-Anbieter Vorlagen enthalten vorab gepackte Implementierungen für alle erforderlichen Schnittstellen. Erforderliche und optionale Schnittstellen werden durch OLE DB für verschiedene Typen von Objekten definiert:
 
 - [Datenquelle](../../data/oledb/data-source-object-interfaces.md)
 
-- [Sitzung](../../data/oledb/session-object-interfaces.md)
+- [Sitzungskonsistenz](../../data/oledb/session-object-interfaces.md)
 
 - [Rowset](../../data/oledb/rowset-object-interfaces.md)
 
@@ -37,25 +37,25 @@ Der OLE DB-Anbietervorlagen bieten vorgefertigte Implementierungen für alle erf
 
 - [Transaktion](../../data/oledb/transaction-object-interfaces.md)
 
-Der OLE DB-Anbietervorlagen implementiert nicht die Zeilen- und Storage-Objekte.
+In den OLE DB Anbieter Vorlagen werden die Zeilen-und Speicher Objekte nicht implementiert.
 
-Die folgende Tabelle enthält die erforderliche und optionale Schnittstellen für die oben aufgeführten Objekte gemäß den [OLE DB 2.6 SDK-Dokumentation](/previous-versions/windows/desktop/ms722784(v=vs.85)).
+In der folgenden Tabelle sind erforderliche und optionale Schnittstellen für die oben aufgeführten Objekte entsprechend der [OLE DB 2,6 SDK-Dokumentation](/previous-versions/windows/desktop/ms722784(v=vs.85))aufgelistet.
 
-|Komponente|Interface|Kommentar|
+|Komponente|Schnittstelle|Kommentar|
 |---------------|---------------|-------------|
-|[Datenquelle](../../data/oledb/data-source-object-interfaces.md) ([CDataSource](../../data/oledb/cdatasource-class.md))|[erforderlich] `IDBCreateSession`<br /><br /> [erforderlich] `IDBInitialize`<br /><br /> [erforderlich] `IDBProperties`<br /><br /> [erforderlich] `IPersist`<br /><br /> [optional] `IConnectionPointContainer`<br /><br /> [optional] `IDBAsynchStatus`<br /><br /> [optional] `IDBDataSourceAdmin`<br /><br /> [optional] `IDBInfo`<br /><br /> [optional] `IPersistFile`<br /><br /> [optional] `ISupportErrorInfo`|Die Verbindung vom Consumer mit dem Anbieter. Das Objekt wird verwendet, um Eigenschaften für die Verbindung wie z. B. Benutzer-ID, Kennwort und Daten Quellname anzugeben. Das Objekt kann auch zur Verwaltung von einer Datenquelle verwendet werden (erstellen, aktualisieren, Löschen von Tabellen und so weiter).|
-|[Sitzung](../../data/oledb/session-object-interfaces.md) ([CSession](../../data/oledb/cdataconnection-operator-csession-amp.md))|[erforderlich] `IGetDataSource`<br /><br /> [erforderlich] `IOpenRowset`<br /><br /> [erforderlich] `ISessionProperties`<br /><br /> [optional] `IAlterIndex`<br /><br /> [optional] `IAlterTable`<br /><br /> [optional] `IBindResource`<br /><br /> [optional] `ICreateRow`<br /><br /> [optional] `IDBCreateCommand`<br /><br /> [optional] `IDBSchemaRowset`<br /><br /> [optional] `IIndexDefinition`<br /><br /> [optional] `ISupportErrorInfo`<br /><br /> [optional] `ITableCreation`<br /><br /> [optional] `ITableDefinition`<br /><br /> [optional] `ITableDefinitionWithConstraints`<br /><br /> [optional] `ITransaction`<br /><br /> [optional] `ITransactionJoin`<br /><br /> [optional] `ITransactionLocal`<br /><br /> [optional] `ITransactionObject`|Session-Objekt ist eine einfache Konversation zwischen einem Consumer und Anbieter. Es ähnelt der ODBC `HSTMT` , es können viele gleichzeitige Sitzungen aktiv sein.<br /><br /> Session-Objekt ist die primäre Verknüpfung, um den OLE DB-Funktionen zu erhalten. Um einen Befehl, der Transaktion oder der Rowset-Objekt zu erhalten, führen Sie das Session-Objekt.|
-|[Rowset](../../data/oledb/rowset-object-interfaces.md) ([CRowset](../../data/oledb/crowset-class.md))|[erforderlich] `IAccessor`<br /><br /> [erforderlich] `IColumnsInfo`<br /><br /> [erforderlich] `IConvertType`<br /><br /> [erforderlich] `IRowset`<br /><br /> [erforderlich] `IRowsetInfo`<br /><br /> [optional] `IChapteredRowset`<br /><br /> [optional] `IColumnsInfo2`<br /><br /> [optional] `IColumnsRowset`<br /><br /> [optional] `IConnectionPointContainer`<br /><br /> [optional] `IDBAsynchStatus`<br /><br /> [optional] `IGetRow`<br /><br /> [optional] `IRowsetChange`<br /><br /> [optional] `IRowsetChapterMember`<br /><br /> [optional] `IRowsetCurrentIndex`<br /><br /> [optional] `IRowsetFind`<br /><br /> [optional] `IRowsetIdentity`<br /><br /> [optional] `IRowsetIndex`<br /><br /> [optional] `IRowsetLocate`<br /><br /> [optional] `IRowsetRefresh`<br /><br /> [optional] `IRowsetScroll`<br /><br /> [optional] `IRowsetUpdate`<br /><br /> [optional] `IRowsetView`<br /><br /> [optional] `ISupportErrorInfo`<br /><br /> [optional] `IRowsetBookmark`|Rowset-Objekt stellt die Daten aus der Datenquelle. Das Objekt ist für die Bindungen von Daten und grundlegende Vorgänge (Update, Fetch, datenverschiebung usw.) für die Daten verwendet. Sie haben immer eine Rowset-Objekt, und Bearbeiten von Daten.|
-|[Command](../../data/oledb/command-object-interfaces.md) ([CCommand](ccommand-class.md))|[erforderlich] `IAccessor`<br /><br /> [erforderlich] `IColumnsInfo`<br /><br /> [erforderlich] `ICommand`<br /><br /> [erforderlich] `ICommandProperties`<br /><br /> [erforderlich] `ICommandText`<br /><br /> [erforderlich] `IConvertType`<br /><br /> [optional] `IColumnsRowset`<br /><br /> [optional] `ICommandPersist`<br /><br /> [optional] `ICommandPrepare`<br /><br /> [optional] `ICommandWithParameters`<br /><br /> [optional] `ISupportErrorInfo`<br /><br /> [optional] `ICommandStream`|Das Command-Objekt verarbeitet die Vorgänge für Daten, z. B. Abfragen. Sie können die parametrisierte oder nicht parametrisierte Anweisungen behandeln.<br /><br /> Das Command-Objekt ist auch zuständig für die Behandlung von Bindungen für Parameter und Ausgabespalten. Eine Bindung ist eine Struktur, die enthält Informationen, wie eine Spalte, in einem Rowset abgerufen werden soll. Es enthält Informationen wie z. B. die Ordnungszahl, Datentyp, Länge und Status.|
-|[Transaktion](../../data/oledb/transaction-object-interfaces.md) (optional)|[erforderlich] `IConnectionPointContainer`<br /><br /> [erforderlich] `ITransaction`<br /><br /> [optional] `ISupportErrorInfo`|Das Transaktionsobjekt, das eine unteilbare Arbeitseinheit in einer Datenquelle definiert, und bestimmt, wie diese Arbeitseinheiten miteinander in Beziehung stehen. Dieses Objekt wird nicht direkt von der OLE DB-Anbietervorlagen unterstützt (d. h., Sie erstellen ein eigenes Objekt).|
+|[Datenquelle](../../data/oledb/data-source-object-interfaces.md) ([CDataSource](../../data/oledb/cdatasource-class.md))|Verpflich `IDBCreateSession`<br /><br /> Verpflich `IDBInitialize`<br /><br /> Verpflich `IDBProperties`<br /><br /> Verpflich `IPersist`<br /><br /> optionale `IConnectionPointContainer`<br /><br /> optionale `IDBAsynchStatus`<br /><br /> optionale `IDBDataSourceAdmin`<br /><br /> optionale `IDBInfo`<br /><br /> optionale `IPersistFile`<br /><br /> optionale `ISupportErrorInfo`|Verbindung zwischen dem Consumer und dem Anbieter. Das-Objekt wird verwendet, um Eigenschaften für die Verbindung anzugeben, z. b. Benutzer-ID, Kennwort und Datenquellen Name. Das-Objekt kann auch verwendet werden, um eine Datenquelle (Create, Update, DELETE, Tables usw.) zu verwalten.|
+|[Sitzung](../../data/oledb/session-object-interfaces.md) ([CSession](./cdataconnection-class.md#op_csession_amp))|Verpflich `IGetDataSource`<br /><br /> Verpflich `IOpenRowset`<br /><br /> Verpflich `ISessionProperties`<br /><br /> optionale `IAlterIndex`<br /><br /> optionale `IAlterTable`<br /><br /> optionale `IBindResource`<br /><br /> optionale `ICreateRow`<br /><br /> optionale `IDBCreateCommand`<br /><br /> optionale `IDBSchemaRowset`<br /><br /> optionale `IIndexDefinition`<br /><br /> optionale `ISupportErrorInfo`<br /><br /> optionale `ITableCreation`<br /><br /> optionale `ITableDefinition`<br /><br /> optionale `ITableDefinitionWithConstraints`<br /><br /> optionale `ITransaction`<br /><br /> optionale `ITransactionJoin`<br /><br /> optionale `ITransactionLocal`<br /><br /> optionale `ITransactionObject`|Das Sitzungs Objekt ist eine einzelne Konversation zwischen einem Consumer und einem Anbieter. Es ähnelt dem ODBC darin `HSTMT` , dass viele gleichzeitige Sitzungen aktiv sein können.<br /><br /> Das Sitzungs Objekt ist der primäre Link, um OLE DB Funktionalität zu erhalten. Um zu einem Befehls-, Transaktions-oder Rowsetobjekt zu gelangen, durchlaufen Sie das Session-Objekt.|
+|[Rowset](../../data/oledb/rowset-object-interfaces.md) ([CRowset](../../data/oledb/crowset-class.md))|Verpflich `IAccessor`<br /><br /> Verpflich `IColumnsInfo`<br /><br /> Verpflich `IConvertType`<br /><br /> Verpflich `IRowset`<br /><br /> Verpflich `IRowsetInfo`<br /><br /> optionale `IChapteredRowset`<br /><br /> optionale `IColumnsInfo2`<br /><br /> optionale `IColumnsRowset`<br /><br /> optionale `IConnectionPointContainer`<br /><br /> optionale `IDBAsynchStatus`<br /><br /> optionale `IGetRow`<br /><br /> optionale `IRowsetChange`<br /><br /> optionale `IRowsetChapterMember`<br /><br /> optionale `IRowsetCurrentIndex`<br /><br /> optionale `IRowsetFind`<br /><br /> optionale `IRowsetIdentity`<br /><br /> optionale `IRowsetIndex`<br /><br /> optionale `IRowsetLocate`<br /><br /> optionale `IRowsetRefresh`<br /><br /> optionale `IRowsetScroll`<br /><br /> optionale `IRowsetUpdate`<br /><br /> optionale `IRowsetView`<br /><br /> optionale `ISupportErrorInfo`<br /><br /> optionale `IRowsetBookmark`|Das Rowsetobjekt ist die Daten aus der Datenquelle. Das-Objekt wird für die Bindungen dieser Daten und aller grundlegenden Vorgänge (Update, FETCH, Movement usw.) für die Daten verwendet. Sie verfügen immer über ein Rowsetobjekt, um Daten beizubehalten und zu bearbeiten.|
+|[Befehl](../../data/oledb/command-object-interfaces.md) ([CCommand](ccommand-class.md))|Verpflich `IAccessor`<br /><br /> Verpflich `IColumnsInfo`<br /><br /> Verpflich `ICommand`<br /><br /> Verpflich `ICommandProperties`<br /><br /> Verpflich `ICommandText`<br /><br /> Verpflich `IConvertType`<br /><br /> optionale `IColumnsRowset`<br /><br /> optionale `ICommandPersist`<br /><br /> optionale `ICommandPrepare`<br /><br /> optionale `ICommandWithParameters`<br /><br /> optionale `ISupportErrorInfo`<br /><br /> optionale `ICommandStream`|Das Command-Objekt verarbeitet Vorgänge für Daten, z. b. Abfragen. Parametrisierte oder nicht parametrisierte Anweisungen können verarbeitet werden.<br /><br /> Das Command-Objekt ist auch für die Behandlung von Bindungen für Parameter und Ausgabespalten verantwortlich. Eine Bindung ist eine Struktur, die Informationen darüber enthält, wie eine Spalte in einem Rowset abgerufen werden soll. Sie enthält Informationen wie Ordinalzahl, Datentyp, Länge und Status.|
+|[Transaktion](../../data/oledb/transaction-object-interfaces.md) (optional)|Verpflich `IConnectionPointContainer`<br /><br /> Verpflich `ITransaction`<br /><br /> optionale `ISupportErrorInfo`|Das Transaction-Objekt definiert eine unteilbare Arbeitseinheit in einer Datenquelle und bestimmt, wie diese Arbeitseinheiten zueinander zueinander stehen. Dieses Objekt wird nicht direkt von den OLE DB Anbieter Vorlagen unterstützt (d. h., Sie erstellen Ihr eigenes Objekt).|
 
 Weitere Informationen finden Sie unter den folgenden Themen:
 
-- [Eigenschaftenzuordnungen](../../data/oledb/property-maps.md)
+- [Eigenschaften Zuordnungen](../../data/oledb/property-maps.md)
 
-- [Benutzerdatensatz](../../data/oledb/user-record.md)
+- [Der Benutzerdaten Satz](../../data/oledb/user-record.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
-[OLE DB-Schnittstellen](/previous-versions/windows/desktop/ms709709(v=vs.85))<br/>
+[OLE DB-Anbietervorlagen](../../data/oledb/ole-db-provider-templates-cpp.md)<br/>
+[OLE DB Schnittstellen](/previous-versions/windows/desktop/ms709709(v=vs.85))<br/>

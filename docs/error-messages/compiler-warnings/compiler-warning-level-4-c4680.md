@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C4680
 ms.assetid: 6e043f4c-c601-4b77-8130-920cff1d912e
-ms.openlocfilehash: 21ea9bf54a493a72dc24c607812eaed69f9ef71b
-ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
+ms.openlocfilehash: ea9eb681d1696c77184a9999a94367a0bce8c454
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74990458"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91510045"
 ---
 # <a name="compiler-warning-level-4-c4680"></a>Compilerwarnung (Stufe 4) C4680
 
 "Class": die Co-Klasse gibt keine Standardschnittstelle an.
 
-Es wurde keine [Standard](../../windows/default-cpp.md) Schnittstelle für eine Klasse angegeben, die mit dem [Co-Klasse](../../windows/coclass.md) -Attribut markiert wurde. Damit ein Objekt nützlich ist, muss es eine Schnittstelle implementieren.
+Es wurde keine [Standard](../../windows/attributes/default-cpp.md) Schnittstelle für eine Klasse angegeben, die mit dem [Co-Klasse](../../windows/attributes/coclass.md) -Attribut markiert wurde. Damit ein Objekt nützlich ist, muss es eine Schnittstelle implementieren.
 
 Im folgenden Beispiel wird C4680 generiert:
 

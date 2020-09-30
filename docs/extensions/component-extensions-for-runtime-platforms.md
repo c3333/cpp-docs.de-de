@@ -9,12 +9,12 @@ helpviewer_keywords:
 - keywords [C++]
 - Managed Extensions for C++, replacement syntax
 ms.assetid: 1e400ee6-3ac9-4910-a608-9d3d5993e423
-ms.openlocfilehash: aa6e5d1ea7d1bc2d7ebfaf07c7c9f808b37e9804
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 887fa14153e728735937604d531782a9ae7535bb
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87219767"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91509710"
 ---
 # <a name="component-extensions-for-net-and-uwp"></a>Komponentenerweiterungen für .NET und UWP
 
@@ -73,12 +73,12 @@ Die folgenden Schlüsselwörter wurden den C++-Erweiterungen hinzugefügt.
 
 |Schlüsselwort|Kontextbezogen|Zweck|Verweis|
 |-------------|-----------------------|-------------|---------------|
-|**finally**|Ja|Gibt das Standardausnahmebehandlungsverhalten an.|[Behandlung von Ausnahmen](exception-handling-cpp-component-extensions.md)|
+|**finally**|Ja|Gibt das Standardausnahmebehandlungsverhalten an.|[Ausnahmebehandlung](exception-handling-cpp-component-extensions.md)|
 |**for each, in**|Nein|Listet die Elemente einer Auflistung auf.|[for each, in](../dotnet/for-each-in.md)|
 |**gcnew**|Nein|Ordnet Typen auf dem Heap der Garbage Collection zu. Verwenden Sie anstelle von **`new`** und **`delete`** .|[ref new, gcnew](ref-new-gcnew-cpp-component-extensions.md)|
 |**ref new**|Ja|Weist einen Windows-Runtime-Typ zu. Verwenden Sie anstelle von **`new`** und **`delete`** .|[ref new, gcnew](ref-new-gcnew-cpp-component-extensions.md)|
 |**initonly**|Ja|Gibt an, dass ein Member nur in der Deklaration oder in einem statischen Konstruktor initialisiert werden kann.|[initonly (C++/CLI)](../dotnet/initonly-cpp-cli.md)|
-|**wahrsten**|Ja|Erstellt eine literale Variable.|[literal](literal-cpp-component-extensions.md)|
+|**literal**|Ja|Erstellt eine literale Variable.|[literal](literal-cpp-component-extensions.md)|
 |**`nullptr`**|Nein|Gibt an, dass ein Handle oder ein Zeiger nicht auf ein Objekt zeigt.|[nullptr](nullptr-cpp-component-extensions.md)|
 
 ## <a name="template-constructs"></a>Vorlagenkonstrukte
@@ -106,17 +106,17 @@ Die folgenden Typdeklaratoren weisen die Laufzeit an, die Lebensdauer und das L�
 
 In diesem Abschnitt werden weitere Programmierungskonstrukte sowie Themen aufgeführt, die die CLR betreffen.
 
-|Thema|BESCHREIBUNG|
+|Thema|Beschreibung|
 |-----------|-----------------|
 |[__identifier (C++/CLI)](identifier-cpp-cli.md)|(Windows-Runtime und CLR) Ermöglicht die Verwendung von Schlüsselwörtern als Bezeichner.|
 |[Variable Argumentlisten (...) (C++/CLI)](variable-argument-lists-dot-dot-dot-cpp-cli.md)|(Windows-Runtime und CLR) Ermöglicht es einer Funktion, eine variable Anzahl von Argumenten zu akzeptieren.|
-|[.NET Framework Entsprechungen zu C++ Native-Typen (C++/CLI)](../dotnet/dotnet-framework-equivalents-to-cpp-native-types-cpp-cli.md)|Listet die CLR-Typen auf, die anstelle von ganzzahligen C++-Typen verwendet werden.|
+|[.NET Framework Entsprechungen zu C++ Native-Typen (C++/CLI)](../dotnet/managed-types-cpp-cli.md#dotnet)|Listet die CLR-Typen auf, die anstelle von ganzzahligen C++-Typen verwendet werden.|
 |[AppDomain](../cpp/appdomain.md) **`__declspec`** Modifizierer|**`__declspec`** Ein Modifizierer, der vorschreibt, dass statische und globale Variablen pro AppDomain vorhanden sind.|
 |[C-stilartige Umwandlungen mit /clr (C++/CLI)](c-style-casts-with-clr-cpp-cli.md)|Beschreibt, wie Umwandlungen im C-Stil interpretiert werden.|
 |[__clrcall](../cpp/clrcall.md)-Aufrufkonvention|Gibt die CLR-kompatible Aufrufkonvention an.|
 |`__cplusplus_cli`|[Vordefinierte Makros](../preprocessor/predefined-macros.md)|
 |[Benutzerdefinierte Attribute](user-defined-attributes-cpp-component-extensions.md)|Beschreibt, wie eigene CLR-Attribute definiert werden.|
-|[Behandlung von Ausnahmen](exception-handling-cpp-component-extensions.md)|Stellt eine Übersicht über die Ausnahmebehandlung bereit.|
+|[Ausnahmebehandlung](exception-handling-cpp-component-extensions.md)|Stellt eine Übersicht über die Ausnahmebehandlung bereit.|
 |[Explizite über schreibungen](explicit-overrides-cpp-component-extensions.md)|Zeigt, wie Memberfunktionen beliebige Member überschreiben können.|
 |[Friend-Assemblys (C++)](../dotnet/friend-assemblies-cpp.md)|Erläutert, wie eine Clientassembly auf alle Typen in einer Assemblykomponente zugreifen kann.|
 |[Boxing](boxing-cpp-component-extensions.md)|Veranschaulicht die Bedingungen, unter denen Werttypen geschachtelt werden.|

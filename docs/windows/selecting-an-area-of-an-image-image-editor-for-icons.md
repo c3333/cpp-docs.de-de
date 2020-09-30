@@ -39,21 +39,21 @@ helpviewer_keywords:
 - Image editor [C++], Properties window
 - Properties window, image editor
 ms.assetid: 8b6ce4ad-eba1-4ece-86ba-cea92c3edff2
-ms.openlocfilehash: 9324e3dc5c6691a7b50f137da1fad446b416e968
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: ecfd69594c05c210743e0c22c804a4713a8229ef
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80167848"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91509643"
 ---
 # <a name="how-to-edit-an-image"></a>Gewusst wie: Bearbeiten eines Bilds
 
 Mithilfe von Auswahl Tools können Sie einen Bereich eines Bilds definieren, das Sie Ausschneiden, kopieren, löschen, Größe ändern, umkehren oder verschieben möchten. Mit dem **Rechteck Auswahl** Tool können Sie einen rechteckigen Bereich des Bilds definieren und auswählen. Mit dem **unregelmäßigen Auswahl** Werkzeug können Sie einen frei Hand Umriss für den Bereich zeichnen, den Sie für den Ausschneide-, Kopier-oder anderen Vorgang auswählen möchten.
 
 > [!NOTE]
-> Weitere Informationen finden Sie in der [Symbolleiste](../windows/toolbar-image-editor-for-icons.md) **des Bild-** Editors in den Tools für **Rechteck Auswahl** und **irreguläre Auswahl** .
+> Weitere Informationen finden Sie in der [Symbolleiste](./image-editor-for-icons.md) **des Bild-** Editors in den Tools für **Rechteck Auswahl** und **irreguläre Auswahl** .
 
-Sie können auch einen benutzerdefinierten Pinsel aus einer Auswahl erstellen. Weitere Informationen finden Sie unter [Erstellen eines benutzerdefinierten Pinsels](../windows/creating-a-custom-brush-image-editor-for-icons.md).
+Sie können auch einen benutzerdefinierten Pinsel aus einer Auswahl erstellen. Weitere Informationen finden Sie unter [Erstellen eines benutzerdefinierten Pinsels](./using-a-drawing-tool-image-editor-for-icons.md).
 
 ## <a name="how-to"></a>Vorgehensweise
 
@@ -61,7 +61,7 @@ Informationen zum Bearbeiten eines Bilds finden Sie unter Gewusst wie:
 
 ### <a name="to-select-an-image"></a>So wählen Sie ein Bild aus
 
-1. Verwenden Sie die Symbolleiste des **Bild-Editors** , oder wechseln Sie zu Menü **Bild** > **Tools** , und wählen Sie das gewünschte Auswahl Tool aus.
+1. Verwenden Sie die Symbolleiste des **Bild-Editors** , oder wechseln Sie zu Menü **Bild**  >  **Tools** , und wählen Sie das gewünschte Auswahl Tool aus.
 
 1. Verschieben Sie die Einfügemarke in eine Ecke des Bildbereichs, den Sie auswählen möchten. Kreuzhaare werden angezeigt, wenn sich die Einfügemarke über dem Bild befindet.
 
@@ -81,7 +81,7 @@ Außerdem können Sie die Größe der Auswahl ändern, unabhängig davon, ob Sie
 
 #### <a name="to-cut-the-current-selection-and-move-it-to-the-clipboard"></a>So schneiden Sie die aktuelle Auswahl aus und verschieben Sie in die Zwischenablage
 
-Wechseln Sie zum Menü **Bearbeiten** > **Ausschneiden**.
+Wechseln Sie zu Menü **Bearbeiten**  >  **Ausschneiden**.
 
 #### <a name="to-copy-the-selection"></a>So kopieren Sie die Auswahl
 
@@ -93,7 +93,7 @@ Wechseln Sie zum Menü **Bearbeiten** > **Ausschneiden**.
 
 #### <a name="to-paste-the-clipboard-contents-into-an-image"></a>So fügen Sie den Inhalt der Zwischenablage in ein Bild ein
 
-1. Wechseln Sie zum Menü **Bearbeiten** > **Einfügen**.
+1. Wechseln Sie zum **Menü "**  >  **Einfügen**".
 
    Der Inhalt der Zwischenablage, der vom Auswahl Rahmen umgeben ist, wird in der oberen linken Ecke des Bereichs angezeigt.
 
@@ -103,7 +103,7 @@ Wechseln Sie zum Menü **Bearbeiten** > **Ausschneiden**.
 
 #### <a name="to-delete-the-current-selection-without-moving-it-to-the-clipboard"></a>So löschen Sie die aktuelle Auswahl, ohne Sie in die Zwischenablage zu verschieben
 
-Wechseln Sie zum Menü **Bearbeiten** > **Löschen**.
+Wechseln Sie zu Menü **Bearbeiten**  >  **Löschen**.
 
    Der ursprüngliche Bereich der Auswahl wird mit der aktuellen Hintergrundfarbe ausgefüllt.
 
@@ -118,17 +118,17 @@ Wechseln Sie zum Menü **Bearbeiten** > **Löschen**.
 
 1. Um die Auswahl im Bild an der neuen Position zu verankern, wählen Sie außerhalb des Auswahl Rahmens aus.
 
-Weitere Informationen zum Zeichnen mit einer Auswahl finden Sie unter [Erstellen eines benutzerdefinierten Pinsels](../windows/creating-a-custom-brush-image-editor-for-icons.md).
+Weitere Informationen zum Zeichnen mit einer Auswahl finden Sie unter [Erstellen eines benutzerdefinierten Pinsels](./using-a-drawing-tool-image-editor-for-icons.md).
 
 ### <a name="to-flip-an-image"></a>So kippen Sie ein Bild
 
 Sie können ein Bild kippen oder drehen, um entweder ein Spiegelbild des Originals zu erstellen, das Bild nach oben zu drehen oder das Bild nach rechts um 90 Grad zu drehen.
 
-- Um das Bild horizontal zu kippen (Spiegelbild), wechseln Sie zu Menü **Bild** > **Horizontal kippen**.
+- Um das Bild horizontal zu kippen (Spiegelbild), wechseln Sie zum Menü **Bild**horizontal  >  **kippen**.
 
-- Um das Bild vertikal zu kippen (nach oben), wechseln Sie zu Menü **Bild** > **Vertikal kippen**.
+- Um das Bild vertikal zu kippen (nach oben), wechseln Sie zu Menü **Bild**  >  **Vertikal kippen**.
 
-- Um das Bild um 90 Grad zu drehen, wechseln Sie zum Menü **Bild** > **drehen Sie 90 Grad**.
+- Um das Bild um 90 Grad zu drehen, wechseln Sie zu Menü **Bild**  >  **Drehen 90 Grad**.
 
    > [!NOTE]
    > Sie können auch die [Tastenkombinationen (Tastenkombinationen)](../windows/accelerator-keys-image-editor-for-icons.md) für diese Befehle verwenden oder über das Kontextmenü auf die Befehle zugreifen (Wählen Sie im Bild- **Editor**außerhalb des Bilds aus).
@@ -143,11 +143,11 @@ Wenn die Auswahl das gesamte Bild enthält, verkleinert und erweitert der **Bild
 
 Es gibt zwei Mechanismen zum Ändern der Größe eines Bilds: die Zieh Punkte und die [Eigenschaftenfenster](/visualstudio/ide/reference/properties-window). Sie ziehen die Zieh Punkte, um die Größe eines vollständig oder eines Teils eines Bilds zu ändern. Zieh Punkte, die Sie ziehen können, sind solide. Sie können keine Zieh Punkte ziehen, die hohl sind. Verwenden Sie das **Eigenschaften** Fenster, um die Größe des gesamten Bilds nur zu ändern, nicht für ein ausgewähltes Element.
 
-![Größen Zieh Punkte in einer Bitmap](../mfc/media/vcimageeditorsizinghandles.gif "vcimageeditor sizinghandles")<br/>
+![Ziehpunkte in einer Bitmap](../mfc/media/vcimageeditorsizinghandles.gif "vcimageeditor sizinghandles")<br/>
 Größen Zieh Punkte
 
 > [!NOTE]
-> Wenn Sie die Option **Kachel Raster** im [Dialogfeld Raster Einstellungen](../windows/grid-settings-dialog-box-image-editor-for-icons.md)ausgewählt haben, ändern Sie die Größe von dockt zur nächsten Kachel Raster Linie. Wenn nur die **Pixel Raster** -Option ausgewählt ist (Standardeinstellung), wird die Größe von dockt zum nächsten verfügbaren Pixel angepasst.
+> Wenn Sie die Option **Kachel Raster** im [Dialogfeld Raster Einstellungen](./image-editor-for-icons.md)ausgewählt haben, ändern Sie die Größe von dockt zur nächsten Kachel Raster Linie. Wenn nur die **Pixel Raster** -Option ausgewählt ist (Standardeinstellung), wird die Größe von dockt zum nächsten verfügbaren Pixel angepasst.
 
 #### <a name="to-resize-an-entire-image-using-the-properties-window"></a>So ändern Sie die Größe eines gesamten Bilds mithilfe des Fensters "Eigenschaften"
 
@@ -190,7 +190,7 @@ Normalerweise wird ein Bild von der **Bild** Bearbeitung beim Ändern der Größ
 
 Sie können Bilder in der Entwicklungsumgebung genauso wie in jeder beliebigen Grafikanwendung öffnen und bearbeiten, z. b. das Öffnen einer Bitmap für die eigenständige Bearbeitung. Die Images, mit denen Sie arbeiten, müssen nicht Teil eines Visual Studio-Projekts sein.
 
-1. Wechseln Sie zu Menü **Datei** > **Öffnen**.
+1. Wechseln Sie zur Menü **Datei**  >  **geöffnet**.
 
 1. Wählen Sie im Feld **Dateityp** die Option **alle Dateien**aus.
 
@@ -204,13 +204,13 @@ Sie können die Eigenschaften eines Bilds mithilfe des [Eigenschaftenfenster](/v
 
 1. Ändern Sie im **Eigenschaften** Fenster eine beliebige oder alle Eigenschaften für das Bild.
 
-   |Eigenschaft|BESCHREIBUNG|
+   |Eigenschaft|Beschreibung|
    |--------------|-----------------|
    |**Farben**|Gibt das Farbschema für das Bild an. Wählen Sie **Monochrom**, **16**oder **256**oder **wahr Farbe**aus.<br/><br/>Wenn Sie das Bild bereits mit einer 16-Farbpalette gezeichnet haben, bewirkt die Auswahl von **Chrome** , dass die Farben des Bilds in schwarz und weiß ersetzt werden. Der Kontrast wird nicht immer beibehalten: beispielsweise werden angrenzende Bereiche von rot und Grün in schwarz konvertiert.|
-   |**Filename**|Gibt den Namen der Bilddatei an.<br/><br/>Standardmäßig weist Visual Studio einen Basis Dateinamen zu, der durch Entfernen der ersten vier Zeichen ("IDB_") aus dem Standard Ressourcen Bezeichner (IDB_BITMAP1) und durch Hinzufügen der entsprechenden Erweiterung erstellt wurde. Der Dateiname für das Bild in diesem Beispiel wäre *bitmap1. bmp*. Sie können Sie *MYBITMAP1. bmp*umbenennen.|
+   |**Filename**|Gibt den Namen der Bilddatei an.<br/><br/>Standardmäßig weist Visual Studio einen Basis Dateinamen zu, der durch Entfernen der ersten vier Zeichen ("IDB_") aus dem Standard Ressourcen Bezeichner (IDB_BITMAP1) und durch Hinzufügen der entsprechenden Erweiterung erstellt wurde. Der Dateiname für das Bild in diesem Beispiel wäre *BITMAP1.bmp*. Sie können ihn *MYBITMAP1.bmp*umbenennen.|
    |**Height**|Legt die Höhe des Bilds (in Pixel) fest. Der Standardwert ist 48.<br/><br/>Das Bild wird abgeschnitten, oder unterhalb des vorhandenen Bilds wird Leerraum hinzugefügt.|
    |**ID**|Legt den Bezeichner der Ressource fest.<br/><br/>Bei einem Bild weist Microsoft Visual Studio standardmäßig den nächsten verfügbaren Bezeichner in einer Reihe zu: IDB_BITMAP1, IDB_BITMAP2 usw. Ähnliche Namen werden für Symbole und Cursor verwendet.|
-   |**Messer**|Ändert Farbeigenschaften.<br/><br/>Doppelklicken Sie, um eine Farbe auszuwählen, und zeigen Sie das [Dialogfeld Benutzerdefinierte Farbauswahl](../windows/custom-color-selector-dialog-box-image-editor-for-icons.md)an. Definieren Sie die Farbe, indem Sie RGB-oder HSL-Werte in die entsprechenden Textfelder eingeben.|
+   |**Palette**|Ändert Farbeigenschaften.<br/><br/>Doppelklicken Sie, um eine Farbe auszuwählen, und zeigen Sie das [Dialogfeld Benutzerdefinierte Farbauswahl](./image-editor-for-icons.md)an. Definieren Sie die Farbe, indem Sie RGB-oder HSL-Werte in die entsprechenden Textfelder eingeben.|
    |**Savekomprimiert**|Gibt an, ob das Bild in einem komprimierten Format vorliegt. Diese Eigenschaft ist schreibgeschützt.<br/><br/>Visual Studio ermöglicht nicht das Speichern von Bildern in komprimiertem Format. für alle Bilder, die in Visual Studio erstellt werden, lautet diese Eigenschaft also **false**. Wenn Sie ein komprimiertes Bild (das in einem anderen Programm erstellt wurde) in Visual Studio öffnen, ist diese Eigenschaft " **true**". Wenn Sie ein komprimiertes Bild mithilfe von Visual Studio speichern, wird es nicht komprimiert, und diese Eigenschaft wird auf **false**zurückgesetzt.|
    |**Width**|Legt die Breite des Bilds (in Pixel) fest. Der Standardwert für Bitmaps ist 48.<br/><br/>Das Bild wird abgeschnitten, oder es wird ein Leerzeichen auf der rechten Seite des vorhandenen Bilds hinzugefügt.|
 

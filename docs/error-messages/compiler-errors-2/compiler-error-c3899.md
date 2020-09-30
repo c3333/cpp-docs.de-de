@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C3899
 ms.assetid: 14e07e4a-f7a7-4309-baaa-649d69e12e23
-ms.openlocfilehash: 022bc1a37f7d9cfdb2c206592dd303a9c3c95080
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: f3650d994e3102f71ab1d3598a4d1482f50b3334
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74749112"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91510034"
 ---
 # <a name="compiler-error-c3899"></a>Compilerfehler C3899
 
 "var": die Verwendung des l-Werts eines initonly-Datenmembers ist nicht direkt innerhalb eines parallelen Bereichs in der Klasse "Class" zulässig.
 
-Ein [initonly-C++Datenmember (/CLI)](../../dotnet/initonly-cpp-cli.md) kann nicht innerhalb dieses Teils eines Konstruktors initialisiert werden, der sich in einem [parallelen](../../parallel/openmp/reference/parallel.md) Bereich befindet.  Dies liegt daran, dass der Compiler eine interne Verschiebung dieses Codes durchführt, sodass er nicht mehr Teil des Konstruktors ist.
+Ein [initonly-Datenmember (C++/CLI)](../../dotnet/initonly-cpp-cli.md) kann nicht innerhalb dieses Teils eines Konstruktors initialisiert werden, der sich in einem [parallelen](../../parallel/openmp/reference/openmp-directives.md#parallel) Bereich befindet.  Dies liegt daran, dass der Compiler eine interne Verschiebung dieses Codes durchführt, sodass er nicht mehr Teil des Konstruktors ist.
 
 Um dies aufzulösen, initialisieren Sie den initonly-Datenmember im Konstruktor, jedoch außerhalb des parallelen Bereichs.
 
