@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - struct constructors
 ms.assetid: 3c6ba273-e248-4ff1-8c69-d2abcf1263c6
-ms.openlocfilehash: 5f247a99d3f04a15ebd54718a46dae8512a580d6
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: d0092cf107159f4c84b431f5eeae130df64dc835
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87231116"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91507461"
 ---
 # <a name="struct-c"></a>struct (C++)
 
@@ -38,7 +38,7 @@ Das **`struct`** Schlüsselwort.
 *MS-decl-spec*<br/>
 Optionale Speicherklassenspezifikation. Weitere Informationen finden Sie unter [__declspec](../cpp/declspec.md) -Schlüsselwort.
 
-*Tag*<br/>
+*das Tag*<br/>
 Der Typname, der für die Struktur angegeben wurde. Das Tag wird ein reserviertes Wort innerhalb des Gültigkeitsbereichs der Struktur. Das Tag ist optional. Wenn es nicht angegeben wird, wird eine anonyme Struktur definiert. Weitere Informationen finden Sie unter [Anonyme Klassentypen](../cpp/anonymous-class-types.md).
 
 *base-list*<br/>
@@ -48,7 +48,7 @@ Optionale Liste von Klassen oder Strukturen, von denen diese Struktur ihre Membe
 Liste der Strukturmember. Weitere Informationen finden Sie unter [Übersicht über Klassenmember](../cpp/class-member-overview.md) . Der einzige Unterschied besteht darin, dass **`struct`** anstelle von verwendet wird **`class`** .
 
 *Deklaratoren*<br/>
-Deklaratorliste, die die Namen der Struktur angibt. Deklaratorlisten deklarieren eine oder mehrere Instanzen des Strukturtyps. Deklaratoren können Initialisiererlisten einschließen, wenn alle Datenmember der Struktur sind **`public`** . Initialisiererlisten werden in-Strukturen häufig angezeigt, da Datenmember **`public`** Standardmäßig sind.  Weitere Informationen finden Sie [unter Übersicht über Deklaratoren](../cpp/overview-of-declarators.md) .
+Deklaratorliste, die die Namen der Struktur angibt. Deklaratorlisten deklarieren eine oder mehrere Instanzen des Strukturtyps. Deklaratoren können Initialisiererlisten einschließen, wenn alle Datenmember der Struktur sind **`public`** . Initialisiererlisten werden in-Strukturen häufig angezeigt, da Datenmember **`public`** Standardmäßig sind.  Weitere Informationen finden Sie [unter Übersicht über Deklaratoren](./declarations-and-definitions-cpp.md) .
 
 ## <a name="remarks"></a>Bemerkungen
 

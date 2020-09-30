@@ -108,12 +108,12 @@ helpviewer_keywords:
 - operator>(list) member [STL/CLR]
 - operator>=(list) member [STL/CLR]
 ms.assetid: a70c45c8-a257-4f6b-8434-b27ff6685bac
-ms.openlocfilehash: 1c05aff71b16c3edf1348466df325caacb027554
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 9ef9f68c6bef72bf251d270b3bc8142448016a11
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87225630"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91508731"
 ---
 # <a name="list-stlclr"></a>list (STL/CLR)
 
@@ -212,7 +212,7 @@ Der Typ eines Elements in der kontrollierten Sequenz.
 
 ## <a name="interfaces"></a>Schnittstellen
 
-|Schnittstelle|BESCHREIBUNG|
+|Schnittstelle|Beschreibung|
 |---------------|-----------------|
 |<xref:System.ICloneable>|Duplizieren eines Objekts.|
 |<xref:System.Collections.IEnumerable>|Sequenzieren Sie Elemente.|
@@ -225,7 +225,7 @@ Der Typ eines Elements in der kontrollierten Sequenz.
 
 Das-Objekt ordnet Speicher für die Sequenz zu, die er als einzelne Knoten in einer bidirektionalen Linkliste steuert und freigibt. Sie ordnet Elemente neu an, indem die Verknüpfungen zwischen den Knoten geändert werden, nie durch Kopieren des Inhalts eines Knotens in einen anderen. Dies bedeutet, dass Sie Elemente ohne Beeinträchtigung der restlichen Elemente frei einfügen und entfernen können. Daher ist eine Liste ein guter Kandidat für den zugrunde liegenden Container für die Vorlagen Klassen [Warteschlange (STL/CLR)](../dotnet/queue-stl-clr.md) oder den Vorlagen Klassen [Stapel (STL/CLR)](../dotnet/stack-stl-clr.md).
 
-Ein- `list` Objekt unterstützt Bidirektionale Iteratoren. Dies bedeutet, dass Sie bei einem Iterator, der ein Element in der gesteuerten Sequenz festlegt, zu angrenzenden Elementen wechseln können. Ein spezieller Haupt Knoten entspricht dem Iterator, der von [List:: End (STL/CLR)](../dotnet/list-end-stl-clr.md)zurückgegeben wurde `()` . Sie können diesen Iterator verringern, um das letzte Element in der kontrollierten Sequenz zu erreichen, falls vorhanden. Sie können einen Listeniterator erhöhen, um den Head-Knoten zu erreichen, und dann wird gleich verglichen `end()` . Sie können jedoch nicht den von zurückgegebenen Iterator dereferenzieren `end()` .
+Ein- `list` Objekt unterstützt Bidirektionale Iteratoren. Dies bedeutet, dass Sie bei einem Iterator, der ein Element in der gesteuerten Sequenz festlegt, zu angrenzenden Elementen wechseln können. Ein spezieller Haupt Knoten entspricht dem Iterator, der von [List:: End (STL/CLR)](#end)zurückgegeben wurde `()` . Sie können diesen Iterator verringern, um das letzte Element in der kontrollierten Sequenz zu erreichen, falls vorhanden. Sie können einen Listeniterator erhöhen, um den Head-Knoten zu erreichen, und dann wird gleich verglichen `end()` . Sie können jedoch nicht den von zurückgegebenen Iterator dereferenzieren `end()` .
 
 Beachten Sie, dass Sie nicht direkt mit der numerischen Position auf ein Listenelement verweisen können, das einen Iterator mit zufälligem Zugriff erfordert. Eine Liste kann daher *nicht* als zugrunde liegender Container für die Vorlagen Klasse [Priority_queue (STL/CLR)](../dotnet/priority-queue-stl-clr.md)verwendet werden.
 
@@ -233,9 +233,9 @@ Ein Listeniterator speichert ein Handle für den zugeordneten Listen Knoten, der
 
 Durch das Löschen oder Entfernen eines Elements wird der Dekonstruktor für den gespeicherten Wert aufgerufen. Wenn Sie den Container zerstören, werden alle Elemente gelöscht. Daher stellt ein Container, dessen Elementtyp eine Verweis Klasse ist, sicher, dass keine Elemente den Container überdauern. Beachten Sie jedoch, dass ein Container von Handles seine Elemente *nicht* zerstört.
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
-## <a name="listassign-stlclr"></a><a name="assign"></a>List:: Assign (STL/CLR)
+## <a name="listassign-stlclr"></a><a name="assign"></a> List:: Assign (STL/CLR)
 
 Ersetzt alle Elemente.
 
@@ -317,7 +317,7 @@ a b
 a b c
 ```
 
-## <a name="listback-stlclr"></a><a name="back"></a>List:: Back (STL/CLR)
+## <a name="listback-stlclr"></a><a name="back"></a> List:: Back (STL/CLR)
 
 Greift auf das letzte Element zu.
 
@@ -368,7 +368,7 @@ back() = c
 a b x
 ```
 
-## <a name="listback_item-stlclr"></a><a name="back_item"></a>List:: back_item (STL/CLR)
+## <a name="listback_item-stlclr"></a><a name="back_item"></a> List:: back_item (STL/CLR)
 
 Greift auf das letzte Element zu.
 
@@ -419,7 +419,7 @@ back_item = c
 a b x
 ```
 
-## <a name="listbegin-stlclr"></a><a name="begin"></a>List:: begin (STL/CLR)
+## <a name="listbegin-stlclr"></a><a name="begin"></a> List:: begin (STL/CLR)
 
 Legt den Anfang der kontrollierten Sequenz fest.
 
@@ -474,7 +474,7 @@ a b c
 x y c
 ```
 
-## <a name="listclear-stlclr"></a><a name="clear"></a>List:: Clear (STL/CLR)
+## <a name="listclear-stlclr"></a><a name="clear"></a> List:: Clear (STL/CLR)
 
 Entfernt alle Elemente.
 
@@ -486,7 +486,7 @@ void clear();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion ruft effektiv [List:: Erase (STL/CLR)](../dotnet/list-erase-stl-clr.md) `(` [List:: begin (STL/CLR)](../dotnet/list-begin-stl-clr.md) `(),` [List:: End (STL/CLR)](../dotnet/list-end-stl-clr.md)auf `())` . Sie verwenden ihn, um sicherzustellen, dass die gesteuerte Sequenz leer ist.
+Die Member-Funktion ruft effektiv [List:: Erase (STL/CLR)](#erase) `(` [List:: begin (STL/CLR)](#begin) `(),` [List:: End (STL/CLR)](#end)auf `())` . Sie verwenden ihn, um sicherzustellen, dass die gesteuerte Sequenz leer ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -531,7 +531,7 @@ a b
 size() = 0
 ```
 
-## <a name="listconst_iterator-stlclr"></a><a name="const_iterator"></a>List:: const_iterator (STL/CLR)
+## <a name="listconst_iterator-stlclr"></a><a name="const_iterator"></a> List:: const_iterator (STL/CLR)
 
 Der Typ eines konstanten Iterators für die gesteuerte Sequenz.
 
@@ -572,7 +572,7 @@ int main()
 a b c
 ```
 
-## <a name="listconst_reference-stlclr"></a><a name="const_reference"></a>List:: const_reference (STL/CLR)
+## <a name="listconst_reference-stlclr"></a><a name="const_reference"></a> List:: const_reference (STL/CLR)
 
 Der Typ eines konstanten Verweises auf ein Element.
 
@@ -616,7 +616,7 @@ int main()
 a b c
 ```
 
-## <a name="listconst_reverse_iterator-stlclr"></a><a name="const_reverse_iterator"></a>List:: const_reverse_iterator (STL/CLR)
+## <a name="listconst_reverse_iterator-stlclr"></a><a name="const_reverse_iterator"></a> List:: const_reverse_iterator (STL/CLR)
 
 Der Typ eines konstanten umgekehrten Iterators für die gesteuerte Sequenz.
 
@@ -658,7 +658,7 @@ int main()
 c b a
 ```
 
-## <a name="listdifference_type-stlclr"></a><a name="difference_type"></a>List::d ifference_type (STL/CLR)
+## <a name="listdifference_type-stlclr"></a><a name="difference_type"></a> List::d ifference_type (STL/CLR)
 
 Die Typen eines Abstands mit Vorzeichen zwischen zwei Elementen.
 
@@ -712,7 +712,7 @@ end()-begin() = 3
 begin()-end() = -3
 ```
 
-## <a name="listempty-stlclr"></a><a name="empty"></a>List:: Empty (STL/CLR)
+## <a name="listempty-stlclr"></a><a name="empty"></a> List:: Empty (STL/CLR)
 
 Testet, ob keine Elemente vorhanden sind.
 
@@ -724,7 +724,7 @@ bool empty();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt „true“ für eine leere gesteuerte Sequenz zurück. Dies entspricht [List:: Size (STL/CLR)](../dotnet/list-size-stl-clr.md) `() == 0` . Sie verwenden es, um zu testen, ob die Liste leer ist.
+Die Memberfunktion gibt „true“ für eine leere gesteuerte Sequenz zurück. Dies entspricht [List:: Size (STL/CLR)](#size) `() == 0` . Sie verwenden es, um zu testen, ob die Liste leer ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -763,7 +763,7 @@ size() = 0
 empty() = True
 ```
 
-## <a name="listend-stlclr"></a><a name="end"></a>List:: End (STL/CLR)
+## <a name="listend-stlclr"></a><a name="end"></a> List:: End (STL/CLR)
 
 Legt das Ende der kontrollierten Sequenz fest.
 
@@ -819,7 +819,7 @@ a b c
 a x y
 ```
 
-## <a name="listerase-stlclr"></a><a name="erase"></a>List:: Erase (STL/CLR)
+## <a name="listerase-stlclr"></a><a name="erase"></a> List:: Erase (STL/CLR)
 
 Entfernt Elemente an den angegebenen Positionen.
 
@@ -847,7 +847,7 @@ Die erste Member-Funktion entfernt das-Element der kontrollierten Sequenz, auf d
 
 Die zweite Memberfunktion entfernt die Elemente der gesteuerten Sequenz im Bereich [`first`, `last`). Sie verwenden Sie, um 0 (null) oder mehrere zusammenhängende Elemente zu entfernen.
 
-Beide Member-Funktionen geben einen Iterator zurück, der das erste über die entfernten Elemente hinaus verbliebene Element festlegt, oder [List:: End (STL/CLR)](../dotnet/list-end-stl-clr.md) , `()` Wenn kein solches Element vorhanden ist.
+Beide Member-Funktionen geben einen Iterator zurück, der das erste über die entfernten Elemente hinaus verbliebene Element festlegt, oder [List:: End (STL/CLR)](#end) , `()` Wenn kein solches Element vorhanden ist.
 
 Beim Löschen von Elementen ist die Anzahl der Element Kopien in der Anzahl der Elemente zwischen dem Ende der Löschung und dem engeren Ende der Sequenz linear. (Wenn ein oder mehrere Elemente an beiden Enden der Sequenz gelöscht werden, treten keine Element Kopien auf.)
 
@@ -898,7 +898,7 @@ erase(begin(), end()-1) = e
 size() = 1
 ```
 
-## <a name="listfront-stlclr"></a><a name="front"></a>List:: Front (STL/CLR)
+## <a name="listfront-stlclr"></a><a name="front"></a> List:: Front (STL/CLR)
 
 Greift auf das erste Element zu.
 
@@ -949,7 +949,7 @@ front() = a
 x b c
 ```
 
-## <a name="listfront_item-stlclr"></a><a name="front_item"></a>List:: front_item (STL/CLR)
+## <a name="listfront_item-stlclr"></a><a name="front_item"></a> List:: front_item (STL/CLR)
 
 Greift auf das erste Element zu.
 
@@ -1000,7 +1000,7 @@ front_item = a
 x b c
 ```
 
-## <a name="listgeneric_container-stlclr"></a><a name="generic_container"></a>List:: generic_container (STL/CLR)
+## <a name="listgeneric_container-stlclr"></a><a name="generic_container"></a> List:: generic_container (STL/CLR)
 
 Der Typ der generischen Schnittstelle für den Container.
 
@@ -1066,7 +1066,7 @@ a b c d
 a b c d e
 ```
 
-## <a name="listgeneric_iterator-stlclr"></a><a name="generic_iterator"></a>List:: generic_iterator (STL/CLR)
+## <a name="listgeneric_iterator-stlclr"></a><a name="generic_iterator"></a> List:: generic_iterator (STL/CLR)
 
 Der Typ eines Iterators, der mit der generischen-Schnittstelle für den Container verwendet werden soll.
 
@@ -1124,7 +1124,7 @@ a b c
 a a c
 ```
 
-## <a name="listgeneric_reverse_iterator-stlclr"></a><a name="generic_reverse_iterator"></a>List:: generic_reverse_iterator (STL/CLR)
+## <a name="listgeneric_reverse_iterator-stlclr"></a><a name="generic_reverse_iterator"></a> List:: generic_reverse_iterator (STL/CLR)
 
 Der Typ eines umgekehrten Iterators, der mit der generischen-Schnittstelle für den Container verwendet werden soll.
 
@@ -1181,7 +1181,7 @@ a b c
 a c c
 ```
 
-## <a name="listgeneric_value-stlclr"></a><a name="generic_value"></a>List:: generic_value (STL/CLR)
+## <a name="listgeneric_value-stlclr"></a><a name="generic_value"></a> List:: generic_value (STL/CLR)
 
 Der Typ eines Elements, das mit der generischen-Schnittstelle für den Container verwendet werden soll.
 
@@ -1237,7 +1237,7 @@ a b c
 a a c
 ```
 
-## <a name="listinsert-stlclr"></a><a name="insert"></a>List:: Insert (STL/CLR)
+## <a name="listinsert-stlclr"></a><a name="insert"></a> List:: Insert (STL/CLR)
 
 Fügt Elemente an einer angegebenen Position hinzu.
 
@@ -1355,7 +1355,7 @@ y y a x b
 a x b c y y a x b
 ```
 
-## <a name="listiterator-stlclr"></a><a name="iterator"></a>List:: Iterator (STL/CLR)
+## <a name="listiterator-stlclr"></a><a name="iterator"></a> List:: Iterator (STL/CLR)
 
 Der Typ eines Iterators für die gesteuerte Sequenz.
 
@@ -1404,7 +1404,7 @@ a b c
 x b c
 ```
 
-## <a name="listlist-stlclr"></a><a name="list"></a>List:: List (STL/CLR)
+## <a name="listlist-stlclr"></a><a name="list"></a> List:: List (STL/CLR)
 
 Erstellt ein container-Objekt.
 
@@ -1549,7 +1549,7 @@ x x x x x x
 x x x x x x
 ```
 
-## <a name="listmerge-stlclr"></a><a name="merge"></a>List:: Merge (STL/CLR)
+## <a name="listmerge-stlclr"></a><a name="merge"></a> List:: Merge (STL/CLR)
 
 Führt zwei geordnete kontrollierte Sequenzen zusammen.
 
@@ -1646,7 +1646,7 @@ f e e d c c b a a
 c1.size() = 0
 ```
 
-## <a name="listoperator-stlclr"></a><a name="op_as"></a>List:: Operator = (STL/CLR)
+## <a name="listoperator-stlclr"></a><a name="op_as"></a> List:: Operator = (STL/CLR)
 
 Ersetzt die kontrollierte Sequenz.
 
@@ -1699,7 +1699,7 @@ a b c
 a b c
 ```
 
-## <a name="listpop_back-stlclr"></a><a name="pop_back"></a>List::p op_back (STL/CLR)
+## <a name="listpop_back-stlclr"></a><a name="pop_back"></a> List::p op_back (STL/CLR)
 
 Entfernt das letzte Element.
 
@@ -1746,7 +1746,7 @@ a b c
 a b
 ```
 
-## <a name="listpop_front-stlclr"></a><a name="pop_front"></a>List::p op_front (STL/CLR)
+## <a name="listpop_front-stlclr"></a><a name="pop_front"></a> List::p op_front (STL/CLR)
 
 Entfernt das erste Element.
 
@@ -1793,7 +1793,7 @@ a b c
 b c
 ```
 
-## <a name="listpush_back-stlclr"></a><a name="push_back"></a>List::p ush_back (STL/CLR)
+## <a name="listpush_back-stlclr"></a><a name="push_back"></a> List::p ush_back (STL/CLR)
 
 Fügt ein neues letztes Element hinzu.
 
@@ -1833,7 +1833,7 @@ int main()
 a b c
 ```
 
-## <a name="listpush_front-stlclr"></a><a name="push_front"></a>List::p ush_front (STL/CLR)
+## <a name="listpush_front-stlclr"></a><a name="push_front"></a> List::p ush_front (STL/CLR)
 
 Fügt ein neues erstes Element hinzu.
 
@@ -1873,7 +1873,7 @@ int main()
 c b a
 ```
 
-## <a name="listrbegin-stlclr"></a><a name="rbegin"></a>List:: rbegin (STL/CLR)
+## <a name="listrbegin-stlclr"></a><a name="rbegin"></a> List:: rbegin (STL/CLR)
 
 Legt den Anfang der umgekehrten kontrollierten Sequenz fest.
 
@@ -1928,7 +1928,7 @@ a b c
 a y x
 ```
 
-## <a name="listreference-stlclr"></a><a name="reference"></a>List:: Reference (STL/CLR)
+## <a name="listreference-stlclr"></a><a name="reference"></a> List:: Reference (STL/CLR)
 
 Der Typ eines Verweises auf ein Element.
 
@@ -1983,7 +1983,7 @@ a b c
 A B C
 ```
 
-## <a name="listremove-stlclr"></a><a name="remove"></a>List:: Remove (STL/CLR)
+## <a name="listremove-stlclr"></a><a name="remove"></a> List:: Remove (STL/CLR)
 
 Entfernt ein Element mit einem angegebenen Wert.
 
@@ -2042,7 +2042,7 @@ a b c
 a c
 ```
 
-## <a name="listremove_if-stlclr"></a><a name="remove_if"></a>List:: remove_if (STL/CLR)
+## <a name="listremove_if-stlclr"></a><a name="remove_if"></a> List:: remove_if (STL/CLR)
 
 Entfernt Elemente, die einen angegebenen Test bestehen.
 
@@ -2106,7 +2106,7 @@ a b b b c
 b b b
 ```
 
-## <a name="listrend-stlclr"></a><a name="rend"></a>List:: rend (STL/CLR)
+## <a name="listrend-stlclr"></a><a name="rend"></a> List:: rend (STL/CLR)
 
 Legt das Ende der umgekehrten kontrollierten Sequenz fest.
 
@@ -2162,7 +2162,7 @@ a b c
 y x c
 ```
 
-## <a name="listresize-stlclr"></a><a name="resize"></a>List:: Resize (STL/CLR)
+## <a name="listresize-stlclr"></a><a name="resize"></a> List:: Resize (STL/CLR)
 
 Ändert die Anzahl der Elemente.
 
@@ -2183,7 +2183,7 @@ Der Wert des Auffüllung-Elements.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Mit den Element Funktionen wird sichergestellt, dass [List:: Size (STL/CLR)](../dotnet/list-size-stl-clr.md) nach wie vor `()` *new_size*zurückgibt. Wenn die gesteuerte Sequenz länger dauern muss, fügt die erste Member-Funktion Elemente mit einem Wert an `value_type()` , während die zweite Element Funktion Elemente mit dem Wert *Val*anfügt. Damit die gesteuerte Sequenz kürzer wird, löschen beide Element Funktionen die letzten Elemente der [Liste:: Size (STL/CLR)](../dotnet/list-size-stl-clr.md) `() -` `new_size` . Sie verwenden diese Option, um sicherzustellen, dass die Größe der kontrollierten Sequenz *new_size*ist, indem Sie die aktuelle gesteuerte Sequenz kürzen oder Auffüllen.
+Mit den Element Funktionen wird sichergestellt, dass [List:: Size (STL/CLR)](#size) nach wie vor `()` *new_size*zurückgibt. Wenn die gesteuerte Sequenz länger dauern muss, fügt die erste Member-Funktion Elemente mit einem Wert an `value_type()` , während die zweite Element Funktion Elemente mit dem Wert *Val*anfügt. Damit die gesteuerte Sequenz kürzer wird, löschen beide Element Funktionen die letzten Elemente der [Liste:: Size (STL/CLR)](#size) `() -` `new_size` . Sie verwenden diese Option, um sicherzustellen, dass die Größe der kontrollierten Sequenz *new_size*ist, indem Sie die aktuelle gesteuerte Sequenz kürzen oder Auffüllen.
 
 ### <a name="example"></a>Beispiel
 
@@ -2222,7 +2222,7 @@ size() = 0
 x x x x x
 ```
 
-## <a name="listreverse-stlclr"></a><a name="reverse"></a>List:: Reverse (STL/CLR)
+## <a name="listreverse-stlclr"></a><a name="reverse"></a> List:: Reverse (STL/CLR)
 
 Kehrt die gesteuerte Sequenz um.
 
@@ -2269,7 +2269,7 @@ a b c
 c b a
 ```
 
-## <a name="listreverse_iterator-stlclr"></a><a name="reverse_iterator"></a>List:: reverse_iterator (STL/CLR)
+## <a name="listreverse_iterator-stlclr"></a><a name="reverse_iterator"></a> List:: reverse_iterator (STL/CLR)
 
 Der Typ eines umgekehrten Iterators für die gesteuerte Sequenz.
 
@@ -2318,7 +2318,7 @@ c b a
 x b a
 ```
 
-## <a name="listsize-stlclr"></a><a name="size"></a>List:: Size (STL/CLR)
+## <a name="listsize-stlclr"></a><a name="size"></a> List:: Size (STL/CLR)
 
 Ermittelt die Anzahl von Elementen.
 
@@ -2330,7 +2330,7 @@ size_type size();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt die Länge der gesteuerten Sequenz zurück. Sie verwenden Sie, um die Anzahl der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden. Wenn Sie nur für Sie wichtig sind, ob die Sequenz eine Größe ungleich NULL aufweist, finden Sie weitere Informationen unter [List:: Empty (STL/CLR)](../dotnet/list-empty-stl-clr.md) `()` .
+Die Memberfunktion gibt die Länge der gesteuerten Sequenz zurück. Sie verwenden Sie, um die Anzahl der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden. Wenn Sie nur für Sie wichtig sind, ob die Sequenz eine Größe ungleich NULL aufweist, finden Sie weitere Informationen unter [List:: Empty (STL/CLR)](#empty) `()` .
 
 ### <a name="example"></a>Beispiel
 
@@ -2371,7 +2371,7 @@ size() = 0 after clearing
 size() = 2 after adding 2
 ```
 
-## <a name="listsize_type-stlclr"></a><a name="size_type"></a>List:: size_type (STL/CLR)
+## <a name="listsize_type-stlclr"></a><a name="size_type"></a> List:: size_type (STL/CLR)
 
 Der Typ eines Abstands mit Vorzeichen zwischen zwei Elementen.
 
@@ -2419,7 +2419,7 @@ a b c
 end()-begin() = 3
 ```
 
-## <a name="listsort-stlclr"></a><a name="sort"></a>List:: Sort (STL/CLR)
+## <a name="listsort-stlclr"></a><a name="sort"></a> List:: Sort (STL/CLR)
 
 Sortiert die kontrollierte Sequenz.
 
@@ -2484,7 +2484,7 @@ c b a
 a b c
 ```
 
-## <a name="listsplice-stlclr"></a><a name="splice"></a>List:: splice (STL/CLR)
+## <a name="listsplice-stlclr"></a><a name="splice"></a> List:: splice (STL/CLR)
 
 Verknüpfungen zwischen Knoten neu anheften.
 
@@ -2577,7 +2577,7 @@ b c a
 c2.size() = 0
 ```
 
-## <a name="listswap-stlclr"></a><a name="swap"></a>List:: Swap (STL/CLR)
+## <a name="listswap-stlclr"></a><a name="swap"></a> List:: Swap (STL/CLR)
 
 Vertauscht den Inhalt von zwei Containern.
 
@@ -2641,7 +2641,7 @@ x x x x x
 a b c
 ```
 
-## <a name="listto_array-stlclr"></a><a name="to_array"></a>List:: to_array (STL/CLR)
+## <a name="listto_array-stlclr"></a><a name="to_array"></a> List:: to_array (STL/CLR)
 
 Kopiert die gesteuerte Sequenz in ein neues Array.
 
@@ -2690,7 +2690,7 @@ a b c d
 a b c
 ```
 
-## <a name="listunique-stlclr"></a><a name="unique"></a>List:: Unique (STL/CLR)
+## <a name="listunique-stlclr"></a><a name="unique"></a> List:: Unique (STL/CLR)
 
 Entfernt benachbarte Elemente, die einen angegebenen Test bestehen.
 
@@ -2709,7 +2709,7 @@ Vergleich für Element Paare.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die erste Member-Funktion entfernt jedes Element aus der kontrollierten Sequenz (erases), das mit dem vorangehenden Element übereinstimmt, `X` `Y` und `X == Y` die Element Funktion entfernt `Y` . Sie verwenden Sie, um alle bis auf eine Kopie jeder unter Sequenz benachbarter Elemente zu entfernen, die gleich sind. Beachten Sie Folgendes: Wenn die gesteuerte Sequenz sortiert ist, z. b. durch Aufrufen von [List:: Sort (STL/CLR)](../dotnet/list-sort-stl-clr.md) `()` , gibt die Member-Funktion nur Elemente mit eindeutigen Werten aus. (Sie beenden – englisch: to terminate – die Abfrage, daher der Name.)
+Die erste Member-Funktion entfernt jedes Element aus der kontrollierten Sequenz (erases), das mit dem vorangehenden Element übereinstimmt, `X` `Y` und `X == Y` die Element Funktion entfernt `Y` . Sie verwenden Sie, um alle bis auf eine Kopie jeder unter Sequenz benachbarter Elemente zu entfernen, die gleich sind. Beachten Sie Folgendes: Wenn die gesteuerte Sequenz sortiert ist, z. b. durch Aufrufen von [List:: Sort (STL/CLR)](#sort) `()` , gibt die Member-Funktion nur Elemente mit eindeutigen Werten aus. (Sie beenden – englisch: to terminate – die Abfrage, daher der Name.)
 
 Die zweite Member-Funktion verhält sich wie die erste, mit der Ausnahme, dass Sie jedes Element `Y` nach einem Element entfernt, `X` für das `pred(X, Y)` . Sie verwenden Sie, um alle bis auf eine Kopie jeder unter Sequenz angrenzender Elemente zu entfernen, die eine Prädikat Funktion oder einen von Ihnen angegebenen Delegaten erfüllen. Beachten Sie Folgendes: Wenn die gesteuerte Sequenz geordnet ist, z. b. durch Aufrufen von, gibt die Member-Funktion nur Elemente aus, für die keine `sort(pred)` äquivalente Reihenfolge mit anderen Elementen vorliegt.
 
@@ -2756,7 +2756,7 @@ a b c
 a a
 ```
 
-## <a name="listvalue_type-stlclr"></a><a name="value_type"></a>List:: value_type (STL/CLR)
+## <a name="listvalue_type-stlclr"></a><a name="value_type"></a> List:: value_type (STL/CLR)
 
 Der Typ eines Elements.
 
@@ -2801,7 +2801,7 @@ int main()
 a b c
 ```
 
-## <a name="operator-list-stlclr"></a><a name="op_neq"></a>Operator! = (List) (STL/CLR)
+## <a name="operator-list-stlclr"></a><a name="op_neq"></a> Operator! = (List) (STL/CLR)
 
 Die Liste entspricht nicht dem Vergleich.
 
@@ -2870,7 +2870,7 @@ a b d
 [a b c] != [a b d] is True
 ```
 
-## <a name="operatorlt-list-stlclr"></a><a name="op_lt"></a>Operator &lt; (List) (STL/CLR)
+## <a name="operatorlt-list-stlclr"></a><a name="op_lt"></a> Operator &lt; (List) (STL/CLR)
 
 Liste kleiner als-Vergleich.
 
@@ -2939,7 +2939,7 @@ a b d
 [a b c] < [a b d] is True
 ```
 
-## <a name="operatorlt-list-stlclr"></a><a name="op_lteq"></a>Operator &lt; = (List) (STL/CLR)
+## <a name="operatorlt-list-stlclr"></a><a name="op_lteq"></a> Operator &lt; = (List) (STL/CLR)
 
 Liste kleiner oder gleich-Vergleich.
 
@@ -3008,7 +3008,7 @@ a b d
 [a b d] <= [a b c] is False
 ```
 
-## <a name="operator-list-stlclr"></a><a name="op_eq"></a>Operator = = (List) (STL/CLR)
+## <a name="operator-list-stlclr"></a><a name="op_eq"></a> Operator = = (List) (STL/CLR)
 
 Auflisten des gleichen Vergleichs.
 
@@ -3077,7 +3077,7 @@ a b d
 [a b c] == [a b d] is False
 ```
 
-## <a name="operatorgt-list-stlclr"></a><a name="op_gt"></a>Operator &gt; (List) (STL/CLR)
+## <a name="operatorgt-list-stlclr"></a><a name="op_gt"></a> Operator &gt; (List) (STL/CLR)
 
 Die Liste ist größer als der Vergleich.
 
@@ -3146,7 +3146,7 @@ a b d
 [a b d] > [a b c] is True
 ```
 
-## <a name="operatorgt-list-stlclr"></a><a name="op_gteq"></a>Operator &gt; = (List) (STL/CLR)
+## <a name="operatorgt-list-stlclr"></a><a name="op_gteq"></a> Operator &gt; = (List) (STL/CLR)
 
 Liste größer oder gleich-Vergleich.
 

@@ -2,28 +2,28 @@
 title: WRL-Integration (C++/CX)
 ms.date: 01/22/2017
 ms.assetid: 3ad43894-c574-477c-ad3e-240301f381d4
-ms.openlocfilehash: a3c8b824d2cd932a7d284804f3f28781654045e0
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: 3ea0f6aece985a2ee74916e737b9aab1bf0d1d96
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62304149"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91507406"
 ---
 # <a name="wrl-integration-ccx"></a>WRL-Integration (C++/CX)
 
-Sie können frei WRL-Code mit Windows Runtime C++ Template Library (WRL) Code kombinieren. In derselben Übersetzungseinheit können Sie Objekte, die mit WRL-Handle-to-Object deklariert (`^`)-Notation und WRL intelligente Zeiger (`ComPtr<T>`) Notation. Allerdings müssen Sie manuell Werte zurückgeben, und die WRL-HRESULT-Fehlercodes und die WRL-Ausnahmen behandeln.
+Sie können den WRL-Code problemlos mit Windows-Runtime dem WRL-Code (C++ Template Library) kombinieren. In derselben Übersetzungseinheit können Sie Objekte verwenden, die mit WRL-Handle-zu-Objekt- `^` Notation () und WRL-intelligenter Zeiger () deklariert wurden `ComPtr<T>` . Sie müssen jedoch manuell Rückgabewerte und WRL HRESULT-Fehlercodes und WRL-Ausnahmen verarbeiten.
 
 ## <a name="wrl-development"></a>WRL-Entwicklung
 
-Weitere Informationen zum Erstellen und Konsumieren von WRL-Komponenten finden Sie unter [Windows Runtime C++ Template Library (WRL)](../windows/windows-runtime-cpp-template-library-wrl.md).
+Weitere Informationen zum Erstellen und Verwenden von WRL-Komponenten finden Sie unter [Windows-Runtime C++ Template Library (WRL)](./wrl/windows-runtime-cpp-template-library-wrl.md).
 
 ### <a name="example"></a>Beispiel
 
-Der folgende Codeausschnitt veranschaulicht, wie mit WRL und WRL Windows-Runtime-Klassen nutzen und eine Metadatendatei überprüft wird.
+Der folgende Code Ausschnitt veranschaulicht die Verwendung von wrl und WRL, um Windows-Runtime Klassen zu nutzen und eine Metadatendatei zu untersuchen.
 
-Das Beispiel stammt von einem Codeausschnitt in das Erstellen von Microsoft Store-apps-Forum. Der Autor dieses Codeausschnitts bietet die folgenden Haftungsausschlüsse und Bedingungen an:
+Das Beispiel stammt aus einem Code Ausschnitt im Forum Building Microsoft Store Apps. Der Autor dieses Codeausschnitts bietet die folgenden Haftungsausschlüsse und Bedingungen an:
 
-1. C++ stellt keine bestimmte API zum Windows-Runtime-Typen reflektieren bereit, aber Windows-Metadatendateien (.winmd) für einen Typ sind mit CLR-Metadatendateien vollständig kompatibel. Windows bietet die neuen APIs zur Metadatenermittlung (RoGetMetaDataFile), um zur WINMD-Datei für einen bestimmten Typ zu gelangen. Diese APIs sind für C++-Entwickler jedoch nur von begrenztem Nutzen, da Sie Klassen nicht instanziieren können.
+1. C++ stellt keine spezifischen APIs bereit, um Windows-Runtime Typen widerzuspiegeln, aber Windows-Metadatendateien (. winmd) für einen Typ sind mit CLR-Metadatendateien vollständig kompatibel. Windows bietet die neuen APIs zur Metadatenermittlung (RoGetMetaDataFile), um zur WINMD-Datei für einen bestimmten Typ zu gelangen. Diese APIs sind für C++-Entwickler jedoch nur von begrenztem Nutzen, da Sie Klassen nicht instanziieren können.
 
 1. Nachdem der Code kompiliert wurde, müssen Sie auch Runtimeobject.lib und Rometadata.lib an den Linker übergeben.
 
@@ -110,6 +110,6 @@ IVector<String^>^ GetTypeMethods(Object^ instance)
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Interoperabilität mit anderen Sprachen](interoperating-with-other-languages-c-cx.md)

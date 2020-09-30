@@ -6,32 +6,32 @@ f1_keywords:
 helpviewer_keywords:
 - ATL Control Wizard, options
 ms.assetid: 4607c51a-992d-433e-9281-919c6f519a3d
-ms.openlocfilehash: 25db3995687011de5e9cc0a98506cd26f2f1af0b
-ms.sourcegitcommit: fcb48824f9ca24b1f8bd37d647a4d592de1cc925
+ms.openlocfilehash: 481c97fe7621e9592317f629c2cf87f2f719d5d1
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69495443"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91506918"
 ---
 # <a name="options-atl-control-wizard"></a>Optionen, ATL-Steuerelement-Assistent
 
 Verwenden Sie diese Seite des Assistenten, um den Typ des Steuer Elements zu definieren, das Sie erstellen, und die Ebene der Schnittstellen Unterstützung, die es enthält.
 
-## <a name="uielement-list"></a>Liste der Benutzeroberflächenelemente
+## <a name="uielement-list"></a>UIElement-Liste
 
 ### <a name="control-type"></a>Steuerelementtyp
 
 Die Art des Steuer Elements, das Sie erstellen möchten.
 
-- **Standard Steuer**Element: Ein ActiveX-Steuerelement.
+- **Standard Steuer**Element: ein ActiveX-Steuerelement.
 
-- **Composite-Steuer**Element: Ein ActiveX-Steuerelement, das (ähnlich einem Dialogfeld) andere ActiveX-Steuerelemente oder Windows-Steuerelemente enthalten kann. Ein zusammengesetztes Steuerelement schließt Folgendes ein:
+- Zusammen **gesetztes Steuer**Element: ein ActiveX-Steuerelement, das (ähnlich einem Dialogfeld) andere ActiveX-Steuerelemente oder Windows-Steuerelemente enthalten kann. Ein zusammengesetztes Steuerelement schließt Folgendes ein:
 
   - Eine Vorlage für das Dialogfeld, das das zusammengesetzte Steuerelement implementiert.
 
   - Eine benutzerdefinierte Ressource, die Registrierung, die das zusammengesetzte Steuerelement automatisch registriert, wenn es aufgerufen wird.
 
-  - Eine C++ Klasse, die das zusammengesetzte Steuerelement implementiert.
+  - Eine C++-Klasse, die das zusammengesetzte Steuerelement implementiert.
 
   - Eine vom zusammengesetzten Steuerelement verfügbar gemachte COM-Schnittstelle.
 
@@ -39,7 +39,7 @@ Die Art des Steuer Elements, das Sie erstellen möchten.
 
     Standardmäßig legt dieses Steuerelement " [CComControlBase:: m_bWindowOnly](../../atl/reference/ccomcontrolbase-class.md#m_bwindowonly) " auf "true" fest, um anzugeben, dass es sich hierbei um ein Fenster Steuerelement handelt. Es implementiert eine Sink map. Weitere Informationen finden Sie [unter Unterstützung für DHTML-Steuer](../../atl/atl-support-for-dhtml-controls.md)Elemente.
 
-- **DHTML-Steuer**Element: Ein ATL-DHTML-Steuerelement gibt die Benutzeroberfläche mithilfe von HTML an. Die DHTML-UI-Klasse enthält eine COM-Zuordnung. Standardmäßig legt dieses Steuerelement " [CComControlBase:: m_bWindowOnly](../../atl/reference/ccomcontrolbase-class.md#m_bwindowonly) " auf "true" fest, um anzugeben, dass es sich hierbei um ein Fenster Steuerelement handelt.
+- **DHTML-Steuer**Element: ein ATL-DHTML-Steuerelement gibt die Benutzeroberfläche mithilfe von HTML an. Die DHTML-UI-Klasse enthält eine COM-Zuordnung. Standardmäßig legt dieses Steuerelement " [CComControlBase:: m_bWindowOnly](../../atl/reference/ccomcontrolbase-class.md#m_bwindowonly) " auf "true" fest, um anzugeben, dass es sich hierbei um ein Fenster Steuerelement handelt.
 
    Weitere Informationen finden Sie unter [Identifizieren der Elemente des DHTML-Steuerelement Projekts](../../atl/identifying-the-elements-of-the-dhtml-control-project.md).
 
@@ -61,30 +61,30 @@ Fügt Aggregations Unterstützung für das Steuerelement hinzu, das Sie erstelle
 
 Gibt das Threading Modell an, das vom-Steuerelement verwendet wird.
 
-- **Single**: Das-Steuerelement wird nur im primären com-Thread ausgeführt.
+- **Single**: das Steuerelement wird nur im primären com-Thread ausgeführt.
 
-- **Apartment**: Das-Steuerelement kann in jedem einzelnen Thread-Apartment erstellt werden. Der Standardwert.
+- **Apartment**: das Steuerelement kann in jedem einzelnen Thread-Apartment erstellt werden. Der Standardwert.
 
-### <a name="interface"></a>Interface
+### <a name="interface"></a>Schnittstelle
 
 Der Typ der Schnittstelle, die dieses Steuerelement für den Container verfügbar macht.
 
-- **Dual**: Erstellt eine Schnittstelle, die Eigenschaften und Methoden `IDispatch` durch und direkt über das VTBL verfügbar macht.
+- **Dual**: erstellt eine Schnittstelle, die Eigenschaften und Methoden durch `IDispatch` und direkt über das VTBL verfügbar macht.
 
-- **Benutzerdefiniert**: Erstellt eine Schnittstelle, die Methoden direkt über ein VTBL verfügbar macht.
+- **Custom**: erstellt eine Schnittstelle, die Methoden direkt über ein VTBL verfügbar macht.
 
-   Wenn Sie **Benutzer**definiert auswählen, können Sie angeben, dass das Steuerelement **Automatisierungs kompatibel**ist. Wenn Sie **Automation-kompatibel**auswählen, fügt der Assistent der-Schnittstelle in der IDL das [oleautomation](../../windows/oleautomation.md) -Attribut hinzu, und die-Schnittstelle kann vom Universal Mars Haller in Oleaut32. dll gemarshallt werden. Weitere Informationen finden Sie unter Mars Hallen von [Details](/windows/win32/com/marshaling-details) in der Windows SDK.
+   Wenn Sie **Benutzer**definiert auswählen, können Sie angeben, dass das Steuerelement **Automatisierungs kompatibel**ist. Wenn Sie **Automation-kompatibel**auswählen, fügt der Assistent der-Schnittstelle in der IDL das [oleautomation](../../windows/attributes/oleautomation.md) -Attribut hinzu, und die-Schnittstelle kann vom universellen Mars Haller in oleaut32.dll gemarshallt werden. Weitere Informationen finden Sie unter Mars Hallen von [Details](/windows/win32/com/marshaling-details) in der Windows SDK.
 
    Wenn Sie außerdem **Automatisierungs kompatibel**auswählen, müssen alle Parameter für alle Methoden im Steuerelement Variant-kompatibel sein.
 
-### <a name="support"></a>Unterstützung
+### <a name="support"></a>Support
 
 Legt weitere verschiedene Unterstützung für das-Steuerelement fest.
 
 - **Verbindungspunkte**: Aktiviert Verbindungspunkte für Ihr Objekt, indem die Klasse des Objekts von [IConnectionPointContainerImpl](../../atl/reference/iconnectionpointcontainerimpl-class.md) abgeleitet und eine Quell Schnittstelle verfügbar gemacht wird.
 
-- **Lizenziert**: Fügt dem-Steuerelement Unterstützung für die [Lizenzierung](/windows/win32/com/licensing)hinzu. Lizenzierte Steuerelemente können nur gehostet werden, wenn der Client Computer über die richtige Lizenz verfügt.
+- **Lizenziert**: Fügt Unterstützung für das-Steuerelement für die [Lizenzierung](/windows/win32/com/licensing)hinzu. Lizenzierte Steuerelemente können nur gehostet werden, wenn der Client Computer über die richtige Lizenz verfügt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [ATL-Steuerelement-Assistent](../../atl/reference/atl-control-wizard.md)

@@ -42,18 +42,18 @@ helpviewer_keywords:
 - RichEdit 1.0 control
 - rich edit controls [C++], RichEdit 1.0
 ms.assetid: 73cef03f-5c8c-456a-87d1-1458dff185cf
-ms.openlocfilehash: 79ea16e2d1737063040302a1ce111d275ae28e27
-ms.sourcegitcommit: d9c94dcabd94537e304be0261b3263c2071b437b
+ms.openlocfilehash: be2923c98ed1b92d4aeb2692591abcaf9f13c5ec
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91352751"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91508830"
 ---
 # <a name="how-to-add-edit-or-delete-controls-c"></a>Vorgehensweise: Hinzufügen, bearbeiten oder Löschen von Steuerelementen (C++)
 
 Mit dem **Dialog-Editor**können Sie Steuerelemente in Dialog Feldern hinzufügen, die Größe ändern, bearbeiten und löschen. Sie können auch die Eigenschaften eines Steuer Elements bearbeiten, z. b. die zugehörige ID oder ob es anfänglich zur Laufzeit sichtbar ist.
 
-Die Registerkarte " **Dialog-Editor** " wird im [Fenster "Toolbox](/visualstudio/ide/reference/toolbox) " angezeigt, wenn Sie im Dialog- **Editor**arbeiten. Sie können das **Toolbox** Fenster auch für eine einfachere Verwendung anpassen. Weitere Informationen finden Sie unter [Verwenden der Toolbox](/visualstudio/ide/using-the-toolbox) und [anzeigen oder Ausblenden des Fenster "Toolbox](showing-or-hiding-the-dialog-editor-toolbar.md)".
+Die Registerkarte " **Dialog-Editor** " wird im [Fenster "Toolbox](/visualstudio/ide/reference/toolbox) " angezeigt, wenn Sie im Dialog- **Editor**arbeiten. Sie können das **Toolbox** Fenster auch für eine einfachere Verwendung anpassen. Weitere Informationen finden Sie unter [Verwenden der Toolbox](/visualstudio/ide/using-the-toolbox) und [anzeigen oder Ausblenden des Fenster "Toolbox](./dialog-editor.md)".
 
 > [!TIP]
 > Wenn Sie den **Dialog-Editor**verwenden, können Sie in vielen Fällen die Rechte Maustaste auswählen, um ein Kontextmenü mit häufig verwendeten Befehlen anzuzeigen.
@@ -94,7 +94,7 @@ Die Registerkarte " **Dialog-Editor** " wird im [Fenster "Toolbox](/visualstudio
 1. Lassen Sie die Maustaste los. Das-Steuerelement wird im Dialogfeld in der von Ihnen angegebenen Größe festgelegt.
 
 > [!TIP]
-> Sie können die Größe des Steuer Elements nach dem ablegen im Dialogfeld ändern, indem Sie die Zieh Punkte am Rahmen des Steuer Elements verschieben. Weitere Informationen finden Sie unter [dimensionieren einzelner Steuerelemente](../windows/sizing-individual-controls.md).
+> Sie können die Größe des Steuer Elements nach dem ablegen im Dialogfeld ändern, indem Sie die Zieh Punkte am Rahmen des Steuer Elements verschieben. Weitere Informationen finden Sie unter [dimensionieren einzelner Steuerelemente](./arrangement-of-controls-on-dialog-boxes.md).
 
 ### <a name="to-add-a-custom-control"></a>So fügen Sie ein benutzerdefiniertes Steuerelement hinzu
 
@@ -129,7 +129,7 @@ Sie können dem Dialogfeld benutzerdefinierte Steuerelemente hinzufügen. Wähle
 
 1. Beim Drücken der **STRG** -Taste Doppelklicken Sie auf das Dialogfeld-Steuerelement.
 
-   Der [Assistent zum Hinzufügen](../ide/add-member-variable-wizard.md) von Element Variablen wird angezeigt.
+   Der [Assistent zum Hinzufügen](../ide/adding-a-member-variable-visual-cpp.md#add-member-variable-wizard) von Element Variablen wird angezeigt.
 
 1. Geben Sie die entsprechenden Informationen in den Assistenten zum **Hinzufügen von Mitgliedsvariablen** ein. Weitere Informationen finden Sie unter [Dialog Datenaustausch](../mfc/dialog-data-exchange.md).
 
@@ -207,7 +207,7 @@ Visual Studio ermöglicht Ihnen das Einfügen von ActiveX-Steuerelementen in Ihr
 
 Im Dialogfeld **ActiveX-Steuerelement einfügen** können Sie ActiveX-Steuerelemente in das Dialogfeld einfügen, während Sie den Dialogfeld- [Editor](dialog-editor.md)verwenden. Dieses Dialogfeld enthält die folgenden Eigenschaften:
 
-|Eigenschaft|BESCHREIBUNG|
+|Eigenschaft|Beschreibung|
 |---|---|
 |**ActiveX-Steuerelement**|Zeigt eine Liste von ActiveX-Steuerelementen an.<br/><br/>Das Einfügen eines Steuer Elements aus diesem Dialogfeld generiert keine Wrapper Klasse. Wenn Sie eine Wrapper Klasse benötigen, verwenden Sie [Klassenansicht](/visualstudio/ide/viewing-the-structure-of-code) , um einen zu erstellen, siehe [Hinzufügen einer Klasse](../ide/adding-a-class-visual-cpp.md).<br/><br/>Wenn ein ActiveX-Steuerelement in diesem Dialogfeld nicht angezeigt wird, versuchen Sie, das Steuerelement gemäß den Anweisungen des Herstellers zu installieren.|
 |**Path**|Zeigt die Datei an, in der das ActiveX-Steuerelement gefunden wurde.|

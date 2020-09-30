@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C3037
 ms.assetid: 9ba8a890-d3c7-4cce-93c5-d358e2bfad28
-ms.openlocfilehash: d11f1419fdaac5e2283d0ae53a1ed068214e437e
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: f7a2e4cfe40366db06e2418616825ef467a2271a
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74754991"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91508462"
 ---
 # <a name="compiler-error-c3037"></a>Compilerfehler C3037
 
 "var": Variable in reduction-Klausel muss im übergeordneten Kontext freigegeben sein.
 
-Eine in einer [reduction](../../parallel/openmp/reference/reduction.md) -Klausel angegebene Variable darf nicht für jeden Thread im Kontext privat sein.
+Eine in einer [reduction](../../parallel/openmp/reference/openmp-clauses.md#reduction) -Klausel angegebene Variable darf nicht für jeden Thread im Kontext privat sein.
 
 Im folgenden Beispiel wird C3037 generiert:
 

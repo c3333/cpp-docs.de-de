@@ -5,12 +5,12 @@ f1_keywords:
 - <charconv>
 helpviewer_keywords:
 - charconv header
-ms.openlocfilehash: 59807749105512e0eb61acfdf60ef463febbc3a8
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: c9dfb8e18a8f7fd367ec4f6b52b1a0af74b3f939
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87230190"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91507705"
 ---
 # <a name="ltcharconvgt"></a>&lt;charcharv&gt;
 
@@ -35,11 +35,11 @@ Die Verwendung der Bibliothek bietet folgende Vorteile `<charconv>` :
 
 /Std: c++ 17 (oder höher) ist erforderlich.
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="types"></a>Typen
 
-| type | BESCHREIBUNG |
+| Type | Beschreibung |
 |-|:-|
 | [chars_format](chars-format-class.md) | Gibt den Formatierungstyp an, z. b. Scientific, Hex usw. |
 | [from_chars_result](from-chars-result-structure.md) | Enthält das Ergebnis einer `from_chars` Konvertierung. |
@@ -47,7 +47,7 @@ Die Verwendung der Bibliothek bietet folgende Vorteile `<charconv>` :
 
 ### <a name="functions"></a>Functions
 
-| Funktion | BESCHREIBUNG |
+| Funktion | Beschreibung |
 |-|:-|
 | [from_chars](charconv-functions.md#from_chars) | Konvertieren Sie Zeichen in eine Ganzzahl, float oder Double. |
 | [to_chars](charconv-functions.md#to_chars)| Konvertiert eine Ganzzahl, float oder Double in Zeichen. |
@@ -55,4 +55,3 @@ Die Verwendung der Bibliothek bietet folgende Vorteile `<charconv>` :
 ## <a name="see-also"></a>Weitere Informationen
 
 [Headerdateienreferenz](cpp-standard-library-header-files.md)
-

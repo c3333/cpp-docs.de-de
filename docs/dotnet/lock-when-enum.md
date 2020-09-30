@@ -9,12 +9,12 @@ f1_keywords:
 helpviewer_keywords:
 - lock_when enum
 ms.assetid: 6b87bbe9-63cd-450d-a02e-bb91ffd0dcea
-ms.openlocfilehash: af4e4472a33ef3d083f54da74e306562af1867a1
-ms.sourcegitcommit: 573b36b52b0de7be5cae309d45b68ac7ecf9a6d8
+ms.openlocfilehash: 991cce4cfa6810f35c2ccb3ec1ed45adf2d849ac
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "79544832"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91508689"
 ---
 # <a name="lock_when-enum"></a>lock_when-Enumeration
 
@@ -28,9 +28,9 @@ enum lock_when {
 };
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Bei Übergabe an [Lock:: Lock](../dotnet/lock-lock.md)gibt `lock_later` an, dass die Sperre jetzt nicht ausgeführt werden soll.
+Gibt bei Übergabe an [Lock:: Lock](./lock-class.md#lock)an, `lock_later` dass die Sperre jetzt nicht ausgeführt werden soll.
 
 ## <a name="example"></a>Beispiel
 
@@ -122,12 +122,12 @@ In thread 6, Counter = 10
 All threads completed.
 ```
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
-**Header Datei** \<msclr\lock.h >
+**Headerdatei** \<msclr\lock.h>
 
 **Namespace** -msclr
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [lock](../dotnet/lock.md)

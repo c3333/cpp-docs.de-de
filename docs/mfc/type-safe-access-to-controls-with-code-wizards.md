@@ -7,16 +7,16 @@ helpviewer_keywords:
 - dialog boxes [MFC], access to controls
 - dialog box controls [MFC], accessing
 ms.assetid: b8874393-ee48-4124-8d78-e3648a7e29b9
-ms.openlocfilehash: bfbc27dbcdeeb38c40f5d989bacd65a23198d4f5
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: ee7c49f75dcdc2b6c32f2b391ace7260b46d197b
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87213969"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91507891"
 ---
 # <a name="type-safe-access-to-controls-with-code-wizards"></a>Typsicherer Zugriff auf Steuerelemente mit Code-Assistenten
 
-Wenn Sie mit DDX-Funktionen vertraut sind, können Sie die Control-Eigenschaft im [Assistenten zum Hinzufügen](../ide/add-member-variable-wizard.md) von Element Variablen verwenden, um typsicheren Zugriff zu erstellen. Diese Vorgehensweise ist einfacher als das Erstellen von Steuerelementen ohne Code-Assistenten.
+Wenn Sie mit DDX-Funktionen vertraut sind, können Sie die Control-Eigenschaft im [Assistenten zum Hinzufügen](../ide/adding-a-member-variable-visual-cpp.md#add-member-variable-wizard) von Element Variablen verwenden, um typsicheren Zugriff zu erstellen. Diese Vorgehensweise ist einfacher als das Erstellen von Steuerelementen ohne Code-Assistenten.
 
 Wenn Sie einfach auf den Wert eines Steuer Elements zugreifen möchten, stellt DDX es bereit. Wenn Sie mehr als auf den Wert eines Steuer Elements zugreifen möchten, verwenden Sie den Assistenten zum Hinzufügen von Element Variablen, um der Dialogfeld Klasse eine Member-Variable der entsprechenden Klasse hinzuzufügen. Fügen Sie diese Element Variable an die Steuerelement Eigenschaft an.
 

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ActiveX controls [MFC], properties
 - controls [MFC], properties
 ms.assetid: 14ce5152-742b-4e0d-a9ab-c7b456e32918
-ms.openlocfilehash: b0ca43f59cf70dea1348f22a08cfb4e89b45c3dd
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: 052da13619fae5004ee573bd4957266a545d8335
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84617357"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91507918"
 ---
 # <a name="activex-control-containers-viewing-and-modifying-control-properties"></a>ActiveX-Steuerelementcontainer: Anzeigen und Ändern von Steuerelementeigenschaften
 
@@ -31,7 +31,7 @@ Der erste Schritt beim Anzeigen der Eigenschaften des-Steuer Elements besteht da
 
 1. Öffnen Sie die Haupt Dialogfeld Vorlage.
 
-1. Fügen Sie ein ActiveX-Steuerelement mit dem Dialogfeld **ActiveX-Steuerelement einfügen** ein. Weitere Informationen finden Sie unter [anzeigen und Hinzufügen von ActiveX-Steuerelementen zu einem Dialog Feld](../windows/viewing-and-adding-activex-controls-to-a-dialog-box.md).
+1. Fügen Sie ein ActiveX-Steuerelement mit dem Dialogfeld **ActiveX-Steuerelement einfügen** ein. Weitere Informationen finden Sie unter [anzeigen und Hinzufügen von ActiveX-Steuerelementen zu einem Dialog Feld](../windows/adding-editing-or-deleting-controls.md).
 
 1. Wählen Sie das ActiveX-Steuerelement im Dialogfeld aus.
 
@@ -39,6 +39,6 @@ Der erste Schritt beim Anzeigen der Eigenschaften des-Steuer Elements besteht da
 
 Verwenden Sie das Dialogfeld **Eigenschaften** , um neue Eigenschaften sofort zu ändern und zu testen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[ActiveX-Steuerelementcontainer](activex-control-containers.md)
+[ActiveX-Steuerelement Container](activex-control-containers.md)

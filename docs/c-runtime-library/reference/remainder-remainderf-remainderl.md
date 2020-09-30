@@ -35,12 +35,12 @@ helpviewer_keywords:
 - remainderl
 - remainder
 ms.assetid: 5f721fb3-8b78-4597-9bc0-ca9bcd1f1d0e
-ms.openlocfilehash: ef2b326bef2288b52dba8988749e030ff0b46077
-ms.sourcegitcommit: 4ed2d68634eb2fb77e18110a2d26bc0008be369c
+ms.openlocfilehash: 288d6b0d373a5b318a139b030181c671e2c01048
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89556008"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91507583"
 ---
 # <a name="remainder-remainderf-remainderl"></a>remainder, remainderf, remainderl
 
@@ -70,7 +70,7 @@ Der Nenner.
 
 Der Gleit Komma Rest von *x*  /  *y*. Wenn der Wert von *y* 0,0 ist, gibt **Rest** einen stillen NaN-Wert zurück. Informationen zur Darstellung eines stillen Nan durch die **printf** -Familie finden Sie unter [printf, _printf_l, wprintf, _wprintf_l](printf-printf-l-wprintf-wprintf-l.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **Rest** -Funktionen berechnen den Gleit Komma Rest *r* von *x*  /  *y* , d. h. *x*  =  *n* \* *y*  +  *r*, wobei *n*die Ganzzahl ist, die dem Wert am nächsten liegt, bis zu *x*  /  *y* , und *n*ist auch immer, wenn &#124; *n*  -  *x*  /  *y* &#124; = 1/2. Wenn *r* = 0 ist, hat *r* das gleiche Vorzeichen wie *x*.
 
@@ -80,7 +80,7 @@ Wenn Sie das- \<tgmath.h> `remainder()` Makro verwenden, bestimmt der Typ des Ar
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 |Funktion|Erforderlicher Header (C)|Erforderlicher Header (C++)|
 |--------------|---------------------|-|
@@ -114,7 +114,7 @@ The remainder of -10.00 / 3.00 is -1.000000
 ## <a name="see-also"></a>Weitere Informationen
 
 [Gleit Komma Unterstützung](../../c-runtime-library/floating-point-support.md)\
-[ldiv, lldiv](ldiv-lldiv.md)\
+[ldiv, lldiv](./div.md)\
 [imaxdiv](imaxdiv.md)\
 ["f", "f"](fmod-fmodf.md)\
 [remquo, remquof, remquol](remquo-remquof-remquol.md)

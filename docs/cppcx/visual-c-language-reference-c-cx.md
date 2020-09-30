@@ -2,16 +2,16 @@
 title: C++/CX-Sprachreferenz
 ms.date: 09/15/2017
 ms.assetid: 3f6abf92-4e5e-4ed8-8e11-f9252380d30a
-ms.openlocfilehash: 4f3816280630a6a061eb037a33367ef4e9d90375
-ms.sourcegitcommit: 6b3d793f0ef3bbb7eefaf9f372ba570fdfe61199
+ms.openlocfilehash: f28270ace3965a3cf89e250a873af14e48390708
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86403854"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91507425"
 ---
 # <a name="ccx-language-reference"></a>C++/CX-Sprachreferenz
 
-C++/CX ist ein Satz von Erweiterungen für die C++-Sprache, die die Erstellung von Windows-apps und Windows-Runtime Komponenten in einer Ausdrucksweise ermöglichen, die so nah wie möglich an modern C++ ist. Verwenden Sie C++/CX, um Windows-apps und-Komponenten in nativem Code zu schreiben, die problemlos mit Visual c#, Visual Basic und JavaScript und anderen Sprachen, die die Windows-Runtime unterstützen, interagieren können. In den seltenen Fällen, die direkten Zugriff auf die unformatierten COM-Schnittstellen oder nicht Ausnahme Code erfordern, können Sie die [Windows-Runtime C++ Template Library (WRL)](../windows/windows-runtime-cpp-template-library-wrl.md)verwenden.
+C++/CX ist ein Satz von Erweiterungen für die C++-Sprache, die die Erstellung von Windows-apps und Windows-Runtime Komponenten in einer Ausdrucksweise ermöglichen, die so nah wie möglich an modern C++ ist. Verwenden Sie C++/CX, um Windows-apps und-Komponenten in nativem Code zu schreiben, die problemlos mit Visual c#, Visual Basic und JavaScript und anderen Sprachen, die die Windows-Runtime unterstützen, interagieren können. In den seltenen Fällen, die direkten Zugriff auf die unformatierten COM-Schnittstellen oder nicht Ausnahme Code erfordern, können Sie die [Windows-Runtime C++ Template Library (WRL)](./wrl/windows-runtime-cpp-template-library-wrl.md)verwenden.
 
 > [!NOTE]
 > **/WinRT ist die empfohlene Alternative zu C++/CX. [ C++](/windows/uwp/cpp-and-winrt-apis/index)** Dabei handelt es sich um eine neue, standardmäßige c++ 17-sprach Projektion für Windows-Runtime-APIs, die im neuesten Windows 10 SDK ab Version 1803 verfügbar ist. C++/WinRT wird vollständig in Header Dateien implementiert und wurde entwickelt, um Ihnen erstklassigen Zugriff auf die moderne Windows-API zu ermöglichen.
@@ -28,7 +28,7 @@ Mithilfe von C++/CX können Sie Folgendes erstellen:
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-| Link | BESCHREIBUNG |
+| Link | Beschreibung |
 |--|--|
 | [Kurzübersicht](../cppcx/quick-reference-c-cx.md) | Tabelle mit Schlüsselwörtern und Operatoren für C++/CX. |
 | [Typensystem](../cppcx/type-system-c-cx.md) | Beschreibt grundlegende C++/CX-Typen und-Programmierungskonstrukte und erläutert, wie C++/CX verwendet wird, um Windows-Runtime Typen zu nutzen und zu erstellen |

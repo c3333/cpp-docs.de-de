@@ -24,12 +24,12 @@ helpviewer_keywords:
 - files [C++], editable types
 - resource editing
 ms.assetid: 4d2b6fcc-07cf-4289-be87-83a60f69533c
-ms.openlocfilehash: 087cd613fa0dfd9cb6e07ac47a6a38d63bba004e
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 463c27959b049436e29f872c966bc276c6ef5f2d
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80167874"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91507014"
 ---
 # <a name="resource-files-c"></a>Ressourcendateien (C++)
 
@@ -46,7 +46,7 @@ Der Begriff " *Ressourcen Datei* " kann auf eine Reihe von Dateitypen verweisen,
 
 - Eine einzelne Ressource, die als eigenständige Datei vorhanden ist. Dieser Typ enthält eine Bitmap, ein Symbol oder eine Cursor Datei, auf die von einer RC-Datei verwiesen wird.
 
-- Eine von der Entwicklungsumgebung generierte Header Datei. Dieser Typ enthält `Resource.h`, auf die von einer RC-Datei verwiesen wird.
+- Eine von der Entwicklungsumgebung generierte Header Datei. Dieser Typ enthält `Resource.h` , auf den von einer RC-Datei verwiesen wird.
 
 Ressourcen, die in anderen Dateitypen, z. b. exe-, dll-und res-Dateien, gefunden werden, werden als *Ressourcen*bezeichnet.
 
@@ -54,7 +54,7 @@ Sie können in Ihrem Projekt mit *Ressourcen Dateien* und *Ressourcen* arbeiten.
 
 - Arbeiten mit geschachtelten und bedingt eingeschlossenen Ressourcendateien.
 
-- Aktualisieren Sie vorhandene Ressourcen, oder konvertieren Sie C++Sie in eine Visualisierung.
+- Aktualisieren Sie vorhandene Ressourcen, oder konvertieren Sie Sie in Visual C++.
 
 - Importieren oder Exportieren grafischer Ressourcendateien in die oder aus der aktuelle(n) Ressourcendatei.
 
@@ -90,7 +90,7 @@ Beim Bearbeiten von Ressourcen arbeitet die Visual Studio-Umgebung mit und wirkt
 
 ## <a name="manifest-resources"></a>Manifestressourcen
 
-In C++ Desktop Projekten sind Manifest-Ressourcen XML-Dateien, die die von einer Anwendung verwendeten Abhängigkeiten beschreiben. In Visual Studio wird von dieser vom MFC-Assistenten generierten Manifest-Datei z. b. definiert, welche Version der allgemeinen Windows-Steuerelement-DLLs von der Anwendung verwendet werden soll:
+In C++-Desktop Projekten sind Manifest-Ressourcen XML-Dateien, die die von einer Anwendung verwendeten Abhängigkeiten beschreiben. In Visual Studio wird von dieser vom MFC-Assistenten generierten Manifest-Datei z. b. definiert, welche Version der allgemeinen Windows-Steuerelement-DLLs von der Anwendung verwendet werden soll:
 
 ```xml
 <description>Your app description here</description>
@@ -108,12 +108,12 @@ In C++ Desktop Projekten sind Manifest-Ressourcen XML-Dateien, die die von einer
 </dependency>
 ```
 
-Für eine Windows XP-oder Windows Vista-Anwendung sollte die Manifestressource die aktuellste Version der allgemeinen Windows-Steuerelemente angeben, die von der Anwendung verwendet werden soll. Im obigen Beispiel wird Version `6.0.0.0`verwendet, die das [Syslink-Steuer](/windows/win32/Controls/syslink-overview)Element unterstützt.
+Für eine Windows XP-oder Windows Vista-Anwendung sollte die Manifestressource die aktuellste Version der allgemeinen Windows-Steuerelemente angeben, die von der Anwendung verwendet werden soll. Im obigen Beispiel wird die-Version verwendet `6.0.0.0` , die das [Syslink-Steuer](/windows/win32/Controls/syslink-overview)Element unterstützt.
 
 > [!NOTE]
 > Es kann nur eine Manifestressource pro Modul verwendet werden.
 
-Um die in einer Manifestressource enthaltenen Versions-und Typinformationen anzuzeigen, öffnen Sie die Datei in einem XML-Viewer oder im Text-Editor von Visual Studio. Beim Öffnen einer Manifestressource aus [Ressourcenansicht](../windows/resource-view-window.md)wird die Ressource im Binärformat geöffnet.
+Um die in einer Manifestressource enthaltenen Versions-und Typinformationen anzuzeigen, öffnen Sie die Datei in einem XML-Viewer oder im Text-Editor von Visual Studio. Beim Öffnen einer Manifestressource aus [Ressourcenansicht](./how-to-create-a-resource-script-file.md)wird die Ressource im Binärformat geöffnet.
 
 ### <a name="to-open-a-manifest-resource"></a>So öffnen Sie eine Manifestressource
 
@@ -131,6 +131,6 @@ Win32
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Arbeiten mit Ressourcendateien](../windows/working-with-resource-files.md)<br/>
-[Ressourcenbezeichner (Symbole)](../windows/symbols-resource-identifiers.md)<br/>
-[Ressourcen-Editor](../windows/resource-editors.md)<br/>
+[Working with Resource Files (Arbeiten mit Ressourcendateien)](../windows/working-with-resource-files.md)<br/>
+[Ressourcen Bezeichner (Symbole)](../windows/symbols-resource-identifiers.md)<br/>
+[Ressourcen-Editoren](../windows/resource-editors.md)<br/>

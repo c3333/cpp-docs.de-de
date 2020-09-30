@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - std::charconv [C++], to_chars
 - std::charconv [C++], from_chars
-ms.openlocfilehash: b8117f2a272f33be2bb5fef6ba8fa53ec794b63b
-ms.sourcegitcommit: f1752bf90b4f869633a859ace85439ca19e208b2
+ms.openlocfilehash: cde2ae6b6275543ec74d859b9a953f8673da9c2b
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88722153"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91507752"
 ---
 # <a name="ltcharconvgt-functions"></a>&lt;chardev- &gt; Funktionen
 
@@ -94,7 +94,7 @@ Für Gleit Komma Konvertierungen die Anzahl der Ziffern der Genauigkeit für den
 
 Eine [to_chars_result](to-chars-result-structure.md) , die das Ergebnis der Konvertierung enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Funktionen, die einen [chars_format](chars-format-class.md) -Parameter verwenden, bestimmen den Konvertierungsspezifizierer wie `printf()` folgt: der Konvertierungsspezifizierer ist, wenn ist, `'f'` `fmt` `chars_format::fixed` `'e'` `fmt` `chars_format::scientific` `'a'` (ohne die führende `0x` im Ergebnis) `fmt` , wenn ist, `chars_format::hex` und wenn ist `'g'` `fmt` `chars_format::general` . Die Angabe der kürzesten Fixed-Notation kann zu einer längeren Ausgabe führen, da Sie möglicherweise die kürzeste Darstellung darstellt, wenn der Wert sehr groß oder sehr klein ist.
 
@@ -121,7 +121,7 @@ template <typename T> void TestToChars(const T t)
     char buf[100]; // 100 is large enough for double and long double values because the longest possible outputs are "-1.23456735e-36" and "-1.2345678901234567e-100".
     constexpr size_t size = IsFloat ? 15 : 24;
     const std::to_chars_result res = std::to_chars(buf, buf + size, t);  // points to buffer area it can use. Must be char, not wchar_t, etc.
-    
+
     if (res.ec == std::errc{}) // no error
     {
         // %.*s provides the exact number of characters to output because the output range, [buf, res.ptr), isn't null-terminated
@@ -183,7 +183,7 @@ Bei ganzzahligen Konvertierungen die Basis, die während der Konvertierung verwe
 *fmt*\
 Für Gleit Komma Konvertierungen das Format der Sequenz von Zeichen, die konvertiert wird. Weitere Informationen finden Sie unter [chars_format](chars-format-class.md) .
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die- `from_chars()` Funktionen analysieren die Zeichenfolge ( \[ `first` `last` ) für ein Zahlenmuster, bei dem \[ `first` , `last` ) ein gültiger Bereich sein muss.
 
@@ -242,7 +242,7 @@ int main()
 
 /Std: c++ 17 (oder höher) ist erforderlich.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [\<charconv>](charconv.md)  
 [Die kürzeste Dezimal Zeichenfolge, die von Roundtrips](https://www.exploringbinary.com/the-shortest-decimal-string-that-round-trips-examples/) 

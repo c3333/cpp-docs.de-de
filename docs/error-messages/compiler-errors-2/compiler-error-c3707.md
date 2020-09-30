@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C3707
 ms.assetid: ac63a5dd-7a4b-48d2-9f2a-be9cb090134c
-ms.openlocfilehash: 6faf035c0f4f68b10b187c56bea4cafc776998cf
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: a09bf080c72e154a37cec5cdb75e714c12dd7150
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74757955"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91507982"
 ---
 # <a name="compiler-error-c3707"></a>Compilerfehler C3707
 
 "Function": die dispinterface-Methode muss eine "DISPID" aufweisen.
 
-Wenn Sie eine `dispinterface` Methode verwenden, müssen Sie Ihr eine `dispid`zuweisen. Um diesen Fehler zu beheben, weisen Sie der `dispinterface`-Methode einen `dispid` zu, indem Sie beispielsweise das `id`-Attribut für die-Methode im folgenden Beispiel auskommentieren. Weitere Informationen finden Sie in den Attributen " [dispinterface](../../windows/dispinterface.md) " und " [ID](../../windows/id.md)".
+Wenn Sie eine `dispinterface` Methode verwenden, müssen Sie Ihr eine zuweisen `dispid` . Um diesen Fehler zu beheben, weisen `dispid` Sie der-Methode einen zu `dispinterface` , indem Sie beispielsweise das- `id` Attribut für die-Methode im folgenden Beispiel auskommentieren. Weitere Informationen finden Sie in den Attributen " [dispinterface](../../windows/attributes/dispinterface.md) " und " [ID](../../windows/attributes/id.md)".
 
 Im folgenden Beispiel wird C3707 generiert:
 

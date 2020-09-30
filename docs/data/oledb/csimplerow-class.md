@@ -34,12 +34,12 @@ helpviewer_keywords:
 - m_dwRef
 - m_iRowset
 ms.assetid: 06d9621d-60cc-4508-8b0c-528d1b1a809b
-ms.openlocfilehash: c332fc0c653bbde3a69421b8166d4d099eaeeaf4
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: c0d7ea0966b9a582e4a6969573458bca2e8a0fea
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88841076"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91507222"
 ---
 # <a name="csimplerow-class"></a>CSimpleRow-Klasse
 
@@ -55,7 +55,7 @@ class CSimpleRow
 
 **Header:** „atldb.h“
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -75,7 +75,7 @@ class CSimpleRow
 
 ## <a name="remarks"></a>Bemerkungen
 
-Ein Zeilen Handle ist logisch ein eindeutiges Tag für eine Ergebniszeile. `IRowsetImpl` erstellt ein neues `CSimpleRow` für jede in [IRowset timpl:: GetNextRows](../../data/oledb/irowsetimpl-getnextrows.md)angeforderte Zeile. `CSimpleRow` kann auch durch ihre eigene Implementierung des Zeilen Handles ersetzt werden, da es sich um ein Standardvorlagen Argument für handelt `IRowsetImpl` . Die einzige Anforderung, diese Klasse zu ersetzen, besteht darin, dass die Ersetzungs Klasse einen Konstruktor bereitstellt, der einen einzelnen Parameter vom Typ **Long**akzeptiert.
+Ein Zeilen Handle ist logisch ein eindeutiges Tag für eine Ergebniszeile. `IRowsetImpl` erstellt ein neues `CSimpleRow` für jede in [IRowset timpl:: GetNextRows](./irowsetimpl-class.md#getnextrows)angeforderte Zeile. `CSimpleRow` kann auch durch ihre eigene Implementierung des Zeilen Handles ersetzt werden, da es sich um ein Standardvorlagen Argument für handelt `IRowsetImpl` . Die einzige Anforderung, diese Klasse zu ersetzen, besteht darin, dass die Ersetzungs Klasse einen Konstruktor bereitstellt, der einen einzelnen Parameter vom Typ **Long**akzeptiert.
 
 ## <a name="csimplerowaddrefrow"></a><a name="addrefrow"></a> Csimplerow:: Adresszeilen
 
@@ -123,7 +123,7 @@ in Index für das aktuelle Rowset.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Legt [m_iRowset](../../data/oledb/csimplerow-m-irowset.md) auf *irowsetcur*fest.
+Legt [m_iRowset](#irowset) auf *irowsetcur*fest.
 
 ## <a name="csimplerowreleaserow"></a><a name="releaserow"></a> Csimplerow:: releaserow
 

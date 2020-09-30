@@ -228,12 +228,12 @@ helpviewer_keywords:
 - Update method
 - UpdateAll method
 ms.assetid: b0228a90-b8dd-47cc-b397-8d4c15c1e7f4
-ms.openlocfilehash: 8cacbd6d188b3453c0111cca6565b7def9e3aa1e
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: b351530326e0dc4ed0b72db50d17717824eb6bb4
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88831566"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91507285"
 ---
 # <a name="crowset-class"></a>CRowset-Klasse
 
@@ -249,13 +249,13 @@ class CRowset
 ### <a name="parameters"></a>Parameter
 
 *TAccessor*<br/>
-Eine Accessor-Klasse. Der Standardwert ist `CAccessorBase`.
+Eine Accessor-Klasse. Der Standardwert lautet `CAccessorBase`.
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
 **Header:** atldbcli.h
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="methods"></a>Methoden
 
@@ -282,8 +282,8 @@ Eine Accessor-Klasse. Der Standardwert ist `CAccessorBase`.
 |[MoveToRatio](#movetoratio)|Ruft Zeilen ab einer Bruch Position im Rowset ab.|
 |[ReleaseRows](#releaserows)|Ruft [IRowset:: ReleaseRows](/previous-versions/windows/desktop/ms719771(v=vs.85)) auf, um das aktuelle Zeilen Handle freizugeben.|
 |[SetData](#setdata)|Legt Datenwerte in einer oder mehreren Spalten einer Zeile mit [IRowsetChange: SetData](/previous-versions/windows/desktop/ms721232(v=vs.85))fest.|
-|[Rückgängig](#undo)|Macht Änderungen an einer Zeile seit dem letzten Abrufen oder [Aktualisieren](../../data/oledb/crowset-update.md)unverändert.|
-|[Aktualisieren](#update)|Überträgt alle ausstehenden Änderungen, die seit dem letzten Abrufen oder aktualisieren an der aktuellen Zeile vorgenommen wurden.|
+|[Rückgängig](#undo)|Macht Änderungen an einer Zeile seit dem letzten Abrufen oder [Aktualisieren](#update)unverändert.|
+|[Update](#update)|Überträgt alle ausstehenden Änderungen, die seit dem letzten Abrufen oder aktualisieren an der aktuellen Zeile vorgenommen wurden.|
 |[UpdateAll](#updateall)|Überträgt alle ausstehenden Änderungen, die seit dem letzten Abrufen oder aktualisieren an allen Zeilen vorgenommen wurden.|
 
 ## <a name="remarks"></a>Bemerkungen
@@ -308,7 +308,7 @@ Ein HRESULT-Standard.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode erhöht den Verweis Zähler für das aktuelle Zeilen handle. Ruft [ReleaseRows](../../data/oledb/crowset-releaserows.md) auf, um die Anzahl zu verringern. Zeilen, die von den Verschiebungs Methoden zurückgegeben werden, haben einen Verweis Zähler von 1.
+Diese Methode erhöht den Verweis Zähler für das aktuelle Zeilen handle. Ruft [ReleaseRows](#releaserows) auf, um die Anzahl zu verringern. Zeilen, die von den Verschiebungs Methoden zurückgegeben werden, haben einen Verweis Zähler von 1.
 
 ## <a name="crowsetclose"></a><a name="close"></a> CRowset:: Close
 
@@ -497,7 +497,7 @@ Ein HRESULT-Standard.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn Sie einen Accessor angeben, der in [BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md)keinen Autoaccessor ist, verwenden Sie diese Methode, um die Daten explizit durch übergeben der Accessornummer zu erhalten.
+Wenn Sie einen Accessor angeben, der in [BEGIN_ACCESSOR](./macros-and-global-functions-for-ole-db-consumer-templates.md#begin_accessor)keinen Autoaccessor ist, verwenden Sie diese Methode, um die Daten explizit durch übergeben der Accessornummer zu erhalten.
 
 ## <a name="crowsetgetdatahere"></a><a name="getdatahere"></a> CRowset:: GetDataHere
 
@@ -820,7 +820,7 @@ Ein HRESULT-Standard.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Für das `SetData` Formular, das keine Argumente akzeptiert, werden alle Accessoren für die Aktualisierung verwendet. In der Regel `SetData` wird aufgerufen, um Datenwerte in Spalten in einer Zeile festzulegen. Anschließend wird [Update](../../data/oledb/crowset-update.md) aufgerufen, um diese Änderungen zu übertragen.
+Für das `SetData` Formular, das keine Argumente akzeptiert, werden alle Accessoren für die Aktualisierung verwendet. In der Regel `SetData` wird aufgerufen, um Datenwerte in Spalten in einer Zeile festzulegen. Anschließend wird [Update](#update) aufgerufen, um diese Änderungen zu übertragen.
 
 Diese Methode erfordert die optionale Schnittstelle `IRowsetChange` , die möglicherweise nicht für alle Anbieter unterstützt wird. wenn dies der Fall ist, gibt die Methode E_NOINTERFACE zurück. Sie müssen auch `DBPROP_IRowsetChange` auf VARIANT_TRUE festlegen, bevor Sie `Open` für die Tabelle oder den Befehl aufrufen, der das Rowset enthält.
 
@@ -828,7 +828,7 @@ Der Einstellungs Vorgang kann fehlschlagen, wenn eine oder mehrere Spalten nicht
 
 ## <a name="crowsetundo"></a><a name="undo"></a> CRowset:: Undo
 
-Macht Änderungen an einer Zeile seit dem letzten Abrufen oder [Aktualisieren](../../data/oledb/crowset-update.md)unverändert.
+Macht Änderungen an einer Zeile seit dem letzten Abrufen oder [Aktualisieren](#update)unverändert.
 
 ### <a name="syntax"></a>Syntax
 
@@ -886,7 +886,7 @@ Ein HRESULT-Standard.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Überträgt alle ausstehenden Änderungen, die an der aktuellen Zeile vorgenommen wurden, seit diese Zeile zuletzt abgerufen oder aktualisiert wurde (mit `Update` oder [UpdateAll](../../data/oledb/crowset-updateall.md)). In der Regel wird [SetData](../../data/oledb/crowset-setdata.md) aufgerufen, um Datenwerte in Spalten in einer Zeile festzulegen. Anschließend wird aufgerufen, `Update` um diese Änderungen zu übertragen.
+Überträgt alle ausstehenden Änderungen, die an der aktuellen Zeile vorgenommen wurden, seit diese Zeile zuletzt abgerufen oder aktualisiert wurde (mit `Update` oder [UpdateAll](#updateall)). In der Regel wird [SetData](#setdata) aufgerufen, um Datenwerte in Spalten in einer Zeile festzulegen. Anschließend wird aufgerufen, `Update` um diese Änderungen zu übertragen.
 
 Diese Methode erfordert die optionale Schnittstelle `IRowsetUpdate` , die möglicherweise nicht für alle Anbieter unterstützt wird. wenn dies der Fall ist, gibt die Methode E_NOINTERFACE zurück. Sie müssen auch `DBPROP_IRowsetUpdate` auf VARIANT_TRUE festlegen, bevor Sie `Open` für die Tabelle oder den Befehl aufrufen, der das Rowset enthält.
 
@@ -915,7 +915,7 @@ vorgenommen Ein Zeiger auf den Speicherort, an dem `Update` den Zeilen Statuswer
 
 ### <a name="remarks"></a>Bemerkungen
 
-Überträgt alle ausstehenden Änderungen, die an allen Zeilen vorgenommen wurden, da diese Zeilen zuletzt mit [Update](../../data/oledb/crowset-update.md) oder aktualisiert wurden `UpdateAll` . `UpdateAll` aktualisiert jede Zeile, die geändert wurde, unabhängig davon, ob Sie noch über das Handle verfügen (siehe *pphrow*).
+Überträgt alle ausstehenden Änderungen, die an allen Zeilen vorgenommen wurden, da diese Zeilen zuletzt mit [Update](#update) oder aktualisiert wurden `UpdateAll` . `UpdateAll` aktualisiert jede Zeile, die geändert wurde, unabhängig davon, ob Sie noch über das Handle verfügen (siehe *pphrow*).
 
 Wenn Sie z. b. `Insert` zum Einfügen von fünf Zeilen in ein Rowset verwendet haben, können Sie entweder fünfmal aufzurufen `Update` oder einmal aufzurufen, `UpdateAll` um alle zu aktualisieren.
 

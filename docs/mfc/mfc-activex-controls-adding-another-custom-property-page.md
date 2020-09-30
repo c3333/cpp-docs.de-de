@@ -7,12 +7,12 @@ helpviewer_keywords:
 - ActiveX controls [MFC], property pages
 - MFC ActiveX controls [MFC], property pages
 ms.assetid: fcf7e119-9f29-41a9-908d-e9b1607e08af
-ms.openlocfilehash: 33fd297ee509b341d39d9db21af54a3988f6256e
-ms.sourcegitcommit: c21b05042debc97d14875e019ee9d698691ffc0b
+ms.openlocfilehash: a749c5d8d676ac85c3c2085eb041328aff599ab8
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84618285"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91508879"
 ---
 # <a name="mfc-activex-controls-adding-another-custom-property-page"></a>MFC-ActiveX-Steuerelemente: Hinzufügen einer weiteren benutzerdefinierten Eigenschaftenseite
 
@@ -24,9 +24,9 @@ In den folgenden Verfahren wird ein vom ActiveX-Steuerelement-Assistenten erstel
 
 Weitere Informationen zur Verwendung von Eigenschaften Seiten in einem ActiveX-Steuerelement finden Sie in den folgenden Artikeln:
 
-- [MFC-ActiveX-Steuerelemente: Eigenschaftenseite](mfc-activex-controls-property-pages.md)
+- [MFC-ActiveX-Steuerelemente: Eigenschaften Seiten](mfc-activex-controls-property-pages.md)
 
-- [MFC-ActiveX-Steuerelemente: Verwenden von vordefinierten Eigenschaftenseiten](mfc-activex-controls-using-stock-property-pages.md)
+- [MFC-ActiveX-Steuerelemente: Verwenden von vordefinierten Eigenschaften Seiten](mfc-activex-controls-using-stock-property-pages.md)
 
     > [!NOTE]
     >  Es wird dringend empfohlen, dass neue Eigenschaften Seiten den Größen Standard für die Eigenschaften Seiten des ActiveX-Steuer Elements entsprechen. Die Eigenschaften Seiten "Stock Picture" und "Color" messen 250 x 62 Dialog Einheiten (DLU). Die Eigenschaften Seite Standard Schriftart ist 250 x 110 DLUs. Die Standardeigenschaften Seite, die vom ActiveX-Steuerelement-Assistenten erstellt wurde, verwendet den dlu-Standard von 250 x 62.
@@ -55,7 +55,7 @@ Weitere Informationen zur Verwendung von Eigenschaften Seiten in einem ActiveX-S
 
 1. Klicken Sie im Kontextmenü auf **Hinzufügen** , und klicken Sie dann auf **Klasse hinzufügen**.
 
-   Dadurch wird das Dialogfeld [Klasse hinzufügen](../ide/add-class-dialog-box.md) geöffnet.
+   Dadurch wird das Dialogfeld [Klasse hinzufügen](../ide/adding-a-class-visual-cpp.md#add-class-dialog-box) geöffnet.
 
 1. Doppelklicken Sie auf die **MFC-Klassen** Vorlage.
 
@@ -107,6 +107,6 @@ Der nächste Schritt umfasst das Erstellen von zwei neuen Zeichen folgen Ressour
 
 Nachdem Sie die erforderlichen Änderungen vorgenommen haben, erstellen Sie das Projekt neu, und verwenden Sie den Test Container, um die neue Eigenschaften Seite zu testen. Informationen zum Zugriff auf den Testcontainer finden Sie unter [Testen von Eigenschaften und Ereignissen mit dem Testcontainer](testing-properties-and-events-with-test-container.md) .
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [MFC-ActiveX-Steuerelemente](mfc-activex-controls.md)

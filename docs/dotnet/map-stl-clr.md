@@ -99,12 +99,12 @@ helpviewer_keywords:
 - operator> (map) member [STL/CLR]
 - operator>= (map) member [STL/CLR]
 ms.assetid: 8b0a7764-b5e4-4175-a802-82b72eb8662a
-ms.openlocfilehash: cd06942d3795dda9e6c6aaa8794957018fa96ace
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 31d696c1bf85cdcb1d662474042c82524abdfcf1
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87216374"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91508593"
 ---
 # <a name="map-stlclr"></a>map (STL/CLR)
 
@@ -116,9 +116,9 @@ In der Beschreibung unten `GValue` ist identisch mit folgendem:
 
 Dabei gilt:
 
-`GKey`ist identisch mit *Key* , es sei denn, der letztere ist ein Ref-Typ. in diesem Fall ist es`Key^`
+`GKey` ist identisch mit *Key* , es sei denn, der letztere ist ein Ref-Typ. in diesem Fall ist es `Key^`
 
-`GMapped`ist identisch mit dem zugeordneten, es *sei denn,* der letztere ist ein Ref-Typ. in diesem Fall ist es`Mapped^`
+`GMapped` ist identisch mit dem zugeordneten, es *sei denn,* der letztere ist ein Ref-Typ. in diesem Fall ist es `Mapped^`
 
 ## <a name="syntax"></a>Syntax
 
@@ -143,7 +143,7 @@ template<typename Key,
 *Schlüssel*<br/>
 Der Typ der Schlüsselkomponente eines Elements in der kontrollierten Sequenz.
 
-*Mapped*<br/>
+*Grafi*<br/>
 Der Typ der zusätzlichen Komponente eines Elements in der kontrollierten Sequenz.
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
@@ -154,7 +154,7 @@ Der Typ der zusätzlichen Komponente eines Elements in der kontrollierten Sequen
 
 ## <a name="declarations"></a>Deklarationen
 
-|Typendefinition|BESCHREIBUNG|
+|Typendefinition|Beschreibung|
 |---------------------|-----------------|
 |[map::const_iterator (STL/CLR)](#const_iterator)|Der Typ eines konstanten Iterators für die gesteuerte Sequenz.|
 |[map::const_reference (STL/CLR)](#const_reference)|Der Typ eines konstanten Verweises auf ein Element.|
@@ -174,7 +174,7 @@ Der Typ der zusätzlichen Komponente eines Elements in der kontrollierten Sequen
 |[map::value_compare (STL/CLR)](#value_compare)|Der Bestell Delegat für zwei Element Werte.|
 |[map::value_type (STL/CLR)](#value_type)|Der Typ eines Elements.|
 
-|Memberfunktion|BESCHREIBUNG|
+|Memberfunktion|Beschreibung|
 |---------------------|-----------------|
 |[map::begin (STL/CLR)](#begin)|Legt den Anfang der kontrollierten Sequenz fest.|
 |[map::clear (STL/CLR)](#clear)|Entfernt alle Elemente.|
@@ -197,7 +197,7 @@ Der Typ der zusätzlichen Komponente eines Elements in der kontrollierten Sequen
 |[map::upper_bound (STL/CLR)](#upper_bound)|Findet das Ende des Bereichs, der einem angegebenen Schlüssel entspricht.|
 |[map::value_comp (STL/CLR)](#value_comp)|Kopiert den Bestell Delegaten für zwei Element Werte.|
 
-|Operator|BESCHREIBUNG|
+|Operator|Beschreibung|
 |--------------|-----------------|
 |[map::operator= (STL/CLR)](#op_as)|Ersetzt die kontrollierte Sequenz.|
 |[map::operator(STL/CLR)](#op)|Ordnet dem zugeordneten zugeordneten Wert einen Schlüssel zu.|
@@ -210,7 +210,7 @@ Der Typ der zusätzlichen Komponente eines Elements in der kontrollierten Sequen
 
 ## <a name="interfaces"></a>Schnittstellen
 
-|Schnittstelle|BESCHREIBUNG|
+|Schnittstelle|Beschreibung|
 |---------------|-----------------|
 |<xref:System.ICloneable>|Duplizieren eines Objekts.|
 |<xref:System.Collections.IEnumerable>|Sequenzieren Sie Elemente.|
@@ -224,11 +224,11 @@ Der Typ der zusätzlichen Komponente eines Elements in der kontrollierten Sequen
 
 Das-Objekt ordnet Speicher für die Sequenz zu, die er als einzelne Knoten steuert, und gibt diesen frei. Sie fügt Elemente in eine (fast) ausgeglichene Struktur ein, die durch Ändern der Verknüpfungen zwischen den Knoten geändert wird, ohne den Inhalt eines Knotens auf einen anderen zu kopieren. Dies bedeutet, dass Sie Elemente ohne Beeinträchtigung der restlichen Elemente frei einfügen und entfernen können.
 
-Das Objekt sortiert die Sequenz, die es steuert, indem es ein gespeichertes Delegatobjekt vom Typ [map:: key_compare (STL/CLR)](../dotnet/map-key-compare-stl-clr.md)aufruft. Beim Erstellen der Zuordnung können Sie das gespeicherte Delegatobjekt angeben. Wenn Sie kein Delegatobjekt angeben, ist der Standardwert der-Vergleich `operator<(key_type, key_type)` . Sie greifen auf dieses gespeicherte Objekt zu, indem Sie die Member-Funktion [map:: key_comp (STL/CLR)](../dotnet/map-key-comp-stl-clr.md)aufrufen `()` .
+Das Objekt sortiert die Sequenz, die es steuert, indem es ein gespeichertes Delegatobjekt vom Typ [map:: key_compare (STL/CLR)](#key_compare)aufruft. Beim Erstellen der Zuordnung können Sie das gespeicherte Delegatobjekt angeben. Wenn Sie kein Delegatobjekt angeben, ist der Standardwert der-Vergleich `operator<(key_type, key_type)` . Sie greifen auf dieses gespeicherte Objekt zu, indem Sie die Member-Funktion [map:: key_comp (STL/CLR)](#key_comp)aufrufen `()` .
 
-Ein solches Delegatobjekt muss eine strikte schwache Reihenfolge für Schlüssel vom Typ [map:: key_type (STL/CLR)](../dotnet/map-key-type-stl-clr.md)erzwingen. Dies bedeutet, dass für alle zwei Schlüssel `X` und `Y` :
+Ein solches Delegatobjekt muss eine strikte schwache Reihenfolge für Schlüssel vom Typ [map:: key_type (STL/CLR)](#key_type)erzwingen. Dies bedeutet, dass für alle zwei Schlüssel `X` und `Y` :
 
-`key_comp()(X, Y)`gibt bei jedem-Rückruf dasselbe boolesche Ergebnis zurück.
+`key_comp()(X, Y)` gibt bei jedem-Rückruf dasselbe boolesche Ergebnis zurück.
 
 Wenn `key_comp()(X, Y)` true ist, `key_comp()(Y, X)` muss false sein.
 
@@ -240,7 +240,7 @@ Für jedes Element, `X` das `Y` in der kontrollierten Sequenz vorangeht, `key_co
 
 Jedes Element enthält einen separaten Schlüssel und einen zugeordneten Wert. Die Sequenz wird so dargestellt, dass die Suche, das Einfügen und das Entfernen eines beliebigen Elements mit einer Reihe von Vorgängen, die proportional zum Logarithmus der Anzahl von Elementen in der Sequenz sind (logarithmische Zeit), ermöglicht wird. Darüber hinaus führt das Einfügen eines Elements nicht dazu, dass Iteratoren ungültig werden, und durch das Entfernen eines Elements werden nur solche Iteratoren ungültig, die auf das entfernte Element gezeigt haben.
 
-Eine Zuordnung unterstützt Bidirektionale Iteratoren. Dies bedeutet, dass Sie bei einem Iterator, der ein Element in der gesteuerten Sequenz festlegt, zu angrenzenden Elementen wechseln können. Ein spezieller Haupt Knoten entspricht dem Iterator, der von [map:: End (STL/CLR)](../dotnet/map-end-stl-clr.md)zurückgegeben wurde `()` . Sie können diesen Iterator verringern, um das letzte Element in der kontrollierten Sequenz zu erreichen, falls vorhanden. Sie können einen karteniterator erhöhen, um den Head-Knoten zu erreichen, und dann vergleicht er gleich `end()` . Sie können jedoch nicht den von zurückgegebenen Iterator dereferenzieren `end()` .
+Eine Zuordnung unterstützt Bidirektionale Iteratoren. Dies bedeutet, dass Sie bei einem Iterator, der ein Element in der gesteuerten Sequenz festlegt, zu angrenzenden Elementen wechseln können. Ein spezieller Haupt Knoten entspricht dem Iterator, der von [map:: End (STL/CLR)](#end)zurückgegeben wurde `()` . Sie können diesen Iterator verringern, um das letzte Element in der kontrollierten Sequenz zu erreichen, falls vorhanden. Sie können einen karteniterator erhöhen, um den Head-Knoten zu erreichen, und dann vergleicht er gleich `end()` . Sie können jedoch nicht den von zurückgegebenen Iterator dereferenzieren `end()` .
 
 Beachten Sie, dass Sie nicht direkt auf ein Kartenelement verweisen können, das die numerische Position erhält, die einen Random-Access-Iterator erfordert.
 
@@ -248,9 +248,9 @@ Ein karteniterator speichert ein Handle für den zugeordneten Karten Knoten, der
 
 Durch das Löschen oder Entfernen eines Elements wird der Dekonstruktor für den gespeicherten Wert aufgerufen. Wenn Sie den Container zerstören, werden alle Elemente gelöscht. Daher stellt ein Container, dessen Elementtyp eine Verweis Klasse ist, sicher, dass keine Elemente den Container überdauern. Beachten Sie jedoch, dass ein Container von Handles seine Elemente *nicht* zerstört.
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
-## <a name="mapbegin-stlclr"></a><a name="begin"></a>Map:: begin (STL/CLR)
+## <a name="mapbegin-stlclr"></a><a name="begin"></a> Map:: begin (STL/CLR)
 
 Legt den Anfang der kontrollierten Sequenz fest.
 
@@ -301,7 +301,7 @@ int main()
 *++begin() = [b 2]
 ```
 
-## <a name="mapclear-stlclr"></a><a name="clear"></a>Map:: Clear (STL/CLR)
+## <a name="mapclear-stlclr"></a><a name="clear"></a> Map:: Clear (STL/CLR)
 
 Entfernt alle Elemente.
 
@@ -313,7 +313,7 @@ void clear();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion ruft effektiv [map:: Erase (STL/CLR)](../dotnet/map-erase-stl-clr.md) Map: `(` [: begin (STL/CLR)](../dotnet/map-begin-stl-clr.md) `(),` [map:: End (STL/CLR)](../dotnet/map-end-stl-clr.md)auf `())` . Sie verwenden ihn, um sicherzustellen, dass die gesteuerte Sequenz leer ist.
+Die Member-Funktion ruft effektiv [map:: Erase (STL/CLR)](#erase) Map: `(` [: begin (STL/CLR)](#begin) `(),` [map:: End (STL/CLR)](#end)auf `())` . Sie verwenden ihn, um sicherzustellen, dass die gesteuerte Sequenz leer ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -359,7 +359,7 @@ size() = 0
 size() = 0
 ```
 
-## <a name="mapconst_iterator-stlclr"></a><a name="const_iterator"></a>Map:: const_iterator (STL/CLR)
+## <a name="mapconst_iterator-stlclr"></a><a name="const_iterator"></a> Map:: const_iterator (STL/CLR)
 
 Der Typ eines konstanten Iterators für die gesteuerte Sequenz.
 
@@ -401,7 +401,7 @@ int main()
 [a 1] [b 2] [c 3]
 ```
 
-## <a name="mapconst_reference-stlclr"></a><a name="const_reference"></a>Map:: const_reference (STL/CLR)
+## <a name="mapconst_reference-stlclr"></a><a name="const_reference"></a> Map:: const_reference (STL/CLR)
 
 Der Typ eines konstanten Verweises auf ein Element.
 
@@ -446,7 +446,7 @@ int main()
 [a 1] [b 2] [c 3]
 ```
 
-## <a name="mapconst_reverse_iterator-stlclr"></a><a name="const_reverse_iterator"></a>Map:: const_reverse_iterator (STL/CLR)
+## <a name="mapconst_reverse_iterator-stlclr"></a><a name="const_reverse_iterator"></a> Map:: const_reverse_iterator (STL/CLR)
 
 Der Typ eines konstanten umgekehrten Iterators für die gesteuerte Sequenz.
 
@@ -488,7 +488,7 @@ int main()
 [c 3] [b 2] [a 1]
 ```
 
-## <a name="mapcount-stlclr"></a><a name="count"></a>Map:: count (STL/CLR)
+## <a name="mapcount-stlclr"></a><a name="count"></a> Map:: count (STL/CLR)
 
 Sucht die Anzahl von Elementen, die einem angegebenen Schlüssel entsprechen.
 
@@ -541,7 +541,7 @@ count(L'b') = 1
 count(L'C') = 0
 ```
 
-## <a name="mapdifference_type-stlclr"></a><a name="difference_type"></a>Map::d ifference_type (STL/CLR)
+## <a name="mapdifference_type-stlclr"></a><a name="difference_type"></a> Map::d ifference_type (STL/CLR)
 
 Die Typen eines Abstands mit Vorzeichen zwischen zwei Elementen.
 
@@ -596,7 +596,7 @@ end()-begin() = 3
 begin()-end() = -3
 ```
 
-## <a name="mapempty-stlclr"></a><a name="empty"></a>Map:: Empty (STL/CLR)
+## <a name="mapempty-stlclr"></a><a name="empty"></a> Map:: Empty (STL/CLR)
 
 Testet, ob keine Elemente vorhanden sind.
 
@@ -608,7 +608,7 @@ bool empty();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt „true“ für eine leere gesteuerte Sequenz zurück. Dies entspricht [map:: Size (STL/CLR)](../dotnet/map-size-stl-clr.md) `() == 0` . Sie verwenden es, um zu testen, ob die Zuordnung leer ist.
+Die Memberfunktion gibt „true“ für eine leere gesteuerte Sequenz zurück. Dies entspricht [map:: Size (STL/CLR)](#size) `() == 0` . Sie verwenden es, um zu testen, ob die Zuordnung leer ist.
 
 ### <a name="example"></a>Beispiel
 
@@ -648,7 +648,7 @@ size() = 0
 empty() = True
 ```
 
-## <a name="mapend-stlclr"></a><a name="end"></a>Map:: End (STL/CLR)
+## <a name="mapend-stlclr"></a><a name="end"></a> Map:: End (STL/CLR)
 
 Legt das Ende der kontrollierten Sequenz fest.
 
@@ -695,7 +695,7 @@ int main()
     }
 ```
 
-## <a name="mapequal_range-stlclr"></a><a name="equal_range"></a>Map:: equal_range (STL/CLR)
+## <a name="mapequal_range-stlclr"></a><a name="equal_range"></a> Map:: equal_range (STL/CLR)
 
 Sucht den Bereich, der einem angegebenen Schlüssel entspricht.
 
@@ -712,7 +712,7 @@ Der zu suchende Schlüsselwert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion gibt ein paar von Iteratoren `cliext::pair<iterator, iterator>(` [map:: lower_bound (STL/CLR)](../dotnet/map-lower-bound-stl-clr.md) `(key),` [map:: upper_bound (STL/CLR)](../dotnet/map-upper-bound-stl-clr.md)zurück `(key))` . Sie verwenden Sie, um den Bereich der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden, die einem angegebenen Schlüssel entsprechen.
+Die Member-Funktion gibt ein paar von Iteratoren `cliext::pair<iterator, iterator>(` [map:: lower_bound (STL/CLR)](#lower_bound) `(key),` [map:: upper_bound (STL/CLR)](#upper_bound)zurück `(key))` . Sie verwenden Sie, um den Bereich der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden, die einem angegebenen Schlüssel entsprechen.
 
 ### <a name="example"></a>Beispiel
 
@@ -756,7 +756,7 @@ equal_range(L'x') empty = True
 [b 2]
 ```
 
-## <a name="maperase-stlclr"></a><a name="erase"></a>Map:: Erase (STL/CLR)
+## <a name="maperase-stlclr"></a><a name="erase"></a> Map:: Erase (STL/CLR)
 
 Entfernt Elemente an den angegebenen Positionen.
 
@@ -784,7 +784,7 @@ Zu Lösch Endes Element.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die erste Member-Funktion entfernt das-Element der kontrollierten Sequenz, auf die von *Where*verwiesen wird, und gibt einen Iterator zurück, der das erste Element festlegt, das hinter dem entfernten Element liegt, oder [map:: End (STL/CLR)](../dotnet/map-end-stl-clr.md) , `()` Wenn kein solches Element vorhanden ist. Sie verwenden es, um ein einzelnes Element zu entfernen.
+Die erste Member-Funktion entfernt das-Element der kontrollierten Sequenz, auf die von *Where*verwiesen wird, und gibt einen Iterator zurück, der das erste Element festlegt, das hinter dem entfernten Element liegt, oder [map:: End (STL/CLR)](#end) , `()` Wenn kein solches Element vorhanden ist. Sie verwenden es, um ein einzelnes Element zu entfernen.
 
 Die zweite Member-Funktion entfernt die Elemente der kontrollierten Sequenz im Bereich [ `first` , `last` ) und gibt einen Iterator zurück, der das erste über die entfernten Elemente hinaus verbliebene Element festlegt, oder, `end()` Wenn kein solches Element vorhanden ist. Sie verwenden Sie, um 0 (null) oder mehrere zusammenhängende Elemente zu entfernen.
 
@@ -849,7 +849,7 @@ erase(L'x') = 0
 erase(L'e') = 1
 ```
 
-## <a name="mapfind-stlclr"></a><a name="find"></a>Map:: Find (STL/CLR)
+## <a name="mapfind-stlclr"></a><a name="find"></a> Map:: Find (STL/CLR)
 
 Sucht ein Element, das einem angegebenen Schlüssel entspricht.
 
@@ -866,7 +866,7 @@ Der zu suchende Schlüsselwert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn mindestens ein Element in der kontrollierten Sequenz eine äquivalente Reihenfolge mit *Key*aufweist, gibt die Member-Funktion einen Iterator zurück, der eines dieser Elemente festlegt. Andernfalls wird [map:: End (STL/CLR)](../dotnet/map-end-stl-clr.md)zurückgegeben `()` . Sie verwenden Sie, um ein Element zu suchen, das sich derzeit in der kontrollierten Sequenz befindet, die einem angegebenen Schlüssel entspricht.
+Wenn mindestens ein Element in der kontrollierten Sequenz eine äquivalente Reihenfolge mit *Key*aufweist, gibt die Member-Funktion einen Iterator zurück, der eines dieser Elemente festlegt. Andernfalls wird [map:: End (STL/CLR)](#end)zurückgegeben `()` . Sie verwenden Sie, um ein Element zu suchen, das sich derzeit in der kontrollierten Sequenz befindet, die einem angegebenen Schlüssel entspricht.
 
 ### <a name="example"></a>Beispiel
 
@@ -908,7 +908,7 @@ find b = [b 2]
 find C = False
 ```
 
-## <a name="mapgeneric_container-stlclr"></a><a name="generic_container"></a>Map:: generic_container (STL/CLR)
+## <a name="mapgeneric_container-stlclr"></a><a name="generic_container"></a> Map:: generic_container (STL/CLR)
 
 Der Typ der generischen Schnittstelle für den Container.
 
@@ -972,7 +972,7 @@ int main()
 [a 1] [b 2] [c 3] [d 4] [e 5]
 ```
 
-## <a name="mapgeneric_iterator-stlclr"></a><a name="generic_iterator"></a>Map:: generic_iterator (STL/CLR)
+## <a name="mapgeneric_iterator-stlclr"></a><a name="generic_iterator"></a> Map:: generic_iterator (STL/CLR)
 
 Der Typ eines Iterators, der mit der generischen-Schnittstelle für den Container verwendet werden soll.
 
@@ -1029,7 +1029,7 @@ int main()
 [a 1]
 ```
 
-## <a name="mapgeneric_reverse_iterator-stlclr"></a><a name="generic_reverse_iterator"></a>Map:: generic_reverse_iterator (STL/CLR)
+## <a name="mapgeneric_reverse_iterator-stlclr"></a><a name="generic_reverse_iterator"></a> Map:: generic_reverse_iterator (STL/CLR)
 
 Der Typ eines umgekehrten Iterators, der mit der generischen-Schnittstelle für den Container verwendet werden soll.
 
@@ -1085,7 +1085,7 @@ int main()
 [c 3]
 ```
 
-## <a name="mapgeneric_value-stlclr"></a><a name="generic_value"></a>Map:: generic_value (STL/CLR)
+## <a name="mapgeneric_value-stlclr"></a><a name="generic_value"></a> Map:: generic_value (STL/CLR)
 
 Der Typ eines Elements, das mit der generischen-Schnittstelle für den Container verwendet werden soll.
 
@@ -1139,7 +1139,7 @@ int main()
 [a 1]
 ```
 
-## <a name="mapinsert-stlclr"></a><a name="insert"></a>Map:: Insert (STL/CLR)
+## <a name="mapinsert-stlclr"></a><a name="insert"></a> Map:: Insert (STL/CLR)
 
 Fügt Elemente hinzu.
 
@@ -1259,7 +1259,7 @@ insert(begin(), [L'y' 25]) = [y 25]
 [a 1] [b 2] [c 3] [x 24] [y 25]
 ```
 
-## <a name="mapiterator-stlclr"></a><a name="iterator"></a>Map:: Iterator (STL/CLR)
+## <a name="mapiterator-stlclr"></a><a name="iterator"></a> Map:: Iterator (STL/CLR)
 
 Der Typ eines Iterators für die gesteuerte Sequenz.
 
@@ -1301,7 +1301,7 @@ int main()
 [a 1] [b 2] [c 3]
 ```
 
-## <a name="mapkey_comp-stlclr"></a><a name="key_comp"></a>Map:: key_comp (STL/CLR)
+## <a name="mapkey_comp-stlclr"></a><a name="key_comp"></a> Map:: key_comp (STL/CLR)
 
 Kopiert den Bestell Delegaten für zwei Schlüssel.
 
@@ -1360,7 +1360,7 @@ compare(L'a', L'b') = False
 compare(L'b', L'a') = True
 ```
 
-## <a name="mapkey_compare-stlclr"></a><a name="key_compare"></a>Map:: key_compare (STL/CLR)
+## <a name="mapkey_compare-stlclr"></a><a name="key_compare"></a> Map:: key_compare (STL/CLR)
 
 Der Bestell Delegat für zwei Schlüssel.
 
@@ -1420,7 +1420,7 @@ compare(L'a', L'b') = False
 compare(L'b', L'a') = True
 ```
 
-## <a name="mapkey_type-stlclr"></a><a name="key_type"></a>Map:: key_type (STL/CLR)
+## <a name="mapkey_type-stlclr"></a><a name="key_type"></a> Map:: key_type (STL/CLR)
 
 Der Typ eines Sortierschlüssels.
 
@@ -1465,7 +1465,7 @@ int main()
 a b c
 ```
 
-## <a name="maplower_bound-stlclr"></a><a name="lower_bound"></a>Map:: lower_bound (STL/CLR)
+## <a name="maplower_bound-stlclr"></a><a name="lower_bound"></a> Map:: lower_bound (STL/CLR)
 
 Sucht den Anfang des Bereichs, der einem angegebenen Schlüssel entspricht.
 
@@ -1482,7 +1482,7 @@ Der zu suchende Schlüsselwert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion bestimmt das erste Element `X` in der kontrollierten Sequenz, das eine entsprechende *key*Reihenfolge aufweist. Wenn kein solches Element vorhanden ist, wird [map:: End (STL/CLR)](../dotnet/map-end-stl-clr.md)zurückgegeben `()` ; andernfalls wird ein Iterator zurückgegeben, der festlegt `X` . Sie verwenden Sie, um den Anfang einer Sequenz von Elementen zu suchen, die sich derzeit in der kontrollierten Sequenz befinden, die einem angegebenen Schlüssel entsprechen.
+Die Member-Funktion bestimmt das erste Element `X` in der kontrollierten Sequenz, das eine entsprechende *key*Reihenfolge aufweist. Wenn kein solches Element vorhanden ist, wird [map:: End (STL/CLR)](#end)zurückgegeben `()` ; andernfalls wird ein Iterator zurückgegeben, der festlegt `X` . Sie verwenden Sie, um den Anfang einer Sequenz von Elementen zu suchen, die sich derzeit in der kontrollierten Sequenz befinden, die einem angegebenen Schlüssel entsprechen.
 
 ### <a name="example"></a>Beispiel
 
@@ -1524,7 +1524,7 @@ lower_bound(L'x')==end() = True
 *lower_bound(L'b') = [b 2]
 ```
 
-## <a name="mapmake_value-stlclr"></a><a name="make_value"></a>Map:: make_value (STL/CLR)
+## <a name="mapmake_value-stlclr"></a><a name="make_value"></a> Map:: make_value (STL/CLR)
 
 Erstellt ein Wertobjekt.
 
@@ -1539,7 +1539,7 @@ static value_type make_value(key_type key, mapped_type mapped);
 *key*<br/>
 Der zu verwendende Schlüsselwert.
 
-*Grafi*<br/>
+*Zugeordnet*<br/>
 Zugeordneter Wert, der gesucht werden soll.
 
 ### <a name="remarks"></a>Bemerkungen
@@ -1573,7 +1573,7 @@ int main()
 [a 1] [b 2] [c 3]
 ```
 
-## <a name="mapmap-stlclr"></a><a name="map"></a>Map:: Map (STL/CLR)
+## <a name="mapmap-stlclr"></a><a name="map"></a> Map:: Map (STL/CLR)
 
 Erstellt ein container-Objekt.
 
@@ -1746,7 +1746,7 @@ size() = 0
 [a 1] [b 2] [c 3]
 ```
 
-## <a name="mapmapped_type-stlclr"></a><a name="mapped_type"></a>Map:: mapped_type (STL/CLR)
+## <a name="mapmapped_type-stlclr"></a><a name="mapped_type"></a> Map:: mapped_type (STL/CLR)
 
 Der Typ eines zugeordneten Werts, der jedem Schlüssel zugeordnet ist.
 
@@ -1791,7 +1791,7 @@ int main()
 1 2 3
 ```
 
-## <a name="mapoperator-stlclr"></a><a name="op_as"></a>Map:: Operator = (STL/CLR)
+## <a name="mapoperator-stlclr"></a><a name="op_as"></a> Map:: Operator = (STL/CLR)
 
 Ersetzt die kontrollierte Sequenz.
 
@@ -1846,7 +1846,7 @@ int main()
 [a 1] [b 2] [c 3]
 ```
 
-## <a name="mapoperatorstlclr"></a><a name="op"></a>Map:: Operator (STL/CLR)
+## <a name="mapoperatorstlclr"></a><a name="op"></a> Map:: Operator (STL/CLR)
 
 Ordnet dem zugeordneten zugeordneten Wert einen Schlüssel zu.
 
@@ -1913,7 +1913,7 @@ c1[b] = 2
 [A 10] [a 1] [b 2] [c 13]
 ```
 
-## <a name="maprbegin-stlclr"></a><a name="rbegin"></a>Map:: rbegin (STL/CLR)
+## <a name="maprbegin-stlclr"></a><a name="rbegin"></a> Map:: rbegin (STL/CLR)
 
 Legt den Anfang der umgekehrten kontrollierten Sequenz fest.
 
@@ -1964,7 +1964,7 @@ int main()
 *++rbegin() = [b 2]
 ```
 
-## <a name="mapreference-stlclr"></a><a name="reference"></a>Map:: Reference (STL/CLR)
+## <a name="mapreference-stlclr"></a><a name="reference"></a> Map:: Reference (STL/CLR)
 
 Der Typ eines Verweises auf ein Element.
 
@@ -2009,7 +2009,7 @@ int main()
 [a 1] [b 2] [c 3]
 ```
 
-## <a name="maprend-stlclr"></a><a name="rend"></a>Map:: rend (STL/CLR)
+## <a name="maprend-stlclr"></a><a name="rend"></a> Map:: rend (STL/CLR)
 
 Legt das Ende der umgekehrten kontrollierten Sequenz fest.
 
@@ -2062,7 +2062,7 @@ int main()
 *--rend() = [a 1]
 ```
 
-## <a name="mapreverse_iterator-stlclr"></a><a name="reverse_iterator"></a>Map:: reverse_iterator (STL/CLR)
+## <a name="mapreverse_iterator-stlclr"></a><a name="reverse_iterator"></a> Map:: reverse_iterator (STL/CLR)
 
 Der Typ eines umgekehrten Iterators für die gesteuerte Sequenz.
 
@@ -2104,7 +2104,7 @@ int main()
 [c 3] [b 2] [a 1]
 ```
 
-## <a name="mapsize-stlclr"></a><a name="size"></a>Map:: Size (STL/CLR)
+## <a name="mapsize-stlclr"></a><a name="size"></a> Map:: Size (STL/CLR)
 
 Ermittelt die Anzahl von Elementen.
 
@@ -2116,7 +2116,7 @@ size_type size();
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Memberfunktion gibt die Länge der gesteuerten Sequenz zurück. Sie verwenden Sie, um die Anzahl der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden. Wenn Sie nur für Sie wichtig sind, ob die Sequenz eine Größe ungleich NULL aufweist, finden Sie weitere Informationen unter [map:: Empty (STL/CLR)](../dotnet/map-empty-stl-clr.md) `()` .
+Die Memberfunktion gibt die Länge der gesteuerten Sequenz zurück. Sie verwenden Sie, um die Anzahl der Elemente zu bestimmen, die sich derzeit in der kontrollierten Sequenz befinden. Wenn Sie nur für Sie wichtig sind, ob die Sequenz eine Größe ungleich NULL aufweist, finden Sie weitere Informationen unter [map:: Empty (STL/CLR)](#empty) `()` .
 
 ### <a name="example"></a>Beispiel
 
@@ -2156,7 +2156,7 @@ size() = 0 after clearing
 size() = 2 after adding 2
 ```
 
-## <a name="mapsize_type-stlclr"></a><a name="size_type"></a>Map:: size_type (STL/CLR)
+## <a name="mapsize_type-stlclr"></a><a name="size_type"></a> Map:: size_type (STL/CLR)
 
 Der Typ eines Abstands mit Vorzeichen zwischen zwei Elementen.
 
@@ -2204,7 +2204,7 @@ int main()
 end()-begin() = 3
 ```
 
-## <a name="mapswap-stlclr"></a><a name="swap"></a>Map:: Swap (STL/CLR)
+## <a name="mapswap-stlclr"></a><a name="swap"></a> Map:: Swap (STL/CLR)
 
 Vertauscht den Inhalt von zwei Containern.
 
@@ -2272,7 +2272,7 @@ int main()
 [a 1] [b 2] [c 3]
 ```
 
-## <a name="mapto_array-stlclr"></a><a name="to_array"></a>Map:: to_array (STL/CLR)
+## <a name="mapto_array-stlclr"></a><a name="to_array"></a> Map:: to_array (STL/CLR)
 
 Kopiert die gesteuerte Sequenz in ein neues Array.
 
@@ -2322,7 +2322,7 @@ int main()
 [a 1] [b 2] [c 3]
 ```
 
-## <a name="mapupper_bound-stlclr"></a><a name="upper_bound"></a>Map:: upper_bound (STL/CLR)
+## <a name="mapupper_bound-stlclr"></a><a name="upper_bound"></a> Map:: upper_bound (STL/CLR)
 
 Findet das Ende des Bereichs, der einem angegebenen Schlüssel entspricht.
 
@@ -2339,7 +2339,7 @@ Der zu suchende Schlüsselwert.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Member-Funktion bestimmt das letzte Element `X` in der kontrollierten Sequenz, das eine entsprechende *key*Reihenfolge aufweist. Wenn kein solches Element vorhanden ist oder wenn `X` das letzte Element in der kontrollierten Sequenz ist, gibt es [map:: End (STL/CLR)](../dotnet/map-end-stl-clr.md)zurück `()` . andernfalls gibt es einen Iterator zurück, der das erste Element über den Wert festlegt `X` . Sie verwenden es, um das Ende einer Sequenz von Elementen zu suchen, die sich derzeit in der kontrollierten Sequenz befinden, die einem angegebenen Schlüssel entspricht.
+Die Member-Funktion bestimmt das letzte Element `X` in der kontrollierten Sequenz, das eine entsprechende *key*Reihenfolge aufweist. Wenn kein solches Element vorhanden ist oder wenn `X` das letzte Element in der kontrollierten Sequenz ist, gibt es [map:: End (STL/CLR)](#end)zurück `()` . andernfalls gibt es einen Iterator zurück, der das erste Element über den Wert festlegt `X` . Sie verwenden es, um das Ende einer Sequenz von Elementen zu suchen, die sich derzeit in der kontrollierten Sequenz befinden, die einem angegebenen Schlüssel entspricht.
 
 ### <a name="example"></a>Beispiel
 
@@ -2381,7 +2381,7 @@ upper_bound(L'x')==end() = True
 *upper_bound(L'b') = [c 3]
 ```
 
-## <a name="mapvalue_comp-stlclr"></a><a name="value_comp"></a>Map:: value_comp (STL/CLR)
+## <a name="mapvalue_comp-stlclr"></a><a name="value_comp"></a> Map:: value_comp (STL/CLR)
 
 Kopiert den Bestell Delegaten für zwei Element Werte.
 
@@ -2428,7 +2428,7 @@ compare([L'a', 1], [L'b', 2]) = True
 compare([L'b', 2], [L'a', 1]) = False
 ```
 
-## <a name="mapvalue_compare-stlclr"></a><a name="value_compare"></a>Map:: Value_compare (STL/CLR)
+## <a name="mapvalue_compare-stlclr"></a><a name="value_compare"></a> Map:: Value_compare (STL/CLR)
 
 Der Bestell Delegat für zwei Element Werte.
 
@@ -2476,7 +2476,7 @@ compare([L'a', 1], [L'b', 2]) = True
 compare([L'b', 2], [L'a', 1]) = False
 ```
 
-## <a name="mapvalue_type-stlclr"></a><a name="value_type"></a>Map:: value_type (STL/CLR)
+## <a name="mapvalue_type-stlclr"></a><a name="value_type"></a> Map:: value_type (STL/CLR)
 
 Der Typ eines Elements.
 
@@ -2520,7 +2520,7 @@ int main()
 [a 1] [b 2] [c 3]
 ```
 
-## <a name="operator-map-stlclr"></a><a name="op_neq"></a>Operator! = (Map) (STL/CLR)
+## <a name="operator-map-stlclr"></a><a name="op_neq"></a> Operator! = (Map) (STL/CLR)
 
 Die Liste entspricht nicht dem Vergleich.
 
@@ -2591,7 +2591,7 @@ int main()
 [a b c] != [a b d] is True
 ```
 
-## <a name="operatorlt-map-stlclr"></a><a name="op_lt"></a>Operator &lt; (Map) (STL/CLR)
+## <a name="operatorlt-map-stlclr"></a><a name="op_lt"></a> Operator &lt; (Map) (STL/CLR)
 
 Liste kleiner als-Vergleich.
 
@@ -2662,7 +2662,7 @@ int main()
 [a b c] < [a b d] is True
 ```
 
-## <a name="operatorlt-map-stlclr"></a><a name="op_lteq"></a>Operator &lt; = (Map) (STL/CLR)
+## <a name="operatorlt-map-stlclr"></a><a name="op_lteq"></a> Operator &lt; = (Map) (STL/CLR)
 
 Liste kleiner oder gleich-Vergleich.
 
@@ -2733,7 +2733,7 @@ int main()
 [a b d] <= [a b c] is False
 ```
 
-## <a name="operator-map-stlclr"></a><a name="op_eq"></a>Operator = = (Map) (STL/CLR)
+## <a name="operator-map-stlclr"></a><a name="op_eq"></a> Operator = = (Map) (STL/CLR)
 
 Auflisten des gleichen Vergleichs.
 
@@ -2804,7 +2804,7 @@ int main()
 [a b c] == [a b d] is False
 ```
 
-## <a name="operatorgt-map-stlclr"></a><a name="op_gt"></a>Operator &gt; (Map) (STL/CLR)
+## <a name="operatorgt-map-stlclr"></a><a name="op_gt"></a> Operator &gt; (Map) (STL/CLR)
 
 Die Liste ist größer als der Vergleich.
 
@@ -2875,7 +2875,7 @@ int main()
 [a b d] > [a b c] is True
 ```
 
-## <a name="operatorgt-map-stlclr"></a><a name="op_gteq"></a>Operator &gt; = (Map) (STL/CLR)
+## <a name="operatorgt-map-stlclr"></a><a name="op_gteq"></a> Operator &gt; = (Map) (STL/CLR)
 
 Liste größer oder gleich-Vergleich.
 

@@ -7,19 +7,20 @@ helpviewer_keywords:
 - compatibility, C runtime libraries
 - compatibility
 ms.assetid: 346709cb-edda-4909-9a19-3d253eddb6b7
-ms.openlocfilehash: d6562be0abde8e9d51260b2d230f225ed159c199
-ms.sourcegitcommit: b492516cc65120250b9ea23f96f7f63f37f99fae
+ms.openlocfilehash: 711d5b3c95269413a0d94f568d3e3cb7b7dff721
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90075749"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91506876"
 ---
 # <a name="compatibility"></a>Kompatibilität
 
 Die universelle c-Lauf Zeit Bibliothek (ucrt) unterstützt den größten Teil der c-Standardbibliothek, die für C++ Konformität erforderlich ist. Sie implementiert die C99-Bibliothek (ISO/IEC 9899:1999) mit bestimmten Ausnahmen:
-- strikte Typkompatibilität in \<complex.h> . 
+
+- strikte Typkompatibilität in \<complex.h> .
 - `aligned_alloc`, die wahrscheinlich nicht implementiert wird, da das Windows-Betriebssystem keine ausgerichteten Zuordnungen unterstützt. Verwenden Sie stattdessen den nicht standardmäßigen `_aligned_malloc` .
--  `strerrorlen_s`
+- `strerrorlen_s`
 - atomarische Unterstützung in \<stdatomic.h>
 - Threading Unterstützung in \<threads.h>
 
@@ -35,7 +36,7 @@ Sofern nicht in der Dokumentation zu bestimmten Funktionen anders vermerkt, ist 
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-|Titel|BESCHREIBUNG|
+|Titel|Beschreibung|
 |-----------|-----------------|
 |[UWP-apps, die Windows-Runtime und die C-Laufzeit](../c-runtime-library/windows-store-apps-the-windows-runtime-and-the-c-run-time.md)|Beschreibt, wann ucrt-Routinen nicht mit universellen Windows-Apps oder Microsoft Store-Apps kompatibel sind.|
 |[ANSI C-Konformität](../c-runtime-library/ansi-c-compliance.md)|Beschreibt die normgerechte Benennung in der UCRT.|

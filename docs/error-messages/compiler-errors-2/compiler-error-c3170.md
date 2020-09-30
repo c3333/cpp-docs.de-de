@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - C3170
 ms.assetid: ca9a59d6-7df3-42f0-b028-c09d0af3ac2a
-ms.openlocfilehash: e2d74a637e2902fcf636b49068882f32aa706f94
-ms.sourcegitcommit: 16fa847794b60bf40c67d20f74751a67fccb602e
+ms.openlocfilehash: c4eb4a2551312791d05c8badb66af0070e74b630
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74761763"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91508325"
 ---
 # <a name="compiler-error-c3170"></a>Compilerfehler C3170
 
 in einem Projekt können keine unterschiedlichen Modul Bezeichner vorhanden sein.
 
-[Modul](../../windows/module-cpp.md) Attribute mit unterschiedlichen Namen wurden in zwei Dateien einer Kompilierung gefunden. Pro Kompilierung kann nur ein eindeutiges `module` Attribut angegeben werden.
+[Modul](../../windows/attributes/module-cpp.md) Attribute mit unterschiedlichen Namen wurden in zwei Dateien einer Kompilierung gefunden. `module`Pro Kompilierung kann nur ein eindeutiges Attribut angegeben werden.
 
 Identische `module` Attribute können in mehr als einer Quell Code Datei angegeben werden.
 

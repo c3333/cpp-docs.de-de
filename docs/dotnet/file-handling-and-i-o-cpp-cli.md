@@ -1,5 +1,5 @@
 ---
-title: Dateibehandlung und e / A (C++ / CLI)
+title: Dateiverarbeitung und I-O (C++/CLI)
 ms.date: 11/04/2016
 helpviewer_keywords:
 - .NET Framework [C++], file handling
@@ -24,12 +24,12 @@ helpviewer_keywords:
 - files [C++], text
 - text files, writing in C++
 ms.assetid: 3296fd59-a83a-40d4-bd4a-6096cc13101b
-ms.openlocfilehash: 7009c0b017c403c3f0108aa84b8ddb25a1d1564f
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: a1cfdc4239506f22368753d8c37765e550d9b835
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62324999"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91508931"
 ---
 # <a name="file-handling-and-io-ccli"></a>Dateibehandlung und E/A (C++/CLI)
 
@@ -37,7 +37,7 @@ Veranschaulicht verschiedene Dateioperationen mit .NET Framework.
 
 In den folgenden Themen wird die Verwendung von Klassen, die im <xref:System.IO>-Namespace definiert sind, zur Durchführung verschiedener Dateioperationen erläutert.
 
-## <a name="enumerate"></a> Auflisten von Dateien in einem Verzeichnis
+## <a name="enumerate-files-in-a-directory"></a><a name="enumerate"></a> Dateien in einem Verzeichnis aufzählen
 
 Im folgenden Codebeispiel wird veranschaulicht, wie eine Liste von Dateien in einem Verzeichnis abgerufen wird. Zusätzlich werden die Unterverzeichnisse aufgelistet. Im folgenden Beispiel werden die <xref:System.IO.Directory.GetFiles%2A><xref:System.IO.Directory.GetFiles%2A>-Methode und <xref:System.IO.Directory.GetDirectories%2A>-Methode verwendet, um den Inhalt des Verzeichnisses C:\Windows anzuzeigen.
 
@@ -66,9 +66,9 @@ int main()
 }
 ```
 
-## <a name="monitor"></a> Überwachen von Dateisystemänderungen
+## <a name="monitor-file-system-changes"></a><a name="monitor"></a> Überwachen von Datei System Änderungen
 
-Das folgende Codebeispiel verwendet <xref:System.IO.FileSystemWatcher> zum Registrieren für Ereignisse, die erstellt wird, geändert, gelöschte oder umbenannte Dateien entsprechen. Statt in regelmäßigen Abständen Abfragen ein Verzeichnis für Änderungen an Dateien, können Sie die <xref:System.IO.FileSystemWatcher> Klasse, um Ereignisse auszulösen, wenn eine Änderung erkannt wird.
+Im folgenden Codebeispiel <xref:System.IO.FileSystemWatcher> wird verwendet, um Ereignisse für Ereignisse zu registrieren, die Dateien entsprechen, die erstellt, geändert, gelöscht oder umbenannt werden. Anstatt ein Verzeichnis regelmäßig auf Änderungen an Dateien abzufragen, können Sie die-Klasse verwenden, <xref:System.IO.FileSystemWatcher> um Ereignisse auszulösen, wenn eine Änderung erkannt wird.
 
 ### <a name="example"></a>Beispiel
 
@@ -132,11 +132,11 @@ int main()
 }
 ```
 
-## <a name="read_binary"></a> Lesen einer Binärdatei
+## <a name="read-a-binary-file"></a><a name="read_binary"></a> Eine Binärdatei lesen
 
 Im folgenden Codebeispiel wird das Lesen von Binärdaten aus einer Datei, mithilfe von zwei Klassen aus dem <xref:System.IO?displayProperty=fullName>-Namespace: <xref:System.IO.FileStream> und <xref:System.IO.BinaryReader> verdeutlicht. <xref:System.IO.FileStream> repräsentiert die eigentliche Datei. <xref:System.IO.BinaryReader> stellt eine Schnittstelle zum Stream für den Binärzugriff bereit.
 
-Im Codebeispiel wird eine Datei namens "data.bin" gelesen, in der ganze Zahlen im Binärformat enthalten sind. Weitere Informationen über diese Art von Datei finden Sie unter [Vorgehensweise: Schreiben einer Binärdatei (C++ / CLI)](../dotnet/how-to-write-a-binary-file-cpp-cli.md).
+Im Codebeispiel wird eine Datei namens "data.bin" gelesen, in der ganze Zahlen im Binärformat enthalten sind. Weitere Informationen zu dieser Art von Datei finden Sie unter Gewusst [wie: Schreiben einer Binärdatei (C++/CLI)](#write_binary).
 
 ### <a name="example"></a>Beispiel
 
@@ -173,11 +173,11 @@ int main()
 }
 ```
 
-## <a name="read_text"></a> Lesen einer Textdatei
+## <a name="read-a-text-file"></a><a name="read_text"></a> Textdatei lesen
 
 Im folgenden Codebeispiel wird veranschaulicht, wie eine Textdatei geöffnet und dann zeilenweise mithilfe der <xref:System.IO.StreamReader>-Klasse gelesen wird, die im <xref:System.IO?displayProperty=fullName>-Namespace definiert ist. Mit einer Instanz dieser Klasse wird eine Textdatei geöffnet und anschließend jede Zeile mithilfe der <xref:System.IO.StreamReader.ReadLine%2A?displayProperty=fullName>-Methode abgerufen.
 
-In diesem Codebeispiel wird eine Datei mit dem Namen textfile.txt gelesen, die Text enthält. Weitere Informationen über diese Art von Datei finden Sie unter [Vorgehensweise: Schreiben einer Textdatei (C++ / CLI)](../dotnet/how-to-write-a-text-file-cpp-cli.md).
+In diesem Codebeispiel wird eine Datei mit dem Namen textfile.txt gelesen, die Text enthält. Weitere Informationen zu dieser Art von Datei finden Sie unter Gewusst [wie: Schreiben einer Textdatei (C++/CLI)](#write_text).
 
 ### <a name="example"></a>Beispiel
 
@@ -216,7 +216,7 @@ int main()
 }
 ```
 
-## <a name="retrieve"></a> Abrufen von Dateiinformationen
+## <a name="retrieve-file-information"></a><a name="retrieve"></a> Abrufen von Dateiinformationen
 
 Im folgenden Codebeispiel wird die <xref:System.IO.FileInfo>-Klasse erläutert. Wenn der Name einer Datei bekannt ist, können Sie diese Klasse verwenden, um Informationen über die Datei abzurufen, z. B. Dateigröße, Verzeichnis, vollständiger Name, Datum und Uhrzeit der Erstellung sowie der letzten Änderung.
 
@@ -257,11 +257,11 @@ int main()
 }
 ```
 
-## <a name="write_binary"></a> Schreiben einer Binärdatei
+## <a name="write-a-binary-file"></a><a name="write_binary"></a> Schreiben einer Binärdatei
 
 Im folgenden Codebeispiel wird das Schreiben von Binärdaten in eine Datei veranschaulicht. Zwei Klassen des <xref:System.IO>-Namespace werden verwendet: <xref:System.IO.FileStream> und <xref:System.IO.BinaryWriter>. <xref:System.IO.FileStream> repräsentiert die eigentliche Datei, während <xref:System.IO.BinaryWriter> eine Schnittstelle zum Stream für den Binärzugriff bereitstellt.
 
-Im folgenden Codebeispiel wird eine Datei erzeugt, die ganze Zahlen im Binärformat enthält. Diese Datei gelesen werden kann, mit dem Code in [Vorgehensweise: Lesen einer Binärdatei (C++ / CLI)](../dotnet/how-to-read-a-binary-file-cpp-cli.md).
+Im folgenden Codebeispiel wird eine Datei erzeugt, die ganze Zahlen im Binärformat enthält. Diese Datei kann mit dem Code in Gewusst [wie: Lesen einer Binärdatei (C++/CLI)](#read_binary)gelesen werden.
 
 ### <a name="example"></a>Beispiel
 
@@ -300,7 +300,7 @@ int main()
 }
 ```
 
-## <a name="write_text"></a> Schreiben einer Textdatei
+## <a name="write-a-text-file"></a><a name="write_text"></a> Schreiben einer Textdatei
 
 Im folgenden Codebeispiel wird veranschaulicht, wie eine Textdatei erstellt und in diese mithilfe der im <xref:System.IO.StreamWriter>-Namespace definierten <xref:System.IO>-Klasse geschrieben wird. Der Name der zu erstellenden Datei wird vom <xref:System.IO.StreamWriter>-Konstruktor übernommen. Wenn die Datei existiert, wird sie überschrieben (außer wenn Sie True als zweites <xref:System.IO.StringWriter>-Konstruktorargument übergeben).
 
@@ -332,8 +332,8 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [.NET-Programmierung mit C++/CLI (Visual C++)](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)<br/>
 [Datei- und Stream-E/A](/dotnet/standard/io/index)<br/>
-[System.IO-namespace](/dotnet/api/system.io)
+[System.IO-Namespace](/dotnet/api/system.io)

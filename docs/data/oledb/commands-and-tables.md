@@ -11,12 +11,12 @@ helpviewer_keywords:
 - tables [C++], OLE DB Consumer Templates
 - OLE DB consumer templates, command support
 ms.assetid: 4bd3787b-6d26-40a9-be0c-083080537c12
-ms.openlocfilehash: 0d5f6bd8d5f813497cba399e5c071f43dc1a7c4d
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: f65bd0f90832039d453d84ab9765781c30750318
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80211522"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91507377"
 ---
 # <a name="commands-and-tables"></a>Befehle und Tabellen
 
@@ -25,15 +25,15 @@ Befehle und Tabellen ermöglichen den Zugriff auf Rowsets. Das heißt, dass Sie 
 ![CCommand und CTable](../../data/oledb/media/vccommandstables.gif "CCommand und CTable")<br/>
 Befehls-und Tabellen Klassen
 
-In der obigen Tabelle können `TAccessor` beliebige Accessortypen sein, die in [Zugriffsmethoden Typen](../../data/oledb/accessors-and-rowsets.md)aufgeführt sind. `TRowset` kann jeder in [Rowsettypen](../../data/oledb/accessors-and-rowsets.md)aufgelistete Rowsettyp sein. `TMultiple` gibt den Ergebnistyp an (ein einzelnes oder mehrere Resultsets).
+In der vorherigen Tabelle kann es sich um `TAccessor` einen beliebigen Accessortyp handeln, der in [Accessortypen](../../data/oledb/accessors-and-rowsets.md)aufgeführt ist. `TRowset` kann ein beliebiger Rowsettyp sein, der in [Rowsettypen](../../data/oledb/accessors-and-rowsets.md)aufgeführt ist. `TMultiple` Gibt den Ergebnistyp an (ein einzelnes oder mehrere Resultsets).
 
 Mit dem [ATL-OLE DB Consumer-Assistenten](../../atl/reference/atl-ole-db-consumer-wizard.md) können Sie angeben, ob Sie ein Befehls-oder Tabellenobjekt möchten.
 
-- Für Datenquellen ohne Befehle können Sie die `CTable`-Klasse verwenden. Im Allgemeinen verwenden Sie es für einfache Rowsets, die keine Parameter angeben und nicht mehrere Ergebnisse erfordern. Diese einfache Klasse öffnet eine Tabelle in einer Datenquelle mit einem von Ihnen angegebenen Tabellennamen.
+- Für Datenquellen ohne Befehle können Sie die- `CTable` Klasse verwenden. Im Allgemeinen verwenden Sie es für einfache Rowsets, die keine Parameter angeben und nicht mehrere Ergebnisse erfordern. Diese einfache Klasse öffnet eine Tabelle in einer Datenquelle mit einem von Ihnen angegebenen Tabellennamen.
 
-- Bei Datenquellen, die Befehle unterstützen, können Sie stattdessen die `CCommand`-Klasse verwenden. Um einen Befehl auszuführen, müssen Sie für diese Klasse " [Öffnen](../../data/oledb/ccommand-open.md) " aufzurufen. Als Alternative können Sie `Prepare` aufzurufen, um einen Befehl vorzubereiten, den Sie mehrmals ausführen möchten.
+- Bei Datenquellen, die Befehle unterstützen, können Sie `CCommand` stattdessen die-Klasse verwenden. Um einen Befehl auszuführen, müssen Sie für diese Klasse " [Öffnen](./ccommand-class.md#open) " aufzurufen. Als Alternative können Sie auch aufzurufen, `Prepare` um einen Befehl vorzubereiten, den Sie mehrmals ausführen möchten.
 
-   `CCommand` hat drei Vorlagen Argumente: einen Accessortyp, einen Rowsettyp und einen Ergebnistyp (standardmäßig`CNoMultipleResults`, oder `CMultipleResults`). Wenn Sie `CMultipleResults`angeben, unterstützt die `CCommand`-Klasse die `IMultipleResults`-Schnittstelle und verarbeitet mehrere Rowsets. Das [DBViewer](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/ATL/OLEDB/Consumer) -Beispiel zeigt, wie die verschiedenen Ergebnisse behandelt werden.
+   `CCommand` hat drei Vorlagen Argumente: einen Accessortyp, einen Rowsettyp und einen Ergebnistyp ( `CNoMultipleResults` standardmäßig oder `CMultipleResults` ). Wenn Sie angeben `CMultipleResults` , `CCommand` unterstützt die-Klasse die `IMultipleResults` -Schnittstelle und behandelt mehrere Rowsets. Das [DBViewer](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/ATL/OLEDB/Consumer) -Beispiel zeigt, wie die verschiedenen Ergebnisse behandelt werden.
 
 ## <a name="see-also"></a>Weitere Informationen
 

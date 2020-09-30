@@ -14,12 +14,12 @@ f1_keywords:
 helpviewer_keywords:
 - msclr::lock class
 ms.assetid: 5123edd9-6aed-497d-9a0b-f4b6d6c0d666
-ms.openlocfilehash: b06c293200bc85945e95996db3109c1f5fba8d8a
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 7b2f187ec940af95523d0bbfb9265d7d9d6f69e8
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87225617"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91508645"
 ---
 # <a name="lock-class"></a>lock-Klasse
 
@@ -33,11 +33,11 @@ ref class lock;
 
 ## <a name="remarks"></a>Bemerkungen
 
-`lock`ist nur für CLR-Objekte verfügbar und kann nur in CLR-Code verwendet werden.
+`lock` ist nur für CLR-Objekte verfügbar und kann nur in CLR-Code verwendet werden.
 
 Intern wird von der Lock-Klasse verwendet <xref:System.Threading.Monitor> , um den Zugriff zu synchronisieren. Weitere Informationen finden Sie im referenzierten Artikel.
 
-## <a name="members"></a>Member
+## <a name="members"></a>Members
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
@@ -69,7 +69,7 @@ Intern wird von der Lock-Klasse verwendet <xref:System.Threading.Monitor> , um d
 
 **Namespace** -msclr
 
-## <a name="locklock"></a><a name="lock"></a>Lock:: Lock
+## <a name="locklock"></a><a name="lock"></a> Lock:: Lock
 
 Erstellt ein- `lock` Objekt, das optional darauf wartet, die Sperre für einen bestimmten Zeitraum dauerhaft zu erhalten, oder überhaupt nicht.
 
@@ -107,11 +107,11 @@ Wird ausgelöst, <xref:System.ApplicationException> Wenn die Sperre nicht vor de
 
 Die ersten drei Formen des Konstruktors versuchen, `_object` innerhalb des angegebenen Timeout Zeitraums eine Sperre zu erhalten (oder <xref:System.Threading.Timeout.Infinite> Wenn kein Wert angegeben ist).
 
-Die vierte Form des Konstruktors erhält keine Sperre für `_object` . `lock_later`ist ein Member der [Lock_when](../dotnet/lock-when-enum.md)Enumeration. Verwenden Sie [Lock::](../dotnet/lock-acquire.md) Abruf oder [Lock:: try_acquire](../dotnet/lock-try-acquire.md) , um die Sperre in diesem Fall zu erhalten.
+Die vierte Form des Konstruktors erhält keine Sperre für `_object` . `lock_later` ist ein Member der [Lock_when](../dotnet/lock-when-enum.md)Enumeration. Verwenden Sie [Lock::](#acquire) Abruf oder [Lock:: try_acquire](#try-acquire) , um die Sperre in diesem Fall zu erhalten.
 
 Die Sperre wird automatisch freigegeben, wenn der Dekonstruktor aufgerufen wird.
 
-`_object`darf nicht sein <xref:System.Threading.ReaderWriterLock> .  Wenn dies der Fall ist, führt dies zu einem Compilerfehler.
+`_object` darf nicht sein <xref:System.Threading.ReaderWriterLock> .  Wenn dies der Fall ist, führt dies zu einem Compilerfehler.
 
 ### <a name="example"></a>Beispiel
 
@@ -203,7 +203,7 @@ In thread 6, Counter = 10
 All threads completed.
 ```
 
-## <a name="locklock"></a><a name="tilde-lock"></a>Lock:: ~ Lock
+## <a name="locklock"></a><a name="tilde-lock"></a> Lock:: ~ Lock
 
 Zerstört ein- `lock` Objekt.
 
@@ -213,7 +213,7 @@ Zerstört ein- `lock` Objekt.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Der Dekonstruktor ruft [Lock:: Release](../dotnet/lock-release.md)auf.
+Der Dekonstruktor ruft [Lock:: Release](#release)auf.
 
 ### <a name="example"></a>Beispiel
 
@@ -305,7 +305,7 @@ In thread 6, Counter = 10
 All threads completed.
 ```
 
-## <a name="lockacquire"></a><a name="acquire"></a>Lock:: Abruf
+## <a name="lockacquire"></a><a name="acquire"></a> Lock:: Abruf
 
 Ruft eine Sperre für ein Objekt ab, wobei optional darauf gewartet wird, dass die Sperre für einen bestimmten Zeitraum (oder gar nicht) erhalten bleiben soll.
 
@@ -424,7 +424,7 @@ In thread 6, Counter = 10
 All threads completed.
 ```
 
-## <a name="lockis_locked"></a><a name="is-locked"></a>Lock:: is_locked
+## <a name="lockis_locked"></a><a name="is-locked"></a> Lock:: is_locked
 
 Gibt an, ob eine Sperre aufrechterhalten wird.
 
@@ -434,7 +434,7 @@ bool is_locked();
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn eine Sperre aufrechterhalten wird; **`false`** andernfalls.
+**`true`** , wenn eine Sperre aufrechterhalten wird; **`false`** andernfalls.
 
 ### <a name="example"></a>Beispiel
 
@@ -527,7 +527,7 @@ In thread 6, Counter = 10
 All threads completed.
 ```
 
-## <a name="lockoperator-bool"></a><a name="operator-bool"></a>Lock:: Operator bool
+## <a name="lockoperator-bool"></a><a name="operator-bool"></a> Lock:: Operator bool
 
 Operator für die Verwendung von `lock` in einem bedingten Ausdruck.
 
@@ -537,7 +537,7 @@ operator bool();
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn eine Sperre aufrechterhalten wird; **`false`** andernfalls.
+**`true`** , wenn eine Sperre aufrechterhalten wird; **`false`** andernfalls.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -634,7 +634,7 @@ In thread 6, Counter = 10
 All threads completed.
 ```
 
-## <a name="lockrelease"></a><a name="release"></a>Lock:: Release
+## <a name="lockrelease"></a><a name="release"></a> Lock:: Release
 
 Gibt eine Sperre frei.
 
@@ -738,7 +738,7 @@ In thread 6, Counter = 10
 All threads completed.
 ```
 
-## <a name="locktry_acquire"></a><a name="try-acquire"></a>Lock:: try_acquire
+## <a name="locktry_acquire"></a><a name="try-acquire"></a> Lock:: try_acquire
 
 Ruft eine Sperre für ein Objekt ab, die auf einen angegebenen Zeitraum wartet und einen zurückgibt, **`bool`** um den Erfolg des Erwerbs zu melden, anstatt eine Ausnahme auszulösen.
 
@@ -758,7 +758,7 @@ Timeout Wert in Millisekunden oder als <xref:System.TimeSpan> .
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn die Sperre abgerufen wurde, **`false`** andernfalls.
+**`true`** , wenn die Sperre abgerufen wurde, **`false`** andernfalls.
 
 ### <a name="remarks"></a>Bemerkungen
 
@@ -854,7 +854,7 @@ In thread 6, Counter = 10
 All threads completed.
 ```
 
-## <a name="lockoperator"></a><a name="operator-equality"></a>Lock:: Operator = =
+## <a name="lockoperator"></a><a name="operator-equality"></a> Lock:: Operator = =
 
 Gleichheits Operator.
 
@@ -866,7 +866,7 @@ template<class T> bool operator==(
 
 ### <a name="parameters"></a>Parameter
 
-*Bund*<br/>
+*t*<br/>
 Das auf Gleichheit zu prüfende Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
@@ -897,7 +897,7 @@ int main () {
 Equal!
 ```
 
-## <a name="lockoperator"></a><a name="operator-inequality"></a>Lock:: Operator! =
+## <a name="lockoperator"></a><a name="operator-inequality"></a> Lock:: Operator! =
 
 Ungleichheits Operator.
 
@@ -909,7 +909,7 @@ template<class T> bool operator!=(
 
 ### <a name="parameters"></a>Parameter
 
-*Bund*<br/>
+*t*<br/>
 Das Objekt, das auf Ungleichheit verglichen werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
