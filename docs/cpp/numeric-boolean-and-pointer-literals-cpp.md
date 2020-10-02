@@ -7,12 +7,12 @@ helpviewer_keywords:
 - constants, literals
 - literals [C++]
 ms.assetid: 17c09fc3-3ad7-47e2-8b48-ba8ae994edc8
-ms.openlocfilehash: def223682b58f3d0c8bd3dd88f6d54fc5aa8b8a4
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 84fdac7010805fc4d0a429231a080ab11d5c595a
+ms.sourcegitcommit: f7fbdc39d73e1fb3793c396fccf7a1602af7248b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87186450"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662255"
 ---
 # <a name="numeric-boolean-and-pointer-literals"></a>Numerische, boolesche und Zeigerliterale
 
@@ -31,7 +31,7 @@ In manchen Fällen ist es wichtig, dem Compiler darüber zu informieren, wie er 
 
 ## <a name="integer-literals"></a>Ganzzahlenliteral
 
-Ganzzahlenliterale beginnen mit einer Ziffer und weisen weder Bruchteile noch Exponenten auf. Sie können Integerliterale im Dezimal-, Oktal- oder Hexadezimalformat angeben. Sie können Typen mit oder ohne Vorzeichen und lange oder kurze Typen angeben.
+Ganzzahlenliterale beginnen mit einer Ziffer und weisen weder Bruchteile noch Exponenten auf. Sie können ganzzahlige Literale im Dezimal-, binär-, Oktal-oder Hexadezimal Format angeben. Optional können Sie ein Ganzzahlliteral als unsigned und als Long-oder Long Long-Typ angeben, indem Sie ein-Suffix verwenden.
 
 Wenn kein Präfix oder Suffix vorhanden ist, gibt der Compiler einen ganzzahligen literalwerttyp **`int`** (32 Bits) an, wenn der Wert passt, andernfalls erhält er den Typ **`long long`** (64 Bits).
 

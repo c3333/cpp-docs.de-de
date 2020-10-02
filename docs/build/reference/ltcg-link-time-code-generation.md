@@ -14,14 +14,14 @@ helpviewer_keywords:
 - -LTCG linker option
 - LTCG linker option
 ms.assetid: 788c6f52-fdb8-40c2-90af-4026ea2cf2e2
-ms.openlocfilehash: c954794d6d0fd087eee74ebb7e86d77b89a9a8fc
-ms.sourcegitcommit: 80c8a512b361bd84e38958beb1a1bf6db7434021
+ms.openlocfilehash: 6c0009e5236f33119ed411dc81ce6a4385f21a2a
+ms.sourcegitcommit: f7fbdc39d73e1fb3793c396fccf7a1602af7248b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86180798"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91662267"
 ---
-# <a name="ltcg-link-time-code-generation"></a>`/LTCG`(Link-Zeit Codegenerierung)
+# <a name="ltcg-link-time-code-generation"></a>`/LTCG` (Link-Zeit Codegenerierung)
 
 Verwenden **`/LTCG`** Sie, um die Optimierung des gesamten Programms auszuführen oder die PGO-Instrumentation (Profil gesteuerte Optimierung) zu erstellen, Schulungen auszuführen und Profil gesteuerte optimierte Builds zu erstellen.
 
@@ -38,20 +38,20 @@ Diese Optionen sind von Visual Studio 2015 an veraltet:
 **`INCREMENTAL`**<br/>
 Optionale Gibt an, dass der Linker anstelle des gesamten Projekts nur die Optimierung des gesamten Programms oder die Link-Zeit Codegenerierung (Link-Time Code Generation, LTCG) auf Dateien anwendet Standardmäßig ist dieses Flag nicht festgelegt **`/LTCG`** , wenn angegeben wird, und das gesamte Projekt wird mithilfe der Optimierung des gesamten Programms verknüpft.
 
-**`NOSTATUS`**&#124;**`STATUS`**<br/>
+**`NOSTATUS`** &#124; **`STATUS`**<br/>
 (Optional) Gibt an, ob der Linker eine Statusanzeige anzeigt, die darstellt, welcher Prozentsatz des Links abgeschlossen ist. Standardmäßig werden diese Statusinformationen nicht angezeigt.
 
 **`OFF`**<br/>
 (Optional) Deaktiviert die Codegenerierung zur Verknüpfungszeit. Dieses Verhalten ist identisch mit dem, wenn **`/LTCG`** nicht in der Befehlszeile angegeben wird.
 
 **`PGINSTRUMENT`**<br/>
-(Optional) Diese Optionen sind von Visual Studio 2015 an veraltet. Verwenden Sie stattdessen **`/LTCG`** und `[/GENPROFILE` oder `/FASTGENPROFILE` ] (genprofile-fastgenprofile-Generate-Profiling-Instrumented-Build.MD), um einen instrumentierten Build für die Profil gesteuerte Optimierung zu generieren. Die Daten, die in instrumentierten Ausführungen gesammelt werden, werden zum Erstellen eines optimierten Images verwendet. Weitere Informationen finden Sie unter [Profilgesteuerte Optimierungen](../profile-guided-optimizations.md). Die Kurzform dieser Option ist **`/LTCG:PGI`** .
+(Optional) Diese Optionen sind von Visual Studio 2015 an veraltet. Verwenden Sie stattdessen **`/LTCG`** und [ `/GENPROFILE` oder `/FASTGENPROFILE` ](genprofile-fastgenprofile-generate-profiling-instrumented-build.md) , um einen instrumentierten Build für die Profil gesteuerte Optimierung zu generieren. Die Daten, die in instrumentierten Ausführungen gesammelt werden, werden zum Erstellen eines optimierten Images verwendet. Weitere Informationen finden Sie unter [Profilgesteuerte Optimierungen](../profile-guided-optimizations.md). Die Kurzform dieser Option ist **`/LTCG:PGI`** .
 
 **`PGOPTIMIZE`**<br/>
-(Optional) Diese Optionen sind von Visual Studio 2015 an veraltet. Verwenden Sie stattdessen **`/LTCG`** und, [`/USEPROFILE`](useprofile.md) um ein optimiertes Image zu erstellen. Weitere Informationen finden Sie unter [Profilgesteuerte Optimierungen](../profile-guided-optimizations.md). Die Kurzform dieser Option ist **`/LTCG:PGO`** .
+(Optional) Diese Optionen sind von Visual Studio 2015 an veraltet. Verwenden Sie stattdessen **`/LTCG`** und,  [`/USEPROFILE`](useprofile.md) um ein optimiertes Image zu erstellen. Weitere Informationen finden Sie unter [Profilgesteuerte Optimierungen](../profile-guided-optimizations.md). Die Kurzform dieser Option ist **`/LTCG:PGO`** .
 
 **`PGUPDATE`**<br/>
-(Optional) Diese Optionen sind von Visual Studio 2015 an veraltet. Verwenden Sie stattdessen **`/LTCG`** und, **`/USEPROFILE`** um ein optimiertes Image neu zu erstellen. Weitere Informationen finden Sie unter [Profilgesteuerte Optimierungen](../profile-guided-optimizations.md). Die Kurzform dieser Option ist **`/LTCG:PGU`** .
+(Optional) Diese Optionen sind von Visual Studio 2015 an veraltet. Verwenden Sie stattdessen **`/LTCG`** und,  **`/USEPROFILE`** um ein optimiertes Image neu zu erstellen. Weitere Informationen finden Sie unter [Profilgesteuerte Optimierungen](../profile-guided-optimizations.md). Die Kurzform dieser Option ist **`/LTCG:PGU`** .
 
 ## <a name="remarks"></a>Bemerkungen
 
@@ -129,7 +129,7 @@ Wenn eine Funktion über einen Funktionszeiger aufgerufen wird, oder wenn eine F
 > [!NOTE]
 > Wenn Sie verwenden **`/LTCG`** und neu definieren `mainCRTStartup` , kann die Anwendung unvorhersehbares Verhalten aufweisen, das sich auf den Benutzercode bezieht, der vor dem Initialisieren globaler Objekte ausgeführt wird. Es gibt drei Möglichkeiten, dieses Problem zu beheben: definieren Sie `mainCRTStartup` die Datei, die mit enthalten ist, nicht neu, kompilieren Sie die Datei mit `mainCRTStartup` **`/LTCG`** , oder initialisieren Sie globale Variablen und Objekte statisch.
 
-### <a name="ltcg-and-msil-modules"></a>`/LTCG`und MSIL-Module
+### <a name="ltcg-and-msil-modules"></a>`/LTCG` und MSIL-Module
 
 Module, die mit und kompiliert werden, [`/GL`](gl-whole-program-optimization.md) [`/clr`](clr-common-language-runtime-compilation.md) können als Eingabe für den Linker verwendet werden, wenn **`/LTCG`** angegeben wird.
 
