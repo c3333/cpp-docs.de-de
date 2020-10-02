@@ -9,12 +9,12 @@ helpviewer_keywords:
 - ActiveX Control Wizard
 - add class from ActiveX control wizard [C++]
 ms.assetid: 729fcb37-54b8-44d5-9b4e-50bb16e0eea4
-ms.openlocfilehash: 1d91d98082a5c5d6d45bfa31e81c59e8925aa2c2
-ms.sourcegitcommit: b032daf81cb5fdb1f5a988277ee30201441c4945
+ms.openlocfilehash: d63f73e17e47f2cabb8f1a55c71325ec7068a2c8
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51694217"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91500373"
 ---
 # <a name="add-a-class-from-an-activex-control"></a>Hinzufügen einer Klasse aus einem ActiveX-Steuerelement
 
@@ -34,7 +34,7 @@ Ein ActiveX-Steuerelement ist eine wiederverwendbare Softwarekomponente, die auf
 
 1. Wählen Sie im Kontextmenü **Hinzufügen** und dann **Klasse hinzufügen** aus.
 
-1. Wählen Sie im Dialogfeld [Klasse hinzufügen](../ide/add-class-dialog-box.md) im Bereich **Vorlagen** die Option **MFC-Klasse aus ActiveX-Steuerelement** aus, und wählen Sie dann **Öffnen** aus, um den [Assistenten zum Hinzufügen einer ActiveX-Steuerelementklasse](#add-class-from-activex-control-wizard) anzuzeigen.
+1. Wählen Sie im Dialogfeld [Klasse hinzufügen](./adding-a-class-visual-cpp.md#add-class-dialog-box) im Bereich **Vorlagen** die Option **MFC-Klasse aus ActiveX-Steuerelement** aus, und wählen Sie dann **Öffnen** aus, um den [Assistenten zum Hinzufügen einer ActiveX-Steuerelementklasse](#add-class-from-activex-control-wizard) anzuzeigen.
 
 Im Assistenten können Sie mehrere Schnittstellen in einem ActiveX-Steuerelement hinzufügen. Zudem können Sie Klassen aus mehreren ActiveX-Steuerelementen in einer einzelnen Assistenten-Sitzung erstellen.
 
@@ -54,10 +54,10 @@ Verwenden Sie diesen Assistenten, um eine MFC-Klasse aus einem verfügbaren Acti
 
   Gibt den Speicherort der Typbibliothek an, aus der die Klasse erstellt wird.
 
-  |Option|Beschreibung |
+  |Option|BESCHREIBUNG|
   |------------|-----------------|
-  |**Registry**|Die Typbibliothek ist im System registriert. Registrierte Typbibliotheken werden unter **Available ActiveX controls** (Verfügbare ActiveX-Steuerelemente) aufgeführt.|
-  |**Datei**|Die Typbibliothek ist nicht unbedingt im System registriert, sondern in einer Datei gespeichert. Geben Sie den Dateispeicherort unter **Speicherort** an.|
+  |**Registrierung**|Die Typbibliothek ist im System registriert. Registrierte Typbibliotheken werden unter **Available ActiveX controls** (Verfügbare ActiveX-Steuerelemente) aufgeführt.|
+  |**File**|Die Typbibliothek ist nicht unbedingt im System registriert, sondern in einer Datei gespeichert. Geben Sie den Dateispeicherort unter **Speicherort** an.|
 
 - **Verfügbare ActiveX-Steuerelemente**
 
@@ -65,7 +65,7 @@ Verwenden Sie diesen Assistenten, um eine MFC-Klasse aus einem verfügbaren Acti
 
   Wenn Sie unter **Add Class From** (Klasse hinzufügen aus) **Datei** auswählen, kann dieses Feld nicht geändert werden.
 
-- **Position**
+- **Standort**
 
   Gibt den Speicherort des ActiveX-Steuerelements an. Wenn Sie unter **Add Class From** (Klasse hinzufügen aus) **Datei** auswählen, können Sie den Speicherort der Datei angeben, die die Typbibliothek enthält. Wählen Sie die Schaltfläche mit den Auslassungspunkten aus, um nach dem Speicherort der Datei zu suchen.
 
@@ -75,7 +75,7 @@ Verwenden Sie diesen Assistenten, um eine MFC-Klasse aus einem verfügbaren Acti
 
   Gibt die Schnittstellen im ActiveX-Steuerelement an. Der Assistent verwendet die Schnittstellen aus der aktuellen Auswahl in **Verfügbare ActiveX-Steuerelemente** oder die Schnittstellen aus der unter **Speicherort** angegebenen Typbibliotheksdatei.
 
-  |Schaltfläche „Übertragen“|Beschreibung |
+  |Schaltfläche „Übertragen“|BESCHREIBUNG|
   |---------------------|-----------------|
   |**>**|Fügt die Schnittstelle hinzu, die derzeit in der Liste **Schnittstellen** ausgewählt ist. Nicht verfügbar, wenn keine Schnittstelle ausgewählt ist.|
   |**>>**|Fügt alle Schnittstellen im ActiveX-Steuerelement hinzu. Der Assistent verwendet die Schnittstellen aus der aktuellen Auswahl in **Verfügbare ActiveX-Steuerelemente** oder die Schnittstellen aus der unter **Speicherort** angegebenen Typbibliotheksdatei.|

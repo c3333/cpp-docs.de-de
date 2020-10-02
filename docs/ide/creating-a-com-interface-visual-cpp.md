@@ -7,12 +7,12 @@ helpviewer_keywords:
 - COM interfaces, editing
 - properties [C++], adding to COM interfaces
 ms.assetid: 1be84d3c-6886-4d1e-8493-56c4d38a96d4
-ms.openlocfilehash: 09ddc113450fadb208e4f8471bc9aacf596a53f1
-ms.sourcegitcommit: fc1de63a39f7fcbfe2234e3f372b5e1c6a286087
+ms.openlocfilehash: 6ad8d50049d34a711937f3d1f73157ce26f69808
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "66182610"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91509687"
 ---
 # <a name="create-a-com-interface"></a>Erstellen einer COM-Schnittstelle
 
@@ -36,14 +36,14 @@ Sie können diese Assistenten zum Ausführen der folgenden häufig benötigten A
 
   Dieser Assistent generiert die IDL-Quelle und eine COM-Zuordnung in den Projektklassen.
 
-Sobald Sie ein ATL-Projekt geöffnet haben, erhalten Sie im Dialogfeld [Klasse hinzufügen](../ide/add-class-dialog-box.md) eine Auswahl zusätzlicher Assistenten und Vorlagen zum Hinzufügen von COM-Schnittstellen zum Projekt. Mithilfe der folgenden Assistenten können Sie mehrere Schnittstellen für das Objekt erstellen:
+Sobald Sie ein ATL-Projekt geöffnet haben, erhalten Sie im Dialogfeld [Klasse hinzufügen](./adding-a-class-visual-cpp.md#add-class-dialog-box) eine Auswahl zusätzlicher Assistenten und Vorlagen zum Hinzufügen von COM-Schnittstellen zum Projekt. Mithilfe der folgenden Assistenten können Sie mehrere Schnittstellen für das Objekt erstellen:
 
 - [ATL COM+ 1.0 component wizard (ATL COM+ 1.0 Komponenten-Assistent)](../atl/reference/atl-com-plus-1-0-component-wizard.md)
 - [ATL simple object wizard (ATL-Assistent für einfache Objekte)](../atl/reference/atl-simple-object-wizard.md)
 - [ATL active server page component wizard (ATL-Assistent für Active Server Page-Komponenten)](../atl/reference/atl-active-server-page-component-wizard.md)
 - [ATL control wizard (ATL-Steuerelement-Assistent)](../atl/reference/atl-control-wizard.md)
 
-Außerdem können Sie neue Schnittstellen für Ihre COM-Steuerelemente implementieren. Klicken Sie dafür erst mit der rechten Maustaste auf die Steuerelementklasse des Objekts in der Klassenansicht und anschließend mit der linken auf [Schnittstelle implementieren](../ide/implement-interface-wizard.md).
+Außerdem können Sie neue Schnittstellen für Ihre COM-Steuerelemente implementieren. Klicken Sie dafür erst mit der rechten Maustaste auf die Steuerelementklasse des Objekts in der Klassenansicht und anschließend mit der linken auf [Schnittstelle implementieren](./implementing-an-interface-visual-cpp.md#implement-interface-wizard).
 
 > [!NOTE]
 > Visual Studio stellt keinen Assistenten dafür bereit, Schnittstellen zu einem Projekt hinzuzufügen. Sie können Schnittstellen zu einem ATL-Projekt oder zu einem [MFC-Projekt](../mfc/reference/adding-atl-support-to-your-mfc-project.md) hinzufügen, zu dem von ATL-Unterstützung hinzugefügt wurde, indem Sie mithilfe des [ATL-Assistenten für einfache Objekte](../atl/reference/atl-simple-object-wizard.md) ein einfaches Objekt hinzufügen. Öffnen Sie alternativ die IDL-Datei des Projekts, und erstellen Sie die Schnittstelle, indem Sie Folgendes eingeben:
@@ -80,9 +80,9 @@ Bei ATL- und MFC-basierten COM-Objektklassen können Sie die Implementierung der
 
 Die folgenden drei Assistenten unterstützen Sie beim Anpassen vorhandener Schnittstellen. Sie sind in der Klassenansicht verfügbar:
 
-|Assistent|Projekttyp:|
+|Assistent|Projekttyp|
 |------------|------------------|
-|[Assistent zum Hinzufügen von Eigenschaften](../ide/names-add-property-wizard.md)|ATL- oder MFC-Projekte, die ATL unterstützen. Klicken Sie mit der rechten Maustaste auf die Schnittstelle, der die Eigenschaft hinzugefügt werden soll.<br /><br />Visual C++ erkennt den Projekttyp und ändert die Optionen im Assistenten zum Hinzufügen von Eigenschaften nach Bedarf:<br /><br />– Für Disp-Schnittstellen in Projekten, die mit dem [MFC-Anwendungs-Assistenten](../mfc/reference/mfc-application-wizard.md) erstellt wurden, werden durch das Aufrufen des Assistenten zum Hinzufügen von Eigenschaften MFC-spezifische Optionen bereitgestellt.<br />– Für ActiveX-Steuerelementschnittstellen stellt der Assistent zum Hinzufügen von Eigenschaften eine Liste vordefinierter Methoden und Eigenschaften bereit, die Sie verwenden oder für Ihr Steuerelement anpassen können.<br />– Für alle anderen Schnittstellen stellt der Assistent zum Hinzufügen von Eigenschaften Optionen bereit, die in den meisten Situationen nützlich sind.|
-|[Assistent zum Hinzufügen von Methoden](../ide/add-method-wizard.md)|ATL- oder MFC-Projekte, die ATL unterstützen. Klicken Sie mit der rechten Maustaste auf die Schnittstelle, der die Methode hinzugefügt werden soll.<br /><br />Visual C++ erkennt den Projekttyp und ändert die Optionen im Assistenten zum Hinzufügen von Methoden nach Bedarf:<br /><br />– Für Disp-Schnittstellen in Projekten, die mit dem [MFC-Anwendungs-Assistenten](../mfc/reference/mfc-application-wizard.md) erstellt wurden, werden durch das Aufrufen des Assistenten zum Hinzufügen von Methoden MFC-spezifische Optionen bereitgestellt.<br />– Für ActiveX-Steuerelementschnittstellen stellt der Assistent zum Hinzufügen von Methoden eine Liste vordefinierter Methoden und Eigenschaften bereit, die Sie verwenden oder für Ihr Steuerelement anpassen können.<br />– Für alle anderen Schnittstellen stellt der **Assistent zum Hinzufügen von Methoden** Optionen bereit, die in den meisten Situationen nützlich sind.|
+|[Assistent zum Hinzufügen von Eigenschaften](./adding-a-property-visual-cpp.md#names-add-property-wizard)|ATL- oder MFC-Projekte, die ATL unterstützen. Klicken Sie mit der rechten Maustaste auf die Schnittstelle, der die Eigenschaft hinzugefügt werden soll.<br /><br />Visual C++ erkennt den Projekttyp und ändert die Optionen im Assistenten zum Hinzufügen von Eigenschaften nach Bedarf:<br /><br />– Für Disp-Schnittstellen in Projekten, die mit dem [MFC-Anwendungs-Assistenten](../mfc/reference/mfc-application-wizard.md) erstellt wurden, werden durch das Aufrufen des Assistenten zum Hinzufügen von Eigenschaften MFC-spezifische Optionen bereitgestellt.<br />– Für ActiveX-Steuerelementschnittstellen stellt der Assistent zum Hinzufügen von Eigenschaften eine Liste vordefinierter Methoden und Eigenschaften bereit, die Sie verwenden oder für Ihr Steuerelement anpassen können.<br />– Für alle anderen Schnittstellen stellt der Assistent zum Hinzufügen von Eigenschaften Optionen bereit, die in den meisten Situationen nützlich sind.|
+|[Assistent zum Hinzufügen von Methoden](./adding-a-method-visual-cpp.md#add-method-wizard)|ATL- oder MFC-Projekte, die ATL unterstützen. Klicken Sie mit der rechten Maustaste auf die Schnittstelle, der die Methode hinzugefügt werden soll.<br /><br />Visual C++ erkennt den Projekttyp und ändert die Optionen im Assistenten zum Hinzufügen von Methoden nach Bedarf:<br /><br />– Für Disp-Schnittstellen in Projekten, die mit dem [MFC-Anwendungs-Assistenten](../mfc/reference/mfc-application-wizard.md) erstellt wurden, werden durch das Aufrufen des Assistenten zum Hinzufügen von Methoden MFC-spezifische Optionen bereitgestellt.<br />– Für ActiveX-Steuerelementschnittstellen stellt der Assistent zum Hinzufügen von Methoden eine Liste vordefinierter Methoden und Eigenschaften bereit, die Sie verwenden oder für Ihr Steuerelement anpassen können.<br />– Für alle anderen Schnittstellen stellt der **Assistent zum Hinzufügen von Methoden** Optionen bereit, die in den meisten Situationen nützlich sind.|
 
-Außerdem können Sie neue Schnittstellen für Ihre COM-Steuerelemente implementieren. Klicken Sie dafür erst mit der rechten Maustaste auf die Steuerelementklasse des Objekts in der Klassenansicht und anschließend mit der linken auf [Schnittstelle implementieren](../ide/implement-interface-wizard.md).
+Außerdem können Sie neue Schnittstellen für Ihre COM-Steuerelemente implementieren. Klicken Sie dafür erst mit der rechten Maustaste auf die Steuerelementklasse des Objekts in der Klassenansicht und anschließend mit der linken auf [Schnittstelle implementieren](./implementing-an-interface-visual-cpp.md#implement-interface-wizard).

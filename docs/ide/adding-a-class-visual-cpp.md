@@ -9,12 +9,12 @@ helpviewer_keywords:
 - classes [C++], adding
 - Add Class dialog box
 ms.assetid: c34b5f70-4e72-4faa-ba21-e2b05361c4d9
-ms.openlocfilehash: fa53c2af5cd3e81c2d4877ef255430eac9525aad
-ms.sourcegitcommit: fc1de63a39f7fcbfe2234e3f372b5e1c6a286087
+ms.openlocfilehash: b1c64505a63b8720ed7aee855f2bbbbdb9134e28
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "66182680"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91505982"
 ---
 # <a name="add-a-class"></a>Hinzufügen einer Klasse
 
@@ -31,7 +31,7 @@ Wenn Ihre Namenskonvention für das Projekt erfordert, dass Sie einen vorhandene
 
 ## <a name="what-kind-of-class-do-you-want-to-add"></a>Welche Art von Klasse möchten Sie hinzufügen?
 
-Wenn Sie im Dialogfeld **Klasse hinzufügen** den Knoten **Visual C++** erweitern, werden mehrere Gruppierungen von installierten Vorlagen im linken Bereich angezeigt. Zu diesen Gruppen gehören **CLR**, **ATL**, **MFC** und **C++** . Wenn Sie eine Gruppe auswählen, wird eine Liste der verfügbaren Vorlagen dieser Gruppe im mittleren Bereich angezeigt. Jede Vorlage enthält die Dateien und den Quellcode, die für eine Klasse erforderlich sind.
+Wenn Sie im Dialogfeld **Klasse hinzufügen** den Knoten **Visual C++** erweitern, werden mehrere Gruppierungen von installierten Vorlagen im linken Bereich angezeigt. Zu diesen Gruppen gehören **CLR**, **ATL**, **MFC** und **C++**. Wenn Sie eine Gruppe auswählen, wird eine Liste der verfügbaren Vorlagen dieser Gruppe im mittleren Bereich angezeigt. Jede Vorlage enthält die Dateien und den Quellcode, die für eine Klasse erforderlich sind.
 
 Wählen Sie zum Erstellen einer neuen Klasse eine Vorlage im mittleren Bereich aus, geben Sie in das Feld **Name** einen Namen für die Klasse ein, und klicken Sie auf **Hinzufügen**. Daraufhin wird der **Assistent zum Hinzufügen von Klassen** geöffnet, damit Sie die Optionen für die Klasse festlegen können.
 
@@ -42,7 +42,7 @@ Wählen Sie zum Erstellen einer neuen Klasse eine Vorlage im mittleren Bereich a
 > [!NOTE]
 > Die Vorlage **ATL-Unterstützung zu MFC hinzufügen** erstellt keine Klasse. Stattdessen konfiguriert sie für das Projekt die Verwendung von ATL. Weitere Informationen finden Sie unter [ATL Support in an MFC Project (ATL-Unterstützung in einem MFC-Projekt)](../mfc/reference/adding-atl-support-to-your-mfc-project.md).
 
-Verwenden Sie die Vorlage **C++-Klasse** in der **C++** -Gruppe installierter Vorlagen, um eine C++-Klasse zu erstellen, die MFC, ATL und CLR nicht verwendet. Weitere Informationen finden Sie unter [Adding a Generic C++ Class (Hinzufügen einer generischen C++-Klasse)](../ide/adding-a-generic-cpp-class.md).
+Verwenden Sie die Vorlage **C++-Klasse** in der **C++**-Gruppe installierter Vorlagen, um eine C++-Klasse zu erstellen, die MFC, ATL und CLR nicht verwendet. Weitere Informationen finden Sie unter [Adding a Generic C++ Class (Hinzufügen einer generischen C++-Klasse)](../ide/adding-a-generic-cpp-class.md).
 
 Es stehen zwei Arten von formularbasierten C++-Klassen zur Verfügung. Die erste Klasse, die [CFormView-Klasse](../mfc/reference/cformview-class.md), erstellt eine MFC-Klasse. Die zweite Klasse erstellt eine CLR-Windows Forms-Klasse.
 
@@ -52,11 +52,11 @@ Das Dialogfeld **Klasse hinzufügen** enthält Vorlagen, die Ihnen folgende Mög
 
 - Öffnen Sie einen entsprechenden Code-Assistenten, falls verfügbar. Weitere Informationen finden Sie unter [Adding Functionality with Code Wizards (Hinzufügen neuer Funktionen mit Code-Assistenten)](../ide/adding-functionality-with-code-wizards-cpp.md).
 
-   \- oder –
+   \- oder -
 
 - Erstellen Sie die neue Klasse automatisch durch Hinzufügen der entsprechenden Dateien und des Quellcodes zum Projekt.
 
-Sie können auf das Dialogfeld **Klasse hinzufügen** über das Menü **Projekt** , den **Projektmappen-Explorer**oder die [Klassenansicht](/visualstudio/ide/viewing-the-structure-of-code)zugreifen.
+Sie können über das Menü **Projekt**, den **Projektmappen-Explorer** oder die [Klassenansicht](/visualstudio/ide/viewing-the-structure-of-code) auf das Dialogfeld **Klasse hinzufügen** zugreifen.
 
 > [!NOTE]
 > Wenn Sie versuchen, eine Klasse hinzuzufügen, die für das aktuelle Projekt nicht geeignet ist, erhalten Sie eine Fehlermeldung. Klicken Sie auf **OK**, um zum Dialogfeld **Klasse hinzufügen** zurückzukehren.
@@ -96,4 +96,4 @@ Es gibt vier Kategorien von **Klasse hinzufügen** -Vorlagen: „.NET“, „ATL
 
 |Vorlage|Assistent|
 |--------------|------------|
-|Generische C++-Klasse|[Generic C++ class wizard (Generischer C++-Klassen-Assistent)](../ide/generic-cpp-class-wizard.md)|
+|Generische C++-Klasse|[Generic C++ class wizard (Generischer C++-Klassen-Assistent)](./adding-a-generic-cpp-class.md#generic-c-class-wizard)|
