@@ -2,12 +2,12 @@
 title: Konfigurieren eines CMake-Projekts für Linux in Visual Studio
 description: Konfigurieren von CMake-Einstellungen für Linux in Visual Studio
 ms.date: 08/08/2020
-ms.openlocfilehash: 4bc6d5d82a0f1cd21e8f989eb92b431d38b2bf5c
-ms.sourcegitcommit: 111ee74772d7f308d3414b5d42cbc1e90287f081
+ms.openlocfilehash: 32c851791402b59c941ae088fa637d3d9953dd1b
+ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88659343"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91504722"
 ---
 # <a name="configure-a-linux-cmake-project-in-visual-studio"></a>Konfigurieren eines CMake-Projekts für Linux in Visual Studio
 
@@ -53,6 +53,7 @@ Die Standardkonfiguration für Linux-Debuggen in Visual Studio 2017 (und Visual
       "inheritEnvironments": [ "linux-x64" ]
 }
 ```
+
 ::: moniker-end
 
 ::: moniker range="vs-2019"
@@ -97,12 +98,13 @@ Ab Visual Studio 2019, Version 16.6 ist Ninja der Standardgenerator für Konfigu
 Weitere Informationen zu diesen Einstellungen finden Sie in der [Referenz zu CMakeSettings.json](../build/cmakesettings-reference.md).
 
 Beim Erstellen eines Builds:
+
 - Für Remoteziele wählt Visual Studio standardmäßig das erste Remotesystem in der Liste unter **Extras** > **Optionen** > **Plattformübergreifend** > **Verbindungs-Manager** aus.
 - Wenn keine Remoteverbindungen gefunden werden, werden Sie aufgefordert, eine Remoteverbindung zu erstellen. Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit Ihrem Linux-Remotecomputer](connect-to-your-remote-linux-computer.md).
 
 ## <a name="choose-a-linux-target"></a>Auswählen eines Linux-Ziels
 
-Sobald Sie einen CMake-Projektordner öffnen, analysiert Visual Studio die Datei *CMakeLists.txt* und gibt das Windows-Ziel **x86-Debug** an. Ändern Sie die Projekteinstellungen in **Linux-Debug** oder **Linux-Release**, um auf ein Linux-Remotesystem abzuzielen.
+Sobald Sie einen CMake-Projektordner öffnen, analysiert Visual Studio die Datei *CMakeLists.txt* und gibt das Windows-Ziel **x86-Debug** an. Um ein Linux-Remotesystem als Ziel anzugeben, ändern Sie die Projekteinstellungen basierend auf Ihrem Linux-Compiler. Wenn Sie beispielsweise GCC unter Linux verwenden und mit Debuginformationen kompilieren, wählen Sie Folgendes aus:  **Linux-GCC-Debug** oder **Linux-GCC-Release**.
 
 Wenn Sie ein Linux-Remoteziel angeben, wird Ihre Quelle in das Remotesystem kopiert.
 
@@ -117,7 +119,15 @@ Wenn Sie ein Ziel ausgewählt haben, wird CMake zum Generieren des CMake-Caches 
 
 Wenn Sie auf das Windows-Subsystem für Linux (WSL) abzielen, müssen Sie keine Remoteverbindung hinzufügen.
 
-Um auf das WSL abzuzielen, wählen Sie auf der Hauptsymbolleiste in der Dropdownliste „Konfiguration“ **Konfigurationen verwalten** aus. Klicken Sie dann auf die Schaltfläche **Konfiguration hinzufügen**, und wählen Sie **WSL-Debug** oder **WSL-Release** aus, wenn GCC verwendet wird. Verwenden Sie bei Nutzung des Clang/LLVM-Toolsets die Clang-Varianten.
+Um das WSL als Ziel anzugeben, wählen Sie in der Hauptsymbolleiste im Dropdownmenü „Konfiguration“ die Option **Konfigurationen verwalten** aus:
+
+![Verwalten von CMake-Konfigurationen](../build/media/vs2019-cmake-manage-configurations.png "Dropdownliste „CMake-Konfigurationen“")
+
+Das Fenster **CMakeSettings.json** wird angezeigt.
+
+![Hinzufügen einer Konfiguration](media/cmake-linux-configurations.png "Hinzufügen einer Konfiguration zu CMake-Einstellungen")
+
+Klicken Sie auf **Konfiguration hinzufügen** (die grüne Schaltfläche mit dem Pluszeichen), und wählen Sie **Linux-GCC-Debug** oder **Linux-GCC-Release** aus, wenn Sie GCC verwenden. Wenn Sie das Clang/LLVM-Toolset verwenden, wählen Sie die Clang-Varianten aus.  Klicken Sie auf **Auswählen**, und drücken Sie dann **STRG+S**, um die Konfiguration zu speichern.
 
 **Visual Studio 2019, Version 16.1** Wenn Sie auf die WSL zielen, muss Visual Studio keine Quelldateien kopieren und zwei synchrone Kopien Ihrer Buildstruktur pflegen, da der Compiler unter Linux direkten Zugriff auf Ihre Quelldateien im eingebundenen Windows-Dateisystem hat.
 ::: moniker-end

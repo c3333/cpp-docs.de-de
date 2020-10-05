@@ -1,13 +1,13 @@
 ---
 title: Konfigurieren von Linux-Projekten zum Verwenden von AddressSanitizer
 description: In diesem Artikel wird beschrieben, wie Sie C++-Linux-Projekte in Visual Studio konfigurieren, um AddressSanitizer verwenden zu können.
-ms.date: 06/07/2019
-ms.openlocfilehash: 0e862e09d8178ce35fe26f2be138d7f6843b5ef1
-ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
+ms.date: 09/25/2020
+ms.openlocfilehash: 7e68d0af4d2ab27820f894bafc58bed444f141d9
+ms.sourcegitcommit: 94893973211d0b254c8bcdcf0779997dcc136b0c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90686664"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91414196"
 ---
 # <a name="configure-linux-projects-to-use-address-sanitizer"></a>Konfigurieren von Linux-Projekten zum Verwenden von AddressSanitizer
 
@@ -33,7 +33,7 @@ Sie können sich im Debugbereich des Ausgabefensters auch die vollständige ASan
 ## <a name="enable-asan-for-msbuild-based-linux-projects"></a>Aktivieren von ASan für MSBuild-basierte Linux-Projekte
 
 > [!NOTE]
-> Ab Visual Studio 2019, Version 16.4 wird AddressSanitizer für Linux-Projekte über **Konfigurationseigenschaften** > **C/C++**  > **Address Sanitizer aktivieren** aktiviert.
+> Ab Visual Studio 2019, Version 16.4, wird der AddressSanitizer für Linux-Projekte über **Projekteigenschaften** > **Konfigurationseigenschaften** > **C/C++**  > **AddressSanitizer aktivieren** aktiviert.
 
 Klicken Sie mit der rechten Maustaste auf das Projekt im **Projektmappen-Explorer**, und wählen Sie **Eigenschaften** aus, um ASan für MSBuild-basierte Linux-Projekte zu aktivieren. Navigieren Sie dann zu **Konfigurationseigenschaften** > **C/C++**  > **Sanitizer**. ASan ist über Compiler und Linker-Flags aktiviert und erfordert, dass Ihr Projekt noch mal kompiliert wird, um zu funktionieren.
 
@@ -51,7 +51,7 @@ Stellen Sie sicher, dass Sie im linken Bereich des Dialogfelds eine Linux-Konfig
 
 ![Screenshot des linken Bereichs, in dem „Linux-Debug“ als eine der Konfigurationsoptionen aufgeführt ist](media/linux-debug-configuration.png)
 
-Die ASan-Optionen finden Sie unter **Allgemein**. Geben Sie die ASan-Runtimeflags im Format „flag=value“ (Flag=Wert) ein, und verwenden Sie dabei Semikolons.
+Die ASan-Optionen finden Sie unter **Allgemein**. Geben Sie die ASan-Runtimeflags im Format „flag=value“ (Flag=Wert) durch Leerzeichen getrennt ein. Die Benutzeroberfläche schlägt fälschlicherweise die Verwendung von Semikolons vor. Verwenden Sie Leerzeichen oder Doppelpunkte zum Trennen von Flags.
 
 ![Screenshot der Option „AddressSanitizer aktivieren“ mit einigen AdressSanitizier-Laufzeitflags](media/cmake-settings-asan-options.png)
 
