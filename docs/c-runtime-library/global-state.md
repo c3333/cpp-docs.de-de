@@ -2,21 +2,21 @@
 title: Globaler Status in der CRT
 description: Beschreibt, wie der gemeinsame globale Zustand in der Microsoft Universal C-Laufzeit behandelt wird.
 ms.topic: conceptual
-ms.date: 04/02/2020
+ms.date: 10/02/2020
 helpviewer_keywords:
 - CRT global state
-ms.openlocfilehash: 60532fbdb905bd8ea78b4ce705ec8ecc3e374d9d
-ms.sourcegitcommit: 9451db8480992017c46f9d2df23fb17b503bbe74
+ms.openlocfilehash: 6c8b97e2bd6fa71891aedacb1fbfec2bbe382d84
+ms.sourcegitcommit: faedcc3be78b29c78e5d51e3c7c7c2f448c745bf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91589730"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91717514"
 ---
 # <a name="global-state-in-the-crt"></a>Globaler Status in der CRT
 
 Einige Funktionen in der universellen C-Laufzeit (ucrt) verwenden den globalen Zustand. Beispielsweise `setlocale()` legt das Gebiets Schema für das gesamte Programm fest, das die Ziffern Trennzeichen, die Text Codepage usw. beeinflusst.
 
-Der globale Status der ucrt wird nicht für Anwendungen und das Betriebssystem freigegeben. Wenn die Anwendung beispielsweise aufruft `setlocale()` , wirkt sie sich nicht auf das Gebiets Schema für Betriebssystemkomponenten aus, die die C-Laufzeit verwenden, oder umgekehrt.
+Der globale Status der ucrt wird nicht von den Anwendungen und dem Betriebssystem gemeinsam genutzt. Wenn die Anwendung beispielsweise aufruft `setlocale()` , wirkt sie sich nicht auf das Gebiets Schema für Betriebssystemkomponenten aus, die die C-Laufzeit verwenden, oder umgekehrt.
 
 ## <a name="os-specific-versions-of-crt-functions"></a>Betriebssystemspezifische Versionen von CRT-Funktionen
 
@@ -31,8 +31,8 @@ Die betriebssystemspezifischen Versionen dieser Funktionen sind in `ucrt.osmode.
 
 Es gibt zwei Möglichkeiten, den CRT-Zustand Ihrer Komponente vom CRT-Zustand einer APP zu isolieren:
 
-- Verknüpfen Sie die Komponente statisch mithilfe der Compileroptionen/MT (Release) oder mtd (Debug). Weitere Informationen finden Sie unter [/MD,/MT,/LD](../build/reference/md-mt-ld-use-run-time-library.md). Beachten Sie, dass das statische verknüpfen die binäre Größe erheblich erhöhen kann.
-- Ab Windows 10 20h2 können Sie die CRT-Zustands Isolation durch dynamisches Verknüpfen mit der CRT abrufen, aber Sie müssen die Exporte im Betriebssystem Modus (die Funktionen, die mit _o_beginnen) abrufen. Um die Betriebssystem-Modus-Exporte aufzurufen, wird statisch wie zuvor verknüpft, aber die statische ucrt wird mithilfe der Linkeroption `/NODEFAULTLIB:libucrt.lib` (Release) oder `/NODEFAULTLIB:libucrtd.lib` (Debuggen) ignoriert. Weitere Informationen finden Sie unter [/NODEFAULTLIB (Bibliotheken ignorieren)](../build/reference/nodefaultlib-ignore-libraries.md) . Und `ucrt.osmode.lib` der Linker-Eingabe hinzufügen.
+- Verknüpfen Sie die Komponente statisch mithilfe der Compileroptionen `/MT` (Release) oder `/MTd` (Debug). Weitere Informationen finden Sie unter [/MD,/MT,/LD](../build/reference/md-mt-ld-use-run-time-library.md). Das statische verknüpfen kann die binäre Größe erheblich erhöhen.
+- Beginnend mit Windows 10, Version 2004, wird dynamisch mit der CRT verknüpft, aber die Exporte im Betriebssystem Modus (die Funktionen, die mit _o_beginnen) werden aufgerufen. Um die exportierte Betriebs systemmodusexporte aufzurufen, verknüpfen Sie statisch wie zuvor, aber ignorieren Sie die statische ucrt mithilfe der Linkeroption `/NODEFAULTLIB:libucrt.lib` (Release) oder `/NODEFAULTLIB:libucrtd.lib` (Debug). Und `ucrt.osmode.lib` der Linker-Eingabe hinzufügen. Weitere Informationen finden Sie unter [/NODEFAULTLIB (Bibliotheken ignorieren)](../build/reference/nodefaultlib-ignore-libraries.md) .
 
 > [!Note]
 > Schreiben Sie im Quellcode, `setlocale()` nicht `_o_setlocale()` . Wenn Sie einen Link `ucrt.osmode.lib` zu durchführt, ersetzt der Linker automatisch die betriebssystemspezifische Version der Funktion. Das heißt, `setlocale()` wird durch ersetzt `_o_setlocale()` .
@@ -52,7 +52,7 @@ Der globale Status, der durch die Trennung von App-und Betriebssystem Status bee
 - Der von _putch verwendete Puffer [_putwch](reference/putch-putwch.md)
 - [_set_invalid_parameter_handler, _set_thread_local_invalid_parameter_handler](reference/set-invalid-parameter-handler-set-thread-local-invalid-parameter-handler.md)
 - [_set_new_handler](reference/set-new-handler.md) und [_set_new_mode](reference/set-new-mode.md)
-- [f-Modus] (Text-and-Binary-Mode-File-i-o.MD)
+- [f-Modus](text-and-binary-mode-file-i-o.md)
 - [Zeitzoneninformationen](time-management.md)
 
 ## <a name="see-also"></a>Weitere Informationen
