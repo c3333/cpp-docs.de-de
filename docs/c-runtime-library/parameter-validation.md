@@ -6,12 +6,12 @@ ms.topic: conceptual
 helpviewer_keywords:
 - parameters, validation
 ms.assetid: 019dd5f0-dc61-4d2e-b4e9-b66409ddf1f2
-ms.openlocfilehash: 60ded7fc5a4388b2c4bf87ab5a388caab5fc47c2
-ms.sourcegitcommit: 9451db8480992017c46f9d2df23fb17b503bbe74
+ms.openlocfilehash: 8378e4bf9bdfc950002c3ed8c3ef50c27a3c162d
+ms.sourcegitcommit: 30792632548d1c71894f9fecbe2f554294b86020
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91589821"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91765259"
 ---
 # <a name="parameter-validation"></a>Parameterüberprüfung
 
@@ -25,11 +25,11 @@ In Debugbuilds löst das ungültige Parameter Makro in der Regel eine fehlgeschl
 
 Die Sende Funktion für ungültige Parameter Handler Ruft den derzeit zugewiesenen Handler für ungültige Parameter auf. Standardmäßig ruft der ungültige Parameter `_invoke_watson` auf, wodurch die Anwendung geschlossen und ein Mini Abbild generiert wird. Wenn das Betriebssystem aktiviert ist, wird der Benutzer in einem Dialogfeld aufgefordert, das Absturz Abbild zur Analyse an Microsoft zu senden.
 
-Sie können dieses Verhalten ändern, indem Sie die Funktionen [_set_invalid_parameter_handler](../c-runtime-library/reference/set-invalid-parameter-handler-set-thread-local-invalid-parameter-handler.md) oder [_set_thread_local_invalid_parameter_handler](../c-runtime-library/reference/set-invalid-parameter-handler-set-thread-local-invalid-parameter-handler.md) verwenden, um den Handler für ungültige Parameter auf Ihre eigene Funktion festzulegen. Wenn die Funktion, die Sie angeben, die Anwendung nicht beendet, wird die Steuerung an die Funktion zurückgegeben, die ungültige Parameter empfangen hat. In der CRT beenden diese Funktionen normalerweise die Funktions Ausführung, legen `errno` auf einen Fehlercode fest und geben einen Fehlercode zurück. In vielen Fällen sind der `errno` Wert und der Rückgabewert beide `EINVAL` , um einen ungültigen Parameter anzugeben. In einigen Fällen wird ein spezifischerer Fehlercode zurückgegeben, wie z.B. `EBADF` für einen ungültigen Dateizeiger, der als Parameter übergeben wird. 
+Sie können dieses Verhalten ändern, indem Sie die Funktionen [_set_invalid_parameter_handler](../c-runtime-library/reference/set-invalid-parameter-handler-set-thread-local-invalid-parameter-handler.md) oder [_set_thread_local_invalid_parameter_handler](../c-runtime-library/reference/set-invalid-parameter-handler-set-thread-local-invalid-parameter-handler.md) verwenden, um den Handler für ungültige Parameter auf Ihre eigene Funktion festzulegen. Wenn die Funktion, die Sie angeben, die Anwendung nicht beendet, wird die Steuerung an die Funktion zurückgegeben, die ungültige Parameter empfangen hat. In der CRT beenden diese Funktionen normalerweise die Funktions Ausführung, legen `errno` auf einen Fehlercode fest und geben einen Fehlercode zurück. In vielen Fällen sind der `errno` Wert und der Rückgabewert beide `EINVAL` , um einen ungültigen Parameter anzugeben. In einigen Fällen wird ein spezifischerer Fehlercode zurückgegeben, wie z.B. `EBADF` für einen ungültigen Dateizeiger, der als Parameter übergeben wird.
 
 Weitere Informationen zu `errno` finden Sie unter [errno, _doserrno, _sys_errlist und _sys_nerr](../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Sicherheitsfunktionen in der CRT](../c-runtime-library/security-features-in-the-crt.md)\
 [Funktionen der CRT-Bibliothek](../c-runtime-library/crt-library-features.md)

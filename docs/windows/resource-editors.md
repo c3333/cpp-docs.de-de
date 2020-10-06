@@ -21,12 +21,12 @@ helpviewer_keywords:
 - properties [C++], resources
 - resources [C++], properties
 ms.assetid: e20a29ec-d6fb-4ead-98f3-431a0e23aaaf
-ms.openlocfilehash: 2552f9eea79aa0a3545d9746d85cacfbd9a3f25d
-ms.sourcegitcommit: d9c94dcabd94537e304be0261b3263c2071b437b
+ms.openlocfilehash: f854f3cc6e61e3022e784befc738bf28c1adeb6c
+ms.sourcegitcommit: 30792632548d1c71894f9fecbe2f554294b86020
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91353167"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91765243"
 ---
 # <a name="resource-editors-c"></a>Ressourcen-Editoren (C++)
 
@@ -58,7 +58,7 @@ Für jeden Ressourcentyp ist ein Ressourcen-Editor für diesen Ressourcentyp spe
 
 Einige Ressourcentypen sind einzelne Dateien, die importiert und auf verschiedene Arten verwendet werden können. Dazu zählen Bitmaps, Symbole, Cursor, Symbolleisten und HTML-Dateien. Diese Ressourcen verfügen über Dateinamen und [Ressourcen](../windows/symbols-resource-identifiers.md)Bezeichner. Andere, z. b. Dialogfelder, Menüs und Zeichen folgen Tabellen in Win32-Projekten, sind nur als Teil einer Ressourcen Skriptdatei (. RC) oder einer Ressourcen Vorlagen Datei (. rct) vorhanden.
 
-Ressourcen können auch außerhalb des Projekts bearbeitet werden, ohne dass das Projekt geöffnet ist. Weitere Informationen finden Sie unter Gewusst [wie: Erstellen von Ressourcen](../windows/how-to-open-a-resource-script-file-outside-of-a-project-standalone.md).
+Ressourcen können auch außerhalb des Projekts bearbeitet werden, ohne dass das Projekt geöffnet ist. Weitere Informationen finden Sie unter Gewusst [wie: Erstellen von Ressourcen](./how-to-create-a-resource-script-file.md).
 
 > [!NOTE]
 > Die Eigenschaften einer Ressource können mithilfe des Fensters **Eigenschaften** geändert werden.
@@ -126,7 +126,7 @@ Die folgenden Ressourcen bieten keine visuelle Vorschau: Accelerator, Manifest, 
 
 Keine
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Working with Resource Files (Arbeiten mit Ressourcendateien)](../windows/working-with-resource-files.md)<br/>
 [Ressourcen Dateien](../windows/resource-files-visual-studio.md)<br/>

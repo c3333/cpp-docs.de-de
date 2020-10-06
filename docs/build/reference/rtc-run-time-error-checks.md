@@ -1,5 +1,6 @@
 ---
 title: /RTC (Laufzeitfehlerüberprüfungen)
+description: Der Microsoft C/C++-Compiler/RTC Optionen für Lauf Zeit Fehlerüberprüfungen.
 ms.date: 07/31/2020
 f1_keywords:
 - /rtc
@@ -25,14 +26,14 @@ helpviewer_keywords:
 - RTCc compiler option
 - -RTCc compiler option [C++]
 ms.assetid: 9702c558-412c-4004-acd5-80761f589368
-ms.openlocfilehash: eefec0956bebe9f72324f3cbc61fccbc5e2e24d7
-ms.sourcegitcommit: f2a135d69a2a8ef1777da60c53d58fe06980c997
+ms.openlocfilehash: 888a81d0d5c21b0b85420a43d534c5b2742aa082
+ms.sourcegitcommit: 30792632548d1c71894f9fecbe2f554294b86020
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520537"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91765234"
 ---
-# <a name="rtc-run-time-error-checks"></a>`/RTC`(Lauf Zeit Fehlerüberprüfungen)
+# <a name="rtc-run-time-error-checks"></a>`/RTC` (Lauf Zeit Fehlerüberprüfungen)
 
 Wird verwendet, um die Lauf Zeit Fehlerüberprüfungen in Verbindung mit dem [runtime_checks](../../preprocessor/runtime-checks.md) -Pragma zu aktivieren und zu deaktivieren.
 
@@ -109,7 +110,7 @@ Die `__MSVC_RUNTIME_CHECKS` Präprozessordirektive wird definiert, wenn Sie eine
 
 1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Wählen Sie die **Eigenschaften Seite Konfigurations Eigenschaften**  >  **C/C++-****Code Generierung** aus.  
+1. Wählen Sie die **Eigenschaften Seite Konfigurations Eigenschaften**  >  **C/C++-**  >  **Code Generierung** aus.
 
 1. Ändern Sie eine oder beide der folgenden Eigenschaften: **grundlegende Laufzeitüberprüfungen** oder eine **kleinere Typüberprüfung**.
 

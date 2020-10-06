@@ -1,7 +1,7 @@
 ---
-title: if-else-Anweisung (C++)
-ms.date: 07/20/2019
-description: Verwenden Sie if-else-Anweisungen in C++, um bedingte Verzweigungen zu steuern.
+title: If-Else-Anweisung (C++)
+description: Verwenden Sie "If-Else", "If-Else" mit dem Initialisierer und "if-constexpr"-Anweisungen zum Steuern der bedingten Verzweigung.
+ms.date: 10/02/2020
 f1_keywords:
 - else_cpp
 - if_cpp
@@ -9,16 +9,18 @@ helpviewer_keywords:
 - if keyword [C++]
 - else keyword [C++]
 ms.assetid: f8c45cde-6bce-42ae-81db-426b3dbd4caa
-ms.openlocfilehash: a9256e32c89890635c5473a85b4bb3b56bec26d4
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 20d828bf00a79687fe0a9fffbeb1a9cc56fae08c
+ms.sourcegitcommit: 30792632548d1c71894f9fecbe2f554294b86020
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87187568"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91765301"
 ---
-# <a name="if-else-statement-c"></a>if-else-Anweisung (C++)
+# <a name="if-else-statement-c"></a>If-Else-Anweisung (C++)
 
-Steuert den bedingten Branch. Anweisungen im *If-Block* werden nur ausgeführt, wenn der *if-Expression* einen Wert ungleich 0 (null) ergibt (oder **`true`** ). Wenn der Wert des *Ausdrucks* ungleich 0 (null) ist, werden *Anweisung1* und alle anderen Anweisungen im Block ausgeführt, und der Else-Block wird übersprungen. Wenn der Wert von *Expression* NULL ist, wird der If-Block ausgelassen, und der Else-Block wird ausgeführt, falls vorhanden. Ausdrücke, die als ungleich NULL ausgewertet werden, sind
+Eine if-else-Anweisung steuert die bedingte Verzweigung. -Anweisungen in *`if-branch`* werden nur ausgeführt, wenn der *`condition`* -Wert einen Wert ungleich 0 (null) ergibt (oder **`true`** ). Wenn der Wert von ungleich *`condition`* NULL ist, wird die folgende-Anweisung ausgeführt, und die-Anweisung, die auf den optionalen folgt, **`else`** wird übersprungen. Andernfalls wird die folgende-Anweisung ausgelassen, und wenn ein vorhanden ist, **`else`** wird die-Anweisung ausgeführt, die nach dem **`else`** ausgeführt wird.
+
+*`condition`* Ausdrücke, die als ungleich NULL ausgewertet werden, sind:
 
 - **`true`**
 - ein nicht-NULL-Zeiger,
@@ -27,44 +29,49 @@ Steuert den bedingten Branch. Anweisungen im *If-Block* werden nur ausgeführt, 
 
 ## <a name="syntax"></a>Syntax
 
-```cpp
-if ( expression )
-{
-   statement1;
-   ...
-}
-else  // optional
-{
-   statement2;
-   ...
-}
+*`init-statement`*:\
+&emsp; *`expression-statement`*\
+&emsp; *`simple-declaration`*
 
-// C++17 - Visual Studio 2017 version 15.3 and later:
-if ( initialization; expression )
-{
-   statement1;
-   ...
-}
-else  // optional
-{
-   statement2;
-   ...
-}
+*`condition`*:\
+&emsp; *`expression`*\
+&emsp;*`attribute-specifier-seq`* <sub>*opt*</sub> *`decl-specifier-seq`* opt *`declarator`**`brace-or-equal-initializer`*
 
-// C++17 - Visual Studio 2017 version 15.3 and later:
-if constexpr (expression)
-{
-    statement1;
-    ...
-}
-else  // optional
-{
-   statement2;
-   ...
-}
-```
+*`statement`*:\
+&emsp; *`expression-statement`*\
+&emsp; *`compound-statement`*
 
-## <a name="example"></a>Beispiel
+*`expression-statement`*:\
+&emsp;*`expression`* <sub>*opt*</sub>**`;`**
+
+*`compound-statement`*:\
+&emsp;**`{`** *`statement-seq`* <sub>*opt*</sub>**`}`**
+
+*`statement-seq`*:\
+&emsp; *`statement`*\
+&emsp; *`statement-seq`* *`statement`*
+
+*`if-branch`*:\
+&emsp; *`statement`*
+
+*`else-branch`*:\
+&emsp; *`statement`*
+
+*`selection-statement`*:\
+&emsp;**`if`** **`constexpr`** <sub>*opt*</sub><sup>17</sup> **`(`** *`init-statement`* <sub>*opt*</sub><sup>17</sup> 17 *`condition`* **`)`***`if-branch`*\
+&emsp;**`if`** **`constexpr`** <sub>*opt*</sub><sup>17</sup> **`(`** *`init-statement`* <sub>*opt*</sub><sup>17</sup> 17 *`condition`* **`)`** *`if-branch`* **`else`***`else-branch`*
+
+<sup>17</sup> dieses optionale Element ist ab c++ 17 verfügbar.
+
+## <a name="if-else-statements"></a>if-else-Anweisungen
+
+In allen Formen der- **`if`** Anweisung, *`condition`* die einen beliebigen Wert außer einer Struktur aufweisen kann, wird ausgewertet, einschließlich aller Nebeneffekte. Die Steuerung wird von der- **`if`** Anweisung an die nächste Anweisung im Programm weitergeleitet, es sei denn, die ausgeführte *`if-branch`* oder *`else-branch`* enthält [`break`](../cpp/break-statement-cpp.md) , [`continue`](../cpp/continue-statement-cpp.md) oder [`goto`](../cpp/goto-statement-cpp.md) .
+
+Die-Klausel einer- **`else`** `if...else` Anweisung ist mit der nächstgelegenen vorangehenden- **`if`** Anweisung in demselben Bereich verknüpft, der keine entsprechende- **`else`** Anweisung hat.
+
+### <a name="example"></a>Beispiel
+
+Dieser Beispielcode zeigt mehrere **`if`** verwendete-Anweisungen, sowohl mit als auch ohne **`else`** :
 
 ```cpp
 // if_else_statement.cpp
@@ -111,11 +118,11 @@ int main()
 }
 ```
 
-## <a name="if-statement-with-an-initializer"></a><a name="if_with_init"></a>if-Anweisung mit einem Initialisierer
+## <a name="if-statement-with-an-initializer"></a><a name="if_with_init"></a> if-Anweisung mit einem Initialisierer
 
-**Visual Studio 2017 Version 15,3 und** höher (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)): eine- **`if`** Anweisung kann auch einen Ausdruck enthalten, der eine benannte Variable deklariert und initialisiert. Verwenden Sie diese Form der if-Anweisung, wenn die Variable nur im Bereich des If-Blocks benötigt wird.
+Ab c++ 17 kann eine- **`if`** Anweisung auch einen Ausdruck enthalten *`init-statement`* , der eine benannte Variable deklariert und initialisiert. Verwenden Sie diese Form der if-Anweisung, wenn die Variable nur im Gültigkeitsbereich der if-Anweisung benötigt wird. **Microsoft-spezifisch**: dieses Formular ist ab Visual Studio 2017 Version 15,3 verfügbar und erfordert mindestens die- [`/std:c++17`](../build/reference/std-specify-language-standard-version.md) Compileroption.
 
-## <a name="example"></a>Beispiel
+### <a name="example"></a>Beispiel
 
 ```cpp
 #include <iostream>
@@ -159,13 +166,13 @@ int main()
 }
 ```
 
-In allen Formen der- **`if`** Anweisung wird *Expression*, der einen beliebigen Wert außer einer Struktur aufweisen kann, ausgewertet, einschließlich aller Nebeneffekte. Die Steuerung wird von der- **`if`** Anweisung an die nächste Anweisung im Programm weitergeleitet, es sei denn, eine der Anweisungen s enthält eine [break](../cpp/break-statement-cpp.md)-, [Continue](../cpp/continue-statement-cpp.md)-oder [goto](../cpp/goto-statement-cpp.md) *-Anweisung*.
+## <a name="a-nameif_constexpr-if-constexpr-statements"></a><a name="if_constexpr"> if-Anweisungen (constexpr)
 
-Die-Klausel einer- **`else`** `if...else` Anweisung ist der nächstgelegenen vorangehenden **`if`** Anweisung in demselben Bereich zugeordnet, der keine entsprechende- **`else`** Anweisung hat.
+Ab c++ 17 können Sie eine- **`if constexpr`** Anweisung in Funktions Vorlagen verwenden, um Entscheidungen zur Kompilierzeit Verzweigung zu treffen, ohne auf mehrere Funktions Überladungen zurückgreifen zu müssen. **Microsoft-spezifisch**: dieses Formular ist ab Visual Studio 2017 Version 15,3 verfügbar und erfordert mindestens die- [`/std:c++17`](../build/reference/std-specify-language-standard-version.md) Compileroption.
 
-## <a name="a-nameif_constexpr-if-constexpr-statements"></a><a name="if_constexpr">if-Anweisungen (constexpr)
+### <a name="example"></a>Beispiel
 
-**Visual Studio 2017 Version 15,3 und** höher (verfügbar mit [/Std: c++ 17](../build/reference/std-specify-language-standard-version.md)): in Funktions Vorlagen können Sie mit einer **if constexpr** -Anweisung Kompilierzeit-Verzweigungs Entscheidungen treffen, ohne auf mehrere Funktions Überladungen zurückgreifen zu müssen. Sie können z. b. eine einzelne Funktion schreiben, die das Entpacken von Parametern behandelt (keine NULL-Parameter Überladung erforderlich):
+Dieses Beispiel zeigt, wie Sie eine einzelne Funktion schreiben können, die das Entpacken von Parametern behandelt. Keine NULL-Parameter Überladung erforderlich:
 
 ```cpp
 template <class T, class... Rest>
@@ -186,8 +193,8 @@ void f(T&& t, Rest&&... r)
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Auswahlanweisungen](../cpp/selection-statements-cpp.md)<br/>
-[Schlüsselwörter](../cpp/keywords-cpp.md)<br/>
-[Switch-Anweisung (C++)](../cpp/switch-statement-cpp.md)
+[Auswahl Anweisungen](../cpp/selection-statements-cpp.md)\
+[Keywords](../cpp/keywords-cpp.md)\
+[`switch`-Anweisung (C++)](../cpp/switch-statement-cpp.md)

@@ -160,12 +160,12 @@ helpviewer_keywords:
 - CRT_REPORT_HOOK type
 - _finddata_t type
 ms.assetid: 23312dd2-4a6a-4d70-9b48-2a5d0d8c9f28
-ms.openlocfilehash: bf90adbdbc739a2dd26d8e59ab38e56aef3bd312
-ms.sourcegitcommit: d9c94dcabd94537e304be0261b3263c2071b437b
+ms.openlocfilehash: 376c29371fb9213ed46435b41bea1666058c7b4e
+ms.sourcegitcommit: 30792632548d1c71894f9fecbe2f554294b86020
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91352933"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91765316"
 ---
 # <a name="standard-types"></a>Standardtypen
 
@@ -189,7 +189,7 @@ Die Microsoft-Laufzeitbibliothek definiert die folgenden Standardtypen und TypeD
 |int_fast64_t, uint_fast64_t|long long, unsigned long long|
 |intmax_t, uintmax_t|long long, unsigned long long|
 
-|type|BESCHREIBUNG|Deklariert in|
+|type|Beschreibung|Deklariert in|
 |----------|-----------------|-----------------|
 |`clock_t` (lang)|Speichert Zeitwerte, die von [clock](../c-runtime-library/reference/clock.md) verwendet werden.|TIME.H|
 |`_complex`-Struktur|Speicher tatsächliche und imaginäre Teile komplexer Zahlen, die von [_cabs](../c-runtime-library/reference/cabs.md) verwendet werden.|MATH.H|
@@ -199,7 +199,7 @@ Die Microsoft-Laufzeitbibliothek definiert die folgenden Standardtypen und TypeD
 |`_CRT_REPORT_HOOK`,<br /><br /> `_CRT_REPORT_HOOKW`,<br /><br /> `_CRT_REPORT_HOOKW_M`|Eine Typendefinition für eine Rückruffunktion, die in [_CrtDbgReport](../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md) aufgerufen wird.<br /><br /> Die Parameter für diese Funktion sind: Berichttyp, Ausgabenachricht und der Rückgabewert der Rückruffunktion.|CRTDBG.H|
 |`dev_t`, `_dev_t` kurze ganze Zahl oder ganze Zahl ohne Vorzeichen|Stellt Gerätehandles dar.|SYS\TYPES.H|
 |`_diskfree_t`-Struktur|Enthält Informationen über ein Laufwerk. Wird von [_getdiskfree](../c-runtime-library/reference/getdiskfree.md)verwendet **.**|DOS.H und DIRECT.H|
-|`div_t`-, `ldiv_t`- und `lldiv_t`-Strukturen|Speichern Werte, die von [div](reference/div.md), [ldiv](../c-runtime-library/reference/ldiv-lldiv.md) und [lldiv](../c-runtime-library/reference/ldiv-lldiv.md) zurückgegeben werden.|STDLIB.H|
+|`div_t`-, `ldiv_t`- und `lldiv_t`-Strukturen|Speichern Werte, die von [div](reference/div.md), [ldiv](./reference/div.md) und [lldiv](./reference/div.md) zurückgegeben werden.|STDLIB.H|
 |`errno_t`-Integer|Wird für einen Parameter oder einen Funktionsrückgabetyp verwendet, der Fehlercodes von `errno` behandelt.|STDDEF.H,<br /><br /> CRTDEFS.H|
 |`_exception`-Struktur|Speichert Fehlerinformationen für [_matherr](../c-runtime-library/reference/matherr.md).|MATH.H|
 |`_EXCEPTION_POINTERS`|Enthält einen Ausnahmedatensatz. Weitere Informationen finden Sie unter [EXCEPTION_POINTERS](/windows/win32/api/winnt/ns-winnt-exception_pointers).|FPIEEE.H|
@@ -253,6 +253,6 @@ Die Microsoft-Laufzeitbibliothek definiert die folgenden Standardtypen und TypeD
 |`wctype_t`-Integer|Es können alle Zeichen eines beliebigen Sprachenzeichensatzes dargestellt werden.|WCHAR.H,<br /><br /> CRTDEFS.H|
 |`wint_t`-Integer|Typ eines Datenobjekts, der beliebige Breitzeichen- oder Breitzeichen-Dateiende-Werte enthalten kann.|WCHAR.H,<br /><br /> CRTDEFS.H|
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [C-Lauf Zeit Bibliotheks Referenz](../c-runtime-library/c-run-time-library-reference.md)
