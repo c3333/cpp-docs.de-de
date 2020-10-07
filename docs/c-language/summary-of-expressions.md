@@ -74,7 +74,7 @@ ms.locfileid: "87220833"
 
 *shift-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*additive-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*Verschiebeausdruck*  * *\<\<**  *additive-expression*<br/> &nbsp;&nbsp;&nbsp;&nbsp;* Verschiebeausdruck*  **>>**  *additiver-Ausdruck*
+&nbsp;&nbsp;&nbsp;&nbsp;*Verschiebeausdruck*  **\<\<**  *additive-expression*<br/> &nbsp;&nbsp;&nbsp;&nbsp;* Verschiebeausdruck*  **>>**  *additiver-Ausdruck*
 
 *relational-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*shift-expression*<br/>
