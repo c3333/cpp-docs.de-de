@@ -55,12 +55,12 @@ helpviewer_keywords:
 - std::basic_ios [C++], tie
 - std::basic_ios [C++], widen
 ms.assetid: 4fdcd8e1-62d2-4611-8a70-1e4f58434007
-ms.openlocfilehash: b730933879df04d2455b5eae6fc5abf16bbf4484
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: ab8e9e0243a298f5ef39b38b3fd345572cafa587
+ms.sourcegitcommit: 8caaf5e00aeb727741a273aecafa15de293426cf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87219273"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91806558"
 ---
 # <a name="basic_ios-class"></a>basic_ios-Klasse
 
@@ -77,12 +77,12 @@ class basic_ios : public ios_base
 ### <a name="parameters"></a>Parameter
 
 *Elem*\
-Ein Typ.
+Ein Zeichentyp.
 
 *Aufweisen*\
-Eine Variable des Typs `char_traits`.
+Ein Typ, der Informationen zum Zeichentyp bereitstellt. der Standardwert ist `char_traits < Elem >` .
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Ein Objekt der Klasse **basic_ios \<class Elem, class Traits> ** Stores:
 
@@ -123,7 +123,7 @@ Ein Objekt der Klasse **basic_ios \<class Elem, class Traits> ** Stores:
 |[exceptions](#exceptions)|Gibt an, welche Ausnahmen vom Datenstrom ausgelöst werden.|
 |[UN](#fail)|Kennzeichnet einen Fehler beim Extrahieren eines gültigen Felds aus einem Stream.|
 |[erfüllen](#fill)|Gibt das Zeichen an oder zurück, das verwendet wird, wenn der Text nicht so breit ist wie der Stream.|
-|[Glück](#good)|Gibt an, dass der Stream in einem guten Zustand ist.|
+|[good](#good)|Gibt an, dass der Stream in einem guten Zustand ist.|
 |[imbue](#imbue)|Ändert das Gebietsschema.|
 |[init](#init)|Wird von `basic_ios`-Konstruktoren aufgerufen.|
 |[move](#move)|Verschiebt alle Werte, mit Ausnahme des Zeigers auf den Streampuffer, aus dem Parameter in das aktuelle Objekt.|
@@ -150,7 +150,7 @@ Ein Objekt der Klasse **basic_ios \<class Elem, class Traits> ** Stores:
 
 **Namespace:** std
 
-## <a name="basic_iosbad"></a><a name="bad"></a>basic_ios:: Bad
+## <a name="basic_iosbad"></a><a name="bad"></a> basic_ios:: Bad
 
 Kennzeichnet einen Verlust der Integrität des Streampuffers.
 
@@ -160,7 +160,7 @@ bool bad() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn ungleich `rdstate & badbit` NULL ist, andernfalls **`false`** .
+**`true`** , wenn ungleich `rdstate & badbit` NULL ist, andernfalls **`false`** .
 
 Weitere Informationen zu `badbit` finden Sie unter [ios_base::iostate](../standard-library/ios-base-class.md#iostate).
 
@@ -183,7 +183,7 @@ int main( void )
 }
 ```
 
-## <a name="basic_iosbasic_ios"></a><a name="basic_ios"></a>basic_ios:: basic_ios
+## <a name="basic_iosbasic_ios"></a><a name="basic_ios"></a> basic_ios:: basic_ios
 
 Erstellt die basic_ios-Klasse.
 
@@ -197,11 +197,11 @@ basic_ios();
 *SB*\
 Standardpuffer zum Speichern von Eingabe- oder Ausgabeelementen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der erste Konstruktor initialisiert die Memberobjekte durch Aufrufen von [init](#init)(_ *Sb*). Der zweite (geschützte) Konstruktor initialisiert seine Memberobjekte nicht. Ein späterer-Rückruf `init` muss das-Objekt initialisieren, bevor es sicher zerstört werden kann.
 
-## <a name="basic_ioschar_type"></a><a name="char_type"></a>basic_ios:: char_type
+## <a name="basic_ioschar_type"></a><a name="char_type"></a> basic_ios:: char_type
 
 Ein Synonym für den Vorlagenparameter `Elem`.
 
@@ -209,7 +209,7 @@ Ein Synonym für den Vorlagenparameter `Elem`.
 typedef Elem char_type;
 ```
 
-## <a name="basic_iosclear"></a><a name="clear"></a>basic_ios:: Clear
+## <a name="basic_iosclear"></a><a name="clear"></a> basic_ios:: Clear
 
 Löscht alle Fehlerflags.
 
@@ -226,7 +226,7 @@ Optionale Die Flags, die Sie nach dem Löschen aller Flags festlegen möchten. W
 *Reraise*\
 Optionale Gibt an, ob die Ausnahme erneut ausgelöst werden soll. Der Standardwert ist **`false`** (die Ausnahme wird nicht erneut ausgelöst).
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Flags lauten `goodbit` , `failbit` , `eofbit` und `badbit` . Testen Sie auf diese Flags mit [good](#good), [bad](#bad), [eof](#eof) und [fail](#fail).
 
@@ -240,7 +240,7 @@ Wenn `state` **&** [Ausnahmen](#exceptions) ungleich NULL sind, wird ein Objekt 
 
 Beispiele für die Verwendung von finden Sie unter [Rdstate](#rdstate) und [getline](../standard-library/string-functions.md#getline) `clear` .
 
-## <a name="basic_ioscopyfmt"></a><a name="copyfmt"></a>basic_ios:: copyf
+## <a name="basic_ioscopyfmt"></a><a name="copyfmt"></a> basic_ios:: copyf
 
 Kopiert Flags aus einem Stream in einen anderen.
 
@@ -258,7 +258,7 @@ Der Stream, dessen Flags Sie kopieren möchten.
 
 Das- **`this`** Objekt für den Stream, in den die Flags kopiert werden.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Member-Funktion meldet das ** \_ Ereignis zum Löschen**von Rückruf Ereignissen. Anschließend werden Sie von *Rechts* in das Füll Zeichen, den Tie-Zeiger und die Formatierungsinformationen kopiert. ** \* ** Vor dem Ändern der Ausnahme Maske meldet Sie das Rückruf Ereignis `copyfmt_event` . Wenn **state &**[exceptions](#exceptions) nach Abschluss der Kopie ungleich null ist, ruft die Funktion effektiv [clear](#clear) mit dem Argument [rdstate](#rdstate) auf. ** \* Dies**wird zurückgegeben.
 
@@ -283,7 +283,7 @@ int main( )
 }
 ```
 
-## <a name="basic_ioseof"></a><a name="eof"></a>basic_ios:: EOF
+## <a name="basic_ioseof"></a><a name="eof"></a> basic_ios:: EOF
 
 Gibt an, dass das Ende eines Streams erreicht wurde.
 
@@ -293,9 +293,9 @@ bool eof() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn das Ende des Streams erreicht wurde, **`false`** andernfalls.
+**`true`** , wenn das Ende des Streams erreicht wurde, **`false`** andernfalls.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Member-Funktion gibt zurück, **`true`** Wenn [Rdstate](#rdstate) ungleich `& eofbit` 0 (null) ist. Weitere Informationen zu `eofbit` finden Sie unter [ios_base::iostate](../standard-library/ios-base-class.md#iostate).
 
@@ -321,7 +321,7 @@ int main( int argc, char* argv[] )
 }
 ```
 
-## <a name="basic_iosexceptions"></a><a name="exceptions"></a>basic_ios:: Exceptions
+## <a name="basic_iosexceptions"></a><a name="exceptions"></a> basic_ios:: Exceptions
 
 Gibt an, welche Ausnahmen vom Datenstrom ausgelöst werden.
 
@@ -340,7 +340,7 @@ Die Flags, die eine Ausnahme auslösen sollen.
 
 Die Flags, die aktuell angegeben sind, um eine Ausnahme für den Stream auszulösen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Memberfunktion gibt die gespeicherte Ausnahmemaske zurück. Die zweite Memberfunktion speichert *_Except* in der Ausgabemaske und gibt den zuletzt gespeicherten Wert zurück. Beachten Sie, dass das Speichern einer neuen Ausgabemaske ebenso wie der Aufruf von [clear](#clear)( [rdstate](#rdstate) ) eine Ausnahme auslösen kann.
 
@@ -380,7 +380,7 @@ Exception class: class std::ios_base::failure
 Exception description: ios_base::eofbit set
 ```
 
-## <a name="basic_iosfail"></a><a name="fail"></a>basic_ios:: Fail
+## <a name="basic_iosfail"></a><a name="fail"></a> basic_ios:: Fail
 
 Kennzeichnet einen Fehler beim Extrahieren eines gültigen Felds aus einem Stream.
 
@@ -390,7 +390,7 @@ bool fail() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn [Rdstate](#rdstate) ungleich `& (badbit|failbit)` 0 (null) ist, andernfalls **`false`** .
+**`true`** , wenn [Rdstate](#rdstate) ungleich `& (badbit|failbit)` 0 (null) ist, andernfalls **`false`** .
 
 Weitere Informationen zu `failbit` finden Sie unter [ios_base::iostate](../standard-library/ios-base-class.md#iostate).
 
@@ -410,7 +410,7 @@ int main( void )
 }
 ```
 
-## <a name="basic_iosfill"></a><a name="fill"></a>basic_ios:: Fill
+## <a name="basic_iosfill"></a><a name="fill"></a> basic_ios:: Fill
 
 Gibt das Zeichen an oder zurück, das verwendet wird, wenn der Text nicht so breit ist wie der Stream.
 
@@ -428,7 +428,7 @@ Das Zeichen, das als das Füllzeichen dienen soll.
 
 Das aktuelle Füllzeichen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Memberfunktion gibt die gespeicherten Füllzeichen zurück. Die zweite Member-Funktion speichert *char* im Füll Zeichen und gibt den vorherigen gespeicherten Wert zurück.
 
@@ -457,7 +457,7 @@ xxxxa
 x
 ```
 
-## <a name="basic_iosgood"></a><a name="good"></a>basic_ios:: Good
+## <a name="basic_iosgood"></a><a name="good"></a> basic_ios:: Good
 
 Gibt an, dass der Stream in einem guten Zustand ist.
 
@@ -467,7 +467,7 @@ bool good() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-**`true`**, wenn [Rdstate](#rdstate) `== goodbit` (keine Statusflags festgelegt sind), andernfalls **`false`** .
+**`true`** , wenn [Rdstate](#rdstate) `== goodbit` (keine Statusflags festgelegt sind), andernfalls **`false`** .
 
 Weitere Informationen zu `goodbit` finden Sie unter [ios_base::iostate](../standard-library/ios-base-class.md#iostate).
 
@@ -475,7 +475,7 @@ Weitere Informationen zu `goodbit` finden Sie unter [ios_base::iostate](../stand
 
 Unter [basic_ios::bad](#bad) finden Sie ein Beispiel für die Verwendung von `good`.
 
-## <a name="basic_iosimbue"></a><a name="imbue"></a>basic_ios:: imbue
+## <a name="basic_iosimbue"></a><a name="imbue"></a> basic_ios:: imbue
 
 Ändert das Gebietsschema.
 
@@ -492,7 +492,7 @@ Eine lokale Zeichenfolge.
 
 Das vorherige Gebietsschema.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn [rdbuf](#rdbuf) kein NULL-Zeiger ist, ruft die Memberfunktion Folgendes auf:
 
@@ -518,7 +518,7 @@ int main( )
 }
 ```
 
-## <a name="basic_iosinit"></a><a name="init"></a>basic_ios:: init
+## <a name="basic_iosinit"></a><a name="init"></a> basic_ios:: init
 
 Wird von basic_ios-Konstruktoren aufgerufen.
 
@@ -534,7 +534,7 @@ Standardpuffer zum Speichern von Eingabe- oder Ausgabeelementen.
 *_Isstd*\
 Gibt an, ob es sich um einen Standardstream handelt.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Memberfunktion speichert Werte in allen Memberobjekten, sodass:
 
@@ -558,7 +558,7 @@ Die Memberfunktion speichert Werte in allen Memberobjekten, sodass:
 
 - [iword](../standard-library/ios-base-class.md#iword) null zurückgibt, und [pword](../standard-library/ios-base-class.md#pword) einen NULL-Zeiger für alle Argumentwerte zurückgibt.
 
-## <a name="basic_iosint_type"></a><a name="int_type"></a>basic_ios:: int_type
+## <a name="basic_iosint_type"></a><a name="int_type"></a> basic_ios:: int_type
 
 Ein Synonym für `traits_type::int_type`.
 
@@ -566,7 +566,7 @@ Ein Synonym für `traits_type::int_type`.
 typedef typename traits_type::int_type int_type;
 ```
 
-## <a name="basic_iosmove"></a><a name="move"></a>basic_ios:: Move
+## <a name="basic_iosmove"></a><a name="move"></a> basic_ios:: Move
 
 Verschiebt alle Werte, mit Ausnahme des Zeigers auf den Streampuffer, aus dem Parameter in das aktuelle Objekt.
 
@@ -579,11 +579,11 @@ void move(basic_ios&& right);
 *Richting*\
 Das `ios_base`-Objekt, aus dem Werte verschoben werden sollen.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die geschützte Member-Funktion verschiebt *alle in gespeicherten Werte mit* **`*this`** Ausnahme des gespeicherten `stream buffer pointer` , das in der *rechten* Ecke unverändert ist und auf einen NULL-Zeiger in festgelegt ist **`*this`** . Der gespeicherte `tie pointer` wird auf einen NULL-Zeiger in der *rechten*Ecke festgelegt.
 
-## <a name="basic_iosnarrow"></a><a name="narrow"></a>basic_ios:: Narrow
+## <a name="basic_iosnarrow"></a><a name="narrow"></a> basic_ios:: Narrow
 
 Sucht das entsprechende Zeichen zu einem angegebenen `char_type`.
 
@@ -603,7 +603,7 @@ Das **`char`** , das zurückgegeben werden soll, wenn keine Entsprechung gefunde
 
 Das-Äquivalent **`char`** zu einem angegebenen `char_type` .
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Member-Funktion gibt [Use_facet](../standard-library/basic-filebuf-class.md#open) \<ctype\<E> > ( [getloc](../standard-library/ios-base-class.md#getloc)()) zurück. `narrow` ( `Char`, `Default`).
 
@@ -628,7 +628,7 @@ int main( )
 }
 ```
 
-## <a name="basic_iosoff_type"></a><a name="off_type"></a>basic_ios:: off_type
+## <a name="basic_iosoff_type"></a><a name="off_type"></a> basic_ios:: off_type
 
 Ein Synonym für `traits_type::off_type`.
 
@@ -636,7 +636,7 @@ Ein Synonym für `traits_type::off_type`.
 typedef typename traits_type::off_type off_type;
 ```
 
-## <a name="basic_iosoperator-void-"></a><a name="op_void_star"></a>basic_ios:: Operator void *
+## <a name="basic_iosoperator-void-"></a><a name="op_void_star"></a> basic_ios:: Operator void *
 
 Gibt an, ob der Stream weiterhin brauchbar ist.
 
@@ -666,7 +666,7 @@ int main( )
 1
 ```
 
-## <a name="basic_iosoperator"></a><a name="op_not"></a>basic_ios:: Operator!
+## <a name="basic_iosoperator"></a><a name="op_not"></a> basic_ios:: Operator!
 
 Gibt an, ob der Stream nicht unbrauchbar ist.
 
@@ -696,7 +696,7 @@ int main( )
 0
 ```
 
-## <a name="basic_iosoperator-bool"></a><a name="op_bool"></a>basic_ios:: Operator bool
+## <a name="basic_iosoperator-bool"></a><a name="op_bool"></a> basic_ios:: Operator bool
 
 Ermöglicht die Verwendung eines- `basic_ios` Objekts als **`bool`** . Die automatische Typkonvertierung wird deaktiviert, um häufig vorkommende unbeabsichtigte Nebeneffekte zu verhindern.
 
@@ -704,11 +704,11 @@ Ermöglicht die Verwendung eines- `basic_ios` Objekts als **`bool`** . Die autom
 explicit operator bool() const;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Der-Operator gibt einen Wert zurück, der **`false`** nur bei konvertiert werden konnte `fail()` . Der Rückgabetyp kann nur zu konvertiert **`bool`** werden, nicht zu `void *` oder zu anderen bekannten skalaren Typen.
 
-## <a name="basic_iospos_type"></a><a name="pos_type"></a>basic_ios::p os_type
+## <a name="basic_iospos_type"></a><a name="pos_type"></a> basic_ios::p os_type
 
 Ein Synonym für `traits_type::pos_type`.
 
@@ -716,7 +716,7 @@ Ein Synonym für `traits_type::pos_type`.
 typedef typename traits_type::pos_type pos_type;
 ```
 
-## <a name="basic_iosrdbuf"></a><a name="rdbuf"></a>basic_ios:: Rdbuf
+## <a name="basic_iosrdbuf"></a><a name="rdbuf"></a> basic_ios:: Rdbuf
 
 Leitet einen Stream in den angegebenen Puffer weiter.
 
@@ -729,9 +729,9 @@ basic_streambuf<Elem, Traits>* _Sb);
 ### <a name="parameters"></a>Parameter
 
 *_Sb*\
-Ein Stream
+Ein Stream.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die erste Memberfunktion gibt den gespeicherten Streampufferzeiger zurück.
 
@@ -761,7 +761,7 @@ int main( )
 test2
 ```
 
-## <a name="basic_iosrdstate"></a><a name="rdstate"></a>basic_ios:: Rdstate
+## <a name="basic_iosrdstate"></a><a name="rdstate"></a> basic_ios:: Rdstate
 
 Liest den Status der Bits für Flags.
 
@@ -810,7 +810,7 @@ int main( )
 1
 ```
 
-## <a name="basic_iossetstate"></a><a name="setstate"></a>basic_ios:: SetState
+## <a name="basic_iossetstate"></a><a name="setstate"></a> basic_ios:: SetState
 
 Legt zusätzliche Flags fest.
 
@@ -823,7 +823,7 @@ void setstate(iostate _State);
 *_State*\
 Zusätzlich festzulegende Flags.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Memberfunktion ruft effektiv [clear](#clear)(_ *State* &#124; [rdstate](#rdstate)) auf.
 
@@ -859,7 +859,7 @@ int main( )
 1
 ```
 
-## <a name="basic_iosset_rdbuf"></a><a name="set_rdbuf"></a>basic_ios:: set_rdbuf
+## <a name="basic_iosset_rdbuf"></a><a name="set_rdbuf"></a> basic_ios:: set_rdbuf
 
 Weist einen Streampuffer zu, der der Lesepuffer für dieses Streamobjekt sein soll.
 
@@ -873,11 +873,11 @@ basic_streambuf<Elem, Tr>* strbuf)
 *strbuf*\
 Der Streampuffer, der zum Lesepuffer werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die geschützte Member-Funktion speichert " *strinbuf* " in der `stream buffer pointer` . Es wird nicht aufgerufen `clear` .
 
-## <a name="basic_iostie"></a><a name="tie"></a>basic_ios:: Tie
+## <a name="basic_iostie"></a><a name="tie"></a> basic_ios:: Tie
 
 Stellt sicher, dass ein Stream vor einem anderen Stream verarbeitet wird.
 
@@ -890,13 +890,13 @@ basic_ostream<Elem, Traits>* str);
 ### <a name="parameters"></a>Parameter
 
 *SRT*\
-Ein Stream
+Ein Stream.
 
 ### <a name="return-value"></a>Rückgabewert
 
 Die erste Memberfunktion gibt den gespeicherten tie-Zeiger zurück. Die zweite Member-Funktion speichert *Str* im Tie-Zeiger und gibt den vorherigen gespeicherten Wert zurück.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 `tie` bewirkt, dass zwei Streams so synchronisiert werden, dass Vorgänge für einen Stream erst stattfinden, wenn sie für den anderen Stream abgeschlossen sind.
 
@@ -918,7 +918,7 @@ int main( )
 }
 ```
 
-## <a name="basic_iostraits_type"></a><a name="traits_type"></a>basic_ios:: traits_type
+## <a name="basic_iostraits_type"></a><a name="traits_type"></a> basic_ios:: traits_type
 
 Ein Synonym für den Vorlagenparameter `Traits`.
 
@@ -926,7 +926,7 @@ Ein Synonym für den Vorlagenparameter `Traits`.
 typedef Traits traits_type;
 ```
 
-## <a name="basic_ioswiden"></a><a name="widen"></a>basic_ios:: ausweiten
+## <a name="basic_ioswiden"></a><a name="widen"></a> basic_ios:: ausweiten
 
 Sucht den entsprechenden `char_type` zu einem angegebenen **`char`** .
 
@@ -943,7 +943,7 @@ Das zu konvertierende Zeichen.
 
 Sucht den entsprechenden `char_type` zu einem angegebenen **`char`** .
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Member-Funktion gibt [Use_facet](../standard-library/basic-filebuf-class.md#open) <  **CType** - \< **E**> > ( [getloc](../standard-library/ios-base-class.md#getloc)) zurück. `widen`( `Char`).
 
@@ -967,7 +967,7 @@ int main( )
 }
 ```
 
-## <a name="basic_iosswap"></a><a name="swap"></a>basic_ios:: Swap
+## <a name="basic_iosswap"></a><a name="swap"></a> basic_ios:: Swap
 
 Tauscht die Werte in diesem `basic_ios`-Objekt gegen die Werte eines anderen `basic_ios`-Objekts aus. Die Zeiger auf die Streampuffer werden jedoch nicht ausgetauscht.
 
@@ -980,7 +980,7 @@ void swap(basic_ios&& right);
 *Richting*\
 Das `basic_ios`-Objekt, das zum Austauschen von Werten verwendet wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die geschützte Member-Funktion tauscht alle Werte, die *right* in gespeichert sind, mit **`*this`** Ausnahme der gespeicherten aus `stream buffer pointer` .
 

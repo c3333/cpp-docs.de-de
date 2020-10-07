@@ -1,5 +1,6 @@
 ---
 title: Universelle C-Laufzeitroutinen nach Kategorie
+description: Liste der Microsoft Universal C Runtime (ucrt)-Bibliotheks Routinen nach Kategorie.
 ms.date: 04/06/2018
 helpviewer_keywords:
 - routines, run-time
@@ -7,16 +8,16 @@ helpviewer_keywords:
 - categories, run-time functions
 - functions [CRT]
 ms.assetid: de6f5ac4-2226-4dad-be9f-deeb31138c9d
-ms.openlocfilehash: be58ce7550c8f15c1c12eafa1dd4187f12fb71cd
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 3106c97bfcaf6ed273ba9f826edf7b268fdca782
+ms.sourcegitcommit: 8caaf5e00aeb727741a273aecafa15de293426cf
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846341"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91806538"
 ---
 # <a name="universal-c-runtime-routines-by-category"></a>Universelle C-Laufzeitroutinen nach Kategorie
 
-In diesem Abschnitt werden die universellen C-Laufzeitbibliotheksroutinen (UCRT) nach Kategorie aufgelistet und beschrieben. Einige Routinen sind in mehr als einer Kategorie aufgeführt, damit sie leichter gefunden werden können. Routinen für Multibyte-Zeichensätze und Breitzeichenroutinen sind mit Einzelbyte-Zeichensatzentsprechungen gruppiert, falls diese vorhanden sind.
+In diesem Abschnitt werden universelle C-Lauf Zeit Bibliotheks Routinen (ucrt) nach Kategorie aufgelistet. Einige Routinen sind in mehr als einer Kategorie aufgeführt, damit sie leichter gefunden werden können. Routinen für Multibyte-Zeichensätze und Breitzeichenroutinen sind mit Einzelbyte-Zeichensatzentsprechungen gruppiert, falls diese vorhanden sind.
 
 ## <a name="ucrt-library-routine-categories"></a>Kategorien der UCRT-Bibliotheksroutinen
 
