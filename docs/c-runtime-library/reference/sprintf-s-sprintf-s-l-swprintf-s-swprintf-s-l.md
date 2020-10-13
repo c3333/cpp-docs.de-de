@@ -44,12 +44,12 @@ helpviewer_keywords:
 - _sprintf_s_l function
 - formatted text [C++]
 ms.assetid: 424f0a29-22ef-40e8-b565-969f5f57782f
-ms.openlocfilehash: 34b3ddce68563479b26abff34e8fa31f6298558a
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: 006b0f84494466b5c23a8c86f586774b66839b03
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70958008"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008834"
 ---
 # <a name="sprintf_s-_sprintf_s_l-swprintf_s-_swprintf_s_l"></a>sprintf_s, _sprintf_s_l, swprintf_s, _swprintf_s_l
 
@@ -100,7 +100,7 @@ int swprintf_s(
 
 ### <a name="parameters"></a>Parameter
 
-*buffer*<br/>
+*ert*<br/>
 Speicherort für die Ausgabe
 
 *sizeOfBuffer*<br/>
@@ -123,17 +123,17 @@ Die Anzahl geschriebener Zeichen oder-1, wenn ein Fehler aufgetreten ist. Wenn d
 
 **sprintf_s** gibt die Anzahl von Bytes zurück, die im *Puffer*gespeichert werden, wobei das abschließende Null-Zeichen nicht gezählt wird. **swprintf_s** gibt die Anzahl der im *Puffer*gespeicherten breit Zeichen zurück, wobei das abschließende Null-breit Zeichen nicht gezählt wird.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **sprintf_s** -Funktion formatiert und speichert eine Reihe von Zeichen und Werten im *Puffer*. Jedes *Argument* (sofern vorhanden) wird entsprechend der entsprechenden Format Spezifikation im- *Format*konvertiert und ausgegeben. Das Format besteht aus normalen Zeichen und hat die gleiche Form und Funktion wie das *Format* -Argument für [printf](printf-printf-l-wprintf-wprintf-l.md). Ein NULL-Zeichen wird nach dem letzten geschriebenen Zeichen angefügt. Wenn der Kopiervorgang zwischen Zeichenfolgen ausgeführt wird, die sich überschneiden, ist das Verhalten nicht definiert.
 
 Ein Hauptunterschied zwischen **sprintf_s** und [sprintf](sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md) besteht darin, dass **sprintf_s** die Format Zeichenfolge auf gültige Formatierungszeichen überprüft, während [sprintf](sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md) nur überprüft, ob die Format Zeichenfolge oder der Puffer **null** -Zeiger sind. Wenn bei einer der beiden Überprüfungen ein Fehler auftritt, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validation](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die weitere Ausführung zugelassen wird, gibt die Funktion-1 zurück und legt **errno** auf **EINVAL**fest.
 
-Der andere Hauptunterschied zwischen **sprintf_s** und [sprintf](sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md) besteht darin, dass **sprintf_s** einen length-Parameter annimmt, der die Größe des Ausgabepuffers in Zeichen angibt. Wenn der Puffer für den formatierten Text zu klein ist, einschließlich des abschließenden NULL-Werts, wird der Puffer auf eine leere Zeichenfolge festgelegt, indem ein NULL-Zeichen im *Puffer*[0] platziert wird, und der Handler für ungültige Parameter wird aufgerufen. Im Gegensatz zu **_snprintf**garantiert **sprintf_s** , dass der Puffer mit NULL endet, es sei denn, die Puffergröße ist 0 (null).
+Der andere Hauptunterschied zwischen **sprintf_s** und [sprintf](sprintf-sprintf-l-swprintf-swprintf-l-swprintf-l.md) besteht darin, dass **sprintf_s** einen length-Parameter annimmt, der die Größe des Ausgabepuffers in Zeichen angibt. Wenn der Puffer für den formatierten Text zu klein ist, einschließlich des abschließenden NULL-Werts, wird der Puffer auf eine leere Zeichenfolge festgelegt, indem ein NULL-Zeichen im *Puffer*[0] platziert wird, und der Handler für ungültige Parameter wird aufgerufen. Im Gegensatz zu **_snprintf**gewährleistet **sprintf_s** , dass der Puffer mit NULL endet, es sei denn, die Puffergröße ist 0 (null).
 
 **swprintf_s** ist eine breit Zeichen Version von **sprintf_s**. die Zeigerargumente für **swprintf_s** sind Zeichen folgen mit breit Zeichen. Die Erkennung von Codierungs Fehlern in **swprintf_s** kann sich von der in **sprintf_s**unterscheiden. Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch den Gebiets Schema Parameter, der anstelle des aktuellen Thread Gebiets Schemas übergeben wurde.
 
-In C++ wird die Verwendung dieser Funktionen durch Vorlagenüberladungen vereinfacht. Die Überladungen können automatisch Rückschlüsse auf die Pufferlänge ziehen (wodurch kein Größenargument mehr angegeben werden muss), und sie können automatisch die älteren, nicht sicheren Funktionen durch ihre neueren, sicheren Entsprechungen ersetzen. Weitere Informationen finden Sie unter [Secure Template Overloads](../../c-runtime-library/secure-template-overloads.md).
+In C++ wird die Verwendung dieser Funktionen durch Vorlagenüberladungen vereinfacht. Die Überladungen können automatisch Rückschlüsse auf die Pufferlänge ziehen (wodurch kein Größenargument mehr angegeben werden muss), und sie können automatisch die älteren, nicht sicheren Funktionen durch ihre neueren, sicheren Entsprechungen ersetzen. Weitere Informationen finden Sie unter [Sichere Vorlagenüberladungen](../../c-runtime-library/secure-template-overloads.md).
 
 Es gibt Versionen von **sprintf_s** , die eine zusätzliche Kontrolle darüber bieten, was geschieht, wenn der Puffer zu klein ist. Weitere Informationen finden Sie unter [_snprintf_s, _snprintf_s_l, _snwprintf_s, _snwprintf_s_l](snprintf-s-snprintf-s-l-snwprintf-s-snwprintf-s-l.md).
 
@@ -148,12 +148,12 @@ Es gibt Versionen von **sprintf_s** , die eine zusätzliche Kontrolle darüber b
 
 |-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
-|**sprintf_s**, **_sprintf_s_l**|C: \<stdio.h><br /><br /> C++: \<cstdio> oder \<stdio.h>|
-|**swprintf_s**, **_swprintf_s_l**|C: \<stdio.h> oder \<wchar.h><br /><br /> C++: \<cstdio>, \<cwchar>, \<stdio.h> oder \<wchar.h>|
+|**sprintf_s** **_sprintf_s_l**|Scher \<stdio.h><br /><br /> C++: \<cstdio> oder \<stdio.h>|
+|**swprintf_s** **_swprintf_s_l**|C: \<stdio.h> oder \<wchar.h><br /><br /> C++: \<cstdio> , \<cwchar> \<stdio.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="example"></a>Beispiel
+## <a name="example-use-sprintf_s-to-format-data"></a>Beispiel: Verwenden von sprintf_s zum Formatieren von Daten
 
 ```C
 // crt_sprintf_s.c
@@ -189,7 +189,7 @@ Output:
 character count = 79
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-error-code-handling"></a>Beispiel: Behandlung von Fehlercodes
 
 ```C
 // crt_swprintf_s.c

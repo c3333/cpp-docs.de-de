@@ -5,12 +5,12 @@ helpviewer_keywords:
 - message-block filters, using [Concurrency Runtime]
 - using message-block filters [Concurrency Runtime]
 ms.assetid: db6b99fb-288d-4477-96dc-b9751772ebb2
-ms.openlocfilehash: a5814536e88add5b15f577588d571a06eda6151c
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: ac58ef2240d2ea6ba34b334106c08595e70b02e8
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87226710"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008641"
 ---
 # <a name="how-to-use-a-message-block-filter"></a>Gewusst wie: Verwenden eines Nachrichtenblockfilters
 
@@ -20,9 +20,9 @@ Wenn Sie ein Nachrichtenblock Objekt wie z. b. eine Parallelität [:: Unbounded_
 
 Filter Funktionen sind wichtig, da Sie es Ihnen ermöglichen, Nachrichten Blöcke zum bilden von *Datenfluss Netzwerken*zu verbinden. Nachrichtenblöcke in einem Datenflussnetzwerk steuern den Datenfluss, indem sie nur Nachrichten verarbeiten, die bestimmte Kriterien erfüllen. Vergleichen Sie dies mit dem Ablaufsteuerungsmodell, in dem der Datenfluss mit Steuerungsstrukturen, z. B. Bedingungsanweisungen, Schleifen usw., gesteuert wird.
 
-Dieses Dokument enthält ein einfaches Beispiel für die Verwendung eines Nachrichtenfilters. Weitere Beispiele, in denen Nachrichtenfilter und das Datenfluss Modell verwendet werden, um Nachrichten Blöcke zu verbinden, finden Sie unter Exemplarische Vorgehensweise [: Erstellen eines Daten](../../parallel/concrt/walkthrough-creating-a-dataflow-agent.md) Fluss-Agents und Exemplarische Vorgehensweise [: Erstellen eines Bild Verarbeitungs Netzwerks](../../parallel/concrt/walkthrough-creating-an-image-processing-network.md).
+Dieses Dokument enthält ein einfaches Beispiel für die Verwendung eines Nachrichtenfilters. Weitere Beispiele, in denen Nachrichtenfilter und das Datenfluss Modell verwendet werden, um Nachrichten Blöcke zu verbinden, finden Sie unter Exemplarische Vorgehensweise [: Erstellen eines Daten](../../parallel/concrt/walkthrough-creating-a-dataflow-agent.md) Fluss-Agents und Exemplarische Vorgehensweise [: Erstellen eines Image-Processing Netzwerks](../../parallel/concrt/walkthrough-creating-an-image-processing-network.md).
 
-## <a name="example"></a>Beispiel
+## <a name="example-count_primes-function"></a>Beispiel: count_primes-Funktion
 
 Betrachten Sie die folgende Funktion `count_primes`, die die grundlegende Verwendung eines Nachrichtenblocks veranschaulicht, der keine eingehenden Nachrichten filtert. Der Message-Block fügt Primzahlen an ein [Std:: Vector](../../standard-library/vector-class.md) -Objekt an. Die `count_primes`-Funktion sendet Zahlen an den Nachrichtenblock, empfängt die Ausgabewerte des Nachrichtenblocks und gibt die Zahlen, die Primzahlen sind, an die Konsole aus.
 
@@ -30,7 +30,7 @@ Betrachten Sie die folgende Funktion `count_primes`, die die grundlegende Verwen
 
 Das `transformer`-Objekt verarbeitet alle Eingabewerte. Es benötigt jedoch nur die Werte, bei denen es sich um Primzahlen handelt. Die Anwendung kann zwar so geschrieben werden kann, dass der Nachrichtenabsender nur Primzahlen sendet, jedoch können die Anforderungen des Nachrichtenempfängers nicht immer bekannt sein.
 
-## <a name="example"></a>Beispiel
+## <a name="example-count_primes_filter-function"></a>Beispiel: count_primes_filter-Funktion
 
 Die folgende Funktion `count_primes_filter` führt die gleiche Aufgabe wie die `count_primes`-Funktion aus. Das `transformer`-Objekt in dieser Version verwendet jedoch eine Filterfunktion, damit nur die Werte angenommen werden, die Primzahlen sind. Die Funktion, die die Aktion ausführt, empfängt nur Primzahlen. Daher muss sie die `is_prime`-Funktion nicht aufrufen.
 
@@ -40,7 +40,7 @@ Da das `transformer`-Objekt nur Primzahlen empfängt, kann das `transformer`-Obj
 
 Das `transformer`-Objekt verarbeitet jetzt nur die Werte, die Primzahlen sind. Im vorherigen Beispiel verarbeitet das `transformer`-Objekt alle Nachrichten. Daher muss im vorherigen Beispiel die gleiche Anzahl von Nachrichten empfangen werden, wie gesendet wurden. In diesem Beispiel wird das Ergebnis der [parallelcurrency:: Send](reference/concurrency-namespace-functions.md#send) -Funktion verwendet, um zu bestimmen, wie viele Nachrichten vom-Objekt empfangen werden `transformer` . Die `send` Funktion gibt zurück, **`true`** Wenn der Nachrichten Puffer die Nachricht annimmt und der Nachrichten **`false`** Puffer die Nachricht ablehnt. Daher stimmt die Häufigkeit, mit der der Nachrichtenpuffer die Nachricht annimmt, mit der Anzahl der Primzahlen überein.
 
-## <a name="example"></a>Beispiel
+## <a name="example-finished-message-block-filter-code-sample"></a>Beispiel: Fertigstellung des Code Beispiels für den Nachrichtenblock Filter
 
 Der folgende Code veranschaulicht das vollständige Beispiel. In dem Beispiel werden die `count_primes`-Funktion und die `count_primes_filter`-Funktion aufgerufen.
 
@@ -67,5 +67,5 @@ Um das unnötige Kopieren von Daten zu vermeiden, verwenden Sie das zweite Forma
 
 [Asynchronous Agents Library](../../parallel/concrt/asynchronous-agents-library.md)<br/>
 [Exemplarische Vorgehensweise: Erstellen eines Datenfluss-Agents](../../parallel/concrt/walkthrough-creating-a-dataflow-agent.md)<br/>
-[Exemplarische Vorgehensweise: Erstellen eines Bild Verarbeitungs Netzwerks](../../parallel/concrt/walkthrough-creating-an-image-processing-network.md)<br/>
+[Exemplarische Vorgehensweise: Erstellen eines Image-Processing Netzwerks](../../parallel/concrt/walkthrough-creating-an-image-processing-network.md)<br/>
 [Transformer-Klasse](../../parallel/concrt/reference/transformer-class.md)

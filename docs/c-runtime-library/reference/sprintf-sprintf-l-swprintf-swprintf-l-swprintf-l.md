@@ -49,12 +49,12 @@ helpviewer_keywords:
 - sprintf_l function
 - formatted text [C++]
 ms.assetid: f6efe66f-3563-4c74-9455-5411ed939b81
-ms.openlocfilehash: 9a3f10fc89d93717edfb032dea910040589c1254
-ms.sourcegitcommit: 8645408c7929558b8162f781776d0908d790a41c
+ms.openlocfilehash: da3c5b3660b481fd3a7140adbc236f44cd51f37e
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334950"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008818"
 ---
 # <a name="sprintf-_sprintf_l-swprintf-_swprintf_l-__swprintf_l"></a>sprintf, _sprintf_l, swprintf, _swprintf_l, __swprintf_l
 
@@ -133,7 +133,7 @@ Die Anzahl geschriebener Zeichen oder-1, wenn ein Fehler aufgetreten ist. Wenn *
 
 **sprintf** gibt die Anzahl von Bytes zurück, die im *Puffer*gespeichert werden, wobei das abschließende Null-Zeichen nicht gezählt wird. " **tauprintf** " gibt die Anzahl der im *Puffer*gespeicherten breit Zeichen zurück, wobei das abschließende Null-breit Zeichen nicht gezählt wird.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **sprintf** -Funktion formatiert und speichert eine Reihe von Zeichen und Werten im *Puffer*. Jedes *Argument* (sofern vorhanden) wird entsprechend der entsprechenden Format Spezifikation im- *Format*konvertiert und ausgegeben. Das Format besteht aus normalen Zeichen und hat die gleiche Form und Funktion wie das *Format* -Argument für [printf](printf-printf-l-wprintf-wprintf-l.md). Ein NULL-Zeichen wird nach dem letzten geschriebenen Zeichen angefügt. Wenn der Kopiervorgang zwischen Zeichenfolgen ausgeführt wird, die sich überschneiden, ist das Verhalten nicht definiert.
 
@@ -162,7 +162,7 @@ In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sich
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="example"></a>Beispiel
+## <a name="example-use-sprintf-to-format-data"></a>Beispiel: Verwenden von sprintf zum Formatieren von Daten
 
 ```C
 // crt_sprintf.c
@@ -199,7 +199,7 @@ Output:
 character count = 79
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-error-code-handling"></a>Beispiel: Behandlung von Fehlercodes
 
 ```C
 // crt_swprintf.c

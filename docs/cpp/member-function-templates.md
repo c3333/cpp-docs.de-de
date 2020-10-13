@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - function templates, member functions
 ms.assetid: 83d51835-6a27-40ed-997c-7d90dc9182d8
-ms.openlocfilehash: ee36d4f33f3e4216e2ad9c434ac1da4ca3aa83e8
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 8514c8ffe630f5bc44d8d287d6ccf08c7755e3a0
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80177980"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008565"
 ---
 # <a name="member-function-templates"></a>Memberfunktionsvorlagen
 
@@ -17,7 +17,7 @@ Der Ausdruck "Membervorlage" bezieht sich auf Memberfunktionsvorlagen und gescha
 
 Memberfunktionen können in mehreren Kontexten Funktionsvorlagen sein. Alle Funktionen von Klassenvorlagen sind generisch, werden jedoch nicht als Membervorlagen oder Memberfunktionsvorlagen bezeichnet. Wenn diese Memberfunktionen eigene Vorlagenargumente übernehmen, werden sie als Memberfunktionsvorlagen betrachtet.
 
-## <a name="example"></a>Beispiel
+## <a name="example-declare-member-function-templates"></a>Beispiel: Deklarieren von Element Funktions Vorlagen
 
 Memberfunktionsvorlagen von nicht auf Vorlagen basierenden Klassen oder Vorlagenklassen werden als Funktionsvorlagen mit ihren Vorlagenparametern deklariert.
 
@@ -36,7 +36,7 @@ int main()
 }
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-member-function-template-of-template-class"></a>Beispiel: Element Funktions Vorlage der Vorlagen Klasse
 
 Das folgende Beispiel zeigt eine Memberfunktionsvorlage einer Vorlagenklasse.
 
@@ -57,7 +57,7 @@ int main()
 }
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-define-member-templates-outside-class"></a>Beispiel: Definieren von Element Vorlagen außerhalb der Klasse
 
 ```cpp
 // defining_member_templates_outside_class.cpp
@@ -79,7 +79,7 @@ int main()
 }
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-templated-user-defined-conversion"></a>Beispiel: benutzerdefinierte Konvertierung mit Vorlagen
 
 Lokale Klassen dürfen keine Membervorlagen haben.
 
@@ -105,6 +105,6 @@ int main()
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Funktionsvorlagen](../cpp/function-templates.md)
+[Funktions Vorlagen](../cpp/function-templates.md)

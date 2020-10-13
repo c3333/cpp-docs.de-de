@@ -45,12 +45,12 @@ helpviewer_keywords:
 - formatted text [C++]
 - _stprintf_p_l function
 ms.assetid: a2ae78e8-6b0c-48d5-87a9-ea2365b0693d
-ms.openlocfilehash: 5bb8993293236a20c87707db06715e9a012e643e
-ms.sourcegitcommit: f19474151276d47da77cdfd20df53128fdcc3ea7
+ms.openlocfilehash: c694567aa7554319d5821678a18c3b5392f89965
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70958029"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008846"
 ---
 # <a name="_sprintf_p-_sprintf_p_l-_swprintf_p-_swprintf_p_l"></a>_sprintf_p, _sprintf_p_l, _swprintf_p, _swprintf_p_l
 
@@ -89,7 +89,7 @@ int _swprintf_p_l(
 
 ### <a name="parameters"></a>Parameter
 
-*buffer*<br/>
+*ert*<br/>
 Speicherort für die Ausgabe
 
 *sizeOfBuffer*<br/>
@@ -110,11 +110,11 @@ Weitere Informationen finden Sie unter [Formatangaben](../../c-runtime-library/f
 
 Die Anzahl geschriebener Zeichen oder-1, wenn ein Fehler aufgetreten ist.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_sprintf_p** -Funktion formatiert und speichert eine Reihe von Zeichen und Werten im *Puffer*. Jedes Argument im *argument_list* (sofern vorhanden) wird entsprechend der entsprechenden Format Spezifikation im- *Format*konvertiert und ausgegeben. Das *Format* -Argument verwendet die [formatspezifikations Syntax für printf-und wprintf-Funktionen](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md). Ein NULL-Zeichen wird nach dem letzten geschriebenen Zeichen angefügt. Wenn der Kopiervorgang zwischen Zeichenfolgen ausgeführt wird, die sich überschneiden, ist das Verhalten nicht definiert. Der Unterschied zwischen **_sprintf_p** und **sprintf_s** besteht darin, dass **_sprintf_p** Positions Parameter unterstützt, wodurch die Reihenfolge angegeben werden kann, in der die Argumente in der Format Zeichenfolge verwendet werden. Weitere Informationen finden Sie unter [printf-Positionsparameter](../../c-runtime-library/printf-p-positional-parameters.md).
+Die **_sprintf_p** -Funktion formatiert und speichert eine Reihe von Zeichen und Werten im *Puffer*. Jedes Argument im *argument_list* (sofern vorhanden) wird entsprechend der entsprechenden Format Spezifikation im- *Format*konvertiert und ausgegeben. Das *Format* -Argument verwendet die [formatspezifikations Syntax für printf-und wprintf-Funktionen](../../c-runtime-library/format-specification-syntax-printf-and-wprintf-functions.md). Ein NULL-Zeichen wird nach dem letzten geschriebenen Zeichen angefügt. Wenn der Kopiervorgang zwischen Zeichenfolgen ausgeführt wird, die sich überschneiden, ist das Verhalten nicht definiert. Der Unterschied zwischen **_sprintf_p** und **sprintf_s** besteht darin, dass **_sprintf_p** Positions Parameter unterstützt, wodurch die Reihenfolge angegeben werden kann, in der die Argumente in der Format Zeichenfolge verwendet werden. Weitere Informationen finden Sie unter [printf_p-Positionsparameter](../../c-runtime-library/printf-p-positional-parameters.md).
 
-**_swprintf_p** ist eine breit Zeichen Version von **_sprintf_p**. die Zeigerargumente für **_swprintf_p** sind Zeichen folgen mit breit Zeichen. Die Erkennung von Codierungs Fehlern in **_swprintf_p** kann sich von der in **_sprintf_p**unterscheiden. **_swprintf_p** und **fwprintf_p** Verhalten sich identisch, mit dem Unterschied, dass **_swprintf_p** die Ausgabe in eine Zeichenfolge anstatt in ein Ziel vom Typ **File**schreibt, und **_swprintf_p** erfordert den *count* -Parameter, um das maximale Anzahl von Zeichen, die geschrieben werden sollen. Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch den Gebiets Schema Parameter, der anstelle des aktuellen Thread Gebiets Schemas übergeben wurde.
+**_swprintf_p** ist eine breit Zeichen Version von **_sprintf_p**. die Zeigerargumente für **_swprintf_p** sind Zeichen folgen mit breit Zeichen. Die Erkennung von Codierungs Fehlern in **_swprintf_p** kann sich von der in **_sprintf_p**unterscheiden. **_swprintf_p** und **fwprintf_p** Verhalten sich identisch, außer dass **_swprintf_p** Ausgabe in eine Zeichenfolge anstatt in ein Ziel vom Typ **File**schreibt, und **_swprintf_p** erfordert den *count* -Parameter, um die maximale Anzahl der zu schreibenden Zeichen anzugeben. Die Versionen dieser Funktionen mit dem **_l** -Suffix sind beinahe identisch, verwenden jedoch den Gebiets Schema Parameter, der anstelle des aktuellen Thread Gebiets Schemas übergeben wurde.
 
 **_sprintf_p** gibt die Anzahl von Bytes zurück, die im *Puffer*gespeichert werden, wobei das abschließende Null-Zeichen nicht gezählt wird. **_swprintf_p** gibt die Anzahl der im *Puffer*gespeicherten breit Zeichen zurück, wobei das abschließende Null-breit Zeichen nicht gezählt wird. Wenn der *Puffer* oder das *Format* ein NULL-Zeiger ist oder wenn die Format Zeichenfolge ungültige Formatierungszeichen enthält, wird der Handler für ungültige Parameter aufgerufen, wie in [Parameter Validierung](../../c-runtime-library/parameter-validation.md)beschrieben. Wenn die weitere Ausführung zugelassen wird, geben diese Funktionen-1 zurück und legen **errno** auf **EINVAL**fest.
 
@@ -129,12 +129,12 @@ Die **_sprintf_p** -Funktion formatiert und speichert eine Reihe von Zeichen und
 
 |-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
-|**_sprintf_p**, **_sprintf_p_l**|\<stdio.h>|
-|**_swprintf_p**, **_swprintf_p_l**|\<stdio.h> oder \<wchar.h>|
+|**_sprintf_p** **_sprintf_p_l**|\<stdio.h>|
+|**_swprintf_p** **_swprintf_p_l**|\<stdio.h> oder \<wchar.h>|
 
-Weitere Informationen zur Kompatibilität finden Sie unter [Kompatibilität](../../c-runtime-library/compatibility.md).
+Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="example"></a>Beispiel
+## <a name="example-use-_sprintf_p-to-format-data"></a>Beispiel: Verwenden von _sprintf_p zum Formatieren von Daten
 
 ```C
 // crt_sprintf_p.c
@@ -177,7 +177,7 @@ Output:
 character count = 79
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-error-code-handling"></a>Beispiel: Behandlung von Fehlercodes
 
 ```C
 // crt_swprintf_p.c
@@ -221,4 +221,4 @@ Wrote -1 characters
 [sscanf, _sscanf_l, swscanf, _swscanf_l](sscanf-sscanf-l-swscanf-swscanf-l.md)<br/>
 [sscanf_s, _sscanf_s_l, swscanf_s, _swscanf_s_l](sscanf-s-sscanf-s-l-swscanf-s-swscanf-s-l.md)<br/>
 [vprintf-Funktionen](../../c-runtime-library/vprintf-functions.md)<br/>
-[printf_p-Positionsparameter](../../c-runtime-library/printf-p-positional-parameters.md)<br/>
+[Printf_p Positions Parameter](../../c-runtime-library/printf-p-positional-parameters.md)<br/>

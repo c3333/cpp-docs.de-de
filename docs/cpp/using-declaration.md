@@ -7,12 +7,12 @@ helpviewer_keywords:
 - namespaces [C++], unqualified names in
 - using keyword [C++]
 ms.assetid: 4184e2b1-3adc-408e-b5f3-0b3f8b554723
-ms.openlocfilehash: 3aa0c7c4615aaf5eae9f4eae534e52167bf79ff0
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 072ecd325a76e80dbd710c241e39fdf7b969e537
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87227022"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008249"
 ---
 # <a name="using-declaration"></a>using-Deklaration
 
@@ -37,7 +37,7 @@ nicht *qualifizierte-ID* Ein nicht qualifizierter ID-Ausdruck, bei dem es sich u
 
 Eine using-Deklaration führt einen nicht qualifizierten Namen als Synonym für eine an anderer Stelle deklarierte Entität ein. Er ermöglicht die Verwendung eines einzelnen Namens aus einem bestimmten Namespace ohne explizite Qualifizierung in dem Deklarations Bereich, in dem er angezeigt wird. Dies steht im Gegensatz zur [using-Direktive](../cpp/namespaces-cpp.md#using_directives), mit der *alle* Namen in einem Namespace ohne Qualifikation verwendet werden können. Das **`using`** Schlüsselwort wird auch für [Typaliase](../cpp/aliases-and-typedefs-cpp.md)verwendet.
 
-## <a name="example"></a>Beispiel
+## <a name="example-using-declaration-in-class-field"></a>Beispiel: `using` Deklaration im Feld "Klasse"
 
 Eine using-Deklaration kann in einer Klassendefinition verwendet werden.
 
@@ -83,7 +83,7 @@ In B::f()
 In B::g()
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-using-declaration-to-declare-a-member"></a>Beispiel: `using` Deklaration zum Deklarieren eines Members
 
 Bei Verwendung zum Deklarieren eines Members muss eine using-Deklaration auf den Member einer Basisklasse verweisen.
 
@@ -123,7 +123,7 @@ int main() {
 In B::f()
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-using-declaration-with-explicit-qualification"></a>Beispiel: `using` Deklaration mit expliziter Qualifizierung
 
 Auf Member, die mit einer using-Deklaration deklariert werden, kann mithilfe der expliziten Qualifizierung verwiesen werden. Das Präfix `::` verweist auf den globalen Namespace.
 
@@ -163,7 +163,7 @@ In f
 In A::g
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-using-declaration-synonyms-and-aliases"></a>Beispiel: `using` Deklarations Synonyme und Aliase
 
 Wenn eine using-Deklaration erfolgt, verweist das von der Deklaration erstellte Synonym nur auf Definitionen, die zum Zeitpunkt der using-Deklaration gültig waren. Definitionen, die nach der using-Deklaration einem Namespace hinzugefügt werden, sind ungültige Synonyme.
 
@@ -192,7 +192,7 @@ void b() {
 }
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-local-declarations-and-using-declarations"></a>Beispiel: lokale Deklarationen und `using` Deklarationen
 
 In Bezug auf Funktionen in Namespaces gilt Folgendes: Wenn eine Reihe von lokalen Deklarationen und using-Deklarationen in einem deklarativen Gültigkeitsbereich für einen einzelnen Namen angegeben werden, müssen alle auf dieselbe Entität verweisen, oder sie müssen alle auf Funktionen verweisen.
 
@@ -215,9 +215,9 @@ void g() {
 
 Im Beispiel oben veranlasst die `using B::i`-Anweisung, dass eine zweite `int i` in der `g()`-Funktion deklariert wird. Die `using B::f`-Anweisung steht nicht mit der `f(char)`-Funktion in Konflikt, da die Funktionsnamen, die von `B::f` eingeführt werden, über verschiedene Parametertypen verfügen.
 
-## <a name="example"></a>Beispiel
+## <a name="example-local-function-declarations-and-using-declarations"></a>Beispiel: lokale Funktions Deklarationen und- `using` Deklarationen
 
-Eine lokale Funktionsdeklaration kann nicht den gleichen Namen und Typ wie eine Funktion haben, die von einer using-Deklaration eingeführt wird. Zum Beispiel:
+Eine lokale Funktionsdeklaration kann nicht den gleichen Namen und Typ wie eine Funktion haben, die von einer using-Deklaration eingeführt wird. Beispiel:
 
 ```cpp
 // functions_in_namespaces2.cpp
@@ -242,7 +242,7 @@ void h() {
 }
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-using-declaration-and-inheritance"></a>Beispiel: `using` Deklaration und Vererbung
 
 In Bezug auf Vererbung gilt Folgendes: Wenn eine using-Deklaration einen Namen aus einer Basisklasse in den Gültigkeitsbereich einer abgeleiteten Klasse einführt, überschreiben Memberfunktionen in der abgeleiteten Klasse virtuelle Memberfunktionen in der Basisklasse, die denselben Namen und dieselben Argumenttypen aufweisen.
 
@@ -300,7 +300,7 @@ In B::g
 In D::g(char)
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-using-declaration-accessibility"></a>Beispiel: `using` Barrierefreiheit bei der Deklaration
 
 Alle in einer using-Deklaration erwähnten Instanzen eines Namens müssen verfügbar sein. Insbesondere muss der Membername zugänglich sein, wenn eine abgeleitete Klasse eine using-Deklaration verwendet, um auf einen Member einer Basisklasse zuzugreifen. Wenn der Name der einer überladenen Memberfunktion ist, muss auf alle genannten Funktionen zugegriffen werden können.
 

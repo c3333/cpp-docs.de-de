@@ -4,12 +4,12 @@ ms.date: 03/05/2018
 helpviewer_keywords:
 - move constructor [C++]
 ms.assetid: e75efe0e-4b74-47a9-96ed-4e83cfc4378d
-ms.openlocfilehash: 2c8fed15787ec4b347694d8c4e40bf7912f3421d
-ms.sourcegitcommit: d4da3693f83a24f840e320e35c24a4a07cae68e2
+ms.openlocfilehash: e57f67eeca93572b26ee03033cbe4dcf90431f78
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83550770"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008868"
 ---
 # <a name="move-constructors-and-move-assignment-operators-c"></a>Bewegungskonstruktoren und Bewegungszuweisungsoperatoren (C++)
 
@@ -168,7 +168,7 @@ Die folgenden Prozeduren beschreiben, wie ein Bewegungskonstruktor und ein Beweg
     return *this;
     ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-complete-move-constructor-and-assignment-operator"></a>Beispiel: kompletter bewegungskonstruktor und Zuweisungs Operator
 
 Im folgenden Beispiel wird der vollständige Bewegungskonstruktor und der Bewegungszuweisungsoperator für die `MemoryBlock`-Klasse veranschaulicht:
 
@@ -217,7 +217,7 @@ MemoryBlock& operator=(MemoryBlock&& other) noexcept
 }
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-use-move-semantics-to-improve-performance"></a>Beispiel: Verschieben der Semantik zum Verbessern der Leistung
 
 Im folgenden Beispiel wird eine Verbesserung der Leistung Ihrer Anwendungen mithilfe von Bewegungssemantik veranschaulicht. Im Beispiel werden einem Vektorobjekt zwei Elemente hinzugefügt, daraufhin wird ein neues Element zwischen den beiden bestehenden Elementen eingefügt. Die- `vector` Klasse verwendet Verschiebungs Semantik, um den Einfügevorgang effizient auszuführen, indem die Elemente des Vektors verschoben werden, anstatt Sie zu kopieren.
 
@@ -309,7 +309,7 @@ MemoryBlock(MemoryBlock&& other) noexcept
 
 Die [Std:: Move](../standard-library/utility-functions.md#move) -Funktion konvertiert den lvalue `other` in einen Rvalue-Wert.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Rvalue-Verweisdeklarator: &&](../cpp/rvalue-reference-declarator-amp-amp.md)<br/>
 [Std:: Move](../standard-library/utility-functions.md#move)

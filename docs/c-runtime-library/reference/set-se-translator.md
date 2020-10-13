@@ -26,12 +26,12 @@ helpviewer_keywords:
 - exception handling, changing
 - _set_se_translator function
 ms.assetid: 280842bc-d72a-468b-a565-2d3db893ae0f
-ms.openlocfilehash: f1c9446f9c3f0d637ea53d54584258959677b339
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 9de0c62b9e9a0bca0753d31ef64396e00c379253
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87232416"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008630"
 ---
 # <a name="_set_se_translator"></a>_set_se_translator
 
@@ -84,7 +84,7 @@ Beachten Sie beim Verwenden von **_set_se_translator** aus verwaltetem Code (mit
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="example"></a>Beispiel
+## <a name="example-catch-__try-exception-error"></a>Beispiel: Fehler beim Abfangen __try Ausnahme
 
 In diesem Beispiel werden die Aufrufe zum Festlegen eines strukturierten Ausnahme Übersetzer und zum Wiederherstellen der alten in einer RAII-Klasse () umschlossen `Scoped_SE_Translator` . Mit dieser Klasse können Sie einen Bereichs spezifischen Konvertierer als einzelne Deklaration einführen. Der klassendekonstruktor stellt den ursprünglichen Konvertierer wieder her, wenn die Steuerung den Bereich verlässt
 
@@ -157,7 +157,7 @@ In __finally
 Caught a __try exception, error c0000094.
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-catch-se_exception-error"></a>Beispiel: Fehler bei catch SE_Exception
 
 Obwohl die von **_set_se_translator** bereitgestellte Funktionalität in verwaltetem Code nicht verfügbar ist, ist es möglich, diese Zuordnung in nativem Code zu verwenden, auch wenn sich dieser systemeigene Code in einer Kompilierung unter dem Schalter **/CLR** befindet, solange der systemeigene Code mithilfe von angegeben wird `#pragma unmanaged` . Wenn eine strukturierte Ausnahme in verwaltetem Code ausgelöst wird, der zugeordnet werden soll, muss der Code, der die Ausnahme generiert und behandelt, als markiert werden `#pragma unmanaged` . Der folgende Code veranschaulicht eine mögliche Verwendung. Weitere Informationen finden Sie unter [Pragma-Direktiven und das __Pragma-Schlüsselwort](../../preprocessor/pragma-directives-and-the-pragma-keyword.md).
 
@@ -230,10 +230,10 @@ int main() {
 Caught SE_Exception, error c0000094
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Ausnahme Behandlungs Routinen](../../c-runtime-library/exception-handling-routines.md)<br/>
 [set_terminate](set-terminate-crt.md)<br/>
 [set_unexpected](set-unexpected-crt.md)<br/>
 [aufzu](terminate-crt.md)<br/>
-[te](unexpected-crt.md)<br/>
+[Nicht erwartet](unexpected-crt.md)<br/>

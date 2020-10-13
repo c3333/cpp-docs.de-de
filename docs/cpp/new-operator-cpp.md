@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - new keyword [C++]
 ms.assetid: 69fee812-1c28-4882-8fda-d1ad17860004
-ms.openlocfilehash: 81dd7483c49a699ac53ea53d33481fa6539d484c
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 0c3ed59262ec5ad061572d23c1166b2153cb16ca
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87223654"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008572"
 ---
 # <a name="new-operator-c"></a>new-Operator (C++)
 
@@ -70,7 +70,7 @@ Gibt den zuzuweisenden Typ an. Es kann entweder ein integrierter oder ein benutz
 *initializer*<br/>
 Stellt einen Wert für das initialisierte Objekt bereit. Für Arrays können keine Initialisierer angegeben werden. Der- **`new`** Operator erstellt nur dann Arrays von-Objekten, wenn die Klasse über einen Standardkonstruktor verfügt.
 
-## <a name="example"></a>Beispiel
+## <a name="example-allocate-and-free-a-character-array"></a>Beispiel: zuordnen und Freigeben eines Zeichen Arrays
 
 Im folgenden Codebeispiel werden ein Zeichenarray und ein Objekt der Klasse `CName` zugewiesen und dann wieder freigegeben.
 
@@ -115,7 +115,7 @@ int main() {
 }
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-new-operator"></a>Beispiel: `new` Operator
 
 Wenn Sie die Platzierung New Form des **`new`** Operators, das Formular mit Argumenten zusätzlich zur Größe der Zuordnung verwenden, unterstützt der Compiler keine Platzierungs Form des **`delete`** Operators, wenn der Konstruktor eine Ausnahme auslöst. Beispiel:
 

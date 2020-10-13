@@ -5,12 +5,12 @@ ms.topic: reference
 helpviewer_keywords:
 - custom attributes, parameter types
 ms.assetid: d9f127a3-7f08-456f-acc6-256805632712
-ms.openlocfilehash: c7b219ddad939aab7d6093787dc2fe4131ccced5
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: cf33014c455bef145f7b7ec7ee353f27d1157f24
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87225162"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008604"
 ---
 # <a name="attribute-parameter-types--ccli-and-ccx"></a>Attributparametertypen (C++/CLI und C++/CX)
 
@@ -32,7 +32,7 @@ An Attribute übergebene Werte müssen dem Compiler zum Zeitpunkt der Kompilieru
 
 - **`wchar_t`**
 
-- **`char*`** oder `wchar_t*` oder`System::String*`
+- **`char*`** oder `wchar_t*` oder `System::String*`
 
 - `System::Type ^`
 
@@ -40,7 +40,7 @@ An Attribute übergebene Werte müssen dem Compiler zum Zeitpunkt der Kompilieru
 
 - **`enum`**
 
-## <a name="example"></a>Beispiel
+## <a name="example-attribute-parameter-types"></a>Beispiel: Attribut Parametertypen
 
 ### <a name="code"></a>Code
 
@@ -65,7 +65,7 @@ ref struct MyStruct {
 };
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-unnamed-arguments-precede-named-arguments"></a>Beispiel: Unbenannte Argumente vor benannten Argumenten
 
 ### <a name="description"></a>Beschreibung
 
@@ -99,7 +99,7 @@ ref class ClassC {};   // Positional argument
 ref class ClassD {};   // Positional and named
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-one-dimensional-array-attribute-parameter"></a>Beispiel: eindimensionaler Array Attribut Parameter
 
 ### <a name="description"></a>Beschreibung
 

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - assertions [C++], static_assert
 - static_assert
 ms.assetid: 28dd3668-e78c-4de8-ba68-552084743426
-ms.openlocfilehash: b30af5fcf5d4f58143e657d84e743ef09a34e268
-ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
+ms.openlocfilehash: bf796b853d21d33d97e25c05101b7486e1eb112f
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90742969"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008863"
 ---
 # <a name="static_assert"></a>static_assert
 
@@ -44,21 +44,21 @@ Der Compiler überprüft die- **`static_assert`** Deklaration auf Syntax Fehler,
 
 Sie können das **`static_assert`** Schlüsselwort im Namespace, in der Klasse oder im Block Bereich verwenden. (Das- **`static_assert`** Schlüsselwort ist technisch gesehen eine Deklaration, obwohl es keinen neuen Namen in Ihr Programm einführt, da es im Namespace Bereich verwendet werden kann.)
 
-## <a name="description-of-static_assert-with-namespace-scope"></a>Beschreibung des static_assert mit Namespace-Gültigkeitsbereich
+## <a name="description-of-static_assert-with-namespace-scope"></a>Beschreibung von `static_assert` mit Namespace-Gültigkeitsbereich
 
 Im folgenden Beispiel verfügt die- **`static_assert`** Deklaration über einen Namespace Bereich. Da der Compiler die Größe des Typs `void *` kennt, wird der Ausdruck sofort ausgewertet.
 
-## <a name="example-of-static_assert-with-namespace-scope"></a>Beispiel für static_assert mit Namespace-Gültigkeitsbereich
+## <a name="example-static_assert-with-namespace-scope"></a>Beispiel: `static_assert` mit Namespace-Gültigkeitsbereich
 
 ```cpp
 static_assert(sizeof(void *) == 4, "64-bit code generation is not supported.");
 ```
 
-## <a name="description-of-static_assert-with-class-scope"></a>Beschreibung der static_assert mit dem Klassen Bereich
+## <a name="description-of-static_assert-with-class-scope"></a>Beschreibung von `static_assert` mit Klassen Bereich
 
 Im folgenden Beispiel verfügt die- **`static_assert`** Deklaration über einen Klassen Bereich. Der **`static_assert`** überprüft, ob ein Vorlagen Parameter ein *Plain Old Data* (Pod)-Typ ist. Der Compiler überprüft die **`static_assert`** Deklaration, wenn er deklariert wird, wertet den *Constant-Expression-* Parameter jedoch erst aus, wenn die `basic_string` Klassen Vorlage in instanziiert wird `main()` .
 
-## <a name="example-of-static_assert-with-class-scope"></a>Beispiel für static_assert mit Klassen Bereich
+## <a name="example-static_assert-with-class-scope"></a>Beispiel: `static_assert` mit Klassen Bereich
 
 ```cpp
 #include <type_traits>
@@ -83,11 +83,11 @@ int main()
 }
 ```
 
-## <a name="description"></a>Beschreibung
+## <a name="description-of-static_assert-with-block-scope"></a>Beschreibung von `static_assert` mit Block Bereich
 
 Im folgenden Beispiel verfügt die- **`static_assert`** Deklaration über einen Block Bereich. **`static_assert`** Mit wird überprüft, ob die Größe der VMPage-Struktur gleich der Seitegröße des virtuellen Arbeitsspeichers des Systems ist.
 
-## <a name="example"></a>Beispiel
+## <a name="example-static_assert-at-block-scope"></a>Beispiel: `static_assert` at Block Scope
 
 ```cpp
 #include <sys/param.h> // defines PAGESIZE
@@ -104,7 +104,7 @@ public:
 };
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Assertion und benutzerdefinierte Meldungen (C++)](../cpp/assertion-and-user-supplied-messages-cpp.md)<br/>
 [#Error-Direktive (C/C++)](../preprocessor/hash-error-directive-c-cpp.md)<br/>

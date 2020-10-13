@@ -56,12 +56,12 @@ helpviewer_keywords:
 - formatted text [C++]
 - vsnwprintf function
 ms.assetid: a97f92df-c2f8-4ea0-9269-76920d2d566a
-ms.openlocfilehash: 63a2cd2e6287f9fe960cd60d799f4518b47572ae
-ms.sourcegitcommit: b492516cc65120250b9ea23f96f7f63f37f99fae
+ms.openlocfilehash: e6ed3d146458f514691fe0b20a4c88ffebb5f877
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90075763"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008695"
 ---
 # <a name="vsnprintf-_vsnprintf-_vsnprintf_l-_vsnwprintf-_vsnwprintf_l"></a>vsnprintf, _vsnprintf, _vsnprintf_l, _vsnwprintf, _vsnwprintf_l
 
@@ -206,7 +206,7 @@ In C++ haben diese Funktionen Vorlagenüberladungen, mit denen die neueren, sich
 
 Die Funktionen **_vsnprintf**, **_vsnprintf_l**, **_vsnwprintf** und **_vsnwprintf_l** sind Microsoft-spezifisch. Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="example"></a>Beispiel
+## <a name="example-use-wide-characters-with-_vsnwprintf"></a>Beispiel: Verwenden von breit Zeichen mit `_vsnwprintf()`
 
 ```C
 // crt_vsnwprintf.c
@@ -248,7 +248,7 @@ nSize: -1, buff: Hi there!
 
 Das Verhalten ändert sich, wenn Sie stattdessen „vsnprintf“ zusammen mit Parametern mit schmaler Zeichenfolge verwenden. Der *count* -Parameter kann die gesamte Größe des Puffers sein, und der Rückgabewert ist die Anzahl der Zeichen, die geschrieben worden wären, wenn die *Anzahl* groß genug wäre:
 
-## <a name="example"></a>Beispiel
+## <a name="example-use-vsnprintf-with-narrow-strings"></a>Beispiel: verwenden `vsnprintf()` von mit schmalen Zeichen folgen
 
 ```C
 // crt_vsnprintf.c
@@ -284,7 +284,7 @@ nSize: 9, buff: Hi there!
 nSize: 10, buff: Hi there!
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Stream-E/A](../../c-runtime-library/stream-i-o.md)<br/>
 [vprintf-Funktionen](../../c-runtime-library/vprintf-functions.md)<br/>

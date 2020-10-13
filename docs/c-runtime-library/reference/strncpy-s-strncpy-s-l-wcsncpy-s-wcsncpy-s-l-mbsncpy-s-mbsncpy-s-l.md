@@ -54,12 +54,12 @@ helpviewer_keywords:
 - _tcsncpy_s function
 - wcsncpy_s_l function
 ms.assetid: a971c800-94d1-4d88-92f3-a2fe236a4546
-ms.openlocfilehash: 1fa2cc24f4ec610e1cc892ddd8d3bf8971ddf687
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 08921ff44d2d69ab77eb210b2123016ea61c4f67
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82919296"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008280"
 ---
 # <a name="strncpy_s-_strncpy_s_l-wcsncpy_s-_wcsncpy_s_l-_mbsncpy_s-_mbsncpy_s_l"></a>strncpy_s, _strncpy_s_l, wcsncpy_s, _wcsncpy_s_l, _mbsncpy_s, _mbsncpy_s_l
 
@@ -176,12 +176,12 @@ Das zu verwendende Gebietsschema.
 
 |*der schnellste*|*numberOfElements*|*-Quelle*|Rückgabewert|Inhalt von " *strandest* "|
 |---------------|------------------------|-----------------|------------------|---------------------------|
-|**Normal**|any|any|**Eingabe**|nicht geändert|
-|any|any|**Normal**|**Eingabe**|" *strandest*[0]" auf 0 festgelegt.|
+|**NULL**|any|any|**Eingabe**|nicht geändert|
+|any|any|**NULL**|**Eingabe**|" *strandest*[0]" auf 0 festgelegt.|
 |any|0|any|**Eingabe**|nicht geändert|
 |nicht **null**|zu klein|any|**ERANGE**|" *strandest*[0]" auf 0 festgelegt.|
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Diese Funktionen versuchen, die ersten *D-* Zeichen von *"darsource* " in " *strandest*" zu kopieren, wobei " *d* *" der kleinere Wert und die* Länge von " *darsource*" ist. Wenn diese *D-* Zeichen in " *strindest* " passen (deren Größe als " *suffioements*" angegeben ist) und weiterhin Platz für ein NULL-Terminator ist, dann werden diese Zeichen kopiert und ein abschließendes NULL angehängt. Andernfalls wird " *strandest*[0]" auf das NULL-Zeichen festgelegt und der Handler für ungültige Parameter wird aufgerufen, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben.
 
@@ -231,7 +231,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
 |**strncpy_s** **_strncpy_s_l**|\<string.h>|
 |**wcsncpy_s** **_wcsncpy_s_l**|\<string.h> oder \<wchar.h>|
@@ -239,7 +239,7 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 Zusätzliche Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="example"></a>Beispiel
+## <a name="example-copy-chars-to-a-buffer"></a>Beispiel: Kopieren von Zeichen in einen Puffer
 
 ```cpp
 // crt_strncpy_s_1.cpp
@@ -366,7 +366,7 @@ Invalid parameter handler invoked: (L"Buffer is too small" && 0)
     new contents of dest: ''
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-strncpy-and-strncpy_s"></a>Beispiel: "straupie" und "strncpy_s"
 
 ```C
 // crt_strncpy_s_2.c
@@ -410,11 +410,11 @@ After strncpy_s (with null-termination):
    'mice'
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Zeichen folgen Bearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
-[Locale](../../c-runtime-library/locale.md)<br/>
-[Interpretation von Multibyte-Zeichensequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
+[Zeichenfolgenbearbeitung](../../c-runtime-library/string-manipulation-crt.md)<br/>
+[Gebietsschema](../../c-runtime-library/locale.md)<br/>
+[Interpretation von Multibyte-Character Sequenzen](../../c-runtime-library/interpretation-of-multibyte-character-sequences.md)<br/>
 [_mbsnbcpy, _mbsnbcpy_l](mbsnbcpy-mbsnbcpy-l.md)<br/>
 [strcat_s, wcscat_s, _mbscat_s](strcat-s-wcscat-s-mbscat-s.md)<br/>
 [strcmp, wcscmp, _mbscmp](strcmp-wcscmp-mbscmp.md)<br/>

@@ -4,12 +4,12 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - partial specialization of class templates
 ms.assetid: f3c67c0b-3875-434a-b8d8-bb47e99cf4f0
-ms.openlocfilehash: 17f1f15a5356d760119123214e939a7dd2d1fbaf
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 7f71c2c3862bd015ba3edcd17aeac85472eb2562
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87223576"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008918"
 ---
 # <a name="template-specialization-c"></a>Vorlagenspezialisierung (C++)
 
@@ -19,7 +19,7 @@ Klassenvorlagen können teilweise spezialisiert werden, und die resultierende Kl
 
 - Eine Vorlage verfügt nur über einen Typ, aber eine Spezialisierung wird für Zeiger-, Verweis-, Memberzeiger- oder Funktionszeigertypen benötigt. Die Spezialisierung selbst ist immer noch eine Vorlage für den Typ, auf den verwiesen oder gezeigt wird.
 
-## <a name="example"></a>Beispiel
+## <a name="example-partial-specialization-of-class-templates"></a>Beispiel: partielle Spezialisierung von Klassen Vorlagen
 
 ```cpp
 // partial_specialization_of_class_templates.cpp
@@ -66,7 +66,7 @@ PTS<S*>::IsPointer == 1 PTS<S*>::IsPointerToDataMember ==0
 PTS<int S::*>::IsPointer == 0 PTS<int S::*>::IsPointerToDataMember == 1
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-partial-specialization-for-pointer-types"></a>Beispiel: partielle Spezialisierung für Zeiger Typen
 
 Wenn Sie über eine Vorlagen Sammlungsklasse verfügen, die einen beliebigen Typ annimmt `T` , können Sie eine partielle Spezialisierung erstellen, die einen beliebigen Zeigertyp annimmt `T*` . Der folgende Code zeigt die Auflistung von Klassenvorlagen `Bag` und eine teilweise Spezialisierung für Zeigertypen, wobei die Auflistung die Zeigertypen dereferenziert, bevor sie diese ins Array kopiert. Die Auflistung speichert dann die Werte, auf die gezeigt wird. Bei der ursprünglichen Vorlage wären nur die Zeiger selbst in der Auflistung gespeichert worden, sodass sich Löschungen und Änderungen auf die Daten auswirken können. In dieser speziellen Zeigerversion der Auflistung wird ein Code zur Suche eines NULL-Zeigers in der `add`-Methode hinzugefügt.
 
@@ -178,7 +178,7 @@ Null pointer!
 3 87 8 100
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-define-partial-specialization-so-one-type-is-int"></a>Beispiel: Definieren einer partiellen Spezialisierung, sodass ein Typ `int`
 
 Im folgenden Beispiel wird eine Vorlagen Klasse definiert, die Paare zweier Typen annimmt und dann eine partielle Spezialisierung dieser Vorlagen Klasse definiert, die für einen der-Typen spezialisiert ist **`int`** . Die Spezialisierung definiert eine zusätzliche Sortiermethode, die eine einfache Bubble Sort auf Grundlage der Ganzzahl implementiert.
 

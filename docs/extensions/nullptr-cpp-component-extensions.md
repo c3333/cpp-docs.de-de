@@ -6,12 +6,12 @@ helpviewer_keywords:
 - __nullptr keyword (C++)
 - nullptr keyword [C++]
 ms.assetid: 594cfbf7-06cb-4366-9ede-c0b703e1d095
-ms.openlocfilehash: 5e7a5d3f9a42968dee35f82d3f19d0fdb6da5d0c
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 7e9cf88fdc0444f736f1cfac0d06dfc675a162cc
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87214229"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008348"
 ---
 # <a name="nullptr--ccli-and-ccx"></a>nullptr (C++/CLI und C++/CX)
 
@@ -23,7 +23,7 @@ Das **__nullptr** -Schlüsselwort ist ein Microsoft-spezifisches Schlüsselwort,
 
 Das **`nullptr`** -Schlüsselwort entspricht **Nothing** in Visual Basic und **null** in c#.
 
-## <a name="usage"></a>Verbrauch
+## <a name="usage"></a>Verwendung
 
 Das- **`nullptr`** Schlüsselwort kann überall dort verwendet werden, wo ein Handle, ein System eigener Zeiger oder ein Funktions Argument verwendet werden kann.
 
@@ -51,7 +51,7 @@ Funktionsaufrufe zwischen Sprachen, die NULL-Zeigerwerte für die Fehlerüberpr�
 
 Ein Handle kann nicht mit 0 (null) initialisiert werden. es **`nullptr`** kann nur verwendet werden. Die Zuweisung der Konstante 0 zu einem Objekthandle hat ein geschachteltes `Int32` und eine Umwandlung in `Object^` zur Folge.
 
-## <a name="example"></a>Beispiel
+## <a name="example-nullptr-keyword"></a>Beispiel: `nullptr` Schlüsselwort
 
 Im folgenden Codebeispiel wird veranschaulicht, dass das- **`nullptr`** Schlüsselwort überall dort verwendet werden kann, wo ein Handle, ein System eigener Zeiger oder ein Funktions Argument verwendet werden kann. Das Beispiel zeigt, dass das- **`nullptr`** Schlüsselwort verwendet werden kann, um einen Verweis zu überprüfen, bevor es verwendet wird.
 
@@ -80,7 +80,7 @@ int main() {
 }
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-use-nullptr-and-zero-interchangeably"></a>Beispiel: Verwenden Sie `nullptr` und NULL austauschbar.
 
 Das folgende Codebeispiel zeigt, dass **`nullptr`** und 0 (null) für Native Zeiger austauschbar verwendet werden können.
 
@@ -119,7 +119,7 @@ pMyClass == nullptr
 pMyClass == 0
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-interpret-nullptr-as-a-handle"></a>Beispiel: interpretieren `nullptr` als handle
 
 Das folgende Codebeispiel zeigt, dass **`nullptr`** als Handle für einen beliebigen Typ oder einen systemeigenen Zeiger auf einen beliebigen Typ interpretiert wird. Bei einer Funktionsüberladung mit Handles zu verschiedenen Typen wird ein Mehrdeutigkeitsfehler generiert. **`nullptr`** Muss explizit in einen-Typ umgewandelt werden.
 
@@ -137,7 +137,7 @@ void f_null() {
 }
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-cast-nullptr"></a>Beispiel: Cast `nullptr`
 
 Das folgende Codebeispiel zeigt, dass die Umwandlung **`nullptr`** zulässig ist, und gibt einen Zeiger oder ein Handle für den Umwandlungs Typen zurück, der den **`nullptr`** Wert enthält.
 
@@ -158,7 +158,7 @@ int main() {
 }
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-pass-nullptr-as-a-function-parameter"></a>Beispiel: übergeben `nullptr` als Funktionsparameter
 
 Im folgenden Codebeispiel wird gezeigt, dass **`nullptr`** als Funktionsparameter verwendet werden kann.
 
@@ -179,7 +179,7 @@ int main() {
 test
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-default-initialization"></a>Beispiel: Standard Initialisierung
 
 Im folgenden Codebeispiel wird veranschaulicht, dass beim Deklarieren und nicht expliziten Initialisieren von Handles der Standardwert für initialisiert wird **`nullptr`** .
 
@@ -206,7 +206,7 @@ int main() {
 NULL
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-assign-nullptr-to-a-native-pointer"></a>Beispiel: zuweisen `nullptr` zu einem nativen Zeiger
 
 Das folgende Codebeispiel zeigt, dass einem systemeigenen **`nullptr`** Zeiger zugewiesen werden kann, wenn Sie mit kompilieren `/clr` .
 
@@ -219,11 +219,11 @@ int main() {
 }
 ```
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 Compileroption: (nicht erforderlich; wird von allen Code Generierungs Optionen unterstützt, einschließlich `/ZW` und `/clr` )
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Komponenten Erweiterungen für .net und UWP](component-extensions-for-runtime-platforms.md)<br/>
 [nullptr](../cpp/nullptr.md)

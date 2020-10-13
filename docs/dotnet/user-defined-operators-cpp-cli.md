@@ -4,66 +4,66 @@ ms.date: 11/04/2016
 helpviewer_keywords:
 - user-defined operators under /clr
 ms.assetid: 42f93b4a-6de4-4e34-b07b-5a62ac014f2c
-ms.openlocfilehash: cf80eb4c440c1308e8ea06a563c18569e4e4ddf2
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: ee5aa122983a315e55884c643a9b7894f075e260
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62384503"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008951"
 ---
 # <a name="user-defined-operators-ccli"></a>Benutzerdefinierte Operatoren (C++/CLI)
 
-Benutzerdefinierte Operatoren für verwaltete Typen sind als statische Member oder Instanzmember oder im globalen Gültigkeitsbereich zulässig. Es gibt jedoch nur statische Operatoren Zugriff über Metadaten-Clients, die in einer anderen Sprache als Visual C++ geschrieben sind.
+Benutzerdefinierte Operatoren für verwaltete Typen sind als statische Member oder Instanzmember oder im globalen Gültigkeitsbereich zulässig. Allerdings sind nur statische Operatoren über Metadaten für Clients zugänglich, die in einer anderen Sprache als Visual C++ geschrieben sind.
 
-In einem Referenztyp muss einer der Parameter eines statischen, benutzerdefinierten Operators eines der folgenden sein:
+In einem Verweistyp muss einer der Parameter eines statischen benutzerdefinierten Operators einer der folgenden Parameter sein:
 
-- Ein Handle (`type` ^) mit einer Instanz des einschließenden Typs.
+- Ein Handle ( `type` ^) für eine Instanz des einschließenden Typs.
 
-- Ein Verweis Typ Dereferenzierung (`type`^ & oder ^ %) Um ein Handle für eine Instanz des einschließenden Typs.
+- Verweistyp Dereferenzierung ( `type` ^& oder Typ ^%) an ein Handle für eine Instanz des einschließenden Typs.
 
-In einen Werttyp handelt muss einer der Parameter eines statischen, benutzerdefinierten Operators eines der folgenden sein:
+Bei einem Werttyp muss einer der Parameter eines statischen benutzerdefinierten Operators einer der folgenden Parameter sein:
 
-- Des gleichen Typs wie der einschließende Werttyp.
+- Desselben Typs wie der einschließende Werttyp.
 
-- Ein Typ Zeigerdereferenzierung (`type`^) in den einschließenden Typ.
+- Eine Zeigertyp Dereferenzierung ( `type` ^) zum einschließenden Typ.
 
-- Ein Verweis Typ Dereferenzierung (`type`% oder `type`&) in den einschließenden Typ.
+- Eine Verweistyp Dereferenzierung ( `type` % oder `type`&) zum einschließenden Typ.
 
-- Ein Verweis Typ Dereferenzierung (`type`^ % oder `type`^ &) an das Handle.
+- Eine Verweistyp Dereferenzierung ( `type` ^% oder `type` ^&) zum handle.
 
 Sie können die folgenden Operatoren definieren:
 
-|Operator|Der unäre/binäre Forms?|
+|Betreiber|Unäre/binäre Formulare?|
 |--------------|--------------------------|
 |!|Unär|
-|!=|Binär|
-|%|Binär|
+|!=|Binary|
+|%|Binary|
 |&|Unär und binär|
-|&&|Binär|
+|&&|Binary|
 |*|Unär und binär|
 |+|Unär und binär|
 |++|Unär|
-|,|Binär|
+|,|Binary|
 |-|Unär und binär|
 |--|Unär|
 |->|Unär|
-|/|Binär|
-|<|Binär|
-|<<|Binär|
-|\<=|Binär|
-|=|Binär|
-|==|Binär|
-|>|Binär|
-|>=|Binär|
-|>>|Binär|
-|^|Binär|
-|False|Unär|
+|/|Binary|
+|<|Binary|
+|<<|Binary|
+|\<=|Binary|
+|=|Binary|
+|==|Binary|
+|>|Binary|
+|>=|Binary|
+|>>|Binary|
+|^|Binary|
+|false|Unär|
 |true|Unär|
-|&#124;|Binär|
-|&#124;&#124;|Binär|
+|&#124;|Binary|
+|&#124;&#124;|Binary|
 |~|Unär|
 
-## <a name="example"></a>Beispiel
+## <a name="example-user-defined-operators"></a>Beispiel: benutzerdefinierte Operatoren
 
 ```cpp
 // mcppv2_user-defined_operators.cpp
@@ -135,9 +135,9 @@ int main() {
 -3
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-operator-synthesis"></a>Beispiel: Operator Synthese
 
-Das folgende Beispiel veranschaulicht die Operatorsynthese, die nur verfügbar ist, bei der Verwendung **"/ CLR"** kompiliert. Operatorsynthese das Formular Zuweisung eines binären Operators erstellt, sofern nicht definiert, in der linken Seite des Zuweisungsoperators einen CLR-Typ hat.
+Im folgenden Beispiel wird die-Operator Synthese veranschaulicht, die nur verfügbar ist, wenn Sie **/CLR** für die Kompilierung verwenden. Die Operator Synthese erstellt die Zuweisungs Form eines binären Operators, sofern nicht definiert, wobei die linke Seite des Zuweisungs Operators einen CLR-Typ aufweist.
 
 ```cpp
 // mcppv2_user-defined_operators_2.cpp

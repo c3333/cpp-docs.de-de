@@ -2,18 +2,18 @@
 title: Namensauflösung für lokal deklarierte Namen
 ms.date: 11/04/2016
 ms.assetid: 743b88f3-de11-48f4-ae83-931449ea3886
-ms.openlocfilehash: 2c75c09308f6ba07039de4d2811b9bedaba71e44
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 0216154b55e9742c2c4f3f5df7e6d612e16ec9b1
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80177897"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008921"
 ---
 # <a name="name-resolution-for-locally-declared-names"></a>Namensauflösung für lokal deklarierte Namen
 
 Der Name der Vorlage selbst kann mit oder ohne Vorlagenargumente angegeben werden. Im Bereich einer Klassenvorlage bezieht sich der Name selbst auf die Vorlage. Im Bereich einer Vorlagenspezialisierung oder Teilspezialisierung bezieht sich der Name allein auf die Spezialisierung oder Teilspezialisierung. Andere Spezialisierungen oder Teilspezialisierungen der Vorlage können mit den entsprechenden Vorlagenargumenten ebenfalls referenziert werden.
 
-## <a name="example"></a>Beispiel
+## <a name="example-specialization-versus-partial-specialization"></a>Beispiel: Spezialisierung und partielle Spezialisierung
 
 Der folgende Code zeigt, dass der Name der Klassenvorlage A im Bereich einer Spezialisierung oder einer teilweisen Spezialisierung unterschiedlich interpretiert wird.
 
@@ -35,7 +35,7 @@ template<> class A<int> {
 };
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-name-conflict-between-template-parameter-and-object"></a>Beispiel: namens Konflikt zwischen Vorlagen Parameter und Objekt
 
 Im Falle eines Namenskonflikts zwischen einem Vorlagenparameter und einem anderen Objekt kann der Vorlagenparameter ausgeblendet oder nicht ausgeblendet werden. Die folgenden Regeln bestimmen die Vorrangigkeit.
 
@@ -55,7 +55,7 @@ int main() {
 }
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-define-member-function-outside-class-template"></a>Beispiel: Definieren der Element Funktion außerhalb der Klassen Vorlage
 
 Wenn Sie die Memberfunktionen einer Vorlage außerhalb der Klassenvorlage definieren, kann ein anderer Vorlagenparametername verwendet werden. Wenn die Definition für die Vorlagenmemberfunktion einen anderen Namen für den Vorlagenparameter verwendet als die Deklaration, und der Name in der Definition mit einem anderen Member der Deklaration in Konflikt steht, hat der Member in der Vorlagendeklaration Vorrang.
 
@@ -90,7 +90,7 @@ int main() {
 Z::Z()
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-define-template-or-member-function-outside-namespace"></a>Beispiel: Definieren einer Vorlage oder einer Element Funktion außerhalb des Namespace
 
 Wenn eine Vorlagenfunktion oder Memberfunktion außerhalb des Namespaces definiert wird, in dem die Vorlage deklariert wurde, hat das Vorlagenargument Vorrang vor den Namen anderer Member des Namespaces.
 
@@ -124,7 +124,7 @@ int main() {
 C<T>::g
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-base-class-or-member-name-hides-template-argument"></a>Beispiel: Basisklassen-oder Elementname blendet das Vorlagen Argument aus.
 
 In Definitionen, die sich außerhalb der Deklaration der Vorlagenklassen befinden, gilt: Wenn eine Vorlagenklasse über eine Basisklasse verfügt, die nicht von einem Vorlagenargument abhängig ist, und wenn die Basisklasse oder einer ihrer Member über denselben Namen wie ein Vorlagenargument verfügt, blendet die Basisklasse oder der Membername das Vorlagenargument aus.
 
@@ -162,6 +162,6 @@ Base
 1
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Namensauflösung](../cpp/templates-and-name-resolution.md)

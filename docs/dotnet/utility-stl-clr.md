@@ -39,12 +39,12 @@ helpviewer_keywords:
 - operator<= member [STL/CLR]
 - operator< member [STL/CLR]
 ms.assetid: fb48cb75-d5ef-47ce-b526-bf60dc86c552
-ms.openlocfilehash: 271bc01f5c8fd9dd07bfa03035ae3d0204ebd8e7
-ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
+ms.openlocfilehash: faf7f607f9433fa3e4813957b24220a5e66e1e49
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91500586"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008618"
 ---
 # <a name="utility-stlclr"></a>utility (STL/CLR)
 
@@ -56,7 +56,7 @@ Fügen Sie den STL/CLR-Header ein `<cliext/utility>` , um die Vorlagen Klasse `p
 #include <utility>
 ```
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 **Header:**\<cliext/utility>
 
@@ -81,8 +81,6 @@ Fügen Sie den STL/CLR-Header ein `<cliext/utility>` , um die Vorlagen Klasse `p
 |--------------|-----------------|
 |[make_pair (STL/CLR)](#make_pair)|Erstellen Sie ein paar aus einem Paar von Werten.|
 
-## <a name="members"></a>Members
-
 ## <a name="pair-stlclr"></a><a name="pair"></a> Pair (STL/CLR)
 
 Die Vorlagen Klasse beschreibt ein Objekt, das ein paar von Werten umschließt.
@@ -103,7 +101,7 @@ Der Typ des ersten umschließenden Werts.
 *Value2*<br/>
 Der Typ des zweiten umschließenden Werts.
 
-## <a name="members"></a>Members
+## <a name="members"></a>Member
 
 |Typendefinition|Beschreibung|
 |---------------------|-----------------|

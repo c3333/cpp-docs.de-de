@@ -26,12 +26,12 @@ helpviewer_keywords:
 - malloca function
 - _malloca function
 ms.assetid: 293992df-cfca-4bc9-b313-0a733a6bb936
-ms.openlocfilehash: d4604a6e2dfb00502e3c942c9735a077e1632843
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 64bed4dac2bbaeb60c7b04a600af38f455caf08d
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87232494"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008259"
 ---
 # <a name="_malloca"></a>_malloca
 
@@ -81,7 +81,7 @@ Zusätzlich zu den oben genannten Einschränkungen können **_malloca** nicht in
 |-------------|---------------------|
 |**_malloca**|\<malloc.h>|
 
-## <a name="example"></a>Beispiel
+## <a name="example-malloca"></a>Beispiel: Malloca
 
 ```C
 // crt_malloca_simple.c
@@ -101,7 +101,7 @@ int main()
 }
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-malloca-exception"></a>Beispiel: Malloca-Ausnahme
 
 ```C
 // crt_malloca_exception.c
@@ -173,7 +173,7 @@ int main()
 Enter the number of bytes to allocate using _malloca: 1000
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Speicher Belegung](../../c-runtime-library/memory-allocation.md)<br/>
 [calloc](calloc.md)<br/>

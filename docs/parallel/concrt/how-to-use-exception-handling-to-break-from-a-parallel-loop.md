@@ -5,12 +5,12 @@ helpviewer_keywords:
 - search algorithm, writing [Concurrency Runtime]
 - writing a search algorithm [Concurrency Runtime]
 ms.assetid: 16d7278c-2d10-4014-9f58-f1899e719ff9
-ms.openlocfilehash: 9cf42df0926022f93633a6b5b1365ae9fc646a1a
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: f6842e3093a577289c0c4432d96298e3c7b2bb92
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87213917"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008497"
 ---
 # <a name="how-to-use-exception-handling-to-break-from-a-parallel-loop"></a>Gewusst wie: Verwenden der Ausnahmebehandlung zum Verlassen einer Parallel-Schleife
 
@@ -18,19 +18,19 @@ In diesem Thema wird gezeigt, wie ein Suchalgorithmus für eine einfache Baumstr
 
 Der Thema [Abbruch](cancellation-in-the-ppl.md) erläutert die Rolle des Abbruchs in der Parallel Patterns Library. Die Verwendung der Ausnahmebehandlung ist eine weniger effiziente Möglichkeit zum Abbrechen paralleler Aufgaben als die Verwendung der Methoden " [parallelcurrency:: task_group:: Cancel](reference/task-group-class.md#cancel) " und " [parallelcurrency:: structured_task_group:: Cancel](reference/structured-task-group-class.md#cancel) ". Ein Szenario, in dem die Verwendung der Ausnahmebehandlung zum Abbrechen von Arbeit angebracht ist, ist jedoch, wenn Sie eine Bibliothek eines Drittanbieters aufruft, die Tasks oder parallele Algorithmen verwendet, aber kein- `task_group` oder- `structured_task_group` Objekt zum Abbrechen bereitstellt.
 
-## <a name="example"></a>Beispiel
+## <a name="example-basic-tree-type"></a>Beispiel: grundlegender bauentyp
 
 Das folgende Beispiel zeigt einen `tree` Basistyp, der ein Datenelement und eine Liste mit untergeordneten Knoten enthält. Der folgende Abschnitt zeigt den Text der- `for_all` Methode, die rekursiv eine Arbeitsfunktion auf jedem untergeordneten Knoten ausführt.
 
 [!code-cpp[concrt-task-tree-search#2](../../parallel/concrt/codesnippet/cpp/how-to-use-exception-handling-to-break-from-a-parallel-loop_1.cpp)]
 
-## <a name="example"></a>Beispiel
+## <a name="example-perform-work-in-parallel"></a>Beispiel: parallele Ausführung von Aufgaben
 
 Im folgenden Beispiel wird die- `for_all` Methode veranschaulicht. Dabei wird der Parallelitäts [::p arallel_for_each](reference/concurrency-namespace-functions.md#parallel_for_each) -Algorithmus verwendet, um eine Arbeitsfunktion auf jedem Knoten der Struktur parallel auszuführen.
 
 [!code-cpp[concrt-task-tree-search#1](../../parallel/concrt/codesnippet/cpp/how-to-use-exception-handling-to-break-from-a-parallel-loop_2.cpp)]
 
-## <a name="example"></a>Beispiel
+## <a name="example--search-the-tree-for-a-value"></a>Beispiel: Durchsuchen der Struktur nach einem Wert
 
 Das folgende Beispiel zeigt die `search_for_value`-Funktion, die nach einem Wert im bereitgestellten `tree`-Objekt sucht. Diese Funktion übergibt an die- `for_all` Methode eine Arbeitsfunktion, die auslöst, wenn ein Struktur Knoten gefunden wird, der den bereitgestellten Wert enthält.
 
@@ -40,7 +40,7 @@ Wenn die Arbeitsfunktion, die Sie einer Aufgaben Gruppe bereitstellen, eine Ausn
 
 [!code-cpp[concrt-task-tree-search#3](../../parallel/concrt/codesnippet/cpp/how-to-use-exception-handling-to-break-from-a-parallel-loop_3.cpp)]
 
-## <a name="example"></a>Beispiel
+## <a name="example-create-and-search-a-tree-in-parallel"></a>Beispiel: parallele Erstellung und Durchsuchen einer Struktur
 
 Im folgenden Beispiel wird ein `tree` -Objekt erstellt und nach mehreren Werten parallel durchsucht. Die- `build_tree` Funktion wird weiter unten in diesem Thema gezeigt.
 
@@ -48,7 +48,7 @@ Im folgenden Beispiel wird ein `tree` -Objekt erstellt und nach mehreren Werten 
 
 In diesem Beispiel wird der " [parallelcurrency::p arallel_invoke](reference/concurrency-namespace-functions.md#parallel_invoke) -Algorithmus verwendet, um parallele Werte zu suchen. Weitere Informationen zu diesem Algorithmus finden Sie unter [parallele Algorithmen](../../parallel/concrt/parallel-algorithms.md).
 
-## <a name="example"></a>Beispiel
+## <a name="example-finished-exception-handling-code-sample"></a>Beispiel: Fertigstellung des Code Beispiels für die Ausnahmebehandlung
 
 Im folgenden Beispiel wird die Ausnahmebehandlung verwendet, um nach Werten in einer grundlegenden Baumstruktur zu suchen.
 
@@ -68,10 +68,10 @@ Kopieren Sie den Beispielcode, und fügen Sie ihn in ein Visual Studio-Projekt e
 
 > **cl.exe/EHsc Task-Tree-Search. cpp**
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Abbruch in der PPL](cancellation-in-the-ppl.md)<br/>
-[Behandlung von Ausnahmen](../../parallel/concrt/exception-handling-in-the-concurrency-runtime.md)<br/>
+[Ausnahmebehandlung](../../parallel/concrt/exception-handling-in-the-concurrency-runtime.md)<br/>
 [Aufgaben Parallelität](../../parallel/concrt/task-parallelism-concurrency-runtime.md)<br/>
 [Parallele Algorithmen](../../parallel/concrt/parallel-algorithms.md)<br/>
 [Task_group-Klasse](reference/task-group-class.md)<br/>

@@ -6,12 +6,12 @@ ms.topic: conceptual
 helpviewer_keywords:
 - DLL conflicts [C++]
 ms.assetid: c217ffd2-5d9a-4678-a1df-62a637a96460
-ms.openlocfilehash: f6d831ac8b86be8a6669e8ee6c66da64507d129f
-ms.sourcegitcommit: 9451db8480992017c46f9d2df23fb17b503bbe74
+ms.openlocfilehash: 2d42803b5eca7a43f122d209b7d9e2d4e45c38de
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91590185"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008942"
 ---
 # <a name="potential-errors-passing-crt-objects-across-dll-boundaries"></a>Potenzielle Fehler bei der Übergabe von CRT-Objekten über DLL-Grenzen
 
@@ -33,7 +33,7 @@ Da jede Kopie der CRT-Bibliothek über einen eigenen Heap-Manager verfügt, kann
 
 Die DLL und die DLL-Clients verwenden normalerweise nur dann die gleiche Kopie der CRT-Bibliothek, wenn beide zur Ladezeit mit der gleichen Version der CRT-DLL verknüpft sind. Da die dll-Version der universellen CRT-Bibliothek, die von Visual Studio 2015 und höher unter Windows 10 verwendet wird, jetzt eine zentral bereitgestellte Windows-Komponente (ucrtbase.dll) ist, ist Sie für apps, die mit Visual Studio 2015 und höheren Versionen erstellt wurden, identisch. Auch wenn der CRT-Code identisch ist, können Sie in einem Heap zugeordnete Arbeitsspeicher nicht an eine Komponente übergeben, die einen anderen Heap verwendet.
 
-## <a name="example"></a>Beispiel
+## <a name="example-pass-file-handle-across-dll-boundary"></a>Beispiel: übergeben des Datei Handles über eine DLL-Grenze
 
 ### <a name="description"></a>Beschreibung
 
@@ -75,7 +75,7 @@ int main(void)
 this is a string
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-pass-environment-variables-across-dll-boundary"></a>Beispiel: übergeben von Umgebungsvariablen über eine DLL-Grenze
 
 ### <a name="description"></a>Beschreibung
 
@@ -128,6 +128,6 @@ Wenn die dll-und exe-Datei so erstellt werden, `/MD` dass nur eine Kopie der CRT
 New MYLIB variable is: c:\mylib;c:\yourlib
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Funktionen der CRT-Bibliothek](../c-runtime-library/crt-library-features.md)

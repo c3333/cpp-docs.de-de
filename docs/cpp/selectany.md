@@ -7,12 +7,12 @@ helpviewer_keywords:
 - __declspec keyword [C++], selectany
 - selectany __declspec keyword
 ms.assetid: 9c353017-5a42-4f50-b741-bd13da1ce84d
-ms.openlocfilehash: e279184322c239e7768eb8fd4321ee451b2cb94c
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 6cd2ec4e22d94c42432a1fc3e39afd5540302d22
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87213228"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008215"
 ---
 # `selectany`
 
@@ -37,7 +37,7 @@ Ein globales Datenelement kann normalerweise nur einmal in einem EXE- bzw. DLL-P
 > [!NOTE]
 > **`selectany`** kann nur auf die tatsächliche Initialisierung globaler Datenelemente angewendet werden, die extern sichtbar sind.
 
-## <a name="example"></a>Beispiel
+## <a name="example-selectany-attribute"></a>Beispiel: `selectany` Attribut
 
 Dieser Code zeigt, wie das- **`selectany`** Attribut verwendet wird:
 
@@ -71,7 +71,7 @@ int i;
 __declspec(selectany) X x(1);
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-use-selectany-attribute-to-ensure-data-comdat-folding"></a>Beispiel: verwenden `selectany` von Attributen zum Sicherstellen der Faltung von Daten
 
 Dieser Code zeigt, wie das- **`selectany`** Attribut verwendet wird, um die Faltung von Daten zu gewährleisten, wenn Sie auch die Linkeroption verwenden [`/OPT:ICF`](../build/reference/opt-optimizations.md) . Beachten Sie, dass Daten mit markiert **`selectany`** und in einem (schreibgeschützten) Abschnitt abgelegt werden müssen **`const`** . Sie müssen den schreibgeschützten Abschnitt explizit angeben.
 

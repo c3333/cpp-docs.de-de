@@ -31,12 +31,12 @@ helpviewer_keywords:
 - files [C++], translation
 - setmode function
 ms.assetid: 996ff7cb-11d1-43f4-9810-f6097182642a
-ms.openlocfilehash: 1995d54e972f99543773fff374e56c0dd7cf4988
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: abedba6f1d414191732859e3e44b54cc16acc4e9
+ms.sourcegitcommit: 43cee7a0d41a062661229043c2f7cbc6ace17fa3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82915811"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92008421"
 ---
 # <a name="_setmode"></a>_setmode
 
@@ -67,14 +67,14 @@ Wenn ungültige Parameter an die Funktion übergeben werden, wird der Handler f�
 
 Weitere Informationen zu diesen und anderen Rückgabecodes finden Sie unter [_doserrno, errno, _sys_errlist und _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md).
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die **_setmode** -Funktion legt den *Modus* in den Übersetzungsmodus der von *FD*angegebenen Datei fest. Wenn Sie **_O_TEXT** as- *Modus* übergeben, wird der Modus Text (übersetzt) festgelegt. Die Kombinationen aus Wagen Rücklauf/Zeilenvorschub (CR-LF) werden bei der Eingabe in ein Einzel Zeilen-Feed-Zeichen übersetzt. Zeilenvorschubzeichen werden bei der Ausgabe in Kombinationen aus Wagenrücklauf und Zeilenvorschub (CR-LF) übersetzt. Durch übergeben **_O_BINARY** wird der binäre (nicht übersetzte) Modus festgelegt, in dem diese Übersetzungen unterdrückt werden.
 
 Sie können auch **_O_U16TEXT**, **_O_U8TEXT**oder **_O_WTEXT** übergeben, um den Unicode-Modus zu aktivieren, wie im zweiten Beispiel weiter unten in diesem Dokument veranschaulicht.
 
 > [!CAUTION]
-> Der Unicode-Modus ist für breit Druckfunktionen (z `wprintf`. b.) und wird für schmale Druckfunktionen nicht unterstützt. Die Verwendung einer schmalen Druckfunktion in einem Unicode-modusstream löst eine Assert-Funktion aus.
+> Der Unicode-Modus ist für breit Druckfunktionen (z. b. `wprintf` ) und wird für schmale Druckfunktionen nicht unterstützt. Die Verwendung einer schmalen Druckfunktion in einem Unicode-modusstream löst eine Assert-Funktion aus.
 
 **_setmode** wird normalerweise verwendet, um den Standard Übersetzungsmodus von **stdin** und **stdout**zu ändern, aber Sie können Sie in jeder beliebigen Datei verwenden. Wenn Sie **_setmode** auf den Dateideskriptor für einen Stream anwenden, müssen Sie **_setmode** vor dem Ausführen von Eingabe-oder Ausgabe Vorgängen im Stream abrufen.
 
@@ -85,13 +85,13 @@ Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschr�
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|Optionale Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|Optionale Header|
 |-------------|---------------------|----------------------|
-|**_setmode**|\<io.h>|\<fcntl.h >|
+|**_setmode**|\<io.h>|\<fcntl.h>|
 
 Weitere Informationen zur Kompatibilität finden Sie unter [Compatibility](../../c-runtime-library/compatibility.md).
 
-## <a name="example"></a>Beispiel
+## <a name="example-use-_setmode-to-change-stdin"></a>Beispiel: Verwenden von _setmode zum Ändern von stdin
 
 ```C
 // crt_setmode.c
@@ -119,7 +119,7 @@ int main( void )
 'stdin' successfully changed to binary mode
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-use-_setmode-to-change-stdout"></a>Beispiel: Verwenden von _setmode zum Ändern von "stdout"
 
 ```C
 // crt_setmodeunicode.c
@@ -139,7 +139,7 @@ int main(void) {
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Dateiverarbeitung](../../c-runtime-library/file-handling.md)<br/>
 [_creat, _wcreat](creat-wcreat.md)<br/>
