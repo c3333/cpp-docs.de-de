@@ -78,7 +78,7 @@ ms.locfileid: "87220833"
 
 *relational-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*shift-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*relationaler-Ausdruck*  **\<**  *shift-expression*<br/> &nbsp;&nbsp;&nbsp;&nbsp;* relationaler-Ausdruck*  **>**  *Verschiebeausdruck*<br/> &nbsp;&nbsp;&nbsp;&nbsp;* relationaler-Ausdruck*  * *\<=**  *shift-expression*<br/> &nbsp;&nbsp;&nbsp;&nbsp;* relationaler-Ausdruck*  **>=**  *Verschiebeausdruck*
+&nbsp;&nbsp;&nbsp;&nbsp;*relationaler-Ausdruck*  **\<**  *shift-expression*<br/> &nbsp;&nbsp;&nbsp;&nbsp;* relationaler-Ausdruck*  **>**  *Verschiebeausdruck*<br/> &nbsp;&nbsp;&nbsp;&nbsp;* relationaler-Ausdruck*  **\<=**  *shift-expression*<br/> &nbsp;&nbsp;&nbsp;&nbsp;* relationaler-Ausdruck*  **>=**  *Verschiebeausdruck*
 
 *equality-expression*:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;*relational-expression*<br/>
