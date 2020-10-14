@@ -106,7 +106,7 @@ In diesem Teil der exemplarischen Vorgehensweise wird gezeigt, wie dem Projekt e
 
 1. Wählen Sie im **Projektmappen-Explorer** das Projekt **Game** aus. Klicken Sie in der Menüleiste auf **Projekt** > **Klasse hinzufügen**.
 
-1. Geben Sie im Dialogfeld **Klasse hinzufügen***Cardgame* in das Feld **Klassenname** ein. Ändern Sie die Standarddateinamen und - einstellungen nicht. Klicken Sie auf die Schaltfläche **OK** .
+1. Geben Sie im Dialogfeld **Klasse hinzufügen** *Cardgame* in das Feld **Klassenname** ein. Ändern Sie die Standarddateinamen und - einstellungen nicht. Klicken Sie auf die Schaltfläche **OK** .
 
    Visual Studio erstellt neue Dateien und fügt diese zum Projekt hinzu. Diese werden im Fenster **Projektmappen-Explorer** angezeigt. Die Dateien „Cardgame.h“ und „Cardgame.cpp“ werden im Editor geöffnet.
 
