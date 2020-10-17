@@ -11,18 +11,18 @@ f1_keywords:
 helpviewer_keywords:
 - macros, error reporting
 ms.assetid: 4da9b87f-ec5c-4a32-ab93-637780909b9d
-ms.openlocfilehash: 2bcdfb474ee852e55bd54f1b125716e7785f28be
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 6b969cfb841a9a95d695eacc0a25f9dd378379ac
+ms.sourcegitcommit: ced5ff1431ffbd25b20d106901955532723bd188
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88833477"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92135540"
 ---
 # <a name="debugging-and-error-reporting-macros"></a>Debugging-und Fehlerberichterstattungs-Makros
 
 Diese Makros bieten nützliche Debugging-und Ablauf Verfolgungs Funktionen.
 
-|Name|Beschreibung|
+|Name|BESCHREIBUNG|
 |-|-|
 |[_ATL_DEBUG_INTERFACES](#_atl_debug_interfaces)|Schreibt im Ausgabefenster alle Schnittstellen Verluste, die erkannt werden, wenn `_Module.Term` aufgerufen wird.|
 |[_ATL_DEBUG_QI](#_atl_debug_qi)|Schreibt alle Aufrufe von `QueryInterface` in das Ausgabefenster.|
@@ -40,7 +40,7 @@ Definieren Sie dieses Makro, bevor Sie ATL-Header Dateien einschließen, um alle
 #define _ATL_DEBUG_INTERFACES
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Ausgabe der Ablauf Verfolgung wird wie unten dargestellt angezeigt:
 
@@ -71,7 +71,7 @@ Schreibt alle Aufrufe von `QueryInterface` in das Ausgabefenster.
 #define _ATL_DEBUG_QI
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Wenn beim Aufrufen von ein Fehler aufgetreten `QueryInterface` ist, wird im Ausgabefenster Folgendes angezeigt:
 
@@ -90,11 +90,11 @@ ATLASSERT(booleanExpression);
 *booleanExpression*<br/>
 Ausdruck (einschließlich Zeiger), der als ungleich 0 (null) oder 0 ausgewertet wird.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 In Debugbuilds wertet ATLASSERT " *booleanExpression* " aus und generiert einen Debugbericht, wenn das Ergebnis "false" ist.
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Anforderungen
 
 **Header:** atldef. h
 
@@ -115,7 +115,7 @@ Gibt einen booleschen Ausdruck an, der getestet werden soll.
 *Std.*<br/>
 Gibt einen Fehlercode an, der zurückgegeben werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Diese Makros bieten einen Mechanismus zum erkennen und Benachrichtigen des Benutzers über eine falsche Parameter Verwendung.
 
@@ -131,7 +131,7 @@ Der Unterschied zwischen atlsicher und ATLASSERT besteht darin, dass ATL-sicher 
 
 [!code-cpp[NVC_ATL_Utilities#108](../../atl/codesnippet/cpp/debugging-and-error-reporting-macros_1.cpp)]
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Anforderungen
 
 **Header:** AFX. h
 
@@ -148,7 +148,7 @@ ATLTRACENOTIMPL(funcname);
 *funcname*<br/>
 in Eine Zeichenfolge, die den Namen der nicht implementierten Funktion enthält.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Gibt in Releasebuilds einfach E_NOTIMPL zurück.
 
@@ -156,7 +156,7 @@ Gibt in Releasebuilds einfach E_NOTIMPL zurück.
 
 [!code-cpp[NVC_ATL_Utilities#127](../../atl/codesnippet/cpp/debugging-and-error-reporting-macros_2.cpp)]
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+### <a name="requirements"></a>Anforderungen
 
 **Header:** ATLTRACE. h
 
@@ -187,7 +187,7 @@ in Die Ebene der Ablauf Verfolgung, die gemeldet werden soll. Weitere Informatio
 *lpszformat*<br/>
 in Die formatierte Zeichenfolge, die an das dumpgerät gesendet werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Eine Beschreibung von ATLTRACE finden Sie unter [ATLTRACE2](#atltrace2) . ATLTRACE und ATLTRACE2 haben das gleiche Verhalten, ATLTRACE ist aus Gründen der Abwärtskompatibilität eingeschlossen.
 
@@ -218,7 +218,7 @@ in Die Ebene der Ablauf Verfolgung, die gemeldet werden soll. Weitere Informatio
 *lpszformat*<br/>
 in Die `printf` Format Zeichenfolge im Format, mit der eine Zeichenfolge erstellt wird, die an das dumpgerät gesendet werden soll.
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
 Die Kurzform von ATLTRACE2 schreibt eine Zeichenfolge in das Ausgabefenster des Debuggers. Die zweite Form von ATLTRACE2 schreibt auch die Ausgabe in das Ausgabefenster des Debuggers, unterliegt jedoch den Einstellungen des ATL/MFC-Ablauf Verfolgungs Tools (siehe [AtlTraceTool-Beispiel](../../overview/visual-cpp-samples.md)). Wenn Sie z. b. *Level* auf 4 festlegen und das ATL/MFC-Ablaufverfolgungs-Tool auf Level 0 festgelegt ist, wird die Meldung nicht angezeigt. die *Ebene* kann 0, 1, 2, 3 oder 4 sein. Der Standardwert ist 0 und meldet nur die schwerwiegendsten Probleme.
 
@@ -226,7 +226,7 @@ Der Parameter *Category* listet die festzulegenden Ablaufverfolgungsflags auf. D
 
 ### <a name="atl-trace-flags"></a>ATL-Ablauf Verfolgungs Flags
 
-|ATL-Kategorie|Beschreibung|
+|ATL-Kategorie|BESCHREIBUNG|
 |------------------|-----------------|
 |`atlTraceGeneral`|Berichte zu allen ATL-Anwendungen. Der Standardwert.|
 |`atlTraceCOM`|Berichte zu com-Methoden.|
@@ -244,7 +244,7 @@ Der Parameter *Category* listet die festzulegenden Ablaufverfolgungsflags auf. D
 
 ### <a name="mfc-trace-flags"></a>MFC-Trace-Flags
 
-|MFC-Kategorie|Beschreibung|
+|MFC-Kategorie|BESCHREIBUNG|
 |------------------|-----------------|
 |`traceAppMsg`|Allgemeine MFC-Nachrichten. Wird immer empfohlen.|
 |`traceDumpContext`|Nachrichten aus [CDumpContext](../../mfc/reference/cdumpcontext-class.md).|
@@ -283,7 +283,7 @@ ATLTRACE und ATLTRACE2 haben das gleiche Verhalten, ATLTRACE ist aus Gründen de
 
 [!code-cpp[NVC_ATL_Utilities#111](../../atl/codesnippet/cpp/debugging-and-error-reporting-macros_5.cpp)]
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Makros](../../atl/reference/atl-macros.md)<br/>
 [Globale Funktionen zum Debuggen und zur Fehlerberichterstattung](../../atl/reference/debugging-and-error-reporting-global-functions.md)

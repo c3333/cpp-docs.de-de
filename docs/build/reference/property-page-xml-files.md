@@ -1,31 +1,54 @@
 ---
 title: XML-Regeldateien für Eigenschaftenseiten
-ms.date: 05/06/2019
+description: Beschreibung der Visual Studio-IDE C++ XML-Regel Dateien und-Inhalte der Eigenschaften Seite.
+ms.date: 10/14/2020
 helpviewer_keywords:
 - property page XML files
-ms.assetid: dd9d9734-4387-4098-8ba6-85b93507731d
-ms.openlocfilehash: da9fa72419dc6971e90124b061da48493d7ca017
-ms.sourcegitcommit: 069e3833bd821e7d64f5c98d0ea41fc0c5d22e53
+ms.openlocfilehash: 96cbf6a32cada2b594874493868ec884823016cb
+ms.sourcegitcommit: 6e5429e076e552b32e8bdc49480c51498d7924c1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74303157"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92099718"
 ---
 # <a name="property-page-xml-rule-files"></a>XML-Regeldateien für Eigenschaftenseiten
 
-Die Eigenschaftenseiten eines Projekts in der IDE werden durch XML-Dateien im Ordner „VCTargets“ konfiguriert. Der genaue Pfad hängt davon ab, welche Edition(en) von Visual Studio installiert ist bzw. sind und welche Produktsprache verwendet wird. Wenn Visual Studio 2019 Enterprise Edition auf Englisch verwendet wird, entspricht der Pfad `%ProgramFiles%\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\VC\VCTargets\1033`. Die XML-Datei beschreibt die Namen der Regeln, Kategorien und der einzelnen Eigenschaften sowie deren Datentyp, Standardwerte und wie sie angezeigt werden sollen. Wenn Sie eine Eigenschaft in der IDE festlegen, wird der neue Wert in der Projektdatei gespeichert.
+Die Projekteigenschaften Seiten in der IDE werden von XML-Dateien im Ordner Standardregeln konfiguriert. Die XML-Dateien beschreiben die Namen der Regeln, die Kategorien und die einzelnen Eigenschaften, den Datentyp, die Standardwerte und wie Sie angezeigt werden. Wenn Sie eine Eigenschaft in der IDE festlegen, wird der neue Wert in der Projektdatei gespeichert.
 
-Die einzigen Szenarios, für die Sie die interne Funktionsweise dieser Dateien und der Visual Studio-IDE kennen müssen, sind das Erstellen einer benutzerdefinierten Eigenschaftenseite oder das Anpassen von Projekteigenschaften auf andere Art als über die Visual Studio-IDE.
+::: moniker range="vs-2015"
 
-Öffnen Sie zunächst die Eigenschaftenseiten eines Projekts. Klicken Sie hierzu mit der rechten Maustaste auf den Projektknoten im **Projektmappen-Explorer**, und wählen Sie „Eigenschaften“ aus.
+Der Pfad zum Standardordner "Rules" hängt vom Gebiets Schema und der verwendeten Version von Visual Studio ab. In einer Developer-Eingabeaufforderung von Visual Studio 2015 oder einer früheren Version lautet der Ordner Regeln *`%ProgramFiles(x86)%\MSBuild\Microsoft.Cpp\v4.0\<version>\<locale>`* . Der `<version>` Wert ist *`v140`* in Visual Studio 2015. `<locale>`Bei handelt es sich um eine LCID, z `1033` . b. für Englisch. Sie verwenden für jede installierte Edition von Visual Studio einen anderen Pfad und für jede Sprache. Der standardmäßige Regel Ordner Pfad für Visual Studio 2015 Community Edition in englischer Sprache könnte z *`C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\v140\1033\`* . b. lauten.
 
-![Visual Studio C++-Projekteigenschaften](../media/cpp-property-page-2017.png)
+::: moniker-end
 
-Jeder Knoten unter **Konfigurationseigenschaften** wird als „Regel“ bezeichnet. Eine Regel stellt manchmal ein einzelnes Tool (z.B. den Compiler) dar. Im Allgemeinen bezieht sich der Begriff jedoch darauf, dass ein Element über Eigenschaften verfügt, ausgeführt werden und Ausgaben erzeugen kann. Jede Regel wird über eine XML-Datei im Ordner „VCTargets“ aufgefüllt. Die angezeigte C/C++-Regel wird beispielsweise über „cl.xml“ aufgefüllt.
+::: moniker range="vs-2017"
 
-Wie zuvor erwähnt besitzt jede Regel mehrere Eigenschaften, die in Kategorien organisiert sind. Jeder Unterknoten einer Regel stellt eine Kategorie dar. Der Knoten „Optimierung“ unter „C/C++“ enthält beispielsweise alle Eigenschaften des Compilertools, mit denen Optimierungen vorgenommen werden können. Die Eigenschaften und deren Werte werden in einem Rasterformat im rechten Bereich gerendert.
+Der Pfad zum Standardordner "Rules" hängt vom Gebiets Schema und der verwendeten Version von Visual Studio ab. In einer Visual Studio 2017 Developer-Eingabeaufforderung lautet der Ordner Regeln *`%VSINSTALLDIR%Common7\IDE\VC\VCTargets\<locale>\`* . `<locale>`Bei handelt es sich um eine LCID, z `1033` . b. für Englisch. In einer Developer-Eingabeaufforderung von Visual Studio 2015 oder einer früheren Version lautet der Ordner "Rules" *`%ProgramFiles(x86)%\MSBuild\Microsoft.Cpp\v4.0\<version>\<locale>\`* , wobei der `<version>` Wert *`v140`* in Visual Studio 2015 ist. Sie verwenden für jede installierte Edition von Visual Studio einen anderen Pfad und für jede Sprache. Der standardmäßige Regel Ordner Pfad für Visual Studio 2017 Community Edition in englischer Sprache könnte z *`C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\1033\`* . b. lauten.
 
-Sie können „cl.xml“ im Editor oder in einem beliebigen XML-Editor (siehe Screenshot) öffnen. Es wird ein Stammknoten namens „Rule“ (Regel) angezeigt, der die gleiche Liste von definierten Eigenschaften enthält, die auch auf der Benutzeroberfläche angezeigt wird, jedoch mit zusätzlichen Metadaten.
+::: moniker-end
+
+::: moniker range=">=vs-2019"
+
+Der Pfad zum Standardordner "Rules" hängt vom Gebiets Schema und der verwendeten Version von Visual Studio ab. In einer Developer-Eingabeaufforderung von Visual Studio 2019 oder höher lautet der Ordner "Rules" *`%VSINSTALLDIR%MSBuild\Microsoft\VC\<version>\<locale>\`* , wobei der `<version>` Wert *`v160`* in Visual Studio 2019 ist. `<locale>`Bei handelt es sich um eine LCID, z `1033` . b. für Englisch. In Visual Studio 2017 lautet der Ordner Regeln *`%VSINSTALLDIR%Common7\IDE\VC\VCTargets\<locale>\`* . In einer Developer-Eingabeaufforderung von Visual Studio 2015 oder einer früheren Version lautet der Ordner Regeln *`%ProgramFiles(x86)%\MSBuild\Microsoft.Cpp\v4.0\<version>\<locale>\`* . Sie verwenden für jede installierte Edition von Visual Studio einen anderen Pfad und für jede Sprache. Der standardmäßige Regel Ordner Pfad für Visual Studio 2019 Community Edition in englischer Sprache könnte z *`C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\1033\`* . b. lauten.
+
+::: moniker-end
+
+Sie müssen nur die internen Abläufe dieser Dateien und der Visual Studio-IDE in einigen Szenarios verstehen:
+
+- Sie möchten eine benutzerdefinierte Eigenschaften Seite erstellen oder
+- Sie möchten Ihre Projekteigenschaften ohne die Visual Studio-IDE anpassen.
+
+## <a name="contents-of-rule-files"></a>Inhalt von Regel Dateien
+
+Öffnen Sie zunächst die Eigenschaften Seiten für ein Projekt. Klicken Sie in **Projektmappen-Explorer** mit der rechten Maustaste auf den Projekt Knoten, und wählen Sie **Eigenschaften**aus:
+
+![Zeigt das Dialogfeld "Visual Studio C++ Projekteigenschaften" an](../media/cpp-property-page-2017.png)
+
+Jeder Knoten unter **Konfigurations Eigenschaften** wird als *Regel*bezeichnet. Eine Regel stellt manchmal ein einzelnes Tool wie den Compiler dar. Im allgemeinen verweist der Begriff auf etwas, das über Eigenschaften verfügt, die ausgeführt werden und eine Ausgabe verursachen können. Jede Regel wird aus einer XML-Datei im Standardregel Ordner ausgefüllt. Die hier gezeigte C/C++-Regel wird z. b. mit *"cl.xml"* aufgefüllt.
+
+Jede Regel verfügt über eine Reihe von Eigenschaften, die in *Kategorien*unterteilt sind. Jeder unter Knoten unter einer Regel stellt eine Kategorie dar. Beispielsweise enthält der Knoten **Optimierung** unter **C/C++** alle Optimierungs bezogenen Eigenschaften des Compilertools. Die Eigenschaften und ihre Werte werden im rechten Bereich in einem Raster Format gerendert.
+
+Sie können *`cl.xml`* in Editor oder einem beliebigen XML-Editor öffnen. Sie sehen einen Stamm Knoten mit dem Namen `Rule` . Sie definiert die gleiche Liste von Eigenschaften, die in der Benutzeroberfläche angezeigt werden, zusammen mit zusätzlichen Metadaten.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -44,16 +67,17 @@ Sie können „cl.xml“ im Editor oder in einem beliebigen XML-Editor (siehe Sc
     <Category Name="All Options" DisplayName="All Options" Subtype="Search" />
     <Category Name="Command Line" DisplayName="Command Line" Subtype="CommandLine" />
   </Rule.Categories>
-...
+  <!-- . . . -->
+</Rule>
 ```
 
-Jedem Knoten unter „Konfigurationseigenschaften“ auf der Benutzeroberfläche der Eigenschaftenseiten ist eine XML-Datei zugeordnet. Sie können Regeln über die Benutzeroberfläche hinzufügen oder entfernen, indem Sie Speicherorte zu den entsprechenden XML-Dateien im Projekt hinzufügen oder aus diesen entfernen. So fügt „Microsoft.CppBuild.targets“ (eine Ebene über dem Ordner „1033“) die Datei „cl.xml“ ein:
+Es gibt eine XML-Datei für jeden Knoten unter **Konfigurations Eigenschaften** in der Benutzeroberfläche der Eigenschaften Seiten. Sie können Regeln in der Benutzeroberfläche hinzufügen oder entfernen: Dies erfolgt durch das einschließen oder Entfernen von Speicherorten in entsprechende XML-Dateien im Projekt. Beispielsweise enthält die Vorgehensweise *`Microsoft.CppBuild.targets`* (eine Ebene, die höher als der Ordner 1033 ist) Folgendes *`cl.xml`* :
 
 ```xml
 <PropertyPageSchema Condition="'$(ConfigurationType)' != 'Utility'" Include="$(VCTargetsPath)$(LangID)\cl.xml"/>
 ```
 
-Wenn Sie alle Daten aus „cl.xml“ entfernen, verbleibt folgendes Gerüst:
+Wenn Sie *`cl.xml`* alle Daten entfernen, verfügen Sie über dieses grundlegende Framework:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -61,7 +85,7 @@ Wenn Sie alle Daten aus „cl.xml“ entfernen, verbleibt folgendes Gerüst:
   <Rule.DataSource />
   <Rule.Categories>
     <Category />
-        ...
+    <!-- . . . -->
   </Rule.Categories>
   <BoolProperty />
   <EnumProperty />
@@ -71,109 +95,115 @@ Wenn Sie alle Daten aus „cl.xml“ entfernen, verbleibt folgendes Gerüst:
 </Rule>
 ```
 
-Im folgenden Abschnitt werden die Hauptelemente und einige der Metadaten beschrieben, die an diese angefügt werden können.
+Im nächsten Abschnitt werden die einzelnen Hauptelemente und einige der Metadaten beschrieben, die Sie anfügen können.
 
-1. **Rule:** Bei „Rule“ handelt es sich im Allgemeinen um den Stammknoten der XML-Datei. Dieser kann mehrere Attribute enthalten:
+### <a name="rule-attributes"></a>Regel Attribute
 
-    ```xml
-    <Rule Name="CL" PageTemplate="tool" SwitchPrefix="/" Order="10"
-              xmlns="http://schemas.microsoft.com/build/2009/properties"
-              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-              xmlns:sys="clr-namespace:System;assembly=mscorlib">
-      <Rule.DisplayName>
-        <sys:String>C/C++</sys:String>
-      </Rule.DisplayName>
-    ```
+Ein- **`<Rule>`** Element ist der Stamm Knoten in der XML-Datei. Sie kann über viele Attribute verfügen:
 
-   a. **Name:** Das Name-Attribut ist eine ID für die Regel. Es muss in allen XML-Dateien der Projektseiten eines Projekts eindeutig sein.
+```xml
+<Rule Name="CL" PageTemplate="tool" SwitchPrefix="/" Order="10"
+          xmlns="http://schemas.microsoft.com/build/2009/properties"
+          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <Rule.DisplayName>
+    <sys:String>C/C++</sys:String>
+  </Rule.DisplayName>
+```
 
-   b. **PageTemplate:** Der Wert dieses Attributs wird von der Benutzeroberfläche verwendet, um eine Auswahl aus mehreren Vorlagen für die Benutzeroberfläche zu treffen. Die Vorlage „tool“ rendert die Eigenschaften in einem Standardrasterformat. Weitere integrierte Werte für dieses Attribut sind „debugger“ und „generic“. Betrachten Sie die Knoten „Debuggen“ und „Allgemein“, um zu sehen, welches Format sich für die Benutzeroberfläche ergibt, wenn Sie diese Werte festlegen. Die Benutzeroberfläche für die Seitenvorlage „Debugger“ verwendet ein Dropdownfeld, um zwischen den Eigenschaften von verschiedenen Debuggern zu wechseln, während die Vorlage „generic“ verschiedene Eigenschaftenkategorien auf einer Seite anzeigt, statt mehrere Kategorien in den Unterknoten der Regel anzuzeigen. Bei diesem Attribut handelt es sich lediglich um einen Vorschlag für die Benutzeroberfläche. Die XML-Datei wurde dafür entworfen, unabhängig von der Benutzeroberfläche zu sein. Eine andere Benutzeroberfläche verwendet dieses Attribut möglicherweise für andere Zwecke.
+- **`Name`**: Das Name-Attribut ist eine ID für das `Rule` . Er muss in allen XML-Dateien der Eigenschaften Seite für ein Projekt eindeutig sein.
 
-   c. **SwitchPrefix:** Dieses Präfix wird in der Befehlszeile für die Parameter verwendet. Ein Wert von „/“ ergibt Parameter wie „/ZI“, „/nologo“ oder „/W3“.
+- **`PageTemplate`**: Der Wert dieses Attributs wird von der Benutzeroberfläche verwendet, um eine Sammlung von UI-Vorlagen auszuwählen. Die Vorlage „tool“ rendert die Eigenschaften in einem Standardrasterformat. Weitere integrierte Werte für dieses Attribut sind „debugger“ und „generic“. Betrachten Sie die Knoten „Debuggen“ und „Allgemein“, um zu sehen, welches Format sich für die Benutzeroberfläche ergibt, wenn Sie diese Werte festlegen. Die Benutzeroberfläche für die Seitenvorlage "Debugger" verwendet ein Dropdown Feld, um zwischen den Eigenschaften verschiedener Debugger zu wechseln. Die "generische" Vorlage zeigt verschiedene Eigenschaften Kategorien in einer Seite an, anstatt mehrere kategorieunterknoten unterhalb des `Rule` Knotens zu haben. Dieses Attribut ist nur ein Vorschlag für die Benutzeroberfläche. Die XML-Datei ist so konzipiert, dass Sie Benutzeroberflächen unabhängig ist. Eine andere Benutzeroberfläche verwendet dieses Attribut möglicherweise für andere Zwecke.
 
-   d. **Order:** Hierbei handelt es sich um einen Vorschlag für einen möglichen Benutzeroberflächenclient am relativen Speicherort dieser Regel im Vergleich mit allen anderen Regeln im System.
+- **`SwitchPrefix`**: Das Präfix, das in der Befehlszeile für die Switches verwendet wird. Ein Wert von `"/"` würde zu Switches führen, die wie **`/ZI`** , **`/nologo`** , **`/W3`** usw. aussehen.
 
-   e. **xmlns:** Hierbei handelt es sich um ein XAML-Standardelement. Drei Namespaces werden aufgeführt. Diese entsprechen den Namespaces für die XAML-Deserialisierungsklassen, das XAML-Schema und insbesondere den XAML-Systemnamespace.
+- **`Order`**: Ein Vorschlag an einen potenziellen Benutzeroberflächen Client im `Rule` Vergleich zu allen anderen Regeln im System.
 
-   f. **DisplayName:** Dieser Name wird auf der Benutzeroberfläche der Eigenschaftenseite des Knotens „Rule“ (Regel) angezeigt. Dieser Wert wird lokalisiert. „DisplayName“ wurde aufgrund der internen Anforderungen von Lokalisierungstools als untergeordnetes Element von „Rule“ statt als Attribut erstellt (wie „Name“ oder „SwitchPrefix“). Aus Sicht von XAML sind beide Äquivalent. Sie können deshalb ein Attribut daraus erstellen, um die Übersichtlichkeit zu verbessern, oder keine Änderung vornehmen.
+- **`xmlns`**: Ein Standard-XML-Element. Drei Namespaces werden aufgeführt. Diese Attribute entsprechen den Namespaces für die XML-deserialisierungsklassen, das XML-Schema bzw. den System Namespace.
 
-   g. **DataSource:** Diese Eigenschaft ist sehr wichtig, da Sie dem Projektsystem mitteilt, an welchem Speicherort der Projektwert gelesen und gespeichert werden soll und wie dieser gruppiert wird. Dies wird im Folgenden erläutert. Für „cl.xml“ sind diese Werte Folgende:
+- **`DisplayName`**: Der Name, der auf der Benutzeroberfläche der Eigenschaften Seite für den Knoten angezeigt wird `Rule` . Dieser Wert wird lokalisiert. Wir haben `DisplayName` `Rule` `Name` `SwitchPrefix` aufgrund interner Lokalisierungs Tool Anforderungen als untergeordnetes Element von und nicht als Attribut (z. b. oder) erstellt. Aus XML-Sicht sind beide Äquivalent. Sie können deshalb ein Attribut daraus erstellen, um die Übersichtlichkeit zu verbessern, oder keine Änderung vornehmen.
 
-      ```xml
-      <DataSource Persistence="ProjectFile" ItemType="ClCompile" Label="" HasConfigurationCondition="true" />
-      ```
-
-   - `Persistence="ProjectFile` teilt dem Projektsystem mit, dass alle Eigenschaften von „Rule“ in die Projektdatei oder in die Eigenschaftenblattdatei (je nachdem, welcher Knoten zum Erzeugen der Eigenschaftenseiten verwendet wurde) geschrieben werden sollen. Ein weiterer möglicher Wert ist „UserFile“. Dieser schreibt den Wert in die USER-Datei.
-
-   - `ItemType="ClCompile"` gibt an, dass die Eigenschaften als ItemDefinition-Metadaten oder als Elementmetadaten (nur, wenn die Eigenschaftenseiten aus einem Dateiknoten im Projektmappen-Explorer erzeugt wurden) dieses Elementtyps gespeichert werden. Wenn dieses Feld nicht festgelegt ist, wird die Eigenschaft als allgemeine Eigenschaft in ein PropertyGroup-Element geschrieben.
-
-   - `Label=""` gibt an, dass die Bezeichnung des übergeordneten Elements „ItemDefinitionGroup“ leer ist (jedes MSBuild-Element kann eine Bezeichnung besitzen), wenn die Eigenschaften als `ItemDefinition`-Metadaten geschrieben werden. Visual Studio 2017 und höher verwendet Gruppen mit Bezeichnung, um in der VCXPROJ-Projektdatei zu navigieren. Beachten Sie, dass die Gruppen, die die meisten Rule-Eigenschaften enthalten, über eine leere Zeichenfolge als Bezeichner verfügen.
-
-   - `HasConfigurationCondition="true"` weist das Projektsystem an, eine Konfigurationsbedingung an den Wert anzufügen, damit dieser nur für die aktuelle Projektkonfiguration wirksam ist. Die Konfiguration kann an die übergeordnete Gruppe oder an den Wert angefügt werden. Öffnen Sie beispielsweise die Projektseiten über den Projektknoten, und legen Sie den Wert der Eigenschaft **Warnungen als Fehler behandeln** unter **Konfigurationseigenschaften > C/C++ > Allgemein** auf „Ja“ fest. Der folgende Wert wird in die Projektdatei geschrieben. Beachten Sie die Konfigurationsbedingung, die an das übergeordnete Element „ItemDefinitionGroup“ angefügt ist.
-
-      ```xml
-      <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-        <ClCompile>
-          <TreatWarningAsError>true</TreatWarningAsError>
-        </ClCompile>
-      </ItemDefinitionGroup>
-      ```
-
-      Wenn dieser Wert auf der Eigenschaften Seite für eine bestimmte Datei, wie z. b. stdafx. cpp, festgelegt wurde, wird der Eigenschafts Wert unter dem Element *stdafx. cpp* in der Projektdatei geschrieben, wie unten gezeigt. Sie werden feststellen, dass die Konfigurationsbedingung direkt an die Metadaten angefügt wurde.
-
-      ```xml
-      <ItemGroup>
-        <ClCompile Include="stdafx.cpp">
-          <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</TreatWarningAsError>
-        </ClCompile>
-      </ItemGroup>
-      ```
-
-   Ein weiteres Attribut von **DataSource**, das zuvor nicht aufgelistet wurde, ist **PersistedName**. Sie können dieses Attribut verwenden, um eine Eigenschaft in der Projektdatei mit einem anderen Namen darzustellen. Standardmäßig ist dieses Attribut auf den **Namen**der Eigenschaft festgelegt.
-
-   Eine einzelne Eigenschaft kann die Datenquelle der übergeordneten Regel überschreiben. In diesem Fall unterscheidet sich der Speicherort für den Wert dieser Eigenschaft von anderen Eigenschaften in der Regel.
-
-   h. Es gibt weitere Attribute von „Rule“, einschließlich „Description“ und „SupportsFileBatching“. Diese werden hier nicht dargestellt. Alle Attribute, die auf „Rule“ oder ein anderes Element angewendet werden können, finden Sie in der Dokumentation für diese Typen. Alternativ können Sie die öffentlichen Eigenschaften von Typen im `Microsoft.Build.Framework.XamlTypes`-Namespace der `Microsoft.Build.Framework .dll`-Assembly überprüfen.
-
-   i. **DisplayName**, **PageTemplate** und **Order** sind auf die Benutzeroberfläche bezogene Eigenschaften, die in diesem Datenmodell vorhanden sind, das ansonsten von der Benutzeroberfläche unabhängig ist. Diese Eigenschaften werden meistens von allen Benutzeroberflächen verwendet, die zum Anzeigen von Eigenschaftenseiten verwendet werden. Die Eigenschaften **DisplayName** und **Description** sind in fast allen Elementen der XML-Datei vorhanden. Nur diese beiden Eigenschaften werden lokalisiert. Die Lokalisierung dieser Zeichenfolgen wird in einem späteren Beitrag erläutert.
-
-1. **Category:** Eine Regel kann mehrere Kategorien aufweisen. Bei der Reihenfolge, in der diese Kategorien in der XML-Datei aufgeführt werden, handelt es sich um einen Vorschlag für die Benutzeroberfläche, damit diese in der gleichen Reihenfolge angezeigt werden. Die Reihenfolge der Kategorien im Knoten „C/C++“, die auf der Benutzeroberfläche angezeigt wird (Allgemein, Optimierung, Präprozessor, ...),  entspricht beispielsweise der in „cl.xml“. Eine Beispielkategorie sieht folgendermaßen aus:
+- **`DataSource`**: Diese wichtige Eigenschaft weist das Projekt System an, den Eigenschafts Wert und die zugehörige Gruppierung zu lesen und zu schreiben (später erläutert). Für lauten *`cl.xml`* folgende Werte:
 
     ```xml
-    <Category Name="Optimization">
-      <Category.DisplayName>
-        <sys:String>Optimization</sys:String>
-      </Category.DisplayName>
-    </Category>
+    <DataSource Persistence="ProjectFile" ItemType="ClCompile" Label="" HasConfigurationCondition="true" />
     ```
 
-   Der obige Codeausschnitt zeigt die Attribute **Name** und **DisplayName**, die zuvor beschrieben wurden. Auch für **Category** gibt es weitere Attribute, die oben nicht verwendet wurden. Sie können mehr über diese erfahren, indem Sie die Dokumentation lesen oder die Assemblys mithilfe von „ildasm.exe“ überprüfen.
+  - `Persistence="ProjectFile"` weist das Projekt System an, dass alle Eigenschaften für das `Rule` in die Projektdatei oder die Eigenschaften Blatt Datei geschrieben werden sollen (je nachdem, welcher Knoten zum Erzeugen der Eigenschaften Seiten verwendet wurde). Der andere mögliche Wert ist `"UserFile"` , wodurch der Wert in die Datei geschrieben wird *`.user`* .
 
-1. **Properties:** Dies ist der Hauptbestandteil der XML-Datei, in dem eine Liste aller Eigenschaften der Regel enthalten ist. Jede Eigenschaft kann einen von fünf möglichen Typen aufweisen, die zuvor im XAML-Gerüst dargestellt wurden. In Ihrer Datei können jedoch nur einige dieser Typen vorhanden sein. Eine Eigenschaft besitzt mehrere Attribute, mit denen Sie ausführlich beschrieben werden kann. Hier werde ich nur die **StringProperty** erläutern. Die übrigen Attribute sind jedoch ähnlich.
+  - `ItemType="ClCompile"` gibt an, dass die Eigenschaften als ItemDefinition-Metadaten oder als Elementmetadaten (nur, wenn die Eigenschaftenseiten aus einem Dateiknoten im Projektmappen-Explorer erzeugt wurden) dieses Elementtyps gespeichert werden. Wenn dieses Feld nicht festgelegt ist, wird die Eigenschaft als allgemeine Eigenschaft in eine PropertyGroup geschrieben.
+
+  - `Label=""` gibt an, dass die Bezeichnung des übergeordneten Elements „ItemDefinitionGroup“ leer ist (jedes MSBuild-Element kann eine Bezeichnung besitzen), wenn die Eigenschaften als `ItemDefinition`-Metadaten geschrieben werden. Visual Studio 2017 und höher verwendet Gruppen mit Bezeichnung, um in der VCXPROJ-Projektdatei zu navigieren. Die Gruppen, die die meisten Eigenschaften enthalten, `Rule` haben eine leere Zeichenfolge als Bezeichnung.
+
+  - `HasConfigurationCondition="true"` weist das Projektsystem an, eine Konfigurationsbedingung an den Wert anzufügen, damit dieser nur für die aktuelle Projektkonfiguration wirksam ist. Die Konfiguration kann an die übergeordnete Gruppe oder an den Wert angefügt werden. Öffnen Sie beispielsweise die Projektseiten über den Projektknoten, und legen Sie den Wert der Eigenschaft **Warnungen als Fehler behandeln** unter **Konfigurationseigenschaften > C/C++ > Allgemein** auf „Ja“ fest. Der folgende Wert wird in die Projektdatei geschrieben. Beachten Sie die Konfigurationsbedingung, die an das übergeordnete Element „ItemDefinitionGroup“ angefügt ist.
 
     ```xml
-    <StringProperty Subtype="file" Name="ObjectFileName" Category="Output Files" Switch="Fo">
-      <StringProperty.DisplayName>
-        <sys:String>Object File Name</sys:String>
-      </StringProperty.DisplayName>
-      <StringProperty.Description>
-        <sys:String>Specifies a name to override the default object file name; can be file or directory name.(/Fo[name])</sys:String>
-      </StringProperty.Description>
-    </StringProperty>
+    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      <ClCompile>
+        <TreatWarningAsError>true</TreatWarningAsError>
+      </ClCompile>
+    </ItemDefinitionGroup>
     ```
 
-   Die meisten Attribute im Codeausschnitt wurden zuvor bereits beschrieben. Neu sind „Subtype“, „Category“ and „Switch“.
+     Wenn dieser Wert auf der Eigenschaften Seite für eine bestimmte Datei (z. b.) festgelegt wird, *`stdafx.cpp`* sollte der Eigenschafts Wert unter dem `stdafx.cpp` Element in der Projektdatei geschrieben werden, wie hier gezeigt. Beachten Sie, dass die Konfigurations Bedingung direkt an die Metadaten selbst angefügt wird:
 
-   a. **Subtype** ist ein Attribut, das nur für **StringProperty** und **StringListProperty** verfügbar ist und Kontextinformationen enthält. Der Wert von „file“ gibt beispielsweise an, dass die Eigenschaft einen Dateipfad darstellt. Diese Kontextinformationen werden verwendet, um die Bearbeitungsfunktionen zu verbessern, indem ein Windows-Explorer als Eigenschaften-Editor bereitgestellt wird, mit dem der Benutzer die Datei visuell auswählen kann.
+    ```xml
+    <ItemGroup>
+      <ClCompile Include="stdafx.cpp">
+        <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</TreatWarningAsError>
+      </ClCompile>
+    </ItemGroup>
+    ```
 
-   b. **Category:** Hierdurch wird die Kategorie der Eigenschaft deklariert. Suchen Sie diese Eigenschaft in der Kategorie **Ausgabedateien** auf der Benutzeroberfläche.
+  Ein anderes Attribut, das `DataSource` hier nicht aufgeführt ist, ist `PersistedName` . Sie können dieses Attribut verwenden, um eine Eigenschaft in der Projektdatei mit einem anderen Namen darzustellen. Standardmäßig ist dieses Attribut auf die der-Eigenschaft festgelegt `Name` .
 
-   c. **Switch:** Wenn eine Regel ein Tool darstellt (in diesem Fall z.B. ein Compilertool), werden die meisten Eigenschaften der Regel während der Buildzeit als Parameter an das ausführbare Tool übergeben. Der Wert dieses Attributs gibt das Parameterliteral an, das verwendet werden soll. Die oben genannte Eigenschaft gibt an, dass der Parameter **Fo** sein sollte. In Kombination mit dem **SwitchPrefix**-Attribut des übergeordneten Rule-Elements wird diese Eigenschaft an die ausführbare Datei als **/Fo"Debug\"** übergeben. Dies wird in der Befehlszeile für C/C++ auf der Benutzeroberfläche der Eigenschaftenseite angezeigt.
+  Eine einzelne Eigenschaft kann die `DataSource` des übergeordneten Elements überschreiben `Rule` . In diesem Fall unterscheidet sich der Speicherort für den Wert dieser Eigenschaft von anderen Eigenschaften im `Rule` .
+
+- Es gibt andere Attribute von `Rule` , einschließlich `Description` und `SupportsFileBatching` , die hier nicht angezeigt werden. Der vollständige Satz von Attributen, die für einen `Rule` oder für ein beliebiges anderes Element anwendbar sind, kann durch das Durchsuchen der Dokumentation für diese Typen abgerufen werden. Alternativ können Sie die öffentlichen Eigenschaften von Typen im `Microsoft.Build.Framework.XamlTypes`-Namespace der `Microsoft.Build.Framework.dll`-Assembly überprüfen.
+
+- **`DisplayName`**, **`PageTemplate`** und **`Order`** sind UI-bezogene Eigenschaften, die in diesem anderweitig Benutzeroberflächen unabhängigen Datenmodell vorhanden sind. Diese Eigenschaften werden meistens von allen Benutzeroberflächen verwendet, die zum Anzeigen von Eigenschaftenseiten verwendet werden. `DisplayName` und `Description` sind zwei Eigenschaften, die für fast alle Elemente in der XML-Datei vorhanden sind. Diese beiden Eigenschaften sind die einzigen, die lokalisiert werden.
+
+### <a name="category-elements"></a>Kategorieelemente
+
+Ein `Rule` kann mehrere- `Category` Elemente aufweisen. Die Reihenfolge, in der die Kategorien in der XML-Datei aufgelistet sind, ist ein Vorschlag für die Benutzeroberfläche, die Kategorien in derselben Reihenfolge anzuzeigen. Beispielsweise ist die Reihenfolge der Kategorien unter dem Knoten **C/C++** , den Sie in der Benutzeroberfläche sehen, identisch mit der Reihenfolge in *`cl.xml`* . Eine Beispielkategorie sieht folgendermaßen aus:
+
+```xml
+<Category Name="Optimization">
+  <Category.DisplayName>
+    <sys:String>Optimization</sys:String>
+  </Category.DisplayName>
+</Category>
+```
+
+Dieser Code Ausschnitt zeigt das `Name` -Attribut und das- `DisplayName` Attribut, die zuvor beschrieben wurden. Auch hier gibt es noch weitere Attribute, `Category` die ein aufweisen kann, die im Beispiel nicht angezeigt werden. Weitere Informationen hierzu finden Sie in der Dokumentation oder unter Untersuchen der Assemblys mithilfe von *`ildasm.exe`* .
+
+### <a name="property-elements"></a>Eigenschaften Elemente
+
+Der größte Teil der Regeldatei besteht aus `Property` Elementen. Sie enthalten die Liste aller Eigenschaften in einer `Rule` . Jede Eigenschaft kann einer der fünf möglichen Typen sein, die im grundlegenden Framework angezeigt werden: `BoolProperty` , `EnumProperty` , `IntProperty` , `StringProperty` und `StringListProperty` . In Ihrer Datei sind möglicherweise nur einige dieser Typen enthalten. Eine Eigenschaft verfügt über eine Reihe von Attributen, mit denen Sie ausführlich beschrieben werden kann. Die `StringProperty` wird hier beschrieben. Der Rest ist ähnlich.
+
+```xml
+<StringProperty Subtype="file" Name="ObjectFileName" Category="Output Files" Switch="Fo">
+  <StringProperty.DisplayName>
+    <sys:String>Object File Name</sys:String>
+  </StringProperty.DisplayName>
+  <StringProperty.Description>
+    <sys:String>Specifies a name to override the default object file name; can be file or directory name.(/Fo[name])</sys:String>
+  </StringProperty.Description>
+</StringProperty>
+```
+
+Die meisten Attribute im Codeausschnitt wurden zuvor bereits beschrieben. Die neuen sind `Subtype` , `Category` und `Switch` .
+
+- **`Subtype`** ist ein Attribut, das nur für `StringProperty` -und-Elemente verfügbar ist `StringListProperty` . Sie enthält Kontextinformationen. Der-Wert gibt beispielsweise an `file` , dass die-Eigenschaft einen Dateipfad darstellt. Visual Studio verwendet diese Kontextinformationen, um die Bearbeitungsfunktionen zu verbessern. Beispielsweise kann ein Fenster in Windows-Explorer bereitgestellt werden, mit dem der Benutzer die Datei visuell als Editor für die Eigenschaft auswählen kann.
+
+- **`Category`**: Die Kategorie, unter der diese Eigenschaft liegt. Suchen Sie diese Eigenschaft in der Kategorie **Ausgabedateien** auf der Benutzeroberfläche.
+
+- **`Switch`**: Wenn eine Regel ein Tool (z. b. das Compilertool) darstellt, werden die meisten `Rule` Eigenschaften bei der Buildzeit als Switches an die ausführbare Datei des Tools Der Wert dieses Attributs gibt an, welches switchliterale verwendet werden soll. Im `<StringProperty>` Beispiel wird angegeben, dass der Switch lauten soll **`Fo`** . In Kombination mit dem- `SwitchPrefix` Attribut für das übergeordnete Element `Rule` wird diese Eigenschaft als an die ausführbare Datei weitergegeben  **`/Fo"Debug\"`** . Es ist in der Befehlszeile für C/C++ auf der Eigenschaften Seite der Benutzeroberfläche sichtbar.
 
    Folgende weitere Eigenschaftenattribute sind vorhanden:
 
-   d. **Sichtbar:** Wenn Sie aus irgendeinem Grund nicht möchten, dass Ihre Eigenschaft in den Eigenschaften Seiten angezeigt wird (aber wahrscheinlich noch während der Buildzeit verfügbar ist), legen Sie dieses Attribut auf "false" fest.
+- **`Visible`**: Wenn Sie nicht möchten, dass Ihre Eigenschaft in den Eigenschaften Seiten angezeigt wird, Sie aber zur Buildzeit verfügbar machen möchten, legen Sie dieses Attribut auf fest `false` .
 
-   e. Schreibgeschützt **:** Wenn Sie in den Eigenschaften Seiten eine schreibgeschützte Ansicht des Eigenschafts Werts angeben möchten, legen Sie dieses Attribut auf "true" fest.
+- **`ReadOnly`**: Legen Sie dieses Attribut auf fest, wenn Sie eine schreibgeschützte Ansicht für den Wert dieser Eigenschaft in den Eigenschaften Seiten bereitstellen möchten `true` .
 
-   f. **IncludeInCommandLine:** Einige Eigenschaft müssen während der Buildzeit möglicherweise nicht an ein Tool übergeben werden. Wenn Sie dieses Attribut auf FALSE festlegen, wird es nicht übergeben.
+- **`IncludeInCommandLine`**: Bei der Buildzeit benötigt ein Tool möglicherweise nicht einige seiner Eigenschaften. Legen Sie dieses Attribut auf fest, `false` um zu verhindern, dass eine bestimmte Eigenschaft übermittelt wird.

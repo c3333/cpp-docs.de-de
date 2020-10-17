@@ -6,12 +6,12 @@ helpviewer_keywords:
 - generic interfaces
 - interfaces, generic [C++}
 ms.assetid: f3da788a-ba83-4db7-9dcf-9b95a8fb9d1a
-ms.openlocfilehash: f5a74eaafa7ff348079ec367a7c2318f86081f15
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 61ab514d244c8b41d467d382fa97e30556ccbb32
+ms.sourcegitcommit: ced5ff1431ffbd25b20d106901955532723bd188
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87218025"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92135527"
 ---
 # <a name="generic-interfaces-ccli"></a>Generische Schnittstellen (C++/CLI)
 
@@ -30,7 +30,7 @@ Weitere Informationen zu Schnittstellen finden Sie unter [Schnittstellenklasse](
 [type-parameter-constraints-clauses][accesibility-modifiers] interface class identifier [: base-list] {   interface-body} [declarators] ;
 ```
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 *attributes*<br/>
 (Optional) Zusätzliche deklarative Informationen. Weitere Informationen zu Attributen und Attributklassen finden Sie unter **Attribute**.
@@ -59,7 +59,7 @@ Deklarationen der Schnittstellenmember.
 *Deklaratoren*<br/>
 (Optional) Deklarationen von Variablen, basierend auf diesem Typ.
 
-## <a name="example"></a>Beispiel
+## <a name="example-how-to-declare-and-instantiate-a-generic-interface"></a>Beispiel: Deklarieren und Instanziieren einer generischen Schnittstelle
 
 Das folgende Beispiel veranschaulicht, wie Sie eine generische Schnittstelle deklarieren und instanziieren. In diesem Beispiel wird die generische Schnittstelle `IList<ItemType>` deklariert. Sie wird durch zwei generische Klassen implementiert: `List1<ItemType>` und `List2<ItemType>`. Die Implementierungen unterscheiden sich.
 
@@ -236,7 +236,7 @@ Array List
 List2
 ```
 
-## <a name="example"></a>Beispiel
+## <a name="example-declare-a-generic-interface"></a>Beispiel: Deklarieren einer generischen Schnittstelle
 
 Dieses Beispiel deklariert eine generische Schnittstelle `IMyGenIface` und zwei nicht generische Schnittstellen `IMySpecializedInt` und `ImySpecializedString`, die `IMyGenIface` spezialisieren. Die beiden spezialisierten Schnittstellen werden dann durch die beiden Klassen `MyIntClass` und `MyStringClass` implementiert. Das Beispiel zeigt, wie Sie generische Schnittstellen spezialisieren, generische und nicht generische Schnittstellen instanziieren und die explizit implementierten Member in den Schnittstellen aufrufen.
 

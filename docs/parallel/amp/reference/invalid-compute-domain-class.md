@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - invalid_compute_domain class
 ms.assetid: ac7a7166-8bdb-4db1-8caf-ea129ab5117e
-ms.openlocfilehash: 3b8179e8e92665fa6482bd092504af71aa0106f0
-ms.sourcegitcommit: a8ef52ff4a4944a1a257bdaba1a3331607fb8d0f
+ms.openlocfilehash: 09418991e805e494c1d79ef31980bbec66a2e172
+ms.sourcegitcommit: ced5ff1431ffbd25b20d106901955532723bd188
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77126460"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92135566"
 ---
 # <a name="invalid_compute_domain-class"></a>invalid_compute_domain-Klasse
 
@@ -29,9 +29,9 @@ class invalid_compute_domain : public runtime_exception;
 
 ### <a name="public-constructors"></a>Öffentliche Konstruktoren
 
-|Name|BESCHREIBUNG|
+|name|BESCHREIBUNG|
 |----------|-----------------|
-|[invalid_compute_domain-Konstruktor](#ctor)|Initialisiert eine neue Instanz der Klasse `invalid_compute_domain`.|
+|[invalid_compute_domain-Konstruktor](#ctor)|Initialisiert eine neue Instanz der `invalid_compute_domain`-Klasse.|
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -41,17 +41,17 @@ class invalid_compute_domain : public runtime_exception;
 
 `invalid_compute_domain`
 
-## <a name="requirements"></a>Requirements (Anforderungen)
+## <a name="requirements"></a>Anforderungen
 
 **Header:** amprt. h
 
 **Namespace:** Parallelität
 
-## <a name="ctor"></a>invalid_compute_domain
+## <a name="invalid_compute_domain"></a><a name="ctor"></a> invalid_compute_domain
 
 Initialisiert eine neue Instanz der Klasse.
 
-## <a name="syntax"></a>Syntax
+### <a name="syntax"></a>Syntax
 
 ```cpp
 explicit invalid_compute_domain(
@@ -69,6 +69,6 @@ Eine Beschreibung des Fehlers.
 
 Eine Instanz der `invalid_compute_domain`-Klasse
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Concurrency-Namespace (C++ AMP)](concurrency-namespace-cpp-amp.md)
+[Parallelitäts Namespace (C++ amp)](concurrency-namespace-cpp-amp.md)
