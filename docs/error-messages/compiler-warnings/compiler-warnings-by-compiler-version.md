@@ -1,15 +1,16 @@
 ---
 title: Compilerwarnungen nach Compilerversion
-ms.date: 04/22/2019
+description: Tabelle mit Microsoft C/C++-Compilerwarnungen nach Compilerversion.
+ms.date: 10/18/2020
 helpviewer_keywords:
 - warnings, by compiler version
 - cl.exe compiler, setting warning options
-ms.openlocfilehash: d8d47e9dbfce9e22cf7aab2e3e7beab72d86c770
-ms.sourcegitcommit: 00af3df3331854b23693ee844e5e7c10c8b05a90
+ms.openlocfilehash: b470663e3cea8ec62a1737fb19e9ec5a277d27cc
+ms.sourcegitcommit: f19f02f217b80804ab321d463c76ce6f681abcc6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86491374"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92176316"
 ---
 # <a name="compiler-warnings-by-compiler-version"></a>Compilerwarnungen nach Compilerversion
 
@@ -22,7 +23,7 @@ Diese Versionen des Compilers haben neue Warnungen eingeführt:
 | Visual Studio 2002 | 13.00.9466 |
 | Visual Studio 2003 | 13.10.3077 |
 | Visual Studio 2005 | 14.00.50727.762 |
-| Visual Studio | 15.00.21022.08 |
+| Visual Studio 2008 | 15.00.21022.08 |
 | Visual Studio 2010 | 16.00.40219.01 |
 | Visual Studio 2012 | 17.00.51106.1 |
 | Visual Studio 2013 | 18.00.21005.1 |
@@ -44,12 +45,33 @@ Diese Versionen des Compilers haben neue Warnungen eingeführt:
 | Visual Studio 2019, Version 16.4 | 19.24.28314.0 |
 | Visual Studio 2019 Version 16.5 | 19.25.28610.0 |
 | Visual Studio 2019, Version 16.6 | 19.26.28805.0 |
+| Visual Studio 2019, Version 16.7 | 19.26.29112.0 |
 
 Sie können für die Option nur die Hauptnummer, die Haupt-und neben Zahlen oder die Haupt-, neben-und Buildnummern angeben **`/Wv`** . Der Compiler meldet alle Warnungen, die Versionen entsprechen, die mit der angegebenen Zahl beginnen. Alle Warnungen für Versionen, die die angegebene Anzahl überschreiten, werden unterdrückt. Beispielsweise **`/Wv:17`** meldet Warnungen, die in oder vor einer beliebigen Version von Visual Studio 2012 eingeführt wurden, und unterdrückt Warnungen, die von einem Compiler aus Visual Studio 2013 (Version 18) oder höher eingeführt wurden. Zum Unterdrücken von Warnungen, die in Visual Studio 2015 Update 2 und höher eingeführt wurden, können Sie verwenden **`/Wv:19.00.23506`** . Verwenden **`/Wv:19.11`** Sie, um die Warnungen, die in einer beliebigen Version von Visual Studio vor Visual Studio 2017 Version 15,5 eingeführt wurden, zu melden, aber die in Visual Studio 2017 Version 15,5 und höher eingeführten Warnungen zu unterdrücken.
 
 In den folgenden Abschnitten werden die Warnungen aufgeführt, die von den einzelnen Versionen von Visual C++ eingeführt werden, die Sie mithilfe der- **`/Wv`** Compileroption unterdrücken können Die **`/Wv`** Option kann keine Warnungen unterdrücken, die nicht aufgelistet sind und die den angegebenen Versionen des Compilers vorangestellt sind.
 
 ::: moniker range=">= vs-2019"
+
+## <a name="warnings-introduced-in-visual-studio-2019-version-167-compiler-version-1927291120"></a>In Visual Studio 2019 Version 16,7 eingeführte Warnungen (Compilerversion 19.27.29112.0)
+
+Diese Warnungen und alle Warnungen in späteren Versionen werden mithilfe der-Compileroption unterdrückt **`/Wv:19.26`** .
+
+| Warnung | `Message` |
+|--|--|
+| C5207 | `the simple requirement asserts the validity of expression 'e->id'. Did you mean '{ e } -> id'? You can suppress the warning using '{ e->id }'` |
+| C5209 | `the C++20 syntax for an init-capture has changed to '& ...opt identifier initializer'` |
+| C5210 | `'name' is not a valid header unit reference; ignoring` |
+| C5212 | `'name' is not a valid named reference; treating as reference to file` |
+| C5213 | `'name' named reference is treated as a named partition but the name is not specified; treating as reference to file` |
+| C5214 | `applying 'modifier' to an operand with a volatile qualified type is deprecated in C++20` |
+| C5215 | `'name' a function parameter with a volatile qualified type is deprecated in C++20` |
+| C5216 | `'name' a volatile qualified return type is deprecated in C++20` |
+| C5217 | `a structured binding declaration that includes volatile is deprecated in C++20` |
+| C5218 | `destroying delete may not behave as intended when non-conforming switches '/Zc:sizedDealloc-' or '/Zc:alignedNew-' are used` |
+| C5219 | `implicit conversion from 'type-1' to 'type-2', possible loss of data` |
+| C5220 | `'name': a non-static data member with a volatile qualified type no longer implies%$N that compiler generated copy/move constructors and copy/move assignment operators are not trivial` |
+| C5221 | `xfg::rename is deprecated.` |
 
 ## <a name="warnings-introduced-in-visual-studio-2019-version-166-compiler-version-1926288050"></a>In Visual Studio 2019 Version 16,6 eingeführte Warnungen (Compilerversion 19.26.28805.0)
 
