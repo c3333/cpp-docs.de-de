@@ -14,25 +14,25 @@ helpviewer_keywords:
 - std::make_tuple [C++]
 - std::tie [C++]
 ms.openlocfilehash: 46c386ecffb8fbbf7c07d40b334afd91d261ebcf
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.sourcegitcommit: 19016630f9d35f365e9ba249e0f3617515d7ca33
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79427812"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92274514"
 ---
 # <a name="lttuplegt-functions"></a>&lt;tuple&gt;-Funktionen
 
-## <a name="apply"></a>Apply
+## <a name="apply"></a><a name="apply"></a> Apply
 
 ```cpp
 template <class F, class Tuple> constexpr decltype(auto) apply(F&& f, Tuple&& t);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Ruft Funktion *F* mit einem Tupel *t*auf.
 
-## <a name="forward"></a>forward_as_tuple
+## <a name="forward_as_tuple"></a><a name="forward"></a> forward_as_tuple
 
 ```cpp
 template <class... TTypes>
@@ -41,13 +41,13 @@ template <class... TTypes>
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt `tuple<TTypes&&...>(std::forward<TTypes>(t)...)` zurück.
+Gibt `tuple<TTypes&&...>(std::forward<TTypes>(t)...)`zurück.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Erstellt ein Tupel von Verweisen auf die Argumente in *t* , die für die Weiterleitung als Argumente an eine Funktion geeignet sind.
 
-## <a name="get"></a>Erhalten
+## <a name="get"></a><a name="get"></a> Erhalten
 
 Ruft ein Element aus einem `tuple` -Objekt nach dem Index oder (in C++14) nach dem Typ ab.
 
@@ -84,18 +84,18 @@ template <class T, class... Types>
 *Index*\
 Der Index des abzurufenden Elements.
 
-*Typen*\
+*Solche*\
 Die Sequenz der im Tupel deklarierten Typen in der Deklarationsreihenfolge.
 
-*T*\
+*Bund*\
 Der Typ des abzurufenden Elements.
 
-*Tupel* -\
-Eine `std::tuple`, die eine beliebige Anzahl von Elementen enthält.
+*Tupel*\
+Eine `std::tuple` , die eine beliebige Anzahl von Elementen enthält.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Funktionen geben einen Verweis auf den Wert am Index *Index*oder vom Typ *T* im `tuple` Objekt zurück.
+Die Vorlagen Funktionen geben einen Verweis auf den Wert am Index *Index*oder vom Typ *T* im- `tuple` Objekt zurück.
 
 Das Aufrufen von `get<T>(Tuple)` führt zu einem Compilerfehler, wenn das Tupel mehr oder weniger als ein Element vom Typ T enthält.
 
@@ -128,17 +128,17 @@ int main() {
 0 1.42 Call me Tuple
 ```
 
-## <a name="make_from_tuple"></a>make_from_tuple
+## <a name="make_from_tuple"></a><a name="make_from_tuple"></a> make_from_tuple
 
 ```cpp
 template <class T, class Tuple> constexpr T make_from_tuple(Tuple&& t);
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Identisch mit `return make_from_tuple_impl<T>(forward<Tuple>(t), make_index_sequence<tuple_size_v<decay_t<Tuple>>>{})`.
+Wie in `return make_from_tuple_impl<T>(forward<Tuple>(t), make_index_sequence<tuple_size_v<decay_t<Tuple>>>{})`.
 
-## <a name="make_tuple"></a>make_tuple
+## <a name="make_tuple"></a><a name="make_tuple"></a> make_tuple
 
 Erstellt eine `tuple` aus Elementwerten.
 
@@ -149,15 +149,15 @@ template <class T1, class T2, ..., class TN>
 
 ### <a name="parameters"></a>Parameter
 
-*TN* -\
+*TN*\
 Der Typ des Parameters der Nth-Funktion.
 
-*tN* -\
+*tN*\
 Der Wert des Parameters der Nth-Funktion.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagen Funktion gibt `tuple<V1, V2, ..., VN>(t1, t2, ..., tN)`zurück, wobei jeder Typ `Vi` `X&` ist, wenn der entsprechende Typ `Ti` `cv` `reference_wrapper<X>`ist. Andernfalls ist es `Ti`.
+Die Vorlagen Funktion gibt zurück `tuple<V1, V2, ..., VN>(t1, t2, ..., tN)` , wobei jeder Typ ist, `Vi` `X&` Wenn der entsprechende Typ `Ti` ist, `cv` `reference_wrapper<X>` und andernfalls `Ti` .
 
 Ein Vorteil von `make_tuple` ist, dass die Typen von Objekten, die gespeichert werden, automatisch vom Compiler bestimmt werden und nicht explizit angegeben werden müssen. Verwenden Sie keine expliziten Vorlagenargumente wie `make_tuple<int, int>(1, 2)`, wenn Sie `make_tuple` verwenden, da dies unnötig detailliert ist und zu komplexen rvalue-Verweisproblemen führt, die möglicherweise Kompilierungsfehler verursachen.
 
@@ -196,14 +196,14 @@ int main() {
 4 5 6 7
 ```
 
-## <a name="swap"></a>Wechsel
+## <a name="swap"></a><a name="swap"></a> Wechsel
 
 ```cpp
 template <class... Types>
     void swap(tuple<Types...>& x, tuple<Types...>& y) noexcept(see below );
 ```
 
-## <a name="tie"></a>Tie
+## <a name="tie"></a><a name="tie"></a> Tie
 
 Erstellt eine `tuple` aus Elementverweisen.
 
@@ -214,12 +214,12 @@ tuple<T1&, T2&, ..., TN&> tie(T1& t1, T2& t2, ..., TN& tN);
 
 ### <a name="parameters"></a>Parameter
 
-*TN* -\
+*TN*\
 Der Basistyp des N-ten Tupelelements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Vorlagenfunktion gibt `tuple<T1&, T2&, ..., TN&>(t1, t2, ..., tN)` zurück.
+Diese Vorlagenfunktion gibt `tuple<T1&, T2&, ..., TN&>(t1, t2, ..., tN)` zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -262,7 +262,7 @@ int main() {
 0 1 2 3
 ```
 
-## <a name="tuple_cat"></a>tuple_cat
+## <a name="tuple_cat"></a><a name="tuple_cat"></a> tuple_cat
 
 ```cpp
 template <class... Tuples> constexpr tuple<CTypes...> tuple_cat(Tuples&&...);
@@ -272,14 +272,14 @@ template <class... Tuples> constexpr tuple<CTypes...> tuple_cat(Tuples&&...);
 
 Ein tupelobjekt, das durch Initialisieren der einzelnen Type-Elemente erstellt wird.
 
-## <a name="tuple_element_t"></a>tuple_element_t
+## <a name="tuple_element_t"></a><a name="tuple_element_t"></a> tuple_element_t
 
 ```cpp
 template <size_t I, class T>
     using tuple_element_t = typename tuple_element<I, T>::type;
 ```
 
-## <a name="tuple_size_v"></a>tuple_size_v
+## <a name="tuple_size_v"></a><a name="tuple_size_v"></a> tuple_size_v
 
 ```cpp
 template <class T>

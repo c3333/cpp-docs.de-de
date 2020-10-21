@@ -10,15 +10,15 @@ f1_keywords:
 - tuple/std::operator==
 ms.assetid: f25752dc-d3e2-4e12-b5ac-9a8682ca60ed
 ms.openlocfilehash: 5554f08f32048bafde5bdb2c316e12e1e01c6ffb
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.sourcegitcommit: 19016630f9d35f365e9ba249e0f3617515d7ca33
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79427806"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92274629"
 ---
 # <a name="lttuplegt-operators"></a>&lt;tuple&gt;-Operatoren
 
-## <a name="op_neq"></a>Operator! =
+## <a name="operator"></a><a name="op_neq"></a> Operator! =
 
 Vergleicht `tuple`-Objekte, ob diese ungleich sind.
 
@@ -31,10 +31,10 @@ bool operator!=(const tuple<T1, T2, ..., TN>& tpl1,
 
 ### <a name="parameters"></a>Parameter
 
-*TN* -\
+*TN*\
 Der Typ des N-ten Tupelelements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Funktion gibt FALSE zurück, wenn `N` 0 ist, andernfalls `get<0>(tpl1) != get<0>(tpl2) || get<1>(tpl1) != get<1>(tpl2) || ... || get<N - 1>(tpl1) == get<N - 1>(tpl2)`.
 
@@ -83,7 +83,7 @@ false
 true
 ```
 
-## <a name="op_lt"></a>-Operator&lt;
+## <a name="operatorlt"></a><a name="op_lt"></a> KOM&lt;
 
 Vergleicht `tuple`-Objekte, ob diese kleiner sind.
 
@@ -96,10 +96,10 @@ bool operator<(const tuple<T1, T2, ..., TN>& tpl1,
 
 ### <a name="parameters"></a>Parameter
 
-*TN* -\
+*TN*\
 Der Typ des N-ten Tupelelements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Funktion gibt TRUE zurück, wenn `N` größer als 0 ist und der erste unterschiedliche Wert in `tpl1` kleiner als der entsprechende Wert in `tpl2` ist, andernfalls wird FALSE zurückgegeben.
 
@@ -148,7 +148,7 @@ false
 true
 ```
 
-## <a name="op_lt_eq"></a>Operator&lt;=
+## <a name="operatorlt"></a><a name="op_lt_eq"></a> KOM&lt;=
 
 Vergleicht `tuple` -Objekte, ob diese kleiner oder gleich sind.
 
@@ -161,12 +161,12 @@ bool operator<=(const tuple<T1, T2, ..., TN>& tpl1,
 
 ### <a name="parameters"></a>Parameter
 
-*TN* -\
+*TN*\
 Der Typ des N-ten Tupelelements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Funktion gibt `!(tpl2 < tpl1)`zurück.
+Die Funktion gibt `!(tpl2 < tpl1)` zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -213,7 +213,7 @@ true
 false
 ```
 
-## <a name="op_eq_eq"></a>Operator = =
+## <a name="operator"></a><a name="op_eq_eq"></a> Operator = =
 
 Vergleicht `tuple`-Objekte, ob diese gleich sind.
 
@@ -226,10 +226,10 @@ bool operator==(const tuple<T1, T2, ..., TN>& tpl1,
 
 ### <a name="parameters"></a>Parameter
 
-*TN* -\
+*TN*\
 Der Typ des N-ten Tupelelements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Die Funktion gibt TRUE zurück, wenn `N` 0 ist, andernfalls `get<0>(tpl1) == get<0>(tpl2) && get<1>(tpl1) == get<1>(tpl2) && ... && get<N - 1>(tpl1) == get<N - 1>(tpl2)`.
 
@@ -278,7 +278,7 @@ true
 false
 ```
 
-## <a name="op_gt"></a>-Operator&gt;
+## <a name="operatorgt"></a><a name="op_gt"></a> KOM&gt;
 
 Vergleicht `tuple`-Objekte, ob diese größer sind.
 
@@ -291,12 +291,12 @@ bool operator>(const tuple<T1, T2, ..., TN>& tpl1,
 
 ### <a name="parameters"></a>Parameter
 
-*TN* -\
+*TN*\
 Der Typ des N-ten Tupelelements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Funktion gibt `tpl2 < tpl1`zurück.
+Die Funktion gibt `tpl2 < tpl1` zurück.
 
 ### <a name="example"></a>Beispiel
 
@@ -343,7 +343,7 @@ false
 true
 ```
 
-## <a name="op_gt_eq"></a>Operator&gt;=
+## <a name="operatorgt"></a><a name="op_gt_eq"></a> KOM&gt;=
 
 Vergleicht `tuple`-Objekte, ob diese größer oder gleich sind.
 
@@ -356,12 +356,12 @@ bool operator>=(const tuple<T1, T2, ..., TN>& tpl1,
 
 ### <a name="parameters"></a>Parameter
 
-*TN* -\
+*TN*\
 Der Typ des N-ten Tupelelements.
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
-Die Funktion gibt `!(tpl1 < tpl2)`zurück.
+Die Funktion gibt `!(tpl1 < tpl2)` zurück.
 
 ### <a name="example"></a>Beispiel
 

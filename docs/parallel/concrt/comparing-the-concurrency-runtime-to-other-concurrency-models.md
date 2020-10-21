@@ -5,11 +5,11 @@ helpviewer_keywords:
 - Concurrency Runtime, compared to other models
 ms.assetid: d8b9a1f4-f15f-43c3-a5b4-c0991edf9c86
 ms.openlocfilehash: 5bc6691f6d0b166bb3084091ee6af70474937568
-ms.sourcegitcommit: 7ecd91d8ce18088a956917cdaf3a3565bd128510
+ms.sourcegitcommit: 19016630f9d35f365e9ba249e0f3617515d7ca33
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79427470"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92274706"
 ---
 # <a name="comparing-the-concurrency-runtime-to-other-concurrency-models"></a>Concurrency Runtime im Vergleich zu anderen Parallelitätsmodellen
 
@@ -19,15 +19,15 @@ Wenn Sie derzeit ein anderes Programmiermodell verwenden, zum Beispiel Windows T
 
 Sie können die Funktionen und Produktivitätsvorteile der Concurrency Runtime auch als Ergänzung in vorhandenen Anwendungen verwenden, die ein anderes Parallelitätsmodell verwenden. Die Concurrency Runtime garantiert nicht einen Lastenausgleich, wenn mehrere Aufgabenplaner um die gleichen Ressourcen konkurrieren. Wenn sich Arbeitslasten nicht überlappen, ist dieser Effekt minimal.
 
-## <a name="top"></a> Abschnitte
+## <a name="sections"></a><a name="top"></a> Strecken
 
 - [Vergleich von präemptiver Planung mit kooperativer Planung](#models)
 
-- [Vergleich der Concurrency Runtime mit der Windows-API](#winapi)
+- [Vergleich von Concurrency Runtime mit Windows-API](#winapi)
 
-- [Vergleich der Concurrency Runtime mit OpenMP](#openmp)
+- [Vergleich von Concurrency Runtime mit OpenMP](#openmp)
 
-## <a name="models"></a> Vergleich von präemptiver Planung mit kooperativer Planung
+## <a name="comparing-preemptive-scheduling-to-cooperative-scheduling"></a><a name="models"></a> Vergleich von präemptiver Planung mit kooperativer Planung
 
 Das präemptive Modell und kooperative Planungsmodelle sind zwei allgemeine Verfahren zum Aktivieren mehrerer Aufgaben zum Freigeben von Ressourcen, z.B. Prozessoren oder Hardwarethreads.
 
@@ -49,9 +49,9 @@ Für einen präemptiven Planer sind Aufgaben mit selber Prioritätsstufe gleich.
 
 Kooperative Planung löst nicht alle Planungsprobleme. Beispielsweise können Aufgaben, die nicht genügend an andere Aufgaben abgeben, alle verfügbaren Computerressourcen nutzen und verhindern, dass andere Aufgaben ausgeführt werden. Die Concurrency Runtime verwendet die Effizienzvorteile der kooperativen Planung, um die Ausgewogenheitsgarantien der präemptiven Planung zu ergänzen. Concurrency Runtime bietet standardmäßig einen kooperativen Planer, der einen Arbeitsübernahme-Algorithmus verwendet, um die Arbeit effizient auf die Computerressourcen zu verteilen. Der Concurrency Runtime-Planer hängt jedoch auch von dem präemptiven Planer des Betriebssystems ab, der die Ressourcen zwischen den Anwendungen verteilt. Sie können auch benutzerdefinierte Planer und Planerrichtlinien in den Anwendungen erstellen, um eine präzisere Kontrolle über die Ausführung von Threads zu ermöglichen.
 
-[[Nach oben](#top)]
+[Nach[oben](#top)]
 
-## <a name="winapi"></a> Vergleich der Concurrency Runtime mit der Windows-API
+## <a name="comparing-the-concurrency-runtime-to-the-windows-api"></a><a name="winapi"></a> Vergleichen der Concurrency Runtime mit der Windows-API
 
 Die Microsoft Windows Anwendungsprogrammierschnittstelle (API), die in der Regel als Windows-API (und früher als Win32) bezeichnet wird, bietet ein Programmiermodell, das Parallelität in der Anwendung ermöglicht. Die Concurrency Runtime basiert auf der Windows-API und stellt zusätzliche Programmiermodelle bereit, die nicht über das zugrunde liegende Betriebssystem verfügbar sind.
 
@@ -79,9 +79,9 @@ Unter Windows 7 und Windows Server 2008 R2 unterstützt das Betriebssystem Paral
 
 [base.user-mode_scheduling](/windows/win32/procthread/user-mode-scheduling)
 
-[[Nach oben](#top)]
+[Nach[oben](#top)]
 
-## <a name="openmp"></a> Vergleich der Concurrency Runtime mit OpenMP
+## <a name="comparing-the-concurrency-runtime-to-openmp"></a><a name="openmp"></a> Vergleichen der Concurrency Runtime mit OpenMP
 
 Concurrency Runtime ermöglicht eine Vielzahl von Programmiermodellen. Diese Modelle überlappen oder ergänzen die Modelle von anderen Bibliotheken. In diesem Abschnitt wird die Concurrency Runtime mit [OpenMP](../../parallel/concrt/comparing-the-concurrency-runtime-to-other-concurrency-models.md#openmp) verglichen.
 
@@ -93,12 +93,12 @@ Viele der Funktionen in der Concurrency Runtime können erweitert werden. Sie k�
 
 Weitere Informationen zum Vergleich von Concurrency Runtime und OpenMP und wie vorhandener OpenMP-Code für die Verwendung der Concurrency Runtime migriert wird finden Sie unter [Migrating from OpenMP to the Concurrency Runtime](../../parallel/concrt/migrating-from-openmp-to-the-concurrency-runtime.md).
 
-[[Nach oben](#top)]
+[Nach[oben](#top)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Concurrency Runtime](../../parallel/concrt/concurrency-runtime.md)<br/>
 [Übersicht](../../parallel/concrt/asynchronous-message-blocks.md)<br/>
 [Parallel Patterns Library (PPL)](../../parallel/concrt/parallel-patterns-library-ppl.md)<br/>
-[Asynchrone Agents Library](../../parallel/concrt/asynchronous-agents-library.md)<br/>
+[Asynchronous Agents Library](../../parallel/concrt/asynchronous-agents-library.md)<br/>
 [OpenMP](../../parallel/concrt/comparing-the-concurrency-runtime-to-other-concurrency-models.md#openmp)
