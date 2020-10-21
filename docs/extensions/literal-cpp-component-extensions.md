@@ -1,23 +1,23 @@
 ---
-title: literal (C++/CLI und C++/CX)
-ms.date: 10/12/2018
+title: Literale (C++/CLI)
+description: Das Literalschlüsselwort ist ein Kontext sensibles Schlüsselwort von Microsoft C++/CLI für eine Kompilierzeit Konstante.
+ms.date: 10/20/2020
 ms.topic: reference
 f1_keywords:
 - literal
 - literal_cpp
 helpviewer_keywords:
 - literal keyword [C++]
-ms.assetid: 6b1a1f36-2e1d-4a23-8eb6-172f4f3c477f
-ms.openlocfilehash: 2687352c02bed609ffaa60ee8b1df40b51126d21
-ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
+ms.openlocfilehash: 2d71a535252ba51f89407670b474a34b407eaffc
+ms.sourcegitcommit: 59b7c18703d1ffd66827db0e2eeece490d3d8789
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90686729"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337212"
 ---
-# <a name="literal-ccli-and-ccx"></a>literal (C++/CLI und C++/CX)
+# <a name="literal-ccli"></a>`literal` (C++/CLI)
 
-Eine als **literal** markierte Variable (Datenmember) in einer **/clr**-Kompilierung ist das native Äquivalent einer **static const**-Variablen.
+Eine Variable (Datenmember), die als **`literal`** in einer **`/clr`** Kompilierung gekennzeichnet ist, ist eine Kompilierzeit Konstante. Dabei handelt es sich um das systemeigene Äquivalent einer c#- [`const`](/dotnet/csharp/language-reference/keywords/const) Variablen.
 
 ## <a name="all-platforms"></a>Alle Plattformen
 
@@ -31,27 +31,21 @@ Eine als **literal** markierte Variable (Datenmember) in einer **/clr**-Kompilie
 
 (Es gibt keine Hinweise für diese Sprachfunktion, die nur für Windows-Runtime gelten.)
 
-### <a name="requirements"></a>Anforderungen
-
-Compileroption: `/ZW`
-
 ## <a name="common-language-runtime"></a>Common Language Runtime
 
 ## <a name="remarks"></a>Bemerkungen
 
-Ein als **literal** markierter Datenmember muss beim Deklarieren initialisiert werden, und der Wert muss ein konstanter Ganzzahl-, Enumerations- oder Zeichenfolgentyp sein. Die Konvertierung vom Typ des Initialisierungsausdrucks in den Typ des static const-Datenmembers muss keine benutzerdefinierte Konvertierung erfordern.
+Ein als markierter Datenmember **`literal`** muss initialisiert werden, wenn er deklariert wird. Und der Wert muss ein konstanter ganzzahliger Typ, Enumerationstyp oder Zeichen Folgentyp sein. Die Konvertierung vom Typ des Initialisierungs Ausdrucks in den Typ des **`literal`** Datenmembers kann keine benutzerdefinierte Konvertierung erfordern.
 
-Für das literal-Feld wird zur Laufzeit kein Arbeitsspeicher belegt; der Compiler fügt nur seinen Wert in die Metadaten für die Klasse ein.
+Für das Feld wird zur Laufzeit kein Arbeitsspeicher zugeordnet **`literal`** . der Compiler fügt seinen Wert nur in die Metadaten für die Klasse ein. Der **`literal`** Wert wird als Kompilierzeit Konstante behandelt. Das nächstgelegene Äquivalent in Standard C++ ist **`constexpr`** , ein Datenmember kann jedoch nicht **`constexpr`** in C++/CLI.
 
-Eine als **static const** markierte Variable wird in den Metadaten nicht für andere Compiler verfügbar sein.
+Eine Variable, die als gekennzeichnet **`literal`** ist, weicht von einem markierten ab **`static const`** . Ein **`static const`** Datenmember wird nicht in den Metadaten für andere Compiler zur Verfügung gestellt. Weitere Informationen finden Sie unter [`static`](../cpp/storage-classes-cpp.md) und [`const`](../cpp/const-cpp.md).
 
-Weitere Informationen finden Sie unter [Static](../cpp/storage-classes-cpp.md) und [const](../cpp/const-cpp.md).
-
-**literal** ist ein kontextbezogenes Schlüsselwort. Weitere Informationen finden Sie unter [Kontextbezogene Schlüsselwörter](context-sensitive-keywords-cpp-component-extensions.md).
+**`literal`** ist ein kontextsensitiv Schlüsselwort. Weitere Informationen finden Sie unter [Kontextbezogene Schlüsselwörter](context-sensitive-keywords-cpp-component-extensions.md).
 
 ## <a name="examples"></a>Beispiele
 
-Dieses Beispiel zeigt, dass eine **literalvariable** impliziert **`static`** .
+Dieses Beispiel zeigt, dass eine **`literal`** Variable impliziert **`static`** .
 
 ```cpp
 // mcppv2_literal.cpp
@@ -65,7 +59,7 @@ int main() {
 }
 ```
 
-Das folgende Beispiel zeigt die Auswirkungen von „literal“ in den Metadaten:
+Das folgende Beispiel zeigt die Auswirkung von **`literal`** in Metadaten:
 
 ```cpp
 // mcppv2_literal2.cpp
@@ -78,15 +72,15 @@ public ref struct A {
 
 Beachten Sie den Unterschied in den Metadaten für `sc` und `lit`: die `modopt`-Anweisung gilt für `sc`, d.h. sie kann von anderen Compilern ignoriert werden.
 
-```
-.field public static int32 modopt([mscorlib]System.Runtime.CompilerServices.IsConst) sc = int32(0x0000000A)
-```
-
-```
-.field public static literal int32 lit = int32(0x0000000A)
+```MSIL
+.field public static int32 modopt([mscorlib]System.Runtime.CompilerServices.IsConst) sc = int32(0x00000001)
 ```
 
-Im folgenden in C# erstellten Beispiel wird auf die im vorherigen Beispiel erstellten Metadaten verwiesen, und es zeigt die Auswirkungen der **literal**- und **static const**-Variablen:
+```MSIL
+.field public static literal int32 lit = int32(0x00000000)
+```
+
+Das folgende Beispiel, das in c# erstellt wurde, verweist auf die Metadaten, die im vorherigen Beispiel erstellt wurden, und zeigt die Auswirkung der **`literal`** **`static const`** Variablen und:
 
 ```csharp
 // mcppv2_literal3.cs
@@ -117,7 +111,7 @@ class B {
 }
 ```
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Compileroption: `/clr`
 
