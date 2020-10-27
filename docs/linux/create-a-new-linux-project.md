@@ -1,14 +1,14 @@
 ---
 title: Erstellen eines auf MSBuild basierenden C++-Projekts für Linux in Visual Studio
-ms.date: 08/04/2020
+ms.date: 10/15/2020
 description: Erstellen Sie ein neues MSBuild-basiertes Linux-Projekt in Visual Studio.
 ms.assetid: 5d7c1d67-bc31-4f96-8622-2b4cf91372fd
-ms.openlocfilehash: 559a868ebdea7e3b835a82c31849d0e2fdeaa6c9
-ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
+ms.openlocfilehash: dddb9dbdee4cefc58a2bd5ccefa493b25e1c9f24
+ms.sourcegitcommit: f19f02f217b80804ab321d463c76ce6f681abcc6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90686690"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92176307"
 ---
 # <a name="create-a-linux-msbuild-c-project-in-visual-studio"></a>Erstellen eines auf MSBuild basierenden C++-Projekts für Linux in Visual Studio
 
@@ -28,17 +28,17 @@ Für eine plattformübergreifende Kompilierung wird die Verwendung von CMake emp
 
 Führen Sie folgende Schritte aus, um ein neues Linux-Projekt in Visual Studio 2017 zu erstellen:
 
-1. Wählen Sie in Visual Studio **Datei > Neues Projekt** aus, oder drücken Sie **STRG + UMSCHALT + N**.
-1. Wählen Sie **Visual C++ > Plattformübergreifend > Linux** und anschließend den Projekttyp aus, den Sie erstellen möchten. Geben Sie einen **Namen** und einen **Speicherort** an, und klicken Sie dann auf **OK**.
+1. Wählen Sie in Visual Studio **Datei > Neues Projekt** aus, oder drücken Sie **STRG + UMSCHALT + N** .
+1. Wählen Sie **Visual C++ > Plattformübergreifend > Linux** und anschließend den Projekttyp aus, den Sie erstellen möchten. Geben Sie einen **Namen** und einen **Speicherort** an, und klicken Sie dann auf **OK** .
 
    ![Screenshot des Dialogfelds „Neues Projekt“, in dem „Visual C plus plus“ > „Plattformübergreifend“ > „Linux“ ausgewählt ist, alle Projekttypen gekennzeichnet sind und die Textfelder „Name“ und „Speicherort“ gekennzeichnet sind](media/newproject.png)
 
    | Projekttyp | Beschreibung |
    | ------------ | --- |
-   | **Blink (Raspberry)**           | Projekt für ein Raspberry Pi-Gerät mit Beispielcode für das Aufblinken einer LED |
+   | **Blink (Raspberry)** | Projekt für ein Raspberry Pi-Gerät mit Beispielcode für das Aufblinken einer LED |
    | **Konsolenanwendung (Linux)** | Projekt für alle Linux-Computer mit Beispielcode für die Ausgabe von Text an die Konsole |
-   | **Leeres Projekt (Linux)**       | Projekt für alle Linux-Computer ohne Beispielcode |
-   | **Makefile-Projekt (Linux)**    | Projekt für alle Linux-Computer, die mithilfe eines Standard-Makefile-Buildsystems erstellt wurden |
+   | **Leeres Projekt (Linux)** | Projekt für alle Linux-Computer ohne Beispielcode |
+   | **Makefile-Projekt (Linux)** | Projekt für alle Linux-Computer, die mithilfe eines Standard-Makefile-Buildsystems erstellt wurden |
 
 ## <a name="next-steps"></a>Nächste Schritte
 
@@ -54,21 +54,23 @@ Wenn Sie ein neues C++-Projekt für Linux in Visual Studio erstellen, können Si
 
 Wenn Sie über eine vorhandene Visual Studio-Projektmappe für Windows verfügen, die Sie für die Kompilierung unter Linux erweitern möchten, und CMake nicht verwendet werden kann, können Sie der Windows-Projektmappe ein Visual Studio-Projekt für Linux sowie ein Projekt für **freigegebene Elemente** hinzufügen. Platzieren Sie den von beiden Plattformen gemeinsam verwendeten Code im Projekt „Freigegebene Elemente“, und fügen Sie für die Windows- und Linux-Projekte einen Verweis auf dieses Projekt hinzu.
 
-## <a name="to-create-a-new-linux-project"></a>So erstellen Sie ein neues Linux-Projekts
+## <a name="create-a-new-linux-project"></a>Erstellen eines neuen Linux-Projekts
 
 Führen Sie folgende Schritte aus, um ein neues Linux-Projekt in Visual Studio 2019 zu erstellen:
 
-1. Wählen Sie in Visual Studio **Datei > Neues Projekt** aus, oder drücken Sie **STRG + UMSCHALT + N**.
-1. Legen Sie die **Sprache** auf **C++** fest, und suchen Sie nach „Linux“. Wählen Sie den zu erstellenden Projekttyp aus, und klicken Sie dann auf **Weiter**. Geben Sie einen **Namen** und einen **Speicherort** an, und klicken Sie auf **Erstellen**.
+1. Wählen Sie in Visual Studio **Datei > Neues Projekt** aus, oder drücken Sie **STRG + UMSCHALT + N** . Das Dialogfeld „Neues Projekt erstellen“ wird angezeigt.
+1. Geben Sie im Textfeld **Nach Vorlagen suchen** **Linux** ein, damit die verfügbaren Vorlagen für Linux-Projekte aufgeführt werden.
+1. Wählen Sie den Projekttyp aus, der erstellt werden soll, z. B. **Konsolenanwendung** , und klicken Sie dann auf **Weiter** . Geben Sie einen **Namen** und einen **Speicherort** an, und klicken Sie auf **Erstellen** .
 
-   ![Screenshot des Dialogfelds „Neues Projekt hinzufügen“, in dem Suchfeld der Text „Linux“ eingegeben ist](media/newproject-vs2019.png)
+   ![Screenshot des Dialogfelds „Neues Projekt“ mit dem Sprachdropdown, in dem C++ ausgewählt ist, und dem Plattformdropdown, in dem Linux ausgewählt ist](media/newproject-vs2019.png)
 
    | Projekttyp | Beschreibung |
    | ------------ | --- |
-   | **Blink (Raspberry)**           | Projekt für ein Raspberry Pi-Gerät mit Beispielcode für das Aufblinken einer LED |
-   | **Konsolenanwendung (Linux)** | Projekt für alle Linux-Computer mit Beispielcode für die Ausgabe von Text an die Konsole |
-   | **Leeres Projekt (Linux)**       | Projekt für alle Linux-Computer ohne Beispielcode |
-   | **Makefile-Projekt (Linux)**    | Projekt für alle Linux-Computer, die mithilfe eines Standard-Makefile-Buildsystems erstellt wurden |
+   | **Raspberry Pi-Projekt** | Projekt für ein Raspberry Pi-Gerät mit Beispielcode für das Aufblinken einer LED |
+   | **Konsolenanwendung** | Projekt für alle Linux-Computer mit Beispielcode für die Ausgabe von Text an die Konsole |
+   | **Leeres Projekt** | Projekt für alle Linux-Computer ohne Beispielcode |
+   | **Makefile-Projekt** | Projekt für alle Linux-Computer, die mithilfe eines Standard-Makefile-Buildsystems erstellt wurden |
+   | **CMake-Projekt** | Projekt für alle Linux-Computer, die mithilfe eines CMake-Buildsystems erstellt wurden |
 
 ## <a name="next-steps"></a>Nächste Schritte
 

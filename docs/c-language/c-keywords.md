@@ -1,22 +1,22 @@
 ---
 title: C-Schlüsselwörter
 description: Schlüsselwörter in Standard-C- und Microsoft C-Compilererweiterungen.
-ms.date: 09/12/2020
+ms.date: 10/15/2020
 helpviewer_keywords:
 - keywords [C]
 - redefining keywords
 - Microsoft-specific keywords
 ms.assetid: 2d932335-97bf-45cd-b367-4ae00db0ff42
-ms.openlocfilehash: f459b81c2b3f314218108f3f367eec0c1bf17f26
-ms.sourcegitcommit: b492516cc65120250b9ea23f96f7f63f37f99fae
+ms.openlocfilehash: 24981c8d70cb56b4578fd905a30ccc57eaa83d45
+ms.sourcegitcommit: f19f02f217b80804ab321d463c76ce6f681abcc6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90075737"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92176220"
 ---
 # <a name="c-keywords"></a>C-Schlüsselwörter
 
-*Schlüsselwörter* sind Wörter, die für den C-Compiler eine besondere Bedeutung haben. In den Übersetzungsphasen 7 und 8 kann ein Bezeichner nicht dieselbe Schreibweise und Groß-/Kleinschreibung haben wie ein C-Schlüsselwort. Weitere Informationen erhalten Sie unter [Phasen der Übersetzung](../preprocessor/phases-of-translation.md) in der *Präprozessorreferenz*. Weitere Informationen zu Bezeichnern finden Sie unter [Bezeichner](../c-language/c-identifiers.md).
+*Schlüsselwörter* sind Wörter, die für den C-Compiler eine besondere Bedeutung haben. In den Übersetzungsphasen 7 und 8 kann ein Bezeichner nicht dieselbe Schreibweise und Groß-/Kleinschreibung haben wie ein C-Schlüsselwort. Weitere Informationen erhalten Sie unter [Phasen der Übersetzung](../preprocessor/phases-of-translation.md) in der *Präprozessorreferenz* . Weitere Informationen zu Bezeichnern finden Sie unter [Bezeichner](../c-language/c-identifiers.md).
 
 ## <a name="standard-c-keywords"></a>Standardschlüsselwörter in C
 
@@ -119,7 +119,8 @@ Die folgenden Schlüsselwörter und speziellen Bezeichner werden vom Microsoft C
         **`__try`** <sup>5</sup>\
         **`dllexport`** <sup>4</sup>\
         **`__inline`** <sup>5</sup>\
-        **`__leave`** <sup>5</sup>
+        **`__leave`** <sup>5</sup>\
+        **`static_assert`** <sup>6</sup>
     :::column-end:::
 :::row-end:::
 
@@ -128,6 +129,8 @@ Die folgenden Schlüsselwörter und speziellen Bezeichner werden vom Microsoft C
 <sup>4</sup> Dies sind spezielle Bezeichner, wenn sie mit **`__declspec`** verwendet werden. Ihre Verwendung in anderen Kontexten ist nicht eingeschränkt.
 
 <sup>5</sup> Wegen der Kompatibilität mit früheren Versionen sind diese Schlüsselwörter sowohl mit zwei führenden Unterstrichen als auch mit einem einzigen führenden Unterstrich verfügbar, wenn Microsoft-Erweiterungen aktiviert sind.
+
+<sup>6</sup> Wenn Sie <assert.h> nicht einschließen, ordnet der Visual C-Compiler von Microsoft **`static_assert`** dem C11-Schlüsselwort **`_Static_assert`** zu.
 
 Standardmäßig sind Microsoft-Erweiterungen aktiviert. Um das Erstellen portierbaren Codes zu unterstützen, können Sie Microsoft-Erweiterungen deaktivieren, indem Sie während der Kompilierung die Option [/Za \(Spracherweiterungen deaktivieren)](../build/reference/za-ze-disable-language-extensions.md) angeben. Mit dieser Option werden einige Microsoft-spezifische Schlüsselwörter deaktiviert.
 

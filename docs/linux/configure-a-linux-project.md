@@ -1,14 +1,14 @@
 ---
 title: Konfigurieren eines auf MSBuild basierenden C++-Projekts für Linux in Visual Studio
-ms.date: 08/06/2020
+ms.date: 10/16/2020
 description: Konfigurieren Sie ein neues auf MSBuild basierendes Linux-Projekt in Visual Studio, damit Sie einen Build erstellen können.
 ms.assetid: 4d7c6adf-54b9-4b23-bd23-5de0c825b768
-ms.openlocfilehash: 4e99645eea89682b4beac5452da01755ea555ec4
-ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
+ms.openlocfilehash: 51837dc86d041b9120f984cc01f8db06d696b292
+ms.sourcegitcommit: f19f02f217b80804ab321d463c76ce6f681abcc6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90685955"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92176335"
 ---
 # <a name="configure-a-linux-msbuild-c-project-in-visual-studio"></a>Konfigurieren eines auf MSBuild basierenden C++-Projekts für Linux in Visual Studio
 
@@ -26,7 +26,7 @@ Sie können ein Linux-Projekt so konfigurieren, dass dieses auf einen physischen
 
 **Visual Studio 2019 Version 16.1:**
 
-- Für das Windows-Subsystem für Linux können Sie die Kopiervorgänge vermeiden, die für die Erstellung und IntelliSense erforderlich sind, wenn auf Linux-Remotesysteme abgezielt wird.
+- Wenn Sie WSL als Ziel verwenden, können Sie die Kopiervorgänge vermeiden, die erforderlich sind, um IntelliSense-Ergebnisse zu generieren und abzurufen, die erforderlich sind, wenn Sie ein Linux-Remotesystem als Ziel verwenden.
 
 - Sie können separate Linux-Ziele zum Erstellen und Debuggen angeben.
 
@@ -34,11 +34,15 @@ Sie können ein Linux-Projekt so konfigurieren, dass dieses auf einen physischen
 
 ## <a name="general-settings"></a>Allgemeine Einstellungen
 
-Wählen Sie zum Anzeigen von Konfigurationsoptionen das Menü **Projekt > Eigenschaften** aus, oder klicken Sie mit der rechten Maustaste auf das Projekt im **Projektmappen-Explorer**, und wählen Sie dann **Eigenschaften** aus dem Kontextmenü aus: Die **allgemeinen** Einstellungen werden angezeigt.
+Wählen Sie zum Anzeigen von Konfigurationsoptionen das Menü **Projekt > Eigenschaften** aus, oder klicken Sie mit der rechten Maustaste auf das Projekt im **Projektmappen-Explorer** , und wählen Sie dann **Eigenschaften** aus dem Kontextmenü aus: Die **allgemeinen** Einstellungen werden angezeigt.
 
 ![Allgemeine Konfiguration](media/settings_general.png)
 
 Standardmäßig wird eine ausführbare Datei (.out) erstellt. Verwenden Sie zum Erstellen einer statischen oder dynamischen Bibliothek entweder die Einstellung **Konfigurationstyp** oder eine vorhandene Makefile-Datei.
+
+Wenn Sie für das Windows-Subsystem für Linux (WSL) entwickeln, ist die WSL-Version 1 auf 64 parallele Kompilierungsprozesse beschränkt. Dies wird von der **Maximale Anzahl paralleler Kompilierungsaufträge** -Einstellung unter **Konfigurationseigenschaften > C/C++ > Allgemein** geregelt.
+
+Unabhängig von der verwendeten WSL-Version sollten Sie Ninja zum Entwickeln verwenden, wenn Sie mehr als 64 parallele Kompilierungsprozesse beabsichtigen. Ninja ist allgemein schneller und zuverlässiger. Für das Erstellen mit Ninja verwenden Sie die Einstellung **Verwalteten inkrementellen Build aktivieren** unter **Konfigurationseigenschaften > Allgemein** .
 
 Weitere Informationen zu den Einstellungen auf den Eigenschaftenseiten finden Sie unter [Linux Project Property Page Reference (Referenz zur Linux-Projekteigenschaftenseite)](prop-pages-linux.md).
 
@@ -46,13 +50,13 @@ Weitere Informationen zu den Einstellungen auf den Eigenschaftenseiten finden Si
 
 Konfigurieren Sie die Remoteeinstellungen, die unter [Allgemein](prop-pages/general-linux.md) angezeigt werden, um die Einstellungen für den Linux-Remotecomputer zu ändern.
 
-- Verwenden Sie den **Remotebuildcomputer**, um einen Linux-Remotezielcomputer anzugeben. Dadurch können Sie eine der zuvor erstellten Verbindungen auswählen. Weitere Informationen zum Erstellen eines neuen Eintrags finden Sie im Abschnitt [Connecting to Your Remote Linux Computer (Herstellen einer Verbindung mit Ihrem Linux-Remotecomputer)](connect-to-your-remote-linux-computer.md).
+- Verwenden Sie den **Remotebuildcomputer** , um einen Linux-Remotezielcomputer anzugeben. Dadurch können Sie eine der zuvor erstellten Verbindungen auswählen. Weitere Informationen zum Erstellen eines neuen Eintrags finden Sie im Abschnitt [Connecting to Your Remote Linux Computer (Herstellen einer Verbindung mit Ihrem Linux-Remotecomputer)](connect-to-your-remote-linux-computer.md).
 
    ![Buildcomputer](media/remote-build-machine-vs2019.png)
 
    ::: moniker range="vs-2019"
 
-   **Visual Studio 2019 Version 16.1:** Klicken Sie für das **Plattformtoolset** auf die NACH-UNTEN-TASTE, und wählen Sie **WSL_1_0** aus, um auf das Windows-Subsystem für Linux abzuzielen. Die anderen Remoteoptionen werden ausgeblendet, und der Pfad zur standardmäßigen WSL-Shell wird stattdessen angezeigt:
+   **Visual Studio 2019, Version 16.7:** Wenn Sie das Windows-Subsystem für Linux (WSL) als Ziel verwenden, legen Sie im **Plattformtoolset** -Dropdown **GCC for Windows Subsystem for Linux** (GCC für das Windows-Subsystem für Linux) fest. Die anderen Remoteoptionen werden ausgeblendet, und der Pfad zur standardmäßigen WSL-Shell wird stattdessen angezeigt:
 
    ![WSL-Buildcomputer](media/wsl-remote-vs2019.png)
 
@@ -62,12 +66,12 @@ Konfigurieren Sie die Remoteeinstellungen, die unter [Allgemein](prop-pages/gene
 
    ::: moniker-end
 
-- Das **Remotebuild-Stammverzeichnis** bestimmt das Stammverzeichnis, in dem das Projekt auf dem Linux-Remotecomputer erstellt wird. Standardmäßig handelt es sich dabei um **~/projects**, sofern nicht anders angegeben.
+- Das **Remotebuild-Stammverzeichnis** bestimmt das Stammverzeichnis, in dem das Projekt auf dem Linux-Remotecomputer erstellt wird. Standardmäßig handelt es sich dabei um **~/projects** , sofern nicht anders angegeben.
 
 - Das **Remotebuild-Projektverzeichnis** ist das Verzeichnis, in dem dieses spezifische Projekt auf dem Linux-Remotecomputer erstellt wird. Standardmäßig handelt es sich dabei um das Verzeichnis **$(RemoteRootDir)/$(ProjektName)** . Es wird zu einem Verzeichnis erweitert, das den Namen des aktuellen Projekts unter dem oben angegebenen Stammverzeichnis trägt.
 
 > [!NOTE]
-> Verwenden Sie zum Ändern der C- und C++-Standardcompiler bzw. der Linker und Archivierungsprogramme, die zur Erstellung des Projekts verwendet werden, die entsprechenden Einträge im Abschnitt **C/C++ > Allgemein** sowie im Abschnitt **Linker > Allgemein**. Sie können beispielsweise eine bestimmte Version von GCC (GNU Compiler Collection) oder Clang angeben. Weitere Informationen finden Sie unter [C/C++-Eigenschaften (Linux C++)](prop-pages/c-cpp-linux.md) und [Linkereigenschaften (Linux C++)](prop-pages/linker-linux.md).
+> Verwenden Sie zum Ändern der C- und C++-Standardcompiler bzw. der Linker und Archivierungsprogramme, die zur Erstellung des Projekts verwendet werden, die entsprechenden Einträge im Abschnitt **C/C++ > Allgemein** sowie im Abschnitt **Linker > Allgemein** . Sie können beispielsweise eine bestimmte Version von GCC (GNU Compiler Collection) oder Clang angeben. Weitere Informationen finden Sie unter [C/C++-Eigenschaften (Linux C++)](prop-pages/c-cpp-linux.md) und [Linkereigenschaften (Linux C++)](prop-pages/linker-linux.md).
 
 ## <a name="copy-sources-remote-systems-only"></a>Kopieren von Quellen (nur Remotesysteme)
 
@@ -89,7 +93,7 @@ Beim Erstellen auf Remotesystemen werden die Quelldateien auf Ihrem Entwicklungs
 
 ## <a name="build-events"></a>Buildereignisse
 
-Da die gesamte Kompilierung auf einem Remotecomputer (oder WSL) erfolgt, wurden dem Abschnitt „Buildereignisse“ in den Projekteigenschaften mehrere zusätzliche Buildereignisse hinzugefügt. Dazu gehören das **Remote-Präbuildereignis**, das **Remote-Prälinkereignis** und das **Remote-Postbuildereignis**. Diese Ereignisse finden auf dem Remotecomputer vor oder nach den einzelnen Schritten im Prozess statt.
+Da die gesamte Kompilierung auf einem Remotecomputer (oder WSL) erfolgt, wurden dem Abschnitt „Buildereignisse“ in den Projekteigenschaften mehrere zusätzliche Buildereignisse hinzugefügt. Dazu gehören das **Remote-Präbuildereignis** , das **Remote-Prälinkereignis** und das **Remote-Postbuildereignis** . Diese Ereignisse finden auf dem Remotecomputer vor oder nach den einzelnen Schritten im Prozess statt.
 
 ![Buildereignisse](media/settings_buildevents.png)
 
@@ -106,7 +110,7 @@ Diese Funktion hängt davon ab, ob auf dem Linux-Computer Zip installiert ist. S
 sudo apt install zip
 ```
 
-Navigieren Sie zum Verwalten Ihres Header-Caches zu **Extras > Optionen > Plattformübergreifend > Verbindungs-Manager > IntelliSense-Manager für Remoteheader**. Wählen Sie zum Aktualisieren des Header-Caches nach Änderungen auf dem Linux-Computer die Remoteverbindung aus, und klicken Sie dann auf **Aktualisieren**. Klicken Sie auf **Löschen**, um die Header zu entfernen, ohne die Verbindung selbst zu löschen. Klicken Sie auf **Erkunden**, um das lokale Verzeichnis im **Datei-Explorer** zu öffnen. Behandeln Sie diesen Ordner, als sei er schreibgeschützt. Wählen Sie zum Herunterladen von Headern für eine vorhandene Verbindung, die vor Version 15.3 von Visual Studio 2017 erstellt wurde, die Verbindung aus, und klicken Sie dann auf **Herunterladen**.
+Navigieren Sie zum Verwalten Ihres Header-Caches zu **Extras > Optionen > Plattformübergreifend > Verbindungs-Manager > IntelliSense-Manager für Remoteheader** . Wählen Sie zum Aktualisieren des Header-Caches nach Änderungen auf dem Linux-Computer die Remoteverbindung aus, und klicken Sie dann auf **Aktualisieren** . Klicken Sie auf **Löschen** , um die Header zu entfernen, ohne die Verbindung selbst zu löschen. Klicken Sie auf **Erkunden** , um das lokale Verzeichnis im **Datei-Explorer** zu öffnen. Behandeln Sie diesen Ordner, als sei er schreibgeschützt. Wählen Sie zum Herunterladen von Headern für eine vorhandene Verbindung, die vor Version 15.3 von Visual Studio 2017 erstellt wurde, die Verbindung aus, und klicken Sie dann auf **Herunterladen** .
 
 ::: moniker range="vs-2017"
 

@@ -1,13 +1,13 @@
 ---
 title: Konfigurieren von Linux-Projekten zum Verwenden von AddressSanitizer
 description: In diesem Artikel wird beschrieben, wie Sie C++-Linux-Projekte in Visual Studio konfigurieren, um AddressSanitizer verwenden zu können.
-ms.date: 09/25/2020
-ms.openlocfilehash: 7e68d0af4d2ab27820f894bafc58bed444f141d9
-ms.sourcegitcommit: 94893973211d0b254c8bcdcf0779997dcc136b0c
+ms.date: 10/7/2020
+ms.openlocfilehash: 3c2f78346e4a2049e3482ba4093d8a6212f54e9a
+ms.sourcegitcommit: 611e903f222ec794ef14195796b332851ab98904
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91414196"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91847150"
 ---
 # <a name="configure-linux-projects-to-use-address-sanitizer"></a>Konfigurieren von Linux-Projekten zum Verwenden von AddressSanitizer
 
@@ -35,23 +35,23 @@ Sie können sich im Debugbereich des Ausgabefensters auch die vollständige ASan
 > [!NOTE]
 > Ab Visual Studio 2019, Version 16.4, wird der AddressSanitizer für Linux-Projekte über **Projekteigenschaften** > **Konfigurationseigenschaften** > **C/C++**  > **AddressSanitizer aktivieren** aktiviert.
 
-Klicken Sie mit der rechten Maustaste auf das Projekt im **Projektmappen-Explorer**, und wählen Sie **Eigenschaften** aus, um ASan für MSBuild-basierte Linux-Projekte zu aktivieren. Navigieren Sie dann zu **Konfigurationseigenschaften** > **C/C++**  > **Sanitizer**. ASan ist über Compiler und Linker-Flags aktiviert und erfordert, dass Ihr Projekt noch mal kompiliert wird, um zu funktionieren.
+Klicken Sie mit der rechten Maustaste auf das Projekt im **Projektmappen-Explorer** , und wählen Sie **Eigenschaften** aus, um ASan für MSBuild-basierte Linux-Projekte zu aktivieren. Navigieren Sie dann zu **Konfigurationseigenschaften** > **C/C++**  > **Sanitizer** . ASan ist über Compiler und Linker-Flags aktiviert und erfordert, dass Ihr Projekt noch mal kompiliert wird, um zu funktionieren.
 
 ![Aktivieren von ASan für ein MSBuild-Projekt](media/msbuild-asan-prop-page.png)
 
-Navigieren Sie zu **Konfigurationseigenschaften** > **Debuggen** > **AddressSanitizer-Runtimeflags**, um optionale ASan-Runtimeflags zu übergeben. Klicken Sie zum Hinzufügen oder Entfernen von Flags auf die NACH-UNTEN-TASTE.
+Navigieren Sie zu **Konfigurationseigenschaften** > **Debuggen** > **AddressSanitizer-Runtimeflags** , um optionale ASan-Runtimeflags zu übergeben. Klicken Sie auf den Pfeil nach unten, um Flags hinzuzufügen oder zu entfernen.
 
 ![Konfigurieren von ASan-Runtimeflags](media/msbuild-asan-runtime-flags.png)
 
 ## <a name="enable-asan-for-visual-studio-cmake-projects"></a>Aktivieren von ASan für CMake-Projekte in Visual Studio
 
-Klicken Sie mit der rechten Maustaste auf die Datei „CMakeLists.txt“ im **Projektmappen-Explorer**, und wählen Sie **CMake Settings for Project** (Einstellungen für CMake-Projekt) aus, um ASan für CMake zu aktivieren.
+Klicken Sie mit der rechten Maustaste auf die Datei „CMakeLists.txt“ im **Projektmappen-Explorer** , und wählen Sie **CMake Settings for Project** (Einstellungen für CMake-Projekt) aus, um ASan für CMake zu aktivieren.
 
-Stellen Sie sicher, dass Sie im linken Bereich des Dialogfelds eine Linux-Konfiguration ausgewählt haben (z. B. **Linux-Debug**):
+Stellen Sie sicher, dass Sie im linken Bereich des Dialogfelds eine Linux-Konfiguration ausgewählt haben (z. B. **Linux-Debug** ):
 
 ![Screenshot des linken Bereichs, in dem „Linux-Debug“ als eine der Konfigurationsoptionen aufgeführt ist](media/linux-debug-configuration.png)
 
-Die ASan-Optionen finden Sie unter **Allgemein**. Geben Sie die ASan-Runtimeflags im Format „flag=value“ (Flag=Wert) durch Leerzeichen getrennt ein. Die Benutzeroberfläche schlägt fälschlicherweise die Verwendung von Semikolons vor. Verwenden Sie Leerzeichen oder Doppelpunkte zum Trennen von Flags.
+Die ASan-Optionen finden Sie unter **Allgemein** . Geben Sie die ASan-Runtimeflags im Format „flag=value“ (Flag=Wert) durch Leerzeichen getrennt ein. Die Benutzeroberfläche schlägt fälschlicherweise die Verwendung von Semikolons vor. Verwenden Sie Leerzeichen oder Doppelpunkte zum Trennen von Flags.
 
 ![Screenshot der Option „AddressSanitizer aktivieren“ mit einigen AdressSanitizier-Laufzeitflags](media/cmake-settings-asan-options.png)
 
@@ -73,7 +73,7 @@ Verwenden Sie diesen Befehl, um zu bestimmen, welche GCC-Version Sie besitzen:
 gcc --version
 ```
 
-Führen Sie das Programm aus, und achten Sie dann auf den Bereich **Debuggen** im **Ausgabefenster**, um die libasan-dbg-Version anzuzeigen, die Sie benötigen. Die geladene ASan-Version entspricht der libasan-dbg-Version, die auf Ihrem Linux-Computer benötigt wird. Sie können **STRG+F** verwenden, um im Fenster nach „libasan“ zu suchen. Wenn Sie beispielsweise „libasan4“ verwenden, wird Ihnen eine Zeile wie diese angezeigt:
+Führen Sie das Programm aus, und achten Sie dann auf den Bereich **Debuggen** im **Ausgabefenster** , um die libasan-dbg-Version anzuzeigen, die Sie benötigen. Die geladene ASan-Version entspricht der libasan-dbg-Version, die auf Ihrem Linux-Computer benötigt wird. Sie können **STRG+F** verwenden, um im Fenster nach „libasan“ zu suchen. Wenn Sie beispielsweise „libasan4“ verwenden, wird Ihnen eine Zeile wie diese angezeigt:
 
 ```Output
 Loaded '/usr/lib/x86_64-linux-gnu/libasan.so.4'. Symbols loaded.
@@ -84,5 +84,7 @@ Sie können die ASan-Debugbits unter Linux-Distributionen installieren, die „a
 ```bash
 sudo apt-get install libasan4-dbg
 ```
+
+Eine vollständige Anleitung für das Installieren von Debugsymbolpaketen unter Ubuntu finden Sie unter [Debug symbol packages](https://wiki.ubuntu.com/Debug%20Symbol%20Packages) (Debugsymbolpakete).
 
 Wenn ASan aktiviert ist, werden Sie oben im Bereich **Debuggen** im **Ausgabefenster** von Visual Studio aufgefordert, die ASan-Debugsymbole zu installieren.

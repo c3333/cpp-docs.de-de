@@ -3,12 +3,12 @@ title: Installieren der C++-Workload unter Linux in Visual Studio
 description: In diesem Artikel finden Sie Informationen zum Herunterladen, Installieren und Einrichten der Linux-Workload für C++ in Visual Studio.
 ms.date: 05/03/2020
 ms.assetid: e11b40b2-f3a4-4f06-b788-73334d58dfd9
-ms.openlocfilehash: 3f8e6eb8285652078e5f26ca58601bc6ccfa80d1
-ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.openlocfilehash: 1a1b42927d440d1cde847fd1c1b6593e87a3824a
+ms.sourcegitcommit: f19f02f217b80804ab321d463c76ce6f681abcc6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90040976"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92176274"
 ---
 # <a name="download-install-and-set-up-the-linux-workload"></a>Herunterladen, Installieren und Einrichten der Linux-Workload
 
@@ -36,13 +36,13 @@ Für jedes dieser Szenarios ist die Workload **Linux-Entwicklung mit C++** erfor
 
    ![Windows-Suchfeld](media/visual-studio-installer-search.png)
 
-1. Suchen Sie in den Ergebnissen unter **Apps** nach dem Installer, und doppelklicken Sie auf ihn. Wenn der Installer geöffnet wird, wählen Sie **Ändern**aus, und klicken Sie dann auf die Registerkarte **Workloads**. Scrollen Sie nach unten zu **Andere Toolsets**, und wählen Sie die Workload **Linux Entwicklung mit C++** aus.
+1. Suchen Sie in den Ergebnissen unter **Apps** nach dem Installer, und doppelklicken Sie auf ihn. Wenn der Installer geöffnet wird, wählen Sie **Ändern** aus, und klicken Sie dann auf die Registerkarte **Workloads** . Scrollen Sie nach unten zu **Andere Toolsets** , und wählen Sie die Workload **Linux Entwicklung mit C++** aus.
 
    ![Workload „Visual C++ für Linux-Entwicklung“](media/linuxworkload.png)
 
-1. Wenn Sie für IoT- oder eingebettete Plattformen entwickeln, wechseln Sie im rechten Bereich zu **Installationsdetails**. Erweitern Sie unter **Linux-Entwicklung mit C++** den Eintrag **Optionale Komponenten**, und wählen Sie die benötigten Komponenten. CMake-Unterstützung für Linux ist standardmäßig ausgewählt.
+1. Wenn Sie für IoT- oder eingebettete Plattformen entwickeln, wechseln Sie im rechten Bereich zu **Installationsdetails** . Erweitern Sie unter **Linux-Entwicklung mit C++** den Eintrag **Optionale Komponenten** , und wählen Sie die benötigten Komponenten. CMake-Unterstützung für Linux ist standardmäßig ausgewählt.
 
-1. Klicken Sie auf **Ändern**, um mit der Installation fortzufahren.
+1. Klicken Sie auf **Ändern** , um mit der Installation fortzufahren.
 
 ## <a name="options-for-creating-a-linux-environment"></a>Optionen zum Erstellen einer Linux-Umgebung
 
@@ -58,7 +58,7 @@ Linux-Projekte in Visual Studio erfordern die Installation der folgenden Abhäng
 
 - **Compiler:** Visual Studio 2019 bietet vollständige Unterstützung für GCC und [Clang](../build/clang-support-cmake.md).
 - **gdb:** Visual Studio startet gdb automatisch auf dem Linux-System und nutzt das Front-End des Visual Studio-Debuggers, um unter Linux Funktionen für zuverlässiges Debuggen zu bieten.
-- **rsync** und **zip**: Die Einbindung von rsync und zip ermöglicht Visual Studio das Extrahieren von Headerdateien aus Ihrem Linux-System in das Windows-Dateisystem zur Verwendung durch IntelliSense.
+- **rsync** und **zip** : Die Einbindung von rsync und zip ermöglicht Visual Studio das Extrahieren von Headerdateien aus Ihrem Linux-System in das Windows-Dateisystem zur Verwendung durch IntelliSense.
 - **make**
 - **openssh-server** (nur Linux-Remotesysteme): Visual Studio und Linux-Remotesysteme werden über eine sichere SSH-Verbindung miteinander verbunden.
 - **CMake** (nur CMake-Projekte): Sie können [statisch verknüpfte CMake-Binärdateien für Linux](https://github.com/microsoft/CMake/releases) von Microsoft installieren.
@@ -74,9 +74,9 @@ Linux-Projekte in Visual Studio erfordern die Installation der folgenden Abhäng
 
 - **gcc:** Visual Studio 2017 bietet vollständige Unterstützung für GCC.
 - **gdb:** Visual Studio startet gdb automatisch auf dem Linux-System und nutzt das Front-End des Visual Studio-Debuggers, um unter Linux Funktionen für zuverlässiges Debuggen zu bieten.
-- **rsync** und **zip**: Die Einbindung von rsync und zip ermöglicht Visual Studio das Extrahieren von Headerdateien aus Ihrem Linux-System in das Windows-Dateisystem zur Verwendung durch IntelliSense.
+- **rsync** und **zip** : Die Einbindung von rsync und zip ermöglicht Visual Studio das Extrahieren von Headerdateien aus Ihrem Linux-System in das Windows-Dateisystem zur Verwendung durch IntelliSense.
 - **make**
-- **openssh-server**: Visual Studio und Linux-Remotesysteme werden über eine sichere SSH-Verbindung miteinander verbunden.
+- **openssh-server** : Visual Studio und Linux-Remotesysteme werden über eine sichere SSH-Verbindung miteinander verbunden.
 - **CMake** (nur CMake-Projekte): Sie können [statisch verknüpfte CMake-Binärdateien für Linux](https://github.com/microsoft/CMake/releases) von Microsoft installieren.
 
 ::: moniker-end
@@ -97,7 +97,7 @@ sudo apt-get install g++ gdb make ninja-build rsync zip
 
 ## <a name="ubuntu-on-remote-linux-systems"></a>Ubuntu auf Linux-Remotesystemen
 
-Auf dem Linux-Zielsystem muss **openssh-server**, **g++** , **gdb** und **make** installiert sein. **ninja-build** ist nur für CMake-Projekte erforderlich. Der **ssh**-Daemon muss ausgeführt werden. **zip** und **rsync** sind zur Unterstützung von IntelliSense für die automatische Synchronisierung von Remoteheadern mit Ihrem lokalen Computer erforderlich. Wenn diese Anwendungen noch nicht vorhanden sind, können Sie sie wie folgt installieren:
+Auf dem Linux-Zielsystem muss **openssh-server** , **g++** , **gdb** und **make** installiert sein. **ninja-build** ist nur für CMake-Projekte erforderlich. Der **ssh** -Daemon muss ausgeführt werden. **zip** und **rsync** sind zur Unterstützung von IntelliSense für die automatische Synchronisierung von Remoteheadern mit Ihrem lokalen Computer erforderlich. Wenn diese Anwendungen noch nicht vorhanden sind, können Sie sie wie folgt installieren:
 
 1. Führen Sie bei einer Shelleingabeaufforderung auf dem Linux-Computer Folgendes aus:
 
@@ -121,7 +121,7 @@ Auf dem Linux-Zielsystem muss **openssh-server**, **g++** , **gdb** und **make**
 
 ## <a name="fedora-on-wsl"></a>Fedora auf dem WSL
 
-Fedora verwendet den **dnf**-Paket-Installer. Führen Sie den folgenden Befehl aus, um **g++** , **gdb**, **make**, **rsync**, **ninja-build** und **zip** herunterzuladen:
+Fedora verwendet den **dnf** -Paket-Installer. Führen Sie den folgenden Befehl aus, um **g++** , **gdb** , **make** , **rsync** , **ninja-build** und **zip** herunterzuladen:
 
    ```bash
    sudo dnf install gcc-g++ gdb rsync ninja-build make zip
@@ -135,7 +135,7 @@ Fedora verwendet den **dnf**-Paket-Installer. Führen Sie den folgenden Befehl a
 
 ## <a name="fedora-on-remote-linux-systems"></a>Fedora auf Linux-Remotesystemen
 
-Der Zielcomputer, auf dem Fedora ausgeführt wird, verwendet den **Dnf**-Paket-Installer. Um **openssh-server**, **g++** , **gdb**, **make**, **ninja-build**, **rsync** und **zip** herunterzuladen und den ssh-Daemon neu zu starten, befolgen Sie diese Anweisungen. **ninja-build** ist nur für CMake-Projekte erforderlich.
+Der Zielcomputer, auf dem Fedora ausgeführt wird, verwendet den **Dnf** -Paket-Installer. Um **openssh-server** , **g++** , **gdb** , **make** , **ninja-build** , **rsync** und **zip** herunterzuladen und den ssh-Daemon neu zu starten, befolgen Sie diese Anweisungen. **ninja-build** ist nur für CMake-Projekte erforderlich.
 
 1. Führen Sie bei einer Shelleingabeaufforderung auf dem Linux-Computer Folgendes aus:
 
@@ -157,7 +157,7 @@ Der Zielcomputer, auf dem Fedora ausgeführt wird, verwendet den **Dnf**-Paket-I
 
 Jetzt können Sie ein Linux-Projekt erstellen oder öffnen und es so konfigurieren, dass es auf dem Zielsystem ausgeführt wird. Weitere Informationen finden Sie unter:
 
-- [Erstellen eines neuen Linux-Projekts](create-a-new-linux-project.md)
+- [Erstellen eines auf MSBuild basierenden C++-Projekts für Linux in Visual Studio](create-a-new-linux-project.md)
 - [Konfigurieren eines Linux CMake-Projekts](cmake-linux-project.md)
 
 ::: moniker-end
