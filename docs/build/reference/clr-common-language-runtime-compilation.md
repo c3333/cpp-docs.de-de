@@ -1,7 +1,7 @@
 ---
 title: /clr (Common Language Runtime-Kompilierung)
 description: Verwenden Sie die Microsoft C++-Compileroption/clr, um C++/CLI-und C++-Code als verwalteten Code zu kompilieren.
-ms.date: 10/25/2020
+ms.date: 10/27/2020
 f1_keywords:
 - /CLR
 - VC.Project.VCNMakeTool.CompileAsManaged
@@ -14,16 +14,16 @@ helpviewer_keywords:
 - Managed Extensions for C++, compiling
 - common language runtime, /clr compiler option
 ms.assetid: fec5a8c0-40ec-484c-a213-8dec918c1d6c
-ms.openlocfilehash: b4634b63e58344893d99e2217e57693a2c169f66
-ms.sourcegitcommit: faecabcdd12ff53eb79dc0df193fc3567f2f037c
+ms.openlocfilehash: 9d27d9fb6226f84c4ea67a8f9387a595ba65468b
+ms.sourcegitcommit: 9c801a43ee0d4d84956b03fd387716c818705e0d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92639093"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92907596"
 ---
 # <a name="clr-common-language-runtime-compilation"></a>`/clr` (Common Language Runtime-Kompilierung)
 
-Ermöglicht Anwendungen und Komponenten, Funktionen aus der Common Language Runtime (CLR) zu verwenden.
+Ermöglicht Anwendungen und Komponenten, Funktionen aus der Common Language Runtime (CLR) zu verwenden, und ermöglicht die C++/CLI-Kompilierung.
 
 ## <a name="syntax"></a>Syntax
 
@@ -36,7 +36,15 @@ Eines oder mehrere der folgenden durch Trennzeichen getrennten Argumente.
 
 - Keine
 
-   Ohne Optionen werden **`/clr`** von Metadaten für die Anwendung erstellt. Die Metadaten können von anderen CLR-Anwendungen genutzt werden, und ermöglichen, dass eine Anwendung Typen und Daten in den Metadaten anderer CLR-Komponenten nutzt. Weitere Informationen finden Sie unter [Gemischte (native und verwaltete) Assemblys](../../dotnet/mixed-native-and-managed-assemblies.md).
+   Ohne Optionen **`/clr`** erstellt Metadaten für die Komponente. Die Metadaten können von anderen CLR-Anwendungen genutzt werden und ermöglichen es der Komponente, Typen und Daten in den Metadaten anderer CLR-Komponenten zu verwenden. Weitere Informationen finden Sie unter [Gemischte (native und verwaltete) Assemblys](../../dotnet/mixed-native-and-managed-assemblies.md).
+
+- **`NetCore`**
+
+   **`/clr:NetCore`** erstellt Metadaten und Code für die Komponente mit dem neuesten plattformübergreifenden .NET Framework, auch bekannt als .net Core. Die Metadaten können von anderen .net Core-Anwendungen verwendet werden. Und die-Option ermöglicht der Komponente, Typen und Daten in den Metadaten anderer .net Core-Komponenten zu verwenden.
+
+- **`nostdlib`**
+
+   Weist den Compiler an, das Standardverzeichnis zu ignorieren *`\clr`* . Der Compiler erzeugt Fehler, wenn Sie mehrere Versionen einer DLL einschließen, z. b. System.dll. Mit dieser Option können Sie angeben, welches Framework während der Kompilierung verwendet werden soll.
 
 - **`pure`**
 
@@ -58,15 +66,11 @@ Eines oder mehrere der folgenden durch Trennzeichen getrennten Argumente.
 
 - **`initialAppDomain`**
 
-   Ermöglicht die Ausführung einer C++/CLI-Anwendung in Version 1 der CLR.  Eine Anwendung, die mithilfe von kompiliert **`initialAppDomain`** wird, sollte nicht von einer Anwendung verwendet werden, die ASP.NET verwendet, da Sie in Version 1 der CLR nicht unterstützt wird.
-
-- **`nostdlib`**
-
-   Weist den Compiler an, das Standardverzeichnis zu ignorieren *`\clr`* . Der Compiler erzeugt Fehler, wenn Sie mehrere Versionen einer DLL einschließen, z. b. System.dll. Mit dieser Option können Sie angeben, welches Framework während der Kompilierung verwendet werden soll.
+   **`initialAppDomain` ist veraltet** . Ermöglicht die Ausführung einer C++/CLI-Anwendung in Version 1 der CLR.  Eine Anwendung, die mithilfe von kompiliert **`initialAppDomain`** wird, sollte nicht von einer Anwendung verwendet werden, die ASP.NET verwendet, da Sie in Version 1 der CLR nicht unterstützt wird.
 
 ## <a name="remarks"></a>Hinweise
 
-Verwalteter Code ist Code, der überprüft und von der CLR verwaltet werden kann. Verwalteter Code kann auf verwaltete Objekte zugreifen. Weitere Informationen finden Sie unter [ `/clr ` Einschränkungen](clr-restrictions.md).
+*Verwalteter Code* ist Code, der von der CLR überprüft und verwaltet werden kann. Verwalteter Code kann auf verwaltete Objekte zugreifen. Weitere Informationen finden Sie unter [ `/clr` Einschränkungen](clr-restrictions.md).
 
 Informationen zum Entwickeln von Anwendungen, die verwaltete Typen in C++ definieren und verwenden, finden Sie unter [Komponenten Erweiterungen für laufzeitplattformen](../../extensions/component-extensions-for-runtime-platforms.md).
 
@@ -110,9 +114,12 @@ Mithilfe von ildasm.exe können Sie Metadaten anzeigen.
 
 1. Legen Sie die Dropdown Liste **Konfiguration** auf **alle Konfigurationen** fest, und legen Sie die Dropdown Liste **Plattform** auf **alle Plattformen** fest.
 
-1. Wählen Sie die Seite Erweiterte **Konfigurations Eigenschaften** aus  >  **Advanced** .
+1. Wählen Sie die Seite **Konfigurations Eigenschaften**  >  **C/C++**  >  **Allgemein** aus.
 
 1. Ändern Sie die Eigenschaft **Common Language Runtime-Unterstützung** . Klicken Sie auf **OK** , um die Änderungen zu speichern.
+
+> [!NOTE]
+> In der Visual Studio-IDE **`/clr`** kann die-Compileroption auf der Seite **Konfigurations Eigenschaften**  >  **C/C++**  >  **Allgemein** des Dialog Felds Eigenschaften Seiten einzeln festgelegt werden. Es wird jedoch empfohlen, eine CLR-Vorlage zu verwenden, um Ihr Projekt zu erstellen. Es werden alle Eigenschaften festgelegt, die für eine erfolgreiche Erstellung einer CLR-Komponente erforderlich sind. Eine weitere Möglichkeit zum Festlegen dieser Eigenschaften ist die Verwendung der Eigenschaft **Common Language Runtime-Unterstützung** auf der Seite Erweiterte **Konfigurations Eigenschaften**  >  **Advanced** des Dialog Felds Eigenschaften Seiten. Diese Eigenschaft legt alle anderen CLR-bezogenen Tool Optionen auf einmal fest.
 
 ### <a name="to-set-this-compiler-option-programmatically"></a>So legen Sie diese Compileroption programmgesteuert fest
 
