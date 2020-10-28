@@ -3,10 +3,10 @@ title: Navigieren in C++-Code in Visual Studio
 description: Verwenden Sie verschiedene Tools in Visual Studio, um in Ihrer C++-Codebasis zu navigieren.
 ms.date: 05/28/2019
 ms.openlocfilehash: cc13326dee14e952c78e521344a6244249179cb8
-ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
+ms.sourcegitcommit: 59b7c18703d1ffd66827db0e2eeece490d3d8789
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/22/2020
 ms.locfileid: "90683493"
 ---
 # <a name="navigate-c-code-in-visual-studio"></a>Navigieren in C++-Code in Visual Studio
@@ -21,7 +21,7 @@ Klicken Sie mit der rechten Maustaste auf eine `#include`-Anweisung, und wählen
 
 ## <a name="toggle-headercode-file"></a>Umschalten zwischen Header- und Codedatei
 
-Sie können zwischen einer Headerdatei und der entsprechenden Quelldatei wechseln. Klicken Sie mit der rechten Maustaste auf eine beliebige Stelle in Ihrer Datei, und wählen Sie **Header-/Codedatei umschalten** aus. Sie können auch **STRG+K**, **STRG+O** drücken.
+Sie können zwischen einer Headerdatei und der entsprechenden Quelldatei wechseln. Klicken Sie mit der rechten Maustaste auf eine beliebige Stelle in Ihrer Datei, und wählen Sie **Header-/Codedatei umschalten** aus. Sie können auch **STRG+K** , **STRG+O** drücken.
 
 ## <a name="go-to-definitiondeclaration"></a>Gehe zu Definition/Deklaration
 
@@ -39,19 +39,19 @@ Sie können **Gehe zu** mit **STRG+,** öffnen. Diese Aktion öffnet ein Suchfel
 
 **Gehe zu** umfasst folgende Suchfilter:
 
-- **Gehe zu Zeile** (**STRG+G**): Hiermit können Sie schnell zu einer anderen Zeile in Ihrem aktuellen Dokument springen.
-- **Gehe zu allen** (**STRG+,** oder **STRG+T**): Die Suchergebnisse umfassen alles Folgende.
-- **Gehe zu Datei** (**STRG+1, F**): Hiermit suchen Sie in Ihrer Projektmappe nach Dateien.
-- **Gehe zu Typ** (**STRG+1, T**): Die Suchergebnisse umfassen Folgendes:
+- **Gehe zu Zeile** ( **STRG+G** ): Hiermit können Sie schnell zu einer anderen Zeile in Ihrem aktuellen Dokument springen.
+- **Gehe zu allen** ( **STRG+,** oder **STRG+T** ): Die Suchergebnisse umfassen alles Folgende.
+- **Gehe zu Datei** ( **STRG+1, F** ): Hiermit suchen Sie in Ihrer Projektmappe nach Dateien.
+- **Gehe zu Typ** ( **STRG+1, T** ): Die Suchergebnisse umfassen Folgendes:
   - Klassen, Strukturen und Enumerationen.
   - Schnittstellen und Delegaten (nur verwalteter Code).
-- **Gehe zu Member** (**STRG+1, M**): Die Suchergebnisse umfassen Folgendes:
+- **Gehe zu Member** ( **STRG+1, M** ): Die Suchergebnisse umfassen Folgendes:
   - Globale Variablen und globale Funktionen.
   - Klassenmembervariablen und Memberfunktionen.
   - Konstanten.
   - Enumerationselemente.
   - Eigenschaften und Ereignisse.
-- **Gehe zu Symbol** (**STRG+1, S**): Die Suchergebnisse umfassen Folgendes:
+- **Gehe zu Symbol** ( **STRG+1, S** ): Die Suchergebnisse umfassen Folgendes:
   - Ergebnisse von „Gehe zu Typ“ und „Gehe zu Member“.
   - Alle verbleibenden C++-Sprachkonstrukte, einschließlich Makros.
 
@@ -70,19 +70,19 @@ Im folgenden Beispiel werden Suchergebnisse des Vorgangs *Gehe zu Datei* mit dem
 
 ![Screenshot des Menüs „Gehe zu Dateien“](../ide/media/vs2017-go-to-results.png "Menü „Gehe zu“")
 
-Geben Sie ein „?“ gefolgt von einem Leerzeichen ein, um die Liste der Textfilter anzuzeigen. Sie können auch über das Menü **Bearbeiten** auf die **Gehe zu**-Befehle zugreifen. Dort können Sie die jeweiligen Tastenkombinationen für **Gehe zu** einsehen.
+Geben Sie ein „?“ gefolgt von einem Leerzeichen ein, um die Liste der Textfilter anzuzeigen. Sie können auch über das Menü **Bearbeiten** auf die **Gehe zu** -Befehle zugreifen. Dort können Sie die jeweiligen Tastenkombinationen für **Gehe zu** einsehen.
 
 ![Screenshot des Menüs „Gehe zu“](../ide/media/go-to-menu-cpp.png "Menü „Gehe zu“")
 
 ## <a name="find-or-find-in-files"></a>Suchen oder in Dateien suchen
 
-Mit **Suchen** (**STRG+F**) oder **In Dateien suchen** (**STRG+UMSCHALT+F**) können Sie eine Textsuche in Ihrer Projektmappe durchführen.
+Mit **Suchen** ( **STRG+F** ) oder **In Dateien suchen** ( **STRG+UMSCHALT+F** ) können Sie eine Textsuche in Ihrer Projektmappe durchführen.
 
 Die **Suche** kann auf eine Auswahl, das aktuelle Dokument, alle offenen Dokumente, das aktuelle Projekt oder die gesamte Projektmappe begrenzt werden. Sie können reguläre Ausdrücke und Nur-Text-Suchen verwenden. Alle Übereinstimmungen werden automatisch in der IDE hervorgehoben.
 
 ![C&#43;&#43; – Suchen](../ide/media/find-cpp.png "Suchen")
 
-**In Dateien suchen** ist eine leistungsstärkere Version von **Suchen**, die Ergebnisse im Fenster **Suchergebnisse** anzeigt. Sie können externe Codeabhängigkeiten suchen, nach Dateitypen filtern und vieles mehr.
+**In Dateien suchen** ist eine leistungsstärkere Version von **Suchen** , die Ergebnisse im Fenster **Suchergebnisse** anzeigt. Sie können externe Codeabhängigkeiten suchen, nach Dateitypen filtern und vieles mehr.
 
 ![Screenshot des Fensters „Suchen und Ersetzen“ mit geöffneter Seite „In Dateien suchen“](../ide/media/find-in-files-cpp.png "Suchen in Dateien")
 
@@ -112,11 +112,11 @@ Zeigen Sie auf eine Spalte, und klicken Sie auf das angezeigte Filtersymbol, um 
 
 ![C&#43;&#43; – Filter für „Alle Verweise suchen“](../ide/media/find-all-references-filters-cpp.png "Filter für „Alle Verweise suchen“")
 
-- **Bestätigte Ergebnisse**: Tatsächliche Codeverweise auf das gesuchte Symbol. Beispielsweise gibt die Suche nach einer Memberfunktion namens `Size` alle Verweise auf `Size` zurück, die mit dem Bereich der Klasse übereinstimmt, die `Size` definiert.
+- **Bestätigte Ergebnisse** : Tatsächliche Codeverweise auf das gesuchte Symbol. Beispielsweise gibt die Suche nach einer Memberfunktion namens `Size` alle Verweise auf `Size` zurück, die mit dem Bereich der Klasse übereinstimmt, die `Size` definiert.
 
-- **Nicht bestätigte Ergebnisse**: Dieser Filter ist standardmäßig deaktiviert, da er Symbole mit übereinstimmenden Namen aufführt, die jedoch keine tatsächlichen Verweise auf das gesuchte Symbol sind. Wenn Sie zum Beispiel über zwei Klassen verfügen, die eine Memberfunktion namens `Size` definieren, und Sie eine Suche nach `Size` für einen Verweis eines Objekts von `Class1` durchführen, werden alle Verweise auf `Size` von `Class2` als nicht bestätigte Ergebnisse aufgeführt.
+- **Nicht bestätigte Ergebnisse** : Dieser Filter ist standardmäßig deaktiviert, da er Symbole mit übereinstimmenden Namen aufführt, die jedoch keine tatsächlichen Verweise auf das gesuchte Symbol sind. Wenn Sie zum Beispiel über zwei Klassen verfügen, die eine Memberfunktion namens `Size` definieren, und Sie eine Suche nach `Size` für einen Verweis eines Objekts von `Class1` durchführen, werden alle Verweise auf `Size` von `Class2` als nicht bestätigte Ergebnisse aufgeführt.
 
-- **Nicht verarbeitete Ergebnisse**: **Alle Verweise suchen** kann bei größeren Codebasen mehr Zeit beanspruchen, weshalb „nicht verarbeitete“ Ergebnisse hier aufgeführt werden. Nicht verarbeitete Ergebnisse weisen eine Übereinstimmung mit dem Namen des gesuchten Symbols auf, wurden jedoch noch nicht als tatsächliche Codeverweise bestätigt. Sie können diesen Filter aktivieren, um schneller Ergebnisse zu erhalten. Sie sollten sich jedoch bewusst sein, dass einige Ergebnisse möglicherweise keine tatsächlichen Verweise sind.
+- **Nicht verarbeitete Ergebnisse** : **Alle Verweise suchen** kann bei größeren Codebasen mehr Zeit beanspruchen, weshalb „nicht verarbeitete“ Ergebnisse hier aufgeführt werden. Nicht verarbeitete Ergebnisse weisen eine Übereinstimmung mit dem Namen des gesuchten Symbols auf, wurden jedoch noch nicht als tatsächliche Codeverweise bestätigt. Sie können diesen Filter aktivieren, um schneller Ergebnisse zu erhalten. Sie sollten sich jedoch bewusst sein, dass einige Ergebnisse möglicherweise keine tatsächlichen Verweise sind.
 
 #### <a name="sort-results"></a>Ergebnisse sortieren
 
