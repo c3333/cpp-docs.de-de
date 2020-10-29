@@ -4,22 +4,22 @@ ms.date: 07/02/2019
 helpviewer_keywords:
 - ATL projects, adding ATL OLE DB consumers
 ms.assetid: dcb68ed1-2224-422f-9f7b-108a74864204
-ms.openlocfilehash: f7bdc371e5575375f5e72a1a6c0c51890921b1f4
-ms.sourcegitcommit: d9c94dcabd94537e304be0261b3263c2071b437b
+ms.openlocfilehash: 490335f1f61987fc6e5b0b3806ee8e39c82f336f
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91353128"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92923755"
 ---
 # <a name="atl-ole-db-consumer-wizard"></a>ATL-OLE DB-Consumer-Assistent
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 Dieser Assistent ist in Visual Studio 2019 und höher nicht verfügbar.
 
 ::: moniker-end
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 Dieser Assistent richtet eine OLE DB-Consumerklasse mit den Datenbindungen ein, die zum Zugriff auf die angegebene Datenquelle über den angegebenen OLE DB-Anbieter erforderlich sind.
 
@@ -32,11 +32,11 @@ Dieser Assistent richtet eine OLE DB-Consumerklasse mit den Datenbindungen ein, 
 
    Mithilfe der Schaltfläche **Datenquelle** können Sie die angegebene Datenquelle unter Verwendung des angegebenen OLE DB-Anbieters einrichten. Wenn Sie auf diese Schaltfläche klicken, wird das Dialogfeld **Datenverknüpfungseigenschaften** geöffnet. Weitere Informationen zum Erstellen von Verbindungszeichenfolgen und dem Dialogfeld **Datenverknüpfungseigenschaften** finden Sie im Abschnitt [Übersicht über die Data Link-API](/previous-versions/windows/desktop/ms718102(v=vs.85)) in der Windows SDK-Dokumentation.
 
-   Die folgenden zusätzlichen Informationen beschreiben die Registerkarten im Dialogfeld **Datenverknüpfungseigenschaften**.
+   Die folgenden zusätzlichen Informationen beschreiben die Registerkarten im Dialogfeld **Datenverknüpfungseigenschaften** .
 
   - Registerkarte **Anbieter**
 
-      Wählen Sie einen geeigneten Anbieter zum Verwalten der Verbindung mit der Datenquelle aus. Der Anbietertyp wird üblicherweise durch den Typ der Datenbank bestimmt, mit der Sie eine Verbindung herstellen. Klicken Sie auf die Schaltfläche **Weiter** oder auf die Registerkarte **Verbindung**.
+      Wählen Sie einen geeigneten Anbieter zum Verwalten der Verbindung mit der Datenquelle aus. Der Anbietertyp wird üblicherweise durch den Typ der Datenbank bestimmt, mit der Sie eine Verbindung herstellen. Klicken Sie auf die Schaltfläche **Weiter** oder auf die Registerkarte **Verbindung** .
 
   - Registerkarte **Verbindung**
 
@@ -71,7 +71,7 @@ Dieser Assistent richtet eine OLE DB-Consumerklasse mit den Datenbindungen ein, 
 
          \- oder -
 
-         **Verbindungs Zeichenfolge verwenden:** Geben Sie entweder eine bereits erhaltene Verbindungs Zeichenfolge ein, oder klicken Sie auf die Schaltfläche **Erstellen** . Das Dialogfeld **Datenquelle auswählen** wird angezeigt. Wählen Sie eine Datei oder eine Computerdatenquelle aus, und klicken Sie auf **OK**.
+         **Verbindungs Zeichenfolge verwenden:** Geben Sie entweder eine bereits erhaltene Verbindungs Zeichenfolge ein, oder klicken Sie auf die Schaltfläche **Erstellen** . Das Dialogfeld **Datenquelle auswählen** wird angezeigt. Wählen Sie eine Datei oder eine Computerdatenquelle aus, und klicken Sie auf **OK** .
 
          > [!NOTE]
          > Sie können eine Verbindungszeichenfolge abrufen, indem Sie die Eigenschaften einer vorhandenen Verbindung im **Server-Explorer** anzeigen, oder Sie können eine Verbindung erstellen, indem Sie im **Server-Explorer** auf **Verbindung hinzufügen** doppelklicken.
@@ -80,13 +80,13 @@ Dieser Assistent richtet eine OLE DB-Consumerklasse mit den Datenbindungen ein, 
 
       1. Geben Sie den Anfangskatalog ein, der verwendet werden soll.
 
-      1. Klicken Sie auf **Verbindung testen**. Wenn der Test erfolgreich war, klicken Sie auf **OK**. Falls der Test nicht erfolgreich war, überprüfen Sie Ihre Anmeldeinformationen, oder versuchen Sie es mit einer anderen Datenbank oder einem anderen Datenserver.
+      1. Klicken Sie auf **Verbindung testen** . Wenn der Test erfolgreich war, klicken Sie auf **OK** . Falls der Test nicht erfolgreich war, überprüfen Sie Ihre Anmeldeinformationen, oder versuchen Sie es mit einer anderen Datenbank oder einem anderen Datenserver.
 
   - Registerkarte **erweitert**
 
       **Netzwerkeinstellungen:** Geben Sie die Identitätswechsel **Ebene** an (die Ebene des Identitäts Wechsels, die der Server beim Annehmen der Identität des Clients verwenden darf; entspricht direkt den RPC-Identitätswechsel Ebenen) und der **Schutz Ebene** (die Ebene des Schutzes von Daten, die zwischen Client und Server gesendet werden, entspricht direkt den RPC-Schutz Ebenen).
 
-      **Sonstige:** Geben Sie unter **Verbindungs Timeout**die Anzahl der Sekunden an, die im Leerlauf vor einem Timeout zulässig sind. Geben Sie in **Zugriffsberechtigungen** die Zugriffsberechtigungen für die Datenverbindung an.
+      **Sonstige:** Geben Sie unter **Verbindungs Timeout** die Anzahl der Sekunden an, die im Leerlauf vor einem Timeout zulässig sind. Geben Sie in **Zugriffsberechtigungen** die Zugriffsberechtigungen für die Datenverbindung an.
 
       Weitere Informationen zu erweiterten Initialisierungseigenschaften finden Sie in der Dokumentation zum jeweiligen OLE DB-Anbieter.
 
@@ -94,7 +94,7 @@ Dieser Assistent richtet eine OLE DB-Consumerklasse mit den Datenbindungen ein, 
 
       Auf dieser Registerkarte wird eine Zusammenfassung der Initialisierungseigenschaften für die angegebene Datenquelle und Verbindung angezeigt. Sie können diese Werte bearbeiten.
 
-      Klicken Sie auf **OK**, um den Vorgang abzuschließen. Das Dialogfeld **Datenbankobjekt auswählen** wird angezeigt. Wählen Sie in diesem Dialogfeld die Tabelle, Ansicht oder gespeicherte Prozedur aus, die der Consumer verwenden wird.
+      Klicken Sie auf **OK** , um den Vorgang abzuschließen. Das Dialogfeld **Datenbankobjekt auswählen** wird angezeigt. Wählen Sie in diesem Dialogfeld die Tabelle, Ansicht oder gespeicherte Prozedur aus, die der Consumer verwenden wird.
 
 - **Klasse**
 
@@ -161,7 +161,7 @@ Dieser Assistent richtet eine OLE DB-Consumerklasse mit den Datenbindungen ein, 
 
    Aktivieren Sie eine dieser Optionsschaltflächen, um anzugeben, ob die Consumerklasse von `CTable` oder `CCommand` (Standard) abgeleitet wird.
 
-  - **Table**
+  - **Tabelle**
 
       Aktivieren Sie diese Option, wenn Sie `CTable` oder `db_table` zum Erstellen der Tabellen- und Tabellenaccessor-Klassendeklarationen verwenden möchten.
 
@@ -187,7 +187,7 @@ Dieser Assistent richtet eine OLE DB-Consumerklasse mit den Datenbindungen ein, 
 
 ::: moniker-end
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [ATL-OLE DB-Consumer](../../atl/reference/adding-an-atl-ole-db-consumer.md)<br/>
 [Adding Functionality with Code Wizards (Hinzufügen neuer Funktionen mit Code-Assistenten)](../../ide/adding-functionality-with-code-wizards-cpp.md)<br/>

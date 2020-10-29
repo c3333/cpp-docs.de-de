@@ -9,12 +9,12 @@ helpviewer_keywords:
 - file redistribution [C++]
 - redistributing applications [C++], about redistributing applications
 ms.assetid: d201b2ce-36f1-44e5-a96c-0db81a1ba652
-ms.openlocfilehash: 7a639f7ad7deb76cade47b0162012dcb70cb0d69
-ms.sourcegitcommit: e15b46ea7888dbdd7e0bb47da76aeed680c3c1f3
+ms.openlocfilehash: a660e67b2664417438ea9fa7acddbde4c20c307a
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86446752"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924145"
 ---
 # <a name="redistributing-visual-c-files"></a>Verteilen von Visual C++-Dateien
 
@@ -25,19 +25,19 @@ ms.locfileid: "86446752"
 
 Wenn Sie eine Anwendung bereitstellen, müssen Sie auch die Dateien bereitstellen, die zu ihrer Unterstützung erforderlich sind. Wenn eine dieser Dateien von Microsoft bereitgestellt wird, überprüfen Sie, ob Sie diese Dateien weiterverteilen dürfen. Sie finden einen Link zu den Visual Studio-Lizenzbedingungen in der IDE. Verwenden Sie den Link Lizenzbedingungen im Dialogfeld Info Microsoft Visual Studio. Alternativ können Sie die relevanten EULAs und Lizenzen aus dem Visual Studio- [Lizenz Verzeichnis](https://visualstudio.microsoft.com/license-terms/)herunterladen.
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 Informationen zum Anzeigen der "Redist-Liste", auf die im Abschnitt "verteilbarer Code" der Microsoft-Software-Lizenzbedingungen für Visual Studio 2019 verwiesen wird, finden Sie unter [verteilbare Code Dateien für Microsoft Visual Studio 2019](/visualstudio/releases/2019/redistribution#-distributable-code-files-for-visual-studio-2019)
 
 ::: moniker-end
 
-::: moniker range="vs-2017"
+::: moniker range="msvc-150"
 
 Informationen zum Anzeigen der "Redist-Liste", auf die im Abschnitt "verteilbarer Code" der Microsoft-Software-Lizenzbedingungen für Visual Studio 2017 verwiesen wird, finden Sie unter [verteilbare Code Dateien für Microsoft Visual Studio 2017](/visualstudio/productinfo/2017-redistribution-vs#-distributable-code-files-for-visual-studio-2017).
 
 ::: moniker-end
 
-::: moniker range="vs-2015"
+::: moniker range="msvc-140"
 
 Informationen zum Anzeigen der "Redist-Liste", auf die im Abschnitt "verteilbarer Code" der Microsoft-Software-Lizenzbedingungen für Visual Studio 2015 verwiesen wird, finden Sie unter [verteilbare Code Dateien für Microsoft Visual Studio 2015](/visualstudio/productinfo/2015-redistribution-vs#-distributable-code-files-for-visual-studio-2015).
 
@@ -65,11 +65,11 @@ Verteilbare Mergemodule müssen in das Windows Installer Paket (oder ein ähnlic
 
 ## <a name="install-individual-redistributable-files"></a>Einzelne verteilbare Dateien installieren
 
-Es ist auch möglich, die verteilbaren DLLs direkt im *lokalen Anwendungsordner*zu installieren. Das ist der Ordner, der die ausführbare Anwendungsdatei enthält. Aus Wartungsgründen wird empfohlen, diesen Installationsort nicht zu verwenden.
+Es ist auch möglich, die verteilbaren DLLs direkt im *lokalen Anwendungsordner* zu installieren. Das ist der Ordner, der die ausführbare Anwendungsdatei enthält. Aus Wartungsgründen wird empfohlen, diesen Installationsort nicht zu verwenden.
 
 ## <a name="potential-run-time-errors"></a>Potenzielle Laufzeitfehler
 
-Wenn Windows eine der für Ihre Anwendung erforderlichen weitervertreibbaren Bibliotheks-DLLs nicht finden kann, wird möglicherweise eine Meldung ähnlich der folgenden angezeigt: "diese Anwendung konnte nicht gestartet werden, da *Library*. dll nicht gefunden wurde. Das Problem kann möglicherweise durch eine Neuinstallation der Anwendung behoben werden. "
+Wenn Windows eine der für Ihre Anwendung erforderlichen weitervertreibbaren Bibliotheks-DLLs nicht finden kann, wird möglicherweise eine Meldung ähnlich der folgenden angezeigt: "diese Anwendung konnte nicht gestartet werden, da *Library* . dll nicht gefunden wurde. Das Problem kann möglicherweise durch eine Neuinstallation der Anwendung behoben werden. "
 
 Um diese Art von Fehler zu beheben, stellen Sie sicher, dass der Anwendungsinstaller ordnungsgemäß erstellt wird. Überprüfen Sie, ob die verteilbaren Bibliotheken auf dem Zielsystem ordnungsgemäß bereitgestellt werden. Weitere Informationen finden Sie unter [Grundlegendes zu den Abhängigkeiten einer Visual C++-Anwendung](understanding-the-dependencies-of-a-visual-cpp-application.md).
 

@@ -5,26 +5,26 @@ helpviewer_keywords:
 - OLE DB consumer templates, field status
 - field status in OLE DB templates
 ms.assetid: 66e4e223-c60c-471e-860d-d23abcdfe371
-ms.openlocfilehash: 61ee867f664b6b0d885e35f6d58840b37ce322b9
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 476c91f55071f6d1c7f243257273a32798813cae
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80210911"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924639"
 ---
 # <a name="field-status-data-members-in-wizard-generated-accessors"></a>Feldstatus-Datenmember in vom Assistenten generierten Accessoren
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 Der ATL-OLE DB-Consumer-Assistent ist in Visual Studio 2019 und höher nicht verfügbar. Sie können diese Funktionalität weiterhin manuell hinzufügen. Weitere Informationen finden Sie unter [Erstellen eines Consumers ohne Assistent](creating-a-consumer-without-using-a-wizard.md).
 
 ::: moniker-end
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 Bei Verwendung des **ATL-OLE DB-Consumer-Assistenten** zum Erstellen eines Consumers generiert der Assistent einen Datenmember in der Benutzerdatensatzklasse für jedes Feld, das Sie in der Spaltenzuordnung angeben. Jeder Datenmember ist vom Typ `DWORD` und enthält einen Statuswert, der dem jeweiligen Feld entspricht.
 
-Für einen Datenmember *m_OwnerID* generiert der Assistent z.B. einen zusätzlichen Datenmember für den Feldstatus (*dwOwnerIDStatus*) und einen weiteren für die Feldlänge (*dwOwnerIDLength*). Er generiert außerdem eine Spaltenzuordnung mit COLUMN_ENTRY_LENGTH_STATUS-Einträgen.
+Für einen Datenmember *m_OwnerID* generiert der Assistent z.B. einen zusätzlichen Datenmember für den Feldstatus ( *dwOwnerIDStatus* ) und einen weiteren für die Feldlänge ( *dwOwnerIDLength* ). Er generiert außerdem eine Spaltenzuordnung mit COLUMN_ENTRY_LENGTH_STATUS-Einträgen.
 
 Dies wird im folgenden Code veranschaulicht:
 
@@ -114,6 +114,6 @@ Bei Verwendung von `CDynamicAccessor` werden Länge und Status automatisch für 
 
 ::: moniker-end
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Arbeiten mit OLE DB-Consumervorlagen](../../data/oledb/working-with-ole-db-consumer-templates.md)
+[Arbeiten mit OLE DB Consumervorlagen](../../data/oledb/working-with-ole-db-consumer-templates.md)

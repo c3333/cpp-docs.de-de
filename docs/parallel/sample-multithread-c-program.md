@@ -2,16 +2,16 @@
 title: Beispiel für ein C-Multithreadprogramm
 ms.date: 08/09/2019
 ms.assetid: 4706f6cd-ff9c-4dbf-99a2-1c999b568f17
-ms.openlocfilehash: eb1a07558dd9446e167c27ad08891f88c37fb4ec
-ms.sourcegitcommit: b3d19b5f59f3a5d90c24f9f16c73bad4c5eb6944
+ms.openlocfilehash: 355024b995dc638b89a335983bd2e0f2cb0d96ce
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71195813"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924762"
 ---
 # <a name="sample-multithread-c-program"></a>Beispiel für ein C-Multithreadprogramm
 
-Bounce. c ist ein Beispiel für ein Multithreadprogramm, das jedes Mal einen neuen Thread `a` erstellt `A` , wenn der Buchstabe oder der Buchstabe eingegeben wird. Jeder Thread springt einen Buchstaben mit einer anderen Farbe um den Bildschirm. Es können bis zu 32 Threads erstellt werden. Die normale Beendigung des Programms tritt auf `q` , `Q` wenn oder eingegeben wird.
+Bounce. c ist ein Beispiel für ein Multithreadprogramm, das jedes Mal einen neuen Thread erstellt, wenn der Buchstabe oder der Buchstabe `a` `A` eingegeben wird. Jeder Thread springt einen Buchstaben mit einer anderen Farbe um den Bildschirm. Es können bis zu 32 Threads erstellt werden. Die normale Beendigung des Programms tritt auf, wenn `q` oder `Q` eingegeben wird.
 
 ## <a name="compile-and-link-a-multithread-program"></a>Kompilieren und Verknüpfen eines Multithreadprogramms
 
@@ -19,11 +19,11 @@ Programme werden standardmäßig als multithreadkompiliert.
 
 ### <a name="to-compile-and-link-the-multithread-program-bouncec-from-within-the-development-environment"></a>So kompilieren und verknüpfen Sie das Multithreadprogramm "Bounce. c" in der Entwicklungsumgebung
 
-::: moniker range=">=vs-2019"
+::: moniker range=">=msvc-160"
 
-1. Wählen Sie im Menü **Datei** die Optionsfolge **Neu** >**Projekt**aus.
+1. Klicken Sie im Menü **Datei** auf **Neu** > **Projekt** .
 
-1. Wählen Sie im Dialogfeld **Neues Projekt erstellen** die **Konsolen-App** -Vorlage mit **C++** den Tags, **Windows**und **Console** aus. Klicken Sie auf **Weiter** , um fortzufahren.
+1. Wählen Sie im Dialogfeld **Neues Projekt erstellen** die **Konsolen-App** -Vorlage mit den Tags **C++** , **Windows** und **Console** aus. Wählen Sie zum Fortfahren **Weiter** aus.
 
 1. Geben Sie im Dialogfeld **Neues Projekt konfigurieren** einen Namen für das Projekt ein, z. b. "Bounce". Wählen Sie **Erstellen** , um fortzufahren.
 
@@ -31,17 +31,17 @@ Programme werden standardmäßig als multithreadkompiliert.
 
 1. Löschen Sie im Bearbeitungsfenster den vorhandenen Quellcode, und ersetzen Sie ihn durch den Beispielcode.
 
-1. Wählen Sie im Menü **Erstellen** die Option **Projektmappe erstellen**.
+1. Wählen Sie im Menü **Erstellen** die Option **Projektmappe erstellen** .
 
 1. Drücken Sie **F5** , um das Programm im Debugger zu starten.
 
 ::: moniker-end
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
-1. Wählen Sie im Menü **Datei** die Optionsfolge **Neu** >**Projekt**aus.
+1. Klicken Sie im Menü **Datei** auf **Neu** > **Projekt** .
 
-1. Wählen Sie im Dialogfeld **Neues Projekt** im linken Bereich  **C++ Visualisierung** aus, und wählen Sie dann im mittleren Bereich die Option **leeres Projekt** aus.
+1. Wählen Sie im Dialogfeld **Neues Projekt** im linken Bereich **Visual C++** aus, und klicken Sie dann im mittleren Bereich auf **leeres Projekt** .
 
 1. Geben Sie im Bearbeitungsfeld **Name** einen Namen für das Projekt ein, z. b. "Bounce". Wählen Sie **OK** aus, um das leere Projekt zu erstellen.
 

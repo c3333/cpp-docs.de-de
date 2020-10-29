@@ -2,12 +2,12 @@
 title: Installieren der plattformübergreifenden mobile Entwicklung mit C++
 ms.date: 10/17/2019
 ms.assetid: aaea6b8d-55eb-4427-8185-c050f855c257
-ms.openlocfilehash: 6a573b0f7ba261b97af9de24e67f733acac0532f
-ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.openlocfilehash: b9a6b78450969f5228ccf16cc7b0cff02a4d3b1e
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90041951"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924004"
 ---
 # <a name="install-cross-platform-mobile-development-with-c"></a>Installieren der plattformübergreifenden mobile Entwicklung mit C++
 
@@ -17,7 +17,7 @@ In diesem Artikel wird beschrieben, wie Sie die Tools und Drittanbietersoftware 
 
 ## <a name="requirements"></a>Requirements (Anforderungen)
 
-::: moniker range="vs-2017"
+::: moniker range="msvc-150"
 
 - Die Anforderungen für die Installation finden Sie unter [Systemanforderungen der Visual Studio-Produktfamilie](/visualstudio/productinfo/vs2017-system-requirements-vs).
 
@@ -25,7 +25,7 @@ In diesem Artikel wird beschrieben, wie Sie die Tools und Drittanbietersoftware 
    > Wenn Sie Windows 7 oder Windows Server 2008 R2 verwenden, können Sie Code für Windows-Desktopanwendungen, Android-Apps mit nativer Aktivität und -Bibliotheken sowie Apps und Codebibliotheken für iOS, jedoch keine Windows Store- oder UWP-Apps entwickeln.
 
 ::: moniker-end
-::: moniker range=">=vs-2019"
+::: moniker range=">=msvc-160"
 
 - Die Anforderungen für die Installation finden Sie unter [Systemanforderungen der Visual Studio-Produktfamilie](/visualstudio/releases/2019/system-requirements).
 
@@ -48,7 +48,7 @@ Mobile-Entwicklung mit C++ ist in den Editionen Visual Studio Community, Profess
 
 ## <a name="install-the-tools"></a>Installieren der Tools
 
-Der Visual Studio-Installer umfasst die Workload **Mobile Entwicklung mit C++**. Mit dieser Workload werden die C++-Sprachtools, -Vorlagen und -Komponenten installiert, die für die Entwicklung für Android und iOS in Visual Studio notwendig sind. Sie enthält die für Android-Builds und-Debugging benötigten gcc-und clang-Toolsets. Bei der Arbeitsauslastung werden die Android SDK und Komponenten für die Kommunikation mit einem Mac für die IOS-Entwicklung installiert. Außerdem werden Drittanbieter Tools und Software Development Kits installiert, die zur Unterstützung der IOS-und Android-App-Entwicklung erforderlich sind. Bei den meisten dieser Drittanbietertools handelt es sich um Open Source-Software für die Android-Plattformunterstützung.
+Der Visual Studio-Installer umfasst die Workload **Mobile Entwicklung mit C++** . Mit dieser Workload werden die C++-Sprachtools, -Vorlagen und -Komponenten installiert, die für die Entwicklung für Android und iOS in Visual Studio notwendig sind. Sie enthält die für Android-Builds und-Debugging benötigten gcc-und clang-Toolsets. Bei der Arbeitsauslastung werden die Android SDK und Komponenten für die Kommunikation mit einem Mac für die IOS-Entwicklung installiert. Außerdem werden Drittanbieter Tools und Software Development Kits installiert, die zur Unterstützung der IOS-und Android-App-Entwicklung erforderlich sind. Bei den meisten dieser Drittanbietertools handelt es sich um Open Source-Software für die Android-Plattformunterstützung.
 
 - Das Android Native Development Kit (NDK), Apache Ant und die C++-Entwicklungstools für Android werden benötigt, um C++-Code für die Android-Plattform zu erstellen.
 
@@ -60,21 +60,21 @@ Der Visual Studio-Installer umfasst die Workload **Mobile Entwicklung mit C++**.
 - C++-Entwicklungstools für iOS sind erforderlich, um C++-Code für die iOS-Plattform zu entwickeln.
 
 > [!NOTE]
-> Wenn Sie Visual Studio 2015 verwenden, lesen Sie [Installieren von Visual C++ für plattformübergreifende Mobile-Entwicklung (Visual Studio 2015)](install-visual-cpp-for-cross-platform-mobile-development.md?view=vs-2015&preserve-view=true).
+> Wenn Sie Visual Studio 2015 verwenden, lesen Sie [Installieren von Visual C++ für plattformübergreifende Mobile-Entwicklung (Visual Studio 2015)](install-visual-cpp-for-cross-platform-mobile-development.md?view=msvc-140&preserve-view=true).
 
 ### <a name="install-the-mobile-development-with-c-workload"></a>Installieren der Workload „Mobile-Entwicklung mit C++“
 
 1. Führen Sie den **Visual Studio-Installer** über das **Startmenü** aus.
 
-1. Wenn Sie Visual Studio bereits installiert haben, klicken Sie auf die Schaltfläche **Bearbeiten**, um die installierte Version von Visual Studio auszuwählen, die Sie ändern möchten. Wählen Sie andernfalls **Installieren** aus, um Visual Studio zu installieren.
+1. Wenn Sie Visual Studio bereits installiert haben, klicken Sie auf die Schaltfläche **Bearbeiten** , um die installierte Version von Visual Studio auszuwählen, die Sie ändern möchten. Wählen Sie andernfalls **Installieren** aus, um Visual Studio zu installieren.
 
 1. Wählen Sie die Registerkarte **Workloads** aus, scrollen Sie nach unten, und wählen Sie im Visual Studio-Installer die Workload **Mobile-Entwicklung mit C++** aus. Wenn diese Workload ausgewählt ist, werden gleichzeitig andere erforderliche Komponenten für die C++-Entwicklung ausgewählt. Sie können auch andere Workloads und einzelne Komponenten auswählen, die zur gleichen Zeit installiert werden. Um plattformübergreifenden Code zu erstellen, der auf UWP ausgerichtet ist, wählen Sie die Workload **Entwicklung für die Universelle Windows-Plattform** aus.
 
-1. Erweitern Sie im Bereich **Details zur Installation****Mobile-Entwicklung mit C++**. Im Abschnitt **Optional** können Sie zusätzliche Versionen des NDK, des Google Android-Emulators, des Hardware Accelerated Execution Managers und des IncrediBuild-Buildbeschleunigungstools auswählen.
+1. Erweitern Sie im Bereich **Details zur Installation****Mobile-Entwicklung mit C++** . Im Abschnitt **Optional** können Sie zusätzliche Versionen des NDK, des Google Android-Emulators, des Hardware Accelerated Execution Managers und des IncrediBuild-Buildbeschleunigungstools auswählen.
 
 1. Standardmäßig enthält die Workload eine oder mehrere Android SDK-Setupkomponenten. Es sind zusätzliche Versionen von Android SDK verfügbar. Um eine der Versionen zu Ihrer Installation hinzuzufügen, wählen Sie die Registerkarte **Einzelne Komponenten** aus, scrollen Sie zum Bereich **SDKs, Bibliotheken und Frameworks** herunter, und treffen Sie eine Auswahl.
 
-1. Klicken Sie auf die Schaltfläche **Ändern** oder **Installieren**, um die Workload **Mobile-Entwicklung mit C++** und die ausgewählten anderen Workloads und optionalen Komponenten zu installieren.
+1. Klicken Sie auf die Schaltfläche **Ändern** oder **Installieren** , um die Workload **Mobile-Entwicklung mit C++** und die ausgewählten anderen Workloads und optionalen Komponenten zu installieren.
 
    Wenn die Installation abgeschlossen ist, schließen Sie den Installer und starten Sie Ihren Computer neu. Einige Setupaktionen für die Komponenten von Drittanbietern sind erst nach dem Neustart Ihres Computers aktiv.
 
@@ -99,17 +99,17 @@ In den meisten Fällen kann Visual Studio die Konfigurationen für die von Ihnen
 
 ### <a name="to-set-the-paths-for-third-party-tools"></a>So legen Sie die Pfade für Drittanbietertools fest
 
-1. **Wählen Sie**in der Visual Studio-Menüleiste Extras  >  **Optionen**aus.
+1. **Wählen Sie** in der Visual Studio-Menüleiste Extras  >  **Optionen** aus.
 
 1. Wählen Sie im Dialogfeld **Optionen****Plattformübergreifend** > **C++** > **Android** aus.
 
    ![Pfadoptionen für Android-Tools](../cross-platform/media/cppmdd-options-android.png "Android-Tool-Pfadoptionen")
 
-1. Um den von einem Tool verwendeten Pfad zu ändern, aktivieren Sie das Kontrollkästchen neben dem Pfad, und bearbeiten Sie den Ordnerpfad im Textfeld. Sie können auch über die Schaltfläche zum Durchsuchen (**...**) das Dialogfeld **Speicherort auswählen** öffnen, um den Ordner auszuwählen.
+1. Um den von einem Tool verwendeten Pfad zu ändern, aktivieren Sie das Kontrollkästchen neben dem Pfad, und bearbeiten Sie den Ordnerpfad im Textfeld. Sie können auch über die Schaltfläche zum Durchsuchen ( **...** ) das Dialogfeld **Speicherort auswählen** öffnen, um den Ordner auszuwählen.
 
 1. Klicken Sie auf **OK** , um die benutzerdefinierten Toolordnerpfade zu speichern.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Installieren und Konfigurieren von Tools zum Erstellen mit IOS](install-and-configure-tools-to-build-using-ios.md)\
 [Visual C++ plattformübergreifende Mobile Geräte](https://visualstudio.microsoft.com/vs/features/cplusplus-mdd/)

@@ -5,12 +5,12 @@ ms.date: 10/18/2020
 helpviewer_keywords:
 - warnings, by compiler version
 - cl.exe compiler, setting warning options
-ms.openlocfilehash: b470663e3cea8ec62a1737fb19e9ec5a277d27cc
-ms.sourcegitcommit: f19f02f217b80804ab321d463c76ce6f681abcc6
+ms.openlocfilehash: 5718642f6a7f714dd0a38ec34211ddc0be4e8fd2
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92176316"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924701"
 ---
 # <a name="compiler-warnings-by-compiler-version"></a>Compilerwarnungen nach Compilerversion
 
@@ -51,7 +51,7 @@ Sie können für die Option nur die Hauptnummer, die Haupt-und neben Zahlen oder
 
 In den folgenden Abschnitten werden die Warnungen aufgeführt, die von den einzelnen Versionen von Visual C++ eingeführt werden, die Sie mithilfe der- **`/Wv`** Compileroption unterdrücken können Die **`/Wv`** Option kann keine Warnungen unterdrücken, die nicht aufgelistet sind und die den angegebenen Versionen des Compilers vorangestellt sind.
 
-::: moniker range=">= vs-2019"
+::: moniker range=">= msvc-160"
 
 ## <a name="warnings-introduced-in-visual-studio-2019-version-167-compiler-version-1927291120"></a>In Visual Studio 2019 Version 16,7 eingeführte Warnungen (Compilerversion 19.27.29112.0)
 
@@ -151,7 +151,7 @@ Diese Warnungen und alle Warnungen in späteren Versionen werden mithilfe der-Co
 | C5051 | `attribute 'attribute-name' requires at least 'standard-level'; ignored` |
 
 ::: moniker-end
-::: moniker range=">= vs-2017"
+::: moniker range=">= msvc-150"
 
 ## <a name="warnings-introduced-in-visual-studio-2017-version-158-compiler-version-1915267260"></a>In Visual Studio 2017 Version 15,8 eingeführte Warnungen (Compilerversion 19.15.26726.0)
 
@@ -768,7 +768,7 @@ Diese Warnungen und alle Warnungen in späteren Versionen werden mithilfe der-Co
 | C4997 | `'type': coclass does not implement a COM interface or pseudo-interface` |
 | C4998 | `EXPECTATION FAILED: description(number)` |
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Fehler und Warnungen für C/C++-Compiler und Buildtools](../compiler-errors-1/c-cpp-build-errors.md) \
 [Compilerwarnungen C4000-C5999](compiler-warnings-c4000-c5999.md) \

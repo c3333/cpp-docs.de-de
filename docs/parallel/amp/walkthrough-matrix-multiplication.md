@@ -2,12 +2,12 @@
 title: 'Exemplarische Vorgehensweise: Matrixmultiplikation'
 ms.date: 04/23/2019
 ms.assetid: 61172e8b-da71-4200-a462-ff3a908ab0cf
-ms.openlocfilehash: 6387e68304c7b1dbf0531729b7b73b519f40d159
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: d45e731cefe51a815424aa941362dce8ceaa4500
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87215867"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924349"
 ---
 # <a name="walkthrough-matrix-multiplication"></a>Exemplarische Vorgehensweise: Matrixmultiplikation
 
@@ -25,41 +25,41 @@ Vorbereitungen:
 
 ### <a name="to-create-the-project"></a>So erstellen Sie das Projekt
 
-Die Anweisungen zum Erstellen eines neuen Projekts variieren abhängig von der installierten Version von Visual Studio. Um die Dokumentation für Ihre bevorzugte Version von Visual Studio anzuzeigen, verwenden Sie das Auswahlsteuerelement **Version**. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
+Die Anweisungen zum Erstellen eines neuen Projekts variieren abhängig von der installierten Version von Visual Studio. Um die Dokumentation für Ihre bevorzugte Version von Visual Studio anzuzeigen, verwenden Sie das Auswahlsteuerelement **Version** . Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 ### <a name="to-create-the-project-in-visual-studio-2019"></a>So erstellen Sie das Projekt in Visual Studio 2019
 
-1. Klicken Sie in der Menüleiste auf **Datei** > **Neu** > **Projekt**, um das Dialogfeld **Neues Projekt erstellen** zu öffnen.
+1. Klicken Sie in der Menüleiste auf **Datei**  > **Neu**  > **Projekt** , um das Dialogfeld **Neues Projekt erstellen** zu öffnen.
 
 1. Legen Sie oben im Dialogfeld die **Sprache** auf **C++** , die **Plattform** auf **Windows** und den **Projekttyp** auf **Konsole** fest.
 
-1. Wählen Sie in der gefilterten Liste der Projekttypen **leeres Projekt** aus, und klicken Sie dann auf **weiter**. Geben Sie auf der nächsten Seite *Matrixmultiplikation* in das Feld **Name** ein, um einen Namen für das Projekt anzugeben, und geben Sie ggf. den Projekt Speicherort an.
+1. Wählen Sie in der gefilterten Liste der Projekttypen **leeres Projekt** aus, und klicken Sie dann auf **weiter** . Geben Sie auf der nächsten Seite *Matrixmultiplikation* in das Feld **Name** ein, um einen Namen für das Projekt anzugeben, und geben Sie ggf. den Projekt Speicherort an.
 
    ![Neue Konsolen-App](../../build/media/mathclient-project-name-2019.png "Neue Konsolen-App")
 
-1. Klicken Sie auf die Schaltfläche **Erstellen**, um das Clientprojekt zu erstellen.
+1. Klicken Sie auf die Schaltfläche **Erstellen** , um das Clientprojekt zu erstellen.
 
-1. Öffnen Sie in **Projektmappen-Explorer**das Kontextmenü für **Quelldateien**, und wählen Sie dann **Add** > **Neues Element**hinzufügen aus.
+1. Öffnen Sie in **Projektmappen-Explorer** das Kontextmenü für **Quelldateien** , und wählen Sie dann **Add** > **Neues Element** hinzufügen aus.
 
 1. Wählen Sie im Dialogfeld **Neues Element hinzufügen** die Option **C++ File (. cpp)** aus, geben Sie *matrixmultipli. cpp* in das Feld **Name** ein, und wählen Sie dann die Schaltfläche **Hinzufügen** aus.
 
 ::: moniker-end
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 ### <a name="to-create-a-project-in-visual-studio-2017-or-2015"></a>So erstellen Sie ein Projekt in Visual Studio 2017 oder 2015
 
-1. Wählen Sie in Visual Studio auf der Menüleiste **Datei** > **neu** > **Projekt**aus.
+1. Wählen Sie in Visual Studio auf der Menüleiste **Datei** > **neu** > **Projekt** aus.
 
 1. Wählen Sie unter **installiert** im Bereich Vorlagen die Option **Visual C++** aus.
 
-1. Wählen Sie **leeres Projekt**aus, geben Sie *Matrixmultiplikation* in das Feld **Name** ein, und klicken Sie dann auf die Schaltfläche **OK** .
+1. Wählen Sie **leeres Projekt** aus, geben Sie *Matrixmultiplikation* in das Feld **Name** ein, und klicken Sie dann auf die Schaltfläche **OK** .
 
-1. Klicken Sie auf **Weiter**.
+1. Klicken Sie auf **Weiter** .
 
-1. Öffnen Sie in **Projektmappen-Explorer**das Kontextmenü für **Quelldateien**, und wählen Sie dann **Add** > **Neues Element**hinzufügen aus.
+1. Öffnen Sie in **Projektmappen-Explorer** das Kontextmenü für **Quelldateien** , und wählen Sie dann **Add** > **Neues Element** hinzufügen aus.
 
 1. Wählen Sie im Dialogfeld **Neues Element hinzufügen** die Option **C++ File (. cpp)** aus, geben Sie *matrixmultipli. cpp* in das Feld **Name** ein, und wählen Sie dann die Schaltfläche **Hinzufügen** aus.
 
@@ -109,7 +109,7 @@ A ist eine 3 x 2-Matrix und B eine 2 x 3-Matrix. Das Produkt der Multiplikation 
 
    Der Algorithmus ist eine einfache Implementierung der Definition der Matrixmultiplikation. Um die Berechnungszeit zu reduzieren verwendet er keine Parallel- oder Threaded-Algorithmen.
 
-1. Klicken Sie in der Menüleiste auf **Datei**  >  **Alle speichern**.
+1. Klicken Sie in der Menüleiste auf **Datei**  >  **Alle speichern** .
 
 1. Drücken Sie die **Taste F5** , um das Debugging zu starten, und überprüfen Sie, ob die Ausgabe korrekt ist.
 
@@ -171,7 +171,7 @@ A ist eine 3 x 2-Matrix und B eine 2 x 3-Matrix. Das Produkt der Multiplikation 
    }
    ```
 
-1. Drücken **Ctrl** + Sie die Tastenkombination STRG**F5** , um das Debugging zu starten und zu überprüfen, ob die Ausgabe korrekt ist.
+1. Drücken **Ctrl** + Sie die Tastenkombination STRG **F5** , um das Debugging zu starten und zu überprüfen, ob die Ausgabe korrekt ist.
 
 1. Drücken Sie die **LEERTASTE** , um die Anwendung zu beenden.
 
@@ -316,11 +316,11 @@ Um diesen Algorithmus implementieren, verwendet der Code:
    }
    ```
 
-1. Drücken **Ctrl** + Sie die Tastenkombination STRG**F5** , um das Debugging zu starten und zu überprüfen, ob die Ausgabe korrekt ist.
+1. Drücken **Ctrl** + Sie die Tastenkombination STRG **F5** , um das Debugging zu starten und zu überprüfen, ob die Ausgabe korrekt ist.
 
 1. Drücken Sie die **LEERTASTE** , um die Anwendung zu beenden.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [C++ AMP (C++ Accelerated Massive Parallelism)](../../parallel/amp/cpp-amp-cpp-accelerated-massive-parallelism.md)<br/>
 [Exemplarische Vorgehensweise: Debuggen einer C++ AMP-Anwendung](../../parallel/amp/walkthrough-debugging-a-cpp-amp-application.md)

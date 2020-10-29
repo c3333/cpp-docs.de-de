@@ -4,22 +4,22 @@ ms.date: 05/08/2019
 helpviewer_keywords:
 - ATL projects, adding components
 ms.assetid: 11670681-8671-4122-96a4-2e52f8dadce0
-ms.openlocfilehash: 6b1fea925c5f6d657e398933b5fb26cf09c28055
-ms.sourcegitcommit: d9c94dcabd94537e304be0261b3263c2071b437b
+ms.openlocfilehash: c4e77c7f3c17a90ddd09661b5fea5bad984d3245
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91353154"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92923806"
 ---
 # <a name="atl-com-10-component-wizard"></a>ATL COM+ 1.0 Komponenten-Assistent
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 Dieser Assistent ist in Visual Studio 2019 und höher nicht verfügbar.
 
 ::: moniker-end
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 Verwenden Sie diesen Assistenten, um ein Objekt zu Ihrem Projekt hinzuzufügen, das COM+ 1.0-Dienste einschließlich Transaktionen unterstützt.
 
@@ -27,7 +27,7 @@ Sie können angeben, ob das Objekt duale Schnittstellen und Automatisierung unte
 
 ## <a name="remarks"></a>Hinweise
 
-Ab Visual Studio 2008 werden mit dem von diesem Assistenten generierten Registrierungsskript die zugehörigen COM-Komponenten nicht unter **HKEY_LOCAL_MACHINE**, sondern unter **HKEY_CURRENT_USER** registriert. Um dieses Verhalten zu ändern, legen Sie die Option **Komponente für alle Benutzer registrieren** des ATL-Assistenten fest.
+Ab Visual Studio 2008 werden mit dem von diesem Assistenten generierten Registrierungsskript die zugehörigen COM-Komponenten nicht unter **HKEY_LOCAL_MACHINE** , sondern unter **HKEY_CURRENT_USER** registriert. Um dieses Verhalten zu ändern, legen Sie die Option **Komponente für alle Benutzer registrieren** des ATL-Assistenten fest.
 
 ## <a name="names"></a>Namen
 
@@ -35,13 +35,13 @@ Geben Sie die Namen für das Objekt, die Schnittstelle und die Klassen an, das b
 
 - **Kurzname**
 
-   Legt einen abgekürzten Namen für das Objekt fest. Der Name, den Sie hier angeben, bestimmt die Namen der `Class` und der `Coclass`, die Namen der **.cpp-Datei** und der **.h-Datei**, den Namen der **Schnittstelle**, den Namen des **Typs** und die **ProgID**, sofern Sie diese Felder nicht individuell ändern.
+   Legt einen abgekürzten Namen für das Objekt fest. Der Name, den Sie hier angeben, bestimmt die Namen der `Class` und der `Coclass`, die Namen der **.cpp-Datei** und der **.h-Datei** , den Namen der **Schnittstelle** , den Namen des **Typs** und die **ProgID** , sofern Sie diese Felder nicht individuell ändern.
 
 - **H-Datei**
 
    Legt den Namen der Headerdatei für die neue Klasse des Objekts fest. Standardmäßig basiert dieser Name auf dem Namen, den Sie unter **Kurzname** angeben. Klicken Sie auf die Schaltfläche mit den Auslassungspunkten, um den Dateinamen am gewünschten Speicherort zu speichern oder um die Klassendeklaration an eine vorhandene Datei anzufügen. Wenn Sie eine vorhandene Datei auswählen, speichert der Assistent diese nicht am ausgewählten Speicherort, bis Sie im Assistenten auf **Fertig stellen** klicken.
 
-   Der Assistent überschreibt Dateien nicht. Wenn Sie den Namen einer vorhandenen Datei auswählen, fordert der Assistent Sie dazu auf, anzugeben, ob die Klassendeklaration an die Inhalte der Datei angefügt werden sollen, wenn Sie auf **Fertig stellen** klicken. Klicken Sie auf **Ja**, um die Datei anzufügen. Klicken Sie auf **Nein**, um zum Assistenten zurückzukehren und einen anderen Dateinamen anzugeben.
+   Der Assistent überschreibt Dateien nicht. Wenn Sie den Namen einer vorhandenen Datei auswählen, fordert der Assistent Sie dazu auf, anzugeben, ob die Klassendeklaration an die Inhalte der Datei angefügt werden sollen, wenn Sie auf **Fertig stellen** klicken. Klicken Sie auf **Ja** , um die Datei anzufügen. Klicken Sie auf **Nein** , um zum Assistenten zurückzukehren und einen anderen Dateinamen anzugeben.
 
 - **Klasse**
 
@@ -51,7 +51,7 @@ Geben Sie die Namen für das Objekt, die Schnittstelle und die Klassen an, das b
 
    Legt den Namen der Implementierungsdatei für die neue Klasse des Objekts fest. Standardmäßig basiert dieser Name auf dem Namen, den Sie unter **Kurzname** angeben. Klicken Sie auf die Schaltfläche mit den Auslassungspunkten, um den Dateinamen am gewünschten Speicherort zu speichern. Die Datei wird nicht am ausgewählten Speicherort gespeichert, bis Sie im Assistenten auf **Fertig stellen** klicken.
 
-   Der Assistent überschreibt Dateien nicht. Wenn Sie den Namen einer vorhandenen Datei auswählen, fordert der Assistent Sie dazu auf, anzugeben, ob die Klassenimplementierung an die Inhalte der Datei angefügt werden sollen, wenn Sie auf **Fertig stellen** klicken. Klicken Sie auf **Ja**, um die Datei anzufügen. Klicken Sie auf **Nein**, um zum Assistenten zurückzukehren und einen anderen Dateinamen anzugeben.
+   Der Assistent überschreibt Dateien nicht. Wenn Sie den Namen einer vorhandenen Datei auswählen, fordert der Assistent Sie dazu auf, anzugeben, ob die Klassenimplementierung an die Inhalte der Datei angefügt werden sollen, wenn Sie auf **Fertig stellen** klicken. Klicken Sie auf **Ja** , um die Datei anzufügen. Klicken Sie auf **Nein** , um zum Assistenten zurückzukehren und einen anderen Dateinamen anzugeben.
 
 - **Attributiert**
 
@@ -88,6 +88,6 @@ Stellt Informationen über die COM-Funktionalität für das Objekt bereit.
 
 ::: moniker-end
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [ATL COM+ 1.0-Komponente](../../atl/reference/adding-an-atl-com-plus-1-0-component.md)

@@ -4,22 +4,22 @@ ms.date: 08/19/2019
 helpviewer_keywords:
 - OLE DB consumers, implementing
 ms.assetid: 13828167-23a4-4e94-8b6c-878262fda464
-ms.openlocfilehash: 9e93b40313a215dfe5872b33dc7d41641204a2f1
-ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
+ms.openlocfilehash: 2d59989f8afd180b39153eed1ad0a20435aad9d4
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91508968"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92923902"
 ---
 # <a name="implementing-a-simple-consumer"></a>Implementieren eines einfachen Consumers
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 Der ATL-OLE DB-Consumer-Assistent ist in Visual Studio 2019 und höher nicht verfügbar. Sie können diese Funktionalität weiterhin manuell hinzufügen. Weitere Informationen finden Sie unter [Erstellen eines Consumers ohne Assistent](creating-a-consumer-without-using-a-wizard.md).
 
 ::: moniker-end
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 Die folgenden Themen zeigen, wie Sie die vom **MFC-Anwendungsassistenten** und **ATL-OLE DB-Consumer-Assistenten** erstellten Dateien bearbeiten können, um einen einfachen Consumer zu erstellen. Dieses Beispiel besteht aus folgenden Teilen:
 
@@ -89,7 +89,7 @@ Mit den vorherigen Schritten erhalten Sie Lesezeichenunterstützung und ein Lese
 
 ### <a name="to-instantiate-the-bookmark"></a>So instanziieren Sie das Lesezeichen
 
-1. Der Accessor muss ein Objekt des Typs [CBookmark](../../data/oledb/cbookmark-class.md) enthalten. Der *nSize*-Parameter gibt die Größe des Lesezeichenpuffers in Bytes an (in der Regel 4 für 32-Bit-Plattformen und 8 für 64-Bit-Plattformen). Fügen Sie die folgende Deklaration zu den Spaltendatenmembern in der Benutzerdatensatz-Klasse hinzu:
+1. Der Accessor muss ein Objekt des Typs [CBookmark](../../data/oledb/cbookmark-class.md) enthalten. Der *nSize* -Parameter gibt die Größe des Lesezeichenpuffers in Bytes an (in der Regel 4 für 32-Bit-Plattformen und 8 für 64-Bit-Plattformen). Fügen Sie die folgende Deklaration zu den Spaltendatenmembern in der Benutzerdatensatz-Klasse hinzu:
 
     ```cpp
     //////////////////////////////////////////////////////////////////////
@@ -205,6 +205,6 @@ Weitere Informationen über Lesezeichen finden Sie unter [Verwenden von Lesezeic
 
 ::: moniker-end
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Erstellen eines OLE DB Consumers mithilfe eines Assistenten](../../data/oledb/creating-an-ole-db-consumer-using-a-wizard.md)

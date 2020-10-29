@@ -25,20 +25,20 @@ helpviewer_keywords:
 - Clean Build option
 - output files, setting directory
 - Unicode, creating C++ build configuration
-ms.openlocfilehash: bb301f63bfd1e6839d7893cdc03d61e021409666
-ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
+ms.openlocfilehash: eaaa2c7428809c05532642b0f9ac53146c6f01a9
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91500066"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924284"
 ---
 # <a name="general-property-page-project"></a>Eigenschaftenseite "Allgemein" (Projekt)
 
-::: moniker range=">=vs-2019"
+::: moniker range=">=msvc-160"
 
 Dieses Thema bezieht sich auf Visual Studio-Projekte für Windows. Informationen zu Linux-Projekten finden Sie unter [Linux C++ Eigenschaften Seiten Referenz](../../linux/prop-pages-linux.md). Informationen zu cmake-Projekten finden Sie unter [cmake-Projekte in Visual Studio](../cmake-projects-in-visual-studio.md). Informationen zu Android-Projekten finden Sie unter [allgemeine Projekteigenschaften (Android C++)](../../cross-platform/general-android-prop-page.md). Informationen zu Android Makefile-Projekten finden Sie unter [allgemeine Projekteigenschaften (Android C++ Makefile)](../../cross-platform/general-makefile-android-prop-page.md) .
 
-Wenn Sie in Projektmappen-Explorer mit der rechten Maustaste auf einen Projekt Knoten klicken und **Eigenschaften**auswählen, werden auf der Eigenschaften Seite **Allgemein** unter dem Knoten **Konfigurations Eigenschaften** im linken Bereich folgende Eigenschaften angezeigt:
+Wenn Sie in Projektmappen-Explorer mit der rechten Maustaste auf einen Projekt Knoten klicken und **Eigenschaften** auswählen, werden auf der Eigenschaften Seite **Allgemein** unter dem Knoten **Konfigurations Eigenschaften** im linken Bereich folgende Eigenschaften angezeigt:
 
 - **Ausgabeverzeichnis**
 
@@ -86,23 +86,23 @@ Wenn Sie in Projektmappen-Explorer mit der rechten Maustaste auf einen Projekt K
 
    Gibt für die Windows-Zielplattform die Version des Windows SDK an, mit dem Ihr Projekt erstellt wird. Wenn Sie eine C++-Workload mit dem Visual Studio-Installer installieren, werden auch die erforderlichen Teile des Windows SDK installiert. Wenn Sie auf Ihrem Computer über andere Versionen des Windows SDK verfügen, wird jede installierte Version der SDK Tools in der Dropdownliste angezeigt.
 
-   Verwenden Sie den Wert **8.1**, um Windows 7 oder Windows Vista als Zielplattform anzugeben, da Windows SDK 8.1 für diese Plattformen abwärtskompatibel ist. Darüber hinaus müssen Sie den entsprechenden Wert für **_WIN32_WINNT** in „argetver.h“ definieren. Für Windows 7 ist dies "0x0601". Siehe [Ändern von WINVER und _WIN32_WINNT](../../porting/modifying-winver-and-win32-winnt.md)
+   Verwenden Sie den Wert **8.1** , um Windows 7 oder Windows Vista als Zielplattform anzugeben, da Windows SDK 8.1 für diese Plattformen abwärtskompatibel ist. Darüber hinaus müssen Sie den entsprechenden Wert für **_WIN32_WINNT** in „argetver.h“ definieren. Für Windows 7 ist dies "0x0601". Siehe [Ändern von WINVER und _WIN32_WINNT](../../porting/modifying-winver-and-win32-winnt.md)
 
    Sie können das in Visual Studio enthaltene Windows XP-Plattformtoolset installieren, um die aktuellen Versionen der Bibliotheken zum Erstellen von Windows XP- und Windows 2003-Serverprojekten zu verwenden. Informationen zum Herunterladen und Verwenden dieses Plattformtoolsets finden Sie unter [Konfigurieren von Programmen für Windows XP](../configuring-programs-for-windows-xp.md). Weitere Informationen zum Ändern des Plattformtoolsets finden Sie unter [Vorgehensweise: Ändern des Zielframeworks und des Plattformtoolsets](../how-to-modify-the-target-framework-and-platform-toolset.md).
 
-- **Platt Form Toolset**
+- **Plattformtoolset**
 
    Ermöglicht eine Ausrichtung des Projekts auf andere Versionen der Visual C++-Bibliotheken und des Compilers. Visual Studio C++ Projekte können entweder auf das von Visual Studio installierte Standard Toolset oder auf eines der Toolsets abzielen, die von mehreren früheren Versionen von Visual Studio installiert wurden. Hierzu zählen auch Toolsets, mit denen ausführbare Dateien erstellt werden können, die unter Windows XP ausgeführt werden können. Informationen zum Ändern des Plattformtoolsets finden Sie unter [How to: Modify the Target Framework and Platform Toolset (Vorgehensweise: Ändern des Zielframeworks und des Plattformtoolsets)](../how-to-modify-the-target-framework-and-platform-toolset.md).
 
-- **C++-sprach Standard**
+- **C++-Sprachstandard**
 
    Gibt an, welcher Sprachstandard verwendet werden soll. Der Standardwert ist/Std: c++ 14. Geben Sie/Std: c++ 17 an, um c++ 17-Features zu verwenden, oder/Std: c++ + latest, um c++ 20 oder andere experimentelle Features zu verwenden. Weitere Informationen finden Sie unter [/Std (angeben der Standard Version für die Sprache)](std-specify-language-standard-version.md) .
 
 ::: moniker-end
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
-Wenn Sie in Visual Studio 2015 und Visual Studio 2017 in **Projektmappen-Explorer**mit der rechten Maustaste auf einen Projekt Knoten klicken und **Eigenschaften**auswählen, werden auf der Eigenschaften Seite **Allgemein** unter dem Knoten **Konfigurations Eigenschaften** im linken Bereich zwei Eigenschaften Abschnitte angezeigt:
+Wenn Sie in Visual Studio 2015 und Visual Studio 2017 in **Projektmappen-Explorer** mit der rechten Maustaste auf einen Projekt Knoten klicken und **Eigenschaften** auswählen, werden auf der Eigenschaften Seite **Allgemein** unter dem Knoten **Konfigurations Eigenschaften** im linken Bereich zwei Eigenschaften Abschnitte angezeigt:
 
 - Allgemein
 
@@ -124,7 +124,7 @@ Wenn Sie in Visual Studio 2015 und Visual Studio 2017 in **Projektmappen-Explore
 
    Gibt für die Windows-Zielplattform die Version des Windows SDK an, mit dem Ihr Projekt erstellt wird. Wenn Sie eine C++-Workload mit dem Visual Studio-Installer installieren, werden auch die erforderlichen Teile des Windows SDK installiert. Wenn Sie auf Ihrem Computer über andere Versionen des Windows SDK verfügen, wird jede installierte Version der SDK Tools in der Dropdownliste angezeigt.
 
-   Verwenden Sie den Wert **8.1**, um Windows 7 oder Windows Vista als Zielplattform anzugeben, da Windows SDK 8.1 für diese Plattformen abwärtskompatibel ist. Darüber hinaus müssen Sie den entsprechenden Wert für **_WIN32_WINNT** in „argetver.h“ definieren. Für Windows 7 ist dies "0x0601". Siehe [Ändern von WINVER und _WIN32_WINNT](../../porting/modifying-winver-and-win32-winnt.md)
+   Verwenden Sie den Wert **8.1** , um Windows 7 oder Windows Vista als Zielplattform anzugeben, da Windows SDK 8.1 für diese Plattformen abwärtskompatibel ist. Darüber hinaus müssen Sie den entsprechenden Wert für **_WIN32_WINNT** in „argetver.h“ definieren. Für Windows 7 ist dies "0x0601". Siehe [Ändern von WINVER und _WIN32_WINNT](../../porting/modifying-winver-and-win32-winnt.md)
 
    Sie können das in Visual Studio enthaltene Windows XP-Plattformtoolset installieren, um die aktuellen Versionen der Bibliotheken zum Erstellen von Windows XP- und Windows 2003-Serverprojekten zu verwenden. Informationen zum Herunterladen und Verwenden dieses Plattformtoolsets finden Sie unter [Konfigurieren von Programmen für Windows XP](../configuring-programs-for-windows-xp.md). Weitere Informationen zum Ändern des Plattformtoolsets finden Sie unter [Vorgehensweise: Ändern des Zielframeworks und des Plattformtoolsets](../how-to-modify-the-target-framework-and-platform-toolset.md).
 
@@ -150,7 +150,7 @@ Wenn Sie in Visual Studio 2015 und Visual Studio 2017 in **Projektmappen-Explore
 
 - **Bei der Bereinigung zu löschende Erweiterungen**
 
-   Durch die Option **Bereinigen** (Menü **Build**) werden Dateien aus dem Zwischenverzeichnis gelöscht, in dem die Projektkonfiguration erstellt wurde. Dateien mit Erweiterungen, die durch diese Eigenschaft festgelegt werden, werden gelöscht, sobald **Bereinigen** ausgeführt bzw. eine Neuerstellung gestartet wurde. Zusätzlich zu Dateien, die über diese Erweiterungen verfügen und sich im Zwischenverzeichnis befinden, werden vom Buildsystem alle bekannten Ausgaben (einschließlich Zwischenausgaben wie OBJ-Dateien) des Builds unabhängig von ihrem Speicherort gelöscht. Sie können auch Platzhalterzeichen angeben.
+   Durch die Option **Bereinigen** (Menü **Build** ) werden Dateien aus dem Zwischenverzeichnis gelöscht, in dem die Projektkonfiguration erstellt wurde. Dateien mit Erweiterungen, die durch diese Eigenschaft festgelegt werden, werden gelöscht, sobald **Bereinigen** ausgeführt bzw. eine Neuerstellung gestartet wurde. Zusätzlich zu Dateien, die über diese Erweiterungen verfügen und sich im Zwischenverzeichnis befinden, werden vom Buildsystem alle bekannten Ausgaben (einschließlich Zwischenausgaben wie OBJ-Dateien) des Builds unabhängig von ihrem Speicherort gelöscht. Sie können auch Platzhalterzeichen angeben.
 
    Informationen zum programmgesteuerten Zugriff auf diese Eigenschaft finden Sie unter <xref:Microsoft.VisualStudio.VCProjectEngine.VCConfiguration.DeleteExtensionsOnClean%2A>.
 
@@ -160,7 +160,7 @@ Wenn Sie in Visual Studio 2015 und Visual Studio 2017 in **Projektmappen-Explore
 
    Sie können Projektmakros verwenden, um den Verzeichnispfad zu ändern. Siehe [Allgemeine Makros für Buildbefehle und-Eigenschaften](common-macros-for-build-commands-and-properties.md).
 
-- **Platt Form Toolset**
+- **Plattformtoolset**
 
    Ermöglicht eine Ausrichtung des Projekts auf andere Versionen der Visual C++-Bibliotheken und des Compilers. Visual Studio C++ Projekte können entweder auf das von Visual Studio installierte Standard Toolset oder auf eines der Toolsets abzielen, die von mehreren früheren Versionen von Visual Studio installiert wurden. Hierzu zählen auch Toolsets, mit denen ausführbare Dateien erstellt werden können, die unter Windows XP ausgeführt werden können. Informationen zum Ändern des Plattformtoolsets finden Sie unter [How to: Modify the Target Framework and Platform Toolset (Vorgehensweise: Ändern des Zielframeworks und des Plattformtoolsets)](../how-to-modify-the-target-framework-and-platform-toolset.md).
 
@@ -170,7 +170,7 @@ Wenn Sie in Visual Studio 2015 und Visual Studio 2017 in **Projektmappen-Explore
 
 ## <a name="project-defaults"></a>Projektstandards
 
-Die Eigenschaften im Abschnitt “Projektstandards“ stellen änderbare Standardeigenschaften dar. Die Definition für diese Eigenschaften befindet sich in den PROPS-Dateien unter *Installationsverzeichnis*\VC\VCProjectDefaults.
+Die Eigenschaften im Abschnitt “Projektstandards“ stellen änderbare Standardeigenschaften dar. Die Definition für diese Eigenschaften befindet sich in den PROPS-Dateien unter *Installationsverzeichnis* \VC\VCProjectDefaults.
 
 - **Konfigurationstyp**
 
@@ -220,7 +220,7 @@ Die Eigenschaften im Abschnitt “Projektstandards“ stellen änderbare Standar
 
    Gibt in verwalteten Projekten die Zielversion von .NET-Framework an.
 
-- **Optimierung des gesamten Programms**
+- **Optimierung des ganzen Programms**
 
    Legt die Verwendung der [/GL](gl-whole-program-optimization.md)-Compileroption und der [/LTCG](ltcg-link-time-code-generation.md)-Linkeroption fest. Dies ist standardmäßig für die Debugkonfiguration deaktiviert und für die Verkaufskonfiguration aktiviert.
 

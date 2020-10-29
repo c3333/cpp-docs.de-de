@@ -2,12 +2,12 @@
 title: Erstellen einer Android Native Activity-App
 ms.date: 10/17/2019
 ms.assetid: 884014b1-5208-45ec-b0da-ad0070d2c24d
-ms.openlocfilehash: f588c56acfd5c559e6b0bf1b8635e8b36c69548a
-ms.sourcegitcommit: a673f6a54cc97e3d4cd032b10aa8dce7f0539d39
+ms.openlocfilehash: 664729a920076839f5f9b4440768fe3adb846803
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "79469938"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924193"
 ---
 # <a name="create-an-android-native-activity-app"></a>Erstellen einer Android Native Activity-App
 
@@ -21,13 +21,13 @@ Vor der Erstellung einer Android-Anwendung mit nativer Aktivität müssen Sie si
 
 In diesem Tutorial erstellen Sie zunächst ein neues Android-Projekt mit nativer Aktivität. Anschließend erstellen Sie die Standard-App in einem Android-Emulator und führen sie in diesem aus.
 
-::: moniker range="vs-2017"
+::: moniker range="msvc-150"
 
-1. Wählen Sie in Visual Studio **Datei** > **neue** > **Projekt**aus.
+1. Wählen Sie in Visual Studio **Datei** > **neu** > **Projekt** aus.
 
-1. Wählen Sie im Dialogfeld **Neues Projekt** unter **Vorlagen**die Option **Visual C++**  > **plattformübergreifend**aus, und wählen Sie dann die Vorlage **native-Activity Application (Android)** aus.
+1. Wählen Sie im Dialogfeld **Neues Projekt** unter **Vorlagen** die Option **Visual C++** > **Plattformübergreifend** und dann die Vorlage **Native-Activity Application (Android)** aus.
 
-1. Geben Sie der App einen Namen wie etwa *MyAndroidApp*, und klicken Sie dann auf **OK**.
+1. Geben Sie der App einen Namen wie etwa *MyAndroidApp* , und klicken Sie dann auf **OK** .
 
    ![Erstellen eines Projekts](../cross-platform/media/cppmdd-newproject.png "Erstellen eines Native Activity-Projekts")
 
@@ -37,13 +37,13 @@ In diesem Tutorial erstellen Sie zunächst ein neues Android-Projekt mit nativer
 
 ::: moniker-end
 
-::: moniker range=">=vs-2019"
+::: moniker range=">=msvc-160"
 
-1. Wählen Sie in Visual Studio **Datei** > **neue** > **Projekt**aus.
+1. Wählen Sie in Visual Studio **Datei** > **neu** > **Projekt** aus.
 
-1. Wählen Sie im Dialogfeld **Neues Projekt erstellen** die Vorlage **Anwendung mit nativer Aktivität (Android)** aus, und klicken Sie dann auf **Weiter**.
+1. Wählen Sie im Dialogfeld **Neues Projekt erstellen** die Vorlage **Anwendung mit nativer Aktivität (Android)** aus, und klicken Sie dann auf **Weiter** .
 
-1. Geben Sie im Dialogfeld **Neues Projekt konfigurieren** einen Namen wie *MyAndroidApp* in **Projektname** ein, und klicken Sie dann auf **Erstellen**.
+1. Geben Sie im Dialogfeld **Neues Projekt konfigurieren** einen Namen wie *MyAndroidApp* in **Projektname** ein, und klicken Sie dann auf **Erstellen** .
 
    Visual Studio erstellt die neue Projektmappe und öffnet den Projektmappen-Explorer.
 
@@ -51,9 +51,9 @@ In diesem Tutorial erstellen Sie zunächst ein neues Android-Projekt mit nativer
 
 Die neue Android Native Activity-App-Projektmappe enthält zwei Projekte:
 
-- `MyAndroidApp.NativeActivity` enthält die Verweise und den Verbindungscode, damit Ihre App als eine systemeigene Aktivität auf Android ausgeführt werden kann. Die Implementierung der Einstiegspunkte aus dem Verbindungscode befindet sich in *main.cpp*. Vorkompilierte Header befinden sich in *pch.h*. Das Native Activity-App-Projekt wird in eine freigegebene Bibliotheksdatei *SO* kompiliert, die durch das Paketprojekt ausgewählt wird.
+- `MyAndroidApp.NativeActivity` enthält die Verweise und den Verbindungscode, damit Ihre App als eine systemeigene Aktivität auf Android ausgeführt werden kann. Die Implementierung der Einstiegspunkte aus dem Verbindungs Code finden Sie in der Datei " *Main. cpp* ". Vorkompilierte Header befinden sich in *pch.h* . Dieses native Activity-App-Projekt wird in eine freigegebene Bibliothek kompiliert *. Dies* ist die Datei, die vom Paket Erstellungs Projekt abgerufen wird.
 
-- `MyAndroidApp.Packaging` erstellt die *APK*-Datei für die Entwicklung auf einem Android-Gerät oder -Emulator. Dieses enthält die Ressourcen und die Datei *AndroidManifest.xml*, wo Sie Manifesteigenschaften festlegen. Es enthält zudem die Datei *build.xml*, die den Ant-Buildprozess steuert. Es ist standardmäßig als Startprojekt festgelegt, sodass es bereitgestellt und direkt in Visual Studio ausgeführt werden kann.
+- `MyAndroidApp.Packaging` erstellt die *APK* -Datei für die Bereitstellung auf einem Android-Gerät oder -Emulator. Diese enthält die Ressourcen und *AndroidManifest.xml* Datei, in der Sie die Manifestressourcen festlegen. Es enthält zudem die Datei *build.xml* , die den Ant-Buildprozess steuert. Es ist standardmäßig als Startprojekt festgelegt, sodass es bereitgestellt und direkt in Visual Studio ausgeführt werden kann.
 
 ## <a name="build-and-run-the-default-android-native-activity-app"></a>Generieren und Ausführen der standardmäßigen Android Native Activity-App
 
@@ -61,7 +61,7 @@ Erstellen und führen Sie die App aus, die durch die Vorlage generiert wurde, um
 
 ## <a name="to-build-and-run-the-default-native-activity-app"></a>So erstellen Sie die standardmäßige Native Activity-App und führen diese aus
 
-1. Falls die Plattform noch nicht ausgewählt ist, wählen Sie **x86** aus der Dropdownliste **Projektmappenplattformen** aus.
+1. Wenn Sie nicht bereits ausgewählt ist, wählen Sie in der Dropdown Liste Projektmappenplattformen die Option **x86** aus. **Solution Platforms**
 
      ![Dropdownliste für Lösungsplattformen mit x86-Auswahl](../cross-platform/media/cppmdd-rc-na-solution-x86.png "Dropdownliste für Lösungsplattformen mit x86-Auswahl")
 
@@ -69,13 +69,13 @@ Erstellen und führen Sie die App aus, die durch die Vorlage generiert wurde, um
 
 1. Wählen Sie auf der Menüleiste **Erstellen** > **Projektmappe erstellen** aus.
 
-     Das Fenster Ausgabe zeigt die Ausgabe des Buildprozesses für die zwei Projekte in der Projektmappe an.
+     Das Fenster "Ausgabe" zeigt die Ausgabe des Buildprozesses für die zwei Projekte in der Projektmappe an.
 
 1. Wählen Sie als Bereitstellungsziel eines der Android-Emulatorprofile aus.
 
      Wenn Sie andere Emulatoren installiert oder mit einem Android-Gerät verbunden haben, können Sie sie aus der Bereitstellungsziel-Dropdownliste auswählen.
 
-1. Drücken Sie **F5**, um mit dem Debuggen zu beginnen, oder **UMSCHALT**+**F5**, um ohne Debuggen zu beginnen.
+1. Drücken Sie **F5** , um das Debuggen zu starten **, oder drücken** + Sie **F5** , um ohne Debugging
 
    Die Standard-App sieht in einem Android-Emulator folgendermaßen aus.
 
@@ -83,6 +83,6 @@ Erstellen und führen Sie die App aus, die durch die Vorlage generiert wurde, um
 
    Visual Studio startet den Emulator, wobei das Laden und Bereitstellen Ihres Codes einige Sekunden in Anspruch nimmt. Nachdem Ihre App gestartet wurde, können Sie Haltepunkte festlegen und den Debugger verwenden, um den Code schrittweise zu durchlaufen, lokale Variablen zu prüfen und Werte anzuzeigen.
 
-1. Drücken Sie **UMSCHALT**+**ShiftF5**, um den Debugvorgang zu beenden.
+1. Drücken Sie **UMSCHALT** + **Taste F5** , um das Debugging zu verhindern.
 
    Der Emulator ist ein separater Prozess, der weiterhin ausgeführt wird. Sie können Ihren Code mehrfach auf demselben Emulator bearbeiten, kompilieren und bereitstellen.

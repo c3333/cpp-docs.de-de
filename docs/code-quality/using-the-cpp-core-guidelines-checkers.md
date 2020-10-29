@@ -5,12 +5,12 @@ ms.date: 07/27/2020
 ms.topic: conceptual
 dev_langs:
 - CPP
-ms.openlocfilehash: 8a9c09eba23e2db3c1929cf1e24163947cf015b9
-ms.sourcegitcommit: 6e55aeb538b1c39af754f82d6f7738a18f5aa031
+ms.openlocfilehash: a041ecd4053360ebfc0da198efe9a3decb73ffd2
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87389986"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924793"
 ---
 # <a name="use-the-c-core-guidelines-checkers"></a>Verwenden der Überprüfungen für C++ Core Guidelines
 
@@ -22,13 +22,13 @@ Die C++ Core Guidelines von Bjarne Stroustrup und anderen erstellt, sind ein Lei
 
 ## <a name="enable-the-c-core-check-guidelines-in-code-analysis"></a>Aktivieren der C++ Core Check Richtlinien in der Code Analyse
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 Eine Teilmenge der C++ Core Check Regeln ist im systemeigenen empfohlenen Microsoft-Regelsatz enthalten. Dies ist der Regelsatz, der standardmäßig ausgeführt wird, wenn die Code Analyse aktiviert ist.
 
 ### <a name="to-enable-code-analysis-on-your-project"></a>So aktivieren Sie die Code Analyse für Ihr Projekt
 
-1. Öffnen Sie das Dialogfeld **Eigenschaften Seiten** für das Projekt.
+1. Öffnen Sie das Dialogfeld  **Eigenschaften Seiten** für das Projekt.
 
 1. Wählen Sie die **Eigenschaften Seite Konfigurations Eigenschaften** > **Code Analyse** aus.
 
@@ -41,13 +41,13 @@ Eine Teilmenge der C++ Core Check Regeln ist im systemeigenen empfohlenen Micros
 ![Dropdown für zusätzliche C++ Core Check Regelsätze](media/cppcorecheck_codeanalysis_extensions.png)
 
 ::: moniker-end
-::: moniker range=">=vs-2019"
+::: moniker range=">=msvc-160"
 
 Eine Teilmenge der C++ Core Check Regeln ist im systemeigenen empfohlenen Microsoft-Regelsatz enthalten. Dies ist der Regelsatz, der standardmäßig ausgeführt wird, wenn die Microsoft-Code Analyse aktiviert ist.
 
 ### <a name="to-enable-code-analysis-on-your-project"></a>So aktivieren Sie die Code Analyse für Ihr Projekt:
 
-1. Öffnen Sie das Dialogfeld **Eigenschaften Seiten** für das Projekt.
+1. Öffnen Sie das Dialogfeld  **Eigenschaften Seiten** für das Projekt.
 
 1. Wählen Sie die **Eigenschaften Seite Konfigurations Eigenschaften** > **Code Analyse** aus.
 
@@ -57,11 +57,11 @@ Sie haben auch die Möglichkeit, alle unterstützten C++ Core Check Regeln auszu
 
 ### <a name="to-enable-additional-core-check-rules"></a>So aktivieren Sie zusätzliche kernregel Regeln
 
-1. Öffnen Sie das Dialogfeld **Eigenschaften Seiten** für das Projekt.
+1. Öffnen Sie das Dialogfeld  **Eigenschaften Seiten** für das Projekt.
 
 1. Wählen Sie die **Eigenschaften Seite Konfigurations Eigenschaften** > **Code Analyse** > **Microsoft** aus.
 
-1. Öffnen Sie die Dropdown Liste **aktive Regeln** , und wählen Sie **mehrere Regelsätze**auswählen aus.
+1. Öffnen Sie die Dropdown Liste **aktive Regeln** , und wählen Sie **mehrere Regelsätze** auswählen aus.
 
 1. Wählen Sie im Dialogfeld **Regelsätze hinzufügen oder entfernen** die Regelsätze aus, die Sie einschließen möchten.
 
@@ -116,43 +116,43 @@ Die C++ Core Guidelines sind vorhanden, damit Sie besseren und sichereren Code s
 
 Wenn der C++ Core Guidelines Prüfung neue Regeln hinzugefügt werden, kann sich die Anzahl der Warnungen, die für bereits vorhandenen Code erzeugt werden, erhöhen. Sie können vordefinierte Regelsätze verwenden, um zu filtern, welche Arten von Regeln aktiviert werden sollen. Referenz Artikel zu den meisten Regeln finden Sie unter [Visual Studio C++ Core Check Referenz](code-analysis-for-cpp-corecheck.md).
 
-- **Arithmetische Regeln**: Regeln zum Erkennen von arithmetischen [Überlauf](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#Res-overflow) [-, signierten, nicht signierten Vorgängen](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#Res-unsigned)und [Bitmanipulation](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#Res-nonnegative). <sup>15,6</sup>
+- **Arithmetische Regeln** : Regeln zum Erkennen von arithmetischen [Überlauf](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#Res-overflow) [-, signierten, nicht signierten Vorgängen](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#Res-unsigned)und [Bitmanipulation](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#Res-nonnegative). <sup>15,6</sup>
 
-- Begrenzungs **Regeln**: erzwingen Sie das [Rahmenprofil der C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#probounds-bounds-safety-profile). <sup>15,3</sup>
+- Begrenzungs **Regeln** : erzwingen Sie das [Rahmenprofil der C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#probounds-bounds-safety-profile). <sup>15,3</sup>
 
-- **Klassenregeln**: einige Regeln, die sich auf die ordnungsgemäße Verwendung von speziellen Member-Funktionen und virtuellen Spezifikationen konzentrieren. Dabei handelt es sich um eine Teilmenge der Überprüfungen, die für [Klassen und Klassenhierarchien](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#S-class)empfohlen werden. <sup>15,5</sup>
+- **Klassenregeln** : einige Regeln, die sich auf die ordnungsgemäße Verwendung von speziellen Member-Funktionen und virtuellen Spezifikationen konzentrieren. Dabei handelt es sich um eine Teilmenge der Überprüfungen, die für [Klassen und Klassenhierarchien](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#S-class)empfohlen werden. <sup>15,5</sup>
 
-- Parallelitäts **Regeln**: eine einzelne Regel, die fehlerhafte Wächter Objekt Deklarationen abfängt. Weitere Informationen finden Sie unter [Richtlinien im Zusammenhang mit](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#S-concurrency)der Parallelität. <sup>15,5</sup>
+- Parallelitäts **Regeln** : eine einzelne Regel, die fehlerhafte Wächter Objekt Deklarationen abfängt. Weitere Informationen finden Sie unter [Richtlinien im Zusammenhang mit](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#S-concurrency)der Parallelität. <sup>15,5</sup>
 
-- **Regeln für konstantenregeln**: erzwingen Sie [die Überprüfung auf Konstanten aus der C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#con-constants-and-immutability). <sup>15,3</sup>
+- **Regeln für konstantenregeln** : erzwingen Sie [die Überprüfung auf Konstanten aus der C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#con-constants-and-immutability). <sup>15,3</sup>
 
-- **Deklarations Regeln**: einige Regeln aus den [Schnittstellen Richtlinien](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#S-interfaces) , die sich darauf konzentrieren, wie globale Variablen deklariert werden. <sup>15,5</sup>
+- **Deklarations Regeln** : einige Regeln aus den [Schnittstellen Richtlinien](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#S-interfaces) , die sich darauf konzentrieren, wie globale Variablen deklariert werden. <sup>15,5</sup>
 
-- **Enum-Regeln**: diese Regeln erzwingen [Aufzählungs bezogene Überprüfungen aus dem C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#S-enum). <sup>16,3</sup>
+- **Enum-Regeln** : diese Regeln erzwingen [Aufzählungs bezogene Überprüfungen aus dem C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#S-enum). <sup>16,3</sup>
 
 - **Experimentelle Regeln** Dies sind experimentelle C++ Core Check Regeln, die nützlich sind, aber nicht für die alltägliche Verwendung bereit sind. Probieren Sie es aus, und geben Sie uns [Feedback](https://developercommunity.visualstudio.com/content/idea/post.html?space=62). <sup>16,0</sup>
 
-- **Funktions Regeln**: zwei Überprüfungen, die bei der Annahme des **`noexcept`** Spezifizierers helfen. Sie sind Teil der Richtlinien für den [klaren Funktions Entwurf und die Implementierung](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#S-functions). <sup>15,5</sup>
+- **Funktions Regeln** : zwei Überprüfungen, die bei der Annahme des **`noexcept`** Spezifizierers helfen. Sie sind Teil der Richtlinien für den [klaren Funktions Entwurf und die Implementierung](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#S-functions). <sup>15,5</sup>
 
-- **Gsl-Regeln**: diese Regeln erzwingen Überprüfungen im Zusammenhang mit der [Unterstützungs Bibliothek für Richtlinien aus der C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#S-gsl). <sup>15,7</sup>
+- **Gsl-Regeln** : diese Regeln erzwingen Überprüfungen im Zusammenhang mit der [Unterstützungs Bibliothek für Richtlinien aus der C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#S-gsl). <sup>15,7</sup>
 
-- **Lebensdauer Regeln**: diese Regeln erzwingen das [Lebensdauer Profil der C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#prolifetime-lifetime-safety-profile). <sup>15,7</sup>
+- **Lebensdauer Regeln** : diese Regeln erzwingen das [Lebensdauer Profil der C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#prolifetime-lifetime-safety-profile). <sup>15,7</sup>
 
-- **Besitzer Zeiger Regeln**: erzwingen [Sie Ressourcen Verwaltungs Prüfungen im Zusammenhang mit \<T> dem Besitzer aus der C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r-resource-management).<sup> 15,3</sup>
+- **Besitzer Zeiger Regeln** : erzwingen [Sie Ressourcen Verwaltungs Prüfungen im Zusammenhang mit \<T> dem Besitzer aus der C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r-resource-management). <sup> 15,3</sup>
 
-- **Rohzeiger Regeln**: erzwingen [Sie Ressourcen Verwaltungs Prüfungen im Zusammenhang mit unformatierten Zeigern aus der C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r-resource-management). <sup>15,3</sup>
+- **Rohzeiger Regeln** : erzwingen [Sie Ressourcen Verwaltungs Prüfungen im Zusammenhang mit unformatierten Zeigern aus der C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r-resource-management). <sup>15,3</sup>
 
-- Frei **gegebene Zeiger Regeln**: Sie sind Teil der Erzwingung von Richtlinien zur [Ressourcenverwaltung](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#S-resource) . <sup>15,5</sup> wir haben einige Regeln hinzugefügt, die für die Übergabe von freigegebenen Zeigern an Funktionen und die Verwendung von lokal verwendet werden.
+- Frei **gegebene Zeiger Regeln** : Sie sind Teil der Erzwingung von Richtlinien zur [Ressourcenverwaltung](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#S-resource) . <sup>15,5</sup> wir haben einige Regeln hinzugefügt, die für die Übergabe von freigegebenen Zeigern an Funktionen und die Verwendung von lokal verwendet werden.
 
-- **STL-Regeln**: diese Regeln erzwingen Überprüfungen im Zusammenhang mit der [C++-Standard Bibliothek (STL) aus dem C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#S-stdlib). <sup>15,7</sup>
+- **STL-Regeln** : diese Regeln erzwingen Überprüfungen im Zusammenhang mit der [C++-Standard Bibliothek (STL) aus dem C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#S-stdlib). <sup>15,7</sup>
 
-- **Stilregeln**: eine einfache, aber wichtige Überprüfung, die die Verwendung von [goto](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#Res-goto)verbietet. <sup>15,5</sup> es ist der erste Schritt, den Codierungsstil und die Verwendung von Ausdrücken und Anweisungen in C++ zu verbessern.
+- **Stilregeln** : eine einfache, aber wichtige Überprüfung, die die Verwendung von [goto](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#Res-goto)verbietet. <sup>15,5</sup> es ist der erste Schritt, den Codierungsstil und die Verwendung von Ausdrücken und Anweisungen in C++ zu verbessern.
 
-- **Typregeln**: erzwingen Sie das [Typprofil der C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#prosafety-type-safety-profile). <sup>15,3</sup>
+- **Typregeln** : erzwingen Sie das [Typprofil der C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#prosafety-type-safety-profile). <sup>15,3</sup>
 
-- **Eindeutige Zeiger Regeln**: erzwingen [Sie Ressourcen Verwaltungs Prüfungen in Bezug auf Typen mit eindeutiger Zeiger Semantik aus der C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r-resource-management). <sup>15,3</sup>
+- **Eindeutige Zeiger Regeln** : erzwingen [Sie Ressourcen Verwaltungs Prüfungen in Bezug auf Typen mit eindeutiger Zeiger Semantik aus der C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r-resource-management). <sup>15,3</sup>
 
-- **C++ Core Check Regeln**: Dieser Regelsatz enthält alle derzeit implementierten Überprüfungen des [C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c-core-guidelines), mit Ausnahme der experimentellen Regeln.
+- **C++ Core Check Regeln** : Dieser Regelsatz enthält alle derzeit implementierten Überprüfungen des [C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c-core-guidelines), mit Ausnahme der experimentellen Regeln.
 
 <sup>15,3</sup> diese Regeln wurden zuerst in Visual Studio 2017, Version 15,3 \, angezeigt.
 <sup>15,5</sup> diese Regeln wurden zuerst in Visual Studio 2017, Version 15,5 \, angezeigt.
@@ -163,14 +163,14 @@ Wenn der C++ Core Guidelines Prüfung neue Regeln hinzugefügt werden, kann sich
 
 Sie können Warnungen auf nur eine oder mehrere Gruppen beschränken. Die systemeigenen empfohlenen **Minimal** -und systemeigenen **empfohlenen** Regelsätze umfassen C++ Core Check Regeln und andere vorab Überprüfungen.
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
-Öffnen Sie das Dialogfeld " **Projekteigenschaften** ", um die verfügbaren Regelsätze anzuzeigen. Wählen Sie im Dialogfeld Eigenschaften **Seiten** die **Eigenschaften**  >  Seite allgemeine**Code Analyse**für die Konfiguration aus  >  **General** . Öffnen Sie dann im Kombinations Feld **Regelsätze** die Dropdown Liste, um die verfügbaren Regelsätze anzuzeigen. Wählen Sie **mehrere Regelsätze**auswählen aus, um eine benutzerdefinierte Kombination von Regelsätzen zu erstellen. Im Dialogfeld **Regelsätze hinzufügen oder entfernen** werden die Regeln aufgelistet, aus denen Sie auswählen können. Weitere Informationen zum Verwenden von Regelsätzen in Visual Studio finden Sie unter [Verwenden von Regelsätzen zum Angeben der zu testenden C++ Regeln](using-rule-sets-to-specify-the-cpp-rules-to-run.md).
+Öffnen Sie das Dialogfeld " **Projekteigenschaften** ", um die verfügbaren Regelsätze anzuzeigen. Wählen Sie im Dialogfeld Eigenschaften **Seiten** die **Eigenschaften**  >  Seite allgemeine **Code Analyse** für die Konfiguration aus  >  **General** . Öffnen Sie dann im Kombinations Feld **Regelsätze** die Dropdown Liste, um die verfügbaren Regelsätze anzuzeigen. Wählen Sie **mehrere Regelsätze** auswählen aus, um eine benutzerdefinierte Kombination von Regelsätzen zu erstellen. Im Dialogfeld **Regelsätze hinzufügen oder entfernen** werden die Regeln aufgelistet, aus denen Sie auswählen können. Weitere Informationen zum Verwenden von Regelsätzen in Visual Studio finden Sie unter [Verwenden von Regelsätzen zum Angeben der zu testenden C++ Regeln](using-rule-sets-to-specify-the-cpp-rules-to-run.md).
 
 ::: moniker-end
-::: moniker range=">=vs-2019"
+::: moniker range=">=msvc-160"
 
-Öffnen Sie das Dialogfeld " **Projekteigenschaften** ", um die verfügbaren Regelsätze anzuzeigen. Wählen Sie im Dialogfeld Eigenschaften **Seiten** die **Eigenschaften Seite Konfigurations Eigenschaften**  >  **Code Analyse**  >  **Microsoft** aus. Öffnen Sie dann die Dropdown Liste im Kombinations Feld **aktive Regeln** , um die verfügbaren Regelsätze anzuzeigen. Wählen Sie **mehrere Regelsätze**auswählen aus, um eine benutzerdefinierte Kombination von Regelsätzen zu erstellen. Im Dialogfeld **Regelsätze hinzufügen oder entfernen** werden die Regeln aufgelistet, aus denen Sie auswählen können. Weitere Informationen zum Verwenden von Regelsätzen in Visual Studio finden Sie unter [Verwenden von Regelsätzen zum Angeben der zu testenden C++ Regeln](using-rule-sets-to-specify-the-cpp-rules-to-run.md).
+Öffnen Sie das Dialogfeld " **Projekteigenschaften** ", um die verfügbaren Regelsätze anzuzeigen. Wählen Sie im Dialogfeld Eigenschaften **Seiten** die **Eigenschaften Seite Konfigurations Eigenschaften**  >  **Code Analyse**  >  **Microsoft** aus. Öffnen Sie dann die Dropdown Liste im Kombinations Feld **aktive Regeln** , um die verfügbaren Regelsätze anzuzeigen. Wählen Sie **mehrere Regelsätze** auswählen aus, um eine benutzerdefinierte Kombination von Regelsätzen zu erstellen. Im Dialogfeld **Regelsätze hinzufügen oder entfernen** werden die Regeln aufgelistet, aus denen Sie auswählen können. Weitere Informationen zum Verwenden von Regelsätzen in Visual Studio finden Sie unter [Verwenden von Regelsätzen zum Angeben der zu testenden C++ Regeln](using-rule-sets-to-specify-the-cpp-rules-to-run.md).
 
 ::: moniker-end
 
@@ -196,7 +196,7 @@ Diese Makros entsprechen den Regelsätzen und werden in eine durch Leerzeichen g
 #pragma warning(default: CPPCORECHECK_CONST_WARNINGS)
 ```
 
-## <a name="attributes"></a>Attributes
+## <a name="attributes"></a>Attribute
 
 Der Microsoft C++-Compiler hat eingeschränkte Unterstützung für das- `[[gsl::suppress]]` Attribut. Sie kann verwendet werden, um Warnungen für Ausdrucks-und Block Anweisungen innerhalb von Funktionen zu unterdrücken.
 
@@ -224,15 +224,15 @@ Der Microsoft C++-Compiler hat eingeschränkte Unterstützung für das- `[[gsl::
 
 Anstelle #Pragmas können Sie die Befehlszeilenoptionen auf der Eigenschaften Seite der Datei verwenden, um Warnungen für ein Projekt oder eine einzelne Datei zu unterdrücken. So deaktivieren Sie z. b. die Warnung C26400 für eine Datei:
 
-1. Klicken Sie mit der rechten Maustaste auf **Projektmappen-Explorer** , und wählen Sie **Eigenschaften**aus.
+1. Klicken Sie mit der rechten Maustaste auf **Projektmappen-Explorer** , und wählen Sie **Eigenschaften** aus.
 
 1. Wählen Sie im Dialogfeld Eigenschaften **Seiten** die **Eigenschaften Seite Konfigurations Eigenschaften**  >  **C/C++-**  >  **Befehlszeile** aus.
 
 1. Fügen Sie im Bearbeitungsfeld **zusätzliche Optionen** hinzu *`/wd26400`* .
 
-Sie können die Befehlszeilenoption verwenden, um die gesamte Code Analyse für eine Datei temporär zu deaktivieren, indem Sie angeben **`/analyze-`** . Sie sehen eine Warnung *D9025 Überschreiben von "/Analyze" mit "/Analyze-"*, die Sie daran erinnert, die Code Analyse später erneut zu aktivieren.
+Sie können die Befehlszeilenoption verwenden, um die gesamte Code Analyse für eine Datei temporär zu deaktivieren, indem Sie angeben **`/analyze-`** . Sie sehen eine Warnung *D9025 Überschreiben von "/Analyze" mit "/Analyze-"* , die Sie daran erinnert, die Code Analyse später erneut zu aktivieren.
 
-## <a name="enable-the-c-core-guidelines-checker-on-specific-project-files"></a><a name="corecheck_per_file"></a>Aktivieren der C++ Core Guidelines Prüfung für bestimmte Projektdateien
+## <a name="enable-the-c-core-guidelines-checker-on-specific-project-files"></a><a name="corecheck_per_file"></a> Aktivieren der C++ Core Guidelines Prüfung für bestimmte Projektdateien
 
 Manchmal ist es hilfreich, eine fokussierte Code Analyse durchzuführen und die Visual Studio-IDE weiterhin zu verwenden. Verwenden Sie das folgende Beispielszenario für große Projekte. Sie kann die Buildzeit sparen und das Filtern von Ergebnissen vereinfachen:
 
@@ -246,9 +246,9 @@ Manchmal ist es hilfreich, eine fokussierte Code Analyse durchzuführen und die 
 
 1. Wechseln Sie zu der Datei, die Sie mit der C++ Core Guidelines Prüfung analysieren möchten, und öffnen Sie die zugehörigen Eigenschaften.
 
-1. Wählen Sie **Konfigurations Eigenschaften**  >  **C/C++**  >  **Befehlszeile**  >  **zusätzliche Optionen** aus, und fügen Sie hinzu.*`/analyze:plugin EspXEngine.dll`*
+1. Wählen Sie **Konfigurations Eigenschaften**  >  **C/C++**  >  **Befehlszeile**  >  **zusätzliche Optionen** aus, und fügen Sie hinzu. *`/analyze:plugin EspXEngine.dll`*
 
-1. Deaktivieren Sie die Verwendung des vorkompilierten Headers (**Konfigurations Eigenschaften**  >  : vorkompilierte**C/C++-**  >  **Header**). Dies ist erforderlich, da das Erweiterungsmodul möglicherweise versucht, seine internen Informationen aus dem vorkompilierten Header (PCH) zu lesen. Wenn das PCH mit Standard Projektoptionen kompiliert wurde, ist es nicht kompatibel.
+1. Deaktivieren Sie die Verwendung des vorkompilierten Headers ( **Konfigurations Eigenschaften**  >  : vorkompilierte **C/C++-**  >  **Header** ). Dies ist erforderlich, da das Erweiterungsmodul möglicherweise versucht, seine internen Informationen aus dem vorkompilierten Header (PCH) zu lesen. Wenn das PCH mit Standard Projektoptionen kompiliert wurde, ist es nicht kompatibel.
 
 1. Erstellen Sie das Projekt neu. Die allgemeinen PREfast-Überprüfungen sollten für alle Dateien ausgeführt werden. Da die C++ Core Guidelines Prüfung nicht standardmäßig aktiviert ist, sollte Sie nur in der Datei ausgeführt werden, die für deren Verwendung konfiguriert ist.
 
@@ -298,21 +298,21 @@ Wenn Sie ein Buildsystem verwenden, das nicht auf MSBuild beruht, können Sie di
 Die Code Analyse erfordert einige Umgebungsvariablen und Compilerbefehlszeilenoptionen. Wir empfehlen Ihnen die Verwendung der **native Tools-Eingabe** Aufforderungs Umgebung, sodass Sie nicht nach bestimmten Pfaden für den Compiler suchen müssen, Verzeichnisse einschließen usw.
 
 - **Umgebungsvariablen**
-  - `set esp.extensions=cppcorecheck.dll`Dies weist die Engine an, das C++ Core Guidelines-Modul zu laden.
-  - `set esp.annotationbuildlevel=ignore`Dadurch wird die Logik zum Verarbeiten von Sal-Anmerkungen deaktiviert. Anmerkungen wirken sich nicht auf die Code Analyse im C++ Core Guidelines Checker aus, ihre Verarbeitung dauert jedoch Zeit (manchmal sehr lange). Diese Einstellung ist optional, wird jedoch dringend empfohlen.
-  - `set caexcludepath=%include%`Es wird dringend empfohlen, Warnungen zu deaktivieren, die für Standard Header ausgelöst werden. Hier können Sie weitere Pfade hinzufügen, z. b. den Pfad zu den allgemeinen Headern in Ihrem Projekt.
+  - `set esp.extensions=cppcorecheck.dll` Dies weist die Engine an, das C++ Core Guidelines-Modul zu laden.
+  - `set esp.annotationbuildlevel=ignore` Dadurch wird die Logik zum Verarbeiten von Sal-Anmerkungen deaktiviert. Anmerkungen wirken sich nicht auf die Code Analyse im C++ Core Guidelines Checker aus, ihre Verarbeitung dauert jedoch Zeit (manchmal sehr lange). Diese Einstellung ist optional, wird jedoch dringend empfohlen.
+  - `set caexcludepath=%include%` Es wird dringend empfohlen, Warnungen zu deaktivieren, die für Standard Header ausgelöst werden. Hier können Sie weitere Pfade hinzufügen, z. b. den Pfad zu den allgemeinen Headern in Ihrem Projekt.
 
 - **Befehlszeilenoptionen**
-  - **`/analyze`** Aktiviert die Code Analyse (Beachten Sie auch **`/analyze:only`** und **`/analyze:quiet`** ).
+  - **`/analyze`**  Aktiviert die Code Analyse (Beachten Sie auch **`/analyze:only`** und **`/analyze:quiet`** ).
   - **`/analyze:plugin EspXEngine.dll`** Mit dieser Option wird die Engine für die Code Analyse Erweiterungen in den PREfast-Wert geladen. Diese Engine lädt wiederum den C++ Core Guidelines Checker.
 
 ## <a name="use-the-guideline-support-library"></a>Verwenden der Unterstützungs Bibliothek für Richtlinien
 
 Die Richtlinien-Unterstützungs Bibliothek (GSL) soll Ihnen helfen, die grundlegenden Richtlinien zu befolgen. Die GSL enthält Definitionen, mit denen Sie fehleranfällige Konstrukte durch sicherere Alternativen ersetzen können. Beispielsweise können Sie ein `T*, length` Parameter paar durch den `span<T>` Typ ersetzen. Die GSL ist unter verfügbar [http://www.nuget.org/packages/Microsoft.Gsl](https://www.nuget.org/packages/Microsoft.Gsl) . Die Bibliothek ist Open Source, sodass Sie die Quellen anzeigen, Kommentare erstellen oder mitwirken können. Das Projekt finden Sie unter [https://github.com/Microsoft/GSL](https://github.com/Microsoft/GSL) .
 
-::: moniker range="vs-2015"
+::: moniker range="msvc-140"
 
-## <a name="use-the-c-core-check-guidelines-in-visual-studio-2015-projects"></a><a name="vs2015_corecheck"></a>Verwenden der C++ Core Check-Richtlinien in Visual Studio 2015-Projekten
+## <a name="use-the-c-core-check-guidelines-in-visual-studio-2015-projects"></a><a name="vs2015_corecheck"></a> Verwenden der C++ Core Check-Richtlinien in Visual Studio 2015-Projekten
 
 Wenn Sie Visual Studio 2015 verwenden, werden die C++ Core Check Code Analyse-Regelsätze standardmäßig nicht installiert. Bevor Sie die C++ Core Check Code Analysetools in Visual Studio 2015 aktivieren können, sind zusätzliche Schritte erforderlich. Microsoft bietet Unterstützung für Visual Studio 2015-Projekte mithilfe eines nuget-Pakets. Das Paket heißt "Microsoft. cppcorecheck" und ist unter verfügbar [http://www.nuget.org/packages/Microsoft.CppCoreCheck](https://www.nuget.org/packages/Microsoft.CppCoreCheck) . Für dieses Paket ist mindestens Visual Studio 2015 mit installiertem Update 1 erforderlich.
 
@@ -322,7 +322,7 @@ Aufgrund der Art und Weise, wie die Code Analyse Regeln innerhalb von Visual Stu
 
 ### <a name="to-add-the-microsoftcppcorecheck-package-to-your-project-in-visual-studio-2015"></a>So fügen Sie dem Projekt das Microsoft. cppcorecheck-Paket in Visual Studio 2015 hinzu
 
-1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf, um das Kontextmenü Ihres Projekts in der Projekt Mappe zu öffnen, der Sie das Paket hinzufügen möchten. Wählen Sie **nuget-Pakete verwalten** , um den **nuget-Paket-Manager**zu öffnen.
+1. Klicken Sie in **Projektmappen-Explorer** mit der rechten Maustaste auf, um das Kontextmenü Ihres Projekts in der Projekt Mappe zu öffnen, der Sie das Paket hinzufügen möchten. Wählen Sie **nuget-Pakete verwalten** , um den **nuget-Paket-Manager** zu öffnen.
 
 1. Suchen Sie im Fenster **nuget-Paket-Manager** nach Microsoft. cppcorecheck.
 

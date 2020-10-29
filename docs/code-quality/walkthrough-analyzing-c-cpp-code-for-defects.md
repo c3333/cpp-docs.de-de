@@ -8,12 +8,12 @@ helpviewer_keywords:
 - code analysis, walkthroughs
 - code, analyzing C/C++
 - code analysis tool, walkthroughs
-ms.openlocfilehash: 65da18f5f6d1972276f1cb8e306e82314282e40a
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: bb81ca376651c17c760ee776510303efaa13fd9a
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87227711"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924777"
 ---
 # <a name="walkthrough-analyzing-cc-code-for-defects"></a>Exemplarische Vorgehensweise: Analysieren von C/C++-Code auf Fehler
 
@@ -35,25 +35,25 @@ In dieser exemplarischen Vorgehensweise gehen Sie wie folgt vor:
 
 ### <a name="to-run-code-defect-analysis-on-native-code"></a>So führen Sie die Code Fehleranalyse für nativen Code aus
 
-::: moniker range=">=vs-2019"
+::: moniker range=">=msvc-160"
 
 1. Öffnen Sie die CppDemo-Projekt Mappe in Visual Studio.
 
-     Die CppDemo-Lösung füllt nun **Projektmappen-Explorer**auf.
+     Die CppDemo-Lösung füllt nun **Projektmappen-Explorer** auf.
 
-1. Wählen Sie im Menü **Erstellen** die Option Projekt Mappe **neu erstellen**aus.
+1. Wählen Sie im Menü **Erstellen** die Option Projekt Mappe **neu erstellen** aus.
 
      Die Lösung wird ohne Fehler oder Warnungen erstellt.
 
-1. Wählen Sie in **Projektmappen-Explorer**das Projekt codemängel aus.
+1. Wählen Sie in **Projektmappen-Explorer** das Projekt codemängel aus.
 
-1. Klicken Sie im Menü **Projekt** auf **Eigenschaften**.
+1. Klicken Sie im Menü **Projekt** auf **Eigenschaften** .
 
      Das Dialogfeld **Codedefekte-Eigenschaften Seiten** wird angezeigt.
 
 1. Wählen Sie die Eigenschaften Seite **Code Analyse** aus.
 
-1. Ändern Sie die Eigenschaft **Code Analyse für Build aktivieren** in **Ja**. Klicken Sie auf **OK**, um die Änderungen zu speichern.
+1. Ändern Sie die Eigenschaft **Code Analyse für Build aktivieren** in **Ja** . Klicken Sie auf **OK** , um die Änderungen zu speichern.
 
 1. Erstellen Sie das Projekt "codemängel" neu.
 
@@ -61,28 +61,28 @@ In dieser exemplarischen Vorgehensweise gehen Sie wie folgt vor:
 
 ::: moniker-end
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 1. Öffnen Sie die CppDemo-Projekt Mappe in Visual Studio.
 
-     Die CppDemo-Lösung füllt nun **Projektmappen-Explorer**auf.
+     Die CppDemo-Lösung füllt nun **Projektmappen-Explorer** auf.
 
-1. Wählen Sie im Menü **Erstellen** die Option Projekt Mappe **neu erstellen**aus.
+1. Wählen Sie im Menü **Erstellen** die Option Projekt Mappe **neu erstellen** aus.
 
      Die Lösung wird ohne Fehler oder Warnungen erstellt.
 
      > [!NOTE]
      > In Visual Studio 2017 wird möglicherweise eine falsche Warnung `E1097 unknown attribute "no_init_all"` in der IntelliSense-Engine angezeigt. Sie können diese Warnung problemlos ignorieren.
 
-1. Wählen Sie in **Projektmappen-Explorer**das Projekt codemängel aus.
+1. Wählen Sie in **Projektmappen-Explorer** das Projekt codemängel aus.
 
-1. Klicken Sie im Menü **Projekt** auf **Eigenschaften**.
+1. Klicken Sie im Menü **Projekt** auf **Eigenschaften** .
 
      Das Dialogfeld **Codedefekte-Eigenschaften Seiten** wird angezeigt.
 
 1. Wählen Sie die Eigenschaften Seite **Code Analyse** aus.
 
-1. Aktivieren Sie das Kontrollkästchen **Code Analyse bei Build aktivieren** . Klicken Sie auf **OK**, um die Änderungen zu speichern.
+1. Aktivieren Sie das Kontrollkästchen **Code Analyse bei Build aktivieren** . Klicken Sie auf **OK** , um die Änderungen zu speichern.
 
 1. Erstellen Sie das Projekt "codemängel" neu.
 
@@ -92,9 +92,9 @@ In dieser exemplarischen Vorgehensweise gehen Sie wie folgt vor:
 
 ### <a name="to-analyze-code-defect-warnings"></a>So analysieren Sie Code Fehler Warnungen
 
-1. Wählen Sie im Menü **Ansicht** die Option **Fehlerliste**aus.
+1. Wählen Sie im Menü **Ansicht** die Option **Fehlerliste** aus.
 
-     Dieses Menü Element ist möglicherweise nicht sichtbar. Dies hängt von dem Entwickler Profil ab, das Sie in Visual Studio ausgewählt haben. Möglicherweise müssen Sie auf **andere Fenster** im Menü **Ansicht** zeigen und dann auf **Fehlerliste**klicken.
+     Dieses Menü Element ist möglicherweise nicht sichtbar. Dies hängt von dem Entwickler Profil ab, das Sie in Visual Studio ausgewählt haben. Möglicherweise müssen Sie auf **andere Fenster** im Menü **Ansicht** zeigen und dann auf **Fehlerliste** klicken.
 
 1. Doppelklicken Sie im Fenster **Fehlerliste** auf die folgende Warnung:
 
@@ -108,7 +108,7 @@ In dieser exemplarischen Vorgehensweise gehen Sie wie folgt vor:
    if (SUCCEEDED(ReadUserAccount()))
    ```
 
-1. Doppelklicken Sie im **Fehlerliste**auf die folgende Warnung:
+1. Doppelklicken Sie im **Fehlerliste** auf die folgende Warnung:
 
      C6282: Falscher Operator: Zuweisung einer Konstanten im booleschen Kontext. Verwenden Sie stattdessen "= =".
 
@@ -128,31 +128,31 @@ In dieser exemplarischen Vorgehensweise gehen Sie wie folgt vor:
 
 ### <a name="to-enable-the-source-code-annotation-warnings-in-annotationc"></a>So aktivieren Sie die Warnungen der Quell Code Anmerkung in der Anmerkung. c
 
-::: moniker range=">=vs-2019"
+::: moniker range=">=msvc-160"
 
 1. Wählen Sie in Projektmappen-Explorer das Projekt Annotations aus.
 
-1. Klicken Sie im Menü **Projekt** auf **Eigenschaften**.
+1. Klicken Sie im Menü **Projekt** auf **Eigenschaften** .
 
      Das Dialogfeld **Annotations-Eigenschaften Seiten** wird angezeigt.
 
 1. Wählen Sie die Eigenschaften Seite **Code Analyse** aus.
 
-1. Ändern Sie die Eigenschaft **Code Analyse für Build aktivieren** in **Ja**. Klicken Sie auf **OK**, um die Änderungen zu speichern.
+1. Ändern Sie die Eigenschaft **Code Analyse für Build aktivieren** in **Ja** . Klicken Sie auf **OK** , um die Änderungen zu speichern.
 
 ::: moniker-end
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 1. Wählen Sie in Projektmappen-Explorer das Projekt Annotations aus.
 
-1. Klicken Sie im Menü **Projekt** auf **Eigenschaften**.
+1. Klicken Sie im Menü **Projekt** auf **Eigenschaften** .
 
      Das Dialogfeld **Annotations-Eigenschaften Seiten** wird angezeigt.
 
 1. Wählen Sie die Eigenschaften Seite **Code Analyse** aus.
 
-1. Aktivieren Sie das Kontrollkästchen **Code Analyse bei Build aktivieren** . Klicken Sie auf **OK**, um die Änderungen zu speichern.
+1. Aktivieren Sie das Kontrollkästchen **Code Analyse bei Build aktivieren** . Klicken Sie auf **OK** , um die Änderungen zu speichern.
 
 ::: moniker-end
 
@@ -160,9 +160,9 @@ In dieser exemplarischen Vorgehensweise gehen Sie wie folgt vor:
 
 1. Erstellen Sie das Projekt Annotations neu.
 
-1. Wählen Sie im Menü **Erstellen** die Option **Code Analyse für Anmerkungen ausführen aus**.
+1. Wählen Sie im Menü **Erstellen** die Option **Code Analyse für Anmerkungen ausführen aus** .
 
-1. Doppelklicken Sie im **Fehlerliste**auf die folgende Warnung:
+1. Doppelklicken Sie im **Fehlerliste** auf die folgende Warnung:
 
      C6011: dereferenzierender NULL-Zeiger "newNode".
 
@@ -198,7 +198,7 @@ In dieser exemplarischen Vorgehensweise gehen Sie wie folgt vor:
 
 1. Wählen Sie im Menü **Build** die Option **Codeanalyse für Lösung ausführen** aus.
 
-1. Doppelklicken Sie im **Fehlerliste**auf die folgende Warnung:
+1. Doppelklicken Sie im **Fehlerliste** auf die folgende Warnung:
 
      C6011: dereferenzierender NULL-Zeiger "Node".
 

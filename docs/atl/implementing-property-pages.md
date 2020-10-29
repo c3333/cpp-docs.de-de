@@ -6,22 +6,22 @@ helpviewer_keywords:
 - IPropertyPage class
 - property pages, implementing
 ms.assetid: 62f29440-33a7-40eb-a1ef-3634c95f640c
-ms.openlocfilehash: 6544f5ddf0b81fdec893308bb10e0c19cea73005
-ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
+ms.openlocfilehash: c9b1c0c159a15ec7d9a5c99208baa2ed6af2d6d1
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91499451"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92923899"
 ---
 # <a name="implementing-property-pages"></a>Implementieren von Eigenschaftenseiten
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 Der ATL-Eigenschaftenseiten-Assistent ist in Visual Studio 2019 und höher nicht verfügbar.
 
 ::: moniker-end
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 Eigenschaftenseiten sind COM-Objekte, die die Schnittstelle `IPropertyPage` oder die Schnittstelle `IPropertyPage2` implementieren. ATL bietet Unterstützung für die Implementierung von Eigenschaftenseiten mit dem [ATL-Eigenschaftenseiten-Assistenten](../atl/reference/atl-property-page-wizard.md) im [Dialogfeld „Klasse hinzufügen“](../ide/adding-a-class-visual-cpp.md#add-class-dialog-box).
 
@@ -41,7 +41,7 @@ So erstellen Sie eine Eigenschaftenseite mithilfe von ATL:
 
 - Überschreiben Sie optional die `IPropertyPageImpl`-Methoden mithilfe der folgenden Anweisungen.
 
-   |IPropertyPageImpl-Methode|Grund für Überschreibung|Hinweise|
+   |IPropertyPageImpl-Methode|Grund für Überschreibung|Notizen|
    |------------------------------|----------------------------------|-----------|
    |[SetObjects](../atl/reference/ipropertypageimpl-class.md#setobjects)|Sie möchten grundlegende Integritätsprüfungen für die an Ihre Seite übergebenen Objekten sowie die von ihnen unterstützten Schnittstellen ausführen.|Führen Sie Ihren eigenen Code aus, bevor Sie die Implementierung der Basisklasse aufrufen. Wenn die festgelegten Objekte Ihren Erwartungen nicht entsprechen, sollten Sie den Aufruf schnellstmöglich als fehlerhaft kennzeichnen.|
    |[Aktivieren](../atl/reference/ipropertypageimpl-class.md#activate)|Sie möchten die Benutzeroberfläche Ihrer Seite initialisieren (z.B. möchten Sie Dialogfeldsteuerelemente mit aktuellen Eigenschaftswerten aus Objekten festlegen, Steuerelemente dynamisch erstellen oder andere Initialisierungen durchführen).|Rufen Sie die Implementierung der Basisklasse vor Ihrem Code auf, sodass die Basisklasse das Dialogfeldfenster und alle Steuerelemente erstellen kann, bevor Sie versuchen, diese zu aktualisieren.|
@@ -51,11 +51,11 @@ So erstellen Sie eine Eigenschaftenseite mithilfe von ATL:
 Ein Beispiel für eine Implementierung einer Eigenschaften Seite finden Sie unter [Beispiel: Implementieren einer Eigenschaften Seite](../atl/example-implementing-a-property-page.md).
 
 > [!NOTE]
-> Wenn Sie auf Ihrer Eigenschaftenseite ActiveX-Steuerelemente hosten möchten, müssen Sie die Ableitung Ihrer vom Assistenten generierten Klasse ändern. Ersetzen Sie **CDialogImpl \<CYourClass> ** durch **CAxDialogImpl \<CYourClass> ** in der Liste der Basisklassen.
+> Wenn Sie auf Ihrer Eigenschaftenseite ActiveX-Steuerelemente hosten möchten, müssen Sie die Ableitung Ihrer vom Assistenten generierten Klasse ändern. Ersetzen Sie **CDialogImpl \<CYourClass>** durch **CAxDialogImpl \<CYourClass>** in der Liste der Basisklassen.
 
 ::: moniker-end
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Eigenschaftenseiten](../atl/atl-com-property-pages.md)<br/>
 [ATLPages-Beispiel](../overview/visual-cpp-samples.md)

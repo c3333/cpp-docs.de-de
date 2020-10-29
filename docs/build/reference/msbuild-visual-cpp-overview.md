@@ -4,12 +4,12 @@ description: Die Unterstützungs Dateien, Eigenschaften und Ziele, die von MSBui
 ms.date: 10/14/2020
 helpviewer_keywords:
 - MSBuild overview
-ms.openlocfilehash: b08db751bfe04c7cd3ce2c2f4741c9ee8956cf74
-ms.sourcegitcommit: 6e5429e076e552b32e8bdc49480c51498d7924c1
+ms.openlocfilehash: e99b9a428d9c6149debc06e1dfab7a69c3590196
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92099679"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924390"
 ---
 # <a name="msbuild-internals-for-c-projects"></a>MSBuild-Interna für C++-Projekte
 
@@ -21,7 +21,7 @@ Die meisten Ziele und Eigenschaften in den Unterstützungsdateien dienen ausschl
 
 Standardmäßig befinden sich die primären Visual Studio-Supportdateien in den folgenden Verzeichnissen. Diese Informationen sind Versions spezifisch.
 
-::: moniker range=">=vs-2019"
+::: moniker range=">=msvc-160"
 
 ### <a name="visual-studio-2019"></a>Visual Studio 2019
 
@@ -39,7 +39,7 @@ Standardmäßig befinden sich die primären Visual Studio-Supportdateien in den 
 
 ::: moniker-end
 
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
 ### <a name="visual-studio-2017"></a>Visual Studio 2017
 
@@ -133,9 +133,9 @@ In der folgenden Tabelle sind mehrere nützliche benutzerorientierte Ziele aufge
 | Xsd | Führt das XML-Schemadefinitionstool ("Xsd.exe") aus. *Siehe Hinweis.* |
 
 > [!NOTE]
-> In Visual Studio 2017 und höher ist die Unterstützung von C++-Projekten für **xsd**-Dateien veraltet. Sie können **Microsoft.VisualC.CppCodeProvider** weiterhin verwenden, indem Sie die Datei **CppCodeProvider.dll** manuell dem globalen Assemblycache hinzufügen.
+> In Visual Studio 2017 und höher ist die Unterstützung von C++-Projekten für **xsd** -Dateien veraltet. Sie können **Microsoft.VisualC.CppCodeProvider** weiterhin verwenden, indem Sie die Datei **CppCodeProvider.dll** manuell dem globalen Assemblycache hinzufügen.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Referenz zu MSBuild-Aufgaben](/visualstudio/msbuild/msbuild-task-reference)\
 [BSCMAKE-Aufgabe](/visualstudio/msbuild/bscmake-task)\

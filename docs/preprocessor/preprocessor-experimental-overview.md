@@ -5,22 +5,22 @@ ms.date: 09/10/2020
 helpviewer_keywords:
 - preprocessor, experimental
 - preprocessor, new
-ms.openlocfilehash: c95f923d8c38250958e26431b61a71a1e6a7fdda
-ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.openlocfilehash: 5327a8148f78a07e222fae7fb92e6ed741d12011
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90041366"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924583"
 ---
 # <a name="msvc-new-preprocessor-overview"></a>Übersicht über den neuen MSVC-Präprozessor
 
-::: moniker range="vs-2015"
+::: moniker range="msvc-140"
 
-Visual Studio 2015 verwendet den herkömmlichen Präprozessor, der nicht mit den Standard mäßigen C++ oder C99 übereinstimmt. Ab Visual Studio 2019, Version 16,5, ist die neue präprozessorunterstützung für den c++ 20-Standard Feature-Complete. Diese Änderungen sind über den [/Zc: präprocessor](../build/reference/zc-preprocessor.md) -Compilerschalter verfügbar. Eine experimentelle Version des neuen Präprozessors ist ab Visual Studio 2017, Version 15,8 und höher, mit dem [/experimental: Präprozessor](../build/reference/experimental-preprocessor.md) Compiler-Schalter verfügbar. Weitere Informationen zur Verwendung des neuen Präprozessors in Visual Studio 2017 und Visual Studio 2019 sind verfügbar. Um die Dokumentation für Ihre bevorzugte Version von Visual Studio anzuzeigen, verwenden Sie das Auswahlsteuerelement **Version**. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
+Visual Studio 2015 verwendet den herkömmlichen Präprozessor, der nicht mit den Standard mäßigen C++ oder C99 übereinstimmt. Ab Visual Studio 2019, Version 16,5, ist die neue präprozessorunterstützung für den c++ 20-Standard Feature-Complete. Diese Änderungen sind über den [/Zc: präprocessor](../build/reference/zc-preprocessor.md) -Compilerschalter verfügbar. Eine experimentelle Version des neuen Präprozessors ist ab Visual Studio 2017, Version 15,8 und höher, mit dem [/experimental: Präprozessor](../build/reference/experimental-preprocessor.md) Compiler-Schalter verfügbar. Weitere Informationen zur Verwendung des neuen Präprozessors in Visual Studio 2017 und Visual Studio 2019 sind verfügbar. Um die Dokumentation für Ihre bevorzugte Version von Visual Studio anzuzeigen, verwenden Sie das Auswahlsteuerelement **Version** . Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
 
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
 Wir aktualisieren den Microsoft C++-Präprozessor, um die Einhaltung von Standards zu verbessern, langjährige Fehler zu beheben und einige Verhaltensweisen zu ändern, die offiziell nicht definiert sind. Wir haben auch neue Diagnose hinzugefügt, um bei Fehlern in Makro Definitionen zu warnen.
 
@@ -128,7 +128,7 @@ ADD_STD(string) s;
 
 ### <a name="comma-elision-in-variadic-macros"></a>Komma-elisions in Variadic-Makros
 
-Der herkömmliche MSVC-Präprozessor entfernt vor leeren Ersetzungen immer Kommas `__VA_ARGS__` . Der neue Präprozessor folgt genauer an das Verhalten anderer beliebter plattformübergreifender Compiler. Damit das Komma entfernt wird, muss das Variadic-Argument fehlen (nicht nur leer), und es muss mit einem-Operator gekennzeichnet werden `##` . Betrachten Sie das folgende Beispiel:
+Der herkömmliche MSVC-Präprozessor entfernt vor leeren Ersetzungen immer Kommas `__VA_ARGS__` . Der neue Präprozessor folgt genauer an das Verhalten anderer beliebter plattformübergreifender Compiler. Damit das Komma entfernt wird, muss das Variadic-Argument fehlen (nicht nur leer), und es muss mit einem-Operator gekennzeichnet werden `##` . Betrachten Sie das folgenden Beispiel:
 
 ```cpp
 void func(int, int = 2, int = 3);

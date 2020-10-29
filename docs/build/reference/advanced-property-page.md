@@ -4,22 +4,22 @@ ms.date: 08/10/2020
 f1_keywords:
 - VC.Project.VCConfiguration.VCToolsVersion
 ms.description: Use the Advanced property page in Visual Studio 2019 to set various properties for C++ projects.
-ms.openlocfilehash: 3d6694e44d3da4023998a0335cd06c85b353b2b1
-ms.sourcegitcommit: 8140647370017b885432349ce89f187c3068b46a
+ms.openlocfilehash: 3b1e45f984cd40d6ea42ead25b045fc8688ad0a7
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88144164"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924032"
 ---
 # <a name="advanced-property-page"></a>Erweiterte Eigenschaften Seite
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 Die Eigenschaften Seite erweitert ist in Visual Studio 2019 und höher verfügbar. Wenn die Dokumentation für diese Version angezeigt werden soll, legen Sie das Steuerelement zur Auswahl der **Version** für diesen Artikel auf Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 Die Eigenschaften Seite erweitert ist in Visual Studio 2019 und höher verfügbar.
 
@@ -31,7 +31,7 @@ Die Eigenschaften Seite erweitert ist in Visual Studio 2019 und höher verfügba
 
 - **Bei der Bereinigung zu löschende Erweiterungen**
 
-   Durch die Option **Bereinigen** (Menü **Build**) werden Dateien aus dem Zwischenverzeichnis gelöscht, in dem die Projektkonfiguration erstellt wurde. Dateien mit Erweiterungen, die in dieser Eigenschaft angegeben sind, werden gelöscht, wenn **Clean** ausgeführt wird oder wenn Sie neu erstellen. Das Buildsystem löscht alle Dateien, die über diese Erweiterungen im zwischen Verzeichnis verfügen. Außerdem werden alle bekannten Ausgaben des Builds gelöscht, unabhängig davon, wo Sie sich befinden. (Einschließlich der zwischen Ausgaben wie z *`.obj`* . b. Dateien). In dieser Eigenschaft können Sie Platzhalter Zeichen angeben.
+   Durch die Option **Bereinigen** (Menü **Build** ) werden Dateien aus dem Zwischenverzeichnis gelöscht, in dem die Projektkonfiguration erstellt wurde. Dateien mit Erweiterungen, die in dieser Eigenschaft angegeben sind, werden gelöscht, wenn **Clean** ausgeführt wird oder wenn Sie neu erstellen. Das Buildsystem löscht alle Dateien, die über diese Erweiterungen im zwischen Verzeichnis verfügen. Außerdem werden alle bekannten Ausgaben des Builds gelöscht, unabhängig davon, wo Sie sich befinden. (Einschließlich der zwischen Ausgaben wie z *`.obj`* . b. Dateien). In dieser Eigenschaft können Sie Platzhalter Zeichen angeben.
 
    Informationen zum programmgesteuerten Zugriff auf diese Eigenschaft finden Sie unter <xref:Microsoft.VisualStudio.VCProjectEngine.VCConfiguration.DeleteExtensionsOnClean%2A>.
 
@@ -81,7 +81,7 @@ Die Eigenschaften Seite erweitert ist in Visual Studio 2019 und höher verfügba
 
    Informationen zum programmgesteuerten Zugriff auf diese Eigenschaft finden Sie unter <xref:Microsoft.VisualStudio.VCProject.VCProjectConfigurationProperties.CharacterSet%2A>.
 
-- **Optimierung des gesamten Programms**
+- **Optimierung des ganzen Programms**
 
    Gibt die [`/GL`](gl-whole-program-optimization.md) Compileroption und die [`/LTCG`](ltcg-link-time-code-generation.md) Linkeroption an. Standardmäßig ist die Optimierung des gesamten Programms für Debugkonfigurationen deaktiviert und für Releasekonfigurationen aktiviert.
 

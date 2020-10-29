@@ -7,12 +7,12 @@ helpviewer_keywords:
 - OLE DB providers, schema rowsets
 - OLE DB, schema rowsets
 ms.assetid: 71c5e14b-6e33-4502-a2d9-a1dc6d6e9ba0
-ms.openlocfilehash: f87e6cc0a307eed4f00f1fb90ac16a840a1759af
-ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
+ms.openlocfilehash: 156fe9c7a2b15f7254fb0c83f8b25982aa5ad09a
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91509451"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924308"
 ---
 # <a name="supporting-schema-rowsets"></a>Supporting Schema Rowsets
 
@@ -32,13 +32,13 @@ Schemarowsets ermöglichen es Consumern, Informationen zu einem Datenspeicher ab
 
 ## <a name="atl-ole-db-provider-wizard-support"></a>Unterstützung für den ATL-OLE DB-Anbieter-Assistenten
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 Der ATL-OLE DB-Anbieter-Assistent ist in Visual Studio 2019 und höher nicht verfügbar.
 
 ::: moniker-end
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 Der **ATL-OLE DB-Anbieter-Assistent** erstellt drei Schemaklassen in der Sitzungsheaderdatei:
 
@@ -94,7 +94,7 @@ class CUpdateSessionTRSchemaRowset :
                     ULONG cRestrictions, const VARIANT* rgRestrictions)
 ```
 
-`CUpdateSession` erbt von `IDBSchemaRowsetImpl` und verfügt deshalb über alle zugehörigen Methoden für die Einschränkungsverarbeitung. Deklarieren Sie unter Verwendung von `CSchemaRowsetImpl` drei untergeordnete Klassen (diese werden in der Schemazuordnung oben aufgeführt): `CUpdateSessionTRSchemaRowset`, `CUpdateSessionColSchemaRowset` und `CUpdateSessionPTSchemaRowset`. Jede dieser untergeordneten Klassen umfasst eine `Execute`-Methode, die den zugehörigen Satz an Einschränkungen (Suchkriterien) verarbeitet. Jede `Execute`-Methode vergleicht die Werte der Parameter *cRestrictions* und *rgRestrictions*. Eine Beschreibung dieser Parameter finden Sie in [SetRestrictions](./idbschemarowsetimpl-class.md#setrestrictions).
+`CUpdateSession` erbt von `IDBSchemaRowsetImpl` und verfügt deshalb über alle zugehörigen Methoden für die Einschränkungsverarbeitung. Deklarieren Sie unter Verwendung von `CSchemaRowsetImpl` drei untergeordnete Klassen (diese werden in der Schemazuordnung oben aufgeführt): `CUpdateSessionTRSchemaRowset`, `CUpdateSessionColSchemaRowset` und `CUpdateSessionPTSchemaRowset`. Jede dieser untergeordneten Klassen umfasst eine `Execute`-Methode, die den zugehörigen Satz an Einschränkungen (Suchkriterien) verarbeitet. Jede `Execute`-Methode vergleicht die Werte der Parameter *cRestrictions* und *rgRestrictions* . Eine Beschreibung dieser Parameter finden Sie in [SetRestrictions](./idbschemarowsetimpl-class.md#setrestrictions).
 
 Weitere Informationen dazu, welche Einschränkungen einem bestimmten Schemarowset entsprechen, finden Sie in der Tabelle der Schemarowset-GUIDs in [IDBSchemaRowset](/previous-versions/windows/desktop/ms713686(v=vs.85)) in der **OLE DB-Programmierreferenz** im Windows SDK.
 
@@ -146,14 +146,14 @@ if (InlineIsEqualGUID(rguidSchema[l], DBSCHEMA_TABLES))
     rgRestrictions[l] = 0x0C;
 ```
 
-Die folgende `Execute`-Funktion ähnelt denen in regulären Rowsets. Sie verfügen über drei Argumente: *pcRowsAffected*, *cRestrictions* und *rgRestrictions*. Die Variable *pcRowsAffected* ist ein Ausgabeparameter, mit dem der Anbieter die Anzahl von Zeilen im Schemarowset zurückgeben kann. Der *cRestrictions*-Parameter ist ein Eingabeparameter, der die Anzahl von Einschränkungen enthält, die vom Consumer an den Anbieter übergeben werden. Der Parameter *rgRestrictions* ist ein Array aus VARIANT-Werten, die die Einschränkungswerte enthalten.
+Die folgende `Execute`-Funktion ähnelt denen in regulären Rowsets. Sie verfügen über drei Argumente: *pcRowsAffected* , *cRestrictions* und *rgRestrictions* . Die Variable *pcRowsAffected* ist ein Ausgabeparameter, mit dem der Anbieter die Anzahl von Zeilen im Schemarowset zurückgeben kann. Der *cRestrictions* -Parameter ist ein Eingabeparameter, der die Anzahl von Einschränkungen enthält, die vom Consumer an den Anbieter übergeben werden. Der Parameter *rgRestrictions* ist ein Array aus VARIANT-Werten, die die Einschränkungswerte enthalten.
 
 ```cpp
 HRESULT Execute(DBROWCOUNT* pcRowsAffected, ULONG cRestrictions,
                 const VARIANT* rgRestrictions)
 ```
 
-Die Variable *cRestrictions* basiert auf der Gesamtzahl an Einschränkungen für ein Schemarowset, unabhängig davon, ob der Anbieter sie unterstützt. UpdatePV unterstützt zwei Einschränkungen (die 3. und die 4.), deshalb sucht dieser Code nur nach einem *cRestrictions*-Wert größer oder gleich 3.
+Die Variable *cRestrictions* basiert auf der Gesamtzahl an Einschränkungen für ein Schemarowset, unabhängig davon, ob der Anbieter sie unterstützt. UpdatePV unterstützt zwei Einschränkungen (die 3. und die 4.), deshalb sucht dieser Code nur nach einem *cRestrictions* -Wert größer oder gleich 3.
 
 Der Wert für die TABLE_NAME-Einschränkung ist in *rgRestrictions[2]* gespeichert (die 3. Einschränkung in einem 0-basierten Array ist 2). Stellen Sie sicher, dass die Einschränkung nicht VT_EMPTY lautet, um sie tatsächlich zu unterstützen. Beachten Sie, dass VT_NULL nicht gleichbedeutend ist mit VT_EMPTY. VT_NULL gibt einen gültigen Einschränkungswert an.
 
@@ -265,12 +265,12 @@ virtual DBSTATUS GetDBStatus(CSimpleRow* , ATLCOLUMNINFO* pColInfo)
 
 Ihre `Execute`-Funktion gibt Daten für die Felder TABLE_NAME, TABLE_TYPE und DESCRIPTION aus dem TABLES-Rowset zurück, deshalb können Sie anhand von **Anhang B** der OLE DB-Spezifikation (durch Zählen von oben nach unten) feststellen, dass es sich um die Ordinalzahlen 3, 4 und 6 handelt. Geben Sie für jede dieser Spalten DBSTATUS_S_OK zurück. Für alle anderen Spalten geben Sie DBSTATUS_S_ISNULL zurück. Es ist wichtig, diesen Status zurückzugeben, weil ein Consumer möglicherweise nicht versteht, dass der zurückgegebene Wert NULL oder etwas anderes ist. Zur Erinnerung: NULL ist nicht gleichbedeutend mit leer.
 
-Weitere Informationen zur OLE DB-Schemarowset-Schnittstelle finden Sie im Abschnitt zur [IDBSchemaRowset](../../data/oledb/idbschemarowsetimpl-class.md)-Schnittstelle in der **OLE DB-Programmierreferenz**.
+Weitere Informationen zur OLE DB-Schemarowset-Schnittstelle finden Sie im Abschnitt zur [IDBSchemaRowset](../../data/oledb/idbschemarowsetimpl-class.md)-Schnittstelle in der **OLE DB-Programmierreferenz** .
 
 Informationen dazu, wie Consumer `IDBSchemaRowset`-Methoden verwenden können, finden Sie unter [Abrufen von Metadaten mit Schemarowsets](../../data/oledb/obtaining-metadata-with-schema-rowsets.md).
 
 Ein Beispiel für einen Anbieter, der Schemarowsets unterstützt, finden Sie im [UpdatePV](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/ATL/OLEDB/Provider/UPDATEPV)-Beispiel.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Erweiterte Anbieter Techniken](../../data/oledb/advanced-provider-techniques.md)
