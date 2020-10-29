@@ -5,12 +5,12 @@ helpviewer_keywords:
 - asynchronous agents, creating
 - agent class, example
 ms.assetid: 730f42ce-6d58-4753-b948-fd9c9ef2ce6c
-ms.openlocfilehash: 4e67b3fc3363955ae02973847912c021eca95ded
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 9d9fdd3ddface01f84f6426dd334600cf88b84e7
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87219481"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924831"
 ---
 # <a name="walkthrough-creating-an-agent-based-application"></a>Exemplarische Vorgehensweise: Erstellen einer agentbasierten Anwendung
 
@@ -28,7 +28,7 @@ Zum Durchführen dieser exemplarischen Vorgehensweise sollten Sie die folgenden 
 
 - [Synchronisierungs Datenstrukturen](../../parallel/concrt/synchronization-data-structures.md)
 
-## <a name="sections"></a><a name="top"></a>Strecken
+## <a name="sections"></a><a name="top"></a> Strecken
 
 Mit dieser exemplarischen Vorgehensweise wird die Durchführung der folgenden Aufgaben beschrieben:
 
@@ -38,55 +38,55 @@ Mit dieser exemplarischen Vorgehensweise wird die Durchführung der folgenden Au
 
 - [Verwenden der file_reader-Klasse in der Anwendung](#useagentclass)
 
-## <a name="creating-the-console-application"></a><a name="createapplication"></a>Erstellen der Konsolenanwendung
+## <a name="creating-the-console-application"></a><a name="createapplication"></a> Erstellen der Konsolenanwendung
 
-In diesem Abschnitt wird gezeigt, wie eine C++-Konsolenanwendung erstellt wird, die auf die vom Programm verwendeten Header Dateien verweist. Die ersten Schritte sind abhängig von der verwendeten Version von Visual Studio. Um die Dokumentation für Ihre bevorzugte Version von Visual Studio anzuzeigen, verwenden Sie das Auswahlsteuerelement **Version**. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
+In diesem Abschnitt wird gezeigt, wie eine C++-Konsolenanwendung erstellt wird, die auf die vom Programm verwendeten Header Dateien verweist. Die ersten Schritte sind abhängig von der verwendeten Version von Visual Studio. Um die Dokumentation für Ihre bevorzugte Version von Visual Studio anzuzeigen, verwenden Sie das Auswahlsteuerelement **Version** . Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 ### <a name="to-create-a-c-console-application-in-visual-studio-2019"></a>So erstellen Sie eine C++-Konsolenanwendung in Visual Studio 2019
 
-1. Klicken Sie im Hauptmenü auf **Datei** > **Neu** > **Projekt**, um das Dialogfeld **Neues Projekt erstellen** zu öffnen.
+1. Wählen Sie im Hauptmenü **Datei** > **Neu** > **Projekt** aus, um das Dialogfeld **Neues Projekt erstellen** zu öffnen.
 
 1. Legen Sie oben im Dialogfeld die **Sprache** auf **C++** , die **Plattform** auf **Windows** und den **Projekttyp** auf **Konsole** fest.
 
-1. Wählen Sie aus der gefilterten Projekttypliste **Konsolen-App** aus, und klicken Sie auf **Weiter**. Geben Sie auf der nächsten Seite `BasicAgent` als Namen für das Projekt ein, und geben Sie den Speicherort des Projekts an, wenn gewünscht.
+1. Wählen Sie aus der gefilterten Projekttypliste **Konsolen-App** aus, und klicken Sie auf **Weiter** . Geben Sie auf der nächsten Seite `BasicAgent` als Namen für das Projekt ein, und geben Sie den Speicherort des Projekts an, wenn gewünscht.
 
-1. Klicken Sie auf die Schaltfläche **Erstellen**, um das Projekt zu erstellen.
+1. Klicken Sie auf die Schaltfläche **Erstellen** , um das Projekt zu erstellen.
 
-1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Projekt Knoten, und wählen Sie **Eigenschaften**aus. Wählen Sie unter **Konfigurations Eigenschaften**  >  **C/C++** vorkompilierte Header für  >  **vorkompilierte**  >  **Precompiled header** **Create**Header die Option erstellen aus.
+1. Klicken Sie in **Projektmappen-Explorer** mit der rechten Maustaste auf den Projekt Knoten, und wählen Sie **Eigenschaften** aus. Wählen Sie unter **Konfigurations Eigenschaften**  >  **C/C++** vorkompilierte Header für  >  **vorkompilierte**  >  **Precompiled header** **Create** Header die Option erstellen aus.
 
 ::: moniker-end
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 ### <a name="to-create-a-c-console-application-in-visual-studio-2017-and-earlier"></a>So erstellen Sie eine C++-Konsolenanwendung in Visual Studio 2017 und früher
 
-1. Klicken Sie im Menü **Datei** auf **neu**, und klicken Sie dann auf **Projekt** , um das Dialogfeld **Neues Projekt** anzuzeigen.
+1. Klicken Sie im Menü **Datei** auf **neu** , und klicken Sie dann auf **Projekt** , um das Dialogfeld **Neues Projekt** anzuzeigen.
 
-1. Wählen Sie im Dialogfeld **Neues Projekt** im Bereich **Projekttypen** den Knoten **Visual C++** aus, und wählen Sie dann im Bereich **Vorlagen** die Option **Win32-Konsolenanwendung** aus. Geben Sie einen Namen für das Projekt ein, z. b `BasicAgent` ., und klicken Sie dann auf **OK** , um den Assistenten für die **Win32-Konsolenanwendung**anzuzeigen.
+1. Wählen Sie im Dialogfeld **Neues Projekt** im Bereich **Projekttypen** den Knoten **Visual C++** aus, und wählen Sie dann im Bereich **Vorlagen** die Option **Win32-Konsolenanwendung** aus. Geben Sie einen Namen für das Projekt ein, z. b `BasicAgent` ., und klicken Sie dann auf **OK** , um den Assistenten für die **Win32-Konsolenanwendung** anzuzeigen.
 
-1. Klicken Sie im Dialogfeld **Assistent für Win32-Konsolen Anwendungen** auf **Fertig**stellen.
+1. Klicken Sie im Dialogfeld **Assistent für Win32-Konsolen Anwendungen** auf **Fertig** stellen.
 
 ::: moniker-end
 
-1. Fügen Sie in " *PCH. h* " (*stdafx. h* in Visual Studio 2017 und früher) den folgenden Code hinzu:
+1. Fügen Sie in " *PCH. h* " ( *stdafx. h* in Visual Studio 2017 und früher) den folgenden Code hinzu:
 
 [!code-cpp[concrt-basic-agent#1](../../parallel/concrt/codesnippet/cpp/walkthrough-creating-an-agent-based-application_1.h)]
 
    Die Header Datei "Agents. h" enthält die Funktionalität der " [parallelcurrency:: Agent](../../parallel/concrt/reference/agent-class.md) "-Klasse.
 
-1. Überprüfen Sie, ob die Anwendung erfolgreich erstellt wurde, indem Sie sie erstellen und ausführen. Klicken Sie im Menü **Erstellen** auf Projekt Mappe **Erstellen**, um die Anwendung zu erstellen. Wenn die Anwendung erfolgreich erstellt wird, führen Sie die Anwendung aus, indem Sie im Menü **Debuggen** auf **Debugging starten** klicken.
+1. Überprüfen Sie, ob die Anwendung erfolgreich erstellt wurde, indem Sie sie erstellen und ausführen. Klicken Sie im Menü **Erstellen** auf Projekt Mappe **Erstellen** , um die Anwendung zu erstellen. Wenn die Anwendung erfolgreich erstellt wird, führen Sie die Anwendung aus, indem Sie im Menü **Debuggen** auf **Debugging starten** klicken.
 
 [Nach[oben](#top)]
 
-## <a name="creating-the-file_reader-class"></a><a name="createagentclass"></a>Erstellen der file_reader-Klasse
+## <a name="creating-the-file_reader-class"></a><a name="createagentclass"></a> Erstellen der file_reader-Klasse
 
 In diesem Abschnitt wird die Erstellung der `file_reader`-Klasse beschrieben. Die Runtime plant jeden Agent so, dass er Arbeiten im eigenen Kontext ausführt. Daher können Sie einen Agent erstellen, der Arbeiten synchron ausführt, aber asynchron mit anderen Komponenten interagiert. Die `file_reader`-Klasse liest Daten aus einer angegebenen Eingabedatei aus und sendet Daten aus dieser Datei an eine angegebene Zielkomponente.
 
 #### <a name="to-create-the-file_reader-class"></a>So erstellen Sie die file_reader-Klasse
 
-1. Fügen Sie dem Projekt eine neue C++-Headerdatei hinzu. Klicken Sie hierzu in **Projektmappen-Explorer**mit der rechten Maustaste auf den Knoten **Header Dateien** , klicken Sie auf **Hinzufügen**, und klicken Sie dann auf **Neues Element**. Wählen Sie im Bereich **Vorlagen** die Option **Header Datei (. h)** aus. Geben Sie im Dialogfeld **Neues Element hinzufügen** `file_reader.h` im Feld **Name den Namen** ein, und klicken Sie dann auf **Hinzufügen**.
+1. Fügen Sie dem Projekt eine neue C++-Headerdatei hinzu. Klicken Sie hierzu in **Projektmappen-Explorer** mit der rechten Maustaste auf den Knoten **Header Dateien** , klicken Sie auf **Hinzufügen** , und klicken Sie dann auf **Neues Element** . Wählen Sie im Bereich **Vorlagen** die Option **Header Datei (. h)** aus. Geben Sie im Dialogfeld **Neues Element hinzufügen** `file_reader.h` im Feld **Name den Namen** ein, und klicken Sie dann auf **Hinzufügen** .
 
 1. Fügen Sie in der Datei file_reader.h den folgenden Code hinzu.
 
@@ -128,7 +128,7 @@ Im folgenden Beispiel wird der vollständige Inhalt der Datei file_reader.h darg
 
 [Nach[oben](#top)]
 
-## <a name="using-the-file_reader-class-in-the-application"></a><a name="useagentclass"></a>Verwenden der file_reader-Klasse in der Anwendung
+## <a name="using-the-file_reader-class-in-the-application"></a><a name="useagentclass"></a> Verwenden der file_reader-Klasse in der Anwendung
 
 In diesem Abschnitt wird beschrieben, wie mithilfe der `file_reader`-Klasse der Inhalt einer Textdatei gelesen wird. Außerdem wird gezeigt, wie ein [parallelcurrency:: Callcenter](../../parallel/concrt/reference/call-class.md) -Objekt erstellt wird, das diese Datei Daten empfängt und seine Adler-32-Prüfsumme berechnet.
 
@@ -202,7 +202,7 @@ Die Methode " [parallelcurrency:: Agent::d One](reference/agent-class.md#done) "
 
 Ein weiteres Beispiel für eine agentbasierte Anwendung finden Sie unter Exemplarische Vorgehensweise [: Verwenden von Join zum verhindern](../../parallel/concrt/walkthrough-using-join-to-prevent-deadlock.md)von Deadlocks.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Asynchronous Agents Library](../../parallel/concrt/asynchronous-agents-library.md)<br/>
 [Asynchrone Nachrichten Blöcke](../../parallel/concrt/asynchronous-message-blocks.md)<br/>

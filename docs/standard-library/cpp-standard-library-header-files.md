@@ -6,12 +6,12 @@ helpviewer_keywords:
 - header files, C++ Standard Library
 - C++ Standard Library, header files
 ms.assetid: e7bf497a-0f63-48d0-9b54-cb0eef4073c4
-ms.openlocfilehash: dfadfb99e10fdb916b3fb4dc515f89e6f9252fde
-ms.sourcegitcommit: d9c94dcabd94537e304be0261b3263c2071b437b
+ms.openlocfilehash: 7d4978e7de75e5416ba2653a632d713f407d3677
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91352881"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924813"
 ---
 # <a name="c-standard-library-header-files"></a>Header Dateien der C++-Standardbibliothek
 
@@ -19,9 +19,9 @@ Header Dateien für die C++-Standardbibliothek und-Erweiterungen nach Kategorie.
 
 ## <a name="headers-by-category"></a>Header nach Kategorie
 
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
-| Category | Header |
+| Kategorie | Header |
 | - | - |
 | [Algorithmen](./algorithms.md) | [\<algorithm>](algorithm.md), [\<cstdlib>](cstdlib.md), [\<numeric>](numeric.md) |
 | Atomarische Vorgänge |  [\<atomic>](atomic.md)<sup>11:</sup> |
@@ -57,9 +57,9 @@ Header Dateien für die C++-Standardbibliothek und-Erweiterungen nach Kategorie.
 
 ::: moniker-end
 
-::: moniker range="vs-2015"
+::: moniker range="msvc-140"
 
-|Category|Header|
+|Kategorie|Header|
 |-|-|
 |[Algorithmen](./algorithms.md)|[\<algorithm>](algorithm.md)|
 |Wrapper für die C-Bibliothek|[\<cassert>](cassert.md), [\<cctype>](cctype.md), [\<cerrno>](cerrno.md), [\<cfenv>](cfenv.md), [\<cfloat>](cfloat.md), [\<cinttypes>](cinttypes.md), [\<ciso646>](ciso646.md), [\<climits>](climits.md), [\<clocale>](clocale.md), [\<cmath>](cmath.md), [\<csetjmp>](csetjmp.md), [\<csignal>](csignal.md), [\<cstdarg>](cstdarg.md), [\<cstdbool>](cstdbool.md), [\<cstddef>](cstddef.md), [\<cstdint>](cstdint.md), [\<cstdio>](cstdio.md), [\<cstdlib>](cstdlib.md), [\<cstring>](cstring.md), [\<ctgmath>](ctgmath.md), [\<ctime>](ctime.md), [\<cwchar>](cwchar.md), [\<cwctype>](cwctype.md)|
@@ -80,7 +80,7 @@ Header Dateien für die C++-Standardbibliothek und-Erweiterungen nach Kategorie.
 
 ::: moniker-end
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Verwenden von C++-Bibliotheks Headern](using-cpp-library-headers.md)\
 [C++-Standardbibliothek](cpp-standard-library-reference.md)
