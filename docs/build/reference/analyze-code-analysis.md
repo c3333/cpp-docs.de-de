@@ -12,12 +12,12 @@ helpviewer_keywords:
 - -analyze compiler option [C++]
 - analyze compiler option [C++]
 ms.assetid: 81da536a-e030-4bd4-be18-383927597d08
-ms.openlocfilehash: e970872e89132aed52190b8688f2cdaccab5ea6f
-ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
+ms.openlocfilehash: dcf44f1d282a9dd39205aecb4e75b59a6e8481f9
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91500088"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92919097"
 ---
 # <a name="analyze-code-analysis"></a>`/analyze` (Code Analyse)
 
@@ -25,7 +25,7 @@ Aktiviert Codeanalyse- und Steueroptionen.
 
 ## <a name="syntax"></a>Syntax
 
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
 > **`/analyze`**\
 > **`/analyze-`**\
@@ -42,7 +42,7 @@ Aktiviert Codeanalyse- und Steueroptionen.
 > **`/analyze:WX-`**
 
 ::: moniker-end
-::: moniker range="vs-2015"
+::: moniker range="msvc-140"
 
 > **`/analyze`**\
 > **`/analyze-`**\
@@ -68,10 +68,10 @@ Aktiviert die Analyse im Standardmodus. Die Analyse Ausgabe wird wie andere Fehl
 Ausführliche Analyseergebnisse werden als XML in eine Datei geschrieben, die denselben Basis Namen wie die Quelldatei und eine Erweiterung von hat *`.pftlog`* . **`/analyze:autolog-`** deaktiviert diese Protokolldatei.
 
 **`/analyze:autolog:ext`***Erweiterung*\
-Ausführliche Analyseergebnisse werden als XML in eine Datei geschrieben, die denselben Basis Namen wie die Quelldatei und eine Erweiterung der *Erweiterung*hat.
+Ausführliche Analyseergebnisse werden als XML in eine Datei geschrieben, die denselben Basis Namen wie die Quelldatei und eine Erweiterung der *Erweiterung* hat.
 
 **`/analyze:log`***Dateiname*\
-Ausführliche Analyseergebnisse werden als XML in die Datei geschrieben, die durch *filename*angegeben wird.
+Ausführliche Analyseergebnisse werden als XML in die Datei geschrieben, die durch *filename* angegeben wird.
 
 **`/analyze:max_paths`***Zahl*\
 Der mit dieser Option verwendete *Number* -Parameter gibt die maximale Anzahl von Codepfade an, die analysiert werden sollen. Wenn dieser Parameter nicht angegeben wird, ist die Zahl standardmäßig 256. Größere Werte führen zu einer gründlicheren Überprüfung, aber die Analyse kann länger dauern.
@@ -82,14 +82,14 @@ In der Regel generiert der Compiler Code und führt nach der Ausführung der Ana
 **`/analyze:plugin`***Plug-in-dll*\
 Aktiviert das angegebene PREfast-Plug-in als Teil der Code Analyse Ausführungen.
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 LocalEspC.dll ist das Plug-in, das Parallelitäts bezogene Code Analyse Überprüfungen im Bereich der C261XX-Warnungen implementiert. Beispiel: [C26100](../../code-quality/c26100.md), [C26101](../../code-quality/c26101.md),...,  [C26167](../../code-quality/c26167.md).
 
 Verwenden Sie diese Compileroption, um LocalEspC.dll auszuführen: **`/analyze:plugin LocalEspC.dll`**
 
 ::: moniker-end
-::: moniker range=">=vs-2019"
+::: moniker range=">=msvc-160"
 
 ConcurrencyCheck.dll implementiert neben läufigkeits bezogene Code Analyse Überprüfungen im Bereich der C261XX-Warnungen. Beispiel: [C26100](../../code-quality/c26100.md), [C26101](../../code-quality/c26101.md),...,  [C26167](../../code-quality/c26167.md).
 
@@ -114,7 +114,7 @@ Verwenden Sie dann diese Compileroption: **`/analyze:plugin EspXEngine.dll`** .
 **`/analyze:quiet`**\
 Deaktiviert die Analyzer-Ausgabe in die Konsole oder das **Ausgabe** Fenster von Visual Studio.
 
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
 **`/analyze:ruleset`***FILE_PATH. RuleSet*\
 Ermöglicht Ihnen die Angabe der zu analysierenden Regelsätze, einschließlich benutzerdefinierter Regelsätze, die Sie selbst erstellen können. Wenn dieser Switch festgelegt ist, ist die Regel-Engine effizienter, da Sie vor der Ausführung nicht-Member des angegebenen Regelsatzes ausschließt. Andernfalls prüft die Engine alle Regeln.
@@ -141,7 +141,7 @@ Der mit dieser Option verwendete *Number* -Parameter gibt die Größe (in Bytes)
 **`/analyze:WX-`**\
 Code Analyse Warnungen werden nicht als Fehler behandelt, wenn Sie mit kompilieren **`/WX`** . Weitere Informationen finden Sie unter [ `/WX` (Warnstufe)](compiler-option-warning-level.md).
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Weitere Informationen finden Sie unter [Übersicht über die Code Analyse für c/C++](../../code-quality/code-analysis-for-c-cpp-overview.md) und [Code Analyse für c/C++-Warnungen](../../code-quality/code-analysis-for-c-cpp-warnings.md).
 
@@ -149,7 +149,7 @@ Weitere Informationen finden Sie unter [Übersicht über die Code Analyse für c
 
 1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Wählen Sie die **Eigenschaften**  >  Seite allgemeine**Code Analyse**für die Konfiguration aus  >  **General** .
+1. Wählen Sie die **Eigenschaften**  >  Seite allgemeine **Code Analyse** für die Konfiguration aus  >  **General** .
 
 1. Ändern Sie eine oder mehrere der **Code Analyse** Eigenschaften.
 
@@ -157,7 +157,7 @@ Weitere Informationen finden Sie unter [Übersicht über die Code Analyse für c
 
 1. Siehe <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.EnablePREfast%2A>.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [MSVC-Compileroptionen](compiler-options.md)\
-[MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)
+[MSVC-CompilerCommand-Line Syntax](compiler-command-line-syntax.md)

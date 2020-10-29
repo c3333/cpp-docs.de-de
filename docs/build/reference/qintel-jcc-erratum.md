@@ -1,30 +1,30 @@
 ---
 title: /QIntel-jcc-erratum
-description: Describes the Microsoft C/C++ compiler (MSVC) /QIntel-jcc-erratum option.
+description: Beschreibt die/QIntel-JCC-Erratum-Option von Microsoft C/C++ Compiler (MSVC).
 ms.date: 01/07/2020
 f1_keywords:
 - QIntel-jcc-erratum
 helpviewer_keywords:
 - /QIntel-jcc-erratum
 - -QIntel-jcc-erratum
-ms.openlocfilehash: f311da04b833b06124c5e6237ea83a31319858ca
-ms.sourcegitcommit: a930a9b47bd95599265d6ba83bb87e46ae748949
+ms.openlocfilehash: c66dd4bb25647ce193bce4db5dc4ebb1268277c0
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520918"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92921372"
 ---
 # <a name="qintel-jcc-erratum"></a>/QIntel-jcc-erratum
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
-The **/QIntel-jcc-erratum** option is available in Visual Studio 2019 version 16.5 and later.
+Die **/QIntel-JCC-Erratum** -Option ist in Visual Studio 2019, Version 16,5 und höher, verfügbar.
 
 ::: moniker-end
 
-::: moniker range=">=vs-2019"
+::: moniker range=">=msvc-160"
 
-Specifies that the compiler generates instructions to mitigate the performance impact caused by the Intel Jump Conditional Code (JCC) erratum microcode update in certain Intel processors.
+Gibt an, dass der Compiler Anweisungen generiert, um die Auswirkungen auf die Leistung zu mindern, die durch den Intel Jump Conditional Code (JCC) Erratum-Mikro Code Update in bestimmten Intel-Prozessoren verursacht werden.
 
 ## <a name="syntax"></a>Syntax
 
@@ -32,21 +32,21 @@ Specifies that the compiler generates instructions to mitigate the performance i
 
 ## <a name="remarks"></a>Hinweise
 
-Under **/QIntel-jcc-erratum**, the compiler detects jump and macro-fused jump instructions that cross or end on a 32-byte boundary. It aligns these instructions to the boundary. This change mitigates the performance impact of microcode updates that prevent the JCC erratum in certain Intel processors. For more information about the erratum, see [Mitigations for Jump Conditional Code Erratum](https://www.intel.com/content/dam/support/us/en/documents/processors/mitigations-jump-conditional-code-erratum.pdf) on the Intel website.
+Unter **/QIntel-JCC-Erratum** erkennt der Compiler Sprung-und Makro Verknüpfungen, die auf einer 32-Byte-Grenze überschreiten oder enden. Diese Anweisungen werden an die Grenze ausgerichtet. Durch diese Änderung werden die Auswirkungen von Mikro Code Aktualisierungen auf die Leistung verringert, die JCC Erratum in bestimmten Intel-Prozessoren verhindern. Weitere Informationen zum Erratum finden Sie unter entschärfungen [für Jump Conditional Code Erratum](https://www.intel.com/content/dam/support/us/en/documents/processors/mitigations-jump-conditional-code-erratum.pdf) auf der Intel-Website.
 
-The **/QIntel-jcc-erratum** option is available in Visual Studio 2019 version 16.5 and later. This option is only available in compilers that target x86 and x64. The option isn't available in compilers that target ARM processors.
+Die **/QIntel-JCC-Erratum** -Option ist in Visual Studio 2019, Version 16,5 und höher, verfügbar. Diese Option ist nur in Compilern verfügbar, die auf x86 und x64 abzielen. Die Option ist nicht in Compilern verfügbar, die auf ARM-Prozessoren abzielen.
 
-The **/QIntel-jcc-erratum** option is off by default, and works only in optimized builds. This option can increase code size.
+Die **/QIntel-JCC-Erratum** -Option ist standardmäßig deaktiviert und funktioniert nur in optimierten Builds. Mit dieser Option kann die Codegröße erhöht werden.
 
-**/QIntel-jcc-erratum** is incompatible with [/clr](clr-common-language-runtime-compilation.md).
+**/QIntel-JCC-Erratum** ist nicht mit [/CLR](clr-common-language-runtime-compilation.md)kompatibel.
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
 1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Select the **Configuration Properties** > **C/C++** > **Code Generation** property page.
+1. Wählen Sie die **Eigenschaften Seite Konfigurations Eigenschaften** > **C/C++-** > **Code Generierung** aus.
 
-1. Select a value for the **Enable Intel JCC Erratum Mitigation** property. Wählen Sie **OK** aus, um die Änderung zu übernehmen.
+1. Wählen Sie einen Wert für die Eigenschaft **Intel JCC Erratum Entschärfung aktivieren** aus. Wählen Sie **OK** aus, um die Änderung zu übernehmen.
 
 ### <a name="to-set-this-compiler-option-programmatically"></a>So legen Sie diese Compileroption programmgesteuert fest
 
@@ -54,8 +54,8 @@ The **/QIntel-jcc-erratum** option is off by default, and works only in optimize
 
 ## <a name="see-also"></a>Siehe auch
 
-[/Q options (Low-level operations)](q-options-low-level-operations.md)\
-[MSVC compiler options](compiler-options.md)\
-[MSVC compiler command-line syntax](compiler-command-line-syntax.md)
+[/Q-Optionen (Vorgänge auf niedriger Ebene)](q-options-low-level-operations.md)\
+[MSVC-Compileroptionen](compiler-options.md)\
+[Syntax für die MSVC-Compilerbefehlszeile](compiler-command-line-syntax.md)
 
 ::: moniker-end

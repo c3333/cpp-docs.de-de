@@ -1,5 +1,5 @@
 ---
-title: /openmp (OpenMP-Unterstützung aktivieren)
+title: /OpenMP (OpenMP-Unterstützung aktivieren)
 ms.date: 04/15/2019
 f1_keywords:
 - /openmp
@@ -8,62 +8,62 @@ helpviewer_keywords:
 - /openmp compiler option [C++]
 - -openmp compiler option [C++]
 ms.assetid: 9082b175-18d3-4378-86a7-c0eb95664e13
-ms.openlocfilehash: d3454650bfaaacd756e5cfc73df056441a39f5ac
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 6bd1ffcd9b21bfe22ed9424ee77edf43100abf6c
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81336194"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92921229"
 ---
-# <a name="openmp-enable-openmp-support"></a>/openmp (OpenMP-Unterstützung aktivieren)
+# <a name="openmp-enable-openmp-support"></a>/OpenMP (OpenMP-Unterstützung aktivieren)
 
-Bewirkt, dass [`#pragma omp`](../../preprocessor/omp.md) der Compiler Direktiven zur Unterstützung von OpenMP verarbeitet.
+Bewirkt, dass der Compiler [`#pragma omp`](../../preprocessor/omp.md) Direktiven zur Unterstützung von OpenMP verarbeitet.
 
 ## <a name="syntax"></a>Syntax
 
-::: moniker range=">= vs-2019"
+::: moniker range=">= msvc-160"
 
-> **/openmp**\[**:**__experimentell__]
-
-::: moniker-end
-
-::: moniker range="<= vs-2017"
-
-> **/openmp**
+> **/OpenMP** \[ **:**__experimentell__ ]
 
 ::: moniker-end
 
-## <a name="remarks"></a>Bemerkungen
+::: moniker range="<= msvc-150"
 
-`#pragma omp`wird verwendet, um [Richtlinien](../../parallel/openmp/reference/openmp-directives.md) und [Klauseln](../../parallel/openmp/reference/openmp-clauses.md)anzugeben. Wenn **/openmp** in einer Kompilierung nicht angegeben ist, ignoriert der Compiler OpenMP-Klauseln und -Direktiven. [OpenMP Function-Aufrufe](../../parallel/openmp/reference/openmp-functions.md) werden vom Compiler verarbeitet, auch wenn **/openmp** nicht angegeben ist.
-
-::: moniker range=">= vs-2019"
-
-Der C++-Compiler unterstützt derzeit den OpenMP 2.0-Standard. Visual Studio 2019 bietet jetzt jedoch auch SIMD-Funktionalität. Um SIMD zu verwenden, kompilieren Sie mit der Option **/openmp:experimental.** Diese Option aktiviert sowohl die üblichen OpenMP-Funktionen als auch zusätzliche OpenMP-SIMD-Funktionen, die bei Verwendung des **Schalters /openmp** nicht verfügbar sind.
+> **/OpenMP**
 
 ::: moniker-end
 
-Anwendungen, die mit **/openmp** und **/clr** kompiliert werden, können nur in einem einzelnen Anwendungsdomänenprozess ausgeführt werden. Mehrere Anwendungsdomänen werden nicht unterstützt. Das heißt, wenn der`.cctor`Modulkonstruktor ( ) ausgeführt wird, erkennt er, ob der Prozess mit **/openmp**kompiliert wird und ob die App in eine nicht standardmäßige Laufzeit geladen wird. Weitere Informationen finden Sie unter [appdomain](../../cpp/appdomain.md), [/clr (Common Language Runtime Compilation)](clr-common-language-runtime-compilation.md)und [Initialisierung gemischter Assemblys](../../dotnet/initialization-of-mixed-assemblies.md).
+## <a name="remarks"></a>Hinweise
 
-Wenn Sie versuchen, eine App, die mit **/openmp** und **/clr** kompiliert wurde, in eine nicht standardmäßige Anwendungsdomäne zu laden, wird eine <xref:System.TypeInitializationException> Ausnahme außerhalb des Debuggers ausgelöst, und eine `OpenMPWithMultipleAppdomainsException` Ausnahme wird im Debugger ausgelöst.
+`#pragma omp` wird verwendet, um [Direktiven](../../parallel/openmp/reference/openmp-directives.md) und [Klauseln](../../parallel/openmp/reference/openmp-clauses.md)anzugeben. Wenn **/OpenMP** nicht in einer Kompilierung angegeben ist, ignoriert der Compiler OpenMP-Klauseln und-Direktiven. [OpenMP-Funktions](../../parallel/openmp/reference/openmp-functions.md) Aufrufe werden vom Compiler verarbeitet, auch wenn **/OpenMP** nicht angegeben ist.
+
+::: moniker range=">= msvc-160"
+
+Der C++-Compiler unterstützt derzeit den OpenMP 2,0-Standard. Visual Studio 2019 bietet jedoch jetzt auch SIMD-Funktionen. Kompilieren Sie mit der Option **/OpenMP: experimental** , um SIMD zu verwenden. Diese Option ermöglicht sowohl die üblichen OpenMP-Features als auch zusätzliche OpenMP SIMD-Funktionen, die bei Verwendung des **/OpenMP** -Schalters nicht verfügbar sind.
+
+::: moniker-end
+
+Anwendungen, die mit **/OpenMP** und **/CLR** kompiliert werden, können nur in einem einzelnen Anwendungs Domänen Prozess ausgeführt werden. Mehrere Anwendungs Domänen werden nicht unterstützt. Das heißt, wenn der Modulkonstruktor ( `.cctor` ) ausgeführt wird, erkennt er, ob der Prozess mit **/OpenMP** kompiliert wird und ob die app in eine nicht standardmäßige Laufzeit geladen wird. Weitere Informationen finden Sie unter [AppDomain](../../cpp/appdomain.md), [/CLR (Common Language Runtime-Kompilierung)](clr-common-language-runtime-compilation.md)und [Initialisierung gemischter](../../dotnet/initialization-of-mixed-assemblies.md)Assemblys.
+
+Wenn Sie versuchen, eine mit " **/OpenMP** " und " **/CLR** " kompilierte app in eine nicht standardmäßige Anwendungsdomäne zu laden, wird eine- <xref:System.TypeInitializationException> Ausnahme außerhalb des Debuggers ausgelöst, und `OpenMPWithMultipleAppdomainsException` im Debugger wird eine-Ausnahme ausgelöst.
 
 Diese Ausnahmen können auch in den folgenden Situationen ausgelöst werden:
 
-- Wenn Ihre Anwendung mit **/clr,** aber nicht mit **/openmp**kompiliert und in eine nicht standardmäßige Anwendungsdomäne geladen wird, enthält der Prozess eine Mit **/openmp**kompilierte App.
+- Wenn Ihre Anwendung mit **/CLR** , aber nicht mit **/OpenMP** kompiliert wird, wird Sie in eine nicht standardmäßige Anwendungsdomäne geladen, wobei der Prozess eine mit **/OpenMP** kompilierte app enthält.
 
-- Wenn Sie Ihre **/clr-App** an ein Dienstprogramm übergeben, z. B. [regasm.exe](/dotnet/framework/tools/regasm-exe-assembly-registration-tool), das seine Zielassemblys in eine nicht standardmäßige Anwendungsdomäne lädt.
+- Wenn Sie Ihre **/CLR** -APP an ein-Hilfsprogramm übergeben, z. b. [regasm.exe](/dotnet/framework/tools/regasm-exe-assembly-registration-tool), das die Zielassemblys in eine nicht standardmäßige Anwendungsdomäne lädt.
 
-Die Codezugriffssicherheit der Common Language Runtime funktioniert in OpenMP-Regionen nicht. Wenn Sie ein CLR-Codezugriffssicherheitsattribut außerhalb einer parallelen Region anwenden, ist es in der parallelen Region nicht wirksam.
+Die Code Zugriffssicherheit des Common Language Runtime funktioniert nicht in den OpenMP-Regionen. Wenn Sie ein Attribut für die CLR-Code Zugriffssicherheit außerhalb eines parallelen Bereichs anwenden, ist es im parallelen Bereich nicht wirksam.
 
-Microsoft empfiehlt nicht, **/openmp-Apps** zu schreiben, die teilweise vertrauenswürdige Aufrufer zulassen. Verwenden Sie <xref:System.Security.AllowPartiallyTrustedCallersAttribute>keine oder CLR-Codezugriffssicherheitsattribute.
+Microsoft empfiehlt nicht, **/OpenMP** -apps zu schreiben, die teilweise vertrauenswürdige Aufrufer zulassen. Verwenden Sie weder noch die Attribute für die <xref:System.Security.AllowPartiallyTrustedCallersAttribute> CLR-Code Zugriffssicherheit.
 
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>So legen Sie diese Compileroption in der Visual Studio-Entwicklungsumgebung fest
 
 1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Erweitern Sie die Eigenschaftenseite **"Konfigurationseigenschaften** > **C/C++** > **Language".**
+1. Erweitern Sie die **Eigenschaften Seite Konfigurations Eigenschaften**  >  **C/C++-**  >  **Sprache** .
 
-1. Ändern Sie die **OpenMP** Support-Eigenschaft.
+1. Ändern Sie die Eigenschaft **OpenMP-Unterstützung** .
 
 ### <a name="to-set-this-compiler-option-programmatically"></a>So legen Sie diese Compileroption programmgesteuert fest
 
@@ -71,11 +71,11 @@ Microsoft empfiehlt nicht, **/openmp-Apps** zu schreiben, die teilweise vertraue
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt einige der Auswirkungen des Threadpoolstarts im Vergleich zur Verwendung des Threadpools nach dem Start. Unter der Annahme eines x64, Single-Core, Dual-Prozessor, dauert der Thread-Pool etwa 16 ms, um zu starten. Danach gibt es wenig zusätzliche Kosten für den Thread-Pool.
+Im folgenden Beispiel werden einige der Auswirkungen des Thread Pool Starts und die Verwendung des Thread Pools nach dem Starten veranschaulicht. Bei einem x64-, Single Core-und Dual-Prozessor benötigt der Thread Pool ungefähr 16 ms, um zu starten. Danach fallen für den Thread Pool wenig zusätzliche Kosten an.
 
-Wenn Sie mit **/openmp**kompilieren, wird der zweite Aufruf von test2 nie länger ausgeführt als wenn Sie mit **/openmp-** kompilieren, da kein Threadpoolstart gestartet wird. Bei einer Million Iterationen ist die **/openmp-Version** schneller als die **/openmp-Version** für den zweiten Aufruf von test2. Bei 25 Iterationen registrieren sowohl **/openmp- als** **auch /openmp-Versionen** weniger als die Uhrgranularität.
+Wenn Sie mit **/OpenMP** kompilieren, wird der zweite test2-Befehl nie länger ausgeführt, als wenn Sie mit **/OpenMP-** kompilieren, da kein Thread Pool Start vorhanden ist. Bei einer Million Iterationen ist die **/OpenMP** -Version schneller als die **/OpenMP-** -Version für den zweiten test2-Rückruf. Bei 25 Iterationen registrieren sowohl die **/OpenMP-** -als auch die **/OpenMP** -Version weniger als die Zeit Granularität.
 
-Wenn Sie nur eine Schleife in Ihrer Anwendung haben und sie in weniger als 15 ms läuft (angepasst an den ungefähren Overhead auf Ihrem Computer), ist **/openmp** möglicherweise nicht geeignet. Wenn es höher ist, sollten Sie die Verwendung von **/openmp**in Betracht ziehen.
+Wenn Sie nur eine Schleife in Ihrer Anwendung haben und Sie in weniger als 15 MS ausgeführt wird (entsprechend dem ungefähren mehr Aufwand auf dem Computer), ist **/OpenMP** möglicherweise nicht geeignet. Wenn Sie höher ist, sollten Sie die Verwendung von **/OpenMP** in Erwägung gezogen.
 
 ```cpp
 // cpp_compiler_options_openmp.cpp
@@ -124,5 +124,5 @@ int main(int argc, char* argv[]) {
 ## <a name="see-also"></a>Siehe auch
 
 [MSVC-Compileroptionen](compiler-options.md) \
-[MSVC Compiler-Befehlszeilensyntax](compiler-command-line-syntax.md) \
+[MSVC-CompilerCommand-Line Syntax](compiler-command-line-syntax.md) \
 [OpenMP in MSVC](../../parallel/openmp/openmp-in-visual-cpp.md)

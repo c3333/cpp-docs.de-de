@@ -4,32 +4,32 @@ description: Beschreibung der Visual Studio-IDE C++ XML-Regel Dateien und-Inhalt
 ms.date: 10/14/2020
 helpviewer_keywords:
 - property page XML files
-ms.openlocfilehash: 96cbf6a32cada2b594874493868ec884823016cb
-ms.sourcegitcommit: 6e5429e076e552b32e8bdc49480c51498d7924c1
+ms.openlocfilehash: f8aa893fa2b062da2f1d0784e5a9b1a6f2b30c95
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92099718"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92921398"
 ---
 # <a name="property-page-xml-rule-files"></a>XML-Regeldateien für Eigenschaftenseiten
 
 Die Projekteigenschaften Seiten in der IDE werden von XML-Dateien im Ordner Standardregeln konfiguriert. Die XML-Dateien beschreiben die Namen der Regeln, die Kategorien und die einzelnen Eigenschaften, den Datentyp, die Standardwerte und wie Sie angezeigt werden. Wenn Sie eine Eigenschaft in der IDE festlegen, wird der neue Wert in der Projektdatei gespeichert.
 
-::: moniker range="vs-2015"
+::: moniker range="msvc-140"
 
-Der Pfad zum Standardordner "Rules" hängt vom Gebiets Schema und der verwendeten Version von Visual Studio ab. In einer Developer-Eingabeaufforderung von Visual Studio 2015 oder einer früheren Version lautet der Ordner Regeln *`%ProgramFiles(x86)%\MSBuild\Microsoft.Cpp\v4.0\<version>\<locale>`* . Der `<version>` Wert ist *`v140`* in Visual Studio 2015. `<locale>`Bei handelt es sich um eine LCID, z `1033` . b. für Englisch. Sie verwenden für jede installierte Edition von Visual Studio einen anderen Pfad und für jede Sprache. Der standardmäßige Regel Ordner Pfad für Visual Studio 2015 Community Edition in englischer Sprache könnte z *`C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\v140\1033\`* . b. lauten.
-
-::: moniker-end
-
-::: moniker range="vs-2017"
-
-Der Pfad zum Standardordner "Rules" hängt vom Gebiets Schema und der verwendeten Version von Visual Studio ab. In einer Visual Studio 2017 Developer-Eingabeaufforderung lautet der Ordner Regeln *`%VSINSTALLDIR%Common7\IDE\VC\VCTargets\<locale>\`* . `<locale>`Bei handelt es sich um eine LCID, z `1033` . b. für Englisch. In einer Developer-Eingabeaufforderung von Visual Studio 2015 oder einer früheren Version lautet der Ordner "Rules" *`%ProgramFiles(x86)%\MSBuild\Microsoft.Cpp\v4.0\<version>\<locale>\`* , wobei der `<version>` Wert *`v140`* in Visual Studio 2015 ist. Sie verwenden für jede installierte Edition von Visual Studio einen anderen Pfad und für jede Sprache. Der standardmäßige Regel Ordner Pfad für Visual Studio 2017 Community Edition in englischer Sprache könnte z *`C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\1033\`* . b. lauten.
+Der Pfad zum Standardordner "Rules" hängt vom Gebiets Schema und der verwendeten Version von Visual Studio ab. Bei der Developer-Eingabeaufforderung in Visual Studio 2015 oder einer früheren Version ist der Regelordner *`%ProgramFiles(x86)%\MSBuild\Microsoft.Cpp\v4.0\<version>\<locale>`* . In Visual Studio 2015 ist der Wert für `<version>` *`v140`* . `<locale>` ist eine LCID, z. B. `1033` für Englisch. Für jede installierte Edition von Visual Studio und jede Sprache gibt es einen eigenen Pfad. Beispielsweise könnte der Standardpfad für den Regelordner für Visual Studio 2015 Community Edition in englischer Sprache *`C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\v140\1033\`* sein.
 
 ::: moniker-end
 
-::: moniker range=">=vs-2019"
+::: moniker range="msvc-150"
 
-Der Pfad zum Standardordner "Rules" hängt vom Gebiets Schema und der verwendeten Version von Visual Studio ab. In einer Developer-Eingabeaufforderung von Visual Studio 2019 oder höher lautet der Ordner "Rules" *`%VSINSTALLDIR%MSBuild\Microsoft\VC\<version>\<locale>\`* , wobei der `<version>` Wert *`v160`* in Visual Studio 2019 ist. `<locale>`Bei handelt es sich um eine LCID, z `1033` . b. für Englisch. In Visual Studio 2017 lautet der Ordner Regeln *`%VSINSTALLDIR%Common7\IDE\VC\VCTargets\<locale>\`* . In einer Developer-Eingabeaufforderung von Visual Studio 2015 oder einer früheren Version lautet der Ordner Regeln *`%ProgramFiles(x86)%\MSBuild\Microsoft.Cpp\v4.0\<version>\<locale>\`* . Sie verwenden für jede installierte Edition von Visual Studio einen anderen Pfad und für jede Sprache. Der standardmäßige Regel Ordner Pfad für Visual Studio 2019 Community Edition in englischer Sprache könnte z *`C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\1033\`* . b. lauten.
+Der Pfad zum Standardordner "Rules" hängt vom Gebiets Schema und der verwendeten Version von Visual Studio ab. Bei der Developer-Eingabeaufforderung in Visual Studio 2017 ist der Regelordner *`%VSINSTALLDIR%Common7\IDE\VC\VCTargets\<locale>\`* . `<locale>` ist eine LCID, z. B. `1033` für Englisch. Bei der Developer-Eingabeaufforderung in Visual Studio 2015 oder einer früheren Version ist der Regelordner *`%ProgramFiles(x86)%\MSBuild\Microsoft.Cpp\v4.0\<version>\<locale>\`* mit *`v140`* als Wert für `<version>` in Visual Studio 2015. Für jede installierte Edition von Visual Studio und jede Sprache gibt es einen eigenen Pfad. Beispielsweise könnte der Standardpfad für den Regelordner für Visual Studio 2017 Community Edition in englischer Sprache *`C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\1033\`* sein.
+
+::: moniker-end
+
+::: moniker range=">=msvc-160"
+
+Der Pfad zum Standardordner "Rules" hängt vom Gebiets Schema und der verwendeten Version von Visual Studio ab. Bei der Developer-Eingabeaufforderung in Visual Studio 2019 oder einer höheren Version ist der Regelordner *`%VSINSTALLDIR%MSBuild\Microsoft\VC\<version>\<locale>\`* mit *`v160`* als Wert für `<version>` in Visual Studio 2019. `<locale>` ist eine LCID, z. B. `1033` für Englisch. In Visual Studio 2017 ist der Regelordner *`%VSINSTALLDIR%Common7\IDE\VC\VCTargets\<locale>\`* . Bei der Developer-Eingabeaufforderung in Visual Studio 2015 oder einer früheren Version ist der Regelordner *`%ProgramFiles(x86)%\MSBuild\Microsoft.Cpp\v4.0\<version>\<locale>\`* . Für jede installierte Edition von Visual Studio und jede Sprache gibt es einen eigenen Pfad. Beispielsweise könnte der Standardpfad für den Regelordner für Visual Studio 2019 Community Edition in englischer Sprache *`C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\1033\`* sein.
 
 ::: moniker-end
 
@@ -40,13 +40,13 @@ Sie müssen nur die internen Abläufe dieser Dateien und der Visual Studio-IDE i
 
 ## <a name="contents-of-rule-files"></a>Inhalt von Regel Dateien
 
-Öffnen Sie zunächst die Eigenschaften Seiten für ein Projekt. Klicken Sie in **Projektmappen-Explorer** mit der rechten Maustaste auf den Projekt Knoten, und wählen Sie **Eigenschaften**aus:
+Öffnen Sie zunächst die Eigenschaften Seiten für ein Projekt. Klicken Sie in **Projektmappen-Explorer** mit der rechten Maustaste auf den Projekt Knoten, und wählen Sie **Eigenschaften** aus:
 
 ![Zeigt das Dialogfeld "Visual Studio C++ Projekteigenschaften" an](../media/cpp-property-page-2017.png)
 
-Jeder Knoten unter **Konfigurations Eigenschaften** wird als *Regel*bezeichnet. Eine Regel stellt manchmal ein einzelnes Tool wie den Compiler dar. Im allgemeinen verweist der Begriff auf etwas, das über Eigenschaften verfügt, die ausgeführt werden und eine Ausgabe verursachen können. Jede Regel wird aus einer XML-Datei im Standardregel Ordner ausgefüllt. Die hier gezeigte C/C++-Regel wird z. b. mit *"cl.xml"* aufgefüllt.
+Jeder Knoten unter **Konfigurations Eigenschaften** wird als *Regel* bezeichnet. Eine Regel stellt manchmal ein einzelnes Tool wie den Compiler dar. Im allgemeinen verweist der Begriff auf etwas, das über Eigenschaften verfügt, die ausgeführt werden und eine Ausgabe verursachen können. Jede Regel wird aus einer XML-Datei im Standardregel Ordner ausgefüllt. Die hier gezeigte C/C++-Regel wird z. b. mit *"cl.xml"* aufgefüllt.
 
-Jede Regel verfügt über eine Reihe von Eigenschaften, die in *Kategorien*unterteilt sind. Jeder unter Knoten unter einer Regel stellt eine Kategorie dar. Beispielsweise enthält der Knoten **Optimierung** unter **C/C++** alle Optimierungs bezogenen Eigenschaften des Compilertools. Die Eigenschaften und ihre Werte werden im rechten Bereich in einem Raster Format gerendert.
+Jede Regel verfügt über eine Reihe von Eigenschaften, die in *Kategorien* unterteilt sind. Jeder unter Knoten unter einer Regel stellt eine Kategorie dar. Beispielsweise enthält der Knoten **Optimierung** unter **C/C++** alle Optimierungs bezogenen Eigenschaften des Compilertools. Die Eigenschaften und ihre Werte werden im rechten Bereich in einem Raster Format gerendert.
 
 Sie können *`cl.xml`* in Editor oder einem beliebigen XML-Editor öffnen. Sie sehen einen Stamm Knoten mit dem Namen `Rule` . Sie definiert die gleiche Liste von Eigenschaften, die in der Benutzeroberfläche angezeigt werden, zusammen mit zusätzlichen Metadaten.
 
@@ -111,19 +111,19 @@ Ein- **`<Rule>`** Element ist der Stamm Knoten in der XML-Datei. Sie kann über 
   </Rule.DisplayName>
 ```
 
-- **`Name`**: Das Name-Attribut ist eine ID für das `Rule` . Er muss in allen XML-Dateien der Eigenschaften Seite für ein Projekt eindeutig sein.
+- **`Name`** : Das Name-Attribut ist eine ID für das `Rule` . Er muss in allen XML-Dateien der Eigenschaften Seite für ein Projekt eindeutig sein.
 
-- **`PageTemplate`**: Der Wert dieses Attributs wird von der Benutzeroberfläche verwendet, um eine Sammlung von UI-Vorlagen auszuwählen. Die Vorlage „tool“ rendert die Eigenschaften in einem Standardrasterformat. Weitere integrierte Werte für dieses Attribut sind „debugger“ und „generic“. Betrachten Sie die Knoten „Debuggen“ und „Allgemein“, um zu sehen, welches Format sich für die Benutzeroberfläche ergibt, wenn Sie diese Werte festlegen. Die Benutzeroberfläche für die Seitenvorlage "Debugger" verwendet ein Dropdown Feld, um zwischen den Eigenschaften verschiedener Debugger zu wechseln. Die "generische" Vorlage zeigt verschiedene Eigenschaften Kategorien in einer Seite an, anstatt mehrere kategorieunterknoten unterhalb des `Rule` Knotens zu haben. Dieses Attribut ist nur ein Vorschlag für die Benutzeroberfläche. Die XML-Datei ist so konzipiert, dass Sie Benutzeroberflächen unabhängig ist. Eine andere Benutzeroberfläche verwendet dieses Attribut möglicherweise für andere Zwecke.
+- **`PageTemplate`** : Der Wert dieses Attributs wird von der Benutzeroberfläche verwendet, um eine Sammlung von UI-Vorlagen auszuwählen. Die Vorlage „tool“ rendert die Eigenschaften in einem Standardrasterformat. Weitere integrierte Werte für dieses Attribut sind „debugger“ und „generic“. Betrachten Sie die Knoten „Debuggen“ und „Allgemein“, um zu sehen, welches Format sich für die Benutzeroberfläche ergibt, wenn Sie diese Werte festlegen. Die Benutzeroberfläche für die Seitenvorlage "Debugger" verwendet ein Dropdown Feld, um zwischen den Eigenschaften verschiedener Debugger zu wechseln. Die "generische" Vorlage zeigt verschiedene Eigenschaften Kategorien in einer Seite an, anstatt mehrere kategorieunterknoten unterhalb des `Rule` Knotens zu haben. Dieses Attribut ist nur ein Vorschlag für die Benutzeroberfläche. Die XML-Datei ist so konzipiert, dass Sie Benutzeroberflächen unabhängig ist. Eine andere Benutzeroberfläche verwendet dieses Attribut möglicherweise für andere Zwecke.
 
-- **`SwitchPrefix`**: Das Präfix, das in der Befehlszeile für die Switches verwendet wird. Ein Wert von `"/"` würde zu Switches führen, die wie **`/ZI`** , **`/nologo`** , **`/W3`** usw. aussehen.
+- **`SwitchPrefix`** : Das Präfix, das in der Befehlszeile für die Switches verwendet wird. Ein Wert von `"/"` würde zu Switches führen, die wie **`/ZI`** , **`/nologo`** , **`/W3`** usw. aussehen.
 
-- **`Order`**: Ein Vorschlag an einen potenziellen Benutzeroberflächen Client im `Rule` Vergleich zu allen anderen Regeln im System.
+- **`Order`** : Ein Vorschlag an einen potenziellen Benutzeroberflächen Client im `Rule` Vergleich zu allen anderen Regeln im System.
 
-- **`xmlns`**: Ein Standard-XML-Element. Drei Namespaces werden aufgeführt. Diese Attribute entsprechen den Namespaces für die XML-deserialisierungsklassen, das XML-Schema bzw. den System Namespace.
+- **`xmlns`** : Ein Standard-XML-Element. Drei Namespaces werden aufgeführt. Diese Attribute entsprechen den Namespaces für die XML-deserialisierungsklassen, das XML-Schema bzw. den System Namespace.
 
-- **`DisplayName`**: Der Name, der auf der Benutzeroberfläche der Eigenschaften Seite für den Knoten angezeigt wird `Rule` . Dieser Wert wird lokalisiert. Wir haben `DisplayName` `Rule` `Name` `SwitchPrefix` aufgrund interner Lokalisierungs Tool Anforderungen als untergeordnetes Element von und nicht als Attribut (z. b. oder) erstellt. Aus XML-Sicht sind beide Äquivalent. Sie können deshalb ein Attribut daraus erstellen, um die Übersichtlichkeit zu verbessern, oder keine Änderung vornehmen.
+- **`DisplayName`** : Der Name, der auf der Benutzeroberfläche der Eigenschaften Seite für den Knoten angezeigt wird `Rule` . Dieser Wert wird lokalisiert. Wir haben `DisplayName` `Rule` `Name` `SwitchPrefix` aufgrund interner Lokalisierungs Tool Anforderungen als untergeordnetes Element von und nicht als Attribut (z. b. oder) erstellt. Aus XML-Sicht sind beide Äquivalent. Sie können deshalb ein Attribut daraus erstellen, um die Übersichtlichkeit zu verbessern, oder keine Änderung vornehmen.
 
-- **`DataSource`**: Diese wichtige Eigenschaft weist das Projekt System an, den Eigenschafts Wert und die zugehörige Gruppierung zu lesen und zu schreiben (später erläutert). Für lauten *`cl.xml`* folgende Werte:
+- **`DataSource`** : Diese wichtige Eigenschaft weist das Projekt System an, den Eigenschafts Wert und die zugehörige Gruppierung zu lesen und zu schreiben (später erläutert). Für lauten *`cl.xml`* folgende Werte:
 
     ```xml
     <DataSource Persistence="ProjectFile" ItemType="ClCompile" Label="" HasConfigurationCondition="true" />
@@ -161,7 +161,7 @@ Ein- **`<Rule>`** Element ist der Stamm Knoten in der XML-Datei. Sie kann über 
 
 - Es gibt andere Attribute von `Rule` , einschließlich `Description` und `SupportsFileBatching` , die hier nicht angezeigt werden. Der vollständige Satz von Attributen, die für einen `Rule` oder für ein beliebiges anderes Element anwendbar sind, kann durch das Durchsuchen der Dokumentation für diese Typen abgerufen werden. Alternativ können Sie die öffentlichen Eigenschaften von Typen im `Microsoft.Build.Framework.XamlTypes`-Namespace der `Microsoft.Build.Framework.dll`-Assembly überprüfen.
 
-- **`DisplayName`**, **`PageTemplate`** und **`Order`** sind UI-bezogene Eigenschaften, die in diesem anderweitig Benutzeroberflächen unabhängigen Datenmodell vorhanden sind. Diese Eigenschaften werden meistens von allen Benutzeroberflächen verwendet, die zum Anzeigen von Eigenschaftenseiten verwendet werden. `DisplayName` und `Description` sind zwei Eigenschaften, die für fast alle Elemente in der XML-Datei vorhanden sind. Diese beiden Eigenschaften sind die einzigen, die lokalisiert werden.
+- **`DisplayName`** , **`PageTemplate`** und **`Order`** sind UI-bezogene Eigenschaften, die in diesem anderweitig Benutzeroberflächen unabhängigen Datenmodell vorhanden sind. Diese Eigenschaften werden meistens von allen Benutzeroberflächen verwendet, die zum Anzeigen von Eigenschaftenseiten verwendet werden. `DisplayName` und `Description` sind zwei Eigenschaften, die für fast alle Elemente in der XML-Datei vorhanden sind. Diese beiden Eigenschaften sind die einzigen, die lokalisiert werden.
 
 ### <a name="category-elements"></a>Kategorieelemente
 
@@ -196,14 +196,14 @@ Die meisten Attribute im Codeausschnitt wurden zuvor bereits beschrieben. Die ne
 
 - **`Subtype`** ist ein Attribut, das nur für `StringProperty` -und-Elemente verfügbar ist `StringListProperty` . Sie enthält Kontextinformationen. Der-Wert gibt beispielsweise an `file` , dass die-Eigenschaft einen Dateipfad darstellt. Visual Studio verwendet diese Kontextinformationen, um die Bearbeitungsfunktionen zu verbessern. Beispielsweise kann ein Fenster in Windows-Explorer bereitgestellt werden, mit dem der Benutzer die Datei visuell als Editor für die Eigenschaft auswählen kann.
 
-- **`Category`**: Die Kategorie, unter der diese Eigenschaft liegt. Suchen Sie diese Eigenschaft in der Kategorie **Ausgabedateien** auf der Benutzeroberfläche.
+- **`Category`** : Die Kategorie, unter der diese Eigenschaft liegt. Suchen Sie diese Eigenschaft in der Kategorie **Ausgabedateien** auf der Benutzeroberfläche.
 
-- **`Switch`**: Wenn eine Regel ein Tool (z. b. das Compilertool) darstellt, werden die meisten `Rule` Eigenschaften bei der Buildzeit als Switches an die ausführbare Datei des Tools Der Wert dieses Attributs gibt an, welches switchliterale verwendet werden soll. Im `<StringProperty>` Beispiel wird angegeben, dass der Switch lauten soll **`Fo`** . In Kombination mit dem- `SwitchPrefix` Attribut für das übergeordnete Element `Rule` wird diese Eigenschaft als an die ausführbare Datei weitergegeben  **`/Fo"Debug\"`** . Es ist in der Befehlszeile für C/C++ auf der Eigenschaften Seite der Benutzeroberfläche sichtbar.
+- **`Switch`** : Wenn eine Regel ein Tool (z. b. das Compilertool) darstellt, werden die meisten `Rule` Eigenschaften bei der Buildzeit als Switches an die ausführbare Datei des Tools Der Wert dieses Attributs gibt an, welches switchliterale verwendet werden soll. Im `<StringProperty>` Beispiel wird angegeben, dass der Switch lauten soll **`Fo`** . In Kombination mit dem- `SwitchPrefix` Attribut für das übergeordnete Element `Rule` wird diese Eigenschaft als an die ausführbare Datei weitergegeben  **`/Fo"Debug\"`** . Es ist in der Befehlszeile für C/C++ auf der Eigenschaften Seite der Benutzeroberfläche sichtbar.
 
    Folgende weitere Eigenschaftenattribute sind vorhanden:
 
-- **`Visible`**: Wenn Sie nicht möchten, dass Ihre Eigenschaft in den Eigenschaften Seiten angezeigt wird, Sie aber zur Buildzeit verfügbar machen möchten, legen Sie dieses Attribut auf fest `false` .
+- **`Visible`** : Wenn Sie nicht möchten, dass Ihre Eigenschaft in den Eigenschaften Seiten angezeigt wird, Sie aber zur Buildzeit verfügbar machen möchten, legen Sie dieses Attribut auf fest `false` .
 
-- **`ReadOnly`**: Legen Sie dieses Attribut auf fest, wenn Sie eine schreibgeschützte Ansicht für den Wert dieser Eigenschaft in den Eigenschaften Seiten bereitstellen möchten `true` .
+- **`ReadOnly`** : Legen Sie dieses Attribut auf fest, wenn Sie eine schreibgeschützte Ansicht für den Wert dieser Eigenschaft in den Eigenschaften Seiten bereitstellen möchten `true` .
 
-- **`IncludeInCommandLine`**: Bei der Buildzeit benötigt ein Tool möglicherweise nicht einige seiner Eigenschaften. Legen Sie dieses Attribut auf fest, `false` um zu verhindern, dass eine bestimmte Eigenschaft übermittelt wird.
+- **`IncludeInCommandLine`** : Bei der Buildzeit benötigt ein Tool möglicherweise nicht einige seiner Eigenschaften. Legen Sie dieses Attribut auf fest, `false` um zu verhindern, dass eine bestimmte Eigenschaft übermittelt wird.

@@ -4,26 +4,26 @@ ms.date: 05/09/2019
 helpviewer_keywords:
 - ATL projects, adding ATL OLE DB providers
 ms.assetid: cf91ba78-01d1-4d12-b673-e95d96bfbebe
-ms.openlocfilehash: 91384d6c61368ee56ed303622e5c1bdfad09bd8a
-ms.sourcegitcommit: fc1de63a39f7fcbfe2234e3f372b5e1c6a286087
+ms.openlocfilehash: 43b8ed4507b004f1e78bc1b9dda64c44ff56e1d7
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65706962"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92921138"
 ---
 # <a name="atl-ole-db-provider-wizard"></a>ATL-OLE DB-Anbieter-Assistent
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 Dieser Assistent ist in Visual Studio 2019 und höher nicht verfügbar.
 
 ::: moniker-end
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
-## <a name="remarks"></a>Anmerkungen
+## <a name="remarks"></a>Hinweise
 
-Ab Visual Studio 2008 werden mit dem von diesem Assistenten generierten Registrierungsskript die zugehörigen COM-Komponenten nicht unter **HKEY_LOCAL_MACHINE**, sondern unter **HKEY_CURRENT_USER** registriert. Um dieses Verhalten zu ändern, legen Sie die Option **Komponente für alle Benutzer registrieren** des ATL-Assistenten fest.
+Ab Visual Studio 2008 werden mit dem von diesem Assistenten generierten Registrierungsskript die zugehörigen COM-Komponenten nicht unter **HKEY_LOCAL_MACHINE** , sondern unter **HKEY_CURRENT_USER** registriert. Um dieses Verhalten zu ändern, legen Sie die Option **Komponente für alle Benutzer registrieren** des ATL-Assistenten fest.
 
 Die folgende Tabelle beschreibt die Optionen für den ATL-OLE DB-Anbieter-Assistenten:
 
@@ -43,15 +43,15 @@ Die folgende Tabelle beschreibt die Optionen für den ATL-OLE DB-Anbieter-Assist
 
 - **ProgID**
 
-   Dieser programmgesteuerte Bezeichner ist eine Textzeichenfolge, den Ihre Anwendung anstelle einer GUID verwenden kann. Der ProgID-Name hat die Form *NameProjekt.NameCo-Klasse*.
+   Dieser programmgesteuerte Bezeichner ist eine Textzeichenfolge, den Ihre Anwendung anstelle einer GUID verwenden kann. Der ProgID-Name hat die Form *NameProjekt.NameCo-Klasse* .
 
 - **Version**
 
-   Die Versionsnummer Ihres Anbieters. Der Standard ist 1.
+   Die Versionsnummer Ihres Anbieters. Der Standardwert ist 1.
 
 - **DataSource-Klasse**
 
-   Der Name der Datenquellenklasse in der Form C*Kurzname*Source.
+   Der Name der Datenquellenklasse in der Form C *Kurzname* Source.
 
 - **DataSource-H-Datei**
 
@@ -59,7 +59,7 @@ Die folgende Tabelle beschreibt die Optionen für den ATL-OLE DB-Anbieter-Assist
 
 - **Sitzungsklasse**
 
-   Der Name der Sitzungsklasse in der Form C*Kurzname*Session.
+   Der Name der Sitzungsklasse in der Form C *Kurzname* Session.
 
 - **Sitzungs-H-Datei**
 
@@ -67,7 +67,7 @@ Die folgende Tabelle beschreibt die Optionen für den ATL-OLE DB-Anbieter-Assist
 
 - **Befehlsklasse**
 
-   Der Name der Befehlsklasse in der Form C*Kurzname*Command.
+   Der Name der Befehlsklasse in der Form C *Kurzname* Command.
 
 - **Befehls-H-Datei**
 
@@ -75,7 +75,7 @@ Die folgende Tabelle beschreibt die Optionen für den ATL-OLE DB-Anbieter-Assist
 
 - **Rowsetklasse**
 
-   Der Name der Rowsetklasse von in der Form C*Kurzname*Rowset.
+   Der Name der Rowsetklasse von in der Form C *Kurzname* Rowset.
 
 - **Rowset-H-Datei**
 

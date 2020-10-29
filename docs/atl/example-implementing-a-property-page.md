@@ -4,22 +4,22 @@ ms.date: 05/09/2019
 helpviewer_keywords:
 - property pages, implementing
 ms.assetid: c30b67fe-ce08-4249-ae29-f3060fa8d61e
-ms.openlocfilehash: dd74dd4562a3c4a8bff2c58d5f1d801f5dd06fd8
-ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
+ms.openlocfilehash: 82c2bd3765802f87025eaf2dfbda8f7467bbe9a0
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91499611"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92921242"
 ---
 # <a name="example-implementing-a-property-page"></a>Beispiel: Implementieren einer Eigenschaften Seite
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 Der ATL-Eigenschaftenseiten-Assistent ist in Visual Studio 2019 und höher nicht verfügbar.
 
 ::: moniker-end
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 Dieses Beispiel zeigt, wie Sie eine Eigenschaftenseite erstellen, auf der Eigenschaften der [Document Classes](../mfc/document-classes.md)-Schnittstelle angezeigt werden (und auf der Sie die Eigenschaften ändern können).
 
@@ -47,7 +47,7 @@ In diesem Beispiel führen Sie folgende Aktionen aus:
 
 ## <a name="adding-the-atl-property-page-class"></a><a name="vcconusing_the_atl_object_wizard"></a> Hinzufügen einer Klasse für ATL-Eigenschaftenseiten
 
-Zunächst erstellen Sie ein neues ATL-Projekt für einen DLL-Server namens `ATLPages7`. Danach verwenden Sie den [ATL-Eigenschaftenseiten-Assistenten](../atl/reference/atl-property-page-wizard.md), um eine Eigenschaftenseite zu generieren. Weisen Sie der Eigenschaftenseite den **Kurznamen****DocProperties** zu, und wechseln Sie dann zur Seite **Zeichenfolgen**, um für die Eigenschaftenseite spezifische Elemente festzulegen, wie in der unten stehenden Tabelle gezeigt.
+Zunächst erstellen Sie ein neues ATL-Projekt für einen DLL-Server namens `ATLPages7`. Danach verwenden Sie den [ATL-Eigenschaftenseiten-Assistenten](../atl/reference/atl-property-page-wizard.md), um eine Eigenschaftenseite zu generieren. Weisen Sie der Eigenschaftenseite den **Kurznamen****DocProperties** zu, und wechseln Sie dann zur Seite **Zeichenfolgen** , um für die Eigenschaftenseite spezifische Elemente festzulegen, wie in der unten stehenden Tabelle gezeigt.
 
 |Element|Wert|
 |----------|-----------|
@@ -60,7 +60,7 @@ Die Werte, die Sie auf dieser Seite des Assistenten festlegen, werden an den Con
 > [!NOTE]
 > Die Zeichenfolgen, die Sie hier festlegen, werden vom Assistenten als Zeichenfolgenressourcen in Ihrem Projekt gespeichert. Sie können diese Zeichenfolgen ganz einfach mit dem Ressourcen-Editor bearbeiten, wenn Sie diese Informationen ändern müssen, nachdem der Code für Ihre Seite generiert wurde.
 
-Klicken Sie auf **OK**, damit der Assistent Ihre Eigenschaftenseite generiert.
+Klicken Sie auf **OK** , damit der Assistent Ihre Eigenschaftenseite generiert.
 
 ## <a name="editing-the-dialog-resource"></a><a name="vcconediting_the_dialog_resource"></a> Bearbeiten der Dialogfeldressource
 
@@ -79,7 +79,7 @@ Wenn die Steuerelemente vorhanden sind, können Sie Meldungshandler hinzufügen,
 
 [!code-cpp[NVC_ATL_Windowing#73](../atl/codesnippet/cpp/example-implementing-a-property-page_1.h)]
 
-Dieser Code reagiert auf Änderungen am Bearbeitungssteuerelement oder Kontrollkästchen durch Aufruf von [IPropertyPageImpl::SetDirty](../atl/reference/ipropertypageimpl-class.md#setdirty), wodurch die Site der Seite darüber informiert wird, dass die Seite sich geändert hat. In der Regel reagiert die Site der Seite durch Aktivieren oder Deaktivieren einer **Anwenden**-Schaltfläche im Frame der Eigenschaftenseite.
+Dieser Code reagiert auf Änderungen am Bearbeitungssteuerelement oder Kontrollkästchen durch Aufruf von [IPropertyPageImpl::SetDirty](../atl/reference/ipropertypageimpl-class.md#setdirty), wodurch die Site der Seite darüber informiert wird, dass die Seite sich geändert hat. In der Regel reagiert die Site der Seite durch Aktivieren oder Deaktivieren einer **Anwenden** -Schaltfläche im Frame der Eigenschaftenseite.
 
 > [!NOTE]
 > Auf Ihren eigenen Eigenschaftenseiten müssen Sie möglicherweise nachverfolgen, welche Eigenschaften genau vom Benutzer geändert wurden, um zu vermeiden, dass Eigenschaften aktualisiert werden, die sich nicht geändert haben. Dieses Beispiel implementiert diesen Code, indem die ursprünglichen Eigenschaftswerte nachverfolgt und mit den aktuellen Werten der Benutzeroberfläche verglichen werden, wenn die Änderungen angewendet werden sollen.
@@ -140,7 +140,7 @@ Verwenden Sie das [Dialogfeld „Klasse hinzufügen“](../ide/adding-a-class-vi
 |Methodenname|`ShowPage`|
 |Parameter|`[in] BSTR bstrCaption, [in] BSTR bstrID, [in] IUnknown* pUnk`|
 
-Der *bstrCaption*-Parameter ist die Beschriftung, die als Titel des Dialogfelds angezeigt werden soll. Der *bstrID*-Parameter ist eine Zeichenfolge, die entweder eine CLSID oder eine ProgID der anzuzeigenden Eigenschaftenseite repräsentiert. Der *pUnk*-Parameter ist der `IUnknown`-Zeiger des Objekts, dessen Eigenschaften durch die Eigenschaftenseite konfiguriert werden.
+Der *bstrCaption* -Parameter ist die Beschriftung, die als Titel des Dialogfelds angezeigt werden soll. Der *bstrID* -Parameter ist eine Zeichenfolge, die entweder eine CLSID oder eine ProgID der anzuzeigenden Eigenschaftenseite repräsentiert. Der *pUnk* -Parameter ist der `IUnknown`-Zeiger des Objekts, dessen Eigenschaften durch die Eigenschaftenseite konfiguriert werden.
 
 Implementieren Sie die unten gezeigte Methode:
 
@@ -171,7 +171,7 @@ Wenn Sie dieses Makro ausführen, wird die Eigenschaftenseite mit dem Dateinamen
 
 ::: moniker-end
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Eigenschaftenseiten](../atl/atl-com-property-pages.md)<br/>
 [ATLPages-Beispiel](../overview/visual-cpp-samples.md)

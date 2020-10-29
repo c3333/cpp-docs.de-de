@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - ATL Property Page Wizard, strings
 ms.assetid: 00547db6-911f-49eb-92e1-2ba67079d4df
-ms.openlocfilehash: 04178c435bbd0ca80e412efc39a1b736062d95e7
-ms.sourcegitcommit: fc1de63a39f7fcbfe2234e3f372b5e1c6a286087
+ms.openlocfilehash: 61378e0aa2cee94420849195a94203be078418ff
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65706766"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92921112"
 ---
 # <a name="strings-atl-property-page-wizard"></a>Zeichenfolgen, ATL-Eigenschaftenseiten-Assistent
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 Der ATL-Eigenschaftenseiten-Assistent ist in Visual Studio 2019 und höher nicht verfügbar.
 
 ::: moniker-end
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 Ruft den Text ab, der der Eigenschaftenseite zugeordnet ist.
 

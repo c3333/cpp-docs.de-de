@@ -4,12 +4,12 @@ ms.date: 07/27/2020
 ms.topic: conceptual
 f1_keywords:
 - vs.codeanalysis.rulesets.native
-ms.openlocfilehash: f9876a2ce164d0a129ba21405ec61fdcbbd8de91
-ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
+ms.openlocfilehash: 53e1122cd1aac74401ca956ee24ebcdf79883228
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91507473"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92921905"
 ---
 # <a name="use-rule-sets-to-specify-the-c-rules-to-run"></a>Verwenden von Regelsätzen zum Festlegen von C++-Regeln für die Ausführung
 
@@ -23,9 +23,9 @@ Zum Erstellen eines neuen benutzerdefinierten Regelsatzes speichern Sie diesen u
 
 ## <a name="to-create-a-custom-rule-from-a-single-existing-rule-set"></a>So erstellen Sie eine benutzerdefinierte Regel aus einem einzelnen vorhandenen Regelsatz
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
-1. Öffnen Sie in Projektmappen-Explorer das Kontextmenü für das Projekt, und wählen Sie dann **Eigenschaften**aus.
+1. Öffnen Sie in Projektmappen-Explorer das Kontextmenü für das Projekt, und wählen Sie dann **Eigenschaften** aus.
 
 1. Wählen Sie im Dialogfeld Eigenschaften **Seiten** die **Eigenschaften** > Seite allgemeine **Code Analyse** für die Konfiguration aus > **General** .
 
@@ -40,9 +40,9 @@ Zum Erstellen eines neuen benutzerdefinierten Regelsatzes speichern Sie diesen u
 1. Wählen Sie **Öffnen** aus, um die Regeln im Regelsatz-Editor anzuzeigen.
 
 ::: moniker-end
-::: moniker range=">=vs-2019"
+::: moniker range=">=msvc-160"
 
-1. Öffnen Sie in Projektmappen-Explorer das Kontextmenü für das Projekt, und wählen Sie dann **Eigenschaften**aus.
+1. Öffnen Sie in Projektmappen-Explorer das Kontextmenü für das Projekt, und wählen Sie dann **Eigenschaften** aus.
 
 1. Wählen Sie im Dialogfeld Eigenschaften **Seiten** die **Eigenschaften Seite Konfigurations Eigenschaften** > **Code Analyse** > **Microsoft** aus.
 
@@ -60,7 +60,7 @@ Zum Erstellen eines neuen benutzerdefinierten Regelsatzes speichern Sie diesen u
 
 ## <a name="to-modify-a-rule-set-in-the-rule-set-editor"></a>So ändern Sie einen Regelsatz im Regelsatz-Editor
 
-- Um den anzeigen amen des Regelsatzes zu ändern, wählen Sie im Menü **Ansicht** die Option **Eigenschaften Fenster**aus. Geben Sie den anzeigen Amen in das Feld **Name** ein. Der Anzeigename kann sich vom Dateinamen unterscheiden.
+- Um den anzeigen amen des Regelsatzes zu ändern, wählen Sie im Menü **Ansicht** die Option **Eigenschaften Fenster** aus. Geben Sie den anzeigen Amen in das Feld **Name** ein. Der Anzeigename kann sich vom Dateinamen unterscheiden.
 
 - Wenn Sie einem benutzerdefinierten Regelsatz alle Regeln der Gruppe hinzufügen möchten, aktivieren Sie das Kontrollkästchen für die Gruppe. Wenn Sie alle Regeln der Gruppe entfernen möchten, deaktivieren Sie das Kontrollkästchen.
 
@@ -78,23 +78,23 @@ Zum Erstellen eines neuen benutzerdefinierten Regelsatzes speichern Sie diesen u
 
 ## <a name="to-group-filter-or-change-the-fields-in-the-rule-set-editor-by-using-the-rule-set-editor-toolbar"></a>So gruppieren, filtern oder ändert Sie Felder auf der Symbolleiste des Regelsatz-Editors
 
-- Um die Regeln in allen Gruppen zu erweitern, wählen Sie **Alle erweitern**aus.
+- Um die Regeln in allen Gruppen zu erweitern, wählen Sie **Alle erweitern** aus.
 
-- Um die Regeln in allen Gruppen zu reduzieren, wählen Sie **alle**reduzieren aus.
+- Um die Regeln in allen Gruppen zu reduzieren, wählen Sie **alle** reduzieren aus.
 
 - Wenn Sie das Feld ändern möchten, nach dem Regeln gruppiert werden, wählen Sie das Feld aus der Liste **Gruppieren nach** aus. Um die Regeln nicht gruppiert anzuzeigen, wählen Sie aus **\<None>** .
 
-- Wählen Sie **Spaltenoptionen**aus, um Felder in Regel Spalten hinzuzufügen oder zu entfernen.
+- Wählen Sie **Spaltenoptionen** aus, um Felder in Regel Spalten hinzuzufügen oder zu entfernen.
 
-- Um Regeln auszublenden, die nicht für die aktuelle Projekt Mappe gelten, wählen Sie **Regeln ausblenden aus, die nicht auf die aktuelle**Projekt Mappe angewendet werden.
+- Um Regeln auszublenden, die nicht für die aktuelle Projekt Mappe gelten, wählen Sie **Regeln ausblenden aus, die nicht auf die aktuelle** Projekt Mappe angewendet werden.
 
-- Wenn Sie zwischen dem anzeigen und Ausblenden von Regeln wechseln möchten, denen die Fehler Aktion zugewiesen ist, wählen Sie **Regeln anzeigen, die Code Analysefehler generieren können**.
+- Wenn Sie zwischen dem anzeigen und Ausblenden von Regeln wechseln möchten, denen die Fehler Aktion zugewiesen ist, wählen Sie **Regeln anzeigen, die Code Analysefehler generieren können** .
 
-- Wenn Sie zwischen dem anzeigen und Ausblenden von Regeln wechseln möchten, denen die Warnungs Aktion zugewiesen ist, wählen Sie **Regeln anzeigen, die Code Analyse Warnungen generieren können**aus.
+- Wenn Sie zwischen dem anzeigen und Ausblenden von Regeln wechseln möchten, denen die Warnungs Aktion zugewiesen ist, wählen Sie **Regeln anzeigen, die Code Analyse Warnungen generieren können** aus.
 
-- Wenn Sie zwischen dem anzeigen und Ausblenden von Regeln wechseln möchten, denen die Aktion **keine** zugewiesen ist, wählen Sie **nicht aktivierte Regeln anzeigen**aus.
+- Wenn Sie zwischen dem anzeigen und Ausblenden von Regeln wechseln möchten, denen die Aktion **keine** zugewiesen ist, wählen Sie **nicht aktivierte Regeln anzeigen** aus.
 
-- Um dem aktuellen Regelsatz Microsoft-Standardregel Sätze hinzuzufügen oder daraus zu entfernen, wählen Sie untergeordnete **Regelsätze hinzufügen oder entfernen**aus.
+- Um dem aktuellen Regelsatz Microsoft-Standardregel Sätze hinzuzufügen oder daraus zu entfernen, wählen Sie untergeordnete **Regelsätze hinzufügen oder entfernen** aus.
 
 ## <a name="to-create-a-rule-set-in-a-text-editor"></a>So erstellen Sie einen Regelsatz in einem Text-Editor
 
@@ -239,7 +239,7 @@ Das folgende RuleSet-Schema beschreibt das XML-Schema einer RuleSet-Datei. Das R
 
 Details zum Schema Element:
 
-| Schema-Element | Beschreibung |
+| Schema-Element | BESCHREIBUNG |
 |--------------------|--------------|
 | `TLocalization` | Lokalisierungs Informationen einschließlich Name der RuleSet-Datei, Beschreibung der RuleSet-Datei, Name der Ressourcenassembly, die die lokalisierte Ressource enthält, und Basisname der lokalisierten Ressource |
 | `TRuleHintPaths` | Dateipfade, die als Hinweise für die Suche nach RuleSet-Dateien verwendet werden |
