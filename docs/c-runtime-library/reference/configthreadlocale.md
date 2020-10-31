@@ -1,6 +1,7 @@
 ---
 title: _configthreadlocale
-ms.date: 4/2/2020
+ms.date: 10/29/2020
+description: Beschreibt die Microsoft C-Lauf Zeitfunktion, die zum Konfigurieren der Thread spezifischen Gebiets Schema `_configthreadlocale`  Optionen verwendet wird.
 api_name:
 - _configthreadlocale
 - _o__configthreadlocale
@@ -31,14 +32,14 @@ helpviewer_keywords:
 - per-thread locale
 - thread locale
 ms.assetid: 10e4050e-b587-4f30-80bc-6c76b35fc770
-ms.openlocfilehash: 26bcfe0d93a8c2b1a14e6afc0d413a5c7e4a7f6e
-ms.sourcegitcommit: 5a069c7360f75b7c1cf9d4550446ec2fa2eb2293
+ms.openlocfilehash: 3ffea30f8547088d6117ee980cdf28f017e87e83
+ms.sourcegitcommit: 868838273eda35eb72c78dccf4121940dcc04706
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82917318"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93102323"
 ---
-# <a name="_configthreadlocale"></a>_configthreadlocale
+# `_configthreadlocale`
 
 Konfiguriert Optionen für threadspezifische Gebietsschemas.
 
@@ -50,36 +51,36 @@ int _configthreadlocale( int per_thread_locale_type );
 
 ### <a name="parameters"></a>Parameter
 
-*per_thread_locale_type*<br/>
+*`per_thread_locale_type`*\
 Die festzulegende Option. Eine der in der folgenden Tabelle aufgelisteten Optionen.
 
 ## <a name="return-value"></a>Rückgabewert
 
-Der vorherige Status des Thread spezifischen Gebiets Schemas (**_DISABLE_PER_THREAD_LOCALE** oder **_ENABLE_PER_THREAD_LOCALE**) oder-1 bei einem Fehler.
+Der vorherige Status des Thread spezifischen Gebiets Schemas ( **`_DISABLE_PER_THREAD_LOCALE`** oder **`_ENABLE_PER_THREAD_LOCALE`** ) oder-1 bei einem Fehler.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
-Die **_configurethreadlocale** -Funktion wird verwendet, um die Verwendung von Thread spezifischen Gebiets Schemas zu steuern. Verwenden Sie eine dieser *per_thread_locale_type* Optionen, um den Status des Thread spezifischen Gebiets Schemas anzugeben oder zu bestimmen:
+Die- **`_configthreadlocale`** Funktion wird verwendet, um die Verwendung von Thread spezifischen Gebiets Schemas zu steuern. Verwenden Sie eine dieser *`per_thread_locale_type`* Optionen, um den Status des Thread spezifischen Gebiets Schemas anzugeben oder zu bestimmen:
 
 | Option | Beschreibung |
 |-|-|
-| **_ENABLE_PER_THREAD_LOCALE** | Legen Sie fest, dass der aktuelle Thread ein threadspezifisches Gebietsschema verwendet. Nachfolgende Aufrufe von **setlocale** in diesem Thread betreffen nur das eigene Gebiets Schema des Threads. |
-| **_DISABLE_PER_THREAD_LOCALE** | Legen Sie fest, dass der aktuelle Thread das globale Gebietsschema verwendet. Nachfolgende Aufrufe von **setlocale** in diesem Thread wirken sich auf andere Threads aus, die das globale Gebiets Schema verwenden. |
+| **`_ENABLE_PER_THREAD_LOCALE`** | Legen Sie fest, dass der aktuelle Thread ein threadspezifisches Gebietsschema verwendet. Nachfolgende Aufrufe von **`setlocale`** in diesem Thread betreffen nur das eigene Gebiets Schema des Threads. |
+| **`_DISABLE_PER_THREAD_LOCALE`** | Legen Sie fest, dass der aktuelle Thread das globale Gebietsschema verwendet. Nachfolgende Aufrufe von **`setlocale`** in diesem Thread betreffen andere Threads, die das globale Gebiets Schema verwenden. |
 | **0** | Ruft die aktuelle Einstellung für diesen speziellen Thread ab. |
 
-Diese Funktionen beeinflussen das Verhalten von **setlocale**, **_tsetlocale**, **_wsetlocale**und **_setmbcp**. Wenn das Thread spezifische Gebiets Schema deaktiviert ist, ändern alle nachfolgenden Aufrufe von **setlocale** oder **_wsetlocale** das Gebiets Schema aller Threads, die das globale Gebiets Schema verwenden. Wenn das Thread spezifische Gebiets Schema aktiviert ist, wirkt sich **setlocale** oder **_wsetlocale** nur auf das Gebiets Schema des aktuellen Threads aus.
+Diese Funktionen beeinflussen das Verhalten von **`setlocale`** , **`_tsetlocale`** , **`_wsetlocale`** und **`_setmbcp`** . Wenn das Thread spezifische Gebiets Schema deaktiviert ist, ändern alle nachfolgenden Aufrufe **`setlocale`** von oder das Gebiets Schema **`_wsetlocale`** aller Threads, die das globale Gebiets Schema verwenden. Wenn das Thread spezifische Gebiets Schema aktiviert ist, wirkt sich dies nur auf das Gebiets Schema **`setlocale`** **`_wsetlocale`** des aktuellen Threads aus.
 
-Wenn Sie **_configurethreadlocale** zum Aktivieren eines Thread spezifischen Gebiets Schemas verwenden, empfiehlt es sich, **setlocale** oder **_wsetlocale** aufzurufen, um das bevorzugte Gebiets Schema direkt danach in diesem Thread festzulegen.
+Wenn Sie zum Aktivieren eines Thread spezifischen Gebiets Schemas verwenden **`_configthreadlocale`** , wird empfohlen, **`setlocale`** oder zu verwenden, **`_wsetlocale`** um das bevorzugte Gebiets Schema in diesem Thread sofort später festzulegen.
 
-Wenn *per_thread_locale_type* nicht einer der in der Tabelle aufgeführten Werte ist, ruft diese Funktion den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legt diese Funktion **errno** auf **EINVAL** fest und gibt-1 zurück.
+Wenn *`per_thread_locale_type`* keiner der in der Tabelle aufgeführten Werte ist, ruft diese Funktion den Handler für ungültige Parameter auf, wie in [Parameter Validation (Parameter](../../c-runtime-library/parameter-validation.md)Überprüfung) beschrieben. Wenn die weitere Ausführung zugelassen wird, legt diese Funktion **`errno`** auf fest **`EINVAL`** und gibt-1 zurück.
 
 Standardmäßig ist der globale Status dieser Funktion auf die Anwendung beschränkt. Informationen hierzu finden Sie unter [globaler Status in der CRT](../global-state.md).
 
 ## <a name="requirements"></a>Anforderungen
 
-|Routine|Erforderlicher Header|
+|-Routine zurückgegebener Wert|Erforderlicher Header|
 |-------------|---------------------|
-|**_configthreadlocale**|\<locale.h>|
+|**`_configthreadlocale`**|\`<"locale. h">"|
 
 ## <a name="example"></a>Beispiel
 
@@ -190,9 +191,9 @@ The thread locale is now set to German_Germany.1252.
 The time in German locale is: 'Mittwoch, 12. Mai 2004'
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[setlocale, _wsetlocale](setlocale-wsetlocale.md)<br/>
-[_beginthread, _beginthreadex](beginthread-beginthreadex.md)<br/>
-[Locale](../../c-runtime-library/locale.md)<br/>
-[Multithreading und Gebiets Schemas](../../parallel/multithreading-and-locales.md)<br/>
+[`setlocale`, `_wsetlocale`](setlocale-wsetlocale.md)\
+[`_beginthread`, `_beginthreadex`](beginthread-beginthreadex.md)\
+[Konfigurations](../../c-runtime-library/locale.md)\
+[Multithreading und Gebietsschemas](../../parallel/multithreading-and-locales.md)
