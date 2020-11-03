@@ -1,7 +1,7 @@
 ---
 title: /std (Standardversion für die Sprache festlegen)
 description: Die MSVC-Compileroption/Std gibt den C-oder C++-Sprachstandard an, der vom Compiler unterstützt wird.
-ms.date: 09/11/2020
+ms.date: 10/29/2020
 f1_keywords:
 - /std
 - -std
@@ -11,12 +11,12 @@ f1_keywords:
 - /std:c17
 - VC.Project.VCCLCompilerTool.CppLanguageStandard
 ms.assetid: 0acb74ba-1aa8-4c05-b96c-682988dc19bd
-ms.openlocfilehash: 82f37377dc223bfe3f5e578e1c7f390da91752a1
-ms.sourcegitcommit: b492516cc65120250b9ea23f96f7f63f37f99fae
+ms.openlocfilehash: 208789071ff028107d3c7311c3b5c6cf3eea7c1d
+ms.sourcegitcommit: 4abc6c4c9694f91685cfd77940987e29a51e3143
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90075828"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93238472"
 ---
 # <a name="std-specify-language-standard-version"></a>`/std` (Standard Version der Sprache angeben)
 
@@ -30,7 +30,7 @@ Aktivieren Sie die unterstützten c-und C++-sprach Features der angegebenen Vers
 > **`/std:c11`**\
 > **`/std:c17`**
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die **`/std`** Option ist in Visual Studio 2017 und höher verfügbar. Sie wird verwendet, um die Versions spezifischen Standard Features der ISO C-oder C++-Programmiersprache zu steuern, die während der Kompilierung Ihres Codes aktiviert wurden. Mit dieser Option können Sie die Unterstützung für bestimmte neue sprach-und Bibliotheks Features deaktivieren: solche, die den vorhandenen Code unterbrechen können, der einer bestimmten Version des Sprachstandards entspricht.
 
@@ -77,13 +77,13 @@ Ab Visual Studio 2019 Version 16,8 können Sie **`/std:c11`** oder **`/std:c17`*
 
 Wenn Sie **`/std:c11`** oder angeben **`/std:c17`** , unterstützt MSVC alle erforderlichen Features von C11 und C17. Die Compileroptionen aktivieren die Unterstützung für diese Funktionen:
 
-- **`_Pragma`**
+- [`_Pragma`](../../preprocessor/pragma-directives-and-the-pragma-keyword.md#the-_pragma-preprocessing-operator-c99-c11)
 
 - **`restrict`**
 
 - **`_Noreturn`** immer \<stdnoreturn.h>
 
-- **`_Alignas`**, **`_Alignof`** und \<stdalign.h>
+- **`_Alignas`** , **`_Alignof`** und \<stdalign.h>
 
 - **`_Generic`** immer \<tgmath.h>
 
@@ -107,11 +107,11 @@ Der Compiler unterstützt keine optionalen Features von ISO C11. Einige dieser o
 
 1. Öffnen Sie das Dialogfeld **Eigenschaftenseiten** des Projekts. Weitere Informationen erhalten Sie unter [Set C++ compiler and build properties in Visual Studio (Festlegen der Compiler- und Buildeigenschaften (C++) in Visual Studio)](../working-with-project-properties.md).
 
-1. Wählen Sie **Konfigurationseigenschaften**, **C/C++**, **Sprache**aus.
+1. Wählen Sie **Konfigurationseigenschaften** , **C/C++** , **Sprache** aus.
 
-1. Wählen Sie im **C++-Sprachstandard** (oder für c, **c-Sprachstandard**) im Dropdown-Steuerelement den zu unterstützten Sprachstandard aus, und **Klicken** Sie dann auf OK **oder übernehmen, um** die Änderungen zu speichern.
+1. Wählen Sie im **C++-Sprachstandard** (oder für c, **c-Sprachstandard** ) im Dropdown-Steuerelement den zu unterstützten Sprachstandard aus, und **Klicken** Sie dann auf OK **oder übernehmen, um** die Änderungen zu speichern.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen:
 
 [MSVC-Compileroptionen](compiler-options.md)<br/>
-[MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)
+[MSVC-CompilerCommand-Line Syntax](compiler-command-line-syntax.md)

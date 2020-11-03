@@ -1,6 +1,7 @@
 ---
 title: Pragma-Anweisungen und das __pragma-Schlüsselwort
-ms.date: 08/29/2019
+description: Beschreibt die in Microsoft Visual C und C++ (MSVC) verfügbaren pragma-Direktiven.
+ms.date: 10/30/2020
 f1_keywords:
 - '#pragma'
 helpviewer_keywords:
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - preprocessor, pragmas
 - pragma directives (#pragma)
 ms.assetid: 9867b438-ac64-4e10-973f-c3955209873f
-ms.openlocfilehash: 786f76d9f7fd2eee73c6b1d009186bf93ea0c667
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: bf4bbdcf74808edd8ef54149f8258f47bd94c600
+ms.sourcegitcommit: 4abc6c4c9694f91685cfd77940987e29a51e3143
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88842688"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93238407"
 ---
 # <a name="pragma-directives-and-the-__pragma-keyword"></a>Pragma-Anweisungen und das __pragma-Schlüsselwort
 
@@ -26,16 +27,18 @@ Pragma-Direktiven geben Computer-oder betriebssystemspezifische Compilerfunktion
 
 ## <a name="syntax"></a>Syntax
 
-> **#pragma** *Tokenzeichenfolge*\
-> **__Pragma (** *Tokenzeichenfolge* **)**
+> **#`pragma`***Tokenzeichenfolge*\
+> **`__pragma(`***Tokenzeichenfolge* **`)`** zwei führende Unterstriche: Microsoft-spezifische Erweiterungs **`_Pragma(`** *Zeichenfolge-Literale* **`)`** //C99
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Jede Implementierung von C und C++ unterstützt mehrere Funktionen, die auf dem Hostcomputer oder Betriebssystem einzigartig sind. Einige Programme müssen z. b. eine genaue Kontrolle über den Speicherort der Daten im Arbeitsspeicher oder die Art und Weise steuern, wie bestimmte Funktionen Parameter erhalten. Die **#pragma** -Direktiven bieten jedem Compiler die Möglichkeit, Computer-und betriebssystemspezifische Funktionen bereitzustellen und gleichzeitig die Gesamt Kompatibilität mit den Programmiersprachen C und C++ aufrechtzuerhalten.
 
 Pragmas sind definitionsgemäß Computer-oder betriebssystemspezifisch und unterscheiden sich in der Regel für jeden Compiler. Pragmas können in bedingten Direktiven verwendet werden, um neue präprozessorfunktionen bereitzustellen oder um Implementierungs definierte Informationen für den Compiler bereitzustellen.
 
-Die *Tokenzeichenfolge* ist eine Reihe von Zeichen, die eine bestimmte Compileranweisung und Argumente (sofern vorhanden) enthalten. Das Nummern Zeichen ( **#** ) muss das erste Zeichen, das kein Leerzeichen ist, in der Zeile sein, die das Pragma enthält. Leerzeichen können das Nummern Zeichen und das Wort "Pragma" trennen. Schreiben Sie nach **#pragma**den Text, den der Konvertierer als Vorverarbeitungs Token analysieren kann. Das Argument für **#pragma** unterliegt der Makro Erweiterung.
+Die *Tokenzeichenfolge* ist eine Reihe von Zeichen, die eine bestimmte Compileranweisung und Argumente darstellen, sofern vorhanden. Das Nummern Zeichen ( **#** ) muss das erste Zeichen, das kein Leerzeichen ist, in der Zeile sein, die das Pragma enthält. Leerzeichen können das Nummern Zeichen und das Wort "Pragma" trennen. Schreiben Sie nach **#pragma** den Text, den der Konvertierer als Vorverarbeitungs Token analysieren kann. Das Argument für **#pragma** unterliegt der Makro Erweiterung.
+
+Die *Zeichenfolgenliterale* ist die Eingabe für `_Pragma` . Äußere Anführungszeichen und führende/nachfolgende Leerzeichen werden entfernt. `\"` wird durch ersetzt `"` und `\\` wird durch ersetzt `\` .
 
 Der Compiler gibt eine Warnung aus, wenn ein Pragma gefunden wird, das nicht erkannt wird, und setzt die Kompilierung fort.
 
@@ -114,9 +117,9 @@ cl /Zp8 some_file.cpp
 
 ## <a name="the-__pragma-keyword"></a>Das __Pragma ()-Schlüsselwort
 
-Der Compiler unterstützt auch das Microsoft-spezifische **__Pragma** -Schlüsselwort, das über die gleiche Funktionalität wie die **#pragma** -Direktive verfügt. Der Unterschied besteht darin, dass das **__Pragma** -Schlüsselwort Inline in einer Makro Definition verwendet werden kann. Die **#pragma** -Direktive kann nicht in einer Makro Definition verwendet werden, da der Compiler das Nummern Zeichen (' # ') in der Direktive als Zeichen folgen [Operator (#)](../preprocessor/stringizing-operator-hash.md)interpretiert.
+Der Compiler unterstützt auch das Microsoft-spezifische **`__pragma`** Schlüsselwort, das über die gleiche Funktionalität wie die **`#pragma`** Direktive verfügt. Der Unterschied besteht darin, dass das- **`__pragma`** Schlüsselwort Inline in einer Makro Definition verwendet werden kann. Die- **`#pragma`** Direktive kann nicht in einer Makro Definition verwendet werden, da der Compiler das Nummern Zeichen (' # ') in der Direktive als Zeichen folgen [Operator (#)](../preprocessor/stringizing-operator-hash.md)interpretiert.
 
-Im folgenden Codebeispiel wird veranschaulicht, wie das **__Pragma** -Schlüsselwort in einem Makro verwendet werden kann. Dieser Code wurde dem mfcdual.h-Header im ACDUAL-Beispiel in den Beispielen für die COM-Unterstützung des Compilers entnommen:
+Im folgenden Codebeispiel wird veranschaulicht, wie das- **`__pragma`** Schlüsselwort in einem Makro verwendet werden kann. Dieser Code wird aus dem *mfcdual. h* -Header im ACDUAL-Beispiel in "Compiler com-Support Beispiele" entnommen:
 
 ```cpp
 #define CATCH_ALL_DUAL \
@@ -136,7 +139,49 @@ END_CATCH_ALL \
 return _hr; \
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="the-_pragma-preprocessing-operator-c99-c11"></a>Der `_Pragma` Vorverarbeitungs Operator (C99, c++ 11)
+
+`_Pragma` ähnelt dem Microsoft-spezifischen [`__pragma`](#the-__pragma-keyword) Schlüsselwort, mit dem Unterschied, dass es Teil des Standards ist. Es wurde für C in C99 eingeführt. Für C++ wurde es in C++ 11 eingeführt.
+
+ Sie können Pragmas in eine Makro Definition einfügen. Es verfügt über einen führenden Unterstrich `_` anstelle von zwei führenden unterstrichen, `__` dass das Microsoft-spezifische Schlüsselwort hat und der erste Buchstabe groß geschrieben ist.
+
+Der Zeichenfolgenliteralwert sollte nach einer-Anweisung anderweitig eingefügt werden *`#pragma`* . Beispiel:
+
+```c
+#pragma message("--the #pragma way")
+_Pragma ("message( \"the _Pragma way\")") 
+```
+
+Anführungszeichen und Rückstriche sollten mit Escapezeichen versehen werden, wie oben gezeigt. Eine pragma-Zeichenfolge, die nicht erkannt wird, wird ignoriert.
+
+Im folgenden Codebeispiel wird veranschaulicht, wie das- **`_Pragma`** Schlüsselwort in einem Assert-ähnlichen Makro verwendet werden kann, wenn Sie keine Warnung erhalten möchten, wenn der Bedingungs Ausdruck konstant ist. 
+
+Die Makro Definition verwendet die do/while (0)-Ausdrucksweise für Makros mit mehreren Anweisungen, sodass Sie so verwendet werden kann, als ob es sich um eine Anweisung handelt. Weitere Informationen finden Sie unter [C-Multiline-Makro](https://stackoverflow.com/questions/1067226/c-multi-line-macro-do-while0-vs-scope-block) auf Stack Overflow. Die _Pragma-Anweisung gilt nur für die Codezeile, die darauf folgt.
+
+```C
+// Compile with /W4
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MY_ASSERT(BOOL_EXPRESSION) \
+    do { \
+        _Pragma("warning(suppress: 4127)") /* C4127 conditional expression is constant */  \
+        if (!(BOOL_EXPRESSION)) {   \
+            printf("MY_ASSERT FAILED: \"" #BOOL_EXPRESSION "\" on %s(%d)", __FILE__, __LINE__); \
+            exit(-1); \
+        } \
+    } while (0)
+
+int main()
+{
+    MY_ASSERT(0 && "Note that there is no warning: C4127 conditional expression is constant");
+
+    return 0;
+}
+```
+
+## <a name="see-also"></a>Weitere Informationen:
 
 [C/C++-präprozessorverweis](../preprocessor/c-cpp-preprocessor-reference.md)\
 [C-Pragmas](../c-language/c-pragmas.md)\
