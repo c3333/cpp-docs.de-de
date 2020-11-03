@@ -9,12 +9,12 @@ helpviewer_keywords:
 - MFC Feature Pack, update existing application
 - walkthroughs [MFC], update existing application
 ms.assetid: aa6330d3-6cfc-4c79-8fcb-0282263025f7
-ms.openlocfilehash: a9eda80fbabf939b9e3a5f8a0ef5b76e46656740
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 2abcb509a3d7a0045ad33bedccdd61fd1e0e58f8
+ms.sourcegitcommit: d8f65b1ddc9ea32e877c67e2c8f0ea7501183fc7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88840257"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93291082"
 ---
 # <a name="walkthrough-updating-the-mfc-scribble-application-part-1"></a>Exemplarische Vorgehensweise: Aktualisieren der MFC Scribble-Anwendung (Teil 1)
 
@@ -24,7 +24,7 @@ In dieser exemplarischen Vorgehensweise wird das klassische MFC-Beispiel Scribbl
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-Das [Scribble 1,0 MFC-Beispiel](https://download.microsoft.com/download/4/0/9/40946FEC-EE5C-48C2-8750-B0F8DA1C99A8/MFC/general/Scribble.zip.exe). Hilfe bei der Umstellung auf Visual Studio 2017 oder höher finden Sie unter [Leitfaden zum Portieren: MFC Scribble](../porting/porting-guide-mfc-scribble.md).
+Das [Scribble 1,0 MFC-Beispiel](https://github.com/microsoft/VCSamples/tree/master/VC2010Samples/MFC/general/Scribble). Hilfe bei der Umstellung auf Visual Studio 2017 oder höher finden Sie unter [Leitfaden zum Portieren: MFC Scribble](../porting/porting-guide-mfc-scribble.md).
 
 ## <a name="sections"></a><a name="top"></a> Strecken
 
@@ -50,7 +50,7 @@ Zum Konvertieren einer Anwendung, die ein Menü unterstützt, in eine Anwendung,
 
 1. Vergewissern Sie sich in Scribble. cpp, dass `CScribbleApp::InitInstance` einen [AfxOLEInit](../mfc/reference/ole-initialization.md#afxoleinit)-aufzurufenden enthält.
 
-1. Fügen Sie den folgenden Code in die Datei " *PCH. h* " ein (*stdafx. h* in Visual Studio 2017 und früher):
+1. Fügen Sie den folgenden Code in die Datei " *PCH. h* " ein ( *stdafx. h* in Visual Studio 2017 und früher):
 
     ```cpp
     #include <afxcontrolbars.h>
@@ -127,7 +127,7 @@ Diese exemplarische Vorgehensweise kopiert Ressourcen Dateien aus dem Beispiel, 
 
    1. Erstellen Sie eine Kopie der toolbar.bmp Datei, speichern Sie die Kopie jedoch im Menüband-Beispiel. Benennen Sie die Kopie in "panelicons.bmp" um, und verschieben Sie sie dann in das Scribble-Projekt.
 
-1. Importieren Sie die Bitmap für eine MFC-Anwendung. Doppelklicken Sie in **Ressourcenansicht**auf den Knoten **Scribble. RC** , doppelklicken Sie auf den Knoten **Bitmap** , und klicken Sie dann auf **Ressource hinzufügen**. Klicken Sie im angezeigten Dialogfeld auf **importieren**. Navigieren Sie zum `res` Verzeichnis, wählen Sie die Datei main.bmp aus, und klicken Sie dann auf **Öffnen**.
+1. Importieren Sie die Bitmap für eine MFC-Anwendung. Doppelklicken Sie in **Ressourcenansicht** auf den Knoten **Scribble. RC** , doppelklicken Sie auf den Knoten **Bitmap** , und klicken Sie dann auf **Ressource hinzufügen**. Klicken Sie im angezeigten Dialogfeld auf **importieren**. Navigieren Sie zum `res` Verzeichnis, wählen Sie die Datei main.bmp aus, und klicken Sie dann auf **Öffnen**.
 
    Die Bitmap "main.bmp" enthält ein 26x26-Bild. Ändern Sie die ID der Bitmap in `IDB_RIBBON_MAIN` .
 
@@ -148,7 +148,7 @@ Diese exemplarische Vorgehensweise kopiert Ressourcen Dateien aus dem Beispiel, 
 
 1. Importieren Sie Bitmaps für die Menübandbereiche, deren Größe geändert wurde. Diese Bitmaps oder Bereichssymbole werden nach einer Größenänderung verwendet, wenn das Menüband zu klein ist, um den gesamten Bereich anzuzeigen.
 
-   1. Importieren Sie die Bitmap "panelicons.bmp", die acht 16x16-Bilder enthält. Passen Sie im Fenster **Eigenschaften** des **Bitmap-Editors**die Breite der Bitmap auf 64 (16X64) an. Ändern Sie die ID der Bitmap in `IDB_PANEL_ICONS` .
+   1. Importieren Sie die Bitmap "panelicons.bmp", die acht 16x16-Bilder enthält. Passen Sie im Fenster **Eigenschaften** des **Bitmap-Editors** die Breite der Bitmap auf 64 (16X64) an. Ändern Sie die ID der Bitmap in `IDB_PANEL_ICONS` .
 
    > [!NOTE]
    > Da wir nur die ersten vier 16x16-Bilder (16X64) benötigen, können Sie optional die Rechte Breite dieser Bitmap von 128 auf 64 zuschneiden.
@@ -161,17 +161,17 @@ Ein Menüband besteht aus der **Anwendungs** Schaltfläche, bei der es sich um d
 
 ### <a name="to-add-a-ribbon-resource-to-the-project"></a>So fügen Sie dem Projekt eine Menübandressource hinzu
 
-1. Wenn das Scribble-Projekt in **Projektmappen-Explorer**ausgewählt ist, klicken Sie im Menü **Projekt** auf **Ressource hinzufügen**.
+1. Wenn das Scribble-Projekt in **Projektmappen-Explorer** ausgewählt ist, klicken Sie im Menü **Projekt** auf **Ressource hinzufügen**.
 
 1. Wählen Sie im Dialogfeld **Ressource hinzufügen** die Option **Menüband** aus, und klicken Sie auf **neu**.
 
-   Visual Studio erstellt eine Menübandressource und öffnet sie in der Designansicht. Die Menüband-Ressourcen-ID ist `IDR_RIBBON1` , die in **Ressourcenansicht**angezeigt wird. Das Menüband enthält eine Kategorie und einen Bereich.
+   Visual Studio erstellt eine Menübandressource und öffnet sie in der Designansicht. Die Menüband-Ressourcen-ID ist `IDR_RIBBON1` , die in **Ressourcenansicht** angezeigt wird. Das Menüband enthält eine Kategorie und einen Bereich.
 
 1. Sie können die **Anwendungs** Schaltfläche anpassen, indem Sie Ihre Eigenschaften ändern. Die Meldungs-IDs, die in diesem Code verwendet werden, sind bereits im Menü für Scribble 1.0 definiert.
 
 1. Klicken Sie in der Entwurfs Ansicht auf die **Anwendungs** Schaltfläche, um die zugehörigen Eigenschaften anzuzeigen. Ändern Sie die Eigenschaftswerte wie folgt: **Bild** in `IDB_RIBBON_MAIN` , **Eingabeaufforderung** , `File` **Schlüssel** zu `f` , **große Bilder** bis `IDB_RIBBON_FILELARGE` und **kleine Bilder** zu `IDB_RIBBON_FILESMALL` .
 
-1. Die folgenden Änderungen erstellen das Menü, das angezeigt wird, wenn der Benutzer auf die **Anwendungs** Schaltfläche klickt. Klicken Sie auf das Auslassungs Zeichen (**...**) neben **Hauptelemente** , um den **Editor für Elemente**zu öffnen.
+1. Die folgenden Änderungen erstellen das Menü, das angezeigt wird, wenn der Benutzer auf die **Anwendungs** Schaltfläche klickt. Klicken Sie auf das Auslassungs Zeichen ( **...** ) neben **Hauptelemente** , um den **Editor für Elemente** zu öffnen.
 
    1. Klicken Sie bei ausgewähltem **Elementtyp auf** **Hinzufügen** , um eine **Schaltfläche hinzu** zufügen. Ändern Sie **Beschriftung** in `&New` , **ID** in `ID_FILE_NEW` , **Bild** in, `0` **Bild groß** in `0` .
 
@@ -183,28 +183,28 @@ Ein Menüband besteht aus der **Anwendungs** Schaltfläche, bei der es sich um d
 
    1. Ändern Sie den **Elementtyp in** **Separator** , und klicken Sie dann auf **Hinzufügen**.
 
-   1. Ändern Sie den **Elementtyp in** " **Schaltfläche**". Klicken Sie zum Hinzufügen einer fünften Schaltfläche **Hinzufügen** . Ändern Sie **Beschriftung** in `&Close` , **ID** in `ID_FILE_CLOSE` , **Bild** in `5` und **Bild groß** in `5` .
+   1. Ändern Sie den **Elementtyp in** " **Schaltfläche** ". Klicken Sie zum Hinzufügen einer fünften Schaltfläche **Hinzufügen** . Ändern Sie **Beschriftung** in `&Close` , **ID** in `ID_FILE_CLOSE` , **Bild** in `5` und **Bild groß** in `5` .
 
 1. Mit den folgenden Änderungen wird ein Untermenü unter der Schaltfläche **Drucken** erstellt, das Sie im vorherigen Schritt erstellt haben.
 
-   1. Klicken Sie **auf die Schalt** Fläche **Drucken** , ändern Sie den Elementtyp in **Bezeichnung**, und klicken Sie dann auf **Einfügen**. Ändern Sie die **Beschriftung** in `Preview and print the document` .
+   1. Klicken Sie **auf die Schalt** Fläche **Drucken** , ändern Sie den Elementtyp in **Bezeichnung** , und klicken Sie dann auf **Einfügen**. Ändern Sie die **Beschriftung** in `Preview and print the document` .
 
-   1. Klicken Sie **auf die Schalt** Fläche **Drucken** , ändern Sie den Elementtyp in **Schaltfläche**, und klicken Sie auf **Einfügen**. Ändern Sie **Beschriftung** in `&Print` , **ID** in `ID_FILE_PRINT` , **Bild** in `4` und **Bild groß** in `4` .
+   1. Klicken Sie **auf die Schalt** Fläche **Drucken** , ändern Sie den Elementtyp in **Schaltfläche** , und klicken Sie auf **Einfügen**. Ändern Sie **Beschriftung** in `&Print` , **ID** in `ID_FILE_PRINT` , **Bild** in `4` und **Bild groß** in `4` .
 
    1. Klicken Sie auf die Schaltfläche **Drucken** und dann auf **Einfügen** , um eine Schaltfläche hinzuzufügen. Ändern Sie **Beschriftung** in `&Quick Print` , **ID** in `ID_FILE_PRINT_DIRECT` , **Bild** in `7` und **Bild groß** in `7` .
 
    1. Klicken Sie auf die Schaltfläche **Drucken** und dann auf **Einfügen** , um eine weitere Schaltfläche hinzuzufügen Ändern Sie **Beschriftung** in `Print Pre&view` , **ID** in `ID_FILE_PRINT_PREVIEW` , **Bild** in `6` und **Bild groß** in `6` .
 
-   1. Sie haben nun die **Hauptelemente**geändert. Klicken Sie auf **Schließen** , um den **Elemente-Editor**zu beenden
+   1. Sie haben nun die **Hauptelemente** geändert. Klicken Sie auf **Schließen** , um den **Elemente-Editor** zu beenden
 
 1. Mit der folgenden Änderung wird eine Schaltfläche Beenden erstellt, die am unteren Rand des **Anwendungs** Schaltflächen Menüs angezeigt wird.
 
-   1. Wählen Sie in **Projektmappen-Explorer**die Registerkarte **Ressourcenansicht** .
-   1. Klicken Sie im Fenster **Eigenschaften** auf die Schaltfläche mit den Auslassungs Punkten (**...**) neben **Schaltfläche** , um den **Elemente-Editor**zu öffnen.
+   1. Wählen Sie in **Projektmappen-Explorer** die Registerkarte **Ressourcenansicht** .
+   1. Klicken Sie im Fenster **Eigenschaften** auf die Schaltfläche mit den Auslassungs Punkten ( **...** ) neben **Schaltfläche** , um den **Elemente-Editor** zu öffnen.
 
    1. Klicken Sie bei ausgewähltem **Elementtyp auf** **Hinzufügen** , um eine **Schaltfläche hinzu** zufügen. Ändern Sie **Beschriftung** in `E&xit` , **ID** in `ID_APP_EXIT` , **Image** in `8` .
 
-   1. Sie haben die **Schalt**Flächen geändert. Klicken Sie auf **Schließen** , um den **Elemente-Editor**zu beenden
+   1. Sie haben die **Schalt** Flächen geändert. Klicken Sie auf **Schließen** , um den **Elemente-Editor** zu beenden
 
 ## <a name="creating-an-instance-of-the-ribbon-bar"></a><a name="createinstance"></a> Erstellen einer Instanz der Menü Band Leiste
 
@@ -239,13 +239,13 @@ Nachdem Sie die **Anwendungs** Schaltfläche erstellt haben, können Sie dem Men
 
 ### <a name="to-add-a-home-category-and-edit-panel"></a>So fügen Sie eine Kategorie "Startseite" und einen Bereich "Bearbeiten" hinzu
 
-1. Das Scribble-Programm erfordert nur eine Kategorie. Doppelklicken Sie in der Entwurfs Ansicht in der **Toolbox**auf **Category** , um eine hinzuzufügen und die zugehörigen Eigenschaften anzuzeigen. Ändern Sie die Eigenschaftswerte wie folgt: **Beschriftung** in `&Home` , **große Bilder** in `IDB_RIBBON_HOMELARGE` , **kleine Bilder** in `IDB_RIBBON_HOMESMALL` .
+1. Das Scribble-Programm erfordert nur eine Kategorie. Doppelklicken Sie in der Entwurfs Ansicht in der **Toolbox** auf **Category** , um eine hinzuzufügen und die zugehörigen Eigenschaften anzuzeigen. Ändern Sie die Eigenschaftswerte wie folgt: **Beschriftung** in `&Home` , **große Bilder** in `IDB_RIBBON_HOMELARGE` , **kleine Bilder** in `IDB_RIBBON_HOMESMALL` .
 
-1. Jede Menübandkategorie ist in benannte Bereiche unterteilt. Jeder Bereich enthält eine Reihe von Steuerelementen, die Verwandte Vorgänge vervollständigen. Diese Kategorie verfügt über einen Bereich. Klicken Sie auf **Panel**, und ändern Sie dann die **Beschriftung** in `Edit` .
+1. Jede Menübandkategorie ist in benannte Bereiche unterteilt. Jeder Bereich enthält eine Reihe von Steuerelementen, die Verwandte Vorgänge vervollständigen. Diese Kategorie verfügt über einen Bereich. Klicken Sie auf **Panel** , und ändern Sie dann die **Beschriftung** in `Edit` .
 
-1. Fügen Sie dem **Bearbeitungs** Bereich eine Schaltfläche hinzu, die für das Löschen des Inhalts des Dokuments zuständig ist. Die Nachrichten-ID für diese Schaltfläche wurde bereits in der `IDR_SCRIBBTYPE` Menü Ressource definiert. Geben Sie `Clear All` als Schaltflächen Text und den Index der Bitmap an, der die Schaltfläche schmückt. Öffnen Sie die **Toolbox**, und ziehen Sie dann eine **Schaltfläche** in den **Bearbeitungs** Bereich. Klicken Sie auf die Schaltfläche, und ändern Sie dann **Beschriftung** in `Clear All` , **ID** in `ID_EDIT_CLEAR_ALL` , **Image Index** in `0` , **Large Image Index** in `0` .
+1. Fügen Sie dem **Bearbeitungs** Bereich eine Schaltfläche hinzu, die für das Löschen des Inhalts des Dokuments zuständig ist. Die Nachrichten-ID für diese Schaltfläche wurde bereits in der `IDR_SCRIBBTYPE` Menü Ressource definiert. Geben Sie `Clear All` als Schaltflächen Text und den Index der Bitmap an, der die Schaltfläche schmückt. Öffnen Sie die **Toolbox** , und ziehen Sie dann eine **Schaltfläche** in den **Bearbeitungs** Bereich. Klicken Sie auf die Schaltfläche, und ändern Sie dann **Beschriftung** in `Clear All` , **ID** in `ID_EDIT_CLEAR_ALL` , **Image Index** in `0` , **Large Image Index** in `0` .
 
-1. Speichern Sie die Änderungen, erstellen Sie anschließend die Anwendung, und führen Sie sie aus. Die Scribble-Anwendung sollte angezeigt werden, und sie sollte am oberen Rand des Fensters über eine Menübandleiste anstelle einer Menüleiste verfügen. Die Menü Band Leiste sollte eine Kategorie, eine " **Home**" und " **Home** " einen Bereich haben, " **Bearbeiten**". Die Menü Band Schaltflächen, die Sie hinzugefügt haben, sollten den vorhandenen Ereignis Handlern zugeordnet sein, und die Schaltflächen **Öffnen**, **Schließen**, **Speichern**, **Drucken**und **Alle löschen** sollten erwartungsgemäß funktionieren.
+1. Speichern Sie die Änderungen, erstellen Sie anschließend die Anwendung, und führen Sie sie aus. Die Scribble-Anwendung sollte angezeigt werden, und sie sollte am oberen Rand des Fensters über eine Menübandleiste anstelle einer Menüleiste verfügen. Die Menü Band Leiste sollte eine Kategorie, eine " **Home** " und " **Home** " einen Bereich haben, " **Bearbeiten** ". Die Menü Band Schaltflächen, die Sie hinzugefügt haben, sollten den vorhandenen Ereignis Handlern zugeordnet sein, und die Schaltflächen **Öffnen** , **Schließen** , **Speichern** , **Drucken** und **Alle löschen** sollten erwartungsgemäß funktionieren.
 
 ## <a name="setting-the-look-of-the-application"></a><a name="setlook"></a> Das Aussehen der Anwendung wird festgelegt.
 
@@ -265,7 +265,7 @@ Bei einem *visuellen Manager* handelt es sich um ein globales Objekt, das alle Z
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Sie haben das klassische Scribble 1,0 MFC-Beispiel geändert, um den **Menüband-Designer**zu verwenden. Wechseln Sie jetzt zu [Teil 2](../mfc/walkthrough-updating-the-mfc-scribble-application-part-2.md).
+Sie haben das klassische Scribble 1,0 MFC-Beispiel geändert, um den **Menüband-Designer** zu verwenden. Wechseln Sie jetzt zu [Teil 2](../mfc/walkthrough-updating-the-mfc-scribble-application-part-2.md).
 
 ## <a name="see-also"></a>Weitere Informationen
 
