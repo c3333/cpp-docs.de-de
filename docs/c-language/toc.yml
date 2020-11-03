@@ -481,23 +481,7 @@
         - name: Definitionen und Konventionen
           href: ../c-language/definitions-and-conventions.md
         - name: Lexikalische Grammatik
-          items:
-            - name: Lexikalische Grammatik
-              href: ../c-language/lexical-grammar.md
-            - name: Zusammenfassung der Tokens
-              href: ../c-language/summary-of-tokens.md
-            - name: Zusammenfassung der Schlüsselwörter
-              href: ../c-language/summary-of-keywords.md
-            - name: Zusammenfassung der Bezeichner
-              href: ../c-language/summary-of-identifiers.md
-            - name: Zusammenfassung der Konstanten
-              href: ../c-language/summary-of-constants.md
-            - name: Zusammenfassung der Zeichenfolgenliterale
-              href: ../c-language/summary-of-string-literals.md
-            - name: Operatoren (C)
-              href: ../c-language/operators-c.md
-            - name: Markierungszeichen
-              href: ../c-language/punctuators.md
+          href: ../c-language/lexical-grammar.md
         - name: Phrasenstrukturgrammatik
           items:
             - name: Phrasenstrukturgrammatik
