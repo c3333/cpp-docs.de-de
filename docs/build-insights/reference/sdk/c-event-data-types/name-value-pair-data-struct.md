@@ -9,21 +9,21 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 384ed0340cd8de09101e2fe3e62e1a75f25e2bc1
-ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.openlocfilehash: bab9f7ccedc4a94478d50863f2fae248722468e2
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90041691"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92923540"
 ---
 # <a name="name_value_pair_data-structure"></a>NAME_VALUE_PAIR_DATA-Struktur
 
-::: moniker range="<=vs-2015"
+::: moniker range="<=msvc-140"
 
 Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
 Die `NAME_VALUE_PAIR_DATA`-Struktur beschreibt ein Name-Wert-Paar.
 

@@ -3,24 +3,24 @@ title: Bereitstellen, Ausführen und Debuggen Ihres auf MSBuild basierenden C++-
 description: Informationen zum Kompilieren, Ausführen und Debuggen von Code für das Remoteziel in einem auf MSBuild basierenden C++-Projekt für Linux in Visual Studio.
 ms.date: 08/08/2020
 ms.assetid: f7084cdb-17b1-4960-b522-f84981bea879
-ms.openlocfilehash: 4200e30b445f4a09fc60083db0067996c96ea953
-ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
+ms.openlocfilehash: a9feffbc86b50d510647776de6f1030f6986bef7
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90686703"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92921710"
 ---
 # <a name="deploy-run-and-debug-your-linux-msbuild-project"></a>Bereitstellen, Ausführen und Debuggen Ihres Linux-MSBuild-Projekts
 
-::: moniker range="vs-2015"
+::: moniker range="msvc-140"
 Die Unterstützung für Linux ist in Visual Studio 2017 und höher verfügbar. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie die Dropdownliste **Version** über dem Inhaltsverzeichnis auf **Visual Studio 2017** oder **Visual Studio 2019** fest.
 ::: moniker-end
 
 Nachdem Sie ein auf MSBuild basierendes C++-Projekt in Visual Studio für Linux erstellt haben und mit dem [Verbindungs-Manager von Linux](connect-to-your-remote-linux-computer.md) eine Verbindung mit dem Projekt hergestellt haben, können Sie das Projekt ausführen und debuggen. Die Kompilierung, die Ausführung und das Debuggen des Codes erfolgen auf dem Remoteziel.
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
-**Visual Studio 2019 Version 16.1**: Sie können für verschiedene Linux-Systeme Debug- und Buildvorgänge durchführen. Beispielsweise können Sie unter x64 eine Crosskompilierung durchführen und eine Bereitstellung auf einem ARM-Gerät vornehmen, wenn Sie auf IoT-Szenarien abzielen. Weitere Informationen finden Sie unter [Angeben verschiedener Computer zum Erstellen von Builds und Debuggen](#separate_build_debug) weiter unten in diesem Artikel.
+**Visual Studio 2019 Version 16.1** : Sie können für verschiedene Linux-Systeme Debug- und Buildvorgänge durchführen. Beispielsweise können Sie unter x64 eine Crosskompilierung durchführen und eine Bereitstellung auf einem ARM-Gerät vornehmen, wenn Sie auf IoT-Szenarien abzielen. Weitere Informationen finden Sie unter [Angeben verschiedener Computer zum Erstellen von Builds und Debuggen](#separate_build_debug) weiter unten in diesem Artikel.
 
 ::: moniker-end
 
@@ -34,7 +34,7 @@ Es gibt mehrere Möglichkeiten für den Umgang mit dem Linux-Projekt sowie zum D
 
 1. Wählen Sie den Debugmodus auf der Eigenschaftenseite **Debuggen** aus.
 
-   ::: moniker range="vs-2019"
+   ::: moniker range="msvc-160"
 
    GDB wird zum Debuggen von Anwendungen verwendet, die unter Linux ausgeführt werden. Beim Debuggen auf einem Remotesystem (nicht WSL) stehen gdb für die Ausführung zwei verschiedene Modi zur Verfügung, die über die Option **Debugmodus** auf der Eigenschaftenseite **Debuggen** des Projekts ausgewählt werden können:
 
@@ -42,7 +42,7 @@ Es gibt mehrere Möglichkeiten für den Umgang mit dem Linux-Projekt sowie zum D
 
    ::: moniker-end
 
-   ::: moniker range="vs-2017"
+   ::: moniker range="msvc-150"
 
    GDB wird zum Debuggen von Anwendungen verwendet, die unter Linux ausgeführt werden. Für die Ausführung stehen GDB zwei verschiedene Modi zur Verfügung, die über die Option **Debugging Mode** (Debugmodus) auf der Eigenschaftenseite **Debugging** (Debuggen) des Projekts ausgewählt werden können:
 
@@ -50,9 +50,9 @@ Es gibt mehrere Möglichkeiten für den Umgang mit dem Linux-Projekt sowie zum D
 
    ::: moniker-end
 
-   - Im **gdbserver**-Modus wird GDB lokal ausgeführt und stellt eine Verbindung mit gdbserver auf dem Remotesystem aus.
+   - Im **gdbserver** -Modus wird GDB lokal ausgeführt und stellt eine Verbindung mit gdbserver auf dem Remotesystem aus.
 
-   - Im **gdb**-Modus steuert der Visual Studio-Debugger GDB auf dem Remotesystem. Diese Option eignet sich besser, wenn die lokale Version von GDB nicht mit der Version kompatibel ist, die auf dem Zielcomputer installiert ist. Dies ist der einzige Modus, der im Linux-Konsolenfenster unterstützt wird.
+   - Im **gdb** -Modus steuert der Visual Studio-Debugger GDB auf dem Remotesystem. Diese Option eignet sich besser, wenn die lokale Version von GDB nicht mit der Version kompatibel ist, die auf dem Zielcomputer installiert ist. Dies ist der einzige Modus, der im Linux-Konsolenfenster unterstützt wird.
 
    > [!NOTE]
    > Wenn Sie im gdbserver-Debugmodus keine Haltepunkte treffen können, versuchen Sie es im gdb-Modus. GDB muss zunächst auf dem Remoteziel [installiert](download-install-and-setup-the-linux-development-workload.md) werden.
@@ -71,7 +71,7 @@ Es gibt mehrere Möglichkeiten für den Umgang mit dem Linux-Projekt sowie zum D
 
    In der Codezeile, in der Sie den Haltepunkt festlegen, wird ein roter Punkt angezeigt.
 
-1. Drücken Sie **F5** (oder **Debuggen > Debuggen starten**), um das Debuggen zu starten.
+1. Drücken Sie **F5** (oder **Debuggen > Debuggen starten** ), um das Debuggen zu starten.
 
    Wenn Sie das Debuggen starten, wird die Anwendung auf dem Remoteziel kompiliert, bevor sie gestartet wird. Fehler bei der Kompilierung werden im Fenster **Fehlerliste** angezeigt.
 
@@ -102,7 +102,7 @@ Es gibt mehrere Möglichkeiten für den Umgang mit dem Linux-Projekt sowie zum D
 
 ## <a name="debug-with-attach-to-process"></a>Debuggen mit „An den Prozess anhängen“
 
-Die Eigenschaftenseite [Debuggen](prop-pages/debugging-linux.md) für Visual Studio-Projekte und die **launch.vs.json**-Einstellungen für CMake-Projekte enthalten Einstellungen, über die Sie Anfügungen an laufende Prozesse durchführen können. Wenn Sie zusätzliche Steuerungsoptionen benötigen, die nicht von diesen Einstellungen abgedeckt werden, können Sie eine Datei mit dem Namen `Microsoft.MIEngine.Options.xml` am Stamm Ihrer Projektmappe oder Ihres Arbeitsbereichs ablegen. Hier sehen Sie ein einfaches Beispiel:
+Die Eigenschaftenseite [Debuggen](prop-pages/debugging-linux.md) für Visual Studio-Projekte und die **launch.vs.json** -Einstellungen für CMake-Projekte enthalten Einstellungen, über die Sie Anfügungen an laufende Prozesse durchführen können. Wenn Sie zusätzliche Steuerungsoptionen benötigen, die nicht von diesen Einstellungen abgedeckt werden, können Sie eine Datei mit dem Namen `Microsoft.MIEngine.Options.xml` am Stamm Ihrer Projektmappe oder Ihres Arbeitsbereichs ablegen. Hier sehen Sie ein einfaches Beispiel:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -121,23 +121,23 @@ ExePath="C:\temp\ConsoleApplication17\ConsoleApplication17\bin\x64\Debug\Console
 
 Das Objekt **AttachOptionsForConnection** verfügt über die meisten Attribute, die Sie möglicherweise brauchen. Das oben stehende Beispiel veranschaulicht, wie Sie einen Speicherort für die Suche nach zusätzlichen SO-Bibliotheken angeben. Durch das untergeordnete Element **ServerOptions** können Sie stattdessen Anfügungen an den Remoteprozess mit gdbserver durchführen. Dazu müssen Sie einen lokalen gdb-Client (der zu Visual Studio 2017 gehörige wird oben gezeigt) und eine lokale Kopie der Binärdatei mit Symbolen angeben. Durch das Element **SetupCommands** können Sie Befehle direkt an gdb übergeben. Alle verfügbaren Optionen finden Sie im [LaunchOptions.xsd-Schema](https://github.com/Microsoft/MIEngine/blob/master/src/MICore/LaunchOptions.xsd) auf GitHub.
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 ## <a name="specify-different-machines-for-building-and-debugging-in-msbuild-based-linux-projects"></a><a name="separate_build_debug"></a> Angeben verschiedener Computer zum Erstellen von Builds und Debuggen in auf MSBuild basierenden Linux-Projekten
 
 In Visual Studio 2019, Version 16.1 können Sie Ihren Remotebuildcomputer von Ihrem Remotedebugcomputer trennen, und zwar sowohl für auf MSBuild basierende Linux-Projekte als auch für CMake-Projekte, die einen Linux-Remotecomputer als Ziel haben. Beispielsweise können Sie nun unter x64 eine Crosskompilierung durchführen und eine Bereitstellung auf einem ARM-Gerät vornehmen, wenn Sie auf IoT-Szenarien abzielen.
 
-Standardmäßig ist der Remotedebugcomputer identisch mit dem Remotebuildcomputer (**Konfigurationseigenschaften** > **Allgemein** > **Remotebuildcomputer**). Um einen neuen Remotedebugcomputer anzugeben, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wechseln Sie zu **Konfigurationseigenschaften** > **Debuggen** > **Remotedebugcomputer**.  
+Standardmäßig ist der Remotedebugcomputer identisch mit dem Remotebuildcomputer ( **Konfigurationseigenschaften** > **Allgemein** > **Remotebuildcomputer** ). Um einen neuen Remotedebugcomputer anzugeben, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wechseln Sie zu **Konfigurationseigenschaften** > **Debuggen** > **Remotedebugcomputer**.  
 
 ![Linux-Remotedebugcomputer](media/linux-remote-debug-machine.png)
 
-Das Dropdownmenü für **Remotedebugcomputer** wird mit allen eingerichteten Remoteverbindungen aufgefüllt. Um eine neue Remoteverbindung hinzuzufügen, navigieren Sie zu **Tools** > **Optionen** > **Plattformübergreifend** > **Verbindungs-Manager**, oder suchen Sie in **Schnellstart** nach „Verbindungs-Manager“. Sie können auch auf den Eigenschaftsseiten des Projekts (**Konfigurationseigenschaften** > **Allgemein** > **Remotebereitstellungsverzeichnis**) ein neues Remotebereitstellungsverzeichnis angeben.
+Das Dropdownmenü für **Remotedebugcomputer** wird mit allen eingerichteten Remoteverbindungen aufgefüllt. Um eine neue Remoteverbindung hinzuzufügen, navigieren Sie zu **Tools** > **Optionen** > **Plattformübergreifend** > **Verbindungs-Manager** , oder suchen Sie in **Schnellstart** nach „Verbindungs-Manager“. Sie können auch auf den Eigenschaftsseiten des Projekts ( **Konfigurationseigenschaften** > **Allgemein** > **Remotebereitstellungsverzeichnis** ) ein neues Remotebereitstellungsverzeichnis angeben.
 
 Standardmäßig werden nur die Dateien, die für den zu debuggenden Prozess erforderlich sind, auf dem Remotedebugcomputer bereitgestellt. Sie können im **Projektmappen-Explorer** konfigurieren, welche Quelldateien dem Remotedebugcomputer bereitgestellt werden sollen. Wenn Sie auf eine Quelldatei klicken, sehen Sie direkt unter dem Projektmappen-Explorer eine Vorschau ihrer Dateieigenschaften.
 
 ![Unter Linux bereitstellbare Dateien](media/linux-deployable-content.png)
 
-Die **Content**-Eigenschaft gibt an, ob die Datei auf dem Remotedebugcomputer bereitgestellt wird. Sie können die Bereitstellung vollständig deaktivieren, indem Sie zu **Eigenschaftsseiten** > **Konfigurations-Manager** navigieren und **Bereitstellen** für die gewünschte Konfiguration deaktivieren.
+Die **Content** -Eigenschaft gibt an, ob die Datei auf dem Remotedebugcomputer bereitgestellt wird. Sie können die Bereitstellung vollständig deaktivieren, indem Sie zu **Eigenschaftsseiten** > **Konfigurations-Manager** navigieren und **Bereitstellen** für die gewünschte Konfiguration deaktivieren.
 
 Möglicherweise benötigen Sie in einigen Fällen mehr Kontrolle über die Bereitstellung Ihres Projekts. Beispielsweise können sich einige Dateien, die Sie bereitstellen möchten, außerhalb Ihrer Projektmappe befinden, oder Sie möchten Ihr Remotebereitstellungsverzeichnis datei- oder verzeichnisbezogen anpassen. Fügen Sie in diesen Fällen die folgenden Codeblöcke an Ihre VCXPROJ-Datei an, und ersetzen Sie „example.cpp“ durch die tatsächlichen Dateinamen:
 

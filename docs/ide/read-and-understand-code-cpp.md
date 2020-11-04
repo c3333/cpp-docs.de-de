@@ -2,12 +2,12 @@
 title: Lesen und Verstehen von C++-Code in Visual Studio
 description: Verwenden Sie den C++-Code-Editor in Visual Studio, um Ihren Code zu formatieren und zu verstehen.
 ms.date: 05/28/2019
-ms.openlocfilehash: 3da4224592cabd11e449fa4be395eba046c0e554
-ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
+ms.openlocfilehash: cd152ffbbd106c6a31a21da35d08b53555047209
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90686128"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924648"
 ---
 # <a name="read-and-understand-c-code-in-visual-studio"></a>Lesen und Verstehen von C++-Code in Visual Studio
 
@@ -45,11 +45,11 @@ Sie können den Editor vergrößern oder verkleinern, indem Sie **STRG** halten 
 
 ![C&#43;&#43; – Zoomsteuerung](../ide/media/zoom-control.png "Zoom-Steuerelement")
 
-Mit dem Scrollleisten-**Code Map-Modus** können Sie schnell scrollen und eine Codedatei durchsuchen, ohne die aktuelle Position zu verlassen. Sie können auf eine beliebige Stelle in der Code Map klicken, um zu dieser zu springen.
+Mit dem Scrollleisten- **Code Map-Modus** können Sie schnell scrollen und eine Codedatei durchsuchen, ohne die aktuelle Position zu verlassen. Sie können auf eine beliebige Stelle in der Code Map klicken, um zu dieser zu springen.
 
 ![Code Map in C&#43;&#43;](../ide/media/vs2015-cpp-code-map.png "Code Map")
 
-Geben Sie „map“ in das **Schnellstart**-Suchfeld in der Hauptsymbolleiste ein, und wählen Sie **Use scroll map mode** (Scroll-Code Map-Modus verwenden) aus, um den **Code Map-Modus** zu aktivieren. Weitere Informationen finden Sie unter [Vorgehensweise: Verfolgen von Code durch Anpassen der Scrollleiste](/visualstudio/ide/how-to-track-your-code-by-customizing-the-scrollbar).
+Geben Sie „map“ in das **Schnellstart** -Suchfeld in der Hauptsymbolleiste ein, und wählen Sie **Use scroll map mode** (Scroll-Code Map-Modus verwenden) aus, um den **Code Map-Modus** zu aktivieren. Weitere Informationen finden Sie unter [Vorgehensweise: Verfolgen von Code durch Anpassen der Scrollleiste](/visualstudio/ide/how-to-track-your-code-by-customizing-the-scrollbar).
 
 Wenn der **Code Map-Modus** deaktiviert ist, hebt die Scrollleiste weiterhin die Änderungen hervor, die Sie in der Datei vorgenommen haben. Grün gibt gespeicherte Änderungen an, und Gelb gibt nicht gespeicherte Änderungen an.
 
@@ -57,11 +57,11 @@ Wenn der **Code Map-Modus** deaktiviert ist, hebt die Scrollleiste weiterhin die
 
 Zeigen Sie auf eine beliebige Variable, Funktion oder ein anderes Symbol, um Informationen über dieses zu erhalten, einschließlich der Deklaration und weiteren Kommentare, die davor platziert wurden.
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 ![Screenshot der QuickInfo in Visual Studio 2019](../ide/media/quick-info-vs2019.png "QuickInfo")
 
-Die **QuickInfo** enthält einen Link zum **Online suchen**. Öffnen Sie **Extras** > **Optionen** > **Text-Editor** > **C++**  > **Ansicht**, um den Suchanbieter festzulegen.
+Die **QuickInfo** enthält einen Link zum **Online suchen**. Öffnen Sie **Extras** > **Optionen** > **Text-Editor** > **C++**  > **Ansicht** , um den Suchanbieter festzulegen.
 
 Wenn Ihr Code einen Fehler aufweist, können Sie auf diesen zeigen. In der **QuickInfo** wird die Fehlermeldung angezeigt. Sie können die Fehlermeldung auch im Fenster „Fehlerliste“ finden.
 
@@ -69,7 +69,7 @@ Wenn Ihr Code einen Fehler aufweist, können Sie auf diesen zeigen. In der **Qui
 
 ::: moniker-end
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 ![Screenshot der QuickInfo in Visual Studio 2017](../ide/media/quick-info.png "QuickInfo")
 
@@ -91,7 +91,7 @@ Zeigen Sie auf eine Variablen- oder Funktionsdeklaration, klicken Sie mit der re
 
 ## <a name="f1-help"></a>F1-Hilfe
 
-Platzieren Sie den Cursor in oder direkt hinter einen Typ, ein Schlüsselwort oder einer Funktion, und drücken Sie **F1**, um direkt das entsprechende Referenzthema auf docs.microsoft.com zu öffnen. **F1** funktioniert auch für Elemente in der Fehlerliste und in vielen Dialogfeldern.
+Platzieren Sie den Cursor in oder direkt hinter einen Typ, ein Schlüsselwort oder einer Funktion, und drücken Sie **F1** , um direkt das entsprechende Referenzthema auf docs.microsoft.com zu öffnen. **F1** funktioniert auch für Elemente in der Fehlerliste und in vielen Dialogfeldern.
 
 ## <a name="class-view"></a>Klassenansicht
 

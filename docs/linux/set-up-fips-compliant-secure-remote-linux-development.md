@@ -2,22 +2,22 @@
 title: Einrichten einer FIPS-konformen sicheren Linux-Remoteentwicklung
 description: Einrichten einer mit FIPS kompatiblen kryptografischen Verbindung zwischen Visual Studio und einem Linux-Computer für Remoteentwicklung.
 ms.date: 01/17/2020
-ms.openlocfilehash: 9a0e87f4ddf69bf489b52d4f83934d3279f2d085
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: b7eb6bfd32d362415eda057bfa78afe80fb9e2f4
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "76520462"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924683"
 ---
 # <a name="set-up-fips-compliant-secure-remote-linux-development"></a>Einrichten einer FIPS-konformen sicheren Linux-Remoteentwicklung
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 Die Unterstützung für Linux ist in Visual Studio 2017 und höher verfügbar. Mit FIPS kompatible sichere Linux-Remoteentwicklung ist in Visual Studio 2019 (Version 16.5 oder höher) verfügbar.
 
 ::: moniker-end
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 Die FIPS-Veröffentlichung (Federal Information Processing Standard) 140-2 ist ein Standard der US-Regierung für kryptografische Module. Implementierungen des Standards werden von NIST überprüft. Windows verfügt über [überprüfte Unterstützung für mit FIPS kompatible kryptografische Module](/windows/security/threat-protection/fips-140-validation). In Visual Studio 2019 (Version 16.5 oder höher) können Sie eine sichere, mit FIPS kompatible kryptografische Verbindung mit Ihrem Linux-System für Remoteentwicklung verwenden.
 
@@ -99,7 +99,7 @@ Sie haben SSH erfolgreich eingerichtet, Verschlüsselungsschlüssel erstellt und
 
 ## <a name="connect-to-the-remote-system-in-visual-studio"></a>Herstellen einer Verbindung mit dem Remotesystem in Visual Studio
 
-1. Klicken Sie in Visual Studio in der Menüleiste auf **Extras > Optionen**, um das Dialogfeld **Optionen** zu öffnen. Wählen Sie dann **Plattformübergreifend > Verbindungs-Manager** aus, um das Dialogfeld „Verbindungs-Manager“ zu öffnen.
+1. Klicken Sie in Visual Studio in der Menüleiste auf **Extras > Optionen** , um das Dialogfeld **Optionen** zu öffnen. Wählen Sie dann **Plattformübergreifend > Verbindungs-Manager** aus, um das Dialogfeld „Verbindungs-Manager“ zu öffnen.
 
    Wenn Sie zuvor noch keine Verbindung in Visual Studio eingerichtet haben, öffnet Visual Studio das Dialogfeld „Verbindungs-Manager“, wenn Sie das Projekt erstmals erstellen.
 
@@ -124,7 +124,7 @@ Sie haben SSH erfolgreich eingerichtet, Verschlüsselungsschlüssel erstellt und
 
    Ändern Sie den Authentifizierungstyp in **Privater Schlüssel**. Geben Sie den Pfad zu Ihrem privaten Schlüssel in das Feld **Datei des privaten Schlüssels** ein. Sie können die Schaltfläche **Durchsuchen** verwenden, um stattdessen zu Ihrer Datei mit dem privaten Schlüssel zu navigieren. Geben Sie dann die Passphrase in das Feld **Passphrase** ein, die verwendet wird, um die Datei mit dem privaten Schlüssel zu verschlüsseln.
 
-1. Klicken Sie auf die Schaltfläche **Verbinden**, um eine Verbindung mit dem Remotecomputer herzustellen.
+1. Klicken Sie auf die Schaltfläche **Verbinden** , um eine Verbindung mit dem Remotecomputer herzustellen.
 
    Wenn die Verbindung erfolgreich hergestellt wird, konfiguriert Visual Studio IntelliSense für die Verwendung der Remoteheader. Weitere Informationen finden Sie unter [IntelliSense für Header auf Remotesystemen](configure-a-linux-project.md#remote_intellisense).
 
@@ -136,17 +136,17 @@ Sie haben SSH erfolgreich eingerichtet, Verschlüsselungsschlüssel erstellt und
 
 ## <a name="command-line-utility-for-the-connection-manager"></a>Befehlszeilenhilfsprogramm für den Verbindungs-Manager  
 
-**Visual Studio 2019 Version 16.5 oder höher**: „ConnectionManager.exe“ ist ein Befehlszeilenhilfsprogramm zum Verwalten von Remoteentwicklungsverbindungen außerhalb von Visual Studio. Es ist gut für Aufgaben wie die Bereitstellung eines neuen Entwicklungscomputers geeignet. Sie können es auch zum Einrichten von Visual Studio für Continuous Integration verwenden. Beispiele für den und eine umfassende Referenz zum ConnectionManager-Befehl finden Sie unter [ConnectionManager-Referenz](connectionmanager-reference.md).  
+**Visual Studio 2019 Version 16.5 oder höher** : „ConnectionManager.exe“ ist ein Befehlszeilenhilfsprogramm zum Verwalten von Remoteentwicklungsverbindungen außerhalb von Visual Studio. Es ist gut für Aufgaben wie die Bereitstellung eines neuen Entwicklungscomputers geeignet. Sie können es auch zum Einrichten von Visual Studio für Continuous Integration verwenden. Beispiele für den und eine umfassende Referenz zum ConnectionManager-Befehl finden Sie unter [ConnectionManager-Referenz](connectionmanager-reference.md).  
 
 ## <a name="optional-enable-or-disable-fips-mode"></a>Optional: Aktivieren oder Deaktivieren des FIPS-Modus
 
 Es ist möglich, den FIPS-Modus in Windows global zu aktivieren.
 
-1. Um den FIPS-Modus zu aktivieren, drücken Sie **WINDOWS+R**, um das Dialogfeld „Ausführen“ zu öffnen, und führen Sie dann „gpedit.msc“ aus.
+1. Um den FIPS-Modus zu aktivieren, drücken Sie **WINDOWS+R** , um das Dialogfeld „Ausführen“ zu öffnen, und führen Sie dann „gpedit.msc“ aus.
 
-1. Erweitern Sie **Lokale Computerrichtlinie > Computerkonfiguration > Windows-Einstellungen > Sicherheitseinstellungen > Lokale Richtlinien**, und wählen Sie dann **Sicherheitsoptionen** aus.
+1. Erweitern Sie **Lokale Computerrichtlinie > Computerkonfiguration > Windows-Einstellungen > Sicherheitseinstellungen > Lokale Richtlinien** , und wählen Sie dann **Sicherheitsoptionen** aus.
 
-1. Wählen Sie unter **Richtlinie** die Option **Systemkryptografie: Mit FIPS kompatiblen Algorithmus für Verschlüsselung, Hashing und Signieren verwenden** aus, und drücken Sie dann die **EINGABETASTE**, um das entsprechende Dialogfeld zu öffnen.
+1. Wählen Sie unter **Richtlinie** die Option **Systemkryptografie: Mit FIPS kompatiblen Algorithmus für Verschlüsselung, Hashing und Signieren verwenden** aus, und drücken Sie dann die **EINGABETASTE** , um das entsprechende Dialogfeld zu öffnen.
 
 1. Wählen Sie auf der Registerkarte **Lokale Sicherheitseinstellung** die Option **Aktiviert** oder **Deaktiviert** aus, und wählen Sie dann **OK** aus, um die Änderungen zu speichern.
 

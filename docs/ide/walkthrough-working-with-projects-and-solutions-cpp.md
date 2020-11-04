@@ -7,12 +7,12 @@ helpviewer_keywords:
 - projects [C++]
 - solutions [C++], about solutions
 ms.assetid: 93a3f290-e294-46e3-876e-e3084d9ae833
-ms.openlocfilehash: 9a27d5fb49fe3576ee1f8d906219127d8b630c4e
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 46fd15e184b3a4fb1f84cde3e3207c03c692ad2e
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87228660"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92921879"
 ---
 # <a name="walkthrough-working-with-projects-and-solutions-c"></a>Exemplarische Vorgehensweise: Arbeiten mit Projekten und Projektmappen (C++)
 
@@ -30,7 +30,7 @@ Es ist hilfreich, die Grundlagen von C++ zu verstehen und zu wissen, wofür der 
 
 Um ein Projekt zu erstellen, wählen Sie zunächst eine Projekttypvorlage. Für jeden Projekttyp legt Visual Studio Compilereinstellungen fest und generiert abhängig vom Typ Startcode, den Sie später ändern können. Die folgenden Schritte variieren leicht, je nachdem, welche Version von Visual Studio Sie verwenden. Um die Dokumentation für Ihre bevorzugte Version von Visual Studio anzuzeigen, verwenden Sie das Auswahlsteuerelement **Version**. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 ### <a name="to-create-a-project-in-visual-studio-2019"></a>Erstellen eines Projekts in Visual Studio 2019
 
@@ -44,19 +44,19 @@ Um ein Projekt zu erstellen, wählen Sie zunächst eine Projekttypvorlage. Für 
 
    Beim Erstellen eines Projekts wird das Projekt von Visual Studio in eine Projektmappe eingefügt. Standardmäßig weist die Lösung den gleichen Namen wie das Projekt auf. Sie können den Namen im Feld **Projektmappenname** ändern. Behalten Sie für dieses Beispiel jedoch den Standardnamen bei.
 
-1. Klicken Sie auf die Schaltfläche **Erstellen**, um das Projekt zu erstellen.
+1. Klicken Sie auf die Schaltfläche **Erstellen** , um das Projekt zu erstellen.
 
    Visual Studio erstellt Ihre neue Projektmappe und die Projektdateien und öffnet den Editor für die Quellcodedatei „Game.cpp“, die generiert wurde.
 
 ::: moniker-end
 
-::: moniker range="vs-2017"
+::: moniker range="msvc-150"
 
 ### <a name="to-create-a-project-in-visual-studio-2017"></a>Erstellen eines Projekts in Visual Studio 2017
 
 1. Wählen Sie in der Menüleiste **Datei** > **Neu** > **Projekt** aus.
 
-1. Erweitern Sie **Installiert** im linken Bereich des Dialogfeld **Neues Projekt**, und wählen Sie **Visual C++** aus, wenn dies nicht bereits geöffnet ist.
+1. Erweitern Sie **Installiert** im linken Bereich des Dialogfeld **Neues Projekt** , und wählen Sie **Visual C++** aus, wenn dies nicht bereits geöffnet ist.
 
 1. Wählen Sie aus der Liste der installierten Vorlagen im mittleren Bereich **Windows-Konsolenanwendung** aus.
 
@@ -72,13 +72,13 @@ Um ein Projekt zu erstellen, wählen Sie zunächst eine Projekttypvorlage. Für 
 
 ::: moniker-end
 
-::: moniker range="vs-2015"
+::: moniker range="msvc-140"
 
 ### <a name="to-create-a-project-in-visual-studio-2015"></a>Erstellen eines Projekts in Visual Studio 2015
 
 1. Wählen Sie in der Menüleiste **Datei** > **Neu** > **Projekt** aus.
 
-1. Erweitern Sie **Installiert** im linken Bereich des Dialogfeld **Neues Projekt**, und wählen Sie **Visual C++** aus, wenn dies nicht bereits geöffnet ist.
+1. Erweitern Sie **Installiert** im linken Bereich des Dialogfeld **Neues Projekt** , und wählen Sie **Visual C++** aus, wenn dies nicht bereits geöffnet ist.
 
 1. Wählen Sie aus der Liste der installierten Vorlagen im mittleren Bereich **Win32-Konsolenanwendung** aus.
 
@@ -153,7 +153,7 @@ In diesem Teil der exemplarischen Vorgehensweise wird gezeigt, wie dem Projekt e
 
    Die Zeile `#pragma once` teilt dem Compiler mit, die Headerdatei nur einmal aufzunehmen. Weitere Informationen finden Sie unter [once](../preprocessor/once.md). Informationen zu weiteren C++-Schlüsselwörtern in der oben gezeigten Headerdatei finden Sie unter [class](../cpp/class-cpp.md), [int](../cpp/fundamental-types-cpp.md), [static](../cpp/storage-classes-cpp.md) und [public](../cpp/public-cpp.md).
 
-1. Klicken Sie oben im Bearbeitungsbereich auf die Registerkarte **Cardgame.cpp**, um die Datei zum Bearbeiten zu öffnen.
+1. Klicken Sie oben im Bearbeitungsbereich auf die Registerkarte **Cardgame.cpp** , um die Datei zum Bearbeiten zu öffnen.
 
 1. Löschen Sie den gesamten Inhalt der Datei, und ersetzen Sie ihn durch den folgenden Code:
 

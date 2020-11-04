@@ -4,22 +4,22 @@ description: Hier wird die Verwendung von Visual Studio zum Konfigurieren der CM
 ms.date: 04/02/2020
 helpviewer_keywords:
 - CMake debugging
-ms.openlocfilehash: cc80827458ba7cb61339ec3a36f227747780a47c
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: a790e26e5bf3980ffb81a3ba778577afacff95b4
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87224083"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92922230"
 ---
 # <a name="configure-cmake-debugging-sessions"></a>Konfigurieren von CMake-Debugsitzungen
 
-::: moniker range="vs-2015"
+::: moniker range="msvc-140"
 
-Die native Unterstützung für CMake ist in Visual Studio 2017 und höher verfügbar. Legen Sie das Auswahlsteuerelement für die Visual Studio-**Version** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest, um die Dokumentationen für diese Versionen anzuzeigen. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
+Die native Unterstützung für CMake ist in Visual Studio 2017 und höher verfügbar. Legen Sie das Auswahlsteuerelement für die Visual Studio- **Version** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest, um die Dokumentationen für diese Versionen anzuzeigen. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
 
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
 Alle ausführbaren CMake-Ziele werden in der Dropdownliste **Startelement** auf der Symbolleiste **Allgemein** angezeigt. Wählen Sie eine Version aus, um eine Debugsitzung und somit den Debugger zu starten.
 
@@ -33,7 +33,7 @@ Klicken Sie dann mit der rechten Maustaste auf eine ausführbare Datei und dann 
 
 ## <a name="customize-debugger-settings"></a>Anpassen von Debuggereinstellungen
 
-Sie können die Debuggereinstellungen für alle ausführbaren CMake-Ziele im Projekt anpassen. Sie befinden sich in einer Konfigurationsdatei namens *launch.vs.json*, die sich in einem *`.vs`* -Ordner im Projektstamm befindet. Eine Startkonfigurationsdatei ist in den meisten Debugszenarios nützlich, da Sie die Details zum Debuggen konfigurieren und speichern können. Es gibt drei Einstiegspunkte für diese Datei:
+Sie können die Debuggereinstellungen für alle ausführbaren CMake-Ziele im Projekt anpassen. Sie befinden sich in einer Konfigurationsdatei namens *launch.vs.json* , die sich in einem *`.vs`* -Ordner im Projektstamm befindet. Eine Startkonfigurationsdatei ist in den meisten Debugszenarios nützlich, da Sie die Details zum Debuggen konfigurieren und speichern können. Es gibt drei Einstiegspunkte für diese Datei:
 
 - **Menü „Debuggen“:** Klicken Sie im Hauptmenü auf **Debuggen > Debug- und Starteinstellungen für ${activeDebugTarget}** , um die für das Debugziel spezifische Debugkonfiguration anzupassen. Wenn Sie kein Debugziel ausgewählt haben, ist diese Option ausgegraut.
 
@@ -47,11 +47,11 @@ Sie können die Debuggereinstellungen für alle ausführbaren CMake-Ziele im Pro
 
 ![Dialogfeld „Debugger auswählen“](media/cmake-select-a-debugger.png "Dialogfeld „Debugger auswählen“")
 
-Sie können die *launch.vs.json*-Datei bearbeiten, um Debugkonfigurationen für eine beliebige Anzahl von CMake-Zielen zu erstellen. Wenn Sie die Datei speichern, erstellt Visual Studio im Dropdownmenü **Startelement** einen Eintrag für jede neue Konfiguration.
+Sie können die *launch.vs.json* -Datei bearbeiten, um Debugkonfigurationen für eine beliebige Anzahl von CMake-Zielen zu erstellen. Wenn Sie die Datei speichern, erstellt Visual Studio im Dropdownmenü **Startelement** einen Eintrag für jede neue Konfiguration.
 
 ## <a name="reference-keys-in-cmakesettingsjson"></a>Verweisschlüssel in CMakeSettings.json
 
-Stellen Sie in der *launch.vs.json*-Datei `cmake.` voran, um in einer *CMakeSettings.json*-Datei auf einen beliebigen Schlüssel zu verweisen. In folgendem Beispiel wird eine einfache *launch.vs.json*-Datei dargestellt, die den Wert des Schlüssels `remoteCopySources` aus der Datei *CMakeSettings.json* für die derzeit ausgewählte Konfiguration abruft:
+Stellen Sie in der *launch.vs.json* -Datei `cmake.` voran, um in einer *CMakeSettings.json* -Datei auf einen beliebigen Schlüssel zu verweisen. In folgendem Beispiel wird eine einfache *launch.vs.json* -Datei dargestellt, die den Wert des Schlüssels `remoteCopySources` aus der Datei *CMakeSettings.json* für die derzeit ausgewählte Konfiguration abruft:
 
 ```json
 {
@@ -69,11 +69,11 @@ Stellen Sie in der *launch.vs.json*-Datei `cmake.` voran, um in einer *CMakeSett
 }
 ```
 
-Die in der *CMakeSettings.json*-Datei definierten **Umgebungsvariablen** können mithilfe der Syntax `${env.VARIABLE_NAME}` auch in „launch.vs.json“ verwendet werden. In Visual Studio 2019, Version 16.4 und höher werden Debugziele mithilfe der in der *CMakeSettings.json*-Datei angegebenen Umgebung automatisch gestartet. Sie können eine Umgebungsvariable zurücksetzen, indem Sie sie auf **Null** festlegen.
+Die in der *CMakeSettings.json* -Datei definierten **Umgebungsvariablen** können mithilfe der Syntax `${env.VARIABLE_NAME}` auch in „launch.vs.json“ verwendet werden. In Visual Studio 2019, Version 16.4 und höher werden Debugziele mithilfe der in der *CMakeSettings.json* -Datei angegebenen Umgebung automatisch gestartet. Sie können eine Umgebungsvariable zurücksetzen, indem Sie sie auf **Null** festlegen.
 
 ## <a name="launchvsjson-reference"></a>Launch.vs.json-Verweis
 
-Es gibt viele *launch.vs.json*-Eigenschaften, die alle Debugszenarios unterstützen. Die folgenden Eigenschaften gelten sowohl für alle lokalen als auch für Remotedebugkonfigurationen:
+Es gibt viele *launch.vs.json* -Eigenschaften, die alle Debugszenarios unterstützen. Die folgenden Eigenschaften gelten sowohl für alle lokalen als auch für Remotedebugkonfigurationen:
 
 - `projectTarget`: Hiermit wird das CMake-Ziel angegeben, das beim Erstellen des Projekts abgerufen werden soll. Visual Studio füllt diese Eigenschaft automatisch auf, wenn Sie *launch.vs.json* im **Menü „Debuggen“** oder in der **Targets View** (Zielansicht) eingeben. Dieser Wert muss mit dem Namen eines vorhandenen Debugziels übereinstimmen, das im Dropdownmenü **Startelement** aufgeführt wird.
 
@@ -105,7 +105,7 @@ In Visual 2019, Version 16.6 haben wir eine neue Debugkonfiguration von `type:
 #### <a name="additional-options-for-the-gdb-configuration"></a>Zusätzliche Optionen für die `gdb`-Konfiguration
 
 - `program`: Wird standardmäßig auf `"${debugInfo.fullTargetPath}"` festgelegt. Dies ist der UNIX-Pfad zu der zu debuggenden Anwendung. Dieser ist nur erforderlich, wenn dieser von dem der ausführbaren Zieldatei im Build- oder Bereitstellungsspeicherort abweicht.
-- `remoteMachineName`: Wird standardmäßig auf `"${debugInfo.remoteMachineName}"` festgelegt. Dies ist der Name des Remotesystems, das das zu debuggende Programm hostet. Dieser ist nur erforderlich, wenn er von dem des Buildsystems abweicht. Im [Verbindungs-Manager](../linux/connect-to-your-remote-linux-computer.md) muss ein Eintrag vorhanden sein. Drücken Sie **STRG+LEERTASTE**, um eine Liste aller vorhandenen Remoteverbindungen anzuzeigen.
+- `remoteMachineName`: Wird standardmäßig auf `"${debugInfo.remoteMachineName}"` festgelegt. Dies ist der Name des Remotesystems, das das zu debuggende Programm hostet. Dieser ist nur erforderlich, wenn er von dem des Buildsystems abweicht. Im [Verbindungs-Manager](../linux/connect-to-your-remote-linux-computer.md) muss ein Eintrag vorhanden sein. Drücken Sie **STRG+LEERTASTE** , um eine Liste aller vorhandenen Remoteverbindungen anzuzeigen.
 - `cwd`: Wird standardmäßig auf `"${debugInfo.defaultWorkingDirectory}"` festgelegt. Dies ist der UNIX-Pfad zum Verzeichnis auf dem Remotesystem, auf dem `program` ausgeführt wird. Das Verzeichnis muss vorhanden sein.
 - `gdbpath`: Wird standardmäßig auf `/usr/bin/gdb` festgelegt. Dies ist der vollständige UNIX-Pfad zu dem zum Debuggen verwendeten `gdb`-Befehl. Dieser ist nur erforderlich, wenn eine benutzerdefinierte Version von `gdb` verwendet wird.
 - `preDebugCommand`: Dies ist ein Linux-Befehl, der unmittelbar vor dem Aufrufen von `gdb` ausgeführt wird. `gdb` wird nicht gestartet, bis der Befehl abgeschlossen ist. Sie können die Option verwenden, um ein Skript vor der Ausführung von `gdb` auszuführen.
@@ -113,7 +113,7 @@ In Visual 2019, Version 16.6 haben wir eine neue Debugkonfiguration von `type:
 #### <a name="additional-options-allowed-with-the-gdbserver-configuration-167-or-later"></a>Mit der `gdbserver`-Konfiguration (16.7 oder höher) sind weitere Optionen zulässig.
 
 - `program`: Wird standardmäßig auf `"${debugInfo.fullTargetPath}"` festgelegt. Dies ist der UNIX-Pfad zu der zu debuggenden Anwendung. Dieser ist nur erforderlich, wenn dieser von dem der ausführbaren Zieldatei im Build- oder Bereitstellungsspeicherort abweicht.
-- `remoteMachineName`:  Wird standardmäßig auf `"${debugInfo.remoteMachineName}"` festgelegt. Dies ist der Name des Remotesystems, das das zu debuggende Programm hostet. Dieser ist nur erforderlich, wenn er von dem des Buildsystems abweicht. Im [Verbindungs-Manager](../linux/connect-to-your-remote-linux-computer.md) muss ein Eintrag vorhanden sein. Drücken Sie **STRG+LEERTASTE**, um eine Liste aller vorhandenen Remoteverbindungen anzuzeigen.
+- `remoteMachineName`:  Wird standardmäßig auf `"${debugInfo.remoteMachineName}"` festgelegt. Dies ist der Name des Remotesystems, das das zu debuggende Programm hostet. Dieser ist nur erforderlich, wenn er von dem des Buildsystems abweicht. Im [Verbindungs-Manager](../linux/connect-to-your-remote-linux-computer.md) muss ein Eintrag vorhanden sein. Drücken Sie **STRG+LEERTASTE** , um eine Liste aller vorhandenen Remoteverbindungen anzuzeigen.
 - `cwd`: Wird standardmäßig auf `"${debugInfo.defaultWorkingDirectory}"` festgelegt. Dies ist der vollständige UNIX-Pfad zum Verzeichnis auf dem Remotesystem, auf dem `program` ausgeführt wird. Das Verzeichnis muss vorhanden sein.
 - `gdbPath`: Wird standardmäßig auf `${debugInfo.vsInstalledGdb}` festgelegt. Dies ist der vollständige Windows-Pfad zum `gdb`-Befehl, der für das Debuggen verwendet wird. Entspricht standardmäßig `gdb` (wird mit der Linux-Entwicklung mit der C/C++-Workload installiert).
 - `gdbserverPath`: Wird standardmäßig auf `usr/bin/gdbserver` festgelegt. Dies ist der vollständige UNIX-Pfad zu dem zum Debuggen verwendeten `gdbserver`-Befehl.
@@ -123,15 +123,15 @@ In Visual 2019, Version 16.6 haben wir eine neue Debugkonfiguration von `type:
 
 Verwenden Sie die folgenden Optionen, um den (in der CMakeSettings.json-Datei definierten) Buildcomputer vom Remotedebugcomputer zu trennen.
 
-- `remoteMachineName`: Remotedebugcomputer Dieser ist nur erforderlich, wenn er von dem des Buildcomputers abweicht. Im [Verbindungs-Manager](../linux/connect-to-your-remote-linux-computer.md) muss ein Eintrag vorhanden sein. Drücken Sie **STRG+LEERTASTE**, um eine Liste aller vorhandenen Remoteverbindungen anzuzeigen.
+- `remoteMachineName`: Remotedebugcomputer Dieser ist nur erforderlich, wenn er von dem des Buildcomputers abweicht. Im [Verbindungs-Manager](../linux/connect-to-your-remote-linux-computer.md) muss ein Eintrag vorhanden sein. Drücken Sie **STRG+LEERTASTE** , um eine Liste aller vorhandenen Remoteverbindungen anzuzeigen.
 - `disableDeploy`: Der Standardwert lautet **`false`** . Hiermit wird angegeben, ob die Build- bzw. Debugtrennung deaktiviert ist. Im Falle von **`false`** ermöglicht diese Option das Durchführen von Build- und Debugvorgängen auf zwei separaten Computern.
 - `deployDirectory`: Dies ist der vollständige UNIX-Pfad zum Verzeichnis auf `remoteMachineName`, in das die ausführbare Datei kopiert wird.
 - `deploy`: Dies ist ein Array erweiterter Bereitstellungseinstellungen. Sie müssen diese Einstellungen nur konfigurieren, wenn Sie genauere Kontrolle über den Bereitstellungsprozess wünschen. Standardmäßig werden nur die Dateien, die für den zu debuggenden Prozess erforderlich sind, auf dem Remotedebugcomputer bereitgestellt.
-  - `sourceMachine`: Dies ist der Computer, von dem die Datei oder das Verzeichnis kopiert wird. Drücken Sie **STRG+LEERTASTE**, um eine Liste aller im Verbindungs-Manager gespeicherten Remoteverbindungen anzuzeigen. Wenn Sie nativ auf WSL aufbauen, wird diese Option ignoriert.
-  - `targetMachine`: Dies ist der Computer, auf den die Datei oder das Verzeichnis kopiert wird. Drücken Sie **STRG+LEERTASTE**, um eine Liste aller im Verbindungs-Manager gespeicherten Remoteverbindungen anzuzeigen.
+  - `sourceMachine`: Dies ist der Computer, von dem die Datei oder das Verzeichnis kopiert wird. Drücken Sie **STRG+LEERTASTE** , um eine Liste aller im Verbindungs-Manager gespeicherten Remoteverbindungen anzuzeigen. Wenn Sie nativ auf WSL aufbauen, wird diese Option ignoriert.
+  - `targetMachine`: Dies ist der Computer, auf den die Datei oder das Verzeichnis kopiert wird. Drücken Sie **STRG+LEERTASTE** , um eine Liste aller im Verbindungs-Manager gespeicherten Remoteverbindungen anzuzeigen.
   - `sourcePath`: Dies ist der Speicherort der Datei oder des Verzeichnisses auf `sourceMachine`.
   - `targetPath`: Dies ist der Speicherort der Datei oder des Verzeichnisses auf `targetMachine`.
-  - `deploymentType`: Dies ist eine Beschreibung des Bereitstellungstyps. `LocalRemote` und `RemoteRemote` werden unterstützt. `LocalRemote` bedeutet, dass von dem lokalen Dateisystem auf das Remotesystem kopiert wird, das durch `remoteMachineName` in der *launch.vs.json*-Datei angegeben wird. `RemoteRemote` bedeutet, dass von dem in der *CMakeSettings.json*-Datei angegebenen Remotebuildsystem auf das andere in der *launch.vs.json*-Datei angegebene Remotesystem kopiert wird.
+  - `deploymentType`: Dies ist eine Beschreibung des Bereitstellungstyps. `LocalRemote` und `RemoteRemote` werden unterstützt. `LocalRemote` bedeutet, dass von dem lokalen Dateisystem auf das Remotesystem kopiert wird, das durch `remoteMachineName` in der *launch.vs.json* -Datei angegeben wird. `RemoteRemote` bedeutet, dass von dem in der *CMakeSettings.json* -Datei angegebenen Remotebuildsystem auf das andere in der *launch.vs.json* -Datei angegebene Remotesystem kopiert wird.
   - `executable`: Hiermit wird angegeben, ob es sich bei der bereitgestellten Datei um eine ausführbare Datei handelt.
 
 ### <a name="execute-custom-gdb-commands"></a>Ausführen benutzerdefinierter `gdb`-Befehle
@@ -158,7 +158,7 @@ Die folgenden Optionen können beim Debuggen auf einem Remotesystem oder WSL mit
 
 - `program`: Wird standardmäßig auf `"${debugInfo.fullTargetPath}"` festgelegt. Dies ist der UNIX-Pfad zu der zu debuggenden Anwendung. Dieser ist nur erforderlich, wenn dieser von dem der ausführbaren Zieldatei im Build- oder Bereitstellungsspeicherort abweicht.
 
-- `remoteMachineName`:  Wird standardmäßig auf `"${debugInfo.remoteMachineName}"` festgelegt. Dies ist der Name des Remotesystems, das das zu debuggende Programm hostet. Dieser ist nur erforderlich, wenn er von dem des Buildsystems abweicht. Im [Verbindungs-Manager](../linux/connect-to-your-remote-linux-computer.md) muss ein Eintrag vorhanden sein. Drücken Sie **STRG+LEERTASTE**, um eine Liste aller vorhandenen Remoteverbindungen anzuzeigen.
+- `remoteMachineName`:  Wird standardmäßig auf `"${debugInfo.remoteMachineName}"` festgelegt. Dies ist der Name des Remotesystems, das das zu debuggende Programm hostet. Dieser ist nur erforderlich, wenn er von dem des Buildsystems abweicht. Im [Verbindungs-Manager](../linux/connect-to-your-remote-linux-computer.md) muss ein Eintrag vorhanden sein. Drücken Sie **STRG+LEERTASTE** , um eine Liste aller vorhandenen Remoteverbindungen anzuzeigen.
 
 - `cwd`: Wird standardmäßig auf `"${debugInfo.defaultWorkingDirectory}"` festgelegt. Dies ist der vollständige UNIX-Pfad zum Verzeichnis auf dem Remotesystem, auf dem `program` ausgeführt wird. Das Verzeichnis muss vorhanden sein.
 
@@ -225,7 +225,7 @@ Sie können die `cppdbg`-Konfiguration zum Debuggen mithilfe von `gdbserver` kon
 
 ::: moniker-end
 
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
 ## <a name="see-also"></a>Siehe auch
 

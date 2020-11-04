@@ -4,12 +4,12 @@ description: In dieser exemplarischen Vorgehensweise wird gezeigt, wie Sie ein M
 ms.date: 10/08/2020
 helpviewer_keywords:
 - 'MSBuild (C++), walkthrough: create a project'
-ms.openlocfilehash: 4f17cd8c4f5f48d8be5cd7cb25940db87029e111
-ms.sourcegitcommit: 6e5429e076e552b32e8bdc49480c51498d7924c1
+ms.openlocfilehash: b3d4e8881f926e80e95832a27f7a5106ce876265
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92099731"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924337"
 ---
 # <a name="walkthrough-using-msbuild-to-create-a-visual-c-project"></a>Exemplarische Vorgehensweise: Verwenden von MSBuild zum Erstellen eines Visual C++-Projekts
 
@@ -36,21 +36,21 @@ Für diese exemplarische Vorgehensweise benötigen Sie Folgendes:
 
 - Allgemeine Kenntnisse des MSBuild-Systems
 
-::: moniker range="vs-2015"
+::: moniker range="msvc-140"
 
 > [!NOTE]
 > Die meisten der spezifischen Buildanweisungen sind in den *`.targets`* - und *`.props`* -Dateien enthalten, die im Standardzieleordner definiert sind, der in der Eigenschaft `$(VCTargetsPath)` gespeichert ist. Dort finden Sie Dateien wie *`Microsoft.Cpp.Common.props`* . In Visual Studio 2015 und früheren Versionen ist der Standardpfad für diese Dateien *`%ProgramFiles(x86)%\MSBuild\Microsoft.Cpp\v4.0\<version>\`* .
 
 ::: moniker-end
 
-::: moniker range="vs-2017"
+::: moniker range="msvc-150"
 
 > [!NOTE]
 > Die meisten der spezifischen Buildanweisungen sind in den *`.targets`* - und *`.props`* -Dateien enthalten, die im Standardzieleordner definiert sind, der in der Eigenschaft `$(VCTargetsPath)` gespeichert ist. Dort finden Sie Dateien wie *`Microsoft.Cpp.Common.props`* . In Visual Studio 2017 ist der Standardpfad für diese Dateien *`%VSINSTALLDIR%Common7\IDE\VC\VCTargets\`* . In Visual Studio 2015 und früheren Versionen wurden sie unter *`%ProgramFiles(x86)%\MSBuild\Microsoft.Cpp\v4.0\<version>\`* gespeichert.
 
 ::: moniker-end
 
-::: moniker range=">=vs-2019"
+::: moniker range=">=msvc-160"
 
 > [!NOTE]
 > Die meisten der spezifischen Buildanweisungen sind in den *`.targets`* - und *`.props`* -Dateien enthalten, die im Standardzieleordner definiert sind, der in der Eigenschaft `$(VCTargetsPath)` gespeichert ist. Dort finden Sie Dateien wie *`Microsoft.Cpp.Common.props`* . Der Standardpfad für diese Dateien ist *`%VSINSTALLDIR%MSBuild\Microsoft\VC\<version>\`* . Der Wert des Pfadelements `<version>` hängt von der Visual Studio-Version ab. Für Visual Studio 2019 ist er *`v160`* . In Visual Studio 2017 wurden diese Dateien unter *`%VSINSTALLDIR%Common7\IDE\VC\VCTargets\`* gespeichert. In Visual Studio 2015 und früheren Versionen wurden sie unter *`%ProgramFiles(x86)%\MSBuild\Microsoft.Cpp\v4.0\<version>\`* gespeichert.

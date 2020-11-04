@@ -9,12 +9,12 @@ helpviewer_keywords:
 - compiling programs [C++]
 - C program compiling [C++]
 ms.assetid: 7e74cc2d-54b1-49de-b7ad-d3ae6b39ab8d
-ms.openlocfilehash: 57276f61ca8ff848db0313935bc1841de50f9874
-ms.sourcegitcommit: b492516cc65120250b9ea23f96f7f63f37f99fae
+ms.openlocfilehash: 1090bf98332a51773e53bfcda51e944dc09c5221
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90075607"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924741"
 ---
 # <a name="walkthrough-compile-a-c-program-on-the-command-line"></a>Exemplarische Vorgehensweise: Kompilieren eines C-Programms in der Befehlszeile
 
@@ -30,14 +30,14 @@ Visual Studio ist eine leistungsstarke integrierte Entwicklungsumgebung, die ein
 
 Die Buildtools für Visual Studio installieren nur das Befehlszeilen-Toolset, die Compiler, Tools und Bibliotheken, die Sie benötigen, um C- und C++-Programme zu erstellen. Sie eignen sich ideal für Buildlabs oder Übungen im Schulungskontext und werden schnell installiert. Laden Sie von der Seite für [Visual Studio-Downloads](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019) die Buildtools für Visual Studio herunter, um nur das Befehlszeilen-Toolset zu installieren, und führen Sie das Installationsprogramm aus. Wählen Sie im Visual Studio-Installationsprogramm die Workload **C++-Buildtools** und anschließend **Installieren** aus.
 
-Überprüfen Sie, ob die Tools installiert sind und Sie über die Befehlszeile darauf zugreifen können, bevor Sie ein C- oder C++-Programm über die Befehlszeile erstellen. Visual C++ hat komplexe Anforderungen an die Befehlszeilenumgebung hinsichtlich der Suche nach den verwendeten Tools, Headern und Bibliotheken. **Sie können Visual C++ nicht in einem einfachen Eingabeaufforderungsfenster** ohne bestimmte Vorbereitungen verwenden. Sie benötigen ein *Developer-Eingabeaufforderung*-Fenster, das ein reguläres Eingabeaufforderungsfenster ist, in dem alle erforderlichen Umgebungsvariablen festgelegt sind. Glücklicherweise installiert Visual C++ Verknüpfungen zum Starten einer Developer-Eingabeaufforderung, in der die Umgebung für Befehlszeilenbuilds eingerichtet ist. Leider unterscheiden sich die Namen der Verknüpfungen für die Developer-Eingabeaufforderung und deren Position in nahezu jeder Version von Visual C++ und unterschiedlichen Versionen von Windows. Ihre erste Aufgabe bei der exemplarischen Vorgehensweise besteht darin, die richtige Verknüpfung zu finden.
+Überprüfen Sie, ob die Tools installiert sind und Sie über die Befehlszeile darauf zugreifen können, bevor Sie ein C- oder C++-Programm über die Befehlszeile erstellen. Visual C++ hat komplexe Anforderungen an die Befehlszeilenumgebung hinsichtlich der Suche nach den verwendeten Tools, Headern und Bibliotheken. **Sie können Visual C++ nicht in einem einfachen Eingabeaufforderungsfenster** ohne bestimmte Vorbereitungen verwenden. Sie benötigen ein *Developer-Eingabeaufforderung* -Fenster, das ein reguläres Eingabeaufforderungsfenster ist, in dem alle erforderlichen Umgebungsvariablen festgelegt sind. Glücklicherweise installiert Visual C++ Verknüpfungen zum Starten einer Developer-Eingabeaufforderung, in der die Umgebung für Befehlszeilenbuilds eingerichtet ist. Leider unterscheiden sich die Namen der Verknüpfungen für die Developer-Eingabeaufforderung und deren Position in nahezu jeder Version von Visual C++ und unterschiedlichen Versionen von Windows. Ihre erste Aufgabe bei der exemplarischen Vorgehensweise besteht darin, die richtige Verknüpfung zu finden.
 
 > [!NOTE]
 > Eine Verknüpfung für die Developer-Eingabeaufforderung legt die richtigen Pfade für den Compiler und die Tools sowie für alle erforderlichen Header und Bibliotheken automatisch fest. Einige dieser Werte unterscheiden sich für jede Buildkonfiguration. Sie müssen diese Umgebungswerte selbst festlegen, wenn Sie keine der Verknüpfungen verwenden. Weitere Informationen finden Sie unter [Festlegen der Pfad- und Umgebungsvariablen für Befehlszeilenbuilds](setting-the-path-and-environment-variables-for-command-line-builds.md). Da die Buildumgebung komplex ist, wird dringend empfohlen, eine Verknüpfung zu einer Developer-Eingabeaufforderung zu verwenden, anstatt ihre eigenen Verknüpfung zu erstellen.
 
 Die Anweisungen variieren, je nachdem, welche Version von Visual Studio Sie verwenden. Um die Dokumentation für Ihre bevorzugte Version von Visual Studio anzuzeigen, verwenden Sie das Auswahlsteuerelement **Version**. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 ## <a name="open-a-developer-command-prompt-in-visual-studio-2019"></a>Öffnen einer Developer-Eingabeaufforderung in Visual Studio 2019
 
@@ -47,7 +47,7 @@ Wenn Sie eine andere Version von Windows verwenden, suchen Sie im Startmenü ode
 
 ::: moniker-end
 
-::: moniker range="vs-2017"
+::: moniker range="msvc-150"
 
 ## <a name="open-a-developer-command-prompt-in-visual-studio-2017"></a>Öffnen einer Developer-Eingabeaufforderung in Visual Studio 2017
 
@@ -57,11 +57,11 @@ Wenn Sie eine andere Version von Windows verwenden, suchen Sie im Startmenü ode
 
 ::: moniker-end
 
-::: moniker range="vs-2015"
+::: moniker range="msvc-140"
 
 ## <a name="open-a-developer-command-prompt-in-visual-studio-2015"></a>Öffnen einer Developer-Eingabeaufforderung in Visual Studio 2015
 
-Wenn Sie Microsoft Visual C++ Build Tools 2015 unter Windows 10 installiert haben, öffnen Sie das Menü **Start**, scrollen dann nach unten und öffnen den Ordner **Visual C++ Build Tools**. Klicken Sie auf **Visual C++ 2015 x86 Native Tools Command Prompt** (Visual C++ 2015 x86 Native Tools-Eingabeaufforderung), um das Eingabeaufforderungsfenster zu öffnen.
+Wenn Sie Microsoft Visual C++ Build Tools 2015 unter Windows 10 installiert haben, öffnen Sie das Menü **Start** , scrollen dann nach unten und öffnen den Ordner **Visual C++ Build Tools**. Klicken Sie auf **Visual C++ 2015 x86 Native Tools Command Prompt** (Visual C++ 2015 x86 Native Tools-Eingabeaufforderung), um das Eingabeaufforderungsfenster zu öffnen.
 
 Wenn Sie eine andere Version von Windows verwenden, suchen Sie im Startmenü oder auf der Startseite nach einem Ordner mit Visual Studio-Tools, der eine Verknüpfung für eine Developer-Eingabeaufforderung enthält. Sie können auch die Windows-Suchfunktion verwenden, um nach „Developer-Eingabeaufforderung“ zu suchen und die Version anzuklicken, die mit der installierten Version von Visual Studio übereinstimmt. Verwenden Sie die Verknüpfung, um das Eingabeaufforderungsfenster zu öffnen.
 
@@ -80,7 +80,7 @@ usage: cl [ option... ] filename... [ /link linkoption... ]
 Abhängig von der Visual C++-Version und den installierten Updates kann es Unterschiede im aktuellen Verzeichnis oder in den Versionsnummern geben. Wenn die oben genannte der angezeigten Ausgabe ähnelt, können Sie C- oder C++-Programme über die Befehlszeile erstellen.
 
 > [!NOTE]
-> Wenn eine Fehlermeldung wie z. B. "'cl' is not recognized as an internal or external command, operable program or batch file" („cl“ wurde nicht als interner oder externer Befehl, ausführbares Programm oder Batchdatei erkannt.), Fehler C1034 oder Fehler LNK1104 beim Ausführen des **cl**-Befehls ausgegeben wird, verwenden Sie entweder keine Developer-Eingabeaufforderung, oder es ist ein Fehler bei der Installation von Visual C++ aufgetreten. Sie müssen das Problem beheben, bevor Sie fortfahren können.
+> Wenn eine Fehlermeldung wie z. B. "'cl' is not recognized as an internal or external command, operable program or batch file" („cl“ wurde nicht als interner oder externer Befehl, ausführbares Programm oder Batchdatei erkannt.), Fehler C1034 oder Fehler LNK1104 beim Ausführen des **cl** -Befehls ausgegeben wird, verwenden Sie entweder keine Developer-Eingabeaufforderung, oder es ist ein Fehler bei der Installation von Visual C++ aufgetreten. Sie müssen das Problem beheben, bevor Sie fortfahren können.
 
 Wenn Sie die Verknüpfung für die Developer-Eingabeaufforderungen nicht finden, oder wenn Sie eine Fehlermeldung erhalten, wenn Sie `cl` eingeben, liegt ein Problem im Zusammenhang mit der Installation von Visual C++ vor. Wenn Sie Visual Studio 2017 oder höher verwenden, können Sie versuchen, die **Desktopentwicklung mit C++** -Workload im Visual Studio-Installationsprogramm neu zu installieren. Weitere Informationen finden Sie unter [Installieren der C++-Unterstützung in Visual Studio](vscpp-step-0-installation.md). Oder installieren Sie die Buildtools auf der Seite [Visual Studio-Downloads](https://visualstudio.microsoft.com/downloads/) erneut. Fahren Sie nicht mit dem nächsten Abschnitt fort, bis dies funktioniert. Weitere Informationen zur Installation und Problembehandlung von Visual Studio finden Sie unter [Installieren von Visual Studio](/visualstudio/install/install-visual-studio).
 
@@ -91,7 +91,7 @@ Wenn Sie die Verknüpfung für die Developer-Eingabeaufforderungen nicht finden,
 
 1. Geben Sie im Fenster der Developer-Eingabeaufforderung `cd c:\` ein, um das aktuelle Arbeitsverzeichnis in das Stammverzeichnis des Laufwerks C: zu ändern. Als Nächstes geben Sie `md c:\simple` ein, um ein Verzeichnis zu erstellen. Geben Sie anschließend `cd c:\simple` ein, um zu diesem Verzeichnis zu wechseln. In diesem Verzeichnis werden die Quelldatei und das kompilierte Programm gespeichert.
 
-1. Geben Sie in die Developer-Eingabeaufforderung `notepad simple.c` ein. Wählen Sie im angezeigten Dialogfeld mit der Editor-Warnung **Ja**, um eine neue Datei „simple.c“ in Ihrem Arbeitsverzeichnis zu erstellen.
+1. Geben Sie in die Developer-Eingabeaufforderung `notepad simple.c` ein. Wählen Sie im angezeigten Dialogfeld mit der Editor-Warnung **Ja** , um eine neue Datei „simple.c“ in Ihrem Arbeitsverzeichnis zu erstellen.
 
 1. Geben Sie im Editor die folgenden Codezeilen ein:
 
@@ -105,7 +105,7 @@ Wenn Sie die Verknüpfung für die Developer-Eingabeaufforderungen nicht finden,
     }
     ```
 
-1. Wählen Sie in der Editor-Menüleiste **Datei** > **Speichern**, um „simple.c“ in Ihrem Arbeitsverzeichnis zu speichern.
+1. Wählen Sie in der Editor-Menüleiste **Datei** > **Speichern** , um „simple.c“ in Ihrem Arbeitsverzeichnis zu speichern.
 
 1. Wechseln Sie zurück zum Developer-Eingabeaufforderungsfenster. Geben Sie `dir` in die Eingabeaufforderung ein, um den Inhalt des Verzeichnisses „c:\simple“ aufzulisten. Die Quelldatei „simple.c“ sollte in der Verzeichnisauflistung angezeigt werden, die in etwa wie folgt aussieht:
 

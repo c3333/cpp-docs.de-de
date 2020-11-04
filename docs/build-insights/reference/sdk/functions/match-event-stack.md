@@ -9,21 +9,21 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: ae476c402c3ea0cad558ce41a979b4233e0f1dd3
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 08627b6af601f6894aa228683ffb51232b015310
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87224122"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92922813"
 ---
 # <a name="matcheventstack"></a>MatchEventStack
 
-::: moniker range="<=vs-2015"
+::: moniker range="<=msvc-140"
 
 Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
 Die `MatchEventStack`-Funktion wird zum Abgleichen eines Ereignisstapels mit einer bestimmten Ereignishierarchie verwendet. Übereinstimmende Hierarchien werden zur weiteren Verarbeitung an einen Handler weitergeleitet. Weitere Informationen zu Ereignissen, Ereignisstapeln und Hierarchien finden Sie in der [Ereignistabelle](../event-table.md).
 
@@ -59,7 +59,7 @@ Die Typen der zusätzlichen Argumente, die an `MatchEventStack` übergeben werde
 Der Ereignisstapel, der mit der von *TEvent* und *TEvents* beschriebenen Ereignistyphierarchie abgeglichen werden soll.
 
 *callable*\
-Nach erfolgreichem Abgleich des Ereignisstapels mit der von *TEvent* und *TEvents* beschriebenen Ereignistyphierarchie ruft `MatchEventStack` den Parameter *callable* auf. Für jeden Typ in der Ereignishierarchie wird ein Rückgabewertargument an *callable* übergeben. Das Parameterpaket *extraArgs* wird perfekt an die übrigen *callable*-Parameter weitergeleitet.
+Nach erfolgreichem Abgleich des Ereignisstapels mit der von *TEvent* und *TEvents* beschriebenen Ereignistyphierarchie ruft `MatchEventStack` den Parameter *callable* auf. Für jeden Typ in der Ereignishierarchie wird ein Rückgabewertargument an *callable* übergeben. Das Parameterpaket *extraArgs* wird perfekt an die übrigen *callable* -Parameter weitergeleitet.
 
 *extraArgs*\
 Die Argumente, die zusammen mit dem übereinstimmenden Ereignistyp perfekt an den Parameter *callable* weitergeleitet werden.
@@ -70,7 +70,7 @@ Ein **`bool`** -Wert, der **`true`** ist, wenn der Abgleich erfolgreich war. And
 
 ## <a name="remarks"></a>Hinweise
 
-Das letzte Ereignis in *eventStack* wird immer mit dem letzten Eintrag in der verketteten Typliste \[*TEvent*, *TEvents...* \] abgeglichen. Alle anderen *TEvent*- und *TEvents*-Einträge können mit jeder Position in *eventStack* außer der letzten übereinstimmen, vorausgesetzt, sie liegen in der gleichen Reihenfolge vor.
+Das letzte Ereignis in *eventStack* wird immer mit dem letzten Eintrag in der verketteten Typliste \[*TEvent* , *TEvents...* \] abgeglichen. Alle anderen *TEvent* - und *TEvents* -Einträge können mit jeder Position in *eventStack* außer der letzten übereinstimmen, vorausgesetzt, sie liegen in der gleichen Reihenfolge vor.
 
 Die Ereignistypen, die für die Parameter *TEvent* und *TEvents* verwendet werden sollen, werden aus eine Liste mit *Erfassungsklassen* ausgewählt. Eine Liste der Ereignisse und der Erfassungsklassen, die Sie zum Abgleichen verwenden können, finden Sie in der [Ereignistabelle](../event-table.md).
 

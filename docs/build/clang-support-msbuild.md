@@ -4,22 +4,22 @@ ms.date: 06/02/2020
 ms.description: Configure a Visual Studio MSBuild project to use the Clang/LLVM toolchain.
 helpviewer_keywords:
 - Clang support for C++ MSBuild projects
-ms.openlocfilehash: a34b8931fa344071d319770ef1c55fc46d27e1e2
-ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
+ms.openlocfilehash: 0b29322c46d7a92dbb265610f93b084a84f37d0d
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90686344"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92922243"
 ---
 # <a name="clangllvm-support-in-visual-studio-projects"></a>Clang-/LLVM-Unterstützung in Visual Studio-Projekten
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 Die Clang-Unterstützung für CMake- und MSBuild-Projekte ist in Visual Studio 2019 verfügbar.
 
 ::: moniker-end
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 Sie können Visual Studio 2019-Version 16.2 mit Clang zum Bearbeiten, Erstellen und Debuggen von C++-Projekten (MSBuild) für Windows oder Linux in Visual Studio verwenden.
 
@@ -31,7 +31,7 @@ Für die beste IDE-Unterstützung in Visual Studio wird die Verwendung der aktue
 
 ## <a name="configure-a-windows-project-to-use-clang-tools"></a>Konfigurieren eines Windows-Projekts zur Verwendung von Clang-Tools
 
-Klicken Sie mit der rechten Maustaste auf den Projektknoten im **Projektmappen-Explorer**, und wählen Sie dann **Eigenschaften** aus, um ein Visual Studio-Projekt zur Verwendung von Clang zu konfigurieren. In der Regel sollten Sie zuerst oben im Dialogfeld auf **Alle Konfigurationen** klicken. Wählen Sie dann unter **Allgemein** > **Plattformtoolset** die Option **LLVM (clang-cl)** aus, und klicken Sie auf **OK**.
+Klicken Sie mit der rechten Maustaste auf den Projektknoten im **Projektmappen-Explorer** , und wählen Sie dann **Eigenschaften** aus, um ein Visual Studio-Projekt zur Verwendung von Clang zu konfigurieren. In der Regel sollten Sie zuerst oben im Dialogfeld auf **Alle Konfigurationen** klicken. Wählen Sie dann unter **Allgemein** > **Plattformtoolset** die Option **LLVM (clang-cl)** aus, und klicken Sie auf **OK**.
 
 ![Screenshot des Dialogfelds „Eigenschaftenseiten“, in dem „Konfigurationseigenschaften“ > „Allgemein“ ausgewählt und das Plattformtoolset und die L L V M-Optionen (c lang c l) hervorgehoben sind.](media/clang-msbuild-prop-page.png)
 
@@ -47,7 +47,7 @@ So konfigurieren Sie ein Linux-Projekt in Visual Studio für die Verwendung von 
 
 1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektknoten, und wählen Sie dann **Eigenschaften** aus.
 1. In der Regel sollten Sie zuerst oben im Dialogfeld auf **Alle Konfigurationen** klicken.
-1. Wählen Sie unter **Allgemein** > **Plattformtoolset** die Option **WSL_Clang_1_0**, wenn Sie das Windows-Subsystem für Linux verwenden, oder **Remote_Clang_1_0** aus, wenn Sie einen Remotecomputer oder eine VM verwenden.
+1. Wählen Sie unter **Allgemein**  > **Plattformtoolset** die Option **WSL_Clang_1_0** , wenn Sie das Windows-Subsystem für Linux verwenden, oder **Remote_Clang_1_0** aus, wenn Sie einen Remotecomputer oder eine VM verwenden.
 1. Klicken Sie auf **OK**.
 
 ![Screenshot des Dialogfelds „Eigenschaftenseiten“ für die Konsolen-App c lang von Visual Studio 2019, in dem „Konfigurationseigenschaften“ > „Allgemein“ ausgewählt ist und das Plattformtoolset und die L L V M-Optionen (c lang c l) hervorgehoben sind.](media/clang-msbuild-prop-page.png)
@@ -56,7 +56,7 @@ Unter Linux verwendet Visual Studio standardmäßig den ersten Clang-Speicherort
 
 ## <a name="set-a-custom-llvm-location"></a><a name="custom_llvm_location"></a> Festlegen eines benutzerdefinierten LLVM-Speicherorts
 
-Sie können einen benutzerdefinierten Pfad für LLVM für mehrere Projekte festlegen, indem Sie eine *Directory.build.props*-Datei erstellen und zum Stammverzeichnis der jeweiligen Projekte hinzufügen. Sie können die Datei zum Stammprojektmappen-Ordner hinzufügen, um den Pfad für alle Projekte in der Projektmappe festzulegen. Die Datei sollte wie folgt aussehen (fügen Sie jedoch Ihren tatsächlichen Pfad ein):
+Sie können einen benutzerdefinierten Pfad für LLVM für mehrere Projekte festlegen, indem Sie eine *Directory.build.props* -Datei erstellen und zum Stammverzeichnis der jeweiligen Projekte hinzufügen. Sie können die Datei zum Stammprojektmappen-Ordner hinzufügen, um den Pfad für alle Projekte in der Projektmappe festzulegen. Die Datei sollte wie folgt aussehen (fügen Sie jedoch Ihren tatsächlichen Pfad ein):
 
 ```xml
 <Project>

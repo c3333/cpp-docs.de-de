@@ -4,22 +4,22 @@ ms.date: 10/14/2020
 description: Hier werden die Kompilierungsoptionen für Linux auf der Seite mit C-/C++-Eigenschaften in Visual Studio beschrieben.
 ms.assetid: 4bb8894b-c874-4a68-935e-b127d54e484f
 f1_keywords: []
-ms.openlocfilehash: 0840327b30d94b4845adef7788fd73f4e797775f
-ms.sourcegitcommit: f19f02f217b80804ab321d463c76ce6f681abcc6
+ms.openlocfilehash: b8cb1d8c6c585262e966c3015660adeaeab60307
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92176241"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924561"
 ---
 # <a name="cc-properties-linux-c"></a>C/C++-Eigenschaften (Linux C++)
 
-::: moniker range="vs-2015"
+::: moniker range="msvc-140"
 
 Die Unterstützung für Linux ist in Visual Studio 2017 und höher verfügbar.
 
 ::: moniker-end
 
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
 ## <a name="general"></a>Allgemein
 

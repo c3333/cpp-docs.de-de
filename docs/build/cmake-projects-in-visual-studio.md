@@ -5,12 +5,12 @@ ms.date: 01/08/2020
 helpviewer_keywords:
 - CMake in Visual C++
 ms.assetid: 444d50df-215e-4d31-933a-b41841f186f8
-ms.openlocfilehash: a4eea2b321bc07fc40c9a42b3ce515435e808ee4
-ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
+ms.openlocfilehash: 693179c6da368fa84a5ccb0ffaf2b1b1596972b8
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90685031"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92922329"
 ---
 # <a name="cmake-projects-in-visual-studio"></a>CMake-Projekte in Visual Studio
 
@@ -19,9 +19,9 @@ CMake ist ein plattformübergreifendes Open Source-Tool, das zum Definieren von 
 > [!NOTE]
 > CMake wurde in den letzten Releases immer mehr in Visual Studio integriert. Um die Dokumentation für Ihre bevorzugte Version von Visual Studio anzuzeigen, verwenden Sie das Auswahlsteuerelement **Version**. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
-Die Komponente **C++-CMake-Tools für Windows** verwendet die Funktion [Ordner öffnen](open-folder-projects-cpp.md), um CMake-Projektdateien (z. B. *CMakeLists.txt*) direkt für IntelliSense und das Durchsuchen nutzen zu können. Es werden sowohl Ninja- als auch Visual Studio-Generatoren unterstützt. Wenn Sie einen Visual Studio-Generator verwenden, generiert dieser eine temporäre Projektdatei und übergibt sie an „msbuild.exe“. Das Projekt wird jedoch nie für IntelliSense oder zum Durchsuchen geladen. Sie können auch einen vorhandenen CMake-Cache importieren.
+Die Komponente **C++-CMake-Tools für Windows** verwendet die Funktion [Ordner öffnen](open-folder-projects-cpp.md), um CMake-Projektdateien (z. B. *CMakeLists.txt* ) direkt für IntelliSense und das Durchsuchen nutzen zu können. Es werden sowohl Ninja- als auch Visual Studio-Generatoren unterstützt. Wenn Sie einen Visual Studio-Generator verwenden, generiert dieser eine temporäre Projektdatei und übergibt sie an „msbuild.exe“. Das Projekt wird jedoch nie für IntelliSense oder zum Durchsuchen geladen. Sie können auch einen vorhandenen CMake-Cache importieren.
 
 ## <a name="installation"></a>Installation
 
@@ -33,17 +33,17 @@ Weitere Informationen finden Sie unter [Install the C++ Linux workload in Visual
 
 ## <a name="ide-integration"></a>IDE-Integration
 
-Wenn Sie auf **Datei > Öffnen > Ordner** klicken, um einen Ordner zu öffnen, der eine *CMakeLists.txt*-Datei enthält, geschieht Folgendes:
+Wenn Sie auf **Datei > Öffnen > Ordner** klicken, um einen Ordner zu öffnen, der eine *CMakeLists.txt* -Datei enthält, geschieht Folgendes:
 
-- Visual Studio fügt ein **CMake**-Element zum Menü **Projekt** mit Befehlen zum Anzeigen und Bearbeiten von CMake-Skripts hinzu.
+- Visual Studio fügt ein **CMake** -Element zum Menü **Projekt** mit Befehlen zum Anzeigen und Bearbeiten von CMake-Skripts hinzu.
 
 - Der **Projektmappen-Explorer** zeigt die Ordnerstruktur und die Dateien an.
 
-- Visual Studio führt „cmake.exe“ aus und generiert die CMake-Cachedatei (*CMakeCache.txt*) für die Standardkonfiguration (x64 Debug). Die CMake-Befehlszeile wird im **Ausgabefenster** zusammen mit zusätzlichen Ausgaben von CMake angezeigt.
+- Visual Studio führt „cmake.exe“ aus und generiert die CMake-Cachedatei ( *CMakeCache.txt* ) für die Standardkonfiguration (x64 Debug). Die CMake-Befehlszeile wird im **Ausgabefenster** zusammen mit zusätzlichen Ausgaben von CMake angezeigt.
 
 - Im Hintergrund beginnt Visual Studio damit, die Quelldateien zu indizieren, um IntelliSense, das Durchsuchen von Informationen, das Refactoring und vieles mehr zu ermöglichen. Während Sie arbeiten, überwacht Visual Studio die Änderungen im Editor und auf dem Datenträger, damit der Index mit den Quellen synchron ist.
 
-Sie können Ordner öffnen, die eine beliebige Anzahl von CMake-Projekten enthalten. Visual Studio erkennt und konfiguriert alle *CMakeLists.txt*-Stammdateien in Ihrem Arbeitsbereich. CMake-Vorgänge (Konfigurieren, Erstellen, Debuggen), IntelliSense für C++ und das Durchsuchen sind für alle CMake-Projekte in Ihrem Arbeitsbereich verfügbar.
+Sie können Ordner öffnen, die eine beliebige Anzahl von CMake-Projekten enthalten. Visual Studio erkennt und konfiguriert alle *CMakeLists.txt* -Stammdateien in Ihrem Arbeitsbereich. CMake-Vorgänge (Konfigurieren, Erstellen, Debuggen), IntelliSense für C++ und das Durchsuchen sind für alle CMake-Projekte in Ihrem Arbeitsbereich verfügbar.
 
 ![CMake-Projekte mit mehreren Stammdateien](media/cmake-multiple-roots.png)
 
@@ -51,7 +51,7 @@ Sie können die Projekte auch logisch strukturiert nach Zielen anzeigen. Wählen
 
 ![Schaltfläche für CMake-Zielansicht](media/cmake-targets-view.png)
 
-Klicken Sie oben im **Projektmappen-Explorer** auf **Alle Dateien anzeigen**, um die von CMake generierten Ausgaben in den Ordnern *out/build\<config>* anzuzeigen.
+Klicken Sie oben im **Projektmappen-Explorer** auf **Alle Dateien anzeigen** , um die von CMake generierten Ausgaben in den Ordnern *out/build\<config>* anzuzeigen.
 
 Visual Studio verwendet eine Konfigurationsdatei namens **CMakeSettings.json**. Mit dieser Datei können Sie mehrere Buildkonfigurationen definieren und speichern und in der IDE zwischen ihnen wechseln. Eine *Konfiguration* ist ein Visual Studio-Konstrukt, das Einstellungen kapselt, die für einen bestimmten Buildtyp spezifisch sind. Die Einstellungen werden verwendet, um die Standardbefehlszeilenoptionen zu konfigurieren, die Visual Studio an cmake.exe übergibt. Sie können hier auch weitere CMake-Optionen angeben und alle weiteren gewünschten Variablen definieren. Alle Optionen werden entweder als interne oder externe Variablen in den CMake-Cache geschrieben. In Visual Studio 2019 bietet der **Editor für CMake-Einstellungen** eine bequeme Möglichkeit zum Bearbeiten der Einstellungen. Weitere Informationen finden Sie unter [Customize CMake settings (Anpassen von CMake-Einstellungen)](customize-cmake-settings.md).
 
@@ -66,7 +66,7 @@ Sie können eine andere Datei namens **launch.vs.json** verwenden, um zur Debugz
 
 ## <a name="open-an-existing-cache"></a>Öffnen eines vorhandenen Caches
 
-Wenn Sie eine vorhandene CMake-Cachedatei (*CMakeCache.txt*) öffnen, versucht Visual Studio nicht, Ihren Cache und die Buildstruktur für Sie zu verwalten. Ihre benutzerdefinierten oder bevorzugten Tools haben die umfassende Kontrolle darüber, wie CMake das Projekt konfiguriert. Klicken Sie auf **Datei > Öffnen > CMake**, um einen vorhandenen Cache in Visual Studio zu öffnen. Navigieren Sie dann zu einer vorhandenen *CMakeCache.txt*-Datei.
+Wenn Sie eine vorhandene CMake-Cachedatei ( *CMakeCache.txt* ) öffnen, versucht Visual Studio nicht, Ihren Cache und die Buildstruktur für Sie zu verwalten. Ihre benutzerdefinierten oder bevorzugten Tools haben die umfassende Kontrolle darüber, wie CMake das Projekt konfiguriert. Klicken Sie auf **Datei > Öffnen > CMake** , um einen vorhandenen Cache in Visual Studio zu öffnen. Navigieren Sie dann zu einer vorhandenen *CMakeCache.txt* -Datei.
 
 Sie können einem geöffneten Projekt einen vorhandenen CMake-Cache hinzufügen. Dies erfolgt auf die gleiche Weise wie das Hinzufügen einer neuen Konfiguration. Weitere Informationen finden Sie in unserem Blogbeitrag zum [Öffnen eines vorhandenen Caches in Visual Studio](https://devblogs.microsoft.com/cppblog/open-existing-cmake-caches-in-visual-studio/).
 
@@ -78,7 +78,7 @@ Folgende Optionen stehen Ihnen zum Erstellen eines CMake-Projekts zur Verfügung
 
 1. Klicken Sie mit der rechten Maustaste auf *CMakeLists.txt* und anschließend im Kontextmenü auf **Erstellen**. Wenn mehrere Ziele in Ihrer Ordnerstruktur vorhanden sind, können Sie auswählen, den Build für alle oder nur für ein bestimmtes Ziel durchzuführen.
 
-1. Klicken Sie im Hauptmenü auf **Erstellen > Alle erstellen** (**F7** oder **STRG+UMSCHALT+B**). Stellen Sie sicher, dass ein CMake-Ziel bereits in der Dropdownliste **Startelement** auf der Symbolleiste **Allgemein** ausgewählt ist.
+1. Klicken Sie im Hauptmenü auf **Erstellen > Alle erstellen** ( **F7** oder **STRG+UMSCHALT+B** ). Stellen Sie sicher, dass ein CMake-Ziel bereits in der Dropdownliste **Startelement** auf der Symbolleiste **Allgemein** ausgewählt ist.
 
 ![CMake-Menübefehl „Erstellen“](media/cmake-build-menu.png "CMake-Menübefehl „Erstellen“")
 
@@ -86,7 +86,7 @@ Erwartungsgemäß werden die Buildergebnisse im **Ausgabefenster** und in der **
 
 ![CMake-Buildfehler](media/cmake-build-errors.png "CMake-Buildfehler")
 
-In einem Ordner mit mehreren Buildzielen können Sie angeben, welches CMake-Ziel erstellt werden soll: Klicken Sie im **CMake**-Menü auf das Element **Erstellen** oder das Kontextmenü *CMakeLists.txt*, um das Ziel anzugeben. Wenn Sie in einem CMake-Projekt **STRG+UMSCHALT+B** drücken, wird das derzeit aktive Dokument erstellt.
+In einem Ordner mit mehreren Buildzielen können Sie angeben, welches CMake-Ziel erstellt werden soll: Klicken Sie im **CMake** -Menü auf das Element **Erstellen** oder das Kontextmenü *CMakeLists.txt* , um das Ziel anzugeben. Wenn Sie in einem CMake-Projekt **STRG+UMSCHALT+B** drücken, wird das derzeit aktive Dokument erstellt.
 
 ## <a name="debugging-cmake-projects"></a>Debuggen von CMake-Projekten
 
@@ -100,7 +100,7 @@ Sie können eine CMake-Debugsitzung durch das Festlegen von Eigenschaften in der
 
 ## <a name="just-my-code-for-cmake-projects"></a>„Nur eigenen Code“ für CMake-Projekte
 
-Wenn Sie für Windows mit dem MSVC-Compiler erstellen, unterstützen CMake-Projekte das „Nur eigenen Code“-Debuggen. Navigieren Sie zu **Extras** > **Optionen** > **Debuggen** > **Allgemein**, um die „Nur eigenen Code“-Einstellung zu ändern.
+Wenn Sie für Windows mit dem MSVC-Compiler erstellen, unterstützen CMake-Projekte das „Nur eigenen Code“-Debuggen. Navigieren Sie zu **Extras** > **Optionen** > **Debuggen** > **Allgemein** , um die „Nur eigenen Code“-Einstellung zu ändern.
 
 ## <a name="vcpkg-integration"></a>Vcpkg-Integration
 
@@ -114,11 +114,11 @@ Die meisten Konfigurationsmeldungen werden standardmäßig unterdrückt, es sei 
 
 ## <a name="editing-cmakeliststxt-files"></a>Bearbeiten von CMakeLists.txt-Dateien
 
-Wenn Sie eine *CMakeLists.txt*-Datei bearbeiten möchten, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf die Datei und danach auf **Öffnen**. Wenn Sie Änderungen an der Datei vornehmen, wird eine gelbe Statusleiste angezeigt, die Sie darüber informiert, dass IntelliSense ein Update durchführen möchte. Sie haben die Möglichkeit, den Updatevorgang abzubrechen. Weitere Informationen zu *CMakeLists.txt* finden Sie in der [CMake-Dokumentation](https://cmake.org/documentation/).
+Wenn Sie eine *CMakeLists.txt* -Datei bearbeiten möchten, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf die Datei und danach auf **Öffnen**. Wenn Sie Änderungen an der Datei vornehmen, wird eine gelbe Statusleiste angezeigt, die Sie darüber informiert, dass IntelliSense ein Update durchführen möchte. Sie haben die Möglichkeit, den Updatevorgang abzubrechen. Weitere Informationen zu *CMakeLists.txt* finden Sie in der [CMake-Dokumentation](https://cmake.org/documentation/).
 
    ![Bearbeiten von CMakeLists.txt-Dateien](media/cmake-cmakelists.png "Bearbeiten von CMakeLists.txt-Dateien")
 
-Sobald Sie die Datei speichern, wird der Konfigurationsschritt automatisch erneut ausgeführt. Dieser zeigt Informationen im **Ausgabefenster** an. Fehler und Warnungen werden in der **Fehlerliste** oder im **Ausgabefenster** angezeigt. Doppelklicken Sie auf einen Fehler in der **Fehlerliste**, um zur problematischen Zeile in *CMakeLists.txt* zu navigieren.
+Sobald Sie die Datei speichern, wird der Konfigurationsschritt automatisch erneut ausgeführt. Dieser zeigt Informationen im **Ausgabefenster** an. Fehler und Warnungen werden in der **Fehlerliste** oder im **Ausgabefenster** angezeigt. Doppelklicken Sie auf einen Fehler in der **Fehlerliste** , um zur problematischen Zeile in *CMakeLists.txt* zu navigieren.
 
    ![CMakeLists.txt-Dateifehler](media/cmake-cmakelists-error.png "CMakeLists.txt-Dateifehler")
 
@@ -128,7 +128,7 @@ Wenn Sie wichtige Änderungen an den Dateien *CMakeSettings.json* oder *CMakeLis
 
 ## <a name="troubleshooting-cmake-cache-errors"></a>Behandlung von CMake-Cachefehlern
 
-Wenn Sie weitere Informationen zum Status des CMake-Caches benötigen, um ein Problem zu diagnostizieren, öffnen Sie das Hauptmenü **Projekt** oder das Kontextmenü *CMakeLists.txt* im **Projektmappen-Explorer**, um einen der folgenden Befehle auszuführen:
+Wenn Sie weitere Informationen zum Status des CMake-Caches benötigen, um ein Problem zu diagnostizieren, öffnen Sie das Hauptmenü **Projekt** oder das Kontextmenü *CMakeLists.txt* im **Projektmappen-Explorer** , um einen der folgenden Befehle auszuführen:
 
 - **Cache anzeigen** öffnet die Datei *CMakeCache.txt* aus dem Stammordner des Builds im Editor. (Alle Änderungen, die Sie hier an *CMakeCache.txt* vornehmen, werden verworfen, wenn Sie den Cache bereinigen. Informationen zum Vornehmen von Änderungen, die nach dem Bereinigen des Caches beibehalten werden, finden Sie unter [Anpassen von CMake-Einstellungen](customize-cmake-settings.md).)
 
@@ -152,9 +152,9 @@ Wenn Sie CMake über den Visual Studio-Installer installiert haben, können Sie 
 
 ::: moniker-end
 
-::: moniker range="vs-2017"
+::: moniker range="msvc-150"
 
-Visual Studio 2017 bietet umfangreiche Unterstützung für CMake einschließlich [plattformübergreifender CMake-Projekte](../linux/cmake-linux-project.md). Die Komponente **Visual C++-Tools für CMake** verwendet die Funktion **Ordner öffnen**, um der IDE die Verwendung von CMake-Projektdateien (z. B. *CMakeLists.txt*) direkt für IntelliSense und das Durchsuchen zu ermöglichen. Es werden sowohl Ninja- als auch Visual Studio-Generatoren unterstützt. Wenn Sie einen Visual Studio-Generator verwenden, generiert dieser eine temporäre Projektdatei und übergibt sie an „msbuild.exe“. Das Projekt wird jedoch nie für IntelliSense oder zum Durchsuchen geladen. Sie können auch einen vorhandenen CMake-Cache verwenden.
+Visual Studio 2017 bietet umfangreiche Unterstützung für CMake einschließlich [plattformübergreifender CMake-Projekte](../linux/cmake-linux-project.md). Die Komponente **Visual C++-Tools für CMake** verwendet die Funktion **Ordner öffnen** , um der IDE die Verwendung von CMake-Projektdateien (z. B. *CMakeLists.txt* ) direkt für IntelliSense und das Durchsuchen zu ermöglichen. Es werden sowohl Ninja- als auch Visual Studio-Generatoren unterstützt. Wenn Sie einen Visual Studio-Generator verwenden, generiert dieser eine temporäre Projektdatei und übergibt sie an „msbuild.exe“. Das Projekt wird jedoch nie für IntelliSense oder zum Durchsuchen geladen. Sie können auch einen vorhandenen CMake-Cache verwenden.
 
 ## <a name="installation"></a>Installation
 
@@ -166,9 +166,9 @@ Weitere Informationen finden Sie unter [Install the C++ Linux workload in Visual
 
 ## <a name="ide-integration"></a>IDE-Integration
 
-Wenn Sie auf **Datei > Öffnen > Ordner** klicken, um einen Ordner zu öffnen, der eine *CMakeLists.txt*-Datei enthält, geschieht Folgendes:
+Wenn Sie auf **Datei > Öffnen > Ordner** klicken, um einen Ordner zu öffnen, der eine *CMakeLists.txt* -Datei enthält, geschieht Folgendes:
 
-- Visual Studio fügt ein **CMake**-Menüelement zum Hauptmenü hinzu, das Befehle für das Anzeigen und Bearbeiten von CMake-Skripts enthält.
+- Visual Studio fügt ein **CMake** -Menüelement zum Hauptmenü hinzu, das Befehle für das Anzeigen und Bearbeiten von CMake-Skripts enthält.
 
 - Der **Projektmappen-Explorer** zeigt die Ordnerstruktur und die Dateien an.
 
@@ -176,7 +176,7 @@ Wenn Sie auf **Datei > Öffnen > Ordner** klicken, um einen Ordner zu öffnen, d
 
 - Im Hintergrund beginnt Visual Studio damit, die Quelldateien zu indizieren, um IntelliSense, das Durchsuchen von Informationen, das Refactoring und vieles mehr zu ermöglichen. Während Sie arbeiten, überwacht Visual Studio die Änderungen im Editor und auf dem Datenträger, damit der Index mit den Quellen synchron ist.
 
-Sie können Ordner öffnen, die eine beliebige Anzahl von CMake-Projekten enthalten. Visual Studio erkennt und konfiguriert alle *CMakeLists.txt*-Stammdateien in Ihrem Arbeitsbereich. CMake-Vorgänge (Konfigurieren, Erstellen, Debuggen), IntelliSense für C++ und das Durchsuchen sind für alle CMake-Projekte in Ihrem Arbeitsbereich verfügbar.
+Sie können Ordner öffnen, die eine beliebige Anzahl von CMake-Projekten enthalten. Visual Studio erkennt und konfiguriert alle *CMakeLists.txt* -Stammdateien in Ihrem Arbeitsbereich. CMake-Vorgänge (Konfigurieren, Erstellen, Debuggen), IntelliSense für C++ und das Durchsuchen sind für alle CMake-Projekte in Ihrem Arbeitsbereich verfügbar.
 
 ![CMake-Projekte mit mehreren Stammdateien](media/cmake-multiple-roots.png)
 
@@ -195,19 +195,19 @@ Wenn Sie beim Debuggen Argumente an eine ausführbare Datei übergeben müssen, 
 
 ## <a name="import-an-existing-cache"></a>Importieren eines vorhandenen Caches
 
-Wenn Sie eine vorhandene *CMakeLists.txt*-Datei importieren, extrahiert Visual Studio benutzerdefinierte Variablen automatisch und erstellt eine vorab mit Daten aufgefüllte *CMakeSettings.json*-Datei, die auf diesen basiert. Der ursprüngliche Cache wird in keiner Weise geändert. Er kann weiterhin über die Befehlszeile oder mit einem beliebigen Tool oder der IDE verwendet werden, die zum Generieren verwendet werden. Die neue *CMakeSettings.json*-Datei wird zusammen mit der *CMakeLists.txt*-Stammdatei des Projekts abgelegt. Visual Studio generiert einen neuen Cache, der auf der Einstellungsdatei basiert. Sie können die automatische Cachegenerierung im Dialogfeld **Extras > Optionen > CMake > Allgemein** außer Kraft setzen.
+Wenn Sie eine vorhandene *CMakeLists.txt* -Datei importieren, extrahiert Visual Studio benutzerdefinierte Variablen automatisch und erstellt eine vorab mit Daten aufgefüllte *CMakeSettings.json* -Datei, die auf diesen basiert. Der ursprüngliche Cache wird in keiner Weise geändert. Er kann weiterhin über die Befehlszeile oder mit einem beliebigen Tool oder der IDE verwendet werden, die zum Generieren verwendet werden. Die neue *CMakeSettings.json* -Datei wird zusammen mit der *CMakeLists.txt* -Stammdatei des Projekts abgelegt. Visual Studio generiert einen neuen Cache, der auf der Einstellungsdatei basiert. Sie können die automatische Cachegenerierung im Dialogfeld **Extras > Optionen > CMake > Allgemein** außer Kraft setzen.
 
 Nicht der gesamte Inhalt des Caches wird importiert.  Eigenschaften wie der Generator und der Speicherort des Compilers werden durch die Standardwerte ersetzt, die in der IDE bekanntermaßen funktionieren.
 
 ### <a name="to-import-an-existing-cache"></a>Importieren eines vorhandenen Caches
 
-1. Klicken Sie im Hauptmenü auf **Datei > Öffnen > CMake**:
+1. Klicken Sie im Hauptmenü auf **Datei > Öffnen > CMake** :
 
    ![CMake öffnen](media/cmake-file-open.png "Datei, Öffnen, CMake")
 
    Mit diesem Befehl wird der Assistent **CMake-Projekt aus Cache importieren** gestartet.
 
-2. Navigieren Sie zur *CMakeCache.txt*-Datei, die Sie importieren möchten, und klicken Sie dann auf **OK**. Der Assistent **CMake-Projekt aus Cache importieren** wird angezeigt:
+2. Navigieren Sie zur *CMakeCache.txt* -Datei, die Sie importieren möchten, und klicken Sie dann auf **OK**. Der Assistent **CMake-Projekt aus Cache importieren** wird angezeigt:
 
    ![Importieren eines CMake-Caches](media/cmake-import-wizard.png "Öffnen des Assistenten zum Importieren von CMake-Caches")
 
@@ -221,17 +221,17 @@ Folgende Optionen stehen Ihnen zum Erstellen eines CMake-Projekts zur Verfügung
 
 1. Klicken Sie mit der rechten Maustaste auf *CMakeLists.txt* und dann im Kontextmenü auf **Erstellen**. Wenn mehrere Ziele in Ihrer Ordnerstruktur vorhanden sind, können Sie auswählen, den Build für alle oder nur für ein bestimmtes Ziel durchzuführen.
 
-1. Alternativ können Sie im Hauptmenü auf **Erstellen > Projektmappe erstellen** klicken (**F7** oder **STRG+UMSCHALT+B**). Stellen Sie sicher, dass ein CMake-Ziel bereits in der Dropdownliste **Startelement** auf der Symbolleiste **Allgemein** ausgewählt ist.
+1. Alternativ können Sie im Hauptmenü auf **Erstellen > Projektmappe erstellen** klicken ( **F7** oder **STRG+UMSCHALT+B** ). Stellen Sie sicher, dass ein CMake-Ziel bereits in der Dropdownliste **Startelement** auf der Symbolleiste **Allgemein** ausgewählt ist.
 
 ![CMake-Menübefehl „Erstellen“](media/cmake-build-menu.png "CMake-Menübefehl „Erstellen“")
 
-Sie können Buildkonfigurationen, Umgebungsvariablen, Befehlszeilenargumente und andere Einstellungen in der *CMakeSettings.json*-Datei anpassen. Sie können Änderungen vornehmen, ohne die Datei *CMakeLists.txt* zu ändern. Weitere Informationen finden Sie unter [Customize CMake settings (Anpassen von CMake-Einstellungen)](customize-cmake-settings.md).
+Sie können Buildkonfigurationen, Umgebungsvariablen, Befehlszeilenargumente und andere Einstellungen in der *CMakeSettings.json* -Datei anpassen. Sie können Änderungen vornehmen, ohne die Datei *CMakeLists.txt* zu ändern. Weitere Informationen finden Sie unter [Customize CMake settings (Anpassen von CMake-Einstellungen)](customize-cmake-settings.md).
 
 Erwartungsgemäß werden die Buildergebnisse im **Ausgabefenster** und in der **Fehlerliste** angezeigt.
 
 ![CMake-Buildfehler](media/cmake-build-errors.png "CMake-Buildfehler")
 
-In einem Ordner mit mehreren Buildzielen können Sie angeben, welches CMake-Ziel erstellt werden soll: Klicken Sie im **CMake**-Menü auf das Element **Erstellen** oder das Kontextmenü *CMakeLists.txt*, um das Ziel anzugeben. Wenn Sie in einem CMake-Projekt **STRG+UMSCHALT+B** drücken, wird das derzeit aktive Dokument erstellt.
+In einem Ordner mit mehreren Buildzielen können Sie angeben, welches CMake-Ziel erstellt werden soll: Klicken Sie im **CMake** -Menü auf das Element **Erstellen** oder das Kontextmenü *CMakeLists.txt* , um das Ziel anzugeben. Wenn Sie in einem CMake-Projekt **STRG+UMSCHALT+B** drücken, wird das derzeit aktive Dokument erstellt.
 
 ## <a name="debugging-cmake-projects"></a>Debuggen von CMake-Projekten
 
@@ -245,11 +245,11 @@ Sie können eine CMake-Debugsitzung durch das Festlegen von Eigenschaften in der
 
 ## <a name="editing-cmakeliststxt-files"></a>Bearbeiten von CMakeLists.txt-Dateien
 
-Wenn Sie eine *CMakeLists.txt*-Datei bearbeiten möchten, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf die Datei und danach auf **Öffnen**. Wenn Sie Änderungen an der Datei vornehmen, wird eine gelbe Statusleiste angezeigt, die Sie darüber informiert, dass IntelliSense ein Update durchführen möchte. Sie haben die Möglichkeit, den Updatevorgang abzubrechen. Weitere Informationen zu *CMakeLists.txt* finden Sie in der [CMake-Dokumentation](https://cmake.org/documentation/).
+Wenn Sie eine *CMakeLists.txt* -Datei bearbeiten möchten, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf die Datei und danach auf **Öffnen**. Wenn Sie Änderungen an der Datei vornehmen, wird eine gelbe Statusleiste angezeigt, die Sie darüber informiert, dass IntelliSense ein Update durchführen möchte. Sie haben die Möglichkeit, den Updatevorgang abzubrechen. Weitere Informationen zu *CMakeLists.txt* finden Sie in der [CMake-Dokumentation](https://cmake.org/documentation/).
 
    ![Bearbeiten von CMakeLists.txt-Dateien](media/cmake-cmakelists.png "Bearbeiten von CMakeLists.txt-Dateien")
 
-Sobald Sie die Datei speichern, wird der Konfigurationsschritt automatisch erneut ausgeführt. Dieser zeigt Informationen im **Ausgabefenster** an. Fehler und Warnungen werden in der **Fehlerliste** oder im **Ausgabefenster** angezeigt. Doppelklicken Sie auf einen Fehler in der **Fehlerliste**, um zur problematischen Zeile in *CMakeLists.txt* zu navigieren.
+Sobald Sie die Datei speichern, wird der Konfigurationsschritt automatisch erneut ausgeführt. Dieser zeigt Informationen im **Ausgabefenster** an. Fehler und Warnungen werden in der **Fehlerliste** oder im **Ausgabefenster** angezeigt. Doppelklicken Sie auf einen Fehler in der **Fehlerliste** , um zur problematischen Zeile in *CMakeLists.txt* zu navigieren.
 
    ![CMakeLists.txt-Dateifehler](media/cmake-cmakelists-error.png "CMakeLists.txt-Dateifehler")
 
@@ -265,7 +265,7 @@ Sie können Build- und Debugsitzungen auf eine Teilmenge der Projekte im Arbeits
 
 ## <a name="troubleshooting-cmake-cache-errors"></a>Behandlung von CMake-Cachefehlern
 
-Wenn Sie weitere Informationen zum Status des CMake-Caches benötigen, um ein Problem zu diagnostizieren, öffnen Sie das Hauptmenü **CMake** oder das Kontextmenü *CMakeLists.txt* im **Projektmappen-Explorer**, um einen der folgenden Befehle auszuführen:
+Wenn Sie weitere Informationen zum Status des CMake-Caches benötigen, um ein Problem zu diagnostizieren, öffnen Sie das Hauptmenü **CMake** oder das Kontextmenü *CMakeLists.txt* im **Projektmappen-Explorer** , um einen der folgenden Befehle auszuführen:
 
 - **Cache anzeigen** öffnet die Datei *CMakeCache.txt* aus dem Stammordner des Builds im Editor. (Alle Änderungen, die Sie hier an *CMakeCache.txt* vornehmen, werden verworfen, wenn Sie den Cache bereinigen. Informationen zum Vornehmen von Änderungen, die nach dem Bereinigen des Caches beibehalten werden, finden Sie unter [Anpassen von CMake-Einstellungen](customize-cmake-settings.md).)
 
@@ -279,7 +279,7 @@ Die automatische Cachegenerierung kann im Dialogfeld **Extras > Optionen > CMake
 
 ## <a name="single-file-compilation"></a>Kompilierung einzelner Dateien
 
-Klicken Sie zum Erstellen einer einzelnen Datei in einem CMake-Projekt im **Projektmappen-Explorer** mit der rechten Maustaste auf die Datei. Klicken Sie im Popupmenü auf **Kompilieren**. Sie können die derzeit im Editor geöffnete Datei auch über das **CMake**-Hauptmenü erstellen:
+Klicken Sie zum Erstellen einer einzelnen Datei in einem CMake-Projekt im **Projektmappen-Explorer** mit der rechten Maustaste auf die Datei. Klicken Sie im Popupmenü auf **Kompilieren**. Sie können die derzeit im Editor geöffnete Datei auch über das **CMake** -Hauptmenü erstellen:
 
 ![Kompilierung einzelner Dateien in CMake](media/cmake-single-file-compile.png)
 
@@ -295,7 +295,7 @@ Wenn Sie CMake über den Visual Studio-Installer installiert haben, können Sie 
 
 ::: moniker-end
 
-::: moniker range="vs-2015"
+::: moniker range="msvc-140"
 
 In Visual Studio 2015 können Visual Studio-Benutzer einen [CMake-Generator](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html) verwenden, um MSBuild-Projektdateien zu generieren, die anschließend von der IDE für IntelliSense sowie für das Durchsuchen und die Kompilierung verwendet werden.
 

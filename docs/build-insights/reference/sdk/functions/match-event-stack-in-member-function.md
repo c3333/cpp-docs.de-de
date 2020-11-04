@@ -9,21 +9,21 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: db02ce5656bf8970ead7b49d5580f7d81bebb1b2
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 4d416a10d5e2803cd978243a1e44625a2e696d42
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87224135"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92920176"
 ---
 # <a name="matcheventstackinmemberfunction"></a>MatchEventStackInMemberFunction
 
-::: moniker range="<=vs-2015"
+::: moniker range="<=msvc-140"
 
 Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
 Die `MatchEventStackInMemberFunction`-Funktion wird zum Abgleichen eines Ereignisstapels mit einer bestimmten Ereignishierarchie verwendet, die von der Parameterliste einer Memberfunktion beschrieben wird. Übereinstimmende Hierarchien werden zur weiteren Verarbeitung an die Memberfunktion weitergeleitet. Weitere Informationen zu Ereignissen, Ereignisstapeln und Hierarchien finden Sie in der [Ereignistabelle](../event-table.md).
 
@@ -87,7 +87,7 @@ Der Typ, der die Memberfunktion enthält.
 *TReturn*\
 Der Rückgabetyp der Memberfunktion.
 
-*T1*, ..., *T10*\
+*T1* , ..., *T10*\
 Die Typen, die die Ereignishierarchie für den Abgleich beschreiben.
 
 *TExtraParams*\

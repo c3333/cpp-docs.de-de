@@ -4,12 +4,12 @@ description: In diesem Artikel erfahren Sie, wie Sie benutzerdefinierte Tools in
 ms.date: 10/08/2020
 helpviewer_keywords:
 - 'MSBuild (C++), howto: integrate custom tools'
-ms.openlocfilehash: 4b88bf94a92efaf5046fd83e5c6358f3fdf80895
-ms.sourcegitcommit: 6e5429e076e552b32e8bdc49480c51498d7924c1
+ms.openlocfilehash: 58626101d54c5b1f9749174e5f3e8938c431d025
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92099666"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92922152"
 ---
 # <a name="how-to-integrate-custom-tools-into-the-project-properties"></a>Vorgehensweise: Integrieren von benutzerdefinierten Tools in die Projekteigenschaften
 
@@ -19,19 +19,19 @@ Im Abschnitt **Konfigurationseigenschaften** des Fensters **Eigenschaftenseiten*
 
 Sie können eine Regeldatei erstellen, die Eigenschaften für Ihr benutzerdefiniertes Tool enthält, sodass die Eigenschaften beim Starten von Visual Studio geladen werden. Informationen zum Ändern der Datei finden Sie unter [Plattformerweiterbarkeit, Teil 2](/archive/blogs/vsproject/platform-extensibility-part-2) auf dem Blog des Visual Studio Project Team (Visual Studio-Projektteam).
 
-::: moniker range="vs-2015"
+::: moniker range="msvc-140"
 
 Der Ordner zum Ablegen der Regeldatei hängt vom Gebietsschema und der verwendeten Visual Studio-Version ab. Bei der Developer-Eingabeaufforderung in Visual Studio 2015 oder einer früheren Version ist der Regelordner *`%ProgramFiles(x86)%\MSBuild\Microsoft.Cpp\v4.0\<version>\<locale>`* . In Visual Studio 2015 ist der Wert für `<version>` *`v140`* . `<locale>` ist eine LCID, z. B. `1033` für Englisch. Für jede installierte Edition von Visual Studio und jede Sprache gibt es einen eigenen Pfad. Beispielsweise könnte der Standardpfad für den Regelordner für Visual Studio 2015 Community Edition in englischer Sprache *`C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\v140\1033\`* sein.
 
 ::: moniker-end
 
-::: moniker range="vs-2017"
+::: moniker range="msvc-150"
 
 Der Ordner zum Ablegen der Regeldatei hängt vom Gebietsschema und der verwendeten Visual Studio-Version ab. Bei der Developer-Eingabeaufforderung in Visual Studio 2017 ist der Regelordner *`%VSINSTALLDIR%Common7\IDE\VC\VCTargets\<locale>\`* . `<locale>` ist eine LCID, z. B. `1033` für Englisch. Bei der Developer-Eingabeaufforderung in Visual Studio 2015 oder einer früheren Version ist der Regelordner *`%ProgramFiles(x86)%\MSBuild\Microsoft.Cpp\v4.0\<version>\<locale>\`* mit *`v140`* als Wert für `<version>` in Visual Studio 2015. Für jede installierte Edition von Visual Studio und jede Sprache gibt es einen eigenen Pfad. Beispielsweise könnte der Standardpfad für den Regelordner für Visual Studio 2017 Community Edition in englischer Sprache *`C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\1033\`* sein.
 
 ::: moniker-end
 
-::: moniker range=">=vs-2019"
+::: moniker range=">=msvc-160"
 
 Der Ordner zum Ablegen der Regeldatei hängt vom Gebietsschema und der verwendeten Visual Studio-Version ab. Bei der Developer-Eingabeaufforderung in Visual Studio 2019 oder einer höheren Version ist der Regelordner *`%VSINSTALLDIR%MSBuild\Microsoft\VC\<version>\<locale>\`* mit *`v160`* als Wert für `<version>` in Visual Studio 2019. `<locale>` ist eine LCID, z. B. `1033` für Englisch. In Visual Studio 2017 ist der Regelordner *`%VSINSTALLDIR%Common7\IDE\VC\VCTargets\<locale>\`* . Bei der Developer-Eingabeaufforderung in Visual Studio 2015 oder einer früheren Version ist der Regelordner *`%ProgramFiles(x86)%\MSBuild\Microsoft.Cpp\v4.0\<version>\<locale>\`* . Für jede installierte Edition von Visual Studio und jede Sprache gibt es einen eigenen Pfad. Beispielsweise könnte der Standardpfad für den Regelordner für Visual Studio 2019 Community Edition in englischer Sprache *`C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\1033\`* sein.
 
@@ -51,7 +51,7 @@ Der Ordner zum Ablegen der Regeldatei hängt vom Gebietsschema und der verwendet
 
 1. Die XML-Dateien im Regelordner werden beim Starten von Visual Studio geladen. Starten Sie Visual Studio neu, um die neue Datei zu testen.
 
-1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf ein Projekt, und klicken Sie dann auf **Eigenschaften** . Überprüfen Sie im Fenster **Eigenschaftenseiten** , ob ein neuer Knoten mit dem Namen Ihrer Regel vorhanden ist.
+1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf ein Projekt, und klicken Sie dann auf **Eigenschaften**. Überprüfen Sie im Fenster **Eigenschaftenseiten** , ob ein neuer Knoten mit dem Namen Ihrer Regel vorhanden ist.
 
 ## <a name="see-also"></a>Siehe auch
 

@@ -7,21 +7,21 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 2d4473e3682a6e00e0eef61cb73d7450976bcc0c
-ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
+ms.openlocfilehash: 75f45244b9e9b38b7dc65b604940199acafa0ede
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91507730"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92922217"
 ---
 # <a name="tutorial-windows-performance-analyzer-basics"></a>Tutorial: Windows Performance Analyzer-Grundlagen
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 Die C++ Build Insights-Tools sind in Visual Studio 2019 verfügbar. Wenn die Dokumentation für diese Version angezeigt werden soll, legen Sie das Steuerelement zur Auswahl der **Version** für diesen Artikel auf Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 Die Verwendung von C++ Build Insights setzt effektiv Kenntnisse in Windows Performance Analyzer (WPA) voraus. In diesem Artikel lernen Sie allgemeine WPA-Vorgänge kennen. Weitere Informationen zur Verwendung von WPA finden Sie in der Dokumentation zu [Windows Performance Analyzer](/windows-hardware/test/wpt/windows-performance-analyzer).
 
@@ -44,7 +44,7 @@ Die meisten C++ Build Insights-WPA-Ansichten verfügen über mehrere Voreinstell
 
 ## <a name="zoom-in-and-out"></a>Vergrößern und Verkleinern
 
-Einige Buildablaufverfolgungen sind so groß, dass Details schwer zu erkennen sind. Klicken Sie mit der rechten Maustaste auf das Diagramm, und wählen Sie **Zoom** aus, um einen relevanten Bereich zu vergrößern. Sie können jederzeit zur vorherigen Einstellung zurückkehren, indem Sie **Zoomvorgang rückgängig machen** auswählen. Diese Abbildung zeigt ein Beispiel für die Verwendung einer Auswahl und des **Zoom**-Befehls, um einen Abschnitt des Diagramms zu vergrößern:
+Einige Buildablaufverfolgungen sind so groß, dass Details schwer zu erkennen sind. Klicken Sie mit der rechten Maustaste auf das Diagramm, und wählen Sie **Zoom** aus, um einen relevanten Bereich zu vergrößern. Sie können jederzeit zur vorherigen Einstellung zurückkehren, indem Sie **Zoomvorgang rückgängig machen** auswählen. Diese Abbildung zeigt ein Beispiel für die Verwendung einer Auswahl und des **Zoom** -Befehls, um einen Abschnitt des Diagramms zu vergrößern:
 
 ![Kurzes Video, das das Vergrößern eines Diagramms zeigt.](media/wpa-zooming.gif)
 

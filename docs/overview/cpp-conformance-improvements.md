@@ -3,24 +3,24 @@ title: Verbesserungen an C++ bei der Übereinstimmung mit Standards
 ms.date: 08/04/2020
 description: Microsoft C++ in Visual Studio  bewegt sich auf die vollständige Konformität mit dem Sprachstandard C++20 zu.
 ms.technology: cpp-language
-ms.openlocfilehash: 3cf06b092b79068b22e62dfdbbcfbd2c2cf5ad91
-ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
+ms.openlocfilehash: fc88406a3d2e291d06e01c3e92261b8dfc624ced
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91500255"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92921424"
 ---
 # <a name="c-conformance-improvements-in-visual-studio"></a>Verbesserungen der C++-Konformität in Visual Studio
 
 Microsoft C++ nimmt bei jedem Release Verbesserungen bei der Übereinstimmung mit Standards und Fehlerbehebungen vor. Dieser Artikel listet die Verbesserungen nach Hauptrelease und dann nach Versionen auf. Außerdem werden wichtige Fehlerbehebungen geordnet nach Version aufgeführt. Um direkt zu den Änderungen für eine bestimmte Version zu gelangen, verwenden Sie die Liste **In diesem Artikel**.
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 ## <a name="conformance-improvements-in-visual-studio-2019-rtw-version-160"></a><a name="improvements_160"></a> Verbesserungen der Konformität in Visual Studio 2019 RTW (Version 16.0)
 
 Visual Studio 2019 (RTW) enthält die folgenden Verbesserungen der Konformität, Fehlerbehebungen und Verhaltensänderungen des Microsoft C++-Compilers (MSVC).
 
-**Hinweis**: C++20-Features werden im Modus **`/std:c++latest`** zur Verfügung gestellt, bis die C++20-Implementierung für den Compiler und IntelliSense abgeschlossen ist. Zu diesem Zeitpunkt wird der Compilermodus **`/std:c++20`** eingeführt.
+**Hinweis** : C++20-Features werden im Modus **`/std:c++latest`** zur Verfügung gestellt, bis die C++20-Implementierung für den Compiler und IntelliSense abgeschlossen ist. Zu diesem Zeitpunkt wird der Compilermodus **`/std:c++20`** eingeführt.
 
 ### <a name="improved-modules-support-for-templates-and-error-detection"></a>Verbesserte Unterstützung von Modulen für Vorlagen und die Fehlererkennung
 
@@ -341,7 +341,7 @@ std::equal(std::begin(a), std::end(a), std::begin(b), std::end(b));
 
 ### <a name="effect-of-defining-spaceship-operator-on--and-"></a>Auswirkung der Definition des Spaceship-Operators auf `==` und `!=`
 
-Eine Definition des Spaceship-Operators ( **`<=>`** ) allein schreibt keine Ausdrücke mit **`==`** oder **`!=`** mehr neu, es sei denn, der Spaceship-Operator ist als **`= default`** ([P1185R2](https://wg21.link/p1185r2)) markiert. Das folgende Beispiel wird in Visual Studio 2019 RTW und Version 16.1 kompiliert, erzeugt jedoch C2678 in Visual Studio 2019 Version 16.2:
+Eine Definition des Spaceship-Operators ( **`<=>`** ) allein schreibt keine Ausdrücke mit **`==`** oder **`!=`** mehr neu, es sei denn, der Spaceship-Operator ist als **`= default`** ( [P1185R2](https://wg21.link/p1185r2)) markiert. Das folgende Beispiel wird in Visual Studio 2019 RTW und Version 16.1 kompiliert, erzeugt jedoch C2678 in Visual Studio 2019 Version 16.2:
 
 ```cpp
 #include <compare>
@@ -1617,7 +1617,7 @@ void f(E e) {
 
 ::: moniker-end
 
-::: moniker range="vs-2017"
+::: moniker range="msvc-150"
 
 ## <a name="conformance-improvements-in-visual-studio-2017-rtw-version-150"></a><a name="improvements_150"></a> Verbesserungen der Konformität in Visual Studio 2017 RTW (Version 15.0)
 
@@ -3308,7 +3308,7 @@ struct S : Base<T> {
 
 Ändern Sie die Anweisung **`return`** in `return this->base_value;`, um den Fehler zu beheben.
 
-**Hinweis**: In der Boost-Python-Bibliothek ist eine MSVC-spezifische Problemumgehung für eine Vorlagenvorwärtsdeklaration in [unwind_type.hpp](https://github.com/boostorg/python/blame/develop/include/boost/python/detail/unwind_type.hpp) vorhanden. Im [`/permissive-`](../build/reference/permissive-standards-conformance.md)-Modus ab Visual Studio 2017 Version 15.8 (\_MSC\_VER=1915) führt der MSVC-Compiler die argumentabhängige Namenssuche ordnungsgemäß aus. Das Verhalten entspricht jetzt dem Verhalten anderer Compiler, sodass diese Problemumgehung nicht mehr erforderlich ist. Um den Fehler „C3861: `'unwind_type': identifier not found`“ zu vermeiden, finden Sie unter [PR 229](https://github.com/boostorg/python/pull/229) im Boost-Repository Informationen zum Aktualisieren der Headerdatei. Das Boost-Paket [vcpkg](../build/vcpkg.md) wurde bereits gepatcht. Wenn Sie also Ihre Boost-Quellen aus vcpkg abrufen oder aktualisieren möchten, müssen Sie den Patch nicht separat anwenden.
+**Hinweis** : In der Boost-Python-Bibliothek ist eine MSVC-spezifische Problemumgehung für eine Vorlagenvorwärtsdeklaration in [unwind_type.hpp](https://github.com/boostorg/python/blame/develop/include/boost/python/detail/unwind_type.hpp) vorhanden. Im [`/permissive-`](../build/reference/permissive-standards-conformance.md)-Modus ab Visual Studio 2017 Version 15.8 (\_MSC\_VER=1915) führt der MSVC-Compiler die argumentabhängige Namenssuche ordnungsgemäß aus. Das Verhalten entspricht jetzt dem Verhalten anderer Compiler, sodass diese Problemumgehung nicht mehr erforderlich ist. Um den Fehler „C3861: `'unwind_type': identifier not found`“ zu vermeiden, finden Sie unter [PR 229](https://github.com/boostorg/python/pull/229) im Boost-Repository Informationen zum Aktualisieren der Headerdatei. Das Boost-Paket [vcpkg](../build/vcpkg.md) wurde bereits gepatcht. Wenn Sie also Ihre Boost-Quellen aus vcpkg abrufen oder aktualisieren möchten, müssen Sie den Patch nicht separat anwenden.
 
 ### <a name="forward-declarations-and-definitions-in-namespace-std"></a>Vorwärtsdeklarationen und -definitionen im Namespace `std`
 
@@ -3324,7 +3324,7 @@ namespace std {
 }
 ```
 
-Verwenden Sie anstelle einer Vorwärtsdeklaration eine **include**-Anweisung, um den Fehler zu beheben:
+Verwenden Sie anstelle einer Vorwärtsdeklaration eine **include** -Anweisung, um den Fehler zu beheben:
 
 ```cpp
 #include <vector>
@@ -3357,7 +3357,7 @@ public:
 
 ### <a name="offsetof-with-constant-expressions"></a>`offsetof` mit konstanten Ausdrücken
 
-[offsetof](../c-runtime-library/reference/offsetof-macro.md) wurde bisher mithilfe eines Makros implementiert, das [reinterpret_cast](../cpp/reinterpret-cast-operator.md) erfordert. Die Verwendung ist in Kontexten nicht zulässig, die einen konstanten Ausdruck erfordern, jedoch war es bisher im Microsoft C++-Compiler gültig. Das `offsetof`-Makro, das im Rahmen der Standardbibliothek enthalten ist, verwendet eine intrinsische Compiler-Funktion ( **__builtin_offsetof**), jedoch haben viele Personen den Makro-Trick verwendet, um `offsetof` selbst zu definieren.
+[offsetof](../c-runtime-library/reference/offsetof-macro.md) wurde bisher mithilfe eines Makros implementiert, das [reinterpret_cast](../cpp/reinterpret-cast-operator.md) erfordert. Die Verwendung ist in Kontexten nicht zulässig, die einen konstanten Ausdruck erfordern, jedoch war es bisher im Microsoft C++-Compiler gültig. Das `offsetof`-Makro, das im Rahmen der Standardbibliothek enthalten ist, verwendet eine intrinsische Compiler-Funktion ( **__builtin_offsetof** ), jedoch haben viele Personen den Makro-Trick verwendet, um `offsetof` selbst zu definieren.
 
 In Visual Studio 2017, Version 15.8, beschränkt der Compiler die Bereiche, in denen diese **`reinterpret_cast`** -Operatoren im Standardmodus auftreten können, damit der Code dem Standardverhalten von C++ besser entspricht. Im Modus [`/permissive-`](../build/reference/permissive-standards-conformance.md) sind die Einschränkungen sogar strenger. Wenn ein `offsetof`-Ergebnis an Stellen verwendet wird, an denen konstante Ausdrücke erforderlich sind, löst der Code möglicherweise die Warnung „C4644 `usage of the macro-based offsetof pattern in constant expressions is non-standard; use offsetof defined in the C++ standard library instead`“ oder „C2975 `invalid template argument, expected compile-time constant expression`“ aus.
 
@@ -3643,7 +3643,7 @@ Entfernen Sie den Qualifizierer **`constexpr`** aus der expliziten Instanziierun
 
 ::: moniker-end
 
-::: moniker range="vs-2015"
+::: moniker range="msvc-140"
 
 ## <a name="c-conformance-improvements-in-visual-studio-2015"></a>Verbesserungen der C++-Konformität in Visual Studio 2015
 

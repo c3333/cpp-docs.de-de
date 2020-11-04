@@ -5,22 +5,22 @@ ms.date: 09/11/2020
 helpviewer_keywords:
 - Install preview Windows SDK
 ms.assetid: 45138d70-719d-42dc-90d7-1d0ca31a2f54
-ms.openlocfilehash: 86de38feb66ab0a057005140d22cf0dd3b03d4cf
-ms.sourcegitcommit: b492516cc65120250b9ea23f96f7f63f37f99fae
+ms.openlocfilehash: 9310b0dbb4e436245de820622ec9dd0f52292871
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078993"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924409"
 ---
 # <a name="install-c11-and-c17-support-in-visual-studio"></a>Installieren der Unterstützung für C11 und C17 in Visual Studio
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 Die Unterstützung für die Standards C11 und C17 erfordert Visual Studio 2019 Version 16.8 oder höher. Wenn die Dokumentation für diese Version angezeigt werden soll, legen Sie das Steuerelement zur Auswahl der **Version** für diesen Artikel auf Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 Die Unterstützung für die Standards C11 und C17 beginnt in Visual Studio 2019 Version 16.8. Die Unterstützung erfordert eine aktualisierte Universal C-Runtime (UCRT) und die neuesten Windows SDK-Updates, um ordnungsgemäß mit dem entsprechenden Präprozessor ([`/Zc:preprocessor`](../build/reference/zc-preprocessor.md)) zu arbeiten.
 

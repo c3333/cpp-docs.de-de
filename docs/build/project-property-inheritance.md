@@ -4,12 +4,12 @@ description: Hier wird die Funktionsweise der Eigenschaftenvererbung in nativen 
 ms.date: 02/21/2020
 helpviewer_keywords:
 - C++ projects, property inheritance
-ms.openlocfilehash: 00afe982156597aa166c2c5de98f3027e3f84bdb
-ms.sourcegitcommit: 6e5429e076e552b32e8bdc49480c51498d7924c1
+ms.openlocfilehash: 17b23426f70bb2d306491e538d30cffc0f202362
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92099705"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92919214"
 ---
 # <a name="property-inheritance-in-visual-studio-projects"></a>Vererbung von Eigenschaften in Visual Studio-Projekten
 
@@ -17,19 +17,19 @@ Das native Visual Studio-Projektsystem beruht auf MSBuild. MSBuild definiert Dat
 
 ## <a name="the-vcxproj-file-props-files-and-targets-files"></a>Die VCXPROJ-Datei, PROPS- und TARGETS-Dateien
 
-::: moniker range="vs-2015"
+::: moniker range="msvc-140"
 
 Projekteigenschaften werden in verschiedenen Dateien gespeichert. Einige werden direkt in der *`.vcxproj`* -Projektdatei gespeichert. Andere stammen aus anderen *`.targets`* - oder *`.props`* -Dateien, die von der Projektdatei importiert werden und Standardwerte bereitstellen. In Visual Studio 2015 befinden sich die Projektdateien in einem gebietsschemaspezifischen Ordner im Basisverzeichnis *`%ProgramFiles(x86)%\MSBuild\Microsoft.Cpp\v4.0\v140`* .
 
 ::: moniker-end
 
-::: moniker range="vs-2017"
+::: moniker range="msvc-150"
 
 Projekteigenschaften werden in verschiedenen Dateien gespeichert. Einige werden direkt in der *`.vcxproj`* -Projektdatei gespeichert. Andere stammen aus anderen *`.targets`* - oder *`.props`* -Dateien, die von der Projektdatei importiert werden und Standardwerte bereitstellen. In Visual Studio 2017 befinden sich die Projektdateien in einem gebietsschemaspezifischen Ordner im Basisverzeichnis *`%VSINSTALLDIR%Common7\IDE\VC\VCTargets\`* .
 
 ::: moniker-end
 
-::: moniker range=">=vs-2019"
+::: moniker range=">=msvc-160"
 
 Projekteigenschaften werden in verschiedenen Dateien gespeichert. Einige werden direkt in der *`.vcxproj`* -Projektdatei gespeichert. Andere stammen aus anderen *`.targets`* - oder *`.props`* -Dateien, die von der Projektdatei importiert werden und Standardwerte bereitstellen. Die Visual Studio-Projektdateien befinden sich in einem gebietsschemaspezifischen Ordner im Basisverzeichnis *`%VSINSTALLDIR%MSBuild\Microsoft\VC\<version>`* . Der Wert von `<version>` hängt von der Visual Studio-Version ab. Für Visual Studio 2019 ist er *`v160`* .
 
@@ -84,7 +84,7 @@ Eine Konfiguration ist nur eine beliebige Gruppe von Eigenschaften, denen ein Na
 
 ![Eigenschaften-Manager](media/property-manager.png "Eigenschaften-Manager")
 
-Sie können beispielsweise auf der Seite „Eigenschaften“ zum Bereich „Allgemein“ wechseln. Ändern Sie die Eigenschaft für „Zeichensatz“ in „Nicht festgelegt“ anstelle von „Unicode-Zeichensatz verwenden“, und klicken Sie dann auf **OK** . Der Eigenschaften-Manager zeigt jetzt kein Eigenschaftenblatt für die **Unicode-Unterstützung** an. Es wird für die aktuelle Konfiguration entfernt, ist für andere Konfigurationen aber noch vorhanden.
+Sie können beispielsweise auf der Seite „Eigenschaften“ zum Bereich „Allgemein“ wechseln. Ändern Sie die Eigenschaft für „Zeichensatz“ in „Nicht festgelegt“ anstelle von „Unicode-Zeichensatz verwenden“, und klicken Sie dann auf **OK**. Der Eigenschaften-Manager zeigt jetzt kein Eigenschaftenblatt für die **Unicode-Unterstützung** an. Es wird für die aktuelle Konfiguration entfernt, ist für andere Konfigurationen aber noch vorhanden.
 
 Weitere Informationen zum Eigenschaften-Manager und zu Eigenschaftenblättern finden Sie unter [Teilen oder Wiederverwenden von Visual Studio C++-Projekteinstellungen](create-reusable-property-configurations.md).
 

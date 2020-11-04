@@ -9,21 +9,21 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 6b1cf6871329fcce3166495e173360a88ac38ee0
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 2a6270e8e166bb38754314fcb308b86232dbb68b
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87224213"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92922909"
 ---
 # <a name="c-build-insights-sdk-event-table"></a>C++ Build Insights SDK: Ereignistabelle
 
-::: moniker range="<=vs-2015"
+::: moniker range="<=msvc-140"
 
 Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
 ## <a name="compiler-events"></a>Compilerereignisse
 
@@ -92,13 +92,13 @@ Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wen
 |  | Children | [FRONT_END_FILE](#front-end-file)<br/>[SYMBOL_NAME](#symbol-name)<br/>[TEMPLATE_INSTANTIATION](#template-instantiation) |
 |  | Eigenschaften | Keine |
 |  | Erfassungsklassen | [Aktivität](cpp-event-data-types/activity.md)<br/>[C1DLL](cpp-event-data-types/c1-dll.md) |
-|  | Beschreibung | Tritt am Anfang und am Ende eines Aufrufs der DLL-Dateien *c1.dll* oder *c1xx.dll* auf, die das C- und C++-Front-End des Computers darstellen und nur über den Compilertreiber (*cl.exe*) aufgerufen werden |
+|  | Beschreibung | Tritt am Anfang und am Ende eines Aufrufs der DLL-Dateien *c1.dll* oder *c1xx.dll* auf, die das C- und C++-Front-End des Computers darstellen und nur über den Compilertreiber ( *cl.exe* ) aufgerufen werden |
 | <a name="c2-dll"></a> C2_DLL | Typ | Aktivität |
 |  | Übergeordnete Elemente (Parents) | [BACK_END_PASS](#back-end-pass)<br/>[LTCG](#ltcg) |
 |  | Children | [CODE_GENERATION](#code-generation)<br/>[WHOLE_PROGRAM_ANALYSIS](#whole-program-analysis) |
 |  | Eigenschaften | Keine |
 |  | Erfassungsklassen | [Aktivität](cpp-event-data-types/activity.md)<br/>[C2DLL](cpp-event-data-types/c2-dll.md) |
-|  | Beschreibung | Tritt am Anfang und am Ende eines Aufrufs der DLL-Datei *c2.dll* auf, die das Back-End des Compilers darstellt und über den Compilertreiber (*cl.exe*) oder den Linker (*link.exe*) aufgerufen wird, wenn die Codegenerierung zur Verknüpfungszeit erfolgt |
+|  | Beschreibung | Tritt am Anfang und am Ende eines Aufrufs der DLL-Datei *c2.dll* auf, die das Back-End des Compilers darstellt und über den Compilertreiber ( *cl.exe* ) oder den Linker ( *link.exe* ) aufgerufen wird, wenn die Codegenerierung zur Verknüpfungszeit erfolgt |
 | <a name="code-generation"></a> CODE_GENERATION | Typ | Aktivität |
 |  | Übergeordnete Elemente (Parents) | [C2_DLL](#c2-dll) |
 |  | Children | [FUNCTION](#function)<br/>[THREAD](#thread) |
@@ -110,7 +110,7 @@ Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wen
 |  | Children | Keine |
 |  | Eigenschaften | – Befehlszeile, die zum Aufrufen von *cl.exe* oder *link.exe* verwendet wurde |
 |  | Erfassungsklassen | [SimpleEvent](cpp-event-data-types/simple-event.md)<br/>[CommandLine](cpp-event-data-types/command-line.md) |
-|  | Beschreibung | Tritt auf, wenn der Compiler und Linker die Auswertung der Befehlszeile abgeschlossen haben: Die ausgewertete Befehlszeile enthält alle *cl.exe*- und *link.exe*-Parameter, die über eine Antwortdatei übergeben wurden. Sie enthält zudem Parameter für *cl.exe* und *link.exe*, die über Umgebungsvariablen wie CL, \_CL\_, LINK und \_LINK\_ übergeben wurden. |
+|  | Beschreibung | Tritt auf, wenn der Compiler und Linker die Auswertung der Befehlszeile abgeschlossen haben: Die ausgewertete Befehlszeile enthält alle *cl.exe* - und *link.exe* -Parameter, die über eine Antwortdatei übergeben wurden. Sie enthält zudem Parameter für *cl.exe* und *link.exe* , die über Umgebungsvariablen wie CL, \_CL\_, LINK und \_LINK\_ übergeben wurden. |
 | <a name="compiler"></a> COMPILER | Typ | Aktivität |
 |  | Übergeordnete Elemente (Parents) | Keine |
 |  | Children | [BACK_END_PASS](#back-end-pass)<br/>[COMMAND_LINE](#command-line)<br/>[ENVIRONMENT_VARIABLE](#environment-variable)<br/>[FILE_INPUT](#file-input)<br/>[OBJ_OUTPUT](#obj-output)<br/>[FRONT_END_PASS](#front-end-pass) |
@@ -132,15 +132,15 @@ Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wen
 | <a name="exp-output"></a> EXP_OUTPUT | Typ | Einfaches Ereignis |
 |  | Übergeordnete Elemente (Parents) | [LINKER](#linker) |
 |  | Children | Keine |
-|  | Eigenschaften | – Absoluter Pfad zu einer *EXP*-Ausgabedatei |
+|  | Eigenschaften | – Absoluter Pfad zu einer *EXP* -Ausgabedatei |
 |  | Erfassungsklassen | [SimpleEvent](cpp-event-data-types/simple-event.md)<br/>[FileOutput](cpp-event-data-types/file-output.md)<br/>[ExpOutput](cpp-event-data-types/exp-output.md) |
-|  | Beschreibung | Tritt auf, wenn eine der Linkerausgaben eine *EXP*-Datei ist |
+|  | Beschreibung | Tritt auf, wenn eine der Linkerausgaben eine *EXP* -Datei ist |
 | <a name="file-input"></a> FILE_INPUT | Typ | Einfaches Ereignis |
 |  | Übergeordnete Elemente (Parents) | [COMPILER](#compiler)<br/>[LINKER](#linker) |
 |  | Children | Keine |
 |  | Eigenschaften | – Absoluter Pfad zur Eingabedatei<br/>– Eingabedateityp |
 |  | Erfassungsklassen | [SimpleEvent](cpp-event-data-types/simple-event.md)<br/>[FileInput](cpp-event-data-types/file-input.md) |
-|  | Beschreibung | Tritt auf, um eine *cl.exe*- oder *link.exe*-Eingabe anzukündigen |
+|  | Beschreibung | Tritt auf, um eine *cl.exe* - oder *link.exe* -Eingabe anzukündigen |
 | <a name="force-inlinee"></a> FORCE_INLINEE | Typ | Einfaches Ereignis |
 |  | Übergeordnete Elemente (Parents) | [FUNCTION](#function) |
 |  | Children | Keine |
@@ -192,9 +192,9 @@ Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wen
 | <a name="obj-output"></a> OBJ_OUTPUT | Typ | Einfaches Ereignis |
 |  | Übergeordnete Elemente (Parents) | [COMPILER](#compiler) |
 |  | Children | Keine |
-|  | Eigenschaften | – Absoluter Pfad zu einer *OBJ*-Ausgabedatei |
+|  | Eigenschaften | – Absoluter Pfad zu einer *OBJ* -Ausgabedatei |
 |  | Erfassungsklassen | [SimpleEvent](cpp-event-data-types/simple-event.md)<br/>[FileOutput](cpp-event-data-types/file-output.md)<br/>[ObjOutput](cpp-event-data-types/obj-output.md) |
-|  | Beschreibung | Tritt einmal für jede von *cl.exe* generierte *OBJ*-Ausgabedatei auf |
+|  | Beschreibung | Tritt einmal für jede von *cl.exe* generierte *OBJ* -Ausgabedatei auf |
 | <a name="opt-icf"></a> OPT_ICF | Typ | Aktivität |
 |  | Übergeordnete Elemente (Parents) | [PASS1](#pass1) |
 |  | Children | Keine |

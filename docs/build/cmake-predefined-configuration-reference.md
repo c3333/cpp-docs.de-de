@@ -4,22 +4,22 @@ ms.description: Visual Studio provides several predefined build configurations f
 ms.date: 06/12/2019
 helpviewer_keywords:
 - CMake redefined configurations
-ms.openlocfilehash: a88b5ebbf05e11dc05e012c5bfbcc718d3742fb3
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: aa8c39d8322408e08eb35859c7b0d8ed798a6f84
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81323011"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92919435"
 ---
 # <a name="cmake-predefined-build-configurations"></a>Vordefinierte CMake-Buildkonfigurationen
 
-::: moniker range="vs-2015"
+::: moniker range="msvc-140"
 
 CMake-Projekte werden von Visual Studio 2017 und höher unterstützt.
 
 ::: moniker-end
 
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
 In einem CMake-Projekt werden Buildkonfigurationen in einer „CMakeSettings.json“-Datei gespeichert. Wenn Sie in der Hauptsymbolleiste aus der Buildkonfigurations-Dropdownliste **Konfigurationen verwalten...** auswählen, wird ein Dialogfeld angezeigt, das die in Visual Studio verfügbaren CMake-Standardkonfigurationen anzeigt:
 
@@ -354,7 +354,7 @@ Mithilfe dieser Optionen können Sie Befehle vor und nach dem Erstellen und vor 
 
 ::: moniker-end
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 In einem CMake-Projekt werden Buildkonfigurationen in einer „CMakeSettings.json“-Datei gespeichert. Wenn Sie in der Hauptsymbolleiste aus der Buildkonfigurations-Dropdownliste **Konfigurationen verwalten...** auswählen, wird ein Dialogfeld angezeigt, das die in Visual Studio verfügbaren CMake-Standardkonfigurationen anzeigt:
 

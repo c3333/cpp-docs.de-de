@@ -7,21 +7,21 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: a5b13ee08becd472b3bc52319212b84a9c8ffc25
-ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
+ms.openlocfilehash: 2ad5d2153fdf434461e1af982e9d9f343e9957a9
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91508799"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92919500"
 ---
 # <a name="reference-windows-performance-analyzer-views"></a>Referenz: Windows Performance Analyzer-Ansichten
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 Die C++ Build Insights-Tools sind in Visual Studio 2019 verfügbar. Wenn die Dokumentation für diese Version angezeigt werden soll, legen Sie das Steuerelement zur Auswahl der **Version** für diesen Artikel auf Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 Dieser Artikel enthält Details zu den einzelnen C++ Build Insights-Ansichten, die in Windows Performance Analyzer (WPA) verfügbar sind. Auf dieser Seite finden Sie:
 

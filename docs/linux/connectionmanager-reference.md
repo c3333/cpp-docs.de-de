@@ -6,26 +6,26 @@ f1_keywords:
 - ConnectionManager
 helpviewer_keywords:
 - ConnectionManager program
-ms.openlocfilehash: 2f38fec21e7526fa214db811b00fc545504f0610
-ms.sourcegitcommit: 611e903f222ec794ef14195796b332851ab98904
+ms.openlocfilehash: 065a2cf6d6a2fe7d7e418299255c5bbf1f2bf753
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91847137"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92921619"
 ---
 # <a name="connectionmanager-reference"></a>Referenz zu ConnectionManager
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 „ConnectionManager.exe“ ist ab Visual Studio 2019 Version 16.5 verfügbar.
 
 ::: moniker-end
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
-„ConnectionManager.exe“ ist ein Befehlszeilenhilfsprogramm zum Verwalten von Remoteentwicklungsverbindungen außerhalb von Visual Studio. Es ist gut für Aufgaben wie die Bereitstellung eines neuen Entwicklungscomputers geeignet. Sie können es auch zum Einrichten von Visual Studio für Continuous Integration verwenden.Sie können das Hilfsprogramm in einem Developer-Eingabeaufforderungsfenster verwenden. Weitere Informationen zur Developer-Eingabeaufforderung finden Sie unter [Verwenden des Microsoft C++-Toolsets in der Befehlszeile](../build/building-on-the-command-line.md).
+„ConnectionManager.exe“ ist ein Befehlszeilenhilfsprogramm zum Verwalten von Remoteentwicklungsverbindungen außerhalb von Visual Studio. Es ist gut für Aufgaben wie die Bereitstellung eines neuen Entwicklungscomputers geeignet. Sie können es auch zum Einrichten von Visual Studio für Continuous Integration verwenden. Sie können das Hilfsprogramm in einem Developer-Eingabeaufforderungsfenster verwenden. Weitere Informationen zur Developer-Eingabeaufforderung finden Sie unter [Verwenden des Microsoft C++-Toolsets in der Befehlszeile](../build/building-on-the-command-line.md).
 
-„ConnectionManager.exe“ ist ab Visual Studio 2019 Version 16.5 verfügbar. Das Hilfsprogramm ist Teil der Workload **Linux-Entwicklung mit C++** . Es wird auch automatisch installiert, wenn Sie die Komponente **Verbindungs-Manager** im Installationsprogramm auswählen. Es wird in *%VCIDEInstallDir%\\Linux\\bin\\ConnectionManagerExe\\ConnectionManager.exe* installiert.
+„ConnectionManager.exe“ ist ab Visual Studio 2019 Version 16.5 verfügbar. Das Hilfsprogramm ist Teil der Workload **Linux-Entwicklung mit C++**. Es wird auch automatisch installiert, wenn Sie die Komponente **Verbindungs-Manager** im Installationsprogramm auswählen. Es wird in *%VCIDEInstallDir%\\Linux\\bin\\ConnectionManagerExe\\ConnectionManager.exe* installiert.
 
 Die Funktionalität von „ConnectionManager.exe“ ist auch in Visual Studio verfügbar. Wählen Sie zum Verwalten von Remoteentwicklungsverbindungen in der IDE wählen Sie in der Menüleiste **Extras** > **Optionen** aus, um das Dialogfeld „Optionen“ zu öffnen. Wählen Sie im Dialogfeld „Optionen“ **Plattformübergreifend** > **Verbindungs-Manager** aus.
 
@@ -86,7 +86,7 @@ Die Funktionalität von „ConnectionManager.exe“ ist auch in Visual Studio ve
 
 - **`--file`** *Dateiname*
 
-  Liest Verbindungsinformationen aus dem bereitgestellten *dateinamen* .
+  Liest Verbindungsinformationen aus dem bereitgestellten *dateinamen*.
 
 - **`--no-telemetry`**
 

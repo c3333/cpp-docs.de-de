@@ -7,21 +7,21 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 28d7e0758ea521af424129c546297fc97e3d6659
-ms.sourcegitcommit: 8c8ed02a6f3bcb5ee008e3fe30ba7595d7c4c922
+ms.openlocfilehash: c4ebbb280a5cccaa35b5efc7f90e9b570600c47b
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83759224"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92923638"
 ---
 # <a name="get-started-with-c-build-insights"></a>Erste Schritte mit C++ Build Insights
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 Die C++ Build Insights-Tools sind in Visual Studio 2019 verfügbar. Wenn die Dokumentation für diese Version angezeigt werden soll, legen Sie das Steuerelement zur Auswahl der **Version** für diesen Artikel auf Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 C++ Build Insights ist eine Sammlung von Tools, mit denen Benutzer von verbesserten Einblicken in die Toolkette von Microsoft Visual C++ (MSVC) profitieren. Mit diesen Tools werden Daten zu Ihren C++-Builds erfasst und in einem Format angezeigt, mit dem sich häufige Fragen beantworten lassen. Dazu zählen z. B. folgende:
 
@@ -31,7 +31,7 @@ C++ Build Insights ist eine Sammlung von Tools, mit denen Benutzer von verbesser
 
 Nachfolgend sind die Hauptkomponenten dieser Technologie beschrieben:
 
-- *vcperf.exe*, ein Befehlszeilenprogramm, mit dem Sie Ablaufverfolgungen für Ihre Builds erfassen können
+- *vcperf.exe* , ein Befehlszeilenprogramm, mit dem Sie Ablaufverfolgungen für Ihre Builds erfassen können
 - eine WPA-Erweiterung (Windows Performance Analyzer), mit der Sie Ablaufverfolgungen für Ihre Builds in WPA anzeigen können
 - das C++ Build Insights SDK, ein Software Development Kit zum Erstellen eigener Tools, die C++ Build Insights-Daten nutzen
 

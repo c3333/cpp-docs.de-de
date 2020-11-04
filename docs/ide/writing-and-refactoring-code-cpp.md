@@ -4,12 +4,12 @@ description: Verwenden Sie den C++-Code-Editor in Visual Studio, um Ihren Code z
 ms.date: 05/31/2019
 ms.assetid: 56ffb9e9-514f-41f4-a3cf-fd9ce2daf3b6
 ms.topic: overview
-ms.openlocfilehash: bf34bf39bc41841be72c9400ec63c501d7aa56a3
-ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
+ms.openlocfilehash: df59509f37567a6fe1d1e0cc6d5b9f38b953009c
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90686331"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924406"
 ---
 # <a name="edit-and-refactor-c-code-in-visual-studio"></a>Bearbeiten und Umgestalten von C++-Code in Visual Studio
 
@@ -23,7 +23,7 @@ IntelliSense ist ein leistungsstarkes Tool zur Codevervollständigung, das Ihnen
 
 Einige Symbole werden automatisch weggelassen, um die Ergebnisse einzugrenzen. Wenn Sie z. B. auf die Member eines Klassenobjekts von außerhalb der Klasse zugreifen, werden standardmäßig keine privaten oder geschützten Member angezeigt (wenn Sie sich nicht im Kontext einer untergeordneten Klasse befinden). Sie können die Filter über die Schaltflächen am unteren Rand anpassen.
 
-Wenn Sie ein Symbol aus der Dropdownliste ausgewählt haben, können Sie es mit der **TAB-TASTE**, der **EINGABETASTE** oder mit einem der anderen Commitzeichen übernehmen (standardmäßig `{ } [ ] ( ) . , : ; + - * / % & | ^ ! = ? @ # \`). Suchen Sie nach „IntelliSense“ im **Schnellstart** (STRG + Q), und wählen Sie **Text-Editor > C/C++ > Erweitert** aus, um Symbole aus dieser Liste zu entfernen oder dieser hinzuzufügen. Mit der Option **Commitzeichen der Memberliste** können Sie die gewünschten Änderungen an der Liste vornehmen.
+Wenn Sie ein Symbol aus der Dropdownliste ausgewählt haben, können Sie es mit der **TAB-TASTE** , der **EINGABETASTE** oder mit einem der anderen Commitzeichen übernehmen (standardmäßig `{ } [ ] ( ) . , : ; + - * / % & | ^ ! = ? @ # \`). Suchen Sie nach „IntelliSense“ im **Schnellstart** (STRG + Q), und wählen Sie **Text-Editor > C/C++ > Erweitert** aus, um Symbole aus dieser Liste zu entfernen oder dieser hinzuzufügen. Mit der Option **Commitzeichen der Memberliste** können Sie die gewünschten Änderungen an der Liste vornehmen.
 
 Mit der Option **Memberlistenfilter-Modus** können Sie festlegen, welche IntelliSense-Vervollständigungsvorschläge angezeigt werden. Standardmäßig ist diese auf **Fuzzy** (unscharf) festgelegt. Bei einer unscharfen Suche können Sie „MAC“ eingeben und die Klasse *MyAwesomeClass* über die Vervollständigungsvorschläge finden. Der unscharfe Algorithmus legt einen Mindestschwellenwert fest, den Symbole erfüllen müssen, um in der Liste angezeigt zu werden. **Intelligentes Filtern** zeigt alle Symbole an, die Teilzeichenfolgen enthalten, die der Eingabe entsprechen. **Präfixfiltern** sucht nach Zeichenfolgen, die mit den eingegebenen Zeichen beginnen.
 
@@ -37,13 +37,13 @@ IntelliCode eignet sich beim Schreiben von C++ insbesondere dann, wenn häufig e
 
 ![C&#43;&#43; IntelliCode](../ide/media/intellicode-cpp.png "C++-IntelliCode")
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
-In Visual Studio 2019 ist IntelliCode als optionale Komponente in der **Desktopentwicklung mit C++** -Workload verfügbar. Wenn Sie überprüfen möchten, ob IntelliCode für C++ aktiviert ist, navigieren Sie zu **Extras** > **Optionen** > **IntelliCode** > **Allgemein**, und legen Sie **C++-Basismodell** auf **Aktiviert** fest.
+In Visual Studio 2019 ist IntelliCode als optionale Komponente in der **Desktopentwicklung mit C++** -Workload verfügbar. Wenn Sie überprüfen möchten, ob IntelliCode für C++ aktiviert ist, navigieren Sie zu **Extras** > **Optionen** > **IntelliCode** > **Allgemein** , und legen Sie **C++-Basismodell** auf **Aktiviert** fest.
 
 ::: moniker-end
 
-::: moniker range="vs-2017"
+::: moniker range="msvc-150"
 
 In Visual Studio 2017 ist IntelliCode als Erweiterung über den Visual Studio Marketplace verfügbar.
 
@@ -74,13 +74,13 @@ Wenn sich die Einfügemarke in einer Vorlagendefinition befindet, wird eine **Vo
 
 ![C&#43;&#43; IntelliSense-Vorlage, vorhandene Instanziierungen](../ide/media/template-intellisense-cpp-1.png "IntelliSense-Vorlage, vorhandene Instanziierungen")
 
-Klicken Sie auf das **\<T>** -Symbol, um die **Vorlagenleiste** zu erweitern/zuzuklappen. Klicken Sie auf das Stiftsymbol, oder doppelklicken Sie auf die **Vorlagenleiste**, um das **Bearbeitungsfenster** zu öffnen.
+Klicken Sie auf das **\<T>** -Symbol, um die **Vorlagenleiste** zu erweitern/zuzuklappen. Klicken Sie auf das Stiftsymbol, oder doppelklicken Sie auf die **Vorlagenleiste** , um das **Bearbeitungsfenster** zu öffnen.
 
 ![C&#43;&#43; IntelliSense-Vorlage](../ide/media/template-intellisense-cpp-3.png "IntelliSense für Vorlagen")
 
 Im Fenster vorgenommene Änderungen werden direkt im Quellcode widergespiegelt, sodass Sie die Auswirkungen in Echtzeit sehen können.
 
-Die Vorlagenleiste kann Kandidaten basierend auf Instanziierungen in Ihrem Code automatisch auffüllen. Klicken Sie auf **Alle vorhandenen Instanziierungen hinzufügen**, um eine Liste aller konkreten Argumente anzuzeigen, die verwendet wurden, um die Vorlage in Ihrer Codebasis zu instanziieren.
+Die Vorlagenleiste kann Kandidaten basierend auf Instanziierungen in Ihrem Code automatisch auffüllen. Klicken Sie auf **Alle vorhandenen Instanziierungen hinzufügen** , um eine Liste aller konkreten Argumente anzuzeigen, die verwendet wurden, um die Vorlage in Ihrer Codebasis zu instanziieren.
 
 ![C&#43;&#43; IntelliSense-Vorlage zu Ergebnisliste](../ide/media/template-intellisense-cpp-2.png "IntelliSense-Vorlage zu Ergebnisliste")
 
@@ -161,11 +161,11 @@ Die Dateien können über die Quellcodeverwaltung leicht freigegeben werden, sod
 
 ![C&#43;&#43; ClangFormat](../ide/media/clang-format-cpp.png "ClangFormat")
 
-Visual Studio 2017 und höher unterstützt zudem [EditorConfig](https://editorconfig.org/), welches ähnlich funktioniert. ClangFormat hat jedoch mehr Formatoptionen als EditorConfig, z. B. auch C++-spezifische Regeln. Mit **EditorConfig** können Sie **EDITORCONFIG**-Dateien erstellen und diese in unterschiedlichen Ordnern Ihrer Codebasis ablegen, um Codeformate für diese Ordner und ihre Unterordner anzugeben. Eine **EDITORCONFIG**-Datei ersetzt alle anderen **EDITORCONFIG**-Dateien in übergeordneten Ordnern und überschreibt alle Formatierungseinstellungen, die über **Extras** > **Optionen** vorgenommen wurden. Sie können z. B. Regeln für Tabs, Leerzeichen und Einzugsgröße festlegen. Weitere Informationen finden Sie unter [Create portable, custom editor settings with EditorConfig (Erstellen von portablen, benutzerdefinierten Editor-Einstellungen mit EditorConfig)](/visualstudio/ide/create-portable-custom-editor-options).
+Visual Studio 2017 und höher unterstützt zudem [EditorConfig](https://editorconfig.org/), welches ähnlich funktioniert. ClangFormat hat jedoch mehr Formatoptionen als EditorConfig, z. B. auch C++-spezifische Regeln. Mit **EditorConfig** können Sie **EDITORCONFIG** -Dateien erstellen und diese in unterschiedlichen Ordnern Ihrer Codebasis ablegen, um Codeformate für diese Ordner und ihre Unterordner anzugeben. Eine **EDITORCONFIG** -Datei ersetzt alle anderen **EDITORCONFIG** -Dateien in übergeordneten Ordnern und überschreibt alle Formatierungseinstellungen, die über **Extras** > **Optionen** vorgenommen wurden. Sie können z. B. Regeln für Tabs, Leerzeichen und Einzugsgröße festlegen. Weitere Informationen finden Sie unter [Create portable, custom editor settings with EditorConfig (Erstellen von portablen, benutzerdefinierten Editor-Einstellungen mit EditorConfig)](/visualstudio/ide/create-portable-custom-editor-options).
 
 ## <a name="other-formatting-options"></a>Andere Formatierungsoptionen
 
-Über das **Schnellstart**-Suchfeld können Sie eine Einstellung oder ein Tool am schnellsten finden. Das Feld befindet sich im Hauptmenü. Beginnen Sie mit der Eingabe, und die Autovervollständigungsliste filtert die Ergebnisse.
+Über das **Schnellstart** -Suchfeld können Sie eine Einstellung oder ein Tool am schnellsten finden. Das Feld befindet sich im Hauptmenü. Beginnen Sie mit der Eingabe, und die Autovervollständigungsliste filtert die Ergebnisse.
 
 ![Visual Studio-Schnellstart](../ide/media/vs2015_cpp_quick_launch.png "Schnellstart")
 

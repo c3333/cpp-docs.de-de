@@ -3,22 +3,22 @@ title: Installieren der C++-Workload unter Linux in Visual Studio
 description: In diesem Artikel finden Sie Informationen zum Herunterladen, Installieren und Einrichten der Linux-Workload für C++ in Visual Studio.
 ms.date: 05/03/2020
 ms.assetid: e11b40b2-f3a4-4f06-b788-73334d58dfd9
-ms.openlocfilehash: 1a1b42927d440d1cde847fd1c1b6593e87a3824a
-ms.sourcegitcommit: f19f02f217b80804ab321d463c76ce6f681abcc6
+ms.openlocfilehash: 9d0c832ec383286b5f89b8ed1474e69d72b5cb98
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92176274"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92921606"
 ---
 # <a name="download-install-and-set-up-the-linux-workload"></a>Herunterladen, Installieren und Einrichten der Linux-Workload
 
-::: moniker range="vs-2015"
+::: moniker range="msvc-140"
 
 Linux-Projekte werden von Visual Studio 2017 und höher unterstützt. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
 
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
 Sie können die IDE von Visual Studio unter Windows verwenden, um C++-Projekte zu erstellen, zu bearbeiten und zu debuggen, die auf einem Linux-Remotesystem, einem virtuellen Computer oder im [Windows-Subsystem für Linux](/windows/wsl/about) ausgeführt werden.
 
@@ -28,7 +28,7 @@ Für jedes dieser Szenarios ist die Workload **Linux-Entwicklung mit C++** erfor
 
 ::: moniker-end
 
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
 ## <a name="visual-studio-setup"></a>Setup von Visual Studio
 
@@ -36,11 +36,11 @@ Für jedes dieser Szenarios ist die Workload **Linux-Entwicklung mit C++** erfor
 
    ![Windows-Suchfeld](media/visual-studio-installer-search.png)
 
-1. Suchen Sie in den Ergebnissen unter **Apps** nach dem Installer, und doppelklicken Sie auf ihn. Wenn der Installer geöffnet wird, wählen Sie **Ändern** aus, und klicken Sie dann auf die Registerkarte **Workloads** . Scrollen Sie nach unten zu **Andere Toolsets** , und wählen Sie die Workload **Linux Entwicklung mit C++** aus.
+1. Suchen Sie in den Ergebnissen unter **Apps** nach dem Installer, und doppelklicken Sie auf ihn. Wenn der Installer geöffnet wird, wählen Sie **Ändern** aus, und klicken Sie dann auf die Registerkarte **Workloads**. Scrollen Sie nach unten zu **Andere Toolsets** , und wählen Sie die Workload **Linux Entwicklung mit C++** aus.
 
    ![Workload „Visual C++ für Linux-Entwicklung“](media/linuxworkload.png)
 
-1. Wenn Sie für IoT- oder eingebettete Plattformen entwickeln, wechseln Sie im rechten Bereich zu **Installationsdetails** . Erweitern Sie unter **Linux-Entwicklung mit C++** den Eintrag **Optionale Komponenten** , und wählen Sie die benötigten Komponenten. CMake-Unterstützung für Linux ist standardmäßig ausgewählt.
+1. Wenn Sie für IoT- oder eingebettete Plattformen entwickeln, wechseln Sie im rechten Bereich zu **Installationsdetails**. Erweitern Sie unter **Linux-Entwicklung mit C++** den Eintrag **Optionale Komponenten** , und wählen Sie die benötigten Komponenten. CMake-Unterstützung für Linux ist standardmäßig ausgewählt.
 
 1. Klicken Sie auf **Ändern** , um mit der Installation fortzufahren.
 
@@ -52,7 +52,7 @@ Unter Windows 10 können Sie Ihre bevorzugte Linux-Distribution im WSL (Windows-
 
 ::: moniker-end
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 Linux-Projekte in Visual Studio erfordern die Installation der folgenden Abhängigkeiten in Ihrem Linux-Remotesystem oder WSL:
 
@@ -68,7 +68,7 @@ Die folgenden Befehle gehen davon aus, dass Sie g++ anstelle von Clang verwenden
 
 ::: moniker-end
 
-::: moniker range="vs-2017"
+::: moniker range="msvc-150"
 
 Linux-Projekte in Visual Studio erfordern die Installation der folgenden Abhängigkeiten in Ihrem Linux-Remotesystem oder WSL:
 
@@ -81,7 +81,7 @@ Linux-Projekte in Visual Studio erfordern die Installation der folgenden Abhäng
 
 ::: moniker-end
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 ## <a name="linux-setup-ubuntu-on-wsl"></a>Linux-Setup: Ubuntu im WSL
 
@@ -93,7 +93,7 @@ sudo apt-get install g++ gdb make ninja-build rsync zip
 
 ::: moniker-end
 
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
 ## <a name="ubuntu-on-remote-linux-systems"></a>Ubuntu auf Linux-Remotesystemen
 
@@ -117,7 +117,7 @@ Auf dem Linux-Zielsystem muss **openssh-server** , **g++** , **gdb** und **make*
 
 ::: moniker-end
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 ## <a name="fedora-on-wsl"></a>Fedora auf dem WSL
 
@@ -131,7 +131,7 @@ Fedora verwendet den **dnf** -Paket-Installer. Führen Sie den folgenden Befehl 
 
 ::: moniker-end
 
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
 ## <a name="fedora-on-remote-linux-systems"></a>Fedora auf Linux-Remotesystemen
 

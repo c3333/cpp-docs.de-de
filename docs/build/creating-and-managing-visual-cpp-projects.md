@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Visual Studio C++ projects
 - ATL projects
 ms.assetid: 11003cd8-9046-4630-a189-a32bf3b88047
-ms.openlocfilehash: 3694478e22bfd2a3c58a72ba0c3ad2d15351bc9f
-ms.sourcegitcommit: 8e285a766523e653aeeb34d412dc6f615ef7b17b
+ms.openlocfilehash: a8e23a3c384ce9b5ac7e73d18958246b52eb95b5
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80078691"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92919383"
 ---
 # <a name="visual-studio-projects---c"></a>Visual Studio-Projekte: C++
 
@@ -21,7 +21,7 @@ Ein *Visual Studio-Projekt* ist ein Projekt, das auf dem MSBuild-Buildsystem bas
 
 ## <a name="create-a-project"></a>Erstellen eines Projekts
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 Sie können C++-Projekte erstellen, indem Sie **Datei** > **Neu** > **Projekt** auswählen und dann die **Sprache** auf C++ einstellen. In der Ergebnisliste sehen Sie eine Liste mit Projektvorlagen, die Sie filtern können, indem Sie die **Plattform** oder den **Projekttyp** festlegen oder Schlüsselwörter in das Suchfeld eingeben.
 
@@ -29,7 +29,7 @@ Sie können C++-Projekte erstellen, indem Sie **Datei** > **Neu** > **Projekt** 
 
 ::: moniker-end
 
-::: moniker range="vs-2017"
+::: moniker range="msvc-150"
 
 Sie können C++-Projekte erstellen, indem Sie **Datei** > **Neu** > **Projekt** und dann Visual C++ im linken Bereich auswählen. Im mittleren Bereich sehen Sie eine Liste mit Projektvorlagen:
 
@@ -59,7 +59,7 @@ Klicken Sie zum Konfigurieren der Buildeinstellungen für ein Projekt im **Proje
 
 ## <a name="compile-and-run"></a>Kompilieren und Ausführen
 
-Um das neue Projekt zu kompilieren und auszuführen, drücken Sie **F5**, oder klicken Sie auf die *Debug-Dropdownliste* mit dem grünen Pfeil in der Hauptsymbolleiste. In der *Dropdownliste „Konfiguration“* wählen Sie aus, ob ein *Debug-* oder ein *Release*-Build (oder eine andere, benutzerdefinierte Konfiguration) erstellt werden soll.
+Um das neue Projekt zu kompilieren und auszuführen, drücken Sie **F5** , oder klicken Sie auf die *Debug-Dropdownliste* mit dem grünen Pfeil in der Hauptsymbolleiste. In der *Dropdownliste „Konfiguration“* wählen Sie aus, ob ein *Debug-* oder ein *Release* -Build (oder eine andere, benutzerdefinierte Konfiguration) erstellt werden soll.
 
 Ein neues Projekt wird ohne Fehler kompiliert. Wenn Sie eigenen Code hinzufügen, führen Sie damit möglicherweise gelegentlich einen Fehler ein oder lösen eine Warnung aus. Ein Fehler verhindert die Fertigstellung des Builds; eine Warnung tut das nicht. Beim Erstellen des Projekts werden alle Fehler und Warnungen sowohl im Ausgabefenster als auch in der Fehlerliste angezeigt.
 

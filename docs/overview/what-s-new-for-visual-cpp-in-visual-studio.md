@@ -4,18 +4,18 @@ description: Die neuen Features und Korrekturen in Microsoft C/C++-Compiler und
 ms.date: 05/19/2020
 ms.technology: cpp-ide
 ms.assetid: 8801dbdb-ca0b-491f-9e33-01618bff5ae9
-ms.openlocfilehash: 5e82e39b9480b83e2d1c8143338654467a08b7d0
-ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
+ms.openlocfilehash: c5e1f368060b650781c413a03e1bc2f9e368941a
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91500270"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924847"
 ---
 # <a name="whats-new-for-c-in-visual-studio"></a>Neuerungen bei C++ in Visual Studio
 
-::: moniker range=">=vs-2019"
+::: moniker range=">=msvc-160"
 
-Visual Studio 2019 enthält viele Updates und Fixes für die C++-Umgebung von Microsoft. Es wurden zahlreiche Fehler und Probleme mit dem Compiler sowie mit Tools behoben. Viele Probleme wurden von Kunden über die Optionen [Problem melden](/visualstudio/ide/how-to-report-a-problem-with-visual-studio?view=vs-2019&preserve-view=true) und [Vorschlag senden](https://developercommunity.visualstudio.com/spaces/62/index.html) unter **Feedback senden** übermittelt. Vielen Dank für das Melden von Fehlern! Weitere Informationen zu Neuerungen in Visual Studio finden Sie unter [Neuerungen in Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019). Weitere Informationen zu Neuerungen für C++ in Visual Studio 2017 finden Sie unter [Neuerungen für C++ in Visual Studio 2017](?preserve-view=true&view=vs-2017). Weitere Informationen zu Neuerungen für C++ in Visual Studio 2015 und frühere Versionen finden Sie unter [Visual C++: Neuerungen von 2003 bis 2015](../porting/visual-cpp-what-s-new-2003-through-2015.md).
+Visual Studio 2019 enthält viele Updates und Fixes für die C++-Umgebung von Microsoft. Es wurden zahlreiche Fehler und Probleme mit dem Compiler sowie mit Tools behoben. Viele Probleme wurden von Kunden über die Optionen [Problem melden](/visualstudio/ide/how-to-report-a-problem-with-visual-studio?view=vs-2019&preserve-view=true) und [Vorschlag senden](https://developercommunity.visualstudio.com/spaces/62/index.html) unter **Feedback senden** übermittelt. Vielen Dank für das Melden von Fehlern! Weitere Informationen zu Neuerungen in Visual Studio finden Sie unter [Neuerungen in Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019). Weitere Informationen zu Neuerungen für C++ in Visual Studio 2017 finden Sie unter [Neuerungen für C++ in Visual Studio 2017](?preserve-view=true&view=msvc-150). Weitere Informationen zu Neuerungen für C++ in Visual Studio 2015 und frühere Versionen finden Sie unter [Visual C++: Neuerungen von 2003 bis 2015](../porting/visual-cpp-what-s-new-2003-through-2015.md).
 
 ## <a name="c-compiler"></a>C++-Compiler
 
@@ -103,7 +103,7 @@ IntelliCode nutzt umfassendes eigenes Training und Ihren Codekontext, um Codeele
 
 ### <a name="template-intellisense"></a>IntelliSense für Vorlagen
 
-Für die **Vorlagenleiste** wird nun die **Vorschaufenster**-Benutzeroberfläche anstelle eines modalen Fensters verwendet. Außerdem unterstützt die Vorlagenleiste verschachtelte Vorlagen und füllt alle Standardargumente im **Vorschaufenster** vorab aus. Weitere Informationen finden Sie unter [Template IntelliSense Improvements for Visual Studio 2019 Preview 2 (IntelliSense-Verbesserungen für Vorlagen in Vorschauversion 2 von Visual Studio 2019)](https://devblogs.microsoft.com/cppblog/template-intellisense-improvements-for-visual-studio-2019-preview-2/). Mit der Dropdownliste **Zuletzt verwendet** in der **Vorlagenleiste** können Sie schnell zwischen vorherigen Beispielargumenten wechseln.
+Für die **Vorlagenleiste** wird nun die **Vorschaufenster** -Benutzeroberfläche anstelle eines modalen Fensters verwendet. Außerdem unterstützt die Vorlagenleiste verschachtelte Vorlagen und füllt alle Standardargumente im **Vorschaufenster** vorab aus. Weitere Informationen finden Sie unter [Template IntelliSense Improvements for Visual Studio 2019 Preview 2 (IntelliSense-Verbesserungen für Vorlagen in Vorschauversion 2 von Visual Studio 2019)](https://devblogs.microsoft.com/cppblog/template-intellisense-improvements-for-visual-studio-2019-preview-2/). Mit der Dropdownliste **Zuletzt verwendet** in der **Vorlagenleiste** können Sie schnell zwischen vorherigen Beispielargumenten wechseln.
 
 ### <a name="new-start-window-experience"></a>Neues Startfenster
 
@@ -133,7 +133,7 @@ Weitere Informationen finden Sie unter [C++ Productivity Improvements in Visual 
 
 ##### <a name="visual-studio-2019-version-161"></a>Visual Studio 2019 Version 16.1
 
-Für die QuickInfo wird jetzt die semantische Farbgebung Ihres Editors berücksichtigt. Außerdem verfügt sie über den neuen Link **Online suchen**, mit dem nach Onlinedokumenten gesucht wird, um mehr Informationen zum jeweiligen Codekonstrukt zu erhalten. Über den Link in der QuickInfo, der für rot unterschlängelten Code angezeigt wird, kann online nach dem Fehler gesucht werden. Auf diese Weise müssen Sie die Nachricht nicht erneut in Ihren Browser eingeben. Weitere Informationen finden Sie unter [Quick Info Improvements in Visual Studio 2019: Colorization and Search Online](https://devblogs.microsoft.com/cppblog/quick-info-improvements-in-visual-studio-2019-colorization-and-search-online/) (QuickInfo-Verbesserungen in Visual Studio 2019: Farbgebung und Onlinesuche).
+Für die QuickInfo wird jetzt die semantische Farbgebung Ihres Editors berücksichtigt. Außerdem verfügt sie über den neuen Link **Online suchen** , mit dem nach Onlinedokumenten gesucht wird, um mehr Informationen zum jeweiligen Codekonstrukt zu erhalten. Über den Link in der QuickInfo, der für rot unterschlängelten Code angezeigt wird, kann online nach dem Fehler gesucht werden. Auf diese Weise müssen Sie die Nachricht nicht erneut in Ihren Browser eingeben. Weitere Informationen finden Sie unter [Quick Info Improvements in Visual Studio 2019: Colorization and Search Online](https://devblogs.microsoft.com/cppblog/quick-info-improvements-in-visual-studio-2019-colorization-and-search-online/) (QuickInfo-Verbesserungen in Visual Studio 2019: Farbgebung und Onlinesuche).
 
 ### <a name="intellicode-available-in-c-workload"></a>In C++-Workload verfügbarer IntelliCode
 
@@ -187,7 +187,7 @@ IncrediBuild ist jetzt als optionale Komponente in der Workload **Desktopentwick
 
 - Für C++-Anwendungen unter Windows werden PDB-Dateien jetzt in einem separaten 64-Bit-Prozess geladen. Diese Änderung behebt eine Reihe von Abstürzen, die dadurch verursacht wurden, dass dem Debugger nicht genügend Arbeitsspeicher zur Verfügung stand. Beispielsweise beim Debuggen von Anwendungen, die eine große Anzahl von Modulen und PDB-Dateien enthielten.
 
-- Die Suche wird in den Fenstern **Überwachen**, **Auto** und **Lokal** aktiviert.
+- Die Suche wird in den Fenstern **Überwachen** , **Auto** und **Lokal** aktiviert.
 
 ## <a name="windows-desktop-development-with-c"></a>Windows Desktop-Entwicklung mit C++
 
@@ -238,9 +238,9 @@ Die Vorlage für verwaltete C++-Testprojekte (Managed C++ Test Project) ist nich
 
 ::: moniker-end
 
-::: moniker range="=vs-2017"
+::: moniker range="=msvc-150"
 
-Visual Studio 2017 RC enthält viele Updates und Problembehebungen der C++-Umgebung. Es wurden mehr als 250 Fehler und Probleme mit dem Compiler sowie mit Tools behoben. Viele dieser Probleme wurden von Kunden über die Optionen [Problem melden](/visualstudio/ide/how-to-report-a-problem-with-visual-studio?view=vs-2017&preserve-view=true) und „Vorschlag senden“ unter **Feedback senden** übermittelt. Vielen Dank für das Melden von Fehlern! Weitere Informationen zu Neuerungen in Visual Studio finden Sie unter [Neuerungen in Visual Studio 2017](/visualstudio/ide/whats-new-visual-studio-2017?view=vs-2017&preserve-view=true). Weitere Informationen zu Neuerungen für C++ in Visual Studio 2019 finden Sie unter [Neuerungen für C++ in Visual Studio](?preserve-view=true&view=vs-2019). Weitere Informationen zu Neuerungen für C++ in Visual Studio 2015 und frühere Versionen finden Sie unter [Visual C++: Neuerungen von 2003 bis 2015](../porting/visual-cpp-what-s-new-2003-through-2015.md).
+Visual Studio 2017 RC enthält viele Updates und Problembehebungen der C++-Umgebung. Es wurden mehr als 250 Fehler und Probleme mit dem Compiler sowie mit Tools behoben. Viele dieser Probleme wurden von Kunden über die Optionen [Problem melden](/visualstudio/ide/how-to-report-a-problem-with-visual-studio?view=vs-2017&preserve-view=true) und „Vorschlag senden“ unter **Feedback senden** übermittelt. Vielen Dank für das Melden von Fehlern! Weitere Informationen zu Neuerungen in Visual Studio finden Sie unter [Neuerungen in Visual Studio 2017](/visualstudio/ide/whats-new-visual-studio-2017?view=vs-2017&preserve-view=true). Weitere Informationen zu Neuerungen für C++ in Visual Studio 2019 finden Sie unter [Neuerungen für C++ in Visual Studio](?preserve-view=true&view=msvc-160). Weitere Informationen zu Neuerungen für C++ in Visual Studio 2015 und frühere Versionen finden Sie unter [Visual C++: Neuerungen von 2003 bis 2015](../porting/visual-cpp-what-s-new-2003-through-2015.md).
 
 ## <a name="visual-studio-2017-c-compiler"></a>Visual Studio 2017 C++-Compiler
 
@@ -332,8 +332,8 @@ Es sind weitere Verbesserungen an der Standardbibliothek in Visual Studio 2017 
 - `condition_variable::wait_for(lock, relative_time, predicate)` wartete bisher bei einer fälschlicherweise erfolgten Aktivierung die gesamte relative Zeit. Es wird nun nur für ein einzelnes Intervall der relativen Zeit gewartet.
 - `future::get()` macht jetzt das `future`-Objekt ungültig, so wie es der Standard erfordert.
 - `iterator_traits<void *>` war zuvor ein harter Fehler, weil versucht wurde, `void&` zu formen. Es wird jetzt zu einer leeren Struktur, um die Verwendung von `iterator_traits` in "is iterator" SFINAE-Bedingungen zuzulassen.
-- Einige von Clang **-Wsystem-headers**-Objekten gemeldete Warnungen wurden korrigiert.
-- Die von „Clang **-Wmicrosoft-exception-spec**“ gemeldete Warnung „exception specification in declaration does not match previous declaration“ (die Ausnahmespezifikation in der Deklaration entspricht nicht der vorherigen Deklaration) wurde ebenfalls korrigiert.
+- Einige von Clang **-Wsystem-headers** -Objekten gemeldete Warnungen wurden korrigiert.
+- Die von „Clang **-Wmicrosoft-exception-spec** “ gemeldete Warnung „exception specification in declaration does not match previous declaration“ (die Ausnahmespezifikation in der Deklaration entspricht nicht der vorherigen Deklaration) wurde ebenfalls korrigiert.
 - Von Clang und C1XX gemeldete mem-initializer-list-Reihenfolgewarnungen wurden ebenfalls korrigiert.
 - Die unsortierten Container tauschten ihre Hashfunktionen oder Prädikate nicht, wenn die Container selbst getauscht wurden. Dies erfolgt jetzt.
 - Viele Tauschvorgänge für Container sind jetzt als **`noexcept`** markiert (da die Standardbibliothek nie eine Ausnahme auslösen soll, wenn sie die nicht definierte Verhaltensbedingung „non-`propagate_on_container_swap` non-equal-allocator“ erkennt).
@@ -343,7 +343,7 @@ Es sind weitere Verbesserungen an der Standardbibliothek in Visual Studio 2017 
 - `basic_string::shrink_to_fit()` wird nicht länger vom `propagate_on_container_swap` der Zuweisung beeinträchtigt.
 - `std::decay` verarbeitet jetzt abominable-Funktionstypen (also Funktionstypen mit cv- und/oder ref-Qualifizierer).
 - include-Direktiven wurden geändert und verwenden jetzt die richtige Groß- und Kleinschreibung und Schrägstriche, was die Portierbarkeit verbessert.
-- Warnung C4061 „enumerator '*enumerator*' in switch of enum '*enumeration*' is not explicitly handled by a case label“ (Enumerator 'enumerator' in der switch-Anweisung der Enumeration 'enumeration' wird von keiner case-Bezeichnung explizit behandelt) wurde korrigiert. Diese Warnung ist standardmäßig deaktiviert und wurde als Ausnahme der allgemeinen Richtlinie der Standardbibliothek für Warnungen korrigiert. (Die Standardbibliothek ist „ **`/W4`** clean“, versucht jedoch nicht, „ **`/Wall`** clean“ zu sein. Viele standardmäßig deaktivierte Warnungen verbrauchen übermäßig viele Ressourcen und sind nicht für die regelmäßige Verwendung gedacht.)
+- Warnung C4061 „enumerator ' *enumerator* ' in switch of enum ' *enumeration* ' is not explicitly handled by a case label“ (Enumerator 'enumerator' in der switch-Anweisung der Enumeration 'enumeration' wird von keiner case-Bezeichnung explizit behandelt) wurde korrigiert. Diese Warnung ist standardmäßig deaktiviert und wurde als Ausnahme der allgemeinen Richtlinie der Standardbibliothek für Warnungen korrigiert. (Die Standardbibliothek ist „ **`/W4`** clean“, versucht jedoch nicht, „ **`/Wall`** clean“ zu sein. Viele standardmäßig deaktivierte Warnungen verbrauchen übermäßig viele Ressourcen und sind nicht für die regelmäßige Verwendung gedacht.)
 - Verbesserte `std::list`-Debugüberprüfungen. Listeniteratoren überprüfen jetzt `operator->()`, und `list::unique()` markiert Iteratoren jetzt als ungültig.
 - Die Metaprogrammierung von „uses-allocator“ wurde im `tuple` korrigiert.
 
@@ -508,7 +508,7 @@ Das C++ REST SDK, eine plattformübergreifende Web-API für C++, wurde auf Versi
 - Verschiedene Projekt- und Code-Assistenten wurden im Signaturdialogstil umgeschrieben.
 - **Klasse hinzufügen** startet den Assistenten zum Hinzufügen von Klassen nun direkt. Alle anderen Elemente, die hier zuvor verfügbar waren, finden Sie nun unter **Hinzufügen > Neues Element**.
 - Win32-Projekte sind nun im Dialogfeld **Neues Projekt** in der **Windows Desktop-Kategorie** zu finden.
-- Die **Windows-Konsolen**- und **Desktopanwendungsvorlagen** erstellen die Projekte nun, ohne einen Assistenten anzuzeigen. Es gibt einen neuen **Windows Desktop-Assistenten** in der gleichen Kategorie, der die gleichen Optionen wie der alte Assistent für die **Win32-Konsolenanwendung** anzeigt.
+- Die **Windows-Konsolen** - und **Desktopanwendungsvorlagen** erstellen die Projekte nun, ohne einen Assistenten anzuzeigen. Es gibt einen neuen **Windows Desktop-Assistenten** in der gleichen Kategorie, der die gleichen Optionen wie der alte Assistent für die **Win32-Konsolenanwendung** anzeigt.
 
 ##### <a name="visual-studio-2017-version-155"></a>Visual Studio 2017 Version 15.5
 
@@ -520,7 +520,7 @@ Mehrere Vorgänge in C++, die die IntelliSense-Engine für Refactoring und Coden
 | Signatur ändern | 4,5-fach |
 | Alle Verweise suchen | 4,7-fach |
 
-C++ unterstützt jetzt STRG+Klick-**GoTo-Definition**, was die Navigation mit der Maus zu Definitionen vereinfacht. Die Strukturvisualisierung aus dem Productivity Power Tools-Paket ist nun standardmäßig auch im Produkt enthalten.
+C++ unterstützt jetzt STRG+Klick- **GoTo-Definition** , was die Navigation mit der Maus zu Definitionen vereinfacht. Die Strukturvisualisierung aus dem Productivity Power Tools-Paket ist nun standardmäßig auch im Produkt enthalten.
 
 ## <a name="intellisense"></a>IntelliSense
 
@@ -717,7 +717,7 @@ Visual Studio-Grafikdiagnosetools: Mit diesen Tools können Sie Rendering- und L
 
   ![Speicherstatistiken](media/memory-stats.png)
 
-- **Frame-Überprüfung:** Mit dieser neuen Liste mit Fehlern und Warnungen können Sie je nach Problem, das auf Direct3D-Debugebene erkannt wurde, einfach zu Ihrer Ereignisliste navigieren. Klicken Sie zum Öffnen des Fensters in der Visual Studio-Grafikanalyse auf **Ansicht > Frame-Überprüfung**. Klicken Sie dann auf **Überprüfung ausführen**, um die Analyse zu starten. Je nach Komplexität des Frames kann dieser Vorgang mehrere Minuten dauern.
+- **Frame-Überprüfung:** Mit dieser neuen Liste mit Fehlern und Warnungen können Sie je nach Problem, das auf Direct3D-Debugebene erkannt wurde, einfach zu Ihrer Ereignisliste navigieren. Klicken Sie zum Öffnen des Fensters in der Visual Studio-Grafikanalyse auf **Ansicht > Frame-Überprüfung**. Klicken Sie dann auf **Überprüfung ausführen** , um die Analyse zu starten. Je nach Komplexität des Frames kann dieser Vorgang mehrere Minuten dauern.
 
   ![Frame-Überprüfung](media/frame-validation.png)
 
@@ -735,14 +735,14 @@ Visual Studio-Grafikdiagnosetools: Mit diesen Tools können Sie Rendering- und L
 
 ::: moniker-end
 
-::: moniker range="=vs-2015"
+::: moniker range="=msvc-140"
 
 Eine vollständige Liste der Neuerungen bis zum Visual Studio 2015 Update 3 finden Sie unter [Visual C++: Neuerungen von 2003 bis 2015](../porting/visual-cpp-what-s-new-2003-through-2015.md).
 
 Weitere Informationen zu Neuerungen in Visual Studio 2015 finden Sie in den Versionshinweisen. Sie sind im [Verlauf der Versionshinweise zu Visual Studio 2015](/visualstudio/releasenotes/vs2015-version-history) verlinkt.
 
-Weitere Informationen zu Neuerungen für C++ in Visual Studio 2019 finden Sie unter [Neuerungen bei C++ in Visual Studio](?preserve-view=true&view=vs-2019).
+Weitere Informationen zu Neuerungen für C++ in Visual Studio 2019 finden Sie unter [Neuerungen bei C++ in Visual Studio](?preserve-view=true&view=msvc-160).
 
-Weitere Informationen zu Neuerungen für C++ in Visual Studio 2017 finden Sie unter [Neuerungen für C++ in Visual Studio 2017](?preserve-view=true&view=vs-2017).
+Weitere Informationen zu Neuerungen für C++ in Visual Studio 2017 finden Sie unter [Neuerungen für C++ in Visual Studio 2017](?preserve-view=true&view=msvc-150).
 
 ::: moniker-end

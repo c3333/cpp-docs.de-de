@@ -9,21 +9,21 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 468fc30d337e5cfc5ab90f7558904fc90588c3df
-ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.openlocfilehash: 617a82055f406c130d74a2823c2cf00aa1beef36
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90041821"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92923603"
 ---
 # <a name="event_data-structure"></a>EVENT_DATA-Struktur
 
-::: moniker range="<=vs-2015"
+::: moniker range="<=msvc-140"
 
 Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
 Die `EVENT_DATA`-Struktur beschreibt ein Ereignis, das aus einer Analysesitzung oder einer Sitzung zur erneuten Protokollierung empfangen wurde. Diese Sitzungen werden durch Aufruf der Funktionen [Analyze](../functions/analyze.md), [AnalyzeA](../functions/analyze-a.md), [AnalyzeW](../functions/analyze-w.md), [Relog](../functions/relog.md), [RelogA](../functions/relog-a.md) oder [RelogW](../functions/relog-w.md) gestartet.
 
@@ -58,7 +58,7 @@ typedef struct EVENT_DATA_TAG
 
 ## <a name="members"></a>Member
 
-| name | BESCHREIBUNG |
+| name | Beschreibung |
 |--|--|
 | `EventId` | Eine Zahl, die das Ereignis identifiziert. Eine Liste der Ereignisbezeichner finden Sie unter [EVENT_ID](event-id-enum.md). |
 | `EventInstanceId` | Eine Zahl, die das aktuelle Ereignis innerhalb einer Stapelüberwachung eindeutig identifiziert. Dieser Wert ändert sich nicht, wenn dieselbe Stapelüberwachung mehrmals analysiert oder erneut protokolliert wird. Verwenden Sie dieses Feld, um ein und dasselbe Ereignis in mehreren Durchläufen der Stapelüberwachung zur Analyse oder erneuten Protokollierung zu identifizieren. |
@@ -86,7 +86,7 @@ Der Wert des `EVENT_DATA`-Felds `Data` hängt vom Wert des zugehörigen `EventId
 | `EventId`-Wert | Typ, auf den von `Data` gezeigt wird |
 |--|--|
 | `EVENT_ID_BACK_END_PASS` | [CL_PASS_DATA](cl-pass-data-struct.md) |
-| `EVENT_ID_COMMAND_LINE` | `const wchar_t` |
+| `EVENT_ID_COMMAND_LINE` | `const wchar_t` |
 | `EVENT_ID_COMPILER` | [INVOCATION_DATA](invocation-data-struct.md) |
 | `EVENT_ID_ENVIRONMENT_VARIABLE` | [NAME_VALUE_PAIR_DATA](name-value-pair-data-struct.md) |
 | `EVENT_ID_EXECUTABLE_IMAGE_OUTPUT` | [FILE_DATA](file-data-struct.md) |

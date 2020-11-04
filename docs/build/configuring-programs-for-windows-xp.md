@@ -3,18 +3,18 @@ title: Konfigurieren von Programmen für Windows XP
 description: Erfahren Sie, wie Sie C++-Toolsets für Windows XP in Visual Studio installieren und verwenden.
 ms.date: 03/16/2020
 ms.assetid: 1e4487b3-d815-4123-878b-5718b22f0fd5
-ms.openlocfilehash: 92364d7fd25ac617baacc125b279fb0ee9c92f62
-ms.sourcegitcommit: 63784729604aaf526de21f6c6b62813882af930a
+ms.openlocfilehash: 09fe1a511c92f999e02646b9e606a3631a175215
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79440480"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92919370"
 ---
 # <a name="configuring-programs-for-windows-xp"></a>Konfigurieren von Programmen für Windows XP
 
 Visual Studio unterstützt mehrere Plattformtoolsets. Das bedeutet, Sie können Zielbetriebssysteme und Ziellaufzeitbibliotheken festlegen, die nicht vom Standardtoolset unterstützt werden. Indem Sie das Plattformtoolset wechseln, können Sie beispielsweise den Visual Studio 2017-C++-Compiler verwenden, um Apps für Windows XP und Windows Server 2003 zu erstellen. Sie können auch ältere Plattformtoolsets verwenden, um binärkompatiblen Legacycode zu verwalten und dennoch die neuesten Funktionen der Visual Studio-IDE zu nutzen.
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 Das v142-Toolset, das in Visual Studio 2019 enthalten ist, umfasst keine Unterstützung zum Erstellen von Code für Windows XP. Die Unterstützung der Windows XP-Entwicklung mithilfe des Visual Studio 2017-v141_xp-Toolsets steht im Visual Studio-Installer als Einzelkomponente zur Verfügung.
 
@@ -22,13 +22,13 @@ Das v142-Toolset, das in Visual Studio 2019 enthalten ist, umfasst keine Unters
 
 ## <a name="install-the-windows-xp-platform-toolset"></a>Installieren des Windows XP-Plattformtoolsets
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 Führen Sie den Visual Studio-Installer aus, um das Visual Studio 2017-Plattformtoolset und die -Komponenten für Windows XP und Windows Server 2003 abzurufen. Achten Sie bei der erstmaligen Installation von Visual Studio oder beim Anpassen einer bestehenden Installation darauf, dass die Workload **Desktopentwicklung mit C++** ausgewählt ist. Wählen Sie in der Liste der optionalen Komponenten für diese Workload **Windows XP-Unterstützung für C++** und dann **Installieren** oder **Ändern** aus.
 
 ::: moniker-end
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 Führen Sie den Visual Studio-Installer aus, um das v141_xp-Plattformtoolset und die -Komponenten für Windows XP und Windows Server 2003 abzurufen. Achten Sie bei der erstmaligen Installation von Visual Studio oder beim Anpassen einer bestehenden Installation darauf, dass die Workload **Desktopentwicklung mit C++** ausgewählt ist. Wählen Sie auf der Registerkarte **Einzelne Komponenten** unter **Compilers, build tools, and runtimes** (Compiler, Buildtools und Runtimes) die Option **C++-Windows XP-Unterstützung für Tools in VS 2017 (v141) \[veraltet]** aus, und klicken Sie dann auf **Installieren** oder **Modify**.
 

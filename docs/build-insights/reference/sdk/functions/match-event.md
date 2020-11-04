@@ -9,21 +9,21 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 8ec2c6bfcacf28998058dc66b5f363fbf1ea5d70
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 1486a76aab7b9a4f3b4da209f4f163b4c65b0ac4
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87224109"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92920098"
 ---
 # <a name="matchevent"></a>MatchEvent
 
-::: moniker range="<=vs-2015"
+::: moniker range="<=msvc-140"
 
 Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
 Die Funktion `MatchEvent` wird verwendet, um ein Ereignis mit einer Liste von Ereignistypen abzugleichen. Wenn das Ereignis mit einem Typ in der Liste übereinstimmt, wird es zur weiteren Verarbeitung an einen Handler weitergeleitet.
 
@@ -59,7 +59,7 @@ Die Typen der zusätzlichen Argumente, die an `MatchEvent` übergeben wurden.
 Das Ereignis, das mit den Ereignistypen abgeglichen werden soll, die von *TEvent* und *TEvents* beschrieben werden.
 
 *callable*\
-`MatchEvent` ruft den Parameter *callable* auf, nachdem das Ereignis erfolgreich einem der in *TEvent* und *TEvents* beschriebenen Ereignistypen zugeordnet werden konnte. Das erste Argument, das an den Parameter *callable* übergeben wird, ist ein R-Wert des zugeordneten Eventtyps. Das Parameterpaket *extraArgs* wird perfekt an die übrigen *callable*-Parameter weitergeleitet.  
+`MatchEvent` ruft den Parameter *callable* auf, nachdem das Ereignis erfolgreich einem der in *TEvent* und *TEvents* beschriebenen Ereignistypen zugeordnet werden konnte. Das erste Argument, das an den Parameter *callable* übergeben wird, ist ein R-Wert des zugeordneten Eventtyps. Das Parameterpaket *extraArgs* wird perfekt an die übrigen *callable* -Parameter weitergeleitet.  
 
 *extraArgs*\
 Die Argumente, die zusammen mit dem zugeordneten Ereignistyp perfekt an den Parameter *callable* weitergeleitet werden.

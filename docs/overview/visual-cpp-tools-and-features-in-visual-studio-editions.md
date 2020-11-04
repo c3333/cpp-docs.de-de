@@ -4,16 +4,16 @@ ms.date: 05/21/2019
 helpviewer_keywords:
 - tools and platforms [C++]
 ms.assetid: 3d88607b-9cc4-490a-8d4c-31ee7610a26f
-ms.openlocfilehash: 00c096203ae056c96c87d67a491d3c84b3d1fb3a
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: c2ef6c539d5845beee044a963e0056d3287ba679
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88845353"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924799"
 ---
 # <a name="c-tools-and-features-in-visual-studio-editions"></a>C++-Tools und -Features in Visual Studio-Editionen
 
-::: moniker range=">=vs-2019"
+::: moniker range=">=msvc-160"
 
 Die folgenden C++-Features stehen in Visual Studio 2019 zur Verfügung. Sofern nicht anders angegeben, sind alle Features in allen Editionen verfügbar: Visual Studio Community, Visual Studio Professional und Visual Studio Enterprise. Einige Features erfordern spezifische Workloads oder optionale Komponenten, die Sie mit dem Visual Studio-Installer installieren können.
 
@@ -309,7 +309,7 @@ Linux:
 
 ::: moniker-end
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 In den folgenden Tabellen werden Visual C++-Features aufgeführt, die in Visual Studio 2017 verfügbar sind. Ein „X“ in einer Zelle gibt an, dass die Funktion verfügbar ist. Eine leere Zelle gibt an, dass die Funktion nicht verfügbar ist. Hinweise in Klammern geben an, dass eine Funktion eingeschränkt verfügbar ist.
 

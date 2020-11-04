@@ -9,21 +9,21 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: c1db302d9e816591624f0fc63633351d32684097
-ms.sourcegitcommit: 72161bcd21d1ad9cc3f12261aa84a5b026884afa
+ms.openlocfilehash: 7135c49bdf95ef5ba39db090c95ad46d266d8f65
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90742761"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92919656"
 ---
 # <a name="tracing_session_statistics-structure"></a>TRACING_SESSION_STATISTICS-Struktur
 
-::: moniker range="<=vs-2015"
+::: moniker range="<=msvc-140"
 
 Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
 Die `TRACING_SESSION_STATISTICS`-Struktur beschreibt Statistiken für eine Ablaufverfolgung, die erfasst wurde. Die Felder werden beim Beenden einer Ablaufverfolgungssitzung festgelegt.
 

@@ -2,22 +2,22 @@
 title: Allgemeine Eigenschaften (Linux C++ Makefile-Projekt) | Microsoft Docs
 ms.date: 06/07/2019
 ms.assetid: 3dec6853-43f6-412b-9806-9bfad333a204
-ms.openlocfilehash: 72a7919bc94be80acdbf7a2cef5b4a9875595545
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: dd92d77069024456020a09b22de3596b8192c5af
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "79446150"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924659"
 ---
 # <a name="makefile-project-properties-linux-c"></a>MakeFile-Projekteigenschaften (Linux C++)
 
-::: moniker range="vs-2015"
+::: moniker range="msvc-140"
 
 Die Unterstützung für Linux ist in Visual Studio 2017 und höher verfügbar.
 
 ::: moniker-end
 
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
 Dies ist eine unvollständige Liste der Eigenschaften, dir in einem Linux Makefile-Projekt verfügbar sind. Viele Eigenschaften des MakeFile-Projekts sind identisch mit den Projekteigenschaften der Linux C++-Konsolenanwendung.
 
@@ -28,7 +28,7 @@ Dies ist eine unvollständige Liste der Eigenschaften, dir in einem Linux Makefi
 | Ausgabeverzeichnis | Gibt einen relativen Pfad zum Ausgabedateiverzeichnis an. Kann Umgebungsvariablen enthalten. |
 | Zwischenverzeichnis | Gibt einen relativen Pfad zum Zwischendateiverzeichnis an. Kann Umgebungsvariablen enthalten. |
 | Buildprotokolldatei | Gibt die zu schreibende Buildprotokolldatei an, wenn die Buildprotokollierung aktiviert ist. |
-| Konfigurationstyp | Gibt den Typ der Ausgabe an, die diese Konfiguration generiert. | **Dynamische Bibliothek (.so)** : Dynamische Bibliothek (.so)<br>**Statische Bibliothek (.a)** : Statische Bibliothek (.a)<br>**Anwendung (.out)** : Anwendung (.out)<br>**Makefile**: Makefile<br> |
+| Konfigurationstyp | Gibt den Typ der Ausgabe an, die diese Konfiguration generiert. | **Dynamische Bibliothek (.so)** : Dynamische Bibliothek (.so)<br>**Statische Bibliothek (.a)** : Statische Bibliothek (.a)<br>**Anwendung (.out)** : Anwendung (.out)<br>**Makefile** : Makefile<br> |
 | Remotebuildcomputer | Der Zielcomputer oder das Gerät, der bzw. das für den Remotebuild, die Bereitstellung und das Debuggen verwendet werden soll. |
 | Remotebuild-Stammverzeichnis | Gibt einen Pfad zu einem Verzeichnis auf dem Remotecomputer oder -Gerät an. |
 | Remotebuild-Projektverzeichnis | Gibt einen Pfad zu einem Verzeichnis auf dem Remotecomputer oder -Gerät für das Projekt an. |

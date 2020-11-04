@@ -6,16 +6,16 @@ helpviewer_keywords:
 - Visual C++, development tools
 author: corob-msft
 ms.author: corob
-ms.openlocfilehash: 5a03590074d8de05153b2d9442da8b916e6eba82
-ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
+ms.openlocfilehash: db0a4ccbab142d01f0506b77237dbb09d43a1cf0
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91500283"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92924362"
 ---
 # <a name="overview-of-c-development-in-visual-studio"></a>Übersicht über die C++-Entwicklung in Visual Studio
 
-Als Teil der integrierten Visual Studio-Entwicklungsumgebung (IDE) verwendet Microsoft C++ (MSVC) viele Fenster und Tools, die auch in zahlreichen anderen Sprachen verwendet werden. Viele davon, z.B. der **Projektmappen-Explorer**, der Code-Editor und der Debugger, sind unter [Visual Studio-IDE](/visualstudio/get-started/visual-studio-ide) dokumentiert. Ein gemeinsam verwendetes Tool oder Fenster verfügt in C++ häufig über etwas andere Funktionen als für andere Sprachen. Einige Fenster oder Tools sind nur in den Editionen Visual Studio Professional oder Visual Studio Enterprise verfügbar.
+Als Teil der integrierten Visual Studio-Entwicklungsumgebung (IDE) verwendet Microsoft C++ (MSVC) viele Fenster und Tools, die auch in zahlreichen anderen Sprachen verwendet werden. Viele davon, z.B. der **Projektmappen-Explorer** , der Code-Editor und der Debugger, sind unter [Visual Studio-IDE](/visualstudio/get-started/visual-studio-ide) dokumentiert. Ein gemeinsam verwendetes Tool oder Fenster verfügt in C++ häufig über etwas andere Funktionen als für andere Sprachen. Einige Fenster oder Tools sind nur in den Editionen Visual Studio Professional oder Visual Studio Enterprise verfügbar.
 
 Zusätzlich zu den gemeinsam verwendeten Tools in der integrierten Visual Studio-Entwicklungsumgebung verfügt MSVC über mehrere Tools, die speziell auf die Entwicklung von nativem Code ausgelegt sind. Diese Tools sind ebenfalls in diesem Artikel aufgeführt. Eine Liste der Tools, die in jeder Edition von Visual Studio verfügbar sind, finden Sie unter [Visual C++ Tools and Features in Visual Studio Editions (Tools und Features von C++ in den Visual Studio-Editionen)](visual-cpp-tools-and-features-in-visual-studio-editions.md).
 
@@ -25,15 +25,15 @@ Ein *Projekt* ist im Grunde eine Reihe von Quellcodedateien und Ressourcen wie B
 
 Visual Studio unterstützt alle Projektsysteme und benutzerdefinierten Buildtools, die Sie verwenden möchten, und bietet vollständige Unterstützung für IntelliSense, das Durchsuchen und das Debuggen:
 
-- Bei **MSBuild** handelt es sich um das native Projektsystem für Visual Studio. Wenn Sie im Hauptmenü **Datei** > **Neu** > **Projekt** auswählen, sehen Sie viele Arten von MSBuild-*Projektvorlagen*, die Sie beim schnellen Einstieg in die Entwicklung verschiedener Arten von C++-Anwendungen unterstützen.
+- Bei **MSBuild** handelt es sich um das native Projektsystem für Visual Studio. Wenn Sie im Hauptmenü **Datei** > **Neu** > **Projekt** auswählen, sehen Sie viele Arten von MSBuild- *Projektvorlagen* , die Sie beim schnellen Einstieg in die Entwicklung verschiedener Arten von C++-Anwendungen unterstützen.
 
-   ::: moniker range="vs-2019"
+   ::: moniker range="msvc-160"
 
    ![Neue Projektvorlagen](../build/media/mathclient-project-name-2019.png "Visual Studio 2019, Dialogfeld „Neues Projekt“")
 
    ::: moniker-end
 
-   ::: moniker range="<=vs-2017"
+   ::: moniker range="<=msvc-150"
 
    ![Projektvorlagen](media/vs2017-new-project.png "Visual Studio 2017, Dialogfeld „Neues Projekt“")
 
@@ -49,13 +49,13 @@ Visual Studio unterstützt alle Projektsysteme und benutzerdefinierten Buildtool
 
 Mithilfe von Quellcodeverwaltung können Sie die Arbeit mehrerer Entwickler koordinieren, im Bearbeitungsprozess stehende Arbeit von Produktionscode trennen und Ihren Quellcode sichern. Visual Studio unterstützt Git und [Team Foundation Version Control \(TFVC\)](/azure/devops/repos/tfvc/) über sein Fenster **Team Explorer**.
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 ![Screenshot des Fensters „Team Explorer“ in Visual Studio 2019](media/vs2019-team-explorer.png "Visual Studio 2017, Team Explorer")
 
 ::: moniker-end
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 ![Screenshot des Fensters „Team Explorer“ in Visual Studio 2017](media/vs2017-team-explorer.png "Visual Studio 2017, Team Explorer")
 
@@ -91,7 +91,7 @@ Ein Windows-Programm oder eine Windows-DLL enthält in der Regel einige *Ressour
 
 ## <a name="build-compile-and-link"></a>Erstellen (Kompilieren und Verknüpfen)
 
-Klicken Sie in der Menüleiste auf **Erstellen** > **Projektmappe erstellen**, oder drücken Sie die Tastenkombination **STRG+UMSCHALT+B**, um ein Projekt zu kompilieren und zu verknüpfen. Buildfehler und Warnungen werden in der Fehlerliste gemeldet (**STRG+\\, E**). Das **Ausgabefenster** (**ALT+2**) zeigt Informationen zum Buildprozess an.
+Klicken Sie in der Menüleiste auf **Erstellen** > **Projektmappe erstellen** , oder drücken Sie die Tastenkombination **STRG+UMSCHALT+B** , um ein Projekt zu kompilieren und zu verknüpfen. Buildfehler und Warnungen werden in der Fehlerliste gemeldet ( **STRG+\\, E** ). Das **Ausgabefenster** ( **ALT+2** ) zeigt Informationen zum Buildprozess an.
 
 ![Ausgabefenster und Fehlerliste](media/vs2017-output-error-list.png "Visual Studio 2017, Ausgabefenster und Fehlerliste")
 
@@ -101,7 +101,7 @@ Sie können auch den Compiler (cl.exe) und viele andere buildbezogene, eigenstä
 
 ## <a name="debug"></a>Debug
 
-Debuggen Sie durch Drücken von **F5**. Die Ausführung hält bei allen von Ihnen festgelegten Haltepunkten an (indem Sie **F9** drücken). Sie können den Code auch zeilenweise durchlaufen (**F10**), die Werte von Variablen oder Registern anzeigen und in einigen Fällen sogar Änderungen am Code vornehmen und das Debuggen fortsetzen, ohne neu kompilieren zu müssen. Die folgende Abbildung zeigt eine Debugsitzung mit bei einem Haltepunkt angehaltener Ausführung. Die Werte der Datenstrukturelemente sind im Fenster **Überwachen** sichtbar.
+Debuggen Sie durch Drücken von **F5**. Die Ausführung hält bei allen von Ihnen festgelegten Haltepunkten an (indem Sie **F9** drücken). Sie können den Code auch zeilenweise durchlaufen ( **F10** ), die Werte von Variablen oder Registern anzeigen und in einigen Fällen sogar Änderungen am Code vornehmen und das Debuggen fortsetzen, ohne neu kompilieren zu müssen. Die folgende Abbildung zeigt eine Debugsitzung mit bei einem Haltepunkt angehaltener Ausführung. Die Werte der Datenstrukturelemente sind im Fenster **Überwachen** sichtbar.
 
 ![Debugsitzung](media/vs2017-debug-watch.png "Visual Studio 2017, Debugsitzung")
 

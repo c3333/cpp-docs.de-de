@@ -3,16 +3,16 @@ title: Konfigurieren eines auf MSBuild basierenden C++-Projekts für Linux in Vi
 ms.date: 10/16/2020
 description: Konfigurieren Sie ein neues auf MSBuild basierendes Linux-Projekt in Visual Studio, damit Sie einen Build erstellen können.
 ms.assetid: 4d7c6adf-54b9-4b23-bd23-5de0c825b768
-ms.openlocfilehash: 51837dc86d041b9120f984cc01f8db06d696b292
-ms.sourcegitcommit: f19f02f217b80804ab321d463c76ce6f681abcc6
+ms.openlocfilehash: 451f34c257c210463ce11b11f27bc218d41b45c8
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92176335"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92921814"
 ---
 # <a name="configure-a-linux-msbuild-c-project-in-visual-studio"></a>Konfigurieren eines auf MSBuild basierenden C++-Projekts für Linux in Visual Studio
 
-::: moniker range="vs-2015"
+::: moniker range="msvc-140"
 
 Die Unterstützung für Linux ist in Visual Studio 2017 und höher verfügbar.
 
@@ -22,7 +22,7 @@ In diesem Thema wird das Konfigurieren eines auf MSBuild basierenden C++-Projekt
 
 Sie können ein Linux-Projekt so konfigurieren, dass dieses auf einen physischen Linux-Computer, einen virtuellen Computer oder das [Windows-Subsystem für Linux](/windows/wsl/about) (WSL) abzielt.
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 **Visual Studio 2019 Version 16.1:**
 
@@ -42,7 +42,7 @@ Standardmäßig wird eine ausführbare Datei (.out) erstellt. Verwenden Sie zum 
 
 Wenn Sie für das Windows-Subsystem für Linux (WSL) entwickeln, ist die WSL-Version 1 auf 64 parallele Kompilierungsprozesse beschränkt. Dies wird von der **Maximale Anzahl paralleler Kompilierungsaufträge** -Einstellung unter **Konfigurationseigenschaften > C/C++ > Allgemein** geregelt.
 
-Unabhängig von der verwendeten WSL-Version sollten Sie Ninja zum Entwickeln verwenden, wenn Sie mehr als 64 parallele Kompilierungsprozesse beabsichtigen. Ninja ist allgemein schneller und zuverlässiger. Für das Erstellen mit Ninja verwenden Sie die Einstellung **Verwalteten inkrementellen Build aktivieren** unter **Konfigurationseigenschaften > Allgemein** .
+Unabhängig von der verwendeten WSL-Version sollten Sie Ninja zum Entwickeln verwenden, wenn Sie mehr als 64 parallele Kompilierungsprozesse beabsichtigen. Ninja ist allgemein schneller und zuverlässiger. Für das Erstellen mit Ninja verwenden Sie die Einstellung **Verwalteten inkrementellen Build aktivieren** unter **Konfigurationseigenschaften > Allgemein**.
 
 Weitere Informationen zu den Einstellungen auf den Eigenschaftenseiten finden Sie unter [Linux Project Property Page Reference (Referenz zur Linux-Projekteigenschaftenseite)](prop-pages-linux.md).
 
@@ -54,7 +54,7 @@ Konfigurieren Sie die Remoteeinstellungen, die unter [Allgemein](prop-pages/gene
 
    ![Buildcomputer](media/remote-build-machine-vs2019.png)
 
-   ::: moniker range="vs-2019"
+   ::: moniker range="msvc-160"
 
    **Visual Studio 2019, Version 16.7:** Wenn Sie das Windows-Subsystem für Linux (WSL) als Ziel verwenden, legen Sie im **Plattformtoolset** -Dropdown **GCC for Windows Subsystem for Linux** (GCC für das Windows-Subsystem für Linux) fest. Die anderen Remoteoptionen werden ausgeblendet, und der Pfad zur standardmäßigen WSL-Shell wird stattdessen angezeigt:
 
@@ -71,11 +71,11 @@ Konfigurieren Sie die Remoteeinstellungen, die unter [Allgemein](prop-pages/gene
 - Das **Remotebuild-Projektverzeichnis** ist das Verzeichnis, in dem dieses spezifische Projekt auf dem Linux-Remotecomputer erstellt wird. Standardmäßig handelt es sich dabei um das Verzeichnis **$(RemoteRootDir)/$(ProjektName)** . Es wird zu einem Verzeichnis erweitert, das den Namen des aktuellen Projekts unter dem oben angegebenen Stammverzeichnis trägt.
 
 > [!NOTE]
-> Verwenden Sie zum Ändern der C- und C++-Standardcompiler bzw. der Linker und Archivierungsprogramme, die zur Erstellung des Projekts verwendet werden, die entsprechenden Einträge im Abschnitt **C/C++ > Allgemein** sowie im Abschnitt **Linker > Allgemein** . Sie können beispielsweise eine bestimmte Version von GCC (GNU Compiler Collection) oder Clang angeben. Weitere Informationen finden Sie unter [C/C++-Eigenschaften (Linux C++)](prop-pages/c-cpp-linux.md) und [Linkereigenschaften (Linux C++)](prop-pages/linker-linux.md).
+> Verwenden Sie zum Ändern der C- und C++-Standardcompiler bzw. der Linker und Archivierungsprogramme, die zur Erstellung des Projekts verwendet werden, die entsprechenden Einträge im Abschnitt **C/C++ > Allgemein** sowie im Abschnitt **Linker > Allgemein**. Sie können beispielsweise eine bestimmte Version von GCC (GNU Compiler Collection) oder Clang angeben. Weitere Informationen finden Sie unter [C/C++-Eigenschaften (Linux C++)](prop-pages/c-cpp-linux.md) und [Linkereigenschaften (Linux C++)](prop-pages/linker-linux.md).
 
 ## <a name="copy-sources-remote-systems-only"></a>Kopieren von Quellen (nur Remotesysteme)
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 Dieser Abschnitt gilt nicht, wenn auf WSL abgezielt wird.
 
@@ -93,7 +93,7 @@ Beim Erstellen auf Remotesystemen werden die Quelldateien auf Ihrem Entwicklungs
 
 ## <a name="build-events"></a>Buildereignisse
 
-Da die gesamte Kompilierung auf einem Remotecomputer (oder WSL) erfolgt, wurden dem Abschnitt „Buildereignisse“ in den Projekteigenschaften mehrere zusätzliche Buildereignisse hinzugefügt. Dazu gehören das **Remote-Präbuildereignis** , das **Remote-Prälinkereignis** und das **Remote-Postbuildereignis** . Diese Ereignisse finden auf dem Remotecomputer vor oder nach den einzelnen Schritten im Prozess statt.
+Da die gesamte Kompilierung auf einem Remotecomputer (oder WSL) erfolgt, wurden dem Abschnitt „Buildereignisse“ in den Projekteigenschaften mehrere zusätzliche Buildereignisse hinzugefügt. Dazu gehören das **Remote-Präbuildereignis** , das **Remote-Prälinkereignis** und das **Remote-Postbuildereignis**. Diese Ereignisse finden auf dem Remotecomputer vor oder nach den einzelnen Schritten im Prozess statt.
 
 ![Buildereignisse](media/settings_buildevents.png)
 
@@ -110,15 +110,15 @@ Diese Funktion hängt davon ab, ob auf dem Linux-Computer Zip installiert ist. S
 sudo apt install zip
 ```
 
-Navigieren Sie zum Verwalten Ihres Header-Caches zu **Extras > Optionen > Plattformübergreifend > Verbindungs-Manager > IntelliSense-Manager für Remoteheader** . Wählen Sie zum Aktualisieren des Header-Caches nach Änderungen auf dem Linux-Computer die Remoteverbindung aus, und klicken Sie dann auf **Aktualisieren** . Klicken Sie auf **Löschen** , um die Header zu entfernen, ohne die Verbindung selbst zu löschen. Klicken Sie auf **Erkunden** , um das lokale Verzeichnis im **Datei-Explorer** zu öffnen. Behandeln Sie diesen Ordner, als sei er schreibgeschützt. Wählen Sie zum Herunterladen von Headern für eine vorhandene Verbindung, die vor Version 15.3 von Visual Studio 2017 erstellt wurde, die Verbindung aus, und klicken Sie dann auf **Herunterladen** .
+Navigieren Sie zum Verwalten Ihres Header-Caches zu **Extras > Optionen > Plattformübergreifend > Verbindungs-Manager > IntelliSense-Manager für Remoteheader**. Wählen Sie zum Aktualisieren des Header-Caches nach Änderungen auf dem Linux-Computer die Remoteverbindung aus, und klicken Sie dann auf **Aktualisieren**. Klicken Sie auf **Löschen** , um die Header zu entfernen, ohne die Verbindung selbst zu löschen. Klicken Sie auf **Erkunden** , um das lokale Verzeichnis im **Datei-Explorer** zu öffnen. Behandeln Sie diesen Ordner, als sei er schreibgeschützt. Wählen Sie zum Herunterladen von Headern für eine vorhandene Verbindung, die vor Version 15.3 von Visual Studio 2017 erstellt wurde, die Verbindung aus, und klicken Sie dann auf **Herunterladen**.
 
-::: moniker range="vs-2017"
+::: moniker range="msvc-150"
 
 ![Screenshot des Dialogfelds „Optionen“, in dem „Plattformübergreifend“ > „Verbindungs-Manager“ > „IntelliSense-Manager für Remoteheader“ ausgewählt ist](media/remote-header-intellisense.png)
 
 ::: moniker-end
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 ![Screenshot des Dialogfelds „Optionen“, in dem „Plattformübergreifend“ > „Verbindungs-Manager“ ausgewählt ist](media/connection-manager-vs2019.png)
 

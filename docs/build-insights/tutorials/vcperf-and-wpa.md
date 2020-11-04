@@ -7,21 +7,21 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: b82c1f7105b3fd03d8c21dd79617dbc66f3e090c
-ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
+ms.openlocfilehash: d5c613a7cd8ee2d7dc158050dae9529bba2a8f71
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91507774"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92919565"
 ---
 # <a name="tutorial-vcperf-and-windows-performance-analyzer"></a>Tutorial: vcperf und Windows Performance Analyzer
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 Die C++ Build Insights-Tools sind in Visual Studio 2019 verfügbar. Wenn die Dokumentation für diese Version angezeigt werden soll, legen Sie das Steuerelement zur Auswahl der **Version** für diesen Artikel auf Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 In diesem Tutorial erfahren Sie, wie Sie *vcperf.exe* zum Erfassen einer Ablaufverfolgung Ihres C++-Builds verwenden. Außerdem erfahren Sie, wie Sie diese Ablaufverfolgung in Windows Performance Analyzer anzeigen.
 
@@ -67,7 +67,7 @@ Zum Anzeigen von C++ Build Insights-Ablaufverfolgungen in WPA ist ein spezielles
 Um C++ Build Insights-Daten anzuzeigen, müssen diese zunächst in einer Ablaufverfolgungsdatei erfasst werden. Führen Sie dazu folgende Schritte aus:
 
 1. Öffnen Sie eine **x64** oder **x86 Native Tools-Eingabeaufforderung für VS 2019** im Administratormodus. (Klicken Sie mit der rechten Maustaste auf „Start“, und wählen Sie **Mehr** > **Als Administrator ausführen** aus.)
-    1. Wählen Sie **x64**, wenn Sie eine 64-Bit-Version von Windows ausführen. Anderenfalls wählen Sie **x86** aus.
+    1. Wählen Sie **x64** , wenn Sie eine 64-Bit-Version von Windows ausführen. Anderenfalls wählen Sie **x86** aus.
 
 1. Geben Sie im Eingabeaufforderungsfenster folgenden Befehl ein:
 
@@ -83,13 +83,13 @@ Um C++ Build Insights-Daten anzuzeigen, müssen diese zunächst in einer Ablaufv
 
    Verwenden Sie für *Sitzungsname* denselben Namen wie oben. Wählen Sie einen geeigneten Namen für die Ablaufverfolgungsdatei *ablaufverfolgungsdatei.etl*.
 
-Nachfolgend ist eine typische *vcperf.exe*-Befehlssequenz in einem Developer-Eingabeaufforderungsfenster gezeigt:
+Nachfolgend ist eine typische *vcperf.exe* -Befehlssequenz in einem Developer-Eingabeaufforderungsfenster gezeigt:
 
 ![Ein einfaches Verwendungsszenario für vcperf.exe](media/vcperf-simple-usage.png)
 
 ### <a name="important-notes-about-vcperfexe"></a>Wichtige Hinweise zu vcperf.exe
 
-- Zum Starten oder Anhalten einer *vcperf.exe*-Ablaufverfolgung sind Administratorrechte erforderlich. Verwenden Sie **Als Administrator ausführen**, um ein Developer-Eingabeaufforderungsfenster zu öffnen.
+- Zum Starten oder Anhalten einer *vcperf.exe* -Ablaufverfolgung sind Administratorrechte erforderlich. Verwenden Sie **Als Administrator ausführen** , um ein Developer-Eingabeaufforderungsfenster zu öffnen.
 
 - Auf einem Computer kann jeweils nur eine Ablaufverfolgungssitzung ausgeführt werden.
 

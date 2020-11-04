@@ -5,12 +5,12 @@ ms.custom: mvc
 ms.date: 04/20/2020
 ms.topic: tutorial
 ms.assetid: 45138d70-719d-42dc-90d7-1d0ca31a2f54
-ms.openlocfilehash: 333bb6ce1f3ea0db6b07d70ddd60d4a4be337abd
-ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
+ms.openlocfilehash: ee9631ee858ca34f82b599eeabce628483d9a247
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90686508"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92922087"
 ---
 # <a name="create-a-c-console-app-project"></a>Erstellen eines C++-Konsolen-App-Projekts
 
@@ -22,15 +22,15 @@ C++-Programmierer beginnen häufig mit einer „Hallo, Welt!“- Anwendung, die 
 
 ## <a name="create-your-app-project"></a>Erstellen Ihres App-Projekts
 
-Visual Studio verwendet *Projekte*, um Code für eine App zu ordnen, und *Projektmappen*, um Ihre Projekte zu ordnen. Ein Projekt beinhaltet alle Optionen, Einstellungen und Regeln, die Sie zum Erstellen Ihrer Anwendung verwendet haben. Es verwaltet die Beziehungen zwischen allen Projektdateien und externen Dateien. Wenn Sie Ihre App erstellen möchten, müssen Sie zuerst ein neues Projekt und eine Projektmappe erstellen.
+Visual Studio verwendet *Projekte* , um Code für eine App zu ordnen, und *Projektmappen* , um Ihre Projekte zu ordnen. Ein Projekt beinhaltet alle Optionen, Einstellungen und Regeln, die Sie zum Erstellen Ihrer Anwendung verwendet haben. Es verwaltet die Beziehungen zwischen allen Projektdateien und externen Dateien. Wenn Sie Ihre App erstellen möchten, müssen Sie zuerst ein neues Projekt und eine Projektmappe erstellen.
 
-::: moniker range=">=vs-2019"
+::: moniker range=">=msvc-160"
 
-1. Öffnen Sie in Visual Studio das Menü **Datei**, und klicken Sie auf **Neu > Projekt**, um das Dialogfeld **Neues Projekt erstellen** zu öffnen. Wählen Sie die Vorlage **Konsolen-App** aus, die über die Tags **C++** , **Windows** und **Konsole** verfügt, und klicken Sie dann auf **Weiter**.
+1. Öffnen Sie in Visual Studio das Menü **Datei** , und klicken Sie auf **Neu > Projekt** , um das Dialogfeld **Neues Projekt erstellen** zu öffnen. Wählen Sie die Vorlage **Konsolen-App** aus, die über die Tags **C++** , **Windows** und **Konsole** verfügt, und klicken Sie dann auf **Weiter**.
 
    ![Neues Projekt erstellen](media/vs2019-choose-console-app.png "Öffnen des Dialogfelds „Neues Projekt erstellen“")
 
-1. Geben Sie im Dialogfeld **Neues Projekt konfigurieren** in das Bearbeitungsfeld **Projektname** *HelloWorld* ein. Klicken Sie auf **Erstellen**, um das Projekt zu erstellen.
+1. Geben Sie im Dialogfeld **Neues Projekt konfigurieren** in das Bearbeitungsfeld **Projektname** *HelloWorld* ein. Klicken Sie auf **Erstellen** , um das Projekt zu erstellen.
 
    ![Screenshot des Dialogfelds „Neues Projekt konfigurieren“, bei dem im Textfeld „Projektname“ der Text „HelloWorld“ eingegeben ist](media/vs2019-configure-new-project-hello-world.png "Benennen und Erstellen des neuen Projekts")
 
@@ -44,13 +44,13 @@ Visual Studio verwendet *Projekte*, um Code für eine App zu ordnen, und *Projek
 
 ::: moniker-end
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
-1. Öffnen Sie in Visual Studio das Menü **Datei**, und klicken Sie auf **Neu > Projekt**, um das Dialogfeld **Neues Projekt** zu öffnen.
+1. Öffnen Sie in Visual Studio das Menü **Datei** , und klicken Sie auf **Neu > Projekt** , um das Dialogfeld **Neues Projekt** zu öffnen.
 
    ![Öffnen des Dialogfelds „Neues Projekt“](media/vscpp-file-new-project.gif "Öffnen des Dialogfelds „Neues Projekt“")
 
-1. Wählen Sie im Dialogfeld **Neues Projekt** **Installiert > Visual C++** aus, sofern dies nicht bereits ausgewählt ist, und dann die Vorlage **Leeres Projekt**. Geben Sie in das Feld **Name** *HelloWorld* ein. Klicken Sie auf **OK**, um das Projekt zu erstellen.
+1. Wählen Sie im Dialogfeld **Neues Projekt** **Installiert > Visual C++** aus, sofern dies nicht bereits ausgewählt ist, und dann die Vorlage **Leeres Projekt**. Geben Sie in das Feld **Name** *HelloWorld* ein. Klicken Sie auf **OK** , um das Projekt zu erstellen.
 
    ![Screenshot des Dialogfelds „Neues Projekt“, in dem „Installiert“ > „Visual C plus plus“ ausgewählt und gekennzeichnet ist, die Option „Leeres Projekt“ gekennzeichnet ist und im Textfeld „Name“ der Text „HelloWorld“ eingegeben ist](media/vscpp-concierge-project-name-callouts.png "Benennen und Erstellen des neuen Projekts")
 
@@ -62,9 +62,9 @@ Visual Studio erstellt daraufhin ein neues leeres Projekt. Sie können das Proje
 
 Visual Studio kann viele verschiedene Arten von Apps und Komponenten für Windows und andere Plattformen erstellen. Mit der Vorlage **Leeres Projekt** wird keine bestimmte Art von App erstellt. Eine *Konsolen-App* ist eine App, die in einem Konsolen- oder Eingabeaufforderungsfenster ausgeführt wird. Wenn Sie eine solche App erstellen möchten, müssen Sie Visual Studio anweisen, Ihre App so zu erstellen, dass diese das Konsolensubsystem verwendet.
 
-1. Öffnen Sie in Visual Studio das Menü **Projekt**, und klicken Sie auf **Eigenschaften**, um das Dialogfeld **HelloWorld Eigenschaftenseiten** zu öffnen.
+1. Öffnen Sie in Visual Studio das Menü **Projekt** , und klicken Sie auf **Eigenschaften** , um das Dialogfeld **HelloWorld Eigenschaftenseiten** zu öffnen.
 
-1. Klicken Sie im Dialogfeld **Eigenschaftenseiten** auf **Konfigurationseigenschaften > Linker > System** und dann auf das Bearbeitungsfeld neben der Eigenschaft **SubSystem**. Wählen Sie im angezeigten Dropdownmenü **Konsole (/SUBSYSTEM:CONSOLE)** aus. Klicken Sie auf **OK**, um die Änderungen zu speichern.
+1. Klicken Sie im Dialogfeld **Eigenschaftenseiten** auf **Konfigurationseigenschaften > Linker > System** und dann auf das Bearbeitungsfeld neben der Eigenschaft **SubSystem**. Wählen Sie im angezeigten Dropdownmenü **Konsole (/SUBSYSTEM:CONSOLE)** aus. Klicken Sie auf **OK** , um die Änderungen zu speichern.
 
    ![Öffnen des Dialogfelds „Eigenschaftenseiten“](media/vscpp-properties-linker-subsystem.gif "Öffnen des Dialogfelds „Eigenschaftenseiten“")
 
@@ -74,9 +74,9 @@ Visual Studio weiß nun, dass Ihr Projekt so erstellt werden soll, dass es in ei
 
 ## <a name="add-a-source-code-file"></a>Hinzufügen einer Quellcodedatei
 
-1. Wählen Sie im **Projektmappen-Explorer** das Projekt „HelloWorld“ aus. Klicken Sie in der Menüleiste auf **Projekt** und dann auf **Neues Element hinzufügen**, um das Dialogfeld **Neues Element hinzufügen** zu öffnen.
+1. Wählen Sie im **Projektmappen-Explorer** das Projekt „HelloWorld“ aus. Klicken Sie in der Menüleiste auf **Projekt** und dann auf **Neues Element hinzufügen** , um das Dialogfeld **Neues Element hinzufügen** zu öffnen.
 
-1. Wählen Sie im Dialogfeld **Neues Element hinzufügen** unter **Installiert** **Visual C++** aus, sofern dies nicht bereits ausgewählt ist. Klicken Sie im mittleren Bereich auf **C++-Datei (.cpp)** . Ändern Sie den **Namen** in *HelloWorld.cpp*. Klicken Sie auf **Hinzufügen**, um das Dialogfeld zu schließen und die Datei zu erstellen.
+1. Wählen Sie im Dialogfeld **Neues Element hinzufügen** unter **Installiert** **Visual C++** aus, sofern dies nicht bereits ausgewählt ist. Klicken Sie im mittleren Bereich auf **C++-Datei (.cpp)** . Ändern Sie den **Namen** in *HelloWorld.cpp*. Klicken Sie auf **Hinzufügen** , um das Dialogfeld zu schließen und die Datei zu erstellen.
 
    ![Hinzufügen einer Quelldatei für HelloWorld.cpp](media/vscpp-add-new-item.gif "Hinzufügen einer Quelldatei für HelloWorld.cpp")
 
@@ -119,11 +119,11 @@ Hier finden Sie Lösungen für häufig auftretende Probleme beim Erstellen Ihres
 
 ### <a name="create-your-app-project-issues"></a>Erstellen Ihres App-Projekts: Probleme
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 Im Dialogfeld **Neues Projekt** sollte eine Vorlage namens **Konsolen-App** angezeigt werden, die über die Tags **C++** , **Windows** und **Konsole** verfügt. Wenn sie nicht angezeigt wird, gibt es hierfür zwei mögliche Ursachen. Sie wurde möglicherweise aus der Liste herausgefiltert, oder sie ist möglicherweise nicht installiert. Überprüfen Sie zunächst die Filterdropdownlisten über der Liste der Vorlagen. Legen Sie dort **C++** , **Windows** und **Konsole** fest. Die C++-Vorlage **Konsolen-App** sollte nun angezeigt werden. Andernfalls ist die Workload **Desktopentwicklung mit C++** nicht installiert.
 
-Wenn Sie **Desktopentwicklung mit C++** installieren möchten, können Sie das Installationsprogramm direkt über das Dialogfeld **Neues Projekt** ausführen. Klicken Sie auf den Link **Weitere Tools und Features installieren** am Ende der Vorlagenliste, um das Installationsprogramm zu starten. Wenn im Dialogfeld **User Account Control** (Benutzerkontensteuerung) Berechtigungen angefordert werden, klicken Sie auf **Ja**. Stellen Sie sicher, dass im Installationsprogramm die Workload **Desktopentwicklung mit C++** aktiviert ist. Klicken Sie dann auf **Ändern**, um Ihre Visual Studio-Installation zu aktualisieren.
+Wenn Sie **Desktopentwicklung mit C++** installieren möchten, können Sie das Installationsprogramm direkt über das Dialogfeld **Neues Projekt** ausführen. Klicken Sie auf den Link **Weitere Tools und Features installieren** am Ende der Vorlagenliste, um das Installationsprogramm zu starten. Wenn im Dialogfeld **User Account Control** (Benutzerkontensteuerung) Berechtigungen angefordert werden, klicken Sie auf **Ja**. Stellen Sie sicher, dass im Installationsprogramm die Workload **Desktopentwicklung mit C++** aktiviert ist. Klicken Sie dann auf **Ändern** , um Ihre Visual Studio-Installation zu aktualisieren.
 
 Wenn bereits ein anderes Projekt mit dem gleichen Namen vorhanden ist, verwenden Sie einen anderen Namen für das Projekt. Alternativ können Sie das vorhandene Projekt löschen und den Vorgang wiederholen. Wenn Sie ein vorhandenes Projekt löschen möchten, müssen Sie den Projektmappenordner (den Ordner, der die Datei *helloworld.sln* enthält) im Datei-Explorer löschen.
 
@@ -131,13 +131,13 @@ Wenn bereits ein anderes Projekt mit dem gleichen Namen vorhanden ist, verwenden
 
 ::: moniker-end
 
-::: moniker range="vs-2017"
+::: moniker range="msvc-150"
 
-Wenn im Dialogfeld **Neues Projekt** unter **Installiert** kein Eintrag **Visual C++** angezeigt wird, ist bei Ihrer Kopie von Visual Studio wahrscheinlich die Workload **Desktopentwicklung mit C++** nicht installiert. Sie können das Installationsprogramm direkt über das Dialogfeld **Neues Projekt** ausführen. Klicken Sie auf den Link **Visual Studio-Installer öffnen**, um das Installationsprogramm noch mal zu starten. Wenn im Dialogfeld **User Account Control** (Benutzerkontensteuerung) Berechtigungen angefordert werden, klicken Sie auf **Ja**. Aktualisieren Sie ggf. das Installationsprogramm. Stellen Sie sicher, dass im Installationsprogramm die Workload **Desktopentwicklung mit C++** aktiviert ist, und klicken Sie auf **OK**, um Ihre Visual Studio-Installation zu aktualisieren.
+Wenn im Dialogfeld **Neues Projekt** unter **Installiert** kein Eintrag **Visual C++** angezeigt wird, ist bei Ihrer Kopie von Visual Studio wahrscheinlich die Workload **Desktopentwicklung mit C++** nicht installiert. Sie können das Installationsprogramm direkt über das Dialogfeld **Neues Projekt** ausführen. Klicken Sie auf den Link **Visual Studio-Installer öffnen** , um das Installationsprogramm noch mal zu starten. Wenn im Dialogfeld **User Account Control** (Benutzerkontensteuerung) Berechtigungen angefordert werden, klicken Sie auf **Ja**. Aktualisieren Sie ggf. das Installationsprogramm. Stellen Sie sicher, dass im Installationsprogramm die Workload **Desktopentwicklung mit C++** aktiviert ist, und klicken Sie auf **OK** , um Ihre Visual Studio-Installation zu aktualisieren.
 
 ::: moniker-end
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 Wenn bereits ein anderes Projekt mit dem gleichen Namen vorhanden ist, verwenden Sie einen anderen Namen für das Projekt. Alternativ können Sie das vorhandene Projekt löschen und den Vorgang wiederholen. Wenn Sie ein vorhandenes Projekt löschen möchten, müssen Sie den Projektmappenordner (den Ordner, der die Datei *helloworld.sln* enthält) im Datei-Explorer löschen.
 
@@ -145,9 +145,9 @@ Wenn bereits ein anderes Projekt mit dem gleichen Namen vorhanden ist, verwenden
 
 ### <a name="make-your-project-a-console-app-issues"></a>So machen Sie aus Ihrem Projekt eine Konsolen-App: Probleme
 
-Wenn **Linker** unter **Konfigurationseigenschaften** nicht aufgeführt ist, klicken Sie auf **Abbrechen**, um das Dialogfeld **Eigenschaftenseiten** zu schließen. Stellen Sie sicher, dass im **Projektmappen-Explorer** das Projekt **HelloWorld** ausgewählt ist, bevor Sie es noch mal versuchen. Wählen Sie nicht im **Projektmappen-Explorer** die Projektmappe **HelloWorld** oder ein anderes Element aus.
+Wenn **Linker** unter **Konfigurationseigenschaften** nicht aufgeführt ist, klicken Sie auf **Abbrechen** , um das Dialogfeld **Eigenschaftenseiten** zu schließen. Stellen Sie sicher, dass im **Projektmappen-Explorer** das Projekt **HelloWorld** ausgewählt ist, bevor Sie es noch mal versuchen. Wählen Sie nicht im **Projektmappen-Explorer** die Projektmappe **HelloWorld** oder ein anderes Element aus.
 
-Das Dropdown-Steuerelement im Bearbeitungsfeld für die Eigenschaft **SubSystem** wird erst angezeigt, wenn Sie die Eigenschaft auswählen. Klicken Sie in das Bearbeitungsfeld, um sie auszuwählen. Alternativ können Sie die **TAB-TASTE** drücken, um die Dialogfeld-Steuerelemente zu durchlaufen, bis **SubSystem** hervorgehoben ist. Klicken Sie auf das Dropdown-Steuerelement, oder drücken Sie **ALT+NACH-UNTEN-TASTE**, um es zu öffnen.
+Das Dropdown-Steuerelement im Bearbeitungsfeld für die Eigenschaft **SubSystem** wird erst angezeigt, wenn Sie die Eigenschaft auswählen. Klicken Sie in das Bearbeitungsfeld, um sie auszuwählen. Alternativ können Sie die **TAB-TASTE** drücken, um die Dialogfeld-Steuerelemente zu durchlaufen, bis **SubSystem** hervorgehoben ist. Klicken Sie auf das Dropdown-Steuerelement, oder drücken Sie **ALT+NACH-UNTEN-TASTE** , um es zu öffnen.
 
 [Zurück](#make-your-project-a-console-app)
 
