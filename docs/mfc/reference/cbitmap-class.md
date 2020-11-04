@@ -34,12 +34,12 @@ helpviewer_keywords:
 - CBitmap [MFC], SetBitmapBits
 - CBitmap [MFC], SetBitmapDimension
 ms.assetid: 3980616a-c59d-495a-86e6-62bd3889c84c
-ms.openlocfilehash: adb2a461de5e82fa76ce0ed9961d970f46dbe26a
-ms.sourcegitcommit: ec6dd97ef3d10b44e0fedaa8e53f41696f49ac7b
+ms.openlocfilehash: 8c19a54584390312cfd1657e88898cdb044179d0
+ms.sourcegitcommit: d77159732a8e782b2a1b7abea552065f2b6f61c1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88834985"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93344578"
 ---
 # <a name="cbitmap-class"></a>CBitmap-Klasse
 
@@ -159,7 +159,7 @@ Weitere Informationen finden Sie in der Beschreibung des `bmBits` Felds in der `
 
 ## <a name="cbitmapcreatebitmapindirect"></a><a name="createbitmapindirect"></a> CBitmap:: kreatebitmapindirekte
 
-Initialisiert eine Bitmap, die über die Breite, Höhe und das Bitmuster verfügt (sofern angegeben), die in der Struktur angegeben sind, auf die von *lpbitmap*verwiesen wird.
+Initialisiert eine Bitmap, die über die Breite, Höhe und das Bitmuster verfügt (sofern angegeben), die in der Struktur angegeben sind, auf die von *lpbitmap* verwiesen wird.
 
 ```
 BOOL CreateBitmapIndirect(LPBITMAP lpBitmap);
@@ -184,7 +184,7 @@ Wenn Sie mit dem `CBitmap` Objekt fertig sind, das mit der `CreateBitmapIndirect
 
 ## <a name="cbitmapcreatecompatiblebitmap"></a><a name="createcompatiblebitmap"></a> CBitmap:: kreatecompatiblebitmap
 
-Initialisiert eine Bitmap, die mit dem durch *PDC*angegebenen Gerät kompatibel ist.
+Initialisiert eine Bitmap, die mit dem durch *PDC* angegebenen Gerät kompatibel ist.
 
 ```
 BOOL CreateCompatibleBitmap(
@@ -210,7 +210,7 @@ Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Bitmap verfügt über die gleiche Anzahl von Farbebenen oder das gleiche Bits-pro-Pixel-Format wie der angegebene Gerätekontext. Sie kann als aktuelle Bitmap für ein beliebiges Speichergerät ausgewählt werden, das mit dem durch *PDC*angegebenen Speichergerät kompatibel ist.
+Die Bitmap verfügt über die gleiche Anzahl von Farbebenen oder das gleiche Bits-pro-Pixel-Format wie der angegebene Gerätekontext. Sie kann als aktuelle Bitmap für ein beliebiges Speichergerät ausgewählt werden, das mit dem durch *PDC* angegebenen Speichergerät kompatibel ist.
 
 Handelt es sich bei *PDC* um einen Speichergeräte Kontext, hat die zurückgegebene Bitmap dasselbe Format wie das aktuell ausgewählte Bitmap in diesem Gerätekontext. Ein "Speichergeräte Kontext" ist ein Speicherblock, der eine Anzeige Oberfläche darstellt. Sie kann verwendet werden, um Bilder im Speicher vorzubereiten, bevor Sie auf die tatsächliche Anzeige Oberfläche des kompatiblen Geräts kopiert werden.
 
@@ -222,7 +222,7 @@ Wenn Sie mit dem `CBitmap` Objekt fertig sind, das mit der- `CreateCompatibleBit
 
 ## <a name="cbitmapcreatediscardablebitmap"></a><a name="creatediscardablebitmap"></a> CBitmap:: kreateverwerdablebitmap
 
-Initialisiert eine verwerfbare Bitmap, die mit dem durch *PDC*identifizierten Gerätekontext kompatibel ist.
+Initialisiert eine verwerfbare Bitmap, die mit dem durch *PDC* identifizierten Gerätekontext kompatibel ist.
 
 ```
 BOOL CreateDiscardableBitmap(
@@ -248,7 +248,7 @@ Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
 ### <a name="remarks"></a>Bemerkungen
 
-Die Bitmap verfügt über die gleiche Anzahl von Farbebenen oder das gleiche Bits-pro-Pixel-Format wie der angegebene Gerätekontext. Eine Anwendung kann diese Bitmap als aktuelle Bitmap für ein Speichergerät auswählen, das mit der von *PDC*angegebenen kompatibel ist.
+Die Bitmap verfügt über die gleiche Anzahl von Farbebenen oder das gleiche Bits-pro-Pixel-Format wie der angegebene Gerätekontext. Eine Anwendung kann diese Bitmap als aktuelle Bitmap für ein Speichergerät auswählen, das mit der von *PDC* angegebenen kompatibel ist.
 
 Windows kann eine Bitmap, die von dieser Funktion erstellt wurde, nur verwerfen, wenn Sie von einer Anwendung nicht in einem Anzeige Kontext ausgewählt wurde. Wenn die Bitmap von Windows verworfen wird, wenn Sie nicht ausgewählt ist, und die Anwendung später versucht, die Bitmap auszuwählen, gibt die [CDC:: SelectObject](../../mfc/reference/cdc-class.md#selectobject) -Funktion NULL zurück.
 
@@ -398,7 +398,7 @@ Ein Flag für eine Bitmap. Kann NULL oder CMB_MASKED sein.
 Ein Zeiger auf eine- `COLORMAP` Struktur, die die zum Zuordnen der Bitmaps benötigten Farbinformationen enthält. Wenn dieser Parameter NULL ist, verwendet die Funktion die Standard Farbzuordnung.
 
 *nmapsize*<br/>
-Die Anzahl der Farb Zuordnungen, auf die von *lpcolormap*verwiesen wird.
+Die Anzahl der Farb Zuordnungen, auf die von *lpcolormap* verwiesen wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
@@ -408,7 +408,7 @@ Ungleich Null, wenn erfolgreich, andernfalls 0 (Null).
 
 Standardmäßig ordnet `LoadMappedBitmap` Farben zu, die häufig in Schaltflächen Symbolen verwendet werden.
 
-Weitere Informationen zum Erstellen einer zugeordneten Bitmap finden Sie unter der Windows-Funktion " [kreatemappedbitmap](https://go.microsoft.com/fwlink/p/?linkid=230562) " und der [ColorMap](/windows/win32/api/commctrl/ns-commctrl-colormap) -Struktur in der Windows SDK.
+Weitere Informationen zum Erstellen einer zugeordneten Bitmap finden Sie unter der Windows-Funktion " [kreatemappedbitmap](/windows/win32/api/commctrl/nf-commctrl-createmappedbitmap) " und der [ColorMap](/windows/win32/api/commctrl/ns-commctrl-colormap) -Struktur in der Windows SDK.
 
 ## <a name="cbitmaploadoembitmap"></a><a name="loadoembitmap"></a> CBitmap:: loadoembitmap
 
@@ -496,7 +496,7 @@ Weitere Informationen zum Verwenden von Grafikobjekten finden Sie unter [Graphic
 
 ## <a name="cbitmapsetbitmapbits"></a><a name="setbitmapbits"></a> CBitmap:: setbitmapbits
 
-Legt die Bits einer Bitmap auf die Bitwerte fest, die von *lpbits*angegeben werden.
+Legt die Bits einer Bitmap auf die Bitwerte fest, die von *lpbits* angegeben werden.
 
 ```
 DWORD SetBitmapBits(
@@ -507,7 +507,7 @@ DWORD SetBitmapBits(
 ### <a name="parameters"></a>Parameter
 
 *dwCount*<br/>
-Gibt die Anzahl der Bytes an, auf die von *lpbits*verwiesen wird.
+Gibt die Anzahl der Bytes an, auf die von *lpbits* verwiesen wird.
 
 *lpbits*<br/>
 Verweist auf das Bytearray, das die Pixelwerte enthält, die in das-Objekt kopiert werden sollen `CBitmap` . Damit die Bitmap das Bild ordnungsgemäß renderfähig ist, sollten die Werte so formatiert werden, dass Sie den Werten für Höhe, Breite und Farbtiefe entsprechen, die beim Erstellen der CBitmap-Instanz angegeben wurden. Weitere Informationen finden Sie unter [CBitmap:: erkreatebitmap](#createbitmap).
@@ -542,7 +542,7 @@ Die vorherigen bitmapdimensionen. Die Höhe befindet sich in der Element `cy` Va
 
 Der GDI verwendet diese Werte nicht, es sei denn, Sie werden zurückgegeben, wenn eine Anwendung die [getbitmapdimension](#getbitmapdimension) -Member-Funktion aufruft.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen:
 
 [MFC-Beispiel-MDI](../../overview/visual-cpp-samples.md)<br/>
 [CGdiObject-Klasse](../../mfc/reference/cgdiobject-class.md)<br/>

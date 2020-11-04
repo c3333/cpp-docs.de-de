@@ -2,12 +2,12 @@
 title: Grafiken (C++ AMP)
 ms.date: 11/04/2016
 ms.assetid: 190a98a4-5f7d-442e-866b-b374ca74c16f
-ms.openlocfilehash: 3f68766c2c38b74df6e57aaa52419baf5d1151a3
-ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.openlocfilehash: 97fd433387aac809053ea6dd8ac59a56207a4fc8
+ms.sourcegitcommit: d77159732a8e782b2a1b7abea552065f2b6f61c1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90041457"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93344721"
 ---
 # <a name="graphics-c-amp"></a>Grafiken (C++ AMP)
 
@@ -21,13 +21,13 @@ C++ amp enthält mehrere APIs im Namespace " [parallelcurrency:: graphics](../..
 
 ## <a name="the-norm-and-unorm-types"></a>Die Typen "norm" und "unorm"
 
-Der `norm` -Typ und der- `unorm` Typ sind skalare Typen, die den Wertebereich einschränken **`float`** . Dies wird als " *Klammer*" bezeichnet. Diese Typen können explizit aus anderen skalaren Typen erstellt werden. Bei der Umwandlung wird der Wert zuerst in umgewandelt **`float`** und dann an den jeweiligen Bereich gebunden, der in Norm [-1,0, 1,0] oder unorm [0,0, 1,0] zulässig ist. Das Umwandeln von +/- Unendlich gibt +/-1 zurück. Das Umwandeln von NaN ist nicht definiert. Ein "norm"-Wert kann ohne Datenverlust implizit aus einem unorm-Wert erstellt werden. Der implizite Konvertierungsoperator zu "float" ist für diese Typen definiert. Binäre Operatoren werden zwischen diesen Typen und anderen integrierten skalaren Typen, z. b. **`float`** und **`int`** , definiert: +,-, \* ,/, = =,! =, >, \<, > =, <=. Die Verbund Zuweisungs Operatoren werden ebenfalls unterstützt: + =,-=, \* =,/=. Der unäre Negationsoperator (-) wird für norm-Typen definiert.
+Der `norm` -Typ und der- `unorm` Typ sind skalare Typen, die den Wertebereich einschränken **`float`** . Dies wird als " *Klammer* " bezeichnet. Diese Typen können explizit aus anderen skalaren Typen erstellt werden. Bei der Umwandlung wird der Wert zuerst in umgewandelt **`float`** und dann an den jeweiligen Bereich gebunden, der in Norm [-1,0, 1,0] oder unorm [0,0, 1,0] zulässig ist. Das Umwandeln von +/- Unendlich gibt +/-1 zurück. Das Umwandeln von NaN ist nicht definiert. Ein "norm"-Wert kann ohne Datenverlust implizit aus einem unorm-Wert erstellt werden. Der implizite Konvertierungsoperator zu "float" ist für diese Typen definiert. Binäre Operatoren werden zwischen diesen Typen und anderen integrierten skalaren Typen, z. b. **`float`** und **`int`** , definiert: +,-, \* ,/, = =,! =, >, \<, > =, <=. Die Verbund Zuweisungs Operatoren werden ebenfalls unterstützt: + =,-=, \* =,/=. Der unäre Negationsoperator (-) wird für norm-Typen definiert.
 
 ## <a name="short-vector-library"></a>Kurzvektorbibliothek
 
-Die kurz Vektor Bibliothek bietet einige Funktionen des [Vektor Typs](https://go.microsoft.com/fwlink/p/?linkid=248500) , der in HLSL definiert ist und in der Regel verwendet wird, um Texels zu definieren. Ein Kurzvektor ist eine Datenstruktur, die ein bis vier Werte desselben Typs enthält. Die unterstützten Typen sind **`double`** , **`float`** , **`int`** , `norm` , `uint` und `unorm` . In der folgenden Tabelle werden Typnamen aufgeführt. Für jeden Typ gibt es auch einen entsprechenden **`typedef`** , der keinen Unterstrich im Namen hat. Die Typen mit unterstrichen befinden sich im [Namespace "parallelcurrency:: graphics](../../parallel/amp/reference/concurrency-graphics-namespace.md)". Die Typen, die keine Unterstriche aufweisen, befinden sich im [Namespace "parallelcurrency:: Graphics::d irect3d](../../parallel/amp/reference/concurrency-graphics-direct3d-namespace.md) ", sodass Sie eindeutig von den grundlegenden Typen, wie z. b. und, getrennt sind **`__int8`** **`__int16`** .
+Die kurz Vektor Bibliothek bietet einige Funktionen des [Vektor Typs](/windows/win32/direct3dhlsl/dx-graphics-hlsl-vector) , der in HLSL definiert ist und in der Regel verwendet wird, um Texels zu definieren. Ein Kurzvektor ist eine Datenstruktur, die ein bis vier Werte desselben Typs enthält. Die unterstützten Typen sind **`double`** , **`float`** , **`int`** , `norm` , `uint` und `unorm` . In der folgenden Tabelle werden Typnamen aufgeführt. Für jeden Typ gibt es auch einen entsprechenden **`typedef`** , der keinen Unterstrich im Namen hat. Die Typen mit unterstrichen befinden sich im [Namespace "parallelcurrency:: graphics](../../parallel/amp/reference/concurrency-graphics-namespace.md)". Die Typen, die keine Unterstriche aufweisen, befinden sich im [Namespace "parallelcurrency:: Graphics::d irect3d](../../parallel/amp/reference/concurrency-graphics-direct3d-namespace.md) ", sodass Sie eindeutig von den grundlegenden Typen, wie z. b. und, getrennt sind **`__int8`** **`__int16`** .
 
-|Typ|Length 2|Länge 3|Länge 4|
+|type|Length 2|Länge 3|Länge 4|
 |-|--------------|--------------|--------------|
 |double|double_2<br /><br /> double2|double_3<br /><br /> double3|double_4<br /><br /> double4|
 |float|float_2<br /><br /> float2|float_3<br /><br /> float3|float_4<br /><br /> float4|
@@ -57,7 +57,7 @@ Der Vorgang wird für jede Komponente einzeln zwischen der jeweiligen Komponente
 
 ### <a name="swizzling-expressions"></a>Swizzeln von Ausdrücken
 
-Die Kurzvektorbibliothek unterstützt das Accessorkonstrukt `vector_type.identifier`, um auf die Komponenten eines Kurzvektors zuzugreifen. Der `identifier` , der als *Schwenk Ausdruck*bezeichnet wird, gibt die Komponenten des Vektors an. Der Ausdruck kann ein l-Wert oder ein r-Wert sein. Die einzelnen Zeichen im Bezeichner können lauten: x, y, z und w; oder r, g, b und a. "x" und "r" bedeuten die Zero-Th-Komponente, "y" und "g" bedeuten die erste Komponente usw. (Beachten Sie, dass "x" und "r" nicht im gleichen Bezeichner verwendet werden können.) Daher geben "RGBA" und "xyzw" dasselbe Ergebnis zurück. Accessoren mit einzelnen Komponenten wie "x" und "y" sind Skalarwerttypen. Zugriffsmethoden mit mehreren Komponenten sind Kurzvektortypen. Wenn Sie z. B. einen Vektor `int_4` mit dem Namen `fourInts` und den Werten 2, 4, 6 und 8 erstellen, dann gibt `fourInts.y` die ganze Zahl 4 wieder, und `fourInts.rg` gibt ein `int_2`-Objekt zurück, das die Werte 2 und 4 hat.
+Die Kurzvektorbibliothek unterstützt das Accessorkonstrukt `vector_type.identifier`, um auf die Komponenten eines Kurzvektors zuzugreifen. Der `identifier` , der als *Schwenk Ausdruck* bezeichnet wird, gibt die Komponenten des Vektors an. Der Ausdruck kann ein l-Wert oder ein r-Wert sein. Die einzelnen Zeichen im Bezeichner können lauten: x, y, z und w; oder r, g, b und a. "x" und "r" bedeuten die Zero-Th-Komponente, "y" und "g" bedeuten die erste Komponente usw. (Beachten Sie, dass "x" und "r" nicht im gleichen Bezeichner verwendet werden können.) Daher geben "RGBA" und "xyzw" dasselbe Ergebnis zurück. Accessoren mit einzelnen Komponenten wie "x" und "y" sind Skalarwerttypen. Zugriffsmethoden mit mehreren Komponenten sind Kurzvektortypen. Wenn Sie z. B. einen Vektor `int_4` mit dem Namen `fourInts` und den Werten 2, 4, 6 und 8 erstellen, dann gibt `fourInts.y` die ganze Zahl 4 wieder, und `fourInts.rg` gibt ein `int_2`-Objekt zurück, das die Werte 2 und 4 hat.
 
 ## <a name="texture-classes"></a>Texturklassen
 
@@ -67,7 +67,7 @@ Viele GPUs haben Hardware und Caches, die für den Abruf von Pixeln und Texeln u
 
 - Ein Kurzvektor, der zwei oder vier Komponenten enthält. Die einzige Ausnahme ist `double_4`, die unzulässig ist.
 
-Das `texture`-Objekt kann über einen Rang von 1, 2 oder 3 verfügen. Das `texture`-Objekt kann nur als Verweis im Lambda eines Aufrufs auf `parallel_for_each` erfasst werden. Die Textur wird auf dem GPU-Computer als Direct3D-Texturobjekte gespeichert. Weitere Informationen zu Texturen und texeln in Direct3D finden Sie unter [Einführung in Texturen in Direct3D 11](https://go.microsoft.com/fwlink/p/?linkid=248502).
+Das `texture`-Objekt kann über einen Rang von 1, 2 oder 3 verfügen. Das `texture`-Objekt kann nur als Verweis im Lambda eines Aufrufs auf `parallel_for_each` erfasst werden. Die Textur wird auf dem GPU-Computer als Direct3D-Texturobjekte gespeichert. Weitere Informationen zu Texturen und texeln in Direct3D finden Sie unter [Einführung in Texturen in Direct3D 11](/windows/win32/direct3d11/overviews-direct3d-11-resources-textures-intro).
 
 Der verwendete Texeltyp kann eines der vielen Texturformate haben, die in der Grafikprogrammierung verwendet werden. Beispielsweise kann ein RGBA-Format 32 Bit mit jeweils 8 Bit für das R-, G-, B- und A-Skalarelement verwenden. Die Texturhardware einer Grafikkarte kann auf der Grundlage des Formats auf die einzelnen Elemente zugreifen. Wenn Sie das RGBA-Format verwenden, kann die Texturhardware z. B. jedes 8-Bit-Element in ein 32-Bit-Formular extrahieren. In C++ AMP können Sie die Bits pro skalarem Element des Texels festlegen, damit Sie auf die einzelnen Skalarelemente im automatisch Code zugreifen können, ohne Bit-Verschiebung zu verwenden.
 
@@ -311,7 +311,7 @@ Weitere Informationen zur Veraltung von finden Sie unter `writeonly_texture_view
 
 ### <a name="instantiating-texture-view-objects"></a>Instanziieren von Texturansichtsobjekten
 
-Das Deklarieren eines `texture_view` ähnelt dem Deklarieren eines `array_view` , das einem **Array**zugeordnet ist. Im folgenden Codebeispiel werden mehrere `texture`-Objekte und `texture_view`-Objekte deklariert, die ihnen zugeordnet werden.
+Das Deklarieren eines `texture_view` ähnelt dem Deklarieren eines `array_view` , das einem **Array** zugeordnet ist. Im folgenden Codebeispiel werden mehrere `texture`-Objekte und `texture_view`-Objekte deklariert, die ihnen zugeordnet werden.
 
 ```cpp
 #include <amp.h>
@@ -342,7 +342,7 @@ Beachten Sie, wie eine Texturansicht mit nicht konstantem Elementtyp und einer K
 
 Der Elementtyp `texture_view` (seine Konstanz sowie die Anzahl der Komponenten) spielt ebenfalls eine Rolle bei der Frage, ob die Ansicht Textursampling unterstützt und wie auf Mipmapebenen zugegriffen werden kann:
 
-|Typ|Komponenten|Lesen|Schreiben|Stichproben|Mipmapzugriff|
+|type|Komponenten|Lesen|Schreiben|Stichproben|Mipmapzugriff|
 |----------|----------------|----------|-----------|--------------|-------------------|
 |texture_view\<const T, N>|1, 2, 4|Ja|Nein (1)|Ja|Ja, kann indexiert werden. Bereich wird bei der Instanziierung bestimmt.|
 |Texture_view\<T, N>|1<br /><br /> 2, 4|Ja<br /><br /> Nein (2)|Ja<br /><br /> Ja|Nein (1)<br /><br /> Nein (1)|Ja, eine Ebene. Ebene wird bei der Instanziierung bestimmt.<br /><br /> Ja, eine Ebene. Ebene wird bei der Instanziierung bestimmt.|
@@ -404,9 +404,9 @@ parallel_for_each(w_view.extent, [=](index<2> idx) restrict(amp)
 
 ## <a name="interoperability"></a>Interoperabilität
 
-Die C++ amp Runtime unterstützt die Interoperabilität zwischen `texture<T,1>` und der [ID3D11Texture1D-Schnittstelle](https://go.microsoft.com/fwlink/p/?linkId=248503), zwischen `texture<T,2>` und der [ID3D11Texture2D-Schnitt](https://go.microsoft.com/fwlink/p/?linkId=255317)Stelle sowie zwischen `texture<T,3>` und der [ID3D11Texture3D-Schnittstelle](https://go.microsoft.com/fwlink/p/?linkId=255377). Die [get_texture](reference/concurrency-graphics-direct3d-namespace-functions.md#get_texture) -Methode übernimmt ein `texture` -Objekt und gibt eine- `IUnknown` Schnittstelle zurück. Die [make_texture](reference/concurrency-graphics-direct3d-namespace-functions.md#make_texture) -Methode nimmt eine `IUnknown` Schnittstelle und ein-Objekt an `accelerator_view` und gibt ein- `texture` Objekt zurück.
+Die C++ amp Runtime unterstützt die Interoperabilität zwischen `texture<T,1>` und der [ID3D11Texture1D-Schnittstelle](/windows/win32/api/d3d11/nn-d3d11-id3d11texture1d), zwischen `texture<T,2>` und der [ID3D11Texture2D-Schnitt](/windows/win32/api/d3d11/nn-d3d11-id3d11texture2d)Stelle sowie zwischen `texture<T,3>` und der [ID3D11Texture3D-Schnittstelle](/windows/win32/api/d3d11/nn-d3d11-id3d11texture3d). Die [get_texture](reference/concurrency-graphics-direct3d-namespace-functions.md#get_texture) -Methode übernimmt ein `texture` -Objekt und gibt eine- `IUnknown` Schnittstelle zurück. Die [make_texture](reference/concurrency-graphics-direct3d-namespace-functions.md#make_texture) -Methode nimmt eine `IUnknown` Schnittstelle und ein-Objekt an `accelerator_view` und gibt ein- `texture` Objekt zurück.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen:
 
 [double_2-Klasse](../../parallel/amp/reference/double-2-class.md)<br/>
 [double_3-Klasse](../../parallel/amp/reference/double-3-class.md)<br/>

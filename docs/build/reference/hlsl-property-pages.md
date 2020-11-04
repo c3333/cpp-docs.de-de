@@ -23,16 +23,16 @@ f1_keywords:
 - VC.Project.FXCompilerTool.AssemblerOutputFile
 - VC.Project.FXCompilerTool.CompileD2DCustomEffect
 - VC.Project.FXCompilerTool.MultiProcFXC
-ms.openlocfilehash: a45ae433e5adaa8aeaf32215d4af7ad0a247af04
-ms.sourcegitcommit: 720b74dddb1cdf4e570d55103158304ee1df81f8
+ms.openlocfilehash: 629a242d3698c9c3c2d3c697298b5c6625e4768f
+ms.sourcegitcommit: d77159732a8e782b2a1b7abea552065f2b6f61c1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68606409"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93344682"
 ---
 # <a name="hlsl-compiler-property-pages"></a>Eigenschaften Seiten des HLSL-Compilers
 
-Sie können den HLSL-Compiler-Eigenschaftenseiten („fxc.exe“) verwenden, um zu konfigurieren, wie die einzelnen HLSL-Shaderdateien erstellt werden. Sie können auch Befehlszeilenargumente für den HLSL-Compiler angeben, indem Sie die Eigenschaft **zusätzliche Optionen** der **Befehlszeilen** -Eigenschaften Seite verwenden. Dies schließt Argumente ein, die nicht mithilfe anderer Eigenschaften der HLSL-Eigenschaften Seiten konfiguriert werden können. Informationen über den HLSL-Compiler finden Sie unter [Effect-Compiler Tool](https://go.microsoft.com/fwlink/p/?LinkID=258285&clcid=0x409).
+Sie können den HLSL-Compiler-Eigenschaftenseiten („fxc.exe“) verwenden, um zu konfigurieren, wie die einzelnen HLSL-Shaderdateien erstellt werden. Sie können auch Befehlszeilenargumente für den HLSL-Compiler angeben, indem Sie die Eigenschaft **zusätzliche Optionen** der **Befehlszeilen** -Eigenschaften Seite verwenden. Dies schließt Argumente ein, die nicht mithilfe anderer Eigenschaften der HLSL-Eigenschaften Seiten konfiguriert werden können. Informationen über den HLSL-Compiler finden Sie unter [Effect-Compiler Tool](/windows/win32/direct3dtools/fxc).
 
 ## <a name="hlsl-general-property-page"></a>HLSL-Eigenschaften Seite "Allgemein"
 
@@ -40,7 +40,7 @@ Sie können den HLSL-Compiler-Eigenschaftenseiten („fxc.exe“) verwenden, um 
 
 Gibt mindestens ein Verzeichnis an, das dem include-Pfad hinzugefügt werden soll. Verwenden Sie Semikolons als Trennzeichen, wenn mehrere Verzeichnisse vorhanden sind. (/I [Pfad])
 
-### <a name="entrypoint-name"></a>Name des Einstiegs Punkts
+### <a name="entrypoint-name"></a>Einstiegspunktname
 
 Gibt den Namen des Einstiegs Punkts für den Shader an (/E [Name]).
 
@@ -48,7 +48,7 @@ Gibt den Namen des Einstiegs Punkts für den Shader an (/E [Name]).
 
 **Ja (/Od)** deaktiviert Optimierungen, andernfalls **Nein**. Für die **Debugkonfigurationen** ist standardmäßig **Ja (/Od)** und für die **Releasekonfigurationen** ist **Nein** festgelegt.
 
-Das Befehlszeilenargument **/Od** für den HLSL-Compiler gilt implizit für das Befehlszeilenargument **/Gfp**, jedoch ist die Ausgabe möglicherweise nicht mit der Ausgabe identisch, die durch Übergeben beider Befehlszeilenargumente ( **/Od** und **/Gfp**) explizit erstellt wird.
+Das Befehlszeilenargument **/Od** für den HLSL-Compiler gilt implizit für das Befehlszeilenargument **/Gfp** , jedoch ist die Ausgabe möglicherweise nicht mit der Ausgabe identisch, die durch Übergeben beider Befehlszeilenargumente ( **/Od** und **/Gfp** ) explizit erstellt wird.
 
 ### <a name="enable-debugging-information"></a>Debuginformationen aktivieren
 
@@ -58,16 +58,16 @@ Das Befehlszeilenargument **/Od** für den HLSL-Compiler gilt implizit für das 
 
 Gibt die Art des Shaders an. Verschiedene Arten von Shadern implementieren verschiedene Teile der Grafikpipeline. Bestimmte Arten von Shadern sind nur in neueren Shadermodellen verfügbar (die durch die Eigenschaft **Shadermodell** angegeben werden), z.B. wurden Compute-Shader mit Shadermodell 5 eingeführt.
 
-Diese Eigenschaft entspricht dem Teil **\[type]** des Befehlszeilenarguments **/T \[type]_\[model]** für den HLSL-Compiler. Die Eigenschaft **Shadermodell** gibt den Teil **[model]** des Arguments an.
+Diese Eigenschaft entspricht dem- **\[ Typ]** -Teil des **/T \[ Type] _ \[ Model]** -Befehlszeilen Arguments für den HLSL-Compiler. Die Eigenschaft **Shadermodell** gibt den Teil **[model]** des Arguments an.
 
-**Optionen**
+**choices**
 
-- **Effect class (Effect-Klasse)**
+- **Auswirkung**
 - **Vertex-Shader**
-- **Pixel-Shader**
+- **Pixelshader**
 - **Geometrie-Shader**
 - **Rumpf-Shader**
-- **Domänen-Shader**
+- **Domain-Shader**
 - **Compute-Shader**
 - **Bibliothek**
 - **Stamm Signatur Objekt generieren**
@@ -76,11 +76,11 @@ Diese Eigenschaft entspricht dem Teil **\[type]** des Befehlszeilenarguments **/
 
 Gibt das Shadermodell an. Verschiedene Shadermodelle verfügen über unterschiedliche Funktionen. Im Allgemeinen bieten neuere Shadermodelle erweiterte Funktionen, erfordern jedoch modernere Grafikhardware zum Ausführen des Shadercodes. Bestimmte Arten von Shadern (die durch die Eigenschaft **Shadertyp** angegeben werden) sind nur in aktuelleren Shadermodellen verfügbar, z.B. wurden Compute-Shader mit Shadermodell 5 eingeführt.
 
-Diese Eigenschaft entspricht dem Teil **\[model]** des Befehlszeilenarguments **/T \[type]_\[model]** für den HLSL-Compiler. Die Eigenschaft **Shadertyp** gibt den Teil **[type]** des Arguments an.
+Diese Eigenschaft entspricht dem **\[ Model]** -Teil des **/T \[ Type] _ \[ Model]** -Befehlszeilen Arguments für den HLSL-Compiler. Die Eigenschaft **Shadertyp** gibt den Teil **[type]** des Arguments an.
 
 ### <a name="all-resources-bound"></a>Alle Ressourcen gebunden
 
-Der Compiler geht davon aus, dass alle Ressourcen, auf die ein Shader verweisen kann, gebunden sind und sich für die Dauer der Shader-Ausführung in einem guten Zustand befinden (/all_resources_bound). Verfügbar für Shadermodell 5.1 und höher.
+Der Compiler geht davon aus, dass alle Ressourcen, auf die ein Shader verweisen kann, gebunden sind und sich für die Dauer der Shader-Ausführung (/all_resources_bound) in einem guten Zustand befinden. Verfügbar für Shadermodell 5.1 und höher.
 
 ### <a name="enable-unbounded-descriptor-tables"></a>Unbegrenzte deskriptortabellen aktivieren
 
@@ -94,7 +94,7 @@ Stamm Signatur an Shader-Bytecode (/setrootsignature) anfügen. Verfügbar für 
 
 Fügt mindestens eine Präprozessorsymboldefinition hinzu, die auf die HLSL-Quellcodedatei angewendet wird. Verwenden Sie Semikolons, um die Symboldefinitionen zu trennen.
 
-Diese Eigenschaft entspricht dem Befehlszeilenargument **/D \[definitions]** für den HLSL-Compiler.
+Diese Eigenschaft entspricht dem Befehlszeilenargument **/D \[ Definitions]** für den HLSL-Compiler.
 
 ### <a name="compile-a-direct2d-custom-pixel-shader-effect"></a>Direct2D benutzerdefinierten Pixelshadereffekt kompilieren
 
@@ -116,11 +116,11 @@ Behandelt alle Compilerwarnungen als Fehler. Bei einem neuen Projekt kann es emp
 
 ## <a name="output-files-property-page"></a>Ausgabedateien (Eigenschaften Seite)
 
-### <a name="header-variable-name"></a>Header Variablen Name
+### <a name="header-variable-name"></a>Header-Variablenname
 
 Gibt einen Namen für den Variablennamen in der Header Datei an (/VN [Name]).
 
-### <a name="header-file-name"></a>Header Dateiname
+### <a name="header-file-name"></a>Headerdateiname
 
 Gibt einen Namen für die Headerdatei mit Objektcode an. (/FH [Name])
 
@@ -128,15 +128,15 @@ Gibt einen Namen für die Headerdatei mit Objektcode an. (/FH [Name])
 
 Gibt einen Namen für die Objektdatei an. (/FO [Name])
 
-### <a name="assembler-output"></a>Assembler-Ausgabe
+### <a name="assembler-output"></a>Assemblyausgabe
 
 Gibt die Inhalte der Ausgabedatei für die Assemblysprache an. (/FC,/FX)
 
-**Optionen**
+**choices**
 
 - **Keine Auflistung** -keine Auflistung.
 - Assemblyausschließliches **auflisten** : assemblycodedatei
-- Assemblycode **und Hex** -Assemblycode und hexadezimal
+- **Assemblycode und Hex** -Assemblycode und hexadezimal
 
 ### <a name="assembler-output-file"></a>Assembler-Ausgabedatei
 
@@ -144,6 +144,6 @@ Gibt den Dateinamen für die Assembly-Codelisten Datei an
 
 ## <a name="see-also"></a>Siehe auch
 
-[C++Referenz zur Projekteigenschaften Seite](property-pages-visual-cpp.md)<br>
-[Eigenschaftenseiten "Befehlszeile"](command-line-property-pages.md)<br>
-[Compiling Shaders (Kompilieren von Shaders)](https://go.microsoft.com/fwlink/p/?LinkID=258284&clcid=0x409)
+[Windows C++-Projekteigenschaftenseitenverweis](property-pages-visual-cpp.md)<br>
+[Befehlszeilen-Eigenschaften Seiten](command-line-property-pages.md)<br>
+[Kompilieren von Shadern](/windows/win32/direct3dhlsl/dx-graphics-hlsl-part1)

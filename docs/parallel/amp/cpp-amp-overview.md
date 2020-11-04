@@ -8,12 +8,12 @@ helpviewer_keywords:
 - C++ Accelerated Massive Parallelism, overview
 - C++ Accelerated Massive Parallelism
 ms.assetid: 9e593b06-6e3c-43e9-8bae-6d89efdd39fc
-ms.openlocfilehash: 2629f243f3db3b8fabbd87ee0a211380ac3d45a2
-ms.sourcegitcommit: 093f49b8b69daf86661adc125b1d2d7b1f0e0650
+ms.openlocfilehash: 0eeda43a279be74ea71669b55356603e980cab40
+ms.sourcegitcommit: d77159732a8e782b2a1b7abea552065f2b6f61c1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89427724"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93344747"
 ---
 # <a name="c-amp-overview"></a>Übersicht über C++ AMP
 
@@ -104,7 +104,7 @@ Es sind zwar die gleichen grundlegenden Elemente vorhanden, es werden jedoch C++
 
 - Daten: Sie verwenden C++ Arrays, um drei C++ amp [array_view](../../parallel/amp/reference/array-view-class.md) -Objekten zu erstellen. Sie stellen vier Werte zur Verfügung, um ein `array_view`-Objekt zu erstellen: die Datenwerte, den Rang, den Elementtyp und die Länge des `array_view`-Objekts in jeder Dimension. Der Rang und der Typ werden als Typparameter übergeben. Die Daten und die Länge werden als Konstruktorparameter übergeben. In diesem Beispiel ist das an den Konstruktor übergebene C++-Array eindimensional. Der Rang und die Länge werden verwendet, um die rechteckige Form der Daten im `array_view`-Objekt zu erstellen, und die Datenwerte werden verwendet, um das Array zu füllen. Die Lauf Zeit Bibliothek enthält auch die [Array-Klasse](../../parallel/amp/reference/array-class.md), die über eine Schnittstelle verfügt, die der-Klasse ähnelt, und wird weiter unten `array_view` in diesem Artikel erläutert.
 
-- Iteration: die [Parallel_for_each-Funktion (C++ amp)](reference/concurrency-namespace-functions-amp.md#parallel_for_each) stellt einen Mechanismus zum Durchlaufen der Datenelemente oder der *Compute-Domäne*bereit. In diesem Beispiel wird die Compute-Domäne durch `sum.extent` angegeben. Der Code, den Sie ausführen möchten, ist in einem Lambda-Ausdruck oder einer *Kernel Funktion*enthalten. Die Anweisung `restrict(amp)` gibt an, dass nur die Teilmenge der Programmiersprache C++ verwendet wird, die mit C++ AMP beschleunigt werden kann.
+- Iteration: die [Parallel_for_each-Funktion (C++ amp)](reference/concurrency-namespace-functions-amp.md#parallel_for_each) stellt einen Mechanismus zum Durchlaufen der Datenelemente oder der *Compute-Domäne* bereit. In diesem Beispiel wird die Compute-Domäne durch `sum.extent` angegeben. Der Code, den Sie ausführen möchten, ist in einem Lambda-Ausdruck oder einer *Kernel Funktion* enthalten. Die Anweisung `restrict(amp)` gibt an, dass nur die Teilmenge der Programmiersprache C++ verwendet wird, die mit C++ AMP beschleunigt werden kann.
 
 - Index: die [Index Klassen](../../parallel/amp/reference/index-class.md) Variable, `idx` , wird mit dem Rang eins deklariert, um dem Rang des Objekts zu entsprechen `array_view` . Mithilfe des Index kann auf die einzelnen Elemente der `array_view`-Objekte zugegriffen werden.
 
@@ -360,7 +360,7 @@ void AddArraysWithFunction() {
 
 ## <a name="accelerating-code-tiles-and-barriers"></a>Beschleunigen von Code: Kacheln und Barrieren
 
-Sie können eine zusätzliche Beschleunigung erreichen, indem Sie Kacheln verwenden. Beim ticken werden die Threads in gleiche rechteckige Teilmengen oder *Kacheln*aufgeteilt. Sie bestimmen die geeignete Kachelgröße auf der Basis des Datasets und des Algorithmus, den Sie programmieren. Für jeden Thread haben Sie Zugriff auf den *globalen* Speicherort eines Datenelements relativ zum ganzen `array` oder `array_view` und auf den *lokalen* Speicherort relativ zur Kachel. Die Verwendung des lokalen Indexwerts vereinfacht den Code, da Sie keinen Code schreiben müssen, um globale Indexwerte in lokale zu übersetzen. Um das Ticken zu verwenden, rufen Sie die Block [:: Tile-Methode](reference/extent-class.md#tile) für die Compute-Domäne in der `parallel_for_each` -Methode auf, und verwenden Sie ein [tiled_index](../../parallel/amp/reference/tiled-index-class.md) -Objekt im Lambda-Ausdruck.
+Sie können eine zusätzliche Beschleunigung erreichen, indem Sie Kacheln verwenden. Beim ticken werden die Threads in gleiche rechteckige Teilmengen oder *Kacheln* aufgeteilt. Sie bestimmen die geeignete Kachelgröße auf der Basis des Datasets und des Algorithmus, den Sie programmieren. Für jeden Thread haben Sie Zugriff auf den *globalen* Speicherort eines Datenelements relativ zum ganzen `array` oder `array_view` und auf den *lokalen* Speicherort relativ zur Kachel. Die Verwendung des lokalen Indexwerts vereinfacht den Code, da Sie keinen Code schreiben müssen, um globale Indexwerte in lokale zu übersetzen. Um das Ticken zu verwenden, rufen Sie die Block [:: Tile-Methode](reference/extent-class.md#tile) für die Compute-Domäne in der `parallel_for_each` -Methode auf, und verwenden Sie ein [tiled_index](../../parallel/amp/reference/tiled-index-class.md) -Objekt im Lambda-Ausdruck.
 
 In typischen Anwendungen sind die Elemente in einer Kachel auf irgendeine Weise verknüpft, und der Code muss in der gesamten Kachel auf Werte zugreifen und diese verfolgen. Verwenden Sie das Schlüsselwort Schlüsselwort [tile_static](../../cpp/tile-static-keyword.md) und die [tile_barrier:: Wait-Methode](reference/tile-barrier-class.md#wait) , um dies zu erreichen. Eine Variable mit dem **tile_static** -Schlüsselwort verfügt über einen Bereich über eine gesamte Kachel, und für jede Kachel wird eine Instanz der Variablen erstellt. Sie müssen sich um die Synchronisierung des Kachel-Threadzugriffs auf die Variable kümmern. Die [tile_barrier:: Wait-Methode](reference/tile-barrier-class.md#wait) beendet die Ausführung des aktuellen Threads, bis alle Threads in der Kachel den-Aufrufvorgang erreicht haben `tile_barrier::wait` . Sie können also Werte auf der Kachel sammeln, indem Sie **tile_static** Variablen verwenden. Anschließend können Sie alle Berechnungen beenden, für die der Zugriff auf alle Werte erforderlich ist.
 
@@ -473,9 +473,9 @@ Wie andere C++-Bibliotheken können Sie C++ amp in ihren UWP-Apps verwenden. In 
 
 - [Verwenden von C++ amp in UWP-apps](../../parallel/amp/using-cpp-amp-in-windows-store-apps.md)
 
-- [Exemplarische Vorgehensweise: Erstellen einer grundlegenden Windows-Runtime Komponente in C++ und Aufrufen dieser Komponente über JavaScript](https://go.microsoft.com/fwlink/p/?linkid=249077)
+- [Exemplarische Vorgehensweise: Erstellen einer grundlegenden Windows-Runtime Komponente in C++ und Aufrufen dieser Komponente über JavaScript](/previous-versions/windows/apps/hh755833(v=vs.140))
 
-- [Reise-Optimierer für den Reise-Optimierer von Reisekarten, Windows Store-Apps in JavaScript](https://go.microsoft.com/fwlink/p/?linkid=249078)
+- [Reise-Optimierer für den Reise-Optimierer von Reisekarten, Windows Store-Apps in JavaScript](/previous-versions/windows/apps/hh699893(v=vs.140))
 
 - [Verwenden von C++ amp aus c# mithilfe des Windows-Runtime](https://devblogs.microsoft.com/pfxteam/how-to-use-c-amp-from-c-using-winrt/)
 
@@ -503,7 +503,7 @@ Die Nebenläufigkeitsschnellansicht unterstützt u. a. das Analysieren der Leist
 
 Modulo und Division ganzer Zahlen ohne Vorzeichen weisen eine erheblich bessere Leistung als Modulo und Division ganzer Zahlen mit Vorzeichen auf. Es wird empfohlen, ganze Zahlen ohne Vorzeichen zu verwenden, sofern möglich.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen:
 
 [C++ AMP (C++ Accelerated Massive Parallelism)](../../parallel/amp/cpp-amp-cpp-accelerated-massive-parallelism.md)<br/>
 [Syntax von Lambda Ausdrücken](../../cpp/lambda-expression-syntax.md)<br/>

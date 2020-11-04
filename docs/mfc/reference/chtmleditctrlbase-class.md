@@ -1,5 +1,5 @@
 ---
-title: CHtmlEditCtrlBase-Klasse
+title: Chtmleditctrlbase-Klasse
 ms.date: 11/04/2016
 f1_keywords:
 - CHtmlEditCtrlBase
@@ -220,14 +220,14 @@ helpviewer_keywords:
 - CHtmlEditCtrlBase [MFC], Unlink
 - CHtmlEditCtrlBase [MFC], UnorderList
 ms.assetid: e0cc74b4-8320-4570-b673-16c03d2ae266
-ms.openlocfilehash: 8cb5d69ea6052b500ab7e92d2520ee70de597a83
-ms.sourcegitcommit: 7a6116e48c3c11b97371b8ae4ecc23adce1f092d
+ms.openlocfilehash: 74df35a82342bad59e9065ef593581add6d3d734
+ms.sourcegitcommit: d77159732a8e782b2a1b7abea552065f2b6f61c1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81752334"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93344734"
 ---
-# <a name="chtmleditctrlbase-class"></a>CHtmlEditCtrlBase-Klasse
+# <a name="chtmleditctrlbase-class"></a>Chtmleditctrlbase-Klasse
 
 Stellt eine HTML-Bearbeitungskomponente dar.
 
@@ -241,115 +241,115 @@ template <class T> class CHtmlEditCtrlBase
 
 ### <a name="public-methods"></a>Öffentliche Methoden
 
-|Name|BESCHREIBUNG|
+|name|Beschreibung|
 |----------|-----------------|
-|[CHtmlEditCtrlBase::AddToGlyphTabelle](#addtoglyphtable)|Fügt der Glyphentabelle einen Eintrag hinzu, der Bilder angibt, die für bestimmte Tags im Entwurfsmodus angezeigt werden sollen.|
-|[CHtmlEditCtrlBase::Fett](#bold)|Schaltet den fett formatierten Zustand des markierten Textes um.|
-|[CHtmlEditCtrlBase::Button](#button)|Überschreibt ein Schaltflächensteuerelement für die aktuelle Auswahl.|
-|[CHtmlEditCtrlBase::CheckBox](#checkbox)|Überschreibt ein Kontrollkästchen-Steuerelement für die aktuelle Auswahl.|
-|[CHtmlEditCtrlBase::ClearSelection](#clearselection)|Löscht die aktuelle Auswahl.|
-|[CHtmlEditCtrlBase::Kopieren](#copy)|Kopiert die aktuelle Auswahl in die Zwischenablage.|
-|[CHtmlEditCtrlBase::Schnitt](#cut)|Kopiert die aktuelle Auswahl in die Zwischenablage und löscht sie dann.|
-|[CHtmlEditCtrlBase::Delete](#delete)|Löscht die aktuelle Auswahl.|
-|[CHtmlEditCtrlBase::DropDownBox](#dropdownbox)|Überschreibt ein Dropdown-Auswahlsteuerelement für die aktuelle Auswahl.|
-|[CHtmlEditCtrlBase::EmptyGlyphTable](#emptyglyphtable)|Entfernt alle Einträge aus der Glyphentabelle, in der alle Bilder ausgeblendet werden, die für Tags im Entwurfsmodus angezeigt werden.|
-|[CHtmlEditCtrlBase::ExecCommand](#execcommand)|Führt einen Befehl aus.|
-|[CHtmlEditCtrlBase::Font](#font)|Öffnet ein Schriftdialogfeld, damit der Benutzer die Textfarbe, Schriftart und Schriftgröße der aktuellen Auswahl ändern kann.|
-|[CHtmlEditCtrlBase::GetAbsolutePosition](#getabsoluteposition)|Gibt zurück, ob die Positionseigenschaft eines Elements "absolut" ist.|
-|[CHtmlEditCtrlBase::GetBackColor](#getbackcolor)|Ruft die Hintergrundfarbe der aktuellen Auswahl ab.|
-|[CHtmlEditCtrlBase::GetBlockFormat](#getblockformat)|Ruft das aktuelle Blockformat-Tag ab.|
-|[CHtmlEditCtrlBase::GetBlockFormatNames](#getblockformatnames)|Ruft die Zeichenfolgen ab, die den verfügbaren Blockformat-Tags entsprechen.|
-|[CHtmlEditCtrlBase::GetBookMark](#getbookmark)|Ruft den Namen eines Lesezeichenankers ab.|
-|[CHtmlEditCtrlBase::GetDocument](#getdocument)|Ruft das Dokumentobjekt ab.|
-|[CHtmlEditCtrlBase::GetDocumentHTML](#getdocumenthtml)|Ruft den HTML-Code des aktuellen Dokuments ab.|
-|[CHtmlEditCtrlBase::GetDocumentTitle](#getdocumenttitle)|Ruft den Titel des Dokuments ab.|
-|[CHtmlEditCtrlBase::GetEvent](#getevent)|Ruft einen Schnittstellenzeiger auf das Ereignisobjekt ab, das Informationen enthält, die für das letzte Ereignis relevant sind.|
-|[CHtmlEditCtrlBase::GetEventSrcElement](#geteventsrcelement)|Ruft das Objekt ab, das das Ereignis ausgelöst hat.|
-|[CHtmlEditCtrlBase::GetFontFace](#getfontface)|Ruft den Schriftartnamen für die aktuelle Auswahl ab.|
-|[CHtmlEditCtrlBase::GetFontSize](#getfontsize)|Ruft die Schriftgröße für die aktuelle Auswahl ab.|
-|[CHtmlEditCtrlBase::GetForeColor](#getforecolor)|Ruft die Vordergrundfarbe (Text) der aktuellen Auswahl ab.|
-|[CHtmlEditCtrlBase::GetFrameZone](#getframezone)|Gibt die Sicherheitszone der aktuellen Seite im Webbrowser zurück.|
-|[CHtmlEditCtrlBase::GetIsDirty](#getisdirty)|Gibt an, ob sich das HTML-Dokument geändert hat.|
-|[CHtmlEditCtrlBase::GetShowAlignedSiteTags](#getshowalignedsitetags)|Gibt zurück, ob eine Glyphe `styleFloat` für alle Elemente mit einer Eigenschaft angezeigt wird.|
-|[CHtmlEditCtrlBase::GetShowAllTags](#getshowalltags)|Gibt zurück, ob der WebBrowser Glyphen anzeigt, um den Speicherort aller Tags in einem Dokument anzuzeigen.|
-|[CHtmlEditCtrlBase::GetShowAreaTags](#getshowareatags)|Ruft ab, ob der WebBrowser eine Glyphe für Bereichs-Tags anzeigt.|
-|[CHtmlEditCtrlBase::GetShowBRTags](#getshowbrtags)|Ruft ab, ob der WebBrowser eine Glyphe für br-Tags anzeigt.|
-|[CHtmlEditCtrlBase::GetShowCommentTags](#getshowcommenttags)|Ruft ab, ob der WebBrowser eine Glyphe für Kommentar-Tags anzeigt.|
-|[CHtmlEditCtrlBase::GetShowMiscTags](#getshowmisctags)|Ruft ab, ob der WebBrowser alle in Microsoft Internet Explorer 4.0 angezeigten Tags anzeigt.|
-|[CHtmlEditCtrlBase::GetShowScriptTags](#getshowscripttags)|Ruft ab, ob der WebBrowser eine Glyphe für alle Skript-Tags anzeigt.|
-|[CHtmlEditCtrlBase::GetShowStyleTags](#getshowstyletags)|Ruft ab, ob der WebBrowser eine Glyphe für alle Stil-Tags anzeigt.|
-|[CHtmlEditCtrlBase::GetShowUnknownTags](#getshowunknowntags)|Ruft ab, ob der WebBrowser eine Glyphe für alle unbekannten Tags anzeigt.|
-|[CHtmlEditCtrlBase::HorizontalLine](#horizontalline)|Überschreibt eine horizontale Linie in der aktuellen Auswahl.|
-|[CHtmlEditCtrlBase::HyperLink](#hyperlink)|Fügt einen Hyperlink in die aktuelle Auswahl ein.|
-|[CHtmlEditCtrlBase::IE50Paste](#ie50paste)|Führt einen Einfügevorgang aus, der mit Microsoft Internet Explorer 5 kompatibel ist.|
-|[CHtmlEditCtrlBase::Iframe](#iframe)|Überschreibt einen Inlinerahmen für die aktuelle Auswahl.|
-|[CHtmlEditCtrlBase::Bild](#image)|Überschreibt ein Bild in der aktuellen Auswahl.|
-|[CHtmlEditCtrlBase::Einzug](#indent)|Erhöht den Einzug des markierten Textes um ein Einzugsinsinkrement.|
-|[CHtmlEditCtrlBase::InsFieldSet](#insfieldset)|Überschreibt ein Feld für die aktuelle Auswahl.|
-|[CHtmlEditCtrlBase::InsInputButton](#insinputbutton)|Überschreibt ein Schaltflächensteuerelement für die aktuelle Auswahl.|
-|[CHtmlEditCtrlBase::InsInputHidden](#insinputhidden)|Fügt ein ausgeblendetes Steuerelement in die aktuelle Auswahl ein.|
-|[CHtmlEditCtrlBase::InsInputImage](#insinputimage)|Überschreibt ein Bildsteuerelement für die aktuelle Auswahl.|
-|[CHtmlEditCtrlBase::InsInputPassword](#insinputpassword)|Überschreibt ein Kennwortsteuerelement für die aktuelle Auswahl.|
-|[CHtmlEditCtrlBase::InsInputReset](#insinputreset)|Überschreibt ein Reset-Steuerelement für die aktuelle Auswahl.|
-|[CHtmlEditCtrlBase::InsInputSubmit](#insinputsubmit)|Überschreibt ein Übermittlungssteuerelement für die aktuelle Auswahl.|
-|[CHtmlEditCtrlBase::InsInputUpload](#insinputupload)|Überschreibt ein Dateiupload-Steuerelement für die aktuelle Auswahl.|
-|[CHtmlEditCtrlBase::Is1DElement](#is1delement)|Bestimmt, ob ein Element statisch positioniert ist.|
-|[CHtmlEditCtrlBase::Is2DElement](#is2delement)|Bestimmt, ob ein Element absolut positioniert ist.|
-|[CHtmlEditCtrlBase::Italic](#italic)|Schaltet die aktuelle Auswahl zwischen kursiv und nichtitalic um.|
-|[CHtmlEditCtrlBase::JustifyCenter](#justifycenter)|Zentriert den Formatblock, in dem sich die aktuelle Auswahl befindet.|
-|[CHtmlEditCtrlBase::JustifyLeft](#justifyleft)|Links rechtfertigt den Formatblock, in dem sich die aktuelle Auswahl befindet.|
-|[CHtmlEditCtrlBase::JustifyRight](#justifyright)|Rechts rechtfertigt den Formatblock, in dem sich die aktuelle Auswahl befindet.|
-|[CHtmlEditCtrlBase::ListBox](#listbox)|Überschreibt ein Listenfeldauswahlsteuerelement für die aktuelle Auswahl.|
-|[CHtmlEditCtrlBase::Marquee](#marquee)|Überschreibt ein leeres Festzelt für die aktuelle Auswahl.|
-|[CHtmlEditCtrlBase::NeuesDokument](#newdocument)|Erstellt ein neues Dokument.|
-|[CHtmlEditCtrlBase::OrderList](#orderlist)|Schaltet die aktuelle Auswahl zwischen einer geordneten Liste und einem normalen Formatblock um.|
-|[CHtmlEditCtrlBase::Outdent](#outdent)|Verringert den Einzug des Formatblocks, in dem sich die aktuelle Auswahl befindet, um ein Schritt.|
-|[CHtmlEditCtrlBase::Paragraph](#paragraph)|Überschreibt einen Zeilenumbruch in der aktuellen Auswahl.|
-|[CHtmlEditCtrlBase::Paste](#paste)|Überschreibt den Inhalt der Zwischenablage in der aktuellen Auswahl.|
-|[CHtmlEditCtrlBase::PrintDokument](#printdocument)|Druckt das aktuelle Dokument.|
-|[CHtmlEditCtrlBase::PrintPreview](#printpreview)|Öffnet das Fenster Druckvorschau für das aktuelle Dokument entweder mit der Standardvorlage für die Druckvorschau oder einer benutzerdefinierten Vorlage.|
-|[CHtmlEditCtrlBase::QueryStatus](#querystatus)|Rufen Sie diese Methode auf, um den Status von Befehlen abzufragen.|
-|[CHtmlEditCtrlBase::RadioButton](#radiobutton)|Überschreibt ein Funksteuerelement für die aktuelle Auswahl.|
-|[CHtmlEditCtrlBase::AktualisierenDokument](#refreshdocument)|Aktualisiert das aktuelle Dokument.|
-|[CHtmlEditCtrlBase::RemoveFormat](#removeformat)|Entfernt die Formatierungs-Tags aus der aktuellen Auswahl.|
-|[CHtmlEditCtrlBase::Speichern](#saveas)|Speichert die aktuelle Webseite in einer Datei.|
-|[CHtmlEditCtrlBase::SelectAlle](#selectall)|Wählt das gesamte Dokument aus.|
-|[CHtmlEditCtrlBase::Set2DPosition](#set2dposition)|Ermöglicht das Verschieben absolut positionierter Elemente durch Ziehen.|
-|[CHtmlEditCtrlBase::SetAbsolutePosition](#setabsoluteposition)|Legt die Positionseigenschaft eines Elements auf "absolut" oder "statisch" fest.|
-|[CHtmlEditCtrlBase::SetAtomicSelection](#setatomicselection)|Legen Sie den atomaren Auswahlmodus fest.|
-|[CHtmlEditCtrlBase::SetAutoURLDetectMode](#setautourldetectmode)|Aktiviert und deaktiviert die automatische URL-Erkennung.|
-|[CHtmlEditCtrlBase::SetBackColor](#setbackcolor)|Legt die Hintergrundfarbe der aktuellen Auswahl fest.|
-|[CHtmlEditCtrlBase::SetBlockFormat](#setblockformat)|Legt das aktuelle Blockformat-Tag fest.|
-|[CHtmlEditCtrlBase::SetBookMark](#setbookmark)|Erstellt einen Lesezeichenanker für die aktuelle Auswahl oder Einfügemarke.|
-|[CHtmlEditCtrlBase::SetCSSEditingLevel](#setcsseditinglevel)|Wählt aus, welche CSS-Ebene (CSS1 oder CSS2) der Editor unterstützt, falls vorhanden.|
-|[CHtmlEditCtrlBase::SetDefaultComposeSettings](#setdefaultcomposesettings)|Rufen Sie diese Methode auf, um die Standard-Verfasseneinstellungen festzulegen.|
-|[CHtmlEditCtrlBase::SetDesignMode](#setdesignmode)|Legen Sie den Entwurfsmodus fest.|
-|[CHtmlEditCtrlBase::SetDisableEditFocusUI](#setdisableeditfocusui)|Deaktiviert den geschlüpften Rahmen und behandelt ein Element mit Bearbeitungsfokus.|
-|[CHtmlEditCtrlBase::SetDocumentHTML](#setdocumenthtml)|Legt den HTML-Code des aktuellen Dokuments fest.|
-|[CHtmlEditCtrlBase::SetFontFace](#setfontface)|Legt die Schriftart für die aktuelle Auswahl fest.|
-|[CHtmlEditCtrlBase::SetFontSize](#setfontsize)|Legt die Schriftgröße für die aktuelle Auswahl fest.|
-|[CHtmlEditCtrlBase::SetForeColor](#setforecolor)|Legt die Vordergrundfarbe (Text) der aktuellen Auswahl fest.|
-|[CHtmlEditCtrlBase::SetIE5PasteMode](#setie5pastemode)|Legt fest, dass der Einfügevorgang mit Microsoft Internet Explorer 5 kompatibel ist.|
-|[CHtmlEditCtrlBase::SetLiveResize](#setliveresize)|Bewirkt, dass der WebBrowser das Erscheinungsbild eines Elements während eines Größenänderungs- oder Verschiebungsvorgangs kontinuierlich aktualisiert.|
-|[CHtmlEditCtrlBase::SetMultiSelect](#setmultiselect)|Aktiviert die Mehrfachauswahl.|
-|[CHtmlEditCtrlBase::SetOverrideCursor](#setoverridecursor)|Befiehlt dem WebBrowser, den Mauszeiger nie zu ändern.|
-|[CHtmlEditCtrlBase::SetOverwriteMode](#setoverwritemode)|Schaltet den Texteingabemodus zwischen Einfügen und Überschreiben um.|
-|[CHtmlEditCtrlBase::SetRespectVisInDesign](#setrespectvisindesign)|Blendet unsichtbare Elemente im Entwurfsmodus aus.|
-|[CHtmlEditCtrlBase::SetShowAlignedSiteTags](#setshowalignedsitetags)|Zeigt eine Glyphe für `styleFloat` alle Elemente an, die über eine Eigenschaft verfügen.|
-|[CHtmlEditCtrlBase::SetShowAllTags](#setshowalltags)|Zeigt Glyphen an, um die Position aller Tags in einem Dokument anzuzeigen.|
-|[CHtmlEditCtrlBase::SetShowAreaTags](#setshowareatags)|Zeigt eine Glyphe für alle Bereichs-Tags an.|
-|[CHtmlEditCtrlBase::SetShowBRTags](#setshowbrtags)|Zeigt eine Glyphe für alle br-Tags an.|
-|[CHtmlEditCtrlBase::SetShowCommentTags](#setshowcommenttags)|Zeigt eine Glyphe für alle Kommentar-Tags an.|
-|[CHtmlEditCtrlBase::SetShowMiscTags](#setshowmisctags)|Zeigt alle in Microsoft Internet Explorer 4.0 angezeigten Tags an.|
-|[CHtmlEditCtrlBase::SetShowScriptTags](#setshowscripttags)|Zeigt eine Glyphe für alle Skript-Tags an.|
-|[CHtmlEditCtrlBase::SetShowStyleTags](#setshowstyletags)|Zeigt eine Glyphe für alle Stil-Tags an.|
-|[CHtmlEditCtrlBase::SetShowUnknownTags](#setshowunknowntags)|Zeigt eine Glyphe für alle unbekannten Tags an.|
-|[CHtmlEditCtrlBase::TextArea](#textarea)|Überschreibt ein mehrzeiliges Texteingabesteuerelement für die aktuelle Auswahl.|
-|[CHtmlEditCtrlBase::TextBox](#textbox)|Überschreibt ein Textsteuerelement für die aktuelle Auswahl.|
-|[CHtmlEditCtrlBase::UnBookmark](#unbookmark)|Entfernt alle Lesezeichen aus der aktuellen Auswahl.|
-|[CHtmlEditCtrlBase::Unterstreichen](#underline)|Schaltet die aktuelle Auswahl zwischen unterstrichen und nicht unterstrichen um.|
-|[CHtmlEditCtrlBase::Unlink](#unlink)|Entfernt alle Hyperlinks aus der aktuellen Auswahl.|
-|[CHtmlEditCtrlBase::UnorderList](#unorderlist)|Schaltet die aktuelle Auswahl zwischen einer geordneten Liste und einem normalen Formatblock um.|
+|[Chtmleditctrlbase:: adddeglyphtable](#addtoglyphtable)|Fügt der Glyphe-Tabelle einen Eintrag hinzu, der Bilder angibt, die für bestimmte Tags im Entwurfs Modus angezeigt werden sollen.|
+|[Chtmleditctrlbase:: Bold](#bold)|Schaltet den fetten Zustand des ausgewählten Texts um.|
+|[Chtmleditctrlbase:: Button](#button)|Überschreibt ein Schaltflächen-Steuerelement für die aktuelle Auswahl.|
+|[Chtmleditctrlbase:: CheckBox](#checkbox)|Überschreibt ein Kontrollkästchen-Steuerelement für die aktuelle Auswahl.|
+|[Chtmleditctrlbase:: ClearSelection](#clearselection)|Löscht die aktuelle Auswahl.|
+|[Chtmleditctrlbase:: Copy](#copy)|Kopiert die aktuelle Auswahl in die Zwischenablage.|
+|[Chtmleditctrlbase:: Cut](#cut)|Kopiert die aktuelle Auswahl in die Zwischenablage und löscht Sie anschließend.|
+|[Chtmleditctrlbase::D Elete](#delete)|Löscht die aktuelle Auswahl.|
+|[Chtmleditctrlbase::D ropdownbox](#dropdownbox)|Überschreibt ein Dropdown-Auswahl Steuerelement für die aktuelle Auswahl.|
+|[Chtmleditctrlbase:: emptyglyphtable](#emptyglyphtable)|Entfernt alle Einträge aus der Glyphe-Tabelle, wodurch alle für Tags im Entwurfs Modus angezeigten Bilder ausgeblendet werden.|
+|[Chtmleditctrlbase:: execCommand](#execcommand)|Führt einen Befehl aus.|
+|[Chtmleditctrlbase:: Font](#font)|Öffnet ein Dialogfeld Schriftart, in dem der Benutzer die Textfarbe, die Schriftart und den Schrift Grad der aktuellen Auswahl ändern kann.|
+|[Chtmleditctrlbase:: GetAbsolutePosition](#getabsoluteposition)|Gibt zurück, ob die Positions Eigenschaft eines Elements "absolut" ist.|
+|[Chtmleditctrlbase:: GetBackColor](#getbackcolor)|Ruft die Hintergrundfarbe der aktuellen Auswahl ab.|
+|[Chtmleditctrlbase:: getblockformat](#getblockformat)|Ruft das aktuelle Block Formattag ab.|
+|[Chtmleditctrlbase:: getblockformatnames](#getblockformatnames)|Ruft die Zeichen folgen ab, die den verfügbaren Block Format Tags entsprechen.|
+|[Chtmleditctrlbase:: GetBookmark](#getbookmark)|Ruft den Namen eines Lesezeichen Ankers ab.|
+|[Chtmleditctrlbase:: GetDocument](#getdocument)|Ruft das Dokument Objekt ab.|
+|[Chtmleditctrlbase:: getdocumenthtml](#getdocumenthtml)|Ruft den HTML-Code des aktuellen Dokuments ab.|
+|[Chtmleditctrlbase:: getdocumenttitle](#getdocumenttitle)|Ruft den Titel des Dokuments ab.|
+|[Chtmleditctrlbase:: GetEvent](#getevent)|Ruft einen Schnittstellen Zeiger auf das Ereignis Objekt ab, das die für das letzte Ereignis relevanten Informationen enthält.|
+|[Chtmleditctrlbase:: geteventsrcelements](#geteventsrcelement)|Ruft das Objekt ab, das das Ereignis ausgelöst hat.|
+|[Chtmleditctrlbase:: getfontface](#getfontface)|Ruft den Schriftart Namen für die aktuelle Auswahl ab.|
+|[Chtmleditctrlbase:: GetFontSize](#getfontsize)|Ruft den Schrift Grad für die aktuelle Auswahl ab.|
+|[Chtmleditctrlbase:: getForeColor](#getforecolor)|Ruft die Vordergrundfarbe (Text) der aktuellen Auswahl ab.|
+|[Chtmleditctrlbase:: getframezone](#getframezone)|Gibt die Sicherheitszone der aktuellen Seite im Webbrowser zurück.|
+|[Chtmleditctrlbase:: getisdirty](#getisdirty)|Gibt an, ob sich das HTML-Dokument geändert hat.|
+|[Chtmleditctrlbase:: getshowalignedsitetags](#getshowalignedsitetags)|Gibt zurück, ob ein Symbol für alle Elemente angezeigt wird, die über eine- `styleFloat` Eigenschaft verfügen.|
+|[Chtmleditctrlbase:: getshowalltags](#getshowalltags)|Gibt zurück, ob im Webbrowser Symbole angezeigt werden, um den Speicherort aller Tags in einem Dokument anzuzeigen.|
+|[Chtmleditctrlbase:: getshowareatags](#getshowareatags)|Ruft ab, ob im Webbrowser ein Symbol für Bereichs Tags angezeigt wird.|
+|[Chtmleditctrlbase:: getshowbrtags](#getshowbrtags)|Ruft ab, ob im Webbrowser ein Symbol für BR-Tags angezeigt wird.|
+|[Chtmleditctrlbase:: getshowcommenttags](#getshowcommenttags)|Ruft ab, ob im Webbrowser ein Symbol für Kommentar Tags angezeigt wird.|
+|[Chtmleditctrlbase:: getshowfehltags](#getshowmisctags)|Ruft ab, ob im Webbrowser alle in Microsoft Internet Explorer 4,0 angezeigten Tags angezeigt werden.|
+|[Chtmleditctrlbase:: getshowscripttags](#getshowscripttags)|Ruft ab, ob im Webbrowser ein Symbol für alle Skript Tags angezeigt wird.|
+|[Chtmleditctrlbase:: getshowstyletags](#getshowstyletags)|Ruft ab, ob der Webbrowser ein Symbol für alle stiltags anzeigt.|
+|[Chtmleditctrlbase:: getshowunknowntags](#getshowunknowntags)|Ruft ab, ob im Webbrowser ein Symbol für alle unbekannten Tags angezeigt wird.|
+|[Chtmleditctrlbase:: horizontalline](#horizontalline)|Überschreibt eine horizontale Linie in der aktuellen Auswahl.|
+|[Chtmleditctrlbase:: Hyperlink](#hyperlink)|Fügt einen Hyperlink für die aktuelle Auswahl ein.|
+|[CHtmlEditCtrlBase::IE50Paste](#ie50paste)|Führt einen mit Microsoft Internet Explorer 5 kompatiblen Einfügevorgang aus.|
+|[Chtmleditctrlbase:: iframe](#iframe)|Überschreibt einen Inline Frame in der aktuellen Auswahl.|
+|[Chtmleditctrlbase:: Image](#image)|Überschreibt ein Bild für die aktuelle Auswahl.|
+|[Chtmleditctrlbase:: Einzug](#indent)|Vergrößert den Einzug des ausgewählten Texts um ein Einzugs Inkrement.|
+|[Chtmleditctrlbase:: insfieldset](#insfieldset)|Überschreibt ein Feld in der aktuellen Auswahl.|
+|[Chtmleditctrlbase:: insinputbutton](#insinputbutton)|Überschreibt ein Schaltflächen-Steuerelement für die aktuelle Auswahl.|
+|[Chtmleditctrlbase:: insinputhidden](#insinputhidden)|Fügt ein verborgenes Steuerelement für die aktuelle Auswahl ein.|
+|[Chtmleditctrlbase:: insinputimage](#insinputimage)|Überschreibt ein Bild Steuerelement für die aktuelle Auswahl.|
+|[Chtmleditctrlbase:: insinputpassword](#insinputpassword)|Überschreibt ein Kenn Wort Steuerelement für die aktuelle Auswahl.|
+|[Chtmleditctrlbase:: insinputreset](#insinputreset)|Überschreibt ein Reset-Steuerelement für die aktuelle Auswahl.|
+|[Chtmleditctrlbase:: insinputsubmit](#insinputsubmit)|Überschreibt ein Submit-Steuerelement für die aktuelle Auswahl.|
+|[Chtmleditctrlbase:: insinputupload](#insinputupload)|Überschreibt ein Dateiuploadsteuerelement für die aktuelle Auswahl.|
+|[Chtmleditctrlbase:: Is1DElement](#is1delement)|Bestimmt, ob ein Element statisch positioniert ist.|
+|[Chtmleditctrlbase:: Is2DElement](#is2delement)|Bestimmt, ob ein Element absolut positioniert ist.|
+|[Chtmleditctrlbase:: Italic](#italic)|Schaltet die aktuelle Auswahl zwischen kursiv-und nonitalic um.|
+|[Chtmleditctrlbase:: justifycenter](#justifycenter)|Zentriert den Format Block, in dem sich die aktuelle Auswahl befindet.|
+|[Chtmleditctrlbase:: justifyleft](#justifyleft)|Gibt den Format Block linksbündig an, in dem sich die aktuelle Auswahl befindet.|
+|[Chtmleditctrlbase:: JustifyRight](#justifyright)|Rechtfertigt den Format Block, in dem sich die aktuelle Auswahl befindet.|
+|[Chtmleditctrlbase:: ListBox](#listbox)|Überschreibt ein Listenfeld Auswahl Steuerelement für die aktuelle Auswahl.|
+|[Chtmleditctrlbase:: Marquee](#marquee)|Überschreibt einen leeren Marquee in der aktuellen Auswahl.|
+|[Chtmleditctrlbase:: NewDocument](#newdocument)|Erstellt ein neues Dokument.|
+|[Chtmleditctrlbase:: OrderList](#orderlist)|Schaltet die aktuelle Auswahl zwischen einer geordneten Liste und einem normalen Format Block um.|
+|[Chtmleditctrlbase:: outdent](#outdent)|Verringert sich um einen Inkrement-Einzug des Format Blocks, in dem sich die aktuelle Auswahl befindet.|
+|[Chtmleditctrlbase::P aragraph](#paragraph)|Überschreibt einen Zeilenumbruch bei der aktuellen Auswahl.|
+|[Chtmleditctrlbase::P Aste](#paste)|Überschreibt den Inhalt der Zwischenablage für die aktuelle Auswahl.|
+|[Chtmleditctrlbase::P rintdocument](#printdocument)|Druckt das aktuelle Dokument.|
+|[Chtmleditctrlbase::P rintpreview](#printpreview)|Öffnet das Seiten Ansichts Fenster für das aktuelle Dokument entweder mithilfe der Standardvorlage für die Druckvorschau oder einer benutzerdefinierten Vorlage.|
+|[Chtmleditctrlbase:: QueryStatus](#querystatus)|Ruft diese Methode auf, um den Status von Befehlen abzufragen.|
+|[Chtmleditctrlbase:: RadioButton](#radiobutton)|Überschreibt ein Radio-Steuerelement für die aktuelle Auswahl.|
+|[Chtmleditctrlbase:: erfrischendes Dokument](#refreshdocument)|Aktualisiert das aktuelle Dokument.|
+|[Chtmleditctrlbase:: RemoveFormat](#removeformat)|Entfernt die Formatierungs Tags aus der aktuellen Auswahl.|
+|[Chtmleditctrlbase:: SaveAs](#saveas)|Speichert die aktuelle Webseite in einer Datei.|
+|[Chtmleditctrlbase:: SelectAll](#selectall)|Wählt das gesamte Dokument aus.|
+|[Chtmleditctrlbase:: Set2DPosition](#set2dposition)|Ermöglicht das Verschieben von absolut positionierten Elementen durchziehen.|
+|[Chtmleditctrlbase:: settabsoluteposition](#setabsoluteposition)|Legt die Positions Eigenschaft eines Elements auf "absolute" oder "static" fest.|
+|[Chtmleditctrlbase:: abwetatomicselection](#setatomicselection)|Legen Sie den atomaren Auswahlmodus fest.|
+|[Chtmleditctrlbase:: s.](#setautourldetectmode)|Schaltet die automatische URL-Erkennung ein und aus.|
+|[Chtmleditctrlbase:: setBackColor](#setbackcolor)|Legt die Hintergrundfarbe der aktuellen Auswahl fest.|
+|[Chtmleditctrlbase:: setblock Format](#setblockformat)|Legt das aktuelle Block Formattag fest.|
+|[Chtmleditctrlbase:: SetBookmark](#setbookmark)|Erstellt einen Lesezeichen Anker für die aktuelle Auswahl oder Einfügemarke.|
+|[Chtmleditctrlbase:: setcsseditinglevel](#setcsseditinglevel)|Wählt die CSS-Ebene (CSS1 oder CSS2) aus, die der Editor ggf. unterstützt.|
+|[Chtmleditctrlbase:: setdefaultcomposesettings](#setdefaultcomposesettings)|Diese Methode wird aufgerufen, um die Standardeinstellungen für Compose festzulegen.|
+|[Chtmleditctrlbase:: setdesignmode](#setdesignmode)|Legen Sie den Entwurfs Modus fest.|
+|[Chtmleditctrlbase:: setdisableeditfocusui](#setdisableeditfocusui)|Deaktiviert den ausgechepfte Rahmen und behandelt ein Element, das den Bearbeitungs Fokus besitzt.|
+|[Chtmleditctrlbase:: setdocumenthtml](#setdocumenthtml)|Legt den HTML-Code des aktuellen Dokuments fest.|
+|[Chtmleditctrlbase:: setfontface](#setfontface)|Legt die Schriftart für die aktuelle Auswahl fest.|
+|[Chtmleditctrlbase:: SetFontSize](#setfontsize)|Legt den Schrift Grad für die aktuelle Auswahl fest.|
+|[Chtmleditctrlbase:: setforecolor](#setforecolor)|Legt die Vordergrundfarbe (Text) der aktuellen Auswahl fest.|
+|[Chtmleditctrlbase:: SetIE5PasteMode](#setie5pastemode)|Legt fest, dass der Einfügevorgang mit Microsoft Internet Explorer 5 kompatibel ist.|
+|[Chtmleditctrlbase:: setliveresize](#setliveresize)|Bewirkt, dass der Webbrowser die Darstellung eines Elements während der Änderung der Größe oder des Verschiebens fortlaufend aktualisiert.|
+|[Chtmleditctrlbase:: setmultiselect](#setmultiselect)|Aktiviert die Mehrfachauswahl.|
+|[Chtmleditctrlbase:: Server-ridecursor](#setoverridecursor)|Gibt an, dass der Webbrowser den Mauszeiger nie ändern darf.|
+|[Chtmleditctrlbase:: Server-Schreibmodus](#setoverwritemode)|Schaltet den Texteingabe Modus zwischen INSERT und überschreiben um.|
+|[Chtmleditctrlbase:: Server Design](#setrespectvisindesign)|Verbirgt unsichtbare Elemente im Entwurfs Modus.|
+|[Chtmleditctrlbase:: setshowalignedsitetags](#setshowalignedsitetags)|Zeigt ein Symbol für alle Elemente an, die über eine- `styleFloat` Eigenschaft verfügen.|
+|[Chtmleditctrlbase:: setshowalltags](#setshowalltags)|Zeigt Symbole an, um den Speicherort aller Tags in einem Dokument anzuzeigen.|
+|[Chtmleditctrlbase:: setshowareatags](#setshowareatags)|Zeigt ein Symbol für alle Bereichs Tags an.|
+|[Chtmleditctrlbase:: setshowbrtags](#setshowbrtags)|Zeigt ein Symbol für alle BR-Tags an.|
+|[Chtmleditctrlbase:: setshowcommenttags](#setshowcommenttags)|Zeigt ein Symbol für alle Kommentartags an.|
+|[Chtmleditctrlbase:: setshowfehltags](#setshowmisctags)|Zeigt alle Tags an, die in Microsoft Internet Explorer 4,0 angezeigt werden.|
+|[Chtmleditctrlbase:: setshowscripttags](#setshowscripttags)|Zeigt ein Symbol für alle Skript Tags an.|
+|[Chtmleditctrlbase:: setshowstyletags](#setshowstyletags)|Zeigt ein Symbol für alle Style-Tags an.|
+|[Chtmleditctrlbase:: setshowunknowntags](#setshowunknowntags)|Zeigt ein Symbol für alle unbekannten Tags an.|
+|[Chtmleditctrlbase:: textarea](#textarea)|Überschreibt ein mehrzeilige Texteingabe-Steuerelement für die aktuelle Auswahl.|
+|[Chtmleditctrlbase:: TextBox](#textbox)|Überschreibt ein Text Steuerelement für die aktuelle Auswahl.|
+|[Chtmleditctrlbase:: unbookmark](#unbookmark)|Entfernt alle Lesezeichen aus der aktuellen Auswahl.|
+|[Chtmleditctrlbase:: Unterstreichung](#underline)|Schaltet die aktuelle Auswahl zwischen unterstrichen und nicht unterstrichen um.|
+|[Chtmleditctrlbase:: unlink](#unlink)|Entfernt einen beliebigen Hyperlink aus der aktuellen Auswahl.|
+|[Chtmleditctrlbase:: unorderlist](#unorderlist)|Schaltet die aktuelle Auswahl zwischen einer geordneten Liste und einem normalen Format Block um.|
 
 #### <a name="parameters"></a>Parameter
 
@@ -358,9 +358,9 @@ Der Name der abgeleiteten Klasse.
 
 ## <a name="remarks"></a>Bemerkungen
 
-`CHtmlEditCtrlBase`bietet Memberfunktionen für die HTML-Bearbeitungsbefehle des WebBrowsers, z. B. [Bold](#bold). (Alternativ können Sie [ExecCommand](#execcommand) aufrufen, um den Befehl IDM_BOLD auszuführen.)
+`CHtmlEditCtrlBase` stellt Element Funktionen für die HTML-Bearbeitungsbefehle des Browsers, z. b. [Fett](#bold), bereit. (Alternativ können Sie [execCommand](#execcommand) zum Ausführen des IDM_BOLD Befehls aufruft.)
 
-`CHtmlEditCtrlBase`ist nicht dazu bestimmt, für sich allein zu stehen. Es wurde als Basisklasse für abgeleitete Klassen entwickelt, die die HTML-Bearbeitungsfunktionalität des WebBrowsers verfügbar machen (siehe [CHtmlEditCtrl](../../mfc/reference/chtmleditctrl-class.md) und [CHtmlEditView](../../mfc/reference/chtmleditview-class.md)).
+`CHtmlEditCtrlBase` ist nicht als eigenständig zu eigen. Es ist eine Basisklasse für abgeleitete Klassen, die die HTML-Bearbeitungsfunktionen des Webbrowser verfügbar machen (siehe [CHtmlEditCtrl](../../mfc/reference/chtmleditctrl-class.md) und [CHtmlEditView](../../mfc/reference/chtmleditview-class.md)).
 
 ## <a name="inheritance-hierarchy"></a>Vererbungshierarchie
 
@@ -370,9 +370,9 @@ Der Name der abgeleiteten Klasse.
 
 **Header:** afxhtml.h
 
-## <a name="chtmleditctrlbaseaddtoglyphtable"></a><a name="addtoglyphtable"></a>CHtmlEditCtrlBase::AddToGlyphTabelle
+## <a name="chtmleditctrlbaseaddtoglyphtable"></a><a name="addtoglyphtable"></a> Chtmleditctrlbase:: adddeglyphtable
 
-Fügt der Glyphentabelle einen Eintrag hinzu, der Bilder angibt, die für bestimmte Tags im Entwurfsmodus angezeigt werden sollen.
+Fügt der Glyphe-Tabelle einen Eintrag hinzu, der Bilder angibt, die für bestimmte Tags im Entwurfs Modus angezeigt werden sollen.
 
 ```
 HRESULT AddToGlyphTable(
@@ -388,43 +388,43 @@ HRESULT AddToGlyphTable(
 
 ### <a name="parameters"></a>Parameter
 
-*szTag*<br/>
-Der Tag-Name (z. B. "P" oder "Tabelle").
+*sztag*<br/>
+Der Tagname (z. b. "P" oder "Table").
 
-*szImgUrl*<br/>
+*szimgurl*<br/>
 Die Bild-URL.
 
-*nTagType*<br/>
-Tag-Typ: 0 bedeutet, dass das Bild nur für das öffnende Tag ist. 1 bedeutet, dass das Bild nur für das schließende Tag gilt. 2 bedeutet, dass das Bild sowohl für das Öffnen als auch für das Schließen von Tags ist. Einzelne Tags wie br und comment müssen hinzugefügt werden, wobei der Tagtyp auf 0 gesetzt ist.
+*ntagtype*<br/>
+Tagtyp: 0 bedeutet, dass das Bild nur für das öffnende Tag gilt. 1 bedeutet, dass das Bild nur für das schließende Tag gilt. 2 bedeutet, dass das Bild sowohl für das öffnende als auch das schließende Tag gilt. Einzelne Tags wie BR und comment müssen hinzugefügt werden, wenn der Tagtyp auf 0 festgelegt ist.
 
-*nAusrichtung*<br/>
-Ausrichtung (nur rechteckige Elemente): Dieser Parameter gibt an, dass das Bild für ein Element mit einem Ausrichtungsattribut gilt. Links = 0, Mitte = 1, rechts = 2 und undefiniert = 3. Linke, rechte oder center-Attribute müssen explizit für das Element festgelegt werden.
+*nausrichtung*<br/>
+Ausrichtung (nur rechteckige Elemente): dieser Parameter gibt an, dass das Bild für ein Element mit einem Ausrichtungs Attribut gilt. Left = 0, Center = 1, Right = 2 und undefiniert = 3. Die Attribute Left, Right oder Center müssen explizit für das Element festgelegt werden.
 
-*nPosInfo*<br/>
-Positionierungsinformationen. Bestimmt den Positioniierungswert für kaskadierende Stylesheets (CSS), auf den die Glyphe angewendet wird, wobei statische Positionierung = 0, absolute Positionierung = 1, relative Positionierung = 2 und alle = 3. Mit diesem Feld können Sie eine Glyphe für ein Tag angeben, wenn es nicht positioniert ist, und eine andere Glyphe, um einen Ankerpunkt anzuzeigen, wenn das Tag positioniert wird.
+*nposinfo*<br/>
+Positionsinformationen. Bestimmt, auf welche Cascading Stylesheets (CSS)-Positionierungs Werte das Symbol angewendet wird, wobei die statische Positionierung = 0, absolute Positionierung = 1, relative Positionierung = 2 und alle = 3 ist. In diesem Feld können Sie ein Symbol für ein Tag angeben, wenn es nicht positioniert ist, und ein anderes Symbol, das einen Ankerpunkt anzeigt, wenn das Tag positioniert ist.
 
-*nDirektion*<br/>
-Die Richtung Dieser Parameter gibt das Bild für ein Tag basierend auf der Lesereihenfolge der aktuellen Sprache an. 0 gibt von links nach rechts, 1 von rechts nach links, 2 von oben nach unten, 3 von unten nach oben und 4 alle an. Normalerweise legen Sie dieses Feld auf 4 fest.
+*ndirection*<br/>
+Die Richtung Dieser Parameter gibt das Bild für ein Tag basierend auf der Lesereihenfolge der aktuellen Sprache an. 0 gibt von links nach rechts an, 1 gibt von rechts nach links, 2 gibt von oben nach unten, 3 den Wert von unten nach oben und 4 alle an. Normalerweise legen Sie dieses Feld auf 4 fest.
 
-*nImgWidth*<br/>
+*nimgwidth*<br/>
 Die Bildbreite in Pixel.
 
-*nImgHeight*<br/>
+*nimgheight*<br/>
 Die Bildhöhe in Pixel.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen zu den Parametern finden Sie unter "Glyphentabellenzeichenfolgenformat" unter [Verwenden von Bearbeitungsglyphen](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa969614\(v=vs.85\)).
+Weitere Informationen zu den Parametern finden Sie unter "Symboltabellen-Zeichen folgen Format" in [Verwenden von Bearbeitungs](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa969614\(v=vs.85\))Symbolen.
 
 Diese Methode sendet die [IDM_ADDTOGLYPHTABLE Befehls-ID](/previous-versions/aa769891\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasebold"></a><a name="bold"></a>CHtmlEditCtrlBase::Fett
+## <a name="chtmleditctrlbasebold"></a><a name="bold"></a> Chtmleditctrlbase:: Bold
 
-Schaltet den fett formatierten Zustand des markierten Textes um.
+Schaltet den fetten Zustand des ausgewählten Texts um.
 
 ```
 HRESULT Bold() const;
@@ -432,15 +432,15 @@ HRESULT Bold() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_BOLD Befehls-ID](/previous-versions/aa769861\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasebutton"></a><a name="button"></a>CHtmlEditCtrlBase::Button
+## <a name="chtmleditctrlbasebutton"></a><a name="button"></a> Chtmleditctrlbase:: Button
 
-Überschreibt ein Schaltflächensteuerelement für die aktuelle Auswahl.
+Überschreibt ein Schaltflächen-Steuerelement für die aktuelle Auswahl.
 
 ```
 HRESULT Button(LPCTSTR szId = NULL) const;
@@ -448,18 +448,18 @@ HRESULT Button(LPCTSTR szId = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szId*<br/>
-Die ID des Schaltflächensteuerelements.
+*szid*<br/>
+Die ID des Schaltflächen-Steuer Elements.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_BUTTON Befehls-ID](/previous-versions/aa769966\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasecheckbox"></a><a name="checkbox"></a>CHtmlEditCtrlBase::CheckBox
+## <a name="chtmleditctrlbasecheckbox"></a><a name="checkbox"></a> Chtmleditctrlbase:: CheckBox
 
 Überschreibt ein Kontrollkästchen-Steuerelement für die aktuelle Auswahl.
 
@@ -469,18 +469,18 @@ HRESULT CheckBox(LPCTSTR szId = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szId*<br/>
-Die ID des Kontrollkästchen-Steuerelements.
+*szid*<br/>
+Die ID des Kontrollkästchen-Steuer Elements.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_CHECKBOX Befehls-ID](/previous-versions/aa769972\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseclearselection"></a><a name="clearselection"></a>CHtmlEditCtrlBase::ClearSelection
+## <a name="chtmleditctrlbaseclearselection"></a><a name="clearselection"></a> Chtmleditctrlbase:: ClearSelection
 
 Löscht die aktuelle Auswahl.
 
@@ -490,13 +490,13 @@ HRESULT ClearSelection() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_CLEARSELECTION Befehls-ID](/previous-versions/aa770038\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasecopy"></a><a name="copy"></a>CHtmlEditCtrlBase::Kopieren
+## <a name="chtmleditctrlbasecopy"></a><a name="copy"></a> Chtmleditctrlbase:: Copy
 
 Kopiert die aktuelle Auswahl in die Zwischenablage.
 
@@ -506,15 +506,15 @@ HRESULT Copy() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_COPY Befehls-ID](/previous-versions/aa769872\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasecut"></a><a name="cut"></a>CHtmlEditCtrlBase::Schnitt
+## <a name="chtmleditctrlbasecut"></a><a name="cut"></a> Chtmleditctrlbase:: Cut
 
-Kopiert die aktuelle Auswahl in die Zwischenablage und löscht sie dann.
+Kopiert die aktuelle Auswahl in die Zwischenablage und löscht Sie anschließend.
 
 ```
 HRESULT Cut() const;
@@ -522,13 +522,13 @@ HRESULT Cut() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_CUT Befehls-ID](/previous-versions/aa769875\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasedelete"></a><a name="delete"></a>CHtmlEditCtrlBase::Delete
+## <a name="chtmleditctrlbasedelete"></a><a name="delete"></a> Chtmleditctrlbase::D Elete
 
 Löscht die aktuelle Auswahl.
 
@@ -538,15 +538,15 @@ HRESULT Delete() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_DELETE Befehls-ID](/previous-versions/aa769876\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasedropdownbox"></a><a name="dropdownbox"></a>CHtmlEditCtrlBase::DropDownBox
+## <a name="chtmleditctrlbasedropdownbox"></a><a name="dropdownbox"></a> Chtmleditctrlbase::D ropdownbox
 
-Überschreibt ein Dropdown-Auswahlsteuerelement für die aktuelle Auswahl.
+Überschreibt ein Dropdown-Auswahl Steuerelement für die aktuelle Auswahl.
 
 ```
 HRESULT DropDownBox(LPCTSTR szId = NULL) const;
@@ -554,20 +554,20 @@ HRESULT DropDownBox(LPCTSTR szId = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szId*<br/>
-Die ID des Dropdown-Auswahlsteuerelements.
+*szid*<br/>
+Die ID des Dropdown-Auswahl Steuer Elements.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_DROPDOWNBOX Befehls-ID](/previous-versions/aa769984\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseemptyglyphtable"></a><a name="emptyglyphtable"></a>CHtmlEditCtrlBase::EmptyGlyphTable
+## <a name="chtmleditctrlbaseemptyglyphtable"></a><a name="emptyglyphtable"></a> Chtmleditctrlbase:: emptyglyphtable
 
-Entfernt alle Einträge aus der Glyphentabelle, in der alle Bilder ausgeblendet werden, die für Tags im Entwurfsmodus angezeigt werden.
+Entfernt alle Einträge aus der Glyphe-Tabelle, wodurch alle für Tags im Entwurfs Modus angezeigten Bilder ausgeblendet werden.
 
 ```
 HRESULT EmptyGlyphTable() const;
@@ -575,13 +575,13 @@ HRESULT EmptyGlyphTable() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_EMPTYGLYPHTABLE Befehls-ID](/previous-versions/aa769907\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseexeccommand"></a><a name="execcommand"></a>CHtmlEditCtrlBase::ExecCommand
+## <a name="chtmleditctrlbaseexeccommand"></a><a name="execcommand"></a> Chtmleditctrlbase:: execCommand
 
 Führt einen Befehl aus.
 
@@ -602,32 +602,32 @@ HRESULT ExecCommand(
 
 ### <a name="parameters"></a>Parameter
 
-*cmdID*<br/>
-Die auszuführende Befehls-ID. Eine Liste finden Sie unter [MSHTML Command Identifiers](/previous-versions/aa741315\(v=vs.85\)).
+*CMDID*<br/>
+Die auszuführende Befehls-ID. Eine Liste finden Sie unter [MSHTML-Befehls](/previous-versions/aa741315\(v=vs.85\))Bezeichner.
 
-*cmdExecOpt*<br/>
-Werte aus der [OLECMDEXECOPT-Enumeration,](/windows/win32/api/docobj/ne-docobj-olecmdexecopt) die beschreiben, wie das Objekt den Befehl ausführen soll.
+*cmdexecopt*<br/>
+Werte aus der [olecmdexecopt](/windows/win32/api/docobj/ne-docobj-olecmdexecopt) -Enumeration, die beschreiben, wie das Objekt den Befehl ausführen soll.
 
-*pInVar*<br/>
+*pinvar*<br/>
 Die Eingabeargumente.
 
-*pOutVar*<br/>
-Die Befehlsausgabe.
+*poutvar*<br/>
+Die Ausgabe des Befehls.
 
-*pGuid*<br/>
+*pguid*<br/>
 Die GUID der Befehlsgruppe.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Diese Methode stellt die Funktionalität von [IOleCommandTarget::Exec](/windows/win32/api/docobj/nf-docobj-iolecommandtarget-exec)bereit.
+Diese Methode stellt die Funktionalität von [IOleCommandTarget:: exec](/windows/win32/api/docobj/nf-docobj-iolecommandtarget-exec)bereit.
 
-## <a name="chtmleditctrlbasefont"></a><a name="font"></a>CHtmlEditCtrlBase::Font
+## <a name="chtmleditctrlbasefont"></a><a name="font"></a> Chtmleditctrlbase:: Font
 
-Öffnet ein Schriftdialogfeld, damit der Benutzer die Textfarbe, Schriftart und Schriftgröße der aktuellen Auswahl ändern kann.
+Öffnet ein Dialogfeld Schriftart, in dem der Benutzer die Textfarbe, die Schriftart und den Schrift Grad der aktuellen Auswahl ändern kann.
 
 ```
 HRESULT Font() const;
@@ -635,15 +635,15 @@ HRESULT Font() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_FONT Befehls-ID](/previous-versions/aa769913\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasegetabsoluteposition"></a><a name="getabsoluteposition"></a>CHtmlEditCtrlBase::GetAbsolutePosition
+## <a name="chtmleditctrlbasegetabsoluteposition"></a><a name="getabsoluteposition"></a> Chtmleditctrlbase:: GetAbsolutePosition
 
-Gibt zurück, ob die Positionseigenschaft eines Elements "absolut" ist.
+Gibt zurück, ob die Positions Eigenschaft eines Elements "absolut" ist.
 
 ```
 HRESULT GetAbsolutePosition(bool& bCurValue) const;
@@ -651,18 +651,18 @@ HRESULT GetAbsolutePosition(bool& bCurValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bCurValue*<br/>
-TRUE, wenn die Positionseigenschaft des Elements auf "absolut" festgelegt ist.
+*bcurrvalue*<br/>
+TRUE, wenn die Positions Eigenschaft des Elements auf "absolute" festgelegt ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie [unter IDM_ABSOLUTE_POSITION Befehls-ID](/previous-versions/aa769889\(v=vs.85\)).
+Weitere Informationen finden Sie unter [IDM_ABSOLUTE_POSITION Befehls-ID](/previous-versions/aa769889\(v=vs.85\)).
 
-## <a name="chtmleditctrlbasegetbackcolor"></a><a name="getbackcolor"></a>CHtmlEditCtrlBase::GetBackColor
+## <a name="chtmleditctrlbasegetbackcolor"></a><a name="getbackcolor"></a> Chtmleditctrlbase:: GetBackColor
 
 Ruft die Hintergrundfarbe der aktuellen Auswahl ab.
 
@@ -672,20 +672,20 @@ HRESULT GetBackColor(int& nColor) const;
 
 ### <a name="parameters"></a>Parameter
 
-*nColor*<br/>
+*ncolor*<br/>
 Die Hintergrundfarbe.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_BACKCOLOR Befehls-ID](/previous-versions/aa769858\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasegetblockformat"></a><a name="getblockformat"></a>CHtmlEditCtrlBase::GetBlockFormat
+## <a name="chtmleditctrlbasegetblockformat"></a><a name="getblockformat"></a> Chtmleditctrlbase:: getblockformat
 
-Ruft das aktuelle Blockformat-Tag ab.
+Ruft das aktuelle Block Formattag ab.
 
 ```
 HRESULT GetBlockFormat(CString& strFormat) const;
@@ -693,20 +693,20 @@ HRESULT GetBlockFormat(CString& strFormat) const;
 
 ### <a name="parameters"></a>Parameter
 
-*strFormat*<br/>
-Das aktuelle Blockformat-Tag.
+*"Straume"*<br/>
+Das aktuelle Block Formattag.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_BLOCKFMT Befehls-ID](/previous-versions/aa769883\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasegetblockformatnames"></a><a name="getblockformatnames"></a>CHtmlEditCtrlBase::GetBlockFormatNames
+## <a name="chtmleditctrlbasegetblockformatnames"></a><a name="getblockformatnames"></a> Chtmleditctrlbase:: getblockformatnames
 
-Ruft die Zeichenfolgen ab, die den verfügbaren Blockformat-Tags entsprechen.
+Ruft die Zeichen folgen ab, die den verfügbaren Block Format Tags entsprechen.
 
 ```
 HRESULT GetBlockFormatNames(CStringArray& sa) const;
@@ -714,20 +714,20 @@ HRESULT GetBlockFormatNames(CStringArray& sa) const;
 
 ### <a name="parameters"></a>Parameter
 
-*sa*<br/>
-Die verfügbaren Blockformat-Tags als Array von Zeichenfolgen.
+*SAS*<br/>
+Die verfügbaren Block Format Tags, als Array von Zeichen folgen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_GETBLOCKFMTS Befehls-ID](/previous-versions/aa769884\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasegetbookmark"></a><a name="getbookmark"></a>CHtmlEditCtrlBase::GetBookMark
+## <a name="chtmleditctrlbasegetbookmark"></a><a name="getbookmark"></a> Chtmleditctrlbase:: GetBookmark
 
-Ruft den Namen eines Lesezeichenankers ab.
+Ruft den Namen eines Lesezeichen Ankers ab.
 
 ```
 HRESULT GetBookMark(CString& strAnchor) const;
@@ -735,20 +735,20 @@ HRESULT GetBookMark(CString& strAnchor) const;
 
 ### <a name="parameters"></a>Parameter
 
-*strAnchor*<br/>
-Der Name eines Lesezeichenankers.
+*stranchor*<br/>
+Der Name eines Lesezeichen Ankers.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [IDM_BOOKMARK Befehls-ID](/previous-versions/aa769873\(v=vs.85\)).
 
-## <a name="chtmleditctrlbasegetdocument"></a><a name="getdocument"></a>CHtmlEditCtrlBase::GetDocument
+## <a name="chtmleditctrlbasegetdocument"></a><a name="getdocument"></a> Chtmleditctrlbase:: GetDocument
 
-Ruft das Dokumentobjekt ab.
+Ruft das Dokument Objekt ab.
 
 ```
 HRESULT GetDocument(IHTMLDocument2** ppDoc) const;
@@ -757,13 +757,13 @@ HRESULT GetDocument(IHTMLDocument2** ppDoc) const;
 ### <a name="parameters"></a>Parameter
 
 *ppDoc*<br/>
-Das Dokumentobjekt.
+Das Dokument Objekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-## <a name="chtmleditctrlbasegetdocumenthtml"></a><a name="getdocumenthtml"></a>CHtmlEditCtrlBase::GetDocumentHTML
+## <a name="chtmleditctrlbasegetdocumenthtml"></a><a name="getdocumenthtml"></a> Chtmleditctrlbase:: getdocumenthtml
 
 Ruft den HTML-Code des aktuellen Dokuments ab.
 
@@ -773,14 +773,14 @@ HRESULT GetDocumentHTML(CString& szHTML) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szHTML*<br/>
+*szhtml*<br/>
 Der HTML-Code.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-## <a name="chtmleditctrlbasegetdocumenttitle"></a><a name="getdocumenttitle"></a>CHtmlEditCtrlBase::GetDocumentTitle
+## <a name="chtmleditctrlbasegetdocumenttitle"></a><a name="getdocumenttitle"></a> Chtmleditctrlbase:: getdocumenttitle
 
 Ruft den Titel des Dokuments ab.
 
@@ -790,16 +790,16 @@ HRESULT GetDocumentTitle(CString& szTitle) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szTitle*<br/>
+*sztitle*<br/>
 Der Titel des Dokuments.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-## <a name="chtmleditctrlbasegetevent"></a><a name="getevent"></a>CHtmlEditCtrlBase::GetEvent
+## <a name="chtmleditctrlbasegetevent"></a><a name="getevent"></a> Chtmleditctrlbase:: GetEvent
 
-Ruft einen Schnittstellenzeiger auf das Ereignisobjekt ab, das Informationen enthält, die für das letzte Ereignis relevant sind.
+Ruft einen Schnittstellen Zeiger auf das Ereignis Objekt ab, das die für das letzte Ereignis relevanten Informationen enthält.
 
 ```
 HRESULT GetEvent(IHTMLEventObj** ppEventObj) const;
@@ -807,14 +807,14 @@ HRESULT GetEvent(IHTMLEventObj** ppEventObj) const;
 
 ### <a name="parameters"></a>Parameter
 
-*ppEventObj*<br/>
+*ppeer-obj*<br/>
 Das Ereignisobjekt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-## <a name="chtmleditctrlbasegeteventsrcelement"></a><a name="geteventsrcelement"></a>CHtmlEditCtrlBase::GetEventSrcElement
+## <a name="chtmleditctrlbasegeteventsrcelement"></a><a name="geteventsrcelement"></a> Chtmleditctrlbase:: geteventsrcelements
 
 Ruft das Objekt ab, das das Ereignis ausgelöst hat.
 
@@ -824,16 +824,16 @@ HRESULT GetEventSrcElement(IHTMLElement** ppSrcElement) const;
 
 ### <a name="parameters"></a>Parameter
 
-*ppSrcElement*<br/>
+*ppsrcelements*<br/>
 Das Element, das das Ereignis ausgelöst hat.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-## <a name="chtmleditctrlbasegetfontface"></a><a name="getfontface"></a>CHtmlEditCtrlBase::GetFontFace
+## <a name="chtmleditctrlbasegetfontface"></a><a name="getfontface"></a> Chtmleditctrlbase:: getfontface
 
-Ruft den Schriftartnamen für die aktuelle Auswahl ab.
+Ruft den Schriftart Namen für die aktuelle Auswahl ab.
 
 ```
 HRESULT GetFontFace(CString& strFace) const;
@@ -842,21 +842,21 @@ HRESULT GetFontFace(CString& strFace) const;
 ### <a name="parameters"></a>Parameter
 
 *strFace*<br/>
-Der Schriftartname.
+Der Schriftart Name.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Wenn die aktuelle Auswahl mehr als eine Schriftart verwendet, ist *strFace* eine leere Zeichenfolge.
+Wenn für die aktuelle Auswahl mehr als eine Schriftart verwendet wird, ist " *strinface* " eine leere Zeichenfolge.
 
 Diese Methode sendet die [IDM_FONTNAME Befehls-ID](/previous-versions/aa769880\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasegetfontsize"></a><a name="getfontsize"></a>CHtmlEditCtrlBase::GetFontSize
+## <a name="chtmleditctrlbasegetfontsize"></a><a name="getfontsize"></a> Chtmleditctrlbase:: GetFontSize
 
-Ruft die Schriftgröße für die aktuelle Auswahl ab.
+Ruft den Schrift Grad für die aktuelle Auswahl ab.
 
 ```
 HRESULT GetFontSize(short& nSize) const;
@@ -864,18 +864,18 @@ HRESULT GetFontSize(short& nSize) const;
 
 ### <a name="parameters"></a>Parameter
 
-*nGröße*<br/>
-Die Schriftgröße.
+*nSize*<br/>
+Der Schrift Grad.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt die HTML-Schriftgröße (1-7) zurück. Gibt 0 zurück, wenn die Auswahl mehrere Schriftgrößen enthält.
+Gibt den HTML-Schrift Grad (1-7) zurück. Gibt 0 zurück, wenn die Auswahl mehrere Schriftgrößen enthält.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_FONTSIZE Befehls-ID](/previous-versions/aa769881\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasegetforecolor"></a><a name="getforecolor"></a>CHtmlEditCtrlBase::GetForeColor
+## <a name="chtmleditctrlbasegetforecolor"></a><a name="getforecolor"></a> Chtmleditctrlbase:: getForeColor
 
 Ruft die Vordergrundfarbe (Text) der aktuellen Auswahl ab.
 
@@ -885,18 +885,18 @@ HRESULT GetForeColor(int& nColor);
 
 ### <a name="parameters"></a>Parameter
 
-*nColor*<br/>
+*ncolor*<br/>
 Die Vordergrundfarbe.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_FORECOLOR Befehls-ID](/previous-versions/aa769882\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasegetframezone"></a><a name="getframezone"></a>CHtmlEditCtrlBase::GetFrameZone
+## <a name="chtmleditctrlbasegetframezone"></a><a name="getframezone"></a> Chtmleditctrlbase:: getframezone
 
 Gibt die Sicherheitszone der aktuellen Seite im Webbrowser zurück.
 
@@ -906,18 +906,18 @@ HRESULT GetFrameZone(short& nZone) const;
 
 ### <a name="parameters"></a>Parameter
 
-*nZone*<br/>
+*Nzone*<br/>
 Die Sicherheitszone.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_GETFRAMEZONE Befehls-ID](/previous-versions/aa769916\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasegetisdirty"></a><a name="getisdirty"></a>CHtmlEditCtrlBase::GetIsDirty
+## <a name="chtmleditctrlbasegetisdirty"></a><a name="getisdirty"></a> Chtmleditctrlbase:: getisdirty
 
 Gibt an, ob sich das HTML-Dokument geändert hat.
 
@@ -927,11 +927,11 @@ HRESULT GetIsDirty() const;
 
 ### <a name="remarks"></a>Bemerkungen
 
-Gibt an, ob sich das Dokument geändert hat. `GetIsDirty`gibt ein HRESULT von [IPersistStorage::IsDirty](/windows/win32/api/objidl/nf-objidl-ipersiststorage-isdirty)zurück.
+Gibt an, ob sich das Dokument geändert hat. `GetIsDirty` Gibt ein HRESULT aus [IPersistStorage:: IsDirty](/windows/win32/api/objidl/nf-objidl-ipersiststorage-isdirty)zurück.
 
-## <a name="chtmleditctrlbasegetshowalignedsitetags"></a><a name="getshowalignedsitetags"></a>CHtmlEditCtrlBase::GetShowAlignedSiteTags
+## <a name="chtmleditctrlbasegetshowalignedsitetags"></a><a name="getshowalignedsitetags"></a> Chtmleditctrlbase:: getshowalignedsitetags
 
-Gibt zurück, ob eine Glyphe `styleFloat` für alle Elemente mit einer Eigenschaft angezeigt wird.
+Gibt zurück, ob ein Symbol für alle Elemente angezeigt wird, die über eine- `styleFloat` Eigenschaft verfügen.
 
 ```
 HRESULT GetShowAlignedSiteTags(bool& bCurValue) const;
@@ -939,20 +939,20 @@ HRESULT GetShowAlignedSiteTags(bool& bCurValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bCurValue*<br/>
-TRUE, wenn eine Glyphe für `styleFloat` alle Elemente mit einer Eigenschaft angezeigt wird; FALSE, wenn keine Glyphe angezeigt wird.
+*bcurrvalue*<br/>
+TRUE, wenn ein Symbol für alle Elemente angezeigt wird, die über eine- `styleFloat` Eigenschaft verfügen. FALSE, wenn kein Symbol angezeigt wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [IDM_SHOWALIGNEDSITETAGS Befehls-ID](/previous-versions/aa769947\(v=vs.85\)).
 
-## <a name="chtmleditctrlbasegetshowalltags"></a><a name="getshowalltags"></a>CHtmlEditCtrlBase::GetShowAllTags
+## <a name="chtmleditctrlbasegetshowalltags"></a><a name="getshowalltags"></a> Chtmleditctrlbase:: getshowalltags
 
-Gibt zurück, ob der WebBrowser Glyphen anzeigt, um den Speicherort aller Tags in einem Dokument anzuzeigen.
+Gibt zurück, ob im Webbrowser Symbole angezeigt werden, um den Speicherort aller Tags in einem Dokument anzuzeigen.
 
 ```
 HRESULT GetShowAllTags(bool& bCurValue) const;
@@ -960,20 +960,20 @@ HRESULT GetShowAllTags(bool& bCurValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bCurValue*<br/>
-TRUE, wenn der WebBrowser Glyphen anzeigt, um den Speicherort aller Tags in einem Dokument anzuzeigen; FALSE, wenn dies nicht der Fall ist.
+*bcurrvalue*<br/>
+TRUE, wenn im Webbrowser Symbole angezeigt werden, um den Speicherort aller Tags in einem Dokument anzuzeigen. FALSE, wenn dies nicht der Fall ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [IDM_SHOWALLTAGS Befehls-ID](/previous-versions/aa769948\(v=vs.85\)).
 
-## <a name="chtmleditctrlbasegetshowareatags"></a><a name="getshowareatags"></a>CHtmlEditCtrlBase::GetShowAreaTags
+## <a name="chtmleditctrlbasegetshowareatags"></a><a name="getshowareatags"></a> Chtmleditctrlbase:: getshowareatags
 
-Ruft ab, ob der WebBrowser eine Glyphe für Bereichs-Tags anzeigt.
+Ruft ab, ob im Webbrowser ein Symbol für Bereichs Tags angezeigt wird.
 
 ```
 HRESULT GetShowAreaTags(bool& bCurValue) const;
@@ -981,20 +981,20 @@ HRESULT GetShowAreaTags(bool& bCurValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bCurValue*<br/>
-TRUE wenn der WebBrowser eine Glyphe für Bereichs-Tags anzeigt, FALSE, wenn dies nicht der Fall ist.
+*bcurrvalue*<br/>
+TRUE, wenn der Webbrowser ein Symbol für Bereichs Tags anzeigt, false, wenn dies nicht der Fall ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie [unter IDM_SHOWAREATAGS Befehls-ID](/previous-versions/aa769949\(v=vs.85\)).
+Weitere Informationen finden Sie unter [IDM_SHOWAREATAGS Befehls-ID](/previous-versions/aa769949\(v=vs.85\)).
 
-## <a name="chtmleditctrlbasegetshowbrtags"></a><a name="getshowbrtags"></a>CHtmlEditCtrlBase::GetShowBRTags
+## <a name="chtmleditctrlbasegetshowbrtags"></a><a name="getshowbrtags"></a> Chtmleditctrlbase:: getshowbrtags
 
-Ruft ab, ob der WebBrowser eine Glyphe für br-Tags anzeigt.
+Ruft ab, ob im Webbrowser ein Symbol für BR-Tags angezeigt wird.
 
 ```
 HRESULT GetShowBRTags(bool& bCurValue) const;
@@ -1002,20 +1002,20 @@ HRESULT GetShowBRTags(bool& bCurValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bCurValue*<br/>
-TRUE, wenn der WebBrowser eine Glyphe für br-Tags anzeigt, FALSE, wenn dies nicht der Fall ist.
+*bcurrvalue*<br/>
+TRUE, wenn der Webbrowser ein Symbol für BR-Tags anzeigt, false, wenn dies nicht der Fall ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie [unter IDM_SHOWWBRTAGS Befehls-ID](/previous-versions/aa769956\(v=vs.85\)).
+Weitere Informationen finden Sie unter [IDM_SHOWWBRTAGS Befehls-ID](/previous-versions/aa769956\(v=vs.85\)).
 
-## <a name="chtmleditctrlbasegetshowcommenttags"></a><a name="getshowcommenttags"></a>CHtmlEditCtrlBase::GetShowCommentTags
+## <a name="chtmleditctrlbasegetshowcommenttags"></a><a name="getshowcommenttags"></a> Chtmleditctrlbase:: getshowcommenttags
 
-Ruft ab, ob der WebBrowser eine Glyphe für Kommentar-Tags anzeigt.
+Ruft ab, ob im Webbrowser ein Symbol für Kommentar Tags angezeigt wird.
 
 ```
 HRESULT GetShowCommentTags(bool& bCurValue) const;
@@ -1023,20 +1023,20 @@ HRESULT GetShowCommentTags(bool& bCurValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bCurValue*<br/>
-TRUE, wenn der WebBrowser eine Glyphe für Kommentar-Tags anzeigt, FALSE, wenn dies nicht der Fall ist.
+*bcurrvalue*<br/>
+TRUE, wenn der Webbrowser ein Symbol für Kommentar Tags anzeigt, false, wenn dies nicht der Fall ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie [unter IDM_SHOWCOMMENTTAGS Befehls-ID](/previous-versions/aa769950\(v=vs.85\)).
+Weitere Informationen finden Sie unter [IDM_SHOWCOMMENTTAGS Befehls-ID](/previous-versions/aa769950\(v=vs.85\)).
 
-## <a name="chtmleditctrlbasegetshowmisctags"></a><a name="getshowmisctags"></a>CHtmlEditCtrlBase::GetShowMiscTags
+## <a name="chtmleditctrlbasegetshowmisctags"></a><a name="getshowmisctags"></a> Chtmleditctrlbase:: getshowfehltags
 
-Ruft ab, ob der WebBrowser alle in Microsoft Internet Explorer 4.0 angezeigten Tags anzeigt.
+Ruft ab, ob im Webbrowser alle in Microsoft Internet Explorer 4,0 angezeigten Tags angezeigt werden.
 
 ```
 HRESULT GetShowMiscTags(bool& bCurValue) const;
@@ -1044,20 +1044,20 @@ HRESULT GetShowMiscTags(bool& bCurValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bCurValue*<br/>
-TRUE, wenn der WebBrowser alle in Microsoft Internet Explorer 4.0 angezeigten Tags anzeigt, FALSE, falls nicht.
+*bcurrvalue*<br/>
+TRUE, wenn im Webbrowser alle in Microsoft Internet Explorer 4,0 angezeigten Tags angezeigt werden, andernfalls false.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie [unter IDM_SHOWMISCTAGS Befehls-ID](/previous-versions/aa769952\(v=vs.85\)).
+Weitere Informationen finden Sie unter [IDM_SHOWMISCTAGS Befehls-ID](/previous-versions/aa769952\(v=vs.85\)).
 
-## <a name="chtmleditctrlbasegetshowscripttags"></a><a name="getshowscripttags"></a>CHtmlEditCtrlBase::GetShowScriptTags
+## <a name="chtmleditctrlbasegetshowscripttags"></a><a name="getshowscripttags"></a> Chtmleditctrlbase:: getshowscripttags
 
-Ruft ab, ob der WebBrowser eine Glyphe für alle Skript-Tags anzeigt.
+Ruft ab, ob im Webbrowser ein Symbol für alle Skript Tags angezeigt wird.
 
 ```
 HRESULT GetShowScriptTags(bool& bCurValue) const;
@@ -1065,20 +1065,20 @@ HRESULT GetShowScriptTags(bool& bCurValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bCurValue*<br/>
-TRUE wenn der WebBrowser eine Glyphe für alle Skript-Tags anzeigt, FALSE, wenn dies nicht der Fall ist.
+*bcurrvalue*<br/>
+TRUE, wenn der Webbrowser ein Symbol für alle Skript Tags anzeigt, andernfalls false.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
-Weitere Informationen finden Sie [unter IDM_SHOWSCRIPTTAGS Befehls-ID](/previous-versions/aa769953\(v=vs.85\)).
+Weitere Informationen finden Sie unter [IDM_SHOWSCRIPTTAGS Befehls-ID](/previous-versions/aa769953\(v=vs.85\)).
 
-## <a name="chtmleditctrlbasegetshowstyletags"></a><a name="getshowstyletags"></a>CHtmlEditCtrlBase::GetShowStyleTags
+## <a name="chtmleditctrlbasegetshowstyletags"></a><a name="getshowstyletags"></a> Chtmleditctrlbase:: getshowstyletags
 
-Ruft ab, ob der WebBrowser eine Glyphe für alle Stil-Tags anzeigt.
+Ruft ab, ob der Webbrowser ein Symbol für alle stiltags anzeigt.
 
 ```
 HRESULT GetShowStyleTags(bool& bCurValue) const;
@@ -1086,20 +1086,20 @@ HRESULT GetShowStyleTags(bool& bCurValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bCurValue*<br/>
-TRUE wenn der WebBrowser eine Glyphe für alle Style-Tags anzeigt, FALSE, wenn
+*bcurrvalue*<br/>
+TRUE, wenn der Webbrowser ein Symbol für alle stiltags anzeigt, false, wenn dies nicht der Fall ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [IDM_SHOWSTYLETAGS Befehls-ID](/previous-versions/aa769954\(v=vs.85\)).
 
-## <a name="chtmleditctrlbasegetshowunknowntags"></a><a name="getshowunknowntags"></a>CHtmlEditCtrlBase::GetShowUnknownTags
+## <a name="chtmleditctrlbasegetshowunknowntags"></a><a name="getshowunknowntags"></a> Chtmleditctrlbase:: getshowunknowntags
 
-Ruft ab, ob der WebBrowser eine Glyphe für alle unbekannten Tags anzeigt.
+Ruft ab, ob im Webbrowser ein Symbol für alle unbekannten Tags angezeigt wird.
 
 ```
 HRESULT GetShowUnknownTags(bool& bCurValue) const;
@@ -1107,18 +1107,18 @@ HRESULT GetShowUnknownTags(bool& bCurValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bCurValue*<br/>
-TRUE wenn der WebBrowser eine Glyphe für alle unbekannten Tags anzeigt, FALSE, wenn dies nicht der Fall ist.
+*bcurrvalue*<br/>
+TRUE, wenn der Webbrowser ein Symbol für alle unbekannten Tags anzeigt, false, wenn dies nicht der Fall ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Weitere Informationen finden Sie unter [IDM_SHOWUNKNOWNTAGS Befehls-ID](/previous-versions/aa769955\(v=vs.85\)).
 
-## <a name="chtmleditctrlbasehorizontalline"></a><a name="horizontalline"></a>CHtmlEditCtrlBase::HorizontalLine
+## <a name="chtmleditctrlbasehorizontalline"></a><a name="horizontalline"></a> Chtmleditctrlbase:: horizontalline
 
 Überschreibt eine horizontale Linie in der aktuellen Auswahl.
 
@@ -1128,20 +1128,20 @@ HRESULT HorizontalLine(LPCTSTR szId = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szID*<br/>
+*szid*<br/>
 Die ID für die horizontale Linie.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_HORIZONTALLINE Befehls-ID](/previous-versions/aa769968\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasehyperlink"></a><a name="hyperlink"></a>CHtmlEditCtrlBase::HyperLink
+## <a name="chtmleditctrlbasehyperlink"></a><a name="hyperlink"></a> Chtmleditctrlbase:: Hyperlink
 
-Fügt einen Hyperlink in die aktuelle Auswahl ein.
+Fügt einen Hyperlink für die aktuelle Auswahl ein.
 
 ```
 HRESULT HyperLink(LPCTSTR szUrl = NULL) const;
@@ -1149,18 +1149,18 @@ HRESULT HyperLink(LPCTSTR szUrl = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szUrl*<br/>
-Die Hyperlink-URL.
+*szURL*<br/>
+Die Link-URL.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_HYPERLINK Befehls-ID](/previous-versions/aa769874\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseie50paste"></a><a name="ie50paste"></a>CHtmlEditCtrlBase::IE50Paste
+## <a name="chtmleditctrlbaseie50paste"></a><a name="ie50paste"></a> Chtmleditctrlbase:: IE50Paste
 
 Führt einen Einfügevorgang aus, der mit Internet Explorer 5 kompatibel ist.
 
@@ -1170,20 +1170,20 @@ HRESULT IE50Paste(LPCTSTR szData) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szData*<br/>
-Die einzufügende Zeichenfolge.
+*szdata*<br/>
+Die einzufüge Zeichenfolge.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_IE50_PASTE Befehls-ID](/previous-versions/aa769922\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseiframe"></a><a name="iframe"></a>CHtmlEditCtrlBase::Iframe
+## <a name="chtmleditctrlbaseiframe"></a><a name="iframe"></a> Chtmleditctrlbase:: iframe
 
-Überschreibt einen Inlinerahmen für die aktuelle Auswahl.
+Überschreibt einen Inline Frame in der aktuellen Auswahl.
 
 ```
 HRESULT Iframe(LPCTSTR szId = NULL) const;
@@ -1191,20 +1191,20 @@ HRESULT Iframe(LPCTSTR szId = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szId*<br/>
-Die ID für den Inlinerahmen.
+*szid*<br/>
+Die ID für den Inline Frame.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_IFRAME Befehls-ID](/previous-versions/aa769969\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseimage"></a><a name="image"></a>CHtmlEditCtrlBase::Bild
+## <a name="chtmleditctrlbaseimage"></a><a name="image"></a> Chtmleditctrlbase:: Image
 
-Überschreibt ein Bild in der aktuellen Auswahl.
+Überschreibt ein Bild für die aktuelle Auswahl.
 
 ```
 HRESULT Image(LPCTSTR szUrl = NULL) const;
@@ -1212,20 +1212,20 @@ HRESULT Image(LPCTSTR szUrl = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szUrl*<br/>
-Der Pfad und der Dateiname des einzufügenden Bildes.
+*szURL*<br/>
+Der Pfad und der Dateiname des einzufügenden Bilds.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_IMAGE Befehls-ID](/previous-versions/aa769970\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseindent"></a><a name="indent"></a>CHtmlEditCtrlBase::Einzug
+## <a name="chtmleditctrlbaseindent"></a><a name="indent"></a> Chtmleditctrlbase:: Einzug
 
-Erhöht den Einzug des markierten Textes um ein Einzugsinsinkrement.
+Vergrößert den Einzug des ausgewählten Texts um ein Einzugs Inkrement.
 
 ```
 HRESULT Indent() const;
@@ -1233,15 +1233,15 @@ HRESULT Indent() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_INDENT Befehls-ID](/previous-versions/aa769963\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseinsfieldset"></a><a name="insfieldset"></a>CHtmlEditCtrlBase::InsFieldSet
+## <a name="chtmleditctrlbaseinsfieldset"></a><a name="insfieldset"></a> Chtmleditctrlbase:: insfieldset
 
-Überschreibt ein Feld für die aktuelle Auswahl.
+Überschreibt ein Feld in der aktuellen Auswahl.
 
 ```
 HRESULT InsFieldSet(LPCTSTR szId = NULL) const;
@@ -1249,20 +1249,20 @@ HRESULT InsFieldSet(LPCTSTR szId = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szId*<br/>
+*szid*<br/>
 Die ID für das Feld.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_INSFIELDSET Befehls-ID](/previous-versions/aa769967\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseinsinputbutton"></a><a name="insinputbutton"></a>CHtmlEditCtrlBase::InsInputButton
+## <a name="chtmleditctrlbaseinsinputbutton"></a><a name="insinputbutton"></a> Chtmleditctrlbase:: insinputbutton
 
-Überschreibt ein Schaltflächensteuerelement für die aktuelle Auswahl.
+Überschreibt ein Schaltflächen-Steuerelement für die aktuelle Auswahl.
 
 ```
 HRESULT InsInputButton(LPCTSTR szId = NULL) const;
@@ -1270,20 +1270,20 @@ HRESULT InsInputButton(LPCTSTR szId = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szId*<br/>
-Die ID für das Schaltflächensteuerelement.
+*szid*<br/>
+Die ID für das Schaltflächen-Steuerelement.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_INSINPUTBUTTON Befehls-ID](/previous-versions/aa769971\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseinsinputhidden"></a><a name="insinputhidden"></a>CHtmlEditCtrlBase::InsInputHidden
+## <a name="chtmleditctrlbaseinsinputhidden"></a><a name="insinputhidden"></a> Chtmleditctrlbase:: insinputhidden
 
-Fügt ein ausgeblendetes Steuerelement in die aktuelle Auswahl ein.
+Fügt ein verborgenes Steuerelement für die aktuelle Auswahl ein.
 
 ```
 HRESULT InsInputHidden(LPCTSTR szId = NULL) const;
@@ -1291,20 +1291,20 @@ HRESULT InsInputHidden(LPCTSTR szId = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szId*<br/>
-Die ID für das ausgeblendete Steuerelement.
+*szid*<br/>
+Die ID für das verborgene Steuerelement.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_INSINPUTHIDDEN Befehls-ID](/previous-versions/aa769974\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseinsinputimage"></a><a name="insinputimage"></a>CHtmlEditCtrlBase::InsInputImage
+## <a name="chtmleditctrlbaseinsinputimage"></a><a name="insinputimage"></a> Chtmleditctrlbase:: insinputimage
 
-Überschreibt ein Bildsteuerelement für die aktuelle Auswahl.
+Überschreibt ein Bild Steuerelement für die aktuelle Auswahl.
 
 ```
 HRESULT InsInputImage(LPCTSTR szId = NULL) const;
@@ -1312,20 +1312,20 @@ HRESULT InsInputImage(LPCTSTR szId = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szId*<br/>
-Die ID für das Bildsteuerelement.
+*szid*<br/>
+Die ID für das Image-Steuerelement.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_INSINPUTIMAGE Befehls-ID](/previous-versions/aa769975\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseinsinputpassword"></a><a name="insinputpassword"></a>CHtmlEditCtrlBase::InsInputPassword
+## <a name="chtmleditctrlbaseinsinputpassword"></a><a name="insinputpassword"></a> Chtmleditctrlbase:: insinputpassword
 
-Überschreibt ein Kennwortsteuerelement für die aktuelle Auswahl.
+Überschreibt ein Kenn Wort Steuerelement für die aktuelle Auswahl.
 
 ```
 HRESULT InsInputPassword(LPCTSTR szId = NULL) const;
@@ -1333,18 +1333,18 @@ HRESULT InsInputPassword(LPCTSTR szId = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szId*<br/>
-Die ID für das Kennwortsteuerelement.
+*szid*<br/>
+Die ID für das Kenn Wort Steuerelement.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_INSINPUTPASSWORD Befehls-ID](/previous-versions/aa769976\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseinsinputreset"></a><a name="insinputreset"></a>CHtmlEditCtrlBase::InsInputReset
+## <a name="chtmleditctrlbaseinsinputreset"></a><a name="insinputreset"></a> Chtmleditctrlbase:: insinputreset
 
 Überschreibt ein Reset-Steuerelement für die aktuelle Auswahl.
 
@@ -1354,20 +1354,20 @@ HRESULT InsInputReset(LPCTSTR szId = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szId*<br/>
+*szid*<br/>
 Die ID für das Reset-Steuerelement.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_INSINPUTRESET Befehls-ID](/previous-versions/aa769978\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseinsinputsubmit"></a><a name="insinputsubmit"></a>CHtmlEditCtrlBase::InsInputSubmit
+## <a name="chtmleditctrlbaseinsinputsubmit"></a><a name="insinputsubmit"></a> Chtmleditctrlbase:: insinputsubmit
 
-Überschreibt ein Übermittlungssteuerelement für die aktuelle Auswahl.
+Überschreibt ein Submit-Steuerelement für die aktuelle Auswahl.
 
 ```
 HRESULT InsInputSubmit(LPCTSTR szId = NULL) const;
@@ -1375,20 +1375,20 @@ HRESULT InsInputSubmit(LPCTSTR szId = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szId*<br/>
-Die ID für das Übermittlungssteuerelement.
+*szid*<br/>
+Die ID für das Submit-Steuerelement.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_INSINPUTSUBMIT Befehls-ID](/previous-versions/aa769979\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseinsinputupload"></a><a name="insinputupload"></a>CHtmlEditCtrlBase::InsInputUpload
+## <a name="chtmleditctrlbaseinsinputupload"></a><a name="insinputupload"></a> Chtmleditctrlbase:: insinputupload
 
-Überschreibt ein Dateiupload-Steuerelement für die aktuelle Auswahl.
+Überschreibt ein Dateiuploadsteuerelement für die aktuelle Auswahl.
 
 ```
 HRESULT InsInputUpload(LPCTSTR szId = NULL) const;
@@ -1396,18 +1396,18 @@ HRESULT InsInputUpload(LPCTSTR szId = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szId*<br/>
-Die ID für das Datei-Upload-Steuerelement.
+*szid*<br/>
+Die ID für das Dateiuploadsteuerelement.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_INSINPUTUPLOAD Befehls-ID](/previous-versions/aa769973\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseis1delement"></a><a name="is1delement"></a>CHtmlEditCtrlBase::Is1DElement
+## <a name="chtmleditctrlbaseis1delement"></a><a name="is1delement"></a> Chtmleditctrlbase:: Is1DElement
 
 Bestimmt, ob ein Element statisch positioniert ist.
 
@@ -1418,17 +1418,17 @@ HRESULT Is1DElement(bool& bValue) const;
 ### <a name="parameters"></a>Parameter
 
 *bValue*<br/>
-TRUE, wenn das Element statisch positioniert ist, andernfalls FALSE.
+TRUE, wenn das Element statisch positioniert ist, andernfalls false.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_1D_ELEMENT Befehls-ID](/previous-versions/aa769885\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseis2delement"></a><a name="is2delement"></a>CHtmlEditCtrlBase::Is2DElement
+## <a name="chtmleditctrlbaseis2delement"></a><a name="is2delement"></a> Chtmleditctrlbase:: Is2DElement
 
 Bestimmt, ob ein Element absolut positioniert ist.
 
@@ -1439,19 +1439,19 @@ HRESULT Is2DElement(bool& bValue) const;
 ### <a name="parameters"></a>Parameter
 
 *bValue*<br/>
-TRUE, wenn das Element absolut positioniert ist, FALSE sonst.
+TRUE, wenn das Element absolut positioniert ist, andernfalls false.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_2D_ELEMENT Befehls-ID](/previous-versions/aa769886\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseitalic"></a><a name="italic"></a>CHtmlEditCtrlBase::Italic
+## <a name="chtmleditctrlbaseitalic"></a><a name="italic"></a> Chtmleditctrlbase:: Italic
 
-Schaltet die aktuelle Auswahl zwischen kursiv und nichtitalic um.
+Schaltet die aktuelle Auswahl zwischen kursiv-und nonitalic um.
 
 ```
 HRESULT Italic() const;
@@ -1459,15 +1459,15 @@ HRESULT Italic() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_ITALIC Befehls-ID](/previous-versions/aa769988\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasejustifycenter"></a><a name="justifycenter"></a>CHtmlEditCtrlBase::JustifyCenter
+## <a name="chtmleditctrlbasejustifycenter"></a><a name="justifycenter"></a> Chtmleditctrlbase:: justifycenter
 
-Zentriert den Formatblock, in dem sich die aktuelle Auswahl befindet.
+Zentriert den Format Block, in dem sich die aktuelle Auswahl befindet.
 
 ```
 HRESULT JustifyCenter() const;
@@ -1475,15 +1475,15 @@ HRESULT JustifyCenter() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_JUSTIFYCENTER Befehls-ID](/previous-versions/aa769989\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasejustifyleft"></a><a name="justifyleft"></a>CHtmlEditCtrlBase::JustifyLeft
+## <a name="chtmleditctrlbasejustifyleft"></a><a name="justifyleft"></a> Chtmleditctrlbase:: justifyleft
 
-Links rechtfertigt den Formatblock, in dem sich die aktuelle Auswahl befindet.
+Gibt den Format Block linksbündig an, in dem sich die aktuelle Auswahl befindet.
 
 ```
 HRESULT JustifyLeft() const;
@@ -1491,15 +1491,15 @@ HRESULT JustifyLeft() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_JUSTIFYLEFT Befehls-ID](/previous-versions/aa770011\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasejustifyright"></a><a name="justifyright"></a>CHtmlEditCtrlBase::JustifyRight
+## <a name="chtmleditctrlbasejustifyright"></a><a name="justifyright"></a> Chtmleditctrlbase:: JustifyRight
 
-Rechts rechtfertigt den Formatblock, in dem sich die aktuelle Auswahl befindet.
+Rechtfertigt den Format Block, in dem sich die aktuelle Auswahl befindet.
 
 ```
 HRESULT JustifyRight() const;
@@ -1507,15 +1507,15 @@ HRESULT JustifyRight() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_JUSTIFYRIGHT Befehls-ID](/previous-versions/aa770013\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaselistbox"></a><a name="listbox"></a>CHtmlEditCtrlBase::ListBox
+## <a name="chtmleditctrlbaselistbox"></a><a name="listbox"></a> Chtmleditctrlbase:: ListBox
 
-Überschreibt ein Listenfeldauswahlsteuerelement für die aktuelle Auswahl.
+Überschreibt ein Listenfeld Auswahl Steuerelement für die aktuelle Auswahl.
 
 ```
 HRESULT ListBox(LPCTSTR szId = NULL) const;
@@ -1523,20 +1523,20 @@ HRESULT ListBox(LPCTSTR szId = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szId*<br/>
-Die ID für das Listenfeldsteuerelement.
+*szid*<br/>
+Die ID für das Listenfeld-Steuerelement.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_LISTBOX Befehls-ID](/previous-versions/aa769985\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasemarquee"></a><a name="marquee"></a>CHtmlEditCtrlBase::Marquee
+## <a name="chtmleditctrlbasemarquee"></a><a name="marquee"></a> Chtmleditctrlbase:: Marquee
 
-Überschreibt ein leeres Festzelt für die aktuelle Auswahl.
+Überschreibt einen leeren Marquee in der aktuellen Auswahl.
 
 ```
 HRESULT Marquee(LPCTSTR szId = NULL) const;
@@ -1544,18 +1544,18 @@ HRESULT Marquee(LPCTSTR szId = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szId*<br/>
-Die ID für das Festzelt.
+*szid*<br/>
+Die ID für den Marquee.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_MARQUEE Befehls-ID](/previous-versions/aa769981\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasenewdocument"></a><a name="newdocument"></a>CHtmlEditCtrlBase::NeuesDokument
+## <a name="chtmleditctrlbasenewdocument"></a><a name="newdocument"></a> Chtmleditctrlbase:: NewDocument
 
 Erstellt ein neues Dokument.
 
@@ -1565,11 +1565,11 @@ HRESULT NewDocument() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-## <a name="chtmleditctrlbaseorderlist"></a><a name="orderlist"></a>CHtmlEditCtrlBase::OrderList
+## <a name="chtmleditctrlbaseorderlist"></a><a name="orderlist"></a> Chtmleditctrlbase:: OrderList
 
-Schaltet die aktuelle Auswahl zwischen einer geordneten Liste und einem normalen Formatblock um.
+Schaltet die aktuelle Auswahl zwischen einer geordneten Liste und einem normalen Format Block um.
 
 ```
 HRESULT OrderList(LPCTSTR szId = NULL) const;
@@ -1577,20 +1577,20 @@ HRESULT OrderList(LPCTSTR szId = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szId*<br/>
+*szid*<br/>
 Die ID für die geordnete Liste.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_ORDERLIST Befehls-ID](/previous-versions/aa769982\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseoutdent"></a><a name="outdent"></a>CHtmlEditCtrlBase::Outdent
+## <a name="chtmleditctrlbaseoutdent"></a><a name="outdent"></a> Chtmleditctrlbase:: outdent
 
-Verringert den Einzug des Formatblocks, in dem sich die aktuelle Auswahl befindet, um ein Schritt.
+Verringert sich um einen Inkrement-Einzug des Format Blocks, in dem sich die aktuelle Auswahl befindet.
 
 ```
 HRESULT Outdent() const;
@@ -1598,15 +1598,15 @@ HRESULT Outdent() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_OUTDENT Befehls-ID](/previous-versions/aa770015\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseparagraph"></a><a name="paragraph"></a>CHtmlEditCtrlBase::Paragraph
+## <a name="chtmleditctrlbaseparagraph"></a><a name="paragraph"></a> Chtmleditctrlbase::P aragraph
 
-Überschreibt einen Zeilenumbruch in der aktuellen Auswahl.
+Überschreibt einen Zeilenumbruch bei der aktuellen Auswahl.
 
 ```
 HRESULT Paragraph(LPCTSTR szId = NULL) const;
@@ -1614,20 +1614,20 @@ HRESULT Paragraph(LPCTSTR szId = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szId*<br/>
+*szid*<br/>
 Die ID für den Absatz.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_PARAGRAPH Befehls-ID](/previous-versions/aa769983\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasepaste"></a><a name="paste"></a>CHtmlEditCtrlBase::Paste
+## <a name="chtmleditctrlbasepaste"></a><a name="paste"></a> Chtmleditctrlbase::P Aste
 
-Überschreibt den Inhalt der Zwischenablage in der aktuellen Auswahl.
+Überschreibt den Inhalt der Zwischenablage für die aktuelle Auswahl.
 
 ```
 HRESULT Paste() const;
@@ -1635,13 +1635,13 @@ HRESULT Paste() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_PASTE Befehls-ID](/previous-versions/aa770017\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseprintdocument"></a><a name="printdocument"></a>CHtmlEditCtrlBase::PrintDokument
+## <a name="chtmleditctrlbaseprintdocument"></a><a name="printdocument"></a> Chtmleditctrlbase::P rintdocument
 
 Druckt das aktuelle Dokument.
 
@@ -1653,23 +1653,23 @@ HRESULT PrintDocument(bool bShowPrintDialog) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szPrintTemplate*<br/>
-Pfad zu einer Druckvorlage; Wenn keine angegeben ist, wird die Standarddruckvorlage verwendet.
+*szprinttemplate*<br/>
+Pfad zu einer Druckvorlage Wenn kein Wert angegeben ist, wird die Standarddruck Vorlage verwendet.
 
-*bShowPrintDialog*<br/>
-Wenn TRUE, wird das Dialogfeld Drucken angezeigt.
+*bshowprintdialog*<br/>
+Wenn true, wird das Dialogfeld Drucken angezeigt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_PRINT Befehls-ID](/previous-versions/aa769937\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseprintpreview"></a><a name="printpreview"></a>CHtmlEditCtrlBase::PrintPreview
+## <a name="chtmleditctrlbaseprintpreview"></a><a name="printpreview"></a> Chtmleditctrlbase::P rintpreview
 
-Öffnet das Fenster Druckvorschau für das aktuelle Dokument entweder mit der Standardvorlage für die Druckvorschau oder einer benutzerdefinierten Vorlage.
+Öffnet das Seiten Ansichts Fenster für das aktuelle Dokument entweder mithilfe der Standardvorlage für die Druckvorschau oder einer benutzerdefinierten Vorlage.
 
 ```
 HRESULT PrintPreview() const;
@@ -1678,20 +1678,20 @@ HRESULT PrintPreview(LPCTSTR szPrintTemplate) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szPrintTemplate*<br/>
+*szprinttemplate*<br/>
 Pfad zu einer Druckvorlage.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_PRINTPREVIEW Befehls-ID](/previous-versions/aa769938\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasequerystatus"></a><a name="querystatus"></a>CHtmlEditCtrlBase::QueryStatus
+## <a name="chtmleditctrlbasequerystatus"></a><a name="querystatus"></a> Chtmleditctrlbase:: QueryStatus
 
-Rufen Sie diese Methode auf, um den Status von Befehlen abzufragen.
+Ruft diese Methode auf, um den Status von Befehlen abzufragen.
 
 ```
 long QueryStatus(long cmdID) const;
@@ -1699,16 +1699,16 @@ long QueryStatus(long cmdID) const;
 
 ### <a name="parameters"></a>Parameter
 
-*cmdID*<br/>
-Die Befehls-ID. Befehlsbezeichner werden der CGID_MSHTML-Befehlsgruppe entnommen. Diese Befehle sind in Mshtmcid.h definiert. Sie finden die Liste auch online unter [MSHTML Command Identifiers](https://go.microsoft.com/fwlink/p/?linkid=149220).
+*CMDID*<br/>
+Die Befehls-ID. Befehls Bezeichner werden aus der CGID_MSHTML Befehlsgruppe entnommen. Diese Befehle sind in mshtmcid. h definiert. Sie finden die Liste auch online unter [MSHTML-Befehls](/previous-versions/aa741315(v=vs.85))Bezeichner.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt einen [OLECMDF](/windows/win32/api/docobj/ne-docobj-olecmdf) zurück, der den Status für *cmdID*oder 0 bei einem Fehler angibt.
+Gibt einen [OLECMDF](/windows/win32/api/docobj/ne-docobj-olecmdf) -Wert zurück, der den Status für *CMDID* angibt, oder 0 bei einem Fehler.
 
-## <a name="chtmleditctrlbaseradiobutton"></a><a name="radiobutton"></a>CHtmlEditCtrlBase::RadioButton
+## <a name="chtmleditctrlbaseradiobutton"></a><a name="radiobutton"></a> Chtmleditctrlbase:: RadioButton
 
-Überschreibt ein Funksteuerelement für die aktuelle Auswahl.
+Überschreibt ein Radio-Steuerelement für die aktuelle Auswahl.
 
 ```
 HRESULT RadioButton(LPCTSTR szId = NULL) const;
@@ -1716,18 +1716,18 @@ HRESULT RadioButton(LPCTSTR szId = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szId*<br/>
-Die ID des Optionsfelds.
+*szid*<br/>
+Die ID des Options Felds.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_RADIOBUTTON Befehls-ID](/previous-versions/aa769977\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaserefreshdocument"></a><a name="refreshdocument"></a>CHtmlEditCtrlBase::AktualisierenDokument
+## <a name="chtmleditctrlbaserefreshdocument"></a><a name="refreshdocument"></a> Chtmleditctrlbase:: erfrischendes Dokument
 
 Aktualisiert das aktuelle Dokument.
 
@@ -1737,15 +1737,15 @@ HRESULT RefreshDocument() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_REFRESH Befehls-ID](/previous-versions/aa770020\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseremoveformat"></a><a name="removeformat"></a>CHtmlEditCtrlBase::RemoveFormat
+## <a name="chtmleditctrlbaseremoveformat"></a><a name="removeformat"></a> Chtmleditctrlbase:: RemoveFormat
 
-Entfernt die Formatierungs-Tags aus der aktuellen Auswahl.
+Entfernt die Formatierungs Tags aus der aktuellen Auswahl.
 
 ```
 HRESULT RemoveFormat() const;
@@ -1753,13 +1753,13 @@ HRESULT RemoveFormat() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_REMOVEFORMAT Befehls-ID](/previous-versions/aa770021\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesaveas"></a><a name="saveas"></a>CHtmlEditCtrlBase::Speichern
+## <a name="chtmleditctrlbasesaveas"></a><a name="saveas"></a> Chtmleditctrlbase:: SaveAs
 
 Speichert die aktuelle Webseite in einer Datei.
 
@@ -1769,18 +1769,18 @@ HRESULT SaveAs(LPCTSTR szPath = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szPath*<br/>
-Der Pfad und der Dateiname, in den die Webseite gespeichert werden soll.
+*szpath*<br/>
+Der Pfad und der Dateiname, in dem die Webseite gespeichert werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_SAVEAS Befehls-ID](/previous-versions/aa770024\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseselectall"></a><a name="selectall"></a>CHtmlEditCtrlBase::SelectAlle
+## <a name="chtmleditctrlbaseselectall"></a><a name="selectall"></a> Chtmleditctrlbase:: SelectAll
 
 Wählt das gesamte Dokument aus.
 
@@ -1790,15 +1790,15 @@ HRESULT SelectAll() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_SELECTALL Befehls-ID](/previous-versions/aa770025\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseset2dposition"></a><a name="set2dposition"></a>CHtmlEditCtrlBase::Set2DPosition
+## <a name="chtmleditctrlbaseset2dposition"></a><a name="set2dposition"></a> Chtmleditctrlbase:: Set2DPosition
 
-Ermöglicht das Verschieben absolut positionierter Elemente durch Ziehen.
+Ermöglicht das Verschieben von absolut positionierten Elementen durchziehen.
 
 ```
 HRESULT Set2DPosition(bool bNewValue) const;
@@ -1806,20 +1806,20 @@ HRESULT Set2DPosition(bool bNewValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bNewValue*<br/>
-Wenn TRUE, können absolut positionierte Elemente durch Ziehen verschoben werden.
+*bnewvalue*<br/>
+TRUE gibt an, dass absolut positionierte Elemente durchziehen verschoben werden können.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_2D_POSITION Befehls-ID](/previous-versions/aa769887\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetabsoluteposition"></a><a name="setabsoluteposition"></a>CHtmlEditCtrlBase::SetAbsolutePosition
+## <a name="chtmleditctrlbasesetabsoluteposition"></a><a name="setabsoluteposition"></a> Chtmleditctrlbase:: settabsoluteposition
 
-Legt die Positionseigenschaft eines Elements auf "absolut" oder "statisch" fest.
+Legt die Positions Eigenschaft eines Elements auf "absolute" oder "static" fest.
 
 ```
 HRESULT SetAbsolutePosition(bool bNewValue) const;
@@ -1827,18 +1827,18 @@ HRESULT SetAbsolutePosition(bool bNewValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bNewValue*<br/>
-Wenn TRUE, ist die Positionseigenschaft des Elements "absolut"; wenn FALSE, ist es "statisch".
+*bnewvalue*<br/>
+TRUE gibt an, dass die Position-Eigenschaft des Elements "absolut" ist. Wenn der Wert false ist, ist er "static".
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_ABSOLUTE_POSITION Befehls-ID](/previous-versions/aa769889\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetatomicselection"></a><a name="setatomicselection"></a>CHtmlEditCtrlBase::SetAtomicSelection
+## <a name="chtmleditctrlbasesetatomicselection"></a><a name="setatomicselection"></a> Chtmleditctrlbase:: abwetatomicselection
 
 Legen Sie den atomaren Auswahlmodus fest.
 
@@ -1848,20 +1848,20 @@ HRESULT SetAtomicSelection(bool bNewValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bNewValue*<br/>
-Wenn TRUE, kann jedes Element mit einem ATOMICSELECTION-Attribut auf TRUE festgelegt werden, nur als Einheit auswählbar sein.
+*bnewvalue*<br/>
+True gibt an, dass jedes Element, für das ein atomicselection-Attribut auf true festgelegt ist, nur als Einheit ausgewählt werden kann.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_ATOMICSELECTION Befehls-ID](/previous-versions/aa769892\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetautourldetectmode"></a><a name="setautourldetectmode"></a>CHtmlEditCtrlBase::SetAutoURLDetectMode
+## <a name="chtmleditctrlbasesetautourldetectmode"></a><a name="setautourldetectmode"></a> Chtmleditctrlbase:: s.
 
-Aktiviert und deaktiviert die automatische URL-Erkennung.
+Schaltet die automatische URL-Erkennung ein und aus.
 
 ```
 HRESULT SetAutoURLDetectMode(bool bNewValue) const;
@@ -1869,18 +1869,18 @@ HRESULT SetAutoURLDetectMode(bool bNewValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bNewValue*<br/>
-Wenn TRUE, ist die automatische URL-Erkennung aktiviert.
+*bnewvalue*<br/>
+TRUE gibt an, dass die automatische URL-Erkennung aktiviert ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_AUTOURLDETECT_MODE Befehls-ID](/previous-versions/aa769893\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetbackcolor"></a><a name="setbackcolor"></a>CHtmlEditCtrlBase::SetBackColor
+## <a name="chtmleditctrlbasesetbackcolor"></a><a name="setbackcolor"></a> Chtmleditctrlbase:: setBackColor
 
 Legt die Hintergrundfarbe der aktuellen Auswahl fest.
 
@@ -1891,23 +1891,23 @@ HRESULT SetBackColor(LPCTSTR szColor) const;
 
 ### <a name="parameters"></a>Parameter
 
-*nColor*<br/>
+*ncolor*<br/>
 Die Farbe. Siehe *pvaIn* in [IDM_BACKCOLOR Befehls-ID](/previous-versions/aa769858\(v=vs.85\)).
 
-*szColor*<br/>
+*szcolor*<br/>
 Die Farbe. Siehe *pvaIn* in [IDM_BACKCOLOR Befehls-ID](/previous-versions/aa769858\(v=vs.85\)).
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_BACKCOLOR_ Befehls-ID](/previous-versions/aa769858\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetblockformat"></a><a name="setblockformat"></a>CHtmlEditCtrlBase::SetBlockFormat
+## <a name="chtmleditctrlbasesetblockformat"></a><a name="setblockformat"></a> Chtmleditctrlbase:: setblock Format
 
-Legt das aktuelle Blockformat-Tag fest.
+Legt das aktuelle Block Formattag fest.
 
 ```
 HRESULT SetBlockFormat(LPCTSTR szFormat) const;
@@ -1915,20 +1915,20 @@ HRESULT SetBlockFormat(LPCTSTR szFormat) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szFormat*<br/>
-Das Format-Tag.
+*szformat*<br/>
+Das Formattag.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_BLOCKFMT_command-ID](/previous-versions/aa769883\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetbookmark"></a><a name="setbookmark"></a>CHtmlEditCtrlBase::SetBookMark
+## <a name="chtmleditctrlbasesetbookmark"></a><a name="setbookmark"></a> Chtmleditctrlbase:: SetBookmark
 
-Erstellt einen Lesezeichenanker für die aktuelle Auswahl oder Einfügemarke.
+Erstellt einen Lesezeichen Anker für die aktuelle Auswahl oder Einfügemarke.
 
 ```
 HRESULT SetBookMark(LPCTSTR szAnchorName) const;
@@ -1936,20 +1936,20 @@ HRESULT SetBookMark(LPCTSTR szAnchorName) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szAnchorName*<br/>
-Der Ankername.
+*szanchorname*<br/>
+Der Anker Name.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_BOOKMARK Befehls-ID](/previous-versions/aa769873\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetcsseditinglevel"></a><a name="setcsseditinglevel"></a>CHtmlEditCtrlBase::SetCSSEditingLevel
+## <a name="chtmleditctrlbasesetcsseditinglevel"></a><a name="setcsseditinglevel"></a> Chtmleditctrlbase:: setcsseditinglevel
 
-Wählt aus, welche CSS-Ebene (CSS1 oder CSS2) der Editor unterstützt, falls vorhanden.
+Wählt die CSS-Ebene (CSS1 oder CSS2) aus, die der Editor ggf. unterstützt.
 
 ```
 HRESULT SetCSSEditingLevel(short nLevel) const;
@@ -1957,20 +1957,20 @@ HRESULT SetCSSEditingLevel(short nLevel) const;
 
 ### <a name="parameters"></a>Parameter
 
-*nLevel*<br/>
-Die CSS-Ebene. Pass 0, wenn Sie keine CSS-Unterstützung wünschen.
+*Nlevel*<br/>
+Die CSS-Ebene. Übergeben Sie 0, wenn Sie keine CSS-Unterstützung wünschen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_CSSEDITING_LEVEL Befehls-ID](/previous-versions/aa769903\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetdefaultcomposesettings"></a><a name="setdefaultcomposesettings"></a>CHtmlEditCtrlBase::SetDefaultComposeSettings
+## <a name="chtmleditctrlbasesetdefaultcomposesettings"></a><a name="setdefaultcomposesettings"></a> Chtmleditctrlbase:: setdefaultcomposesettings
 
-Rufen Sie diese Methode auf, um die Standard-Verfasseneinstellungen festzulegen.
+Diese Methode wird aufgerufen, um die Standardeinstellungen für Compose festzulegen.
 
 ```
 HRESULT SetDefaultComposeSettings(
@@ -1985,38 +1985,38 @@ HRESULT SetDefaultComposeSettings(
 
 ### <a name="parameters"></a>Parameter
 
-*szFontName*<br/>
-Der Schriftartname.
+*szfontname*<br/>
+Der Schriftart Name.
 
-*nFontSize*<br/>
-Die Schriftgröße.
+*nfontsize*<br/>
+Der Schrift Grad.
 
-*crFontColor*<br/>
+*crfontcolor*<br/>
 Die Schriftfarbe.
 
-*crFontBgColor*<br/>
+*crfontbgcolor*<br/>
 Die Hintergrundfarbe der Schriftart.
 
-*bBold*<br/>
-Übergeben Sie TRUE für fett formatierten Text.
+*bbold*<br/>
+Übergeben Sie true für fett formatierten Text.
 
-*bItalic*<br/>
-Übergeben Sie TRUE für kursiven Text.
+*bitalic*<br/>
+Übergeben Sie true für kursiv formatiert.
 
-*bUnderline*<br/>
-Übergeben Sie TRUE für unterstrichenen Text.
+*bunter Streichung*<br/>
+Übergibt true für unterstrichenen Text.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_COMPOSESETTINGS Befehls-ID](/previous-versions/aa769901\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetdesignmode"></a><a name="setdesignmode"></a>CHtmlEditCtrlBase::SetDesignMode
+## <a name="chtmleditctrlbasesetdesignmode"></a><a name="setdesignmode"></a> Chtmleditctrlbase:: setdesignmode
 
-Legen Sie den Entwurfsmodus fest.
+Legen Sie den Entwurfs Modus fest.
 
 ```
 BOOL SetDesignMode(BOOL bMode) const;
@@ -2024,16 +2024,16 @@ BOOL SetDesignMode(BOOL bMode) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bMode*<br/>
-Wenn TRUE, schaltet der Entwurfsmodus ein.
+*bmode*<br/>
+Wenn der Wert true ist, wird der Entwurfs Modus eingeschaltet.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt TRUE bei Erfolg zurück, FALSE bei Fehler.
+Gibt bei Erfolg TRUE zurück, false bei einem Fehler.
 
-## <a name="chtmleditctrlbasesetdisableeditfocusui"></a><a name="setdisableeditfocusui"></a>CHtmlEditCtrlBase::SetDisableEditFocusUI
+## <a name="chtmleditctrlbasesetdisableeditfocusui"></a><a name="setdisableeditfocusui"></a> Chtmleditctrlbase:: setdisableeditfocusui
 
-Deaktiviert den geschlüpften Rahmen und behandelt ein Element mit Bearbeitungsfokus.
+Deaktiviert den ausgechepfte Rahmen und behandelt ein Element, das den Bearbeitungs Fokus besitzt.
 
 ```
 HRESULT SetDisableEditFocusUI(bool bNewValue) const;
@@ -2041,18 +2041,18 @@ HRESULT SetDisableEditFocusUI(bool bNewValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bNewValue*<br/>
-Wenn TRUE, deaktiviert den geschlüpften Rahmen und behandelt um ein standortwählbares Element, wenn das Element im Entwurfsmodus "Bearbeitungsfokus" hat. d. h., wenn der Text oder der Inhalt des Elements bearbeitet werden kann.
+*bnewvalue*<br/>
+Wenn der Wert true ist, wird der ausgelöste Rahmen und die Handles um ein auswählbares Standort Element deaktiviert, wenn das Element den "Fokus bearbeiten" im Entwurfs Modus aufweist. Das heißt, wenn der Text oder der Inhalt des Elements bearbeitet werden kann.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_DISABLE_EDITFOCUS_UI Befehls-ID](/previous-versions/aa769905\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetdocumenthtml"></a><a name="setdocumenthtml"></a>CHtmlEditCtrlBase::SetDocumentHTML
+## <a name="chtmleditctrlbasesetdocumenthtml"></a><a name="setdocumenthtml"></a> Chtmleditctrlbase:: setdocumenthtml
 
 Legt den HTML-Code des aktuellen Dokuments fest.
 
@@ -2062,14 +2062,14 @@ HRESULT SetDocumentHTML(LPCTSTR szHTML) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szHTML*<br/>
+*szhtml*<br/>
 Der HTML-Code.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
-## <a name="chtmleditctrlbasesetfontface"></a><a name="setfontface"></a>CHtmlEditCtrlBase::SetFontFace
+## <a name="chtmleditctrlbasesetfontface"></a><a name="setfontface"></a> Chtmleditctrlbase:: setfontface
 
 Legt die Schriftart für die aktuelle Auswahl fest.
 
@@ -2079,20 +2079,20 @@ HRESULT SetFontFace(LPCTSTR szFace) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szFace*<br/>
-Der Schriftartname.
+*szface*<br/>
+Der Schriftart Name.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_FONTNAME Befehls-ID](/previous-versions/aa769880\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetfontsize"></a><a name="setfontsize"></a>CHtmlEditCtrlBase::SetFontSize
+## <a name="chtmleditctrlbasesetfontsize"></a><a name="setfontsize"></a> Chtmleditctrlbase:: SetFontSize
 
-Legt die Schriftgröße für die aktuelle Auswahl fest.
+Legt den Schrift Grad für die aktuelle Auswahl fest.
 
 ```
 HRESULT SetFontSize(unsigned short size) const;
@@ -2101,17 +2101,17 @@ HRESULT SetFontSize(unsigned short size) const;
 ### <a name="parameters"></a>Parameter
 
 *size*<br/>
-Die HTML-Schriftgröße (1-7). Der Wert 0 legt die Schriftgröße auf 1 fest.
+Der HTML-Schrift Grad (1-7). Bei einem Wert von 0 wird der Schrift Grad auf 1 festgelegt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_FONTSIZE Befehls-ID](/previous-versions/aa769881\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetforecolor"></a><a name="setforecolor"></a>CHtmlEditCtrlBase::SetForeColor
+## <a name="chtmleditctrlbasesetforecolor"></a><a name="setforecolor"></a> Chtmleditctrlbase:: setforecolor
 
 Legt die Vordergrundfarbe (Text) der aktuellen Auswahl fest.
 
@@ -2122,21 +2122,21 @@ HRESULT SetForeColor(int nColor) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szColor*<br/>
+*szcolor*<br/>
 Die Farbe.
 
-*nColor*<br/>
+*ncolor*<br/>
 Die Farbe.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_FORECOLOR Befehls-ID](/previous-versions/aa769882\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetie5pastemode"></a><a name="setie5pastemode"></a>CHtmlEditCtrlBase::SetIE5PasteMode
+## <a name="chtmleditctrlbasesetie5pastemode"></a><a name="setie5pastemode"></a> Chtmleditctrlbase:: SetIE5PasteMode
 
 Legt fest, dass der Einfügevorgang mit Microsoft Internet Explorer 5 kompatibel ist.
 
@@ -2146,20 +2146,20 @@ HRESULT SetIE5PasteMode(bool bNewValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bNewValue*<br/>
-Wenn TRUE, sind alle Einfügevorgänge mit Internet Explorer 5 kompatibel. Wenn FALSE, sind Einfügevorgänge mit Internet Explorer 5.5 kompatibel.
+*bnewvalue*<br/>
+TRUE gibt an, dass alle Einfügevorgänge mit Internet Explorer 5 kompatibel sind. FALSE gibt an, dass Einfügevorgänge mit Internet Explorer 5,5 kompatibel sind.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_IE50_PASTE_MODE Befehls-ID](/previous-versions/aa769923\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetliveresize"></a><a name="setliveresize"></a>CHtmlEditCtrlBase::SetLiveResize
+## <a name="chtmleditctrlbasesetliveresize"></a><a name="setliveresize"></a> Chtmleditctrlbase:: setliveresize
 
-Bewirkt, dass der WebBrowser das Erscheinungsbild eines Elements während eines Größenänderungs- oder Verschiebungsvorgangs kontinuierlich aktualisiert, anstatt nur nach Abschluss des Verschiebens oder Änderns der Größe zu aktualisieren.
+Bewirkt, dass der Webbrowser die Darstellung eines Elements während der Größenänderung oder des Verschiebens fortlaufend aktualisiert, anstatt nur nach Abschluss des Verschiebe Vorgangs oder der Größenänderung aktualisiert zu werden.
 
 ```
 HRESULT SetLiveResize(bool bNewValue) const;
@@ -2167,18 +2167,18 @@ HRESULT SetLiveResize(bool bNewValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bNewValue*<br/>
-Wenn TRUE, bewirkt, dass der WebBrowser das Erscheinungsbild eines Elements während eines Größenänderungs- oder Verschiebungsvorgangs kontinuierlich aktualisiert. Wenn FALSE, wird es erst nach Abschluss des Verschiebens oder der Größenänderung aktualisiert.
+*bnewvalue*<br/>
+Wenn true, bewirkt, dass der Webbrowser die Darstellung eines Elements während der Änderung der Größe oder des Verschiebungs Vorgangs fortlaufend aktualisiert. Wenn der Wert false ist, wird er nur nach Abschluss der Verschiebung oder der Größenänderung aktualisiert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_LIVERESIZE Befehls-ID](/previous-versions/aa769928\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetmultiselect"></a><a name="setmultiselect"></a>CHtmlEditCtrlBase::SetMultiSelect
+## <a name="chtmleditctrlbasesetmultiselect"></a><a name="setmultiselect"></a> Chtmleditctrlbase:: setmultiselect
 
 Aktiviert die Mehrfachauswahl.
 
@@ -2188,20 +2188,20 @@ HRESULT SetMultiSelect(bool bNewValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bNewValue*<br/>
-Wenn TRUE, können Sie mehr als ein standortwählbares Element gleichzeitig auswählen, wenn der Benutzer die UMSCHALT- oder STRG-Tasten gedrückt hält.
+*bnewvalue*<br/>
+Wenn der Wert true ist, wird die Auswahl mehrerer Site auswählbarer Elemente gleichzeitig ermöglicht, wenn der Benutzer die UMSCHALT-oder STRG-Taste gedrückt hält.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_MULTIPLESELECTION Befehls-ID](/previous-versions/aa769929\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetoverridecursor"></a><a name="setoverridecursor"></a>CHtmlEditCtrlBase::SetOverrideCursor
+## <a name="chtmleditctrlbasesetoverridecursor"></a><a name="setoverridecursor"></a> Chtmleditctrlbase:: Server-ridecursor
 
-Befiehlt dem WebBrowser, den Mauszeiger nie zu ändern.
+Gibt an, dass der Webbrowser den Mauszeiger nie ändern darf.
 
 ```
 HRESULT SetOverrideCursor(bool bNewValue) const;
@@ -2209,20 +2209,20 @@ HRESULT SetOverrideCursor(bool bNewValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bNewValue*<br/>
-Wenn TRUE, ändert der WebBrowser den Mauszeiger nicht.
+*bnewvalue*<br/>
+Wenn der Wert true ist, wird der Mauszeiger vom Webbrowser nicht geändert.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_OVERRIDE_CURSOR Befehls-ID](/previous-versions/aa769932\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetoverwritemode"></a><a name="setoverwritemode"></a>CHtmlEditCtrlBase::SetOverwriteMode
+## <a name="chtmleditctrlbasesetoverwritemode"></a><a name="setoverwritemode"></a> Chtmleditctrlbase:: Server-Schreibmodus
 
-Schaltet den Texteingabemodus zwischen Einfügen und Überschreiben um.
+Schaltet den Texteingabe Modus zwischen INSERT und überschreiben um.
 
 ```
 HRESULT SetOverwriteMode(bool bMode) const;
@@ -2230,20 +2230,20 @@ HRESULT SetOverwriteMode(bool bMode) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bMode*<br/>
-Wenn TRUE, wird der Texteingabemodus überschrieben. wenn FALSE, wird der Texteingabemodus eingefügt.
+*bmode*<br/>
+TRUE gibt an, dass der Texteingabe Modus überschrieben wird. FALSE gibt an, dass der Texteingabe Modus Insert ist.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_OVERWRITE Befehls-ID](/previous-versions/aa770016\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetrespectvisindesign"></a><a name="setrespectvisindesign"></a>CHtmlEditCtrlBase::SetRespectVisInDesign
+## <a name="chtmleditctrlbasesetrespectvisindesign"></a><a name="setrespectvisindesign"></a> Chtmleditctrlbase:: Server Design
 
-Blendet unsichtbare Elemente im Entwurfsmodus aus.
+Verbirgt unsichtbare Elemente im Entwurfs Modus.
 
 ```
 HRESULT SetRespectVisInDesign(bool bNewValue) const;
@@ -2251,20 +2251,20 @@ HRESULT SetRespectVisInDesign(bool bNewValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bNewValue*<br/>
-Wenn TRUE, werden alle Elemente, deren Sichtbarkeit auf "versteckt" oder die Anzeigeeigenschaft auf "keine" festgelegt ist, nicht sowohl im Entwurfsmodus als auch im Suchmodus angezeigt. Wenn FALSE, werden diese Elemente nur im Suchmodus angezeigt.
+*bnewvalue*<br/>
+TRUE gibt an, dass alle Elemente, deren Sichtbarkeit auf "ausgeblendet" festgelegt ist, oder Anzeige Eigenschaft auf "None" festgelegt ist, nicht im Entwurfs Modus und im Durchsuchenmodus angezeigt werden. Wenn der Wert false ist, werden diese Elemente nur im Durchsuchenmodus angezeigt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_RESPECTVISIBILITY_INDESIGN Befehls-ID](/previous-versions/aa770023\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetshowalignedsitetags"></a><a name="setshowalignedsitetags"></a>CHtmlEditCtrlBase::SetShowAlignedSiteTags
+## <a name="chtmleditctrlbasesetshowalignedsitetags"></a><a name="setshowalignedsitetags"></a> Chtmleditctrlbase:: setshowalignedsitetags
 
-Zeigt eine Glyphe für `styleFloat` alle Elemente an, die über eine Eigenschaft verfügen.
+Zeigt ein Symbol für alle Elemente an, die über eine- `styleFloat` Eigenschaft verfügen.
 
 ```
 HRESULT SetShowAlignedSiteTags(bool bNewValue) const;
@@ -2272,20 +2272,20 @@ HRESULT SetShowAlignedSiteTags(bool bNewValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bNewValue*<br/>
-Wenn TRUE, wird eine Glyphe `styleFloat` für alle Elemente mit einer Eigenschaft angezeigt.
+*bnewvalue*<br/>
+Wenn true, wird ein Symbol für alle Elemente angezeigt, die über eine- `styleFloat` Eigenschaft verfügen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_SHOWALIGNEDSITETAGS Befehls-ID](/previous-versions/aa769947\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetshowalltags"></a><a name="setshowalltags"></a>CHtmlEditCtrlBase::SetShowAllTags
+## <a name="chtmleditctrlbasesetshowalltags"></a><a name="setshowalltags"></a> Chtmleditctrlbase:: setshowalltags
 
-Zeigt Glyphen an, um die Position aller Tags in einem Dokument anzuzeigen.
+Zeigt Symbole an, um den Speicherort aller Tags in einem Dokument anzuzeigen.
 
 ```
 HRESULT SetShowAllTags(bool bNewValue) const;
@@ -2293,20 +2293,20 @@ HRESULT SetShowAllTags(bool bNewValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bNewValue*<br/>
-Wenn TRUE, werden Glyphen angezeigt, um die Position aller Tags in einem Dokument anzuzeigen.
+*bnewvalue*<br/>
+Wenn true, werden Symbole angezeigt, um den Speicherort aller Tags in einem Dokument anzuzeigen.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_SHOWALLTAGS Befehls-ID](/previous-versions/aa769948\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetshowareatags"></a><a name="setshowareatags"></a>CHtmlEditCtrlBase::SetShowAreaTags
+## <a name="chtmleditctrlbasesetshowareatags"></a><a name="setshowareatags"></a> Chtmleditctrlbase:: setshowareatags
 
-Zeigt eine Glyphe für alle Bereichs-Tags an.
+Zeigt ein Symbol für alle Bereichs Tags an.
 
 ```
 HRESULT SetShowAreaTags(bool bNewValue) const;
@@ -2314,20 +2314,20 @@ HRESULT SetShowAreaTags(bool bNewValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bNewValue*<br/>
-Wenn TRUE, wird eine Glyphe für alle Bereichs-Tags angezeigt.
+*bnewvalue*<br/>
+Wenn true, wird ein Symbol für alle Bereichs Tags angezeigt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_SHOWAREATAGS Befehls-ID](/previous-versions/aa769949\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetshowbrtags"></a><a name="setshowbrtags"></a>CHtmlEditCtrlBase::SetShowBRTags
+## <a name="chtmleditctrlbasesetshowbrtags"></a><a name="setshowbrtags"></a> Chtmleditctrlbase:: setshowbrtags
 
-Zeigt eine Glyphe für alle br-Tags an.
+Zeigt ein Symbol für alle BR-Tags an.
 
 ```
 HRESULT SetShowBRTags(bool bNewValue) const;
@@ -2335,20 +2335,20 @@ HRESULT SetShowBRTags(bool bNewValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bNewValue*<br/>
-Wenn TRUE, zeigt eine Glyphe für alle br-Tags an.
+*bnewvalue*<br/>
+Wenn true, wird ein Symbol für alle BR-Tags angezeigt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_SHOWWBRTAGS Befehls-ID](/previous-versions/aa769956\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetshowcommenttags"></a><a name="setshowcommenttags"></a>CHtmlEditCtrlBase::SetShowCommentTags
+## <a name="chtmleditctrlbasesetshowcommenttags"></a><a name="setshowcommenttags"></a> Chtmleditctrlbase:: setshowcommenttags
 
-Zeigt eine Glyphe für alle Kommentar-Tags an.
+Zeigt ein Symbol für alle Kommentartags an.
 
 ```
 HRESULT SetShowCommentTags(bool bNewValue) const;
@@ -2356,20 +2356,20 @@ HRESULT SetShowCommentTags(bool bNewValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bNewValue*<br/>
-Wenn TRUE, wird eine Glyphe für alle Kommentar-Tags angezeigt.
+*bnewvalue*<br/>
+Wenn true, wird ein Symbol für alle Kommentartags angezeigt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_SHOWCOMMENTTAGS Befehls-ID](/previous-versions/aa769950\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetshowmisctags"></a><a name="setshowmisctags"></a>CHtmlEditCtrlBase::SetShowMiscTags
+## <a name="chtmleditctrlbasesetshowmisctags"></a><a name="setshowmisctags"></a> Chtmleditctrlbase:: setshowfehltags
 
-Zeigt alle in Microsoft Internet Explorer 4.0 angezeigten Tags an.
+Zeigt alle Tags an, die in Microsoft Internet Explorer 4,0 angezeigt werden.
 
 ```
 HRESULT SetShowMiscTags(bool bNewValue) const;
@@ -2377,20 +2377,20 @@ HRESULT SetShowMiscTags(bool bNewValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bNewValue*<br/>
-Wenn TRUE, werden alle in Microsoft Internet Explorer 4.0 angezeigten Tags angezeigt.
+*bnewvalue*<br/>
+Wenn true, werden alle Tags angezeigt, die in Microsoft Internet Explorer 4,0 angezeigt werden.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_SHOWMISCTAGS Befehls-ID](/previous-versions/aa769952\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetshowscripttags"></a><a name="setshowscripttags"></a>CHtmlEditCtrlBase::SetShowScriptTags
+## <a name="chtmleditctrlbasesetshowscripttags"></a><a name="setshowscripttags"></a> Chtmleditctrlbase:: setshowscripttags
 
-Zeigt eine Glyphe für alle Skript-Tags an.
+Zeigt ein Symbol für alle Skript Tags an.
 
 ```
 HRESULT SetShowScriptTags(bool bNewValue) const;
@@ -2398,20 +2398,20 @@ HRESULT SetShowScriptTags(bool bNewValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bNewValue*<br/>
-Wenn TRUE, wird eine Glyphe für alle Skript-Tags angezeigt.
+*bnewvalue*<br/>
+Wenn true, wird ein Symbol für alle Skript Tags angezeigt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_SHOWSCRIPTTAGS Befehls-ID](/previous-versions/aa769953\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetshowstyletags"></a><a name="setshowstyletags"></a>CHtmlEditCtrlBase::SetShowStyleTags
+## <a name="chtmleditctrlbasesetshowstyletags"></a><a name="setshowstyletags"></a> Chtmleditctrlbase:: setshowstyletags
 
-Zeigt eine Glyphe für alle Stil-Tags an.
+Zeigt ein Symbol für alle Style-Tags an.
 
 ```
 HRESULT SetShowStyleTags(bool bNewValue) const;
@@ -2419,20 +2419,20 @@ HRESULT SetShowStyleTags(bool bNewValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bNewValue*<br/>
-Wenn TRUE, wird eine Glyphe für alle Stil-Tags angezeigt.
+*bnewvalue*<br/>
+Wenn true, wird ein Symbol für alle stiltags angezeigt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_SHOWSTYLETAGS Befehls-ID](/previous-versions/aa769954\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasesetshowunknowntags"></a><a name="setshowunknowntags"></a>CHtmlEditCtrlBase::SetShowUnknownTags
+## <a name="chtmleditctrlbasesetshowunknowntags"></a><a name="setshowunknowntags"></a> Chtmleditctrlbase:: setshowunknowntags
 
-Zeigt eine Glyphe für alle unbekannten Tags an.
+Zeigt ein Symbol für alle unbekannten Tags an.
 
 ```
 HRESULT SetShowUnknownTags(bool bNewValue) const;
@@ -2440,20 +2440,20 @@ HRESULT SetShowUnknownTags(bool bNewValue) const;
 
 ### <a name="parameters"></a>Parameter
 
-*bNewValue*<br/>
-Wenn TRUE, zeigt eine Glyphe für alle unbekannten Tags an.
+*bnewvalue*<br/>
+Wenn true, wird ein Symbol für alle unbekannten Tags angezeigt.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_SHOWUNKNOWNTAGS Befehls-ID](/previous-versions/aa769955\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasetextarea"></a><a name="textarea"></a>CHtmlEditCtrlBase::TextArea
+## <a name="chtmleditctrlbasetextarea"></a><a name="textarea"></a> Chtmleditctrlbase:: textarea
 
-Überschreibt ein mehrzeiliges Texteingabesteuerelement für die aktuelle Auswahl.
+Überschreibt ein mehrzeilige Texteingabe-Steuerelement für die aktuelle Auswahl.
 
 ```
 HRESULT TextArea(LPCTSTR szId = NULL) const;
@@ -2461,20 +2461,20 @@ HRESULT TextArea(LPCTSTR szId = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szId*<br/>
-Die ID des mehrzeiligen Texteingabesteuerelements.
+*szid*<br/>
+Die ID des mehrzeiligen Texteingabe-Steuer Elements.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_TEXTAREA Befehls-ID](/previous-versions/aa769986\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbasetextbox"></a><a name="textbox"></a>CHtmlEditCtrlBase::TextBox
+## <a name="chtmleditctrlbasetextbox"></a><a name="textbox"></a> Chtmleditctrlbase:: TextBox
 
-Überschreibt ein Textsteuerelement für die aktuelle Auswahl.
+Überschreibt ein Text Steuerelement für die aktuelle Auswahl.
 
 ```
 HRESULT TextBox(LPCTSTR szId = NULL) const;
@@ -2482,18 +2482,18 @@ HRESULT TextBox(LPCTSTR szId = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szId*<br/>
-Die ID des Textsteuerelements.
+*szid*<br/>
+Die ID des Text Steuer Elements.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_TEXTBOX Befehls-ID](/previous-versions/aa769980\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseunbookmark"></a><a name="unbookmark"></a>CHtmlEditCtrlBase::UnBookmark
+## <a name="chtmleditctrlbaseunbookmark"></a><a name="unbookmark"></a> Chtmleditctrlbase:: unbookmark
 
 Entfernt alle Lesezeichen aus der aktuellen Auswahl.
 
@@ -2503,13 +2503,13 @@ HRESULT UnBookmark() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_UNBOOKMARK Befehls-ID](/previous-versions/aa770034\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseunderline"></a><a name="underline"></a>CHtmlEditCtrlBase::Unterstreichen
+## <a name="chtmleditctrlbaseunderline"></a><a name="underline"></a> Chtmleditctrlbase:: Unterstreichung
 
 Schaltet die aktuelle Auswahl zwischen unterstrichen und nicht unterstrichen um.
 
@@ -2519,15 +2519,15 @@ HRESULT Underline() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_UNDERLINE Befehls-ID](/previous-versions/aa770035\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseunlink"></a><a name="unlink"></a>CHtmlEditCtrlBase::Unlink
+## <a name="chtmleditctrlbaseunlink"></a><a name="unlink"></a> Chtmleditctrlbase:: unlink
 
-Entfernt alle Hyperlinks aus der aktuellen Auswahl.
+Entfernt einen beliebigen Hyperlink aus der aktuellen Auswahl.
 
 ```
 HRESULT Unlink() const;
@@ -2535,15 +2535,15 @@ HRESULT Unlink() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_UNLINK Befehls-ID](/previous-versions/aa770037\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="chtmleditctrlbaseunorderlist"></a><a name="unorderlist"></a>CHtmlEditCtrlBase::UnorderList
+## <a name="chtmleditctrlbaseunorderlist"></a><a name="unorderlist"></a> Chtmleditctrlbase:: unorderlist
 
-Schaltet die aktuelle Auswahl zwischen einer geordneten Liste und einem normalen Formatblock um.
+Schaltet die aktuelle Auswahl zwischen einer geordneten Liste und einem normalen Format Block um.
 
 ```
 HRESULT UnorderList(LPCTSTR szId = NULL) const;
@@ -2551,18 +2551,18 @@ HRESULT UnorderList(LPCTSTR szId = NULL) const;
 
 ### <a name="parameters"></a>Parameter
 
-*szId*<br/>
+*szid*<br/>
 Die ID der ungeordneten Liste.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Gibt S_OK bei Erfolg oder einen Fehler HRESULT bei einem Fehler zurück.
+Gibt bei Erfolg S_OK oder bei einem Fehler HRESULT zurück.
 
 ### <a name="remarks"></a>Bemerkungen
 
 Diese Methode sendet die [IDM_UNORDERLIST Befehls-ID](/previous-versions/aa769987\(v=vs.85\)) an das WebBrowser-Steuerelement.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen:
 
-[Hierarchiediagramm](../../mfc/hierarchy-chart.md)<br/>
+[Hierarchie Diagramm](../../mfc/hierarchy-chart.md)<br/>
 [HTMLEdit-Beispiel](../../overview/visual-cpp-samples.md)
