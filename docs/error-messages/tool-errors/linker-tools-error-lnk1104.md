@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - LNK1104
 ms.assetid: 9ca6f929-0efc-4055-8354-3cf5b4e636dc
-ms.openlocfilehash: aa7bcf34cddfa24956d807131b3c484e7d580e73
-ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
+ms.openlocfilehash: 2eea6885537037db496a2f42e0fff0ffa69127e3
+ms.sourcegitcommit: 12eb6a824dd7187a065d44fceca4c410f58e121e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91506040"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94334207"
 ---
 # <a name="linker-tools-error-lnk1104"></a>Linkertoolfehler LNK1104
 
-> Datei "*Dateiname*" kann nicht geöffnet werden
+> Datei " *Dateiname* " kann nicht geöffnet werden
 
 Dieser Fehler wird gemeldet, wenn der Linker eine Datei zum Lesen oder schreiben nicht öffnen kann. Die beiden häufigsten Gründe für dieses Problem sind:
 
@@ -40,11 +40,11 @@ Antivirenprogramme blockieren häufig vorübergehend den Zugriff auf neu erstell
 
 ### <a name="windows-libraries-such-as-kernel32lib"></a>Windows-Bibliotheken, z. b. Kernel32. lib
 
-Wenn die Datei, die nicht geöffnet werden kann, eine der Standard Bibliotheksdateien ist, die von Microsoft bereitgestellt werden, z. b *. Kernel32. lib*, liegt möglicherweise ein Projekt Konfigurationsfehler oder ein Installationsfehler vor. Vergewissern Sie sich, dass der Windows SDK installiert wurde. Wenn Ihr Projekt andere Microsoft-Bibliotheken erfordert, wie z. b. MFC, stellen Sie sicher, dass die MFC-Komponenten auch vom Visual Studio-Installer installiert wurden. Sie können das Installationsprogramm erneut ausführen, um jederzeit optionale Komponenten hinzuzufügen. Weitere Informationen finden Sie unter [Ändern von Visual Studio](/visualstudio/install/modify-visual-studio). Verwenden Sie die Registerkarte **einzelne Komponenten** im Installationsprogramm, um bestimmte Bibliotheken und sdert auszuwählen.
+Wenn die Datei, die nicht geöffnet werden kann, eine der Standard Bibliotheksdateien ist, die von Microsoft bereitgestellt werden, z. b *. Kernel32. lib* , liegt möglicherweise ein Projekt Konfigurationsfehler oder ein Installationsfehler vor. Vergewissern Sie sich, dass der Windows SDK installiert wurde. Wenn Ihr Projekt andere Microsoft-Bibliotheken erfordert, wie z. b. MFC, stellen Sie sicher, dass die MFC-Komponenten auch vom Visual Studio-Installer installiert wurden. Sie können das Installationsprogramm erneut ausführen, um jederzeit optionale Komponenten hinzuzufügen. Weitere Informationen finden Sie unter [Ändern von Visual Studio](/visualstudio/install/modify-visual-studio). Verwenden Sie die Registerkarte **einzelne Komponenten** im Installationsprogramm, um bestimmte Bibliotheken und sdert auszuwählen.
 
 ### <a name="versioned-vcruntime-libraries"></a>Versionierte vcruntime-Bibliotheken
 
-Wenn die Fehlermeldung eine Microsoft-Bibliothek mit Versions Angabe (z *. b. msvcr120. lib*) aufweist, ist das Platt Form Toolset für diese Compilerversion möglicherweise nicht installiert. Um dieses Problem zu beheben, haben Sie zwei Möglichkeiten: Aktualisieren Sie das Projekt, um das aktuelle Platt Form Toolset zu verwenden, oder installieren Sie das ältere Toolset, und erstellen Sie das Projekt unverändert. Weitere Informationen finden Sie unter [Aktualisieren von Projekten aus früheren Versionen von Visual C++](../../porting/upgrading-projects-from-earlier-versions-of-visual-cpp.md) und Verwenden von systemeigenen [Ziel Versionen in Visual Studio, um alte Projekte zu erstellen](../../porting/use-native-multi-targeting.md).
+Wenn die Fehlermeldung eine Microsoft-Bibliothek mit Versions Angabe (z *. b. msvcr120. lib* ) aufweist, ist das Platt Form Toolset für diese Compilerversion möglicherweise nicht installiert. Um dieses Problem zu beheben, haben Sie zwei Möglichkeiten: Aktualisieren Sie das Projekt, um das aktuelle Platt Form Toolset zu verwenden, oder installieren Sie das ältere Toolset, und erstellen Sie das Projekt unverändert. Weitere Informationen finden Sie unter [Aktualisieren von Projekten aus früheren Versionen von Visual C++](../../porting/upgrading-projects-from-earlier-versions-of-visual-cpp.md) und Verwenden von systemeigenen [Ziel Versionen in Visual Studio, um alte Projekte zu erstellen](../../porting/use-native-multi-targeting.md).
 
 ### <a name="retail-debug-or-platform-specific-libraries"></a>Einzelhandels-, Debug-oder plattformspezifische Bibliotheken
 
@@ -52,7 +52,7 @@ Der Fehler kann auftreten, wenn Sie erstmalig eine neue Zielplattform oder-Konfi
 
 ### <a name="the-vccorliblib-library"></a>Die Bibliothek "vccorlib. lib"
 
-Für universelle Windows-Apps (UWP)-Apps oder-Komponenten gibt es keine von Spectre abgeminderten Bibliotheken. Wenn die Fehlermeldung " *vccorlib. lib*" enthält, haben Sie möglicherweise " [/Qspectre](../../build/reference/qspectre.md) " in einem UWP-Projekt aktiviert. Deaktivieren Sie die **/Qspectre** -Compileroption, um dieses Problem zu beheben. Ändern Sie in Visual Studio die Eigenschaft **Spectre-Entschärfung** . Sie befindet sich auf der Seite **C/C++**-  >  **Code Generierung** des Dialog Felds **Eigenschaften Seiten** des Projekts.
+Für universelle Windows-Apps (UWP)-Apps oder-Komponenten gibt es keine von Spectre abgeminderten Bibliotheken. Wenn die Fehlermeldung " *vccorlib. lib* " enthält, haben Sie möglicherweise " [/Qspectre](../../build/reference/qspectre.md) " in einem UWP-Projekt aktiviert. Deaktivieren Sie die **/Qspectre** -Compileroption, um dieses Problem zu beheben. Ändern Sie in Visual Studio die Eigenschaft **Spectre-Entschärfung** . Sie befindet sich auf der Seite **C/C++** -  >  **Code Generierung** des Dialog Felds **Eigenschaften Seiten** des Projekts.
 
 ### <a name="libraries-in-projects-from-online-or-other-sources"></a>Bibliotheken in Projekten aus Online oder anderen Quellen
 
@@ -72,7 +72,7 @@ Es gibt verschiedene Häufige Gründe für dieses Problem:
 
 - Die Bibliothek kann Abhängigkeiten von anderen Bibliotheken aufweisen, die nicht installiert sind.
 
-Vergewissern Sie sich, dass die lib-Umgebungsvariable festgelegt ist, um ein Pfad Problem für Befehlszeilenbuilds zu beheben. Stellen Sie sicher, dass Sie Pfade für alle Bibliotheken enthält, die Sie verwenden, und für jede Konfiguration, die Sie erstellen. In der IDE werden die Bibliothekspfade von der Eigenschaft " **VC + +-Verzeichnisse**-  >  **Bibliotheks Verzeichnisse** " festgelegt. Stellen Sie sicher, dass alle Verzeichnisse, die die benötigten Bibliotheken enthalten, für jede Konfiguration, die Sie erstellen, hier aufgeführt sind.
+Vergewissern Sie sich, dass die lib-Umgebungsvariable festgelegt ist, um ein Pfad Problem für Befehlszeilenbuilds zu beheben. Stellen Sie sicher, dass Sie Pfade für alle Bibliotheken enthält, die Sie verwenden, und für jede Konfiguration, die Sie erstellen. In der IDE werden die Bibliothekspfade von der Eigenschaft " **VC + +-Verzeichnisse** -  >  **Bibliotheks Verzeichnisse** " festgelegt. Stellen Sie sicher, dass alle Verzeichnisse, die die benötigten Bibliotheken enthalten, für jede Konfiguration, die Sie erstellen, hier aufgeführt sind.
 
 Möglicherweise müssen Sie ein Bibliotheksverzeichnis bereitstellen, das ein Standard Bibliotheksverzeichnis überschreibt. Verwenden Sie in der Befehlszeile die Option [/LIBPATH](../../build/reference/libpath-additional-libpath.md) . Verwenden Sie in der IDE die Eigenschaft **zusätzliche Bibliotheks Verzeichnisse** auf der **Eigenschaften Seite Konfigurations Eigenschaften > Linker > allgemein** für Ihr Projekt.
 
@@ -82,7 +82,7 @@ Stellen Sie sicher, dass Sie jede Version der Bibliothek installieren, die Sie f
 
 Dieser Fehler wird möglicherweise angezeigt, wenn der *Dateiname* noch nicht vorhanden ist, wenn der Linker versucht, darauf zuzugreifen. Dies kann vorkommen, wenn ein Projekt von einem anderen Projekt in der Projekt Mappe abhängt, die Projekte jedoch in der falschen Reihenfolge erstellt werden. Um dieses Problem zu beheben, stellen Sie sicher, dass die Projekt Verweise im Projekt, das die Datei verwendet, festgelegt werden. Anschließend wird die fehlende Datei erstellt, bevor Sie benötigt wird. Weitere Informationen finden Sie unter [Hinzufügen von Verweisen in Visual Studio C++ Projekte](../../build/adding-references-in-visual-cpp-projects.md) und [Verwalten von Verweisen in einem Projekt](/visualstudio/ide/managing-references-in-a-project).
 
-## <a name="cannot-open-file-cprogramobj"></a>Die Datei "C: \\ Program. obj" kann nicht geöffnet werden.
+## <a name="cant-open-file-cprogramobj"></a>Die Datei "C: \\ Program. obj" kann nicht geöffnet werden.
 
 Wenn der Dateiname *C: \\ Program. obj* in der Fehlermeldung angezeigt wird, schließen Sie die Bibliothekspfade in doppelte Anführungszeichen ein. Dieser Fehler tritt auf, wenn ein nicht umschließelter Pfad, der mit *C: \\ Program Files* beginnt, an den Linker übermittelt wird. Nicht umschließende Pfade können auch ähnliche Fehler verursachen. In der Regel wird eine unerwartete obj-Datei im Stammverzeichnis des Laufwerks angezeigt.
 
@@ -120,7 +120,7 @@ Dieser Fehler kann auftreten, wenn die Datei zu groß ist. Bibliotheken oder Obj
 
 ### <a name="incorrect-file-permissions"></a>Falsche Dateiberechtigungen
 
-Dieser Fehler kann auftreten, wenn Sie nicht über ausreichende Dateiberechtigungen für den Zugriff auf *filename*verfügen. Dies kann vorkommen, wenn Sie ein normales Benutzerkonto verwenden, um auf Bibliotheksdateien in geschützten Systemverzeichnissen zuzugreifen. Oder, wenn Sie Dateien verwenden, die von anderen Benutzern kopiert werden, für die noch ihre ursprünglichen Berechtigungen festgelegt sind. Um dieses Problem zu beheben, verschieben Sie die Datei in ein beschreibbares Projektverzeichnis. Wenn die verschoderte Datei nicht auf die Berechtigungen zugreifen kann, führen Sie den takeown.exe Befehl in einem Administrator Befehlsfenster aus, um den Besitz der Datei zu übernehmen.
+Dieser Fehler kann auftreten, wenn Sie nicht über ausreichende Dateiberechtigungen für den Zugriff auf *filename* verfügen. Dies kann vorkommen, wenn Sie ein normales Benutzerkonto verwenden, um auf Bibliotheksdateien in geschützten Systemverzeichnissen zuzugreifen. Oder, wenn Sie Dateien verwenden, die von anderen Benutzern kopiert werden, für die noch ihre ursprünglichen Berechtigungen festgelegt sind. Um dieses Problem zu beheben, verschieben Sie die Datei in ein beschreibbares Projektverzeichnis. Wenn die verschoderte Datei nicht auf die Berechtigungen zugreifen kann, führen Sie den takeown.exe Befehl in einem Administrator Befehlsfenster aus, um den Besitz der Datei zu übernehmen.
 
 ### <a name="insufficient-disk-space"></a>Nicht genügend Speicherplatz.
 
@@ -128,10 +128,10 @@ Der Fehler kann auftreten, wenn nicht genügend Speicherplatz vorhanden ist. Der
 
 ### <a name="problems-in-the-tmp-environment-variable"></a>Probleme in der TMP-Umgebungsvariablen
 
-Wenn der *Dateiname* den Namen lnk*nnn*hat, handelt es sich um einen vom Linker für eine temporäre Datei generierten Dateinamen. Das in der TMP-Umgebungsvariable angegebene Verzeichnis ist möglicherweise nicht vorhanden. Oder es können mehrere Verzeichnisse für die TMP-Umgebungsvariable angegeben werden. Es muss nur ein Verzeichnispfad für die TMP-Umgebungsvariable angegeben werden.
+Wenn der *Dateiname* den Namen lnk *nnn* hat, handelt es sich um einen vom Linker für eine temporäre Datei generierten Dateinamen. Das in der TMP-Umgebungsvariable angegebene Verzeichnis ist möglicherweise nicht vorhanden. Oder es können mehrere Verzeichnisse für die TMP-Umgebungsvariable angegeben werden. Es muss nur ein Verzeichnispfad für die TMP-Umgebungsvariable angegeben werden.
 
 ## <a name="help-my-issue-isnt-listed-here"></a>Hilfe, mein Problem ist hier nicht aufgeführt.
 
-Wenn keines der hier aufgeführten Probleme zutrifft, können Sie die Feedback Tools in Visual Studio verwenden, um Hilfe zu erhalten. Wechseln Sie in der IDE zur Menüleiste, und wählen Sie **Hilfe > Feedback senden > Problem melden**. Oder senden Sie einen Vorschlag mithilfe der **Hilfe > senden Sie Feedback > senden Sie einen Vorschlag**. Sie können auch die Visual Studio C++ [Developer Community](https://developercommunity.visualstudio.com/spaces/62/index.html)-Website verwenden. Verwenden Sie es, um nach Antworten auf Fragen zu suchen und Hilfe zu Fragen. Weitere Informationen finden Sie unter [melden eines Problems mit dem Visual C++-Toolset oder der-Dokumentation](../../overview/how-to-report-a-problem-with-the-visual-cpp-toolset.md).
+Wenn keines der hier aufgeführten Probleme zutrifft, können Sie die Feedback Tools in Visual Studio verwenden, um Hilfe zu erhalten. Wechseln Sie in der IDE zur Menüleiste, und wählen Sie **Hilfe > Feedback senden > Problem melden**. Oder senden Sie einen Vorschlag mithilfe der **Hilfe > senden Sie Feedback > senden Sie einen Vorschlag**. Sie können auch die [Microsoft-Dokumentation Q&einer](/answers/topics/c%2B%2B.html) Website für Fragen und die Visual Studio C++ [Developer Community](https://aka.ms/vsfeedback/browsecpp) -Website verwenden. Verwenden Sie diese Websites, um nach Antworten auf Fragen zu suchen und Hilfe zu Fragen. Weitere Informationen finden Sie unter [melden eines Problems mit dem Visual C++-Toolset oder der-Dokumentation](../../overview/how-to-report-a-problem-with-the-visual-cpp-toolset.md).
 
-Wenn Sie eine neue Möglichkeit gefunden haben, dieses Problem zu beheben, das wir diesem Artikel hinzufügen sollten, teilen Sie uns dies mit. Sie können uns Feedback senden, indem Sie die Schaltfläche unten für **Diese Seite**verwenden. Verwenden Sie es, um ein neues Problem in unserem [GitHub](https://github.com/MicrosoftDocs/cpp-docs/issues)-Repository in der C++-Dokumentation zu erstellen. Vielen Dank!
+Wenn Sie eine neue Möglichkeit gefunden haben, dieses Problem zu beheben, das wir diesem Artikel hinzufügen sollten, teilen Sie uns dies mit. Sie können uns Feedback senden, indem Sie die Schaltfläche unten für **Diese Seite** verwenden. Verwenden Sie es, um ein neues Problem in unserem [GitHub](https://github.com/MicrosoftDocs/cpp-docs/issues)-Repository in der C++-Dokumentation zu erstellen. Vielen Dank!

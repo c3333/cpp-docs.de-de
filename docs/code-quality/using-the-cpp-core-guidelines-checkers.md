@@ -5,12 +5,12 @@ ms.date: 07/27/2020
 ms.topic: conceptual
 dev_langs:
 - CPP
-ms.openlocfilehash: a041ecd4053360ebfc0da198efe9a3decb73ffd2
-ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
+ms.openlocfilehash: 4fb06b0f78c93e6b76e0b8d64d7dfbdc541cf299
+ms.sourcegitcommit: 12eb6a824dd7187a065d44fceca4c410f58e121e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92924793"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94334142"
 ---
 # <a name="use-the-c-core-guidelines-checkers"></a>Verwenden der Überprüfungen für C++ Core Guidelines
 
@@ -130,7 +130,7 @@ Wenn der C++ Core Guidelines Prüfung neue Regeln hinzugefügt werden, kann sich
 
 - **Enum-Regeln** : diese Regeln erzwingen [Aufzählungs bezogene Überprüfungen aus dem C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#S-enum). <sup>16,3</sup>
 
-- **Experimentelle Regeln** Dies sind experimentelle C++ Core Check Regeln, die nützlich sind, aber nicht für die alltägliche Verwendung bereit sind. Probieren Sie es aus, und geben Sie uns [Feedback](https://developercommunity.visualstudio.com/content/idea/post.html?space=62). <sup>16,0</sup>
+- **Experimentelle Regeln** Dies sind experimentelle C++ Core Check Regeln, die nützlich sind, aber nicht für die alltägliche Verwendung bereit sind. Probieren Sie es aus, und geben Sie uns [Feedback](https://aka.ms/feedback/suggest?space=62). <sup>16,0</sup>
 
 - **Funktions Regeln** : zwei Überprüfungen, die bei der Annahme des **`noexcept`** Spezifizierers helfen. Sie sind Teil der Richtlinien für den [klaren Funktions Entwurf und die Implementierung](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#S-functions). <sup>15,5</sup>
 
@@ -334,6 +334,6 @@ Aufgrund der Art und Weise, wie die Code Analyse Regeln innerhalb von Visual Stu
 
 ::: moniker-end
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 - [Visual Studio-C++ Core Check Referenz](code-analysis-for-cpp-corecheck.md)
