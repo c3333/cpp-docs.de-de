@@ -6,18 +6,18 @@ ms.date: 04/02/2019
 ms.topic: tutorial
 ms.devlang: cpp
 ms.assetid: 45138d70-719d-42dc-90d7-1d0ca31a2f54
-ms.openlocfilehash: a850803b8804c2463cd3388ec2bcf0ad9f4f3610
-ms.sourcegitcommit: d4da3693f83a24f840e320e35c24a4a07cae68e2
+ms.openlocfilehash: 6f547b7e50d39b073232e913e660bf3ab96789cb
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83550809"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92922126"
 ---
 # <a name="install-c-and-c-support-in-visual-studio"></a>Installieren der Unterstützung für C und C++ in Visual Studio
 
 Wenn Sie Visual Studio und die Microsoft C/C++-Tools noch nicht heruntergeladen und installiert haben, finden Sie hier Informationen zu den ersten Schritten.
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 ## <a name="visual-studio-2019-installation"></a>Installation von Visual Studio 2019
 
@@ -94,7 +94,7 @@ Wenn Sie nicht das Feature für Workloads verwenden möchten, um Ihre Visual Stu
 
 ### <a name="step-6---install-language-packs-optional"></a>Schritt 6: Installieren von Language Packs (optional)
 
-Standardmäßig versucht das Installationsprogramm bei der ersten Ausführung die Sprache des Betriebssystems zu verwenden. Zum Installieren von Visual Studio in einer Sprache Ihrer Wahl klicken Sie im Visual Studio-Installer auf die Registerkarte **Sprachpakete**, und folgen Sie dann den Anweisungen.
+Standardmäßig versucht das Installationsprogramm bei der ersten Ausführung die Sprache des Betriebssystems zu verwenden. Zum Installieren von Visual Studio in einer Sprache Ihrer Wahl klicken Sie im Visual Studio-Installer auf die Registerkarte **Sprachpakete** , und folgen Sie dann den Anweisungen.
 
   ![Visual Studio 2019 – Installieren von Sprachpaketen](../get-started/media/vs-installer-language-packs.png "Installieren von Visual Studio-Sprachpaketen")
 
@@ -113,7 +113,7 @@ Sie können den Speicherbedarf für die Installation von Visual Studio auf Ihrem
 
 ### <a name="step-8---start-developing"></a>Schritt 8: Mit dem Entwickeln beginnen
 
-1. Klicken Sie nach Abschluss der Visual Studio-Installation auf **Starten**, um mit dem Programmieren in Visual Studio zu beginnen.
+1. Klicken Sie nach Abschluss der Visual Studio-Installation auf **Starten** , um mit dem Programmieren in Visual Studio zu beginnen.
 
 1. Wählen Sie im Startfenster **Neues Projekt erstellen** aus.
 
@@ -125,7 +125,7 @@ Sie können den Speicherbedarf für die Installation von Visual Studio auf Ihrem
 
 ::: moniker-end
 
-::: moniker range="vs-2017"
+::: moniker range="msvc-150"
 
 ## <a name="visual-studio-2017-installation"></a>Installation von Visual Studio 2017
 
@@ -163,7 +163,7 @@ Ausführliche Informationen zum Speicherplatz und den Betriebssystemanforderunge
 
    ![Installieren der Workload „Desktopentwicklung mit C++“](media/vscpp-concierge-choose-workload.gif "Installieren der Workload „Desktopentwicklung mit C++“")
 
-1. Wenn die Installation abgeschlossen ist, klicken Sie auf die Schaltfläche **Start**, um Visual Studio zu starten.
+1. Wenn die Installation abgeschlossen ist, klicken Sie auf die Schaltfläche **Start** , um Visual Studio zu starten.
 
    Wenn Sie Visual Studio zum ersten Mal ausführen, werden Sie aufgefordert, sich mit einem Microsoft-Konto anzumelden. Wenn Sie über keins verfügen, können Sie es kostenloses erstellen. Sie müssen auch ein Design auswählen. Keine Sorge, Sie können dieses auf Wunsch später ändern.
 
@@ -181,11 +181,11 @@ Ausführliche Informationen zum Speicherplatz und den Betriebssystemanforderunge
 
 ::: moniker-end
 
-::: moniker range="<vs-2017"
+::: moniker range="<msvc-150"
 
 ## <a name="visual-studio-2015-installation"></a>Installation von Visual Studio 2015
 
-Auf der Seite [Downloads älterer Versionen von Visual Studio](https://www.visualstudio.com/vs/older-downloads/) können Sie Visual Studio 2015 herunterladen. Führen Sie das Setupprogramm aus, klicken Sie auf **Benutzerdefinierte Installation**, und wählen Sie die C++-Komponente aus. Wenn Sie einer vorhandenen Visual Studio 2015-Installation die Unterstützung für C und C++ hinzufügen möchten, klicken Sie auf die Windows-Schaltfläche „Start“, und geben Sie **Programme hinzufügen** ein. Öffnen Sie das Programm aus der Ergebnisliste, und suchen Sie dann Ihre Visual Studio 2015-Installation in der Liste der installierten Programme. Doppelklicken Sie darauf, klicken Sie auf **Ändern**, und wählen Sie dann die Visual C++-Komponenten aus, die Sie installieren möchten.
+Auf der Seite [Downloads älterer Versionen von Visual Studio](https://www.visualstudio.com/vs/older-downloads/) können Sie Visual Studio 2015 herunterladen. Führen Sie das Setupprogramm aus, klicken Sie auf **Benutzerdefinierte Installation** , und wählen Sie die C++-Komponente aus. Wenn Sie einer vorhandenen Visual Studio 2015-Installation die Unterstützung für C und C++ hinzufügen möchten, klicken Sie auf die Windows-Schaltfläche „Start“, und geben Sie **Programme hinzufügen** ein. Öffnen Sie das Programm aus der Ergebnisliste, und suchen Sie dann Ihre Visual Studio 2015-Installation in der Liste der installierten Programme. Doppelklicken Sie darauf, klicken Sie auf **Ändern** , und wählen Sie dann die Visual C++-Komponenten aus, die Sie installieren möchten.
 
 In der Regel wird die Verwendung der aktuellen Visual Studio-Version selbst dann empfohlen, wenn Sie in diesem Fall Ihren Code mithilfe des Visual Studio 2015-Compilers kompilieren müssen. Weitere Informationen finden Sie unter [Use native multi-targeting in Visual Studio to build old projects (Verwenden der nativen Festlegung von Zielversionen in Visual Studio, um alte Projekte zu erstellen)](../porting/use-native-multi-targeting.md).
 
