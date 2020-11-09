@@ -1,6 +1,6 @@
 ---
 title: ForceInlinee-Klasse
-description: Der C++ Build Insights SDK ForceInlinee-Klassenverweis.
+description: Die Referenz zur ForceInlinee-Klasse im C++ Build Insights SDK.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: c6a1af0384197a0a3b6062ad9ef30537c348190d
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.openlocfilehash: 53fff7b6cfd37ba3e3211dd072c1ce3386d00fda
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81324785"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92920670"
 ---
 # <a name="forceinlinee-class"></a>ForceInlinee-Klasse
 
-::: moniker range="<=vs-2015"
+::: moniker range="<=msvc-140"
 
-Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
-Die `ForceInlinee` Klasse wird mit den Funktionen [MatchEvent](../functions/match-event.md), [MatchEventInMemberFunction](../functions/match-event-in-member-function.md), [MatchEventStack](../functions/match-event-stack.md)und [MatchEventStackInMemberFunction](../functions/match-event-stack-in-member-function.md) verwendet. Verwenden Sie es, um ein [FORCE_INLINEE](../event-table.md#force-inlinee) Ereignis abzugleichen.
+Die `ForceInlinee`-Klasse wird mit den Funktionen [MatchEvent](../functions/match-event.md), [MatchEventInMemberFunction](../functions/match-event-in-member-function.md), [MatchEventStack](../functions/match-event-stack.md) und [MatchEventStackInMemberFunction](../functions/match-event-stack-in-member-function.md) verwendet. Dient zum Abgleichen eines [FORCE_INLINEE](../event-table.md#force-inlinee)-Ereignisses.
 
 ## <a name="syntax"></a>Syntax
 
@@ -42,7 +42,7 @@ public:
 
 ## <a name="members"></a>Member
 
-Zusammen mit den geerbten Membern aus `ForceInlinee` der [SimpleEvent-Basisklasse](simple-event.md) enthält die Klasse die folgenden Member:
+Zusammen mit den geerbten Membern aus der Basisklasse [SimpleEvent](simple-event.md) enthält die `ForceInlinee`-Klasse die folgenden Member:
 
 ### <a name="constructors"></a>Konstruktoren
 
@@ -50,10 +50,10 @@ Zusammen mit den geerbten Membern aus `ForceInlinee` der [SimpleEvent-Basisklass
 
 ### <a name="functions"></a>Functions
 
-[Namensgröße](#name)
+[Name](#name)
 [Size](#size)
 
-## <a name="forceinlinee"></a><a name="force-inlinee"></a>ForceInlinee
+## <a name="forceinlinee"></a><a name="force-inlinee"></a> ForceInlinee
 
 ```cpp
 ForceInlinee(const RawEvent& event);
@@ -62,9 +62,9 @@ ForceInlinee(const RawEvent& event);
 ### <a name="parameters"></a>Parameter
 
 *Ereignis*\
-Ein [FORCE_INLINEE](../event-table.md#force-inlinee) Ereignis.
+Ein [FORCE_INLINEE](../event-table.md#force-inlinee)-Ereignis.
 
-## <a name="name"></a><a name="name"></a>Namen
+## <a name="name"></a><a name="name"></a> Name
 
 ```cpp
 const char* Name() const;
@@ -72,7 +72,7 @@ const char* Name() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Der Name der force-inlined-Funktion, kodiert in UTF-8.
+Der Name der erzwungenen UTF-8-codierten Inlinefunktion.
 
 ## <a name="size"></a><a name="size"></a>-Größe
 
@@ -82,6 +82,6 @@ const unsigned short& Size() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Größe der force-inlined-Funktion als Zwischenanweisungszahl.
+Die Größe der erzwungenen Inlinefunktion als Anzahl von Zwischenanweisungen.
 
 ::: moniker-end

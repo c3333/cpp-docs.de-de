@@ -1,6 +1,6 @@
 ---
 title: Aktivitätsklasse
-description: Der C++Build Insights SDK-Aktivitätsklassenverweis.
+description: Die Referenz zur Activity-Klasse im C++ Build Insights SDK.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 2ea04150aec9c0b2366d97e6e4c15de557a4f47c
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.openlocfilehash: ce7e4083411f1654064ca4628d10a767c7be1b7f
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81325246"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92923399"
 ---
 # <a name="activity-class"></a>Aktivitätsklasse
 
-::: moniker range="<=vs-2015"
+::: moniker range="<=msvc-140"
 
-Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
-Die `Activity` Klasse wird mit den Funktionen [MatchEvent](../functions/match-event.md), [MatchEventInMemberFunction](../functions/match-event-in-member-function.md), [MatchEventStack](../functions/match-event-stack.md)und [MatchEventStackInMemberFunction](../functions/match-event-stack-in-member-function.md) verwendet. Verwenden Sie es, um jedem Aktivitätsereignis zu entsprechen. Verweisen Sie auf [die Ereignistabelle,](../event-table.md) um `Activity` alle Ereignisse anzuzeigen, die von der Klasse abgeglichen werden können.
+Die `Activity`-Klasse wird mit den Funktionen [MatchEvent](../functions/match-event.md), [MatchEventInMemberFunction](../functions/match-event-in-member-function.md), [MatchEventStack](../functions/match-event-stack.md) und [MatchEventStackInMemberFunction](../functions/match-event-stack-in-member-function.md) verwendet. Dient zum Abgleichen eines beliebigen Aktivitätsereignisses. In der [Ereignistabelle](../event-table.md) finden Sie alle Ereignisse, die mit der `Activity`-Klasse abgeglichen werden können.
 
 ## <a name="syntax"></a>Syntax
 
@@ -52,15 +52,15 @@ public:
 };
 ```
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
-Mehrere Memberfunktionen `Activity` in der Klasse geben eine Tickanzahl zurück. C++ Build Insights verwendet den Leistungsindikator von Windows als Quelle von Ticks. Eine Tick-Zahl muss mit einer Tick-Frequenz verwendet werden, um sie in eine Zeiteinheit wie Sekunden umzuwandeln. Die `TickFrequency` Memberfunktion, die in der [Ereignisbasisklasse](event.md) verfügbar ist, kann aufgerufen werden, um die Tick-Frequenz zu erhalten. Die [seite EVENT_DATA](../c-event-data-types/event-data-struct.md#tick-conversion-example) zeigt ein Beispiel für die Konvertierung von Ticks in eine Zeiteinheit.
+Mehrere Memberfunktionen in der `Activity`-Klasse geben eine Taktanzahl zurück. C++ Build Insights verwendet den Leistungsindikator von Windows als Taktquelle. Eine Taktanzahl muss mit einer Taktfrequenz verwendet werden, um sie in eine Zeiteinheit wie Sekunden umzurechnen. Die Memberfunktion `TickFrequency`, die in der Basisklasse [Event](event.md) verfügbar ist, kann zum Abrufen der Taktfrequenz aufgerufen werden. Auf der Seite [EVENT_DATA](../c-event-data-types/event-data-struct.md#tick-conversion-example) finden Sie ein Beispiel für die Umrechnung von Takten in eine Zeiteinheit.
 
-Wenn Sie Ticks nicht selbst in Zeiteinheiten `Activity` konvertieren möchten, stellt die Klasse Memberfunktionen bereit, die Zeitwerte in Nanosekunden zurückgeben. Verwenden Sie die `chrono` Standard-C++-Bibliothek, um sie in andere Zeiteinheiten umzuwandeln.
+Wenn Sie Takte nicht selbst in Zeiteinheiten umrechnen möchten, stellt die `Activity`-Klasse Memberfunktionen bereit, die die Zeitwerte in Nanosekunden zurückgeben. Zur Umrechnung dieser Werte in andere Zeiteinheiten verwenden Sie die C++-Standardbibliothek `chrono`.
 
 ## <a name="members"></a>Member
 
-Zusammen mit ihren Membern, die von `Activity` der [Ereignisbasisklasse](event.md) geerbt wurden, enthält die Klasse die folgenden Member:
+Zusammen mit den geerbten Membern aus der Basisklasse [Event](event.md) enthält die `Activity`-Klasse die folgenden Member:
 
 ### <a name="constructor"></a>Konstruktor
 
@@ -70,7 +70,7 @@ Zusammen mit ihren Membern, die von `Activity` der [Ereignisbasisklasse](event.m
 
 [CPUTicks](#cpu-ticks)\
 [CPUTime](#cpu-time)\
-[Dauer](#duration)\
+[Duration](#duration)\
 [ExclusiveCPUTicks](#exclusive-cpu-ticks)\
 [ExclusiveCPUTime](#exclusive-cpu-time)\
 [ExclusiveDuration](#exclusive-duration)\
@@ -91,9 +91,9 @@ Activity(const RawEvent& event);
 ### <a name="parameters"></a>Parameter
 
 *Ereignis*\
-Jedes Aktivitätsereignis.
+Beliebiges Aktivitätsereignis.
 
-## <a name="cputicks"></a><a name="cpu-ticks"></a>CPUTicks
+## <a name="cputicks"></a><a name="cpu-ticks"></a> CPUTicks
 
 ```cpp
 const long long& CPUTicks() const;
@@ -101,9 +101,9 @@ const long long& CPUTicks() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der CPU-Ticks, die während dieser Aktivität aufgetreten sind. Ein CPU-Tick unterscheidet sich von einem normalen Tick. CPU-Ticks werden nur gezählt, wenn die CPU Code in einer Aktivität ausführt. CPU-Ticks werden nicht gezählt, wenn der der Aktivität zugeordnete Thread schläft.
+Die Anzahl der CPU-Takte während dieser Aktivität. Ein CPU-Tick unterscheidet sich von einem normalen Tick. CPU-Ticks werden nur gezählt, wenn die CPU Code in einer Aktivität ausführt. CPU-Ticks werden nicht gezählt, wenn sich der mit der Aktivität verknüpfte Thread im Ruhezustand befindet.
 
-## <a name="cputime"></a><a name="cpu-time"></a>CPUTime
+## <a name="cputime"></a><a name="cpu-time"></a> CPUTime
 
 ```cpp
 std::chrono::nanoseconds CPUTime()() const;
@@ -111,9 +111,9 @@ std::chrono::nanoseconds CPUTime()() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Zeit, mit der die CPU Code innerhalb dieser Aktivität ausführte. Dieser Wert kann höher als die Dauer der Aktivität sein, wenn untergeordnete Aktivitäten in separaten Threads ausgeführt werden. Der Wert wird in Nanosekunden zurückgegeben.
+Die Zeitspanne, in der die CPU Code in dieser Aktivität ausgeführt hat. Dieser Wert kann höher sein als die Dauer der Aktivität, wenn untergeordnete Aktivitäten in separaten Threads ausgeführt werden. Der Wert wird in Nanosekunden zurückgegeben.
 
-## <a name="duration"></a><a name="duration"></a>Dauer
+## <a name="duration"></a><a name="duration"></a> Duration
 
 ```cpp
 std::chrono::nanoseconds Duration() const;
@@ -121,9 +121,9 @@ std::chrono::nanoseconds Duration() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Dauer der Aktivität in Nanosekunden.
+Die Dauer dieser Aktivität in Nanosekunden.
 
-## <a name="exclusivecputicks"></a><a name="exclusive-cpu-ticks"></a>ExclusiveCPUTicks
+## <a name="exclusivecputicks"></a><a name="exclusive-cpu-ticks"></a> ExclusiveCPUTicks
 
 ```cpp
 const long long& ExclusiveCPUTicks() const;
@@ -131,9 +131,9 @@ const long long& ExclusiveCPUTicks() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Genauso wie [CPUTicks](#cpu-ticks), jedoch ohne die CPU-Ticks, die in untergeordneten Aktivitäten aufgetreten sind.
+Identisch mit [CPUTicks](#cpu-ticks), aber ohne die CPU-Takte in untergeordneten Aktivitäten.
 
-## <a name="exclusivecputime"></a><a name="exclusive-cpu-time"></a>ExclusiveCPUTime
+## <a name="exclusivecputime"></a><a name="exclusive-cpu-time"></a> ExclusiveCPUTime
 
 ```cpp
 std::chrono::nanoseconds ExclusiveCPUTime() const;
@@ -141,9 +141,9 @@ std::chrono::nanoseconds ExclusiveCPUTime() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Genauso wie [CPUTime](#cpu-time), mit der Ausnahme, dass die CPU-Zeit für untergeordnete Aktivitäten nicht enthalten ist.
+Identisch mit [CPUTime](#cpu-time), mit dem Unterschied, dass die CPU-Zeit untergeordneter Aktivitäten nicht inbegriffen ist.
 
-## <a name="exclusiveduration"></a><a name="exclusive-duration"></a>ExclusiveDuration
+## <a name="exclusiveduration"></a><a name="exclusive-duration"></a> ExclusiveDuration
 
 ```cpp
 std::chrono::nanoseconds ExclusiveDuration() const;
@@ -151,9 +151,9 @@ std::chrono::nanoseconds ExclusiveDuration() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Dauer der Aktivität in Nanosekunden, ohne die Zeit, die für untergeordnete Aktivitäten aufgewendet wurde.
+Die Dauer der Aktivität in Nanosekunden ohne die in untergeordneten Aktivitäten verbrachte Zeit.
 
-## <a name="exclusivedurationticks"></a><a name="exclusive-duration-ticks"></a>ExclusiveDurationTicks
+## <a name="exclusivedurationticks"></a><a name="exclusive-duration-ticks"></a> ExclusiveDurationTicks
 
 ```cpp
 const long long& ExclusiveDurationTicks() const;
@@ -161,9 +161,9 @@ const long long& ExclusiveDurationTicks() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Anzahl der Ticks, die in dieser Aktivität aufgetreten sind, mit Ausnahme der Anzahl der Ticks, die in untergeordneten Aktivitäten aufgetreten sind.
+Die Anzahl der Takte in dieser Aktivität ohne die Anzahl der Takte in untergeordneten Aktivitäten.
 
-## <a name="exclusivewallclocktimeresponsibility"></a><a name="exclusive-wall-clock-time-responsibility"></a>ExclusiveWallClockTimeResponsibility
+## <a name="exclusivewallclocktimeresponsibility"></a><a name="exclusive-wall-clock-time-responsibility"></a> ExclusiveWallClockTimeResponsibility
 
 ```cpp
 std::chrono::nanoseconds ExclusiveWallClockTimeResponsibility() const;
@@ -171,9 +171,9 @@ std::chrono::nanoseconds ExclusiveWallClockTimeResponsibility() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Genauso wie [WallClockTimeResponsibility](#wall-clock-time-responsibility), ohne die Wand-Uhr-Zeitverantwortung für untergeordnete Aktivitäten.
+Identisch mit [WallClockTimeResponsibility](#wall-clock-time-responsibility) mit Ausnahme der Gesamtbetrachtungszeit-Verantwortung untergeordneter Aktivitäten.
 
-## <a name="exclusivewallclocktimeresponsibilityticks"></a><a name="exclusive-wall-clock-time-responsibility-ticks"></a>ExclusiveWallClockTimeResponsibilityTicks
+## <a name="exclusivewallclocktimeresponsibilityticks"></a><a name="exclusive-wall-clock-time-responsibility-ticks"></a> ExclusiveWallClockTimeResponsibilityTicks
 
 ```cpp
 const long long& ExclusiveWallClockTimeResponsibilityTicks() const;
@@ -181,9 +181,9 @@ const long long& ExclusiveWallClockTimeResponsibilityTicks() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Genauso wie [WallClockTimeResponsibilityTicks](#wall-clock-time-responsibility-ticks), jedoch ohne die Wand-Uhr-Zeitverantwortung, die von untergeordneten Aktivitäten angekreuzt wird.
+Identisch mit [WallClockTimeResponsibilityTicks](#wall-clock-time-responsibility-ticks) mit Ausnahme der Gesamtbetrachtungszeit-Verantwortungstakte untergeordneter Aktivitäten.
 
-## <a name="starttimestamp"></a><a name="start-timestamp"></a>StartTimestamp
+## <a name="starttimestamp"></a><a name="start-timestamp"></a> StartTimestamp
 
 ```cpp
 const long long& StartTimestamp() const;
@@ -191,9 +191,9 @@ const long long& StartTimestamp() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Tick-Wert, der zum Zeitpunkt des Beginns der Aktivität erfasst wurde.
+Ein Taktwert, der zum Startzeitpunkt der Aktivität aufgezeichnet wurde.
 
-## <a name="stoptimestamp"></a><a name="stop-timestamp"></a>StopTimestamp
+## <a name="stoptimestamp"></a><a name="stop-timestamp"></a> StopTimestamp
 
 ```cpp
 const long long& StopTimestamp() const;
@@ -201,9 +201,9 @@ const long long& StopTimestamp() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Tick-Wert, der zum Zeitpunkt des Beendetwerdens der Aktivität erfasst wurde.
+Ein Taktwert, der zum Stoppzeitpunkt der Aktivität aufgezeichnet wurde.
 
-## <a name="wallclocktimeresponsibility"></a><a name="wall-clock-time-responsibility"></a>WallClockTimeResponsibility
+## <a name="wallclocktimeresponsibility"></a><a name="wall-clock-time-responsibility"></a> WallClockTimeResponsibility
 
 ```cpp
 std::chrono::nanoseconds WallClockTimeResponsibility() const;
@@ -211,9 +211,9 @@ std::chrono::nanoseconds WallClockTimeResponsibility() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Die Wand-Uhr-Zeitverantwortung dieser Aktivität, in Nanosekunden. Weitere Informationen dazu, was Wand-Uhr-Zeitverantwortung bedeutet, finden Sie unter [WallClockTimeResponsibilityTicks](#wall-clock-time-responsibility-ticks).
+Die Gesamtbetrachtungszeit-Verantwortung dieser Aktivität in Nanosekunden. Weitere Informationen dazu, was Gesamtbetrachtungszeit-Verantwortung bedeutet, finden Sie unter [WallClockTimeResponsibilityTicks](#wall-clock-time-responsibility-ticks).
 
-## <a name="wallclocktimeresponsibilityticks"></a><a name="wall-clock-time-responsibility-ticks"></a>WallClockTimeResponsibilityTicks
+## <a name="wallclocktimeresponsibilityticks"></a><a name="wall-clock-time-responsibility-ticks"></a> WallClockTimeResponsibilityTicks
 
 ```cpp
 const long long& WallClockTimeResponsibilityTicks() const;
@@ -221,6 +221,6 @@ const long long& WallClockTimeResponsibilityTicks() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Eine Tick-Zahl, die den Beitrag dieser Aktivität zur Gesamtzeit der Wanduhr darstellt. Ein Wand-Uhr-Zeitverantwortungs-Tick unterscheidet sich von einem normalen Tick. Wand-Uhr-Zeitverantwortung tickt berücksichtigung Parallelität zwischen Aktivitäten. Zwei parallele Aktivitäten können eine Dauer von 50 Ticks haben, und die gleiche Start-stopp-Zeit. In diesem Fall erhalten beide eine Wand-Uhr-Zeitverantwortung von 25 Ticks.
+Die Taktanzahl, die den Beitrag dieser Aktivität zur Gesamtbetrachtungszeit darstellt. Ein Tick der tatsächlich verstrichenen Zeit unterscheidet sich von einem normalen Tick. Ticks der tatsächlich verstrichenen Zeit berücksichtigen Parallelität zwischen Aktivitäten. Zwei parallele Aktivitäten weisen eine Dauer von 50 Takten sowie dieselbe Start- und Endzeit auf. In diesem Fall wird beiden Aktivitäten eine Gesamtbetrachtungszeit von 25 Takten zugewiesen.
 
 ::: moniker-end

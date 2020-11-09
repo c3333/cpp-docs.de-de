@@ -1,6 +1,6 @@
 ---
-title: TEMPLATE_INSTANTIATION_KIND_CODE Enumerat
-description: Das C++ Build Insights SDK TEMPLATE_INSTANTIATION_KIND_CODE Enumerierungsreferenz.
+title: Enumeration TEMPLATE_INSTANTIATION_KIND_CODE
+description: Die Referenz zur Enumeration TEMPLATE_INSTANTIATION_KIND_CODE im C++ Build Insights SDK.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,32 +9,32 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: b31f2cf892547adbc566aa9edafdb423b7f528b5
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.openlocfilehash: 2ee85af4e3d7f19b1b5dc9163dab6090f5ce4e42
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81325301"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92920943"
 ---
-# <a name="template_instantiation_kind_code-enum"></a>TEMPLATE_INSTANTIATION_KIND_CODE Enumerat
+# <a name="template_instantiation_kind_code-enum"></a>Enumeration TEMPLATE_INSTANTIATION_KIND_CODE
 
-::: moniker range="<=vs-2015"
+::: moniker range="<=msvc-140"
 
-Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
-Die `TEMPLATE_INSTANTIATION_KIND_CODE` Enumerat.
+Die Enumeration `TEMPLATE_INSTANTIATION_KIND_CODE`.
 
 ## <a name="members"></a>Member
 
-| Name | Wert | BESCHREIBUNG |
+| name | Wert | Beschreibung |
 |--|--|--|
-| `TEMPLATE_INSTANTIATION_KIND_CODE_CLASS` | 0 (0x00000000) | Eine Klassenvorlageninstanziierung. |
-| `TEMPLATE_INSTANTIATION_KIND_CODE_FUNCTION` | 1 (0x00000001) | Eine Funktionsvorlageninstanziierung. |
-| `TEMPLATE_INSTANTIATION_KIND_CODE_VARIABLE` | 2 (0x00000002) | Eine constexpr-Variableninstanziierung. |
-| `TEMPLATE_INSTANTIATION_KIND_CODE_CONCEPT` | 3 (0x00000003) | Eine Konzeptvorlageninstanziierung. |
+| `TEMPLATE_INSTANTIATION_KIND_CODE_CLASS` | 0 (0x00000000) | Instanziierung einer Klassenvorlage. |
+| `TEMPLATE_INSTANTIATION_KIND_CODE_FUNCTION` | 1 (0x00000001) | Instanziierung einer Funktionsvorlage. |
+| `TEMPLATE_INSTANTIATION_KIND_CODE_VARIABLE` | 2 (0x00000002) | Instanziierung einer Variablen des Typs „constexpr“. |
+| `TEMPLATE_INSTANTIATION_KIND_CODE_CONCEPT` | 3 (0x00000003) | Instanziierung einer Konzeptvorlage. |
 
 ## <a name="remarks"></a>Bemerkungen
 

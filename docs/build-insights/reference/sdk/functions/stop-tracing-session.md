@@ -1,6 +1,6 @@
 ---
 title: StopTracingSession
-description: Der C++ Build Insights SDK StopTracingSession-Funktionsverweis.
+description: Die Referenz zur StopTracingSession-Funktion des C++ Build Insights SDK.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: c6c7a3c6ca47749491774cc3bcd97aae8aa663ea
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.openlocfilehash: 8c1455e737435aa82b32cb44a52e46e55df70d6a
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81323520"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92922634"
 ---
 # <a name="stoptracingsession"></a>StopTracingSession
 
-::: moniker range="<=vs-2015"
+::: moniker range="<=msvc-140"
 
-Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
-Die `StopTracingSession` Funktion beendet eine fortlaufende Ablaufverfolgungssitzung und erzeugt eine unformatierte Ablaufverfolgungsdatei. Raw-Ablaufverfolgungsdateien können an die Funktionen [Analyze](analyze.md), [AnalzeA](analyze-a.md)und [AnalyzeW](analyze-w.md) übergeben werden, um eine Analysesitzung zu starten. Raw-Ablaufverfolgungsdateien können auch an die [Funktionen Relog](relog.md), [RelogA](relog-a.md)und [RelogW](relog-w.md) übergeben werden, um eine Relogging-Sitzung zu starten. Der Aufruf `StopTracingSession` von ausführbaren Dateien muss über Administratorrechte verfügen.
+Die `StopTracingSession`-Funktion beendet eine laufende Ablaufverfolgungssitzung und generiert eine Ablaufverfolgungsdatei mit Rohdaten. Ablaufverfolgungsdateien mit Rohdaten können an die Funktionen [Analyze](analyze.md), [AnalzeA](analyze-a.md) und [AnalyzeW](analyze-w.md) übergeben werden, um eine Analysesitzung zu starten. Ablaufverfolgungsdateien mit Rohdaten können an die Funktionen [Relog](relog.md), [RelogA](relog-a.md) und [RelogW](relog-w.md) übergeben werden, um eine Neuprotokollierungssitzung zu starten. Ausführbare Dateien, die `StopTracingSession` aufrufen, benötigen Administratorberechtigungen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -44,16 +44,16 @@ inline RESULT_CODE StopTracingSession(
 ### <a name="parameters"></a>Parameter
 
 *sessionName*\
-Der Name der zu beendenden Ablaufverfolgungssitzung. Verwenden Sie denselben Sitzungsnamen wie an [StartTracingSession](start-tracing-session.md), [StartTracingSessionA](start-tracing-session-a.md)oder [StartTracingSessionW](start-tracing-session-w.md)übergeben.
+Der Name der Ablaufverfolgungssitzung, die angehalten werden soll. Verwenden Sie den gleichen Sitzungsnamen wie den, der an [StartTracingSession](start-tracing-session.md), [StartTracingSessionA](start-tracing-session-a.md) oder [StartTracingSessionW](start-tracing-session-w.md) übergeben wurde.
 
 *outputLogFile*\
-Pfad zur endgültigen Ausgabeprotokolldatei, in der die unformatierte Ablaufverfolgung gespeichert werden soll.
+Pfad zur endgültigen Ausgabeprotokolldatei, in der die Rohdaten der Ablaufverfolgung gespeichert werden sollen.
 
-*Statistiken*\
-Zeiger auf ein [TRACING_SESSION_STATISTICS](../other-types/tracing-session-statistics-struct.md) Objekt. `StopTracingSession`schreibt Ablaufverfolgungssammlungsstatistiken in diesem Objekt, bevor es zurückgegeben wird.
+*statistics*\
+Zeiger auf ein [TRACING_SESSION_STATISTICS](../other-types/tracing-session-statistics-struct.md)-Objekt. `StopTracingSession` schreibt Sammlungsstatistiken zur Ablaufverfolgung in dieses Objekt, bevor es zurückgegeben wird.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Ergebniscode aus der [RESULT_CODE](../other-types/result-code-enum.md) Enumerum.
+Ein Ergebniscode aus der Enumeration [RESULT_CODE](../other-types/result-code-enum.md).
 
 ::: moniker-end

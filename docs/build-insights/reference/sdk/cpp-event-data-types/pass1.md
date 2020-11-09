@@ -1,6 +1,6 @@
 ---
 title: Pass1-Klasse
-description: Der C++ Build Insights SDK Pass1-Klassenverweis.
+description: Die Referenz zur Pass1-Klasse im C++ Build Insights SDK.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 039c2cc92b8461009c235baa7e49484eb2a4f49f
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.openlocfilehash: 99ada8a2db5ac464113d9805797d4b4555367e77
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81324422"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92923040"
 ---
 # <a name="pass1-class"></a>Pass1-Klasse
 
-::: moniker range="<=vs-2015"
+::: moniker range="<=msvc-140"
 
-Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
-Die `Pass1` Klasse wird mit den Funktionen [MatchEvent](../functions/match-event.md), [MatchEventInMemberFunction](../functions/match-event-in-member-function.md), [MatchEventStack](../functions/match-event-stack.md)und [MatchEventStackInMemberFunction](../functions/match-event-stack-in-member-function.md) verwendet. Verwenden Sie es, um einem [PASS1-Ereignis](../event-table.md#pass1) zu entsprechen.
+Die `Pass1`-Klasse wird mit den Funktionen [MatchEvent](../functions/match-event.md), [MatchEventInMemberFunction](../functions/match-event-in-member-function.md), [MatchEventStack](../functions/match-event-stack.md) und [MatchEventStackInMemberFunction](../functions/match-event-stack-in-member-function.md) verwendet. Dient zum Abgleichen eines [PASS1](../event-table.md#pass1)-Ereignisses.
 
 ## <a name="syntax"></a>Syntax
 
@@ -39,13 +39,13 @@ public:
 
 ## <a name="members"></a>Member
 
-Zusammen mit den geerbten Membern aus der `Pass1` [LinkerPass-Basisklasse](linker-pass.md) enthält die Klasse die folgenden Member:
+Zusammen mit den geerbten Membern aus der Basisklasse [LinkerPass](linker-pass.md) enthält die `Pass1`-Klasse die folgenden Member:
 
 ### <a name="constructors"></a>Konstruktoren
 
 [Pass1](#pass1)
 
-## <a name="pass1"></a><a name="pass1"></a>Pass1
+## <a name="pass1"></a><a name="pass1"></a> Pass1
 
 ```cpp
 Pass1(const RawEvent& event);
@@ -54,6 +54,6 @@ Pass1(const RawEvent& event);
 ### <a name="parameters"></a>Parameter
 
 *Ereignis*\
-Ein [PASS1-Ereignis.](../event-table.md#pass1)
+Ein [PASS1](../event-table.md#pass1)-Ereignis.
 
 ::: moniker-end

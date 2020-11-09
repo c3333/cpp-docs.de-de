@@ -1,6 +1,7 @@
 ---
 title: C-Zuweisungsoperatoren
-ms.date: 06/14/2018
+description: Die standardmäßigen Zuweisungsoperatoren der Sprache C, ihre Syntax und Bedeutung.
+ms.date: 10/30/2020
 helpviewer_keywords:
 - remainder assignment operator (%=)
 - '&= operator'
@@ -30,12 +31,12 @@ helpviewer_keywords:
 - operator >>=, C assignment operators
 - <<= operator
 ms.assetid: 11688dcb-c941-44e7-a636-3fc98e7dac40
-ms.openlocfilehash: e8ada96daaec249a05882aceae9b7d9e86b92065
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 460e18772689de0d28fcfda3295a49b2f8a3c0d7
+ms.sourcegitcommit: 4abc6c4c9694f91685cfd77940987e29a51e3143
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80168798"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93238511"
 ---
 # <a name="c-assignment-operators"></a>C-Zuweisungsoperatoren
 
@@ -43,28 +44,28 @@ Eine Zuweisungsvorgang weist den Wert des rechten Operanden dem Speicherort zu, 
 
 ## <a name="syntax"></a>Syntax
 
-*assignment-expression*:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*conditional-expression*<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;*unärer-Ausdruck* *Zuweisungsoperator* *Zuweisungsausdruck*
+*`assignment-expression`* :\
+&emsp;*`conditional-expression`*\
+&emsp;*`unary-expression`* *`assignment-operator`* *`assignment-expression`*
 
-*assignment-operator*: eines der folgenden Zeichen:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; **=** **\*=** **/=** **%=** **+=** **-=** **\<\<=** **>>=** **&=** **^=** **|=**
+*`assignment-operator`* : eines der folgenden Zeichen<br/>
+&emsp;**`=`** **`*=`** **`/=`** **`%=`** **`+=`** **`-=`** **`<<=`** **`>>=`** **`&=`** **`^=`** **`|=`**
 
 Die Zuweisungsoperatoren in C können Werte in einem einzelnen Vorgang transformieren und zuweisen. C stellt die folgenden Zuweisungsoperatoren bereit:
 
 |Operator|Vorgang ausgeführt|
 |--------------|-------------------------|
-|**=**|Einfache Zuweisung|
-|**&#42;=**|Multiplikationszuweisung|
-|**/=**|Divisionszuweisung|
-|**%=**|Restzuweisung|
-|**+=**|Additionszuweisung|
-|**-=**|Subtraktionszuweisung|
-|**<\<=**|Linksschiebezuweisung|
-|**>>=**|Rechtsschiebezuweisung|
-|**&=**|Bitweise AND-Zuweisung|
-|**^=**|Bitweise exklusive OR-Zuweisung|
-|**&#124;=**|Bitweise inklusive OR-Zuweisung|
+|**`=`**|Einfache Zuweisung|
+|**`*=`**|Multiplikationszuweisung|
+|**`/=`**|Divisionszuweisung|
+|**`%=`**|Restzuweisung|
+|**`+=`**|Additionszuweisung|
+|**`-=`**|Subtraktionszuweisung|
+|**`<<=`**|Linksschiebezuweisung|
+|**`>>=`**|Rechtsschiebezuweisung|
+|**`&=`**|Bitweise AND-Zuweisung|
+|**`^=`**|Bitweise exklusive OR-Zuweisung|
+|**`|=`**|Bitweise inklusive OR-Zuweisung|
 
 In der Zuweisung wird der Typ des rechten Werts in den Typ des linken Werts konvertiert, und der Wert wird im linken Operanden gespeichert, nachdem die Zuweisung stattgefunden hat. Der linke Operand darf kein Array, keine Funktion und keine Konstante sein. Der bestimmte Konvertierungspfad, der von den beiden Typen abhängt, wird ausführlich in [Typkonvertierungen](../c-language/type-conversions-c.md) erläutert.
 

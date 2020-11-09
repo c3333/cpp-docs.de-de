@@ -1,6 +1,6 @@
 ---
 title: EventGroup-Klasse
-description: Der C++ Build Insights SDK EventGroup-Klassenverweis.
+description: Die Referenz zur EventGroup-Klasse im C++ Build Insights SDK.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 596c18ca0e9b4d7b26c4ed5209b16871952c4af2
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.openlocfilehash: 57cbc7a053132909149aee182b9560e2ee33c161
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81324988"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92923304"
 ---
 # <a name="eventgroup-class"></a>EventGroup-Klasse
 
-::: moniker range="<=vs-2015"
+::: moniker range="<=msvc-140"
 
-Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
-Die `EventGroup` Klassenvorlage ist die Basisklasse für alle Gruppenerfassungsklassen.
+Die Klassenvorlage `EventGroup` ist die Basisklasse für alle Gruppenerfassungsklassen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -54,13 +54,13 @@ public:
 ### <a name="functions"></a>Functions
 
 [Back](#back)
+[begin](#begin)
+[end](#end)
+[Front](#front)
+[operator[]](#subscript-operator)
+[Size](#size)
 
-
-
-[Size](#size) Back-Start-End-Frontoperator[][begin](#begin)
-[end](#end)Größe[Front](#front)[operator[]](#subscript-operator)
-
-## <a name="back"></a><a name="back"></a>Zurück
+## <a name="back"></a><a name="back"></a> Back
 
 ```cpp
 const TActivity& Back() const;
@@ -70,7 +70,7 @@ const TActivity& Back() const;
 
 Ein Verweis auf das letzte Aktivitätsereignis in der Gruppe.
 
-## <a name="begin"></a><a name="begin"></a>Beginnen
+## <a name="begin"></a><a name="begin"></a> begin
 
 ```cpp
 std::deque<TActivity>::const_iterator begin() const;
@@ -78,9 +78,9 @@ std::deque<TActivity>::const_iterator begin() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Iterator, der am Anfang der Aktivitätsereignisgruppe zeigt.
+Ein Iterator, der auf den Anfang der Aktivitätsereignisgruppe zeigt.
 
-## <a name="end"></a><a name="end"></a>Ende
+## <a name="end"></a><a name="end"></a> end
 
 ```cpp
 std::deque<TActivity>::const_iterator end() const;
@@ -88,9 +88,9 @@ std::deque<TActivity>::const_iterator end() const;
 
 ### <a name="return-value"></a>Rückgabewert
 
-Ein Iterator, der eine Position über das Ende der Aktivitätsereignisgruppe hinaus zeigt.
+Ein Iterator, der auf eine Position hinter dem Ende der Ereignisgruppe der Aktivität zeigt.
 
-## <a name="front"></a><a name="front"></a>Vorder-
+## <a name="front"></a><a name="front"></a> Front
 
 ```cpp
 const TActivity& Front() const;
@@ -100,7 +100,7 @@ const TActivity& Front() const;
 
 Ein Verweis auf das erste Aktivitätsereignis in der Gruppe.
 
-## <a name="operator"></a><a name="subscript-operator"></a>Operator[]
+## <a name="operator"></a><a name="subscript-operator"></a> operator[]
 
 ```cpp
 const TActivity& operator[](size_t index) const;
@@ -108,12 +108,12 @@ const TActivity& operator[](size_t index) const;
 
 ### <a name="parameters"></a>Parameter
 
-*Index*\
-Der Index des Elements, auf das in der Aktivitätsereignisgruppe zugreifen soll.
+*index*\
+Der Index des Elements, auf das in der Aktivitätsereignisgruppe zugegriffen werden soll.
 
 ### <a name="return-value"></a>Rückgabewert
 
-Das Ereignis aus dem Ereignisstapel, der an der durch *Index*angegebenen Position gespeichert ist.
+Das Ereignis aus dem Ereignisstapel, das an der von *Index* angegebenen Position gespeichert ist.
 
 ## <a name="size"></a><a name="size"></a>-Größe
 

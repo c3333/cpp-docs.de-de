@@ -1,6 +1,6 @@
 ---
 title: EnvironmentVariable-Klasse
-description: Der C++ Build Insights SDK EnvironmentVariable-Klassenverweis.
+description: Die Referenz zur EnvironmentVariable-Klasse im C++ Build Insights SDK.
 ms.date: 02/12/2020
 helpviewer_keywords:
 - C++ Build Insights
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - throughput analysis
 - build time analysis
 - vcperf.exe
-ms.openlocfilehash: 963c52e0ea9e048448c6f2b3ac62d9938817467e
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
-ms.translationtype: MT
+ms.openlocfilehash: f707ab744aaf6097975ba9e189815df3c9f32266
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81325018"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92920762"
 ---
 # <a name="environmentvariable-class"></a>EnvironmentVariable-Klasse
 
-::: moniker range="<=vs-2015"
+::: moniker range="<=msvc-140"
 
-Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Um die Dokumentation zu diesen Versionen anzuzeigen, legen Sie das Visual **Studio-Versionsauswahlsteuerelement** für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich oben im Inhaltsverzeichnis auf dieser Seite.
+Das C++ Build Insights SDK ist mit Visual Studio 2017 und höher kompatibel. Wenn die Dokumentation für diese Versionen angezeigt werden soll, legen Sie das Steuerelement für die Auswahl der **Version** von Visual Studio für diesen Artikel auf Visual Studio 2017 oder Visual Studio 2019 fest. Es befindet sich am Anfang des Inhaltsverzeichnisses auf dieser Seite.
 
 ::: moniker-end
-::: moniker range=">=vs-2017"
+::: moniker range=">=msvc-150"
 
-Die `EnvironmentVariable` Klasse wird mit den Funktionen [MatchEvent](../functions/match-event.md), [MatchEventInMemberFunction](../functions/match-event-in-member-function.md), [MatchEventStack](../functions/match-event-stack.md)und [MatchEventStackInMemberFunction](../functions/match-event-stack-in-member-function.md) verwendet. Verwenden Sie es, um ein [ENVIRONMENT_VARIABLE](../event-table.md#environment-variable) Ereignis abzugleichen.
+Die `EnvironmentVariable`-Klasse wird mit den Funktionen [MatchEvent](../functions/match-event.md), [MatchEventInMemberFunction](../functions/match-event-in-member-function.md), [MatchEventStack](../functions/match-event-stack.md) und [MatchEventStackInMemberFunction](../functions/match-event-stack-in-member-function.md) verwendet. Dient zum Abgleichen eines [ENVIRONMENT_VARIABLE](../event-table.md#environment-variable)-Ereignisses.
 
 ## <a name="syntax"></a>Syntax
 
@@ -42,7 +42,7 @@ public:
 
 ## <a name="members"></a>Member
 
-Zusammen mit den geerbten Membern aus `EnvironmentVariable` der [SimpleEvent-Basisklasse](simple-event.md) enthält die Klasse die folgenden Member:
+Zusammen mit den geerbten Membern aus der Basisklasse [SimpleEvent](simple-event.md) enthält die `EnvironmentVariable`-Klasse die folgenden Member:
 
 ### <a name="constructors"></a>Konstruktoren
 
@@ -51,9 +51,9 @@ Zusammen mit den geerbten Membern aus `EnvironmentVariable` der [SimpleEvent-Bas
 ### <a name="functions"></a>Functions
 
 [Name](#name)
-[Name-Wert](#value)
+[Wert](#value)
 
-## <a name="environmentvariable"></a><a name="environment-variable"></a>UmweltVariable
+## <a name="environmentvariable"></a><a name="environment-variable"></a> EnvironmentVariable
 
 ```cpp
 EnvironmentVariable(const RawEvent& event);
@@ -62,9 +62,9 @@ EnvironmentVariable(const RawEvent& event);
 ### <a name="parameters"></a>Parameter
 
 *Ereignis*\
-Ein [ENVIRONMENT_VARIABLE](../event-table.md#environment-variable) Ereignis.
+Ein [ENVIRONMENT_VARIABLE](../event-table.md#environment-variable)-Ereignis.
 
-## <a name="name"></a><a name="name"></a>Namen
+## <a name="name"></a><a name="name"></a> Name
 
 ```cpp
 const wchar_t Name() const;
@@ -74,7 +74,7 @@ const wchar_t Name() const;
 
 Der Name der Umgebungsvariablen.
 
-## <a name="value"></a><a name="value"></a> Wert
+## <a name="value"></a><a name="value"></a>-Wert
 
 ```cpp
 const wchar_t Value() const;
