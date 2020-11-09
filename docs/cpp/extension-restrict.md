@@ -1,38 +1,38 @@
 ---
-title: __restrict
-ms.date: 10/10/2018
+title: '`__restrict`'
+description: Beschreibt das Microsoft Visual C++- `__restrict` Schlüsselwort.
+ms.date: 11/6/2020
 f1_keywords:
 - __restrict_cpp
 - __restrict
 - _restrict
 helpviewer_keywords:
 - __restrict keyword [C++]
-ms.assetid: 2d151b4d-f930-49df-bd16-d8757ec7fa83
-ms.openlocfilehash: 6318e6d78f6c4c4bb6827a79d26bca028dfe3f3f
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: f23574f49712928e0095f29a3b88b0c05b185eab
+ms.sourcegitcommit: 3f0c1dcdcce25865d1a1022bcc5b9eec79f69025
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87233742"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94381570"
 ---
-# <a name="__restrict"></a>__restrict
+# `__restrict`
 
-Wie der **__declspec ( [Einschränkungs](../cpp/restrict.md) ** -Modifizierer) gibt das- **`__restrict`** Schlüsselwort an, dass ein Symbol im aktuellen Gültigkeitsbereich nicht mit einem Alias versehen ist. Das- **`__restrict`** Schlüsselwort unterscheidet `__declspec ( restrict )` sich wie folgt vom-Modifizierer:
+Wie der-Modifizierer **`__declspec` ( [`restrict`](../cpp/restrict.md) )** gibt das- **`__restrict`** Schlüsselwort (zwei führende Unterstriche ' _ ') an, dass ein Symbol im aktuellen Gültigkeitsbereich nicht mit einem Alias versehen ist. Das- **`__restrict`** Schlüsselwort unterscheidet `__declspec (restrict)` sich wie folgt vom-Modifizierer:
 
-- Das **`__restrict`** Schlüsselwort ist nur für Variablen gültig und `__declspec ( restrict )` nur für Funktions Deklarationen und-Definitionen gültig.
+- Das **`__restrict`** Schlüsselwort ist nur für Variablen gültig und `__declspec (restrict)` nur für Funktions Deklarationen und-Definitionen gültig.
 
-- **`__restrict`** ähnelt **`restrict`** von der C99-Spezifikation, kann aber **`__restrict`** in C++-oder C-Programmen verwendet werden.
+- **`__restrict`** ähnelt [`restrict`](../c-language/type-qualifiers.md#restrict) für C ab C99, **`__restrict`** kann jedoch sowohl in C++-als auch in C-Programmen verwendet werden.
 
-- Wenn **`__restrict`** verwendet wird, gibt der Compiler die No-Alias-Eigenschaft einer Variablen nicht weiter. Das heißt, wenn Sie einer **`__restrict`** nicht Variablen eine Variable zuweisen **`__restrict`** , lässt der Compiler weiterhin zu, dass für die nicht-__restrict Variable ein Alias verwendet wird. Dies unterscheidet sich vom Verhalten des- **`restrict`** Schlüssel Worts aus der C99-Spezifikation.
+- Wenn **`__restrict`** verwendet wird, gibt der Compiler die No-Alias-Eigenschaft einer Variablen nicht weiter. Das heißt, wenn Sie einer **`__restrict`** nicht Variablen eine Variable zuweisen **`__restrict`** , lässt der Compiler weiterhin zu, dass für die nicht-__restrict Variable ein Alias verwendet wird. Dies unterscheidet sich vom Verhalten des C99-C-Programmiersprachen- **`restrict`** Schlüssel Worts.
 
-Wenn Sie das Verhalten einer vollständigen Funktion beeinflussen, ist es im Allgemeinen besser, `__declspec ( restrict )` anstatt das Schlüsselwort zu verwenden.
+Wenn Sie das Verhalten einer gesamten Funktion beeinflussen möchten, verwenden Sie im allgemeinen **`__declspec (restrict)`** anstelle des-Schlüssel Worts.
 
-Aus Gründen der Kompatibilität mit früheren Versionen ist **_Restrict** ein Synonym für, **`__restrict`** es sei denn, die Compileroption [/Za \( Spracherweiterungen deaktivieren)](../build/reference/za-ze-disable-language-extensions.md) ist angegeben.
+Aus Gründen der Kompatibilität mit früheren Versionen ist **`_restrict`** ein Synonym für, **`__restrict`** es sei denn, die Compileroption [ `/Za` \( Spracherweiterungen deaktivieren)](../build/reference/za-ze-disable-language-extensions.md) ist angegeben.
 
 In Visual Studio 2015 und höher **`__restrict`** kann für C++-Verweise verwendet werden.
 
 > [!NOTE]
-> Wenn Sie für eine Variable verwendet wird, die auch das [volatile](../cpp/volatile-cpp.md) -Schlüsselwort aufweist, hat **`volatile`** Vorrang.
+> Wenn Sie für eine Variable verwendet wird, die auch das- [`volatile`](../cpp/volatile-cpp.md) Schlüsselwort aufweist, hat **`volatile`** Vorrang.
 
 ## <a name="example"></a>Beispiel
 

@@ -1,6 +1,7 @@
 ---
-title: '&lt;ios&gt;-Typedefs'
-ms.date: 11/04/2016
+title: typedef `<ios>`
+description: Beschreibt die C++-Standardvorlagen Bibliothek (STL)- `<ios>` Typedefs, die die- `ios` Klasse aus der alten Bibliothek unterstützen `iostream` .
+ms.date: 11/06/2020
 f1_keywords:
 - iosfwd/std::ios
 - iosfwd/std::streamoff
@@ -8,29 +9,28 @@ f1_keywords:
 - iosfwd/std::streamsize
 - iosfwd/std::wios
 - iosfwd/std::wstreampos
-ms.assetid: 0b962632-3439-44de-bf26-20c67a7f0ff3
-ms.openlocfilehash: 6167856c579acfca2bde600b2dd4d457199cafcc
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 4af9636ab3317e7b81eb73dc74aef065b1287e21
+ms.sourcegitcommit: 3f0c1dcdcce25865d1a1022bcc5b9eec79f69025
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87212279"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94381635"
 ---
-# <a name="ltiosgt-typedefs"></a>&lt;ios&gt;-Typedefs
+# <a name="ios-typedefs"></a>typedef `<ios>`
 
-## <a name="ios"></a><a name="ios"></a>erhältlich
+## `ios`
 
-Unterstützt die ios-Klasse aus der alten iostream-Bibliothek.
+Unterstützt die- `ios` Klasse aus der alten `iostream` Bibliothek.
 
 ```cpp
 typedef basic_ios<char, char_traits<char>> ios;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-Der Typ ist ein Synonym für Klassen Vorlagen [basic_ios](../standard-library/basic-ios-class.md), das auf Elemente des Typs **`char`** mit Standard Zeichen Merkmalen spezialisiert ist.
+Der Typ ist ein Synonym für eine Klassen Vorlage [`basic_ios`](../standard-library/basic-ios-class.md) , die auf Elemente des Typs **`char`** mit Standard Zeichen Merkmalen spezialisiert ist.
 
-## <a name="streamoff"></a><a name="streamoff"></a>streamoff
+## `streamoff`
 
 Unterstützt interne Vorgänge.
 
@@ -42,11 +42,11 @@ Unterstützt interne Vorgänge.
 #endif
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-Der Typ ist eine Ganzzahl mit Vorzeichen, die ein Objekt beschreibt, das einen Byte-Offset speichern kann, der an verschiedenen Streampositionierungsvorgängen beteiligt ist. Seine Repräsentation hat mindestens 32 Wertbits. Er ist nicht unbedingt groß genug, um eine willkürliche Byte-Position innerhalb eines Streams repräsentieren zu können. Der Wert `streamoff(-1)` weist im Allgemeinen auf einen fehlerhaften Offset hin.
+Der Typ ist eine Ganzzahl mit Vorzeichen. Es beschreibt ein Objekt, das einen Byte Offset in streampositionierungsvorgängen speichern kann. Seine Repräsentation hat mindestens 32 Wertbits. Es ist nicht notwendigerweise groß genug, um eine beliebige Byte Position innerhalb eines Streams darzustellen. Der Wert `streamoff(-1)` weist im Allgemeinen auf einen fehlerhaften Offset hin.
 
-## <a name="streampos"></a><a name="streampos"></a>streampos
+## `streampos`
 
 Enthält die aktuelle Position des Pufferzeigers oder Dateizeigers.
 
@@ -54,9 +54,9 @@ Enthält die aktuelle Position des Pufferzeigers oder Dateizeigers.
 typedef fpos<mbstate_t> streampos;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-Der Typ ist ein Synonym für die> [von "](../standard-library/fpos-class.md) <  `mbstate_t` ".
+Der Typ ist ein Synonym für [`fpos`](../standard-library/fpos-class.md) <  `mbstate_t`>.
 
 ### <a name="example"></a>Beispiel
 
@@ -73,7 +73,7 @@ int main( )
    ofstream x( "iostream.txt" );
    x << "testing";
    streampos y = x.tellp( );
-   cout << y << endl;
+   cout << streamoff(y) << '\n';
 }
 ```
 
@@ -81,7 +81,7 @@ int main( )
 7
 ```
 
-## <a name="streamsize"></a><a name="streamsize"></a>streamsize
+## `streamsize`
 
 Bezeichnet die Größe des Streams.
 
@@ -93,13 +93,13 @@ Bezeichnet die Größe des Streams.
 #endif
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-Der Typ ist eine Ganzzahl mit Vorzeichen, die ein Objekt beschreibt, das die Anzahl von Objekten speichern kann, die an verschiedenen Streamvorgängen beteiligt sind. Seine Repräsentation verfügt über mindestens 16 Bits. Er ist nicht unbedingt groß genug, um eine willkürliche Byte-Position innerhalb eines Streams repräsentieren zu können.
+Der Typ ist eine Ganzzahl mit Vorzeichen, die ein Objekt beschreibt, das die Anzahl von Objekten speichern kann, die an verschiedenen Streamvorgängen beteiligt sind. Seine Repräsentation verfügt über mindestens 16 Bits. Es ist nicht notwendigerweise groß genug, um eine beliebige Byte Position innerhalb eines Streams darzustellen.
 
 ### <a name="example"></a>Beispiel
 
-Nachdem Sie folgendes Programm kompiliert und ausgeführt haben, öffnen Sie die Datei test.txt,, um den Effekt der Einstellung `streamsize` zu überprüfen.
+Nach dem Kompilieren und Ausführen des folgenden Programms sehen Sie sich die Datei `test.txt` an, um die Auswirkung der Einstellung anzuzeigen `streamsize` .
 
 ```cpp
 // ios_streamsize.cpp
@@ -117,19 +117,19 @@ int main( )
 }
 ```
 
-## <a name="wios"></a><a name="wios"></a>wios
+## `wios`
 
-Unterstützt die wios-Klasse aus der alten iostream-Bibliothek.
+Unterstützt die- `wios` Klasse aus der alten `iostream` Bibliothek.
 
 ```cpp
 typedef basic_ios<wchar_t, char_traits<wchar_t>> wios;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-Der Typ ist ein Synonym für Klassen Vorlagen [basic_ios](../standard-library/basic-ios-class.md), das auf Elemente des Typs **`wchar_t`** mit Standard Zeichen Merkmalen spezialisiert ist.
+Der Typ ist ein Synonym für eine Klassen Vorlage [`basic_ios`](../standard-library/basic-ios-class.md) , die auf Elemente des Typs **`wchar_t`** mit Standard Zeichen Merkmalen spezialisiert ist.
 
-## <a name="wstreampos"></a><a name="wstreampos"></a>wstreampos
+## `wstreampos`
 
 Enthält die aktuelle Position des Pufferzeigers oder Dateizeigers.
 
@@ -137,9 +137,9 @@ Enthält die aktuelle Position des Pufferzeigers oder Dateizeigers.
 typedef fpos<mbstate_t> wstreampos;
 ```
 
-### <a name="remarks"></a>Bemerkungen
+### <a name="remarks"></a>Hinweise
 
-Der Typ ist ein Synonym für die> [von "](../standard-library/fpos-class.md) <  `mbstate_t` ".
+Der Typ ist ein Synonym für [`fpos`](../standard-library/fpos-class.md) <  `mbstate_t`>.
 
 ### <a name="example"></a>Beispiel
 

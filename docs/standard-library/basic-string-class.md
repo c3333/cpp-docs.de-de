@@ -121,12 +121,12 @@ helpviewer_keywords:
 - std::basic_string [C++], substr
 - std::basic_string [C++], swap
 ms.assetid: a9c3e0a2-39bf-4c8a-b093-9abe30839591
-ms.openlocfilehash: fa2e6813d6cfb55ea1924bc976ef03396b88ca92
-ms.sourcegitcommit: 9c801a43ee0d4d84956b03fd387716c818705e0d
+ms.openlocfilehash: 87eda4064ff63a22add49b2872a26c76ac15bc6a
+ms.sourcegitcommit: 3f0c1dcdcce25865d1a1022bcc5b9eec79f69025
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92907570"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94381648"
 ---
 # <a name="basic_string-class"></a>`basic_string`-Klasse
 
@@ -148,7 +148,7 @@ Der Datentyp eines einzelnen in der Zeichenfolge zu speichernden Zeichens. Die C
 Verschiedene wichtige Eigenschaften der `CharType` Elemente in einer basic_string Spezialisierung werden von der-Klasse beschrieben `Traits` . Der Standardwert ist `char_traits`<`CharType`>.
 
 *`Allocator`*\
-Der Typ, mit dem das gespeicherte Zuordnungsobjekt darstellt wird, mit dem Details zum Belegen und Freigeben des Arbeitsspeichers der Zeichenfolge gekapselt werden. Der Standardwert ist `allocator<CharType>`.
+Der Typ, mit dem das gespeicherte Zuordnungsobjekt darstellt wird, mit dem Details zum Belegen und Freigeben des Arbeitsspeichers der Zeichenfolge gekapselt werden. Standardwert: `allocator<CharType>`.
 
 ### <a name="constructors"></a>Konstruktoren
 
@@ -1601,7 +1601,7 @@ size_type _Copy_s(
 Das Zielzeichenarray, in das die Elemente kopiert werden sollen.
 
 *`dest_size`*\
-Die Größe von *dest* .
+Die Größe von *dest*.
 
 *`count`* Die Anzahl der Zeichen, die höchstens aus der Quell Zeichenfolge kopiert werden sollen.
 
@@ -2179,7 +2179,7 @@ int main( )
       cout << "The index of the 1st element of sample "
            << "in str3 is: " << indexCh3a << endl;
    else
-      cout << "The substring 'perfect' was not found in str3 ."
+      cout << "The substring 'sample' was not found in str3 ."
            << endl;
 
    const char *cstr3b = "for";
@@ -4956,7 +4956,7 @@ The character ch1 is: G.
 The character ch2 is: H.
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [`<string>`](../standard-library/string.md)\
 [Thread Sicherheit in der C++-Standard Bibliothek](../standard-library/thread-safety-in-the-cpp-standard-library.md)

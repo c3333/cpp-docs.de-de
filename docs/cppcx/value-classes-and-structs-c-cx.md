@@ -5,12 +5,12 @@ helpviewer_keywords:
 - value struct
 - value class
 ms.assetid: 262a0992-9721-4c02-8297-efc07d90e5a4
-ms.openlocfilehash: 3350af722993d6b23efa3dc9dbd5a7c33ee5165b
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 15d54d139f086ce5bb025aaeab145c71d33903c0
+ms.sourcegitcommit: 3f0c1dcdcce25865d1a1022bcc5b9eec79f69025
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87214944"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94381596"
 ---
 # <a name="value-classes-and-structs-ccx"></a>Wertklassen und Strukturen (C++/CX)
 
@@ -64,7 +64,7 @@ Im folgenden Codefragment werden die `Coordinates` - und `City` -Typen als Werts
 
 ## <a name="parameter-passing-for-value-types"></a>Parameterübergabe für Werttypen
 
-Wenn Sie über einen Werttyp als Funktions- oder Methodenparameter verfügen, wird er normalerweise als Wert übergeben. Bei größeren Objekten kann dies zu Leistungsproblemen führen. In Visual Studio 2013 und früher werden Werttypen in C++/CX immer als Wert übergeben. In Visual Studio 2015 und höher können Werttypen als Verweis oder als Wert übergeben werden.
+Wenn Sie über einen Werttyp als Funktions- oder Methodenparameter verfügen, wird er normalerweise als Wert übergeben. Bei größeren Objekten kann dies zu Leistungsproblemen führen. In Visual Studio 2013 und früheren Versionen wurden Werttypen in C++/CX immer als Wert weitergegeben. In Visual Studio 2015 und höher können Werttypen als Verweis oder als Wert übergeben werden.
 
 Verwenden Sie zum Deklarieren eines Parameters, der einen Werttyp als Wert übergibt, Code wie den folgenden:
 
@@ -147,7 +147,7 @@ public:
 };
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Typsystem (C++-CX)](../cppcx/type-system-c-cx.md)<br/>
 [C++/CX-Sprachreferenz](../cppcx/visual-c-language-reference-c-cx.md)<br/>
