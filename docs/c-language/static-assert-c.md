@@ -30,7 +30,7 @@ static_assert(constant-expression, string-literal);
 
 ### <a name="parameters"></a>Parameter
 
-*constant-expression*\ (konstanter Ausdruck)
+*constant-expression* (konstanter Ausdruck)\
 Hierbei handelt es sich um einen integralen konstanten Ausdruck, der zur Kompilierzeit ausgewertet werden kann. Wenn der Ausdruck 0 (false) ist, wird der *Zeichenfolgenliteral* -Parameter angezeigt, und bei der Kompilierung tritt ein Fehler auf. Wenn der Ausdruck nicht 0 (true) ist, passiert nichts.
 
 *string-literal*\ (Zeichenfolgenliteral)
