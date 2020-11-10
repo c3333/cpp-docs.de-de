@@ -9,12 +9,12 @@ f1_keywords:
 - iosfwd/std::streamsize
 - iosfwd/std::wios
 - iosfwd/std::wstreampos
-ms.openlocfilehash: 4af9636ab3317e7b81eb73dc74aef065b1287e21
-ms.sourcegitcommit: 3f0c1dcdcce25865d1a1022bcc5b9eec79f69025
+ms.openlocfilehash: b9dbed64c88a00f5ca065e23c4af2f3922634ece
+ms.sourcegitcommit: b38485bb3a9d479e0c5d64ffc3d841fa2c2b366f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94381635"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94441267"
 ---
 # <a name="ios-typedefs"></a>typedef `<ios>`
 
@@ -26,7 +26,7 @@ Unterstützt die- `ios` Klasse aus der alten `iostream` Bibliothek.
 typedef basic_ios<char, char_traits<char>> ios;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein Synonym für eine Klassen Vorlage [`basic_ios`](../standard-library/basic-ios-class.md) , die auf Elemente des Typs **`char`** mit Standard Zeichen Merkmalen spezialisiert ist.
 
@@ -42,7 +42,7 @@ Unterstützt interne Vorgänge.
 #endif
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist eine Ganzzahl mit Vorzeichen. Es beschreibt ein Objekt, das einen Byte Offset in streampositionierungsvorgängen speichern kann. Seine Repräsentation hat mindestens 32 Wertbits. Es ist nicht notwendigerweise groß genug, um eine beliebige Byte Position innerhalb eines Streams darzustellen. Der Wert `streamoff(-1)` weist im Allgemeinen auf einen fehlerhaften Offset hin.
 
@@ -54,7 +54,7 @@ Enthält die aktuelle Position des Pufferzeigers oder Dateizeigers.
 typedef fpos<mbstate_t> streampos;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein Synonym für [`fpos`](../standard-library/fpos-class.md) <  `mbstate_t`>.
 
@@ -73,7 +73,7 @@ int main( )
    ofstream x( "iostream.txt" );
    x << "testing";
    streampos y = x.tellp( );
-   cout << streamoff(y) << '\n';
+   cout << streamoff( y ) << '\n';
 }
 ```
 
@@ -93,7 +93,7 @@ Bezeichnet die Größe des Streams.
 #endif
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist eine Ganzzahl mit Vorzeichen, die ein Objekt beschreibt, das die Anzahl von Objekten speichern kann, die an verschiedenen Streamvorgängen beteiligt sind. Seine Repräsentation verfügt über mindestens 16 Bits. Es ist nicht notwendigerweise groß genug, um eine beliebige Byte Position innerhalb eines Streams darzustellen.
 
@@ -125,7 +125,7 @@ Unterstützt die- `wios` Klasse aus der alten `iostream` Bibliothek.
 typedef basic_ios<wchar_t, char_traits<wchar_t>> wios;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein Synonym für eine Klassen Vorlage [`basic_ios`](../standard-library/basic-ios-class.md) , die auf Elemente des Typs **`wchar_t`** mit Standard Zeichen Merkmalen spezialisiert ist.
 
@@ -137,7 +137,7 @@ Enthält die aktuelle Position des Pufferzeigers oder Dateizeigers.
 typedef fpos<mbstate_t> wstreampos;
 ```
 
-### <a name="remarks"></a>Hinweise
+### <a name="remarks"></a>Bemerkungen
 
 Der Typ ist ein Synonym für [`fpos`](../standard-library/fpos-class.md) <  `mbstate_t`>.
 
@@ -155,7 +155,7 @@ int main( )
    wofstream xw( "wiostream.txt" );
    xw << L"testing";
    wstreampos y = xw.tellp( );
-   cout << y << endl;
+   cout << streamoff( y ) << '\n';
 }
 ```
 
