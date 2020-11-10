@@ -3,16 +3,16 @@ title: Anpassen von CMake-Buildeinstellungen in Visual Studio
 ms.date: 08/20/2019
 helpviewer_keywords:
 - CMake build settings
-ms.openlocfilehash: c6bd1404799ccc9ad6b689646cd066849d48fca8
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 9fa1a21b26088482fb64441d0ccf0ad968bd480f
+ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81328677"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92919266"
 ---
 # <a name="customize-cmake-build-settings"></a>Anpassen von CMake-Buildeinstellungen
 
-::: moniker range="vs-2019"
+::: moniker range="msvc-160"
 
 In Visual Studio 2019 und höher können Sie mithilfe des **CMake-Einstellungs-Editors** Konfigurationen hinzufügen und ihre Einstellungen anpassen. Der Editor soll eine einfachere Alternative zur manuellen Bearbeitung der Datei *CMakeSettings.json* bieten, aber wenn Sie es vorziehen, die Datei direkt zu bearbeiten, können Sie auf den Link **JSON bearbeiten** oben rechts im Editor klicken.
 
@@ -46,7 +46,7 @@ Entspricht der Einstellung **inheritedEnvironments**. Mit dieser Einstellung wir
 
 ### <a name="cmake-toolchain-file"></a>CMake-Toolkettendatei
 
-Hierbei handelt es sich um den Pfad zur [CMake-Toolkettendatei](https://cmake.org/cmake/help/latest/variable/CMAKE_TOOLCHAIN_FILE.html). Dieser Pfad wird an CMake als „-DCMAKE_TOOLCHAIN_FILE = \<Dateipfad>“ übergeben. In Toolkettendateien werden die Speicherorte von Compilern und Toolketten-Hilfsprogrammen sowie andere Informationen in Bezug auf die Zielplattform und Compiler angegeben. Wenn für diese Einstellung nichts angegeben ist, verwendet Visual Studio standardmäßig die [VCPKG-Toolkettendatei](https://github.com/microsoft/vcpkg/blob/master/docs/examples/installing-and-using-packages.md#cmake).
+Hierbei handelt es sich um den Pfad zur [CMake-Toolkettendatei](https://cmake.org/cmake/help/latest/variable/CMAKE_TOOLCHAIN_FILE.html). Dieser Pfad wird als „-DCMAKE_TOOLCHAIN_FILE = \<filepath>“ an CMake übergeben. In Toolkettendateien werden die Speicherorte von Compilern und Toolketten-Hilfsprogrammen sowie andere Informationen in Bezug auf die Zielplattform und Compiler angegeben. Wenn für diese Einstellung nichts angegeben ist, verwendet Visual Studio standardmäßig die [VCPKG-Toolkettendatei](https://github.com/microsoft/vcpkg/blob/master/docs/examples/installing-and-using-packages.md#cmake).
 
 ### <a name="build-root"></a>Buildstamm
 
@@ -78,7 +78,7 @@ Bei dieser Einstellung werden zusätzliche Befehlszeilenoptionen an [rsync](http
 
 ## <a name="cmake-variables-and-cache"></a>CMake-Variablen und -Cache
 
-Mithilfe dieser Einstellungen können Sie CMake-Variablen festlegen und in *CMakeSettings.json* speichern. Sie werden zur Erstellungszeit an CMake übergeben und setzen die in der Datei *CMakeLists.txt* vorhandenen Werte außer Kraft. Sie können diesen Abschnitt in der gleichen Weise verwenden, in der Sie das CMakeGUI verwenden, um eine Liste aller für die Bearbeitung verfügbaren CMake-Variablen anzuzeigen. Klicken Sie auf die Schaltfläche **Speichern und Cache generieren**, um eine Liste aller für die Bearbeitung verfügbaren CMake-Variablen anzuzeigen, einschließlich erweiterter Variablen (mithilfe des CMakeGUI). Sie können die Liste nach dem Variablennamen filtern.
+Mithilfe dieser Einstellungen können Sie CMake-Variablen festlegen und in *CMakeSettings.json* speichern. Sie werden zur Erstellungszeit an CMake übergeben und setzen die in der Datei *CMakeLists.txt* vorhandenen Werte außer Kraft. Sie können diesen Abschnitt in der gleichen Weise verwenden, in der Sie das CMakeGUI verwenden, um eine Liste aller für die Bearbeitung verfügbaren CMake-Variablen anzuzeigen. Klicken Sie auf die Schaltfläche **Speichern und Cache generieren** , um eine Liste aller für die Bearbeitung verfügbaren CMake-Variablen anzuzeigen, einschließlich erweiterter Variablen (mithilfe des CMakeGUI). Sie können die Liste nach dem Variablennamen filtern.
 
 Diese Einstellung entspricht **variables**. Sie enthält ein Name/Wert-Paar von CMake-Variablen, die als **-D** *_Name_=_Wert_* an CMake übergeben werden. Wenn die Buildanweisungen Ihres CMake-Projekts das direkte Hinzufügen aller Variablen zur CMake-Cachedatei festlegen, wird empfohlen, diese stattdessen hier hinzuzufügen.
 
@@ -148,7 +148,7 @@ Das folgende Beispiel zeigt eine Beispielkonfiguration, die Sie als Ausgangspunk
     },
 ```
 
-JSON-IntelliSense unterstützt Sie beim Bearbeiten der Datei *CMakeSettings.json*:
+JSON-IntelliSense unterstützt Sie beim Bearbeiten der Datei *CMakeSettings.json* :
 
    ![CMake: JSON-IntelliSense](media/cmake-json-intellisense.png "CMake: JSON-IntelliSense")
 
@@ -158,7 +158,7 @@ Weitere Informationen zu den einzelnen Eigenschaften in der Datei finden Sie in 
 
 ::: moniker-end
 
-::: moniker range="<=vs-2017"
+::: moniker range="<=msvc-150"
 
 Visual Studio 2017 bietet verschiedene CMake-Konfigurationen, die definieren, wie „CMake.exe“ aufgerufen wird, um den CMake-Cache für ein bestimmtes Projekt zu erstellen. Klicken Sie zum Hinzufügen einer neuen Konfiguration in der Symbolleiste auf die Konfigurations-Dropdownliste, und wählen Sie **Konfigurationen verwalten...** aus:
 
@@ -170,11 +170,11 @@ Sie können aus der Liste vordefinierter Konfigurationen wählen:
 
 Wenn Sie zum ersten Mal eine Konfiguration auswählen, erstellt Visual Studio im Stammordner des Projekts eine Datei namens *CMakeSettings.json*. Diese Datei wird verwendet, um die CMake-Cachedatei erneut zu erstellen, z.B. nach einem **Bereinigungsvorgang**.
 
-Klicken Sie zum Hinzufügen einer zusätzlichen Konfiguration mit der rechten Maustaste auf *CMakeSettings.json*, und klicken Sie auf **Konfiguration hinzufügen**.
+Klicken Sie zum Hinzufügen einer zusätzlichen Konfiguration mit der rechten Maustaste auf *CMakeSettings.json* , und klicken Sie auf **Konfiguration hinzufügen**.
 
    ![CMake: Konfiguration hinzufügen](media/cmake-add-configuration.png "CMake: Konfiguration hinzufügen")
 
-Sie können die Datei auch mithilfe des **Editors für CMake-Einstellungen** bearbeiten. Klicken Sie mit der rechten Maustaste im **Projektmappen-Explorer** auf *CMakeSettings.json*, und klicken Sie auf **CMake-Einstellungen bearbeiten**. Alternativ können Sie oben im Editor-Fenster aus der Konfigurations-Dropdownliste **Konfigurationen verwalten...** auswählen.
+Sie können die Datei auch mithilfe des **Editors für CMake-Einstellungen** bearbeiten. Klicken Sie mit der rechten Maustaste im **Projektmappen-Explorer** auf *CMakeSettings.json* , und klicken Sie auf **CMake-Einstellungen bearbeiten**. Alternativ können Sie oben im Editor-Fenster aus der Konfigurations-Dropdownliste **Konfigurationen verwalten...** auswählen.
 
 Sie können *CMakeSettings.json* auch direkt bearbeiten, um benutzerdefinierte Konfigurationen zu erstellen. Das folgende Beispiel zeigt eine Beispielkonfiguration, die Sie als Ausgangspunkt verwenden können:
 
@@ -192,7 +192,7 @@ Sie können *CMakeSettings.json* auch direkt bearbeiten, um benutzerdefinierte K
     },
 ```
 
-JSON-IntelliSense unterstützt Sie beim Bearbeiten der Datei *CMakeSettings.json*:
+JSON-IntelliSense unterstützt Sie beim Bearbeiten der Datei *CMakeSettings.json* :
 
    ![CMake: JSON-IntelliSense](media/cmake-json-intellisense.png "CMake: JSON-IntelliSense")
 

@@ -3,10 +3,10 @@ title: Zusammenarbeit mit Live Share für C++ in Visual Studio
 description: Verwenden Sie Live Share für C++ in Visual Studio, um Code in Echtzeit zu bearbeiten und zu teilen.
 ms.date: 05/24/2019
 ms.openlocfilehash: 60830ad6c6b98f644e1c3ddb2e78fbf7397ae919
-ms.sourcegitcommit: c1fd917a8c06c6504f66f66315ff352d0c046700
+ms.sourcegitcommit: 59b7c18703d1ffd66827db0e2eeece490d3d8789
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
+ms.lasthandoff: 10/23/2020
 ms.locfileid: "90684520"
 ---
 # <a name="collaborate-using-live-share-for-c"></a>Zusammenarbeiten mithilfe von Live Share für C++
