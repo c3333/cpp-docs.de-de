@@ -8,20 +8,20 @@ f1_keywords:
 helpviewer_keywords:
 - /guard:ehcont
 - /guard:ehcont compiler option
-ms.openlocfilehash: 0c5a49d578e626d052aa9d132afbaee5686cb7a7
-ms.sourcegitcommit: f2a135d69a2a8ef1777da60c53d58fe06980c997
+ms.openlocfilehash: ea6a225dce9bf76ff2dc69945916c006a0d5ec0b
+ms.sourcegitcommit: 25f6d52eb9e5d84bd0218c46372db85572af81da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520524"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94448372"
 ---
-# <a name="guardehcont-enable-eh-continuation-metadata"></a>/guard:ehcont (EH-Fortsetzungsmetadaten aktivieren)
+# <a name="guardehcont-enable-eh-continuation-metadata"></a>`/guard:ehcont` (Eh-Fortsetzungs Metadaten aktivieren)
 
 Aktiviert die Generierung von eh-Fortsetzungs Metadaten (EHAs) durch den Compiler.
 
 ## <a name="syntax"></a>Syntax
 
-> **`/guard:ehcont`**[**`-`**]
+> **`/guard:ehcont`** [ **`-`** ]
 
 ## <a name="remarks"></a>Bemerkungen
 
@@ -29,13 +29,13 @@ Die- **`/guard:ehcont`** Option bewirkt, dass der Compiler eine sortierte Liste 
 
 Die **`/guard:ehcont`** Option ist in Visual Studio 2019, Version 16,7 und höher, verfügbar. Das Feature wird für 64-Bit-Prozesse auf einem 64-Bit-Betriebssystem unterstützt.
 
-Die [Steuerungs Technologie für die Ablauf Steuerung ("CET")](https://software.intel.com/sites/default/files/managed/4d/2a/control-flow-enforcement-technology-preview.pdf) ist ein Hardware basiertes Sicherheits Feature, das vor auf der Rückgabe orientierten Programmierung basierenden Angriffen schützt. Er verwaltet einen "Schatten Stapel" für jede aufrufsstapel, um die Ablauf Steuerungs Integrität zu erzwingen.
+Die [Steuerungs Technologie für die Ablauf Steuerung (CET)](https://software.intel.com/sites/default/files/managed/4d/2a/control-flow-enforcement-technology-preview.pdf) ist ein Hardware basiertes Sicherheits Feature, das Schutz vor Return-Oriented-Programmierungs Angriffen (auf der Grundlage von auf der Basis von) Er verwaltet einen "Schatten Stapel" für jede aufrufsstapel, um die Ablauf Steuerungs Integrität zu erzwingen.
 
 Wenn Schatten Stapel verfügbar sind, um die Verwendung von ROP-Angriffen zu verhindern, fahren Angreifer mit anderen exploittechniken fort. Eine Methode, die Sie verwenden können, besteht darin, den Anweisungs Zeiger Wert innerhalb der [Kontext](/windows/win32/api/winnt/ns-winnt-context) Struktur zu beschädigen. Diese Struktur wird an Systemaufrufe weitergeleitet, die die Ausführung eines Threads umleiten, `NtContinue` z [`RtlRestoreContext`](/windows/win32/api/winnt/nf-winnt-rtlrestorecontext) . b [`SetThreadContext`](/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreadcontext) ., und. Die `CONTEXT` Struktur wird im Arbeitsspeicher gespeichert. Die Beschädigung des Anweisungs Zeigers, der in enthalten ist, kann dazu führen, dass die Ausführung der Ausführung durch die Systemaufrufe an eine von Angreifern Derzeit `NTContinue` kann mit einem beliebigen Fortsetzungs Punkt aufgerufen werden. Daher ist es von entscheidender Bedeutung, den Anweisungs Zeiger zu validieren, wenn Schatten Stapel aktiviert sind.
 
-`RtlRestoreContext`und `NtContinue` werden beim Entladen der strukturierten Ausnahmebehandlung (SEH) zum Entladen in den Zielframe verwendet, der den **`__except`** Block enthält. **`__except`** Es ist nicht zu erwarten, dass sich der Anweisungs Zeiger des Blocks auf dem Schatten Stapel befindet, da er die Validierung des Anweisungs Zeigers fehlschlägt. Der **`/guard:ehcont`** Compilerschalter generiert eine "eh-Fortsetzungs Tabelle". Sie enthält eine sortierte Liste der RVAs aller gültigen Fortsetzungs Ziele für die Ausnahmebehandlung in der Binärdatei. `NtContinue`prüft zunächst den Schatten Stapel auf den vom Benutzer bereitgestellten Anweisungs Zeiger, und wenn der Anweisungs Zeiger dort nicht gefunden wird, wird die eh-Fortsetzungs Tabelle in der Binärdatei überprüft, die den Anweisungs Zeiger enthält. Wenn die enthaltende Binärdatei nicht mit der Tabelle kompiliert wurde, kann aus Gründen der Kompatibilität mit Legacy Binärdateien `NtContinue` fortgesetzt werden. Es ist wichtig, zwischen Legacy-Binärdateien zu unterscheiden, die keine EHAND-Daten enthalten, und Binärdateien, die ehint-Daten, aber keine Tabelleneinträge enthalten. Der erste Wert ermöglicht alle Adressen innerhalb der Binärdatei als gültige Fortsetzungs Ziele. Letztere lässt keine Adresse in der Binärdatei als gültiges Fortsetzungs Ziel zu.
+`RtlRestoreContext` und `NtContinue` werden beim Entladen der strukturierten Ausnahmebehandlung (SEH) zum Entladen in den Zielframe verwendet, der den **`__except`** Block enthält. **`__except`** Es ist nicht zu erwarten, dass sich der Anweisungs Zeiger des Blocks auf dem Schatten Stapel befindet, da er die Validierung des Anweisungs Zeigers fehlschlägt. Der **`/guard:ehcont`** Compilerschalter generiert eine "eh-Fortsetzungs Tabelle". Sie enthält eine sortierte Liste der RVAs aller gültigen Fortsetzungs Ziele für die Ausnahmebehandlung in der Binärdatei. `NtContinue` prüft zunächst den Schatten Stapel auf den vom Benutzer bereitgestellten Anweisungs Zeiger, und wenn der Anweisungs Zeiger dort nicht gefunden wird, wird die eh-Fortsetzungs Tabelle in der Binärdatei überprüft, die den Anweisungs Zeiger enthält. Wenn die enthaltende Binärdatei nicht mit der Tabelle kompiliert wurde, kann aus Gründen der Kompatibilität mit Legacy Binärdateien `NtContinue` fortgesetzt werden. Es ist wichtig, zwischen Legacy-Binärdateien zu unterscheiden, die keine EHAND-Daten enthalten, und Binärdateien, die ehint-Daten, aber keine Tabelleneinträge enthalten. Der erste Wert ermöglicht alle Adressen innerhalb der Binärdatei als gültige Fortsetzungs Ziele. Letztere lässt keine Adresse in der Binärdatei als gültiges Fortsetzungs Ziel zu.
 
-Die **`/guard:ehcont`** -Option muss an den Compiler und den Linker weitergegeben werden, um die RVAs für ein Fortsetzungs Ziel für eine Binärdatei zu generieren. Wenn die Binärdatei mit einem einzigen `cl` -Befehl erstellt wird, übergibt der Compiler die Option an den Linker. Der Compiler übergibt auch die [**`/guard:cf`**](guard-enable-control-flow-guard.md) Option an den Linker. Wenn Sie separat kompilieren und verknüpfen, müssen diese Optionen sowohl für den Compiler als auch für den Linker-Befehl festgelegt werden.
+Die **`/guard:ehcont`** -Option muss an den Compiler und den Linker weitergegeben werden, um die RVAs für ein Fortsetzungs Ziel für eine Binärdatei zu generieren. Wenn die Binärdatei mit einem einzigen `cl` -Befehl erstellt wird, übergibt der Compiler die Option an den Linker. Der Compiler übergibt auch die [`/guard:cf`](guard-enable-control-flow-guard.md) Option an den Linker. Wenn Sie separat kompilieren und verknüpfen, müssen diese Optionen sowohl für den Compiler als auch für den Linker-Befehl festgelegt werden.
 
 Sie können Code, der mit kompiliert wurde **`/guard:ehcont`** , mit Bibliotheken und Objektdateien verknüpfen, die ohne ihn kompiliert wurden. Der Linker gibt in einem der folgenden Szenarien einen schwerwiegenden Fehler zurück:
 
@@ -47,7 +47,7 @@ Sie können Code, der mit kompiliert wurde **`/guard:ehcont`** , mit Bibliotheke
 
 Der Linker gibt einen schwerwiegenden Fehler zurück, da er in diesen Szenarien keine Metadaten generieren kann. Das Auslösen einer Ausnahme führt wahrscheinlich zu einem Absturz zur Laufzeit.
 
-Für Seh-Abschnitts Informationen, die in COMDATs gefunden werden, aber nicht mit kompiliert **`/guard:ehcont`** wurden, gibt der Linker Warning **LNK4291**aus. In diesem Fall generiert der Linker korrekte, aber konservative Metadaten für den Abschnitt. Verwenden Sie [/Ignore (bestimmte Warnungen ignorieren)](ignore-ignore-specific-warnings.md), um diese Warnung zu ignorieren.
+Für Seh-Abschnitts Informationen, die in COMDATs gefunden werden, aber nicht mit kompiliert **`/guard:ehcont`** wurden, gibt der Linker Warning **LNK4291** aus. In diesem Fall generiert der Linker korrekte, aber konservative Metadaten für den Abschnitt. Verwenden Sie [/Ignore (bestimmte Warnungen ignorieren)](ignore-ignore-specific-warnings.md), um diese Warnung zu ignorieren.
 
 Wenn der Linker keine Metadaten generieren kann, gibt er einen der folgenden Fehler aus:
 
@@ -91,4 +91,4 @@ e:\>link /dump /loadconfig CETTest.exe
 
 [/Guard (Ablauf Steuerungs Schutz aktivieren)](guard-enable-control-flow-guard.md)\
 [MSVC-Compileroptionen](compiler-options.md)\
-[MSVC-compilerbefehlszeilensyntax](compiler-command-line-syntax.md)
+[MSVC-CompilerCommand-Line Syntax](compiler-command-line-syntax.md)

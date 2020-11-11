@@ -1,5 +1,6 @@
 ---
 title: __thiscall
+description: Erfahren Sie mehr über die Microsoft-spezifische __thiscall Aufruf Konvention für x86-Klassenmember-Funktionen in Microsoft C++.
 ms.date: 05/22/2020
 f1_keywords:
 - __thiscall
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - __thiscall keyword [C++]
 ms.assetid: a6a22dd2-0101-4885-b33b-22f6057965df
-ms.openlocfilehash: b9edc2cd8caa5fd5458f6a53c5fdb1f8a5e69914
-ms.sourcegitcommit: 5bb421fdf61d290cac93a03e16a6a80959accf6d
+ms.openlocfilehash: 9b11dcf8dee928b687f942639ed72ead3659614b
+ms.sourcegitcommit: 25f6d52eb9e5d84bd0218c46372db85572af81da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854813"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94448450"
 ---
 # `__thiscall`
 
@@ -24,9 +25,9 @@ Auf arm-, ARM64-und x64-Computern **`__thiscall`** wird vom Compiler akzeptiert 
 
 Ein Grund für die Verwendung **`__thiscall`** von ist die Verwendung von Klassen, deren Member-Funktionen **`__clrcall`** standardmäßig verwenden. In diesem Fall können Sie verwenden, **`__thiscall`** um einzelne Member-Funktionen aus nativem Code aufrufbar zu machen.
 
-Beim Kompilieren mit [**`/clr:pure`**](../build/reference/clr-common-language-runtime-compilation.md) sind alle Funktionen und Funktionszeiger, **`__clrcall`** sofern nicht anders angegeben. Die **`/clr:pure`** **`/clr:safe`** Compileroptionen und sind in Visual Studio 2015 veraltet und werden in Visual Studio 2017 nicht unterstützt.
+Beim Kompilieren mit [`/clr:pure`](../build/reference/clr-common-language-runtime-compilation.md) sind alle Funktionen und Funktionszeiger, **`__clrcall`** sofern nicht anders angegeben. Die **`/clr:pure`** **`/clr:safe`** Compileroptionen und sind in Visual Studio 2015 veraltet und werden in Visual Studio 2017 nicht unterstützt.
 
-`vararg`Member-Funktionen verwenden die **`__cdecl`** Aufruf Konvention. Alle Funktionsargumente werden auf dem Stapel abgelegt, wobei der **`this`** Zeiger zuletzt auf dem Stapel abgelegt wird.
+`vararg` Member-Funktionen verwenden die **`__cdecl`** Aufruf Konvention. Alle Funktionsargumente werden auf dem Stapel abgelegt, wobei der **`this`** Zeiger zuletzt auf dem Stapel abgelegt wird.
 
 Da diese Aufruf Konvention nur auf C++ angewendet wird, verfügt sie über kein C-namens Dekorationsschema.
 
@@ -34,4 +35,4 @@ Wenn Sie eine nicht statische Klassenmember-Funktion out-of-Line definieren, geb
 
 ## <a name="see-also"></a>Siehe auch
 
-[Argumentübergabe und Benennungskonventionen](../cpp/argument-passing-and-naming-conventions.md)
+[Argument Übergabe und Benennungs Konventionen](../cpp/argument-passing-and-naming-conventions.md)
