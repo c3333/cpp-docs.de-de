@@ -5,12 +5,12 @@ ms.date: 10/18/2020
 helpviewer_keywords:
 - warnings, by compiler version
 - cl.exe compiler, setting warning options
-ms.openlocfilehash: 5718642f6a7f714dd0a38ec34211ddc0be4e8fd2
-ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
+ms.openlocfilehash: 1fdc4f79a7ae3cd45b66cb312a9297754acfc964
+ms.sourcegitcommit: 1f85841f403e76d041c34a7c77089dab389960a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92924701"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94518816"
 ---
 # <a name="compiler-warnings-by-compiler-version"></a>Compilerwarnungen nach Compilerversion
 
@@ -45,7 +45,7 @@ Diese Versionen des Compilers haben neue Warnungen eingeführt:
 | Visual Studio 2019, Version 16.4 | 19.24.28314.0 |
 | Visual Studio 2019 Version 16.5 | 19.25.28610.0 |
 | Visual Studio 2019, Version 16.6 | 19.26.28805.0 |
-| Visual Studio 2019, Version 16.7 | 19.26.29112.0 |
+| Visual Studio 2019, Version 16.7 | 19.27.29112.0 |
 
 Sie können für die Option nur die Hauptnummer, die Haupt-und neben Zahlen oder die Haupt-, neben-und Buildnummern angeben **`/Wv`** . Der Compiler meldet alle Warnungen, die Versionen entsprechen, die mit der angegebenen Zahl beginnen. Alle Warnungen für Versionen, die die angegebene Anzahl überschreiten, werden unterdrückt. Beispielsweise **`/Wv:17`** meldet Warnungen, die in oder vor einer beliebigen Version von Visual Studio 2012 eingeführt wurden, und unterdrückt Warnungen, die von einem Compiler aus Visual Studio 2013 (Version 18) oder höher eingeführt wurden. Zum Unterdrücken von Warnungen, die in Visual Studio 2015 Update 2 und höher eingeführt wurden, können Sie verwenden **`/Wv:19.00.23506`** . Verwenden **`/Wv:19.11`** Sie, um die Warnungen, die in einer beliebigen Version von Visual Studio vor Visual Studio 2017 Version 15,5 eingeführt wurden, zu melden, aber die in Visual Studio 2017 Version 15,5 und höher eingeführten Warnungen zu unterdrücken.
 
