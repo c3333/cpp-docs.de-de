@@ -3,12 +3,12 @@ title: Bereitstellen, Ausführen und Debuggen Ihres auf MSBuild basierenden C++-
 description: Informationen zum Kompilieren, Ausführen und Debuggen von Code für das Remoteziel in einem auf MSBuild basierenden C++-Projekt für Linux in Visual Studio.
 ms.date: 08/08/2020
 ms.assetid: f7084cdb-17b1-4960-b522-f84981bea879
-ms.openlocfilehash: a9feffbc86b50d510647776de6f1030f6986bef7
-ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
+ms.openlocfilehash: 7c038e1903fe029e04e8e9e9e41c11c7bff61ee2
+ms.sourcegitcommit: 12eb6a824dd7187a065d44fceca4c410f58e121e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92921710"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94334194"
 ---
 # <a name="deploy-run-and-debug-your-linux-msbuild-project"></a>Bereitstellen, Ausführen und Debuggen Ihres Linux-MSBuild-Projekts
 
@@ -20,7 +20,7 @@ Nachdem Sie ein auf MSBuild basierendes C++-Projekt in Visual Studio für Linux 
 
 ::: moniker range="msvc-160"
 
-**Visual Studio 2019 Version 16.1** : Sie können für verschiedene Linux-Systeme Debug- und Buildvorgänge durchführen. Beispielsweise können Sie unter x64 eine Crosskompilierung durchführen und eine Bereitstellung auf einem ARM-Gerät vornehmen, wenn Sie auf IoT-Szenarien abzielen. Weitere Informationen finden Sie unter [Angeben verschiedener Computer zum Erstellen von Builds und Debuggen](#separate_build_debug) weiter unten in diesem Artikel.
+**Visual Studio 2019 Version 16.1**: Sie können für verschiedene Linux-Systeme Debug- und Buildvorgänge durchführen. Beispielsweise können Sie unter x64 eine Crosskompilierung durchführen und eine Bereitstellung auf einem ARM-Gerät vornehmen, wenn Sie auf IoT-Szenarien abzielen. Weitere Informationen finden Sie unter [Angeben verschiedener Computer zum Erstellen von Builds und Debuggen](#separate_build_debug) weiter unten in diesem Artikel.
 
 ::: moniker-end
 
@@ -50,9 +50,9 @@ Es gibt mehrere Möglichkeiten für den Umgang mit dem Linux-Projekt sowie zum D
 
    ::: moniker-end
 
-   - Im **gdbserver** -Modus wird GDB lokal ausgeführt und stellt eine Verbindung mit gdbserver auf dem Remotesystem aus.
+   - Im **gdbserver**-Modus wird GDB lokal ausgeführt und stellt eine Verbindung mit gdbserver auf dem Remotesystem aus.
 
-   - Im **gdb** -Modus steuert der Visual Studio-Debugger GDB auf dem Remotesystem. Diese Option eignet sich besser, wenn die lokale Version von GDB nicht mit der Version kompatibel ist, die auf dem Zielcomputer installiert ist. Dies ist der einzige Modus, der im Linux-Konsolenfenster unterstützt wird.
+   - Im **gdb**-Modus steuert der Visual Studio-Debugger GDB auf dem Remotesystem. Diese Option eignet sich besser, wenn die lokale Version von GDB nicht mit der Version kompatibel ist, die auf dem Zielcomputer installiert ist. Dies ist der einzige Modus, der im Linux-Konsolenfenster unterstützt wird.
 
    > [!NOTE]
    > Wenn Sie im gdbserver-Debugmodus keine Haltepunkte treffen können, versuchen Sie es im gdb-Modus. GDB muss zunächst auf dem Remoteziel [installiert](download-install-and-setup-the-linux-development-workload.md) werden.
@@ -71,7 +71,7 @@ Es gibt mehrere Möglichkeiten für den Umgang mit dem Linux-Projekt sowie zum D
 
    In der Codezeile, in der Sie den Haltepunkt festlegen, wird ein roter Punkt angezeigt.
 
-1. Drücken Sie **F5** (oder **Debuggen > Debuggen starten** ), um das Debuggen zu starten.
+1. Drücken Sie **F5** (oder **Debuggen > Debuggen starten**), um das Debuggen zu starten.
 
    Wenn Sie das Debuggen starten, wird die Anwendung auf dem Remoteziel kompiliert, bevor sie gestartet wird. Fehler bei der Kompilierung werden im Fenster **Fehlerliste** angezeigt.
 
@@ -92,17 +92,19 @@ Es gibt mehrere Möglichkeiten für den Umgang mit dem Linux-Projekt sowie zum D
 ## <a name="configure-other-debugging-options-msbuild-projects"></a>Konfigurieren anderer Debugoptionen (MSBuild-Projekte)
 
 - Befehlszeilenargumente können mit dem Element **Programmargumente** auf der Eigenschaftenseite **Debugging** (Debuggen) des Projekts an die ausführbare Datei übergeben werden.
-- Sie können die Umgebungsvariable `DISPLAY` exportieren, indem Sie den **Befehl vor dem Start** auf den Eigenschaftenseiten für das **Debuggen** des Projekts verwenden. Beispiel: `export DISPLAY=:0.0`
+- Sie können die Umgebungsvariable `DISPLAY` exportieren, indem Sie die Option **Befehl vor Start** auf den Eigenschaftenseiten für das **Debuggen** des Projekts verwenden. Beispiel: `export DISPLAY=:0.0`
 
    ![Programmargumente](media/settings_programarguments.png)
 
 - Bestimmte Debuggeroptionen können mit dem Eintrag **Weitere Debuggerbefehle** an GDB übergeben werden.  Beispiel: SIGILL-Signale (unzulässige Anweisung) sollen ignoriert werden.  Sie können den Befehl **handle** verwenden, um dies zu erreichen, indem Sie dem Eintrag **Additional Debugger Commands** wie oben gezeigt Folgendes hinzufügen:
 
    `handle SIGILL nostop noprint`
+   
+- Sie können den von Visual Studio verwendeten Pfad zu GDB mit dem Element **GDB-Pfad** auf der Eigenschaftenseite **Debugging** des Projekts angeben. Diese Eigenschaft ist in Visual Studio 2019 Version 16.9 und höher verfügbar.
 
 ## <a name="debug-with-attach-to-process"></a>Debuggen mit „An den Prozess anhängen“
 
-Die Eigenschaftenseite [Debuggen](prop-pages/debugging-linux.md) für Visual Studio-Projekte und die **launch.vs.json** -Einstellungen für CMake-Projekte enthalten Einstellungen, über die Sie Anfügungen an laufende Prozesse durchführen können. Wenn Sie zusätzliche Steuerungsoptionen benötigen, die nicht von diesen Einstellungen abgedeckt werden, können Sie eine Datei mit dem Namen `Microsoft.MIEngine.Options.xml` am Stamm Ihrer Projektmappe oder Ihres Arbeitsbereichs ablegen. Hier sehen Sie ein einfaches Beispiel:
+Die Eigenschaftenseite [Debuggen](prop-pages/debugging-linux.md) für Visual Studio-Projekte und die **launch.vs.json**-Einstellungen für CMake-Projekte enthalten Einstellungen, über die Sie Anfügungen an laufende Prozesse durchführen können. Wenn Sie zusätzliche Steuerungsoptionen benötigen, die nicht von diesen Einstellungen abgedeckt werden, können Sie eine Datei mit dem Namen `Microsoft.MIEngine.Options.xml` am Stamm Ihrer Projektmappe oder Ihres Arbeitsbereichs ablegen. Hier sehen Sie ein einfaches Beispiel:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -127,17 +129,17 @@ Das Objekt **AttachOptionsForConnection** verfügt über die meisten Attribute, 
 
 In Visual Studio 2019, Version 16.1 können Sie Ihren Remotebuildcomputer von Ihrem Remotedebugcomputer trennen, und zwar sowohl für auf MSBuild basierende Linux-Projekte als auch für CMake-Projekte, die einen Linux-Remotecomputer als Ziel haben. Beispielsweise können Sie nun unter x64 eine Crosskompilierung durchführen und eine Bereitstellung auf einem ARM-Gerät vornehmen, wenn Sie auf IoT-Szenarien abzielen.
 
-Standardmäßig ist der Remotedebugcomputer identisch mit dem Remotebuildcomputer ( **Konfigurationseigenschaften** > **Allgemein** > **Remotebuildcomputer** ). Um einen neuen Remotedebugcomputer anzugeben, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wechseln Sie zu **Konfigurationseigenschaften** > **Debuggen** > **Remotedebugcomputer**.  
+Standardmäßig ist der Remotedebugcomputer identisch mit dem Remotebuildcomputer (**Konfigurationseigenschaften** > **Allgemein** > **Remotebuildcomputer**). Um einen neuen Remotedebugcomputer anzugeben, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wechseln Sie zu **Konfigurationseigenschaften** > **Debuggen** > **Remotedebugcomputer**.  
 
 ![Linux-Remotedebugcomputer](media/linux-remote-debug-machine.png)
 
-Das Dropdownmenü für **Remotedebugcomputer** wird mit allen eingerichteten Remoteverbindungen aufgefüllt. Um eine neue Remoteverbindung hinzuzufügen, navigieren Sie zu **Tools** > **Optionen** > **Plattformübergreifend** > **Verbindungs-Manager** , oder suchen Sie in **Schnellstart** nach „Verbindungs-Manager“. Sie können auch auf den Eigenschaftsseiten des Projekts ( **Konfigurationseigenschaften** > **Allgemein** > **Remotebereitstellungsverzeichnis** ) ein neues Remotebereitstellungsverzeichnis angeben.
+Das Dropdownmenü für **Remotedebugcomputer** wird mit allen eingerichteten Remoteverbindungen aufgefüllt. Um eine neue Remoteverbindung hinzuzufügen, navigieren Sie zu **Tools** > **Optionen** > **Plattformübergreifend** > **Verbindungs-Manager**, oder suchen Sie in **Schnellstart** nach „Verbindungs-Manager“. Sie können auch auf den Eigenschaftsseiten des Projekts (**Konfigurationseigenschaften** > **Allgemein** > **Remotebereitstellungsverzeichnis**) ein neues Remotebereitstellungsverzeichnis angeben.
 
 Standardmäßig werden nur die Dateien, die für den zu debuggenden Prozess erforderlich sind, auf dem Remotedebugcomputer bereitgestellt. Sie können im **Projektmappen-Explorer** konfigurieren, welche Quelldateien dem Remotedebugcomputer bereitgestellt werden sollen. Wenn Sie auf eine Quelldatei klicken, sehen Sie direkt unter dem Projektmappen-Explorer eine Vorschau ihrer Dateieigenschaften.
 
 ![Unter Linux bereitstellbare Dateien](media/linux-deployable-content.png)
 
-Die **Content** -Eigenschaft gibt an, ob die Datei auf dem Remotedebugcomputer bereitgestellt wird. Sie können die Bereitstellung vollständig deaktivieren, indem Sie zu **Eigenschaftsseiten** > **Konfigurations-Manager** navigieren und **Bereitstellen** für die gewünschte Konfiguration deaktivieren.
+Die **Content**-Eigenschaft gibt an, ob die Datei auf dem Remotedebugcomputer bereitgestellt wird. Sie können die Bereitstellung vollständig deaktivieren, indem Sie zu **Eigenschaftsseiten** > **Konfigurations-Manager** navigieren und **Bereitstellen** für die gewünschte Konfiguration deaktivieren.
 
 Möglicherweise benötigen Sie in einigen Fällen mehr Kontrolle über die Bereitstellung Ihres Projekts. Beispielsweise können sich einige Dateien, die Sie bereitstellen möchten, außerhalb Ihrer Projektmappe befinden, oder Sie möchten Ihr Remotebereitstellungsverzeichnis datei- oder verzeichnisbezogen anpassen. Fügen Sie in diesen Fällen die folgenden Codeblöcke an Ihre VCXPROJ-Datei an, und ersetzen Sie „example.cpp“ durch die tatsächlichen Dateinamen:
 

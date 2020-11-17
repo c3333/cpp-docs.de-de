@@ -3,12 +3,12 @@ title: Erstellen plattformübergreifender C++-Projekte in Visual Studio
 description: Hier erfahren Sie, wie Sie ein Open Source-CMake-Projekt in C++ in Visual Studio für Linux und Windows erstellen, kompilieren und debuggen können.
 ms.topic: tutorial
 ms.date: 01/08/2020
-ms.openlocfilehash: 3fdd9b1dfb5075f3a71f62bc4f1e2f3c646f9e6b
-ms.sourcegitcommit: 6280a4c629de0f638ebc2edd446de2a9b11f0406
+ms.openlocfilehash: c420e0ee04e85d49ad752da085d38b2c5ff9d4fa
+ms.sourcegitcommit: d77159732a8e782b2a1b7abea552065f2b6f61c1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2020
-ms.locfileid: "90040482"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93344656"
 ---
 # <a name="tutorial-create-c-cross-platform-projects-in-visual-studio"></a>Tutorial: Erstellen plattformübergreifender C++-Projekte in Visual Studio
 
@@ -31,10 +31,10 @@ In diesem Tutorial lernen Sie, wie die folgenden Aufgaben ausgeführt werden:
 
 * Einrichten eines Linux-Computers für die plattformübergreifende C++-Entwicklung
   * Visual Studio erfordert keine bestimmte Linux-Distribution. Das Betriebssystem kann auf einem physischen Computer, einer VM (virtueller Computer) oder in der Cloud ausgeführt werden. Sie können auch das Windows-Subsystem für Linux verwenden. Für dieses Tutorial ist jedoch eine grafische Umgebung erforderlich. Das Windows-Subsystem für Linux wird hier nicht empfohlen, weil es hauptsächlich für Befehlszeilenvorgänge vorgesehen ist.
-  * Visual Studio erfordert die folgenden Tools auf dem Linux-Computer: C++-Compiler, gdb, ssh, rsync, ninja und zip. Aus Systemen, die auf Debian basieren, können Sie den folgenden Befehl verwenden, um diese Abhängigkeiten zu installieren:
+  * Visual Studio erfordert die folgenden Tools auf dem Linux-Computer: C++-Compiler, gdb, ssh, rsync, make und zip. Aus Systemen, die auf Debian basieren, können Sie den folgenden Befehl verwenden, um diese Abhängigkeiten zu installieren:
 
     ```cmd
-    sudo apt install -y openssh-server build-essential gdb rsync ninja-build zip
+    sudo apt install -y openssh-server build-essential gdb rsync make zip
     ```
 
   * Visual Studio erfordert eine aktuelle Version von CMake auf dem Linux-Computer, in der der Servermodus aktiviert ist (mindestens 3.8). Microsoft gibt einen universellen CMake-Build heraus, den Sie auf allen Linux-Distributionen veröffentlichen können. Es wird empfohlen, dass Sie diesen Build verwenden, damit Sie über die neuesten Features verfügen. Sie können die CMake-Binärdateien aus dem [Microsoft-Fork des CMake-Repositorys](https://github.com/Microsoft/CMake/releases) auf GitHub herunterladen. Rufen Sie diese Seite auf, laden Sie die Version herunter, die mit der Systemarchitektur auf Ihrem Linux-Computer übereinstimmt, und markieren Sie diese als ausführbare Datei:
@@ -144,6 +144,8 @@ In diesem Schritt debuggen wir ein Beispielprogramm, das die Bullet Physics-Bibl
 ## <a name="add-a-linux-configuration-and-connect-to-the-remote-machine"></a>Hinzufügen einer Linux-Konfiguration und Verbinden mit dem Remotecomputer
 
 1. Fügen Sie eine Linux-Konfiguration hinzu. Klicken Sie mit der rechten Maustaste im **Projektmappen-Explorer** auf die Datei „CMakeSettings.json“, und wählen Sie **Konfiguration hinzufügen** aus. Das Dialogfeld „Konfiguration zu CMakeSettings hinzufügen“ wird geöffnet, das Sie schon aus dem vorherigen Schritt kennen. Wählen Sie dieses Mal **Linux-Debug** aus, und speichern (STRG + S) Sie die Datei „CMakeSettings.json“.
+
+1. **Visual Studio 2019, Version 16.6 oder höher** Scrollen Sie im CMake-Einstellungs-Editor ganz nach unten, und wählen Sie **Erweiterte Einstellungen anzeigen** aus. Wählen Sie **Unix Makefiles** als **CMake-Generator** aus, und speichern Sie die Datei „CMakeSettings.json“ (STRG+S).
 
 1. Wählen Sie **Linux-Debug** aus dem Dropdownmenü aus.
 

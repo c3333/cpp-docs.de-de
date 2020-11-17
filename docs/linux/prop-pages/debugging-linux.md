@@ -1,13 +1,14 @@
 ---
 title: Debuggereigenschaften (Linux C++) | Microsoft Docs
+description: Hier werden die Eigenschaften des Microsoft Visual Studio-Debuggers für Linux C++ beschrieben.
 ms.date: 06/07/2019
 ms.assetid: 0c1c0fcc-a49b-451c-a5cb-ce9711fac064
-ms.openlocfilehash: 2b55a0db001c98be72ac88c17c62b21e98ec4888
-ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
+ms.openlocfilehash: 0d43877df817f40cfd97a03c4f66730ab17138d8
+ms.sourcegitcommit: 12eb6a824dd7187a065d44fceca4c410f58e121e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92924525"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94334220"
 ---
 # <a name="c-debugging-properties-linux-c"></a>C++-Debugeigenschaften (Linux C++)
 
@@ -19,7 +20,7 @@ Die Unterstützung für Linux ist in Visual Studio 2017 und höher verfügbar.
 
 ::: moniker range=">=msvc-150"
 
-| Eigenschaft | Beschreibung | Auswahlmöglichkeiten |
+| Eigenschaft | BESCHREIBUNG | Auswahlmöglichkeiten |
 |--|--|--|
 | Remotedebugcomputer | **Visual Studio 2019 Version 16.1:** Gibt den Computer an, auf dem das Programm gedebuggt werden soll. Kann sich vom Remotebuildcomputer unterscheiden, der auf der Seite [Allgemein](general-linux.md) angegeben wurde. Sie können eine Zielcomputerverbindung hinzufügen oder bearbeiten, indem Sie **Tools** > **Optionen** > **Plattformübergreifend** > **Verbindungs-Manager** auswählen. |
 | Befehl vor dem Start | Ein Befehl, der für die Shell ausgeführt wird, bevor der Debugger startet. Er kann verwendet werden, um die Debugumgebung zu beeinflussen. |
@@ -35,5 +36,6 @@ Die Unterstützung für Linux ist in Visual Studio 2017 und höher verfügbar.
 | Python Pretty Printing aktivieren | Aktiviert Pretty Printing von Ausdruckswerten. Wird nur im GDB-Debugmodus unterstützt. |
 | Visualisierungsdatei | Systemeigene Visualisierungsstandarddatei (NATVIS-Datei), die die Visualisierungsdirektiven für SLT-Typen enthält. Andere NATVIS-Dateien, die zur aktuellen Projektmappe gehören, werden automatisch geladen. |
 | Zusätzliche Dateipfadzuordnung für Quellen | Zusätzliche Pfadäquivalenzen für den Debugger, um Windows-Quelldateinamen Linux-Quelldateinamen zuzuordnen. Das Format lautet: \<windows-path>=\<linux-path>;.... Auf einen Quelldateinamen, der unter dem Windows-Pfad gefunden wird, wird so verwiesen, als ob er an der gleichen relativen Position unter dem Linux-Pfad gefunden wurde. Dateien, die im lokalen Projekt gefunden werden, benötigen keine zusätzliche Zuordnung. |
+| GDB-Pfad | **Visual Studio 2019, Version 16.9**: Gibt den Pfad zur ausführbaren GDB-Datei an, die von Visual Studio verwendet werden soll. |
 
 ::: moniker-end

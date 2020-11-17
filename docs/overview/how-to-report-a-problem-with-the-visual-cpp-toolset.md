@@ -5,12 +5,12 @@ ms.date: 09/24/2019
 ms.technology: cpp-ide
 author: corob-msft
 ms.author: corob
-ms.openlocfilehash: 350e902501aca5cbe2b4022ec1f977719844644b
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 7a89966b46efbef9800f3f3ddf836723bbb3b06f
+ms.sourcegitcommit: 12eb6a824dd7187a065d44fceca4c410f58e121e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "71685708"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94334246"
 ---
 # <a name="how-to-report-a-problem-with-the-microsoft-c-toolset-or-documentation"></a>Melden eines Problems mit dem Microsoft C++-Toolset oder der -Dokumentation
 
@@ -77,7 +77,7 @@ Diese Informationen finden Sie am besten unmittelbar nach dem Auftreten des Prob
 
 #### <a name="to-report-the-contents-of-the-command-line"></a>So melden Sie den Inhalt der Befehlszeile
 
-1. Wechseln Sie zur Daten **CL.command.1.tlog**, und öffnen Sie sie. Standardmäßig befindet sich diese Datei im Ordner „Dokumente“ unter \\Visual Studio*Version*\\Projects\\*Projektmappenname*\\*Projektname*\\*Configuration*\\*Projektname*.tlog\\CL.command.1.tlog oder im Ordner „Benutzer“ unter \\Source\\Repos\\*Projektmappenname*\\*Projektname*\\*Configuration*\\*Projektname*.tlog\\CL.command.1.tlog. Wenn Sie ein anderes Buildsystem verwenden oder den Standardspeicherort für Ihr Projekt geändert haben, kann der Speicherort abweichen.
+1. Wechseln Sie zur Daten **CL.command.1.tlog**, und öffnen Sie sie. Standardmäßig befindet sich diese Datei im Ordner „Dokumente“ unter \\Visual Studio *Version*\\Projects\\*Projektmappenname*\\*Projektname*\\*Configuration*\\*Projektname*.tlog\\CL.command.1.tlog oder im Ordner „Benutzer“ unter \\Source\\Repos\\*Projektmappenname*\\*Projektname*\\*Configuration*\\*Projektname*.tlog\\CL.command.1.tlog. Wenn Sie ein anderes Buildsystem verwenden oder den Standardspeicherort für Ihr Projekt geändert haben, kann der Speicherort abweichen.
 
    In dieser Datei finden Sie die Namen Ihrer Quellcodedateien, gefolgt von den Befehlszeilenargumenten zu deren Kompilierung, jeweils in separaten Zeilen.
 
@@ -362,7 +362,7 @@ Erstellen Sie Ihre Reproduktion als minimales IDE-Projekt, und erstellen Sie dan
 
 ## <a name="ways-to-send-your-report"></a>Möglichkeiten zum Senden Ihres Berichts
 
-Sie haben mehrere gute Möglichkeiten, uns Ihren Bericht zu übermitteln. Die können das in Visual Studio integrierte [Tool „Problem melden“](/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017) oder die Seiten der [Visual Studio Developer Community](https://developercommunity.visualstudio.com/) verwenden. Unten auf dieser Seite finden Sie auch eine Schaltfläche **Produktfeedback**. Diese Entscheidung richtet sich danach, ob Sie die integrierten Tools in der IDE verwenden möchten, um Screenshots zu erfassen und Ihren Bericht zu organisieren. Wenn Sie dies nicht möchten, können Sie direkt die Website der Developer Community nutzen.
+Sie haben mehrere gute Möglichkeiten, uns Ihren Bericht zu übermitteln. Die können das in Visual Studio integrierte Tool [Ein Problem melden](/visualstudio/ide/how-to-report-a-problem-with-visual-studio) oder die Seite der [Visual Studio-Entwicklercommunity]( https://aka.ms/feedback/report?space=62) verwenden. Unten auf dieser Seite finden Sie auch eine Schaltfläche **Produktfeedback**. Diese Entscheidung richtet sich danach, ob Sie die integrierten Tools in der IDE verwenden möchten, um Screenshots zu erfassen und Ihren Bericht zu organisieren. Wenn Sie dies nicht möchten, können Sie direkt die Website der Developer Community nutzen.
 
 > [!NOTE]
 > Unabhängig davon, wie Sie den Bericht senden, respektiert Microsoft Ihre Privatsphäre. Microsoft verpflichtet sich der Einhaltung aller Datenschutzgesetze- und regeln. Informationen dazu, wie wir Daten behandeln, die Sie uns senden, finden Sie in der [Datenschutzerklärung von Microsoft](https://privacy.microsoft.com/privacystatement).
@@ -377,14 +377,14 @@ Wenn Sie ein Problem melden möchten, suchen Sie zunächst in der Developer Comm
 
 ### <a name="use-the-visual-studio-developer-community-pages"></a>Verwenden Sie die Seiten der Visual Studio Developer Community
 
-Die Seiten der Visual Studio Developer Community bietet eine weitere einfache Möglichkeit zum Melden von Problemen und zum Finden von Lösungen für Visual Studio und den C++-Compiler, für Tools und für Bibliotheken. Es gibt spezifische Developer Community-Seiten für [Visual Studio](https://developercommunity.visualstudio.com/spaces/8/index.html), [Visual Studio für Mac](https://developercommunity.visualstudio.com/spaces/41/index.html), [.NET](https://developercommunity.visualstudio.com/spaces/61/index.html), [C++](https://developercommunity.visualstudio.com/spaces/62/index.html), [Azure DevOps Services](https://developercommunity.visualstudio.com/spaces/21/index.html) und [TFS](https://developercommunity.visualstudio.com/spaces/22/index.html).
+Die Seiten der Visual Studio Developer Community bietet eine weitere einfache Möglichkeit zum Melden von Problemen und zum Finden von Lösungen für Visual Studio und den C++-Compiler, für Tools und für Bibliotheken. Es gibt spezifische Entwicklercommunityseiten für [Visual Studio](https://aka.ms/feedback/report?space=8), [Visual Studio für Mac](https://aka.ms/feedback/report?space=41), [.NET](https://aka.ms/feedback/report?space=61), [C++](https://aka.ms/feedback/report?space=62), [Azure DevOps](https://aka.ms/feedback/report?space=21) und [Azure DevOps Server](https://aka.ms/feedback/report?space=22).
 
 Unterhalb der Communityregisterkarten (am oberen Rand jeder Seite) befindet sich ein Suchfeld. Mit diesem Feld können Sie Beiträge suchen, die Probleme ähnlich dem Ihrem melden. Möglicherweise sind Lösungen oder andere nützliche Informationen bezüglich Ihres Problems bereits vorhanden. Wenn jemand zuvor das gleiche Problem gemeldet hat, stimmen Sie für den entsprechenden Bericht ab, und kommentieren Sie ihn, anstatt einen neuen Problembericht zu erstellen. Wenn Sie einen Bericht kommentieren, für einen Bericht abstimmen oder ein neues Problem melden möchten, werden Sie möglicherweise aufgefordert, sich bei Ihrem Visual Studio-Konto anzumelden. Bei der ersten Anmeldung müssen Sie der Developer Community-App Zugriff auf Ihr Profil gewähren.
 
-Verwenden Sie bei Problemen mit dem C++-Compiler, dem Linker und anderen Tools und Bibliotheken die [C++](https://developercommunity.visualstudio.com/spaces/62/index.html)-Seite. Wenn Sie nach Ihrem Problem suchen und es noch nicht gemeldet wurde, wählen Sie die Schaltfläche **Problem melden** neben dem Suchfeld aus. Sie können Ihren Reproduktionscode und die Befehlszeile sowie Screenshots, Links zu ähnlichen Diskussionen oder andere Informationen hinzufügen, die Sie für relevant und nützlich halten.
+Durchsuchen Sie bei Problemen mit dem C++-Compiler, dem Linker und anderen Tools und Bibliotheken zuerst die Seite der [C++-Entwicklercommunity](https://aka.ms/vsfeedback/browsecpp). Wenn Sie nach Ihrem Problem suchen und es noch nicht gemeldet wurde, wählen Sie die Schaltfläche **Problem melden** neben dem Suchfeld aus. Sie können Ihren Reproduktionscode und die Befehlszeile sowie Screenshots, Links zu ähnlichen Diskussionen oder andere Informationen hinzufügen, die Sie für relevant und nützlich halten.
 
 > [!TIP]
-> Für andere Arten von Problemen, die möglicherweise in Visual Studio auftreten, jedoch nicht mit dem C++-Toolset zusammenhängen (z.B. Benutzeroberflächenprobleme, defekte IDE-Funktionalität oder allgemeine Abstürze), verwenden Sie das Tool **Problem melden** in der IDE. Dies ist die beste Wahl, da das Tool über Screenshotfunktionen verfügt und Benutzeroberflächenaktionen aufzeichnen kann, die zu dem aufgetretenen Problem geführt haben. Diese Art von Problemen kann auch auf der [Developer Community](https://developercommunity.visualstudio.com/)-Website nachgeschlagen werden. Weitere Informationen finden Sie unter [Melden eines Problems mit Visual Studio](/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017).
+> Für andere Arten von Problemen, die möglicherweise in Visual Studio auftreten, jedoch nicht mit dem C++-Toolset zusammenhängen (z.B. Benutzeroberflächenprobleme, defekte IDE-Funktionalität oder allgemeine Abstürze), verwenden Sie das Tool **Problem melden** in der IDE. Dies ist die beste Wahl, da das Tool über Screenshotfunktionen verfügt und Benutzeroberflächenaktionen aufzeichnen kann, die zu dem aufgetretenen Problem geführt haben. Für diese Art von Fehlern können Sie auch auf der Website der [Visual Studio-Entwicklercommunity](https://aka.ms/feedback/report?space=8) nach Lösungsvorschlägen suchen. Weitere Informationen finden Sie unter [Melden eines Problems mit Visual Studio](/visualstudio/ide/how-to-report-a-problem-with-visual-studio).
 
 ### <a name="reports-and-privacy"></a>Berichte und Datenschutz
 

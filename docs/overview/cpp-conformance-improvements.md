@@ -1,14 +1,14 @@
 ---
 title: Verbesserungen an C++ bei der Übereinstimmung mit Standards
-ms.date: 08/04/2020
 description: Microsoft C++ in Visual Studio  bewegt sich auf die vollständige Konformität mit dem Sprachstandard C++20 zu.
+ms.date: 11/10/2020
 ms.technology: cpp-language
-ms.openlocfilehash: fc88406a3d2e291d06e01c3e92261b8dfc624ced
-ms.sourcegitcommit: 9c2b3df9b837879cd17932ae9f61cdd142078260
+ms.openlocfilehash: ff4d75626b75c55e001601ef7005bc23be60869d
+ms.sourcegitcommit: 25f6d52eb9e5d84bd0218c46372db85572af81da
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92921424"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94448489"
 ---
 # <a name="c-conformance-improvements-in-visual-studio"></a>Verbesserungen der C++-Konformität in Visual Studio
 
@@ -20,7 +20,7 @@ Microsoft C++ nimmt bei jedem Release Verbesserungen bei der Übereinstimmung mi
 
 Visual Studio 2019 (RTW) enthält die folgenden Verbesserungen der Konformität, Fehlerbehebungen und Verhaltensänderungen des Microsoft C++-Compilers (MSVC).
 
-**Hinweis** : C++20-Features werden im Modus **`/std:c++latest`** zur Verfügung gestellt, bis die C++20-Implementierung für den Compiler und IntelliSense abgeschlossen ist. Zu diesem Zeitpunkt wird der Compilermodus **`/std:c++20`** eingeführt.
+**Hinweis**: C++20-Features werden im Modus **`/std:c++latest`** zur Verfügung gestellt, bis die C++20-Implementierung für den Compiler und IntelliSense abgeschlossen ist. Zu diesem Zeitpunkt wird der Compilermodus **`/std:c++20`** eingeführt.
 
 ### <a name="improved-modules-support-for-templates-and-error-detection"></a>Verbesserte Unterstützung von Modulen für Vorlagen und die Fehlererkennung
 
@@ -341,7 +341,7 @@ std::equal(std::begin(a), std::end(a), std::begin(b), std::end(b));
 
 ### <a name="effect-of-defining-spaceship-operator-on--and-"></a>Auswirkung der Definition des Spaceship-Operators auf `==` und `!=`
 
-Eine Definition des Spaceship-Operators ( **`<=>`** ) allein schreibt keine Ausdrücke mit **`==`** oder **`!=`** mehr neu, es sei denn, der Spaceship-Operator ist als **`= default`** ( [P1185R2](https://wg21.link/p1185r2)) markiert. Das folgende Beispiel wird in Visual Studio 2019 RTW und Version 16.1 kompiliert, erzeugt jedoch C2678 in Visual Studio 2019 Version 16.2:
+Eine Definition des Spaceship-Operators ( **`<=>`** ) allein schreibt keine Ausdrücke mit **`==`** oder **`!=`** mehr neu, es sei denn, der Spaceship-Operator ist als **`= default`** ([P1185R2](https://wg21.link/p1185r2)) markiert. Das folgende Beispiel wird in Visual Studio 2019 RTW und Version 16.1 kompiliert, erzeugt jedoch C2678 in Visual Studio 2019 Version 16.2:
 
 ```cpp
 #include <compare>
@@ -1154,6 +1154,338 @@ void f() {
     B b2[1]; // OK: calls default ctor for each array element
 }
 ```
+
+## <a name="conformance-improvements-in-visual-studio-2019-version-168"></a><a name="improvements_168"></a> Verbesserungen der Konformität in Visual Studio 2019, Version 16.8
+
+### <a name="class-rvalue-used-as-lvalue-extension"></a>Erweiterung zum Verwenden eines rvalue-Ausdrucks einer Klasse als lvalue-Ausdruck
+
+MSVC verfügt über eine Erweiterung, mit deren Hilfe ein rvalue-Ausdruck einer Klasse als lvalue-Ausdruck verwendet werden kann. Die Erweiterung verlängert die Lebensdauer des rvalue-Ausdrucks der Klasse nicht und kann zu undefiniertem Verhalten zur Laufzeit führen. Wir erzwingen jetzt die Standardregel und lassen diese Erweiterung unter **`/permissive-`** nicht mehr zu.
+Wenn Sie **`/permissive-`** noch nicht verwenden können, können Sie **`/we4238`** nutzen, um die Erweiterung explizit zu unterbinden. Hier sehen Sie ein Beispiel:
+
+```cpp
+// Compiling with /permissive- now gives:
+// error C2102: '&' requires l-value
+struct S {};
+
+S f();
+
+void g()
+{
+    auto p1 = &(f()); // The temporary returned by 'f' is destructed after this statement. So 'p1' points to an invalid object.
+
+    const auto &r = f(); // This extends the lifetime of the temporary returned by 'f'
+    auto p2 = &r; // 'p2' points to a valid object
+}
+```
+
+### <a name="explicit-specialization-in-non-namespace-scope-extension"></a>Erweiterung zur expliziten Spezialisierung im Nicht-Namespacebereich
+
+MSVC umfasste eine Erweiterung, die eine explizite Spezialisierung im Nicht-Namespacebereich zuließ. Diese ist nach der Auflösung von CWG 727 jetzt Teil des Standards. Es gibt jedoch Unterschiede im Verhalten. Wir haben das Verhalten unseres Compilers so angepasst, dass es dem Standard entspricht.
+
+```cpp
+// Compiling with 'cl a.cpp b.cpp /permissive-' now gives:
+//   error LNK2005: "public: void __thiscall S::f<int>(int)" (??$f@H@S@@QAEXH@Z) already defined in a.obj
+// To fix the linker error,
+// 1. Mark the explicit specialization with 'inline' explicitly. Or,
+// 2. Move its definition to a source file.
+
+// common.h
+struct S {
+    template<typename T> void f(T);
+    template<> void f(int);
+};
+
+// This explicit specialization is implicitly inline in the default mode.
+template<> void S::f(int) {}
+
+// a.cpp
+#include "common.h"
+
+int main() {}
+
+// b.cpp
+#include "common.h"
+```
+
+### <a name="checking-for-abstract-class-types"></a>Überprüfen auf abstrakte Klassentypen
+
+Der C++20-Standard hat den Prozess geändert, mit dem die Verwendung eines abstrakten Klassentyps als Funktionsparameter von einem Compiler erkannt wird. Dies ist kein SFINAE-Fehler mehr. Vorher galt: Wenn der Compiler erkannte, dass eine Spezialisierung einer Funktionsvorlage einen Funktionsparameter enthielt, dessen Typ eine Instanz eines abstrakten Klassentyps war, wurde diese Spezialisierung als falsch formatiert betrachtet. Sie wurde dem Satz geeigneter Funktionen nicht hinzugefügt. In C++20 erfolgt die Überprüfung auf einen Parameter eines abstrakten Klassentyps erst, wenn die Funktion aufgerufen wird. Das bedeutet, dass der zum Kompilieren verwendete Code keinen Fehler verursacht. Hier sehen Sie ein Beispiel:
+
+```cpp
+class Node {
+public:
+    int index() const;
+};
+
+class String : public Node {
+public:
+    virtual int size() const = 0;
+};
+
+class Identifier : public Node {
+public:
+    const String& string() const;
+};
+
+template<typename T>
+int compare(T x, T y)
+{
+    return x < y ? -1 : (x > y ? 1 : 0);
+}
+
+int compare(const Node& x, const Node& y)
+{
+    return compare(x.index(), y.index());
+}
+
+int f(const Identifier& x, const String& y)
+{
+    return compare(x.string(), y);
+}
+```
+
+Zuvor hätte der Aufruf von `compare` versucht, die Funktionsvorlage `compare` zu spezialisieren, wobei `String` als Vorlagenargument für `T` verwendet wurde. Damit hätte keine gültige Spezialisierung generiert werden können, weil `String` eine abstrakte Klasse ist. Der einzige geeignete Kandidat wäre `compare(const Node&, const Node&)` gewesen. In C++20 erfolgt die Überprüfung auf den abstrakten Klassentyps jedoch erst, wenn die Funktion aufgerufen wird. Daher wird die Spezialisierung `compare(String, String)` zum Satz geeigneter Kandidaten hinzugefügt und als bester Kandidat ausgewählt, weil die Konvertierung von `const String&` in `String` eine bessere Sequenz darstellt als die Konvertierung von `const String&` in `const Node&`.
+
+In C++20 ist eine mögliche Problemlösung für dieses Beispiel die Verwendung von Konzepten, also die Änderung der Definition von `compare` in:
+
+```cpp
+template<typename T>
+int compare(T x, T y) requires !std::is_abstract_v<T>
+{
+    return x < y ? -1 : (x > y ? 1 : 0);
+}
+```
+
+Falls keine C++-Konzepte verfügbar sind, können Sie auf SFINAE zurückgreifen:
+
+```cpp
+template<typename T, std::enable_if_t<!std::is_abstract_v<T>, int> = 0>
+int compare(T x, T y)
+{
+    return x < y ? -1 : (x > y ? 1 : 0);
+}
+```
+
+### <a name="support-for-p0960r3---allow-initializing-aggregates-from-a-parenthesized-list-of-values"></a>Unterstützung für P0960R3: Zulassen der Initialisierung von Aggregaten über eine in Klammern gesetzte Liste mit Werten
+
+C++20 bietet Unterstützung für die Initialisierung eines Aggregats mithilfe einer in Klammern gesetzten Initialisiererliste. Der folgende Code beispielsweise ist in C++20 gültig:
+
+```cpp
+struct S {
+    int i;
+    int j;
+};
+
+S s(1, 2);
+```
+
+Der größte Teil dieses Features ist additiv, d. h., es kann jetzt Code kompiliert werden, bei dem dies vorher nicht möglich war. Allerdings ändert das Feature das Verhalten von `std::is_constructible`. Im C++17-Modus kommt es für **`static_assert`** zu einem Fehler, im C++20-Modus ist der Vorgang erfolgreich:
+
+`static_assert(std::is_constructible_v<S, int, int>, "Assertion failed!");`
+
+Wenn dieses Typmerkmal zum Steuern der Überladungsauflösung verwendet wird, kann es zu einer Verhaltensänderung zwischen C++17 und C++20 führen.
+
+### <a name="overload-resolution-involving-function-templates"></a>Überladungsauflösung mit Funktionsvorlagen
+
+Zuvor ließ der Compiler die Kompilierung von Code unter **`/permissive-`** zu, der nicht kompiliert werden sollte. Dadurch rief der Compiler die falsche Funktion auf, was zu einer Änderung des Laufzeitverhaltens führte:
+
+```cpp
+int f(int);
+
+namespace N
+{
+    using ::f;
+    template<typename T>
+    T f(T);
+}
+
+template<typename T>
+void g(T&& t)
+{
+}
+
+void h()
+{
+    using namespace N;
+    g(f);
+}
+```
+
+Der Aufruf von `g` verwendet einen Überladungssatz, der die beiden Funktionen `::f` und `N::f` enthält. Da `N::f` eine Funktionsvorlage ist, sollte der Compiler das Funktionsargument als *nicht abgeleiteten Kontext* behandeln. Das bedeutet, dass in diesem Fall der Aufruf von `g` nicht erfolgreich sein darf, weil der Compiler keinen Typ für den Vorlagenparameter `T` ableiten kann. Leider hat der Compiler die vorherige Entscheidung außer Acht gelassen, dass `::f` ein guter Kandidat für einen Funktionsaufruf ist. Anstatt einen Fehler auszugeben, generiert der Compiler Code zum Aufrufen von `g` mit `::f` als Argument.
+
+Da die Verwendung von `::f` als Funktionsargument in vielen Fällen vom Benutzer erwartet wird, wird nur dann ein Fehler ausgegeben, wenn der Code mit **`/permissive-`** kompiliert wird.
+
+### <a name="migrating-from-await-to-c20-coroutines"></a>Migrieren von `/await` zu C++20-Coroutinen
+
+C++20-Standardcoroutinen sind jetzt unter **`/std:c++latest`** standardmäßig aktiviert. Sie unterscheiden sich von Coroutines TS und der Unterstützung in der Option **`/await`** . Bei einer Migration von **`/await`** zu Standardcoroutinen sind möglicherweise einige Quelländerungen erforderlich.
+
+#### <a name="non-standard-keywords"></a>Nicht standardmäßige Schlüsselwörter
+
+Die alten Schlüsselwörter **`await`** und **`yield`** werden im C++20-Modus nicht unterstützt. Der Code muss stattdessen **`co_await`** und **`co_yield`** verwenden. Im Standardmodus ist die Verwendung von `return` in einer Coroutine nicht zulässig. Jedes **`return`** -Element in einer Coroutine muss **`co_return`** verwenden.
+
+```cpp
+// /await
+task f_legacy() {
+    ...
+    await g();
+    return n;
+}
+// /std:c++latest
+task f() {
+    ...
+    co_await g();
+    co_return n;
+}
+```
+
+#### <a name="types-of-initial_suspendfinal_suspend"></a>Typen von „initial_suspend“ und „final_suspend“
+
+Unter **`/await`** können die Zusagefunktionen „initial“ und „suspend“ als Rückgabe von **`bool`** deklariert werden. Dies ist kein Standardverhalten. In C++20 müssen diese Funktionen einen awaitable-Klassentyp zurückgeben. Dies ist häufig einer der trivialen Typen: `std::suspend_always`, wenn die Funktion zuvor **`true`** zurückgegeben hat, oder `std::suspend_never`, wenn die Rückgabe **`false`** lautete.
+
+```cpp
+// /await
+struct promise_type_legacy {
+    bool initial_suspend() noexcept { return false; }
+    bool final_suspend() noexcept { return true; }
+    ...
+};
+
+// /std:c++latest
+struct promise_type {
+    auto initial_susepend() noexcept { return std::suspend_never{}; }
+    auto final_suspend() noexcept { return std::suspend_always{}; }
+    ...
+};
+```
+
+#### <a name="type-of-yield_value"></a>Typ von `yield_value`
+
+In C++20 muss die Zusagefunktion `yield_value` einen awaitable-Typ zurückgeben. Im **`/await`** -Modus konnte die `yield_value`-Funktion **`void`** zurückgeben und wurde immer angehalten. Solche Funktionen können durch eine Funktion ersetzt werden, die `std::suspend_always` zurückgibt.
+
+```cpp
+// /await
+struct promise_type_legacy {
+    ...
+    void yield_value(int x) { next = x; };
+};
+
+// /std:c++latest
+struct promise_type {
+    ...
+    auto yield_value(int x) { next = x; return std::suspend_always{}; }
+};
+```
+
+#### <a name="exception-handling-function"></a>Funktion zur Ausnahmebehandlung
+
+**`/await`** unterstützt einen Zusagetyp ohne Ausnahmebehandlungsfunktion oder mit einer Ausnahmebehandlungsfunktion namens `set_exception`, die `std::exception_ptr` akzeptiert. In C++20 muss der Zusagetyp eine Funktion namens `unhandled_exception` aufweisen, die keine Argument akzeptiert. Das Ausnahmeobjekt kann bei Bedarf von `std::current_exception` abgerufen werden.
+
+```cpp
+// /await
+struct promise_type_legacy {
+    void set_exception(std::exception_ptr e) { saved_exception = e; }
+    ...
+};
+// /std:c++latest
+struct promise_type {
+    void unhandled_exception() { saved_exception = std::current_exception(); }
+    ...
+};
+```
+
+#### <a name="deduced-return-types-of-coroutines-not-supported"></a>Keine Unterstützung für abgeleitete Rückgabetypen von Coroutinen
+
+C++20 unterstützt keine Coroutinen mit einem Rückgabetyp, der einen Platzhaltertyp wie z. B. **`auto`** enthält. Rückgabetypen von Coroutinen müssen explizit deklariert werden. Unter **`/await`** beinhalten diese abgeleiteten Typen immer einen experimentellen Typ und erfordern die Einbindung eines Headers, der den erforderlichen Typ definiert: Entweder `std::experimental::task<T>`, `std::experimental::generator<T>` oder `std::experimental::async_stream<T>`.
+
+```cpp
+// /await
+auto my_generator() {
+    ...
+    co_yield next;
+};
+
+// /std:c++latest
+#include <experimental/generator>
+std::experimental::generator<int> my_generator() {
+    ...
+    co_yield next;
+};
+```
+
+#### <a name="return-type-of-return_value"></a>Rückgabetyp von `return_value`
+
+Der Rückgabetyp der Zusagefunktion `return_value` muss **`void`** sein. Im **`/await`** -Modus kann der Rückgabetyp beliebig sein und wird ignoriert. Mithilfe der Diagnose lassen sich nahezu unmerkliche Fehler finden, bei denen der Autor fälschlicherweise angenommen hat, dass der Rückgabewert von `return_value` an einen Aufrufer zurückgegeben wird.
+
+```cpp
+// /await
+struct promise_type_legacy {
+    ...
+    int return_value(int x) { return x; } // incorrect, the return value of this function is unused and the value is lost.
+};
+
+// /std:c++latest
+struct promise_type {
+    ...
+    void return_value(int x) { value = x; }; // save return value
+};
+```
+
+#### <a name="return-object-conversion-behavior"></a>Konvertierungsverhalten für Rückgabeobjekte
+
+Wenn der deklarierte Rückgabetyp einer Coroutine nicht mit dem Rückgabetyp der Zusagefunktion `get_return_object` übereinstimmt, wird das von `get_return_object` zurückgegebene Objekt in den Rückgabetyp der Coroutine konvertiert. Unter **`/await`** erfolgt diese Konvertierung frühzeitig, bevor der Coroutinentext ausgeführt werden kann. In **`/std:c++latest`** wird diese Konvertierung nur dann durchgeführt, wenn der Wert tatsächlich an den Aufrufer zurückgegeben wird. So können Coroutinen, die nicht beim ersten Anhaltepunkt angehalten werden, das von `get_return_object` im Coroutinentext zurückgegebene Objekt verwenden.
+
+#### <a name="coroutine-promise-parameters"></a>Zusageparameter für Coroutinen
+
+In C++20 versucht der Compiler, die Coroutinenparameter (sofern vorhanden) an einen Konstruktor des Zusagetyps zu übergeben. Wenn hierbei ein Fehler auftritt, versucht der Compiler den Vorgang erneut mit einem Standardkonstruktor. Im **`/await`** -Modus wurde nur der Standardkonstruktor verwendet. Diese Änderung kann zu einem Unterschied im Verhalten führen, wenn die Zusage mehrere Konstruktoren enthält oder wenn eine Konvertierung eines Coroutinenparameters in den Zusagetyp erfolgt.
+
+```cpp
+struct coro {
+    struct promise_type {
+        promise_type() { ... }
+        promise_type(int x) { ... }
+        ...
+    };
+};
+
+coro f1(int x);
+
+// Under /await the promise gets constructed using the default constructor.
+// Under /std:c++latest the promise gets constructed using the 1-argument constructor.
+f1(0);
+
+struct Object {
+template <typename T> operator T() { ... } // Converts to anything!
+};
+
+coro f2(Object o);
+
+// Under /await the promise gets constructed using the default constructor
+// Under /std:c++latest the promise gets copy- or move-constructed from the result of
+// Object::operator coro::promise_type().
+f2(Object{});
+```
+
+### <a name="permissive--and-c20-modules-are-on-by-default-under-stdclatest"></a>`/permissive-` und C++20-Module unter `/std:c++latest` standardmäßig aktiviert
+
+Die Unterstützung für C++20-Module ist unter **`/std:c++latest`** standardmäßig aktiviert. Weitere Informationen zu dieser Änderung sowie zu den Szenarien, in denen **`module`** und **`import`** bedingt als Schlüsselwörter behandelt werden, finden Sie unter [Standard C++20 Modules support with MSVC in Visual Studio 2019 version 16.8](https://devblogs.microsoft.com/cppblog/standard-c20-modules-support-with-msvc-in-visual-studio-2019-version-16-8/) (Standardmäßige Unterstützung für C++20-Module mit MSVC in Visual Studio 2019, Version 16.8).
+
+Als Voraussetzung für die Modulunterstützung ist **`permissive-`** jetzt aktiviert, wenn **`/std:c++latest`** angegeben ist. Weitere Informationen finden Sie unter [`/permissive-`](../build/reference/permissive-standards-conformance.md).
+
+Bei Code, der zuvor unter **`/std:c++latest`** kompiliert wurde und nicht konformes Compilerverhalten erfordert, kann **`permissive`** angegeben werden, um den strengen Konformitätsmodus im Compiler zu deaktivieren. Die Compileroption muss in der Liste der Befehlszeilenargumente nach **`/std:c++latest`** angezeigt werden. **`permissive`** führt jedoch zu einem Fehler, wenn die Nutzung von Modulen festgestellt wird:
+
+> Fehler C1214: Module stehen in Konflikt mit dem Verhalten, das über *option* angefordert wird und nicht dem Standard entspricht.
+
+Die häufigsten Werte für *option* lauten:
+
+| Option | Beschreibung |
+|--|--|
+| **`/Zc:twoPhase-`** | Für C++20-Module ist eine zweiphasige Namenssuche erforderlich und wird durch **`permissive-`** impliziert. |
+| **`/Zc:hiddenFriend-`** | Aktiviert Standardregeln für die Suche nach verborgenen Anzeigenamen. Erforderlich für C++20-Module und impliziert durch **`permissive-`** . |
+| **`/Zc:preprocessor-`** | Der konforme Präprozessor ist nur für die Nutzung und Erstellung von C++20-Headereinheiten erforderlich. Benannte Module erfordern diese Option nicht. |
+
+Die Option [`/experimental:module`](../build/reference/experimental-module.md) ist weiterhin erforderlich, um die *`std.*`* -Module zu nutzen, die im Lieferumfang von Visual Studio vorhanden sind, da sie noch nicht standardisiert sind.
+
+Die Option **`/experimental:module`** impliziert auch **`/Zc:twoPhase`** und **`/Zc:hiddenFriend`** . Zuvor konnte mit Modulen kompilierter Code mit **`/Zc:twoPhase-`** kompiliert werden, wenn das Modul nur genutzt wurde. Dieses Verhalten wird nicht mehr unterstützt.
 
 ## <a name="bug-fixes-and-behavior-changes-in-visual-studio-2019"></a><a name="update_160"></a> Fehlerbehebungen und Verhaltensänderungen in Visual Studio 2019
 
@@ -3308,7 +3640,7 @@ struct S : Base<T> {
 
 Ändern Sie die Anweisung **`return`** in `return this->base_value;`, um den Fehler zu beheben.
 
-**Hinweis** : In der Boost-Python-Bibliothek ist eine MSVC-spezifische Problemumgehung für eine Vorlagenvorwärtsdeklaration in [unwind_type.hpp](https://github.com/boostorg/python/blame/develop/include/boost/python/detail/unwind_type.hpp) vorhanden. Im [`/permissive-`](../build/reference/permissive-standards-conformance.md)-Modus ab Visual Studio 2017 Version 15.8 (\_MSC\_VER=1915) führt der MSVC-Compiler die argumentabhängige Namenssuche ordnungsgemäß aus. Das Verhalten entspricht jetzt dem Verhalten anderer Compiler, sodass diese Problemumgehung nicht mehr erforderlich ist. Um den Fehler „C3861: `'unwind_type': identifier not found`“ zu vermeiden, finden Sie unter [PR 229](https://github.com/boostorg/python/pull/229) im Boost-Repository Informationen zum Aktualisieren der Headerdatei. Das Boost-Paket [vcpkg](../build/vcpkg.md) wurde bereits gepatcht. Wenn Sie also Ihre Boost-Quellen aus vcpkg abrufen oder aktualisieren möchten, müssen Sie den Patch nicht separat anwenden.
+**Hinweis**: In der Boost-Python-Bibliothek ist eine MSVC-spezifische Problemumgehung für eine Vorlagenvorwärtsdeklaration in [unwind_type.hpp](https://github.com/boostorg/python/blame/develop/include/boost/python/detail/unwind_type.hpp) vorhanden. Im [`/permissive-`](../build/reference/permissive-standards-conformance.md)-Modus ab Visual Studio 2017 Version 15.8 (\_MSC\_VER=1915) führt der MSVC-Compiler die argumentabhängige Namenssuche ordnungsgemäß aus. Das Verhalten entspricht jetzt dem Verhalten anderer Compiler, sodass diese Problemumgehung nicht mehr erforderlich ist. Um den Fehler „C3861: `'unwind_type': identifier not found`“ zu vermeiden, finden Sie unter [PR 229](https://github.com/boostorg/python/pull/229) im Boost-Repository Informationen zum Aktualisieren der Headerdatei. Das Boost-Paket [vcpkg](../build/vcpkg.md) wurde bereits gepatcht. Wenn Sie also Ihre Boost-Quellen aus vcpkg abrufen oder aktualisieren möchten, müssen Sie den Patch nicht separat anwenden.
 
 ### <a name="forward-declarations-and-definitions-in-namespace-std"></a>Vorwärtsdeklarationen und -definitionen im Namespace `std`
 
@@ -3324,7 +3656,7 @@ namespace std {
 }
 ```
 
-Verwenden Sie anstelle einer Vorwärtsdeklaration eine **include** -Anweisung, um den Fehler zu beheben:
+Verwenden Sie anstelle einer Vorwärtsdeklaration eine **include**-Anweisung, um den Fehler zu beheben:
 
 ```cpp
 #include <vector>
@@ -3357,7 +3689,7 @@ public:
 
 ### <a name="offsetof-with-constant-expressions"></a>`offsetof` mit konstanten Ausdrücken
 
-[offsetof](../c-runtime-library/reference/offsetof-macro.md) wurde bisher mithilfe eines Makros implementiert, das [reinterpret_cast](../cpp/reinterpret-cast-operator.md) erfordert. Die Verwendung ist in Kontexten nicht zulässig, die einen konstanten Ausdruck erfordern, jedoch war es bisher im Microsoft C++-Compiler gültig. Das `offsetof`-Makro, das im Rahmen der Standardbibliothek enthalten ist, verwendet eine intrinsische Compiler-Funktion ( **__builtin_offsetof** ), jedoch haben viele Personen den Makro-Trick verwendet, um `offsetof` selbst zu definieren.
+[offsetof](../c-runtime-library/reference/offsetof-macro.md) wurde bisher mithilfe eines Makros implementiert, das [reinterpret_cast](../cpp/reinterpret-cast-operator.md) erfordert. Die Verwendung ist in Kontexten nicht zulässig, die einen konstanten Ausdruck erfordern, jedoch war es bisher im Microsoft C++-Compiler gültig. Das `offsetof`-Makro, das im Rahmen der Standardbibliothek enthalten ist, verwendet eine intrinsische Compiler-Funktion ( **__builtin_offsetof**), jedoch haben viele Personen den Makro-Trick verwendet, um `offsetof` selbst zu definieren.
 
 In Visual Studio 2017, Version 15.8, beschränkt der Compiler die Bereiche, in denen diese **`reinterpret_cast`** -Operatoren im Standardmodus auftreten können, damit der Code dem Standardverhalten von C++ besser entspricht. Im Modus [`/permissive-`](../build/reference/permissive-standards-conformance.md) sind die Einschränkungen sogar strenger. Wenn ein `offsetof`-Ergebnis an Stellen verwendet wird, an denen konstante Ausdrücke erforderlich sind, löst der Code möglicherweise die Warnung „C4644 `usage of the macro-based offsetof pattern in constant expressions is non-standard; use offsetof defined in the C++ standard library instead`“ oder „C2975 `invalid template argument, expected compile-time constant expression`“ aus.
 
