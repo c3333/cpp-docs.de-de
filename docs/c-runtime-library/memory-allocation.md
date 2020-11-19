@@ -1,56 +1,55 @@
 ---
 title: Speicherzuweisung
-ms.date: 11/04/2016
-description: Listet die Microsoft C-Lauf Zeitfunktionen auf, die zum zuordnen, freigeben und erneuten Zuweisen von Arbeitsspeicher verwendet werden.
+ms.date: 11/18/2020
+description: Liste der Microsoft C-Lauf Zeitfunktionen, die zum zuordnen, freigeben und erneuten Zuweisen von Arbeitsspeicher verwendet werden.
 f1_keywords:
 - c.memory
 helpviewer_keywords:
 - memory allocation, routines
 - memory, managing
 - memory, allocation
-ms.assetid: b4470556-a128-4782-9943-2ccf7a7d9979
-ms.openlocfilehash: 4e01d62fdfd24416f78254a849b3feea97883281
-ms.sourcegitcommit: 8caaf5e00aeb727741a273aecafa15de293426cf
+ms.openlocfilehash: 39be48a4ebdf8ee917395d7b743846196200878d
+ms.sourcegitcommit: e82e13b80150fcb27a1387018aafb00d99a3827a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91806499"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94920741"
 ---
 # <a name="memory-allocation"></a>Arbeitsspeicherbelegung
 
-Verwenden Sie diese Routinen zur Belegung, Freigabe und erneuten Belegung von Speicherplatz.
+Diese Routinen ordnen Speicher frei und ordnen ihn neu zu.
 
 ## <a name="memory-allocation-routines"></a>Speicher Belegungs Routinen
 
 |-Routine zurückgegebener Wert|Verwendung|
 |-------------|---------|
-|[_alloca](../c-runtime-library/reference/alloca.md), [_malloca](../c-runtime-library/reference/malloca.md)|Arbeitsspeicher aus dem Stapel zuweisen|
-|[calloc](../c-runtime-library/reference/calloc.md)|Belegen von Speicher für ein Array mit Initialisierung aller Bytes im belegten Block auf 0|
-|[_calloc_dbg](../c-runtime-library/reference/calloc-dbg.md)|Debugversion von **calloc**; nur in den Debugversionen der Laufzeitbibliotheken verfügbar|
-|[Operator Delete, Operator Delete&#91;&#93;](../c-runtime-library/delete-operator-crt.md)|Freigeben eines belegten Blocks|
-|[_expand](../c-runtime-library/reference/expand.md)|Erweitern oder Verkleinern eines Speicherblocks, ohne diesen zu bewegen|
-|[_expand_dbg](../c-runtime-library/reference/expand-dbg.md)|Debugversion von **_expand**; nur in den Debugversionen der Laufzeitbibliotheken verfügbar|
-|[free](../c-runtime-library/reference/free.md)|Freigeben eines belegten Blocks|
-|[_free_dbg](../c-runtime-library/reference/free-dbg.md)|Debugversion von **free**; nur in den Debugversionen der Laufzeitbibliotheken verfügbar|
-|[_freea](../c-runtime-library/reference/freea.md)|Frei zugeordneter Block aus dem Stapel freigeben|
-|[_get_heap_handle](../c-runtime-library/reference/get-heap-handle.md)|Abrufen des Win32 HANDLEs aus dem CRT-Heap.|
-|[_heapadd](../c-runtime-library/heapadd.md)|Hinzufügen von Speicher zum Heap.|
-|[_heapchk](../c-runtime-library/reference/heapchk.md)|Prüfen des Heaps auf Konsistenz|
-|[_heapmin](../c-runtime-library/reference/heapmin.md)|Freigeben von ungenutztem Speicher im Heap|
-|[_heapset](../c-runtime-library/heapset.md)|Füllen freier Heap-Einträge mit bestimmten Werten|
-|[_heapwalk](../c-runtime-library/reference/heapwalk.md)|Rückgabe von Informationen über jeden Eintrag im Heap|
-|[malloc](../c-runtime-library/reference/malloc.md)|Belegen von Speicherblöcken aus dem Heap|
-|[_malloc_dbg](../c-runtime-library/reference/malloc-dbg.md)|Debugversion von **malloc**; nur in den Debugversionen der Laufzeitbibliotheken verfügbar|
-|[_msize](../c-runtime-library/reference/msize.md)|Rückgabe der Größe des belegten Blocks|
-|[_msize_dbg](../c-runtime-library/reference/msize-dbg.md)|Debugversion von **_msize**; nur in den Debugversionen der Laufzeitbibliotheken verfügbar|
-|[neu, neue&#91;&#93;](../c-runtime-library/new-operator-crt.md)|Belegen von Speicherblöcken aus dem Heap|
-|[_query_new_handler](../c-runtime-library/reference/query-new-handler.md)|Zurückgeben der Adresse der aktuellen neuen Handlerroutine, wie in **_set_new_handler** festgelegt.|
-|[_query_new_mode](../c-runtime-library/reference/query-new-mode.md)|Zurückgeben einer Ganzzahl, die den von **_set_new_mode** für **malloc** festgelegten neuen Handlermodus anzeigt.|
-|[realloc](../c-runtime-library/reference/realloc.md)|Erneute Belegung eines Blocks zur neuen Größe|
-|[_realloc_dbg](../c-runtime-library/reference/realloc-dbg.md)|Debugversion von **realloc**; nur in den Debugversionen der Laufzeitbibliotheken verfügbar|
-|[_set_new_handler](../c-runtime-library/reference/set-new-handler.md)|Aktivieren des Fehler Behandlungs Mechanismus, wenn der **`new`** Operator fehlschlägt (um Speicher zuzuweisen) und die Kompilierung von C++-Standard Bibliotheken aktivieren|
-|[_set_new_mode](../c-runtime-library/reference/set-new-mode.md)|Festlegen eines neuen Handlermodus für **malloc**|
+|[`_alloca`](../c-runtime-library/reference/alloca.md), [`_malloca`](../c-runtime-library/reference/malloca.md)|Arbeitsspeicher aus dem Stapel zuweisen|
+|[`calloc`](../c-runtime-library/reference/calloc.md)|Ein Array zuordnen und seine Elemente auf 0 (null) initialisieren|
+|[`_calloc_dbg`](../c-runtime-library/reference/calloc-dbg.md)|Debugversion von **`calloc`** . Nur in den Debugversionen der Laufzeitbibliotheken verfügbar.|
+|[`operator delete`, `operator delete[]`](../c-runtime-library/delete-operator-crt.md)|Frei zugeordneter Arbeitsspeicher auf dem Heap |
+|[`_expand`](../c-runtime-library/reference/expand.md)|Vergrößern oder Verkleinern eines Speicherblocks, ohne ihn zu verschieben|
+|[`_expand_dbg`](../c-runtime-library/reference/expand-dbg.md)|Debugversion von **`_expand`** . Nur in den Debugversionen der Laufzeitbibliotheken verfügbar.|
+|[`free`](../c-runtime-library/reference/free.md)|Frei zugeordneter Arbeitsspeicher auf dem Heap|
+|[`_free_dbg`](../c-runtime-library/reference/free-dbg.md)|Debugversion von **`free`** . Nur in den Debugversionen der Laufzeitbibliotheken verfügbar.|
+|[`_freea`](../c-runtime-library/reference/freea.md)|Auf dem Stapel zugeordneter freier Speicher|
+|[`_get_heap_handle`](../c-runtime-library/reference/get-heap-handle.md)|Eine Win32-Datei `HANDLE` zum C-Lauf Zeit Heap (CRT).|
+|[`_heapadd`](../c-runtime-library/heapadd.md)|Hinzufügen von Arbeitsspeicher zum Heap|
+|[`_heapchk`](../c-runtime-library/reference/heapchk.md)|Überprüfen des Heaps auf Konsistenz|
+|[`_heapmin`](../c-runtime-library/reference/heapmin.md)|Freigeben von nicht genutztem Speicher im Heap|
+|[`_heapset`](../c-runtime-library/heapset.md)|Auffüllen von freien Heap Einträgen mit einem Wert|
+|[`_heapwalk`](../c-runtime-library/reference/heapwalk.md)|Informationen zu jedem Eintrag im Heap erhalten|
+|[`malloc`](../c-runtime-library/reference/malloc.md)|Zuweisen von Arbeitsspeicher aus dem Heap|
+|[`_malloc_dbg`](../c-runtime-library/reference/malloc-dbg.md)|Debugversion von **`malloc`** ; nur in den Debugversionen der Laufzeitbibliotheken verfügbar|
+|[`_msize`](../c-runtime-library/reference/msize.md)|Gibt die Größe eines zugeordneten Speicherblocks zurück.|
+|[`_msize_dbg`](../c-runtime-library/reference/msize-dbg.md)|Debugversion von **`_msize`** ; nur in den Debugversionen der Laufzeitbibliotheken verfügbar|
+|[`new`, `new[]`](../c-runtime-library/new-operator-crt.md)|Zuordnen eines Speicherblocks aus dem Heap|
+|[`_query_new_handler`](../c-runtime-library/reference/query-new-handler.md)|Gibt die Adresse der aktuellen neuen Handlerroutine an, festgelegt von **`_set_new_handler`**|
+|[`_query_new_mode`](../c-runtime-library/reference/query-new-mode.md)|Den neuen handlermodus, der von festgelegt wird, **`_set_new_mode`****`malloc`**|
+|[`realloc`](../c-runtime-library/reference/realloc.md)|Neuzuordnen eines Blocks zu einer neuen Größe|
+|[`_realloc_dbg`](../c-runtime-library/reference/realloc-dbg.md)|Debugversion von **`realloc`** ; nur in den Debugversionen der Laufzeitbibliotheken verfügbar|
+|[`_set_new_handler`](../c-runtime-library/reference/set-new-handler.md)|Aktivieren Sie den Fehler Behandlungs Mechanismus, wenn der **`new`** Operator keinen Arbeitsspeicher zuordnen kann, und aktivieren Sie die Kompilierung der C++-Standard Bibliotheken.|
+|[`_set_new_mode`](../c-runtime-library/reference/set-new-mode.md)|Legen Sie den neuen handlermodus für fest. **`malloc`**|
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen:
 
-[Universelle C-Laufzeitroutinen nach Kategorie](../c-runtime-library/run-time-routines-by-category.md)<br/>
+[Universelle C-Laufzeitroutinen nach Kategorie](../c-runtime-library/run-time-routines-by-category.md)
