@@ -1,8 +1,7 @@
 ---
-title: main Funktions-und Befehlszeilenargumente (C++)
-description: Die- main Funktion ist der Einstiegspunkt für ein C++-Programm.
-ms.date: 01/15/2019
-ms.assetid: c6568ee6-40ab-4ae8-aa44-c99e232f64ac
+title: '`main` Funktions-und Befehlszeilenargumente (C++)'
+description: Die- `main` Funktion ist der Einstiegspunkt für ein C++-Programm.
+ms.date: 11/19/2020
 no-loc:
 - main
 - wmain
@@ -19,77 +18,89 @@ no-loc:
 - char
 - wchar_t
 - extern
-ms.openlocfilehash: b27668c3c7ce77e4369af144bb8be4efb695e522
-ms.sourcegitcommit: a1676bf6caae05ecd698f26ed80c08828722b237
+ms.openlocfilehash: 8a5ed43bdacf5d9d6dd2cbc5d1c56783c82b8e9a
+ms.sourcegitcommit: b02c61667ff7f38e7add266d0aabd8463f2dbfa1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91499812"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95483216"
 ---
-# <a name="no-locmain-function-and-command-line-arguments"></a>main Funktions-und Befehlszeilenargumente
+# <a name="no-locmain-function-and-command-line-arguments"></a>`main` Funktions-und Befehlszeilenargumente
 
-Alle C++-Programme müssen über eine- `main` Funktion verfügen. Wenn Sie versuchen, ein C++ *. exe* -Projekt ohne eine main Funktion zu kompilieren, gibt der Compiler einen Fehler aus. (Dynamic-Link-Bibliotheken und- static Bibliotheken haben keine `main` Funktion.) `main` In der Funktion wird der Quellcode mit der Ausführung begonnen, aber bevor ein Programm `main` in die Funktion eintritt, static werden alle Klassenmember ohne explizite Initialisierer auf NULL festgelegt. In Microsoft C++ werden globale static Objekte auch vor dem Eintrag in initialisiert `main` . Einige Einschränkungen gelten für die `main` Funktion, die nicht für andere C++-Funktionen gelten. Die- `main` Funktion:
+Alle C++-Programme müssen über eine- `main` Funktion verfügen. Wenn Sie versuchen, ein C++-Programm ohne eine `main` Funktion zu kompilieren, löst der Compiler einen Fehler aus. (Dynamic-Link-Bibliotheken und- static Bibliotheken haben keine `main` Funktion.) `main` In der Funktion wird der Quellcode mit der Ausführung begonnen, aber bevor ein Programm `main` in die Funktion eintritt, static werden alle Klassenmember ohne explizite Initialisierer auf NULL festgelegt. In Microsoft C++ werden globale static Objekte auch vor dem Eintrag in initialisiert `main` . Einige Einschränkungen gelten für die `main` Funktion, die für keine anderen C++-Funktionen gelten. Die- `main` Funktion:
 
-- Kann nicht überladen werden (siehe [Funktions Überladung](function-overloading.md)).
+- Kann nicht überladen werden (siehe [Funktions Überladung](./function-overloading.md)).
 - Kann nicht als deklariert werden **`inline`** .
 - Kann nicht als deklariert werden **`static`** .
-- Ihre Adresse kann nicht übernommen werden.
-- Kann nicht aufgerufen werden.
+- Die Adresse kann nicht übernommen werden.
+- Kann nicht von Ihrem Programm aufgerufen werden.
 
-Die main -Funktion verfügt nicht über eine-Deklaration, da Sie in die-Sprache integriert ist. Wenn dies der Fall ist, sieht die Deklarations Syntax für wie folgt aus `main` :
+## <a name="the-no-locmain-function-signature"></a>Die `main` Funktions Signatur
+
+Die `main` -Funktion verfügt nicht über eine-Deklaration, da Sie in die-Sprache integriert ist. Wenn dies der Fall ist, sieht die Deklarations Syntax für wie folgt aus `main` :
 
 ```cpp
 int main();
-int main(int argc, char *argv[], char *envp[]);
+int main(int argc, char *argv[]);
 ```
 
-**Microsoft-spezifisch**
+Wenn in kein Rückgabewert angegeben wird `main` , gibt der Compiler einen Rückgabewert von 0 (null) an.
 
-Wenn in ihren Quelldateien Unicode-weite char acters verwendet werden, können Sie verwenden `wmain` , wobei es sich um die Wide char Acter-Version von handelt `main` . Die Deklarationssyntax für `wmain` lautet wie folgt:
+## <a name="standard-command-line-arguments"></a>Standard Befehlszeilenargumente
 
-```cpp
-int wmain( );
-int wmain(int argc, wchar_t *argv[], wchar_t *envp[]);
-```
-
-Sie können auch verwenden `_tmain` , das in t char . h definiert ist. `_tmain` wird in aufgelöst, `main` es sei denn, _UNICODE definiert ist. In diesem Fall wird `_tmain` in `wmain` aufgelöst.
-
-Wenn kein Rückgabewert angegeben wird, gibt der Compiler einen Rückgabewert von 0 (null) an. Alternativ können die `main` -Funktion und die- `wmain` Funktion als Rückgabe **`void`** (kein Rückgabewert) deklariert werden. Wenn Sie `main` oder `wmain` als zurück **`void`** geben, können Sie keinen exit Code an den übergeordneten Prozess oder das Betriebssystem zurückgeben, indem Sie eine [Return](./program-termination.md) -Anweisung verwenden. Um einen exit Code zurückzugeben `main` , wenn oder `wmain` als deklariert wird **`void`** , müssen Sie die- [exit](./program-termination.md) Funktion verwenden.
-
-**Ende Microsoft-spezifisch**
-
-## <a name="command-line-arguments"></a>Befehlszeilenargumente
-
-Die Argumente für `main` oder `wmain` ermöglichen eine bequeme Befehlszeilen-Analyse von Argumenten und optional Zugriff auf Umgebungsvariablen. Die Typen für `argc` und `argv` werden von der Programmiersprache definiert. Die Namen `argc` , `argv` und `envp` sind traditionell, Sie können Sie jedoch beliebig benennen.
-
-```cpp
-int main( int argc, char* argv[], char* envp[]);
-int wmain( int argc, wchar_t* argv[], wchar_t* envp[]);
-```
+Die Argumente für `main` ermöglichen eine bequeme Befehlszeilen-Analyse von Argumenten. Die Typen für `argc` und `argv` werden von der Programmiersprache definiert. Die Namen `argc` und `argv` sind traditionell, Sie können Sie aber beliebig benennen.
 
 Die Argumentdefinitionen sind wie folgt:
 
-*argc*<br/>
+*`argc`*\
 Eine ganze Zahl, die die Anzahl von Argumenten enthält, die in folgen *argv* . Der- *argc* Parameter ist immer größer als oder gleich 1.
 
-*argv*<br/>
-Ein Array von Zeigern auf Zeichenfolgen, die auf NULL enden und von den Benutzern des Programms eingegebene Befehlszeilenargumente darstellen. `argv[0]`Gemäß der Konvention ist der Befehl, mit dem das Programm aufgerufen wird, `argv[1]` das erste Befehlszeilenargument usw., bis `argv[argc]` , das immer NULL ist. Informationen zum Unterdrücken der Befehlszeilen Verarbeitung finden Sie unter [Anpassen der Befehlszeilen Verarbeitung]() .
+*`argv`*\
+Ein Array von Zeigern auf Zeichenfolgen, die auf NULL enden und von den Benutzern des Programms eingegebene Befehlszeilenargumente darstellen. `argv[0]`Gemäß der Konvention ist der Befehl, mit dem das Programm aufgerufen wird. `argv[1]` ist das erste Befehlszeilenargument. Das letzte Argument in der Befehlszeile ist `argv[argc - 1]` , und `argv[argc]` ist immer NULL.
 
-Das erste Befehlszeilenargument ist immer `argv[1]`, und das letzte ist `argv[argc - 1]`.
+Informationen dazu, wie die Befehlszeilen Verarbeitung unterdrückt wird, finden Sie unter [Anpassen der Befehlszeilen Verarbeitung in C++](#customize).
 
 > [!NOTE]
-> `argv[0]`Gemäß der Konvention ist der Befehl, mit dem das Programm aufgerufen wird. Es ist jedoch möglich, einen Prozess mit zu erzeugen [CreateProcess](/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulefilenamew) , und wenn Sie sowohl das erste als auch das zweite Argument (*lpApplicationName* und *lpCommandLine*) verwenden, ist möglich `argv[0]` erweise nicht der Name der ausführbaren Datei. verwenden Sie, [GetModuleFileName](/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulefilenamew) um den Namen der ausführbaren Datei und den voll qualifizierten Pfad abzurufen.
+> Gemäß der Konvention `argv[0]` ist der Dateiname des Programms. Unter Windows ist es jedoch möglich, einen Prozess mit zu erzeugen [`CreateProcess`](/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulefilenamew) . Wenn Sie sowohl das erste als auch das zweite Argument ( *`lpApplicationName`* und *`lpCommandLine`* ) verwenden, ist `argv[0]` möglicherweise nicht der Name der ausführbaren Datei. Mit können Sie [`GetModuleFileName`](/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulefilenamew) den Namen der ausführbaren Datei und den voll qualifizierten Pfad abrufen.
 
-**Microsoft-spezifisch**
+## <a name="microsoft-specific-extensions"></a>Microsoft-spezifische Erweiterungen
 
-*envp*<br/>
-Das *envp* Array, das eine gemeinsame Erweiterung in vielen UNIX-Systemen ist, wird in Microsoft C++ verwendet. Es ist ein Zeichenfolgenarray, das die Variablen darstellt, die in der Benutzerumgebung festgelegt werden. Das Array wird mit einem NULL-Eintrag beendet. Sie kann als ein Array von Zeigern auf **`char`** ( `char *envp[]` ) oder als Zeiger auf Zeiger auf **`char`** ( `char **envp` ) deklariert werden. Wenn `wmain` das Programm anstelle von verwendet `main` , verwenden Sie den- **`wchar_t`** Datentyp anstelle von **`char`** . Der an und über gegebene Umgebungsblock `main` `wmain` ist eine "fixierte" Kopie der aktuellen Umgebung. Wenn Sie anschließend die Umgebung über einen `putenv` -oder-Rückruf ändern `_wputenv` , ändert sich die aktuelle Umgebung (wie von `getenv` oder `_wgetenv` und der-oder-Variable zurückgegeben `_environ`  `_wenviron` ), aber der Block, auf den verweist, envp ändert sich nicht. Informationen zum Unterdrücken der Umgebungs Verarbeitung finden Sie unter [Anpassen der Befehlszeilen Verarbeitung]() . Dieses Argument ist in C ANSI-kompatibel, aber nicht in C++.
+In den folgenden Abschnitten wird das Microsoft-spezifische Verhalten beschrieben.
 
-**Ende Microsoft-spezifisch**
+## <a name="the-no-locwmain-function-and-no-loc_tmain-macro"></a>Die `wmain` Funktion und das `_tmain` Makro
 
-### <a name="example"></a>Beispiel
+Wenn Sie den Quellcode für die Verwendung von Unicode-weiten Zugriffs char Punkten entwerfen, können Sie den Microsoft-spezifischen Einstiegspunkt verwenden, bei dem es sich um `wmain` die Wide char Acter-Version von handelt `main` . Hier ist die effektive Deklarations Syntax für `wmain` :
 
-Im folgenden Beispiel wird gezeigt, wie die *argc* *argv* Argumente, und für Folgendes verwendet werden *envp* `main` :
+```cpp
+int wmain();
+int wmain(int argc, wchar_t *argv[]);
+```
+
+Sie können auch den Microsoft-spezifischen verwenden `_tmain` , bei dem es sich um ein in definiertes Präprozessormakro handelt *`tchar.h`* . `_tmain` wird in aufgelöst, `main` sofern nicht `_UNICODE` definiert ist. In diesem Fall wird `_tmain` in `wmain` aufgelöst. Das `_tmain` Makro und andere Makros, die mit beginnen, `_t` sind nützlich für Code, der separate Versionen für schmale und Breite char actersets erstellen muss. Weitere Informationen finden Sie unter [Verwenden von generischen Text](../c-runtime-library/using-generic-text-mappings.md)Zuordnungen.
+
+## <a name="returning-no-locvoid-from-no-locmain"></a>Rückgabe `void` von main
+
+Als Microsoft-Erweiterung können die `main` -Funktion und die- `wmain` Funktion als Rückgabe **`void`** (kein Rückgabewert) deklariert werden. Diese Erweiterung ist auch in einigen anderen Compilern verfügbar, aber ihre Verwendung ist nicht empfehlenswert. Es ist für die Symmetrie verfügbar, wenn keinen `main` Wert zurückgibt.
+
+Wenn Sie `main` oder `wmain` als zurück **`void`** geben, können Sie keinen exit Code an den übergeordneten Prozess oder das Betriebssystem zurückgeben, indem Sie eine-Anweisung verwenden [`return`](./program-termination.md) . Um einen exit Code zurückzugeben `main` , wenn oder `wmain` als deklariert wird **`void`** , müssen Sie die- [`exit`](./program-termination.md) Funktion verwenden.
+
+## <a name="the-no-locenvp-command-line-argument"></a>Das `envp` Befehlszeilenargument
+
+Die `main` `wmain` Signaturen oder ermöglichen eine optionale Microsoft-spezifische Erweiterung für den Zugriff auf Umgebungsvariablen. Diese Erweiterung ist auch in anderen Compilern für Windows-und UNIX-Systeme üblich. Der Name *`envp`* ist traditionell, aber Sie können den Umgebungsparameter beliebig benennen. Im folgenden finden Sie die effektiven Deklarationen für die Argumentlisten, die den Umgebungsparameter enthalten:
+
+```cpp
+int main(int argc, char* argv[], char* envp[]);
+int wmain(int argc, wchar_t* argv[], wchar_t* envp[]);
+```
+
+*`envp`*\
+Der optionale- *`envp`* Parameter ist ein Array von Zeichen folgen, die die Variablen darstellen, die in der Benutzerumgebung festgelegt sind. Das Array wird mit einem NULL-Eintrag beendet. Sie kann als ein Array von Zeigern auf **`char`** ( `char *envp[]` ) oder als Zeiger auf Zeiger auf **`char`** ( `char **envp` ) deklariert werden. Wenn `wmain` das Programm anstelle von verwendet `main` , verwenden Sie den- **`wchar_t`** Datentyp anstelle von **`char`** .
+
+Der an und über gegebene Umgebungsblock `main` `wmain` ist eine "fixierte" Kopie der aktuellen Umgebung. Wenn Sie die Umgebung später ändern, indem Sie einen- `putenv` oder-Rückruf ausführen, ändert sich `_wputenv` die aktuelle Umgebung (wie von `getenv` oder `_wgetenv` und der-oder-Variable zurückgegeben `_environ`  `_wenviron` ), aber der Block, auf den verweist, wird *`envp`* nicht geändert. Weitere Informationen zum Unterdrücken der Umgebungs Verarbeitung finden Sie unter [Anpassen der Befehlszeilen Verarbeitung in C++](#customize). Das- *`envp`* Argument ist mit dem C89-Standard kompatibel, jedoch nicht mit C++-Standards.
+
+### <a name="example-arguments-to-no-locmain"></a>Beispiel Argumente für `main`
+
+Im folgenden Beispiel wird gezeigt, wie die *`argc`* *`argv`* Argumente, und für Folgendes verwendet werden *`envp`* `main` :
 
 ```cpp
 // argument_definitions.cpp
@@ -115,27 +126,25 @@ int main( int argc, char *argv[], char *envp[] ) {
 }
 ```
 
-## <a name="parsing-c-command-line-arguments"></a>Parsing C++-Befehlszeilenargumente
+## <a name="parsing-c-command-line-arguments"></a>Analysieren von C++-Befehlszeilenargumenten
 
-**Microsoft-spezifisch**
-
-Beim Interpretieren von Argumenten, die in der Befehlszeile des Betriebssystems angegeben werden, verwendet der Microsoft C/C++-Startcode die folgenden Regeln:
+Die vom Microsoft C/C++-Code verwendeten Befehlszeilen-Regel Regeln sind Microsoft-spezifisch. Der Startcode der Laufzeit verwendet diese Regeln, wenn in der Befehlszeile des Betriebssystems angegebene Argumente interpretiert werden:
 
 - Argumente werden durch einen Leerraum (Leerzeichen oder Tabstopp) abgegrenzt.
 
-- Der char Caretzeichen (^) wird nicht als Escapezeichen char oder Trennzeichen erkannt. Der char Acter wird vom Befehlszeilen Parser im Betriebssystem vollständig verarbeitet, bevor er an das- `argv` Array im Programm übergeben wird.
+- Das erste Argument (`argv[0]`) wird besonders behandelt. Es repräsentiert den Programmnamen. Da es sich um einen gültigen Pfadnamen handeln muss, sind Bestandteile in doppelten geraden Anführungszeichen oben ( **`"`** ) zulässig. Die Anführungszeichen sind nicht in der Ausgabe von `argv[0]` enthalten. Die in doppelten Anführungszeichen eingeschlossene Teile verhindern die Interpretation eines leer Zeichens oder eines Registerkarten- char acters als Ende des Arguments. Die weiter unten in dieser Liste aufgeführten Regeln gelten nicht.
 
-- Eine Zeichenfolge, die in doppelten Anführungszeichen ("*String*") eingeschlossen ist, wird als einzelnes Argument interpretiert, unabhängig von Leerraum, der in enthalten ist. Eine Zeichenfolge in Anführungszeichen kann in ein Argument eingebettet sein.
+- Eine Zeichenfolge, die in doppelten Anführungszeichen eingeschlossen ist, wird als einzelnes Argument interpretiert, das möglicherweise Leerzeichen enthält char . Eine Zeichenfolge in Anführungszeichen kann in ein Argument eingebettet sein. Der **`^`** Caretzeichen () wird nicht als Escapezeichen char oder Trennzeichen erkannt. Innerhalb einer in Anführungszeichen eingeschlossenen Zeichenfolge wird ein Paar aus doppelten Anführungszeichen als ein einzelnes doppeltes Anführungszeichen mit Escapezeichen interpretiert. Wenn die Befehlszeile endet, bevor eine schließende doppelte Anführungszeichen gefunden wird, char werden alle bisher gelesenen acters als letztes Argument ausgegeben.
 
-- Ein doppeltes Anführungszeichen, dem ein umgekehrter Schrägstrich ( \\ ") vorangestellt ist, wird als literales doppeltes Anführungszeichen char (") interpretiert.
+- Wenn dem doppelten Anführungszeichen ein umgekehrter Schrägstrich ( **`\"`** ) vorangestellt ist, wird diese Zeichenfolge als tatsächliches doppeltes Anführungszeichen ( **`"`** ) interpretiert.
 
 - Ein umgekehrter Schrägstrich wird als solcher interpretiert, sofern er nicht unmittelbar vor einem Anführungszeichen steht.
 
-- Wenn ein doppeltes Anführungszeichen auf eine gerade Anzahl umgekehrter Schrägstriche folgt, wird für jedes Paar umgekehrter Schrägstriche ein umgekehrter Schrägstrich im `argv`-Array platziert. Das doppelte Anführungszeichen wird als Zeichenfolgentrennzeichen interpretiert.
+- Wenn ein doppeltes Anführungszeichen auf eine gerade Anzahl umgekehrter Schrägstriche folgt, wird für jedes Paar umgekehrter Schrägstriche ( **`\\`** ) ein umgekehrter Schrägstrich ( **`\`** ) im `argv`-Array platziert. Das doppelte Anführungszeichen ( **`"`** ) wird als Zeichenfolgentrennzeichen interpretiert.
 
-- Wenn ein doppeltes Anführungszeichen auf eine ungerade Anzahl umgekehrter Schrägstriche folgt, wird für jedes Paar umgekehrter Schrägstriche ein umgekehrter Schrägstrich in das Array eingefügt, `argv` und das doppelte Anführungszeichen wird durch den umgekehrten Schrägstrich "Escapezeichen" main , wodurch ein literales doppeltes Anführungszeichen (") eingefügt wird `argv` .
+- Wenn ein doppeltes Anführungszeichen auf eine ungerade Anzahl umgekehrter Schrägstriche folgt, wird für jedes Paar umgekehrter Schrägstriche ( **`\\`** ) ein umgekehrter Schrägstrich ( **`\`** ) im `argv`-Array platziert. Das doppelte Anführungszeichen wird vom umgekehrten Schrägstrich als Escapesequenz interpretiert main und bewirkt, dass ein literales doppeltes Anführungszeichen ( **`"`** ) in eingefügt wird `argv` .
 
-### <a name="example"></a>Beispiel
+### <a name="example-of-command-line-argument-parsing"></a>Beispiel für die Analyse-Befehlszeilenargumente
 
 Das folgende Programm zeigt, wie Befehlszeilenargumente übergeben werden:
 
@@ -159,40 +168,33 @@ int main( int argc,      // Number of strings in array argv
 }
 ```
 
-Die folgende Tabelle zeigt beispielhafte Eingaben und zu erwartende Ausgaben, wobei die Regeln in der vorangehenden Liste aufgezeigt werden.
-
 ### <a name="results-of-parsing-command-lines"></a>Ergebnisse der Befehlszeilen Verarbeitung
 
-|Befehlszeileneingabe|argv[1]|argv[2]|argv€|
-|-------------------------|---------------|---------------|---------------|
-|`"abc" d e`|`abc`|`d`|`e`|
-|`a\\b d"e f"g h`|`a\\b`|`de fg`|`h`|
-|`a\\\"b c d`|`a\"b`|`c`|`d`|
-|`a\\\\"b c" d e`|`a\\b c`|`d`|`e`|
+Die folgende Tabelle zeigt beispielhafte Eingaben und zu erwartende Ausgaben, wobei die Regeln in der vorangehenden Liste aufgezeigt werden.
 
-**Ende Microsoft-spezifisch**
+| Befehlszeilen Eingabe | argv[1] | argv[2] | argv€ |
+|--|--|--|--|
+| `"abc" d e` | `abc` | `d` | `e` |
+| `a\\b d"e f"g h` | `a\\b` | `de fg` | `h` |
+| `a\\\"b c d` | `a\"b` | `c` | `d` |
+| `a\\\\"b c" d e` | `a\\b c` | `d` | `e` |
+| `a"b"" c d` | `ab" c d` |  |  |
 
 ## <a name="wildcard-expansion"></a>Platzhaltererweiterung
 
-**Microsoft-spezifisch**
+*Mit dem* Microsoft-Compiler können Sie optional Platzhalter char -acters, das Fragezeichen ( **`?`** ) und das Sternchen ( **`*`** ) verwenden, um Dateinamen-und Pfad Argumente in der Befehlszeile anzugeben.
 
-Sie können Platzhalter – das Fragezeichen (?) und das Sternchen (*) – verwenden, um Dateinamen- und Pfadargumente in der Befehlszeile anzugeben.
+Befehlszeilenargumente werden von einer internen Routine im Lauf Zeit Startcode behandelt, der standardmäßig keine Platzhalter in separate Zeichen folgen im Zeichen folgen `argv` Array erweitert. Sie können die Erweiterung für Platzhalter aktivieren, indem Sie die *`setargv.obj`* Datei ( *`wsetargv.obj`* Datei für `wmain` ) in die **`/link`** Compileroptionen oder die **`LINK`** Befehlszeile einschließen.
 
-Befehlszeilenargumente werden von einer Routine namens `_setargv` (oder `_wsetargv` in der Wide char Acter-Umgebung) behandelt, die standardmäßig keine Platzhalter in separate Zeichen folgen im `argv` Zeichen folgen Array erweitert. Weitere Informationen zum Aktivieren der Platzhalter Erweiterung finden Sie unter Erweitern von Platzhalter [Argumenten](../c-language/expanding-wildcard-arguments.md).
+Weitere Informationen zu den Optionen für den Runtime-Start Linker finden Sie unter [Link Optionen](../c-runtime-library/link-options.md).
 
-**Ende Microsoft-spezifisch**
+## <a name="customize-c-command-line-processing"></a><a name="customize"/> Anpassen der C++-Befehlszeilen Verarbeitung
 
-## <a name="customizing-c-command-line-processing"></a>Anpassen der C++-Befehlszeilenverarbeitung
+Wenn das Programm keine Befehlszeilenargumente akzeptiert, können Sie die Verarbeitungsroutine für die Befehlszeile unterdrücken, um eine kleine Menge an Speicherplatz zu sparen. Um die Verwendung zu unterdrücken, schließen *`noarg.obj`* Sie die Datei (für `main` und `wmain` ) in die **`/link`** Compileroptionen oder die **`LINK`** Befehlszeile ein.
 
-**Microsoft-spezifisch**
+Wenn Sie auf die Umgebungs Tabelle nicht über das- *`envp`* Argument zugreifen, können Sie auch die interne Umgebungs Verarbeitungsroutine unterdrücken. Um die Verwendung zu unterdrücken, schließen *`noenv.obj`* Sie die Datei (für `main` und `wmain` ) in die **`/link`** Compileroptionen oder die **`LINK`** Befehlszeile ein.
 
-Wenn das Programm keine Befehlszeilenargumente akzeptiert, können Sie ein wenig Platz sparen, indem Sie die Verwendung der Bibliotheksroutine unterdrücken, die die Befehlszeilenverarbeitung ausführt. Diese Routine wird aufgerufen `_setargv` und unter Platzhalter [Erweiterung]()beschrieben. Um die Verwendung zu unterdrücken, definieren Sie eine Routine, die in der Datei, die die Funktion enthält, nichts bewirkt `main` , und benennen Sie Sie `_setargv` . Der-Befehl `_setargv` wird dann durch die Definition von erfüllt `_setargv` , und die Bibliotheksversion wird nicht geladen.
-
-Wenn Sie mit dem-Argument nie auf die Umgebungs Tabelle zugreifen `envp` , können Sie eine eigene leere Routine bereitstellen, die anstelle der `_setenvp` Umgebungs Verarbeitungsroutine verwendet wird. Ebenso wie bei der- `_setargv` Funktion `_setenvp` muss als ** extern "C"** deklariert werden.
-
-Das Programm kann die-oder- `spawn` `exec` Familie von Routinen in der C-Lauf Zeit Bibliothek aufrufen. Wenn dies der Fall ist, sollten Sie die Umgebungs Verarbeitungsroutine nicht unterdrücken, da diese Routine verwendet wird, um eine Umgebung vom übergeordneten Prozess an den untergeordneten Prozess zu übergeben.
-
-**Ende Microsoft-spezifisch**
+Das Programm kann die-oder- `spawn` `exec` Familie von Routinen in der C-Lauf Zeit Bibliothek aufrufen. Wenn dies der Fall ist, sollten Sie die Umgebungs Verarbeitungsroutine nicht unterdrücken, da Sie verwendet wird, um eine Umgebung vom übergeordneten Prozess an den untergeordneten Prozess zu übergeben.
 
 ## <a name="see-also"></a>Siehe auch
 

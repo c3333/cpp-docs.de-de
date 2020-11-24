@@ -1,39 +1,42 @@
 ---
-title: Ereignisbehandlung in systemeigenem C++
-ms.date: 05/07/2019
+title: Ereignisbehandlung in nativem C++-Code
+description: Erfahren Sie, wie Sie die Microsoft C++-Erweiterungen für die native C++-Ereignis Behandlung verwenden.
+ms.date: 11/20/2020
 helpviewer_keywords:
 - event handling [C++]
-ms.assetid: e4b9219a-15d8-42fb-83c8-6d2e4e087c8d
-ms.openlocfilehash: cc9265cd3f9f400e2880405019e4d2c9a934f10a
-ms.sourcegitcommit: 857fa6b530224fa6c18675138043aba9aa0619fb
+ms.openlocfilehash: 5ad9128b7ff596674c3b08687b722c81b7a10aa8
+ms.sourcegitcommit: b02c61667ff7f38e7add266d0aabd8463f2dbfa1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80180081"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95483177"
 ---
-# <a name="event-handling-in-native-c"></a>Ereignisbehandlung in systemeigenem C++
+# <a name="event-handling-in-native-c"></a>Ereignisbehandlung in nativem C++-Code
 
-Bei der C++ nativen Ereignis Behandlung richten Sie eine Ereignis Quelle und einen Ereignis Empfänger mithilfe der Attribute " [event_source](../windows/attributes/event-source.md) " und " [event_receiver](../windows/attributes/event-receiver.md) " ein, wobei Sie `type`=`native`angeben. Diese Attribute ermöglichen es den Klassen, auf die sie angewendet werden, in einem systemeigenen Nicht-COM-Kontext Ereignisse auszulösen und Ereignisse zu behandeln.
+In der nativen C++-Ereignis Behandlung richten Sie eine Ereignis Quelle und einen Ereignis Empfänger mithilfe der Attribute " [event_source](../windows/attributes/event-source.md) " und " [event_receiver](../windows/attributes/event-receiver.md) " ein, wobei Sie angeben `type` = `native` . Diese Attribute ermöglichen es, dass die Klassen, auf die Sie angewendet werden, Ereignisse auslösen und Ereignisse in einem nativen, nicht-COM-Kontext behandeln.
+
+> [!NOTE]
+> Ereignis Attribute in nativem C++ sind mit Standard-C++ nicht kompatibel. Sie werden nicht kompiliert, wenn Sie den [`/permissive-`](../build/reference/permissive-standards-conformance.md) Konformitäts Modus angeben.
 
 ## <a name="declaring-events"></a>Deklarieren von Ereignissen
 
-Verwenden Sie in einer Ereignis Quell Klasse das [__event](../cpp/event.md) -Schlüsselwort in einer Methoden Deklaration, um die Methode als Ereignis zu deklarieren. Stellen Sie sicher, dass Sie die Methode deklarieren, aber nicht definieren. Andernfalls wird ein Compilerfehler verursacht, da der Compiler die Methode implizit definiert, wenn er in einem Ereignis ausgeführt wird. Systemeigene Ereignisse können Methoden mit null oder mehr Parametern sein. Der Rückgabetyp kann „void“ oder ein ganzzahliger Typ sein.
+Verwenden Sie in einer Ereignis Quell Klasse das- [`__event`](../cpp/event.md) Schlüsselwort in einer Methoden Deklaration, um die Methode als Ereignis zu deklarieren. Stellen Sie sicher, dass Sie die-Methode deklarieren, aber nicht definieren. Wenn Sie dies tun, generiert es einen Compilerfehler, da der Compiler die Methode implizit definiert, wenn Sie in einem Ereignis erstellt wird. Systemeigene Ereignisse können Methoden mit null oder mehr Parametern sein. Der Rückgabetyp kann **`void`** ein beliebiger ganzzahliger Typ sein.
 
-## <a name="defining-event-handlers"></a>Definieren von Ereignishandlern
+## <a name="defining-event-handlers"></a>Definieren von Ereignis Handlern
 
-In einer Ereignisempfängerklasse definieren Sie Ereignishandler, die Methoden mit Signaturen sind (Rückgabetypen, Argumente und Aufrufkonventionen), die mit dem Ereignis übereinstimmen, das sie behandeln.
+In einer Ereignis Empfängerklasse definieren Sie Ereignishandler. Ereignishandler sind Methoden mit Signaturen (Rückgabe Typen, Aufruf Konventionen und Argumenten), die mit dem Ereignis übereinstimmen, das Sie behandeln.
 
-## <a name="hooking-event-handlers-to-events"></a>Verknüpfen von Ereignishandlern mit Ereignissen
+## <a name="hooking-event-handlers-to-events"></a>Einbinden von Ereignis Handlern mit Ereignissen
 
-Außerdem verwenden Sie in einer Ereignis Empfängerklasse die intrinsische Funktion [__hook](../cpp/hook.md) , um Ereignisse mit Ereignis Handlern und [__unhook](../cpp/unhook.md) zuzuordnen, um Ereignisse von Ereignis Handlern zu trennen. Sie können mehrere Ereignisse mit einem Ereignishandler oder mehrere Ereignishandler mit einem Ereignis verknüpfen.
+Außerdem verwenden Sie in einer Ereignis Empfängerklasse die intrinsische Funktion, [`__hook`](../cpp/hook.md) um Ereignisse Ereignis Handlern zuzuordnen und [`__unhook`](../cpp/unhook.md) Ereignisse von Ereignis Handlern zu trennen. Sie können mehrere Ereignisse mit einem Ereignishandler oder mehrere Ereignishandler mit einem Ereignis verknüpfen.
 
 ## <a name="firing-events"></a>Auslösen von Ereignissen
 
-Um ein Ereignis auszulösen, rufen Sie einfach die Methode auf, die als Ereignis in der Ereignisquellen-Klasse deklariert wurde. Wenn Handler an das Ereignis geknüpft wurden, werden die Handler aufgerufen.
+Um ein Ereignis auszulösen, wenden Sie die Methode an, die in der Ereignis Quell Klasse als Ereignis deklariert wurde. Wenn Handler an das Ereignis geknüpft wurden, werden die Handler aufgerufen.
 
-### <a name="native-c-event-code"></a>Systemeigener C++-Ereigniscode
+### <a name="native-c-event-code"></a>System eigener C++-Ereignis Code
 
-Das folgende Beispiel zeigt, wie ein Ereignis im systemeigenen C++-Code ausgelöst wird. Informationen zum Kompilieren und Ausführen des Beispiels finden Sie in den Kommentaren im Code.
+Das folgende Beispiel zeigt, wie ein Ereignis im systemeigenen C++-Code ausgelöst wird. Informationen zum Kompilieren und Ausführen des Beispiels finden Sie in den Kommentaren im Code. Um den Code in der Visual Studio-IDE zu erstellen, vergewissern Sie sich, dass die **`/permissive-`** Option deaktiviert ist.
 
 ## <a name="example"></a>Beispiel
 
@@ -41,6 +44,7 @@ Das folgende Beispiel zeigt, wie ein Ereignis im systemeigenen C++-Code ausgelö
 
 ```cpp
 // evh_native.cpp
+// compile by using: cl /EHsc /W3 evh_native.cpp
 #include <stdio.h>
 
 [event_source(native)]
@@ -88,6 +92,6 @@ MyHandler2 was called with value 123.
 MyHandler1 was called with value 123.
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Ereignisbehandlung](../cpp/event-handling.md)
+[Behandlung von Ereignissen](../cpp/event-handling.md)

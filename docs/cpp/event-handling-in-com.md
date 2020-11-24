@@ -1,6 +1,7 @@
 ---
 title: Ereignisbehandlung in COM
-ms.date: 11/04/2016
+description: Erfahren Sie, wie Sie die Microsoft C++-Erweiterungen für die com-Ereignis Behandlung verwenden.
+ms.date: 11/20/2020
 helpviewer_keywords:
 - event handling [C++], COM
 - event handling [C++], about event handling
@@ -15,38 +16,40 @@ helpviewer_keywords:
 - event sources, in event handling
 - declaring events, in COM
 - declaring events, event handling in COM
-ms.assetid: 6b4617d4-a58e-440c-a8a6-1ad1c715b2bb
-ms.openlocfilehash: be71bd9eac44c51a2e6a7cdeb925a1ca0b8b5dfb
-ms.sourcegitcommit: 1f009ab0f2cc4a177f2d1353d5a38f164612bdb1
+ms.openlocfilehash: 0c664f052fe211c88ad097c9d2617ec47f180eff
+ms.sourcegitcommit: b02c61667ff7f38e7add266d0aabd8463f2dbfa1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87231207"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95483112"
 ---
 # <a name="event-handling-in-com"></a>Ereignisbehandlung in COM
 
-Bei der com-Ereignis Behandlung richten Sie eine Ereignis Quelle und einen Ereignis Empfänger mithilfe der Attribute " [event_source](../windows/attributes/event-source.md) " und " [event_receiver](../windows/attributes/event-receiver.md) " ein, wobei Sie angeben `type` = `com` . Diese Attribute fügen den geeigneten Code für benutzerdefinierte Schnittstellen, Dispatchschnittstellen und duale Schnittstellen ein, damit die Klassen, auf die sie angewendet werden, Ereignisse über COM-Verbindungspunkte auslösen und behandeln können.
+Bei der com-Ereignis Behandlung richten Sie eine Ereignis Quelle und einen Ereignis Empfänger mithilfe der [`event_source`](../windows/attributes/event-source.md) -und-Attribute ein, wobei Sie [`event_receiver`](../windows/attributes/event-receiver.md) angeben `type` = `com` . Diese Attribute fügen passenden Code für benutzerdefinierte, Dispatch-und duale Schnittstellen ein. Der eingefügte Code ermöglicht den attributierten Klassen das Auslösen von Ereignissen und das Behandeln von Ereignissen über COM-Verbindungspunkte.
+
+> [!NOTE]
+> Ereignis Attribute in nativem C++ sind mit Standard-C++ nicht kompatibel. Sie werden nicht kompiliert, wenn Sie den [`/permissive-`](../build/reference/permissive-standards-conformance.md) Konformitäts Modus angeben.
 
 ## <a name="declaring-events"></a>Deklarieren von Ereignissen
 
-Verwenden Sie in einer Ereignis Quell Klasse das [__event](../cpp/event.md) -Schlüsselwort in einer Schnittstellen Deklaration, um die Methoden dieser Schnittstelle als Ereignisse zu deklarieren. Die Ereignisse der Schnittstelle werden ausgelöst, wenn Sie die Ereignisse als Schnittstellenmethoden aufrufen. Methoden für Ereignis Schnittstellen können NULL oder mehr Parameter aufweisen (die alle *in* Parametern enthalten sein sollten). Der Rückgabetyp kann „void“ oder ein ganzzahliger Typ sein.
+Verwenden Sie in einer Ereignis Quell Klasse das [`__event`](../cpp/event.md) -Schlüsselwort in einer Schnittstellen Deklaration, um die Methoden dieser Schnittstelle als Ereignisse zu deklarieren. Die Ereignisse der Schnittstelle werden ausgelöst, wenn Sie die Ereignisse als Schnittstellenmethoden aufrufen. Methoden für Ereignis Schnittstellen können NULL oder mehr Parameter aufweisen (die alle *in* Parametern enthalten sein sollten). Der Rückgabetyp kann „void“ oder ein ganzzahliger Typ sein.
 
-## <a name="defining-event-handlers"></a>Definieren von Ereignishandlern
+## <a name="defining-event-handlers"></a>Definieren von Ereignis Handlern
 
-In einer Ereignisempfängerklasse definieren Sie Ereignishandler, die Methoden mit Signaturen sind (Rückgabetypen, Argumente und Aufrufkonventionen), die mit dem Ereignis übereinstimmen, das sie behandeln. Bei com-Ereignissen müssen Aufruf Konventionen nicht übereinstimmen. Weitere Informationen finden Sie weiter unten unter [Layout Dependent com-Ereignisse](#vcconeventhandlingincomanchorlayoutdependentcomevents) .
+Sie definieren Ereignishandler in einer Ereignis Empfängerklasse. Ereignishandler sind Methoden mit Signaturen (Rückgabe Typen, Aufruf Konventionen und Argumenten), die mit dem Ereignis übereinstimmen, das Sie behandeln. Bei com-Ereignissen müssen Aufruf Konventionen nicht übereinstimmen. Weitere Informationen finden Sie weiter unten unter [Layoutabhängige COM-Ereignisse](#vcconeventhandlingincomanchorlayoutdependentcomevents) .
 
-## <a name="hooking-event-handlers-to-events"></a>Verknüpfen von Ereignishandlern mit Ereignissen
+## <a name="hooking-event-handlers-to-events"></a>Einbinden von Ereignis Handlern mit Ereignissen
 
-Außerdem verwenden Sie in einer Ereignis Empfängerklasse die intrinsische Funktion [__hook](../cpp/hook.md) , um Ereignisse mit Ereignis Handlern und [__unhook](../cpp/unhook.md) zuzuordnen, um Ereignisse von Ereignis Handlern zu trennen. Sie können mehrere Ereignisse mit einem Ereignishandler oder mehrere Ereignishandler mit einem Ereignis verknüpfen.
+Außerdem verwenden Sie in einer Ereignis Empfängerklasse die intrinsische Funktion, [`__hook`](../cpp/hook.md) um Ereignisse Ereignis Handlern zuzuordnen und [`__unhook`](../cpp/unhook.md) Ereignisse von Ereignis Handlern zu trennen. Sie können mehrere Ereignisse mit einem Ereignishandler oder mehrere Ereignishandler mit einem Ereignis verknüpfen.
 
 > [!NOTE]
 > Normalerweise gibt es zwei Möglichkeiten, um es einem COM-Ereignisempfänger zu ermöglichen, auf Schnittstellendefinitionen von Ereignisquellen zuzugreifen. Die erste Möglichkeit besteht in einer gemeinsamen Headerdatei, wie unten gezeigt. Die zweite besteht darin, [#Import](../preprocessor/hash-import-directive-cpp.md) mit dem `embedded_idl` Import Qualifizierer zu verwenden, damit die Ereignis Quellentyp Bibliothek in die TLH-Datei geschrieben wird, wobei der Attribut generierte Code beibehalten wird.
 
 ## <a name="firing-events"></a>Auslösen von Ereignissen
 
-Um ein Ereignis auszulösen, wird einfach eine Methode in der Schnittstelle aufgerufen, die mit dem- **`__event`** Schlüsselwort in der Ereignis Quellen Klasse deklariert wird. Wenn Handler an das Ereignis geknüpft wurden, werden die Handler aufgerufen.
+Um ein Ereignis auszulösen, wird eine Methode in der Schnittstelle aufgerufen, die mit dem- **`__event`** Schlüsselwort in der Ereignis Quellen Klasse deklariert wird. Wenn Handler an das Ereignis geknüpft wurden, werden die Handler aufgerufen.
 
-### <a name="com-event-code"></a>COM-Ereigniscode
+### <a name="com-event-code"></a>COM-Ereignis Code
 
 Das folgende Beispiel zeigt, wie ein Ereignis in einer COM-Klasse ausgelöst wird. Informationen zum Kompilieren und Ausführen des Beispiels finden Sie in den Kommentaren im Code.
 
@@ -157,13 +160,13 @@ MyHandler1 was called with value 123.
 MyHandler2 was called with value 123.
 ```
 
-## <a name="layout-dependent-com-events"></a><a name="vcconeventhandlingincomanchorlayoutdependentcomevents"></a>Layout abhängiger com-Ereignisse
+## <a name="layout-dependent-com-events"></a><a name="vcconeventhandlingincomanchorlayoutdependentcomevents"></a> Layout-abhängige com-Ereignisse
 
-Layoutabhängigkeit ist nur bei der COM-Programmierung ein Problem. Bei systemeigener und verwalteter Ereignisbehandlung müssen die Signaturen (Rückgabetyp, Aufrufkonvention und Argumente) der Handler ihren Ereignissen entsprechen, aber die Handlernamen müssen nicht mit ihren Ereignissen übereinstimmen.
+Layoutabhängigkeit ist nur bei der COM-Programmierung ein Problem. Bei der nativen und verwalteten Ereignis Behandlung müssen die Signaturen (Rückgabetyp, Aufruf Konvention und Argumente) der Handler ihren Ereignissen entsprechen, aber die Handlernamen müssen nicht mit ihren Ereignissen übereinstimmen.
 
-Wenn Sie jedoch den *layout_dependent* -Parameter von auf festlegen, wird bei der com-Ereignis Behandlung `event_receiver` **`true`** der Name und der Signatur Abgleich erzwungen. Dies bedeutet, dass die Namen und Signaturen der Handler im Ereignisempfänger exakt mit den Namen und Signaturen der Ereignisse übereinstimmen müssen, mit denen sie verknüpft sind.
+Wenn Sie jedoch den-Parameter von auf festlegen, wird bei der com-Ereignis Behandlung *`layout_dependent`* `event_receiver` **`true`** der Name und der Signatur Abgleich erzwungen. Die Namen und Signaturen der Handler im Ereignis Empfänger und in den gehockten Ereignissen müssen genau übereinstimmen.
 
-Wenn *layout_dependent* auf festgelegt ist **`false`** , können die Aufruf Konvention und die Speicher Klasse (virtuell, statisch usw.) gemischt und zwischen der auslösenden Ereignismethode und den Verknüpfungs Methoden (deren Delegaten) abgeglichen werden. Es ist etwas effizienter, *layout_dependent*zu haben = **`true`** .
+Wenn *`layout_dependent`* auf festgelegt ist **`false`** , können die Aufruf Konvention und die Speicher Klasse (virtuell, statisch usw.) gemischt und zwischen der auslösenden Ereignismethode und den Verknüpfungs Methoden (Delegaten) abgeglichen werden. Das ist etwas effizienter *`layout_dependent`* = **`true`** .
 
 Nehmen Sie z. B. an, `IEventSource` wird definiert, um über die folgenden Methoden zu verfügen:
 
@@ -215,4 +218,4 @@ public:
 
 ## <a name="see-also"></a>Siehe auch
 
-[Ereignis Behandlung](../cpp/event-handling.md)
+[Behandlung von Ereignissen](../cpp/event-handling.md)
