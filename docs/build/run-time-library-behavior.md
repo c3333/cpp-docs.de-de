@@ -15,12 +15,12 @@ helpviewer_keywords:
 - run-time [C++], DLL startup sequence
 - DLLs [C++], startup sequence
 ms.assetid: e06f24ab-6ca5-44ef-9857-aed0c6f049f2
-ms.openlocfilehash: 2f2ffb13e6a80b144298bbf8cd76b5666a10b4dd
-ms.sourcegitcommit: c123cc76bb2b6c5cde6f4c425ece420ac733bf70
+ms.openlocfilehash: 5af3efd733a5d682e33863b330b6a558e824c9b3
+ms.sourcegitcommit: 6284bca6549e7b4f199d4560c30df6c1278bd4a0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81335664"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95782978"
 ---
 # <a name="dlls-and-visual-c-run-time-library-behavior"></a>Verhalten der Laufzeitbibliothek für DLLs und Visual C++
 
@@ -108,13 +108,13 @@ Da reguläre MFC-DLLs ein `CWinApp`-Objekt enthalten, sollten sie ihre Initialis
 
 Eine reguläre MFC-DLL kann mehrere Threads nachverfolgen, indem [TlsAlloc](/windows/win32/api/processthreadsapi/nf-processthreadsapi-tlsalloc) und [TlsGetValue](/windows/win32/api/processthreadsapi/nf-processthreadsapi-tlsgetvalue) in der `InitInstance`-Funktion aufgerufen werden. Diese Funktionen ermöglichen der DLL die Nachverfolgung von threadspezifischen Daten.
 
-In Ihrer regulären MFC-DLL, die dynamisch mit MFC verknüpft wird, wenn Sie MFC-Unterstützung für OLE, Datenbanken (oder DAO) oder Sockets verwenden, werden die MFC-Erweiterungs-DLLs „MFCO*version*D.dll“, „MFCD*version*D.dll“ und „MFCN*version*D.dll“ (wobei *version* der Versionsnummer entspricht) automatisch verknüpft. Sie müssen eine der folgenden vordefinierten Initialisierungsfunktionen für jede dieser DLLs aufrufen, die Sie in der `CWinApp::InitInstance`-Methode Ihrer regulären MFC-DLL verwenden.
+In Ihrer regulären MFC-DLL, die dynamisch mit MFC verknüpft wird, wenn Sie MFC-Unterstützung für OLE, Datenbanken (oder DAO) oder Sockets verwenden, werden die MFC-Erweiterungs-DLLs „MFCO *version* D.dll“, „MFCD *version* D.dll“ und „MFCN *version* D.dll“ (wobei *version* der Versionsnummer entspricht) automatisch verknüpft. Sie müssen eine der folgenden vordefinierten Initialisierungsfunktionen für jede dieser DLLs aufrufen, die Sie in der `CWinApp::InitInstance`-Methode Ihrer regulären MFC-DLL verwenden.
 
 |Typ der MFC-Unterstützung|Aufzurufende Initialisierungsfunktion|
 |-------------------------|-------------------------------------|
-|MFC-OLE (MFCO*version*D.dll)|`AfxOleInitModule`|
-|MFC-Datenbank (MFCD*version*D.dll)|`AfxDbInitModule`|
-|MFC-Sockets (MFCN*version*D.dll)|`AfxNetInitModule`|
+|MFC-OLE (MFCO *version* D.dll)|`AfxOleInitModule`|
+|MFC-Datenbank (MFCD *version* D.dll)|`AfxDbInitModule`|
+|MFC-Sockets (MFCN *version* D.dll)|`AfxNetInitModule`|
 
 <a name="initializing-extension-dlls"></a>
 
@@ -133,7 +133,7 @@ Der Assistent stellt den folgenden Code für MFC-Erweiterungs-DLLs bereit. Im Co
 #undef THIS_FILE
 static char THIS_FILE[] = __FILE__;
 #endif
-static AFX_EXTENSION_MODULE PROJNAMEDLL = { NULL, NULL };
+static AFX_EXTENSION_MODULE PROJNAMEDLL;
 
 extern "C" int APIENTRY
 DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpReserved)
