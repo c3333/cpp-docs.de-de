@@ -1,6 +1,7 @@
 ---
 title: Anpassen der C-Befehlszeilenverarbeitung
-ms.date: 11/04/2016
+description: Unterdrücken von `main`-Funktionsargumenten und Behandlung von Umgebungsparametern im Runtimestartcode.
+ms.date: 11/19/2020
 helpviewer_keywords:
 - _spawn functions
 - command line, processing
@@ -11,22 +12,24 @@ helpviewer_keywords:
 - command line, processing arguments
 - suppressing environment processing
 - _exec function
-ms.assetid: c20fa11d-b35b-4f3e-93b6-2cd5a1c3c993
-ms.openlocfilehash: 1abdb0c104755efc86543ac4773359078e855999
-ms.sourcegitcommit: 0ab61bc3d2b6cfbd52a16c6ab2b97a8ea1864f12
+ms.openlocfilehash: fc306172491cd401caeecb3c87c0711f8b4ef911
+ms.sourcegitcommit: b02c61667ff7f38e7add266d0aabd8463f2dbfa1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62290682"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95483294"
 ---
 # <a name="customizing-c-command-line-processing"></a>Anpassen der C-Befehlszeilenverarbeitung
 
-Wenn das Programm keine Befehlszeilenargumente akzeptiert, können Sie ein wenig Platz sparen, indem Sie die Verwendung der Bibliotheksroutine unterdrücken, die die Befehlszeilenverarbeitung ausführt. Diese Routine hat die Bezeichnung **_setargv** (oder **_wsetargv** in Umgebungen aus Zeichenfolgen mit Breitzeichen), wie unter [Erweitern von Platzhalter-Argumenten](../c-language/expanding-wildcard-arguments.md) beschrieben. Um ihre Verwendung zu unterdrücken, definieren Sie eine Routine, die in der Datei mit der **main**-Funktion keine Aktion ausführt, und nennen Sie diese **_setargv** (oder **_wsetargv** in Umgebungen aus Zeichenfolgen mit Breitzeichen). Der Aufruf von **_setargv** oder **_wsetargv** wird dann durch Ihre Definition von **_setargv** oder **_wsetargv** erfüllt, und die Bibliotheksversion wird nicht geladen.
+Wenn das Programm keine Befehlszeilenargumente akzeptiert, können Sie die Routine zur Befehlszeilenverarbeitung unterdrücken, um ein wenig Speicherplatz zu sparen. Um ihre Verwendung zu unterdrücken, schließen Sie die *`noarg.obj`* -Datei (sowohl für `main` als auch für `wmain`) in Ihre **`/link`** -Compileroptionen oder **`LINK`** -Befehlszeile ein.
 
-Auch wenn Sie niemals auf die Umgebungstabelle vom `envp`-Argument aus zugreifen, können Sie anstelle der umgebungsverarbeitenden Routine **_setenvp** (oder **_wsetenvp**) eine eigene leere Routine bereitstellen.
+Ebenso können Sie die interne Routine zur Umgebungsverarbeitung unterdrücken, wenn Sie nie über das *`envp`* -Argument auf die Umgebungstabelle zugreifen. Um ihre Verwendung zu unterdrücken, schließen Sie die *`noenv.obj`* -Datei (sowohl für `main` als auch für `wmain`) in Ihre **`/link`** -Compileroptionen oder **`LINK`** -Befehlszeile ein.
 
-Wenn Ihr Programm die **_spawn**- oder **_exec**-Familie von Routinen in der C-Laufzeitbibliothek aufruft, sollten Sie die umgebungsverarbeitende Routine nicht unterdrücken, da mit ihr eine Umgebung aus dem erzeugenden Prozess an den neuen Prozess übergeben wird.
+Weitere Informationen zu den Optionen für den Runtimestartlinker finden Sie unter [Linkoptionen](../c-runtime-library/link-options.md).
 
-## <a name="see-also"></a>Siehe auch
+Das Programm ruft möglicherweise die `spawn`- oder `exec`-Gruppe von Routinen in der C-Laufzeitbibliothek auf. Wenn dies der Fall ist, sollten Sie die Routine zur Umgebungsverarbeitung nicht unterdrücken, da diese Routine verwendet wird, um eine Umgebung aus dem übergeordneten Prozess an den untergeordneten Prozess zu übergeben.
 
-[main-Funktion und Programmausführung](../c-language/main-function-and-program-execution.md)
+## <a name="see-also"></a>Weitere Informationen
+
+[`main`-Funktion und Programmausführung](../c-language/main-function-and-program-execution.md)\
+[Linkoptionen](../c-runtime-library/link-options.md).
